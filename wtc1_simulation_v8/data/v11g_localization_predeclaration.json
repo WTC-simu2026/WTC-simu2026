@@ -1,0 +1,63 @@
+{
+  "iteration": "V11G",
+  "random_seed": 1101007,
+  "random_draw_used": false,
+  "purpose": "Bounded cold longitudinal fracture benchmark and read-only equilibrium recovery of V11F. No new tower, heat, aircraft or global resistance credit.",
+  "section_configuration": "wtc1_simulation_v8/data/v11e_cracked_section_predeclaration.json",
+  "panel_configuration": "wtc1_simulation_v8/data/v11f_panel_coupling_predeclaration.json",
+  "panel_directory": "wtc1_simulation_v8/output/v11f_panel_coupling",
+  "bar": {
+    "lengths_m": [2.0, 8.0],
+    "area_m2": 0.01,
+    "cells": [9, 17, 33, 65],
+    "crack_position_fraction": 0.5,
+    "eligible_band": "Single central cell, width L/n; other cells strictly elastic. Odd meshes keep the selected crack plane at L/2. Numerical band width changes, physical bar and chosen single crack position do not.",
+    "material": "E,ft,fc,Gf taken from V11E concrete configuration, with original ksi/MPa retained in the input ledger. Uncalibrated hypotheses; no reinforcement, rate or heat.",
+    "monotonic_opening_fractions": [0.0, 1.0, 1.1],
+    "cyclic_opening_fractions": [0.0, 0.75, 0.0, 0.75, 1.0, 1.1],
+    "elastic_loading_steps": 20,
+    "steps_per_opening_segment": 64,
+    "control": "Postpeak opening w=h*(eps-sigma/E), not prescribed end displacement. Solve scalar material compatibility with safeguarded Newton from last committed history, then enforce exact series-bar static equilibrium. This follows an equilibrium path, not free dynamic stability.",
+    "closed_form_comparator": "wc=2Gf/ft; sigma=ft*(1-w/wc) on monotonic envelope, secant unloading in w. Delta=L*sigma/E+w, P=A*sigma, D_final=A*Gf. Lcrit=E*wc/ft separates ordinary end-displacement softening and snapback for this idealized bar.",
+    "negative_control": "Force a homogeneous strain branch in every cell, with one or two identical Gauss points per cell and Lch=cell_length/gauss_count. Full energy must be (cells*gauss_count)*A*Gf; reject this as a one-crack interpretation. This is deliberately constrained uniform damage, not a prediction of spontaneous crack multiplicity."
+  },
+  "solver": {
+    "maximum_iterations": 48,
+    "opening_tolerance_fraction_wc": 1e-12,
+    "temperature_c": 20.0,
+    "failed_trials_commit": false
+  },
+  "panel_recovery": {
+    "reads_saved_terminal_states_only": true,
+    "meshes": [2, 4, 8],
+    "external_loads": "Slab sees -force from each contact, tensile tie and horizontal tie, plus horizontal-tie couple -e*force, uniform gravity and slab-only actuator reaction. Truss actuator is NOT applied directly to the slab.",
+    "equilibrated_fields": "N(x)=-sum(Fx_left); M(x)=sum(Fy_left*(x-xi))-sum(C_left)+q*x*x/2. Signed small-strain reference coordinates; jumps at concentrated forces/couples are preserved.",
+    "comparison": "Evaluate equilibrated fields at the saved Gauss coordinates, compare to constitutive N/M there; independently reconstruct weak nodal equilibrium with the saved resultants and consistent gravity vector. Do not replace the solved stresses, damage or energy with recovered fields.",
+    "pointwise_gate": "Report separately: maximum Gauss discrepancy divided by maximum absolute equilibrated field (floor 1 N or 1 Nm), both N and M <= 5 percent at subdivision 8. Not a stress bound between samples, proof of physical accuracy, or requirement of exact strong equilibrium at finite mesh.",
+    "failed_pointwise_gate_policy": "Publish honest diagnostics with implementation PASS if audits pass; do not present failed cases as locally converged. No posthoc widening of tolerances."
+  },
+  "acceptance": {
+    "bar_force_relative_to_Aft": 1e-8,
+    "bar_displacement_relative_to_wc": 1e-8,
+    "bar_energy_relative_to_AGf": 1e-8,
+    "bar_equilibrium_relative_to_Aft": 1e-8,
+    "bar_mesh_and_step_relative": 1e-8,
+    "panel_weak_nodal_relative": 1e-8,
+    "panel_slab_global_force_relative": 1e-8,
+    "panel_slab_global_moment_relative": 1e-8,
+    "panel_fine_pointwise_N_relative": 0.05,
+    "panel_fine_pointwise_M_relative": 0.05,
+    "require_historical_outcome": false
+  },
+  "method_references": [
+    {"url":"https://manuals.dianafea.com/d110/en/1465843-1466551-model-parameters.html","accessed":"2026-09-07","scope":"Area under tensile stress-strain curve Gf/crack bandwidth. Own V11E law and own bar derivation, not DIANA execution or calibration."},
+    {"url":"https://opensees.github.io/OpenSeesDocumentation/user/manual/model/elements/dispBeamColumn.html","accessed":"2026-09-07","scope":"Displacement interpolation gives weak rather than exact pointwise section equilibrium. Own recovery, not OpenSees execution."}
+  ],
+  "global_energy_credit_J": 0.0,
+  "panel_mechanics_changed": false,
+  "fire_solved": false,
+  "blender_changed": false,
+  "output_directory": "wtc1_simulation_v8/output/v11g_localization",
+  "scratch_directory": "tmp/v11g_localization",
+  "expected_CPU_minutes_under": 5
+}

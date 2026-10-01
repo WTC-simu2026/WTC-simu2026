@@ -1,0 +1,1257 @@
+{
+  "iteration": "V9C",
+  "generated_at": "2026-08-27T10:18:16.442153+02:00",
+  "status": "validated_negative_official_method_revalidation_not_passed_coupon_not_authorized",
+  "iteration_execution_validated": true,
+  "configuration": "wtc1_simulation_v8/data/v9c_official_ringing_method.json",
+  "scope": "Preserve V8U through V9B, audit official NIST repositories for raw M26/C80 high-rate records, implement the published third-order polynomial yield procedure on the immutable V9B digitized curves, and revalidate yield and tensile strengths without changing the V9B tensile estimator. A non-eroding OpenRadioss coupon remains conditional on every revalidation gate. Failure deletion, facade impact, whole-aircraft, global tower, thermal and Blender work are prohibited in V9C.",
+  "evidence_policy": {
+    "observed_fact": "A statement, equation, table value or curve in an identified official NIST source.",
+    "official_model_result": "A NIST modelling or signal-reduction choice; not a new material measurement.",
+    "local_archive_claim": "No local-archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "A predeclared numerical implementation choice needed where the publication does not fully specify an algorithm.",
+    "derived_result": "A deterministic calculation from immutable V9B digitized traces using the predeclared V9C method.",
+    "unknown": "Raw channels, exact per-test elastic modulus and other information absent from the public sources audited here."
+  },
+  "source_verification": {
+    "id": "NIST_NCSTAR_1_3D_FINAL",
+    "path": "work/official_sources/ncstar1-3d.pdf",
+    "expected_sha256": "eee74f038b15bfd6263a4b5335ca96d124501d002e62883bb8fd4f84d22e52da",
+    "actual_sha256": "eee74f038b15bfd6263a4b5335ca96d124501d002e62883bb8fd4f84d22e52da",
+    "passed": true,
+    "source_modified": false
+  },
+  "regressions": {
+    "files": {
+      "wtc1_simulation_v8/data/v9b_stress_strain_digitization.json": {
+        "exists": true,
+        "expected_sha256": "06dd90b6c8d06545d9ed914cb5f69c1003ac020d82bcd385d27ef5bd82b03539",
+        "actual_sha256": "06dd90b6c8d06545d9ed914cb5f69c1003ac020d82bcd385d27ef5bd82b03539",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/run_v9b_digitization.py": {
+        "exists": true,
+        "expected_sha256": "93012fc22bb41c6b118fe3694ac60e59eaef27576044489ef988f75ef101a65c",
+        "actual_sha256": "93012fc22bb41c6b118fe3694ac60e59eaef27576044489ef988f75ef101a65c",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/finalize_v9b_digitization.py": {
+        "exists": true,
+        "expected_sha256": "a4eb8211070823d941b05c726dbbe3bfae19f11cf8baec4c1732b73526bbeb6f",
+        "actual_sha256": "a4eb8211070823d941b05c726dbbe3bfae19f11cf8baec4c1732b73526bbeb6f",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v9b_numerisation_preliminaire.json": {
+        "exists": true,
+        "expected_sha256": "0a4496956de155b66e9cb7dc56a06cc72c076641c43547960c651e2269a1460a",
+        "actual_sha256": "0a4496956de155b66e9cb7dc56a06cc72c076641c43547960c651e2269a1460a",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9b_cf6_public_source_audit.json": {
+        "exists": true,
+        "expected_sha256": "08544ec71a8df3cf2410c20891d882b7419db14d23ee259a55e40a4fe56e29a4",
+        "actual_sha256": "08544ec71a8df3cf2410c20891d882b7419db14d23ee259a55e40a4fe56e29a4",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v9b_numerisation_courbes.json": {
+        "exists": true,
+        "expected_sha256": "18bca7732505f10ae97aa78f11b5aa0b861d072733d902b03a24a73c4d93b8eb",
+        "actual_sha256": "18bca7732505f10ae97aa78f11b5aa0b861d072733d902b03a24a73c4d93b8eb",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/rapport_wtc1_v9b_numerisation_courbes.md": {
+        "exists": true,
+        "expected_sha256": "fe8a3ddcecb9009154083b21bbaf0a4f089125ba5c80829118a2a520ce8c6cec",
+        "actual_sha256": "fe8a3ddcecb9009154083b21bbaf0a4f089125ba5c80829118a2a520ce8c6cec",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9b_digitized_curves/m26_qs.csv": {
+        "exists": true,
+        "expected_sha256": "816e3290d9cd60181d4d8334fa5a205f409ed8236f66797ba520e1cc29a73d5f",
+        "actual_sha256": "816e3290d9cd60181d4d8334fa5a205f409ed8236f66797ba520e1cc29a73d5f",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9b_digitized_curves/m26_65.csv": {
+        "exists": true,
+        "expected_sha256": "a624f8016d213bd7088d7ad3c2c1cfc61ae4e024c0ef1d3c9a7a5eb7a0b6a7e9",
+        "actual_sha256": "a624f8016d213bd7088d7ad3c2c1cfc61ae4e024c0ef1d3c9a7a5eb7a0b6a7e9",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9b_digitized_curves/m26_100.csv": {
+        "exists": true,
+        "expected_sha256": "e75ef935c0acd3bdf7406603da01ec9738e68505ca8915a426bf81739211c970",
+        "actual_sha256": "e75ef935c0acd3bdf7406603da01ec9738e68505ca8915a426bf81739211c970",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9b_digitized_curves/m26_260.csv": {
+        "exists": true,
+        "expected_sha256": "6fd2ebc3f2644e796b3aa175585d1000d379cb6f72a23fd6fbf3aa278cac0b53",
+        "actual_sha256": "6fd2ebc3f2644e796b3aa175585d1000d379cb6f72a23fd6fbf3aa278cac0b53",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9b_digitized_curves/m26_417.csv": {
+        "exists": true,
+        "expected_sha256": "7dd471db9f8dba7cedf56e2ab508870cba3a5bcbd0c3824c77c2f51aed5c3d75",
+        "actual_sha256": "7dd471db9f8dba7cedf56e2ab508870cba3a5bcbd0c3824c77c2f51aed5c3d75",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9b_digitized_curves/c80_qs.csv": {
+        "exists": true,
+        "expected_sha256": "96a5b249dc8ebd3019f20090e22be6d6d3f4e385e162042c0bd064eda1fad65d",
+        "actual_sha256": "96a5b249dc8ebd3019f20090e22be6d6d3f4e385e162042c0bd064eda1fad65d",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9b_digitized_curves/c80_84.csv": {
+        "exists": true,
+        "expected_sha256": "38d05df56bbac2c996b1d2fa8b96c9e8b9561b49c0342a8595b361772f2a285d",
+        "actual_sha256": "38d05df56bbac2c996b1d2fa8b96c9e8b9561b49c0342a8595b361772f2a285d",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9b_digitized_curves/c80_299.csv": {
+        "exists": true,
+        "expected_sha256": "e15060b3d216119e36009d6e956b275a49a81d4c42c39e6a66f560578b50f2ca",
+        "actual_sha256": "e15060b3d216119e36009d6e956b275a49a81d4c42c39e6a66f560578b50f2ca",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9b_digitized_curves/c80_401.csv": {
+        "exists": true,
+        "expected_sha256": "9cd9e1c75c48082165486d133bfdaaf9cf71803f595422ecbb43c30172ae4704",
+        "actual_sha256": "9cd9e1c75c48082165486d133bfdaaf9cf71803f595422ecbb43c30172ae4704",
+        "passed": true
+      }
+    },
+    "metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9b_numerisation_courbes.json",
+        "path": "iteration_execution_validated",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9b_numerisation_courbes.json",
+        "path": "scientific_digitization_gate_passed",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9b_numerisation_courbes.json",
+        "path": "digitization_gate_summary.maximum_tensile_relative_error",
+        "expected": 0.1338469356950109,
+        "actual": 0.1338469356950109,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9b_numerisation_courbes.json",
+        "path": "openradioss_coupon_executed",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      }
+    ],
+    "files_passed": true,
+    "metrics_passed": true,
+    "passed": true
+  },
+  "public_raw_data_audit": {
+    "exact_specimen_queries": [
+      "M26-C1B1-RF",
+      "C80-A-2-2",
+      "C80-A-2-3"
+    ],
+    "raw_load_strain_time_channels_found": false,
+    "machine_readable_room_temperature_high_rate_m26_c80_curves_found": false,
+    "official_signal_reduction_method_found": true,
+    "full_esis_p7_00_text_found": false,
+    "audit_interpretation": "The report documents the channel types and reduction sequence, but the specimen-level raw channels needed to reproduce the corrected load signal and its uncertainty were not located in the audited public NIST indexes."
+  },
+  "ringing_aware_method": {
+    "input_curves": "Immutable V9B engineering-strain/engineering-stress CSV files extracted from NCSTAR 1-3D Figures A-28 and A-48.",
+    "conversion": "Before fitting, convert every retained point to true strain ln(1+e_engineering) and true stress sigma_engineering*(1+e_engineering).",
+    "fit_window_true_strain": [
+      0.01,
+      0.05
+    ],
+    "fit_model": "Unweighted ordinary least-squares third-order polynomial. Scale the fit-window coordinate linearly to [-1,1] for numerical conditioning; this does not change the cubic polynomial space.",
+    "offset_line": "sigma_true = E*(epsilon_true - 0.01)",
+    "elastic_modulus_ksi_values": [
+      28000.0,
+      29000.0,
+      30000.0
+    ],
+    "central_elastic_modulus_ksi": 29000.0,
+    "elastic_modulus_status": "predeclared sensitivity hypothesis because the plotted axes do not resolve the per-test elastic slope and raw corrected channels were not found",
+    "yield_selection": "Select the smallest real intersection in the closed fit window for which the cubic slope is below E. Report all real in-window roots and fail identification if the selected root is not unique under that rule. Report the intersection in true stress and convert it back to engineering-equivalent stress sigma_true/exp(epsilon_true) for comparison with the tabulated engineering-stress strength.",
+    "tensile_strength": "Retain the V9B maximum digitized engineering stress without smoothing or filtering, because NCSTAR 1-3D defines TS from maximum load.",
+    "reference_intervals": "Use the unchanged V9B Table A-12/A-14 intervals; relative error is zero within an interval and otherwise the distance to the nearest bound divided by that bound.",
+    "no_post_hoc_filtering": true,
+    "no_failure_or_post_necking_calibration": true
+  },
+  "curve_results": [
+    {
+      "curve_id": "M26_QS",
+      "coupon_series_id": "M26_PERIMETER_LONGITUDINAL",
+      "rate_per_s": 6.06e-05,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Flat 2 inch, longitudinal, 2 inch gauge, 9/16 inch source plate",
+      "source_csv": "wtc1_simulation_v8/output/v9b_digitized_curves/m26_qs.csv",
+      "cubic_fit": {
+        "fit_point_count": 31,
+        "polynomial_rank": 4,
+        "scaled_cubic_coefficients": [
+          -2.016618908322789,
+          -1.60027125305972,
+          12.7104014040714,
+          74.17511734592827
+        ],
+        "fit_rmse_ksi": 0.35315645680408636,
+        "fit_rmse_fraction_of_mean_true_stress": 0.005040717296324845,
+        "roots_by_elastic_modulus": [
+          {
+            "elastic_modulus_ksi": 28000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012251597907227126,
+                "true_stress_ksi": 63.04474140235953,
+                "engineering_equivalent_stress_ksi": 62.277054876410645,
+                "cubic_slope_ksi": 539.3138813050967,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012251597907227126,
+              "true_stress_ksi": 63.04474140235953,
+              "engineering_equivalent_stress_ksi": 62.277054876410645,
+              "cubic_slope_ksi": 539.3138813050967,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 29000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.01217248741739108,
+                "true_stress_ksi": 63.002135104341164,
+                "engineering_equivalent_stress_ksi": 62.23989102251294,
+                "cubic_slope_ksi": 537.8185117207772,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.01217248741739108,
+              "true_stress_ksi": 63.002135104341164,
+              "engineering_equivalent_stress_ksi": 62.23989102251294,
+              "cubic_slope_ksi": 537.8185117207772,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 30000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012098750998106807,
+                "true_stress_ksi": 62.9625299432043,
+                "engineering_equivalent_stress_ksi": 62.20535166322233,
+                "cubic_slope_ksi": 536.4162013617216,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012098750998106807,
+              "true_stress_ksi": 62.9625299432043,
+              "engineering_equivalent_stress_ksi": 62.20535166322233,
+              "cubic_slope_ksi": 536.4162013617216,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          }
+        ],
+        "central_selected_root": {
+          "true_strain": 0.01217248741739108,
+          "true_stress_ksi": 63.002135104341164,
+          "engineering_equivalent_stress_ksi": 62.23989102251294,
+          "cubic_slope_ksi": 537.8185117207772,
+          "slope_below_elastic_modulus": true
+        },
+        "yield_spread_across_modulus_range_relative_to_central": 0.0011520459308384467
+      },
+      "ringing_aware_yield_engineering_equivalent_ksi": 62.23989102251294,
+      "yield_reference_interval_ksi": [
+        61.7,
+        63.2
+      ],
+      "yield_relative_error_to_interval": 0.0,
+      "unchanged_v9b_tensile_strength_ksi": 86.59986750631778,
+      "tensile_reference_interval_ksi": [
+        85.5,
+        86.1
+      ],
+      "tensile_relative_error_to_interval": 0.0058056620942832085,
+      "fit_points_passed": true,
+      "polynomial_rank_passed": true,
+      "fit_rmse_passed": true,
+      "unique_root_passed": true,
+      "modulus_sensitivity_passed": true,
+      "yield_validation_passed": true,
+      "tensile_validation_passed": true,
+      "passed": true
+    },
+    {
+      "curve_id": "M26_65",
+      "coupon_series_id": "M26_PERIMETER_LONGITUDINAL",
+      "rate_per_s": 65.0,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Flat HSR 1 inch TK, longitudinal, 1 inch gauge, 0.125 inch thick",
+      "source_csv": "wtc1_simulation_v8/output/v9b_digitized_curves/m26_65.csv",
+      "cubic_fit": {
+        "fit_point_count": 49,
+        "polynomial_rank": 4,
+        "scaled_cubic_coefficients": [
+          2.448302626579645,
+          -0.7572378827246338,
+          8.99526962110669,
+          84.02965259370261
+        ],
+        "fit_rmse_ksi": 0.6594246946908582,
+        "fit_rmse_fraction_of_mean_true_stress": 0.007883548777551753,
+        "roots_by_elastic_modulus": [
+          {
+            "elastic_modulus_ksi": 28000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012644782284358239,
+                "true_stress_ksi": 74.05390396203073,
+                "engineering_equivalent_stress_ksi": 73.12340385291746,
+                "cubic_slope_ksi": 792.0126929569168,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012644782284358239,
+              "true_stress_ksi": 74.05390396203073,
+              "engineering_equivalent_stress_ksi": 73.12340385291746,
+              "cubic_slope_ksi": 792.0126929569168,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 29000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012551016669533198,
+                "true_stress_ksi": 73.97948341646283,
+                "engineering_equivalent_stress_ksi": 73.05676830602404,
+                "cubic_slope_ksi": 795.3639131364027,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012551016669533198,
+              "true_stress_ksi": 73.97948341646283,
+              "engineering_equivalent_stress_ksi": 73.05676830602404,
+              "cubic_slope_ksi": 795.3639131364027,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 30000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.01246366226600075,
+                "true_stress_ksi": 73.90986798002245,
+                "engineering_equivalent_stress_ksi": 72.99439725730325,
+                "cubic_slope_ksi": 798.500520140131,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.01246366226600075,
+              "true_stress_ksi": 73.90986798002245,
+              "engineering_equivalent_stress_ksi": 72.99439725730325,
+              "cubic_slope_ksi": 798.500520140131,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          }
+        ],
+        "central_selected_root": {
+          "true_strain": 0.012551016669533198,
+          "true_stress_ksi": 73.97948341646283,
+          "engineering_equivalent_stress_ksi": 73.05676830602404,
+          "cubic_slope_ksi": 795.3639131364027,
+          "slope_below_elastic_modulus": true
+        },
+        "yield_spread_across_modulus_range_relative_to_central": 0.0017658404362183764
+      },
+      "ringing_aware_yield_engineering_equivalent_ksi": 73.05676830602404,
+      "yield_reference_interval_ksi": [
+        72.2,
+        72.2
+      ],
+      "yield_relative_error_to_interval": 0.011866597036344002,
+      "unchanged_v9b_tensile_strength_ksi": 101.30587516589222,
+      "tensile_reference_interval_ksi": [
+        99.9,
+        99.9
+      ],
+      "tensile_relative_error_to_interval": 0.014072824483405525,
+      "fit_points_passed": true,
+      "polynomial_rank_passed": true,
+      "fit_rmse_passed": true,
+      "unique_root_passed": true,
+      "modulus_sensitivity_passed": true,
+      "yield_validation_passed": true,
+      "tensile_validation_passed": true,
+      "passed": true
+    },
+    {
+      "curve_id": "M26_100",
+      "coupon_series_id": "M26_PERIMETER_LONGITUDINAL",
+      "rate_per_s": 100.0,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Flat HSR 1 inch TN, longitudinal, 1 inch gauge, 0.0625 inch thick",
+      "source_csv": "wtc1_simulation_v8/output/v9b_digitized_curves/m26_100.csv",
+      "cubic_fit": {
+        "fit_point_count": 49,
+        "polynomial_rank": 4,
+        "scaled_cubic_coefficients": [
+          4.6340585428398695,
+          1.5572440242613066,
+          0.8826903806122459,
+          78.92890282263623
+        ],
+        "fit_rmse_ksi": 1.4406085211339579,
+        "fit_rmse_fraction_of_mean_true_stress": 0.018149491028962784,
+        "roots_by_elastic_modulus": [
+          {
+            "elastic_modulus_ksi": 28000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012726524600704406,
+                "true_stress_ksi": 76.3426888197234,
+                "engineering_equivalent_stress_ksi": 75.37726796876467,
+                "cubic_slope_ksi": 428.14358564280235,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012726524600704406,
+              "true_stress_ksi": 76.3426888197234,
+              "engineering_equivalent_stress_ksi": 75.37726796876467,
+              "cubic_slope_ksi": 428.14358564280235,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 29000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012631089323362953,
+                "true_stress_ksi": 76.30159037752577,
+                "engineering_equivalent_stress_ksi": 75.343879373657,
+                "cubic_slope_ksi": 433.1457633669058,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012631089323362953,
+              "true_stress_ksi": 76.30159037752577,
+              "engineering_equivalent_stress_ksi": 75.343879373657,
+              "cubic_slope_ksi": 433.1457633669058,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 30000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012542094466812731,
+                "true_stress_ksi": 76.26283400438207,
+                "engineering_equivalent_stress_ksi": 75.31231156715225,
+                "cubic_slope_ksi": 437.8388932723703,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012542094466812731,
+              "true_stress_ksi": 76.26283400438207,
+              "engineering_equivalent_stress_ksi": 75.31231156715225,
+              "cubic_slope_ksi": 437.8388932723703,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          }
+        ],
+        "central_selected_root": {
+          "true_strain": 0.012631089323362953,
+          "true_stress_ksi": 76.30159037752577,
+          "engineering_equivalent_stress_ksi": 75.343879373657,
+          "cubic_slope_ksi": 433.1457633669058,
+          "slope_below_elastic_modulus": true
+        },
+        "yield_spread_across_modulus_range_relative_to_central": 0.0008621324273771252
+      },
+      "ringing_aware_yield_engineering_equivalent_ksi": 75.343879373657,
+      "yield_reference_interval_ksi": [
+        75.9,
+        75.9
+      ],
+      "yield_relative_error_to_interval": 0.007327017474874865,
+      "unchanged_v9b_tensile_strength_ksi": 100.65373665525394,
+      "tensile_reference_interval_ksi": [
+        100.4,
+        100.4
+      ],
+      "tensile_relative_error_to_interval": 0.0025272575224495127,
+      "fit_points_passed": true,
+      "polynomial_rank_passed": true,
+      "fit_rmse_passed": true,
+      "unique_root_passed": true,
+      "modulus_sensitivity_passed": true,
+      "yield_validation_passed": true,
+      "tensile_validation_passed": true,
+      "passed": true
+    },
+    {
+      "curve_id": "M26_260",
+      "coupon_series_id": "M26_PERIMETER_LONGITUDINAL",
+      "rate_per_s": 260.0,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Flat HSR 1 inch TN, longitudinal, 1 inch gauge, 0.0625 inch thick",
+      "source_csv": "wtc1_simulation_v8/output/v9b_digitized_curves/m26_260.csv",
+      "cubic_fit": {
+        "fit_point_count": 45,
+        "polynomial_rank": 4,
+        "scaled_cubic_coefficients": [
+          -4.013315052644987,
+          -0.3680328190519422,
+          9.655293012504927,
+          86.563190847116
+        ],
+        "fit_rmse_ksi": 3.4181984844192597,
+        "fit_rmse_fraction_of_mean_true_stress": 0.0397117519187254,
+        "roots_by_elastic_modulus": [
+          {
+            "elastic_modulus_ksi": 28000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012876627937948738,
+                "true_stress_ksi": 80.54558226256472,
+                "engineering_equivalent_stress_ksi": 79.51507573109492,
+                "cubic_slope_ksi": 72.99561959592297,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012876627937948738,
+              "true_stress_ksi": 80.54558226256472,
+              "engineering_equivalent_stress_ksi": 79.51507573109492,
+              "cubic_slope_ksi": 72.99561959592297,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 29000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012777192071792808,
+                "true_stress_ksi": 80.53857008199155,
+                "engineering_equivalent_stress_ksi": 79.51605962008047,
+                "cubic_slope_ksi": 68.03868187347008,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012777192071792808,
+              "true_stress_ksi": 80.53857008199155,
+              "engineering_equivalent_stress_ksi": 79.51605962008047,
+              "cubic_slope_ksi": 68.03868187347008,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 30000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.01268441577642886,
+                "true_stress_ksi": 80.53247329286576,
+                "engineering_equivalent_stress_ksi": 79.5174172244194,
+                "cubic_slope_ksi": 63.38688961983365,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.01268441577642886,
+              "true_stress_ksi": 80.53247329286576,
+              "engineering_equivalent_stress_ksi": 79.5174172244194,
+              "cubic_slope_ksi": 63.38688961983365,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          }
+        ],
+        "central_selected_root": {
+          "true_strain": 0.012777192071792808,
+          "true_stress_ksi": 80.53857008199155,
+          "engineering_equivalent_stress_ksi": 79.51605962008047,
+          "cubic_slope_ksi": 68.03868187347008,
+          "slope_below_elastic_modulus": true
+        },
+        "yield_spread_across_modulus_range_relative_to_central": 2.9446797737046193e-05
+      },
+      "ringing_aware_yield_engineering_equivalent_ksi": 79.51605962008047,
+      "yield_reference_interval_ksi": [
+        75.9,
+        75.9
+      ],
+      "yield_relative_error_to_interval": 0.047642419236896744,
+      "unchanged_v9b_tensile_strength_ksi": 103.40928580419013,
+      "tensile_reference_interval_ksi": [
+        102.8,
+        102.8
+      ],
+      "tensile_relative_error_to_interval": 0.005926904710020784,
+      "fit_points_passed": true,
+      "polynomial_rank_passed": true,
+      "fit_rmse_passed": true,
+      "unique_root_passed": true,
+      "modulus_sensitivity_passed": true,
+      "yield_validation_passed": true,
+      "tensile_validation_passed": true,
+      "passed": true
+    },
+    {
+      "curve_id": "M26_417",
+      "coupon_series_id": "M26_PERIMETER_LONGITUDINAL",
+      "rate_per_s": 417.0,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Flat HSR 1 inch TN, longitudinal, 1 inch gauge, 0.0625 inch thick",
+      "source_csv": "wtc1_simulation_v8/output/v9b_digitized_curves/m26_417.csv",
+      "cubic_fit": {
+        "fit_point_count": 48,
+        "polynomial_rank": 4,
+        "scaled_cubic_coefficients": [
+          -14.139710508163315,
+          -0.0802066653131055,
+          12.332860281476073,
+          94.5504334127103
+        ],
+        "fit_rmse_ksi": 5.1847742462035615,
+        "fit_rmse_fraction_of_mean_true_stress": 0.05482410321736485,
+        "roots_by_elastic_modulus": [
+          {
+            "elastic_modulus_ksi": 28000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.013300986655658046,
+                "true_stress_ksi": 92.42762635842534,
+                "engineering_equivalent_stress_ksi": 91.20638757866952,
+                "cubic_slope_ksi": -855.2693424814656,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.013300986655658046,
+              "true_stress_ksi": 92.42762635842534,
+              "engineering_equivalent_stress_ksi": 91.20638757866952,
+              "cubic_slope_ksi": -855.2693424814656,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 29000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.013190456586766063,
+                "true_stress_ksi": 92.52324101621586,
+                "engineering_equivalent_stress_ksi": 91.31083092237627,
+                "cubic_slope_ksi": -874.8634997865355,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.013190456586766063,
+              "true_stress_ksi": 92.52324101621586,
+              "engineering_equivalent_stress_ksi": 91.31083092237627,
+              "cubic_slope_ksi": -874.8634997865355,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 30000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.01308715230512773,
+                "true_stress_ksi": 92.61456915383215,
+                "engineering_equivalent_stress_ksi": 91.41040490882149,
+                "cubic_slope_ksi": -893.29383946963,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.01308715230512773,
+              "true_stress_ksi": 92.61456915383215,
+              "engineering_equivalent_stress_ksi": 91.41040490882149,
+              "cubic_slope_ksi": -893.29383946963,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          }
+        ],
+        "central_selected_root": {
+          "true_strain": 0.013190456586766063,
+          "true_stress_ksi": 92.52324101621586,
+          "engineering_equivalent_stress_ksi": 91.31083092237627,
+          "cubic_slope_ksi": -874.8634997865355,
+          "slope_below_elastic_modulus": true
+        },
+        "yield_spread_across_modulus_range_relative_to_central": 0.0022343168722821732
+      },
+      "ringing_aware_yield_engineering_equivalent_ksi": 91.31083092237627,
+      "yield_reference_interval_ksi": [
+        85.0,
+        85.0
+      ],
+      "yield_relative_error_to_interval": 0.07424506967501493,
+      "unchanged_v9b_tensile_strength_ksi": 107.58308055596316,
+      "tensile_reference_interval_ksi": [
+        106.7,
+        106.7
+      ],
+      "tensile_relative_error_to_interval": 0.008276293870320162,
+      "fit_points_passed": true,
+      "polynomial_rank_passed": true,
+      "fit_rmse_passed": true,
+      "unique_root_passed": true,
+      "modulus_sensitivity_passed": true,
+      "yield_validation_passed": true,
+      "tensile_validation_passed": true,
+      "passed": true
+    },
+    {
+      "curve_id": "C80_QS",
+      "coupon_series_id": "C80_CORE_LONGITUDINAL",
+      "rate_per_s": 8.75e-05,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Round 1 inch, longitudinal, 1 inch gauge, 0.25 inch diameter",
+      "source_csv": "wtc1_simulation_v8/output/v9b_digitized_curves/c80_qs.csv",
+      "cubic_fit": {
+        "fit_point_count": 8,
+        "polynomial_rank": 4,
+        "scaled_cubic_coefficients": [
+          0.3186150929188797,
+          -2.0003622194015485,
+          11.002450484515975,
+          48.36456222958616
+        ],
+        "fit_rmse_ksi": 0.11207689669769134,
+        "fit_rmse_fraction_of_mean_true_stress": 0.00250467766854331,
+        "roots_by_elastic_modulus": [
+          {
+            "elastic_modulus_ksi": 28000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.011287806030420747,
+                "true_stress_ksi": 36.05856885178118,
+                "engineering_equivalent_stress_ksi": 35.65383529519148,
+                "cubic_slope_ksi": 779.1140529151505,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.011287806030420747,
+              "true_stress_ksi": 36.05856885178118,
+              "engineering_equivalent_stress_ksi": 35.65383529519148,
+              "cubic_slope_ksi": 779.1140529151505,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 29000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.01124217241330408,
+                "true_stress_ksi": 36.02299998581838,
+                "engineering_equivalent_stress_ksi": 35.62029111183304,
+                "cubic_slope_ksi": 779.7747708313734,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.01124217241330408,
+              "true_stress_ksi": 36.02299998581838,
+              "engineering_equivalent_stress_ksi": 35.62029111183304,
+              "cubic_slope_ksi": 779.7747708313734,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 30000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.011199661258973898,
+                "true_stress_ksi": 35.989837769216926,
+                "engineering_equivalent_stress_ksi": 35.589012520638065,
+                "cubic_slope_ksi": 780.3907270873259,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.011199661258973898,
+              "true_stress_ksi": 35.989837769216926,
+              "engineering_equivalent_stress_ksi": 35.589012520638065,
+              "cubic_slope_ksi": 780.3907270873259,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          }
+        ],
+        "central_selected_root": {
+          "true_strain": 0.01124217241330408,
+          "true_stress_ksi": 36.02299998581838,
+          "engineering_equivalent_stress_ksi": 35.62029111183304,
+          "cubic_slope_ksi": 779.7747708313734,
+          "slope_below_elastic_modulus": true
+        },
+        "yield_spread_across_modulus_range_relative_to_central": 0.0018198271976468717
+      },
+      "ringing_aware_yield_engineering_equivalent_ksi": 35.62029111183304,
+      "yield_reference_interval_ksi": [
+        37.1,
+        37.1
+      ],
+      "yield_relative_error_to_interval": 0.039884336608273875,
+      "unchanged_v9b_tensile_strength_ksi": 65.7235783623017,
+      "tensile_reference_interval_ksi": [
+        67.3,
+        67.3
+      ],
+      "tensile_relative_error_to_interval": 0.02342379847991535,
+      "fit_points_passed": true,
+      "polynomial_rank_passed": true,
+      "fit_rmse_passed": true,
+      "unique_root_passed": true,
+      "modulus_sensitivity_passed": true,
+      "yield_validation_passed": true,
+      "tensile_validation_passed": true,
+      "passed": true
+    },
+    {
+      "curve_id": "C80_84",
+      "coupon_series_id": "C80_CORE_LONGITUDINAL",
+      "rate_per_s": 84.0,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Flat HSR 1 inch TN, longitudinal, 1 inch gauge, 0.0625 inch thick",
+      "source_csv": "wtc1_simulation_v8/output/v9b_digitized_curves/c80_84.csv",
+      "cubic_fit": {
+        "fit_point_count": 32,
+        "polynomial_rank": 4,
+        "scaled_cubic_coefficients": [
+          -0.17076831452838073,
+          -0.2063870067751008,
+          9.393146736277902,
+          68.91402647710726
+        ],
+        "fit_rmse_ksi": 1.3286168071000541,
+        "fit_rmse_fraction_of_mean_true_stress": 0.019264940567413572,
+        "roots_by_elastic_modulus": [
+          {
+            "elastic_modulus_ksi": 28000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012160447643582376,
+                "true_stress_ksi": 60.492534020306465,
+                "engineering_equivalent_stress_ksi": 59.76137236415675,
+                "cubic_slope_ksi": 467.68648864656024,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012160447643582376,
+              "true_stress_ksi": 60.492534020306465,
+              "engineering_equivalent_stress_ksi": 59.76137236415675,
+              "cubic_slope_ksi": 467.68648864656024,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 29000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012084728440447855,
+                "true_stress_ksi": 60.45712477298798,
+                "engineering_equivalent_stress_ksi": 59.73091370758128,
+                "cubic_slope_ksi": 467.5912538336618,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012084728440447855,
+              "true_stress_ksi": 60.45712477298798,
+              "engineering_equivalent_stress_ksi": 59.73091370758128,
+              "cubic_slope_ksi": 467.5912538336618,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 30000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012014137338141911,
+                "true_stress_ksi": 60.42412014425727,
+                "engineering_equivalent_stress_ksi": 59.702519848434115,
+                "cubic_slope_ksi": 467.50180742199257,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012014137338141911,
+              "true_stress_ksi": 60.42412014425727,
+              "engineering_equivalent_stress_ksi": 59.702519848434115,
+              "cubic_slope_ksi": 467.50180742199257,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          }
+        ],
+        "central_selected_root": {
+          "true_strain": 0.012084728440447855,
+          "true_stress_ksi": 60.45712477298798,
+          "engineering_equivalent_stress_ksi": 59.73091370758128,
+          "cubic_slope_ksi": 467.5912538336618,
+          "slope_below_elastic_modulus": true
+        },
+        "yield_spread_across_modulus_range_relative_to_central": 0.0009852940808967483
+      },
+      "ringing_aware_yield_engineering_equivalent_ksi": 59.73091370758128,
+      "yield_reference_interval_ksi": [
+        57.3,
+        57.3
+      ],
+      "yield_relative_error_to_interval": 0.04242432299443775,
+      "unchanged_v9b_tensile_strength_ksi": 84.16456968862798,
+      "tensile_reference_interval_ksi": [
+        85.0,
+        85.0
+      ],
+      "tensile_relative_error_to_interval": 0.009828591898494377,
+      "fit_points_passed": true,
+      "polynomial_rank_passed": true,
+      "fit_rmse_passed": true,
+      "unique_root_passed": true,
+      "modulus_sensitivity_passed": true,
+      "yield_validation_passed": true,
+      "tensile_validation_passed": true,
+      "passed": true
+    },
+    {
+      "curve_id": "C80_299",
+      "coupon_series_id": "C80_CORE_LONGITUDINAL",
+      "rate_per_s": 299.0,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Flat HSR 1 inch TK, longitudinal, 1 inch gauge, 0.125 inch thick",
+      "source_csv": "wtc1_simulation_v8/output/v9b_digitized_curves/c80_299.csv",
+      "cubic_fit": {
+        "fit_point_count": 31,
+        "polynomial_rank": 4,
+        "scaled_cubic_coefficients": [
+          -7.77999609491221,
+          3.4871139237192317,
+          12.716804403479841,
+          71.13209543735209
+        ],
+        "fit_rmse_ksi": 3.4549897568068877,
+        "fit_rmse_fraction_of_mean_true_stress": 0.047922829117392866,
+        "roots_by_elastic_modulus": [
+          {
+            "elastic_modulus_ksi": 28000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012426023630681744,
+                "true_stress_ksi": 67.92866165908903,
+                "engineering_equivalent_stress_ksi": 67.08980114811338,
+                "cubic_slope_ksi": -571.6258690544224,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012426023630681744,
+              "true_stress_ksi": 67.92866165908903,
+              "engineering_equivalent_stress_ksi": 67.08980114811338,
+              "cubic_slope_ksi": -571.6258690544224,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 29000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012343998398630214,
+                "true_stress_ksi": 67.97595356027607,
+                "engineering_equivalent_stress_ksi": 67.1420161486117,
+                "cubic_slope_ksi": -581.4868586839652,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012343998398630214,
+              "true_stress_ksi": 67.97595356027607,
+              "engineering_equivalent_stress_ksi": 67.1420161486117,
+              "cubic_slope_ksi": -581.4868586839652,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 30000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012267362352745437,
+                "true_stress_ksi": 68.02087058236316,
+                "engineering_equivalent_stress_ksi": 67.19153121907632,
+                "cubic_slope_ksi": -590.735440225561,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012267362352745437,
+              "true_stress_ksi": 68.02087058236316,
+              "engineering_equivalent_stress_ksi": 67.19153121907632,
+              "cubic_slope_ksi": -590.735440225561,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          }
+        ],
+        "central_selected_root": {
+          "true_strain": 0.012343998398630214,
+          "true_stress_ksi": 67.97595356027607,
+          "engineering_equivalent_stress_ksi": 67.1420161486117,
+          "cubic_slope_ksi": -581.4868586839652,
+          "slope_below_elastic_modulus": true
+        },
+        "yield_spread_across_modulus_range_relative_to_central": 0.0015151476943703205
+      },
+      "ringing_aware_yield_engineering_equivalent_ksi": 67.1420161486117,
+      "yield_reference_interval_ksi": [
+        62.5,
+        62.5
+      ],
+      "yield_relative_error_to_interval": 0.07427225837778724,
+      "unchanged_v9b_tensile_strength_ksi": 90.82113954917037,
+      "tensile_reference_interval_ksi": [
+        80.1,
+        80.1
+      ],
+      "tensile_relative_error_to_interval": 0.1338469356950109,
+      "fit_points_passed": true,
+      "polynomial_rank_passed": true,
+      "fit_rmse_passed": true,
+      "unique_root_passed": true,
+      "modulus_sensitivity_passed": true,
+      "yield_validation_passed": true,
+      "tensile_validation_passed": false,
+      "passed": false
+    },
+    {
+      "curve_id": "C80_401",
+      "coupon_series_id": "C80_CORE_LONGITUDINAL",
+      "rate_per_s": 401.0,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Flat HSR 1 inch TK, longitudinal, 1 inch gauge, 0.125 inch thick",
+      "source_csv": "wtc1_simulation_v8/output/v9b_digitized_curves/c80_401.csv",
+      "cubic_fit": {
+        "fit_point_count": 32,
+        "polynomial_rank": 4,
+        "scaled_cubic_coefficients": [
+          -39.08513305446092,
+          1.8702906297144892,
+          32.21009059418112,
+          74.40609516874638
+        ],
+        "fit_rmse_ksi": 4.417551284414279,
+        "fit_rmse_fraction_of_mean_true_stress": 0.05887581114732735,
+        "roots_by_elastic_modulus": [
+          {
+            "elastic_modulus_ksi": 28000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.01262377442972536,
+                "true_stress_ksi": 73.46568403230998,
+                "engineering_equivalent_stress_ksi": 72.54409898821027,
+                "cubic_slope_ksi": -2977.400886311251,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.01262377442972536,
+              "true_stress_ksi": 73.46568403230998,
+              "engineering_equivalent_stress_ksi": 72.54409898821027,
+              "cubic_slope_ksi": -2977.400886311251,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 29000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012541778147969945,
+                "true_stress_ksi": 73.71156629112845,
+                "engineering_equivalent_stress_ksi": 72.79286529412644,
+                "cubic_slope_ksi": -3020.0321744202934,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012541778147969945,
+              "true_stress_ksi": 73.71156629112845,
+              "engineering_equivalent_stress_ksi": 72.79286529412644,
+              "cubic_slope_ksi": -3020.0321744202934,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          },
+          {
+            "elastic_modulus_ksi": 30000.0,
+            "real_in_window_roots": [
+              {
+                "true_strain": 0.012464848063328631,
+                "true_stress_ksi": 73.94544189985905,
+                "engineering_equivalent_stress_ksi": 73.02944394928055,
+                "cubic_slope_ksi": -3060.20865760936,
+                "slope_below_elastic_modulus": true
+              }
+            ],
+            "qualified_root_count": 1,
+            "selected_root": {
+              "true_strain": 0.012464848063328631,
+              "true_stress_ksi": 73.94544189985905,
+              "engineering_equivalent_stress_ksi": 73.02944394928055,
+              "cubic_slope_ksi": -3060.20865760936,
+              "slope_below_elastic_modulus": true
+            },
+            "unique_selected_root": true
+          }
+        ],
+        "central_selected_root": {
+          "true_strain": 0.012541778147969945,
+          "true_stress_ksi": 73.71156629112845,
+          "engineering_equivalent_stress_ksi": 72.79286529412644,
+          "cubic_slope_ksi": -3020.0321744202934,
+          "slope_below_elastic_modulus": true
+        },
+        "yield_spread_across_modulus_range_relative_to_central": 0.006667479829365149
+      },
+      "ringing_aware_yield_engineering_equivalent_ksi": 72.79286529412644,
+      "yield_reference_interval_ksi": [
+        59.5,
+        59.5
+      ],
+      "yield_relative_error_to_interval": 0.2234095007416209,
+      "unchanged_v9b_tensile_strength_ksi": 91.07583767206597,
+      "tensile_reference_interval_ksi": [
+        89.1,
+        89.1
+      ],
+      "tensile_relative_error_to_interval": 0.022175506981660813,
+      "fit_points_passed": true,
+      "polynomial_rank_passed": true,
+      "fit_rmse_passed": true,
+      "unique_root_passed": true,
+      "modulus_sensitivity_passed": true,
+      "yield_validation_passed": false,
+      "tensile_validation_passed": true,
+      "passed": false
+    }
+  ],
+  "revalidation_gate_summary": {
+    "expected_curve_count": 9,
+    "actual_curve_count": 9,
+    "curve_count_passed": true,
+    "passed_curve_count": 7,
+    "failed_curve_ids": [
+      "C80_299",
+      "C80_401"
+    ],
+    "maximum_yield_relative_error": 0.2234095007416209,
+    "median_yield_relative_error": 0.04242432299443775,
+    "median_yield_passed": true,
+    "maximum_tensile_relative_error": 0.1338469356950109,
+    "median_tensile_relative_error": 0.009828591898494377,
+    "median_tensile_passed": true,
+    "all_individual_curves_passed": false,
+    "revalidation_passed": false
+  },
+  "conditional_openradioss_coupon_authorized": false,
+  "openradioss_coupon_executed": false,
+  "failure_deletion_executed": false,
+  "fracture_calibration_executed": false,
+  "facade_impact_executed": false,
+  "global_wtc_impact_physics_qualification_passed": false,
+  "blender_executed": false,
+  "scope_gates": {
+    "failure_deletion_authorized": false,
+    "facade_impact_authorized": false,
+    "whole_aircraft_authorized": false,
+    "global_tower_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_mechanism_tested": false,
+    "global_scope_warning": "A V9C method pass would validate only this published yield-extraction implementation against scalar table values. It would not recreate the missing corrected load channels, validate fracture or contact, identify a CF6-80A2/cowling card, or validate facade, whole-aircraft, global, thermal, Blender, explosive or thermite physics."
+  },
+  "interpretation": "V9C identifies and implements the official NIST third-order ringing-aware yield procedure on the immutable V9B vector traces. The calculation is a method-reproduction attempt, not a reconstruction of the missing corrected raw load channels. Tensile strength remains the unchanged unfiltered V9B maximum. The conditional coupon is authorized only if every declared fit, root, modulus-sensitivity, yield and tensile gate passes.",
+  "runtime": {
+    "elapsed_seconds": 0.15727960000003804,
+    "python": "3.12.13",
+    "numpy": "2.3.5",
+    "config_sha256": "58e72a0d0d8440742bfc367543afce961076022e55f85e88865d3e861b2a8240",
+    "runner_sha256": "711032492c5ec8cde2649ba27dd9e5ac39abac90eb669ad584cc0b2cc7fcd321",
+    "source_archive_rescanned": false,
+    "official_source_files_modified": false,
+    "solver_executed": false,
+    "blender_executed": false
+  }
+}

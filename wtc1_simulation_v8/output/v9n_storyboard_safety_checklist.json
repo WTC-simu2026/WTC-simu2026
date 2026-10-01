@@ -1,0 +1,166 @@
+{
+  "iteration": "V9N",
+  "generated_at": "2026-08-28T16:35:38.907264+02:00",
+  "regressions": {
+    "files": {
+      "wtc1_simulation_v8/data/v8s_wtc1_aircraft_impact_replay.json": {
+        "exists": true,
+        "expected_sha256": "dc7ba078d6b1936a2b193742c97204c699e7ec618ef2af557dd9cc9ebd845c1d",
+        "actual_sha256": "dc7ba078d6b1936a2b193742c97204c699e7ec618ef2af557dd9cc9ebd845c1d",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json": {
+        "exists": true,
+        "expected_sha256": "40bd3c0c9bc4cad3326f171f885702dc47a020e57f32c788e7276097c8b9c318",
+        "actual_sha256": "40bd3c0c9bc4cad3326f171f885702dc47a020e57f32c788e7276097c8b9c318",
+        "passed": true
+      },
+      "wtc1_simulation_v8/data/v9m_impact_branch_closure.json": {
+        "exists": true,
+        "expected_sha256": "12bacbab97e22af0fdb9faa2669eac29bc3a8e73379f786c6d76fa7bcc95276e",
+        "actual_sha256": "12bacbab97e22af0fdb9faa2669eac29bc3a8e73379f786c6d76fa7bcc95276e",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/run_v9m_impact_branch_closure.py": {
+        "exists": true,
+        "expected_sha256": "cdffb5407a7971a94d64c9a68583a749d1cf85a1c8b8ed0f15b10b867094551a",
+        "actual_sha256": "cdffb5407a7971a94d64c9a68583a749d1cf85a1c8b8ed0f15b10b867094551a",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9m_impact_qualification_matrix.json": {
+        "exists": true,
+        "expected_sha256": "3c8501d1ac2f69a04001cbbe63315167d800e6c771dbcaeced48ad06f5c06432",
+        "actual_sha256": "3c8501d1ac2f69a04001cbbe63315167d800e6c771dbcaeced48ad06f5c06432",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9m_impact_future_tracks.json": {
+        "exists": true,
+        "expected_sha256": "aebff759b791447649a23e06704bd8f127a66b4bbc264175ed2b656fb3a8fa9d",
+        "actual_sha256": "aebff759b791447649a23e06704bd8f127a66b4bbc264175ed2b656fb3a8fa9d",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json": {
+        "exists": true,
+        "expected_sha256": "2d403c87c558300f2b4460312da549b46e16dbd92d6eac34b0f1b51f5979eb7d",
+        "actual_sha256": "2d403c87c558300f2b4460312da549b46e16dbd92d6eac34b0f1b51f5979eb7d",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/rapport_wtc1_v9m_cloture_branche_impact.md": {
+        "exists": true,
+        "expected_sha256": "7a24d0fc6e46547b1690ba416524b145d25fc6cf2854f2f119c010118f7910a6",
+        "actual_sha256": "7a24d0fc6e46547b1690ba416524b145d25fc6cf2854f2f119c010118f7910a6",
+        "passed": true
+      }
+    },
+    "passed": true,
+    "metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json",
+        "path": "comparison_to_reserved_official_outputs.tail_clearance.passed",
+        "comparator": "equals",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json",
+        "path": "readiness.gates.global_aircraft_impact_replay_ready",
+        "comparator": "equals",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json",
+        "path": "iteration_execution_validated",
+        "comparator": "equals",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json",
+        "path": "physical_track_reopening_authorized",
+        "comparator": "equals",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json",
+        "path": "physical_facade_impact_qualification_passed",
+        "comparator": "equals",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json",
+        "path": "runtime.blender_executed",
+        "comparator": "equals",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      }
+    ],
+    "metrics_passed": true
+  },
+  "shot_checks": {
+    "start_at_zero": true,
+    "presentation_intervals_contiguous": true,
+    "final_duration_matches": true,
+    "all_camera_ids_known": true,
+    "all_provenance_ids_known": true,
+    "all_shot_durations_positive": true,
+    "precontact_motion_bounded_at_first_contact": true,
+    "precontact_motion_shot_count": 4,
+    "postcontact_motion_shot_count": 0,
+    "frozen_contact_shot_count": 1,
+    "postcontact_data_card_count": 1,
+    "postcontact_motion_absent": true,
+    "contact_frame_is_frozen": true,
+    "timing_scale_is_card_only": true
+  },
+  "counts": {
+    "branch_count": 3,
+    "precontact_event_time_count": 4,
+    "camera_count": 5,
+    "overlay_requirement_count": 5,
+    "provenance_item_count": 8,
+    "shot_count": 11,
+    "precontact_motion_shot_count": 4,
+    "frozen_contact_shot_count": 1,
+    "postcontact_motion_shot_count": 0,
+    "forbidden_visual_claim_count": 9
+  },
+  "count_gates": {
+    "branch_count": true,
+    "precontact_event_time_count": true,
+    "camera_count": true,
+    "overlay_requirement_count": true,
+    "provenance_item_count": true,
+    "shot_count": true,
+    "precontact_motion_shot_count": true,
+    "frozen_contact_shot_count": true,
+    "postcontact_motion_shot_count": true,
+    "forbidden_visual_claim_count": true
+  },
+  "safety_gates": {
+    "V8S_and_V9M_regression_hashes_unchanged": true,
+    "V8S_and_V9M_regression_metrics_unchanged": true,
+    "three_frozen_branches_match": true,
+    "all_derived_precontact_offsets_nonnegative": true,
+    "all_animated_event_times_at_or_before_contact": true,
+    "all_shot_structure_checks_pass": true,
+    "all_predeclared_counts_match": true,
+    "permanent_non_validation_banner_present": true,
+    "contact_stop_banner_present": true,
+    "postcontact_aircraft_motion_forbidden": true,
+    "postcontact_motion_shot_count_zero": true,
+    "all_scope_gates_closed": true,
+    "no_source_archive_network_solver_or_Blender": true,
+    "physical_track_remains_dormant": true,
+    "Blender_not_used_as_physical_validation": true
+  },
+  "passed": true
+}

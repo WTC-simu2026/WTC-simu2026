@@ -1,0 +1,108 @@
+{
+  "dataset": {
+    "name": "WTC 1 V8L multistory cold core frame",
+    "version": "8.11.0",
+    "status": "MULTISTORY_REDUCED_ORDER_COLD_FRAME_AUDIT",
+    "scope": "Floors 94-99; explicit vertical column segments and floor-by-floor beam transfer under the NIST Case B post-impact core load at 20 C",
+    "warning": "The model is a scalar vertical-displacement spring network, not a shell/beam finite-element reproduction. The orthogonal topology and WF assignments are bounded reconstructions because Drawing Books 5 and 6 and the adjusted global-model slab modulus are unavailable."
+  },
+  "official_facts": [
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 88,
+      "printed_page": 24,
+      "fact": "Figure 2-17 maps the WTC 1 Case B severed or heavily damaged core-column segments between Floors 91 and 97.",
+      "confidence": "high; complete page visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL_LIMITE",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 198,
+      "printed_page": 134,
+      "fact": "The isolated WTC 1 core model extended from Floor 89 to Floor 106 and included columns, core beams and slabs. Case B structural-damage runs did not converge even with lateral restraints. The isolated model did not capture transfer between core and exterior walls through floors or the hat truss.",
+      "confidence": "high; complete page visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_pages": [231, 233],
+      "printed_pages": [167, 169],
+      "fact": "The global model used equivalent vertical springs at its truncated base. Individually modeled core beams were those with moment connections; non-moment beam axial stiffness was combined with the in-plane slab stiffness. NIST states that the composite floor representation could redistribute load locally among neighboring columns.",
+      "confidence": "high; complete pages visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 377,
+      "printed_page": 313,
+      "fact": "After impact, loads from severed columns were redistributed mostly to neighboring columns. At Floor 98 the core carried about one percent more gravity load; Column 705 buckled and Columns 605 and 804 showed minor buckling.",
+      "confidence": "high; complete page visually checked"
+    }
+  ],
+  "model_cases": {
+    "floors": [94, 95, 96, 97, 98, 99],
+    "temperature_c": 20.0,
+    "post_impact_core_demand_kip": 34429.0,
+    "load_distribution": "capacity_proportional_at_floor_99",
+    "topologies": [
+      "nist_moment_only",
+      "orthogonal_floor96_reconstruction"
+    ],
+    "beam_profiles": [
+      "12WF65",
+      "14WF136",
+      "14WF228"
+    ],
+    "connection_factors": [0.5, 1.0],
+    "active_planes_per_floor": 1,
+    "beam_damage_cases": [
+      "no_beam_damage_upper_bound",
+      "floor96_figure_damage",
+      "repeat_floor96_damage_floors94_98"
+    ],
+    "load_steps": 100,
+    "maximum_active_set_iterations": 120
+  },
+  "topology_definitions": {
+    "nist_moment_only": {
+      "status": "MANUAL_TRANSCRIPTION_FROM_NIST_GLOBAL_MODEL_FIGURE",
+      "source": "NIST NCSTAR 1-6D Figure 4-2 / prior V8H transcription",
+      "note": "Only individually modeled moment-connected core beams; 500 and 1000 series are not connected in this subnetwork."
+    },
+    "orthogonal_floor96_reconstruction": {
+      "status": "MODEL_HYPOTHESIS_FIGURE_CONSTRAINED",
+      "source": "NIST NCSTAR 1-6C Figure 5-59(a) registered to Figure 2-2",
+      "construction": "Consecutive columns within each numbered row plus same-terminal-digit links between adjacent rows.",
+      "note": "No nearest-four diagonals are used. The graph is an envelope for beams plus omitted composite-floor transfer, not an as-built schedule."
+    }
+  },
+  "beam_damage_definition": {
+    "floor96_removed_edges": [
+      [502, 503],
+      [503, 603],
+      [603, 604],
+      [604, 605]
+    ],
+    "source_status": "Figure-constrained Case Ai Floor 96 transcription from V8K",
+    "warning": "The refined Case B core-beam damage map by floor is unavailable. Repeating the Floor 96 pattern over Floors 94-98 is a conservative sensitivity, not an official damage assignment."
+  },
+  "mechanical_laws": {
+    "columns": "Elastic axial EA/L springs capped by the V8B room-temperature nominal compressive capacity for each historic WF proxy. Case B severed/heavy segments are removed before loading.",
+    "beams": "V8H bilinear vertical-transfer law: k=12EI/L^3, Vy=connection_factor*2Mp/L, one floor plane, 1 percent post-yield tangent, fracture at 0.02 rad relative rotation.",
+    "column_failure": "A column spring is removed if compressive force exceeds its V8B nominal room-temperature capacity.",
+    "omitted": [
+      "explicit shell slab bending and cracking",
+      "published adjusted slab modulus because its numeric value is unavailable",
+      "column and joint rotational degrees of freedom",
+      "geometric P-delta",
+      "perimeter walls and office-floor trusses",
+      "hat-truss transfer",
+      "transient dynamics"
+    ]
+  },
+  "gate": {
+    "required_condition": "The Case B cold load must reach the Floor 93 support without a disconnected loaded component or capacity-triggered cascade in at least one physically sourced topology; a reconstructed upper envelope alone cannot validate the as-built path.",
+    "thermal_authorization_rule": "Thermal continuation remains blocked if only the reconstructed orthogonal envelope passes or if every core-only case fails."
+  }
+}

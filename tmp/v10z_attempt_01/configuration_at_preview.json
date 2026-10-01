@@ -1,0 +1,195 @@
+{
+  "iteration": "V10Z",
+  "dataset": {
+    "name": "WTC 1 V10Y selected-case Blender exploratory visualization",
+    "version": "10.26.0",
+    "status": "PREDECLARED_BEFORE_V10Z_DRIVER_REPLAY_AND_BLENDER_EXECUTION",
+    "created_at_local": "2026-09-05T10:16:00+02:00",
+    "random_seed": 1026001,
+    "random_draw_used": false,
+    "scope": "Replay exactly one already-declared V10Y sensitivity-grid case, GRID-0119, and convert its reduced-order capacity and propagation timeline into a labelled Blender animation. Blender is a visualization consumer only. The derivative must not add structural dynamics, collision, fracture, debris, fluid, fire, thermite, explosive energy or any feedback into the calculation."
+  },
+  "epistemic_policy": {
+    "documented_input": "Tower dimensions and chronology are inherited from the hash-verified V10Y and V4.2 parameter packages.",
+    "official_model_dependent_input": "Impact-damage and localized structural-temperature envelopes remain dependent on the selected NIST model transcriptions used by V10Y.",
+    "exploratory_hypothesis": "Capacity shares, reserve, floor mass, story resistance, temperature quantile, load redistribution, truss-pull penalty and initial drop remain declared V10Y hypotheses.",
+    "derived_result": "The selected initiation and propagation timeline is a deterministic V10Y calculation replayed without parameter change.",
+    "visualization_status": "The 3D geometry and motion are schematic encodings of scalar V10Y outputs, not a finite-element deformation field or historical reconstruction.",
+    "unknown": "Member-by-member temperatures, connections, failure sequence, lateral motion, debris, dust, rotation and the real event outcome are not identified by V10Z."
+  },
+  "execution_policy": {
+    "network_access": false,
+    "source_archive_read": false,
+    "source_archive_modified": false,
+    "official_sources_directory_modified": false,
+    "software_installation": false,
+    "finite_element_solver_execution": false,
+    "reduced_order_solver_execution": true,
+    "reduced_order_solver_scope": "one exact replay of selected V10Y case only",
+    "gpu_compute": false,
+    "blender_execution": true,
+    "blender_visualization_only": true,
+    "blender_physics_execution": false,
+    "blender_master_modification": false,
+    "historical_validation_claim": false,
+    "maximum_runtime_seconds": 900
+  },
+  "regression_files": [
+    {
+      "role": "v10y_configuration",
+      "path": "wtc1_simulation_v8/data/v10y_integrated_exploratory_chain.json",
+      "expected_sha256": "57cb235ce91ff6e855b932ad26200426f2db7901e66f7996ebf3e7cf39101b0b"
+    },
+    {
+      "role": "v10y_runner",
+      "path": "wtc1_simulation_v8/scripts/run_v10y_integrated_exploratory_chain.py",
+      "expected_sha256": "8b50f7514404f8fb6b5e81f39cef6cf602ff7f9428692e4df3a611a3abc3edd8"
+    },
+    {
+      "role": "v10y_sensitivity_grid",
+      "path": "wtc1_simulation_v8/output/v10y_sensitivity_grid.csv",
+      "expected_sha256": "3ab621325d5b5d0a9a85a73bc5d4f4b6eac37ff2682e27b8323786dedbebfa99"
+    },
+    {
+      "role": "v10y_gate",
+      "path": "wtc1_simulation_v8/output/v10y_integrated_exploratory_gate.json",
+      "expected_sha256": "606891a1f3e258baec0bd6e4db2df4264a92646db48337ea7d804110174a0ef6"
+    },
+    {
+      "role": "v10y_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10y_chaine_exploratoire.json",
+      "expected_sha256": "643647c6e9269a49f8d523a157dab090dc090fb2eb44b59619b08eada8a7c40c"
+    },
+    {
+      "role": "v4_2_parameters",
+      "path": "wtc1_3d_v4/data/wtc1_parameters.json",
+      "expected_sha256": "43b351dc434cafcc49436712d74517cb8160e35c72b6d843401675674715bc7f"
+    }
+  ],
+  "protected_files": [
+    {
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+    }
+  ],
+  "software_files": [
+    {
+      "id": "BLENDER_5_2",
+      "path": "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe",
+      "expected_sha256": "e27fbfea8564aa645d4463cb0949695fd85562b9de6df9561b06859a1074adf7",
+      "expected_version_prefix": "5.2",
+      "allowed_credit": "VISUALIZATION_ONLY_NO_MECHANICAL_FEEDBACK"
+    }
+  ],
+  "selection": {
+    "scenario_id": "GRID-0119",
+    "selection_rule": "Keep the previously announced GRID-0119 for illustration and verify that it belongs to the group with minimum absolute initiation-time difference among progressing V10Y cases. This group contains ties; GRID-0119 is not the first by scenario_id and is not uniquely closest. Selection after observing the grid is diagnostic and supplies no independent validation.",
+    "expected_outcome": "GLOBAL_PROGRESSION_TO_GROUND_IN_REDUCED_MODEL",
+    "expected_initiation_time_s_after_impact": 5810.0,
+    "expected_initiation_floor": 96,
+    "expected_collapse_duration_s": 14.126338666270422,
+    "observed_chronology_comparison_s": 6114.0,
+    "expected_timing_error_s_early": 304.0,
+    "historical_calibration_gate": false
+  },
+  "visual_contract": {
+    "master_scene": "WTC1_MASTER",
+    "derivative_blend": "wtc1_3d_v4/output/WTC1_V10Z_EXPLORATORY_GRID0119.blend",
+    "master_overwrite_authorized": false,
+    "scene_name": "V10Z_GRID0119_ANIMATION",
+    "render_engine": "BLENDER_EEVEE",
+    "resolution_px": [768, 432],
+    "resolution_percentage": 100,
+    "fps": 12,
+    "frame_start": 1,
+    "thermal_end_frame": 48,
+    "initiation_frame": 49,
+    "collapse_start_frame": 50,
+    "frame_end": 220,
+    "video_seconds": 18.333333333333332,
+    "still_frames": [1, 48, 50, 135, 220],
+    "still_labels": [
+      "impact_input_t0",
+      "thermal_fast_forward_preinitiation",
+      "initiation_initial_drop",
+      "mid_progression",
+      "final_model_state"
+    ],
+    "capacity_sample_interval_s": 150,
+    "tower_proxy_story_count": 110,
+    "geometry_mapping": "Uniform 3.6576 m levels follow the V10Y coordinate system (402.336 m total); the intact V4.2 reference scene retains its separate 416.9664 m roof. The animated representation uses the upper-block translation plus a descending crush-front marker. Lower levels disappear at the corresponding driver events; that is a display convention and does not remove their accreted mass from the calculation. No debris-volume or compaction model is implied.",
+    "initial_drop_warning": "V10Y starts propagation with 1.8288 m drop and nonzero speed already assigned at relative time zero. The displayed 14.1263 s excludes the duration of that assumed initial drop.",
+    "between_event_mapping": "Position within each propagation interval uses the constant acceleration recoverable from the V10Y start speed, interval duration and story distance. Velocity includes the discrete inelastic accretion changes at event boundaries. Blender keyframes are baked at every video frame; fractional-frame interpolation is visual only.",
+    "impact_zone_floors": [93, 99],
+    "permanent_banner": "MODÈLE EXPLORATOIRE NON VALIDÉ — BLENDER NE CALCULE PAS LA STRUCTURE",
+    "secondary_banner": "IMPACT + FEUX LOCALISÉS (ENVELOPPES) + GRAVITÉ SEULEMENT",
+    "motion_warning": "PROXY CINÉMATIQUE 1D — NI DÉFORMATION EF 3D, NI DÉBRIS, NI POUSSIÈRE",
+    "animation_mapping": "Frames 1-48 compress the cached 0-5800 s pre-initiation capacity rows (10 s sample resolution); frame 49 marks 5810 s initiation before the imposed drop; frames 50-220 map V10Y relative propagation time at 12 fps, capped at the final event. The initial drop duration is omitted by V10Y and explicitly labelled.",
+    "video_codec": "H264",
+    "video_container": "MPEG4",
+    "video_quality": "MEDIUM"
+  },
+  "acceptance": {
+    "all_regression_hashes_pass": true,
+    "protected_master_unchanged": true,
+    "selected_grid_row_exactly_reproduced": true,
+    "selected_case_is_closest_progressing_case": true,
+    "driver_event_count_minimum": 90,
+    "driver_maximum_normalized_energy_residual": 1e-12,
+    "render_count": 5,
+    "render_resolution_exact": true,
+    "video_exists_and_nonempty": true,
+    "proof_sheet_exists_and_nonempty": true,
+    "keyframe_count_minimum": 100,
+    "rigid_body_count": 0,
+    "particle_system_count": 0,
+    "fluid_modifier_count": 0,
+    "blender_physics_executed": false,
+    "visualization_used_as_physical_validation": false,
+    "documentary_requirement_closure_count": 0,
+    "scientific_validation_claim_count": 0
+  },
+  "expected": {
+    "regression_file_count": 6,
+    "protected_file_count": 1,
+    "software_file_count": 1,
+    "selected_scenario_count": 1,
+    "selected_scenario_event_count": 96,
+    "tower_proxy_story_count": 110,
+    "still_render_count": 5,
+    "reduced_order_solver_run_count": 1,
+    "finite_element_solver_run_count": 0,
+    "blender_build_preview_run_count": 1,
+    "blender_render_run_count": 1,
+    "blender_run_count": 2,
+    "gpu_compute_run_count": 0,
+    "documentary_requirement_closure_count": 0,
+    "scientific_validation_claim_count": 0
+  },
+  "outputs": {
+    "runner_script": "wtc1_simulation_v8/scripts/run_v10z_blender_exploratory_visualization.py",
+    "blender_builder_script": "wtc1_3d_v4/scripts/build_v10z_exploratory_animation.py",
+    "selected_driver": "wtc1_simulation_v8/output/v10z_grid0119_visualization_driver.json",
+    "regression_audit": "wtc1_simulation_v8/output/v10z_regression_audit.json",
+    "source_manifest": "wtc1_simulation_v8/output/v10z_visualization_source_manifest.json",
+    "driver_audit": "wtc1_simulation_v8/output/v10z_selected_driver_audit.json",
+    "blender_internal_manifest": "wtc1_3d_v4/output/v10z_blender_internal_manifest.json",
+    "blender_execution_log": "wtc1_3d_v4/output/v10z_blender_execution.log",
+    "derivative_blend": "wtc1_3d_v4/output/WTC1_V10Z_EXPLORATORY_GRID0119.blend",
+    "render_directory": "wtc1_3d_v4/renders/v10z",
+    "video": "wtc1_3d_v4/renders/v10z/wtc1_v10z_grid0119_exploratory.mp4",
+    "proof_sheet": "wtc1_3d_v4/renders/v10z/wtc1_v10z_grid0119_proof_sheet.png",
+    "render_manifest": "wtc1_simulation_v8/output/v10z_render_manifest.json",
+    "visual_qa": "wtc1_simulation_v8/output/v10z_visual_qa.json",
+    "handoff_gate": "wtc1_simulation_v8/output/v10z_visualization_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10z_visualisation_3d_exploratoire.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10z_visualisation_3d_exploratoire.json",
+    "offline_audit": "wtc1_simulation_v8/output/v10z_offline_package_audit.json"
+  },
+  "scratch_directory": "tmp/v10z_attempt_01",
+  "next_iteration": {
+    "id": "V11A",
+    "objective": "Corriger d'abord le raccord initiation-propagation de V10Y : temps et résistance dès le premier déplacement, inventaire complet de masse, conditions d'arrêt explicites. Comparer les mêmes cas sans recalibrage sur la chronologie, puis introduire les chemins d'efforts spatiaux noyau, façades, planchers et connexions."
+  }
+}

@@ -1,0 +1,504 @@
+{
+  "iteration": "V10N",
+  "generated_at_utc": "2026-09-02T17:34:08Z",
+  "validation_status": "PASS",
+  "graph_version": "solver-neutral-coupling-v1",
+  "canonical_unit_system": {
+    "system": "SI",
+    "base": {
+      "length": "m",
+      "mass": "kg",
+      "time": "s",
+      "temperature": "K"
+    },
+    "derived": {
+      "force": "N",
+      "stress": "Pa",
+      "energy": "J",
+      "power": "W",
+      "heat_flux": "W/m2"
+    },
+    "conversion_policy": "Preserve source units and exact conversion in every adapter record; reject implicit units."
+  },
+  "modules": [
+    {
+      "id": "IMPACT_KINEMATICS",
+      "purpose": "Freeze aircraft mass, velocity, attitude, trajectory and contact-time envelopes.",
+      "implementation": "V8S cached reduced kinematic specification",
+      "status": "READY_FOR_REPLAY_AS_KINEMATIC_ENVELOPE_ONLY",
+      "solver_or_method": "deterministic SI-unit transformations and geometry checks",
+      "inputs": [
+        "source-qualified aircraft mass/velocity/attitude",
+        "tower orientation",
+        "contact reference"
+      ],
+      "outputs": [
+        "impact_kinematics_v1",
+        "contact_time_s",
+        "kinetic_energy_J",
+        "trajectory_frame"
+      ],
+      "canonical_units": [
+        "kg",
+        "m",
+        "s",
+        "m/s",
+        "rad",
+        "J"
+      ],
+      "uncertainties": [
+        "mass",
+        "speed",
+        "yaw",
+        "pitch",
+        "roll",
+        "impact point"
+      ],
+      "validation_gate": "V8S input hashes and geometric time-scale checks pass; no damage credit.",
+      "stop_condition": "Missing provenance, non-SI conversion record, or attempt to infer member damage.",
+      "physical_credit": "KINEMATICS_ONLY_NO_FORCE_IMPULSE_DAMAGE_OR_BREAKUP",
+      "cached_anchors": [
+        "V8S_IMPACT_KINEMATICS"
+      ]
+    },
+    {
+      "id": "IMPACT_DAMAGE_STATE",
+      "purpose": "Transform impact conditions into member damage, openings, debris and fuel distributions.",
+      "implementation": "schema only; V9M closes the current physical solver branch as unqualified",
+      "status": "BLOCKED_FOR_PHYSICAL_PREDICTION_SCHEMA_CAN_BE_IMPLEMENTED",
+      "solver_or_method": "future qualified explicit dynamics; OpenRadioss is only installation-smoke qualified",
+      "inputs": [
+        "impact_kinematics_v1",
+        "as-built impact-zone mesh",
+        "aircraft and tower high-rate material/joint cards"
+      ],
+      "outputs": [
+        "impact_damage_state_v1",
+        "opening_map",
+        "debris_distribution",
+        "fuel_distribution"
+      ],
+      "canonical_units": [
+        "m",
+        "kg",
+        "s",
+        "N",
+        "Pa",
+        "J"
+      ],
+      "uncertainties": [
+        "fracture surfaces",
+        "regularization length",
+        "mesh",
+        "contact",
+        "projectile breakup",
+        "joint failure"
+      ],
+      "validation_gate": "All V9M primary-evidence and convergence triggers plus energy/mass balance.",
+      "stop_condition": "Any unqualified erosion, mesh dependence, missing CF6-80A2 card, or absent as-built mesh.",
+      "physical_credit": "NONE_CURRENTLY",
+      "cached_anchors": [
+        "V8T_OPENRADIOSS_SMOKE",
+        "V9M_IMPACT_BRANCH_CLOSURE"
+      ]
+    },
+    {
+      "id": "FIRE_GAS_PHASE",
+      "purpose": "Compute or bracket gas temperature and heat-flux histories after impact.",
+      "implementation": "schema plus bounded surrogate inputs; exact NIST FDS event inputs unavailable",
+      "status": "REDUCED_SURROGATE_ONLY_NOT_EVENT_VALIDATED",
+      "solver_or_method": "future FDS or explicitly labelled reduced fire envelope",
+      "inputs": [
+        "opening_map",
+        "fuel_distribution",
+        "combustibles",
+        "ventilation",
+        "sprinkler and fireproofing state"
+      ],
+      "outputs": [
+        "fire_gas_history_v1",
+        "gas_temperature_K",
+        "incident_heat_flux_W_m2"
+      ],
+      "canonical_units": [
+        "m",
+        "s",
+        "K",
+        "W/m2",
+        "kg",
+        "kg/s"
+      ],
+      "uncertainties": [
+        "fuel placement",
+        "ventilation",
+        "fuel load",
+        "burn rate",
+        "compartment connectivity"
+      ],
+      "validation_gate": "Mass/energy conservation, mesh/time sensitivity and comparison to bounded observations or published official-model envelopes.",
+      "stop_condition": "Damage/fire interface lacks provenance or a surrogate is mislabeled as an FDS event reconstruction.",
+      "physical_credit": "NONE_AS_EVENT_RECONSTRUCTION",
+      "cached_anchors": []
+    },
+    {
+      "id": "THERMAL_SOLIDS",
+      "purpose": "Map gas exposure through protection and conduction to member temperature histories.",
+      "implementation": "V8E synthetic fields preserve official extrema but are not member-resolved NIST temperatures",
+      "status": "CACHED_SYNTHETIC_FIELDS_READY_FOR_SOFTWARE_CONTROL_ONLY",
+      "solver_or_method": "reduced thermal map; future validated solid heat-transfer solver",
+      "inputs": [
+        "fire_gas_history_v1",
+        "member geometry",
+        "insulation thickness/damage",
+        "thermal properties"
+      ],
+      "outputs": [
+        "thermal_member_history_v1",
+        "member_temperature_K_by_time"
+      ],
+      "canonical_units": [
+        "m",
+        "s",
+        "K",
+        "W/m2",
+        "W/(m K)",
+        "J/(kg K)"
+      ],
+      "uncertainties": [
+        "SFRM loss",
+        "thermal properties",
+        "section factors",
+        "boundary convection/radiation"
+      ],
+      "validation_gate": "Temperature extrema, conservation, time-step convergence and member/source mapping.",
+      "stop_condition": "Synthetic spatial field is treated as measured or as an event probability.",
+      "physical_credit": "SENSITIVITY_ONLY",
+      "cached_anchors": [
+        "V8E_THERMAL_FIELDS"
+      ]
+    },
+    {
+      "id": "COLD_GRAVITY_REDISTRIBUTION",
+      "purpose": "Establish the post-impact gravity state before heating.",
+      "implementation": "V8H/V8J/V8L/V8R reduced graph and capacity diagnostics",
+      "status": "DIAGNOSTIC_AVAILABLE_SOURCE_GATE_FAILED",
+      "solver_or_method": "reduced nonlinear spring/network calculations",
+      "inputs": [
+        "impact_damage_state_v1",
+        "gravity loads",
+        "topology",
+        "member/connection laws",
+        "boundary conditions"
+      ],
+      "outputs": [
+        "cold_structural_state_v1",
+        "residual_loads_N",
+        "displacements_m",
+        "failed_component_flags"
+      ],
+      "canonical_units": [
+        "m",
+        "N",
+        "Pa",
+        "rad"
+      ],
+      "uncertainties": [
+        "Book 5 sections",
+        "Book 6 connections",
+        "office/perimeter transfer",
+        "boundaries",
+        "damage state"
+      ],
+      "validation_gate": "All 22 V10A source requirements plus equilibrium and displacement compatibility.",
+      "stop_condition": "Disconnected loaded component, failed equilibrium, or proxy capacity presented as as-built.",
+      "physical_credit": "NONE_CURRENTLY; REDUCED DIAGNOSTIC ONLY",
+      "cached_anchors": [
+        "V8H_MECHANICAL_TRANSFER",
+        "V8J_COLD_GATE",
+        "V8L_MULTISTORY_COLD",
+        "V8R_NETWORK_BOUNDS",
+        "V10A_SOLVER_NEUTRAL_SCHEMA"
+      ]
+    },
+    {
+      "id": "THERMOMECHANICAL_INITIATION",
+      "purpose": "Combine prestress and temperature-dependent response to test initiation or survival.",
+      "implementation": "interface schema only",
+      "status": "BLOCKED_PENDING_COLD_AND_THERMAL_PHYSICAL_GATES",
+      "solver_or_method": "future coupled or sequential structural solver with validated material/connection laws",
+      "inputs": [
+        "cold_structural_state_v1",
+        "thermal_member_history_v1",
+        "temperature-dependent material and connection laws"
+      ],
+      "outputs": [
+        "initiation_state_v1",
+        "instability_time_s_or_null",
+        "failure_sequence",
+        "survival_margin"
+      ],
+      "canonical_units": [
+        "m",
+        "s",
+        "K",
+        "N",
+        "Pa",
+        "rad",
+        "J"
+      ],
+      "uncertainties": [
+        "creep",
+        "strength/stiffness reduction",
+        "connection response",
+        "initial imperfections",
+        "load path"
+      ],
+      "validation_gate": "Cold equilibrium, thermal mapping, numerical convergence and component benchmarks all pass.",
+      "stop_condition": "Any upstream physical gate is closed or instability depends on an unbounded proxy.",
+      "physical_credit": "NONE_CURRENTLY",
+      "cached_anchors": []
+    },
+    {
+      "id": "PROPAGATION_OR_ARREST",
+      "purpose": "Test whether an initiated local descent propagates, arrests, or remains indeterminate.",
+      "implementation": "not yet implemented; deliberately separate from initiation",
+      "status": "SCHEMA_ONLY_SEPARATE_MODEL_REQUIRED",
+      "solver_or_method": "future energy-momentum/member-removal bracket with optional explicit verification",
+      "inputs": [
+        "initiation_state_v1",
+        "upper/lower mass distribution",
+        "story capacities",
+        "dissipation and debris interaction laws"
+      ],
+      "outputs": [
+        "propagation_outcome_v1",
+        "outcome_label",
+        "arrest_story_or_null",
+        "energy_momentum_ledger"
+      ],
+      "canonical_units": [
+        "kg",
+        "m",
+        "s",
+        "N",
+        "J",
+        "kg m/s"
+      ],
+      "uncertainties": [
+        "participating mass",
+        "impact velocity",
+        "dynamic amplification",
+        "connection fracture",
+        "debris compaction"
+      ],
+      "validation_gate": "Energy and momentum close, time-step/element sensitivity passes, and arrest control cases reproduce.",
+      "stop_condition": "Initiation is assumed to imply global propagation, or conservation residual exceeds the declared tolerance.",
+      "physical_credit": "NONE_CURRENTLY",
+      "cached_anchors": []
+    },
+    {
+      "id": "UNCERTAINTY_ENSEMBLE",
+      "purpose": "Run declared parameter envelopes and preserve outcome classifications without converting them to real-event probabilities.",
+      "implementation": "orchestration schema ready for V10O",
+      "status": "READY_FOR_SYNTHETIC_SOFTWARE_CONTROLS_ONLY",
+      "solver_or_method": "deterministic case grid and seeded sampling",
+      "inputs": [
+        "module configurations",
+        "parameter provenance classes",
+        "validation flags",
+        "outcome records"
+      ],
+      "outputs": [
+        "ensemble_manifest_v1",
+        "case_results",
+        "sensitivity_metrics",
+        "epistemic_class"
+      ],
+      "canonical_units": [
+        "module-native SI units",
+        "dimensionless normalized sensitivity"
+      ],
+      "uncertainties": [
+        "aleatory variables only where justified",
+        "epistemic intervals kept separate"
+      ],
+      "validation_gate": "Fixed seeds, complete manifests, unit checks, replay equality and explicit probability prohibition.",
+      "stop_condition": "Synthetic fraction is reported as probability of the historical event.",
+      "physical_credit": "ORCHESTRATION_ONLY",
+      "cached_anchors": [
+        "V8E_THERMAL_FIELDS"
+      ]
+    },
+    {
+      "id": "BLENDER_VISUALIZATION",
+      "purpose": "Render only released states and uncertainty labels for human inspection.",
+      "implementation": "V9O/V9P labelled storyboard/animatic pipeline",
+      "status": "READY_FOR_VALIDATED_STATE_VISUALIZATION_ONLY",
+      "solver_or_method": "Blender; no rigid-body, fracture, fluid or structural feedback credit",
+      "inputs": [
+        "released state records",
+        "time mapping",
+        "camera/storyboard",
+        "mandatory evidence labels"
+      ],
+      "outputs": [
+        "blend derivative",
+        "frames/video",
+        "visual audit manifest"
+      ],
+      "canonical_units": [
+        "m",
+        "s",
+        "rad"
+      ],
+      "uncertainties": [
+        "displayed as separate scenarios or envelopes, never hidden interpolation"
+      ],
+      "validation_gate": "Source-state hashes, transform reproduction, mandatory banner and no post-contact invention.",
+      "stop_condition": "A blocked state is animated as prediction or Blender output feeds a mechanical result.",
+      "physical_credit": "VISUALIZATION_ONLY",
+      "cached_anchors": [
+        "V9P_ANIMATIC"
+      ]
+    }
+  ],
+  "interfaces": [
+    {
+      "id": "I01_KINEMATICS_TO_DAMAGE",
+      "producer": "IMPACT_KINEMATICS",
+      "consumer": "IMPACT_DAMAGE_STATE",
+      "schema": "impact_kinematics_v1",
+      "required_fields": "scenario_id,mass_kg,velocity_vector_m_s,attitude_rad,trajectory_frame,contact_time_s,provenance",
+      "spatial_mapping": "aircraft frame to tower impact coordinate frame",
+      "temporal_mapping": "absolute event time; contact reference t=0 s",
+      "uncertainty_transfer": "preserve mass/speed/attitude intervals and source class without averaging",
+      "status": "SCHEMA_FREEZABLE_PHYSICAL_DAMAGE_BLOCKED",
+      "adapter_ready_for_v10o": true,
+      "physical_ready": false,
+      "validation_gate": "SI units, transform round trip, source hashes and V9M physical triggers",
+      "stop_condition": "adapter may serialize the envelope but must emit PHYSICS_BLOCKED instead of damage"
+    },
+    {
+      "id": "I02_DAMAGE_TO_FIRE",
+      "producer": "IMPACT_DAMAGE_STATE",
+      "consumer": "FIRE_GAS_PHASE",
+      "schema": "impact_damage_state_v1",
+      "required_fields": "member_states,opening_polygons_m,debris_occupancy,fuel_mass_kg_and_distribution,damage_uncertainty,provenance",
+      "spatial_mapping": "structural member/opening IDs to fire mesh compartments/cells",
+      "temporal_mapping": "post-impact state at declared handoff time",
+      "uncertainty_transfer": "retain correlated damage/opening/fuel scenarios",
+      "status": "SCHEMA_FREEZABLE_EVENT_INPUT_BLOCKED",
+      "adapter_ready_for_v10o": true,
+      "physical_ready": false,
+      "validation_gate": "mass conservation, geometry containment and physical impact qualification",
+      "stop_condition": "no exact damage state may be fabricated from a kinematic envelope"
+    },
+    {
+      "id": "I03_DAMAGE_TO_COLD_STRUCTURE",
+      "producer": "IMPACT_DAMAGE_STATE",
+      "consumer": "COLD_GRAVITY_REDISTRIBUTION",
+      "schema": "impact_damage_state_v1",
+      "required_fields": "member_id,state,remaining_section_fraction,connection_state,residual_loads,provenance",
+      "spatial_mapping": "damage IDs must resolve one-to-one to the structural catalogue",
+      "temporal_mapping": "equilibrated cold state before thermal continuation",
+      "uncertainty_transfer": "damage alternatives stay separate cases",
+      "status": "SCHEMA_FREEZABLE_PHYSICAL_COLD_GATE_BLOCKED",
+      "adapter_ready_for_v10o": true,
+      "physical_ready": false,
+      "validation_gate": "identifier coverage, equilibrium, displacement compatibility and 22/22 source closure",
+      "stop_condition": "unresolved member IDs or disconnected loaded components"
+    },
+    {
+      "id": "I04_FIRE_TO_THERMAL_SOLIDS",
+      "producer": "FIRE_GAS_PHASE",
+      "consumer": "THERMAL_SOLIDS",
+      "schema": "fire_gas_history_v1",
+      "required_fields": "cell_or_surface_id,time_s,gas_temperature_K,incident_heat_flux_W_m2,convection_coefficient_W_m2K,provenance",
+      "spatial_mapping": "conservative cell/surface to member-face exposure map",
+      "temporal_mapping": "monotone time interpolation with no extrapolation beyond declared bounds",
+      "uncertainty_transfer": "fire scenario ID and correlated time history preserved",
+      "status": "SCHEMA_FREEZABLE_SURROGATE_CONTROL_AVAILABLE",
+      "adapter_ready_for_v10o": true,
+      "physical_ready": false,
+      "validation_gate": "unit/range checks, conservative mapping and heat-flux/time integral audit",
+      "stop_condition": "temperature-only surrogate may not be relabeled as measured heat flux"
+    },
+    {
+      "id": "I05_THERMAL_TO_INITIATION",
+      "producer": "THERMAL_SOLIDS",
+      "consumer": "THERMOMECHANICAL_INITIATION",
+      "schema": "thermal_member_history_v1",
+      "required_fields": "member_id,time_s,temperature_K,section_temperature_distribution,thermal_model_class,provenance",
+      "spatial_mapping": "every thermal member ID resolves to one structural element/section",
+      "temporal_mapping": "shared monotone time grid or declared energy-preserving resampling",
+      "uncertainty_transfer": "SFRM/material/fire scenario IDs retained",
+      "status": "SCHEMA_FREEZABLE_PHYSICAL_INITIATION_BLOCKED",
+      "adapter_ready_for_v10o": true,
+      "physical_ready": false,
+      "validation_gate": "ID coverage, Kelvin bounds, time-grid audit and temperature-dependent law provenance",
+      "stop_condition": "missing member map or use of synthetic fields as exact member temperatures"
+    },
+    {
+      "id": "I06_COLD_STATE_TO_INITIATION",
+      "producer": "COLD_GRAVITY_REDISTRIBUTION",
+      "consumer": "THERMOMECHANICAL_INITIATION",
+      "schema": "cold_structural_state_v1",
+      "required_fields": "node_displacements_m,element_forces_N,connection_state,boundary_state,equilibrium_residual_N,provenance",
+      "spatial_mapping": "identical structural IDs and coordinate frame",
+      "temporal_mapping": "cold equilibrium is initial state at thermal time zero",
+      "uncertainty_transfer": "topology/connection/boundary alternatives retained",
+      "status": "SCHEMA_FREEZABLE_COLD_GATE_BLOCKED",
+      "adapter_ready_for_v10o": true,
+      "physical_ready": false,
+      "validation_gate": "equilibrium tolerance, displacement compatibility and 22/22 source closure",
+      "stop_condition": "failed or indeterminate cold gate cannot seed a physical thermal run"
+    },
+    {
+      "id": "I07_INITIATION_TO_PROPAGATION",
+      "producer": "THERMOMECHANICAL_INITIATION",
+      "consumer": "PROPAGATION_OR_ARREST",
+      "schema": "initiation_state_v1",
+      "required_fields": "time_s,failed_members,displacements_m,velocities_m_s,participating_mass_kg,energy_J,boundary_state,provenance",
+      "spatial_mapping": "full state projection onto the separately validated propagation model",
+      "temporal_mapping": "handoff at a declared instability event with conserved state",
+      "uncertainty_transfer": "initiation alternatives remain separate propagation cases",
+      "status": "SCHEMA_FREEZABLE_BOTH_PHYSICS_MODULES_BLOCKED",
+      "adapter_ready_for_v10o": true,
+      "physical_ready": false,
+      "validation_gate": "mass/momentum/energy ledger and state-projection error tolerances",
+      "stop_condition": "initiation alone must never be reported as proof of global propagation"
+    },
+    {
+      "id": "I08_PROPAGATION_TO_ENSEMBLE",
+      "producer": "PROPAGATION_OR_ARREST",
+      "consumer": "UNCERTAINTY_ENSEMBLE",
+      "schema": "propagation_outcome_v1",
+      "required_fields": "case_id,outcome_label,arrest_story_or_null,conservation_residuals,validation_flags,parameter_provenance",
+      "spatial_mapping": "story/member outcome IDs retained without aggregation loss",
+      "temporal_mapping": "complete history or declared terminal event",
+      "uncertainty_transfer": "epistemic and aleatory variables stored in separate fields",
+      "status": "SCHEMA_FREEZABLE_SOFTWARE_CONTROL_READY",
+      "adapter_ready_for_v10o": true,
+      "physical_ready": false,
+      "validation_gate": "manifest completeness, deterministic replay and probability-language audit",
+      "stop_condition": "fraction of synthetic cases must not be called real-event probability"
+    },
+    {
+      "id": "I09_ALL_VALIDATED_STATES_TO_BLENDER",
+      "producer": "VALIDATION_RELEASE_BUS",
+      "consumer": "BLENDER_VISUALIZATION",
+      "schema": "visualization_state_v1",
+      "required_fields": "source_module,state_id,time_s,object_transforms,display_class,validation_status,uncertainty_label,source_hashes",
+      "spatial_mapping": "solver/reduced coordinates to Blender coordinates with reversible transform",
+      "temporal_mapping": "explicit time/frame mapping; blocked intervals may use cards only",
+      "uncertainty_transfer": "show separate envelopes/scenarios and permanent labels",
+      "status": "READY_FOR_RELEASED_STATES_ONLY",
+      "adapter_ready_for_v10o": true,
+      "physical_ready": false,
+      "validation_gate": "hashes, transform round trip, mandatory banner, no physics feedback",
+      "stop_condition": "blocked state or post-contact invention must freeze or render as a data card"
+    }
+  ],
+  "release_bus_rule": "Only records with an explicit validation_status, epistemic_class and source hashes can reach the ensemble or Blender. Blocked records may be carried only as labelled null/control states.",
+  "causal_scope_rule": "Passing one interface validates only its serialization and declared mapping. It does not validate upstream physics, downstream physics or the whole historical chain."
+}

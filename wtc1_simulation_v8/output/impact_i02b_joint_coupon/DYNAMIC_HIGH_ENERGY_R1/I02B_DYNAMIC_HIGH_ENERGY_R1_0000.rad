@@ -1,0 +1,63 @@
+#RADIOSS STARTER
+/BEGIN
+I02B_DYNAMIC_HIGH_ENERGY_R1                                                     
+      2026         0
+                   g                  mm                  ms
+                   g                  mm                  ms
+/TITLE
+I02B_DYNAMIC_HIGH_ENERGY_R1
+/ANALY
+         0                   0         0
+/SPMD
+         0         0                   0                   1
+/NODE
+         1                   0                   0                   0
+         2                  10                   0                   0
+/PART/1
+PROXY_RIVET_ROW
+         1         0         0
+/PROP/SPRING/1
+TRIANGULAR_H2_SOFTENING
+                 200                                       0         0         0
+              569600                   0                   1                   0                   1
+        11         2         0         0         0                        -1e+30                 0.5
+                   1                   0                   1                   0
+/FUNCT/11
+LOAD_FORCE_VS_RELATIVE_DISPLACEMENT
+                 -10                   0
+                   0                   0
+                0.02               11392
+                 0.5                   0
+                  10                   0
+/SPRING/1
+         1         1         2         0         0         0         0                             0
+/GRNOD/NODE/1
+FIXED
+         1
+/GRNOD/NODE/2
+MOVING
+         2
+/BCS/1
+FIXED_END
+   111 111         0         1
+/BCS/2
+MOVING_ONLY_X
+   011 111         0         2
+/INIVEL/TRA/1
+CONTROLLED_INITIAL_KINETIC_ENERGY
+                  10                   0                   0         2         0
+                   0         0
+/TH/SPRING/1
+CONNECTOR_HISTORY
+       OFF        FX        LX        IE    LENGTH
+         1          LINK_1
+/TH/NODE/2
+BOUNDARY_HISTORY
+        DX        VX     REACX
+         1         0
+         2         0
+/TH/PART/3
+MASS_ENERGY
+        IE        KE      MASS      XMOM
+         1
+/END

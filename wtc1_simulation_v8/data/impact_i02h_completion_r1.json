@@ -1,0 +1,23 @@
+{
+  "id": "IMPACT-I02H-COMPLETION-R1",
+  "base_configuration": "wtc1_simulation_v8/data/impact_i02h_local_cohesive.json",
+  "base_configuration_sha256": "80c21e9e879d94fe4557d18f907efffcab8bdc51c9f9d540afe9f67dd9bfbd19",
+  "base_generator_sha256": "191a09bad35f0e4c4fee98fb3d7ac9c5ea8811f8087a7b63cf319b95a9bb1440",
+  "purpose": "Complete two fresh-state controls and audit saved I02H results; never rerun or change existing cases.",
+  "random_seed": null,
+  "deterministic": true,
+  "threads": 1,
+  "maximum_case_wall_seconds": 600,
+  "expected_combined_wall_minutes": [2, 6],
+  "material_qualification": "Assumed engineering-to-true conversion of NASA STAGS points; stress/strain convention not established by the reviewed primary pages. Sensitivity input, not a calibrated 767 material card.",
+  "cases": [
+    {"id": "ELASTIC_L127_TAB_CHECK_R1", "local_step_mm": 1.27, "mode": "elastic", "Gf_N_per_mm": null, "dt_scale": 0.9, "material_variant": "nasa_law36", "run_end_ms": 12.0, "loading_end_ms": 12.0, "target_displacement_mm": 0.02},
+    {"id": "NOPROP_L127_TAB_CHECK_R1", "local_step_mm": 1.27, "mode": "no_propagation", "Gf_N_per_mm": null, "dt_scale": 0.9, "material_variant": "nasa_law36", "run_end_ms": 12.0, "loading_end_ms": 36.0, "target_displacement_mm": 6.0}
+  ],
+  "additional_diagnostics": {
+    "maximum_refined_tip_extension_mm": 10.16,
+    "energy_significance_external_fraction": 0.01,
+    "ctoa_time_comparison": "Compare at equal discrete extension, not equal row number; diagnostic, not a predeclared acceptance gate.",
+    "whole_history_kinetic_ratio": "Report maximum KE/IE only after work exceeds 1% of maximum absolute external work; peak-only gate does not imply quasi-static propagation."
+  }
+}

@@ -1,0 +1,568 @@
+{
+  "iteration": "V9P",
+  "validation_status": "PASS",
+  "iteration_execution_validated": true,
+  "generated_at_local": "2026-08-29T09:35:11.922738+02:00",
+  "runtime": {
+    "python": "3.14.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "random_seed_declared": 9122001,
+    "random_draw_used": false,
+    "source_archive_read": false,
+    "source_archive_rescanned": false,
+    "network_access_used": false,
+    "structural_solver_executed": false,
+    "blender_visualization_executed": true,
+    "blender_physics_executed": false,
+    "foia_request_sent": false
+  },
+  "configuration": {
+    "path": "wtc1_simulation_v8/data/v9p_low_resolution_animatic.json",
+    "sha256": "ef03f47edb76b86fd032fd3565adfe3cc806c6c71d4e6de2f6dd904172b81576"
+  },
+  "scripts": {
+    "blender_render": {
+      "path": "wtc1_3d_v4/scripts/render_v9p_motion_sequences.py",
+      "sha256": "f405954aaf96cee54403dae591095cfa2343e253e886f65caa215dd81193a86f"
+    },
+    "animatic_audit": {
+      "path": "wtc1_simulation_v8/scripts/run_v9p_animatic_audit.py",
+      "sha256": "45f9701b89e25d54338ec66caea0bd5f4e4305061a63f12a9df38a8dc192b97e"
+    }
+  },
+  "regression": {
+    "files": {
+      "wtc1_simulation_v8/output/v9n_storyboard_specification.json": {
+        "exists": true,
+        "expected_sha256": "797a0614caa81510d45a5b00eed205944cf5b96213e56af7e96d48a1dfed3ede",
+        "actual_sha256": "797a0614caa81510d45a5b00eed205944cf5b96213e56af7e96d48a1dfed3ede",
+        "passed": true
+      },
+      "wtc1_simulation_v8/data/v9o_blender_storyboard_preview.json": {
+        "exists": true,
+        "expected_sha256": "42a3cd28bffbfaf38cf32794d92d38a2382a4942cd9c4d1e6f4b0005e5733605",
+        "actual_sha256": "42a3cd28bffbfaf38cf32794d92d38a2382a4942cd9c4d1e6f4b0005e5733605",
+        "passed": true
+      },
+      "wtc1_3d_v4/scripts/build_v9o_storyboard_preview.py": {
+        "exists": true,
+        "expected_sha256": "1db7b882453be38cf3957bd42e5272e8c2d1f72ff806256adbd3f56b266ceb5f",
+        "actual_sha256": "1db7b882453be38cf3957bd42e5272e8c2d1f72ff806256adbd3f56b266ceb5f",
+        "passed": true
+      },
+      "wtc1_3d_v4/scripts/audit_v9o_storyboard_preview.py": {
+        "exists": true,
+        "expected_sha256": "becbef537ce3676b7f41261d6d45ea4f567e95ede31a640c1c91bec599653c88",
+        "actual_sha256": "becbef537ce3676b7f41261d6d45ea4f567e95ede31a640c1c91bec599653c88",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/run_v9o_blender_storyboard_audit.py": {
+        "exists": true,
+        "expected_sha256": "f015179c8d1fd63a0f0dd3e3422b82aaab1ca3a0919695aaf9bebe3ff7e63e3b",
+        "actual_sha256": "f015179c8d1fd63a0f0dd3e3422b82aaab1ca3a0919695aaf9bebe3ff7e63e3b",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v9o_storyboard_blender.json": {
+        "exists": true,
+        "expected_sha256": "057c57ee420bdfcd87fc9ca9a2e5770c1c373c6968be4314c498f30fbd3d0bfc",
+        "actual_sha256": "057c57ee420bdfcd87fc9ca9a2e5770c1c373c6968be4314c498f30fbd3d0bfc",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/rapport_wtc1_v9o_storyboard_blender.md": {
+        "exists": true,
+        "expected_sha256": "d58b97905a8f08c4641a4cb664373577a36e7ee648b13041deeaf28c12274459",
+        "actual_sha256": "d58b97905a8f08c4641a4cb664373577a36e7ee648b13041deeaf28c12274459",
+        "passed": true
+      },
+      "wtc1_3d_v4/output/WTC1_V9O_STORYBOARD_PREVIEW.blend": {
+        "exists": true,
+        "expected_sha256": "7594b59876d74255d78c053a80ee5e2df2d605be715e4b74c02ef39fde01a4b5",
+        "actual_sha256": "7594b59876d74255d78c053a80ee5e2df2d605be715e4b74c02ef39fde01a4b5",
+        "passed": true
+      },
+      "wtc1_3d_v4/output/v9o_visualization_manifest.json": {
+        "exists": true,
+        "expected_sha256": "9e93ae8e67d4c16cb03a861a697aac5eacca73e49fd33e57cb4ccebd3c425a5e",
+        "actual_sha256": "9e93ae8e67d4c16cb03a861a697aac5eacca73e49fd33e57cb4ccebd3c425a5e",
+        "passed": true
+      },
+      "wtc1_3d_v4/output/v9o_blender_internal_audit.json": {
+        "exists": true,
+        "expected_sha256": "5f67e68f7a07d0acad2acf1aaaf30b6f61fcb368c3c175212957a85e6bdb0c11",
+        "actual_sha256": "5f67e68f7a07d0acad2acf1aaaf30b6f61fcb368c3c175212957a85e6bdb0c11",
+        "passed": true
+      },
+      "wtc1_3d_v4/renders/v9o/wtc1_v9o_proof_sheet.png": {
+        "exists": true,
+        "expected_sha256": "1d4dc2d88faa4daa5c518bc9a1f2b30b554cf8ce4465321b55769e1dba910253",
+        "actual_sha256": "1d4dc2d88faa4daa5c518bc9a1f2b30b554cf8ce4465321b55769e1dba910253",
+        "passed": true
+      }
+    },
+    "metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9o_storyboard_blender.json",
+        "path": "iteration_execution_validated",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9o_storyboard_blender.json",
+        "path": "storyboard_shot_count",
+        "expected": 11,
+        "actual": 11,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9o_storyboard_blender.json",
+        "path": "branch_count",
+        "expected": 3,
+        "actual": 3,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9o_storyboard_blender.json",
+        "path": "postcontact_motion_keyframe_count",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9o_storyboard_blender.json",
+        "path": "physical_track_reopening_authorized",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9o_storyboard_blender.json",
+        "path": "blender_visualization_is_physical_validation",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "shot_validation": {
+    "starts_at_zero": true,
+    "intervals_contiguous": true,
+    "durations_consistent": true,
+    "total_duration_s": 75.0,
+    "duration_matches": true,
+    "shot_count": 11,
+    "motion_shot_count": 4,
+    "static_shot_count": 7,
+    "postcontact_three_dimensional_motion_shot_count": 0,
+    "passed": true
+  },
+  "motion_input_validation": {
+    "sequences": [
+      {
+        "shot_id": "S04_THREE_BRANCH_APPROACH",
+        "frame_count": 120,
+        "expected_frame_count": 120,
+        "aggregate_path_and_sha256": "738f58c177e8b3d0385bb32c41030422dd3bfa0380ba49c09c1cf16781c7d489",
+        "manifest_aggregate_path_and_sha256": "738f58c177e8b3d0385bb32c41030422dd3bfa0380ba49c09c1cf16781c7d489",
+        "edge_dimensions_px": [
+          [
+            640,
+            360
+          ],
+          [
+            640,
+            360
+          ]
+        ],
+        "passed": true
+      },
+      {
+        "shot_id": "S05_LESS_SEVERE_BRANCH",
+        "frame_count": 72,
+        "expected_frame_count": 72,
+        "aggregate_path_and_sha256": "e5603e13ccdc4a31c035084a9d25d2bb716d5f64c2945aa700753c0f9bd680be",
+        "manifest_aggregate_path_and_sha256": "e5603e13ccdc4a31c035084a9d25d2bb716d5f64c2945aa700753c0f9bd680be",
+        "edge_dimensions_px": [
+          [
+            640,
+            360
+          ],
+          [
+            640,
+            360
+          ]
+        ],
+        "passed": true
+      },
+      {
+        "shot_id": "S06_BASE_BRANCH",
+        "frame_count": 72,
+        "expected_frame_count": 72,
+        "aggregate_path_and_sha256": "e8af092445ae36249d46b9a3c4af1ecc5d4568820ef4a6c2c922734381bb9f58",
+        "manifest_aggregate_path_and_sha256": "e8af092445ae36249d46b9a3c4af1ecc5d4568820ef4a6c2c922734381bb9f58",
+        "edge_dimensions_px": [
+          [
+            640,
+            360
+          ],
+          [
+            640,
+            360
+          ]
+        ],
+        "passed": true
+      },
+      {
+        "shot_id": "S07_MORE_SEVERE_BRANCH",
+        "frame_count": 72,
+        "expected_frame_count": 72,
+        "aggregate_path_and_sha256": "75b83d204f85890d6ad56ed31c2508b05b8c993c7e3730a85bd6c00721233338",
+        "manifest_aggregate_path_and_sha256": "75b83d204f85890d6ad56ed31c2508b05b8c993c7e3730a85bd6c00721233338",
+        "edge_dimensions_px": [
+          [
+            640,
+            360
+          ],
+          [
+            640,
+            360
+          ]
+        ],
+        "passed": true
+      }
+    ],
+    "source_derivative_and_master_unchanged": true,
+    "physics_absent": true,
+    "closing_card_safe": true,
+    "passed": true
+  },
+  "animatic": {
+    "path": "wtc1_3d_v4/renders/v9p/WTC1_V9P_ANIMATIC_75S.mp4",
+    "size_bytes": 3043058,
+    "sha256": "9c74c4714cfabff8d76955def069c750eeb5b371b35f8f570fe5f9a9738979d3",
+    "duration_s": 75.0,
+    "frame_count": 1800,
+    "codec_name": "h264",
+    "pixel_format": "yuv420p",
+    "width": 640,
+    "height": 360,
+    "r_frame_rate": "24/1",
+    "avg_frame_rate": "24/1",
+    "video_stream_count": 1,
+    "audio_stream_count": 0,
+    "passed": true
+  },
+  "audit_samples": [
+    {
+      "time_s": 2.5,
+      "shot_id": "S01_TITLE_AND_SCOPE",
+      "path": "wtc1_3d_v4/renders/v9p/audit_samples/sample_02500ms.png",
+      "size_bytes": 91484,
+      "sha256": "4a9c3967a52cd17ea23c50e51a1910488b3e8eeca18a933333b81f1e5714eb56",
+      "dimensions_px": [
+        640,
+        360
+      ],
+      "maximum_bottom_banner_orange_row_fraction": 0.94375,
+      "bottom_banner_orange_row_count": 23,
+      "banner_panel_gate_passed": true
+    },
+    {
+      "time_s": 8.5,
+      "shot_id": "S02_PROVENANCE_MAP",
+      "path": "wtc1_3d_v4/renders/v9p/audit_samples/sample_08500ms.png",
+      "size_bytes": 102955,
+      "sha256": "0504560d45d6c9cfb751cefa0733889a5e7942dd20b87ab24dbb9ed3c1fa9cd3",
+      "dimensions_px": [
+        640,
+        360
+      ],
+      "maximum_bottom_banner_orange_row_fraction": 0.94375,
+      "bottom_banner_orange_row_count": 23,
+      "banner_panel_gate_passed": true
+    },
+    {
+      "time_s": 16.0,
+      "shot_id": "S03_GEOMETRY_AND_UNCERTAINTY",
+      "path": "wtc1_3d_v4/renders/v9p/audit_samples/sample_16000ms.png",
+      "size_bytes": 172775,
+      "sha256": "aeff0eb5f076e24fcbd8023010332729d67e95d910a5f912726485844e2ad3cb",
+      "dimensions_px": [
+        640,
+        360
+      ],
+      "maximum_bottom_banner_orange_row_fraction": 0.98125,
+      "bottom_banner_orange_row_count": 42,
+      "banner_panel_gate_passed": true
+    },
+    {
+      "time_s": 25.0,
+      "shot_id": "S04_THREE_BRANCH_APPROACH",
+      "path": "wtc1_3d_v4/renders/v9p/audit_samples/sample_25000ms.png",
+      "size_bytes": 190618,
+      "sha256": "948c3df600a62da30a3192751b2a7635457913d8c39a0237a983eddcac305eb0",
+      "dimensions_px": [
+        640,
+        360
+      ],
+      "maximum_bottom_banner_orange_row_fraction": 0.98125,
+      "bottom_banner_orange_row_count": 42,
+      "banner_panel_gate_passed": true
+    },
+    {
+      "time_s": 33.0,
+      "shot_id": "S05_LESS_SEVERE_BRANCH",
+      "path": "wtc1_3d_v4/renders/v9p/audit_samples/sample_33000ms.png",
+      "size_bytes": 165191,
+      "sha256": "384d7aaac761a382838dc9e54d4fc9955c259e39879a79a9d574df0338114b29",
+      "dimensions_px": [
+        640,
+        360
+      ],
+      "maximum_bottom_banner_orange_row_fraction": 0.98125,
+      "bottom_banner_orange_row_count": 42,
+      "banner_panel_gate_passed": true
+    },
+    {
+      "time_s": 39.0,
+      "shot_id": "S06_BASE_BRANCH",
+      "path": "wtc1_3d_v4/renders/v9p/audit_samples/sample_39000ms.png",
+      "size_bytes": 179818,
+      "sha256": "c03c0d00249e127f1f0eff1089bad00d4a1a8b001c4dc44b7bea08fc71547aa0",
+      "dimensions_px": [
+        640,
+        360
+      ],
+      "maximum_bottom_banner_orange_row_fraction": 0.98125,
+      "bottom_banner_orange_row_count": 42,
+      "banner_panel_gate_passed": true
+    },
+    {
+      "time_s": 45.0,
+      "shot_id": "S07_MORE_SEVERE_BRANCH",
+      "path": "wtc1_3d_v4/renders/v9p/audit_samples/sample_45000ms.png",
+      "size_bytes": 166010,
+      "sha256": "de5bf979677342411a4ea092b9c1fe1a53939e0b183c96a8d4441961ca750e90",
+      "dimensions_px": [
+        640,
+        360
+      ],
+      "maximum_bottom_banner_orange_row_fraction": 0.98125,
+      "bottom_banner_orange_row_count": 42,
+      "banner_panel_gate_passed": true
+    },
+    {
+      "time_s": 48.5,
+      "shot_id": "S08_CONTACT_BOUNDARY",
+      "path": "wtc1_3d_v4/renders/v9p/audit_samples/sample_48500ms.png",
+      "size_bytes": 125879,
+      "sha256": "541eff6dfe1ee9a8909764570301bdeb70e5720b4730da7cfcac0d8524c618c7",
+      "dimensions_px": [
+        640,
+        360
+      ],
+      "maximum_bottom_banner_orange_row_fraction": 0.98125,
+      "bottom_banner_orange_row_count": 42,
+      "banner_panel_gate_passed": true
+    },
+    {
+      "time_s": 51.0,
+      "shot_id": "S08_CONTACT_BOUNDARY",
+      "path": "wtc1_3d_v4/renders/v9p/audit_samples/sample_51000ms.png",
+      "size_bytes": 125879,
+      "sha256": "541eff6dfe1ee9a8909764570301bdeb70e5720b4730da7cfcac0d8524c618c7",
+      "dimensions_px": [
+        640,
+        360
+      ],
+      "maximum_bottom_banner_orange_row_fraction": 0.98125,
+      "bottom_banner_orange_row_count": 42,
+      "banner_panel_gate_passed": true
+    },
+    {
+      "time_s": 53.5,
+      "shot_id": "S08_CONTACT_BOUNDARY",
+      "path": "wtc1_3d_v4/renders/v9p/audit_samples/sample_53500ms.png",
+      "size_bytes": 125879,
+      "sha256": "541eff6dfe1ee9a8909764570301bdeb70e5720b4730da7cfcac0d8524c618c7",
+      "dimensions_px": [
+        640,
+        360
+      ],
+      "maximum_bottom_banner_orange_row_fraction": 0.98125,
+      "bottom_banner_orange_row_count": 42,
+      "banner_panel_gate_passed": true
+    },
+    {
+      "time_s": 57.5,
+      "shot_id": "S09_TIMING_SCALE_CARD",
+      "path": "wtc1_3d_v4/renders/v9p/audit_samples/sample_57500ms.png",
+      "size_bytes": 98885,
+      "sha256": "39c6a6e0dbf0bc8eb1bb0be591a0d0caaf46a8e5bf8e13151df05aeb921e8ccd",
+      "dimensions_px": [
+        640,
+        360
+      ],
+      "maximum_bottom_banner_orange_row_fraction": 0.94375,
+      "bottom_banner_orange_row_count": 23,
+      "banner_panel_gate_passed": true
+    },
+    {
+      "time_s": 64.5,
+      "shot_id": "S10_UNQUALIFIED_PHYSICS",
+      "path": "wtc1_3d_v4/renders/v9p/audit_samples/sample_64500ms.png",
+      "size_bytes": 95442,
+      "sha256": "b07cfac03dc4656a7567305115725fb3fdffbf1a2d6897221fe597852d1051eb",
+      "dimensions_px": [
+        640,
+        360
+      ],
+      "maximum_bottom_banner_orange_row_fraction": 0.94375,
+      "bottom_banner_orange_row_count": 23,
+      "banner_panel_gate_passed": true
+    },
+    {
+      "time_s": 71.5,
+      "shot_id": "S11_TWO_TRACKS_AND_CLOSE",
+      "path": "wtc1_3d_v4/renders/v9p/audit_samples/sample_71500ms.png",
+      "size_bytes": 114555,
+      "sha256": "9b86f0ea9965d4824b6e6625354645a41de5decff7715aa997a69af35a71ebe3",
+      "dimensions_px": [
+        640,
+        360
+      ],
+      "maximum_bottom_banner_orange_row_fraction": 0.94375,
+      "bottom_banner_orange_row_count": 23,
+      "banner_panel_gate_passed": true
+    }
+  ],
+  "banner_audit_passed": true,
+  "contact_freeze_audit": {
+    "samples": [
+      {
+        "time_s": 48.5,
+        "shot_id": "S08_CONTACT_BOUNDARY",
+        "path": "wtc1_3d_v4/renders/v9p/audit_samples/sample_48500ms.png",
+        "size_bytes": 125879,
+        "sha256": "541eff6dfe1ee9a8909764570301bdeb70e5720b4730da7cfcac0d8524c618c7",
+        "dimensions_px": [
+          640,
+          360
+        ],
+        "maximum_bottom_banner_orange_row_fraction": 0.98125,
+        "bottom_banner_orange_row_count": 42,
+        "banner_panel_gate_passed": true
+      },
+      {
+        "time_s": 51.0,
+        "shot_id": "S08_CONTACT_BOUNDARY",
+        "path": "wtc1_3d_v4/renders/v9p/audit_samples/sample_51000ms.png",
+        "size_bytes": 125879,
+        "sha256": "541eff6dfe1ee9a8909764570301bdeb70e5720b4730da7cfcac0d8524c618c7",
+        "dimensions_px": [
+          640,
+          360
+        ],
+        "maximum_bottom_banner_orange_row_fraction": 0.98125,
+        "bottom_banner_orange_row_count": 42,
+        "banner_panel_gate_passed": true
+      },
+      {
+        "time_s": 53.5,
+        "shot_id": "S08_CONTACT_BOUNDARY",
+        "path": "wtc1_3d_v4/renders/v9p/audit_samples/sample_53500ms.png",
+        "size_bytes": 125879,
+        "sha256": "541eff6dfe1ee9a8909764570301bdeb70e5720b4730da7cfcac0d8524c618c7",
+        "dimensions_px": [
+          640,
+          360
+        ],
+        "maximum_bottom_banner_orange_row_fraction": 0.98125,
+        "bottom_banner_orange_row_count": 42,
+        "banner_panel_gate_passed": true
+      }
+    ],
+    "pairs": [
+      {
+        "left_time_s": 48.5,
+        "right_time_s": 51.0,
+        "maximum_pixel_channel_delta": 0
+      },
+      {
+        "left_time_s": 51.0,
+        "right_time_s": 53.5,
+        "maximum_pixel_channel_delta": 0
+      }
+    ],
+    "maximum_pixel_channel_delta": 0,
+    "permitted_maximum_pixel_channel_delta": 0,
+    "passed": true
+  },
+  "audit_contact_sheet": {
+    "path": "wtc1_3d_v4/renders/v9p/wtc1_v9p_audit_contact_sheet.png",
+    "size_bytes": 540482,
+    "sha256": "02cd6f6992522dcbce4becef7120c8f8bf51254598aa7c4efed13a1b7a060b46",
+    "dimensions_px": [
+      1280,
+      720
+    ]
+  },
+  "stairwell_requirement": {
+    "iteration": "V9P",
+    "status": "USER_REQUESTED_FUTURE_STRUCTURAL_COMPLETENESS_REQUIREMENT_NOT_A_VALIDATED_PROPERTY",
+    "provenance": "user_instruction_recorded_in_V9P",
+    "requested_count": 3,
+    "generic_identifiers": [
+      "stairwell_1",
+      "stairwell_2",
+      "stairwell_3"
+    ],
+    "required_before_structural_use": [
+      "source-backed plan position and orientation by floor",
+      "floor-by-floor continuity, offsets and transfer levels",
+      "enclosure construction, thicknesses and material identities",
+      "stairs, landings, stringers and their attachments",
+      "connections to slabs, core framing and surrounding partitions",
+      "mass treatment and nonstructural versus structural classification",
+      "impact, fire and damage state for the modeled scenario"
+    ],
+    "assigned_in_v9p": {
+      "mass": false,
+      "stiffness": false,
+      "strength": false,
+      "load_path_credit": false
+    },
+    "geometry_or_mechanical_role_validated": false,
+    "archive_read_or_rescanned": false,
+    "next_action": {
+      "id": "V9Q",
+      "objective": "Preserve V8U through V9P and perform a targeted, source-gated geometry audit for the three WTC 1 stairwell enclosures using cached official sources and existing indexes first. Record floor-by-floor position, continuity, construction, connections, mass treatment and damage-state unknowns. Do not assign structural stiffness, strength or load-path credit and do not run a global solver until the required evidence is documented."
+    }
+  },
+  "shot_count": 11,
+  "motion_shot_count": 4,
+  "postcontact_three_dimensional_motion_shot_count": 0,
+  "physical_track_reopening_authorized": false,
+  "global_wtc_impact_physics_qualification_passed": false,
+  "blender_visualization_is_physical_validation": false,
+  "evidence_separation": {
+    "observed_fact": "A verified cached V9O artifact, a saved Blender data-block property, an encoded-file identity or an audit measurement.",
+    "official_model_result": "A V8S/V9N value already transcribed from NIST and retained without requalification.",
+    "local_archive_claim": "None introduced; the source archive is not read or rescanned.",
+    "user_requirement": "The future tower model must explicitly account for three stairwell enclosures, subject to documentary geometry and connection evidence.",
+    "model_hypothesis": "Rigid aircraft silhouettes, constant-velocity pre-contact interpolation, camera layout, colors, lighting, frame duplication and hard-cut edit timing.",
+    "derived_result": "Rendered motion frames, encoded animatic, decoded audit samples, banner-color coverage and freeze comparison.",
+    "contradiction_or_unknown": "Stairwell plan geometry, floor-by-floor continuity, construction, mass, stiffness, strength, connections and damage state; all physical post-contact behavior."
+  },
+  "limitations": [
+    "The aircraft are rigid schematic silhouettes and not a deformable Boeing 767 or CF6-80A2 model.",
+    "No contact, rupture, impulse, damage, debris, fuel, fire, core response or global tower response is calculated.",
+    "The three stairwell enclosures are a recorded completeness requirement only; their geometry and mechanical role are unqualified.",
+    "Frame duplication and video encoding are presentation operations, not physics."
+  ],
+  "next_iteration": {
+    "id": "V9Q",
+    "objective": "Preserve V8U through V9P and perform a targeted, source-gated geometry audit for the three WTC 1 stairwell enclosures using cached official sources and existing indexes first. Record floor-by-floor position, continuity, construction, connections, mass treatment and damage-state unknowns. Do not assign structural stiffness, strength or load-path credit and do not run a global solver until the required evidence is documented."
+  }
+}

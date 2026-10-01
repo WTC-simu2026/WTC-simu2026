@@ -1,0 +1,156 @@
+{
+  "dataset": {
+    "name": "WTC 1 V9F bounded ingestion audit of open S355 SHPB metadata and workbook",
+    "version": "9.6.0",
+    "status": "PREDECLARED_READ_ONLY_OPEN_DATA_INGESTION_NO_FOIA_NO_LARGE_ARCHIVE_NO_SOLVER_NO_IMPACT",
+    "random_seed": 9112001,
+    "deterministic": true,
+    "scope": "Preserve V8U through V9E, acquire only the small public Zenodo S355 SHPB overview workbook and repository metadata, verify provenance and workbook structure without modifying the source, and resolve the published FDOT A36/A1011 250 versus 500 per second range statement from primary sources. No FOIA request, proprietary contact, 955 MB archive download, material-law fit, solver, rupture or impact calculation is authorized."
+  },
+  "evidence_policy": {
+    "observed_fact": "A value read directly from the acquired Zenodo metadata or immutable workbook, or a statement transcribed from the identified primary publication.",
+    "official_model_result": "A result reported by the FDOT-sponsored report or its author publication, not a V9F simulation result.",
+    "local_archive_claim": "No local-archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "The predeclared ingestion and usability gates in this configuration.",
+    "derived_result": "A deterministic inventory, checksum, completeness and permitted-use classification over acquired open files.",
+    "unknown": "Unacquired signal files inside the large Zenodo archive, exact strain-rate histories, and any transferable WTC or CF6 production parameters."
+  },
+  "regressions": {
+    "required_files": {
+      "wtc1_simulation_v8/data/v9e_open_analogue_evidence.json": "d08e8dcb1f568c6d302b16e6c5be13fcaf167de4e11e587534f3071e0f4bf31e",
+      "wtc1_simulation_v8/scripts/run_v9e_open_analogue_evidence.py": "e86a55286eabfc2ffc06ecea5b1a109c93d418fd9cb73b64cd7c12f3bc416686",
+      "wtc1_simulation_v8/output/resultats_wtc1_v9e_matrice_analogues_ouverts.json": "52aac5a66274b38b0142b26767377faa287f436c714aaa3cd2b98836fa3ca626",
+      "wtc1_simulation_v8/output/rapport_wtc1_v9e_matrice_analogues_ouverts.md": "8d36e1d5f3ba1c3442e136aa7ed52b76eee84132a08e1cf1e5e49ab76f1c5802",
+      "wtc1_simulation_v8/output/v9e_note_eligibilite_foia.md": "2763a9bcdeed7d739cf5857b96bae900d756725642895ab06df33d4665ace6d9"
+    },
+    "required_metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9e_matrice_analogues_ouverts.json",
+        "path": "iteration_execution_validated",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9e_matrice_analogues_ouverts.json",
+        "path": "open_analogue_summary.exact_target_source_count",
+        "expected": 0
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9e_matrice_analogues_ouverts.json",
+        "path": "cf6_80a2_cowling_material_card_identification_passed",
+        "expected": false
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9e_matrice_analogues_ouverts.json",
+        "path": "openradioss_wtc_coupon_authorized",
+        "expected": false
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9e_matrice_analogues_ouverts.json",
+        "path": "facade_impact_executed",
+        "expected": false
+      }
+    ]
+  },
+  "foia_policy": {
+    "priority": "last_resort_only",
+    "request_sent": false,
+    "external_contact_authorized": false,
+    "reason": "Potential response time is incompatible with the current iteration; public open data must be exhausted first."
+  },
+  "zenodo_source": {
+    "record_id": 17591440,
+    "concept_doi": "10.5281/zenodo.17591439",
+    "record_url": "https://zenodo.org/records/17591440",
+    "api_url": "https://zenodo.org/api/records/17591440",
+    "license_expected": "cc-by-4.0",
+    "publication_date_expected": "2025-11-12",
+    "allowed_downloads": [
+      {
+        "filename": "SHPB_S355.xlsx",
+        "expected_size_bytes": 11191,
+        "expected_md5": "1ebdc1413558998a0d25e184e56705c2",
+        "download_url": "https://zenodo.org/api/records/17591440/files/SHPB_S355.xlsx/content",
+        "local_path": "wtc1_simulation_v8/input/v9f_open_sources/SHPB_S355.xlsx"
+      },
+      {
+        "filename": "zenodo_17591440_metadata.json",
+        "download_url": "https://zenodo.org/api/records/17591440",
+        "local_path": "wtc1_simulation_v8/input/v9f_open_sources/zenodo_17591440_metadata.json"
+      }
+    ],
+    "prohibited_download": {
+      "filename": "FurtherMeasurements.zip",
+      "declared_size_bytes": 954989097,
+      "declared_md5": "45c4237981dcb4d5a0e4364ebc2c0da9",
+      "downloaded": false,
+      "reason": "Monolithic archive is not needed to audit the overview workbook and no exact internal channel has yet passed a necessity gate."
+    }
+  },
+  "predeclared_workbook_gates": {
+    "source_file_must_remain_immutable": true,
+    "required_sheet_name": "S355_TestOverview",
+    "minimum_nonempty_data_rows": 6,
+    "required_semantic_column_families": [
+      "specimen_or_test_identifier",
+      "test_type_or_loading_mode",
+      "geometry_or_notch_offset",
+      "projectile_pressure_or_quasi_static_marker",
+      "impact_velocity_or_quasi_static_marker",
+      "measurement_link_or_reference"
+    ],
+    "minimum_distinct_geometry_categories": 2,
+    "dynamic_and_quasi_static_entries_required": true,
+    "units_must_be_identifiable_for_numeric_pressure_and_velocity": true,
+    "raw_force_or_bar_strain_time_series_required_for_signal_reduction": true,
+    "specimen_dimensions_required_for_constitutive_or_failure_fit": true,
+    "exact_strain_rate_definition_required_for_rate_law_fit": true,
+    "large_archive_download_prohibited": true,
+    "source_workbook_edit_prohibited": true
+  },
+  "fdot_range_cross_check": {
+    "report": {
+      "title": "Validation and implementation of bridge design specifications for barge impact loading",
+      "record_url": "https://rosap.ntl.bts.gov/view/dot/27716",
+      "pdf_url": "https://rosap.ntl.bts.gov/view/dot/27716/dot_27716_DS1.pdf",
+      "reported_upper_rate_per_s_to_verify": 500.0
+    },
+    "companion_publication": {
+      "title": "Strain rate sensitive steel constitutive models for finite element analysis of vessel-structure impacts",
+      "doi": "10.1016/j.marstruc.2015.09.001",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0951833915000684",
+      "reported_upper_rate_per_s_to_verify": 250.0
+    },
+    "interpretation_rule": "Treat the two maxima as source-specific reported test ranges until specimen-level tables establish whether one publication omitted or grouped the highest-rate tests. Do not average, merge or reinterpret the ranges."
+  },
+  "predeclared_iteration_gates": {
+    "all_v9e_regressions_unchanged": true,
+    "zenodo_metadata_identity_and_license_required": true,
+    "small_workbook_size_and_checksum_required": true,
+    "workbook_import_and_structure_required": true,
+    "all_required_semantic_column_families_required": true,
+    "fdot_range_difference_must_be_preserved_not_reconciled_by_assumption": true,
+    "foia_request_must_remain_unsent": true,
+    "external_contact_must_remain_false": true,
+    "large_archive_must_remain_undownloaded": true,
+    "source_archive_rescan_prohibited": true,
+    "generic_material_substitution_prohibited": true,
+    "solver_execution_prohibited": true
+  },
+  "scientific_and_scope_gates": {
+    "open_dataset_ingestion_audit_authorized": true,
+    "analogue_signal_reduction_authorized": false,
+    "analogue_material_fit_authorized": false,
+    "analogue_coupon_solver_authorized": false,
+    "wtc_high_rate_material_curve_qualification_passed": false,
+    "cf6_80a2_cowling_material_card_identification_passed": false,
+    "openradioss_wtc_coupon_authorized": false,
+    "failure_deletion_authorized": false,
+    "projectile_rupture_authorized": false,
+    "facade_impact_authorized": false,
+    "whole_aircraft_authorized": false,
+    "global_tower_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_mechanism_tested": false
+  }
+}

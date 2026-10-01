@@ -1,0 +1,526 @@
+{
+  "iteration": "V10A",
+  "dataset": {
+    "name": "Solver-neutral, source-gated mechanical readiness schema for WTC 1 Floors 93-99",
+    "version": "10.1.0",
+    "status": "PREDECLARED_DOCUMENTARY_SCHEMA_PASS_ALLOWED_WITH_SOLVER_GATE_CLOSED",
+    "random_seed": 1010007,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V9Z. Enumerate the node, element, connection, boundary, property, unit and provenance records that a future seven-floor core-office-floor-perimeter-transfer model would require. Reuse only hashed cached artifacts. Treat official-model identifiers and loads as dependent reference data, keep reconstructed topology explicitly hypothetical, and leave every unsourced coordinate, section, material, stiffness, capacity, connection law and damage state null. Do not run a structural solver or Blender and do not modify the protected Blender master."
+  },
+  "source_policy": {
+    "source_archive_read": false,
+    "source_archive_rescanned": false,
+    "source_archive_files_modified": false,
+    "official_sources_directory_read": false,
+    "official_sources_directory_modified": false,
+    "network_access_authorized": false,
+    "external_contact_authorized": false,
+    "new_source_acquisition_authorized": false,
+    "structural_solver_authorized": false,
+    "blender_authorized": false,
+    "blender_master_modification_authorized": false,
+    "as_built_coordinate_assignment_authorized": false,
+    "member_section_assignment_authorized": false,
+    "material_assignment_authorized": false,
+    "mass_assignment_authorized": false,
+    "stiffness_assignment_authorized": false,
+    "strength_assignment_authorized": false,
+    "connection_law_assignment_authorized": false,
+    "damage_state_assignment_authorized": false,
+    "load_path_credit_authorized": false,
+    "thermal_continuation_authorized": false
+  },
+  "regression_files": {
+    "wtc1_simulation_v8/data/v9z_unsent_stairwell_record_requests.json": "f5840c921a4a59222cc710bf1cad48a61d0e7f9f2075fa10b4e36172eed4fa5b",
+    "wtc1_simulation_v8/scripts/run_v9z_unsent_stairwell_record_requests.py": "77271fcd8ac4967911a8aefd4ea0cde5752e1c2175d6a25d9fd0878b3c7a7f1b",
+    "wtc1_simulation_v8/input/v9z_official_routes/nist_foia.html": "877a9e00356d3e271db5bcea28c6d9cf9be02529cfce61d7abe4efe2e63fd251",
+    "wtc1_simulation_v8/input/v9z_official_routes/panynj_how_to_request_a_record.pdf": "0a9dc9f63d7f97385e24a1dadfc2e5304bd3eccac16cd00b20a543fc2063e7d5",
+    "wtc1_simulation_v8/output/v9z_brouillon_demande_nist_plans_escaliers.md": "5c5ed490a6ad681739ae04fdcac833df26abf1ef44c1ff1429323cb025895f33",
+    "wtc1_simulation_v8/output/v9z_brouillon_demande_panynj_plans_escaliers.md": "61bad0ce0565ad5e07ed3c7fd18c56b3aa26a950000bc3e16365129f96767a73",
+    "wtc1_simulation_v8/output/v9z_request_route_audit.json": "f264abbb11460a764f8d77ac4f4c16ee3e36b166b1c0c780ac0adc33169e7c38",
+    "wtc1_simulation_v8/output/v9z_requested_record_matrix.csv": "d50b4f5636f69c7fca6781c725925457232df77018232fa4f9f44973a69525d7",
+    "wtc1_simulation_v8/output/v9z_unsent_request_manifest.json": "235f7cf296fc13e57b5d9f23ccb1488059134c58cb9bc8cd375c76abd2775bfd",
+    "wtc1_simulation_v8/output/v9z_stairwell_geometry_gate.json": "55a2c4d68a4fb6285f29a4e763f216136e8ab0064121c498667101ada493649e",
+    "wtc1_simulation_v8/output/rapport_wtc1_v9z_demandes_plans_non_envoyees.md": "5aed69db8131ab98a62bd294894840780b62ed8a6762c66856cbe1177a00674a",
+    "wtc1_simulation_v8/output/resultats_wtc1_v9z_demandes_plans_non_envoyees.json": "40074e2ef277bb4d38102205d544e7a8fa37ac7ea0df0fa88852b68eb1cd921f"
+  },
+  "protected_files": {
+    "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+  },
+  "cached_input_files": {
+    "wtc1_simulation_v8/data/v8h_core_beam_network.json": "dd0aa58440bb3c5a337b73afa83d57bc36cd898ba350102cee9cdf1d7d2ea2c1",
+    "wtc1_simulation_v8/data/v8l_multistory_cold_frame.json": "0d2e9f4e9d5ce547217b1c799e2ac84106d601a6412bbaa3e5852d5b5e652e18",
+    "wtc1_simulation_v8/data/v8m_core_floor_perimeter_coupling.json": "797d1c87af42108d7fb2bae76c36a395a37f449ce0e45ae19ff9f0f4aab1d01e",
+    "wtc1_simulation_v8/output/resultats_wtc1_v8m_couplage_perimetre_froid.json": "3300f26384446173c521d6b5408a6b072cd7eb098ce6b105022e718a2e42f462",
+    "wtc1_simulation_v8/output/resultats_wtc1_v8p_graphe_vertical.json": "4a9c15dc600157e20d29aaaee03979420a293871c989b67ea57091410a46f2b8",
+    "wtc1_simulation_v8/data/v8q_floor_network_flow.json": "08c5bc725418757d8d863916d7007b6d1af45fc876899e35b54d2de38a9ed168",
+    "wtc1_simulation_v8/output/resultats_wtc1_v8q_flux_reseau.json": "a7c4194b8d937f66151c4ee3fa77804fe60fa42ef40697018a90c1510f9d9a65",
+    "wtc1_simulation_v8/data/v8r_capacity_bounded_flow.json": "6f837fe1f83db090c2c8fe35e0d6c0da7d0f17541e5346069c2f99511595e97e",
+    "wtc1_simulation_v8/output/resultats_wtc1_v8r_flux_bornes.json": "b469ae6085c2bdf0e4f2b16218613042f80d8006813bc109540cc5cb0a5811e7",
+    "wtc1_simulation_v8/output/resultats_wtc1_v9u_pile_categorielle_escaliers.json": "4b2c2999e4918d2c33675d41c38f82aa57200515738c9a9bc3b51620f842ba17",
+    "wtc1_simulation_v8/output/v9u_stairwell_model_gate.json": "72740c53aec2b8f202d01b6d82dcdf1f80df02c03a4b2ccdcfbc79c5f1483eba"
+  },
+  "schema_definition": {
+    "floors": [93, 94, 95, 96, 97, 98, 99],
+    "faces": ["north", "east", "south", "west"],
+    "core_node_rule": "Create one catalogue node for every V8Q core-column identifier on every floor. Preserve the identifier only; x, y and z remain null because the V8Q coordinates are reconstructed model coordinates, not accepted as-built solver coordinates.",
+    "office_node_rule": "Create one office-boundary placeholder and four face placeholders per floor. These are requirement records, not physical nodes or a discretization.",
+    "perimeter_node_rule": "Create four face-level perimeter placeholders per floor. Member-level perimeter columns, splices and connections remain missing.",
+    "core_vertical_element_rule": "Connect the same core-column identifier only between adjacent catalogue floors. Section, length, material, stiffness, capacity, connection law and damage state remain null.",
+    "core_inplane_element_rule": "Enumerate the 79 V8Q orthogonal candidate edges on each floor. Flag the 17 V8H official-model moment-subnetwork transcriptions separately; every other edge remains a reconstruction hypothesis. No edge receives a member assignment or capacity.",
+    "core_to_office_rule": "Enumerate one requirement record for each V8Q boundary-port column per floor. A V8Q port is an algebraic bookkeeping variable, not an identified physical connection.",
+    "office_to_perimeter_rule": "Enumerate one face-level requirement path per floor. V8M face paths are upper-envelope abstractions and do not establish individual trusses, seats, slab strips or perimeter attachments.",
+    "perimeter_vertical_rule": "Enumerate one face-level placeholder between adjacent floors. This does not substitute for member-level perimeter topology.",
+    "stairwell_exclusion_rule": "The 21 V9U floor-stair records remain categorical and hypothetical. They create zero solver nodes or elements and receive no structural credit.",
+    "case_ai_damage_rule": "The four V8L Floor 96 Case Ai removed edges may be carried only as an official-model reference flag. The V10A physical damage_state field remains null for every element.",
+    "v8r_multiplier_rule": "V8R joint multipliers are sensitivity diagnostics and are not copied into capacity fields."
+  },
+  "unit_dictionary": [
+    {
+      "quantity": "length_and_displacement",
+      "original_units": ["in", "ft", "m"],
+      "canonical_solver_unit_if_later_authorized": "m",
+      "exact_conversions": {"in_to_m": 0.0254, "ft_to_m": 0.3048},
+      "assignment_in_v10a": null
+    },
+    {
+      "quantity": "force",
+      "original_units": ["kip", "kN"],
+      "canonical_solver_unit_if_later_authorized": "N",
+      "exact_conversions": {"kip_to_N": 4448.2216152605, "kN_to_N": 1000.0},
+      "assignment_in_v10a": null
+    },
+    {
+      "quantity": "stress_and_modulus",
+      "original_units": ["ksi"],
+      "canonical_solver_unit_if_later_authorized": "Pa",
+      "exact_conversions": {"ksi_to_Pa": 6894757.293168},
+      "assignment_in_v10a": null
+    },
+    {
+      "quantity": "mass",
+      "original_units": [],
+      "canonical_solver_unit_if_later_authorized": "kg",
+      "exact_conversions": {},
+      "assignment_in_v10a": null
+    },
+    {
+      "quantity": "rotation",
+      "original_units": ["rad"],
+      "canonical_solver_unit_if_later_authorized": "rad",
+      "exact_conversions": {},
+      "assignment_in_v10a": null
+    },
+    {
+      "quantity": "temperature",
+      "original_units": ["degC"],
+      "canonical_solver_unit_if_later_authorized": "K",
+      "exact_conversions": {"degC_to_K_offset": 273.15},
+      "assignment_in_v10a": null
+    }
+  ],
+  "source_gate_requirements": [
+    {
+      "requirement_id": "N01",
+      "subsystem": "core_nodes",
+      "field_group": "column_identifiers",
+      "status": "DOCUMENTED_REFERENCE_ONLY",
+      "evidence_class": "OFFICIAL_MODEL_OUTPUT_DEPENDENT",
+      "available": "47 core-column identifiers repeated over Floors 93-99 in V8Q/V8P.",
+      "missing": "Independent as-built verification of the identifier-to-member mapping.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "N02",
+      "subsystem": "all_nodes",
+      "field_group": "as_built_coordinates_xyz",
+      "status": "MISSING",
+      "evidence_class": "UNKNOWN",
+      "available": "V8Q reconstructed coordinates exist but are deliberately excluded from V10A solver fields.",
+      "missing": "Source-qualified x, y and z coordinates and a coordinate-system definition.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "N03",
+      "subsystem": "all_nodes",
+      "field_group": "floor_elevations_and_story_heights",
+      "status": "MISSING",
+      "evidence_class": "UNKNOWN_IN_SELECTED_INPUTS",
+      "available": "Seven categorical floor labels only.",
+      "missing": "Source-qualified elevations, story heights and vertical datum.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "E01",
+      "subsystem": "core_vertical",
+      "field_group": "column_continuity",
+      "status": "PARTIAL_NOT_SOLVER_READY",
+      "evidence_class": "OFFICIAL_MODEL_IDENTIFIER_CONTINUITY",
+      "available": "Same 47 identifiers can be catalogued across six adjacent floor transitions.",
+      "missing": "Splice locations, segment section changes, eccentricities and joint kinematics.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "E02",
+      "subsystem": "core_inplane",
+      "field_group": "moment_subnetwork_topology",
+      "status": "DOCUMENTED_REFERENCE_ONLY",
+      "evidence_class": "OFFICIAL_MODEL_TOPOLOGY_TRANSCRIPTION",
+      "available": "17 moment-subnetwork edges per floor from V8H.",
+      "missing": "As-built member and connection verification and applicability by floor.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "E03",
+      "subsystem": "core_inplane",
+      "field_group": "nonmoment_and_slab_topology",
+      "status": "MISSING",
+      "evidence_class": "MODEL_HYPOTHESIS_ONLY",
+      "available": "62 additional orthogonal candidate edges per floor from the V8Q reconstruction.",
+      "missing": "Actual beams, slab strips, openings, framing directions and floor applicability.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "E04",
+      "subsystem": "core_elements",
+      "field_group": "book5_member_schedule",
+      "status": "MISSING",
+      "evidence_class": "UNKNOWN",
+      "available": "Historic WF proxy brackets exist in immutable V8H/V8L only.",
+      "missing": "Drawing Book 5 member sections, orientation and floor-specific assignments.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "C01",
+      "subsystem": "core_connections",
+      "field_group": "book6_connection_schedule",
+      "status": "MISSING",
+      "evidence_class": "UNKNOWN",
+      "available": "No complete schedule in the selected cached inputs.",
+      "missing": "Drawing Book 6 connection types, bolts, welds, plates, force-displacement and failure laws.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "D01",
+      "subsystem": "all_structural_elements",
+      "field_group": "physical_damage_state",
+      "status": "PARTIAL_NOT_SOLVER_READY",
+      "evidence_class": "OFFICIAL_MODEL_CASE_AI_REFERENCE_ONLY",
+      "available": "Four Floor 96 Case Ai removed-edge references and official-model axial-force contours.",
+      "missing": "Member-level, floor-specific validated damage for the intended scenario.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "O01",
+      "subsystem": "office_floor",
+      "field_group": "generic_geometry",
+      "status": "PARTIAL_NOT_SOLVER_READY",
+      "evidence_class": "OFFICIAL_DOCUMENT_GENERIC_SINGLE_TRUSS",
+      "available": "Published representative span, tributary width and slab thickness used by V8M.",
+      "missing": "Floor-specific truss layout, short/long-span transitions, openings and slab geometry.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "O02",
+      "subsystem": "office_floor",
+      "field_group": "member_level_topology",
+      "status": "MISSING",
+      "evidence_class": "UNKNOWN",
+      "available": "Four face-level requirement placeholders per floor only.",
+      "missing": "Individual trusses, bridging, slab strips, connections and tributary mapping.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "O03",
+      "subsystem": "office_floor",
+      "field_group": "equivalent_membrane_stiffness",
+      "status": "MISSING",
+      "evidence_class": "OFFICIAL_METHOD_WITHOUT_NUMERIC_PARAMETER",
+      "available": "NIST method statement that global membrane stiffness came from a single-truss model.",
+      "missing": "The numerical floor-specific equivalent stiffness and calibration inputs.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "O04",
+      "subsystem": "office_floor_connections",
+      "field_group": "interior_seat_behavior",
+      "status": "PARTIAL_NOT_SOLVER_READY",
+      "evidence_class": "PUBLISHED_COMPONENT_LIMITS",
+      "available": "Published generic seat limits retained in V8M.",
+      "missing": "Exact seat assignment, deformation law, interaction and surviving condition by floor/path.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "O05",
+      "subsystem": "office_floor_connections",
+      "field_group": "exterior_seat_behavior",
+      "status": "PARTIAL_NOT_SOLVER_READY",
+      "evidence_class": "PUBLISHED_COMPONENT_LIMITS",
+      "available": "Published generic exterior-seat limits retained in V8M.",
+      "missing": "Exact perimeter attachment assignment, deformation law and failure interaction.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "P01",
+      "subsystem": "perimeter",
+      "field_group": "official_floor98_load_reference",
+      "status": "DOCUMENTED_REFERENCE_ONLY",
+      "evidence_class": "OFFICIAL_MODEL_OUTPUT_DEPENDENT",
+      "available": "Four face loads at Floor 98 in V8M source context.",
+      "missing": "Independent member-level demand field and compatible boundary conditions.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "P02",
+      "subsystem": "perimeter",
+      "field_group": "member_sections_and_vertical_topology",
+      "status": "PARTIAL_NOT_SOLVER_READY",
+      "evidence_class": "LIMITED_OFFICIAL_PROTOTYPE",
+      "available": "One Column 151 prototype and face-level counts/envelopes in V8M.",
+      "missing": "Complete perimeter section, splice, floor and damage schedule over Floors 93-99.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "P03",
+      "subsystem": "perimeter",
+      "field_group": "connections_and_damage",
+      "status": "MISSING",
+      "evidence_class": "UNKNOWN",
+      "available": "No member-level perimeter connection/damage mapping in selected inputs.",
+      "missing": "Spandrels, bolts, welds, panel-zone behavior, boundary conditions and physical damage states.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "T01",
+      "subsystem": "core_office_perimeter_transfer",
+      "field_group": "transfer_topology_and_compatibility",
+      "status": "PARTIAL_NOT_SOLVER_READY",
+      "evidence_class": "V8M_MODEL_ENVELOPE",
+      "available": "Face-level nonlinear upper-envelope paths and 24 V8Q algebraic boundary ports per floor.",
+      "missing": "Actual port-to-truss-to-seat mapping, compatible displacements and calibrated constitutive laws.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "T02",
+      "subsystem": "hat_truss",
+      "field_group": "separate_upper_transfer_path",
+      "status": "PARTIAL_NOT_SOLVER_READY",
+      "evidence_class": "OFFICIAL_MODEL_CONTEXT_ONLY",
+      "available": "The path exists in official-model context; V8M assigns zero differential cold credit.",
+      "missing": "Member topology, connections, compatibility and a source-supported load case for this schema.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "B01",
+      "subsystem": "boundary_conditions",
+      "field_group": "above_F99_and_below_F93",
+      "status": "MISSING",
+      "evidence_class": "UNKNOWN",
+      "available": "Official-model floor totals are reference outputs only.",
+      "missing": "Applied loads/displacements, support stiffness, rotational restraints and temporal definition.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "M01",
+      "subsystem": "materials_and_sections",
+      "field_group": "mass_stiffness_strength_and_failure",
+      "status": "MISSING",
+      "evidence_class": "UNKNOWN_OR_PROXY_ONLY",
+      "available": "Historic proxies and generic published component limits remain in immutable earlier audits.",
+      "missing": "Source-qualified section properties, density, elastic/plastic laws, rate effects and objective failure data for every assigned component.",
+      "blocking": true
+    },
+    {
+      "requirement_id": "S01",
+      "subsystem": "stairwells",
+      "field_group": "mechanical_exclusion",
+      "status": "PARTIAL_NOT_SOLVER_READY",
+      "evidence_class": "V9U_CATEGORICAL_HYPOTHESIS_ONLY",
+      "available": "21 floor-stair continuity records and separate LOW/BASE/HIGH display hypotheses.",
+      "missing": "As-built enclosures, materials, mass, connections, damage and any demonstrated structural role.",
+      "blocking": true
+    }
+  ],
+  "connection_requirements": [
+    {
+      "connection_id": "CR01",
+      "family": "core_vertical_splice_or_continuity",
+      "expected_catalogue_occurrences": 282,
+      "source_status": "IDENTIFIER_CONTINUITY_ONLY",
+      "required_fields": ["splice_type", "location", "eccentricity", "axial_rotational_law", "failure_law"],
+      "solver_credit": "NONE"
+    },
+    {
+      "connection_id": "CR02",
+      "family": "official_model_moment_edge_ends",
+      "expected_catalogue_occurrences": 238,
+      "source_status": "OFFICIAL_MODEL_TOPOLOGY_WITHOUT_AS_BUILT_CONNECTION_SCHEDULE",
+      "required_fields": ["connection_type", "plate_geometry", "bolts", "welds", "moment_rotation_law", "failure_law"],
+      "solver_credit": "NONE"
+    },
+    {
+      "connection_id": "CR03",
+      "family": "hypothetical_nonmoment_or_slab_edge_ends",
+      "expected_catalogue_occurrences": 868,
+      "source_status": "MODEL_HYPOTHESIS_ONLY",
+      "required_fields": ["physical_member_identity", "connection_type", "slab_coupling", "force_displacement_law"],
+      "solver_credit": "NONE"
+    },
+    {
+      "connection_id": "CR04",
+      "family": "core_to_office_boundary_mapping",
+      "expected_catalogue_occurrences": 168,
+      "source_status": "V8Q_ALGEBRAIC_PORT_NOT_PHYSICAL_CONNECTION",
+      "required_fields": ["actual_truss_or_slab_path", "tributary_mapping", "compatibility", "capacity_and_failure"],
+      "solver_credit": "NONE"
+    },
+    {
+      "connection_id": "CR05",
+      "family": "office_boundary_to_face_distribution",
+      "expected_catalogue_occurrences": 28,
+      "source_status": "REQUIREMENT_PLACEHOLDER",
+      "required_fields": ["floor_specific_topology", "diaphragm_stiffness", "openings", "damage"],
+      "solver_credit": "NONE"
+    },
+    {
+      "connection_id": "CR06",
+      "family": "interior_floor_truss_seat",
+      "expected_catalogue_occurrences": 28,
+      "source_status": "GENERIC_PUBLISHED_LIMITS_ASSIGNMENT_UNKNOWN",
+      "required_fields": ["seat_detail", "pair_count", "location", "interaction_law", "failure_law"],
+      "solver_credit": "NONE"
+    },
+    {
+      "connection_id": "CR07",
+      "family": "exterior_floor_truss_seat",
+      "expected_catalogue_occurrences": 28,
+      "source_status": "GENERIC_PUBLISHED_LIMITS_ASSIGNMENT_UNKNOWN",
+      "required_fields": ["seat_detail", "pair_count", "location", "interaction_law", "failure_law"],
+      "solver_credit": "NONE"
+    },
+    {
+      "connection_id": "CR08",
+      "family": "composite_slab_truss_and_shear_connection",
+      "expected_catalogue_occurrences": 28,
+      "source_status": "NUMERIC_GLOBAL_EQUIVALENT_STIFFNESS_UNAVAILABLE",
+      "required_fields": ["reinforcement", "deck", "concrete", "shear_connectors", "cracking_and_failure"],
+      "solver_credit": "NONE"
+    },
+    {
+      "connection_id": "CR09",
+      "family": "perimeter_vertical_member_and_splice_mapping",
+      "expected_catalogue_occurrences": 24,
+      "source_status": "FACE_PLACEHOLDER_MEMBER_LEVEL_DATA_MISSING",
+      "required_fields": ["panel_column_ids", "spandrels", "splices", "panel_zone_law", "damage"],
+      "solver_credit": "NONE"
+    },
+    {
+      "connection_id": "CR10",
+      "family": "upper_boundary_above_F99",
+      "expected_catalogue_occurrences": 47,
+      "source_status": "MISSING",
+      "required_fields": ["load_or_displacement", "rotational_restraint", "dynamic_or_static_definition", "provenance"],
+      "solver_credit": "NONE"
+    },
+    {
+      "connection_id": "CR11",
+      "family": "lower_boundary_below_F93",
+      "expected_catalogue_occurrences": 47,
+      "source_status": "MISSING",
+      "required_fields": ["support_stiffness", "rotational_restraint", "continuation_or_truncation", "provenance"],
+      "solver_credit": "NONE"
+    },
+    {
+      "connection_id": "CR12",
+      "family": "hat_truss_separate_path",
+      "expected_catalogue_occurrences": 1,
+      "source_status": "OFFICIAL_CONTEXT_ZERO_COLD_CREDIT",
+      "required_fields": ["member_topology", "connections", "compatibility", "source_supported_load_case"],
+      "solver_credit": "NONE"
+    },
+    {
+      "connection_id": "CR13",
+      "family": "stairwell_enclosure_to_structure_exclusion",
+      "expected_catalogue_occurrences": 21,
+      "source_status": "CATEGORICAL_HYPOTHESIS_NOT_A_STRUCTURAL_CONNECTION",
+      "required_fields": ["as_built_geometry", "materials", "mass", "connections", "damage", "demonstrated_structural_role"],
+      "solver_credit": "NONE"
+    }
+  ],
+  "expected_counts": {
+    "floor_count": 7,
+    "core_column_identifier_count": 47,
+    "core_node_count": 329,
+    "office_boundary_placeholder_node_count": 7,
+    "office_face_placeholder_node_count": 28,
+    "perimeter_face_placeholder_node_count": 28,
+    "total_node_catalogue_count": 392,
+    "core_vertical_element_count": 282,
+    "official_model_moment_inplane_element_count": 119,
+    "hypothetical_orthogonal_inplane_element_count": 434,
+    "core_to_office_port_requirement_count": 168,
+    "office_face_distribution_requirement_count": 28,
+    "office_to_perimeter_requirement_count": 28,
+    "perimeter_vertical_placeholder_count": 24,
+    "total_element_catalogue_count": 1083,
+    "connection_requirement_family_count": 13,
+    "source_gate_requirement_count": 22,
+    "stairwell_categorical_record_count": 21,
+    "stairwell_solver_node_count": 0,
+    "stairwell_solver_element_count": 0,
+    "physical_coordinate_assignment_count": 0,
+    "member_section_assignment_count": 0,
+    "material_assignment_count": 0,
+    "mass_assignment_count": 0,
+    "stiffness_assignment_count": 0,
+    "capacity_assignment_count": 0,
+    "connection_law_assignment_count": 0,
+    "damage_state_assignment_count": 0
+  },
+  "evidence_policy": {
+    "observed_or_transcribed_fact": "File identities, column IDs, declared topology counts, unit labels and fields directly read from hashed cached artifacts.",
+    "official_model_result": "NIST-derived floor totals, axial-force contours, moment-subnetwork topology and Case Ai references remain dependent official-model outputs or idealizations.",
+    "archive_claim": "No source archive is read in V10A and no archive claim is promoted.",
+    "model_hypothesis": "The additional V8Q orthogonal edges, algebraic ports, office/perimeter face placeholders and V8M envelopes are hypotheses or requirements, not as-built members.",
+    "derived_result": "Catalogue counts, requirement matrices, source-gate classification and solver-readiness decision.",
+    "contradiction_or_unknown": "All missing coordinates, schedules, connection laws, boundary conditions, material properties and damage states remain null and blocking."
+  },
+  "gates": {
+    "regression_hash_count_expected": 12,
+    "cached_input_hash_count_expected": 11,
+    "all_catalogue_counts_exact": true,
+    "all_physical_assignment_counts_zero": true,
+    "all_catalogue_rows_solver_authorized_false": true,
+    "all_connection_families_solver_credit_none": true,
+    "official_model_dependence_label_required": true,
+    "model_hypothesis_label_required": true,
+    "as_built_geometry_gate_required": false,
+    "member_schedule_gate_required": false,
+    "connection_schedule_gate_required": false,
+    "boundary_condition_gate_required": false,
+    "material_property_gate_required": false,
+    "damage_state_gate_required": false,
+    "solver_readiness_gate_expected": false,
+    "structural_solver_authorized": false,
+    "blender_authorized": false,
+    "thermal_continuation_authorized": false
+  },
+  "outputs": {
+    "source_manifest": "wtc1_simulation_v8/output/v10a_readiness_source_manifest.json",
+    "schema": "wtc1_simulation_v8/output/v10a_solver_neutral_schema.json",
+    "node_catalogue_csv": "wtc1_simulation_v8/output/v10a_floor93_99_node_catalogue.csv",
+    "element_catalogue_csv": "wtc1_simulation_v8/output/v10a_floor93_99_element_catalogue.csv",
+    "connection_matrix_csv": "wtc1_simulation_v8/output/v10a_connection_requirement_matrix.csv",
+    "floor_matrix_csv": "wtc1_simulation_v8/output/v10a_floor_readiness_matrix.csv",
+    "unit_dictionary": "wtc1_simulation_v8/output/v10a_property_unit_dictionary.json",
+    "source_gate_audit": "wtc1_simulation_v8/output/v10a_source_gate_audit.json",
+    "model_gate": "wtc1_simulation_v8/output/v10a_solver_readiness_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10a_schema_preparation_mecanique.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10a_schema_preparation_mecanique.json"
+  },
+  "next_iteration": {
+    "id": "V10B",
+    "objective": "Preserve V8U through V10A and perform a bounded index-only audit of cached structural drawing registers and data tables for the exact Drawing Book 5 beam, Drawing Book 6 connection, office-floor truss/slab and perimeter schedule identifiers required by V10A. Create a prioritized acquisition/transcription matrix without rescanning the source archive, contacting an external party, assigning solver properties, running a solver or launching Blender."
+  }
+}

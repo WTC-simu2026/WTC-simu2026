@@ -1,0 +1,237 @@
+{
+  "iteration": "V10S",
+  "generated_at_utc": "2026-09-04T07:57:44Z",
+  "validation_status": "PASS_SCHEMA_COVERAGE_ONLY",
+  "contract_version": "2.0.0",
+  "schemas": {
+    "initiation_state_v2": {
+      "purpose": "Conservation-capable handoff from a validated initiation model to a separate propagation/arrest model.",
+      "required_fields": [
+        {
+          "name": "time_s",
+          "type": "number",
+          "unit": "s"
+        },
+        {
+          "name": "failed_members",
+          "type": "array_string",
+          "unit": null
+        },
+        {
+          "name": "failure_modes_by_member",
+          "type": "object",
+          "unit": null
+        },
+        {
+          "name": "node_displacements_m",
+          "type": "object_vector3",
+          "unit": "m"
+        },
+        {
+          "name": "node_velocities_m_s",
+          "type": "object_vector3",
+          "unit": "m/s"
+        },
+        {
+          "name": "element_forces_N",
+          "type": "object",
+          "unit": "N"
+        },
+        {
+          "name": "participating_mass_by_component_kg",
+          "type": "object",
+          "unit": "kg"
+        },
+        {
+          "name": "total_participating_mass_kg",
+          "type": "number",
+          "unit": "kg"
+        },
+        {
+          "name": "kinetic_energy_J",
+          "type": "number",
+          "unit": "J"
+        },
+        {
+          "name": "potential_energy_reference_J",
+          "type": "number",
+          "unit": "J"
+        },
+        {
+          "name": "internal_energy_J",
+          "type": "number",
+          "unit": "J"
+        },
+        {
+          "name": "boundary_state",
+          "type": "object",
+          "unit": null
+        },
+        {
+          "name": "topology_state",
+          "type": "object",
+          "unit": null
+        },
+        {
+          "name": "coordinate_frame",
+          "type": "object",
+          "unit": "m,rad"
+        },
+        {
+          "name": "validation_status",
+          "type": "string",
+          "unit": null
+        },
+        {
+          "name": "provenance",
+          "type": "object",
+          "unit": null
+        }
+      ]
+    },
+    "propagation_outcome_v2": {
+      "purpose": "Terminal and full-history status with explicit mass, vector-momentum and energy ledgers.",
+      "required_fields": [
+        {
+          "name": "case_id",
+          "type": "string",
+          "unit": null
+        },
+        {
+          "name": "time_history_s",
+          "type": "array_number",
+          "unit": "s"
+        },
+        {
+          "name": "outcome_label",
+          "type": "string",
+          "unit": null
+        },
+        {
+          "name": "arrest_story_or_null",
+          "type": "nullable_integer",
+          "unit": null
+        },
+        {
+          "name": "terminal_time_s_or_null",
+          "type": "nullable_number",
+          "unit": "s"
+        },
+        {
+          "name": "mass_ledger",
+          "type": "object",
+          "unit": "kg"
+        },
+        {
+          "name": "vector_momentum_ledger",
+          "type": "object_vector3",
+          "unit": "kg m/s,N s"
+        },
+        {
+          "name": "energy_ledger",
+          "type": "object",
+          "unit": "J"
+        },
+        {
+          "name": "story_state_history",
+          "type": "object",
+          "unit": null
+        },
+        {
+          "name": "member_failure_history",
+          "type": "object",
+          "unit": null
+        },
+        {
+          "name": "debris_contact_history",
+          "type": "object",
+          "unit": null
+        },
+        {
+          "name": "conservation_residuals",
+          "type": "object",
+          "unit": "kg,kg m/s,J"
+        },
+        {
+          "name": "validation_flags",
+          "type": "array_string",
+          "unit": null
+        },
+        {
+          "name": "parameter_provenance",
+          "type": "object",
+          "unit": null
+        }
+      ]
+    }
+  },
+  "legacy_interface_audit": {
+    "interface_count": 2,
+    "graph_required_field_count": 14,
+    "legacy_schema_exact_present_field_count": 12,
+    "legacy_schema_exact_gap_count": 2,
+    "v2_addressed_field_count": 14,
+    "by_interface": {
+      "I07_INITIATION_TO_PROPAGATION": {
+        "graph_required_field_count": 8,
+        "exact_present_field_count": 7,
+        "exact_gap_count": 1,
+        "v2_addressed_count": 8
+      },
+      "I08_PROPAGATION_TO_ENSEMBLE": {
+        "graph_required_field_count": 6,
+        "exact_present_field_count": 5,
+        "exact_gap_count": 1,
+        "v2_addressed_count": 6
+      }
+    },
+    "gap_fields": [
+      {
+        "interface_id": "I07_INITIATION_TO_PROPAGATION",
+        "field": "boundary_state",
+        "resolution": "LEGACY_GAP_V2_ADDS_BOUNDARY_STATE"
+      },
+      {
+        "interface_id": "I08_PROPAGATION_TO_ENSEMBLE",
+        "field": "conservation_residuals",
+        "resolution": "LEGACY_SPLIT_SCALARS_INCOMPLETE_V2_ADDS_AGGREGATE_MASS_VECTOR_MOMENTUM_ENERGY"
+      }
+    ],
+    "v2_schema_is_physical_data": false
+  },
+  "minimum_physical_requirement_summary": {
+    "requirement_count": 32,
+    "physical_ready_count": 0,
+    "blocking_count": 32,
+    "by_category": {
+      "initial_state": {
+        "requirement_count": 12,
+        "physical_ready_count": 0,
+        "blocking_count": 12
+      },
+      "output": {
+        "requirement_count": 2,
+        "physical_ready_count": 0,
+        "blocking_count": 2
+      },
+      "resistance": {
+        "requirement_count": 10,
+        "physical_ready_count": 0,
+        "blocking_count": 10
+      },
+      "validation": {
+        "requirement_count": 8,
+        "physical_ready_count": 0,
+        "blocking_count": 8
+      }
+    }
+  },
+  "outcome_label_vocabulary": [
+    "PROPAGATES",
+    "ARRESTS",
+    "INDETERMINATE"
+  ],
+  "outcome_label_rule": "No physical label may be emitted until every blocking requirement and conservation/convergence gate passes.",
+  "physical_ready": false,
+  "physical_data_assignment_count": 0
+}

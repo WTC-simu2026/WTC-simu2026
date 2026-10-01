@@ -1,0 +1,556 @@
+{
+  "iteration": "V9B",
+  "stage": "digitization_preliminary",
+  "generated_at": "2026-08-26T15:46:44.085984+02:00",
+  "configuration": "wtc1_simulation_v8/data/v9b_stress_strain_digitization.json",
+  "scope": "Preserve V8U through V9A, digitize only the published longitudinal engineering stress-strain figures for M26 and C80, validate digitized 1 percent offset yield and tensile strengths against the corresponding tabulated observations, and authorize a non-eroding uniaxial OpenRadioss implementation check only if every digitization gate passes. No failure deletion, facade impact, whole-aircraft, global tower, thermal or Blender calculation is authorized in V9B.",
+  "evidence_policy": {
+    "observed_fact": "A value, curve, caption, specimen geometry or warning transcribed from the named official NIST report.",
+    "official_model_result": "A NIST modelling choice or reported analytical fit; not a direct property measurement.",
+    "local_archive_claim": "No local-archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "A declared digitization, interpolation or constitutive-processing choice used only within the bounded coupon exercise.",
+    "derived_result": "A deterministic value computed from the source vectors and the predeclared procedure.",
+    "unknown": "A parameter, material assignment or fracture datum absent from the audited public sources."
+  },
+  "source_verification": {
+    "id": "NIST_NCSTAR_1_3D",
+    "path": "work/official_sources/ncstar1-3d.pdf",
+    "expected_sha256": "eee74f038b15bfd6263a4b5335ca96d124501d002e62883bb8fd4f84d22e52da",
+    "actual_sha256": "eee74f038b15bfd6263a4b5335ca96d124501d002e62883bb8fd4f84d22e52da",
+    "passed": true,
+    "source_modified": false
+  },
+  "regressions": {
+    "files": {
+      "wtc1_simulation_v8/data/v9a_material_coupon_evidence.json": {
+        "exists": true,
+        "expected_sha256": "f6ac522767c4fbd7031e3bd5e7312dc5044802944e56acff077338a565dd9b42",
+        "actual_sha256": "f6ac522767c4fbd7031e3bd5e7312dc5044802944e56acff077338a565dd9b42",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/run_v9a_material_coupon_benchmarks.py": {
+        "exists": true,
+        "expected_sha256": "65359f41a60a2d4b940776a46c22a44f98cf9548faf2efab3f9349c0dc9f7288",
+        "actual_sha256": "65359f41a60a2d4b940776a46c22a44f98cf9548faf2efab3f9349c0dc9f7288",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v9a_eprouvettes_materiaux.json": {
+        "exists": true,
+        "expected_sha256": "649d7aa0c4249b9e2bafab33f70df24a4942e532fcbe2c89e18561aee8b8e8f9",
+        "actual_sha256": "649d7aa0c4249b9e2bafab33f70df24a4942e532fcbe2c89e18561aee8b8e8f9",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/rapport_wtc1_v9a_eprouvettes_materiaux.md": {
+        "exists": true,
+        "expected_sha256": "dcf3cb9f47ce621afc552241f7a992486ad7c8c789739c04704c983ab39052d3",
+        "actual_sha256": "dcf3cb9f47ce621afc552241f7a992486ad7c8c789739c04704c983ab39052d3",
+        "passed": true
+      }
+    },
+    "metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9a_eprouvettes_materiaux.json",
+        "path": "wtc_rate_strength_benchmark_passed",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9a_eprouvettes_materiaux.json",
+        "path": "diagnostic_generalization.maximum_absolute_leave_one_out_relative_error",
+        "expected": 0.25188566307814064,
+        "actual": 0.25188566307814064,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9a_eprouvettes_materiaux.json",
+        "path": "physical_fracture_card_identification_passed",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9a_eprouvettes_materiaux.json",
+        "path": "cf6_80a2_or_cowling_material_card_identification_passed",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      }
+    ],
+    "files_passed": true,
+    "metrics_passed": true,
+    "passed": true
+  },
+  "digitization_method": {
+    "input_representation": "PDF vector paths read with pdfplumber; rendered 300 dpi pages are visual QA only",
+    "coordinate_reduction": "For each declared trace colour, retain curve objects within the declared axes, group identical vector x coordinates, and use the median y coordinate as the centreline. Sort by x and preserve every resulting point.",
+    "axis_calibration": "Fit an affine map to the declared major tick coordinates and their printed engineering-strain and engineering-stress values.",
+    "yield_estimator": "First positive-to-negative intersection after 0.01 engineering strain between the digitized curve and sigma = E*(engineering_strain - 0.01), with E fixed at 29000 ksi solely as a declared post-processing hypothesis.",
+    "tensile_strength_estimator": "Maximum digitized engineering stress; no smoothing or filtering is applied.",
+    "quasi_static_duplicate_rule": "Where the plotted quasi-static rate corresponds to two tabulated M26 replicates, validate against the closed interval spanned by those replicate strengths rather than silently choosing one specimen. Relative error is zero inside the interval; otherwise it is the distance to the nearest bound divided by that bound.",
+    "c80_colour_continuation_rule": "The C80 401/s path may include the source's orange terminal segment only if its first point is contiguous with the green segment within 1.5 PDF points and no other candidate segment satisfies that condition.",
+    "elastic_modulus_ksi_hypothesis": 29000.0,
+    "no_curve_smoothing": true,
+    "no_failure_or_post_necking_calibration": true
+  },
+  "axis_calibrations": [
+    {
+      "figure_id": "M26_FIGURE_A28_LONGITUDINAL",
+      "pdf_page_number": 243,
+      "x": {
+        "intercept_pdf_points": 217.32000000000002,
+        "slope_pdf_points_per_unit": 484.8,
+        "residuals_pdf_points": [
+          -2.842170943040401e-14,
+          0.0,
+          -5.684341886080802e-14,
+          0.0,
+          0.0
+        ],
+        "maximum_absolute_residual_pdf_points": 5.684341886080802e-14
+      },
+      "y": {
+        "intercept_pdf_points": 325.248,
+        "slope_pdf_points_per_unit": -1.84005,
+        "residuals_pdf_points": [
+          0.012000000000000455,
+          -0.006000000000000227,
+          -0.023999999999972488,
+          0.01799999999998647
+        ],
+        "maximum_absolute_residual_pdf_points": 0.023999999999972488
+      },
+      "maximum_allowed_residual_pdf_points": 0.25,
+      "line_width_pdf_points": 0.815066924,
+      "conservative_half_width_plus_calibration_strain_uncertainty": 0.0013562983952145214,
+      "conservative_half_width_plus_calibration_stress_uncertainty_ksi": 0.3573454319176109,
+      "passed": true
+    },
+    {
+      "figure_id": "C80_FIGURE_A48_LONGITUDINAL",
+      "pdf_page_number": 253,
+      "x": {
+        "intercept_pdf_points": 211.122,
+        "slope_pdf_points_per_unit": 345.96,
+        "residuals_pdf_points": [
+          -0.04200000000000159,
+          0.12599999999997635,
+          -0.12599999999997635,
+          0.04200000000003001
+        ],
+        "maximum_absolute_residual_pdf_points": 0.12599999999997635
+      },
+      "y": {
+        "intercept_pdf_points": 310.83142857142855,
+        "slope_pdf_points_per_unit": -1.8838285714285716,
+        "residuals_pdf_points": [
+          -0.031428571428534724,
+          -0.15485714285711083,
+          0.20171428571433125,
+          0.07828571428575515,
+          0.014857142857181316,
+          -0.10857142857136637
+        ],
+        "maximum_absolute_residual_pdf_points": 0.20171428571433125
+      },
+      "maximum_allowed_residual_pdf_points": 0.25,
+      "line_width_pdf_points": 0.8721619500000001,
+      "conservative_half_width_plus_calibration_strain_uncertainty": 0.001983122254017806,
+      "conservative_half_width_plus_calibration_stress_uncertainty_ksi": 0.36419501509084845,
+      "passed": true
+    }
+  ],
+  "curve_results": [
+    {
+      "figure_id": "M26_FIGURE_A28_LONGITUDINAL",
+      "figure": "A-28",
+      "pdf_page_number": 243,
+      "coupon_series_id": "M26_PERIMETER_LONGITUDINAL",
+      "curve_id": "M26_QS",
+      "rate_per_s": 6.06e-05,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Flat 2 inch, longitudinal, 2 inch gauge, 9/16 inch source plate",
+      "source_segment_count": 1,
+      "source_raw_vector_point_count": 97,
+      "unique_centerline_point_count": 71,
+      "engineering_strain_coverage": 0.2303217821782178,
+      "terminal_alias_segment_count": 0,
+      "terminal_alias_gap_pdf_points": null,
+      "terminal_alias_passed": true,
+      "digitized_yield_1_percent_offset_ksi": 61.322621959209236,
+      "digitized_yield_strain": 0.012114573171007215,
+      "yield_reference_interval_ksi": [
+        61.7,
+        63.2
+      ],
+      "yield_relative_error_to_interval": 0.006116337776187464,
+      "digitized_tensile_strength_ksi": 86.59986750631778,
+      "tensile_reference_interval_ksi": [
+        85.5,
+        86.1
+      ],
+      "tensile_relative_error_to_interval": 0.0058056620942832085,
+      "stress_coordinate_uncertainty_ksi": 0.3573454319176109,
+      "strain_coordinate_uncertainty": 0.0013562983952145214,
+      "csv": "wtc1_simulation_v8/output/v9b_digitized_curves/m26_qs.csv",
+      "identity_passed": true,
+      "point_count_passed": true,
+      "strain_coverage_passed": true,
+      "yield_validation_passed": true,
+      "tensile_validation_passed": true,
+      "passed": true
+    },
+    {
+      "figure_id": "M26_FIGURE_A28_LONGITUDINAL",
+      "figure": "A-28",
+      "pdf_page_number": 243,
+      "coupon_series_id": "M26_PERIMETER_LONGITUDINAL",
+      "curve_id": "M26_65",
+      "rate_per_s": 65.0,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Flat HSR 1 inch TK, longitudinal, 1 inch gauge, 0.125 inch thick",
+      "source_segment_count": 8,
+      "source_raw_vector_point_count": 2049,
+      "unique_centerline_point_count": 308,
+      "engineering_strain_coverage": 0.25804455445544555,
+      "terminal_alias_segment_count": 0,
+      "terminal_alias_gap_pdf_points": null,
+      "terminal_alias_passed": true,
+      "digitized_yield_1_percent_offset_ksi": 72.38339281165257,
+      "digitized_yield_strain": 0.012495979062470778,
+      "yield_reference_interval_ksi": [
+        72.2,
+        72.2
+      ],
+      "yield_relative_error_to_interval": 0.0025400666433873535,
+      "digitized_tensile_strength_ksi": 101.30587516589222,
+      "tensile_reference_interval_ksi": [
+        99.9,
+        99.9
+      ],
+      "tensile_relative_error_to_interval": 0.014072824483405525,
+      "stress_coordinate_uncertainty_ksi": 0.3573454319176109,
+      "strain_coordinate_uncertainty": 0.0013562983952145214,
+      "csv": "wtc1_simulation_v8/output/v9b_digitized_curves/m26_65.csv",
+      "identity_passed": true,
+      "point_count_passed": true,
+      "strain_coverage_passed": true,
+      "yield_validation_passed": true,
+      "tensile_validation_passed": true,
+      "passed": true
+    },
+    {
+      "figure_id": "M26_FIGURE_A28_LONGITUDINAL",
+      "figure": "A-28",
+      "pdf_page_number": 243,
+      "coupon_series_id": "M26_PERIMETER_LONGITUDINAL",
+      "curve_id": "M26_100",
+      "rate_per_s": 100.0,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Flat HSR 1 inch TN, longitudinal, 1 inch gauge, 0.0625 inch thick",
+      "source_segment_count": 4,
+      "source_raw_vector_point_count": 1139,
+      "unique_centerline_point_count": 398,
+      "engineering_strain_coverage": 0.3386138613861386,
+      "terminal_alias_segment_count": 0,
+      "terminal_alias_gap_pdf_points": null,
+      "terminal_alias_passed": true,
+      "digitized_yield_1_percent_offset_ksi": 72.79909214618489,
+      "digitized_yield_strain": 0.012510313522282239,
+      "yield_reference_interval_ksi": [
+        75.9,
+        75.9
+      ],
+      "yield_relative_error_to_interval": 0.04085517593959309,
+      "digitized_tensile_strength_ksi": 100.65373665525394,
+      "tensile_reference_interval_ksi": [
+        100.4,
+        100.4
+      ],
+      "tensile_relative_error_to_interval": 0.0025272575224495127,
+      "stress_coordinate_uncertainty_ksi": 0.3573454319176109,
+      "strain_coordinate_uncertainty": 0.0013562983952145214,
+      "csv": "wtc1_simulation_v8/output/v9b_digitized_curves/m26_100.csv",
+      "identity_passed": true,
+      "point_count_passed": true,
+      "strain_coverage_passed": true,
+      "yield_validation_passed": true,
+      "tensile_validation_passed": true,
+      "passed": true
+    },
+    {
+      "figure_id": "M26_FIGURE_A28_LONGITUDINAL",
+      "figure": "A-28",
+      "pdf_page_number": 243,
+      "coupon_series_id": "M26_PERIMETER_LONGITUDINAL",
+      "curve_id": "M26_260",
+      "rate_per_s": 260.0,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Flat HSR 1 inch TN, longitudinal, 1 inch gauge, 0.0625 inch thick",
+      "source_segment_count": 3,
+      "source_raw_vector_point_count": 874,
+      "unique_centerline_point_count": 333,
+      "engineering_strain_coverage": 0.3017326732673267,
+      "terminal_alias_segment_count": 0,
+      "terminal_alias_gap_pdf_points": null,
+      "terminal_alias_passed": true,
+      "digitized_yield_1_percent_offset_ksi": 79.02485044546341,
+      "digitized_yield_strain": 0.012724994842947014,
+      "yield_reference_interval_ksi": [
+        75.9,
+        75.9
+      ],
+      "yield_relative_error_to_interval": 0.04117062510491974,
+      "digitized_tensile_strength_ksi": 103.40928580419013,
+      "tensile_reference_interval_ksi": [
+        102.8,
+        102.8
+      ],
+      "tensile_relative_error_to_interval": 0.005926904710020784,
+      "stress_coordinate_uncertainty_ksi": 0.3573454319176109,
+      "strain_coordinate_uncertainty": 0.0013562983952145214,
+      "csv": "wtc1_simulation_v8/output/v9b_digitized_curves/m26_260.csv",
+      "identity_passed": true,
+      "point_count_passed": true,
+      "strain_coverage_passed": true,
+      "yield_validation_passed": true,
+      "tensile_validation_passed": true,
+      "passed": true
+    },
+    {
+      "figure_id": "M26_FIGURE_A28_LONGITUDINAL",
+      "figure": "A-28",
+      "pdf_page_number": 243,
+      "coupon_series_id": "M26_PERIMETER_LONGITUDINAL",
+      "curve_id": "M26_417",
+      "rate_per_s": 417.0,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Flat HSR 1 inch TN, longitudinal, 1 inch gauge, 0.0625 inch thick",
+      "source_segment_count": 2,
+      "source_raw_vector_point_count": 751,
+      "unique_centerline_point_count": 329,
+      "engineering_strain_coverage": 0.3033415841584158,
+      "terminal_alias_segment_count": 0,
+      "terminal_alias_gap_pdf_points": null,
+      "terminal_alias_passed": true,
+      "digitized_yield_1_percent_offset_ksi": 92.75811990817833,
+      "digitized_yield_strain": 0.013198555858902701,
+      "yield_reference_interval_ksi": [
+        85.0,
+        85.0
+      ],
+      "yield_relative_error_to_interval": 0.09127199891974505,
+      "digitized_tensile_strength_ksi": 107.58308055596316,
+      "tensile_reference_interval_ksi": [
+        106.7,
+        106.7
+      ],
+      "tensile_relative_error_to_interval": 0.008276293870320162,
+      "stress_coordinate_uncertainty_ksi": 0.3573454319176109,
+      "strain_coordinate_uncertainty": 0.0013562983952145214,
+      "csv": "wtc1_simulation_v8/output/v9b_digitized_curves/m26_417.csv",
+      "identity_passed": true,
+      "point_count_passed": true,
+      "strain_coverage_passed": true,
+      "yield_validation_passed": true,
+      "tensile_validation_passed": true,
+      "passed": true
+    },
+    {
+      "figure_id": "C80_FIGURE_A48_LONGITUDINAL",
+      "figure": "A-48",
+      "pdf_page_number": 253,
+      "coupon_series_id": "C80_CORE_LONGITUDINAL",
+      "curve_id": "C80_QS",
+      "rate_per_s": 8.75e-05,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Round 1 inch, longitudinal, 1 inch gauge, 0.25 inch diameter",
+      "source_segment_count": 1,
+      "source_raw_vector_point_count": 34,
+      "unique_centerline_point_count": 25,
+      "engineering_strain_coverage": 0.4086021505376345,
+      "terminal_alias_segment_count": 0,
+      "terminal_alias_gap_pdf_points": null,
+      "terminal_alias_passed": true,
+      "digitized_yield_1_percent_offset_ksi": 35.55040034656557,
+      "digitized_yield_strain": 0.011225875874019502,
+      "yield_reference_interval_ksi": [
+        37.1,
+        37.1
+      ],
+      "yield_relative_error_to_interval": 0.04176818472869095,
+      "digitized_tensile_strength_ksi": 65.7235783623017,
+      "tensile_reference_interval_ksi": [
+        67.3,
+        67.3
+      ],
+      "tensile_relative_error_to_interval": 0.02342379847991535,
+      "stress_coordinate_uncertainty_ksi": 0.36419501509084845,
+      "strain_coordinate_uncertainty": 0.001983122254017806,
+      "csv": "wtc1_simulation_v8/output/v9b_digitized_curves/c80_qs.csv",
+      "identity_passed": true,
+      "point_count_passed": false,
+      "strain_coverage_passed": true,
+      "yield_validation_passed": true,
+      "tensile_validation_passed": true,
+      "passed": false
+    },
+    {
+      "figure_id": "C80_FIGURE_A48_LONGITUDINAL",
+      "figure": "A-48",
+      "pdf_page_number": 253,
+      "coupon_series_id": "C80_CORE_LONGITUDINAL",
+      "curve_id": "C80_84",
+      "rate_per_s": 84.0,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Flat HSR 1 inch TN, longitudinal, 1 inch gauge, 0.0625 inch thick",
+      "source_segment_count": 4,
+      "source_raw_vector_point_count": 1829,
+      "unique_centerline_point_count": 314,
+      "engineering_strain_coverage": 0.3947277141866112,
+      "terminal_alias_segment_count": 0,
+      "terminal_alias_gap_pdf_points": null,
+      "terminal_alias_passed": true,
+      "digitized_yield_1_percent_offset_ksi": 61.05303670586663,
+      "digitized_yield_strain": 0.012105277127788505,
+      "yield_reference_interval_ksi": [
+        57.3,
+        57.3
+      ],
+      "yield_relative_error_to_interval": 0.06549802278999362,
+      "digitized_tensile_strength_ksi": 84.16456968862798,
+      "tensile_reference_interval_ksi": [
+        85.0,
+        85.0
+      ],
+      "tensile_relative_error_to_interval": 0.009828591898494377,
+      "stress_coordinate_uncertainty_ksi": 0.36419501509084845,
+      "strain_coordinate_uncertainty": 0.001983122254017806,
+      "csv": "wtc1_simulation_v8/output/v9b_digitized_curves/c80_84.csv",
+      "identity_passed": true,
+      "point_count_passed": true,
+      "strain_coverage_passed": true,
+      "yield_validation_passed": true,
+      "tensile_validation_passed": true,
+      "passed": true
+    },
+    {
+      "figure_id": "C80_FIGURE_A48_LONGITUDINAL",
+      "figure": "A-48",
+      "pdf_page_number": 253,
+      "coupon_series_id": "C80_CORE_LONGITUDINAL",
+      "curve_id": "C80_299",
+      "rate_per_s": 299.0,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Flat HSR 1 inch TK, longitudinal, 1 inch gauge, 0.125 inch thick",
+      "source_segment_count": 3,
+      "source_raw_vector_point_count": 976,
+      "unique_centerline_point_count": 348,
+      "engineering_strain_coverage": 0.4741588622962193,
+      "terminal_alias_segment_count": 0,
+      "terminal_alias_gap_pdf_points": null,
+      "terminal_alias_passed": true,
+      "digitized_yield_1_percent_offset_ksi": 69.61318565718719,
+      "digitized_yield_strain": 0.01240045467783404,
+      "yield_reference_interval_ksi": [
+        62.5,
+        62.5
+      ],
+      "yield_relative_error_to_interval": 0.113810970514995,
+      "digitized_tensile_strength_ksi": 90.82113954917037,
+      "tensile_reference_interval_ksi": [
+        80.1,
+        80.1
+      ],
+      "tensile_relative_error_to_interval": 0.1338469356950109,
+      "stress_coordinate_uncertainty_ksi": 0.36419501509084845,
+      "strain_coordinate_uncertainty": 0.001983122254017806,
+      "csv": "wtc1_simulation_v8/output/v9b_digitized_curves/c80_299.csv",
+      "identity_passed": true,
+      "point_count_passed": true,
+      "strain_coverage_passed": true,
+      "yield_validation_passed": false,
+      "tensile_validation_passed": false,
+      "passed": false
+    },
+    {
+      "figure_id": "C80_FIGURE_A48_LONGITUDINAL",
+      "figure": "A-48",
+      "pdf_page_number": 253,
+      "coupon_series_id": "C80_CORE_LONGITUDINAL",
+      "curve_id": "C80_401",
+      "rate_per_s": 401.0,
+      "orientation": "longitudinal",
+      "specimen_geometry": "Flat HSR 1 inch TK, longitudinal, 1 inch gauge, 0.125 inch thick",
+      "source_segment_count": 2,
+      "source_raw_vector_point_count": 680,
+      "unique_centerline_point_count": 294,
+      "engineering_strain_coverage": 0.4098161637183489,
+      "terminal_alias_segment_count": 1,
+      "terminal_alias_gap_pdf_points": 0.6299345114999824,
+      "terminal_alias_passed": true,
+      "digitized_yield_1_percent_offset_ksi": 76.61362166601775,
+      "digitized_yield_strain": 0.01264184902296613,
+      "yield_reference_interval_ksi": [
+        59.5,
+        59.5
+      ],
+      "yield_relative_error_to_interval": 0.2876238935465168,
+      "digitized_tensile_strength_ksi": 91.07583767206597,
+      "tensile_reference_interval_ksi": [
+        89.1,
+        89.1
+      ],
+      "tensile_relative_error_to_interval": 0.022175506981660813,
+      "stress_coordinate_uncertainty_ksi": 0.36419501509084845,
+      "strain_coordinate_uncertainty": 0.001983122254017806,
+      "csv": "wtc1_simulation_v8/output/v9b_digitized_curves/c80_401.csv",
+      "identity_passed": true,
+      "point_count_passed": true,
+      "strain_coverage_passed": true,
+      "yield_validation_passed": false,
+      "tensile_validation_passed": true,
+      "passed": false
+    }
+  ],
+  "digitization_gate_summary": {
+    "expected_curve_count": 9,
+    "actual_curve_count": 9,
+    "curve_count_passed": true,
+    "maximum_yield_relative_error": 0.2876238935465168,
+    "median_yield_relative_error": 0.04176818472869095,
+    "median_yield_passed": true,
+    "maximum_tensile_relative_error": 0.1338469356950109,
+    "median_tensile_relative_error": 0.009828591898494377,
+    "median_tensile_passed": true,
+    "all_axis_calibrations_passed": true,
+    "all_individual_curves_passed": false,
+    "digitization_passed": false
+  },
+  "conditional_openradioss_coupon_authorized": false,
+  "openradioss_coupon_executed": false,
+  "rupture_or_failure_deletion_executed": false,
+  "facade_impact_executed": false,
+  "scope_gates": {
+    "fracture_identification_authorized": false,
+    "failure_deletion_authorized": false,
+    "facade_impact_authorized": false,
+    "whole_aircraft_authorized": false,
+    "global_tower_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_mechanism_tested": false,
+    "global_scope_warning": "A V9B PASS can validate only the reproducibility of vector digitization and, conditionally, a non-eroding coupon implementation. It cannot validate fracture, contact, facade impulse, a CF6-80A2/cowling material card, aircraft impact, global WTC 1 response, thermal response, collapse, Blender physics, or explosive/thermite mechanisms."
+  },
+  "runtime": {
+    "elapsed_seconds": 0.8420202000015706,
+    "python": "3.12.13",
+    "pdfplumber": "0.11.9",
+    "config_sha256": "06dd90b6c8d06545d9ed914cb5f69c1003ac020d82bcd385d27ef5bd82b03539",
+    "runner_sha256": "93012fc22bb41c6b118fe3694ac60e59eaef27576044489ef988f75ef101a65c",
+    "source_archive_rescanned": false,
+    "official_source_files_modified": false,
+    "solver_executed": false,
+    "blender_executed": false
+  }
+}

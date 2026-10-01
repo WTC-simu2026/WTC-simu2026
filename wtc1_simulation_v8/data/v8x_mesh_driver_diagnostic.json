@@ -1,0 +1,127 @@
+{
+  "dataset": {
+    "name": "WTC 1 V8X facade/projectile mesh-driver and no-erosion diagnostic",
+    "version": "8.23.0",
+    "status": "PREDECLARED_BEFORE_EXECUTION_DIAGNOSTIC_NOT_A_WTC_IMPACT_REPRODUCTION",
+    "random_seed": 9112001,
+    "deterministic": true,
+    "scope": "Preserve V8U, V8V and V8W, reuse the cached V8W diagonal impact cases, vary facade and projectile meshes independently around the 50 mm baseline, then repeat a non-eroding diagonal control and conditionally its cross-mesh decomposition if the 10 percent impulse gate still fails. V8X localizes numerical mesh sensitivity; it does not tune the gate and is not a JT9D, whole-aircraft or global WTC 1 impact model."
+  },
+  "evidence_policy": {
+    "observed_fact": "Directly read from a cited source or solver output.",
+    "official_model_result": "A value reported by an official numerical model; none is a new target in V8X.",
+    "local_archive_claim": "No new local-archive claim is used and the archive is not rescanned.",
+    "model_hypothesis": "The V8W equivalent projectile, facade coupon, materials and contact pair selection remain hypotheses.",
+    "derived_result": "A deterministic calculation from the declared cases and cached immutable V8W outputs.",
+    "unknown": "A physical input or capability not identified by this diagnostic."
+  },
+  "base_configuration": {
+    "path": "wtc1_simulation_v8/data/v8w_projectile_freeflight_pairwise_contact.json",
+    "sha256": "6c1438590f30386e6928c66c0f531d730999e3ffa0026642f61b8f96d29f80f8",
+    "inherited_without_change": [
+      "facade geometry and material curve",
+      "projectile geometry, masses, material curves and widened cowling opening",
+      "two reciprocal pairwise core-cowling TYPE7 interfaces",
+      "projectile-to-facade TYPE7 interface",
+      "443 mph initial speed, frictionless contact, shell formulation and output intervals"
+    ]
+  },
+  "sources": [
+    {
+      "id": "V8W_FROZEN_RESULTS",
+      "results": "wtc1_simulation_v8/output/resultats_wtc1_v8w_contact_pairwise.json",
+      "classification": "prior_validated_derived_result",
+      "uses": [
+        "immutable free-flight pass",
+        "cached erosion-enabled diagonal cases at 100, 50 and 25 mm",
+        "unchanged 32.866 percent medium-to-fine impulse failure"
+      ]
+    },
+    {
+      "id": "ALTAIR_RADIOSS_2026_LAW2",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/mat_law2_plas_johns_starter_r.htm",
+      "classification": "official_solver_documentation",
+      "uses": [
+        "LAW2 built-in maximum-plastic-strain failure definition",
+        "failure plastic strain default of 1e20",
+        "zero or blank EPSmax input invokes the non-eroding default in the declared control"
+      ]
+    },
+    {
+      "id": "ALTAIR_RADIOSS_2026_TYPE7",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inter_type7_starter_r.htm",
+      "classification": "official_solver_documentation",
+      "uses": [
+        "unchanged node-to-segment pairwise contact and shell gap formulation"
+      ]
+    }
+  ],
+  "regressions": {
+    "required_files": {
+      "wtc1_simulation_v8/data/v8w_projectile_freeflight_pairwise_contact.json": "6c1438590f30386e6928c66c0f531d730999e3ffa0026642f61b8f96d29f80f8",
+      "wtc1_simulation_v8/scripts/generate_v8w_pairwise_contact.py": "4e53ed25f68ba751a74fbeb71abf391daf8c3d4d24d314389fcd757de28a88bd",
+      "wtc1_simulation_v8/scripts/run_v8w_pairwise_contact.py": "f76ce12627247830fe3eabbe10f2886743d18b621940ceaf854b2f8eca82e88d",
+      "wtc1_simulation_v8/output/resultats_wtc1_v8w_contact_pairwise.json": "7062888f55873840d72abfacaccd5037befd47515f39a7f3c6886511d3bbb916",
+      "wtc1_simulation_v8/output/rapport_wtc1_v8w_contact_pairwise.md": "7a858d4e507e0806db1b8239c4e8c1f06d1cca8ad6295a11023cc075df2d1be4"
+    },
+    "required_metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8w_contact_pairwise.json",
+        "path": "projectile_free_flight_qualification_passed",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8w_contact_pairwise.json",
+        "path": "convergence.medium_to_fine_contact_impulse_relative_difference",
+        "expected": 0.32865876527766763
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8w_contact_pairwise.json",
+        "path": "deformable_subassembly_qualification_passed",
+        "expected": false
+      }
+    ],
+    "numeric_absolute_tolerance": 1e-12
+  },
+  "cached_v8w_cases": {
+    "F100_P100": "IM_M100_P100_DT090_T1",
+    "F050_P050": "IM_M050_P050_DT090_T1",
+    "F025_P025": "IM_M025_P025_DT090_T1"
+  },
+  "cases": [
+    {"id": "E_F100_P050", "phase": "facade_impact", "facade_mesh_target_mm": 100.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.9, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "threads": 1, "erosion_mode": "v8w_enabled", "role": "erosion_cross_facade_coarse"},
+    {"id": "E_F025_P050", "phase": "facade_impact", "facade_mesh_target_mm": 25.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.9, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "threads": 1, "erosion_mode": "v8w_enabled", "role": "erosion_cross_facade_fine"},
+    {"id": "E_F050_P100", "phase": "facade_impact", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 100.0, "time_step_scale": 0.9, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "threads": 1, "erosion_mode": "v8w_enabled", "role": "erosion_cross_projectile_coarse"},
+    {"id": "E_F050_P025", "phase": "facade_impact", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 25.0, "time_step_scale": 0.9, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "threads": 1, "erosion_mode": "v8w_enabled", "role": "erosion_cross_projectile_fine"},
+    {"id": "N_F100_P100", "phase": "facade_impact", "facade_mesh_target_mm": 100.0, "projectile_mesh_target_mm": 100.0, "time_step_scale": 0.9, "core_failure_strain": 0.0, "cowling_failure_strain": 0.0, "threads": 1, "erosion_mode": "law2_default_non_eroding", "role": "non_eroding_diagonal_coarse"},
+    {"id": "N_F050_P050", "phase": "facade_impact", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.9, "core_failure_strain": 0.0, "cowling_failure_strain": 0.0, "threads": 1, "erosion_mode": "law2_default_non_eroding", "role": "non_eroding_diagonal_medium"},
+    {"id": "N_F025_P025", "phase": "facade_impact", "facade_mesh_target_mm": 25.0, "projectile_mesh_target_mm": 25.0, "time_step_scale": 0.9, "core_failure_strain": 0.0, "cowling_failure_strain": 0.0, "threads": 1, "erosion_mode": "law2_default_non_eroding", "role": "non_eroding_diagonal_fine"},
+    {"id": "NC_F100_P050", "phase": "facade_impact", "facade_mesh_target_mm": 100.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.9, "core_failure_strain": 0.0, "cowling_failure_strain": 0.0, "threads": 1, "erosion_mode": "law2_default_non_eroding", "role": "conditional_non_eroding_cross_facade_coarse"},
+    {"id": "NC_F025_P050", "phase": "facade_impact", "facade_mesh_target_mm": 25.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.9, "core_failure_strain": 0.0, "cowling_failure_strain": 0.0, "threads": 1, "erosion_mode": "law2_default_non_eroding", "role": "conditional_non_eroding_cross_facade_fine"},
+    {"id": "NC_F050_P100", "phase": "facade_impact", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 100.0, "time_step_scale": 0.9, "core_failure_strain": 0.0, "cowling_failure_strain": 0.0, "threads": 1, "erosion_mode": "law2_default_non_eroding", "role": "conditional_non_eroding_cross_projectile_coarse"},
+    {"id": "NC_F050_P025", "phase": "facade_impact", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 25.0, "time_step_scale": 0.9, "core_failure_strain": 0.0, "cowling_failure_strain": 0.0, "threads": 1, "erosion_mode": "law2_default_non_eroding", "role": "conditional_non_eroding_cross_projectile_fine"}
+  ],
+  "execution_policy": {
+    "stage_1": "run the four erosion-enabled cross-mesh cases",
+    "stage_2": "run the three non-eroding diagonal cases",
+    "stage_3": "run the four non-eroding cross-mesh cases only if the non-eroding 50-to-25 mm diagonal impulse difference exceeds 10 percent",
+    "facade_impact_termination_time_ms": 18.0,
+    "output_root": "wtc1_simulation_v8/openradioss_benchmarks/v8x_mesh_driver"
+  },
+  "predeclared_gates": {
+    "v8w_regressions_unchanged": true,
+    "all_executed_starter_exit_code_zero": true,
+    "all_executed_engine_exit_code_zero": true,
+    "all_executed_normal_termination": true,
+    "maximum_initial_penetrating_node_count": 0,
+    "maximum_absolute_energy_error_percent": 5.0,
+    "maximum_added_mass_fraction": 0.001,
+    "maximum_hourglass_to_initial_energy_fraction": 0.05,
+    "maximum_pre_facade_elastic_contact_energy_solver": 0.0,
+    "maximum_contact_impulse_to_projectile_momentum_change_relative_error": 0.05,
+    "non_eroding_maximum_eroded_elements": 0,
+    "non_eroding_medium_to_fine_contact_impulse_relative_difference": 0.1,
+    "unchanged_eroding_medium_to_fine_contact_impulse_relative_difference": 0.1,
+    "interpretation_rule": "If the non-eroding diagonal passes 10 percent while the immutable V8W eroding diagonal fails, classify the unregularized strain-to-failure erosion as the principal tested driver. If it also fails, execute the non-eroding cross matrix and classify facade versus projectile discretization by the larger 50-to-25 fixed-other-mesh impulse change. Do not claim real-event physics from either diagnostic."
+  }
+}

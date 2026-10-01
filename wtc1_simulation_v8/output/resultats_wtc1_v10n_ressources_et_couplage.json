@@ -1,0 +1,99 @@
+{
+  "iteration": "V10N",
+  "generated_at_utc": "2026-09-02T17:34:08Z",
+  "validation_status": "PASS",
+  "dataset": {
+    "name": "Local resource inventory and solver-neutral coupling freeze",
+    "version": "10.14.0",
+    "status": "PREDECLARED_BEFORE_V10N_HARDWARE_AND_EXECUTABLE_INVENTORY",
+    "created_at_local": "2026-09-02T19:25:00+02:00",
+    "random_seed": 1014001,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10M. Inventory the current Windows host, CPU, memory, GPU, writable storage and exact candidate executable files without installing software or launching a solver. Reverify selected cached impact, thermal, structural and visualization anchors. Freeze a solver-neutral coupling graph with units, mappings, uncertainty variables, validation gates, runtime classes and stop criteria from impact through separately modeled propagation/arrest and Blender visualization. Do not assign new physical properties, close any of the 22 mechanical source requirements, execute a solver, launch Blender, modify the protected Blender master, or infer real-event probabilities from synthetic ensembles."
+  },
+  "configuration": {
+    "path": "wtc1_simulation_v8/data/v10n_resource_and_coupling_audit.json",
+    "sha256": "f8ae814f40ff90b1b42502932a4d5d37676c3972912bd373f96f45a2b50fda8c"
+  },
+  "script": {
+    "path": "wtc1_simulation_v8/scripts/run_v10n_resource_and_coupling_audit.py",
+    "sha256": "4696afc5aea5e4ce19d55f68877519f5a86a9659ffeb9c7643537565e787dbe2"
+  },
+  "regression_summary": {
+    "files": 11,
+    "protected_files": 1,
+    "passed": true
+  },
+  "cached_anchor_summary": {
+    "count": 10,
+    "all_hashes_passed": true
+  },
+  "resource_summary": {
+    "physical_core_count": 6,
+    "logical_processor_count": 12,
+    "ram_gib": 15.916,
+    "workspace_drive": "C:",
+    "workspace_drive_free_gib": 265.992,
+    "openradioss_present": true,
+    "calculix_present": true,
+    "fds_present": false,
+    "blender_present": true
+  },
+  "solver_summary": {
+    "declared_candidate_count": 10,
+    "present_candidate_count": 5,
+    "exact_nist_replay_ready": false,
+    "reduced_chain_software_ready_for_short_controls": true,
+    "physical_solver_readiness": false
+  },
+  "coupling_summary": {
+    "module_count": 9,
+    "interface_count": 9,
+    "adapter_ready_interface_count": 9,
+    "physically_ready_interface_count": 0,
+    "initiation_and_propagation_separate": true,
+    "blender_feedback_to_physics": false
+  },
+  "gates": {
+    "iteration": "V10N",
+    "generated_at_utc": "2026-09-02T17:34:08Z",
+    "validation_status": "PASS",
+    "regression_gate": "PASS",
+    "protected_blender_master_gate": "PASS_UNCHANGED",
+    "cached_anchor_identity_gate": "PASS_10_OF_10",
+    "host_inventory_gate": "PASS_READ_ONLY",
+    "candidate_presence_count": 5,
+    "candidate_declared_count": 10,
+    "openradioss_installation_smoke_gate": "PASS_CACHED_V8T",
+    "openradioss_wtc_impact_physics_gate": "CLOSED",
+    "exact_nist_production_input_gate": "OPEN_0_OF_10_TARGETS_FROM_V10M",
+    "mechanical_source_gate": "OPEN_0_OF_22_REQUIREMENTS",
+    "coupling_module_definition_gate": "PASS_9_OF_9",
+    "coupling_interface_definition_gate": "PASS_9_OF_9",
+    "all_interfaces_adapter_specified": true,
+    "physically_ready_interface_count": 0,
+    "visualization_release_interface_ready": true,
+    "v10o_short_adapter_and_cached_control_authorized": true,
+    "v10o_physical_historical_conclusion_authorized": false,
+    "high_fidelity_end_to_end_solver_run_authorized": false,
+    "blender_physical_feedback_authorized": false,
+    "physical_assignment_count": 0,
+    "solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 0,
+    "gate_interpretation": "Software availability is sufficient for the next bounded integration step, but no unavailable input or failed physical gate is closed by executable presence."
+  },
+  "epistemic_separation": {
+    "observed_facts": "Hardware, declared-path presence, executable metadata/hashes and cached artifact identities.",
+    "official_model_results": "Preserved as dependent inputs only when referenced by cached modules.",
+    "archive_claims": "No source archive read or promoted in V10N.",
+    "model_hypotheses": "Reduced fields, reconstructed topology and future interface scenarios remain labelled hypotheses.",
+    "derived_results": "Resource sufficiency for short controls and the frozen coupling contracts.",
+    "unknowns": "Physical impact damage, exact fire/thermal interfaces, 22 mechanical requirements, initiation and propagation validation."
+  },
+  "next_iteration": {
+    "id": "V10O",
+    "objective": "Implement schema-validated adapters for the frozen reduced-order coupling interfaces, replay the shortest cached baseline cases, and produce the first integrated no-propagation control without launching a multi-hour solve."
+  },
+  "runtime_seconds": 5.286817
+}

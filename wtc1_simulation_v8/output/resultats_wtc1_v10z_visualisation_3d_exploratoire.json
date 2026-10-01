@@ -1,0 +1,246 @@
+{
+  "iteration": "V10Z",
+  "created_at": "2026-09-05T15:02:03+02:00",
+  "decision": "PASS_LABELLED_EXPLORATORY_DRIVER_VISUALIZATION",
+  "selected_scenario": {
+    "scenario_id": "GRID-0119",
+    "scenario_class": "DETERMINISTIC_SENSITIVITY_GRID_NOT_PROBABILITY",
+    "impact_case": "less_severe",
+    "temperature_quantile": 0.55,
+    "cold_capacity_demand_reserve": 1.8,
+    "load_redistribution_factor": 1.05,
+    "maximum_truss_pull_capacity_penalty": 0.18,
+    "floor_mass_kg": 3200000.0,
+    "intact_story_resistance_at_floor98_GJ": 1.2,
+    "initial_drop_fraction_of_story": 0.5
+  },
+  "summary": {
+    "scenario_id": "GRID-0119",
+    "scenario_class": "DETERMINISTIC_SENSITIVITY_GRID_NOT_PROBABILITY",
+    "impact_case": "less_severe",
+    "temperature_quantile": 0.55,
+    "cold_capacity_demand_reserve": 1.8,
+    "load_redistribution_factor": 1.05,
+    "maximum_truss_pull_capacity_penalty": 0.18,
+    "floor_mass_kg": 3200000.0,
+    "intact_story_resistance_at_floor98_GJ": 1.2,
+    "initial_drop_fraction_of_story": 0.5,
+    "aircraft_kinetic_energy_GJ_reference_only": 2.0929508410476045,
+    "aircraft_energy_reinjected_after_initiation": false,
+    "cold_maximum_dcr": 0.650562766453899,
+    "maximum_dcr_in_window": 1.0121947379412586,
+    "maximum_dcr_floor": 96,
+    "maximum_dcr_time_s": 6000.0,
+    "all_temperature_membership_pass": true,
+    "initiation_time_s_after_impact": 5810.0,
+    "initiation_time_min_after_impact": 96.83333333333333,
+    "initiation_floor": 96,
+    "initiation_dcr": 1.0005483058698228,
+    "outcome_label": "GLOBAL_PROGRESSION_TO_GROUND_IN_REDUCED_MODEL",
+    "arrest_story": null,
+    "arrest_fraction_through_story": null,
+    "stories_failed": 95,
+    "collapse_duration_s": 14.126338666270422,
+    "maximum_velocity_m_s": 43.544238582547244,
+    "initial_upper_block_mass_kg": 46400000.0,
+    "final_moving_mass_kg": 350400000.0,
+    "initial_gravity_release_j": 832156230.528,
+    "gravity_work_during_propagation_j": 670603141635.84,
+    "structural_resistance_work_j": 200984609965.1554,
+    "inelastic_accretion_loss_j": 144293659557.7945,
+    "final_kinetic_energy_j": 326157028343.41815,
+    "maximum_normalized_energy_residual": 0.0
+  },
+  "closest_progressing_tie_count": 18,
+  "initial_drop_duration_excluded": true,
+  "omitted_floor_mass_equivalents": 0.5,
+  "checks": {
+    "exact_driver_replay": true,
+    "master_unchanged": true,
+    "video_decoded": true,
+    "video_frame_count": true,
+    "video_dimensions": true,
+    "all_baked_frame_positions_match_driver": true,
+    "no_blender_physics": true,
+    "keyframes_present": true,
+    "manual_visual_review": true
+  },
+  "blender_version": "5.2.0 LTS",
+  "executions": [
+    {
+      "iteration": "V10Z",
+      "created_at": "2026-09-05T10:30:19+02:00",
+      "stage": "preview",
+      "command": [
+        "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe",
+        "--background",
+        "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_3d_v4\\output\\WTC1_V4_2_MASTER.blend",
+        "--threads",
+        "4",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_3d_v4\\scripts\\build_v10z_exploratory_animation.py",
+        "--",
+        "preview"
+      ],
+      "return_code": 0,
+      "elapsed_s": 12.964902400000028,
+      "configuration": {
+        "path": "wtc1_simulation_v8/data/v10z_blender_exploratory_visualization.json",
+        "sha256": "7fad3744531c7160b2d03365b77cd12ec04998ae90239e3a4d650683fe2e362e",
+        "size_bytes": 11199
+      },
+      "builder": {
+        "path": "wtc1_3d_v4/scripts/build_v10z_exploratory_animation.py",
+        "sha256": "3ba4d48d1660661dbea03b0155e134eac6b68da7714e9ab978217d8646ea0d96",
+        "size_bytes": 22023
+      },
+      "log": {
+        "path": "tmp/v10z_attempt_02/preview_blender.log",
+        "sha256": "7581b71b630897fa7846415566437b4ddf70509da783e829f976ea086bc2abbb",
+        "size_bytes": 1815
+      }
+    },
+    {
+      "iteration": "V10Z",
+      "created_at": "2026-09-05T14:57:07+02:00",
+      "stage": "render",
+      "command": [
+        "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe",
+        "--background",
+        "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\tmp\\v10z_attempt_02\\preview.blend",
+        "--threads",
+        "4",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_3d_v4\\scripts\\build_v10z_exploratory_animation.py",
+        "--",
+        "render"
+      ],
+      "return_code": 0,
+      "elapsed_s": 53.25761440000133,
+      "configuration": {
+        "path": "wtc1_simulation_v8/data/v10z_blender_exploratory_visualization.json",
+        "sha256": "7fad3744531c7160b2d03365b77cd12ec04998ae90239e3a4d650683fe2e362e",
+        "size_bytes": 11199
+      },
+      "builder": {
+        "path": "wtc1_3d_v4/scripts/build_v10z_exploratory_animation.py",
+        "sha256": "e74a548154b0721685b1bd589141eb2eb27b6ac7d817d0246793bd9d94874388",
+        "size_bytes": 22076
+      },
+      "log": {
+        "path": "tmp/v10z_attempt_02/render_blender.log",
+        "sha256": "af5925d2e7fb27ba328c5bbe84bcb2952fda15eab01c36832f351c3d6fc9093b",
+        "size_bytes": 14871
+      }
+    }
+  ],
+  "artifacts": {
+    "runner_script": {
+      "path": "wtc1_simulation_v8/scripts/run_v10z_blender_exploratory_visualization.py",
+      "sha256": "40ace1ff39e458c852d2513708a00cdcc61c2e5ed3ba08c51872bbdcb3534c1d",
+      "size_bytes": 26375
+    },
+    "blender_builder_script": {
+      "path": "wtc1_3d_v4/scripts/build_v10z_exploratory_animation.py",
+      "sha256": "e74a548154b0721685b1bd589141eb2eb27b6ac7d817d0246793bd9d94874388",
+      "size_bytes": 22076
+    },
+    "selected_driver": {
+      "path": "wtc1_simulation_v8/output/v10z_grid0119_visualization_driver.json",
+      "sha256": "06aa72d038f76b956ca6e891faa0e3fda46c50f33df6cc2a4111fdb4760eabd5",
+      "size_bytes": 319680
+    },
+    "regression_audit": {
+      "path": "wtc1_simulation_v8/output/v10z_regression_audit.json",
+      "sha256": "3dc10c8fcdc554bcbac31d91de4ea820a441bfb7d6b313bbac1e66abc8795596",
+      "size_bytes": 9021
+    },
+    "source_manifest": {
+      "path": "wtc1_simulation_v8/output/v10z_visualization_source_manifest.json",
+      "sha256": "2ea763d708d276e8b76e6040b03e22f29115317b20258c9dd2bba8a410578981",
+      "size_bytes": 12138
+    },
+    "driver_audit": {
+      "path": "wtc1_simulation_v8/output/v10z_selected_driver_audit.json",
+      "sha256": "f8050465017f42efce13b1354160d42947f51014e5c3ac679d050176298147b0",
+      "size_bytes": 5846
+    },
+    "blender_internal_manifest": {
+      "path": "wtc1_3d_v4/output/v10z_blender_internal_manifest.json",
+      "sha256": "c53833d200e1909325044b3a60908896c3841a13035437a951505a7db4886310",
+      "size_bytes": 3335
+    },
+    "blender_execution_log": {
+      "path": "wtc1_3d_v4/output/v10z_blender_execution.log",
+      "sha256": "829e783f168e2030067082f65f9c233d9593782b844adb5a89a64b2f83a005fb",
+      "size_bytes": 16925
+    },
+    "derivative_blend": {
+      "path": "wtc1_3d_v4/output/WTC1_V10Z_EXPLORATORY_GRID0119.blend",
+      "sha256": "d61cf28844cdb708e4a7cbfe5c65375d5acaa55765193d63a3e5dbdc938efb3d",
+      "size_bytes": 941601
+    },
+    "video": {
+      "path": "wtc1_3d_v4/renders/v10z/wtc1_v10z_grid0119_exploratory.mp4",
+      "sha256": "1a3ce3907cfa64b999079aa11d89547a5415fe9f7001d67989880ce9c7ce34d8",
+      "size_bytes": 502954
+    },
+    "proof_sheet": {
+      "path": "wtc1_3d_v4/renders/v10z/wtc1_v10z_grid0119_proof_sheet.png",
+      "sha256": "21bbd84689206c7e617233221e1f429210ac6daf88917992a8f419cd376519d8",
+      "size_bytes": 964875
+    },
+    "render_manifest": {
+      "path": "wtc1_simulation_v8/output/v10z_render_manifest.json",
+      "sha256": "aae42280699969d153eb9fd99d8e0baa6d8018dbe2aeb400bd1645a72b5596f5",
+      "size_bytes": 1558
+    },
+    "visual_qa": {
+      "path": "wtc1_simulation_v8/output/v10z_visual_qa.json",
+      "sha256": "58325644f4045e7fa50815ec9e626880e678cc4ee28e337f11c29cb4fe3bbd2d",
+      "size_bytes": 2049
+    },
+    "handoff_gate": {
+      "path": "wtc1_simulation_v8/output/v10z_visualization_gate.json",
+      "sha256": "a7290949779c2374d7a17eff35d7c521d8175fb8dc5e0e8d14aba7df243226bd",
+      "size_bytes": 594
+    },
+    "report": {
+      "path": "wtc1_simulation_v8/output/rapport_wtc1_v10z_visualisation_3d_exploratoire.md",
+      "sha256": "ed9190cc46573f4b1712a41fdad0db38e102c3896f4e46aca5f79c4bcde1706e",
+      "size_bytes": 5936
+    }
+  },
+  "preserved_execution_revisions": {
+    "reason": "Blender 5.2 requires image_settings.media_type=VIDEO before selecting FFMPEG.",
+    "primary_documentation": "https://developer.blender.org/docs/release_notes/4.5/pipeline_assets_io/",
+    "local_api_verified": true,
+    "rejected_encoding_setup": {
+      "path": "tmp/v10z_attempt_02/rejected_render_01/render_execution.json",
+      "sha256": "0808f76fa1880321f04d78761f76cce5f6256d025498f54276720dd7a5439bee",
+      "size_bytes": 1267
+    },
+    "prior_framing_preview": {
+      "path": "tmp/v10z_attempt_01/preview_execution.json",
+      "sha256": "6d79adc2555171b9c83cd7482474501ccab5aba91df2f9acd00a1142d7076c89",
+      "size_bytes": 1278
+    },
+    "physical_model_changes": 0,
+    "accepted_blender_execution_count": 2,
+    "rejected_preview_count": 1,
+    "rejected_encoding_setup_count": 1,
+    "read_only_blender_api_probe_count": 2,
+    "design_research_network_access": true,
+    "render_execution_network_access": false
+  },
+  "physical_validation": false,
+  "scientific_validation_claim_count": 0,
+  "next_iteration": {
+    "id": "V11A",
+    "objective": "Corriger d'abord le raccord initiation-propagation de V10Y : temps et résistance dès le premier déplacement, inventaire complet de masse, conditions d'arrêt explicites. Comparer les mêmes cas sans recalibrage sur la chronologie, puis introduire les chemins d'efforts spatiaux noyau, façades, planchers et connexions."
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "dataset": {
+    "name": "WTC 1 V8T OpenRadioss installation and numerical smoke qualification",
+    "version": "8.19.0",
+    "status": "OFFICIAL_SOLVER_QA_REPLAY_WITH_LOCAL_RUNTIME_ISOLATION",
+    "scope": "Qualify the downloaded Windows OpenRadioss binaries and a deterministic execution path using the official TWISBEAM smoke test. This iteration does not model an aircraft impact, WTC structure, fire, collapse, explosive, thermite, or Blender dynamics.",
+    "random_seed": 9112001,
+    "deterministic": true
+  },
+  "evidence_policy": {
+    "observed_fact": "A directly observed local file, executable response, exit code, or generated output.",
+    "official_qa_input": "A file copied byte-for-byte from the OpenRadioss official GitHub QA suite.",
+    "model_hypothesis": "A declared local execution or comparison choice.",
+    "derived_result": "A deterministic comparison calculated from the declared files.",
+    "unknown": "A physical capability not established by this smoke test."
+  },
+  "installation": {
+    "read_only_source_root": "C:/OpenRadioss",
+    "runtime_shim": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64",
+    "starter": {
+      "source_path": "C:/OpenRadioss/exec/starter_win64.exe",
+      "runtime_path": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+      "bytes": 51955200,
+      "sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6"
+    },
+    "engine": {
+      "source_path": "C:/OpenRadioss/exec/engine_win64.exe",
+      "runtime_path": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+      "bytes": 138132480,
+      "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8"
+    },
+    "build_date": "2026-07-28",
+    "precision": "double",
+    "platform": "win64",
+    "runtime_isolation_reason": {
+      "system_dll": {
+        "path": "C:/Windows/System32/libiomp5md.dll",
+        "file_version": "20170525",
+        "bytes": 1344312,
+        "sha256": "028e346dbb4c7058e044ec14f9914f6e421c5b47a893cc29f1d6c7e5d753efbc"
+      },
+      "package_dll": {
+        "path": "C:/OpenRadioss/extlib/intelOneAPI_runtime/win64/libiomp5md.dll",
+        "file_version": "20250910",
+        "bytes": 1614184,
+        "sha256": "eb14cf741b10a6ca176acded284bff7b069e421f49927e28fef9685c6f62abf3"
+      },
+      "observed_failure_without_isolation": "Windows exit 0xC0000139 because the older system OpenMP runtime is selected before the package runtime.",
+      "mitigation": "Run hard-linked official executables beside copied official package DLLs inside the writable project runtime directory. Do not modify System32 or C:/OpenRadioss."
+    }
+  },
+  "environment": {
+    "RAD_CFG_PATH": "C:/OpenRadioss/hm_cfg_files",
+    "RAD_H3D_PATH": "C:/OpenRadioss/extlib/h3d/lib/win64",
+    "OPENRADIOSS_PATH": "C:/OpenRadioss",
+    "OMP_NUM_THREADS": "1",
+    "KMP_STACKSIZE": "400m"
+  },
+  "official_qa_source": {
+    "repository": "https://github.com/OpenRadioss/OpenRadioss",
+    "commit": "18707be39cd8b6385a04d698709c540f288ea95c",
+    "source_directory": "qa-tests/miniqa/SMOKE_TEST",
+    "license_from_deck": "CC BY-NC 4.0",
+    "local_directory": "wtc1_simulation_v8/openradioss_benchmarks/official_smoke_test",
+    "files": [
+      {
+        "path": "data/TWISBEAM_0000.rad",
+        "bytes": 10237,
+        "sha256": "744aedcce64eb815a24b104640911c551cd61d95effc718c37b4736ac95e1c2a"
+      },
+      {
+        "path": "data/TWISBEAM_0001.rad",
+        "bytes": 516,
+        "sha256": "38b5e84fa8127dac953ec94cd10ccda3c3615f85bae619d0abdc77b58f838f3d"
+      },
+      {
+        "path": "data/TWISBEAMD0B",
+        "bytes": 24998,
+        "sha256": "989a8c0e30b50fab199b83320a4ec8b601e29e75dc79f289b79bc064f3d15462"
+      },
+      {
+        "path": "reference/TWISBEAM_0001.out",
+        "bytes": 60881,
+        "sha256": "97caa29d937831078ea96eb5fcd9f5355417cc0d7d1b6a45235d3261b33fb8c5"
+      }
+    ]
+  },
+  "execution": {
+    "starter_input": "data/TWISBEAM_0000.rad",
+    "engine_input": "data/TWISBEAM_0001.rad",
+    "generated_engine_output": "data/TWISBEAM_0001.out",
+    "reference_engine_output": "reference/TWISBEAM_0001.out",
+    "comparison_cycle": 16750,
+    "starter_arguments": ["-i", "TWISBEAM_0000.rad", "-np", "1"],
+    "engine_arguments": ["-i", "TWISBEAM_0001.rad"]
+  },
+  "predeclared_gates": {
+    "source_hashes_match": true,
+    "starter_exit_code": 0,
+    "engine_exit_code": 0,
+    "engine_normal_termination": true,
+    "reference_cycle_present": true,
+    "maximum_relative_difference": 1e-6,
+    "maximum_absolute_difference": 1e-10,
+    "scope_warning": "Passing this installation smoke gate does not qualify WTC material laws, contacts, failure, erosion, mesh convergence, energy balance, or global impact physics."
+  }
+}

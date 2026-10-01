@@ -1,0 +1,142 @@
+{
+  "iteration": "V10L",
+  "predeclaration_status": "IMMUTABLE_CREATED_BEFORE_ANY_NEW_V10L_PDF_PAGE_CONTENT_READ",
+  "predeclared_at_local": "2026-09-02T11:12:56+02:00",
+  "dataset_version": "10.12.0",
+  "random_seed": 1012031,
+  "random_draw_used": false,
+  "purpose": "Resolve only the still-uninspected Book 5 locator 5-AB3-1 using a corrected content-blind micro-window derived from immutable V10J and V10K visible ordering evidence.",
+  "selection_rule": "V10K visibly identifies Book 5 PDF page 279 as 5-AB3-4 and page 280 as 5-AB3-5. Under the directly observed one-page-per-successive-suffix ordering at the container end, back-calculate 5-AB3-1 to PDF page 276. Freeze pages 275 through 278 as the smallest non-overlapping uncertainty window containing the predicted page, one predecessor control and two successor controls. Do not reread V10K pages 279 or 280.",
+  "selection_uses_only_v10j_v10k_visible_ordering_evidence": true,
+  "new_pdf_page_content_read_before_predeclaration": false,
+  "remote_research_before_predeclaration_did_not_read_new_local_pdf_pages": true,
+  "allowed_seed_locators": [
+    "5-AB3-1"
+  ],
+  "excluded_locators": [
+    "5-AB0-0",
+    "5-AB2-0",
+    "5-AB2-1",
+    "7-AB2-1"
+  ],
+  "document_count": 1,
+  "locator_count": 1,
+  "window_count": 1,
+  "aggregate_candidate_page_count": 4,
+  "hard_aggregate_render_cap": 4,
+  "render_policy": {
+    "renderer": "pdftoppm",
+    "format": "PNG",
+    "color_mode": "grayscale",
+    "dpi": 160,
+    "maximum_pixels_per_page": 30000000,
+    "maximum_aggregate_pixels": 120000000,
+    "maximum_aggregate_png_bytes": 67108864,
+    "individual_page_directory": "wtc1_simulation_v8/output/v10l_corrected_micro_window_figures/pages",
+    "global_contact_sheet": "wtc1_simulation_v8/output/v10l_corrected_micro_window_figures/v10l_contact_sheet.png"
+  },
+  "transcription_policy": {
+    "visual_review_required": true,
+    "allowed_fields": [
+      "visible_document_identifiers",
+      "visible_title_or_index_headings",
+      "visible_tower_labels",
+      "visible_floor_labels",
+      "visible_floor_ranges",
+      "visible_revision_or_issue_fields",
+      "visible_cross_reference_locators"
+    ],
+    "forbidden_fields": [
+      "coordinates",
+      "dimensions",
+      "drawing_geometry",
+      "member_sections",
+      "materials",
+      "mass",
+      "stiffness",
+      "strength_or_capacity",
+      "connection_geometry_or_law",
+      "damage_state",
+      "load_path_credit"
+    ],
+    "full_document_text_scan_authorized": false,
+    "non_candidate_page_read_authorized": false,
+    "ocr_authorized": false,
+    "embedded_text_extraction_authorized": false
+  },
+  "ordering_evidence": [
+    {
+      "path": "wtc1_simulation_v8/data/v10k_bounded_cross_reference_predeclaration.json",
+      "sha256": "6faeb7403f9d12a6de05e20218bcfbafb62d646c929f5d0511ea4b1145d1bdaa"
+    },
+    {
+      "path": "wtc1_simulation_v8/data/v10k_cross_reference_manual_transcription.json",
+      "sha256": "85b9dafbec74eed5951727023bc6bc649e300e8a6cdb154fa6a0ff6bd68a1a99"
+    },
+    {
+      "path": "wtc1_simulation_v8/output/v10k_cross_reference_locator_matrix.csv",
+      "sha256": "bbad97909fdbad8cf171860ed16b046b36192a7c1aaed4dbd60957b280d29c02"
+    },
+    {
+      "path": "wtc1_simulation_v8/output/v10j_frontmatter_figures/pages/WTCI-000016-L__p0003.png",
+      "sha256": "53243eda71bc2d27c7dec67d02cf4cac5c4d40c56b5cdf44dee38832a27a737d",
+      "visible_role": "V10J index page containing the unresolved exact locator 5-AB3-1"
+    },
+    {
+      "path": "wtc1_simulation_v8/output/v10k_cross_reference_figures/pages/WTCI-000016-L__p0279.png",
+      "sha256": "777b7e13d69444f52f72ee2de75682b724b509572b607b45097b04b930b144ad",
+      "visible_identifier": "5-AB3-4"
+    },
+    {
+      "path": "wtc1_simulation_v8/output/v10k_cross_reference_figures/pages/WTCI-000016-L__p0280.png",
+      "sha256": "e5d2e755f4926421ffaf9e5e4326d1a25322191adede680d11752d2fb915fd76",
+      "visible_identifier": "5-AB3-5"
+    }
+  ],
+  "window": {
+    "sequence": 1,
+    "window_id": "WTCI-000016-L__5-AB3-1__corrected",
+    "document_id": "WTCI-000016-L",
+    "seed_locator": "5-AB3-1",
+    "working_copy_path": "wtc1_simulation_v8/input/v10i_structural_sources/WTCI-000016-L__9c6354e1dc9915ec.pdf",
+    "expected_sha256": "9c6354e1dc9915ec27b44f97be0803d6dada6a8aa59a160c20095c69e1ebccaa",
+    "expected_size_bytes": 11095821,
+    "container_page_count": 280,
+    "visible_anchor": {
+      "pdf_page_1_based": 279,
+      "identifier": "5-AB3-4",
+      "successor_pdf_page_1_based": 280,
+      "successor_identifier": "5-AB3-5"
+    },
+    "derivation": {
+      "predicted_pdf_page_1_based": 276,
+      "calculation": "279 - (4 - 1) = 276",
+      "observed_suffix_step_per_page": 1,
+      "uncertainty_policy": "Freeze one page before and two pages after the predicted page to expose any local index, duplicate or insertion while remaining tied only to 5-AB3-1 and excluding already reviewed pages 279-280."
+    },
+    "candidate_pdf_pages_1_based": [
+      275,
+      276,
+      277,
+      278
+    ],
+    "explicitly_excluded_already_reviewed_pdf_pages_1_based": [
+      279,
+      280
+    ]
+  },
+  "prohibitions": {
+    "reread_v10k_pages_279_280": true,
+    "source_archive_read_or_scan": true,
+    "official_sources_directory_read": true,
+    "network_use_during_v10l_page_audit": true,
+    "full_pdf_scan_or_text_extraction": true,
+    "ocr": true,
+    "non_candidate_page_read": true,
+    "geometry_or_dimension_transcription": true,
+    "physical_property_or_damage_assignment": true,
+    "structural_solver_execution": true,
+    "thermal_model_execution": true,
+    "blender_execution_or_master_modification": true
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "iteration": "V10P",
+  "generated_at_utc": "2026-09-04T07:20:15Z",
+  "validation_status": "PASS",
+  "cached_input_count": 5,
+  "official_source_hash_only_count": 2,
+  "cached_inputs": [
+    {
+      "role": "NIST_WTC1_TRANSFER_TRANSCRIPTION",
+      "path": "wtc1_simulation_v8/data/nist_wtc1_transfer.json",
+      "sha256": "bdf4d779bb41f0d64c908702261ea2f571ba6d73b5d0e09876168c4c03cfe8fb",
+      "bytes": 9516,
+      "read_mode": "FULL_ARTIFACT",
+      "status": "PASS",
+      "evidence_class": "MANUAL_TRANSCRIPTION_OF_OFFICIAL_MODEL_INPUTS_AND_OUTPUTS"
+    },
+    {
+      "role": "V8A_TRANSFER_SCRIPT",
+      "path": "wtc1_simulation_v8/scripts/run_v8a_transfer.py",
+      "sha256": "4146db3d5709f236a39601d2c94f480ec9e4bbe0ba4f257eb42fae62b78d941d",
+      "bytes": 25550,
+      "read_mode": "FULL_ARTIFACT",
+      "status": "PASS",
+      "evidence_class": "CACHED_TRANSFORMATION_CODE"
+    },
+    {
+      "role": "V8A_TRANSFER_RESULTS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8a.json",
+      "sha256": "8cc833df3ae273b5fa09a54e94e9372e3a140dd3f6b0b49b3a8f11ddf63ca420",
+      "bytes": 28482,
+      "read_mode": "FULL_ARTIFACT",
+      "status": "PASS",
+      "evidence_class": "CACHED_DERIVED_RESULT"
+    },
+    {
+      "role": "V8S_IMPACT_KINEMATICS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json",
+      "sha256": "40bd3c0c9bc4cad3326f171f885702dc47a020e57f32c788e7276097c8b9c318",
+      "bytes": 19926,
+      "read_mode": "FULL_ARTIFACT",
+      "status": "PASS",
+      "evidence_class": "OFFICIAL_INPUT_TRANSCRIPTION_WITH_DERIVED_KINEMATICS"
+    },
+    {
+      "role": "V9M_IMPACT_BRANCH_CLOSURE",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json",
+      "sha256": "2d403c87c558300f2b4460312da549b46e16dbd92d6eac34b0f1b51f5979eb7d",
+      "bytes": 10440,
+      "read_mode": "FULL_ARTIFACT",
+      "status": "PASS",
+      "evidence_class": "CACHED_GATE_RESULT"
+    }
+  ],
+  "official_source_hash_only_files": [
+    {
+      "role": "NCSTAR1_2B_V2",
+      "path": "work/official_sources/ncstar1-2bv2.pdf",
+      "sha256": "c5bb701fad4103d072f89548c683c0e8ee583c49d94e3f165985088f3443ea1d",
+      "bytes": 21574822,
+      "read_mode": "HASH_ONLY_NO_PAGE_OR_TEXT_EXTRACTION",
+      "status": "PASS",
+      "use": "hash continuity only; aircraft cases, model-dependent damage and distribution tables are consumed from the cached transcription"
+    },
+    {
+      "role": "NCSTAR1_6D_LOCAL",
+      "path": "work/official_sources/ncstar1-6d.pdf",
+      "sha256": "0d2a155fc820c83e4bc7df32a6da098261eb2e7f8d1358abd00d11c12bd6c9ff",
+      "bytes": 16929539,
+      "read_mode": "HASH_ONLY_NO_PAGE_OR_TEXT_EXTRACTION",
+      "status": "PASS",
+      "use": "hash continuity only; final Case B transfer context is consumed from the cached transcription"
+    }
+  ],
+  "source_use_rule": "The two PDFs provide file-identity continuity only in V10P. Damage values are consumed from the hashed cached transcription and remain official-model dependent."
+}

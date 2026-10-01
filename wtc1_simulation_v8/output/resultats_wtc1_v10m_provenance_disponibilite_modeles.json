@@ -1,0 +1,86 @@
+{
+  "iteration": "V10M",
+  "generated_at_utc": "2026-09-02T17:17:58Z",
+  "validation_status": "PASS",
+  "dataset": {
+    "name": "Official WTC 1 provenance and model-availability audit",
+    "version": "10.13.0",
+    "status": "PREDECLARED_BEFORE_V10M_SOURCE_ACQUISITION_WITH_ONE_DOCUMENTED_SOURCE_SUBSTITUTION_AFTER_HTTP_403_BEFORE_EVIDENCE_REVIEW",
+    "created_at_local": "2026-09-02T19:05:00+02:00",
+    "random_seed": 1013001,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10L. Acquire a bounded set of exact NIST and U.S. Department of Commerce sources, verify Tower A/WTC 1 and Drawing Books 5/6 provenance, distinguish described model artifacts from downloadable solver inputs, and produce a dated feasibility and coupling plan toward 2026-09-11. Do not read or modify the source archive, modify work/official_sources, assign new physical properties, close any of the 22 mechanical source requirements from report prose alone, run a solver, launch Blender, or modify the protected Blender master."
+  },
+  "configuration": {
+    "path": "wtc1_simulation_v8/data/v10m_official_model_availability_audit.json",
+    "sha256": "5f7dd257680eefae9dfaa98dacecf89738c099d858a0bec5cb7ab3a51321b2ea"
+  },
+  "script": {
+    "path": "wtc1_simulation_v8/scripts/run_v10m_official_model_availability_audit.py",
+    "sha256": "ebae4d79e0b0d297a747bdcee4ec285c52cd91f8bf626b161a685549aaf074ca"
+  },
+  "source_manifest": {
+    "path": "wtc1_simulation_v8/output/v10m_official_source_manifest.json",
+    "sha256": "340a89c0a269613b42f44ad2fcf995a27813e0de18de8a44ae6155677bd95228",
+    "source_count": 13,
+    "aggregate_bytes": 151119394
+  },
+  "manual_evidence": {
+    "path": "wtc1_simulation_v8/data/v10m_official_evidence_transcription.json",
+    "sha256": "124a8b1fdebe1a5ff247190744002a8b22fb7704e1789a2d1c842766f5a62854",
+    "claim_count": 12
+  },
+  "availability_summary": {
+    "target_count": 10,
+    "exact_solver_ready_target_count": 0,
+    "report_only_or_partial_target_count": 10
+  },
+  "gates": {
+    "iteration": "V10M",
+    "generated_at_utc": "2026-09-02T17:17:58Z",
+    "validation_status": "PASS",
+    "official_source_acquisition_gate": "PASS",
+    "tower_a_to_wtc1_mapping_gate": "CLOSED_BY_OFFICIAL_SOURCE",
+    "book5_general_role_gate": "CLOSED_BY_OFFICIAL_SOURCE",
+    "book6_general_role_gate": "CLOSED_BY_OFFICIAL_SOURCE",
+    "exact_revision_as_built_authority_gate": "OPEN",
+    "wtc1_floor93_99_member_applicability_gate": "OPEN",
+    "exact_production_model_input_gate": "OPEN_0_OF_10_TARGETS",
+    "mechanical_requirement_closure_gate": "OPEN_0_OF_22",
+    "structural_solver_readiness_gate": "CLOSED_22_BLOCKING_REQUIREMENTS",
+    "end_to_end_high_fidelity_by_2026_09_11_gate": "NOT_FEASIBLE_WITH_CURRENT_INPUTS_AND_WINDOW",
+    "integrated_reduced_order_chain_by_2026_09_11_gate": "FEASIBLE_IF_BOUNDED_AND_CONTINUOUSLY_VALIDATED",
+    "physical_assignments": 0,
+    "solver_runs": 0,
+    "blender_runs": 0
+  },
+  "deadline_assessment": {
+    "assessment_date": "2026-09-02",
+    "target_date": "2026-09-11",
+    "calendar_days_available": 9,
+    "high_fidelity_full_build_status": "NOT_FEASIBLE_WITH_CURRENT_INPUTS_AND_TIME_WINDOW",
+    "integrated_reduced_order_chain_status": "CONDITIONALLY_FEASIBLE_WITH_STRICT_GATES",
+    "historical_runtime_context": "Le NIST rapporte environ deux mois pour un calcul intégré d'une tour sur ses machines de l'époque ; ce chiffre est contextuel et non transposable directement au PC local.",
+    "source_availability_context": "Aucune des dix familles d'entrées exactes ciblées n'est actuellement prête pour solveur ; les rapports décrivent les modèles mais ne livrent pas leurs paquets de production.",
+    "decision_rule": "Le livrable du 11 septembre sera présenté comme une chaîne intégrée réduite avec incertitudes, non comme une reproduction haute fidélité du NIST. Aucun verdict d'effondrement ou de non-effondrement réel ne sera émis avant les tests de robustesse et les portes de preuve.",
+    "primary_unknowns": [
+      "Jeux de révisions et applicabilité as-built des Books 5 et 6 aux niveaux 93 à 99",
+      "Entrées de production des modèles SAP2000, TrueGrid/LS-DYNA, ANSYS et FDS",
+      "Lois de connexion et de rupture calibrées",
+      "Propagation globale validée et modes d'arrêt",
+      "Sensibilité au maillage, aux paramètres thermiques et aux états de dommage"
+    ]
+  },
+  "epistemic_separation": {
+    "official_statements": "Recorded as official statements with source locators.",
+    "official_model_descriptions": "Recorded as descriptions, not as acquired solver inputs.",
+    "local_archive_identity": "Kept separate; no official file-level identity inferred.",
+    "model_hypotheses": "Reduced-order deadline strategy explicitly labeled as a harness decision.",
+    "derived_results": "Feasibility conclusions are derived from source availability, scope and time.",
+    "unknowns": "Exact production inputs, revision authority and 22 mechanical requirements remain open."
+  },
+  "next_iteration": {
+    "id": "V10N",
+    "objective": "Inventory local CPU, RAM, GPU, storage and installed solvers; freeze a solver-neutral coupling graph from impact through fire, thermal response, initiation and propagation; choose only bounded validation runs that can complete before 2026-09-11."
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "iteration": "V10W",
+  "scope": "Independent numerical benchmark only",
+  "configuration": {
+    "path": "wtc1_simulation_v8/data/v10w_calculix_prescribed_temperature_benchmark.json",
+    "sha256": "ba929deaec111d5f67380fbef884758684c5120fc670a072bf31725ac42c7364"
+  },
+  "design_research": {
+    "network_access_used_before_execution": true,
+    "retrieved_at_local": "2026-09-04T15:48:00+02:00",
+    "sources": [
+      {
+        "publisher": "Guido Dhondt / CalculiX",
+        "title": "CalculiX CrunchiX 2.20 User's Manual",
+        "url": "https://www.dhondt.de/ccx_2.20.pdf",
+        "page": 572,
+        "section": "7.125 *TEMPERATURE",
+        "use": "Primary syntax statement that *TEMPERATURE defines temperatures and beam/shell gradients inside a purely mechanical STEP; it is not used for a pure thermal or combined thermomechanical analysis.",
+        "wtc_physical_evidence_credit": "NONE"
+      },
+      {
+        "publisher": "Guido Dhondt / CalculiX",
+        "title": "CalculiX CrunchiX 2.22 User's Manual",
+        "url": "https://www.dhondt.de/ccx_2.22.pdf",
+        "page": 126,
+        "section": "6.2.35 Two-node 3D truss element (T3D2)",
+        "use": "Primary definition of T3D2 as an axial element without bending and requirement to use *SOLID SECTION instead of *BEAM SECTION.",
+        "wtc_physical_evidence_credit": "NONE"
+      }
+    ]
+  },
+  "local_software_syntax_precedent": [
+    {
+      "group": "software_reference",
+      "id": "FREECAD_B32R_RECTANGULAR_CANTILEVER_EXAMPLE",
+      "path": "C:/Program Files/FreeCAD 1.1/Mod/Fem/femtest/data/calculix/ccx_cantilever_beam_rect.inp",
+      "exists": true,
+      "expected_sha256": "0137436e0b588e39b2c011143268d542a80b46c29801a4eb7ee585c1bd845848",
+      "actual_sha256": "0137436e0b588e39b2c011143268d542a80b46c29801a4eb7ee585c1bd845848",
+      "hash_match": true
+    }
+  ],
+  "solver_binary": [
+    {
+      "group": "software",
+      "id": "CALCULIX_CCX_2_22",
+      "path": "C:/Program Files/FreeCAD 1.1/bin/ccx.exe",
+      "exists": true,
+      "expected_sha256": "2ff89a72b6aac9c361cb716e44220dfcd01d2bb3e66abd6b6455b01b7250f350",
+      "actual_sha256": "2ff89a72b6aac9c361cb716e44220dfcd01d2bb3e66abd6b6455b01b7250f350",
+      "hash_match": true
+    }
+  ],
+  "solver_version_query": {
+    "return_code": 201,
+    "detected_version": "2.22",
+    "expected_version": "2.22",
+    "version_match": true,
+    "stdout": "\nThis is Version 2.22\n\n",
+    "stderr": "",
+    "note": "Version query is not one of the twelve structural benchmark jobs."
+  },
+  "official_wtc_source_pages_read": 0,
+  "source_archive_files_read": 0,
+  "wtc_physical_sources_used": []
+}

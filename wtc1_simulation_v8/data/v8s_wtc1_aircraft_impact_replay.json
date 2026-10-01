@@ -1,0 +1,291 @@
+{
+  "dataset": {
+    "name": "WTC 1 V8S aircraft-impact replay freeze and readiness gate",
+    "version": "8.18.0",
+    "status": "PRIMARY_NIST_TRANSCRIPTION_WITH_DERIVED_KINEMATIC_ENVELOPE",
+    "scope": "AA11/WTC 1 aircraft kinematics, aircraft mass distribution, tower geometry, reduced geometric and energy checks, explicit-solver inventory, and predeclared validation metrics. No fire, collapse, explosive, thermite, or Blender rigid-body physics is solved in this iteration.",
+    "random_seed": 9112001,
+    "deterministic": true
+  },
+  "evidence_policy": {
+    "official_fact": "A directly transcribed value or statement from a NIST source.",
+    "official_model_output": "A result produced by the NIST LS-DYNA model; reserved for comparison and never used as a V8S predictor input.",
+    "archive_claim": "A claim from the read-only local archive; none is used as a V8S numerical input.",
+    "model_hypothesis": "A declared simplification made by V8S.",
+    "derived_result": "A deterministic calculation from declared inputs.",
+    "unknown": "A required datum or capability that is not established in the local working set."
+  },
+  "sources": [
+    {
+      "id": "NCSTAR1-2B-V1",
+      "path": "work/official_sources/ncstar1-2bv1.pdf",
+      "status": "official_read_only",
+      "printed_pages": [69, 71, 77, 164, 166, 167, 168, 170],
+      "pdf_pages": [167, 169, 175, 262, 264, 265, 266, 268],
+      "used_for": [
+        "aircraft dimensions and mass distribution",
+        "video-derived speed and trajectory ranges",
+        "damage-refined orientation and impact location"
+      ]
+    },
+    {
+      "id": "NCSTAR1-2B-V2",
+      "path": "work/official_sources/ncstar1-2bv2.pdf",
+      "status": "official_read_only",
+      "printed_pages": [196, 198, 201, 206, 207, 208, 213, 219, 228, 257],
+      "pdf_pages": [14, 16, 19, 24, 25, 26, 31, 37, 46, 75],
+      "used_for": [
+        "global impact assumptions and limitations",
+        "base and bounding impact cases",
+        "NIST outputs reserved for validation",
+        "fuel and debris classification"
+      ]
+    },
+    {
+      "id": "WTC1-V4-GEOMETRY",
+      "path": "wtc1_3d_v4/data/wtc1_parameters.json",
+      "status": "mixed_official_and_reconstructed",
+      "used_for": [
+        "tower width",
+        "perimeter-column pitch and count",
+        "upper-office floor height",
+        "core topology and reconstructed metric coordinates"
+      ],
+      "warning": "The core identifiers and topology are official, but metric core coordinates are reconstructed to about plus or minus 0.30 m and the facade plate schedule is incomplete."
+    }
+  ],
+  "aircraft_geometry": {
+    "type": "Boeing 767-200ER",
+    "source": "NCSTAR 1-2B v1 Figure 7-6, printed page 164 (PDF page 262)",
+    "fuselage_length_ft": 155.0,
+    "wingspan_ft": 159.1666666667,
+    "video_apparent_fuselage_length_ft": 153.0,
+    "video_apparent_fuselage_length_uncertainty_ft": 2.0,
+    "inflight_wingtip_deflection_in": 52.0,
+    "wingtip_deflection_source": "NCSTAR 1-2B v1 printed page 69 (PDF page 167)",
+    "wingtip_deflection_circularity_warning": "The wingtip deflection used by NIST was estimated partly from the observed impact pattern and cannot independently validate that pattern."
+  },
+  "aircraft_mass": {
+    "source": "NCSTAR 1-2B v1 Tables 4-3 and 4-4, printed pages 71 and 77 (PDF pages 169 and 175)",
+    "base_loaded_weight_lb": 283600.0,
+    "components_lb": {
+      "wings": 37000.0,
+      "empennage": 8350.0,
+      "fuselage": 103050.0,
+      "landing_gear": 8400.0,
+      "engines_with_cowlings": 20100.0,
+      "uld_and_cargo": 12400.0,
+      "seats_and_cabin_contents": 28200.0,
+      "fuel": 66100.0
+    },
+    "component_sum_expected_lb": 283600.0
+  },
+  "video_kinematics": {
+    "source": "NCSTAR 1-2B v1 Table 7-3, printed page 166 (PDF page 264)",
+    "impact_speed_mph": 443.0,
+    "impact_speed_uncertainty_mph": 30.0,
+    "vertical_approach_deg_below_horizontal": 10.6,
+    "vertical_approach_uncertainty_deg": 3.0,
+    "lateral_approach_deg_clockwise_from_structure_north": 180.3,
+    "lateral_approach_uncertainty_deg": 4.0,
+    "roll_deg_left_wing_down": 25.0,
+    "roll_uncertainty_deg": 4.0,
+    "missing_from_video_table": [
+      "AA11 vertical fuselage orientation",
+      "AA11 lateral fuselage orientation"
+    ],
+    "qualification": "The speed and velocity-vector ranges are video-analysis products. Table 7-3 lists the AA11 roll value but leaves both fuselage-orientation fields blank."
+  },
+  "damage_refined_kinematics": {
+    "source": "NCSTAR 1-2B v1 Tables 7-4 and 7-5, printed page 170 (PDF page 268)",
+    "impact_speed_mph": 443.0,
+    "impact_speed_uncertainty_mph": 30.0,
+    "vertical_approach_deg_below_horizontal": 10.6,
+    "vertical_approach_uncertainty_deg": 3.0,
+    "lateral_approach_deg_clockwise_from_structure_north": 180.3,
+    "lateral_approach_uncertainty_deg": 4.0,
+    "fuselage_nose_up_relative_to_trajectory_deg": 2.0,
+    "lateral_fuselage_orientation_relative_to_trajectory_deg": 0.0,
+    "roll_deg_left_wing_down": 25.0,
+    "roll_uncertainty_deg": 2.0,
+    "nose_impact_west_of_centerline_ft": 2.0,
+    "nose_impact_horizontal_uncertainty_ft": 3.0,
+    "nose_impact_above_floor_96_ft": 1.6,
+    "nose_impact_vertical_uncertainty_ft": 4.0,
+    "circularity_warning": "NIST refined aircraft orientation and position by matching projected aircraft component locations to the observed north-facade damage. A replay using these refined values is a reproduction check, not an independent validation of the facade damage pattern."
+  },
+  "nist_global_input_cases": {
+    "source": "NCSTAR 1-2B v2 Tables 9-2 and 9-7, printed pages 198 and 257 (PDF pages 16 and 75)",
+    "less_severe": {
+      "speed_mph": 414.0,
+      "trajectory_pitch_deg": 13.6,
+      "orientation_pitch_deg": 11.6,
+      "roll_deg": 25.0,
+      "aircraft_mass_factor": 0.95,
+      "aircraft_failure_strain_factor": 0.75,
+      "tower_failure_strain_factor": 1.20,
+      "design_live_load_fraction": 0.25
+    },
+    "base": {
+      "speed_mph": 443.0,
+      "trajectory_pitch_deg": 10.6,
+      "orientation_pitch_deg": 8.6,
+      "roll_deg": 25.0,
+      "aircraft_mass_factor": 1.0,
+      "aircraft_failure_strain_factor": 1.0,
+      "tower_failure_strain_factor": 1.0,
+      "design_live_load_fraction": 0.25
+    },
+    "more_severe": {
+      "speed_mph": 472.0,
+      "trajectory_pitch_deg": 7.6,
+      "orientation_pitch_deg": 5.6,
+      "roll_deg": 25.0,
+      "aircraft_mass_factor": 1.05,
+      "aircraft_failure_strain_factor": 1.25,
+      "tower_failure_strain_factor": 0.80,
+      "design_live_load_fraction": 0.20
+    }
+  },
+  "tower_geometry": {
+    "source": "wtc1_3d_v4/data/wtc1_parameters.json",
+    "impact_face": "north",
+    "tower_width_m": 63.1444,
+    "tower_depth_m": 63.1444,
+    "perimeter_columns_per_face": 59,
+    "perimeter_column_spacing_m": 1.016,
+    "upper_office_floor_height_ft": 12.0,
+    "impact_observation_floor_range": [93, 99],
+    "geometry_status": "Facade bay spacing and count are official-level inputs; exact plate thicknesses, welds, bolts, windows, contents, and all local connections in the impact zone are not yet an as-built explicit mesh."
+  },
+  "official_outputs_reserved_for_validation": {
+    "source": "NCSTAR 1-2B v2 Chapter 9, printed pages 201-228",
+    "base_run_duration_s": 0.715,
+    "full_aircraft_inside_tower_s_approx": 0.25,
+    "aircraft_residual_momentum_fraction_at_0_25_s_approx": 0.30,
+    "typical_residual_airframe_kinetic_energy_fraction_at_termination_lt": 0.01,
+    "port_engine_final_location": "inside core",
+    "starboard_engine_final_location": "about one third of the distance from core to south exterior wall",
+    "engine_final_speed_mph_lt": 50.0,
+    "far_side_statement": "The bulk of aircraft debris and fuel was arrested before exiting the far side of the core; a small amount of aircraft debris was calculated to exit the south wall.",
+    "outside_tower_base_case_lb": {
+      "fuel": 6700.0,
+      "aircraft_debris": 17400.0
+    },
+    "outside_tower_ambiguity": "The published outside total combines material rebounding from the north impact face and material passing through the south side; it is not a measured far-side-only mass.",
+    "base_case_floor_distribution_source": "NCSTAR 1-2B v2 Table 9-4, printed page 228 (PDF page 46)",
+    "use_rule": "These values are loaded only after all V8S input-derived quantities have been calculated. They cannot calibrate mass, speed, geometry, or failure parameters."
+  },
+  "validation_metrics_predeclared": [
+    {
+      "id": "M01_energy_balance",
+      "target": "global explicit solve",
+      "metric": "erreur absolue du bilan travail externe + énergie interne + énergie cinétique résiduelle, divisée par l’énergie cinétique initiale",
+      "gate": "inférieure ou égale à 0,05"
+    },
+    {
+      "id": "M02_tail_clearance_time",
+      "target": "NIST time at which the aircraft is completely inside the tower",
+      "metric": "écart absolu entre temps prédit et temps rapporté",
+      "gate": "inférieur ou égal à 0,03 s"
+    },
+    {
+      "id": "M03_north_facade_damage",
+      "target": "digitized observed north-facade column and spandrel damage mask",
+      "metric": "précision, rappel, F1 et intersection-sur-union à la résolution élément-par-étage",
+      "gate": "F1 supérieur ou égal à 0,80, sans utiliser d’entrée raffinée sur les dommages pour un test indépendant"
+    },
+    {
+      "id": "M04_core_damage",
+      "target": "NIST less/base/more-severe core damage tables reserved from input",
+      "metric": "score de classification pondéré par étage pour les états intact, léger, modéré, lourd et sectionné",
+      "gate": "macro-F1 supérieur ou égal à 0,70; publier chaque cas séparément"
+    },
+    {
+      "id": "M05_momentum_history",
+      "target": "NIST Figure 9-6 digitized normalized momentum curve",
+      "metric": "RMSE sur 0,00-0,70 s et fraction résiduelle à 0,25 s",
+      "gate": "RMSE inférieure ou égale à 0,10"
+    },
+    {
+      "id": "M06_debris_by_floor",
+      "target": "NIST Table 9-4 after correction for explicitly reported eroded mass",
+      "metric": "distance L1 normalisée et distance de transport sur les étages 92-99 plus l’extérieur",
+      "gate": "diagnostic seulement tant que l’érosion numérique et les fenêtres ne sont pas harmonisées"
+    },
+    {
+      "id": "M07_far_side_categories",
+      "target": "observed and modeled opposite-facade phenomena",
+      "metric": "masses et trajectoires séparées pour carburant, moteurs, trains d’atterrissage, fragments d’avion et débris de tour",
+      "gate": "aucune étiquette « avion intact sortant »; tout objet sortant conserve catégorie et provenance"
+    },
+    {
+      "id": "M08_post_impact_stability",
+      "target": "observed survival for about 102 min after impact",
+      "metric": "la structure endommagée à froid reprend les charges gravitaires avant couplage thermique",
+      "gate": "obligatoire avant le couplage incendie-effondrement"
+    }
+  ],
+  "solver_inventory": [
+    {
+      "name": "Blender",
+      "path": "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe",
+      "version_verified": "5.2.0 LTS",
+      "role": "visualisation et animation uniquement",
+      "qualifies_for_global_high_rate_impact": false
+    },
+    {
+      "name": "FreeCAD",
+      "path": "C:/Program Files/FreeCAD 1.1/bin/FreeCADCmd.exe",
+      "version_verified": "1.1.3",
+      "role": "pré/post-traitement géométrique",
+      "qualifies_for_global_high_rate_impact": false
+    },
+    {
+      "name": "CalculiX",
+      "path": "C:/Program Files/FreeCAD 1.1/bin/ccx.exe",
+      "version_verified": "2.22",
+      "role": "solveur structurel pour contrôles de composants et quasi-statiques",
+      "qualifies_for_global_high_rate_impact": false,
+      "reason": "The current workflow has no validated CalculiX formulation for coupled high-rate contact, fragmentation/erosion and SPH-like fuel dispersion at the required global scale."
+    },
+    {
+      "name": "LS-DYNA",
+      "candidate_paths": ["C:/Program Files/LSTC", "C:/Program Files/LS-DYNA"],
+      "role": "solveur explicite non linéaire de référence à grande vitesse",
+      "qualifies_for_global_high_rate_impact": true
+    },
+    {
+      "name": "Abaqus Explicit",
+      "candidate_paths": ["C:/SIMULIA", "C:/Program Files/Dassault Systemes"],
+      "role": "solveur explicite non linéaire candidat à grande vitesse",
+      "qualifies_for_global_high_rate_impact": true
+    },
+    {
+      "name": "OpenRadioss",
+      "candidate_paths": ["C:/OpenRadioss", "C:/Program Files/Altair"],
+      "role": "solveur explicite non linéaire candidat à grande vitesse",
+      "qualifies_for_global_high_rate_impact": true
+    }
+  ],
+  "model_hypotheses": [
+    "Tous les composants de l’avion partagent initialement la même vitesse de translation; leur part d’énergie cinétique suit donc leur part de masse.",
+    "Le diagnostic réduit de silhouette projette une envergure rigide et non déformée selon le roulis; ce n’est pas un calcul de rupture ni de dommages de façade.",
+    "L’estimation du franchissement de la queue projette la longueur du fuselage sur la direction de vitesse et néglige la flexion locale avant impact.",
+    "Aucune sortie NIST de dommage, moment, débris ou pénétration ne règle les calculs cinématiques V8S."
+  ],
+  "required_missing_inputs": [
+    "licensed or open nonlinear explicit high-rate solver validated for contact, fragmentation and erosion at this scale",
+    "solver-ready Boeing 767 material, thickness, joint, failure and fuel model with provenance",
+    "as-built WTC 1 facade plate, weld, bolt, window, floor and content mesh for Floors 92-100",
+    "independently digitized north-facade observed damage mask reserved from model setup",
+    "digitized NIST Figure 9-6 momentum history reserved from calibration",
+    "measured object-by-object far-side debris trajectories for WTC 1",
+    "computational convergence plan for mesh, time step, contact, erosion and mass scaling"
+  ],
+  "provenance": {
+    "prior_transfer_data": "wtc1_simulation_v8/data/nist_wtc1_transfer.json",
+    "tower_geometry": "wtc1_3d_v4/data/wtc1_parameters.json",
+    "prior_iteration_results": "wtc1_simulation_v8/output/resultats_wtc1_v8r_flux_bornes.json"
+  }
+}

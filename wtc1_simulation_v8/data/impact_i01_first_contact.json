@@ -1,0 +1,35 @@
+{
+  "id": "IMPACT-I01",
+  "seed": 9112001,
+  "deterministic": true,
+  "status": "NUMERICAL_COMPONENT_PILOT_NOT_A_BOEING_767_RECONSTRUCTION",
+  "authorization": "User explicitly redirects work to first WTC1 facade contact. This creates a bounded non-eroding numerical pilot; the V9M physical fracture/global qualification gates are not relaxed or declared passed.",
+  "inherited_config": "wtc1_simulation_v8/data/v8v_openradioss_deformable_projectile.json",
+  "inherited_generator": "wtc1_simulation_v8/scripts/generate_v8v_deformable_projectile.py",
+  "units": {"mass":"g","length":"mm","time":"ms","stress":"MPa","energy_to_J":0.001,"impulse_to_Ns":0.001,"force_to_N":1.0},
+  "speed": {"original_mph":443.0,"conversion_mph_to_m_per_s":0.44704,"m_per_s":198.03072,"source":"V8S video-derived AA11 reference, NIST NCSTAR 1-2B Table 7-3; not estimated from Evidence1/2"},
+  "facade": {"story_count":1,"column_centers_x_mm":[-1016,0,1016],"column_width_mm":355.6,"column_depth_mm":355.6,"story_height_mm":3657.6,"panel_width_mm":4064,"spandrel_center_y_mm":[0],"spandrel_height_mm":1320.8,"column_shell_thickness_mm":7.9375,"spandrel_shell_thickness_mm":9.525,"classification":"Representative nominal geometry inherited from V8V, not exact panel-124 plate schedule; shared nodes stand for perfect joints; upper/lower ends fixed; no gravity prestress"},
+  "box": {"width_span_mm":3000,"height_mm":400,"length_chord_mm":2000,"center_y_mm":1000,"front_z_mm":50,"skin_thickness_mm":4,"classification":"Entire geometry and uniform skin are explicit generic hollow wing-section surrogate hypotheses, NOT sourced Boeing spars, ribs, skin, sweep or structural resistance. No fuel, engine, fuselage or attachment mass. Mass follows geometry and density, never fitted to desired penetration."},
+  "aluminum": {"density_g_per_mm3":0.0027,"young_modulus_mpa":70000,"poisson_ratio":0.33,"yield_strength_mpa":300,"ultimate_tensile_strength_mpa":450,"engineering_strain_at_uts":0.12,"rate_coefficient_c":0,"reference_strain_rate_per_ms":0.001,"classification":"Generic isotropic aluminum hypothesis inherited from V8V cowling, NOT identified 2024/7075 production card. No strain-rate uplift or fracture fit."},
+  "constitutive": {"erosion":"disabled using failure plastic strain 1e30","damage":"not modeled","thermal":"not modeled","postprocessing_plastic_strain_flag":0.02,"flag_meaning":"Conservative diagnostic marker for need of constitutive review; NOT an experimentally measured fracture strain and NOT physical validation below threshold."},
+  "contact": {"type":"TYPE7 one-way projectile nodes to facade segments","friction":0,"self_contact":false,"edge_to_edge":false,"limitation":"Early contact diagnostic only; folded self-intersecting or edge-dominated late states must not be promoted as physical results."},
+  "execution": {"end_ms":1.2,"history_dt_ms":0.005,"animation_dt_ms":0.05,"threads":1,"maximum_case_wall_seconds":600,"mass_scaling":false},
+  "cases": [
+    {"id":"FREE50","mesh_mm":50,"dt_scale":0.9,"contact":false,"skin_mm":4},
+    {"id":"M100","mesh_mm":100,"dt_scale":0.9,"contact":true,"skin_mm":4},
+    {"id":"M050","mesh_mm":50,"dt_scale":0.9,"contact":true,"skin_mm":4},
+    {"id":"M025","mesh_mm":25,"dt_scale":0.9,"contact":true,"skin_mm":4},
+    {"id":"DT045","mesh_mm":50,"dt_scale":0.45,"contact":true,"skin_mm":4},
+    {"id":"SKIN008","mesh_mm":50,"dt_scale":0.9,"contact":true,"skin_mm":8},
+    {"id":"M0125","mesh_mm":12.5,"dt_scale":0.9,"contact":true,"skin_mm":4,"role":"Additional diagnostic refinement after original 50-to-25 mm gate failed; original failure retained, same 10 percent criterion"}
+  ],
+  "predeclared_checks": {"max_abs_energy_error_fraction":0.05,"max_momentum_impulse_relative_error":0.02,"max_added_mass_fraction":0.000001,"max_hourglass_over_initial_KE":0.01,"max_medium_fine_impulse_difference":0.10,"max_half_dt_impulse_difference":0.05,"initial_penetrations":0,"eroded_elements":0},
+  "sources": [
+    {"path":"wtc1_simulation_v8/data/v8s_wtc1_aircraft_impact_replay.json","role":"Cached AA11 speed and mass ledger, no whole-plane mass allocated to this box"},
+    {"path":"work/official_sources/ncstar1-2bv1.pdf","pages_printed":[5,6,31,32,33,44],"role":"Constitutive methodology, alloy families, nominal panel construction; not a source for surrogate box dimensions"},
+    {"url":"https://www.nist.gov/publications/analysis-aircraft-impacts-world-trade-center-towers-chapters-1-2-3-4-5-6-7-8","role":"Primary report identity"},
+    {"url":"https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inter_type7_starter_r.htm","role":"Contact formulation and limitations"},
+    {"url":"https://help.altair.com/hwsolvers/rad/topics/solvers/rad/mat_law2_plas_johns_starter_r.htm","role":"Material-law syntax"}
+  ],
+  "output_root":"wtc1_simulation_v8/output/impact_i01_first_contact"
+}

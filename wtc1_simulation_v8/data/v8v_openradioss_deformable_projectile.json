@@ -1,0 +1,273 @@
+{
+  "dataset": {
+    "name": "WTC 1 V8V OpenRadioss deformable engine-and-cowling qualification submodel",
+    "version": "8.21.0",
+    "status": "PREDECLARED_DEFORMABLE_CONTACT_QUALIFICATION_NOT_A_WTC_IMPACT_REPRODUCTION",
+    "random_seed": 9112001,
+    "deterministic": true,
+    "scope": "Preserve V8U by hash and metric as a rigid-projectile regression reference, then qualify a minimal deformable equivalent engine core and cowling against a three-column by three-story shell facade assembly. V8V tests TYPE7 deformable contact, projectile erosion, mesh convergence, time-step convergence, momentum balance, energy balance, and one-versus-four-thread repeatability. It is not a JT9D reconstruction, a full aircraft model, a global WTC impact replay, a fire calculation, a collapse calculation, or a test of an explosive or thermite mechanism."
+  },
+  "evidence_policy": {
+    "observed_fact": "Directly read from a cited source file or solver output.",
+    "official_model_result": "A value reported by a NIST or Altair numerical model; it is not an observation of the real event.",
+    "local_archive_claim": "A statement from the read-only archive; none is used as a new physical input in V8V.",
+    "model_hypothesis": "A declared simplification or parameter without an exact source for the modeled location or component.",
+    "derived_result": "A deterministic calculation from declared inputs and solver outputs.",
+    "unknown": "A missing value or physical capability not qualified by V8V."
+  },
+  "units": {
+    "mass": "g",
+    "length": "mm",
+    "time": "ms",
+    "stress": "MPa",
+    "velocity": "mm/ms",
+    "force": "g*mm/ms^2",
+    "impulse": "g*mm/ms",
+    "energy_solver": "g*mm^2/ms^2",
+    "energy_solver_to_joule": 0.001
+  },
+  "sources": [
+    {
+      "id": "V8U_REGRESSION",
+      "configuration": "wtc1_simulation_v8/data/v8u_openradioss_impact_submodel.json",
+      "generator": "wtc1_simulation_v8/scripts/generate_v8u_impact_panel.py",
+      "runner": "wtc1_simulation_v8/scripts/run_v8u_openradioss_impact.py",
+      "results": "wtc1_simulation_v8/output/resultats_wtc1_v8u_impact_openradioss.json",
+      "classification": "prior_validated_derived_result",
+      "uses": [
+        "immutable regression hashes",
+        "50-to-25 mm rigid-sphere impulse difference",
+        "one-to-four-thread repeatability reference"
+      ]
+    },
+    {
+      "id": "NIST_NCSTAR_1_6C",
+      "path": "work/official_sources/ncstar1-6c.pdf",
+      "classification": "official_source",
+      "pages_pdf": [44, 63],
+      "uses": [
+        "59 perimeter box columns per face",
+        "nominal 14 in square column width",
+        "40 in column spacing",
+        "52 in spandrel height",
+        "three-column by three-story prefabricated panel description",
+        "Material 14 room-temperature strengths"
+      ]
+    },
+    {
+      "id": "NIST_NCSTAR_1_3D",
+      "path": "work/official_sources/ncstar1-3d.pdf",
+      "classification": "official_source",
+      "pages_pdf": [118, 119, 128, 232],
+      "uses": [
+        "near-impact recovered 60 ksi perimeter plate",
+        "5/16 in nearby flange thickness",
+        "60 ksi longitudinal strain-rate exponent"
+      ]
+    },
+    {
+      "id": "NIST_NCSTAR_1_2B_V1",
+      "path": "work/official_sources/ncstar1-2bv1.pdf",
+      "classification": "official_source",
+      "pages_pdf": [202, 204, 205, 215, 218, 220],
+      "uses": [
+        "engine impact centered on panel 124 near floor 96",
+        "official engine-component speed-loss context",
+        "20 percent failure-strain example",
+        "reported mesh/failure coupling"
+      ]
+    },
+    {
+      "id": "V8S_MASS_LEDGER",
+      "path": "wtc1_simulation_v8/data/v8s_wtc1_aircraft_impact_replay.json",
+      "classification": "prior_derived_input",
+      "uses": [
+        "20,100 lb for two engines with cowlings; V8V uses one half as the total equivalent projectile mass"
+      ]
+    },
+    {
+      "id": "ALTAIR_RADIOSS_2026_TYPE7",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inter_type7_starter_r.htm",
+      "classification": "official_solver_documentation",
+      "uses": [
+        "TYPE7 node-to-segment deformable contact syntax",
+        "Istf=4 minimum main/secondary stiffness recommendation",
+        "Idel=2 deleted-segment and disconnected-node handling"
+      ]
+    },
+    {
+      "id": "ALTAIR_RADIOSS_2026_TIME_HISTORY",
+      "urls": [
+        "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/th_inter_starter_r.htm",
+        "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/th_part_starter_r.htm",
+        "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inivel_starter_r.htm",
+        "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/dt_engine_r.htm"
+      ],
+      "classification": "official_solver_documentation",
+      "uses": [
+        "interface FNZ history; its end-minus-start change is used as the solver-reported contact impulse and is independently checked against projectile momentum change",
+        "part momentum, energy, mass and eroded-element histories",
+        "initial translational velocity",
+        "time-step scale-factor sensitivity without mass scaling"
+      ]
+    }
+  ],
+  "v8u_regression": {
+    "required_files": {
+      "wtc1_simulation_v8/data/v8u_openradioss_impact_submodel.json": "8b11989184abc4c0f691ef17bf526d2be676edad0a7b5782dd191c28e6f77a60",
+      "wtc1_simulation_v8/scripts/generate_v8u_impact_panel.py": "fb2bc2fc33b5ead1a0674692e7944d190a2afe995a2d87b47c298724ff8ecf1e",
+      "wtc1_simulation_v8/scripts/run_v8u_openradioss_impact.py": "f5bae6aba888ab41c05b14261abae6d7bb560be8d994e1a26927fa78323b04e7",
+      "wtc1_simulation_v8/output/resultats_wtc1_v8u_impact_openradioss.json": "ecefb3be005a9272b3616cb873c781deb2831e9ae1879ff8813b48a9f9e800a6"
+    },
+    "required_metrics": {
+      "convergence.medium_to_fine_impulse_relative_difference": 0.209001172779897,
+      "convergence.medium_to_fine_residual_speed_relative_difference": 0.00406605389744263,
+      "convergence.thread_repeatability_impulse_relative_difference": 0.0,
+      "surrogate_numerical_qualification_passed": false
+    },
+    "numeric_absolute_tolerance": 1e-12
+  },
+  "facade_geometry": {
+    "model_type": "three closed square shell columns joined by three spandrel strips over a three-story prefabricated-panel height",
+    "column_centers_x_mm": [-1016.0, 0.0, 1016.0],
+    "column_width_mm": 355.6,
+    "column_depth_mm": 355.6,
+    "story_height_mm": 3657.6,
+    "story_count": 3,
+    "spandrel_center_y_mm": [-3657.6, 0.0, 3657.6],
+    "panel_width_mm": 4064.0,
+    "spandrel_height_mm": 1320.8,
+    "column_shell_thickness_mm": 7.9375,
+    "spandrel_shell_thickness_mm": 9.525,
+    "boundary_condition": "all translational and rotational degrees of freedom fixed at the top and bottom column-edge nodes only",
+    "joint_representation": "shared shell nodes at column-spandrel boundaries; no explicit weld, bolt, splice plate, floor slab or truss-seat model",
+    "epistemic_status": "model_hypothesis constrained by official nominal geometry",
+    "limitations": [
+      "The three-story extent matches the documented prefabricated panel scale but not a provenance-complete panel-124 assembly.",
+      "The exact as-built panel-124 plate schedule at floor 96 remains unavailable in the frozen local source set.",
+      "The 5/16 in column and 3/8 in spandrel values are representative nearby values, not an exact panel-124 schedule.",
+      "The closed-square column construction is a contact-qualification surrogate, not a fabricated-section reconstruction."
+    ]
+  },
+  "facade_material": {
+    "law": "/MAT/PLAS_JOHNS (LAW2), simplified UTS input",
+    "density_g_per_mm3": 0.00786,
+    "young_modulus_mpa": 200000.0,
+    "poisson_ratio": 0.3,
+    "yield_strength_mpa": 427.656,
+    "ultimate_tensile_strength_mpa": 601.566,
+    "engineering_strain_at_uts": 0.15,
+    "rate_coefficient_c": 0.016,
+    "reference_strain_rate_per_ms": 0.001,
+    "failure_plastic_strain": 0.2,
+    "failure_status": "mesh-dependent hypothesis; not a measured panel-124 fracture law"
+  },
+  "projectile": {
+    "type": "two-part fully deformable shell projectile",
+    "total_target_mass_g": 4558603.3185,
+    "mass_origin": "one half of the V8S 20,100 lb two-engines-with-cowlings ledger",
+    "initial_velocity_z_mm_per_ms": -198.03072,
+    "initial_speed_mph": 443.0,
+    "impact_location": "centered on the middle column and middle spandrel of the three-story facade surrogate",
+    "initial_leading_gap_mm": 100.0,
+    "engine_core": {
+      "shape": "closed square shell box equivalent core",
+      "width_mm": 900.0,
+      "height_mm": 900.0,
+      "front_z_mm": 300.0,
+      "rear_z_mm": 2300.0,
+      "target_mass_g": 3600000.0,
+      "material": {
+        "density_g_per_mm3": 0.00786,
+        "young_modulus_mpa": 200000.0,
+        "poisson_ratio": 0.3,
+        "yield_strength_mpa": 800.0,
+        "ultimate_tensile_strength_mpa": 1000.0,
+        "engineering_strain_at_uts": 0.1,
+        "rate_coefficient_c": 0.01,
+        "reference_strain_rate_per_ms": 0.001,
+        "failure_plastic_strain": 0.2
+      }
+    },
+    "cowling": {
+      "shape": "open-rear square shell cowling with a front annular frame",
+      "outer_width_mm": 1800.0,
+      "outer_height_mm": 1800.0,
+      "front_opening_width_mm": 1000.0,
+      "front_opening_height_mm": 1000.0,
+      "front_z_mm": 100.0,
+      "rear_z_mm": 2500.0,
+      "target_mass_g": 958603.3185,
+      "material": {
+        "density_g_per_mm3": 0.0027,
+        "young_modulus_mpa": 70000.0,
+        "poisson_ratio": 0.33,
+        "yield_strength_mpa": 300.0,
+        "ultimate_tensile_strength_mpa": 450.0,
+        "engineering_strain_at_uts": 0.12,
+        "rate_coefficient_c": 0.0,
+        "reference_strain_rate_per_ms": 0.001,
+        "failure_plastic_strain": 0.12
+      }
+    },
+    "mass_calibration": "For each projectile mesh, the uniform equivalent shell thickness of each part is calculated from its target ledger mass divided by density and generated shell mid-surface area. The resulting thickness is an explicit equivalent-mass hypothesis, not an as-built JT9D wall thickness.",
+    "epistemic_status": "model_hypothesis constrained only by total engine-with-cowling mass and impact speed",
+    "limitations": [
+      "No JT9D rotating machinery, casing layers, shafts, fan blades, mounts or sourced joint topology.",
+      "Square equivalent core and cowling replace the real engine geometry.",
+      "No wing, fuel, fuselage, pitch, yaw or oblique trajectory.",
+      "Projectile strength and rupture parameters are qualification hypotheses, not component test data."
+    ]
+  },
+  "contact": {
+    "facade_interface": "/INTER/TYPE7 projectile nodes to facade shell surface",
+    "projectile_self_contact": "/INTER/TYPE7 projectile nodes to projectile shell surface",
+    "interface_stiffness_flag": 4,
+    "variable_gap_flag": 2,
+    "deleted_segment_flag": 2,
+    "friction": 0.0,
+    "initial_penetration_handling": 0,
+    "edge_to_edge_contact": "not included; TYPE7 is node-to-segment and V8V does not qualify TYPE11 edge-to-edge contact",
+    "epistemic_status": "official solver formulation with declared frictionless qualification settings"
+  },
+  "cases": [
+    {"id": "M100_P100_DT090_T1", "facade_mesh_target_mm": 100.0, "projectile_mesh_target_mm": 100.0, "time_step_scale": 0.9, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "threads": 1, "role": "mesh_coarse"},
+    {"id": "M050_P050_DT090_T1", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.9, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "threads": 1, "role": "mesh_medium_baseline"},
+    {"id": "M025_P025_DT090_T1", "facade_mesh_target_mm": 25.0, "projectile_mesh_target_mm": 25.0, "time_step_scale": 0.9, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "threads": 1, "role": "mesh_fine"},
+    {"id": "M050_P050_DT045_T1", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.45, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "threads": 1, "role": "time_step_half"},
+    {"id": "M050_P050_DT090_T4", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.9, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "threads": 4, "role": "thread_repeatability"},
+    {"id": "M050_P050_DT090_FLO_T1", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.9, "core_failure_strain": 0.12, "cowling_failure_strain": 0.08, "threads": 1, "role": "projectile_failure_low"},
+    {"id": "M050_P050_DT090_FHI_T1", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.9, "core_failure_strain": 0.3, "cowling_failure_strain": 0.2, "threads": 1, "role": "projectile_failure_high"}
+  ],
+  "execution": {
+    "termination_time_ms": 18.0,
+    "time_history_interval_ms": 0.02,
+    "animation_interval_ms": 1.0,
+    "shell_formulation": "QEPH Ishell=24",
+    "through_thickness_integration_points": 5,
+    "mass_scaling": "disabled",
+    "output_root": "wtc1_simulation_v8/openradioss_benchmarks/v8v_deformable_projectile"
+  },
+  "predeclared_gates": {
+    "v8u_regression_hashes_and_metrics_unchanged": true,
+    "all_starter_exit_code_zero": true,
+    "all_engine_exit_code_zero": true,
+    "all_normal_termination": true,
+    "maximum_initial_penetration_warning_count": 0,
+    "maximum_absolute_energy_error_percent": 5.0,
+    "maximum_added_mass_fraction": 0.001,
+    "maximum_hourglass_to_initial_energy_fraction": 0.05,
+    "maximum_projectile_initial_mass_relative_error": 0.005,
+    "baseline_minimum_projectile_eroded_elements": 1,
+    "baseline_minimum_projectile_remaining_mass_fraction": 0.5,
+    "projectile_failure_ordering_required": true,
+    "maximum_contact_impulse_to_projectile_momentum_change_relative_error": 0.05,
+    "medium_to_fine_contact_impulse_relative_difference": 0.1,
+    "medium_to_fine_projectile_final_momentum_relative_difference": 0.1,
+    "half_time_step_contact_impulse_relative_difference": 0.1,
+    "half_time_step_projectile_final_momentum_relative_difference": 0.1,
+    "thread_repeatability_contact_impulse_relative_difference": 0.01,
+    "thread_repeatability_projectile_final_momentum_relative_difference": 0.01,
+    "scope_warning": "Passing V8V qualifies only this two-part deformable shell projectile, TYPE7 settings and three-column by three-story facade surrogate. It does not validate a JT9D breakup model, NIST's global damage state, an aircraft-wide debris field, a fire-to-collapse chain, Blender dynamics, or any demolition hypothesis."
+  }
+}

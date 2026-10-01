@@ -1,0 +1,163 @@
+{
+  "iteration": "V10R",
+  "generated_at_utc": "2026-09-04T07:46:12Z",
+  "validation_status": "PASS_THREE_TRACK_STATUS_HANDOFF_ONLY",
+  "tracks": [
+    {
+      "track_id": "CONTROL_ZERO_THERMAL_INPUT",
+      "upstream_track_id": "CONTROL_ZERO_FIRE",
+      "epistemic_class": "SYNTHETIC_SOFTWARE_CONTROL_NOT_HISTORICAL",
+      "status": "CONTROL_NO_INITIATION_SOFTWARE_ONLY",
+      "thermal_record": {
+        "record_id": "V10O-CTRL-ZERO-001:I05_THERMAL_TO_INITIATION",
+        "scenario_id": "V10O-CTRL-ZERO-001",
+        "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+        "epistemic_class": "ALGEBRAIC_SENTINEL_NOT_HISTORICAL",
+        "schema_id": "thermal_member_history_v1",
+        "schema_version": "1.0.0",
+        "validation_status": "CONTROL_PASS_SOFTWARE_ONLY",
+        "physical_credit": "NONE",
+        "source_hashes": {
+          "v10o_configuration": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46",
+          "v10n_coupling_graph": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98"
+        },
+        "units": {
+          "time_s": "s",
+          "reference_temperature_K": "K"
+        },
+        "payload": {
+          "time_s": [
+            0.0
+          ],
+          "member_histories": [],
+          "reference_temperature_K": 293.15,
+          "thermal_state": "CONTROL_NO_TEMPERATURE_INCREMENT",
+          "module_status": "CONTROL_THERMAL_NEUTRAL",
+          "provenance": {
+            "kind": "SYNTHETIC_SOFTWARE_CONTROL",
+            "interface_id": "I05_THERMAL_TO_INITIATION",
+            "historical_event_claim": false,
+            "values_are_wtc_properties": false,
+            "purpose": "exercise serialization, unit, invariant, branch, join and stop-status handling"
+          }
+        }
+      },
+      "normalized_control_reduction_factors": {
+        "yield_ratio_to_control": 1.0,
+        "young_modulus_ratio_to_control": 1.0,
+        "definition": "software identity only, not a WTC property assignment"
+      },
+      "initiation_time_s": null,
+      "failed_member_ids": [],
+      "trigger_mode": "CONTROL_NONE",
+      "downstream_software_status_release": true,
+      "downstream_physical_release": false,
+      "historical_noncollapse_claim": false,
+      "physical_validation": false
+    },
+    {
+      "track_id": "OFFICIAL_DEPENDENT_REDUCED_PROPERTY_REFERENCE",
+      "upstream_track_id": "OFFICIAL_MODEL_DEPENDENT_THERMAL_REFERENCE",
+      "epistemic_class": "OFFICIAL_MODEL_DEPENDENT_RANGE_PLUS_DERIVED_REDUCED_PROPERTY_REFERENCE",
+      "status": "INDETERMINATE_BLOCKED_FAILED_COLD_GATE_AND_MEMBER_INPUTS",
+      "upstream_status": "PASS_RANGE_TRANSCRIPTION_AND_UNIT_SUPPORT_ONLY",
+      "material_reduction_matrix": {
+        "path": "wtc1_simulation_v8/output/v10r_material_reduction_envelope_matrix.csv",
+        "row_count": 105,
+        "complete_in_domain_range_count": 58,
+        "partial_domain_blocked_range_count": 47,
+        "tail_model_invocation_count": 0
+      },
+      "legacy_v8e_domain_audit": {
+        "path": "wtc1_simulation_v8/output/v10r_legacy_v8e_domain_audit.csv",
+        "row_count": 110,
+        "physical_authorization_count": 0,
+        "fractions_are_event_probabilities": false
+      },
+      "cold_load_path_gate": {
+        "required_condition": "The post-impact 20 C model must have a mechanically specified, surviving force-displacement path for every loaded component before thermal studies or Blender coupling.",
+        "pass_policy": "Capacity arithmetic alone cannot pass the gate. The path topology, stiffness, deformation capacity, connection assignment, and impact survival must all be specified from drawings or a declared validated substitute.",
+        "observed_passed": false,
+        "observed_status": "NOT_VALIDATED_MISSING_FORCE_DISPLACEMENT_PATH",
+        "observed_reason": "V8J quantifies a loaded disconnected component and finds that published capacity envelopes straddle its demand, but the actual surviving topology, stiffness, ductility and connection assignment are not available.",
+        "thermal_runs_authorized_by_v8j": false,
+        "blender_coupling_authorized_by_v8j": false,
+        "missing_information": [
+          "Drawing Book 5 core beam schedule and real Floor 96 beam topology",
+          "Drawing Book 6 core connection details",
+          "Floor 96 seat-detail assignment and surviving floor-truss map",
+          "compatible force-displacement law for the core-floor-perimeter bridge",
+          "perimeter plate-thickness schedule at Floors 94-99"
+        ],
+        "join_rule": "A thermal reference cannot become a physical initiation state unless the cold-load-path precondition passes and all member-resolved thermal and mechanical inputs are available. A failed precondition produces INDETERMINATE_BLOCKED, not collapse and not non-collapse.",
+        "join_row_count": 3,
+        "physical_initiation_release_count": 0
+      },
+      "member_resolved_inputs": {
+        "member_ids": null,
+        "member_sections": null,
+        "member_restraints_and_effective_lengths": null,
+        "connection_force_displacement_laws": null,
+        "member_temperature_histories": null,
+        "initial_load_and_demand_histories": null,
+        "geometric_imperfections": null,
+        "thermal_expansion_restraint": null,
+        "failure_criteria": null
+      },
+      "initiation_time_s": null,
+      "failed_member_ids": null,
+      "trigger_mode": null,
+      "downstream_software_status_release": true,
+      "downstream_physical_release": false,
+      "historical_initiation_claim": false,
+      "physical_validation": false
+    },
+    {
+      "track_id": "UNKNOWN_PHYSICAL_INITIATION",
+      "upstream_track_id": "UNKNOWN_EVENT_FIRE",
+      "epistemic_class": "UNKNOWN_EVENT_THERMAL_MECHANICAL_AND_INITIATION_STATE",
+      "status": "INDETERMINATE_UNKNOWN_EVENT_INPUTS_AND_FAILED_COLD_GATE",
+      "upstream_status": "BLOCKED_EVENT_FIRE_AND_MEMBER_THERMAL_HISTORY_UNRESOLVED",
+      "member_resolved_inputs": {
+        "member_ids": null,
+        "member_sections": null,
+        "member_restraints_and_effective_lengths": null,
+        "connection_force_displacement_laws": null,
+        "member_temperature_histories": null,
+        "initial_load_and_demand_histories": null,
+        "geometric_imperfections": null,
+        "thermal_expansion_restraint": null,
+        "failure_criteria": null
+      },
+      "material_reduction_history": null,
+      "cold_load_path_state": null,
+      "initiation_time_s": null,
+      "failed_member_ids": null,
+      "trigger_mode": null,
+      "blocking_reasons": [
+        "physical event member-temperature histories are unknown",
+        "member identities, sections, restraints, connections and load histories are incomplete",
+        "the canonical post-impact cold-load-path gate did not pass",
+        "47 published range maxima exceed the declared Young-modulus polynomial domain",
+        "official ranges and V8E synthetic fields do not identify the physical member state"
+      ],
+      "downstream_software_status_release": true,
+      "downstream_physical_release": false,
+      "historical_initiation_claim": false,
+      "physical_validation": false
+    }
+  ],
+  "summary": {
+    "track_count": 3,
+    "track_ids": [
+      "CONTROL_ZERO_THERMAL_INPUT",
+      "OFFICIAL_DEPENDENT_REDUCED_PROPERTY_REFERENCE",
+      "UNKNOWN_PHYSICAL_INITIATION"
+    ],
+    "software_status_release_count": 3,
+    "physical_initiation_release_count": 0,
+    "historical_initiation_promotion_count": 0,
+    "unknown_physical_fields_null": true
+  },
+  "non_merging_rule": "No official-dependent or synthetic reference may be promoted into the unknown physical-event branch."
+}

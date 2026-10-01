@@ -1,0 +1,465 @@
+{
+  "iteration": "V11H",
+  "status": "PASS",
+  "test_count": 27,
+  "tests": [
+    {
+      "test": "declared_case_count_and_unique_ids",
+      "pass": true,
+      "evidence": {
+        "cases": 11,
+        "unique": 11
+      }
+    },
+    {
+      "test": "v11f_cold_control_hashes",
+      "pass": true,
+      "evidence": {
+        "status": "PASS",
+        "hashes": 36
+      }
+    },
+    {
+      "test": "v11f_cold_control_identity",
+      "pass": true,
+      "evidence": {
+        "iteration": true,
+        "results_status": true,
+        "release_status": true,
+        "test_count": true,
+        "case_count": true,
+        "numerical_digest": true,
+        "manifest_status": true
+      }
+    },
+    {
+      "test": "deterministic_exact_replay",
+      "pass": true,
+      "evidence": 11
+    },
+    {
+      "test": "thermoelastic_energy_identity_all_states",
+      "pass": true,
+      "evidence": 1.2079226507921703e-13
+    },
+    {
+      "test": "free_generalized_resultants_all_states",
+      "pass": true,
+      "evidence": 3.3945237591299597e-15
+    },
+    {
+      "test": "fixed_supports_and_free_coordinates_do_zero_mechanical_work",
+      "pass": true,
+      "evidence": 3.771585690105898e-12
+    },
+    {
+      "test": "all_dissipation_exactly_zero",
+      "pass": true,
+      "evidence": 0.0
+    },
+    {
+      "test": "new_section_cold_limit_is_zero",
+      "pass": true,
+      "evidence": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "test": "homogeneous_uniform_free_closed_form",
+      "pass": true,
+      "evidence": {
+        "eps0": 1.734723475976807e-15,
+        "kappa": 3.465277570872923e-19,
+        "extension": 1.724167737936772e-15,
+        "stress": 1.7347234759768069e-15,
+        "stored": 3.009265538105052e-30
+      }
+    },
+    {
+      "test": "homogeneous_uniform_restrained_closed_form",
+      "pass": true,
+      "evidence": {
+        "N": 1.8049107214155752e-15,
+        "reaction": 1.8049107214155752e-15,
+        "U": 1.0575648758294388e-15,
+        "thermal_work": 1.0575648758294388e-15,
+        "eps0": 0.0,
+        "kappa": 0.0
+      }
+    },
+    {
+      "test": "homogeneous_through_depth_gradient_free_closed_form",
+      "pass": true,
+      "evidence": {
+        "eps0": 1.3010426069826053e-15,
+        "kappa": 1.9166959686067738e-16,
+        "bow": 2.992104087527488e-16,
+        "stress": 2.1684043449710085e-15,
+        "stored": 1.9008595462896467e-30
+      }
+    },
+    {
+      "test": "homogeneous_sensible_enthalpy_closed_form",
+      "pass": true,
+      "evidence": {
+        "uniform": 0.0,
+        "gradient": 1.5363483160491137e-16
+      }
+    },
+    {
+      "test": "common_alpha_composite_free_gradient_is_stress_free",
+      "pass": true,
+      "evidence": {
+        "stress_Pa": 2.49366499671666e-07,
+        "U_J_m": 2.6401900365451792e-27
+      }
+    },
+    {
+      "test": "differential_alpha_free_gradient_is_self_equilibrated_not_stress_free",
+      "pass": true,
+      "evidence": {
+        "stress_Pa": 30270673.645224925,
+        "N": -3.8276084524113685e-09,
+        "M": -8.263612016889965e-12
+      }
+    },
+    {
+      "test": "uniform_axial_restraint_generates_reaction_without_rotation_work",
+      "pass": true,
+      "evidence": {
+        "support_reaction_N": 3969980.426066085,
+        "M_Nm": 7.275957614183426e-12,
+        "cumulative_external_mechanical_work_J_per_m": -5.6468661004641954e-30
+      }
+    },
+    {
+      "test": "gradient_full_restraint_generates_force_and_moment_reactions",
+      "pass": true,
+      "evidence": {
+        "reaction_N": 1984990.2130330405,
+        "reaction_Nm": -36452.15649739094
+      }
+    },
+    {
+      "test": "elastic_thermal_cycles_return_without_residual_state_or_dissipation",
+      "pass": true,
+      "evidence": {
+        "R02_UNIFORM_RESTRAINED_CYCLE": {
+          "eps0": 0.0,
+          "kappa": 0.0,
+          "stress": 0.0,
+          "stored": 0.0,
+          "thermal_work": 5.329070518200751e-15,
+          "sensible": 0.0
+        },
+        "R02_GRADIENT_FREE_CYCLE": {
+          "eps0": 0.0,
+          "kappa": 0.0,
+          "stress": 0.0,
+          "stored": 0.0,
+          "thermal_work": 3.5739857254246665e-14,
+          "sensible": 0.0
+        }
+      }
+    },
+    {
+      "test": "temperature_half_step_endpoint_invariance",
+      "pass": true,
+      "evidence": {
+        "maximum": 3.4063649836620646e-13,
+        "field_count": 154
+      }
+    },
+    {
+      "test": "reference_to_320_fiber_refinement",
+      "pass": true,
+      "evidence": {
+        "maximum": 2.8580090335477055e-05,
+        "field_count": 66
+      }
+    },
+    {
+      "test": "cached_v10w_bar_reference_reproduced",
+      "pass": true,
+      "evidence": {
+        "uniform_free": 0.0,
+        "restrained_force": 0.0,
+        "restrained_stress": 0.0,
+        "axial_gradient": 0.0,
+        "energy_identity": 0.0
+      }
+    },
+    {
+      "test": "gross_section_area_and_units",
+      "pass": true,
+      "evidence": {
+        "area_m2": 0.22451568,
+        "maximum_error": 1.2362421909965893e-16
+      }
+    },
+    {
+      "test": "all_section_stiffness_matrices_symmetric_positive_definite",
+      "pass": true,
+      "evidence": 11
+    },
+    {
+      "test": "temperature_and_energy_scopes_remain_bounded",
+      "pass": true,
+      "evidence": "Prescribed-temperature elastic section only; no fire, heat transfer, fracture, panel solve or global credit"
+    },
+    {
+      "test": "heat_transfer_properties_not_silently_invented",
+      "pass": true,
+      "evidence": {
+        "conductivity": null,
+        "emissivity": null,
+        "convection_coefficient": null,
+        "incident_heat_flux": null,
+        "gas_temperature_history": null,
+        "sfrm_state": null
+      }
+    },
+    {
+      "test": "constant_elastic_properties_are_inherited_not_degraded",
+      "pass": true,
+      "evidence": 2500.0
+    },
+    {
+      "test": "reference_serialization_exact_replay_digest",
+      "pass": true,
+      "evidence": "f793c047e5e643a8b7477528ff5bf125de56222acb34198584209ec0f065c82b"
+    }
+  ],
+  "comparisons": {
+    "half_step": {
+      "COLD_R02_FREE:peak:eps0": 0.0,
+      "COLD_R02_FREE:peak:kappa_per_m": 0.0,
+      "COLD_R02_FREE:peak:N_N": 0.0,
+      "COLD_R02_FREE:peak:M_Nm": 0.0,
+      "COLD_R02_FREE:peak:stored_mechanical_J_per_m": 0.0,
+      "COLD_R02_FREE:peak:cumulative_thermoelastic_work_J_per_m": 0.0,
+      "COLD_R02_FREE:peak:sensible_enthalpy_change_J_per_m": 0.0,
+      "COLD_R02_FREE:final:eps0": 0.0,
+      "COLD_R02_FREE:final:kappa_per_m": 0.0,
+      "COLD_R02_FREE:final:N_N": 0.0,
+      "COLD_R02_FREE:final:M_Nm": 0.0,
+      "COLD_R02_FREE:final:stored_mechanical_J_per_m": 0.0,
+      "COLD_R02_FREE:final:cumulative_thermoelastic_work_J_per_m": 0.0,
+      "COLD_R02_FREE:final:sensible_enthalpy_change_J_per_m": 0.0,
+      "PLAIN_UNIFORM_FREE:peak:eps0": 0.0,
+      "PLAIN_UNIFORM_FREE:peak:kappa_per_m": 0.0,
+      "PLAIN_UNIFORM_FREE:peak:N_N": 0.0,
+      "PLAIN_UNIFORM_FREE:peak:M_Nm": 0.0,
+      "PLAIN_UNIFORM_FREE:peak:stored_mechanical_J_per_m": 0.0,
+      "PLAIN_UNIFORM_FREE:peak:cumulative_thermoelastic_work_J_per_m": 3.4063649836620646e-13,
+      "PLAIN_UNIFORM_FREE:peak:sensible_enthalpy_change_J_per_m": 0.0,
+      "PLAIN_UNIFORM_FREE:final:eps0": 0.0,
+      "PLAIN_UNIFORM_FREE:final:kappa_per_m": 0.0,
+      "PLAIN_UNIFORM_FREE:final:N_N": 0.0,
+      "PLAIN_UNIFORM_FREE:final:M_Nm": 0.0,
+      "PLAIN_UNIFORM_FREE:final:stored_mechanical_J_per_m": 0.0,
+      "PLAIN_UNIFORM_FREE:final:cumulative_thermoelastic_work_J_per_m": 3.4063649836620646e-13,
+      "PLAIN_UNIFORM_FREE:final:sensible_enthalpy_change_J_per_m": 0.0,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:peak:eps0": 0.0,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:peak:kappa_per_m": 0.0,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:peak:N_N": 0.0,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:peak:M_Nm": 0.0,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:peak:stored_mechanical_J_per_m": 0.0,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:peak:cumulative_thermoelastic_work_J_per_m": 2.350144168509866e-16,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:peak:sensible_enthalpy_change_J_per_m": 0.0,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:final:eps0": 0.0,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:final:kappa_per_m": 0.0,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:final:N_N": 0.0,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:final:M_Nm": 0.0,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:final:stored_mechanical_J_per_m": 0.0,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:final:cumulative_thermoelastic_work_J_per_m": 2.350144168509866e-16,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:final:sensible_enthalpy_change_J_per_m": 0.0,
+      "PLAIN_GRADIENT_FREE:peak:eps0": 0.0,
+      "PLAIN_GRADIENT_FREE:peak:kappa_per_m": 0.0,
+      "PLAIN_GRADIENT_FREE:peak:N_N": 0.0,
+      "PLAIN_GRADIENT_FREE:peak:M_Nm": 0.0,
+      "PLAIN_GRADIENT_FREE:peak:stored_mechanical_J_per_m": 0.0,
+      "PLAIN_GRADIENT_FREE:peak:cumulative_thermoelastic_work_J_per_m": 2.5032998095415893e-15,
+      "PLAIN_GRADIENT_FREE:peak:sensible_enthalpy_change_J_per_m": 0.0,
+      "PLAIN_GRADIENT_FREE:final:eps0": 0.0,
+      "PLAIN_GRADIENT_FREE:final:kappa_per_m": 0.0,
+      "PLAIN_GRADIENT_FREE:final:N_N": 0.0,
+      "PLAIN_GRADIENT_FREE:final:M_Nm": 0.0,
+      "PLAIN_GRADIENT_FREE:final:stored_mechanical_J_per_m": 0.0,
+      "PLAIN_GRADIENT_FREE:final:cumulative_thermoelastic_work_J_per_m": 2.5032998095415893e-15,
+      "PLAIN_GRADIENT_FREE:final:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:peak:eps0": 0.0,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:peak:kappa_per_m": 0.0,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:peak:N_N": 0.0,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:peak:M_Nm": 0.0,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:peak:stored_mechanical_J_per_m": 0.0,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:peak:cumulative_thermoelastic_work_J_per_m": 4.559269925474455e-15,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:peak:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:final:eps0": 0.0,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:final:kappa_per_m": 0.0,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:final:N_N": 0.0,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:final:M_Nm": 0.0,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:final:stored_mechanical_J_per_m": 0.0,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:final:cumulative_thermoelastic_work_J_per_m": 4.559269925474455e-15,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:final:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_UNIFORM_FREE:peak:eps0": 0.0,
+      "R02_UNIFORM_FREE:peak:kappa_per_m": 0.0,
+      "R02_UNIFORM_FREE:peak:N_N": 0.0,
+      "R02_UNIFORM_FREE:peak:M_Nm": 0.0,
+      "R02_UNIFORM_FREE:peak:stored_mechanical_J_per_m": 0.0,
+      "R02_UNIFORM_FREE:peak:cumulative_thermoelastic_work_J_per_m": 6.780335496959163e-14,
+      "R02_UNIFORM_FREE:peak:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_UNIFORM_FREE:final:eps0": 0.0,
+      "R02_UNIFORM_FREE:final:kappa_per_m": 0.0,
+      "R02_UNIFORM_FREE:final:N_N": 0.0,
+      "R02_UNIFORM_FREE:final:M_Nm": 0.0,
+      "R02_UNIFORM_FREE:final:stored_mechanical_J_per_m": 0.0,
+      "R02_UNIFORM_FREE:final:cumulative_thermoelastic_work_J_per_m": 6.780335496959163e-14,
+      "R02_UNIFORM_FREE:final:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_UNIFORM_AXIAL_RESTRAINED:peak:eps0": 0.0,
+      "R02_UNIFORM_AXIAL_RESTRAINED:peak:kappa_per_m": 0.0,
+      "R02_UNIFORM_AXIAL_RESTRAINED:peak:N_N": 0.0,
+      "R02_UNIFORM_AXIAL_RESTRAINED:peak:M_Nm": 0.0,
+      "R02_UNIFORM_AXIAL_RESTRAINED:peak:stored_mechanical_J_per_m": 0.0,
+      "R02_UNIFORM_AXIAL_RESTRAINED:peak:cumulative_thermoelastic_work_J_per_m": 2.278559364435155e-16,
+      "R02_UNIFORM_AXIAL_RESTRAINED:peak:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_UNIFORM_AXIAL_RESTRAINED:final:eps0": 0.0,
+      "R02_UNIFORM_AXIAL_RESTRAINED:final:kappa_per_m": 0.0,
+      "R02_UNIFORM_AXIAL_RESTRAINED:final:N_N": 0.0,
+      "R02_UNIFORM_AXIAL_RESTRAINED:final:M_Nm": 0.0,
+      "R02_UNIFORM_AXIAL_RESTRAINED:final:stored_mechanical_J_per_m": 0.0,
+      "R02_UNIFORM_AXIAL_RESTRAINED:final:cumulative_thermoelastic_work_J_per_m": 2.278559364435155e-16,
+      "R02_UNIFORM_AXIAL_RESTRAINED:final:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_GRADIENT_FREE:peak:eps0": 0.0,
+      "R02_GRADIENT_FREE:peak:kappa_per_m": 0.0,
+      "R02_GRADIENT_FREE:peak:N_N": 0.0,
+      "R02_GRADIENT_FREE:peak:M_Nm": 0.0,
+      "R02_GRADIENT_FREE:peak:stored_mechanical_J_per_m": 0.0,
+      "R02_GRADIENT_FREE:peak:cumulative_thermoelastic_work_J_per_m": 2.2315482794965646e-14,
+      "R02_GRADIENT_FREE:peak:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_GRADIENT_FREE:final:eps0": 0.0,
+      "R02_GRADIENT_FREE:final:kappa_per_m": 0.0,
+      "R02_GRADIENT_FREE:final:N_N": 0.0,
+      "R02_GRADIENT_FREE:final:M_Nm": 0.0,
+      "R02_GRADIENT_FREE:final:stored_mechanical_J_per_m": 0.0,
+      "R02_GRADIENT_FREE:final:cumulative_thermoelastic_work_J_per_m": 2.2315482794965646e-14,
+      "R02_GRADIENT_FREE:final:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_GRADIENT_FULLY_RESTRAINED:peak:eps0": 0.0,
+      "R02_GRADIENT_FULLY_RESTRAINED:peak:kappa_per_m": 0.0,
+      "R02_GRADIENT_FULLY_RESTRAINED:peak:N_N": 0.0,
+      "R02_GRADIENT_FULLY_RESTRAINED:peak:M_Nm": 0.0,
+      "R02_GRADIENT_FULLY_RESTRAINED:peak:stored_mechanical_J_per_m": 0.0,
+      "R02_GRADIENT_FULLY_RESTRAINED:peak:cumulative_thermoelastic_work_J_per_m": 1.71033248295313e-16,
+      "R02_GRADIENT_FULLY_RESTRAINED:peak:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_GRADIENT_FULLY_RESTRAINED:final:eps0": 0.0,
+      "R02_GRADIENT_FULLY_RESTRAINED:final:kappa_per_m": 0.0,
+      "R02_GRADIENT_FULLY_RESTRAINED:final:N_N": 0.0,
+      "R02_GRADIENT_FULLY_RESTRAINED:final:M_Nm": 0.0,
+      "R02_GRADIENT_FULLY_RESTRAINED:final:stored_mechanical_J_per_m": 0.0,
+      "R02_GRADIENT_FULLY_RESTRAINED:final:cumulative_thermoelastic_work_J_per_m": 1.71033248295313e-16,
+      "R02_GRADIENT_FULLY_RESTRAINED:final:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_UNIFORM_RESTRAINED_CYCLE:peak:eps0": 0.0,
+      "R02_UNIFORM_RESTRAINED_CYCLE:peak:kappa_per_m": 0.0,
+      "R02_UNIFORM_RESTRAINED_CYCLE:peak:N_N": 0.0,
+      "R02_UNIFORM_RESTRAINED_CYCLE:peak:M_Nm": 0.0,
+      "R02_UNIFORM_RESTRAINED_CYCLE:peak:stored_mechanical_J_per_m": 0.0,
+      "R02_UNIFORM_RESTRAINED_CYCLE:peak:cumulative_thermoelastic_work_J_per_m": 2.278559364435155e-16,
+      "R02_UNIFORM_RESTRAINED_CYCLE:peak:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_UNIFORM_RESTRAINED_CYCLE:final:eps0": 0.0,
+      "R02_UNIFORM_RESTRAINED_CYCLE:final:kappa_per_m": 0.0,
+      "R02_UNIFORM_RESTRAINED_CYCLE:final:N_N": 0.0,
+      "R02_UNIFORM_RESTRAINED_CYCLE:final:M_Nm": 0.0,
+      "R02_UNIFORM_RESTRAINED_CYCLE:final:stored_mechanical_J_per_m": 0.0,
+      "R02_UNIFORM_RESTRAINED_CYCLE:final:cumulative_thermoelastic_work_J_per_m": 1.1546319456101628e-13,
+      "R02_UNIFORM_RESTRAINED_CYCLE:final:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_GRADIENT_FREE_CYCLE:peak:eps0": 0.0,
+      "R02_GRADIENT_FREE_CYCLE:peak:kappa_per_m": 0.0,
+      "R02_GRADIENT_FREE_CYCLE:peak:N_N": 0.0,
+      "R02_GRADIENT_FREE_CYCLE:peak:M_Nm": 0.0,
+      "R02_GRADIENT_FREE_CYCLE:peak:stored_mechanical_J_per_m": 0.0,
+      "R02_GRADIENT_FREE_CYCLE:peak:cumulative_thermoelastic_work_J_per_m": 2.2315482794965646e-14,
+      "R02_GRADIENT_FREE_CYCLE:peak:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_GRADIENT_FREE_CYCLE:final:eps0": 0.0,
+      "R02_GRADIENT_FREE_CYCLE:final:kappa_per_m": 0.0,
+      "R02_GRADIENT_FREE_CYCLE:final:N_N": 0.0,
+      "R02_GRADIENT_FREE_CYCLE:final:M_Nm": 0.0,
+      "R02_GRADIENT_FREE_CYCLE:final:stored_mechanical_J_per_m": 0.0,
+      "R02_GRADIENT_FREE_CYCLE:final:cumulative_thermoelastic_work_J_per_m": 1.509485895653806e-14,
+      "R02_GRADIENT_FREE_CYCLE:final:sensible_enthalpy_change_J_per_m": 0.0
+    },
+    "mesh_160_to_320": {
+      "COLD_R02_FREE:eps0": 0.0,
+      "COLD_R02_FREE:kappa_per_m": 0.0,
+      "COLD_R02_FREE:N_N": 0.0,
+      "COLD_R02_FREE:M_Nm": 0.0,
+      "COLD_R02_FREE:stored_mechanical_J_per_m": 0.0,
+      "COLD_R02_FREE:sensible_enthalpy_change_J_per_m": 0.0,
+      "PLAIN_UNIFORM_FREE:eps0": 3.252606517456508e-15,
+      "PLAIN_UNIFORM_FREE:kappa_per_m": 3.331290763680616e-10,
+      "PLAIN_UNIFORM_FREE:N_N": 1.2587433716691917e-08,
+      "PLAIN_UNIFORM_FREE:M_Nm": 3.3927329811745276e-26,
+      "PLAIN_UNIFORM_FREE:stored_mechanical_J_per_m": 1.3647322981654655e-27,
+      "PLAIN_UNIFORM_FREE:sensible_enthalpy_change_J_per_m": 0.0,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:eps0": 0.0,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:kappa_per_m": 0.0,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:N_N": 3.369166679975735e-15,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:M_Nm": 6.139089236967266e-12,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:stored_mechanical_J_per_m": 0.0,
+      "PLAIN_UNIFORM_FULLY_RESTRAINED:sensible_enthalpy_change_J_per_m": 0.0,
+      "PLAIN_GRADIENT_FREE:eps0": 0.0,
+      "PLAIN_GRADIENT_FREE:kappa_per_m": 9.583479843033862e-16,
+      "PLAIN_GRADIENT_FREE:N_N": 7.303743684894289e-12,
+      "PLAIN_GRADIENT_FREE:M_Nm": 3.479701654974098e-11,
+      "PLAIN_GRADIENT_FREE:stored_mechanical_J_per_m": 8.696247818421855e-29,
+      "PLAIN_GRADIENT_FREE:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:eps0": 9.035018104045879e-16,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:kappa_per_m": 1.5972466405056447e-16,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:N_N": 2.1483857606556577e-09,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:M_Nm": 7.486227297283611e-12,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:stored_mechanical_J_per_m": 1.8819926405297e-27,
+      "R02_COMMON_ALPHA_GRADIENT_FREE:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_UNIFORM_FREE:eps0": 2.374453293442386e-15,
+      "R02_UNIFORM_FREE:kappa_per_m": 1.3038265527919138e-09,
+      "R02_UNIFORM_FREE:N_N": 9.405994205735624e-09,
+      "R02_UNIFORM_FREE:M_Nm": 9.663381206337363e-12,
+      "R02_UNIFORM_FREE:stored_mechanical_J_per_m": 0.0,
+      "R02_UNIFORM_FREE:sensible_enthalpy_change_J_per_m": 1.5327293716992683e-16,
+      "R02_UNIFORM_AXIAL_RESTRAINED:eps0": 0.0,
+      "R02_UNIFORM_AXIAL_RESTRAINED:kappa_per_m": 1.3037730067508895e-09,
+      "R02_UNIFORM_AXIAL_RESTRAINED:N_N": 3.2842771614208603e-15,
+      "R02_UNIFORM_AXIAL_RESTRAINED:M_Nm": 5.229594535194337e-12,
+      "R02_UNIFORM_AXIAL_RESTRAINED:stored_mechanical_J_per_m": 0.0,
+      "R02_UNIFORM_AXIAL_RESTRAINED:sensible_enthalpy_change_J_per_m": 1.5327293716992683e-16,
+      "R02_GRADIENT_FREE:eps0": 8.634375612517766e-16,
+      "R02_GRADIENT_FREE:kappa_per_m": 1.1706753647941042e-07,
+      "R02_GRADIENT_FREE:N_N": 1.705757313175127e-09,
+      "R02_GRADIENT_FREE:M_Nm": 8.412825991399586e-12,
+      "R02_GRADIENT_FREE:stored_mechanical_J_per_m": 7.910057941984405e-08,
+      "R02_GRADIENT_FREE:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_GRADIENT_FULLY_RESTRAINED:eps0": 0.0,
+      "R02_GRADIENT_FULLY_RESTRAINED:kappa_per_m": 0.0,
+      "R02_GRADIENT_FULLY_RESTRAINED:N_N": 0.0,
+      "R02_GRADIENT_FULLY_RESTRAINED:M_Nm": 2.8580090335477055e-05,
+      "R02_GRADIENT_FULLY_RESTRAINED:stored_mechanical_J_per_m": 7.092731891109333e-06,
+      "R02_GRADIENT_FULLY_RESTRAINED:sensible_enthalpy_change_J_per_m": 0.0,
+      "R02_UNIFORM_RESTRAINED_CYCLE:eps0": 0.0,
+      "R02_UNIFORM_RESTRAINED_CYCLE:kappa_per_m": 0.0,
+      "R02_UNIFORM_RESTRAINED_CYCLE:N_N": 3.2842771614208603e-15,
+      "R02_UNIFORM_RESTRAINED_CYCLE:M_Nm": 5.229594535194337e-12,
+      "R02_UNIFORM_RESTRAINED_CYCLE:stored_mechanical_J_per_m": 0.0,
+      "R02_UNIFORM_RESTRAINED_CYCLE:sensible_enthalpy_change_J_per_m": 1.5327293716992683e-16,
+      "R02_GRADIENT_FREE_CYCLE:eps0": 8.634375612517766e-16,
+      "R02_GRADIENT_FREE_CYCLE:kappa_per_m": 1.1706753647941042e-07,
+      "R02_GRADIENT_FREE_CYCLE:N_N": 1.705757313175127e-09,
+      "R02_GRADIENT_FREE_CYCLE:M_Nm": 8.412825991399586e-12,
+      "R02_GRADIENT_FREE_CYCLE:stored_mechanical_J_per_m": 7.910057941984405e-08,
+      "R02_GRADIENT_FREE_CYCLE:sensible_enthalpy_change_J_per_m": 0.0
+    }
+  }
+}

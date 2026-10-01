@@ -1,0 +1,93 @@
+{
+  "iteration": "V10Q",
+  "generated_at_utc": "2026-09-04T07:30:16Z",
+  "validation_status": "PASS",
+  "cached_input_count": 6,
+  "official_source_hash_only_count": 3,
+  "cached_inputs": [
+    {
+      "role": "NIST_WTC1_TRANSFER_TRANSCRIPTION",
+      "path": "wtc1_simulation_v8/data/nist_wtc1_transfer.json",
+      "sha256": "bdf4d779bb41f0d64c908702261ea2f571ba6d73b5d0e09876168c4c03cfe8fb",
+      "bytes": 9516,
+      "read_mode": "FULL_ARTIFACT",
+      "status": "PASS",
+      "evidence_class": "MANUAL_TRANSCRIPTION_OF_OFFICIAL_MODEL_INPUTS_AND_OUTPUTS"
+    },
+    {
+      "role": "V8A_TRANSFER_RESULTS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8a.json",
+      "sha256": "8cc833df3ae273b5fa09a54e94e9372e3a140dd3f6b0b49b3a8f11ddf63ca420",
+      "bytes": 28482,
+      "read_mode": "FULL_ARTIFACT",
+      "status": "PASS",
+      "evidence_class": "CACHED_DERIVED_RESULT"
+    },
+    {
+      "role": "V8E_SYNTHETIC_THERMAL_SCRIPT",
+      "path": "wtc1_simulation_v8/scripts/run_v8e_spatial_thermal_fields.py",
+      "sha256": "f43426749057c4f60be1460f4ded92e847acbd6c13626d1d206b91a60343b113",
+      "bytes": 19016,
+      "read_mode": "FULL_ARTIFACT",
+      "status": "PASS",
+      "evidence_class": "CACHED_TRANSFORMATION_CODE"
+    },
+    {
+      "role": "V8E_SYNTHETIC_THERMAL_RESULTS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8e_champs_thermiques.json",
+      "sha256": "d26e0c2671bb2f0bd1839e6208739e1703597adb79f88a4d81c0df5c330b956e",
+      "bytes": 329553,
+      "read_mode": "FULL_ARTIFACT",
+      "status": "PASS",
+      "evidence_class": "CACHED_SYNTHETIC_FIELD_RESULT_NOT_MEMBER_TEMPERATURE_MEASUREMENT"
+    },
+    {
+      "role": "V10O_ZERO_FIRE_CONTROL_TRACE",
+      "path": "wtc1_simulation_v8/output/v10o_null_control_trace.json",
+      "sha256": "62890121c6bc89aa5970e9266bcd89ff1b148c672d601c8ca2f293df81405864",
+      "bytes": 22005,
+      "read_mode": "FULL_ARTIFACT",
+      "status": "PASS",
+      "evidence_class": "SYNTHETIC_SOFTWARE_CONTROL"
+    },
+    {
+      "role": "V10P_IMPACT_DAMAGE_TRACK_MANIFEST",
+      "path": "wtc1_simulation_v8/output/v10p_three_track_handoff.json",
+      "sha256": "458196235667e546d5eef53878ad401c17d807141422ebfa9aa8f3f0c7264868",
+      "bytes": 36412,
+      "read_mode": "FULL_ARTIFACT",
+      "status": "PASS",
+      "evidence_class": "THREE_TRACK_UPSTREAM_HANDOFF"
+    }
+  ],
+  "official_source_hash_only_files": [
+    {
+      "role": "NCSTAR1_2B_V2",
+      "path": "work/official_sources/ncstar1-2bv2.pdf",
+      "sha256": "c5bb701fad4103d072f89548c683c0e8ee583c49d94e3f165985088f3443ea1d",
+      "bytes": 21574822,
+      "read_mode": "HASH_ONLY_NO_PAGE_OR_TEXT_EXTRACTION",
+      "status": "PASS",
+      "use": "hash continuity only for base impact/fuel distribution source context"
+    },
+    {
+      "role": "NCSTAR1_5G",
+      "path": "work/official_sources/ncstar1-5g.pdf",
+      "sha256": "f6aa637c05c4ff1ae2a6a5e9192471aa69e6e0aa97a4bbe5aa33afd68a3526ea",
+      "bytes": 29847167,
+      "read_mode": "HASH_ONLY_NO_PAGE_OR_TEXT_EXTRACTION",
+      "status": "PASS",
+      "use": "hash continuity only for Case B fuel-load and structural-temperature range source context"
+    },
+    {
+      "role": "NCSTAR1_6D_LOCAL",
+      "path": "work/official_sources/ncstar1-6d.pdf",
+      "sha256": "0d2a155fc820c83e4bc7df32a6da098261eb2e7f8d1358abd00d11c12bd6c9ff",
+      "bytes": 16929539,
+      "read_mode": "HASH_ONLY_NO_PAGE_OR_TEXT_EXTRACTION",
+      "status": "PASS",
+      "use": "hash continuity only for global structural-model transfer context"
+    }
+  ],
+  "source_use_rule": "PDFs provide hash continuity only. Numeric values are consumed from the frozen cached transcription and remain official-model dependent."
+}

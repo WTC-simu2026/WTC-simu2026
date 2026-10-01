@@ -1,0 +1,164 @@
+{
+  "experiment": "WTC1-IMPACT-I02G",
+  "status": "completed_bounded_mt_coupon_with_failed_crack_mesh_convergence_and_unreached_fine_ctoa_domain",
+  "accepted_cases": [
+    "ELASTIC_H508_A0_R1",
+    "ELASTIC_H254_A0_R2",
+    "NOPROP_H254_A0_R2",
+    "G15_H508_A0_R2",
+    "G30_H508_A0_R2",
+    "G60_H508_A0_R2",
+    "G30_H254_A0_R2",
+    "G30_H254_S5_R3"
+  ],
+  "accepted_case_count": 8,
+  "accepted_case_checks": 56,
+  "accepted_execution_seconds": 827.9034772999876,
+  "geometry": {
+    "width_mm": 76.2,
+    "length_mm": 300.0,
+    "thickness_mm": 2.3,
+    "initial_total_crack_length_mm": 25.4,
+    "orientation": "L-T",
+    "loading": "fixed lower grip and prescribed upper-grip displacement",
+    "source": "NASA CR-191523 Figure 1 and specimen description"
+  },
+  "material": {
+    "name": "AA2024-T3",
+    "density_g_per_mm3": 0.00278,
+    "young_modulus_mpa": 73100.0,
+    "poisson_ratio": 0.33,
+    "yield_strength_mpa": 360.0,
+    "ultimate_strength_mpa": 495.0,
+    "constitutive_law": "elastic_perfectly_plastic",
+    "source_status": {
+      "yield_and_ultimate": "NASA CR-191523, 2.3 mm 2024-T3 sheet",
+      "elastic_constants_and_density": "generic I02F hypotheses, not reported in CR-191523",
+      "post_yield_curve": "not identified; perfect plasticity is a bounded hypothesis"
+    }
+  },
+  "seam": {
+    "formulation": "massless zero-length TYPE8 springs along the prescribed horizontal crack path",
+    "peak_normal_traction_mpa": 495.0,
+    "normal_stiffness_per_area_equation": "K_n = E / h",
+    "tangential_stiffness_per_area_equation": "K_t = G / h",
+    "softening": "bilinear triangular traction-opening law",
+    "final_opening_equation": "delta_f = 2 Gf / peak_traction",
+    "predeclared_Gf_N_per_mm": [
+      15.0,
+      30.0,
+      60.0
+    ],
+    "no_propagation_control": "same seam topology with linear non-failing normal response",
+    "qualification": "explicit prescribed-path cohesive surrogate; not a calibrated 3D ductile crack law"
+  },
+  "coarse_gf_results": [
+    {
+      "case": "G15_H508_A0_R2",
+      "Gf_N_per_mm": 15.0,
+      "first_complete_separation_stress_mpa": 147.86536003651716,
+      "first_extension_mm": 2.54,
+      "ctoa_B_deg_at_advance": 2.77267897840506,
+      "ctoa_2B_deg_at_advance": 1.4514427202989317
+    },
+    {
+      "case": "G30_H508_A0_R2",
+      "Gf_N_per_mm": 30.0,
+      "first_complete_separation_stress_mpa": 147.9425322378181,
+      "first_extension_mm": 2.54,
+      "ctoa_B_deg_at_advance": 3.0232485257051125,
+      "ctoa_2B_deg_at_advance": 1.720874940558513
+    },
+    {
+      "case": "G60_H508_A0_R2",
+      "Gf_N_per_mm": 60.0,
+      "first_complete_separation_stress_mpa": 216.26681958233482,
+      "first_extension_mm": 2.54,
+      "ctoa_B_deg_at_advance": 5.804053243975352,
+      "ctoa_2B_deg_at_advance": 3.1758585448673884
+    }
+  ],
+  "elastic_mesh_peak_stress_difference_fraction": 0.009880994113512613,
+  "g30_mesh_complete_separation_onset_difference_fraction": 0.20065918682718908,
+  "g30_orientation_complete_separation_onset_difference_fraction": 0.002518320630677619,
+  "g30_coarse_complete_separation_onset_mpa": 147.9425322378181,
+  "g30_fine_complete_separation_onset_mpa": 185.08066872075773,
+  "g30_fine_skew5_complete_separation_onset_mpa": 185.54793792080338,
+  "g30_coarse_final_extension_mm": 2.54,
+  "g30_fine_final_extension_mm": 1.27,
+  "maximum_energy_residual_fraction": 0.0010333817694130067,
+  "maximum_section_work_to_external_error_fraction": 1.2909458929575025e-05,
+  "maximum_kinetic_to_internal_at_peak_stress": 5.573824207924797e-05,
+  "maximum_mass_error_fraction": 2.736598806150208e-07,
+  "published_comparators": {
+    "low_fatigue_stable_tearing_remote_stress_mpa_approx": 200.0,
+    "high_fatigue_stable_tearing_remote_stress_mpa_approx": 230.0,
+    "settled_surface_ctoa_deg_approx": 6.0,
+    "settled_ctoa_comparison_band_deg": [
+      5.0,
+      7.0
+    ],
+    "settled_after_extension_mm_min": 2.3,
+    "use": "independent post-run comparison only; no parameter fitting"
+  },
+  "campaign_checks": {
+    "accepted_case_gates": true,
+    "source_geometry_exact": true,
+    "two_meshes_present": true,
+    "two_accepted_orientations_present": true,
+    "fine_no_propagation_control": true,
+    "elastic_mesh_peak_stress": true,
+    "g30_mesh_onset": false,
+    "g30_orientation_onset": true,
+    "fine_ctoa_domain_reached": false,
+    "energy_and_section_work": true,
+    "mass": true,
+    "historical_conclusion_disabled": true
+  },
+  "campaign_pass_count": 10,
+  "campaign_check_count": 12,
+  "all_campaign_checks_pass": false,
+  "rejected_attempts": [
+    {
+      "directory": "ELASTIC_H508_A0_R0",
+      "status": "starter_rejected",
+      "reason": "invalid PLAS variable in /TH/PART; no solver state produced"
+    },
+    {
+      "directory": "G30_H254_S20_R2",
+      "status": "engine_timeout_600_s_rejected",
+      "reason": "20 degree mapped mesh compressed local elements and made the explicit step prohibitively small",
+      "mesh_quality": {
+        "minimum_edge_mm": 0.005826283182351233,
+        "maximum_edge_mm": 5.248435180953443,
+        "minimum_signed_area_mm2": -0.4243051963862854,
+        "maximum_signed_area_mm2": 13.33955943367414
+      }
+    }
+  ],
+  "accepted_skew5_mesh_quality": {
+    "minimum_edge_mm": 1.888964964934729,
+    "maximum_edge_mm": 3.191035035065269,
+    "minimum_signed_area_mm2": 4.803395524866119,
+    "maximum_signed_area_mm2": 8.111858712421736
+  },
+  "tab2_decision": {
+    "examined": true,
+    "selected": false,
+    "reason": "The official card requires or permits failure plastic strain as functions of triaxiality, Lode parameter, temperature and element size. Those 2024-T3 inputs are not identified here; a constant TAB2 card would hide rather than close that evidence gap."
+  },
+  "reaction_measurement": {
+    "used": "sum of cohesive seam FY forces",
+    "verification": "trapezoidal integral of section force over imposed grip displacement compared with solver external work",
+    "raw_upper_grip_REACY_sum_used": false,
+    "reason_raw_reaction_excluded": "the raw nodal REACY sum did not close the work balance in this deck"
+  },
+  "physical_2024_tearing_calibrated": false,
+  "three_dimensional_crack_tunneling_reproduced": false,
+  "boeing_767_wing_qualified": false,
+  "full_facade_qualified": false,
+  "historical_penetration_conclusion_authorized": false,
+  "cold_V11F_preserved": true,
+  "thermal_V11R_preserved": true,
+  "next_iteration": "IMPACT-I02H"
+}

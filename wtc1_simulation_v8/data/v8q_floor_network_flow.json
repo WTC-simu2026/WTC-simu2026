@@ -1,0 +1,78 @@
+{
+  "dataset": {
+    "name": "WTC 1 V8Q constrained floor network-flow and null-space audit",
+    "version": "8.16.0",
+    "status": "PREDECLARED_FLOOR_NETWORK_FLOW_AND_IDENTIFIABILITY_AUDIT",
+    "scope": "Use the V8P before/after axial-force intervals and official Floor 93-99 core totals to impose exact floor-by-floor nodal equilibrium on an explicit orthogonal core graph, then quantify structural non-uniqueness and test six geometry-selected columns withheld before solving.",
+    "warning": "The force intervals remain digitized outputs of the NIST global model. Edge-flow variables are equilibrium bookkeeping variables, not calibrated beam, slab, connection, or explosive demands. Algebraic feasibility cannot validate a physical cold load path or an event mechanism."
+  },
+  "official_facts": [
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_pages": [283, 284],
+      "printed_pages": [219, 220],
+      "fact": "Figures 4-60 and 4-61 display the floor-specific axial-force contours used by V8P before and immediately after aircraft impact.",
+      "confidence": "high; inherited from V8P visual and resource audit"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 294,
+      "printed_page": 230,
+      "fact": "Table 4-20 reports the WTC 1 total core-column loads at Floors 93-99 before and immediately after impact.",
+      "confidence": "high; inherited from V8P visual audit"
+    }
+  ],
+  "model_hypotheses": {
+    "nodal_balance": "For each floor, after-load minus before-load equals the signed divergence of in-plane core-edge transfers plus an external floor/perimeter exchange on declared boundary columns.",
+    "orthogonal_adjacency": "Connect consecutive identifiers within each 500-1000 row and equal terminal digits between consecutive rows, matching the V8L reconstructed orthogonal topology envelope.",
+    "external_ports": "Allow one signed external exchange only on columns whose reconstructed x or y coordinate is at the core envelope minimum or maximum.",
+    "regularized_representative": "Among infinitely many equilibrium flows, select the weighted minimum-quadratic-energy representative. Edge weights scale with reconstructed length; boundary-port weights are selected only by inner validation.",
+    "important_limit": "No as-built floor membrane stiffness, connection force-displacement law, or edge capacity is assigned in V8Q. The selected flow is a mathematical gauge, not a mechanically identified force path."
+  },
+  "reserved_validation": {
+    "columns": [502, 607, 703, 806, 906, 1003],
+    "selection_rule": "One surviving column from each reconstructed row, chosen before V8Q solving and distinct from the V8P reserved set.",
+    "withheld_fields": "All seven after-impact intervals for every reserved column are excluded from hyperparameter selection and final solving. Before-impact intervals, official totals, coordinates and topology remain available.",
+    "v8p_reserved_columns_not_reused": [705, 804, 605]
+  },
+  "inner_validation": {
+    "columns": [501, 506, 602, 606, 702, 707, 801, 807, 902, 907, 1001, 1006],
+    "method": "Leave one declared inner column out over Floors 93-99 while keeping all final reserved columns unavailable. Select lexicographically by mean distance outside its observed interval, midpoint MAE, maximum midpoint error, then parameter magnitude.",
+    "boundary_port_penalties": [1.0, 4.0, 16.0, 64.0],
+    "observed_target_penalties": [0.1, 1.0, 10.0, 100.0]
+  },
+  "uncertainty_sampling": {
+    "seed": 911008017,
+    "sample_count": 256,
+    "method": "Deterministic uniform sampling inside every available digitization interval, followed by exact bounded projection of before-impact loads to the official total and a constrained solution for after-impact loads. Reserved after-impact values remain hidden.",
+    "reported_band_percentiles": [5.0, 95.0]
+  },
+  "numerics": {
+    "projection_tolerance_kip": 1e-10,
+    "projected_gradient_tolerance_kip": 1e-8,
+    "maximum_iterations": 20000,
+    "equilibrium_residual_tolerance_kip": 1e-7,
+    "rank_relative_tolerance": 1e-10
+  },
+  "acceptance_gates": {
+    "full_row_rank_required": true,
+    "maximum_equilibrium_residual_kip": 1e-7,
+    "reserved_interval_coverage_min": 0.70,
+    "reserved_midpoint_mae_kip_max": 180.0,
+    "reserved_midpoint_maximum_error_kip_max": 450.0,
+    "reserved_p90_band_midpoint_coverage_min": 0.70,
+    "identified_transfer_nullity_max": 0,
+    "mechanical_capacity_calibration_required": true,
+    "thermal_or_blender_authorization": false
+  },
+  "provenance": {
+    "v8p_configuration": "wtc1_simulation_v8/data/v8p_vertical_state_graph.json",
+    "v8p_digitization": "wtc1_simulation_v8/output/digitisation_wtc1_v8p_verticale.json",
+    "v8p_results": "wtc1_simulation_v8/output/resultats_wtc1_v8p_graphe_vertical.json",
+    "v8l_configuration": "wtc1_simulation_v8/data/v8l_multistory_cold_frame.json",
+    "v8l_script": "wtc1_simulation_v8/scripts/run_v8l_multistory_cold_frame.py",
+    "core_geometry": "wtc1_3d_v4/data/wtc1_parameters.json"
+  }
+}

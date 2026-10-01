@@ -1,0 +1,187 @@
+{
+  "iteration": "V10L",
+  "dataset": {
+    "name": "Corrected bounded visual locator audit for Book 5 drawing 5-AB3-1",
+    "version": "10.12.0",
+    "status": "PREDECLARED_NOT_YET_REVIEWED",
+    "random_seed": 1012031,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10K. Render and inspect only Book 5 PDF pages 275-278 frozen before reading in the immutable V10L predeclaration. Resolve only 5-AB3-1. Do not reread pages 279-280, scan the PDF, use OCR or embedded text extraction, transcribe geometry or dimensions, assign physical properties or damage, run a solver, continue thermal work or launch Blender."
+  },
+  "predeclaration": {
+    "path": "wtc1_simulation_v8/data/v10l_corrected_micro_window_predeclaration.json",
+    "expected_sha256": "2236b08c8ea42e4ca4fbb865a3c9a879aeec1df8253feb5e9f0dd996c2b0d6e6",
+    "required_status": "IMMUTABLE_CREATED_BEFORE_ANY_NEW_V10L_PDF_PAGE_CONTENT_READ",
+    "required_document_count": 1,
+    "required_window_count": 1,
+    "required_locator_count": 1,
+    "required_aggregate_candidate_page_count": 4
+  },
+  "source_policy": {
+    "v10i_working_copy_read_only": true,
+    "source_archive_read": false,
+    "source_archive_modified": false,
+    "official_sources_directory_read": false,
+    "official_sources_directory_modified": false,
+    "network_access_during_page_audit_authorized": false,
+    "candidate_page_content_read_authorized": true,
+    "non_candidate_page_content_read_authorized": false,
+    "candidate_page_render_authorized": true,
+    "full_document_text_extraction_authorized": false,
+    "candidate_page_embedded_text_extraction_authorized": false,
+    "ocr_authorized": false,
+    "drawing_geometry_transcription_authorized": false,
+    "dimension_transcription_authorized": false,
+    "member_property_transcription_authorized": false,
+    "connection_detail_transcription_authorized": false,
+    "structural_solver_authorized": false,
+    "blender_authorized": false,
+    "blender_master_modification_authorized": false,
+    "thermal_continuation_authorized": false,
+    "physical_assignment_authorized": false
+  },
+  "regression_files": [
+    {
+      "role": "v10k_predeclaration",
+      "path": "wtc1_simulation_v8/data/v10k_bounded_cross_reference_predeclaration.json",
+      "expected_sha256": "6faeb7403f9d12a6de05e20218bcfbafb62d646c929f5d0511ea4b1145d1bdaa"
+    },
+    {
+      "role": "v10k_configuration",
+      "path": "wtc1_simulation_v8/data/v10k_bounded_cross_reference_audit.json",
+      "expected_sha256": "506bcab2f4692e621b7fd41b3dee980bb71493a831e6fe6b26e7c244c58c5275"
+    },
+    {
+      "role": "v10k_manual_transcription",
+      "path": "wtc1_simulation_v8/data/v10k_cross_reference_manual_transcription.json",
+      "expected_sha256": "85b9dafbec74eed5951727023bc6bc649e300e8a6cdb154fa6a0ff6bd68a1a99"
+    },
+    {
+      "role": "v10k_script",
+      "path": "wtc1_simulation_v8/scripts/run_v10k_bounded_cross_reference_audit.py",
+      "expected_sha256": "845c06408515eb74f7607d18cf05f3d7340f580df8a125b8b14c36752675f7db"
+    },
+    {
+      "role": "v10k_source_manifest",
+      "path": "wtc1_simulation_v8/output/v10k_cross_reference_source_manifest.json",
+      "expected_sha256": "adc5abc7b0039b94245934b01b9b25748d843bbfe5f2d42716c64dc2c7e89348"
+    },
+    {
+      "role": "v10k_regression_audit",
+      "path": "wtc1_simulation_v8/output/v10k_regression_audit.json",
+      "expected_sha256": "a25abe8ef9173ca50c0b770f8798194010e9aeb8417deb3eefa5c0b2d1574475"
+    },
+    {
+      "role": "v10k_candidate_page_manifest",
+      "path": "wtc1_simulation_v8/output/v10k_candidate_page_manifest.json",
+      "expected_sha256": "aefb31d17a8620951b703ddbe9bda6120921dcf0d7eef3d338f684d601ab8d06"
+    },
+    {
+      "role": "v10k_page_render_audit",
+      "path": "wtc1_simulation_v8/output/v10k_page_render_audit.json",
+      "expected_sha256": "f9b4ffe296f556cae27daa338dc1cfb6785b72d2e7c49fc1d2dd9e2091def560"
+    },
+    {
+      "role": "v10k_manual_transcription_audit",
+      "path": "wtc1_simulation_v8/output/v10k_manual_transcription_audit.json",
+      "expected_sha256": "b8ffb9c161256ce5c5232747619db9d4cca78dc165479629976514b94233791f"
+    },
+    {
+      "role": "v10k_locator_matrix",
+      "path": "wtc1_simulation_v8/output/v10k_cross_reference_locator_matrix.csv",
+      "expected_sha256": "bbad97909fdbad8cf171860ed16b046b36192a7c1aaed4dbd60957b280d29c02"
+    },
+    {
+      "role": "v10k_floor_matrix",
+      "path": "wtc1_simulation_v8/output/v10k_floor93_99_locator_matrix.csv",
+      "expected_sha256": "5d30f179969c2eb46cf77335abd0e1662815dd228f4c95a0af54391a0ab17706"
+    },
+    {
+      "role": "v10k_gate",
+      "path": "wtc1_simulation_v8/output/v10k_structural_source_gate.json",
+      "expected_sha256": "9a639bc484b379e64ee98bf5a974e671b962204f4c59736bb3797d0f0ccd24f8"
+    },
+    {
+      "role": "v10k_report",
+      "path": "wtc1_simulation_v8/output/rapport_wtc1_v10k_audit_renvois_bornes.md",
+      "expected_sha256": "fea4945ff62257ba1546034e9f4b6e8de1f40dcc24fda08487f138221aad872d"
+    },
+    {
+      "role": "v10k_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10k_audit_renvois_bornes.json",
+      "expected_sha256": "8010bb231e90aa01519775adef58198ccec74ec7d81350f7227ffa31217ac9d8"
+    },
+    {
+      "role": "v10k_contact_sheet",
+      "path": "wtc1_simulation_v8/output/v10k_cross_reference_figures/v10k_contact_sheet.png",
+      "expected_sha256": "5fab281cc618e479119d6c97cf5a9abe735f82315c23da01b170f2d5ddae15ef"
+    },
+    {
+      "role": "v10k_offline_audit",
+      "path": "wtc1_simulation_v8/output/v10k_offline_package_audit.json",
+      "expected_sha256": "d3086f76388212ff8ff0a756e63f32f6b8ca43f132e5469f8ca01930ac2f0d50"
+    }
+  ],
+  "protected_files": [
+    {
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+    }
+  ],
+  "working_copy": {
+    "path": "wtc1_simulation_v8/input/v10i_structural_sources/WTCI-000016-L__9c6354e1dc9915ec.pdf",
+    "expected_sha256": "9c6354e1dc9915ec27b44f97be0803d6dada6a8aa59a160c20095c69e1ebccaa",
+    "expected_size_bytes": 11095821,
+    "expected_page_count": 280
+  },
+  "manual_transcription": {
+    "path": "wtc1_simulation_v8/data/v10l_corrected_micro_window_manual_transcription.json",
+    "required_record_per_candidate_page": true,
+    "allowed_page_classifications": [
+      "DRAWING_INDEX_OR_SCHEDULE",
+      "REVISION_OR_ISSUE_INDEX",
+      "DRAWING_CONTENT_NOT_TRANSCRIBED",
+      "COVER_OR_SEPARATOR",
+      "BLANK",
+      "UNREADABLE"
+    ],
+    "floor_target_set": [93, 94, 95, 96, 97, 98, 99],
+    "transcription_method": "Manual visual review of exactly four predeclared PNG renders; no OCR and no embedded-text extraction."
+  },
+  "expected": {
+    "protected_regression_file_count": 16,
+    "protected_blender_file_count": 1,
+    "working_copy_document_count": 1,
+    "window_count": 1,
+    "candidate_page_count": 4,
+    "rendered_page_count": 4,
+    "manual_transcription_record_count": 4,
+    "non_candidate_page_content_read_count": 0,
+    "full_document_text_scan_count": 0,
+    "ocr_count": 0,
+    "embedded_text_extraction_count": 0,
+    "geometry_or_dimension_transcription_count": 0,
+    "requirements_closed_count": 0,
+    "requirements_solver_blocking_count": 22,
+    "physical_assignment_count": 0
+  },
+  "outputs": {
+    "source_manifest": "wtc1_simulation_v8/output/v10l_corrected_micro_window_source_manifest.json",
+    "regression_audit": "wtc1_simulation_v8/output/v10l_regression_audit.json",
+    "candidate_page_manifest": "wtc1_simulation_v8/output/v10l_candidate_page_manifest.json",
+    "render_audit": "wtc1_simulation_v8/output/v10l_page_render_audit.json",
+    "manual_transcription_audit": "wtc1_simulation_v8/output/v10l_manual_transcription_audit.json",
+    "locator_matrix_csv": "wtc1_simulation_v8/output/v10l_corrected_locator_matrix.csv",
+    "floor93_99_locator_matrix_csv": "wtc1_simulation_v8/output/v10l_floor93_99_locator_matrix.csv",
+    "model_gate": "wtc1_simulation_v8/output/v10l_structural_source_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10l_micro_fenetre_corrigee.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10l_micro_fenetre_corrigee.json",
+    "contact_sheet": "wtc1_simulation_v8/output/v10l_corrected_micro_window_figures/v10l_contact_sheet.png",
+    "offline_audit": "wtc1_simulation_v8/output/v10l_offline_package_audit.json"
+  },
+  "next_iteration": {
+    "id": "V10M",
+    "objective": "Preserve V8U through V10L. Audit newly authorized primary online evidence for Tower A to WTC 1 mapping, drawing-book provenance and exact source/model availability; keep source claims, official statements and local-file identity separate."
+  }
+}

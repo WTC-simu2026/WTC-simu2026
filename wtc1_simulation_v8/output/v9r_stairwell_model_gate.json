@@ -1,0 +1,65 @@
+{
+  "iteration": "V9R",
+  "required_model_fields": [
+    {
+      "field": "exact plan position and orientation by floor",
+      "status": "PARTIAL",
+      "v9r_change": "Floor-band schematics and a labelled Floor 95 overlay added; no metric as-built coordinates."
+    },
+    {
+      "field": "floor-by-floor continuity, offsets and transfer levels",
+      "status": "PARTIAL",
+      "v9r_change": "Transfer floors are now explicit for A/C and B, but offset distances and paths remain schematic."
+    },
+    {
+      "field": "enclosure construction, thicknesses and material identities",
+      "status": "PARTIAL",
+      "v9r_change": "No new as-built floor-specific layer schedules beyond V9Q."
+    },
+    {
+      "field": "stairs, landings, stringers and their attachments",
+      "status": "PARTIAL",
+      "v9r_change": "Landing rectangles by exit door are dimensioned; flight rise/run, stringers and attachments remain missing."
+    },
+    {
+      "field": "connections to slabs, core framing and surrounding partitions",
+      "status": "PARTIAL",
+      "v9r_change": "Structural grid landmarks are available, but actual stair and landing connections remain absent."
+    },
+    {
+      "field": "mass treatment and nonstructural versus structural classification",
+      "status": "PARTIAL",
+      "v9r_change": "Unchanged from V9Q; discrete masses remain unavailable and double counting remains prohibited."
+    },
+    {
+      "field": "impact, fire and damage state for the modeled scenario",
+      "status": "PARTIAL",
+      "v9r_change": "Floor 95 official-model overlay improves qualitative registration but is not independent damage validation."
+    }
+  ],
+  "field_status_counts": {
+    "COMPLETE": 0,
+    "PARTIAL": 7,
+    "MISSING": 0
+  },
+  "floor_matrix_row_count": 330,
+  "topology_layer_authorized": true,
+  "landing_dimension_layer_authorized": true,
+  "closed_mechanical_and_validation_credits": {
+    "metric_as_built_solver_geometry": false,
+    "discrete_mass": false,
+    "stiffness": false,
+    "strength": false,
+    "load_path_credit": false,
+    "component_damage_validation": false,
+    "global_solver": false,
+    "blender_physical_validation": false
+  },
+  "all_mechanical_and_validation_credits_closed": true,
+  "decision": "USE_CATEGORICAL_TOPOLOGY_AND_LANDING_DIMENSIONS_ONLY",
+  "reason": "No dimensioned floor-specific as-built WTC 1 stair plans, flight/stringer details or actual structural connections were found in the bounded public-source search.",
+  "next_iteration": {
+    "id": "V9S",
+    "objective": "Preserve V8U through V9R and perform a bounded two-figure registration of the three Floor 95 stairwell footprints. Digitize only source-visible outlines from NCSTAR 1-7 Figure 5-2 and NCSTAR 1-2B Figure 9-124 against common core-column or core-boundary landmarks, report pixel and inter-figure uncertainty, and produce qualitative footprint envelopes rather than exact as-built coordinates. Keep mass, stiffness, strength, connection, component-damage and solver gates closed unless a dimensioned primary plan is found."
+  }
+}

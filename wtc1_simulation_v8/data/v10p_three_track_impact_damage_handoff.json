@@ -1,0 +1,227 @@
+{
+  "iteration": "V10P",
+  "dataset": {
+    "name": "Three-track impact-to-damage handoff and bounded conservation ledger",
+    "version": "10.16.0",
+    "status": "PREDECLARED_BEFORE_V10P_HANDOFF_CONSTRUCTION",
+    "created_at_local": "2026-09-04T09:20:00+02:00",
+    "random_seed": 1016001,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10O. Construct exactly three epistemically separate impact-to-damage tracks: the V10O zero-input software control, the three cached NIST-model-dependent less/base/more-severe references, and one UNKNOWN_PHYSICAL_DAMAGE branch that preserves kinematic bounds while leaving all member damage, openings, debris and fuel distributions null. Recompute incoming mass, kinetic-energy and momentum ledgers; audit the published base-case fuel/debris accounting and retain every residual. Compare the cached damage transcription to the V8A transformation over Floors 93-99. Do not run an impact solver, infer missing damage, assign physical damage to a structural model, release a physical state downstream, launch Blender or make a historical collapse/non-collapse conclusion."
+  },
+  "execution_policy": {
+    "network_access": false,
+    "source_archive_read": false,
+    "source_archive_modified": false,
+    "official_source_pdf_hash_only_count": 2,
+    "official_source_pdf_page_read_count": 0,
+    "official_source_pdf_text_extraction_count": 0,
+    "official_sources_directory_modified": false,
+    "software_installation": false,
+    "solver_execution": false,
+    "gpu_compute": false,
+    "blender_execution": false,
+    "blender_master_modification": false,
+    "physical_property_assignment": false,
+    "physical_damage_assignment": false,
+    "damage_interpolation_or_completion": false,
+    "postimpact_velocity_invention": false,
+    "historical_collapse_or_noncollapse_conclusion": false,
+    "maximum_runtime_seconds": 900
+  },
+  "regression_files": [
+    {
+      "role": "v10o_configuration",
+      "path": "wtc1_simulation_v8/data/v10o_integrated_adapter_control.json",
+      "expected_sha256": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46"
+    },
+    {
+      "role": "v10o_adapter_library",
+      "path": "wtc1_simulation_v8/scripts/v10o_coupling_adapters.py",
+      "expected_sha256": "c5f3d70fb8fa2bb65958200a5d4c1b19e8dc7845c88d1fe6e4a5e15aca06e1fd"
+    },
+    {
+      "role": "v10o_script",
+      "path": "wtc1_simulation_v8/scripts/run_v10o_integrated_adapter_control.py",
+      "expected_sha256": "ecfad97a92bddf4081b1983a58b1b6680e487d1bab574c64965a7c1107e307c0"
+    },
+    {
+      "role": "v10o_regression_audit",
+      "path": "wtc1_simulation_v8/output/v10o_regression_audit.json",
+      "expected_sha256": "0c47fc4f765f8246a4f7bcf2a622f061f4eb5f66944cf49943d6023b08a6f53b"
+    },
+    {
+      "role": "v10o_schemas",
+      "path": "wtc1_simulation_v8/output/v10o_interface_schemas.json",
+      "expected_sha256": "9e5a2017ea7415037e54b2917610c72a85083cca8a0314982ea98332513867ca"
+    },
+    {
+      "role": "v10o_adapter_matrix",
+      "path": "wtc1_simulation_v8/output/v10o_adapter_validation_matrix.csv",
+      "expected_sha256": "c8c4a3678305199816b0285438c7b4d3f6d344a969e704471c53c6b332ef828c"
+    },
+    {
+      "role": "v10o_cached_replay",
+      "path": "wtc1_simulation_v8/output/v10o_cached_baseline_replay.json",
+      "expected_sha256": "4ef4d10651d383d7aa060ed20e15610b140159d65d00b3c3e2176388d6b05ef8"
+    },
+    {
+      "role": "v10o_control_trace",
+      "path": "wtc1_simulation_v8/output/v10o_null_control_trace.json",
+      "expected_sha256": "62890121c6bc89aa5970e9266bcd89ff1b148c672d601c8ca2f293df81405864"
+    },
+    {
+      "role": "v10o_control_timeline",
+      "path": "wtc1_simulation_v8/output/v10o_null_control_timeline.csv",
+      "expected_sha256": "92576f5e3e56abfca41d6a985cf39b2175fd6f4c886ced0a24331610e78879a6"
+    },
+    {
+      "role": "v10o_gate",
+      "path": "wtc1_simulation_v8/output/v10o_integration_gate.json",
+      "expected_sha256": "18e750be6a59a18ea660715596962b36d38ea33c805946a1ff99d0a04bf4c36a"
+    },
+    {
+      "role": "v10o_report",
+      "path": "wtc1_simulation_v8/output/rapport_wtc1_v10o_controle_integration.md",
+      "expected_sha256": "e598076678634ef7aabec6fac27b417052e8d32b21dc1f8cbb540a7f9255bde1"
+    },
+    {
+      "role": "v10o_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10o_controle_integration.json",
+      "expected_sha256": "caa622205c2752f2ac53fc567f27bc2a03ae39b4ee5950f25ea9455c4bb85136"
+    },
+    {
+      "role": "v10o_offline_audit",
+      "path": "wtc1_simulation_v8/output/v10o_offline_package_audit.json",
+      "expected_sha256": "f1f67cbbe8372bf34953ec06356ffd20487103a1c38c3b297df5fd0079e5e783"
+    }
+  ],
+  "protected_files": [
+    {
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+    }
+  ],
+  "cached_input_files": [
+    {
+      "id": "NIST_WTC1_TRANSFER_TRANSCRIPTION",
+      "path": "wtc1_simulation_v8/data/nist_wtc1_transfer.json",
+      "expected_sha256": "bdf4d779bb41f0d64c908702261ea2f571ba6d73b5d0e09876168c4c03cfe8fb",
+      "evidence_class": "MANUAL_TRANSCRIPTION_OF_OFFICIAL_MODEL_INPUTS_AND_OUTPUTS"
+    },
+    {
+      "id": "V8A_TRANSFER_SCRIPT",
+      "path": "wtc1_simulation_v8/scripts/run_v8a_transfer.py",
+      "expected_sha256": "4146db3d5709f236a39601d2c94f480ec9e4bbe0ba4f257eb42fae62b78d941d",
+      "evidence_class": "CACHED_TRANSFORMATION_CODE"
+    },
+    {
+      "id": "V8A_TRANSFER_RESULTS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8a.json",
+      "expected_sha256": "8cc833df3ae273b5fa09a54e94e9372e3a140dd3f6b0b49b3a8f11ddf63ca420",
+      "evidence_class": "CACHED_DERIVED_RESULT"
+    },
+    {
+      "id": "V8S_IMPACT_KINEMATICS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json",
+      "expected_sha256": "40bd3c0c9bc4cad3326f171f885702dc47a020e57f32c788e7276097c8b9c318",
+      "evidence_class": "OFFICIAL_INPUT_TRANSCRIPTION_WITH_DERIVED_KINEMATICS"
+    },
+    {
+      "id": "V9M_IMPACT_BRANCH_CLOSURE",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json",
+      "expected_sha256": "2d403c87c558300f2b4460312da549b46e16dbd92d6eac34b0f1b51f5979eb7d",
+      "evidence_class": "CACHED_GATE_RESULT"
+    }
+  ],
+  "official_source_hash_only_files": [
+    {
+      "id": "NCSTAR1_2B_V2",
+      "path": "work/official_sources/ncstar1-2bv2.pdf",
+      "expected_sha256": "c5bb701fad4103d072f89548c683c0e8ee583c49d94e3f165985088f3443ea1d",
+      "use": "hash continuity only; aircraft cases, model-dependent damage and distribution tables are consumed from the cached transcription"
+    },
+    {
+      "id": "NCSTAR1_6D_LOCAL",
+      "path": "work/official_sources/ncstar1-6d.pdf",
+      "expected_sha256": "0d2a155fc820c83e4bc7df32a6da098261eb2e7f8d1358abd00d11c12bd6c9ff",
+      "use": "hash continuity only; final Case B transfer context is consumed from the cached transcription"
+    }
+  ],
+  "track_contract": {
+    "required_track_ids": [
+      "CONTROL_ZERO_INPUT",
+      "OFFICIAL_MODEL_DEPENDENT_REFERENCE",
+      "UNKNOWN_PHYSICAL_DAMAGE"
+    ],
+    "control_rule": "Reuse the V10O zero-input sentinel only as a software control; it carries no historical event meaning.",
+    "official_reference_rule": "Carry the less/base/more-severe model outputs exactly as a dependent reference. Do not call them observations, independent validation or the unique real damage state.",
+    "unknown_rule": "Preserve the source-bounded kinematic envelope, but set member_states, opening_polygons_m, debris_distribution and fuel_distribution to JSON null and block downstream physical release.",
+    "state_labels": [
+      "severed",
+      "heavy",
+      "moderate",
+      "light"
+    ],
+    "analysis_floors": [
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99
+    ],
+    "unit_conversions": {
+      "lb_to_kg": 0.45359237,
+      "mph_to_m_s": 0.44704,
+      "in_to_m": 0.0254,
+      "GJ_to_J": 1000000000.0,
+      "MN_s_to_kg_m_s": 1000000.0
+    }
+  },
+  "expected": {
+    "regression_file_count": 13,
+    "protected_file_count": 1,
+    "cached_input_file_count": 5,
+    "official_source_hash_only_file_count": 2,
+    "track_count": 3,
+    "official_kinematic_case_count": 3,
+    "official_damage_case_count": 3,
+    "official_damage_expanded_segment_count": 89,
+    "official_damage_floor_comparison_count": 21,
+    "official_damage_floor_comparison_pass_count": 21,
+    "official_reference_removal_segment_count": 57,
+    "base_component_count": 8,
+    "incoming_kinematic_ledger_case_count": 3,
+    "full_postimpact_mass_momentum_energy_ledger_closed_count": 0,
+    "fuel_bin_rounding_residual_lb": 20.0,
+    "debris_bin_rounding_residual_lb": 250.0,
+    "nonfuel_mass_not_in_stated_debris_total_lb": 21500.0,
+    "downstream_physical_release_count": 0,
+    "historical_physical_damage_promotion_count": 0,
+    "mechanical_requirements_closed_count": 0,
+    "mechanical_requirements_blocking_count": 22,
+    "physical_assignment_count": 0,
+    "solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 0
+  },
+  "outputs": {
+    "regression_audit": "wtc1_simulation_v8/output/v10p_regression_audit.json",
+    "source_manifest": "wtc1_simulation_v8/output/v10p_impact_damage_source_manifest.json",
+    "track_manifest": "wtc1_simulation_v8/output/v10p_three_track_handoff.json",
+    "damage_matrix": "wtc1_simulation_v8/output/v10p_official_model_damage_reference_matrix.csv",
+    "conservation_ledger": "wtc1_simulation_v8/output/v10p_mass_energy_momentum_ledger.csv",
+    "ledger_audit": "wtc1_simulation_v8/output/v10p_conservation_ledger_audit.json",
+    "handoff_gate": "wtc1_simulation_v8/output/v10p_impact_damage_handoff_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10p_transfert_impact_dommage.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10p_transfert_impact_dommage.json",
+    "offline_audit": "wtc1_simulation_v8/output/v10p_offline_package_audit.json"
+  },
+  "next_iteration": {
+    "id": "V10Q",
+    "objective": "Build a bounded fire-to-thermal handoff with the same epistemic separation: zero-fire control, cached official-model-dependent fire/temperature envelopes, and UNKNOWN_EVENT_FIRE. Audit fuel-bin rounding, time/temperature units, SFRM uncertainty fields and conservative temporal mapping without running FDS or assigning exact member temperatures."
+  }
+}

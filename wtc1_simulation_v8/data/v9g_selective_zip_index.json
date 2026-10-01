@@ -1,0 +1,150 @@
+{
+  "dataset": {
+    "name": "WTC 1 V9G bounded HTTP-range audit of the open S355 supplementary ZIP index",
+    "version": "9.7.0",
+    "status": "PREDECLARED_REMOTE_CENTRAL_DIRECTORY_ONLY_NO_FULL_ZIP_NO_SIGNAL_EXTRACTION_NO_SOLVER",
+    "random_seed": 9112001,
+    "deterministic": true,
+    "scope": "Preserve V8U through V9F, acquire only the small Fig1 geometry image, test the Zenodo supplementary ZIP endpoint with safe streamed HTTP Range requests, retrieve only the end record and central directory under hard byte caps, and inventory exact paths for P4V035 and P6V035. Abort before reading a response body if partial content is not honored. Do not download the full ZIP, extract measurement payloads, fit material laws, run a solver or perform impact work."
+  },
+  "evidence_policy": {
+    "observed_fact": "A byte count, hash, HTTP header or ZIP-directory field read directly from the public Zenodo source.",
+    "official_model_result": "None is introduced by V9G.",
+    "local_archive_claim": "No local WTC archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "The predeclared byte ceilings, target-name rules and permitted-use classifications.",
+    "derived_result": "A deterministic central-directory inventory and exact target-path match; not a material or physical result.",
+    "unknown": "The contents, units and quality of unacquired measurement payloads and their applicability to any constitutive model."
+  },
+  "regressions": {
+    "required_files": {
+      "wtc1_simulation_v8/data/v9f_open_dataset_ingestion.json": "a7d7bf9ae9e5c3b7dca12bd92568149024bfe2e5d476314d662ed6d851364a8e",
+      "wtc1_simulation_v8/scripts/run_v9f_open_dataset_ingestion.py": "1e59f0a3445216ffdee00d047a35ec60894e1ecaa128c6994c1c1179b94dee9a",
+      "wtc1_simulation_v8/scripts/v9f_artifact_tool/inspect_s355_workbook.mjs": "458cc7226c6a8560b181a09b103876111348f8027a700f55dbfbbf58b8515d26",
+      "wtc1_simulation_v8/output/resultats_wtc1_v9f_ingestion_s355.json": "7b14e0398fc5147c49a6e83dcd3d0f8d7a6b6735d694b5e2b6314aae50d086d0",
+      "wtc1_simulation_v8/output/rapport_wtc1_v9f_ingestion_s355.md": "50745318f5d11b83d56cc64cd722f64ad586d335e9addf22d7877973e0d24348",
+      "wtc1_simulation_v8/output/v9f_s355_workbook_inspection.json": "cdd9a7e829139f06f2d0c18d2e07f21c94173060f124fc193d10a451367ce31a",
+      "wtc1_simulation_v8/input/v9f_open_sources/SHPB_S355.xlsx": "8f0b1e26b8f4db6a6468a24ec580f103f6ba9ff801e9d20401ee852da0688717",
+      "wtc1_simulation_v8/input/v9f_open_sources/zenodo_17591440_metadata.json": "e4c1d64a0a3b21c1b2841386f3b88884362fbb3051b52b19bf3b704a2b7beba3"
+    },
+    "required_metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9f_ingestion_s355.json",
+        "path": "iteration_execution_validated",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9f_ingestion_s355.json",
+        "path": "workbook_audit.preferred_matched_pair.dynamic_specimen_id",
+        "expected": "P4V035"
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9f_ingestion_s355.json",
+        "path": "workbook_audit.preferred_matched_pair.quasi_static_specimen_id",
+        "expected": "P6V035"
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9f_ingestion_s355.json",
+        "path": "full_large_archive_download_authorized",
+        "expected": false
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9f_ingestion_s355.json",
+        "path": "analogue_signal_reduction_authorized",
+        "expected": false
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9f_ingestion_s355.json",
+        "path": "facade_impact_executed",
+        "expected": false
+      }
+    ]
+  },
+  "foia_policy": {
+    "priority": "last_resort_only",
+    "request_sent": false,
+    "external_contact_authorized": false
+  },
+  "geometry_source": {
+    "filename": "Fig1.jpg",
+    "url": "https://zenodo.org/api/records/17591440/files/Fig1.jpg/content",
+    "expected_size_bytes": 59578,
+    "expected_md5": "f82e31db6ab9799b18c76fd05d57cece",
+    "local_path": "wtc1_simulation_v8/input/v9g_open_sources/Fig1.jpg",
+    "permitted_use": "Read specimen dimensions shown by the dataset authors; no material inference."
+  },
+  "remote_zip": {
+    "filename": "FurtherMeasurements.zip",
+    "url": "https://zenodo.org/api/records/17591440/files/FurtherMeasurements.zip/content",
+    "declared_total_size_bytes": 954989097,
+    "declared_md5": "45c4237981dcb4d5a0e4364ebc2c0da9",
+    "full_local_path_prohibited": "wtc1_simulation_v8/input/v9g_open_sources/FurtherMeasurements.zip",
+    "initial_suffix_range_bytes": 131072,
+    "maximum_initial_body_bytes": 131072,
+    "maximum_central_directory_bytes": 16777216,
+    "maximum_total_transferred_bytes": 20971520,
+    "required_http_status": 206,
+    "required_content_range_total_bytes": 954989097,
+    "request_timeout_seconds": 60,
+    "redirects_allowed": true,
+    "response_200_body_read_prohibited": true,
+    "archive_payload_entry_download_prohibited": true,
+    "central_directory_output": "wtc1_simulation_v8/output/v9g_zip_central_directory_manifest.json"
+  },
+  "target_inventory": {
+    "specimens": [
+      {
+        "id": "P4V035",
+        "test_type": "SHPB",
+        "geometry": "offset",
+        "expected_channel_families": ["DIC", "bar_strain_or_bar_displacement_boundary_condition"]
+      },
+      {
+        "id": "P6V035",
+        "test_type": "QS",
+        "geometry": "offset",
+        "expected_channel_families": ["DIC", "force_displacement"]
+      }
+    ],
+    "case_insensitive_exact_specimen_token_match": true,
+    "minimum_matching_file_entries_per_specimen": 1,
+    "directory_entries_excluded_from_file_counts": true,
+    "no_payload_may_be_downloaded_in_v9g": true
+  },
+  "predeclared_execution_gates": {
+    "all_v9f_regressions_unchanged": true,
+    "geometry_file_size_and_checksum_required": true,
+    "http_partial_content_required": true,
+    "content_range_total_must_match_zenodo_metadata": true,
+    "end_of_central_directory_required": true,
+    "single_disk_zip_required": true,
+    "central_directory_must_fit_byte_cap": true,
+    "central_directory_entry_count_must_match_end_record": true,
+    "target_specimen_tokens_must_be_inventoried": true,
+    "full_zip_download_prohibited": true,
+    "payload_download_prohibited": true,
+    "foia_request_must_remain_unsent": true,
+    "external_contact_must_remain_false": true,
+    "source_archive_rescan_prohibited": true,
+    "generic_material_substitution_prohibited": true,
+    "solver_execution_prohibited": true
+  },
+  "scientific_and_scope_gates": {
+    "zip_central_directory_audit_authorized": true,
+    "selective_payload_download_authorized": false,
+    "full_zip_download_authorized": false,
+    "analogue_signal_reduction_authorized": false,
+    "analogue_material_fit_authorized": false,
+    "analogue_coupon_solver_authorized": false,
+    "wtc_high_rate_material_curve_qualification_passed": false,
+    "cf6_80a2_cowling_material_card_identification_passed": false,
+    "openradioss_wtc_coupon_authorized": false,
+    "failure_deletion_authorized": false,
+    "projectile_rupture_authorized": false,
+    "facade_impact_authorized": false,
+    "whole_aircraft_authorized": false,
+    "global_tower_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_mechanism_tested": false
+  }
+}

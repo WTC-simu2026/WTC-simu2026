@@ -1,0 +1,105 @@
+{
+  "id": "IMPACT-I02G-R0",
+  "scope": "Bounded 2024-T3 middle-crack M(T) coupon with an explicit zero-thickness cohesive seam; displacement controlled and not an aircraft or facade model.",
+  "units": {
+    "mass": "g",
+    "length": "mm",
+    "time": "ms",
+    "force": "N",
+    "stress": "MPa",
+    "energy": "J",
+    "fracture_energy": "N/mm"
+  },
+  "geometry": {
+    "width_mm": 76.2,
+    "length_mm": 300.0,
+    "thickness_mm": 2.3,
+    "initial_total_crack_length_mm": 25.4,
+    "orientation": "L-T",
+    "loading": "fixed lower grip and prescribed upper-grip displacement",
+    "source": "NASA CR-191523 Figure 1 and specimen description"
+  },
+  "material": {
+    "name": "AA2024-T3",
+    "density_g_per_mm3": 0.00278,
+    "young_modulus_mpa": 73100.0,
+    "poisson_ratio": 0.33,
+    "yield_strength_mpa": 360.0,
+    "ultimate_strength_mpa": 495.0,
+    "constitutive_law": "elastic_perfectly_plastic",
+    "source_status": {
+      "yield_and_ultimate": "NASA CR-191523, 2.3 mm 2024-T3 sheet",
+      "elastic_constants_and_density": "generic I02F hypotheses, not reported in CR-191523",
+      "post_yield_curve": "not identified; perfect plasticity is a bounded hypothesis"
+    }
+  },
+  "seam": {
+    "formulation": "massless zero-length TYPE8 springs along the prescribed horizontal crack path",
+    "peak_normal_traction_mpa": 495.0,
+    "normal_stiffness_per_area_equation": "K_n = E / h",
+    "tangential_stiffness_per_area_equation": "K_t = G / h",
+    "softening": "bilinear triangular traction-opening law",
+    "final_opening_equation": "delta_f = 2 Gf / peak_traction",
+    "predeclared_Gf_N_per_mm": [15.0, 30.0, 60.0],
+    "no_propagation_control": "same seam topology with linear non-failing normal response",
+    "qualification": "explicit prescribed-path cohesive surrogate; not a calibrated 3D ductile crack law"
+  },
+  "published_comparators": {
+    "low_fatigue_stable_tearing_remote_stress_mpa_approx": 200.0,
+    "high_fatigue_stable_tearing_remote_stress_mpa_approx": 230.0,
+    "settled_surface_ctoa_deg_approx": 6.0,
+    "settled_ctoa_comparison_band_deg": [5.0, 7.0],
+    "settled_after_extension_mm_min": 2.3,
+    "use": "independent post-run comparison only; no parameter fitting"
+  },
+  "execution": {
+    "end_ms": 30.0,
+    "fracture_target_displacement_mm": 5.0,
+    "elastic_target_displacement_mm": 0.2,
+    "history_dt_ms": 0.01,
+    "animation_states": 21,
+    "dt_scale": 0.9,
+    "maximum_case_wall_seconds": 600,
+    "threads": 1
+  },
+  "gates": {
+    "maximum_initial_mass_error_fraction": 0.0001,
+    "maximum_global_energy_residual_fraction": 0.01,
+    "maximum_section_work_to_external_error_fraction": 0.01,
+    "maximum_kinetic_to_internal_energy_fraction_at_peak_force": 0.05,
+    "maximum_elastic_mesh_peak_stress_difference_fraction": 0.05,
+    "maximum_g30_mesh_onset_stress_difference_fraction": 0.10,
+    "maximum_g30_orientation_onset_stress_difference_fraction": 0.10,
+    "minimum_required_crack_extension_mm_for_ctoa": 2.3
+  },
+  "sources": [
+    {
+      "id": "NASA_CR_191523",
+      "path": "wtc1_simulation_v8/input/impact_i02f_sources/NASA_CR_191523_2024T3_CTOA.pdf",
+      "sha256": "27d91f70b8816927b22f980ae7decb528837abfb19c04335a538ebaa7e6af156",
+      "use": "M(T) geometry, 2024-T3 strengths, displacement loading, stable-tearing stress and CTOA comparators"
+    },
+    {
+      "id": "ALTAIR_FAIL_TAB2",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/fail_tab2_starter_r.htm",
+      "use": "official review of tabulated triaxiality, Lode, temperature and element-size dependencies; not selected because these inputs are unidentified"
+    },
+    {
+      "id": "ALTAIR_TYPE8",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/spring_property_type8_r.htm",
+      "use": "official nonlinear spring formulation used for the prescribed cohesive seam"
+    }
+  ],
+  "cases": [
+    {"id": "ELASTIC_H508_A0_R0", "h_mm": 5.08, "mesh_orientation_deg": 0.0, "mode": "elastic", "Gf_N_per_mm": null},
+    {"id": "ELASTIC_H254_A0_R0", "h_mm": 2.54, "mesh_orientation_deg": 0.0, "mode": "elastic", "Gf_N_per_mm": null},
+    {"id": "NOPROP_H254_A0_R0", "h_mm": 2.54, "mesh_orientation_deg": 0.0, "mode": "no_propagation", "Gf_N_per_mm": null},
+    {"id": "G15_H508_A0_R0", "h_mm": 5.08, "mesh_orientation_deg": 0.0, "mode": "fracture", "Gf_N_per_mm": 15.0},
+    {"id": "G30_H508_A0_R0", "h_mm": 5.08, "mesh_orientation_deg": 0.0, "mode": "fracture", "Gf_N_per_mm": 30.0},
+    {"id": "G60_H508_A0_R0", "h_mm": 5.08, "mesh_orientation_deg": 0.0, "mode": "fracture", "Gf_N_per_mm": 60.0},
+    {"id": "G30_H254_A0_R0", "h_mm": 2.54, "mesh_orientation_deg": 0.0, "mode": "fracture", "Gf_N_per_mm": 30.0},
+    {"id": "G30_H254_S20_R0", "h_mm": 2.54, "mesh_orientation_deg": 20.0, "mode": "fracture", "Gf_N_per_mm": 30.0},
+    {"id": "G30_H254_S5_R0", "h_mm": 2.54, "mesh_orientation_deg": 5.0, "mode": "fracture", "Gf_N_per_mm": 30.0},
+    {"id": "G30_H254_A0_HALFDT_R0", "h_mm": 2.54, "mesh_orientation_deg": 0.0, "mode": "fracture", "Gf_N_per_mm": 30.0, "dt_scale": 0.45}
+  ]
+}

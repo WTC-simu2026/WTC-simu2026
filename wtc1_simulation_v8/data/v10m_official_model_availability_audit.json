@@ -1,0 +1,283 @@
+{
+  "iteration": "V10M",
+  "dataset": {
+    "name": "Official WTC 1 provenance and model-availability audit",
+    "version": "10.13.0",
+    "status": "PREDECLARED_BEFORE_V10M_SOURCE_ACQUISITION_WITH_ONE_DOCUMENTED_SOURCE_SUBSTITUTION_AFTER_HTTP_403_BEFORE_EVIDENCE_REVIEW",
+    "created_at_local": "2026-09-02T19:05:00+02:00",
+    "random_seed": 1013001,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10L. Acquire a bounded set of exact NIST and U.S. Department of Commerce sources, verify Tower A/WTC 1 and Drawing Books 5/6 provenance, distinguish described model artifacts from downloadable solver inputs, and produce a dated feasibility and coupling plan toward 2026-09-11. Do not read or modify the source archive, modify work/official_sources, assign new physical properties, close any of the 22 mechanical source requirements from report prose alone, run a solver, launch Blender, or modify the protected Blender master."
+  },
+  "source_policy": {
+    "network_access_authorized_by_user": true,
+    "allowed_authorities": [
+      "National Institute of Standards and Technology"
+    ],
+    "allowed_hosts": [
+      "nvlpubs.nist.gov",
+      "www.nist.gov"
+    ],
+    "source_archive_read": false,
+    "source_archive_modified": false,
+    "official_sources_directory_read_only_comparison_authorized": true,
+    "official_sources_directory_modified": false,
+    "maximum_total_download_bytes": 240000000,
+    "minimum_pdf_magic_required": true,
+    "record_final_redirect_url": true,
+    "solver_input_claim_requires_downloadable_exact_file": true,
+    "report_description_is_not_solver_input": true,
+    "structural_solver_authorized": false,
+    "fire_solver_authorized": false,
+    "gpu_job_authorized": false,
+    "blender_authorized": false,
+    "blender_master_modification_authorized": false,
+    "physical_assignment_authorized": false,
+    "source_substitution_log": [
+      {
+        "attempted_id": "DOC_20_YEAR_RETROSPECTIVE",
+        "attempted_url": "https://www.commerce.gov/news/blog/2021/08/20-years-later-nists-world-trade-center-investigation-and-its-legacy",
+        "result": "HTTP_403_FROM_LOCAL_REPRODUCIBLE_CLIENT",
+        "replacement_id": "NIST_WTC7_FAQ_RUNTIME",
+        "replacement_reason": "The official NIST FAQ publishes the same historical WTC tower runtime statement and is reproducibly downloadable. Substitution occurred before manual V10M evidence transcription."
+      }
+    ]
+  },
+  "regression_files": [
+    {
+      "role": "v10l_predeclaration",
+      "path": "wtc1_simulation_v8/data/v10l_corrected_micro_window_predeclaration.json",
+      "expected_sha256": "2236b08c8ea42e4ca4fbb865a3c9a879aeec1df8253feb5e9f0dd996c2b0d6e6"
+    },
+    {
+      "role": "v10l_configuration",
+      "path": "wtc1_simulation_v8/data/v10l_corrected_micro_window_audit.json",
+      "expected_sha256": "b8ce7725a226d15cea334f168baa1946b550dff984eef4350af75746c621a8ca"
+    },
+    {
+      "role": "v10l_manual_transcription",
+      "path": "wtc1_simulation_v8/data/v10l_corrected_micro_window_manual_transcription.json",
+      "expected_sha256": "19ca2ab1a3ac417a4f53a84ed85729b402bd80c339eda5d10d86f8d69e071cad"
+    },
+    {
+      "role": "v10l_script",
+      "path": "wtc1_simulation_v8/scripts/run_v10l_corrected_micro_window_audit.py",
+      "expected_sha256": "88c8ef27d584768cd7d1f12fa7e5aff637accb37ca04c7d53ab4cccb21ed6166"
+    },
+    {
+      "role": "v10l_source_manifest",
+      "path": "wtc1_simulation_v8/output/v10l_corrected_micro_window_source_manifest.json",
+      "expected_sha256": "d2af58d890c654f9844922d0118a47bc8a63e2cbbf474fff005fa278031cabd2"
+    },
+    {
+      "role": "v10l_gate",
+      "path": "wtc1_simulation_v8/output/v10l_structural_source_gate.json",
+      "expected_sha256": "bbd8b21182558ea8670809814d18503b407ed5ff8f36930ac9ade6f31b99ce7c"
+    },
+    {
+      "role": "v10l_report",
+      "path": "wtc1_simulation_v8/output/rapport_wtc1_v10l_micro_fenetre_corrigee.md",
+      "expected_sha256": "3fa30be63a5061f80f94400780532236b9b259a894fd0931f3cc6cb74a1be017"
+    },
+    {
+      "role": "v10l_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10l_micro_fenetre_corrigee.json",
+      "expected_sha256": "120d072c3f267dd96c67963d4d68c0a7b09544b09a124925d431ef2d64e09d07"
+    },
+    {
+      "role": "v10l_offline_audit",
+      "path": "wtc1_simulation_v8/output/v10l_offline_package_audit.json",
+      "expected_sha256": "ccae401475265e389732f9834a2648996af1f832aa0bc2e67d0004bde4fd92c6"
+    }
+  ],
+  "protected_files": [
+    {
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+    }
+  ],
+  "official_sources": [
+    {
+      "id": "NIST_SP1000_5_V2",
+      "authority": "National Institute of Standards and Technology",
+      "kind": "pdf",
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication1000-5v2.pdf",
+      "path": "wtc1_simulation_v8/input/v10m_official_model_availability/nist_sp1000_5v2.pdf",
+      "purpose": "Tower A/WTC 1 mapping and Drawing Books 5 and 6 roles."
+    },
+    {
+      "id": "NIST_NCSTAR_1_2A",
+      "authority": "National Institute of Standards and Technology",
+      "kind": "pdf",
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/NCSTAR/ncstar1-2a.pdf",
+      "path": "wtc1_simulation_v8/input/v10m_official_model_availability/nist_ncstar1_2a.pdf",
+      "purpose": "Electronic structural databases, reference models and SAP2000 data flow."
+    },
+    {
+      "id": "NIST_NCSTAR_1_2_V1",
+      "authority": "National Institute of Standards and Technology",
+      "kind": "pdf",
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/NCSTAR/ncstar1-2v1.pdf",
+      "path": "wtc1_simulation_v8/input/v10m_official_model_availability/nist_ncstar1_2v1.pdf",
+      "purpose": "Aircraft-impact model architecture, LS-DYNA and TrueGrid output descriptions."
+    },
+    {
+      "id": "NIST_NCSTAR_1_2B_V1",
+      "authority": "National Institute of Standards and Technology",
+      "kind": "pdf",
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/NCSTAR/ncstar1-2bv1.pdf",
+      "path": "wtc1_simulation_v8/input/v10m_official_model_availability/nist_ncstar1_2bv1.pdf",
+      "purpose": "Detailed impact-model generation and structural database use."
+    },
+    {
+      "id": "NIST_NCSTAR_1_5F",
+      "authority": "National Institute of Standards and Technology",
+      "kind": "pdf",
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/NCSTAR/ncstar1-5f.pdf",
+      "path": "wtc1_simulation_v8/input/v10m_official_model_availability/nist_ncstar1_5f.pdf",
+      "purpose": "Fire Dynamics Simulator architecture, event inputs and historical computational cost."
+    },
+    {
+      "id": "NIST_NCSTAR_1_6D_V1",
+      "authority": "National Institute of Standards and Technology",
+      "kind": "pdf",
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/NCSTAR/ncstar1-6dv1.pdf",
+      "path": "wtc1_simulation_v8/input/v10m_official_model_availability/nist_ncstar1_6dv1.pdf",
+      "purpose": "Global structural model conversion and WTC 1 analysis."
+    },
+    {
+      "id": "NIST_NCSTAR_1_6D_V2",
+      "authority": "National Institute of Standards and Technology",
+      "kind": "pdf",
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/NCSTAR/ncstar1-6dv2.pdf",
+      "path": "wtc1_simulation_v8/input/v10m_official_model_availability/nist_ncstar1_6dv2.pdf",
+      "purpose": "Global structural analysis continuation and model limitations."
+    },
+    {
+      "id": "NIST_DATA_ARCHIVE",
+      "authority": "National Institute of Standards and Technology",
+      "kind": "html",
+      "url": "https://www.nist.gov/disaster-failure-studies/data-archive",
+      "path": "wtc1_simulation_v8/input/v10m_official_model_availability/nist_data_archive.html",
+      "purpose": "Current official statement about archive contents and route."
+    },
+    {
+      "id": "NIST_REPOSITORY",
+      "authority": "National Institute of Standards and Technology",
+      "kind": "html",
+      "url": "https://www.nist.gov/world-trade-center-investigation/photos-videos-and-simulations",
+      "path": "wtc1_simulation_v8/input/v10m_official_model_availability/nist_repository.html",
+      "purpose": "Current repository statement and simulation categories."
+    },
+    {
+      "id": "NIST_CONTRACTS",
+      "authority": "National Institute of Standards and Technology",
+      "kind": "html",
+      "url": "https://www.nist.gov/world-trade-center-investigation/about-investigation/investigation-contracts",
+      "path": "wtc1_simulation_v8/input/v10m_official_model_availability/nist_investigation_contracts.html",
+      "purpose": "Contract provenance for structural databases, impact and global response."
+    },
+    {
+      "id": "NIST_DATA_COLLECTION",
+      "authority": "National Institute of Standards and Technology",
+      "kind": "html",
+      "url": "https://www.nist.gov/news-events/news/2004/07/status-data-collection-efforts",
+      "path": "wtc1_simulation_v8/input/v10m_official_model_availability/nist_data_collection_status.html",
+      "purpose": "Official list of received and missing documentary information."
+    },
+    {
+      "id": "NIST_TOWERS_FAQ",
+      "authority": "National Institute of Standards and Technology",
+      "kind": "html",
+      "url": "https://www.nist.gov/world-trade-center-investigation/study-faqs/wtc-towers-investigation",
+      "path": "wtc1_simulation_v8/input/v10m_official_model_availability/nist_towers_faq.html",
+      "purpose": "Scope boundary at collapse initiation and documented evidence limits."
+    },
+    {
+      "id": "NIST_WTC7_FAQ_RUNTIME",
+      "authority": "National Institute of Standards and Technology",
+      "kind": "html",
+      "url": "https://www.nist.gov/world-trade-center-investigation/study-faqs/wtc-7-investigation",
+      "path": "wtc1_simulation_v8/input/v10m_official_model_availability/nist_wtc7_faq_runtime.html",
+      "purpose": "Historical WTC tower end-to-end runtime statement, used only for feasibility context."
+    }
+  ],
+  "local_read_only_comparisons": [
+    {
+      "id": "LOCAL_NCSTAR_1_2A",
+      "path": "work/official_sources/ncstar1-2a.pdf",
+      "expected_sha256": "446ea5eea25b1bf9bb6b6e8451ea7867b99f35c1d9ebffec5b0ed0bd1879891d"
+    },
+    {
+      "id": "LOCAL_NCSTAR_1_2B_V1",
+      "path": "work/official_sources/ncstar1-2bv1.pdf",
+      "expected_sha256": "1504c598adcd9e492bc126530b593b2d467b7c01a7324913b221a5cb9e128ab4"
+    },
+    {
+      "id": "LOCAL_NCSTAR_1_6D",
+      "path": "work/official_sources/ncstar1-6d.pdf",
+      "expected_sha256": "0d2a155fc820c83e4bc7df32a6da098261eb2e7f8d1358abd00d11c12bd6c9ff"
+    }
+  ],
+  "manual_evidence": {
+    "path": "wtc1_simulation_v8/data/v10m_official_evidence_transcription.json",
+    "required_status": "MANUALLY_VERIFIED_FROM_HASHED_V10M_SOURCES",
+    "required_claim_ids": [
+      "TOWER_A_IS_WTC1",
+      "BOOK5_ROLE",
+      "BOOK6_ROLE",
+      "STRUCTURAL_DATABASES_EXISTED",
+      "SAP2000_REFERENCE_MODELS_EXISTED",
+      "LSDYNA_TRUEGRID_IMPACT_MODELS_EXISTED",
+      "ANSYS_GLOBAL_MODELS_EXISTED",
+      "FDS_FIRE_MODELS_EXISTED",
+      "ORIGINAL_DRAWINGS_RECEIVED",
+      "ORIGINAL_1960S_IMPACT_CALCULATIONS_LOST",
+      "NIST_TOWER_SCOPE_STOPS_AT_INITIATION",
+      "HISTORICAL_END_TO_END_RUNTIME"
+    ]
+  },
+  "availability_targets": [
+    "STRUCTURAL_RELATIONAL_DATABASES",
+    "SAP2000_REFERENCE_MODEL_INPUTS",
+    "TRUEGRID_COMMAND_FILES",
+    "LSDYNA_WTC1_IMPACT_DECKS",
+    "ANSYS_WTC1_GLOBAL_MODEL_INPUTS",
+    "FDS_WTC1_EVENT_INPUTS",
+    "THERMAL_INTERFACE_TIME_HISTORIES",
+    "DRAWING_BOOK_5_EXACT_REVISION_SET",
+    "DRAWING_BOOK_6_EXACT_REVISION_SET",
+    "FULL_COLLAPSE_PROPAGATION_MODEL"
+  ],
+  "expected": {
+    "official_source_count": 13,
+    "pdf_source_count": 7,
+    "html_source_count": 6,
+    "regression_file_count": 9,
+    "protected_file_count": 1,
+    "local_comparison_count": 3,
+    "manual_claim_count": 12,
+    "visual_verification_count": 6,
+    "availability_target_count": 10,
+    "mechanical_requirements_closed_count": 0,
+    "mechanical_requirements_blocking_count": 22,
+    "physical_assignment_count": 0
+  },
+  "outputs": {
+    "source_manifest": "wtc1_simulation_v8/output/v10m_official_source_manifest.json",
+    "acquisition_audit": "wtc1_simulation_v8/output/v10m_source_acquisition_audit.json",
+    "regression_audit": "wtc1_simulation_v8/output/v10m_regression_audit.json",
+    "evidence_audit": "wtc1_simulation_v8/output/v10m_official_evidence_audit.json",
+    "availability_matrix": "wtc1_simulation_v8/output/v10m_model_availability_matrix.csv",
+    "source_gate": "wtc1_simulation_v8/output/v10m_structural_source_gate.json",
+    "feasibility_plan": "wtc1_simulation_v8/output/plan_wtc1_v10m_vers_2026-09-11.md",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10m_provenance_disponibilite_modeles.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10m_provenance_disponibilite_modeles.json",
+    "offline_audit": "wtc1_simulation_v8/output/v10m_offline_package_audit.json"
+  },
+  "next_iteration": {
+    "id": "V10N",
+    "objective": "Inventory local CPU, RAM, GPU, storage and installed solvers; freeze a solver-neutral coupling graph from impact through fire, thermal response, initiation and propagation; choose only bounded validation runs that can complete before 2026-09-11."
+  }
+}

@@ -1,0 +1,1649 @@
+{
+  "model": "WTC1_V8I_A_BOUNDED_CRACKED_SLAB_CATENARY",
+  "version": "8.8.0",
+  "generated_at_utc": "2026-08-24T08:05:25.751619+00:00",
+  "runtime_seconds": 282.2370661,
+  "configuration_file": "wtc1_simulation_v8/data/v8i_core_slab_catenary.json",
+  "facts_transferred": [
+    {
+      "label": "FAIT_OFFICIEL",
+      "source": "NIST NCSTAR 1-6C",
+      "pdf_page": 52,
+      "printed_page": 4,
+      "fact": "The Floor 96 core used a 4.5 in concrete slab supported by wide-flange girders and beams connected to core columns with bolted connections; this passage calls the concrete lightweight.",
+      "confidence": "high; visually checked against the rendered page"
+    },
+    {
+      "label": "FAIT_OFFICIEL",
+      "source": "NIST NCSTAR 1-6",
+      "pdf_page": 267,
+      "printed_page": 185,
+      "fact": "The core floor slab was typically 4.5 in concrete, composite with floor beams through shear studs; this passage calls the concrete normal weight.",
+      "confidence": "high; extracted text checked in the official local PDF"
+    },
+    {
+      "label": "FAIT_OFFICIEL",
+      "source": "NIST NCSTAR 1-6C",
+      "pdf_page": 58,
+      "printed_page": 10,
+      "fact": "NIST gives typical slab reinforcement ratios of 0.21 percent in the primary-truss direction and 0.74 percent transversely.",
+      "confidence": "high; visually checked, but the passage describes the typical tower slab and does not uniquely establish the core slab schedule at Floors 94-99"
+    },
+    {
+      "label": "FAIT_OFFICIEL",
+      "source": "NIST NCSTAR 1-6C",
+      "pdf_page": 60,
+      "printed_page": 12,
+      "fact": "A smeared welded-wire-fabric representation used 0.47 percent reinforcement and 70 ksi wire yield strength in a NIST component model.",
+      "confidence": "high for the NIST model input; low for direct transfer to the as-built core slab"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 233,
+      "printed_page": 169,
+      "fact": "The global model used the drawing thickness for the core slab but adjusted its elastic modulus to match the in-plane stiffness of the composite steel-beam and slab system. NIST reports local redistribution among neighboring columns.",
+      "confidence": "high; the numerical adjusted modulus is not reported on the inspected page"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6C",
+      "pdf_page": 197,
+      "printed_page": 149,
+      "fact": "The global shell floors were intended to provide diaphragm action and transfer load from a shortening core to the exterior wall, but their elevated-temperature failure modes were imposed separately as fire-induced damage.",
+      "confidence": "high"
+    },
+    {
+      "label": "FAIT_OBSERVE_TRANSCRIT_PAR_NIST",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 46,
+      "printed_page": "xliv",
+      "fact": "WTC 1 was impacted at 8:46:26 and began to collapse at 10:28:20, 102 min after impact.",
+      "confidence": "high; observation table in the official report"
+    }
+  ],
+  "documented_contradictions": [
+    {
+      "subject": "core slab concrete type",
+      "source_a": "NCSTAR 1-6C p. 4 (PDF p. 52): lightweight concrete",
+      "source_b": "NCSTAR 1-6 p. 185 (PDF p. 267): normal-weight concrete",
+      "treatment": "V8I does not use concrete tensile stiffness; the contradiction therefore affects omitted mass/compression behavior, not the cracked-reinforcement catenary law."
+    }
+  ],
+  "model_assumptions": {
+    "topology": "nearest-four connected proxy inherited from V8H; not the as-built beam/slab mesh",
+    "core_area": "convex hull of reconstructed core column centrelines; floor openings and slab beyond the column-centre hull are not explicitly meshed",
+    "strip_width": "one isotropic network is area-normalized so sum(edge length times effective width) equals twice the active convex-hull area, representing two reinforcement directions without assigning a real strip to any edge",
+    "slab_mechanism": "cracked reinforcement-only catenary in parallel with the V8H bilinear beam spring; concrete tensile resistance is set to zero",
+    "slab_temperature": "either 20 C as an optimistic upper bound or the mean synthetic temperature of the edge endpoint columns as a proxy",
+    "beam_case": "14WF136 proxy, connection factor 1.0, two active floor planes, endpoint-mean temperature; chosen before V8I execution as the middle V8H section with optimistic connection participation",
+    "vertical_coupling": "stable column reactions at one story become nodal loads at the story below",
+    "fractions_are_event_probabilities": false,
+    "slab_cases": [
+      {
+        "id": "no_slab_v8h_reference",
+        "active_area_fraction": 0.0,
+        "reinforcement_ratio": 0.0,
+        "wire_yield_ksi_rt": 0.0,
+        "ultimate_strain": 0.0,
+        "temperature_policy": "endpoint_mean_column_proxy",
+        "interpretation": "V8H beam-only reference on the selected topology and beam case"
+      },
+      {
+        "id": "weak_cracked_partial",
+        "active_area_fraction": 0.25,
+        "reinforcement_ratio": 0.0021,
+        "wire_yield_ksi_rt": 50.0,
+        "ultimate_strain": 0.01,
+        "temperature_policy": "endpoint_mean_column_proxy",
+        "interpretation": "lower sensitivity envelope: low documented directional ratio, reduced active area, lower assumed yield and ductility"
+      },
+      {
+        "id": "low_ratio_full_area",
+        "active_area_fraction": 1.0,
+        "reinforcement_ratio": 0.0021,
+        "wire_yield_ksi_rt": 70.0,
+        "ultimate_strain": 0.02,
+        "temperature_policy": "endpoint_mean_column_proxy",
+        "interpretation": "low documented directional ratio over the full area proxy"
+      },
+      {
+        "id": "high_ratio_quarter_area",
+        "active_area_fraction": 0.25,
+        "reinforcement_ratio": 0.0074,
+        "wire_yield_ksi_rt": 70.0,
+        "ultimate_strain": 0.02,
+        "temperature_policy": "endpoint_mean_column_proxy",
+        "interpretation": "high documented directional ratio but only one quarter of the convex-hull area active"
+      },
+      {
+        "id": "high_ratio_full_area",
+        "active_area_fraction": 1.0,
+        "reinforcement_ratio": 0.0074,
+        "wire_yield_ksi_rt": 70.0,
+        "ultimate_strain": 0.02,
+        "temperature_policy": "endpoint_mean_column_proxy",
+        "interpretation": "strong documented directional ratio over the full area proxy"
+      },
+      {
+        "id": "cold_upper_envelope",
+        "active_area_fraction": 1.0,
+        "reinforcement_ratio": 0.0074,
+        "wire_yield_ksi_rt": 70.0,
+        "ultimate_strain": 0.03,
+        "temperature_policy": "cold_20c_upper_bound",
+        "interpretation": "deliberately optimistic upper envelope: full proxy area, high ratio, cold reinforcement and high assumed ductility"
+      }
+    ],
+    "omitted": [
+      "as-built slab reinforcement and opening geometry",
+      "localized slab impact damage mask",
+      "concrete compression, cracking and aggregate interlock",
+      "composite shear-stud failure",
+      "office-floor transfer to the perimeter",
+      "story self weight",
+      "geometric P-delta compatibility between stories",
+      "connection-specific fracture",
+      "creep and transient dynamics"
+    ]
+  },
+  "geometry_proxy": {
+    "convex_hull_area_m2": 1091.1626640000002,
+    "edge_length_sum_m": 763.3631124763872,
+    "edge_count": 118,
+    "edge_length_min_m": 2.684,
+    "edge_length_median_m": 6.380000000000001,
+    "edge_length_max_m": 11.81
+  },
+  "component_envelopes": {
+    "no_slab_v8h_reference": {
+      "effective_strip_width_m": 0.0,
+      "representative_edge_length_m": 6.380000000000001,
+      "steel_area_per_representative_edge_in2": 0.0,
+      "room_temperature_axial_yield_kip": 0.0,
+      "room_temperature_ultimate_relative_displacement_in": 0.0,
+      "room_temperature_vertical_force_near_ultimate_kip": 0.0
+    },
+    "weak_cracked_partial": {
+      "effective_strip_width_m": 0.7147074872796875,
+      "representative_edge_length_m": 6.380000000000001,
+      "steel_area_per_representative_edge_in2": 0.26590495097610417,
+      "room_temperature_axial_yield_kip": 13.062488986764523,
+      "room_temperature_ultimate_relative_displacement_in": 35.6110673568799,
+      "room_temperature_vertical_force_near_ultimate_kip": 1.8317940062880314
+    },
+    "low_ratio_full_area": {
+      "effective_strip_width_m": 2.85882994911875,
+      "representative_edge_length_m": 6.380000000000001,
+      "steel_area_per_representative_edge_in2": 1.0636198039044167,
+      "room_temperature_axial_yield_kip": 73.14993832588134,
+      "room_temperature_ultimate_relative_displacement_in": 50.48677674232385,
+      "room_temperature_vertical_force_near_ultimate_kip": 14.400806659294675
+    },
+    "high_ratio_quarter_area": {
+      "effective_strip_width_m": 0.7147074872796875,
+      "representative_edge_length_m": 6.380000000000001,
+      "steel_area_per_representative_edge_in2": 0.9369983986777006,
+      "room_temperature_axial_yield_kip": 64.441612334705,
+      "room_temperature_ultimate_relative_displacement_in": 50.48677674232385,
+      "room_temperature_vertical_force_near_ultimate_kip": 12.68642491414055
+    },
+    "high_ratio_full_area": {
+      "effective_strip_width_m": 2.85882994911875,
+      "representative_edge_length_m": 6.380000000000001,
+      "steel_area_per_representative_edge_in2": 3.7479935947108025,
+      "room_temperature_axial_yield_kip": 257.76644933882,
+      "room_temperature_ultimate_relative_displacement_in": 50.48677674232385,
+      "room_temperature_vertical_force_near_ultimate_kip": 50.7456996565622
+    },
+    "cold_upper_envelope": {
+      "effective_strip_width_m": 2.85882994911875,
+      "representative_edge_length_m": 6.380000000000001,
+      "steel_area_per_representative_edge_in2": 3.7479935947108025,
+      "room_temperature_axial_yield_kip": 257.76644933882,
+      "room_temperature_ultimate_relative_displacement_in": 61.986284955617755,
+      "room_temperature_vertical_force_near_ultimate_kip": 61.70043393080275
+    }
+  },
+  "ensemble_definition": {
+    "times_min": [
+      20,
+      40,
+      60
+    ],
+    "thermal_localization_gamma": [
+      1.0,
+      2.0
+    ],
+    "seeds": {
+      "first": 0,
+      "last": 99,
+      "count": 100
+    },
+    "elastic_modulus_tail": "linear_to_5pct_at_1000c",
+    "column_damage_rule": "NIST Case B more-severe impact state; severed and heavy segments removed only on reported floors",
+    "warning": "Every synthetic field spans the NIST floor minimum and maximum. Fractions measure robustness to these constructed fields, not event probabilities."
+  },
+  "ensemble_rows": [
+    {
+      "time_min": 20,
+      "gamma": 1.0,
+      "slab_case": "no_slab_v8h_reference",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.19843957189421033,
+      "p90_maximum_membrane_strain": 0.0,
+      "maximum_fractured_membranes_in_any_reached_floor": 0,
+      "maximum_fractured_beams_in_any_reached_floor": 11
+    },
+    {
+      "time_min": 20,
+      "gamma": 1.0,
+      "slab_case": "weak_cracked_partial",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.19843957170720733,
+      "p90_maximum_membrane_strain": 1.5650246432130643e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 11,
+      "maximum_fractured_beams_in_any_reached_floor": 11
+    },
+    {
+      "time_min": 20,
+      "gamma": 1.0,
+      "slab_case": "low_ratio_full_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.1984395711461982,
+      "p90_maximum_membrane_strain": 1.5650246087961506e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 11,
+      "maximum_fractured_beams_in_any_reached_floor": 11
+    },
+    {
+      "time_min": 20,
+      "gamma": 1.0,
+      "slab_case": "high_ratio_quarter_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.19843957123524725,
+      "p90_maximum_membrane_strain": 1.5650246132370427e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 11,
+      "maximum_fractured_beams_in_any_reached_floor": 11
+    },
+    {
+      "time_min": 20,
+      "gamma": 1.0,
+      "slab_case": "high_ratio_full_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.1984395692583582,
+      "p90_maximum_membrane_strain": 1.5650244897802425e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 11,
+      "maximum_fractured_beams_in_any_reached_floor": 13
+    },
+    {
+      "time_min": 20,
+      "gamma": 1.0,
+      "slab_case": "cold_upper_envelope",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.1987067261380722,
+      "p90_maximum_membrane_strain": 1.5701726800987363e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 11,
+      "maximum_fractured_beams_in_any_reached_floor": 13
+    },
+    {
+      "time_min": 20,
+      "gamma": 2.0,
+      "slab_case": "no_slab_v8h_reference",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.19527279763301714,
+      "p90_maximum_membrane_strain": 0.0,
+      "maximum_fractured_membranes_in_any_reached_floor": 0,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 20,
+      "gamma": 2.0,
+      "slab_case": "weak_cracked_partial",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.19527279728136984,
+      "p90_maximum_membrane_strain": 2.1568967334406613e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 20,
+      "gamma": 2.0,
+      "slab_case": "low_ratio_full_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.19527279622642785,
+      "p90_maximum_membrane_strain": 2.1568966681595475e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 20,
+      "gamma": 2.0,
+      "slab_case": "high_ratio_quarter_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.1952727963938789,
+      "p90_maximum_membrane_strain": 2.1568966788176885e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 20,
+      "gamma": 2.0,
+      "slab_case": "high_ratio_full_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.1952727926764648,
+      "p90_maximum_membrane_strain": 2.1568964405638275e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 20,
+      "gamma": 2.0,
+      "slab_case": "cold_upper_envelope",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.19527278829274963,
+      "p90_maximum_membrane_strain": 2.1568962615958759e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 8,
+      "maximum_fractured_beams_in_any_reached_floor": 13
+    },
+    {
+      "time_min": 40,
+      "gamma": 1.0,
+      "slab_case": "no_slab_v8h_reference",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.3403598801014399,
+      "p90_maximum_membrane_strain": 0.0,
+      "maximum_fractured_membranes_in_any_reached_floor": 0,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 40,
+      "gamma": 1.0,
+      "slab_case": "weak_cracked_partial",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.3403598763228074,
+      "p90_maximum_membrane_strain": 7.436637535995774e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 40,
+      "gamma": 1.0,
+      "slab_case": "low_ratio_full_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.3403598649869123,
+      "p90_maximum_membrane_strain": 7.436635931057371e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 40,
+      "gamma": 1.0,
+      "slab_case": "high_ratio_quarter_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.34035986678626057,
+      "p90_maximum_membrane_strain": 7.436636185298443e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 40,
+      "gamma": 1.0,
+      "slab_case": "high_ratio_full_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.34035982684074884,
+      "p90_maximum_membrane_strain": 7.436630526713731e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 40,
+      "gamma": 1.0,
+      "slab_case": "cold_upper_envelope",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.3419402677285742,
+      "p90_maximum_membrane_strain": 7.842167545124569e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 17
+    },
+    {
+      "time_min": 40,
+      "gamma": 2.0,
+      "slab_case": "no_slab_v8h_reference",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.3283538953295835,
+      "p90_maximum_membrane_strain": 0.0,
+      "maximum_fractured_membranes_in_any_reached_floor": 0,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 40,
+      "gamma": 2.0,
+      "slab_case": "weak_cracked_partial",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.328353882418855,
+      "p90_maximum_membrane_strain": 1.0817547819730322e-06,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 40,
+      "gamma": 2.0,
+      "slab_case": "low_ratio_full_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.3283538436866956,
+      "p90_maximum_membrane_strain": 1.0817545541552676e-06,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 40,
+      "gamma": 2.0,
+      "slab_case": "high_ratio_quarter_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.32835384983465465,
+      "p90_maximum_membrane_strain": 1.0817545903485382e-06,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 40,
+      "gamma": 2.0,
+      "slab_case": "high_ratio_full_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.3283537133501946,
+      "p90_maximum_membrane_strain": 1.081753787879336e-06,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 10
+    },
+    {
+      "time_min": 40,
+      "gamma": 2.0,
+      "slab_case": "cold_upper_envelope",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.3320491887056092,
+      "p90_maximum_membrane_strain": 1.1033616034161753e-06,
+      "maximum_fractured_membranes_in_any_reached_floor": 14,
+      "maximum_fractured_beams_in_any_reached_floor": 16
+    },
+    {
+      "time_min": 60,
+      "gamma": 1.0,
+      "slab_case": "no_slab_v8h_reference",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.26271168152773394,
+      "p90_maximum_membrane_strain": 0.0,
+      "maximum_fractured_membranes_in_any_reached_floor": 0,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 60,
+      "gamma": 1.0,
+      "slab_case": "weak_cracked_partial",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.2627116809972293,
+      "p90_maximum_membrane_strain": 3.8876086587702486e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 60,
+      "gamma": 1.0,
+      "slab_case": "low_ratio_full_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.262711679405715,
+      "p90_maximum_membrane_strain": 3.887608305719327e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 60,
+      "gamma": 1.0,
+      "slab_case": "high_ratio_quarter_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.2627116796583363,
+      "p90_maximum_membrane_strain": 3.8876083616745673e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 60,
+      "gamma": 1.0,
+      "slab_case": "high_ratio_full_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.26271167405014423,
+      "p90_maximum_membrane_strain": 3.887607121777493e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 60,
+      "gamma": 1.0,
+      "slab_case": "cold_upper_envelope",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.26352960674419923,
+      "p90_maximum_membrane_strain": 4.0657825113310513e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 9,
+      "maximum_fractured_beams_in_any_reached_floor": 12
+    },
+    {
+      "time_min": 60,
+      "gamma": 2.0,
+      "slab_case": "no_slab_v8h_reference",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.2572778138042719,
+      "p90_maximum_membrane_strain": 0.0,
+      "maximum_fractured_membranes_in_any_reached_floor": 0,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 60,
+      "gamma": 2.0,
+      "slab_case": "weak_cracked_partial",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.2572778111031535,
+      "p90_maximum_membrane_strain": 5.112591825007231e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 60,
+      "gamma": 2.0,
+      "slab_case": "low_ratio_full_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.2572778029998001,
+      "p90_maximum_membrane_strain": 5.112591385580958e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 60,
+      "gamma": 2.0,
+      "slab_case": "high_ratio_quarter_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.2572778042860465,
+      "p90_maximum_membrane_strain": 5.112591454636831e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 60,
+      "gamma": 2.0,
+      "slab_case": "high_ratio_full_area",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.2572777757313918,
+      "p90_maximum_membrane_strain": 5.112589900102551e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 7,
+      "maximum_fractured_beams_in_any_reached_floor": 7
+    },
+    {
+      "time_min": 60,
+      "gamma": 2.0,
+      "slab_case": "cold_upper_envelope",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "p90_maximum_story_displacement_in": 0.2574781090150354,
+      "p90_maximum_membrane_strain": 5.278574441769385e-07,
+      "maximum_fractured_membranes_in_any_reached_floor": 15,
+      "maximum_fractured_beams_in_any_reached_floor": 16
+    }
+  ],
+  "deterministic_cases": [
+    {
+      "time_min": 20,
+      "slab_case": "no_slab_v8h_reference",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 20,
+      "slab_case": "no_slab_v8h_reference",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 20,
+      "slab_case": "no_slab_v8h_reference",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 20,
+      "slab_case": "weak_cracked_partial",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 20,
+      "slab_case": "weak_cracked_partial",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 20,
+      "slab_case": "weak_cracked_partial",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 20,
+      "slab_case": "low_ratio_full_area",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 20,
+      "slab_case": "low_ratio_full_area",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 20,
+      "slab_case": "low_ratio_full_area",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 20,
+      "slab_case": "high_ratio_quarter_area",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 20,
+      "slab_case": "high_ratio_quarter_area",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 20,
+      "slab_case": "high_ratio_quarter_area",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 20,
+      "slab_case": "high_ratio_full_area",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 20,
+      "slab_case": "high_ratio_full_area",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 20,
+      "slab_case": "high_ratio_full_area",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 20,
+      "slab_case": "cold_upper_envelope",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 20,
+      "slab_case": "cold_upper_envelope",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 20,
+      "slab_case": "cold_upper_envelope",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 40,
+      "slab_case": "no_slab_v8h_reference",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 40,
+      "slab_case": "no_slab_v8h_reference",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 40,
+      "slab_case": "no_slab_v8h_reference",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 40,
+      "slab_case": "weak_cracked_partial",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 40,
+      "slab_case": "weak_cracked_partial",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 40,
+      "slab_case": "weak_cracked_partial",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 40,
+      "slab_case": "low_ratio_full_area",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 40,
+      "slab_case": "low_ratio_full_area",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 40,
+      "slab_case": "low_ratio_full_area",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 40,
+      "slab_case": "high_ratio_quarter_area",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 40,
+      "slab_case": "high_ratio_quarter_area",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 40,
+      "slab_case": "high_ratio_quarter_area",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 40,
+      "slab_case": "high_ratio_full_area",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 40,
+      "slab_case": "high_ratio_full_area",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 40,
+      "slab_case": "high_ratio_full_area",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 40,
+      "slab_case": "cold_upper_envelope",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 40,
+      "slab_case": "cold_upper_envelope",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 40,
+      "slab_case": "cold_upper_envelope",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 60,
+      "slab_case": "no_slab_v8h_reference",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 60,
+      "slab_case": "no_slab_v8h_reference",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 60,
+      "slab_case": "no_slab_v8h_reference",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 60,
+      "slab_case": "weak_cracked_partial",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 60,
+      "slab_case": "weak_cracked_partial",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 60,
+      "slab_case": "weak_cracked_partial",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 60,
+      "slab_case": "low_ratio_full_area",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 60,
+      "slab_case": "low_ratio_full_area",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 60,
+      "slab_case": "low_ratio_full_area",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 60,
+      "slab_case": "high_ratio_quarter_area",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 60,
+      "slab_case": "high_ratio_quarter_area",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 60,
+      "slab_case": "high_ratio_quarter_area",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 60,
+      "slab_case": "high_ratio_full_area",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 60,
+      "slab_case": "high_ratio_full_area",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 60,
+      "slab_case": "high_ratio_full_area",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    },
+    {
+      "time_min": 60,
+      "slab_case": "cold_upper_envelope",
+      "temperature_field": "uniform_min",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 60,
+      "slab_case": "cold_upper_envelope",
+      "temperature_field": "uniform_midpoint",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "time_min": 60,
+      "slab_case": "cold_upper_envelope",
+      "temperature_field": "uniform_max",
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 97,
+      "floors_reached": 3
+    }
+  ],
+  "post_impact_cold_validation": [
+    {
+      "slab_case": "no_slab_v8h_reference",
+      "demand_kip": 34429.0,
+      "temperature_c": 20.0,
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "slab_case": "weak_cracked_partial",
+      "demand_kip": 34429.0,
+      "temperature_c": 20.0,
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "slab_case": "low_ratio_full_area",
+      "demand_kip": 34429.0,
+      "temperature_c": 20.0,
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "slab_case": "high_ratio_quarter_area",
+      "demand_kip": 34429.0,
+      "temperature_c": 20.0,
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "slab_case": "high_ratio_full_area",
+      "demand_kip": 34429.0,
+      "temperature_c": 20.0,
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    },
+    {
+      "slab_case": "cold_upper_envelope",
+      "demand_kip": 34429.0,
+      "temperature_c": 20.0,
+      "equilibrium_all_floors": false,
+      "first_failed_floor": 96,
+      "floors_reached": 4
+    }
+  ]
+}

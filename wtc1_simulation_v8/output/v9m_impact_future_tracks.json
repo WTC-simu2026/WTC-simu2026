@@ -1,0 +1,101 @@
+{
+  "iteration": "V9M",
+  "generated_at": "2026-08-28T16:22:21.839455+02:00",
+  "tracks": [
+    {
+      "id": "TRACK_A_VISUALIZATION_ONLY_3D_STORYBOARD",
+      "state": "ELIGIBLE_FOR_SPECIFICATION_NOT_EXECUTED",
+      "purpose": "Create a clearly labelled illustrative storyboard from the frozen V8S less-severe, base and more-severe kinematic envelopes.",
+      "permitted_inputs": [
+        "V8S frozen mass, speed, orientation and timing envelopes",
+        "already documented geometry and official damage outlines only when their provenance is shown",
+        "explicit uncertainty bands and alternative scene branches"
+      ],
+      "mandatory_labels": [
+        "VISUALISATION ILLUSTRATIVE — NON VALIDÉE PHYSIQUEMENT",
+        "No predicted force, rupture, debris trajectory or structural response",
+        "Blender is not a physics-validation tool in this project"
+      ],
+      "prohibited_outputs": [
+        "predicted facade impulse or force",
+        "validated projectile or aircraft breakup",
+        "validated damage mask or debris field",
+        "validated fuel dispersion",
+        "validated global tower response"
+      ],
+      "v9m_execution": {
+        "storyboard_specification_created": false,
+        "blender_executed": false,
+        "physics_claim_made": false
+      }
+    },
+    {
+      "id": "TRACK_B_DORMANT_PHYSICAL_SOLVER",
+      "state": "DORMANT_BLOCKED_PENDING_NEW_PRIMARY_EVIDENCE",
+      "purpose": "Reopen physical impact qualification only after new primary evidence closes every controlling rupture, material, joint, benchmark and convergence gap.",
+      "reopening_logic": "all_required_triggers",
+      "required_triggers": [
+        {
+          "id": "exact_wtc_facade_material_and_joint_data",
+          "met": false,
+          "requirement": "Traceable impact-zone plate, weld, bolt, window and floor-attachment definitions with relevant rate and failure data."
+        },
+        {
+          "id": "production_cf6_80a2_material_and_attachment_data",
+          "met": false,
+          "requirement": "Traceable CF6-80A2 core, cowling and attachment material/failure definitions at relevant rates."
+        },
+        {
+          "id": "objective_fracture_energy_or_length",
+          "met": false,
+          "requirement": "A physical fracture-energy or internal-length bound identified independently of facade impulse."
+        },
+        {
+          "id": "measured_open_deformable_projectile_benchmark",
+          "met": false,
+          "requirement": "A lawful deck or deterministic reconstruction with measured outputs, deformable-projectile rupture and an objective failure treatment."
+        },
+        {
+          "id": "three_level_convergence",
+          "met": false,
+          "requirement": "A common measured observable on three comparable meshes with medium-to-fine eroding impulse difference no greater than 10 percent and a bounded fracture-length sensitivity no greater than 10 percent."
+        }
+      ],
+      "source_policy": "Do not resume broad web searching. Evaluate only a newly identified primary source or user-supplied local evidence against the unchanged gates.",
+      "foia_policy": "Last resort only; no request is sent and no external contact is made in V9M.",
+      "v9m_execution": {
+        "solver_executed": false,
+        "material_fit_performed": false,
+        "generic_substitution_performed": false,
+        "external_contact_made": false,
+        "foia_request_sent": false
+      }
+    }
+  ],
+  "track_count": 2,
+  "physical_track_met_trigger_count": 0,
+  "physical_track_reopening_authorized": false,
+  "scope_gates": {
+    "new_source_acquisition_authorized": false,
+    "web_search_authorized": false,
+    "source_archive_rescan_authorized": false,
+    "solver_execution_authorized": false,
+    "material_fit_authorized": false,
+    "failure_law_fit_authorized": false,
+    "generic_material_substitution_authorized": false,
+    "projectile_rupture_authorized": false,
+    "facade_impact_authorized": false,
+    "whole_aircraft_impact_authorized": false,
+    "global_tower_solver_authorized": false,
+    "thermal_solver_authorized": false,
+    "blender_execution_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_inference_authorized": false,
+    "foia_request_authorized": false,
+    "external_contact_authorized": false
+  },
+  "next_iteration": {
+    "id": "V9N",
+    "objective": "Prepare a visualization-only 3D storyboard specification from the frozen V8S kinematic envelopes, with three uncertainty branches, explicit provenance for every geometric input and permanent non-physical-validation overlays. Do not execute Blender or any solver in V9N; keep the physical track dormant unless genuinely new primary evidence is supplied."
+  }
+}

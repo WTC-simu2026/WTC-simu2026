@@ -1,0 +1,146 @@
+{
+  "iteration": "V9T",
+  "dataset_version": "9.20.0",
+  "generated_at_utc": "2026-08-30T06:55:13Z",
+  "validation_status": "PASS",
+  "random_seed": 9122005,
+  "random_draw_used": false,
+  "scope": "Preserve V8U through V9S, fit the separately published exit-door landing dimensions into the V9S qualitative normalized envelopes with one common relative scale, create deterministic low/base/high placement variants, and validate only transform reproducibility, envelope containment, topology and non-overlap.",
+  "observed_or_transcribed_facts": {
+    "A_C_landing_by_exit_door_in": [
+      92.0,
+      78.0
+    ],
+    "B_landing_by_exit_door_in": [
+      116.0,
+      78.0
+    ],
+    "v9s_envelope_count": 3
+  },
+  "official_model_results": {
+    "v9s_envelopes_derive_from_nist_model_figures": true,
+    "independent_as_built_measurement": false
+  },
+  "archive_claims_used": [],
+  "model_hypotheses": {
+    "orientation_hypotheses": {
+      "A": {
+        "rotation_deg": 0.0,
+        "x_dimension": "landing_by_exit_door_width_in",
+        "y_dimension": "landing_by_exit_door_depth_in",
+        "basis": "V9S envelope is wider than tall"
+      },
+      "C": {
+        "rotation_deg": 0.0,
+        "x_dimension": "landing_by_exit_door_width_in",
+        "y_dimension": "landing_by_exit_door_depth_in",
+        "basis": "V9S envelope is wider than tall"
+      },
+      "B": {
+        "rotation_deg": 90.0,
+        "x_dimension": "landing_by_exit_door_depth_in",
+        "y_dimension": "landing_by_exit_door_width_in",
+        "basis": "V9S envelope is taller than wide"
+      }
+    },
+    "common_relative_scale_rule": "minimum over all stairs and axes of V9S envelope span divided by oriented published landing dimension",
+    "placement_variants": {
+      "low": {
+        "residual_fraction_x": 0.0,
+        "residual_fraction_y": 0.0,
+        "interpretation": "lower-left residual-envelope placement; not a lower confidence bound"
+      },
+      "base": {
+        "residual_fraction_x": 0.5,
+        "residual_fraction_y": 0.5,
+        "interpretation": "centered residual-envelope placement; not a best estimate"
+      },
+      "high": {
+        "residual_fraction_x": 1.0,
+        "residual_fraction_y": 1.0,
+        "interpretation": "upper-right residual-envelope placement; not an upper confidence bound"
+      }
+    },
+    "physical_scale": null
+  },
+  "derived_results": {
+    "common_relative_scale_common_px_per_published_in": 2.3245978260869564,
+    "controlling_scale_candidate": {
+      "stair": "C",
+      "axis": "x",
+      "capacity": 2.3245978260869564
+    },
+    "geometry_fingerprint_sha256": "eb434c40b98122f1b80e1ccec079439137a2bb201f463fe4283e043200152dcf",
+    "variant_count": 3,
+    "stair_rectangle_count": 9,
+    "maximum_transform_abs_error_common_px": 0.0,
+    "maximum_dimension_abs_error_in": 2.842170943040401e-14,
+    "minimum_pairwise_clearance_by_variant_common_px": {
+      "low": 79.207,
+      "base": 84.15699999999998,
+      "high": 89.10699999999997
+    }
+  },
+  "contradictions_and_missing_information": [
+    "The V9S envelopes are qualitative normalized unions of official-model graphics, not dimensioned as-built plans.",
+    "The 92 by 78 in and 116 by 78 in values describe landings by exit doors, not whole stair enclosures.",
+    "Orientation and low/base/high residual placements are explicit hypotheses.",
+    "Walls, doors, flights, treads, risers, stringers, attachments, exact metric coordinates, mass and component damage remain unresolved."
+  ],
+  "checks": {
+    "regression_hashes": true,
+    "input_artifact_hashes": true,
+    "protected_file_before_after": true,
+    "upstream_coordinate_boundary": true,
+    "stairway_count": true,
+    "variant_count": true,
+    "common_scale_rule": true,
+    "transform_reproducibility": true,
+    "published_dimension_reproduction": true,
+    "envelope_containment": true,
+    "topology_and_non_overlap": true,
+    "positive_pairwise_clearance": true,
+    "zero_physical_properties": true,
+    "mechanical_and_blender_gates_closed": true,
+    "source_policy_closed": true,
+    "figures_created": true
+  },
+  "model_gate": {
+    "deterministic_geometry_only_layer": true,
+    "three_hypothetical_placement_variants": true,
+    "relative_landing_dimension_preservation": true,
+    "topology_and_non_overlap": true,
+    "metric_as_built_geometry": false,
+    "whole_stair_enclosure_geometry": false,
+    "mechanical_properties": false,
+    "load_path_credit": false,
+    "component_damage_validation": false,
+    "structural_solver": false,
+    "blender": false,
+    "physical_validation": false
+  },
+  "source_policy": {
+    "source_archive_read": false,
+    "source_archive_rescanned": false,
+    "cached_official_sources_read_only": true,
+    "network_access_used": false,
+    "official_source_files_modified": false,
+    "structural_solver_authorized": false,
+    "blender_authorized": false,
+    "blender_master_modification_authorized": false,
+    "physical_interpretation_authorized": false,
+    "metric_as_built_geometry_authorized": false,
+    "mass_assignment_authorized": false,
+    "stiffness_assignment_authorized": false,
+    "strength_assignment_authorized": false,
+    "connection_assignment_authorized": false,
+    "load_path_credit_authorized": false,
+    "component_damage_validation_authorized": false,
+    "foia_request_sent": false,
+    "external_contact_count": 0
+  },
+  "next_iteration": {
+    "id": "V9U",
+    "objective": "Preserve V8U through V9T and test whether the geometry-only Floor 95 stairwell layer can be extended across Floors 93-99 using only the published V9R floor-band continuity and transfer topology. Create a categorical seven-floor stack only where continuity is supported, label every repeated placement hypothetical, preserve zero mass, stiffness, strength, connection and load-path credit, do not modify Blender, and do not run a structural solver."
+  }
+}

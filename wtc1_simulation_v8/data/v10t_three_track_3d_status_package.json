@@ -1,0 +1,359 @@
+{
+  "iteration": "V10T",
+  "dataset": {
+    "name": "Three-track static 3D status package",
+    "version": "10.20.0",
+    "status": "PREDECLARED_BEFORE_V10T_BLENDER_EXECUTION",
+    "created_at_local": "2026-09-04T10:30:00+02:00",
+    "random_seed": 1020001,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10S and the immutable V4.2 Blender master. Render only the three-track software/reference/unknown statuses already released by V10P-V10S. Produce six static labelled views, a proof sheet and a new derivative blend. Do not animate impact, fire, initiation, collapse, propagation or arrest; do not add physical values; do not run a structural, thermal, fire or propagation solver; do not feed Blender back into calculations; and do not conclude historical collapse or non-collapse."
+  },
+  "execution_policy": {
+    "network_access": false,
+    "source_archive_read": false,
+    "source_archive_modified": false,
+    "official_source_pdf_hash_only_count": 1,
+    "official_source_pdf_page_read_count": 0,
+    "official_source_pdf_text_extraction_count": 0,
+    "official_sources_directory_modified": false,
+    "software_installation": false,
+    "structural_solver_execution": false,
+    "thermal_solver_execution": false,
+    "fire_solver_execution": false,
+    "propagation_solver_execution": false,
+    "other_solver_execution": false,
+    "gpu_compute": false,
+    "blender_execution": true,
+    "blender_visualization_only": true,
+    "blender_physics_execution": false,
+    "blender_master_modification": false,
+    "postcontact_motion": false,
+    "predicted_collapse_motion": false,
+    "historical_collapse_or_noncollapse_conclusion": false,
+    "maximum_runtime_seconds": 900
+  },
+  "regression_files": [
+    {
+      "role": "v10s_configuration",
+      "path": "wtc1_simulation_v8/data/v10s_three_track_propagation_arrest_contract.json",
+      "expected_sha256": "51594076b26fc777755733fc05fe0ca484d70afe32feaf3c168cd04a596dc550"
+    },
+    {
+      "role": "v10s_script",
+      "path": "wtc1_simulation_v8/scripts/run_v10s_three_track_propagation_arrest_contract.py",
+      "expected_sha256": "e0e392393ffeaaf4f5d5c0bbabef837526b05a21bc17d09be4e667d9f81ed706"
+    },
+    {
+      "role": "v10s_regression_audit",
+      "path": "wtc1_simulation_v8/output/v10s_regression_audit.json",
+      "expected_sha256": "cfb4947bcae2322a04860cbc87e7138f94fa720c35e7060e4f0b33be854b382b"
+    },
+    {
+      "role": "v10s_source_manifest",
+      "path": "wtc1_simulation_v8/output/v10s_propagation_source_manifest.json",
+      "expected_sha256": "27d13c167cbebcec2f8ad53ba6e1349fa8664a6e741ccefb86343ca328146e17"
+    },
+    {
+      "role": "v10s_interface_gap_matrix",
+      "path": "wtc1_simulation_v8/output/v10s_legacy_interface_gap_matrix.csv",
+      "expected_sha256": "a750317be287386c3b7de2768ad4d8a6a96873ee901338541743fd54aad92955"
+    },
+    {
+      "role": "v10s_minimum_input_matrix",
+      "path": "wtc1_simulation_v8/output/v10s_propagation_minimum_input_matrix.csv",
+      "expected_sha256": "26352279d7e05d1cb38537f4e2f1bf4f5fd84e3f7b3ebdac65a5e09aedc2b767"
+    },
+    {
+      "role": "v10s_contract_v2",
+      "path": "wtc1_simulation_v8/output/v10s_propagation_contract_v2.json",
+      "expected_sha256": "61c7e737fa2a58e6f56563e33aa6c69e3e399c4035614c653ea8014ec5736617"
+    },
+    {
+      "role": "v10s_conservation_ledger",
+      "path": "wtc1_simulation_v8/output/v10s_conservation_ledger_template.csv",
+      "expected_sha256": "5b190988c0e2bfa5fc37f06be069fb9e754594951f1514841507d8b946af014d"
+    },
+    {
+      "role": "v10s_track_manifest",
+      "path": "wtc1_simulation_v8/output/v10s_three_track_propagation_arrest_handoff.json",
+      "expected_sha256": "1bc02c7d9ac54aaefccbda77e146c2f1cea93e81351247dbd60d3520a1b84e0b"
+    },
+    {
+      "role": "v10s_gate",
+      "path": "wtc1_simulation_v8/output/v10s_propagation_arrest_gate.json",
+      "expected_sha256": "f2d88c75bbf53215d6c044372097ec0e82e7f49db14d4525d0f01c509b7e7f42"
+    },
+    {
+      "role": "v10s_report",
+      "path": "wtc1_simulation_v8/output/rapport_wtc1_v10s_contrat_propagation_arret.md",
+      "expected_sha256": "9aef3bcfba86d88487112923380793e24e754b5c4ce3b3ff73984a5adb851ef7"
+    },
+    {
+      "role": "v10s_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10s_contrat_propagation_arret.json",
+      "expected_sha256": "8619933626ec837b2da5f9ef6f244b98d3b385d9e61b8b131237702d153cf18c"
+    },
+    {
+      "role": "v10s_offline_audit",
+      "path": "wtc1_simulation_v8/output/v10s_offline_package_audit.json",
+      "expected_sha256": "45530896d587c55bce06be8309d1ff3d07ab5deeb1042098cd58063c118e9b1c"
+    }
+  ],
+  "protected_files": [
+    {
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+    }
+  ],
+  "cached_input_files": [
+    {
+      "id": "V10P_TRACK_MANIFEST",
+      "path": "wtc1_simulation_v8/output/v10p_three_track_handoff.json",
+      "expected_sha256": "458196235667e546d5eef53878ad401c17d807141422ebfa9aa8f3f0c7264868",
+      "evidence_class": "CACHED_THREE_TRACK_IMPACT_DAMAGE_STATUS"
+    },
+    {
+      "id": "V10P_GATE",
+      "path": "wtc1_simulation_v8/output/v10p_impact_damage_handoff_gate.json",
+      "expected_sha256": "f30460e8f79cd4e44c0fbf4e3927804d2b91e88c6d957cff9ca796a86f4ed196",
+      "evidence_class": "CACHED_IMPACT_DAMAGE_RELEASE_GATE"
+    },
+    {
+      "id": "V10Q_TRACK_MANIFEST",
+      "path": "wtc1_simulation_v8/output/v10q_three_track_fire_thermal_handoff.json",
+      "expected_sha256": "7b14a3d67ba41a929fb557b07b3376f27206deee25597047e5bf16decb35e99c",
+      "evidence_class": "CACHED_THREE_TRACK_FIRE_THERMAL_STATUS"
+    },
+    {
+      "id": "V10Q_TEMPERATURE_MATRIX",
+      "path": "wtc1_simulation_v8/output/v10q_official_temperature_envelope_matrix.csv",
+      "expected_sha256": "bfb82536adf1482b73a59e8717af723d8a36d1141bd8294e83657759355ac2e0",
+      "evidence_class": "OFFICIAL_MODEL_DEPENDENT_RANGE_TRANSCRIPTION"
+    },
+    {
+      "id": "V10Q_GATE",
+      "path": "wtc1_simulation_v8/output/v10q_fire_thermal_handoff_gate.json",
+      "expected_sha256": "b40ef250fd9aab9d9356d3748bb0cb44b8b8b0ca88f681771b31ac3dea113bf2",
+      "evidence_class": "CACHED_FIRE_THERMAL_RELEASE_GATE"
+    },
+    {
+      "id": "V10R_TRACK_MANIFEST",
+      "path": "wtc1_simulation_v8/output/v10r_three_track_thermal_initiation_handoff.json",
+      "expected_sha256": "e025bd727d878191ea0b82bd5ff074ce8efb85de1b3ebfda399b116081feb827",
+      "evidence_class": "CACHED_THREE_TRACK_THERMAL_INITIATION_STATUS"
+    },
+    {
+      "id": "V10R_MATERIAL_MATRIX",
+      "path": "wtc1_simulation_v8/output/v10r_material_reduction_envelope_matrix.csv",
+      "expected_sha256": "60ce371d7c129992c66a76a171d03bb6366eb5a3c3a850a91ff2d097cffaf510",
+      "evidence_class": "DERIVED_IN_DOMAIN_REDUCTION_REFERENCE"
+    },
+    {
+      "id": "V10R_GATE",
+      "path": "wtc1_simulation_v8/output/v10r_thermal_initiation_gate.json",
+      "expected_sha256": "599c8bd54d407f7272cd1134f9e42146481de92459cdbef69939a811ec71f38b",
+      "evidence_class": "CACHED_INITIATION_RELEASE_GATE"
+    },
+    {
+      "id": "V4_2_MODEL_MANIFEST",
+      "path": "wtc1_3d_v4/output/model_manifest.json",
+      "expected_sha256": "55b7d1c315c0c9ab06d70481153d32c9a401f6ee7efe7480b3882edb393d4b9d",
+      "evidence_class": "GEOMETRY_MODEL_MANIFEST"
+    },
+    {
+      "id": "V4_2_PARAMETERS",
+      "path": "wtc1_3d_v4/data/wtc1_parameters.json",
+      "expected_sha256": "43b351dc434cafcc49436712d74517cb8160e35c72b6d843401675674715bc7f",
+      "evidence_class": "GEOMETRY_PARAMETER_FILE"
+    },
+    {
+      "id": "V9O_VISUALIZATION_PRECEDENT",
+      "path": "wtc1_3d_v4/scripts/build_v9o_storyboard_preview.py",
+      "expected_sha256": "1db7b882453be38cf3957bd42e5272e8c2d1f72ff806256adbd3f56b266ceb5f",
+      "evidence_class": "LABELLED_VISUALIZATION_SOFTWARE_PRECEDENT_ONLY"
+    }
+  ],
+  "official_source_hash_only_files": [
+    {
+      "id": "NCSTAR1_6D_LOCAL",
+      "path": "work/official_sources/ncstar1-6d.pdf",
+      "expected_sha256": "0d2a155fc820c83e4bc7df32a6da098261eb2e7f8d1358abd00d11c12bd6c9ff",
+      "use": "hash continuity only; no page is read in V10T"
+    }
+  ],
+  "software_files": [
+    {
+      "id": "BLENDER_5_2",
+      "path": "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe",
+      "expected_sha256": "e27fbfea8564aa645d4463cb0949695fd85562b9de6df9561b06859a1074adf7",
+      "expected_version_prefix": "5.2",
+      "allowed_credit": "VISUALIZATION_ONLY_NO_MECHANICAL_FEEDBACK"
+    }
+  ],
+  "track_contract": {
+    "required_track_ids": [
+      "CONTROL_SOFTWARE_ZERO",
+      "OFFICIAL_MODEL_DEPENDENT_REFERENCE",
+      "UNKNOWN_PHYSICAL_EVENT"
+    ],
+    "stage_ids": [
+      "IMPACT_DAMAGE",
+      "FIRE_THERMAL",
+      "THERMAL_INITIATION",
+      "PROPAGATION_ARREST"
+    ],
+    "non_merging_rule": "The zero software control, official-model-dependent references and unknown physical-event branch must remain visibly separate in every scene and output table.",
+    "physical_release_rule": "A status may be visualized, but no geometry deformation, motion, temperature field, damage field, member failure, collapse or arrest outcome may be populated unless an upstream physical gate explicitly releases it. V10P-V10S release zero such physical states.",
+    "control_warning": "CONTROL_NO_PROPAGATION is an algebraic zero-input sentinel and is not a historical non-collapse result."
+  },
+  "visual_contract": {
+    "master_scene": "WTC1_MASTER",
+    "derivative_blend": "wtc1_3d_v4/output/WTC1_V10T_THREE_TRACK_STATUS.blend",
+    "master_overwrite_authorized": false,
+    "static_only": true,
+    "frame_start": 1,
+    "frame_end": 1,
+    "permanent_banner": "VISUALISATION DE STATUT — AUCUNE PRÉDICTION D’EFFONDREMENT",
+    "secondary_warning": "BLENDER N’ALIMENTE AUCUN CALCUL — AUCUN MOUVEMENT POST-IMPACT",
+    "impact_zone_floors": [93, 99],
+    "impact_zone_marker_meaning": "Reference volume for Floors 93-99 only; not a physical damage, fire or temperature field.",
+    "render_engine": "BLENDER_EEVEE",
+    "render_resolution_px": [1280, 720],
+    "proof_sheet_resolution_px": [1920, 720],
+    "proof_sheet_columns": 3,
+    "proof_sheet_rows": 2,
+    "proof_sheet_cell_resolution_px": [640, 360],
+    "renders": [
+      {
+        "id": "CHAIN_OVERVIEW",
+        "filename": "01_v10t_chain_overview.png",
+        "kind": "card",
+        "title": "WTC 1 — chaîne intégrée : état au jalon V10T",
+        "subtitle": "Impact/dommages → feu/thermique → initiation → propagation/arrêt",
+        "body": "CONTRÔLE ZÉRO : chaîne logicielle seulement\nRÉFÉRENCES OFFICIELLES : dépendantes et bornées\nÉVÉNEMENT PHYSIQUE : indéterminé aux quatre étapes\n\n0 état physique transmis à Blender",
+        "epistemic_label": "CARTE DE STATUT — PAS UNE SIMULATION PHYSIQUE"
+      },
+      {
+        "id": "CONTROL_ZERO",
+        "filename": "02_v10t_control_zero.png",
+        "kind": "tower",
+        "camera": "full_oblique",
+        "title": "Piste 1 — contrôle logiciel à entrée nulle",
+        "subtitle": "16/16 contrôles de sérialisation ; 3/3 identités de conservation nulles",
+        "body": "CONTROL_NO_PROPAGATION = sentinelle algébrique\nAucune propriété WTC et aucun résultat historique",
+        "epistemic_label": "CONTRÔLE SYNTHÉTIQUE — PAS UN NON-EFFONDREMENT HISTORIQUE",
+        "zone_marker": false
+      },
+      {
+        "id": "OFFICIAL_IMPACT_DAMAGE",
+        "filename": "03_v10t_official_impact_damage.png",
+        "kind": "tower",
+        "camera": "impact_north",
+        "title": "Piste 2 — référence impact/dommages dépendante du modèle officiel",
+        "subtitle": "89 segments de référence sur les cas moins/base/plus sévère",
+        "body": "Le volume translucide repère seulement les étages 93–99.\nCe n’est pas une carte physique indépendante de dommages.",
+        "epistemic_label": "RÉFÉRENCE TRANSCRITE — 0 ÉTAT PHYSIQUE LIBÉRÉ",
+        "zone_marker": true
+      },
+      {
+        "id": "OFFICIAL_FIRE_THERMAL",
+        "filename": "04_v10t_official_fire_thermal.png",
+        "kind": "tower",
+        "camera": "impact_oblique",
+        "title": "Piste 2 — référence feu/thermique dépendante",
+        "subtitle": "105 plages ; 58 entièrement dans le domaine ; 47 extrémités chaudes bloquées",
+        "body": "0 historique thermique membre par membre\n0/8 champs SFRM disponibles",
+        "epistemic_label": "PLAGES DE RÉFÉRENCE — PAS UN CHAMP DE TEMPÉRATURE",
+        "zone_marker": true
+      },
+      {
+        "id": "INITIATION_BLOCKED",
+        "filename": "05_v10t_initiation_blocked.png",
+        "kind": "tower",
+        "camera": "impact_oblique",
+        "title": "Initiation — porte physique fermée",
+        "subtitle": "Chemin d’efforts à froid non validé ; entrées membre par membre absentes",
+        "body": "Temps d’initiation : inconnu\nMembres défaillants : inconnus\nAucun déclencheur transmis",
+        "epistemic_label": "INDÉTERMINÉ — NI EFFONDREMENT NI NON-EFFONDREMENT",
+        "zone_marker": true
+      },
+      {
+        "id": "PROPAGATION_UNKNOWN",
+        "filename": "06_v10t_propagation_unknown.png",
+        "kind": "tower",
+        "camera": "full_oblique",
+        "title": "Propagation ou arrêt — non calculé",
+        "subtitle": "0/32 entrées physiques prêtes ; aucun solveur de propagation exécuté",
+        "body": "Bilans masse/quantité de mouvement/énergie : nuls seulement pour le contrôle\nIssue historique : inconnue",
+        "epistemic_label": "AUCUN MOUVEMENT D’EFFONDREMENT AUTORISÉ",
+        "zone_marker": false
+      }
+    ]
+  },
+  "expected": {
+    "regression_file_count": 13,
+    "protected_file_count": 1,
+    "cached_input_file_count": 11,
+    "official_source_hash_only_file_count": 1,
+    "software_file_count": 1,
+    "track_count": 3,
+    "stage_count": 4,
+    "status_matrix_row_count": 12,
+    "render_count": 6,
+    "scene_count": 7,
+    "manual_visual_qa_image_count": 7,
+    "audited_artifact_count": 19,
+    "impact_damage_official_reference_segment_count": 89,
+    "temperature_range_count": 105,
+    "temperature_endpoint_count": 210,
+    "temperature_hot_endpoint_blocked_count": 47,
+    "complete_material_range_count": 58,
+    "partial_material_range_count": 47,
+    "sfrm_available_field_count": 0,
+    "sfrm_total_field_count": 8,
+    "control_record_check_count": 16,
+    "control_record_pass_count": 16,
+    "control_conservation_identity_pass_count": 3,
+    "minimum_physical_requirement_count": 32,
+    "minimum_physical_ready_count": 0,
+    "minimum_physical_blocking_count": 32,
+    "visualization_status_release_count": 3,
+    "physical_state_release_count": 0,
+    "historical_outcome_assignment_count": 0,
+    "v10t_keyframe_count": 0,
+    "v10t_rigid_body_count": 0,
+    "v10t_particle_system_count": 0,
+    "v10t_fluid_modifier_count": 0,
+    "structural_solver_run_count": 0,
+    "thermal_solver_run_count": 0,
+    "fire_solver_run_count": 0,
+    "propagation_solver_run_count": 0,
+    "other_solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 1
+  },
+  "outputs": {
+    "blender_builder_script": "wtc1_3d_v4/scripts/build_v10t_three_track_status.py",
+    "blender_internal_manifest": "wtc1_3d_v4/output/v10t_blender_internal_manifest.json",
+    "blender_execution_log": "wtc1_3d_v4/output/v10t_blender_execution.log",
+    "derivative_blend": "wtc1_3d_v4/output/WTC1_V10T_THREE_TRACK_STATUS.blend",
+    "render_directory": "wtc1_3d_v4/renders/v10t",
+    "proof_sheet": "wtc1_3d_v4/renders/v10t/wtc1_v10t_proof_sheet.png",
+    "regression_audit": "wtc1_simulation_v8/output/v10t_regression_audit.json",
+    "source_manifest": "wtc1_simulation_v8/output/v10t_visualization_source_manifest.json",
+    "status_matrix": "wtc1_simulation_v8/output/v10t_status_release_matrix.csv",
+    "blender_audit": "wtc1_simulation_v8/output/v10t_blender_audit.json",
+    "render_manifest": "wtc1_simulation_v8/output/v10t_render_manifest.json",
+    "visual_qa": "wtc1_simulation_v8/output/v10t_visual_qa.json",
+    "handoff_gate": "wtc1_simulation_v8/output/v10t_visualization_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10t_visualisation_3d_statuts.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10t_visualisation_3d_statuts.json",
+    "offline_audit": "wtc1_simulation_v8/output/v10t_offline_package_audit.json"
+  },
+  "next_iteration": {
+    "id": "V10U",
+    "objective": "Qualifier un premier cas mécanique borné et indépendant dans CalculiX avec solution analytique, convergence de maillage et bilan force-déplacement. Le cas doit rester un benchmark logiciel de composant sans attribution au WTC 1 tant que les plans, sections, assemblages et chemins d’efforts réels manquent."
+  }
+}

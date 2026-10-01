@@ -1,0 +1,701 @@
+{
+  "iteration": "V10B",
+  "dataset": {
+    "name": "Bounded cached structural-register and data-table index audit for WTC 1 Floors 93-99 readiness",
+    "version": "10.2.0",
+    "status": "PREDECLARED_INDEX_ONLY_PASS_ALLOWED_WITH_SOURCE_AND_SOLVER_GATES_CLOSED",
+    "random_seed": 1010008,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10A. Read only the hashed cached structural archive index workbook and three cached PDF manifests. Identify exact Drawing Book 5, Drawing Book 6, office-floor/truss/slab, core, perimeter, connection and hat-truss document identifiers relevant to the V10A source gates. Produce a prioritized acquisition and transcription matrix without reading any target drawing payload, rescanning the source archive, reading work/official_sources, contacting an external party, assigning solver properties, running a structural solver or launching Blender."
+  },
+  "source_policy": {
+    "source_archive_read": false,
+    "source_archive_rescanned": false,
+    "source_archive_files_modified": false,
+    "official_sources_directory_read": false,
+    "official_sources_directory_modified": false,
+    "cached_index_files_read_only": true,
+    "target_drawing_payload_read": false,
+    "target_drawing_payload_copied": false,
+    "network_access_authorized": false,
+    "external_contact_authorized": false,
+    "new_source_acquisition_authorized": false,
+    "structural_solver_authorized": false,
+    "blender_authorized": false,
+    "blender_master_modification_authorized": false,
+    "thermal_continuation_authorized": false,
+    "as_built_coordinate_assignment_authorized": false,
+    "member_section_assignment_authorized": false,
+    "material_assignment_authorized": false,
+    "mass_assignment_authorized": false,
+    "stiffness_assignment_authorized": false,
+    "capacity_assignment_authorized": false,
+    "connection_law_assignment_authorized": false,
+    "damage_state_assignment_authorized": false,
+    "load_path_credit_authorized": false
+  },
+  "regression_files": {
+    "wtc1_simulation_v8/data/v10a_solver_neutral_readiness_schema.json": "96a5da53951b2568447dcf884fdfc12202a8f91f99a7695f8740ec7f6bfce318",
+    "wtc1_simulation_v8/scripts/run_v10a_solver_neutral_readiness_schema.py": "9bc5fde34c0dea0ad45fef1e6d9357a12f262e779f4b1383ec5f3b8a3c731df1",
+    "wtc1_simulation_v8/output/v10a_readiness_source_manifest.json": "c97418f9e072313338c48af971b9d3f55778eb281a3592236dacba91be56fdd0",
+    "wtc1_simulation_v8/output/v10a_solver_neutral_schema.json": "8ed7ce2665facdf1b20861c793b089908b4c6bef6c3e6ec7751647316700f897",
+    "wtc1_simulation_v8/output/v10a_floor93_99_node_catalogue.csv": "957dca3d6cc1975d3931d1449bad98919830e4f3d5cbefad576321e1ac124da2",
+    "wtc1_simulation_v8/output/v10a_floor93_99_element_catalogue.csv": "c94706d70e79d2081606f44112a337950c0ae80e00800dd72af99cb57fd4e1fc",
+    "wtc1_simulation_v8/output/v10a_connection_requirement_matrix.csv": "6a09823593bd9b4c6d9915d26cc6cf18145031cd5613ccb4a819aef3222e2a44",
+    "wtc1_simulation_v8/output/v10a_floor_readiness_matrix.csv": "49059966c7aff0830aa25b5d6607f571293ae26abfb6a492f963866cb5d2d00b",
+    "wtc1_simulation_v8/output/v10a_property_unit_dictionary.json": "6181a177bc08c34dd937340b1df9e4f5653be1136e787464bd6099f294802e32",
+    "wtc1_simulation_v8/output/v10a_source_gate_audit.json": "7c23640a73bd6d75c4521a00e471337ea735cc82555055fa345be7bf202047cc",
+    "wtc1_simulation_v8/output/v10a_solver_readiness_gate.json": "36aa6f0823a11b72f7658fcaad903f9cf0b532c0d0f23bdd1b5a816211bf0b68",
+    "wtc1_simulation_v8/output/rapport_wtc1_v10a_schema_preparation_mecanique.md": "1ab960e11cb33190a4cab3c337c8979df2f7469717409fa624bb384353ca62d9",
+    "wtc1_simulation_v8/output/resultats_wtc1_v10a_schema_preparation_mecanique.json": "bb5c18ebd1b72ca3c556b95d416e59af9d01f8a19780dca326296ebc54a69cbb"
+  },
+  "protected_files": {
+    "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+  },
+  "cached_index_files": {
+    "work/xlsx_index/TT_Structural_Archived_Index_Apr_2019.xlsx": "6eb6892427c833fbb438153cdb43d5757a14052243805a1b58048723ea13af66",
+    "work/pdf_index/manifest.json": "4a53e5d54e5f04fa1d52ceca5dc843d39a7ee5fdfeab4a6aabb01186009885bb",
+    "work/official_index/manifest.json": "cbf8afd6528cb0fe12e0a537aa21091f564edd8a2b6b902511b8f22fc7f57d6a",
+    "work/official_extra_index/manifest.json": "9194ab259a8d2a658b0a3e972937340bbb6cac7b5b4e6557eb4e5ffe3c7ae425"
+  },
+  "workbook_expectations": {
+    "sheet_names": [
+      "Sheet1",
+      "Sheet2",
+      "Sheet3"
+    ],
+    "sheet1_used_range": "A1:K95",
+    "header": [
+      "Book #",
+      "Title",
+      "PDF Title",
+      "PDF #",
+      "Content I Click to View",
+      "File/Folder Size",
+      "Floors",
+      "Area",
+      "Tower A/B",
+      "Drwg # Start",
+      "Drwg # End"
+    ],
+    "selected_document_count": 53,
+    "selected_book_counts": {
+      "1": 2,
+      "2": 2,
+      "3": 1,
+      "4": 8,
+      "5": 2,
+      "6": 4,
+      "7": 17,
+      "8": 4,
+      "9": 2,
+      "11": 3,
+      "12": 4,
+      "13": 2,
+      "20": 2
+    },
+    "priority_counts": {
+      "P0_LOCALIZE_FIRST": 9,
+      "P1_PRIMARY_DETAIL": 23,
+      "P2_SUPPLEMENTAL": 21
+    },
+    "selected_floor_field_nonblank_count": 0,
+    "selected_manifest_payload_hit_count": 0
+  },
+  "target_groups": [
+    {
+      "group_id": "CORE_COLUMN_BOOK3",
+      "subsystem": "core_vertical",
+      "description": "Core-column schedule and detail register target.",
+      "transcription_scope": "Column identifiers, floor ranges, splice elevations, section changes, steel grade references and drawing-to-detail cross-references.",
+      "minimum_acceptance": "Exact payload hash and provenance, explicit Tower A/WTC 1 mapping, Floors 93-99 applicability, legible schedule cells and revision context.",
+      "documents": [
+        {
+          "document_id": "WTCI-000013-L",
+          "priority": "P0_LOCALIZE_FIRST"
+        }
+      ]
+    },
+    {
+      "group_id": "CORE_BEAM_BOOK5",
+      "subsystem": "core_inplane",
+      "description": "Drawing Book 5 beam schedules, types and stud details.",
+      "transcription_scope": "Book index, beam marks, WF sections, orientation, floor applicability, end details, stud/slab references and drawing cross-references.",
+      "minimum_acceptance": "Exact payload hash and provenance, unambiguous Book 5 drawing number, Tower A/WTC 1 and Floors 93-99 mapping, legible section assignment and revision context.",
+      "documents": [
+        {
+          "document_id": "WTCI-000710-L",
+          "priority": "P0_LOCALIZE_FIRST"
+        },
+        {
+          "document_id": "WTCI-000016-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        }
+      ]
+    },
+    {
+      "group_id": "CONNECTION_BOOK6",
+      "subsystem": "core_office_perimeter_connections",
+      "description": "Drawing Book 6 connection, seat, temporary-elevation, louver and anchor register targets.",
+      "transcription_scope": "Connection marks, beam/column/truss seat assignments, bolts, welds, plates, anchors, elevations, applicable drawing ranges and revision context.",
+      "minimum_acceptance": "Exact payload hash and provenance, connection mark joined to a physical member and floor, legible units and revision, without inferring a force-displacement law from geometry alone.",
+      "documents": [
+        {
+          "document_id": "WTCI-000020-L",
+          "priority": "P0_LOCALIZE_FIRST"
+        },
+        {
+          "document_id": "WTCI-000021-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-000022-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-000023-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        }
+      ]
+    },
+    {
+      "group_id": "OFFICE_FLOOR_BOOK7",
+      "subsystem": "office_floor",
+      "description": "Floor-system, floor-panel, floor-truss and design-calculation register targets.",
+      "transcription_scope": "Book/chapter index, floor bands, panel and truss marks, chord/web geometry, bridging, openings, tributary layout, design-calculation references and drawing cross-references.",
+      "minimum_acceptance": "Exact payload hash and provenance, Tower A/WTC 1 mapping, Floors 93-99 applicability, member-level topology and legible dimensions with units and revision context.",
+      "documents": [
+        {
+          "document_id": "WTCI-000702-L",
+          "priority": "P0_LOCALIZE_FIRST"
+        },
+        {
+          "document_id": "WTCI-000024-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-000131-L_006",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-000472-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-001057-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-001061-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-000025-L",
+          "priority": "P2_SUPPLEMENTAL"
+        },
+        {
+          "document_id": "WTCI-000130-L",
+          "priority": "P2_SUPPLEMENTAL"
+        },
+        {
+          "document_id": "WTCI-000131-L",
+          "priority": "P2_SUPPLEMENTAL"
+        },
+        {
+          "document_id": "WTCI-000131-L_002",
+          "priority": "P2_SUPPLEMENTAL"
+        },
+        {
+          "document_id": "WTCI-000131-L_003",
+          "priority": "P2_SUPPLEMENTAL"
+        },
+        {
+          "document_id": "WTCI-000131-L_004",
+          "priority": "P2_SUPPLEMENTAL"
+        },
+        {
+          "document_id": "WTCI-000131-L_005",
+          "priority": "P2_SUPPLEMENTAL"
+        },
+        {
+          "document_id": "WTCI-000502-L",
+          "priority": "P2_SUPPLEMENTAL"
+        },
+        {
+          "document_id": "WTCI-000733-L",
+          "priority": "P2_SUPPLEMENTAL"
+        },
+        {
+          "document_id": "WTCI-001056-L",
+          "priority": "P2_SUPPLEMENTAL"
+        },
+        {
+          "document_id": "WTCI-001060-L",
+          "priority": "P2_SUPPLEMENTAL"
+        }
+      ]
+    },
+    {
+      "group_id": "SLAB_REINFORCEMENT_BOOK8",
+      "subsystem": "office_floor_slab",
+      "description": "Concrete-reinforcing index, slab reinforcement and typical slab-section targets.",
+      "transcription_scope": "Slab thickness, reinforcement direction and quantity, deck/fireproofing context, openings, shear-transfer details, floor applicability and drawing cross-references.",
+      "minimum_acceptance": "Exact payload hash and provenance, Tower A/WTC 1 and Floors 93-99 mapping, legible dimensions and reinforcement callouts with units and revision context.",
+      "documents": [
+        {
+          "document_id": "WTCI-000703-L",
+          "priority": "P0_LOCALIZE_FIRST"
+        },
+        {
+          "document_id": "WTCI-001059-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-001062-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-001063-L",
+          "priority": "P2_SUPPLEMENTAL"
+        }
+      ]
+    },
+    {
+      "group_id": "HAT_TRUSS_BOOK9",
+      "subsystem": "hat_truss",
+      "description": "Penthouse/outrigger and upper connection-detail register targets.",
+      "transcription_scope": "Member topology, outrigger connections, compatibility path, floor/elevation mapping, section marks and revision context.",
+      "minimum_acceptance": "Exact payload hash and provenance, Tower A/WTC 1 mapping, explicit member and connection topology and a separately source-supported load case before any credit.",
+      "documents": [
+        {
+          "document_id": "WTCI-000030-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-000031-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        }
+      ]
+    },
+    {
+      "group_id": "TRUSS_DETAIL_BOOK11",
+      "subsystem": "office_floor_truss",
+      "description": "Truss detail and Book 11 index targets.",
+      "transcription_scope": "Truss marks, chord/web sections, joints, bridging, seats, panel points, dimensional geometry and Book 7 cross-references.",
+      "minimum_acceptance": "Exact payload hash and provenance, unambiguous truss-to-floor and Tower A/WTC 1 mapping, units and revision context.",
+      "documents": [
+        {
+          "document_id": "WTCI-000705-L",
+          "priority": "P0_LOCALIZE_FIRST"
+        },
+        {
+          "document_id": "WTCI-000033-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-001041-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        }
+      ]
+    },
+    {
+      "group_id": "BEAM_CONNECTION_BOOK12",
+      "subsystem": "beam_connections_and_supports",
+      "description": "Beam connection, support and girder-detail register targets.",
+      "transcription_scope": "Connection/support marks, bolts, welds, plates, seats, bearing details, member joins and cross-references.",
+      "minimum_acceptance": "Exact payload hash and provenance, physical member/floor assignment, complete geometry and revision; constitutive behavior remains separately required.",
+      "documents": [
+        {
+          "document_id": "WTCI-000034-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-000035-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-001042-L",
+          "priority": "P2_SUPPLEMENTAL"
+        },
+        {
+          "document_id": "WTCI-001042-L_002",
+          "priority": "P2_SUPPLEMENTAL"
+        }
+      ]
+    },
+    {
+      "group_id": "BRACING_CONNECTION_BOOK13",
+      "subsystem": "beam_girder_bracing_connections",
+      "description": "Beam, girder and bracing connection-detail targets.",
+      "transcription_scope": "Connection marks, bracing topology, plates, bolts, welds, supported members and cross-references.",
+      "minimum_acceptance": "Exact payload hash and provenance, physical member/floor assignment and revision; no mechanical law inferred from detail geometry alone.",
+      "documents": [
+        {
+          "document_id": "WTCI-000036-L",
+          "priority": "P2_SUPPLEMENTAL"
+        },
+        {
+          "document_id": "WTCI-001043-L",
+          "priority": "P2_SUPPLEMENTAL"
+        }
+      ]
+    },
+    {
+      "group_id": "PERIMETER_COLUMN_BOOK1",
+      "subsystem": "perimeter_columns",
+      "description": "Exterior-column schedule/detail register targets.",
+      "transcription_scope": "Panel/column marks, elevations, plate sections, splices, steel grades, tower assignment and drawing cross-references.",
+      "minimum_acceptance": "Exact payload hash and provenance, verified Tower A/WTC 1 and Floors 93-99 mapping, legible schedule values with units and revision context.",
+      "documents": [
+        {
+          "document_id": "WTCI-000721-L",
+          "priority": "P0_LOCALIZE_FIRST"
+        },
+        {
+          "document_id": "WTCI-000011-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        }
+      ]
+    },
+    {
+      "group_id": "PERIMETER_TREE_BOOK2",
+      "subsystem": "perimeter_wall_trees",
+      "description": "Exterior wall-tree schedule, index and detail targets.",
+      "transcription_scope": "Tree marks, column/spandrel topology, sections, joints, elevations, tower assignment and cross-references.",
+      "minimum_acceptance": "Exact payload hash and provenance, Tower A/WTC 1 and Floors 93-99 applicability, units and revision context.",
+      "documents": [
+        {
+          "document_id": "WTCI-000722-L",
+          "priority": "P0_LOCALIZE_FIRST"
+        },
+        {
+          "document_id": "WTCI-000012-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        }
+      ]
+    },
+    {
+      "group_id": "PERIMETER_PANEL_BOOK4",
+      "subsystem": "perimeter_wall_panels",
+      "description": "Exterior wall-panel schedules, indexes and details.",
+      "transcription_scope": "Panel marks, column/spandrel plate geometry, splices, connections, elevations, Tower A/B labels and drawing cross-references.",
+      "minimum_acceptance": "Exact payload hash and provenance, verified Tower A/WTC 1 mapping, Floors 93-99 applicability, legible units and revision context.",
+      "documents": [
+        {
+          "document_id": "WTCI-000709-L",
+          "priority": "P0_LOCALIZE_FIRST"
+        },
+        {
+          "document_id": "WTCI-000014-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-000017-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-000018-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-000015-L",
+          "priority": "P2_SUPPLEMENTAL"
+        },
+        {
+          "document_id": "WTCI-000019-L",
+          "priority": "P2_SUPPLEMENTAL"
+        },
+        {
+          "document_id": "WTCI-000538-L",
+          "priority": "P2_SUPPLEMENTAL"
+        },
+        {
+          "document_id": "WTCI-000540-L",
+          "priority": "P2_SUPPLEMENTAL"
+        }
+      ]
+    },
+    {
+      "group_id": "STRUCTURAL_STEEL_BOOK20",
+      "subsystem": "structural_steel_details",
+      "description": "Supplemental structural-steel index/detail targets.",
+      "transcription_scope": "Detail identifiers, member references, elevations, connections and cross-references relevant to Floors 93-99.",
+      "minimum_acceptance": "Exact payload hash and provenance, verified WTC 1/floor/member applicability and revision context.",
+      "documents": [
+        {
+          "document_id": "WTCI-000040-L",
+          "priority": "P1_PRIMARY_DETAIL"
+        },
+        {
+          "document_id": "WTCI-001046-L",
+          "priority": "P2_SUPPLEMENTAL"
+        }
+      ]
+    }
+  ],
+  "requirement_mapping": [
+    {
+      "requirement_id": "N01",
+      "candidate_groups": [
+        "CORE_COLUMN_BOOK3"
+      ],
+      "status": "INDEX_CANDIDATE_IDENTIFIED_NOT_ACQUIRED",
+      "note": "A Book 3 schedule may cross-check identifiers, but the archive index alone does not independently verify the V8Q identifier-to-member mapping."
+    },
+    {
+      "requirement_id": "N02",
+      "candidate_groups": [
+        "CORE_COLUMN_BOOK3",
+        "CORE_BEAM_BOOK5",
+        "OFFICE_FLOOR_BOOK7",
+        "PERIMETER_COLUMN_BOOK1",
+        "PERIMETER_PANEL_BOOK4"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED",
+      "note": "Drawing families may contain dimensions or grids, but no coordinate system or as-built coordinate is accepted from an index row."
+    },
+    {
+      "requirement_id": "N03",
+      "candidate_groups": [
+        "CONNECTION_BOOK6",
+        "OFFICE_FLOOR_BOOK7",
+        "PERIMETER_COLUMN_BOOK1"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED",
+      "note": "The register mentions temporary elevations and floor-system documents but supplies no floor elevation values."
+    },
+    {
+      "requirement_id": "E01",
+      "candidate_groups": [
+        "CORE_COLUMN_BOOK3"
+      ],
+      "status": "INDEX_CANDIDATE_IDENTIFIED_NOT_ACQUIRED",
+      "note": "Core-column schedules are the primary target for segment, splice and section continuity."
+    },
+    {
+      "requirement_id": "E02",
+      "candidate_groups": [
+        "CORE_BEAM_BOOK5"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED",
+      "note": "Book 5 is the primary cross-check for the official-model moment-subnetwork transcription and floor applicability."
+    },
+    {
+      "requirement_id": "E03",
+      "candidate_groups": [
+        "CORE_BEAM_BOOK5",
+        "OFFICE_FLOOR_BOOK7",
+        "SLAB_REINFORCEMENT_BOOK8"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED",
+      "note": "Non-moment beams, slab strips and openings require joined Book 5, 7 and 8 transcription."
+    },
+    {
+      "requirement_id": "E04",
+      "candidate_groups": [
+        "CORE_BEAM_BOOK5"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED",
+      "note": "The exact Book 5 identifiers are located, but no member schedule cell is read in V10B."
+    },
+    {
+      "requirement_id": "C01",
+      "candidate_groups": [
+        "CONNECTION_BOOK6",
+        "BEAM_CONNECTION_BOOK12",
+        "BRACING_CONNECTION_BOOK13"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED",
+      "note": "Book 6 is primary; Books 12 and 13 are supplemental connection-detail families."
+    },
+    {
+      "requirement_id": "D01",
+      "candidate_groups": [],
+      "status": "DESIGN_REGISTER_CANNOT_CLOSE_EVENT_DAMAGE",
+      "note": "A design-drawing register cannot establish the physical 2001 damage state."
+    },
+    {
+      "requirement_id": "O01",
+      "candidate_groups": [
+        "OFFICE_FLOOR_BOOK7",
+        "SLAB_REINFORCEMENT_BOOK8",
+        "TRUSS_DETAIL_BOOK11"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED",
+      "note": "Book 7, 8 and 11 families are needed to replace generic single-truss geometry with floor-specific evidence."
+    },
+    {
+      "requirement_id": "O02",
+      "candidate_groups": [
+        "OFFICE_FLOOR_BOOK7",
+        "TRUSS_DETAIL_BOOK11"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED",
+      "note": "Floor panel and truss detail families are the primary member-level topology targets."
+    },
+    {
+      "requirement_id": "O03",
+      "candidate_groups": [
+        "OFFICE_FLOOR_BOOK7"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED",
+      "note": "WTCI-000502-L and WTCI-000733-L may contain design-calculation or correspondence context, but no numerical equivalent stiffness is accepted from the register."
+    },
+    {
+      "requirement_id": "O04",
+      "candidate_groups": [
+        "CONNECTION_BOOK6",
+        "OFFICE_FLOOR_BOOK7",
+        "TRUSS_DETAIL_BOOK11",
+        "BEAM_CONNECTION_BOOK12"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED",
+      "note": "Interior-seat assignment needs a joined connection-to-truss-to-floor transcription."
+    },
+    {
+      "requirement_id": "O05",
+      "candidate_groups": [
+        "CONNECTION_BOOK6",
+        "OFFICE_FLOOR_BOOK7",
+        "TRUSS_DETAIL_BOOK11",
+        "BEAM_CONNECTION_BOOK12",
+        "PERIMETER_PANEL_BOOK4"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED",
+      "note": "Exterior-seat assignment additionally requires the perimeter attachment cross-reference."
+    },
+    {
+      "requirement_id": "P01",
+      "candidate_groups": [
+        "PERIMETER_COLUMN_BOOK1",
+        "PERIMETER_TREE_BOOK2",
+        "PERIMETER_PANEL_BOOK4"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED",
+      "note": "Design schedules may enable member mapping, but they do not independently validate the V8M official-model Floor 98 loads."
+    },
+    {
+      "requirement_id": "P02",
+      "candidate_groups": [
+        "PERIMETER_COLUMN_BOOK1",
+        "PERIMETER_TREE_BOOK2",
+        "PERIMETER_PANEL_BOOK4",
+        "STRUCTURAL_STEEL_BOOK20"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED",
+      "note": "Books 1, 2, 4 and 20 are the primary perimeter section, panel, tree and splice targets."
+    },
+    {
+      "requirement_id": "P03",
+      "candidate_groups": [
+        "PERIMETER_PANEL_BOOK4",
+        "BEAM_CONNECTION_BOOK12",
+        "BRACING_CONNECTION_BOOK13"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED_FOR_CONNECTIONS_DAMAGE_STILL_MISSING",
+      "note": "Connection details may be transcribed later; physical event damage cannot be obtained from design drawings."
+    },
+    {
+      "requirement_id": "T01",
+      "candidate_groups": [
+        "CONNECTION_BOOK6",
+        "OFFICE_FLOOR_BOOK7",
+        "TRUSS_DETAIL_BOOK11",
+        "BEAM_CONNECTION_BOOK12",
+        "PERIMETER_PANEL_BOOK4"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED",
+      "note": "The transfer path requires a complete joined mapping across five drawing families."
+    },
+    {
+      "requirement_id": "T02",
+      "candidate_groups": [
+        "HAT_TRUSS_BOOK9"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED",
+      "note": "Book 9 identifies the upper-truss detail family, but no cold or thermal load-path credit follows."
+    },
+    {
+      "requirement_id": "B01",
+      "candidate_groups": [],
+      "status": "BOUNDARY_MODEL_INPUT_NOT_IDENTIFIED",
+      "note": "Design drawings alone do not define the truncated seven-floor model boundary loads, displacements or support stiffnesses."
+    },
+    {
+      "requirement_id": "M01",
+      "candidate_groups": [
+        "CORE_COLUMN_BOOK3",
+        "CORE_BEAM_BOOK5",
+        "OFFICE_FLOOR_BOOK7",
+        "SLAB_REINFORCEMENT_BOOK8",
+        "TRUSS_DETAIL_BOOK11",
+        "PERIMETER_COLUMN_BOOK1",
+        "PERIMETER_TREE_BOOK2",
+        "PERIMETER_PANEL_BOOK4",
+        "STRUCTURAL_STEEL_BOOK20"
+      ],
+      "status": "INDEX_CANDIDATES_IDENTIFIED_NOT_ACQUIRED_PROPERTIES_STILL_MISSING",
+      "note": "Schedules may identify sections and material references; density, constitutive, rate and failure data remain separately required."
+    },
+    {
+      "requirement_id": "S01",
+      "candidate_groups": [],
+      "status": "OUTSIDE_SELECTED_STRUCTURAL_REGISTER_TARGETS",
+      "note": "V9U stair records remain categorical hypotheses and are not promoted by this structural index audit."
+    }
+  ],
+  "known_index_quality_flags": [
+    {
+      "document_id": "WTCI-000024-L",
+      "flag": "DRAWING_RANGE_PREFIX_CONFLICT",
+      "detail": "The Book 7 row ends with the register string '2 - C/2'; verify against the actual index before using it as a Book 7 endpoint."
+    },
+    {
+      "document_id": "WTCI-000019-L",
+      "flag": "REGISTER_TYPO_CANDIDATE",
+      "detail": "The start string is '4 - B! - 300'; do not silently normalize the exclamation mark."
+    },
+    {
+      "document_id": "ALL_SELECTED",
+      "flag": "FLOORS_FIELD_BLANK",
+      "detail": "The structural archive register does not provide floor values for any of the 53 selected document rows."
+    },
+    {
+      "document_id": "ALL_TOWER_A_OR_AB_SELECTED",
+      "flag": "TOWER_A_TO_WTC1_MAPPING_NOT_VERIFIED_BY_REGISTER",
+      "detail": "The register uses Tower A/B labels but does not itself establish the WTC 1 mapping or revision authority."
+    }
+  ],
+  "gates": {
+    "regression_hash_count_expected": 13,
+    "cached_index_hash_count_expected": 4,
+    "selected_document_count_expected": 53,
+    "all_target_ids_unique": true,
+    "all_target_ids_exactly_once_in_register": true,
+    "selected_floor_field_nonblank_count_expected": 0,
+    "selected_manifest_payload_hit_count_expected": 0,
+    "target_payload_read_count_expected": 0,
+    "source_archive_read_expected": false,
+    "official_sources_directory_read_expected": false,
+    "external_contact_count_expected": 0,
+    "physical_assignment_count_expected": 0,
+    "solver_readiness_expected": false,
+    "structural_solver_executed_expected": false,
+    "blender_executed_expected": false
+  },
+  "outputs": {
+    "source_manifest": "wtc1_simulation_v8/output/v10b_cached_index_source_manifest.json",
+    "register_audit": "wtc1_simulation_v8/output/v10b_structural_register_audit.json",
+    "document_inventory_csv": "wtc1_simulation_v8/output/v10b_target_document_inventory.csv",
+    "requirement_matrix_csv": "wtc1_simulation_v8/output/v10b_requirement_document_matrix.csv",
+    "priority_matrix_csv": "wtc1_simulation_v8/output/v10b_prioritized_acquisition_transcription_matrix.csv",
+    "cache_presence_audit": "wtc1_simulation_v8/output/v10b_cache_presence_audit.json",
+    "model_gate": "wtc1_simulation_v8/output/v10b_solver_readiness_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10b_audit_index_structurel.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10b_audit_index_structurel.json"
+  },
+  "next_iteration": {
+    "id": "V10C",
+    "objective": "Preserve V8U through V10B and perform a strictly targeted, read-only identity check for only the nine P0 exact document identifiers predeclared by V10B. Use literal WTCI identifiers and a bounded file-count/byte gate rather than an archive-wide content rescan. If exact payloads are found, hash them and create working copies only inside wtc1_simulation_v8/input/v10c_structural_sources before transcribing index and locator fields; if not found, record each exact missing identifier. Do not contact an external party, assign solver properties, run a structural solver or launch Blender."
+  }
+}

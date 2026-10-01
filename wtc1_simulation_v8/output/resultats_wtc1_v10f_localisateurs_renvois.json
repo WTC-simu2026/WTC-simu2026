@@ -1,0 +1,99 @@
+{
+  "iteration": "V10F",
+  "started_at_utc": "2026-09-01T14:04:03Z",
+  "completed_at_utc": "2026-09-01T14:04:29Z",
+  "validation_status": "PASS",
+  "dataset": {
+    "name": "Second bounded cross-reference locator audit for three V10E P0 index pages",
+    "version": "10.6.0",
+    "status": "PREDECLARED_SECOND_BOUNDED_CROSS_REFERENCE_LOCATOR_AUDIT",
+    "random_seed": 1010006,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10E. Use only the immutable V10F predeclaration tied to the three visible V10E index cross-reference pages. Inspect embedded text only within the three exact declared PDF page ranges, retain no page text or snippets, render only pages matching one of the exact declared reference tokens, and transcribe only visible identifiers, target-floor labels or ranges, revision or issue fields, and page or sheet locators. Do not transcribe geometry, dimensions, member properties or connection geometry; do not promote drawing-number suffixes to floor labels, Tower A to WTC 1, revision authority or as-built status; do not read the source archive or work/official_sources, use the network, contact an external party, assign physical properties or damage, run a structural solver, continue a thermal model or launch Blender."
+  },
+  "predeclaration_sha256": "1817bb45d08dd15c0199a04b9762ea25f88163b89d1a55fae72c392c9dc1b073",
+  "scanned_document_count": 3,
+  "scanned_pdf_page_count": 365,
+  "predeclared_reference_token_count": 13,
+  "matched_reference_token_count": 9,
+  "matched_reference_tokens": [
+    "4-AB2-1",
+    "4-AB3-1",
+    "5-AB2-0",
+    "5-AB3-1",
+    "6-AB1-0",
+    "6-AB4-0",
+    "6-AB5-0",
+    "6-AB8-1",
+    "6-AB9-0"
+  ],
+  "matched_page_count": 7,
+  "rendered_page_count": 7,
+  "manual_transcription_record_count": 7,
+  "locator_summary": {
+    "documents_with_any_explicit_floor93_99_label": [],
+    "documents_with_exact_floor93_99_locator": [],
+    "exact_floor93_99_locator_candidate_count": 0,
+    "drawing_identifier_suffix_warning_candidate_ids": [
+      "WTCI-000020-L__p0010"
+    ],
+    "drawing_identifier_suffix_warning_candidate_count": 1,
+    "reference_page_locator_relation_counts": {
+      "LISTING_OR_PARENT_REFERENCE_ONLY": 6,
+      "REFERENCE_FAMILY_LOCATOR": 1
+    },
+    "v10g_exact_page_expansion_condition_met": false,
+    "page_content_expansion_branch_closed": true
+  },
+  "render_caps": {
+    "render_count": 7,
+    "matched_page_count": 7,
+    "maximum_rendered_match_page_count": 13,
+    "aggregate_rendered_pixels": 27788768,
+    "maximum_aggregate_rendered_pixels": 300000000,
+    "aggregate_rendered_png_bytes": 3987149,
+    "maximum_aggregate_rendered_png_bytes": 134217728,
+    "maximum_observed_pixels_per_page": 4308150,
+    "maximum_pixels_per_rendered_page": 30000000
+  },
+  "operation_counts": {
+    "source_archive_read": 0,
+    "source_archive_write": 0,
+    "official_sources_read": 0,
+    "official_sources_write": 0,
+    "network_request": 0,
+    "external_contact": 0,
+    "structural_solver_run": 0,
+    "thermal_model_run": 0,
+    "blender_launch": 0,
+    "blender_master_write": 0
+  },
+  "physical_assignment_count": 0,
+  "drawing_geometry_or_dimension_transcription_count": 0,
+  "revision_or_as_built_authority_claimed": false,
+  "next_iteration": {
+    "id": "V10G",
+    "objective": "Preserve V8U through V10F. If and only if V10F documents an explicit Floor 93-99 label together with an exact drawing or page locator, predeclare only those exact referenced pages for a source-identity, revision and floor-applicability audit without transcribing geometry or physical properties. Otherwise close this page-content expansion branch and return to the V10B prioritized acquisition matrix, recording which P0 requirements remain unresolved. Do not use the network, contact an external party, run a structural solver, continue a thermal model or launch Blender."
+  },
+  "outputs": {
+    "source_manifest": "wtc1_simulation_v8/output/v10f_p0_cross_reference_source_manifest.json",
+    "locator_scan_audit": "wtc1_simulation_v8/output/v10f_p0_bounded_locator_scan_audit.json",
+    "matched_page_manifest": "wtc1_simulation_v8/output/v10f_p0_matched_page_manifest.json",
+    "render_audit": "wtc1_simulation_v8/output/v10f_p0_page_render_audit.json",
+    "manual_transcription_audit": "wtc1_simulation_v8/output/v10f_p0_manual_transcription_audit.json",
+    "locator_matrix_csv": "wtc1_simulation_v8/output/v10f_p0_cross_reference_locator_matrix.csv",
+    "floor93_99_locator_matrix_csv": "wtc1_simulation_v8/output/v10f_p0_floor93_99_locator_matrix.csv",
+    "model_gate": "wtc1_simulation_v8/output/v10f_structural_source_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10f_localisateurs_renvois.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10f_localisateurs_renvois.json",
+    "contact_sheet": "wtc1_simulation_v8/output/v10f_cross_reference_locator_figures/v10f_contact_sheet.png",
+    "offline_audit": "wtc1_simulation_v8/output/v10f_offline_package_audit.json"
+  },
+  "software": {
+    "python": "3.12.13",
+    "pypdf": "6.10.0",
+    "pillow": "12.3.0",
+    "pdftoppm": "pdftoppm version 26.05.0"
+  },
+  "errors": []
+}

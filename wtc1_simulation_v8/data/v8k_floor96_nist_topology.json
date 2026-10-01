@@ -1,0 +1,141 @@
+{
+  "dataset": {
+    "name": "WTC 1 V8K Floor 96 NIST topology audit",
+    "version": "8.10.0",
+    "status": "FIGURE_CONSTRAINED_LOCAL_TOPOLOGY_AUDIT",
+    "scope": "Replace the V8I nearest-four cut boundary around core Columns 503, 504, 505 and 604 with the orthogonal core-beam paths visible in NIST NCSTAR 1-6C Figure 5-59, then retest the post-impact 20 C gate.",
+    "warning": "This is a local transcription of an official-model figure, not an as-built beam schedule. The refined NIST Case A/B impact damage was never used in the full-floor model, and vertical loads were not applied to the tops of the columns in that subsystem analysis."
+  },
+  "official_facts": [
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6C",
+      "pdf_page": 53,
+      "printed_page": 5,
+      "fact": "Figure 2-2 identifies the Floor 96 core-column locations and numbers used to register the Figure 5-59 beam plan.",
+      "confidence": "high; complete page visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6C",
+      "pdf_pages": [135, 136],
+      "printed_pages": [87, 88],
+      "fact": "The full-floor base model was developed from the converted SAP2000 Floor 96 model and included core beams, slab, trusses, exterior/core columns and connection break elements.",
+      "confidence": "high for the official model description; it is not an as-built schedule"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL_LIMITE",
+      "source": "NIST NCSTAR 1-6C",
+      "pdf_page": 143,
+      "printed_page": 95,
+      "fact": "Refined Case A/B impact damage was never used in the full-floor model. Only severed columns were removed; damaged-but-not-severed columns were retained as undamaged. Case Ai structural damage was reused for Case Bi because Case Bi was not available at computation time.",
+      "confidence": "high; complete page visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6C",
+      "pdf_page": 155,
+      "printed_page": 107,
+      "fact": "Figure 5-59 compares the Floor 96 core-beam model before and after Case Ai impact damage. Figure 5-60 shows the corresponding core columns.",
+      "confidence": "high for what is plotted; beam labels and section designations are not printed"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL_LIMITE",
+      "source": "NIST NCSTAR 1-6C",
+      "pdf_page": 155,
+      "printed_page": 107,
+      "fact": "For the full-floor gravity and thermal analysis, vertical loads were not applied to the tops of the columns.",
+      "confidence": "high; complete page visually checked"
+    }
+  ],
+  "figure_transcription": {
+    "source_figure": "NIST NCSTAR 1-6C Figure 5-59(b), Case Ai model with damage",
+    "registration": "Column centroids registered from Figure 2-2 to the orthographic beam-plan panel; North is at the top.",
+    "scope": "Only the seven V8J cut-boundary edges are classified. The complete 46,280-element full-floor model is not reverse-engineered from the raster figure.",
+    "edge_rows": [
+      {
+        "edge": [502, 503],
+        "v8j_role": "fractured cut boundary",
+        "figure_status": "removed_after_impact",
+        "geometry_status": "orthogonal_beam_path_visible_before_impact",
+        "confidence": "high"
+      },
+      {
+        "edge": [503, 603],
+        "v8j_role": "fractured cut boundary",
+        "figure_status": "removed_after_impact",
+        "geometry_status": "orthogonal_beam_path_visible_before_impact",
+        "confidence": "high"
+      },
+      {
+        "edge": [504, 605],
+        "v8j_role": "fractured cut boundary",
+        "figure_status": "not_a_direct_beam_path",
+        "geometry_status": "nearest_four_diagonal_proxy_not_visible_in_orthogonal_plan",
+        "confidence": "high"
+      },
+      {
+        "edge": [505, 506],
+        "v8j_role": "fractured cut boundary",
+        "figure_status": "visible_after_impact",
+        "geometry_status": "orthogonal_beam_path",
+        "confidence": "high"
+      },
+      {
+        "edge": [505, 605],
+        "v8j_role": "fractured cut boundary",
+        "figure_status": "visible_after_impact",
+        "geometry_status": "orthogonal_beam_path",
+        "confidence": "medium; beam is offset from the plotted column centroid and connected through the modeled joint region"
+      },
+      {
+        "edge": [603, 604],
+        "v8j_role": "fractured cut boundary",
+        "figure_status": "removed_after_impact",
+        "geometry_status": "orthogonal_beam_path_visible_before_impact",
+        "confidence": "high"
+      },
+      {
+        "edge": [604, 605],
+        "v8j_role": "fractured cut boundary",
+        "figure_status": "removed_after_impact",
+        "geometry_status": "orthogonal_beam_path_visible_before_impact",
+        "confidence": "high"
+      }
+    ],
+    "node_path_rows": [
+      {
+        "column": 503,
+        "post_impact_local_path": "no visible beam path to a surviving core-column support",
+        "classification": "unsupported_in_floor96_figure_path"
+      },
+      {
+        "column": 504,
+        "post_impact_local_path": "no visible beam path to a surviving core-column support",
+        "classification": "unsupported_in_floor96_figure_path"
+      },
+      {
+        "column": 505,
+        "post_impact_local_path": "visible paths toward surviving Columns 506 and 605",
+        "classification": "candidate_supported_in_floor96_figure_path"
+      },
+      {
+        "column": 604,
+        "post_impact_local_path": "no visible beam path to a surviving core-column support",
+        "classification": "unsupported_in_floor96_figure_path"
+      }
+    ]
+  },
+  "model_hypotheses": {
+    "incoming_loads": "Loads arriving at Floor 96 are replayed from the validated V8J cold path through Floors 99, 98 and 97. They remain outputs of the V8I/V8J reduced model, not measured column loads.",
+    "local_topology_rule": "Figure 5-59 is used only to accept, reject or mark ambiguous the seven V8J cut-boundary connections. No diagonal nearest-four edge is retained unless an orthogonal path is visible.",
+    "support_rule": "A removed Floor 96 column is locally supported only if the figure shows a continuous beam route to at least one surviving core-column node.",
+    "force_displacement_rule": "Topology is tested before capacity. A loaded node with no surviving path has zero local transfer capacity regardless of the assumed beam section.",
+    "candidate_505_path": "The visible 505-506 and 505-605 paths are screened with the inherited 14WF136 plus cold-upper slab law only as a proxy sensitivity; that section is not claimed as the as-built Floor 96 assignment.",
+    "fractions_are_event_probabilities": false
+  },
+  "gate": {
+    "required_condition": "Every loaded removed-column node must have a surviving, mechanically specified path with sourced topology, section, connection, stiffness and deformation capacity.",
+    "pass_policy": "A figure-constrained topology may falsify the local Floor 96 bridge hypothesis, but cannot validate the whole building or contradict observed stability when multistory frame action and global redistribution are omitted."
+  }
+}

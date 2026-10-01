@@ -1,0 +1,122 @@
+{
+  "model": "WTC1_V8C_CALCULIX_ELASTIC_BUCKLING_VALIDATION",
+  "scope": "solver verification only; not a WTC collapse result",
+  "assumptions": {
+    "member_length_mm": 3657.6,
+    "end_conditions": "ideal pinned-pinned for flexure; bottom torsional rotation restrained to remove rigid mode",
+    "elastic_modulus_mpa": 206000.0,
+    "element": "B31, 24 elements, shear deformable",
+    "section_representation": "equivalent square matching tabulated weak-axis Iy only; area and local section response are not physical",
+    "reference_load_n": 1.0
+  },
+  "cases": [
+    {
+      "floor": 93,
+      "column": 501,
+      "designation": "14WF500",
+      "iy_in4": 2880.0,
+      "equivalent_square_side_mm": 346.3196628992938,
+      "length_mm": 3657.6,
+      "e_mpa": 206000.0,
+      "euler_n": 182180505.40747258,
+      "timoshenko_n": 178083572.65155557,
+      "calculix_first_positive_eigenvalue_n": 177814200.0,
+      "relative_error_vs_euler_pct": -2.3966918950557914,
+      "relative_error_vs_timoshenko_pct": -0.1512619314318453,
+      "all_parsed_eigenvalues": [
+        177814200.0,
+        177819200.0,
+        664432500.0,
+        664445000.0,
+        1351699000.0,
+        1351702000.0
+      ],
+      "calculix_returncode": 0,
+      "stdout_tail": "s:            1\n   constants per material and temperature:            2\n   temperature points per material:            1\n   plastic data points per material:            0\n\n   orientations:            0\n   amplitudes:            2\n   data points in all amplitudes:            2\n   print requests:            0\n   transformations:            0\n   property cards:            0\n\n\n STEP            1\n\n Buckling analysis was selected\n\n Decascading the MPC's\n\n Determining the structure of the matrix:\n Using up to 1 cpu(s) for setting up the structure of the matrix.\n number of equations\n 510\n number of nonzero lower triangular matrix elements\n 10969\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.\n\n Factoring the system of equations using the symmetric spooles solver\n Using 1 cpu for spooles.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.\n\n Factoring the system of equations using the symmetric spooles solver\n Using 1 cpu for spooles.\n\n Calculating the buckling factors and buckling modes:\n\nsigma=1.000000,d[0]=177814158.317156\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n\n Job finished\n\n",
+      "stderr_tail": "",
+      "input_file": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_simulation_v8\\calculix_validation\\v8c_f93_c501_14wf500.inp",
+      "dat_file": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_simulation_v8\\calculix_validation\\v8c_f93_c501_14wf500.dat"
+    },
+    {
+      "floor": 93,
+      "column": 605,
+      "designation": "12WF133",
+      "iy_in4": 390.0,
+      "equivalent_square_side_mm": 210.08506523648364,
+      "length_mm": 3657.6,
+      "e_mpa": 206000.0,
+      "euler_n": 24670276.773928583,
+      "timoshenko_n": 24463174.98158211,
+      "calculix_first_positive_eigenvalue_n": 24477110.0,
+      "relative_error_vs_euler_pct": -0.7829939473266045,
+      "relative_error_vs_timoshenko_pct": 0.05696324548380982,
+      "all_parsed_eigenvalues": [
+        24477110.0,
+        24477870.0,
+        95631940.0,
+        95632280.0,
+        207293300.0,
+        207294100.0
+      ],
+      "calculix_returncode": 0,
+      "stdout_tail": "ls:            1\n   constants per material and temperature:            2\n   temperature points per material:            1\n   plastic data points per material:            0\n\n   orientations:            0\n   amplitudes:            2\n   data points in all amplitudes:            2\n   print requests:            0\n   transformations:            0\n   property cards:            0\n\n\n STEP            1\n\n Buckling analysis was selected\n\n Decascading the MPC's\n\n Determining the structure of the matrix:\n Using up to 1 cpu(s) for setting up the structure of the matrix.\n number of equations\n 510\n number of nonzero lower triangular matrix elements\n 10969\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.\n\n Factoring the system of equations using the symmetric spooles solver\n Using 1 cpu for spooles.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.\n\n Factoring the system of equations using the symmetric spooles solver\n Using 1 cpu for spooles.\n\n Calculating the buckling factors and buckling modes:\n\nsigma=1.000000,d[0]=24477110.910339\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n\n Job finished\n\n",
+      "stderr_tail": "",
+      "input_file": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_simulation_v8\\calculix_validation\\v8c_f93_c605_12wf133.inp",
+      "dat_file": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_simulation_v8\\calculix_validation\\v8c_f93_c605_12wf133.dat"
+    },
+    {
+      "floor": 93,
+      "column": 705,
+      "designation": "14WF48",
+      "iy_in4": 51.3,
+      "equivalent_square_side_mm": 126.51976291163902,
+      "length_mm": 3657.6,
+      "e_mpa": 206000.0,
+      "euler_n": 3245090.2525706054,
+      "timoshenko_n": 3235156.970403611,
+      "calculix_first_positive_eigenvalue_n": 3239040.0,
+      "relative_error_vs_euler_pct": -0.18644327583223763,
+      "relative_error_vs_timoshenko_pct": 0.12002600281568743,
+      "all_parsed_eigenvalues": [
+        3239040.0,
+        3239067.0,
+        12883880.0,
+        12883970.0,
+        28723280.0,
+        28723370.0
+      ],
+      "calculix_returncode": 0,
+      "stdout_tail": "als:            1\n   constants per material and temperature:            2\n   temperature points per material:            1\n   plastic data points per material:            0\n\n   orientations:            0\n   amplitudes:            2\n   data points in all amplitudes:            2\n   print requests:            0\n   transformations:            0\n   property cards:            0\n\n\n STEP            1\n\n Buckling analysis was selected\n\n Decascading the MPC's\n\n Determining the structure of the matrix:\n Using up to 1 cpu(s) for setting up the structure of the matrix.\n number of equations\n 510\n number of nonzero lower triangular matrix elements\n 10969\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.\n\n Factoring the system of equations using the symmetric spooles solver\n Using 1 cpu for spooles.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.\n\n Factoring the system of equations using the symmetric spooles solver\n Using 1 cpu for spooles.\n\n Calculating the buckling factors and buckling modes:\n\nsigma=1.000000,d[0]=3239039.648568\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n\n Job finished\n\n",
+      "stderr_tail": "",
+      "input_file": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_simulation_v8\\calculix_validation\\v8c_f93_c705_14wf48.inp",
+      "dat_file": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_simulation_v8\\calculix_validation\\v8c_f93_c705_14wf48.dat"
+    },
+    {
+      "floor": 93,
+      "column": 804,
+      "designation": "12WF92",
+      "iy_in4": 256.0,
+      "equivalent_square_side_mm": 189.09890736954662,
+      "length_mm": 3657.6,
+      "e_mpa": 206000.0,
+      "euler_n": 16193822.702886453,
+      "timoshenko_n": 16083506.462442582,
+      "calculix_first_positive_eigenvalue_n": 16093850.0,
+      "relative_error_vs_euler_pct": -0.6173508548332651,
+      "relative_error_vs_timoshenko_pct": 0.06431145833509788,
+      "all_parsed_eigenvalues": [
+        16093850.0,
+        16094550.0,
+        63216360.0,
+        63217140.0,
+        138140000.0,
+        138140400.0
+      ],
+      "calculix_returncode": 0,
+      "stdout_tail": "ls:            1\n   constants per material and temperature:            2\n   temperature points per material:            1\n   plastic data points per material:            0\n\n   orientations:            0\n   amplitudes:            2\n   data points in all amplitudes:            2\n   print requests:            0\n   transformations:            0\n   property cards:            0\n\n\n STEP            1\n\n Buckling analysis was selected\n\n Decascading the MPC's\n\n Determining the structure of the matrix:\n Using up to 1 cpu(s) for setting up the structure of the matrix.\n number of equations\n 510\n number of nonzero lower triangular matrix elements\n 10969\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.\n\n Factoring the system of equations using the symmetric spooles solver\n Using 1 cpu for spooles.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.\n\n Factoring the system of equations using the symmetric spooles solver\n Using 1 cpu for spooles.\n\n Calculating the buckling factors and buckling modes:\n\nsigma=1.000000,d[0]=16093851.453219\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n\n Job finished\n\n",
+      "stderr_tail": "",
+      "input_file": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_simulation_v8\\calculix_validation\\v8c_f93_c804_12wf92.inp",
+      "dat_file": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_simulation_v8\\calculix_validation\\v8c_f93_c804_12wf92.dat"
+    }
+  ]
+}

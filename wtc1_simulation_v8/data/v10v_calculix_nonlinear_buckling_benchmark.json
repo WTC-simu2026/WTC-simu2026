@@ -1,0 +1,222 @@
+{
+  "iteration": "V10V",
+  "dataset": {
+    "name": "Independent CalculiX eigenvalue and imperfect-column postbuckling benchmark",
+    "version": "10.22.2",
+    "status": "PREDECLARED_ATTEMPT_03_BEFORE_V10V_SOLVER_EXECUTION",
+    "created_at_local": "2026-09-04T15:43:06+02:00",
+    "random_seed": 1022003,
+    "random_draw_used": false,
+    "scope": "Qualify only the local CalculiX executable, generated B32R eigenvalue decks, generated geometrically nonlinear imperfect-column decks, multi-increment output parsing, end-reaction equilibrium, analytical critical-load agreement, mesh convergence and a bounded small-slope postbuckling comparator. The benchmark is generic and independent of WTC 1. It shall not be assigned to any WTC member, connection, load path, damage state, temperature, initiation state, propagation state or historical outcome."
+  },
+  "attempt_history": [
+    {
+      "attempt": 1,
+      "status": "REJECTED_AND_PRESERVED",
+      "path": "tmp/v10v_failed_attempt_01",
+      "reason": "All seven solver jobs completed and the nonlinear parser recovered 104 converged points per case, but the eigenvalue parser expected the legacy heading EIGENVALUE OUTPUT while CalculiX 2.22 emitted BUCKLING FACTOR OUTPUT. Report generation then rejected the resulting null value. Attempt 02 changes only parser compatibility and null-safe reporting; no model parameter or acceptance threshold changes.",
+      "preserved_evidence": [
+        {"path":"tmp/v10v_failed_attempt_01/v10v_calculix_nonlinear_buckling_benchmark.attempt01.json","sha256":"950077d0b8ab617fb7569f5073f6add537d9d59088bdf8ad103886431d15aad7"},
+        {"path":"tmp/v10v_failed_attempt_01/run_v10v_calculix_nonlinear_buckling_benchmark.attempt01.py","sha256":"1af17ad389274d979d802c3b690d4d278e7489b08f917ade84662b9a9e1674a1"},
+        {"path":"tmp/v10v_failed_attempt_01/calculix_v10v_nonlinear_buckling_benchmark/v10v_eigen_008.dat","sha256":"9fe53419bed757b28933fa057d44fb92ba9b535aaa6adba20f765ac62e330838"},
+        {"path":"tmp/v10v_failed_attempt_01/calculix_v10v_nonlinear_buckling_benchmark/v10v_nonlinear_064.dat","sha256":"e6fa3606e1a99f51c5c186fcc3f066f825d86e400cfb2655bb05ef4916a624d1"},
+        {"path":"tmp/v10v_failed_attempt_01/calculix_v10v_nonlinear_buckling_benchmark/v10v_nonlinear_064.sta","sha256":"f2c5b7664b40d5c52a0cfbe5e6ed4b6ec0df9f3f2cce80b5aa3380fc80c3cae9"}
+      ]
+    },
+    {
+      "attempt": 2,
+      "status": "REJECTED_AND_PRESERVED",
+      "path": "tmp/v10v_failed_attempt_02",
+      "reason": "The compatibility check still searched for contiguous words, while the CalculiX heading is letter-spaced as B U C K L I N G F A C T O R O U T P U T. All seven solver jobs again completed. Attempt 03 normalizes whitespace before matching and retains null-safe reporting; no model parameter or acceptance threshold changes.",
+      "preserved_evidence": [
+        {"path":"tmp/v10v_failed_attempt_02/v10v_calculix_nonlinear_buckling_benchmark.attempt02.json","sha256":"4aba2ec88e93db7dacc7978c573bcf89f3c6d0d73e0204f1a4ac0b1c9aabb4b0"},
+        {"path":"tmp/v10v_failed_attempt_02/run_v10v_calculix_nonlinear_buckling_benchmark.attempt02.py","sha256":"ed1667a10d71530cc4685e6c66a5f8976d2b8238041d1878ce0958833d21d9e0"},
+        {"path":"tmp/v10v_failed_attempt_02/calculix_v10v_nonlinear_buckling_benchmark/v10v_eigen_008.dat","sha256":"9fe53419bed757b28933fa057d44fb92ba9b535aaa6adba20f765ac62e330838"},
+        {"path":"tmp/v10v_failed_attempt_02/calculix_v10v_nonlinear_buckling_benchmark/v10v_nonlinear_064.dat","sha256":"e6fa3606e1a99f51c5c186fcc3f066f825d86e400cfb2655bb05ef4916a624d1"}
+      ]
+    }
+  ],
+  "execution_policy": {
+    "network_access": false,
+    "source_archive_read": false,
+    "source_archive_modified": false,
+    "official_source_pdf_hash_only_count": 0,
+    "official_source_pdf_page_read_count": 0,
+    "official_source_pdf_text_extraction_count": 0,
+    "official_sources_directory_modified": false,
+    "software_installation": false,
+    "structural_solver_execution": true,
+    "thermal_solver_execution": false,
+    "fire_solver_execution": false,
+    "impact_solver_execution": false,
+    "propagation_solver_execution": false,
+    "other_solver_execution": false,
+    "gpu_compute": false,
+    "blender_execution": false,
+    "wtc_parameter_assignment": false,
+    "physical_wtc_state_release": false,
+    "historical_collapse_or_noncollapse_conclusion": false,
+    "maximum_runtime_seconds": 300
+  },
+  "regression_files": [
+    {"role":"v10u_configuration","path":"wtc1_simulation_v8/data/v10u_calculix_linear_beam_benchmark.json","expected_sha256":"a29dc965ae51de67ac630d426ec6bf191a083dce3a298745b99093cf8900bd33"},
+    {"role":"v10u_runner","path":"wtc1_simulation_v8/scripts/run_v10u_calculix_linear_beam_benchmark.py","expected_sha256":"03e563227bb713a1cba69c6aef50e13a7086ccdf030e323fc123bce10c364e2f"},
+    {"role":"v10u_regression_audit","path":"wtc1_simulation_v8/output/v10u_regression_audit.json","expected_sha256":"2b723f5b204b9756acb83889c305d8a6257e96e49a8ab1e5f4b50464811cfc34"},
+    {"role":"v10u_source_manifest","path":"wtc1_simulation_v8/output/v10u_benchmark_source_manifest.json","expected_sha256":"26bad2d8dcf8850ec19447b9aa39c2bbd817491d1e92e7103bb94259b1fe789f"},
+    {"role":"v10u_analytical_reference","path":"wtc1_simulation_v8/output/v10u_analytical_reference.json","expected_sha256":"1586f211a2d55d3278c48cc8b3f57ad3b73d0197e8a4f53eb62cba1cd2ffdd83"},
+    {"role":"v10u_mesh_convergence","path":"wtc1_simulation_v8/output/v10u_mesh_convergence.csv","expected_sha256":"698ffd805a170ec174fa121891fc7cecd7b9f41c28b6a5764a4b2a18291d078a"},
+    {"role":"v10u_force_displacement","path":"wtc1_simulation_v8/output/v10u_force_displacement.csv","expected_sha256":"cc8b9f0b045eff519a5aee1561851a3df83f9c09cd2faf4159df311b0df39e71"},
+    {"role":"v10u_solver_execution_log","path":"wtc1_simulation_v8/output/v10u_solver_execution_log.json","expected_sha256":"9294e0d4a61ca9f5a0a32f079367decf7856855084c33ff44cbfa5360489b202"},
+    {"role":"v10u_solver_file_manifest","path":"wtc1_simulation_v8/output/v10u_solver_file_manifest.csv","expected_sha256":"343f3085aed12314d60ce3875c7210604e1d395bdf27b659c81e854a4b0fc20b"},
+    {"role":"v10u_gate","path":"wtc1_simulation_v8/output/v10u_linear_beam_benchmark_gate.json","expected_sha256":"0781002a8311f080d024a2d76be9b112076a6e1ceda1b6c61c7bef5c44d727b7"},
+    {"role":"v10u_report","path":"wtc1_simulation_v8/output/rapport_wtc1_v10u_benchmark_poutre_lineaire.md","expected_sha256":"6f8afc7458b318e086ceb28de18fef31cc623ffa8b0d34b4437723fd5a4a7053"},
+    {"role":"v10u_results","path":"wtc1_simulation_v8/output/resultats_wtc1_v10u_benchmark_poutre_lineaire.json","expected_sha256":"20ad02e74d6aec9b46490f941d0247984ed51233a9ee8c5331441dba332e4e0c"},
+    {"role":"v10u_offline_audit","path":"wtc1_simulation_v8/output/v10u_offline_package_audit.json","expected_sha256":"c9eb1ae8536ba9ca0b46bf9f15fa40a15f008a543c00fdd193034ef9bf696e88"}
+  ],
+  "protected_files": [
+    {"role":"blender_master","path":"wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend","expected_sha256":"1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"}
+  ],
+  "software_reference_files": [
+    {
+      "id": "FREECAD_B32R_RECTANGULAR_CANTILEVER_EXAMPLE",
+      "path": "C:/Program Files/FreeCAD 1.1/Mod/Fem/femtest/data/calculix/ccx_cantilever_beam_rect.inp",
+      "expected_sha256": "0137436e0b588e39b2c011143268d542a80b46c29801a4eb7ee585c1bd845848",
+      "use": "local installed syntax precedent for B32R node order and rectangular beam section only",
+      "physical_evidence_credit": "NONE"
+    }
+  ],
+  "software_files": [
+    {
+      "id": "CALCULIX_CCX_2_22",
+      "path": "C:/Program Files/FreeCAD 1.1/bin/ccx.exe",
+      "expected_sha256": "2ff89a72b6aac9c361cb716e44220dfcd01d2bb3e66abd6b6455b01b7250f350",
+      "expected_version": "2.22",
+      "allowed_credit": "THIS_EIGENVALUE_AND_GEOMETRICALLY_NONLINEAR_B32R_BENCHMARK_ONLY"
+    }
+  ],
+  "benchmark": {
+    "name": "generic_pin_ended_initially_crooked_column",
+    "unit_system": {"length":"mm","force":"N","stress":"N/mm2 (MPa)","work":"N mm"},
+    "element_type": "B32R",
+    "beam_axis": "+Z",
+    "buckling_axis": "+X",
+    "section_orientation_vector": [0.0, 1.0, 0.0],
+    "geometry": {
+      "length_mm": 2000.0,
+      "width_mm": 40.0,
+      "height_mm": 40.0,
+      "area_mm2": 1600.0,
+      "second_moment_mm4": 213333.33333333334
+    },
+    "material": {
+      "young_modulus_mpa": 200000.0,
+      "poisson_ratio": 0.3,
+      "shear_modulus_mpa": 76923.07692307692,
+      "shear_correction_factor": 0.8333333333333334,
+      "behavior": "isotropic linear elastic"
+    },
+    "support_conditions": {
+      "bottom": "translations 1 through 3 fixed; torsional rotation 6 fixed only to remove rigid torsion",
+      "top": "lateral translations 1 and 2 fixed; axial translation 3 either loaded for eigenvalue extraction or prescribed for nonlinear response",
+      "bending_rotations": "free at both ends",
+      "contact": "none"
+    },
+    "eigenvalue_cases": {
+      "geometry": "perfect straight column",
+      "element_counts": [8, 16, 32, 64],
+      "reference_compressive_load_n": 1.0,
+      "requested_mode_count": 6
+    },
+    "nonlinear_cases": {
+      "geometry": "stress-free sinusoidal initial crookedness x(z)=e0 sin(pi z/L)",
+      "element_counts": [16, 32, 64],
+      "initial_midspan_amplitude_mm": 2.0,
+      "initial_imperfection_ratio": 1000.0,
+      "target_axial_shortening_mm": 8.0,
+      "geometric_nonlinearity": true,
+      "material_nonlinearity": false,
+      "initial_time_increment": 0.002,
+      "minimum_time_increment": 1e-8,
+      "maximum_time_increment": 0.01,
+      "maximum_increment_count": 2000,
+      "postcritical_window_minimum_shortening_factor": 2.0
+    },
+    "analytical_reference": {
+      "euler_critical_load_n": 105275.7802782865,
+      "timoshenko_shear_corrected_critical_load_n": 105167.8319290131,
+      "timoshenko_critical_axial_shortening_mm": 0.657298949556332,
+      "imperfect_column_equations": {
+        "amplitude": "a = e0 / (1 - p), where p = P / Pcr and 0 <= p < 1",
+        "shortening": "Delta = P L / (E A) + pi^2 (a^2 - e0^2) / (4 L)",
+        "status": "bounded small-slope analytical comparator; not an exact finite-rotation solution"
+      }
+    },
+    "wtc_attribution": false,
+    "physical_wtc_release": false
+  },
+  "acceptance": {
+    "solver_return_code": 0,
+    "maximum_eigenvalue_error_vs_timoshenko_pct": 1.0,
+    "maximum_eigenvalue_finest_pair_relative_change_pct": 0.2,
+    "maximum_target_shortening_relative_error": 0.0001,
+    "maximum_end_reaction_equilibrium_relative_residual": 0.00001,
+    "minimum_postcritical_curve_point_count_per_case": 10,
+    "require_monotonic_shortening": true,
+    "require_monotonic_lateral_amplification": true,
+    "minimum_final_lateral_amplification_ratio": 10.0,
+    "minimum_final_reaction_to_critical_ratio": 0.85,
+    "maximum_final_reaction_to_critical_ratio": 1.05,
+    "maximum_finest_postbuckling_median_analytical_error_pct": 5.0,
+    "maximum_nonlinear_finest_pair_final_reaction_change_pct": 1.0,
+    "maximum_nonlinear_finest_pair_final_amplitude_change_pct": 1.0,
+    "all_input_and_solver_output_files_hashed": true,
+    "wtc_mechanical_requirement_closure_count": 0,
+    "physical_wtc_state_release_count": 0,
+    "historical_outcome_assignment_count": 0
+  },
+  "expected": {
+    "regression_file_count": 13,
+    "protected_file_count": 1,
+    "software_reference_file_count": 1,
+    "software_file_count": 1,
+    "eigenvalue_case_count": 4,
+    "nonlinear_case_count": 3,
+    "unique_solver_job_count": 7,
+    "input_deck_count": 7,
+    "solver_return_code_pass_count": 7,
+    "eigenvalue_pass_count": 4,
+    "nonlinear_target_reached_count": 3,
+    "nonlinear_equilibrium_pass_count": 3,
+    "mechanical_requirement_count": 22,
+    "mechanical_requirement_closed_count": 0,
+    "physical_wtc_state_release_count": 0,
+    "historical_outcome_assignment_count": 0,
+    "structural_solver_run_count": 7,
+    "thermal_solver_run_count": 0,
+    "fire_solver_run_count": 0,
+    "impact_solver_run_count": 0,
+    "propagation_solver_run_count": 0,
+    "other_solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 0
+  },
+  "outputs": {
+    "run_directory": "wtc1_simulation_v8/calculix_v10v_nonlinear_buckling_benchmark",
+    "regression_audit": "wtc1_simulation_v8/output/v10v_regression_audit.json",
+    "source_manifest": "wtc1_simulation_v8/output/v10v_benchmark_source_manifest.json",
+    "analytical_reference": "wtc1_simulation_v8/output/v10v_analytical_reference.json",
+    "eigenvalue_convergence": "wtc1_simulation_v8/output/v10v_eigenvalue_convergence.csv",
+    "postbuckling_summary": "wtc1_simulation_v8/output/v10v_postbuckling_summary.csv",
+    "postbuckling_curve": "wtc1_simulation_v8/output/v10v_postbuckling_curve.csv",
+    "solver_execution_log": "wtc1_simulation_v8/output/v10v_solver_execution_log.json",
+    "solver_file_manifest": "wtc1_simulation_v8/output/v10v_solver_file_manifest.csv",
+    "handoff_gate": "wtc1_simulation_v8/output/v10v_nonlinear_buckling_benchmark_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10v_benchmark_flambement_non_lineaire.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10v_benchmark_flambement_non_lineaire.json",
+    "offline_audit": "wtc1_simulation_v8/output/v10v_offline_package_audit.json"
+  },
+  "next_iteration": {
+    "id": "V10W",
+    "objective": "Qualifier un benchmark thermo-mécanique indépendant et borné : dilatation libre, dilatation empêchée et gradient thermique simple, avec solutions analytiques et bilans. Ne transférer ensuite vers le WTC 1 que des capacités logicielles, jamais des états physiques sans données sources suffisantes."
+  }
+}

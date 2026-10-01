@@ -1,0 +1,156 @@
+{
+  "dataset": {
+    "name": "WTC 1 V8M cold core-office-floor-perimeter coupling",
+    "version": "8.12.0",
+    "status": "OFFICIAL_GEOMETRY_AND_CONNECTION_CAPACITIES_WITH_PARAMETRIC_MEMBRANE_STIFFNESS",
+    "scope": "Nonlinear cold force-displacement envelope connecting the V8L loaded core component to perimeter walls through office-floor truss/slab membranes; the hat-truss path is accounted separately.",
+    "warning": "NIST states that its global shell membrane stiffness was calibrated from a single-truss model but does not publish the numerical equivalent stiffness on the cited pages. V8M therefore brackets axial stiffness from published geometry. A synthetic fraction or a passing uncapped-shell case is not an event probability or an independent validation."
+  },
+  "official_facts": [
+    {
+      "label": "FAIT_OFFICIEL",
+      "source": "NIST NCSTAR 1-6",
+      "pdf_pages": [156, 157, 158],
+      "printed_pages": [74, 75, 76],
+      "fact": "A paired floor-truss seat carried about 16 kip under the 80 psf service gravity load. At 20 C the published interior vertical seat capacities are 194-395 kip, exterior vertical capacities are 94-207 kip, interior horizontal tensile capacity is 44 kip, and exterior horizontal tensile capacities are 100-182 kip.",
+      "confidence": "high; complete pages checked, with Tables 4-2 through 4-5"
+    },
+    {
+      "label": "FAIT_OFFICIEL",
+      "source": "NIST NCSTAR 1-6",
+      "pdf_page": 167,
+      "printed_page": 85,
+      "fact": "The single-truss composite model used a 713 in span, one truss with one-half of an 80 in slab tributary width, a 4.3 in average slab thickness, paired top-chord L2x1.5x0.25 angles and paired bottom-chord L3x2x0.37 angles.",
+      "confidence": "high for the depicted long-span model; complete page checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6C",
+      "pdf_page": 197,
+      "printed_page": 149,
+      "fact": "The global floors used membrane shell elements to provide diaphragm action and to transfer load from a shortening core to the exterior walls. Their longitudinal stiffness was calculated from the single-truss composite model including the exterior-wall connection. A floor displacement greater than 25 in was classified as significant in connection Condition 3.",
+      "confidence": "high for the stated modeling method; the numerical equivalent membrane stiffness is not published on this page"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_pages": [233, 234],
+      "printed_pages": [169, 170],
+      "fact": "The global model used equivalent office/core slab membrane stiffness to redistribute loads locally and transfer lateral loads to exterior walls. Four hat-truss outriggers extended from each core face to an exterior wall; the floor and hat-truss paths are distinct.",
+      "confidence": "high; complete pages checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_pages": [290, 291, 292, 293, 294, 295],
+      "printed_pages": [226, 227, 228, 229, 230, 231],
+      "fact": "At Floor 98 after impact the global model carried 10,137 kip on the north wall, 9,071 kip east, 10,356 kip south, 9,146 kip west, and 34,429 kip in the core. The core change was +400 kip at both Floors 98 and 105, so no additional differential cold unloading through the upper hat-truss path is credited.",
+      "confidence": "high; complete table pages checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL_LIMITE",
+      "source": "NIST NCSTAR 1-6C",
+      "pdf_pages": [216, 217],
+      "printed_pages": [168, 169],
+      "fact": "The one-story Column 151 exterior-wall prototype for Floors 95-97 had calculated room-temperature local buckling at 1,004 kip, yield at 1,177 kip, and a stated Floor 96 gravity demand of 175 kip.",
+      "confidence": "high for this prototype only; it is not a complete perimeter section schedule"
+    }
+  ],
+  "derived_geometry": {
+    "tower_width_in": 2486.0,
+    "core_east_west_width_in": 1620.0,
+    "core_north_south_depth_in": 1044.0,
+    "long_span_north_south_in": 713.0,
+    "short_span_east_west_in": 433.0,
+    "paired_truss_tributary_width_in": 80.0,
+    "paired_trusses_per_face": 31,
+    "active_component_floors": [95, 96, 97, 98, 99],
+    "component_floor_count": 5
+  },
+  "inherited_v8l_target": {
+    "source": "wtc1_simulation_v8/output/resultats_wtc1_v8l_multietages_froid.json",
+    "best_case_topology": "orthogonal_floor96_reconstruction",
+    "maximum_stable_load_factor": 0.78,
+    "failure_load_factor": 0.79,
+    "loaded_disconnected_component_kip": 4772.146180284932,
+    "component_columns": [503, 504, 505, 506, 603, 604, 605, 606],
+    "component_floors": [95, 96, 97, 98, 99]
+  },
+  "material_and_section_hypotheses": {
+    "steel_modulus_ksi": 29000.0,
+    "lightweight_concrete_modulus_ksi": 2500.0,
+    "top_angle_legs_in": [2.0, 1.5],
+    "top_angle_thickness_in": 0.25,
+    "bottom_angle_legs_in": [3.0, 2.0],
+    "bottom_angle_thickness_in": 0.37,
+    "angles_per_chord_per_truss": 2,
+    "trusses_per_pair": 2,
+    "slab_width_per_pair_in": 80.0,
+    "slab_average_thickness_in": 4.3,
+    "concrete_effectiveness_factors": [0.0, 0.25, 1.0],
+    "angle_area_rule": "A=t*(b+d-t), neglecting fillets; used only to bracket axial stiffness.",
+    "membrane_rule": "For relative vertical drop d and horizontal span L, extension=sqrt(L^2+d^2)-L, axial tension=min(EA*extension/L, horizontal seat cap), and vertical transfer=min(tension*d/sqrt(L^2+d^2), vertical seat cap).",
+    "common_drop_assumption": "Every active paired path in a topology sees the same core-to-wall relative drop; this is an aggregate upper-envelope compatibility assumption."
+  },
+  "connection_regimes": {
+    "published_seat_capped": {
+      "horizontal_tension_capacity_per_pair_kip": 44.0,
+      "vertical_capacity_per_pair_kip": 94.0,
+      "status": "physical lower-of-published-details envelope"
+    },
+    "vertical_only_upper": {
+      "horizontal_tension_capacity_per_pair_kip": null,
+      "vertical_capacity_per_pair_kip": 94.0,
+      "status": "deliberately optimistic sensitivity that suppresses the published 44 kip interior horizontal limit"
+    },
+    "uncapped_global_shell": {
+      "horizontal_tension_capacity_per_pair_kip": null,
+      "vertical_capacity_per_pair_kip": null,
+      "status": "comparison with a linear-elastic global shell without an explicit cold connection failure cap; not a physical capacity validation"
+    }
+  },
+  "path_topologies": {
+    "north_damage_scaled_5floors": {
+      "floor_count": 5,
+      "pairs_per_face": {"north": 11, "south": 0, "east": 0, "west": 0},
+      "status": "V8J proxy from 21 of 59 surviving north-wall columns"
+    },
+    "north_full_5floors": {
+      "floor_count": 5,
+      "pairs_per_face": {"north": 31, "south": 0, "east": 0, "west": 0},
+      "status": "undamaged north-face upper envelope"
+    },
+    "all_faces_north_damage_scaled_5floors": {
+      "floor_count": 5,
+      "pairs_per_face": {"north": 11, "south": 31, "east": 31, "west": 31},
+      "status": "global redistribution upper envelope retaining the V8J north damage proxy"
+    },
+    "all_faces_full_5floors": {
+      "floor_count": 5,
+      "pairs_per_face": {"north": 31, "south": 31, "east": 31, "west": 31},
+      "status": "undamaged all-face upper envelope over the five V8L component floors"
+    },
+    "all_faces_full_6floors": {
+      "floor_count": 6,
+      "pairs_per_face": {"north": 31, "south": 31, "east": 31, "west": 31},
+      "status": "deliberately optimistic envelope adding Floor 94"
+    }
+  },
+  "analysis": {
+    "reference_relative_drops_in": [2.0, 5.0, 12.0, 25.0],
+    "maximum_root_search_drop_in": 2000.0,
+    "root_tolerance_in": 0.0001,
+    "physical_gate_maximum_drop_in": 25.0,
+    "post_impact_core_demand_kip": 34429.0,
+    "official_floor98_to_floor93_core_change_difference_kip": -956.0,
+    "hat_truss_cold_credit_kip": 0.0,
+    "later_80min_hat_transfer_kip_not_credited": 6748.0,
+    "perimeter_after_impact_floor98_loads_kip": {"north": 10137.0, "east": 9071.0, "south": 10356.0, "west": 9146.0},
+    "perimeter_surviving_column_proxy": {"north": 21, "east": 59, "south": 56, "west": 59},
+    "perimeter_column151_room_local_buckling_capacity_kip": 1004.0
+  },
+  "gate": {
+    "required_condition": "A topology retaining the published 44 kip interior horizontal seat limit must transfer the 4,772 kip V8L component at or below 25 in relative drop without exhausting the exterior-wall proxy reserve. The cold hat-truss credit remains zero.",
+    "pass_policy": "An uncapped shell or a case that suppresses the horizontal connection limit cannot validate the physical cold path."
+  }
+}

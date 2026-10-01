@@ -1,0 +1,239 @@
+{
+  "iteration": "V11E",
+  "status": "PASS",
+  "checked_at_utc": "2026-09-06T13:38:17.441587+00:00",
+  "audit_scope": "Read-back validation of saved artifacts, not independent experimental or multi-agent review",
+  "checks": [
+    {
+      "test": "published_output_hashes",
+      "pass": true,
+      "evidence": {
+        "convergence_comparison.csv": true,
+        "cycle_vertices.csv": true,
+        "material_coupons.csv": true,
+        "numerical_audit.json": true,
+        "rapport_v11e_section_fissuree.md": true,
+        "results_v11e.json": true,
+        "section_fibers.csv": true,
+        "section_history.csv": true,
+        "section_inventory.json": true,
+        "section_summaries.csv": true,
+        "source_manifest.json": true,
+        "synthese_v11e_section_fissuree.png": true
+      }
+    },
+    {
+      "test": "input_and_protected_hashes",
+      "pass": true,
+      "evidence": {
+        "wtc1_simulation_v8/data/v11a_component_resistance_predeclaration.json": true,
+        "wtc1_simulation_v8/data/v11d_slab_contact_predeclaration.json": true,
+        "wtc1_simulation_v8/scripts/v11d_panel_model.py": true,
+        "wtc1_simulation_v8/output/v11d_slab_contact/results_v11d.json": true,
+        "wtc1_simulation_v8/output/v11d_slab_contact/rapport_v11d_dalle_contact.md": true,
+        "wtc1_simulation_v8/output/v11d_slab_contact/offline_manifest.json": true,
+        "wtc1_simulation_v8/output/v11c_floor_panel/results_v11c.json": true,
+        "wtc1_simulation_v8/output/v11b_initialization_mass/results_v11b.json": true,
+        "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend": true,
+        "wtc1_simulation_v8/data/v11e_cracked_section_predeclaration.json": true,
+        "wtc1_simulation_v8/scripts/v11e_section_model.py": true,
+        "wtc1_simulation_v8/scripts/test_v11e_section.py": true,
+        "wtc1_simulation_v8/scripts/run_v11e_cracked_section.py": true
+      }
+    },
+    {
+      "test": "all_previous_V11D_output_hashes",
+      "pass": true,
+      "evidence": {
+        "isolated_pullout_coupon.csv": true,
+        "numerical_audit.json": true,
+        "panel_inventory.json": true,
+        "path_history.csv": true,
+        "path_summaries.csv": true,
+        "physical_component_forces.csv": true,
+        "rapport_v11d_dalle_contact.md": true,
+        "release_diagnostics.json": true,
+        "results_v11d.json": true,
+        "slab_displacements.csv": true,
+        "slab_fiber_stresses.csv": true,
+        "slab_mesh_comparison.csv": true,
+        "source_manifest.json": true,
+        "synthese_v11d_dalle_contact.png": true
+      }
+    },
+    {
+      "test": "all_previous_V11D_input_hashes",
+      "pass": true,
+      "evidence": {
+        "wtc1_simulation_v8/data/v11c_floor_panel_predeclaration.json": true,
+        "wtc1_simulation_v8/data/v11a_component_resistance_predeclaration.json": true,
+        "wtc1_simulation_v8/data/nist_wtc1_transfer.json": true,
+        "wtc1_simulation_v8/data/nist_wtc1_component_capacities_v8g.json": true,
+        "wtc1_simulation_v8/output/v11c_floor_panel/source_manifest.json": true,
+        "wtc1_simulation_v8/output/v11c_floor_panel/source_table_5_7.png": true,
+        "wtc1_simulation_v8/scripts/v11c_panel_model.py": true,
+        "wtc1_simulation_v8/output/v11c_floor_panel/results_v11c.json": true,
+        "wtc1_simulation_v8/output/v11c_floor_panel/panel_inventory.json": true,
+        "wtc1_simulation_v8/output/v11b_initialization_mass/results_v11b.json": true,
+        "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend": true,
+        "wtc1_simulation_v8/scripts/run_v11c_floor_panel.py": true,
+        "wtc1_simulation_v8/scripts/v11a_component_model.py": true
+      }
+    },
+    {
+      "test": "saved_case_and_state_counts",
+      "pass": true,
+      "evidence": {
+        "cases": 14,
+        "states": 6768,
+        "fiber_rows": 2262
+      }
+    },
+    {
+      "test": "saved_tests_all_pass",
+      "pass": true,
+      "evidence": 86
+    },
+    {
+      "test": "saved_fibers_recover_forces_moments_energy",
+      "pass": true,
+      "evidence": [
+        {
+          "case_id": "MONO_PLAIN",
+          "force_N_error": 1.7692514120426495e-12,
+          "moment_Nm_error": 5.684341886080802e-14,
+          "stored_J_per_m_error": 1.7763568394002505e-15,
+          "work_J_per_m_error": 0.0
+        },
+        {
+          "case_id": "MONO_RHO01",
+          "force_N_error": 9.762857189343777e-12,
+          "moment_Nm_error": 9.094947017729282e-13,
+          "stored_J_per_m_error": 1.4210854715202004e-14,
+          "work_J_per_m_error": 0.0
+        },
+        {
+          "case_id": "MONO_REFERENCE",
+          "force_N_error": 1.0157208407690632e-11,
+          "moment_Nm_error": 0.0,
+          "stored_J_per_m_error": 0.0,
+          "work_J_per_m_error": 2.2737367544323206e-13
+        },
+        {
+          "case_id": "MONO_RHO04",
+          "force_N_error": 2.9462654538292554e-11,
+          "moment_Nm_error": 0.0,
+          "stored_J_per_m_error": 0.0,
+          "work_J_per_m_error": 4.547473508864641e-13
+        },
+        {
+          "case_id": "MONO_TOP_ONLY",
+          "force_N_error": 1.3884005056752358e-11,
+          "moment_Nm_error": 9.094947017729282e-13,
+          "stored_J_per_m_error": 0.0,
+          "work_J_per_m_error": 0.0
+        },
+        {
+          "case_id": "MONO_TOP_REVERSED",
+          "force_N_error": 6.973976951485383e-12,
+          "moment_Nm_error": 3.637978807091713e-12,
+          "stored_J_per_m_error": 0.0,
+          "work_J_per_m_error": 4.547473508864641e-13
+        },
+        {
+          "case_id": "MONO_BOTTOM_ONLY",
+          "force_N_error": 5.7625015870144125e-12,
+          "moment_Nm_error": 1.8189894035458565e-12,
+          "stored_J_per_m_error": 0.0,
+          "work_J_per_m_error": 2.2737367544323206e-13
+        },
+        {
+          "case_id": "MONO_GF50",
+          "force_N_error": 3.595346242946107e-11,
+          "moment_Nm_error": 0.0,
+          "stored_J_per_m_error": 2.842170943040401e-14,
+          "work_J_per_m_error": 1.1368683772161603e-13
+        },
+        {
+          "case_id": "MONO_GF150",
+          "force_N_error": 9.729994587814872e-13,
+          "moment_Nm_error": 0.0,
+          "stored_J_per_m_error": 2.842170943040401e-14,
+          "work_J_per_m_error": 1.1368683772161603e-13
+        },
+        {
+          "case_id": "MONO_LCH005",
+          "force_N_error": 1.5370815731330367e-11,
+          "moment_Nm_error": 0.0,
+          "stored_J_per_m_error": 2.842170943040401e-14,
+          "work_J_per_m_error": 2.2737367544323206e-13
+        },
+        {
+          "case_id": "MONO_LCH020",
+          "force_N_error": 3.595346242946107e-11,
+          "moment_Nm_error": 0.0,
+          "stored_J_per_m_error": 2.842170943040401e-14,
+          "work_J_per_m_error": 1.1368683772161603e-13
+        },
+        {
+          "case_id": "MONO_AXIAL_COMPRESSION",
+          "force_N_error": 2.9103830456733704e-11,
+          "moment_Nm_error": 3.637978807091713e-12,
+          "stored_J_per_m_error": 0.0,
+          "work_J_per_m_error": 1.1368683772161603e-13
+        },
+        {
+          "case_id": "CYCLE_REFERENCE",
+          "force_N_error": 0.0,
+          "moment_Nm_error": 0.0,
+          "stored_J_per_m_error": 0.0,
+          "work_J_per_m_error": 0.0
+        },
+        {
+          "case_id": "CYCLE_TOP_ONLY",
+          "force_N_error": 0.0,
+          "moment_Nm_error": 0.0,
+          "stored_J_per_m_error": 0.0,
+          "work_J_per_m_error": 1.1368683772161603e-13
+        }
+      ]
+    },
+    {
+      "test": "saved_outer_face_compression_screen",
+      "pass": true,
+      "evidence": {
+        "relative_face_error": 0.0,
+        "ratio_error": 0.0,
+        "maximum_face_ratio": 1.000000000000067
+      }
+    },
+    {
+      "test": "saved_external_work_ledger_reproduced",
+      "pass": true,
+      "evidence": 1.8189894035458565e-12
+    },
+    {
+      "test": "saved_coupon_Gf_per_declared_band",
+      "pass": true,
+      "evidence": {
+        "CONCRETE_L0.05": 0.0,
+        "CONCRETE_L0.1": 0.0,
+        "CONCRETE_L0.2": 0.0
+      }
+    }
+  ],
+  "check_count": 10,
+  "output_hash_count": 12,
+  "input_hash_count": 13,
+  "old_V11D_output_hash_count": 14,
+  "old_V11D_input_hash_count": 13,
+  "audit_script": "wtc1_simulation_v8/scripts/audit_v11e_release.py",
+  "audit_script_sha256": "bca842ce87468c3af042e44add1558f90d9bbc909e05782e3031014217fe5638",
+  "software": {
+    "python": "3.14.3",
+    "Pillow": "12.2.0"
+  },
+  "attempt_policy": "attempt02 is the final outer-face compression criterion; attempt01 retained as superseded midpoint-screen diagnostic, never promoted. Current kernel/configuration hashes reproduce attempt02 only.",
+  "global_energy_credit_J": 0.0,
+  "blender_changed": false
+}

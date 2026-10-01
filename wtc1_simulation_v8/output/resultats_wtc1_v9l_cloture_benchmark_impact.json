@@ -1,0 +1,273 @@
+{
+  "iteration": "V9L",
+  "generated_at": "2026-08-28T15:34:43.204466+02:00",
+  "status": "validated_negative_gap_closure_external_benchmark_search_closed_no_solver",
+  "iteration_execution_validated": true,
+  "gap_closure_audit_passed": true,
+  "benchmark_selection_gate_passed": false,
+  "external_benchmark_search_closed": true,
+  "configuration": "wtc1_simulation_v8/data/v9l_final_impact_benchmark_gap_closure.json",
+  "evidence": "wtc1_simulation_v8/data/v9l_final_gap_closure_evidence.json",
+  "source_manifest": "wtc1_simulation_v8/output/v9l_gap_closure_source_manifest.json",
+  "deck_inventory": "wtc1_simulation_v8/output/v9l_altair_deck_inventory.json",
+  "gap_closure_matrix_path": "wtc1_simulation_v8/output/v9l_final_gap_closure_matrix.json",
+  "scope": "Preserve V8U through V9K, inspect only the small official Altair RD-E-2602 input archive and the official FAA DOT/FAA/AR-08/36 flat-panel impact report plus directly necessary primary metadata, and decide whether they jointly or individually close every unchanged V9K benchmark gate. V9L performs no solver run, model conversion, material fit, WTC/CF6 substitution or facade calculation.",
+  "evidence_policy": {
+    "observed_fact": "A source file, archive member, keyword card, table, figure, repository record or rights notice directly inspected in V9L.",
+    "official_model_result": "A result reported by FAA or Altair and not reproduced by V9L.",
+    "local_archive_claim": "No WTC archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "The unchanged seven selection gates and the final stop rule.",
+    "derived_result": "Per-target gate status, source-gap closure verdict and zero-or-one selection decision.",
+    "unknown": "Any license, model field, measurement, physical regularization or convergence evidence absent from the inspected primary material."
+  },
+  "regressions": {
+    "files": {
+      "wtc1_simulation_v8/data/v9k_open_impact_benchmark_screening.json": {
+        "exists": true,
+        "expected_sha256": "d8c72ba3e8b88c6be39a94a5f6a52aa4d71f78d8d3d3fb3bc8fda9e8ad4f454d",
+        "actual_sha256": "d8c72ba3e8b88c6be39a94a5f6a52aa4d71f78d8d3d3fb3bc8fda9e8ad4f454d",
+        "passed": true
+      },
+      "wtc1_simulation_v8/data/v9k_open_impact_screening_evidence.json": {
+        "exists": true,
+        "expected_sha256": "69450aa22331ba7d1ab1f6a124f9887472d664a62f3c25ef1ecbb7df92319685",
+        "actual_sha256": "69450aa22331ba7d1ab1f6a124f9887472d664a62f3c25ef1ecbb7df92319685",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/run_v9k_open_impact_benchmark_screening.py": {
+        "exists": true,
+        "expected_sha256": "a98808a33af0a3647237aef0a615673a4b0332d1447ea0544c86c77da464f798",
+        "actual_sha256": "a98808a33af0a3647237aef0a615673a4b0332d1447ea0544c86c77da464f798",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9k_screening_source_manifest.json": {
+        "exists": true,
+        "expected_sha256": "15e96c4ad91f59b751298adf51ad50d44ed275ab802dae879d8f0c9426522346",
+        "actual_sha256": "15e96c4ad91f59b751298adf51ad50d44ed275ab802dae879d8f0c9426522346",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9k_open_impact_candidate_matrix.json": {
+        "exists": true,
+        "expected_sha256": "8e166fae53d245bfaf6447097fe5d839b7cc42f5dac693608e8134574941843f",
+        "actual_sha256": "8e166fae53d245bfaf6447097fe5d839b7cc42f5dac693608e8134574941843f",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v9k_screening_benchmark_impact.json": {
+        "exists": true,
+        "expected_sha256": "be8fb12dcfaa499aeb6d2c97238fe28685164932d0929638c79cb66a209a95b0",
+        "actual_sha256": "be8fb12dcfaa499aeb6d2c97238fe28685164932d0929638c79cb66a209a95b0",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/rapport_wtc1_v9k_screening_benchmark_impact.md": {
+        "exists": true,
+        "expected_sha256": "ea02fde7c6e3964b802b4a85577cd30718c2becccc53f4428ad1402d61d35bd4",
+        "actual_sha256": "ea02fde7c6e3964b802b4a85577cd30718c2becccc53f4428ad1402d61d35bd4",
+        "passed": true
+      }
+    },
+    "metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9k_screening_benchmark_impact.json",
+        "path": "iteration_execution_validated",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9k_screening_benchmark_impact.json",
+        "path": "selected_candidate_count",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9k_screening_benchmark_impact.json",
+        "path": "benchmark_selection_gate_passed",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9k_screening_benchmark_impact.json",
+        "path": "no_candidate_selected_without_relaxing_gates",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9k_screening_benchmark_impact.json",
+        "path": "runtime.solver_executed",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "source_identity_gate": {
+    "hashes_and_sizes_passed": true,
+    "passed": true
+  },
+  "candidate_count": 2,
+  "required_gate_count": 7,
+  "candidate_matrix": [
+    {
+      "id": "ALTAIR_RD_E_2602_INPUT_ARCHIVE",
+      "title": "Altair RD-E 2602 Ductile Failure Model",
+      "required_gate_count": 7,
+      "passed_gate_count": 3,
+      "all_required_gates_passed": false,
+      "selected": false,
+      "gates": {
+        "authoritative_primary_provenance": {
+          "passed": true,
+          "reason": "The exact input archive was acquired from the official Altair 2025 endpoint and matched the predeclared content length."
+        },
+        "lawful_open_access_and_license": {
+          "passed": false,
+          "reason": "Public download is verified, but no reusable model-file license is embedded; the official documentation page carries an All Rights Reserved notice."
+        },
+        "bounded_downloadable_deck_or_reconstructible_definition": {
+          "passed": true,
+          "reason": "The small complete Radioss Starter/Engine decks are present and locally inspectable."
+        },
+        "failure_and_regularization_complete": {
+          "passed": false,
+          "reason": "Failure cards are present, but objective regularization is inactive or absent: BIQUAD Ref.El_Length is zero, TAB1 has no active element-length function and no /NONLOCAL card exists."
+        },
+        "measured_validation_outputs": {
+          "passed": false,
+          "reason": "The archive contains no measured force, impulse, residual velocity, deformation or perforation dataset."
+        },
+        "mesh_and_convergence_definition": {
+          "passed": false,
+          "reason": "The archive contains formulation and shell-option variants, not three documented mesh levels with a common convergence observable."
+        },
+        "local_execution_feasible_and_bounded": {
+          "passed": true,
+          "reason": "The small decks are compatible with the available OpenRadioss route and are expected to run within the bounded CPU limit; V9L intentionally does not execute them."
+        }
+      },
+      "controlling_rejection_reasons": [
+        "Public download is verified, but no reusable model-file license is embedded; the official documentation page carries an All Rights Reserved notice.",
+        "Failure cards are present, but objective regularization is inactive or absent: BIQUAD Ref.El_Length is zero, TAB1 has no active element-length function and no /NONLOCAL card exists.",
+        "The archive contains no measured force, impulse, residual velocity, deformation or perforation dataset.",
+        "The archive contains formulation and shell-option variants, not three documented mesh levels with a common convergence observable."
+      ]
+    },
+    {
+      "id": "FAA_DOT_FAA_AR_08_36_FLAT_PANEL_IMPACT",
+      "title": "Explicit Finite Element Analysis of 2024-T3/T351 Aluminum Material Under Impact Loading for Airplane Engine Containment and Fragment Shielding",
+      "required_gate_count": 7,
+      "passed_gate_count": 2,
+      "all_required_gates_passed": false,
+      "selected": false,
+      "gates": {
+        "authoritative_primary_provenance": {
+          "passed": true,
+          "reason": "The inspected report self-identifies as the FAA final report DOT/FAA/AR-08/36 with government sponsorship and public distribution."
+        },
+        "lawful_open_access_and_license": {
+          "passed": false,
+          "reason": "The report is public, but no solver deck or explicit model-file reuse license is supplied; report access alone does not license a benchmark deck."
+        },
+        "bounded_downloadable_deck_or_reconstructible_definition": {
+          "passed": false,
+          "reason": "Geometry, material tables and contact choices are informative, but the exact meshes, complete boundary/input data and LS-DYNA deck are not published for deterministic reconstruction."
+        },
+        "failure_and_regularization_complete": {
+          "passed": false,
+          "reason": "Johnson-Cook damage parameters are listed, but they are calibrated to element size and thickness; the nonlocal length is not numerically fixed and did not remove mesh dependency."
+        },
+        "measured_validation_outputs": {
+          "passed": true,
+          "reason": "The report exposes measured initial and residual velocities with units and test geometry for three target thicknesses, although measurement uncertainty is absent."
+        },
+        "mesh_and_convergence_definition": {
+          "passed": false,
+          "reason": "Three meshes are compared, but Mesh-III changes the in-plane topology and the study reports sensitivity rather than a converged sequence or numerical uncertainty bound."
+        },
+        "local_execution_feasible_and_bounded": {
+          "passed": false,
+          "reason": "The LS-DYNA deck is absent, the solver route is proprietary, and no documented deterministic OpenRadioss conversion is supplied."
+        }
+      },
+      "controlling_rejection_reasons": [
+        "The report is public, but no solver deck or explicit model-file reuse license is supplied; report access alone does not license a benchmark deck.",
+        "Geometry, material tables and contact choices are informative, but the exact meshes, complete boundary/input data and LS-DYNA deck are not published for deterministic reconstruction.",
+        "Johnson-Cook damage parameters are listed, but they are calibrated to element size and thickness; the nonlocal length is not numerically fixed and did not remove mesh dependency.",
+        "Three meshes are compared, but Mesh-III changes the in-plane topology and the study reports sensitivity rather than a converged sequence or numerical uncertainty bound.",
+        "The LS-DYNA deck is absent, the solver route is proprietary, and no documented deterministic OpenRadioss conversion is supplied."
+      ]
+    }
+  ],
+  "selected_candidate_ids": [],
+  "selected_candidate_count": 0,
+  "critical_gap_combo_absent": true,
+  "no_candidate_selected_without_relaxing_gates": true,
+  "safety_gate_summary": {
+    "gates": {
+      "V9K_regressions_unchanged": true,
+      "source_hashes_and_sizes_verified": true,
+      "altair_archive_integrity_and_inventory_passed": true,
+      "candidate_ids_match_predeclaration": true,
+      "gate_keys_match_predeclaration": true,
+      "maximum_one_candidate_selected": true,
+      "expected_negative_selection_matches": true,
+      "critical_gap_combo_absent": true,
+      "external_benchmark_search_closed_as_predeclared": true,
+      "single_file_source_limit_respected": true,
+      "total_source_limit_respected": true,
+      "one_archive_and_one_report_only": true,
+      "FAA_transport_fallback_disclosed": true,
+      "no_solver_or_model_conversion": true,
+      "no_material_or_failure_fit": true,
+      "no_WTC_or_CF6_substitution": true,
+      "no_projectile_facade_or_global_run": true,
+      "source_archive_not_rescanned": true,
+      "FOIA_and_external_contact_unsent": true,
+      "Blender_not_used_as_physical_validation": true,
+      "selection_gates_not_relaxed": true
+    },
+    "passed": true
+  },
+  "acquired_source_bytes": 1926314,
+  "benchmark_solver_executed": false,
+  "model_conversion_performed": false,
+  "material_or_failure_fit_performed": false,
+  "WTC_or_CF6_substitution_performed": false,
+  "projectile_rupture_executed": false,
+  "facade_impact_executed": false,
+  "global_wtc_impact_physics_qualification_passed": false,
+  "blender_executed": false,
+  "scope_gates": {
+    "benchmark_solver_execution_authorized": false,
+    "model_conversion_authorized": false,
+    "material_fit_authorized": false,
+    "failure_law_fit_authorized": false,
+    "generic_material_substitution_authorized": false,
+    "WTC_or_CF6_solver_authorized": false,
+    "projectile_rupture_authorized": false,
+    "facade_impact_authorized": false,
+    "global_impact_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_inference_authorized": false
+  },
+  "interpretation": "V9L closes the bounded external benchmark search. The official Altair archive is complete and locally runnable but uses a rigid sphere and supplies neither measured validation, active objective regularization nor a convergence sequence. FAA DOT/FAA/AR-08/36 supplies measured plate-impact residual velocities and three mesh configurations, but its projectile cannot yield, its damage parameters are explicitly tuned to element size and thickness, the nonlocal option does not remove mesh dependence, and no public deck or bounded local conversion route is supplied. Neither source qualifies deformable-projectile rupture or authorizes a facade/global WTC simulation.",
+  "runtime": {
+    "started_at": "2026-08-28T15:34:43.204466+02:00",
+    "completed_at": "2026-08-28T15:34:43.262451+02:00",
+    "software": "Python standard-library deterministic source and deck audit",
+    "python_version": "3.12.13",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "random_seed": 9122001,
+    "network_access_used_for_source_acquisition": true,
+    "network_access_used_for_calculation": false,
+    "source_acquisition_bytes": 1926314,
+    "source_archive_rescanned": false,
+    "external_contact_made": false,
+    "FOIA_request_sent": false,
+    "solver_executed": false
+  }
+}

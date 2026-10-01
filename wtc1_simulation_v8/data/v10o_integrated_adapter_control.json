@@ -1,0 +1,249 @@
+{
+  "iteration": "V10O",
+  "dataset": {
+    "name": "Schema-validated coupling adapters and integrated null no-propagation control",
+    "version": "10.15.0",
+    "status": "PREDECLARED_BEFORE_V10O_ADAPTER_IMPLEMENTATION",
+    "created_at_local": "2026-09-02T19:45:00+02:00",
+    "random_seed": 1015001,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10N. Implement reusable, solver-neutral typed contracts for all nine frozen V10N interfaces. Verify one valid record and one deliberately invalid missing-field record per interface. Recompute a small set of exact cached invariants without rerunning their source models. Execute a deterministic zero-input sentinel from impact kinematics through a synthetic CONTROL_NO_PROPAGATION outcome and a Blender card-only release record. This is a software integration control, not a WTC 1 event scenario, collapse prediction, non-collapse prediction, physical assignment, solver run, GPU job or Blender run."
+  },
+  "execution_policy": {
+    "network_access": false,
+    "source_archive_read": false,
+    "source_archive_modified": false,
+    "official_sources_directory_read": false,
+    "official_sources_directory_modified": false,
+    "software_installation": false,
+    "external_software_modification": false,
+    "solver_execution": false,
+    "gpu_compute": false,
+    "blender_execution": false,
+    "blender_master_modification": false,
+    "physical_property_assignment": false,
+    "historical_damage_assignment": false,
+    "historical_fire_assignment": false,
+    "historical_collapse_or_noncollapse_conclusion": false,
+    "maximum_runtime_seconds": 900,
+    "validation_library": "PYTHON_STANDARD_LIBRARY_CUSTOM_TYPED_CONTRACT_VALIDATOR",
+    "external_schema_package_installation": false
+  },
+  "regression_files": [
+    {
+      "role": "v10n_configuration",
+      "path": "wtc1_simulation_v8/data/v10n_resource_and_coupling_audit.json",
+      "expected_sha256": "f8ae814f40ff90b1b42502932a4d5d37676c3972912bd373f96f45a2b50fda8c"
+    },
+    {
+      "role": "v10n_script",
+      "path": "wtc1_simulation_v8/scripts/run_v10n_resource_and_coupling_audit.py",
+      "expected_sha256": "4696afc5aea5e4ce19d55f68877519f5a86a9659ffeb9c7643537565e787dbe2"
+    },
+    {
+      "role": "v10n_regression_audit",
+      "path": "wtc1_simulation_v8/output/v10n_regression_audit.json",
+      "expected_sha256": "ed1f30ce908b9f79ce5901d594325f903658cd212b69ead42098d408d8ceacf3"
+    },
+    {
+      "role": "v10n_cached_anchor_audit",
+      "path": "wtc1_simulation_v8/output/v10n_cached_anchor_audit.json",
+      "expected_sha256": "1e6ada90dde845fceac0c6b5e3618cc8b38b2f5195013b0fb61c2acd09a18b8a"
+    },
+    {
+      "role": "v10n_resource_inventory",
+      "path": "wtc1_simulation_v8/output/v10n_local_resource_inventory.json",
+      "expected_sha256": "5032fb7730c9921c37e743708c50f3fc55fba48dedb94eec882c3781c508f8ab"
+    },
+    {
+      "role": "v10n_solver_inventory",
+      "path": "wtc1_simulation_v8/output/v10n_solver_inventory.csv",
+      "expected_sha256": "7b3b06ebfeec139bbcdaba52910b5d5b77361946e2eae605abdeabf9a7fac68e"
+    },
+    {
+      "role": "v10n_coupling_graph",
+      "path": "wtc1_simulation_v8/output/v10n_solver_neutral_coupling_graph.json",
+      "expected_sha256": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98"
+    },
+    {
+      "role": "v10n_coupling_matrix",
+      "path": "wtc1_simulation_v8/output/v10n_coupling_interface_matrix.csv",
+      "expected_sha256": "18481afcfdebc4b91d1a03e2359ad1c242067699f58f173c84cb53dd90a52625"
+    },
+    {
+      "role": "v10n_compute_budget",
+      "path": "wtc1_simulation_v8/output/v10n_compute_budget.json",
+      "expected_sha256": "41ce61021de2fb5927aa228d22462bba0ba83dbe1044c8d769e25505166b5616"
+    },
+    {
+      "role": "v10n_gate",
+      "path": "wtc1_simulation_v8/output/v10n_coupling_readiness_gate.json",
+      "expected_sha256": "531997b9eefd2e946c67eebc18fcd0c45d8a6a2bf8efadd86a107520e7b399ff"
+    },
+    {
+      "role": "v10n_report",
+      "path": "wtc1_simulation_v8/output/rapport_wtc1_v10n_ressources_et_couplage.md",
+      "expected_sha256": "4ff31711ca4db646dcd7d4109b5d4bd8ea34c2ec2a04ed55c9bf3e3a89d2acc5"
+    },
+    {
+      "role": "v10n_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10n_ressources_et_couplage.json",
+      "expected_sha256": "6023b7e8cf196986902e081cd1da1d5857e043b382ef99f72529953fbf1f07bc"
+    },
+    {
+      "role": "v10n_offline_audit",
+      "path": "wtc1_simulation_v8/output/v10n_offline_package_audit.json",
+      "expected_sha256": "1cdb24aea0b6a13f12d55661e080d04ddf8e85489aa670377300df58fe5e64ed"
+    }
+  ],
+  "protected_files": [
+    {
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+    }
+  ],
+  "cached_baselines": [
+    {
+      "id": "V8S_IMPACT_KINEMATICS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json",
+      "expected_sha256": "40bd3c0c9bc4cad3326f171f885702dc47a020e57f32c788e7276097c8b9c318"
+    },
+    {
+      "id": "V8E_SYNTHETIC_THERMAL_FIELDS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8e_champs_thermiques.json",
+      "expected_sha256": "d26e0c2671bb2f0bd1839e6208739e1703597adb79f88a4d81c0df5c330b956e"
+    },
+    {
+      "id": "V8J_COLD_GATE",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8j_gate_froid.json",
+      "expected_sha256": "4b93102974a8b9fdf1eff3af408e5c074385df9ae9c5886038b67914b430788e"
+    },
+    {
+      "id": "V8L_MULTISTORY_COLD",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8l_multietages_froid.json",
+      "expected_sha256": "ecaa91fddfec2a04eeeafea130317ed585072d73107da4e10c9751536ec2f9dd"
+    },
+    {
+      "id": "V9M_IMPACT_BRANCH_CLOSURE",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json",
+      "expected_sha256": "2d403c87c558300f2b4460312da549b46e16dbd92d6eac34b0f1b51f5979eb7d"
+    }
+  ],
+  "cached_replay_expectations": {
+    "V8S_IMPACT_KINEMATICS": {
+      "case": "base",
+      "mass_kg": 128638.796132,
+      "speed_mps": 198.03871999999998,
+      "momentum_total_mn_s": 25.475462528322232,
+      "kinetic_energy_gj": 2.5225639952584484,
+      "absolute_tolerance": 1e-09
+    },
+    "V8E_SYNTHETIC_THERMAL_FIELDS": {
+      "ensemble_seeds": 200,
+      "gamma_values": [
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "fields_are_probabilities": false,
+      "deterministic_case_count": 70,
+      "smooth_field_case_count": 40,
+      "first_case_time_min": 20,
+      "first_case_field": "uniform_min",
+      "first_case_system_equilibrium_all_floors": true
+    },
+    "V8J_COLD_GATE": {
+      "passed": false,
+      "status": "NOT_VALIDATED_MISSING_FORCE_DISPLACEMENT_PATH",
+      "thermal_runs_authorized": false,
+      "blender_coupling_authorized": false
+    },
+    "V8L_MULTISTORY_COLD": {
+      "case_count": 36,
+      "official_topology_pass_count": 0,
+      "reconstructed_topology_pass_count": 0,
+      "any_official_topology_pass": false,
+      "any_reconstructed_topology_pass": false,
+      "best_reconstructed_maximum_stable_load_factor": 0.78
+    },
+    "V9M_IMPACT_BRANCH_CLOSURE": {
+      "numerically_qualified": 4,
+      "conditional_numerical": 1,
+      "failed_or_physically_unqualified": 6,
+      "visualization_only": 1,
+      "physical_track_met_trigger_count": 0,
+      "physical_track_reopening_authorized": false,
+      "global_wtc_impact_physics_qualification_passed": false
+    }
+  },
+  "control_scenario": {
+    "scenario_id": "V10O-CTRL-ZERO-001",
+    "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+    "epistemic_class": "ALGEBRAIC_SENTINEL_NOT_HISTORICAL",
+    "historical_event_claim": false,
+    "values_are_wtc_properties": false,
+    "input_mass_kg": 0.0,
+    "input_velocity_vector_m_s": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "input_attitude_rad": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "reference_temperature_K": 293.15,
+    "incremental_force_N": 0.0,
+    "expected_terminal_label": "CONTROL_NO_PROPAGATION",
+    "terminal_label_is_historical_noncollapse": false,
+    "visualization_mode": "CONTROL_CARD_ONLY_NO_OBJECT_TRANSFORMS"
+  },
+  "required_interface_ids": [
+    "I01_KINEMATICS_TO_DAMAGE",
+    "I02_DAMAGE_TO_FIRE",
+    "I03_DAMAGE_TO_COLD_STRUCTURE",
+    "I04_FIRE_TO_THERMAL_SOLIDS",
+    "I05_THERMAL_TO_INITIATION",
+    "I06_COLD_STATE_TO_INITIATION",
+    "I07_INITIATION_TO_PROPAGATION",
+    "I08_PROPAGATION_TO_ENSEMBLE",
+    "I09_ALL_VALIDATED_STATES_TO_BLENDER"
+  ],
+  "expected": {
+    "regression_file_count": 13,
+    "protected_file_count": 1,
+    "cached_baseline_count": 5,
+    "interface_count": 9,
+    "positive_validation_count": 9,
+    "negative_missing_field_rejection_count": 9,
+    "deterministic_replay_match": true,
+    "synthetic_control_count": 1,
+    "historical_scenario_count": 0,
+    "physically_ready_interface_count": 0,
+    "mechanical_requirements_closed_count": 0,
+    "mechanical_requirements_blocking_count": 22,
+    "physical_assignment_count": 0,
+    "solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 0
+  },
+  "outputs": {
+    "regression_audit": "wtc1_simulation_v8/output/v10o_regression_audit.json",
+    "schemas": "wtc1_simulation_v8/output/v10o_interface_schemas.json",
+    "adapter_matrix": "wtc1_simulation_v8/output/v10o_adapter_validation_matrix.csv",
+    "cached_replay": "wtc1_simulation_v8/output/v10o_cached_baseline_replay.json",
+    "control_trace": "wtc1_simulation_v8/output/v10o_null_control_trace.json",
+    "control_timeline": "wtc1_simulation_v8/output/v10o_null_control_timeline.csv",
+    "integration_gate": "wtc1_simulation_v8/output/v10o_integration_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10o_controle_integration.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10o_controle_integration.json",
+    "offline_audit": "wtc1_simulation_v8/output/v10o_offline_package_audit.json"
+  },
+  "next_iteration": {
+    "id": "V10P",
+    "objective": "Instantiate a bounded three-track impact-to-damage handoff using only a zero-input software control, official-model-dependent damage references and an explicit UNKNOWN_PHYSICAL_DAMAGE branch. Verify available mass, energy and momentum ledgers without reopening the unqualified explicit physical solver branch or presenting an official-model damage mask as independent evidence."
+  }
+}

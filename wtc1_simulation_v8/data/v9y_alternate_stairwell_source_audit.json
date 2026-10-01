@@ -1,0 +1,264 @@
+{
+  "iteration": "V9Y",
+  "dataset": {
+    "name": "Bounded alternate-source and file-level receipt audit for WTC 1 stair plans on Floors 93-99",
+    "version": "9.25.0",
+    "status": "PREDECLARED_DOCUMENTARY_AUDIT_PASS_ALLOWED_WITH_GEOMETRY_GATE_CLOSED",
+    "random_seed": 9125007,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V9X. Audit only small public metadata, torrent descriptors, archived landing pages, one NIST FOIA-log response, and the four cached core-plan TIFFs. Test whether any alternate public dataset supplies a higher-quality vector or lossless record-plan source and whether any receipt links the exact 175-sheet tower-plan set or the target sheets A-A-148, A-A-150, A-A-151 and A-A-153 to a NIST or FOIA release. Do not acquire either full alternate dataset. Promote no coordinate unless every printed digit and endpoint in one complete grid-to-stair chain is independently reproducible for each of Stair 1, Stair 2 and Stair 3. Otherwise retain only categorical topology, keep low/base/high separate and hypothetical, assign zero physical or damage credit, and run neither Blender nor a structural solver."
+  },
+  "source_policy": {
+    "source_archive_read": false,
+    "source_archive_rescanned": false,
+    "source_archive_files_modified": false,
+    "workspace_v9x_artifacts_read": true,
+    "network_access_authorized_for_targeted_metadata_and_small_receipts": true,
+    "full_1984_dataset_download_authorized": false,
+    "full_2009_dataset_download_authorized": false,
+    "torrent_payload_download_authorized": false,
+    "remote_acquisition_maximum_single_file_bytes": 5000000,
+    "remote_acquisition_target_directory": "wtc1_simulation_v8/input/v9y_open_sources",
+    "structural_solver_authorized": false,
+    "blender_authorized": false,
+    "blender_master_modification_authorized": false,
+    "scan_pixel_to_physical_conversion_authorized": false,
+    "super_resolution_as_source_authorized": false,
+    "as_built_geometry_promotion_authorized": false,
+    "mass_assignment_authorized": false,
+    "stiffness_assignment_authorized": false,
+    "strength_assignment_authorized": false,
+    "connection_assignment_authorized": false,
+    "load_path_credit_authorized": false,
+    "component_damage_validation_authorized": false,
+    "foia_request_sent": false,
+    "external_contact_count": 0
+  },
+  "regression_files": {
+    "wtc1_simulation_v8/data/v9x_stairwell_printed_anchor_transcription.json": "ad7ec51e4cac39a0c3ef648abbad939aed39277c72d53b6e2bb5bdedb997bcd6",
+    "wtc1_simulation_v8/scripts/run_v9x_stairwell_printed_anchor_transcription.py": "b84421a962b2c2a35bb707b3a2f9120f0796912b925a1a4c2a5f8aeb2cffffaf",
+    "wtc1_simulation_v8/output/v9x_stairwell_anchor_source_manifest.json": "a12b28cbfa680fc41f891825787731d8964489c71f519847e5b4d9849e45d79b",
+    "wtc1_simulation_v8/output/v9x_plan_provenance_audit.json": "5259bfff2af7383b91596b2dee15d9541da8d0366898031745271f01b2db7d14",
+    "wtc1_simulation_v8/output/v9x_printed_anchor_transcription.json": "59caeba84614e896222ddf17111026aa65df6c0d7e4d8840c2af4a240bcf9f14",
+    "wtc1_simulation_v8/output/v9x_stairwell_anchor_matrix.csv": "f45f5579b271b05f7c2a2387085ab2529346afc9916c3fb096c77a0365b49874",
+    "wtc1_simulation_v8/output/v9x_stairwell_model_gate.json": "455aef3f0422fcaa875f96f355dca6de567cc5bb8347b403c289f507aefc7ea7",
+    "wtc1_simulation_v8/output/v9x_stairwell_anchor_figures/v9x_contact_sheet.png": "caa86a24d46d3853db9275282bb3f019e6e768e27b93aa1147fa475743424ad4",
+    "wtc1_simulation_v8/output/rapport_wtc1_v9x_transcription_ancrages_imprimes.md": "5310e308f0705ec9b04b6b910c07825a852c019d2b055ee18e5495e2afdfdfe5",
+    "wtc1_simulation_v8/output/resultats_wtc1_v9x_transcription_ancrages_imprimes.json": "fff64a28e044bf71ca24a88903254959d7f3617131e9ff5086cf966d96a9c6d5"
+  },
+  "protected_files": {
+    "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+  },
+  "cached_plan_sources": {
+    "root": "wtc1_simulation_v8/input/v9w_archive_sources",
+    "files": [
+      "A-A-148.tif",
+      "A-A-150.tif",
+      "A-A-151.tif",
+      "A-A-153.tif"
+    ],
+    "quality_fields_to_audit": [
+      "pixel_dimensions",
+      "bits_per_sample",
+      "compression",
+      "resolution_dpi",
+      "document_name_tag",
+      "vector_content"
+    ]
+  },
+  "acquired_small_sources": {
+    "root": "wtc1_simulation_v8/input/v9y_open_sources",
+    "files": {
+      "ia_1967_metadata.json": {
+        "bytes": 49005,
+        "sha256": "d0cbe05d82b842a5cfec3ae7fafe04272558a610a6a5e32bf917c11329ac42ec",
+        "url": "https://archive.org/metadata/WTC_Architectural_Drawings_Dated_Aug_31_1967"
+      },
+      "landing_1984.html": {
+        "bytes": 23799,
+        "sha256": "1742e4d4f2cafb73f7647a367d5e4e8f4e641e2503091cb090b46fb4e84ef346",
+        "url": "https://web.archive.org/web/20170424103333id_/http://www.911datasets.org/index.php/WTC1_Architectural_Drawings_Dated_May_9_1984"
+      },
+      "landing_2009.html": {
+        "bytes": 25242,
+        "sha256": "f7217afb519eb4cc0ece245812d9f16a17bceea1f3762e5184f4d9a0b8b7321b",
+        "url": "https://web.archive.org/web/20170424103325id_/http://www.911datasets.org/index.php/WTC1_Architectural_and_Engineering_Drawings_Released_May_2009"
+      },
+      "LERA_1984.torrent": {
+        "bytes": 223181,
+        "sha256": "0a4911c113e6253d248f98c158421c47dfd8eef79f42d9adc3d5af2a699cfa28",
+        "url": "https://web.archive.org/web/20170424103333id_/http://911datasets.org/images/WTC1_Architectural_Drawings_Dated_May_9_1984.torrent"
+      },
+      "MAY_2009.torrent": {
+        "bytes": 233476,
+        "sha256": "1a096c1266fa5a5b82b527f4318267a3e0553c3b146dded606f15f05594db951",
+        "url": "https://web.archive.org/web/20170424103325id_/http://911datasets.org/images/WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009.torrent"
+      },
+      "NIST-2012-FOIA-log.pdf": {
+        "bytes": 604750,
+        "sha256": "a588256dcb5dc9298defbdea47ad717239857513465ad5140b3d6e53877dc82d",
+        "url": "https://documents.theblackvault.com/documents/foia/NIST-2012.pdf"
+      }
+    }
+  },
+  "remote_zip_sources": [
+    {
+      "candidate_id": "LERA_1984_284_FILES",
+      "url": "https://archive.org/download/911datasets/WTC1_Architectural_Drawings_Dated_May_9_1984.zip",
+      "expected_remote_total_bytes": 583129663,
+      "expected_torrent_file_count": 284,
+      "selected_entries": [
+        "WTC1_Architectural_Drawings_Dated_May_9_1984/LERA - PLANS-022102/floor_heights.txt",
+        "WTC1_Architectural_Drawings_Dated_May_9_1984/LERA - PLANS-022102/Dxf's/footprints.dxf",
+        "WTC1_Architectural_Drawings_Dated_May_9_1984/LERA - PLANS-022102/Dxf's/topprints.dxf",
+        "WTC1_Architectural_Drawings_Dated_May_9_1984/LERA - PLANS-022102/PAC1 TOWER A/A-A-148.tif",
+        "WTC1_Architectural_Drawings_Dated_May_9_1984/LERA - PLANS-022102/PAC1 TOWER A/A-A-150.tif",
+        "WTC1_Architectural_Drawings_Dated_May_9_1984/LERA - PLANS-022102/PAC1 TOWER A/A-A-151.tif",
+        "WTC1_Architectural_Drawings_Dated_May_9_1984/LERA - PLANS-022102/PAC1 TOWER A/A-A-153.tif"
+      ]
+    },
+    {
+      "candidate_id": "MAY_2009_901_FILES",
+      "url": "https://archive.org/download/911datasets/WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009.zip",
+      "expected_remote_total_bytes": 418204401,
+      "expected_torrent_file_count": 901,
+      "selected_entries": [
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/source.txt",
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/Pack3-5/A-A-148_0.png",
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/Pack3-5/A-A-148_1.png",
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/Pack3-5/A-A-148_2.png",
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/Pack3-5/A-A-148_3.png",
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/Pack3-5/A-A-150_0.png",
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/Pack3-5/A-A-150_1.png",
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/Pack3-5/A-A-150_2.png",
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/Pack3-5/A-A-150_3.png",
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/Pack3-5/A-A-151_0.png",
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/Pack3-5/A-A-151_1.png",
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/Pack3-5/A-A-151_2.png",
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/Pack3-5/A-A-151_3.png",
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/Pack3-5/A-A-153_0.png",
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/Pack3-5/A-A-153_1.png",
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/Pack3-5/A-A-153_2.png",
+        "WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009/Pack3-5/A-A-153_3.png"
+      ]
+    },
+    {
+      "candidate_id": "NIST_FOIA_12_178_RELEASE",
+      "url": "https://archive.org/download/911datasets/NIST_FOIA_12-178_Jul_12_2012.zip",
+      "expected_remote_total_bytes": 173456635,
+      "expected_central_directory_entry_count": 7,
+      "selected_entries": [
+        "NIST_FOIA_12-178_Jul_12_2012/FOIA_12-178_Correspondence_between_FOIA_Officers_and_David_Cole_2012_OCR_redacted.pdf",
+        "NIST_FOIA_12-178_Jul_12_2012/FOIA_12-178_NIST_WTC_Investigation_WTCI-120-I_DVD_Image_1.jpg",
+        "NIST_FOIA_12-178_Jul_12_2012/FOIA_12-178_NIST_WTC_Investigation_WTCI-120-I_DVD_Image_1.pdf"
+      ],
+      "excluded_oversize_entry": {
+        "path": "NIST_FOIA_12-178_Jul_12_2012/FOIA_12-178_NIST_WTC_Investigation_WTCI-120-I.iso_mount/120806_1247/WTCI-000120-I.PDF",
+        "uncompressed_size_bytes": 174233632,
+        "reason": "Above the predeclared small-source cap; the release identity is audited from the official correspondence and DVD label, not from a full drawing payload."
+      }
+    }
+  ],
+  "remote_candidates": [
+    {
+      "candidate_id": "ORIGINAL_1967_175_TIFF",
+      "role": "existing exact-distribution control",
+      "metadata_url": "https://archive.org/metadata/WTC_Architectural_Drawings_Dated_Aug_31_1967",
+      "landing_url": "https://archive.org/details/WTC_Architectural_Drawings_Dated_Aug_31_1967",
+      "declared_file_count": 175,
+      "full_payload_authorized": false
+    },
+    {
+      "candidate_id": "LERA_1984_284_FILES",
+      "role": "alternate architectural record-plan candidate",
+      "landing_capture_url": "https://web.archive.org/web/20170424103333id_/http://www.911datasets.org/index.php/WTC1_Architectural_Drawings_Dated_May_9_1984",
+      "torrent_capture_url": "https://web.archive.org/web/20170424103333id_/http://911datasets.org/images/WTC1_Architectural_Drawings_Dated_May_9_1984.torrent",
+      "declared_file_count": 284,
+      "declared_dataset_bytes": 1224349267,
+      "full_payload_authorized": false
+    },
+    {
+      "candidate_id": "MAY_2009_901_FILES",
+      "role": "alternate architectural and engineering drawing candidate",
+      "landing_capture_url": "https://web.archive.org/web/20170424103325id_/http://www.911datasets.org/index.php/WTC1_Architectural_and_Engineering_Drawings_Released_May_2009",
+      "torrent_capture_url": "https://web.archive.org/web/20170424103325id_/http://911datasets.org/images/WTC1_Architectural_and_Engineering_Drawings_Released_May_27_2009.torrent",
+      "declared_file_count": 901,
+      "declared_dataset_bytes": 418065294,
+      "full_payload_authorized": false
+    },
+    {
+      "candidate_id": "NIST_FY2012_FOIA_LOG",
+      "role": "receipt discriminator and mismatch control",
+      "url": "https://documents.theblackvault.com/documents/foia/NIST-2012.pdf",
+      "classification": "THIRD_PARTY_MIRROR_OF_NIST_FOIA_RESPONSE_AND_LOG",
+      "expected_relevant_record": "DOC-NIST-2012-000501 / 12-178 / WTCI-120 / architectural drawings 1-65",
+      "expected_target_match": false
+    },
+    {
+      "candidate_id": "NIST_FOIA_12_178_RELEASE",
+      "role": "file-level release identity discriminator",
+      "url": "https://archive.org/download/911datasets/NIST_FOIA_12-178_Jul_12_2012.zip",
+      "classification": "THIRD_PARTY_DISTRIBUTION_OF_NIST_FOIA_12_178_RESPONSE_PACKAGE",
+      "expected_document_identity": "WTC 7 Architectural Drawings 1 through 65",
+      "expected_target_match": false
+    }
+  ],
+  "acceptance_policy": {
+    "higher_quality_source_acceptance": "Accept only an actual vector source or a demonstrably lossless raster with more source information than the cached 200 dpi 1-bit plans, containing the relevant floor/core plan and complete printed grid-to-stair endpoints.",
+    "file_level_receipt_acceptance": "Accept only a NIST or FOIA record that names the exact dataset or target files and links them to a documented release; a generic statement, catalogue title, uploader label, or unrelated WTCI record is insufficient.",
+    "numeric_chain_acceptance": "For each of Stair 1, Stair 2 and Stair 3, every digit, unit, extension-line endpoint, grid reference, sheet/floor applicability and revision context must be independently reproducible. All three stairs are required before any model coordinate promotion.",
+    "torrent_name_only_is_geometry": false,
+    "record_drawing_label_alone_is_as_built": false,
+    "lossless_compression_restores_missing_detail": false,
+    "derived_upscale_is_new_source_information": false
+  },
+  "gates": {
+    "regression_hash_count_expected": 10,
+    "cached_core_tiff_count_expected": 4,
+    "remote_candidate_count_expected": 5,
+    "torrent_descriptor_count_expected": 2,
+    "may_2009_full_resolution_exact_cached_match_count_expected": 4,
+    "foia_log_relevant_record_count_expected": 1,
+    "foia_log_exact_target_match_count_expected": 0,
+    "foia_12_178_wtc1_target_match_count_expected": 0,
+    "required_stair_count": 3,
+    "accepted_complete_numeric_chain_count_required_for_geometry": 3,
+    "scan_pixel_coordinate_count_expected": 0,
+    "model_geometry_promoted_record_count_expected": 0,
+    "variant_count_expected": 3,
+    "metric_as_built_solver_geometry_authorized": false,
+    "discrete_mass_authorized": false,
+    "stiffness_authorized": false,
+    "strength_authorized": false,
+    "connection_authorized": false,
+    "load_path_credit_authorized": false,
+    "component_damage_validation_authorized": false,
+    "global_solver_authorized": false,
+    "blender_authorized": false,
+    "blender_physical_validation_authorized": false
+  },
+  "evidence_policy": {
+    "observed_or_transcribed_fact": "File metadata, TIFF tags, torrent file names and sizes, archived landing-page text, and exact FOIA-log wording directly inspected from hashed sources.",
+    "official_model_result": "NIST collection and drawing-database statements remain official documentary context only; V9Y creates no official-model damage result.",
+    "archive_claim": "Archived dataset titles and release labels are claims until an agency receipt or exact record link is verified.",
+    "model_hypothesis": "LOW, BASE and HIGH remain separate display hypotheses inherited without modification.",
+    "derived_result": "Candidate filtering, source-quality classification, receipt-match decision, and geometry-gate decision.",
+    "contradiction_or_unknown": "Whether an unlisted vector original, higher-resolution record plan, or exact NIST/FOIA receipt exists outside the bounded candidates remains unknown."
+  },
+  "outputs": {
+    "figure_directory": "wtc1_simulation_v8/output/v9y_alternate_source_figures",
+    "source_manifest": "wtc1_simulation_v8/output/v9y_alternate_source_manifest.json",
+    "remote_dataset_inventory": "wtc1_simulation_v8/output/v9y_remote_dataset_inventory.json",
+    "foia_receipt_audit": "wtc1_simulation_v8/output/v9y_foia_receipt_audit.json",
+    "source_quality_audit": "wtc1_simulation_v8/output/v9y_source_quality_audit.json",
+    "candidate_matrix_csv": "wtc1_simulation_v8/output/v9y_alternate_source_candidate_matrix.csv",
+    "model_gate": "wtc1_simulation_v8/output/v9y_stairwell_geometry_gate.json",
+    "contact_sheet": "wtc1_simulation_v8/output/v9y_alternate_source_figures/v9y_contact_sheet.png",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v9y_audit_sources_alternatives.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v9y_audit_sources_alternatives.md"
+  },
+  "next_iteration": {
+    "id": "V9Z",
+    "objective_if_geometry_gate_remains_closed": "Preserve V8U through V9Y and formulate a precise, unsent record request to NIST and/or PANYNJ for the native or highest-resolution versions and release documentation of A-A-148, A-A-150, A-A-151 and A-A-153, including revision and drawing-register context. Do not send the request without explicit user authorization. Preserve categorical topology and all zero-credit gates."
+  }
+}

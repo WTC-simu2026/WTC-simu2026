@@ -1,0 +1,966 @@
+{
+  "iteration": "V10D",
+  "generated_at_utc": "2026-08-31T18:05:00Z",
+  "validation_status": "PASS",
+  "policy": {
+    "allowed_scheme": "https",
+    "allowed_exact_host": "archive.org",
+    "allowed_host_suffix": ".archive.org",
+    "maximum_redirects_per_request": 5,
+    "maximum_requests_per_target": 3,
+    "maximum_total_requests": 27,
+    "request_timeout_seconds": 30,
+    "user_agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+    "accept_encoding": "identity",
+    "preflight_method": "HEAD_THEN_OPTIONAL_BYTES_0_7_RANGE_ONLY_IF_LENGTH_UNAVAILABLE_OR_HEAD_UNSUPPORTED",
+    "range_probe": "bytes=0-7",
+    "range_probe_maximum_body_bytes_read": 8,
+    "require_known_positive_payload_length_before_full_get": true,
+    "require_exact_case_insensitive_terminal_filename": true,
+    "maximum_individual_payload_bytes": 16777216,
+    "maximum_aggregate_full_get_payload_bytes": 67108864,
+    "maximum_aggregate_accepted_payload_bytes": 67108864,
+    "require_pdf_signature": "%PDF-",
+    "full_get_status_required": 200,
+    "transport_failure_or_identity_rejection_semantics": "A transport failure or identity rejection is a documented bounded result, not by itself a validation failure. Validation PASS requires that no unauthorized endpoint, payload, write, cap breach or physical promotion occurred and that every accepted copy passed all identity, hash and container gates."
+  },
+  "actual": {
+    "target_count": 9,
+    "request_count": 18,
+    "request_count_by_target": {
+      "WTCI-000013-L": 2,
+      "WTCI-000020-L": 2,
+      "WTCI-000702-L": 2,
+      "WTCI-000703-L": 2,
+      "WTCI-000705-L": 2,
+      "WTCI-000709-L": 2,
+      "WTCI-000710-L": 2,
+      "WTCI-000721-L": 2,
+      "WTCI-000722-L": 2
+    },
+    "redirect_count": 18,
+    "policy_violation_count": 0,
+    "range_probe_body_bytes": 0,
+    "full_get_body_bytes": 51942112,
+    "all_request_body_bytes": 51942112,
+    "aggregate_preflight_reserved_bytes": 51942112,
+    "accepted_payload_bytes": 51942112,
+    "accepted_payload_count": 9,
+    "transport_unavailable_count": 0,
+    "rejected_or_unavailable_count": 0
+  },
+  "preflight_rows": [
+    {
+      "document_id": "WTCI-000013-L",
+      "expected_filename": "WTCI-000013-L.pdf",
+      "register_hyperlink": "https://archive.org/download/WTCI000013L/WTCI-000013-L.pdf",
+      "preflight_status": "PREFLIGHT_ELIGIBLE",
+      "preflight_method_used": "HEAD",
+      "preflight_final_url": "https://dn721502.ca.archive.org/0/items/WTCI000013L/WTCI-000013-L.pdf",
+      "preflight_terminal_filename": "WTCI-000013-L.pdf",
+      "preflight_terminal_filename_matches": true,
+      "preflight_content_length_bytes": 10931974,
+      "preflight_content_encoding_identity": true,
+      "range_probe_body_hex": null,
+      "range_probe_pdf_signature_observed": null,
+      "full_get_authorized": true,
+      "aggregate_reserved_bytes": 10931974
+    },
+    {
+      "document_id": "WTCI-000710-L",
+      "expected_filename": "WTCI-000710-L.pdf",
+      "register_hyperlink": "https://ia801502.us.archive.org/34/items/WTCI000016L/Drawing%20Book%205/Book%205/WTCI-000710-L.pdf",
+      "preflight_status": "PREFLIGHT_ELIGIBLE",
+      "preflight_method_used": "HEAD",
+      "preflight_final_url": "https://ia601508.us.archive.org/4/items/WTCI000016L/Drawing%20Book%205/Book%205/WTCI-000710-L.pdf",
+      "preflight_terminal_filename": "WTCI-000710-L.pdf",
+      "preflight_terminal_filename_matches": true,
+      "preflight_content_length_bytes": 2942365,
+      "preflight_content_encoding_identity": true,
+      "range_probe_body_hex": null,
+      "range_probe_pdf_signature_observed": null,
+      "full_get_authorized": true,
+      "aggregate_reserved_bytes": 2942365
+    },
+    {
+      "document_id": "WTCI-000020-L",
+      "expected_filename": "WTCI-000020-L.pdf",
+      "register_hyperlink": "https://ia801405.us.archive.org/21/items/WTCI000020L/Drawing%20Book%206/WTCI-000020-L.pdf",
+      "preflight_status": "PREFLIGHT_ELIGIBLE",
+      "preflight_method_used": "HEAD",
+      "preflight_final_url": "https://ia601601.us.archive.org/19/items/WTCI000020L/Drawing%20Book%206/WTCI-000020-L.pdf",
+      "preflight_terminal_filename": "WTCI-000020-L.pdf",
+      "preflight_terminal_filename_matches": true,
+      "preflight_content_length_bytes": 13437622,
+      "preflight_content_encoding_identity": true,
+      "range_probe_body_hex": null,
+      "range_probe_pdf_signature_observed": null,
+      "full_get_authorized": true,
+      "aggregate_reserved_bytes": 13437622
+    },
+    {
+      "document_id": "WTCI-000702-L",
+      "expected_filename": "WTCI-000702-L.pdf",
+      "register_hyperlink": "https://ia601507.us.archive.org/21/items/WTCI000131L002/Drawing%20Book%207/WTCI-000702-L.PDF",
+      "preflight_status": "PREFLIGHT_ELIGIBLE",
+      "preflight_method_used": "HEAD",
+      "preflight_final_url": "https://ia800707.us.archive.org/30/items/WTCI000131L002/Drawing%20Book%207/WTCI-000702-L.PDF",
+      "preflight_terminal_filename": "WTCI-000702-L.PDF",
+      "preflight_terminal_filename_matches": true,
+      "preflight_content_length_bytes": 5045534,
+      "preflight_content_encoding_identity": true,
+      "range_probe_body_hex": null,
+      "range_probe_pdf_signature_observed": null,
+      "full_get_authorized": true,
+      "aggregate_reserved_bytes": 5045534
+    },
+    {
+      "document_id": "WTCI-000703-L",
+      "expected_filename": "WTCI-000703-L.pdf",
+      "register_hyperlink": "https://ia801401.us.archive.org/27/items/WTCI001067L/Drawing%20Book%208/WTCI-000703-L.pdf",
+      "preflight_status": "PREFLIGHT_ELIGIBLE",
+      "preflight_method_used": "HEAD",
+      "preflight_final_url": "https://ia800501.us.archive.org/27/items/WTCI001067L/Drawing%20Book%208/WTCI-000703-L.pdf",
+      "preflight_terminal_filename": "WTCI-000703-L.pdf",
+      "preflight_terminal_filename_matches": true,
+      "preflight_content_length_bytes": 7737091,
+      "preflight_content_encoding_identity": true,
+      "range_probe_body_hex": null,
+      "range_probe_pdf_signature_observed": null,
+      "full_get_authorized": true,
+      "aggregate_reserved_bytes": 7737091
+    },
+    {
+      "document_id": "WTCI-000705-L",
+      "expected_filename": "WTCI-000705-L.pdf",
+      "register_hyperlink": "https://ia801505.us.archive.org/17/items/WTCI000033L/Drawing%20Book%2011/WTCI-000705-L.pdf",
+      "preflight_status": "PREFLIGHT_ELIGIBLE",
+      "preflight_method_used": "HEAD",
+      "preflight_final_url": "https://ia601606.us.archive.org/26/items/WTCI000033L/Drawing%20Book%2011/WTCI-000705-L.pdf",
+      "preflight_terminal_filename": "WTCI-000705-L.pdf",
+      "preflight_terminal_filename_matches": true,
+      "preflight_content_length_bytes": 1818245,
+      "preflight_content_encoding_identity": true,
+      "range_probe_body_hex": null,
+      "range_probe_pdf_signature_observed": null,
+      "full_get_authorized": true,
+      "aggregate_reserved_bytes": 1818245
+    },
+    {
+      "document_id": "WTCI-000721-L",
+      "expected_filename": "WTCI-000721-L.pdf",
+      "register_hyperlink": "https://archive.org/download/WTCI000721L/Drawing%20Book%201/Book%201/WTCI-000721-L.pdf",
+      "preflight_status": "PREFLIGHT_ELIGIBLE",
+      "preflight_method_used": "HEAD",
+      "preflight_final_url": "https://dn760108.eu.archive.org/0/items/WTCI000721L/Drawing%20Book%201/Book%201/WTCI-000721-L.pdf",
+      "preflight_terminal_filename": "WTCI-000721-L.pdf",
+      "preflight_terminal_filename_matches": true,
+      "preflight_content_length_bytes": 3545664,
+      "preflight_content_encoding_identity": true,
+      "range_probe_body_hex": null,
+      "range_probe_pdf_signature_observed": null,
+      "full_get_authorized": true,
+      "aggregate_reserved_bytes": 3545664
+    },
+    {
+      "document_id": "WTCI-000722-L",
+      "expected_filename": "WTCI-000722-L.pdf",
+      "register_hyperlink": "https://archive.org/download/WTCI000722L/Drawing%20Book%202/Book%202/WTCI-000722-L.pdf",
+      "preflight_status": "PREFLIGHT_ELIGIBLE",
+      "preflight_method_used": "HEAD",
+      "preflight_final_url": "https://dn760109.eu.archive.org/0/items/WTCI000722L/Drawing%20Book%202/Book%202/WTCI-000722-L.pdf",
+      "preflight_terminal_filename": "WTCI-000722-L.pdf",
+      "preflight_terminal_filename_matches": true,
+      "preflight_content_length_bytes": 2543908,
+      "preflight_content_encoding_identity": true,
+      "range_probe_body_hex": null,
+      "range_probe_pdf_signature_observed": null,
+      "full_get_authorized": true,
+      "aggregate_reserved_bytes": 2543908
+    },
+    {
+      "document_id": "WTCI-000709-L",
+      "expected_filename": "WTCI-000709-L.pdf",
+      "register_hyperlink": "https://archive.org/download/WTCI000017L/Drawing%20Book%204/WTCI-000709-L.pdf",
+      "preflight_status": "PREFLIGHT_ELIGIBLE",
+      "preflight_method_used": "HEAD",
+      "preflight_final_url": "https://dn760007.eu.archive.org/0/items/WTCI000017L/Drawing%20Book%204/WTCI-000709-L.pdf",
+      "preflight_terminal_filename": "WTCI-000709-L.pdf",
+      "preflight_terminal_filename_matches": true,
+      "preflight_content_length_bytes": 3939709,
+      "preflight_content_encoding_identity": true,
+      "range_probe_body_hex": null,
+      "range_probe_pdf_signature_observed": null,
+      "full_get_authorized": true,
+      "aggregate_reserved_bytes": 3939709
+    }
+  ],
+  "requests": [
+    {
+      "request_sequence": 1,
+      "document_id": "WTCI-000013-L",
+      "method": "HEAD",
+      "purpose": "REMOTE_IDENTITY_AND_SIZE_PREFLIGHT",
+      "initial_url": "https://archive.org/download/WTCI000013L/WTCI-000013-L.pdf",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://dn721502.ca.archive.org/0/items/WTCI000013L/WTCI-000013-L.pdf",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000013-L.pdf",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 302,
+          "from_url": "https://archive.org/download/WTCI000013L/WTCI-000013-L.pdf",
+          "to_url": "https://dn721502.ca.archive.org/0/items/WTCI000013L/WTCI-000013-L.pdf",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "10931974",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5cb1870b-a6cf06\"",
+        "Last-Modified": "Sat, 13 Apr 2019 06:51:55 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 0,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "elapsed_seconds": 2.964
+    },
+    {
+      "request_sequence": 2,
+      "document_id": "WTCI-000710-L",
+      "method": "HEAD",
+      "purpose": "REMOTE_IDENTITY_AND_SIZE_PREFLIGHT",
+      "initial_url": "https://ia801502.us.archive.org/34/items/WTCI000016L/Drawing%20Book%205/Book%205/WTCI-000710-L.pdf",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://ia601508.us.archive.org/4/items/WTCI000016L/Drawing%20Book%205/Book%205/WTCI-000710-L.pdf",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000710-L.pdf",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 301,
+          "from_url": "https://ia801502.us.archive.org/34/items/WTCI000016L/Drawing%20Book%205/Book%205/WTCI-000710-L.pdf",
+          "to_url": "https://ia601508.us.archive.org/4/items/WTCI000016L/Drawing%20Book%205/Book%205/WTCI-000710-L.pdf",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "2942365",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5cb240a6-2ce59d\"",
+        "Last-Modified": "Sat, 13 Apr 2019 20:03:50 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 0,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "elapsed_seconds": 1.851
+    },
+    {
+      "request_sequence": 3,
+      "document_id": "WTCI-000020-L",
+      "method": "HEAD",
+      "purpose": "REMOTE_IDENTITY_AND_SIZE_PREFLIGHT",
+      "initial_url": "https://ia801405.us.archive.org/21/items/WTCI000020L/Drawing%20Book%206/WTCI-000020-L.pdf",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://ia601601.us.archive.org/19/items/WTCI000020L/Drawing%20Book%206/WTCI-000020-L.pdf",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000020-L.pdf",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 301,
+          "from_url": "https://ia801405.us.archive.org/21/items/WTCI000020L/Drawing%20Book%206/WTCI-000020-L.pdf",
+          "to_url": "https://ia601601.us.archive.org/19/items/WTCI000020L/Drawing%20Book%206/WTCI-000020-L.pdf",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "13437622",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5cb1c31e-cd0ab6\"",
+        "Last-Modified": "Sat, 13 Apr 2019 11:08:14 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 0,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "elapsed_seconds": 5.485
+    },
+    {
+      "request_sequence": 4,
+      "document_id": "WTCI-000702-L",
+      "method": "HEAD",
+      "purpose": "REMOTE_IDENTITY_AND_SIZE_PREFLIGHT",
+      "initial_url": "https://ia601507.us.archive.org/21/items/WTCI000131L002/Drawing%20Book%207/WTCI-000702-L.PDF",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://ia800707.us.archive.org/30/items/WTCI000131L002/Drawing%20Book%207/WTCI-000702-L.PDF",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000702-L.PDF",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 301,
+          "from_url": "https://ia601507.us.archive.org/21/items/WTCI000131L002/Drawing%20Book%207/WTCI-000702-L.PDF",
+          "to_url": "https://ia800707.us.archive.org/30/items/WTCI000131L002/Drawing%20Book%207/WTCI-000702-L.PDF",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "5045534",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5cb26a45-4cfd1e\"",
+        "Last-Modified": "Sat, 13 Apr 2019 23:01:25 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 0,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "elapsed_seconds": 3.119
+    },
+    {
+      "request_sequence": 5,
+      "document_id": "WTCI-000703-L",
+      "method": "HEAD",
+      "purpose": "REMOTE_IDENTITY_AND_SIZE_PREFLIGHT",
+      "initial_url": "https://ia801401.us.archive.org/27/items/WTCI001067L/Drawing%20Book%208/WTCI-000703-L.pdf",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://ia800501.us.archive.org/27/items/WTCI001067L/Drawing%20Book%208/WTCI-000703-L.pdf",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000703-L.pdf",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 301,
+          "from_url": "https://ia801401.us.archive.org/27/items/WTCI001067L/Drawing%20Book%208/WTCI-000703-L.pdf",
+          "to_url": "https://ia800501.us.archive.org/27/items/WTCI001067L/Drawing%20Book%208/WTCI-000703-L.pdf",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "7737091",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5cb20a5b-760f03\"",
+        "Last-Modified": "Sat, 13 Apr 2019 16:12:11 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 0,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "elapsed_seconds": 2.722
+    },
+    {
+      "request_sequence": 6,
+      "document_id": "WTCI-000705-L",
+      "method": "HEAD",
+      "purpose": "REMOTE_IDENTITY_AND_SIZE_PREFLIGHT",
+      "initial_url": "https://ia801505.us.archive.org/17/items/WTCI000033L/Drawing%20Book%2011/WTCI-000705-L.pdf",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://ia601606.us.archive.org/26/items/WTCI000033L/Drawing%20Book%2011/WTCI-000705-L.pdf",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000705-L.pdf",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 301,
+          "from_url": "https://ia801505.us.archive.org/17/items/WTCI000033L/Drawing%20Book%2011/WTCI-000705-L.pdf",
+          "to_url": "https://ia601606.us.archive.org/26/items/WTCI000033L/Drawing%20Book%2011/WTCI-000705-L.pdf",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "1818245",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5cb1a868-1bbe85\"",
+        "Last-Modified": "Sat, 13 Apr 2019 09:14:16 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 0,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "elapsed_seconds": 2.337
+    },
+    {
+      "request_sequence": 7,
+      "document_id": "WTCI-000721-L",
+      "method": "HEAD",
+      "purpose": "REMOTE_IDENTITY_AND_SIZE_PREFLIGHT",
+      "initial_url": "https://archive.org/download/WTCI000721L/Drawing%20Book%201/Book%201/WTCI-000721-L.pdf",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://dn760108.eu.archive.org/0/items/WTCI000721L/Drawing%20Book%201/Book%201/WTCI-000721-L.pdf",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000721-L.pdf",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 302,
+          "from_url": "https://archive.org/download/WTCI000721L/Drawing%20Book%201/Book%201/WTCI-000721-L.pdf",
+          "to_url": "https://dn760108.eu.archive.org/0/items/WTCI000721L/Drawing%20Book%201/Book%201/WTCI-000721-L.pdf",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "3545664",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5c9ce3d4-361a40\"",
+        "Last-Modified": "Thu, 28 Mar 2019 15:10:12 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 0,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "elapsed_seconds": 2.518
+    },
+    {
+      "request_sequence": 8,
+      "document_id": "WTCI-000722-L",
+      "method": "HEAD",
+      "purpose": "REMOTE_IDENTITY_AND_SIZE_PREFLIGHT",
+      "initial_url": "https://archive.org/download/WTCI000722L/Drawing%20Book%202/Book%202/WTCI-000722-L.pdf",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://dn760109.eu.archive.org/0/items/WTCI000722L/Drawing%20Book%202/Book%202/WTCI-000722-L.pdf",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000722-L.pdf",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 302,
+          "from_url": "https://archive.org/download/WTCI000722L/Drawing%20Book%202/Book%202/WTCI-000722-L.pdf",
+          "to_url": "https://dn760109.eu.archive.org/0/items/WTCI000722L/Drawing%20Book%202/Book%202/WTCI-000722-L.pdf",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "2543908",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5c9ce6ac-26d124\"",
+        "Last-Modified": "Thu, 28 Mar 2019 15:22:20 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 0,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "elapsed_seconds": 2.675
+    },
+    {
+      "request_sequence": 9,
+      "document_id": "WTCI-000709-L",
+      "method": "HEAD",
+      "purpose": "REMOTE_IDENTITY_AND_SIZE_PREFLIGHT",
+      "initial_url": "https://archive.org/download/WTCI000017L/Drawing%20Book%204/WTCI-000709-L.pdf",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://dn760007.eu.archive.org/0/items/WTCI000017L/Drawing%20Book%204/WTCI-000709-L.pdf",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000709-L.pdf",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 302,
+          "from_url": "https://archive.org/download/WTCI000017L/Drawing%20Book%204/WTCI-000709-L.pdf",
+          "to_url": "https://dn760007.eu.archive.org/0/items/WTCI000017L/Drawing%20Book%204/WTCI-000709-L.pdf",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "3939709",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5cb2d114-3c1d7d\"",
+        "Last-Modified": "Sun, 14 Apr 2019 06:20:04 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 0,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "elapsed_seconds": 3.009
+    },
+    {
+      "request_sequence": 10,
+      "document_id": "WTCI-000013-L",
+      "method": "GET",
+      "purpose": "FULL_PDF_ACQUISITION",
+      "initial_url": "https://archive.org/download/WTCI000013L/WTCI-000013-L.pdf",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://dn721502.ca.archive.org/0/items/WTCI000013L/WTCI-000013-L.pdf",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000013-L.pdf",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 302,
+          "from_url": "https://archive.org/download/WTCI000013L/WTCI-000013-L.pdf",
+          "to_url": "https://dn721502.ca.archive.org/0/items/WTCI000013L/WTCI-000013-L.pdf",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "10931974",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5cb1870b-a6cf06\"",
+        "Last-Modified": "Sat, 13 Apr 2019 06:51:55 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 10931974,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "body_sha256": "71af7590da92369160aaa935b32b36610df28d754c7a16af6cfe944155fff016",
+      "elapsed_seconds": 3.786
+    },
+    {
+      "request_sequence": 11,
+      "document_id": "WTCI-000710-L",
+      "method": "GET",
+      "purpose": "FULL_PDF_ACQUISITION",
+      "initial_url": "https://ia801502.us.archive.org/34/items/WTCI000016L/Drawing%20Book%205/Book%205/WTCI-000710-L.pdf",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://ia801508.us.archive.org/4/items/WTCI000016L/Drawing%20Book%205/Book%205/WTCI-000710-L.pdf",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000710-L.pdf",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 301,
+          "from_url": "https://ia801502.us.archive.org/34/items/WTCI000016L/Drawing%20Book%205/Book%205/WTCI-000710-L.pdf",
+          "to_url": "https://ia801508.us.archive.org/4/items/WTCI000016L/Drawing%20Book%205/Book%205/WTCI-000710-L.pdf",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "2942365",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5cb240a6-2ce59d\"",
+        "Last-Modified": "Sat, 13 Apr 2019 20:03:50 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 2942365,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "body_sha256": "0f4c63f9c9204a6181135546d8f2707ab408230ccbcb1f366f42aa6472c52418",
+      "elapsed_seconds": 2.167
+    },
+    {
+      "request_sequence": 12,
+      "document_id": "WTCI-000020-L",
+      "method": "GET",
+      "purpose": "FULL_PDF_ACQUISITION",
+      "initial_url": "https://ia801405.us.archive.org/21/items/WTCI000020L/Drawing%20Book%206/WTCI-000020-L.pdf",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://ia801601.us.archive.org/19/items/WTCI000020L/Drawing%20Book%206/WTCI-000020-L.pdf",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000020-L.pdf",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 301,
+          "from_url": "https://ia801405.us.archive.org/21/items/WTCI000020L/Drawing%20Book%206/WTCI-000020-L.pdf",
+          "to_url": "https://ia801601.us.archive.org/19/items/WTCI000020L/Drawing%20Book%206/WTCI-000020-L.pdf",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "13437622",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5cb1c31e-cd0ab6\"",
+        "Last-Modified": "Sat, 13 Apr 2019 11:08:14 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 13437622,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "body_sha256": "0487e4d25e2d00c1db57deba8b5b027f2a79a8d1a1acee3ca0af970733e96671",
+      "elapsed_seconds": 11.978
+    },
+    {
+      "request_sequence": 13,
+      "document_id": "WTCI-000702-L",
+      "method": "GET",
+      "purpose": "FULL_PDF_ACQUISITION",
+      "initial_url": "https://ia601507.us.archive.org/21/items/WTCI000131L002/Drawing%20Book%207/WTCI-000702-L.PDF",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://ia800707.us.archive.org/30/items/WTCI000131L002/Drawing%20Book%207/WTCI-000702-L.PDF",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000702-L.PDF",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 301,
+          "from_url": "https://ia601507.us.archive.org/21/items/WTCI000131L002/Drawing%20Book%207/WTCI-000702-L.PDF",
+          "to_url": "https://ia800707.us.archive.org/30/items/WTCI000131L002/Drawing%20Book%207/WTCI-000702-L.PDF",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "5045534",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5cb26a45-4cfd1e\"",
+        "Last-Modified": "Sat, 13 Apr 2019 23:01:25 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 5045534,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "body_sha256": "b8f5caeafb7d5cb7550a19eeddc8716262d28e51d5e0b6b8ebb75d114c38dc03",
+      "elapsed_seconds": 2.674
+    },
+    {
+      "request_sequence": 14,
+      "document_id": "WTCI-000703-L",
+      "method": "GET",
+      "purpose": "FULL_PDF_ACQUISITION",
+      "initial_url": "https://ia801401.us.archive.org/27/items/WTCI001067L/Drawing%20Book%208/WTCI-000703-L.pdf",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://ia600501.us.archive.org/27/items/WTCI001067L/Drawing%20Book%208/WTCI-000703-L.pdf",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000703-L.pdf",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 301,
+          "from_url": "https://ia801401.us.archive.org/27/items/WTCI001067L/Drawing%20Book%208/WTCI-000703-L.pdf",
+          "to_url": "https://ia600501.us.archive.org/27/items/WTCI001067L/Drawing%20Book%208/WTCI-000703-L.pdf",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "7737091",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5cb20a5b-760f03\"",
+        "Last-Modified": "Sat, 13 Apr 2019 16:12:11 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 7737091,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "body_sha256": "3d54a59f3f1908a02795908c9cd080dcbfe2b42eb8b4649a27392c486c86a37a",
+      "elapsed_seconds": 2.798
+    },
+    {
+      "request_sequence": 15,
+      "document_id": "WTCI-000705-L",
+      "method": "GET",
+      "purpose": "FULL_PDF_ACQUISITION",
+      "initial_url": "https://ia801505.us.archive.org/17/items/WTCI000033L/Drawing%20Book%2011/WTCI-000705-L.pdf",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://ia801606.us.archive.org/26/items/WTCI000033L/Drawing%20Book%2011/WTCI-000705-L.pdf",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000705-L.pdf",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 301,
+          "from_url": "https://ia801505.us.archive.org/17/items/WTCI000033L/Drawing%20Book%2011/WTCI-000705-L.pdf",
+          "to_url": "https://ia801606.us.archive.org/26/items/WTCI000033L/Drawing%20Book%2011/WTCI-000705-L.pdf",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "1818245",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5cb1a868-1bbe85\"",
+        "Last-Modified": "Sat, 13 Apr 2019 09:14:16 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 1818245,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "body_sha256": "d20f14ae1640ca4d54f4065c1693fbbd4d693399498e3deacba586b2a3c537e0",
+      "elapsed_seconds": 2.026
+    },
+    {
+      "request_sequence": 16,
+      "document_id": "WTCI-000721-L",
+      "method": "GET",
+      "purpose": "FULL_PDF_ACQUISITION",
+      "initial_url": "https://archive.org/download/WTCI000721L/Drawing%20Book%201/Book%201/WTCI-000721-L.pdf",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://dn760108.eu.archive.org/0/items/WTCI000721L/Drawing%20Book%201/Book%201/WTCI-000721-L.pdf",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000721-L.pdf",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 302,
+          "from_url": "https://archive.org/download/WTCI000721L/Drawing%20Book%201/Book%201/WTCI-000721-L.pdf",
+          "to_url": "https://dn760108.eu.archive.org/0/items/WTCI000721L/Drawing%20Book%201/Book%201/WTCI-000721-L.pdf",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "3545664",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5c9ce3d4-361a40\"",
+        "Last-Modified": "Thu, 28 Mar 2019 15:10:12 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 3545664,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "body_sha256": "9ececf939f02250e000ab33205d6fec20c5f097b6e7357f4814399eac27cb828",
+      "elapsed_seconds": 1.902
+    },
+    {
+      "request_sequence": 17,
+      "document_id": "WTCI-000722-L",
+      "method": "GET",
+      "purpose": "FULL_PDF_ACQUISITION",
+      "initial_url": "https://archive.org/download/WTCI000722L/Drawing%20Book%202/Book%202/WTCI-000722-L.pdf",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://ia601400.us.archive.org/2/items/WTCI000722L/Drawing%20Book%202/Book%202/WTCI-000722-L.pdf",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000722-L.pdf",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 302,
+          "from_url": "https://archive.org/download/WTCI000722L/Drawing%20Book%202/Book%202/WTCI-000722-L.pdf",
+          "to_url": "https://ia601400.us.archive.org/2/items/WTCI000722L/Drawing%20Book%202/Book%202/WTCI-000722-L.pdf",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "2543908",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5c9ce6ac-26d124\"",
+        "Last-Modified": "Thu, 28 Mar 2019 15:22:20 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 2543908,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "body_sha256": "9ec4b7b220c98256d3fba67d3ee1f41f8ea3363312c93faafe6a4cf439070527",
+      "elapsed_seconds": 2.273
+    },
+    {
+      "request_sequence": 18,
+      "document_id": "WTCI-000709-L",
+      "method": "GET",
+      "purpose": "FULL_PDF_ACQUISITION",
+      "initial_url": "https://archive.org/download/WTCI000017L/Drawing%20Book%204/WTCI-000709-L.pdf",
+      "initial_url_exact_register_hyperlink": true,
+      "initial_url_allowed_https_archive_org_host": true,
+      "request_headers": {
+        "User-Agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+        "Accept": "application/pdf",
+        "Accept-Encoding": "identity",
+        "Connection": "close"
+      },
+      "response_status": 200,
+      "final_url": "https://dn710709.ca.archive.org/0/items/WTCI000017L/Drawing%20Book%204/WTCI-000709-L.pdf",
+      "final_url_allowed_https_archive_org_host": true,
+      "terminal_filename": "WTCI-000709-L.pdf",
+      "terminal_filename_matches_expected": true,
+      "redirect_chain": [
+        {
+          "status_code": 302,
+          "from_url": "https://archive.org/download/WTCI000017L/Drawing%20Book%204/WTCI-000709-L.pdf",
+          "to_url": "https://dn710709.ca.archive.org/0/items/WTCI000017L/Drawing%20Book%204/WTCI-000709-L.pdf",
+          "allowed_https_archive_org_host": true
+        }
+      ],
+      "response_headers": {
+        "Content-Length": "3939709",
+        "Content-Type": "application/pdf",
+        "Content-Range": null,
+        "Content-Encoding": null,
+        "ETag": "\"5cb2d114-3c1d7d\"",
+        "Last-Modified": "Sun, 14 Apr 2019 06:20:04 GMT",
+        "Accept-Ranges": "bytes"
+      },
+      "body_bytes_read": 3939709,
+      "policy_violation": false,
+      "error_type": null,
+      "error": null,
+      "body_sha256": "0568fdf310455ed543299b0eca5994d037fbcef37c26029e512a44a39e57a2d9",
+      "elapsed_seconds": 2.812
+    }
+  ],
+  "qualification": "Only the nine exact V10C register hyperlinks were used as initial request URLs. Server redirects were allowed only to HTTPS Archive.org hosts. HTTP headers and endpoint strings are remote response claims, not provenance or as-built validation."
+}

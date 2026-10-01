@@ -1,0 +1,170 @@
+{
+  "dataset": {
+    "name": "WTC 1 V8U OpenRadioss facade-impact qualification submodel",
+    "version": "8.20.0",
+    "status": "SOURCE_TRACEABLE_SURROGATE_NOT_A_WTC_IMPACT_REPRODUCTION",
+    "random_seed": 9112001,
+    "deterministic": true,
+    "scope": "Qualify a moving rigid-sphere contact against a small shell facade surrogate, with WTC-adjacent steel data, explicit failure-strain sensitivity, mesh convergence, energy audit, and 1-versus-4-thread repeatability. This is not a JT9D model, a full exterior-wall panel, a fuel-wing calculation, a global WTC impact, a fire calculation, an initiation calculation, or a collapse calculation."
+  },
+  "evidence_policy": {
+    "observed_fact": "Directly read from a cited source file or solver output.",
+    "official_model_result": "A value reported by a NIST or Altair numerical model; it is not an observation of the real event.",
+    "local_archive_claim": "A statement from the read-only archive; none is used as a physical input in V8U.",
+    "model_hypothesis": "A declared simplification or parameter without an exact source for the modeled location.",
+    "derived_result": "A deterministic calculation from the declared inputs and solver outputs.",
+    "unknown": "A missing value or physical capability not qualified by V8U."
+  },
+  "units": {
+    "mass": "g",
+    "length": "mm",
+    "time": "ms",
+    "stress": "MPa",
+    "velocity": "mm/ms",
+    "energy_solver": "g*mm^2/ms^2",
+    "energy_solver_to_joule": 0.001
+  },
+  "sources": [
+    {
+      "id": "NIST_NCSTAR_1_6C",
+      "path": "work/official_sources/ncstar1-6c.pdf",
+      "classification": "official_source",
+      "pages_pdf": [44, 63],
+      "uses": [
+        "59 perimeter box columns per face",
+        "nominal 14 in square column width",
+        "40 in column spacing",
+        "52 in spandrel height",
+        "three-column by three-story prefabricated panel description",
+        "Material 14 room-temperature yield and tensile strengths"
+      ]
+    },
+    {
+      "id": "NIST_NCSTAR_1_3D",
+      "path": "work/official_sources/ncstar1-3d.pdf",
+      "classification": "official_source",
+      "pages_pdf": [118, 119, 128, 232],
+      "uses": [
+        "WTC 1 N8 recovered 60 ksi perimeter-column plate near floors 97-100",
+        "5/16 in nearby flange thickness",
+        "60 ksi longitudinal strain-rate exponent m=0.0160 +/- 0.0033",
+        "stress-strain curve used only to bound the approximate strain at tensile strength"
+      ]
+    },
+    {
+      "id": "NIST_NCSTAR_1_2B_V1",
+      "path": "work/official_sources/ncstar1-2bv1.pdf",
+      "classification": "official_source",
+      "pages_pdf": [202, 204, 205, 215, 218, 220],
+      "uses": [
+        "engine impact centered on panel 124 at floor 96",
+        "500 mph component example and 433 mph residual engine-core result",
+        "56 mph speed reduction between spandrels",
+        "74 mph speed reduction with splice plates",
+        "20 percent failure-strain threshold shown in the example",
+        "reported mesh/failure coupling in wing-panel component analyses"
+      ]
+    },
+    {
+      "id": "ALTAIR_RD_E_2602",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/ruptured_plate_ductile_failure_model_example_r.htm",
+      "local_download": "tmp/v8u/RD-E-2602_Ductile.zip",
+      "classification": "official_solver_example",
+      "uses": [
+        "moving rigid sphere syntax",
+        "QEPH shell formulation with five through-thickness integration points",
+        "LAW2 failure-model qualification pattern"
+      ]
+    },
+    {
+      "id": "V8S_MASS_LEDGER",
+      "path": "wtc1_simulation_v8/data/v8s_wtc1_aircraft_impact_replay.json",
+      "classification": "prior_derived_input",
+      "uses": [
+        "20,100 lb for two engines with cowlings; V8U uses one half as a representative mass"
+      ]
+    }
+  ],
+  "geometry": {
+    "model_type": "three closed square shell columns joined by a continuous one-story spandrel strip",
+    "column_centers_x_mm": [-1016.0, 0.0, 1016.0],
+    "column_width_mm": 355.6,
+    "column_depth_mm": 355.6,
+    "story_height_mm": 3657.6,
+    "panel_width_mm": 4064.0,
+    "spandrel_height_mm": 1320.8,
+    "column_shell_thickness_mm": 7.9375,
+    "spandrel_shell_thickness_mm": 9.525,
+    "boundary_condition": "all translational and rotational degrees of freedom fixed at top and bottom column-edge nodes",
+    "weld_representation": "shared shell nodes at column-spandrel boundaries; no explicit weld, bolt, splice plate, floor slab, or truss-seat model",
+    "epistemic_status": "model_hypothesis",
+    "limitations": [
+      "The exact plate schedule for panel 124 at floor 96 is not present in the frozen local source set.",
+      "The 5/16 in flange and 3/8 in spandrel values are nearby/recovered representative values, not a recovered panel-124 schedule.",
+      "The closed-square shell construction is a qualification surrogate and is not an exact reconstruction of the fabricated perimeter-column cross-section."
+    ]
+  },
+  "material": {
+    "law": "/MAT/PLAS_JOHNS (LAW2), simplified UTS input",
+    "density_g_per_mm3": 0.00786,
+    "young_modulus_mpa": 200000.0,
+    "poisson_ratio": 0.3,
+    "yield_strength_mpa": 427.656,
+    "ultimate_tensile_strength_mpa": 601.566,
+    "engineering_strain_at_uts": 0.15,
+    "engineering_strain_at_uts_status": "approximate digitization/bounding choice from NIST Figure A-8; not tabulated",
+    "rate_coefficient_c": 0.016,
+    "reference_strain_rate_per_ms": 0.001,
+    "rate_formulation": "Johnson-Cook logarithmic multiplier in LAW2; plastic strain-rate flag",
+    "thermal_softening": "disabled",
+    "failure_plastic_strain_cases": [0.1, 0.2, 0.3],
+    "failure_status": "mesh-dependent hypothesis range; 0.20 is shown in the NIST component example but is not a measured panel-124 fracture law"
+  },
+  "projectile": {
+    "type": "/RWALL/SPHER moving rigid sphere",
+    "diameter_mm": 1000.0,
+    "mass_g": 4558603.3185,
+    "mass_origin": "one half of 20,100 lb engines-with-cowlings ledger",
+    "initial_velocity_z_mm_per_ms": -198.03072,
+    "initial_speed_mph": 443.0,
+    "impact_location": "centered on the middle column and middle of the spandrel strip",
+    "epistemic_status": "model_hypothesis",
+    "limitations": [
+      "Rigid sphere rather than a deformable JT9D engine/cowling assembly.",
+      "Diameter is a declared 1.0 m contact surrogate, not a sourced engine-core diameter.",
+      "No rotating machinery, breakup, wing, fuel, fuselage, pitch, yaw, or oblique trajectory."
+    ]
+  },
+  "cases": [
+    {"id": "M100_E020_T1", "mesh_target_mm": 100.0, "failure_strain": 0.2, "threads": 1, "role": "mesh_coarse"},
+    {"id": "M050_E020_T1", "mesh_target_mm": 50.0, "failure_strain": 0.2, "threads": 1, "role": "mesh_medium_baseline"},
+    {"id": "M025_E020_T1", "mesh_target_mm": 25.0, "failure_strain": 0.2, "threads": 1, "role": "mesh_fine"},
+    {"id": "M050_E010_T1", "mesh_target_mm": 50.0, "failure_strain": 0.1, "threads": 1, "role": "failure_low"},
+    {"id": "M050_E030_T1", "mesh_target_mm": 50.0, "failure_strain": 0.3, "threads": 1, "role": "failure_high"},
+    {"id": "M050_E020_T4", "mesh_target_mm": 50.0, "failure_strain": 0.2, "threads": 4, "role": "thread_repeatability"}
+  ],
+  "execution": {
+    "termination_time_ms": 15.0,
+    "time_history_interval_ms": 0.05,
+    "animation_interval_ms": 1.0,
+    "shell_formulation": "QEPH Ishell=24",
+    "through_thickness_integration_points": 5,
+    "rigid_wall_slide": 0,
+    "friction": 0.0,
+    "mass_scaling": "disabled",
+    "output_root": "wtc1_simulation_v8/openradioss_benchmarks/v8u_impact_panel"
+  },
+  "predeclared_gates": {
+    "all_starter_exit_code_zero": true,
+    "all_engine_exit_code_zero": true,
+    "all_normal_termination": true,
+    "maximum_absolute_energy_error_percent": 5.0,
+    "maximum_added_mass_fraction": 0.001,
+    "maximum_hourglass_to_initial_energy_fraction": 0.05,
+    "medium_to_fine_impulse_relative_difference": 0.1,
+    "medium_to_fine_residual_speed_relative_difference": 0.1,
+    "thread_repeatability_impulse_relative_difference": 0.01,
+    "thread_repeatability_residual_speed_relative_difference": 0.01,
+    "scope_warning": "Passing V8U qualifies only this rigid-sphere/shell-surrogate numerical chain. It does not validate NIST's global damage state, an actual aircraft breakup, a fire-to-collapse chain, or any demolition hypothesis."
+  }
+}

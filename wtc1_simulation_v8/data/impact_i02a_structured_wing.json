@@ -1,0 +1,169 @@
+{
+  "id": "IMPACT-I02A",
+  "seed": 9112001,
+  "deterministic": true,
+  "status": "STRUCTURED_WING_TOPOLOGY_AND_NON_ERODING_REFERENCE_NOT_PHYSICAL_RUPTURE",
+  "authorization": "The user explicitly requested continued progress on the first aircraft-facade contact. This iteration replaces the generic closed shell with a bounded skin-spar-rib-stringer section and does not relax the V9M physical-fracture gate.",
+  "units": {
+    "mass": "g",
+    "length": "mm",
+    "time": "ms",
+    "stress": "MPa",
+    "energy_to_J": 0.001,
+    "impulse_to_Ns": 0.001,
+    "force_to_N": 1.0
+  },
+  "speed": {
+    "original_mph": 443.0,
+    "conversion_mph_to_m_per_s": 0.44704,
+    "m_per_s": 198.03072,
+    "source": "Cached V8S AA11 reference from NIST NCSTAR 1-2B Table 7-3; not estimated from user video"
+  },
+  "facade": {
+    "story_count": 1,
+    "column_centers_x_mm": [-1016.0, 0.0, 1016.0],
+    "column_width_mm": 355.6,
+    "column_depth_mm": 355.6,
+    "story_height_mm": 3657.6,
+    "panel_width_mm": 4064.0,
+    "spandrel_center_y_mm": [0.0],
+    "spandrel_height_mm": 1320.8,
+    "column_shell_thickness_mm": 7.9375,
+    "spandrel_shell_thickness_mm": 9.525,
+    "classification": "Representative I01/V8V nominal geometry, not the exact WTC1 impact-panel plate schedule; shared nodes stand for perfect joints; upper and lower column ends fixed; no gravity prestress, floor slab, core or global tower compliance."
+  },
+  "wing_section": {
+    "span_width_mm": 3000.0,
+    "chord_length_mm": 2000.0,
+    "height_mm": 400.0,
+    "center_y_mm": 1000.0,
+    "front_z_mm": 50.0,
+    "rib_count": 4,
+    "stringers_per_skin": 10,
+    "skin_thickness_mm": 2.54,
+    "spar_thickness_mm": 3.175,
+    "rib_thickness_mm": 3.175,
+    "stringer_thickness_mm": 3.175,
+    "stringer_web_height_mm": 50.8,
+    "stringer_free_flange_width_mm": 25.4,
+    "classification": {
+      "source_backed": "NIST simplified topology: four uniform-height ribs, front and rear spar, ten z-stringers, top and bottom skin; assumed skin thickness 0.1 in; typical z-stringer dimensions about 1 in flanges, 2 in web and 1/8 in thickness.",
+      "interpretation": "Figure 4-20 is interpreted as ten stringers on each skin. The literal text says ten z-stringers and is not unambiguous about total versus per-skin count; a 5-per-skin sensitivity remains required.",
+      "hypotheses": "The 3.0 m by 2.0 m by 0.4 m rectangular envelope is inherited from I01 and is not a measured Boeing rib-14-to-18 section. Spar and rib thicknesses are set equal to the documented typical stringer thickness only as an explicit pilot hypothesis. Ribs are evenly spaced. Stringers are evenly spaced and idealized by one web plus one free flange, while the coincident skin supplies the second flange.",
+      "mechanical_credit": "Local component-model topology only. No whole-aircraft, exact Boeing geometry, joint, fuel, engine, fuselage, sweep, roll, pitch or fracture credit."
+    }
+  },
+  "materials": {
+    "skin_2024_t3_clad_reference": {
+      "density_g_per_mm3": 0.00278,
+      "young_modulus_mpa": 73100.0,
+      "poisson_ratio": 0.33,
+      "yield_strength_mpa": 310.264,
+      "hardening_B_mpa": 0.0,
+      "hardening_exponent_n": 1.0,
+      "typical_ultimate_mpa_not_used_as_failure": 448.16,
+      "typical_elongation_fraction_not_used_as_failure": 0.18,
+      "classification": "Elastic-perfectly-plastic reference anchored to typical 2024-T3 clad-sheet yield and tensile values from USAF/NAVAIR TO 1-1A-1 Table 4-4. Not a Boeing production allowables card, not rate-sensitive, and no failure criterion."
+    },
+    "internal_7075_t6_reference": {
+      "density_g_per_mm3": 0.00281,
+      "young_modulus_mpa": 71700.0,
+      "poisson_ratio": 0.33,
+      "yield_strength_mpa": 503.32,
+      "hardening_B_mpa": 0.0,
+      "hardening_exponent_n": 1.0,
+      "typical_ultimate_mpa_not_used_as_failure": 572.264,
+      "typical_elongation_fraction_not_used_as_failure": 0.11,
+      "classification": "Elastic-perfectly-plastic 7075-T6 sheet/plate reference from USAF/NAVAIR TO 1-1A-1 Table 4-4. Assignment to all spars, ribs and stringers is an explicit approximation, not an as-built Boeing material map. No rate sensitivity or failure criterion."
+    }
+  },
+  "connectivity": {
+    "type": "coincident merged nodes at all modeled intersections",
+    "classification": "Non-failing tied upper-connectivity reference. It does not reproduce rivets or NIST tiebreak joints and cannot answer whether a real wing separates."
+  },
+  "contact": {
+    "type": "TYPE7 one-way all wing-section nodes to facade segments",
+    "friction": 0.0,
+    "self_contact": false,
+    "edge_to_edge": false,
+    "limitation": "Early first-contact diagnostic only. Folded, self-intersecting or edge-dominated states are outside qualification."
+  },
+  "execution": {
+    "end_ms": 1.2,
+    "history_dt_ms": 0.005,
+    "animation_dt_ms": 0.05,
+    "threads": 1,
+    "maximum_case_wall_seconds": 1200,
+    "mass_scaling": false
+  },
+  "cases": [
+    {
+      "id": "FREE_M050_R1",
+      "mesh_mm": 50.0,
+      "dt_scale": 0.9,
+      "contact": false,
+      "role": "Cold numerical free-flight control with the complete structured section"
+    },
+    {
+      "id": "CONTACT_M050_R1",
+      "mesh_mm": 50.0,
+      "dt_scale": 0.9,
+      "contact": true,
+      "role": "First non-eroding structured-section contact reference"
+    },
+    {
+      "id": "CONTACT_DT045_R1",
+      "mesh_mm": 50.0,
+      "dt_scale": 0.45,
+      "contact": true,
+      "role": "Time-step sensitivity at identical geometry and constitutive assumptions"
+    }
+  ],
+  "predeclared_checks": {
+    "normal_termination": true,
+    "max_starter_warnings": 0,
+    "max_initial_penetrations": 0,
+    "max_abs_energy_error_fraction": 0.05,
+    "max_momentum_impulse_relative_error": 0.02,
+    "max_support_impulse_total_momentum_relative_error": 0.05,
+    "max_added_mass_fraction": 0.000001,
+    "max_hourglass_over_initial_ke": 0.01,
+    "max_half_dt_impulse_difference": 0.05,
+    "max_free_flight_speed_error_fraction": 0.0001,
+    "eroded_elements": 0
+  },
+  "sources": [
+    {
+      "path": "work/official_sources/ncstar1-2bv1.pdf",
+      "pdf_pages": [129, 130, 131, 170, 172, 174, 175, 176, 177, 178, 179, 214, 215, 216, 218, 219, 220, 221],
+      "printed_pages": [31, 32, 33, 72, 74, 76, 77, 78, 79, 80, 81, 116, 117, 118, 120, 121, 122, 123],
+      "role": "Primary NIST description of aircraft alloys, airframe topology, simplified wing section, component test and known mesh-dependent failure calibration"
+    },
+    {
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/NCSTAR/ncstar1-2bv1.pdf",
+      "role": "Public identity of the local read-only primary report"
+    },
+    {
+      "url": "https://everyspec.com/USAF/USAF-Tech-Manuals/download.php?spec=TO_1-1A1-A_15JAN2016.056663.pdf",
+      "pages_printed": ["4-13", "4-14"],
+      "role": "USAF/NAVAIR typical static aluminum values; not Boeing-specific production allowables"
+    },
+    {
+      "path": "wtc1_simulation_v8/data/impact_i01_first_contact.json",
+      "role": "Cached speed, bounded facade and prior generic-box control"
+    },
+    {
+      "path": "wtc1_simulation_v8/data/impact_i02_geom.json",
+      "role": "Graphics-envelope provenance only; no mass, stiffness or strength transferred"
+    },
+    {
+      "url": "https://www.2024.help.altair.com/2024/hwsolvers/rad/topics/solvers/rad/th_node_starter_r.htm",
+      "role": "Nodal reaction time-history definition"
+    },
+    {
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inter_type7_starter_r.htm",
+      "role": "Contact formulation and limitations"
+    }
+  ],
+  "output_root": "wtc1_simulation_v8/output/impact_i02a_structured_wing"
+}

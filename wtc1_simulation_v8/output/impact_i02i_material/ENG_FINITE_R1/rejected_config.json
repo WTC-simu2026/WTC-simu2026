@@ -1,0 +1,64 @@
+{
+  "id": "IMPACT-I02I-A-R1",
+  "scope": "Fresh homogeneous single-QEPH-shell tension: source convention sensitivity, LAW36 translation, shell thickness and history/energy verification. First bounded stage of I02I, no cohesive propagation or aircraft/facade simulation.",
+  "seed": 1102009,
+  "random_draws": 0,
+  "units": {"mass":"g", "length":"mm", "time":"ms", "stress":"MPa", "force":"N", "solver_energy":"N mm = mJ", "report_energy":"J = 0.001 N mm"},
+  "geometry": {"length_mm":10.0, "width_mm":10.0, "thickness_mm":2.3, "identification":"generic unit patch, not a NASA specimen or Boeing part"},
+  "material": {
+    "density_g_per_mm3":0.00278, "young_modulus_mpa":71400.0, "poisson_ratio":0.3,
+    "source_total_strain":[0.00483,0.015,0.04,0.1,0.16],
+    "source_stress_mpa":[345.0,390.0,430.0,470.0,491.0],
+    "source_convention":"indeterminate in bounded NASA pages; no branch selected as measured truth",
+    "decimal_rule":".015/.04 follow saved NASA deck p.196 rather than inconsistent Table 15 p.181",
+    "stress_rule":"preserve I02H table MPa values to isolate translation; do not silently substitute deck psi",
+    "engineering_interpretation":"e=ln(1+source_strain), s=source_stress*(1+source_strain), p=max(0,e-s/E)",
+    "true_total_interpretation":"e=source_strain, s=source_stress, p=max(0,e-s/E)",
+    "small_strain_engineering_control":"e=source_strain, s=source_stress, p=max(0,e-s/E); engineering measures due Ismstr=1",
+    "continuation":"constant last stress at p=1.0 for numerical deck completeness only; all tests stay below last source p",
+    "history":"each case starts fresh; rate-independent isotropic hardening, no failure, thermal law, damage or state replacement"
+  },
+  "shell_variants": {
+    "legacy":{"Ishell":24,"Ismstr":-1,"Ithick":0,"Iplas":0,"Istrain":1,"N":5,"dm":0.0,"dn":0.0,"note":"same omitted thickness/plasticity fields as I02H, automatic Ismstr; actual starter resolved fields recorded"},
+    "finite":{"Ishell":24,"Ismstr":4,"Ithick":1,"Iplas":1,"Istrain":1,"N":5,"dm":0.0,"dn":0.0,"note":"explicit large strain, changing thickness, iterative plane stress"},
+    "small":{"Ishell":24,"Ismstr":1,"Ithick":2,"Iplas":2,"Istrain":1,"N":5,"dm":0.0,"dn":0.0,"note":"engineering-measure numerical control; not proposed for impact"}
+  },
+  "execution": {"threads":1, "dt_scale":0.9, "segment_ms":2.0,"hold_ms":0.2,"history_dt_ms":0.002,"function_subdivisions_per_segment":200,"maximum_case_wall_seconds":120,"maximum_campaign_wall_seconds":900,"preflight_before_engine":true,"no_mass_scaling":true},
+  "gates": {
+    "maximum_mass_error_fraction":0.00001,
+    "maximum_stress_reference_error_fraction":0.01,
+    "maximum_transverse_stress_over_axial_scale":0.01,
+    "maximum_plastic_strain_reference_error_absolute":0.001,
+    "maximum_global_energy_residual_fraction":0.005,
+    "maximum_internal_stress_work_error_fraction":0.005,
+    "maximum_independent_boundary_work_error_fraction":0.01,
+    "maximum_plastic_work_reference_error_fraction":0.01,
+    "maximum_nominal_stress_conversion_error_fraction":0.01,
+    "maximum_half_dt_stress_difference_fraction":0.005,
+    "maximum_slow_stress_difference_fraction":0.005,
+    "maximum_negative_plastic_increment":0.000001,
+    "maximum_kinetic_to_internal_significant_window":0.001
+  },
+  "cases": [
+    {"id":"ENG_LEGACY_R1","interpretation":"engineering","shell":"legacy","path":"monotone"},
+    {"id":"TRUE_LEGACY_R1","interpretation":"true_total","shell":"legacy","path":"monotone"},
+    {"id":"ENG_FINITE_R1","interpretation":"engineering","shell":"finite","path":"monotone"},
+    {"id":"TRUE_FINITE_R1","interpretation":"true_total","shell":"finite","path":"monotone"},
+    {"id":"ENG_SMALL_R1","interpretation":"engineering_small","shell":"small","path":"monotone"},
+    {"id":"ELASTIC_FINITE_R1","interpretation":"engineering","shell":"finite","path":"elastic"},
+    {"id":"ENG_FINITE_DT45_R1","interpretation":"engineering","shell":"finite","path":"monotone","dt_scale":0.45},
+    {"id":"ENG_FINITE_SLOW_R1","interpretation":"engineering","shell":"finite","path":"monotone","time_factor":2.0},
+    {"id":"ENG_FINITE_CYCLE_R1","interpretation":"engineering","shell":"finite","path":"cycle"},
+    {"id":"TRUE_FINITE_CYCLE_R1","interpretation":"true_total","shell":"finite","path":"cycle"}
+  ],
+  "sources": [
+    {"id":"NASA_STAGS","path":"wtc1_simulation_v8/input/impact_i02h_sources/NASA_CR_2006_214281_STAGS.pdf","sha256":"aef6bef6327dd7038ea4bd78e232403bc2cffda94e8012df15e1fc10369abb80","url":"https://ntrs.nasa.gov/api/citations/20060008654/downloads/20060008654.pdf","pages_1_based":[178,179,180,181,182,196],"use":"bounded material/geometry description and historical deck; convention remains undetermined"},
+    {"id":"ALTAIR_LAW36","url":"https://help.altair.com/hwsolvers/rad/topics/solvers/rad/mat_law36_plas_tab_starter_r.htm","use":"LAW36 card syntax and plastic hardening"},
+    {"id":"ALTAIR_CHARACTERIZATION","url":"https://help.altair.com/hwsolvers/rad/topics/solvers/rad/tensile_test_example_law_characterization_r.htm","use":"engineering/true and elastic/plastic transformation, uniform-state limitation"},
+    {"id":"ALTAIR_SHELL","url":"https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type1_shell_starter_r.htm","use":"QEPH, strain and thickness options"},
+    {"id":"ALTAIR_HISTORY","url":"https://help.altair.com/hwsolvers/rad/topics/solvers/rad/th_shel_starter_r.htm","use":"shell local stress, plastic strain, thickness, energy outputs"},
+    {"id":"ALTAIR_SMALL_STRAIN","url":"https://help.altair.com/hwsolvers/rad/topics/solvers/rad/theory_basic_equations_small_strain_formulation_r.htm","use":"engineering versus true strain/stress of shell formulation"}
+  ],
+  "qualification": {"source_convention_verified":false,"physical_material_calibrated":false,"fracture_propagation_qualified":false,"aircraft_facade_qualified":false,"thermal_branch_resumed":false,"blender_executed":false},
+  "deferred_I02I_work":"Fixed Kn/Kt mesh comparison with no-propagation control, then Gf15/30/60, common-displacement/extension histories and inertia/rate sensitivity. Separate stage; not completed by unit tests."
+}

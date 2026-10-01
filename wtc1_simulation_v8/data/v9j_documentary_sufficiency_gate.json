@@ -1,0 +1,127 @@
+{
+  "iteration": "V9J",
+  "dataset": {
+    "name": "Documentary sufficiency gate for the P4V035/P6V035 S355 analogue pair",
+    "version": "9.10.0",
+    "status": "PREDECLARED_DOCUMENTARY_AUDIT_ONLY_NO_SIGNAL_RECONSTRUCTION_NO_FIT_NO_SOLVER",
+    "random_seed": 9112001,
+    "deterministic": true,
+    "scope": "Preserve V8U through V9I, inspect only the precisely identified primary publication and small public supplementary documentation, and decide whether equation 12, its numerical correction factor, coordinate and sign conventions, and complete specimen dimensions are sufficiently documented for a later stress-strain reconstruction. Missing or inaccessible definitions remain unknown. Do not reconstruct stress or strain, download the deferred P6V035 DIC series, fit a material or failure law, or run a solver."
+  },
+  "sources": [
+    {
+      "type": "verified_local_zenodo_metadata",
+      "path": "wtc1_simulation_v8/input/v9f_open_sources/zenodo_17591440_metadata.json",
+      "sha256": "e4c1d64a0a3b21c1b2841386f3b88884362fbb3051b52b19bf3b704a2b7beba3",
+      "doi": "10.5281/zenodo.17591440"
+    },
+    {
+      "type": "verified_local_geometry_figure",
+      "path": "wtc1_simulation_v8/input/v9g_open_sources/Fig1.jpg",
+      "sha256": "b8a7ab9de81761741a9157500118213419624848225d87bcd42bc3cf363e4c50"
+    },
+    {
+      "type": "primary_publication_target",
+      "doi": "10.1016/j.ijmecsci.2024.109749",
+      "title": "Shear Band Formation with Split Hopkinson Bar Experiments",
+      "allowed_acquisition": "Only a lawful public full text, accepted manuscript, repository record or publisher-hosted small supplementary document. Record access failure without bypassing controls."
+    }
+  ],
+  "predeclared_required_definitions": {
+    "equation_12_full_mathematical_form": {
+      "required": true,
+      "criterion": "Variables, signs, integration limits or initial conditions, and physical units are explicit."
+    },
+    "correction_factor_numeric_value_and_application": {
+      "required": true,
+      "criterion": "Numeric value, dimension or units if any, and location in the boundary-condition derivation are explicit."
+    },
+    "bar_and_specimen_coordinate_sign_conventions": {
+      "required": true,
+      "criterion": "Incident and transmitted displacement signs and mapping among displayed y-z axes, CSV x-y-z coordinates and displacement columns are explicit."
+    },
+    "complete_specimen_dimensions_for_reduction": {
+      "required": true,
+      "criterion": "All dimensions needed to derive the relevant force, displacement, nominal stress and nominal strain measures for the selected geometry are explicit."
+    },
+    "absolute_bar_DIC_time_alignment": {
+      "required": true,
+      "criterion": "The reference event and offset relating the bar histories to DIC filename time are explicit, not inferred from numerical overlap."
+    }
+  },
+  "decision_rule": {
+    "documentary_sufficiency_gate_passes_only_if": "Every required definition is documented by a primary source with a page, equation, figure or explicit metadata location.",
+    "partial_recovery": "Report each recovered item separately but keep the overall gate closed.",
+    "inaccessible_or_absent": "Label unknown; do not invent, interpolate or import a generic SHPB convention.",
+    "stress_strain_reconstruction_authorized_if_gate_fails": false
+  },
+  "regressions": {
+    "required_files": {
+      "wtc1_simulation_v8/data/v9i_measurement_consistency_benchmark.json": "cd47cc8bf4a7c907d6b43bcaf5fe0ac478a901d5298e2c5f1638db56a288a2bc",
+      "wtc1_simulation_v8/scripts/run_v9i_measurement_consistency_benchmark.py": "e05e736a0972ad6b9d331fdad41724000014d71d9fee8b8598030d390c197b58",
+      "wtc1_simulation_v8/output/resultats_wtc1_v9i_coherence_mesures.json": "ac44396ecd357f66c9fca51df74187fc47de4f6e2b402a5f740a504680852681",
+      "wtc1_simulation_v8/output/rapport_wtc1_v9i_coherence_mesures.md": "817e1e530db2e03ac1b54a1c330da506870654da4ff4c84b828f5729f2b9d74f",
+      "wtc1_simulation_v8/output/v9i_dic_field_quantiles.csv": "2bfc99ee37b8e0197411007d87f81f20f3b85ba110bb32a885ae5252854ccf83"
+    },
+    "required_metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9i_coherence_mesures.json",
+        "path": "iteration_execution_validated",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9i_coherence_mesures.json",
+        "path": "DIC_summary.total_missing_cells",
+        "expected": 7070
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9i_coherence_mesures.json",
+        "path": "dynamic_bar_summary.incident.complete_pulse_duration_resolved",
+        "expected": false
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9i_coherence_mesures.json",
+        "path": "dynamic_bar_summary.transmitted.complete_pulse_duration_resolved",
+        "expected": false
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9i_coherence_mesures.json",
+        "path": "analogue_stress_strain_reduction_authorized",
+        "expected": false
+      }
+    ]
+  },
+  "evidence_policy": {
+    "observed_fact": "A statement, equation, dimension, unit or coordinate convention explicitly present in the inspected primary source.",
+    "official_model_result": "None is introduced by V9J.",
+    "local_archive_claim": "No local WTC archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "The all-required-items documentary gate and the prohibition on generic SHPB substitutions.",
+    "derived_result": "A documented, partial, absent or inaccessible status for each predeclared item and the resulting sufficiency decision.",
+    "unknown": "Any definition not explicitly recovered from the inspected primary publication, repository record or dataset documentation."
+  },
+  "scope_gates": {
+    "stress_strain_reconstruction_authorized": false,
+    "material_fit_authorized": false,
+    "failure_law_fit_authorized": false,
+    "coupon_solver_authorized": false,
+    "WTC_or_CF6_solver_authorized": false,
+    "failure_deletion_authorized": false,
+    "projectile_rupture_authorized": false,
+    "facade_impact_authorized": false,
+    "global_impact_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_inference_authorized": false
+  },
+  "acquisition_limits": {
+    "P6V035_DIC_acquisition_authorized": false,
+    "full_Zenodo_ZIP_acquisition_authorized": false,
+    "FOIA_request_authorized": false,
+    "external_contact_authorized": false
+  },
+  "output": {
+    "source_manifest": "wtc1_simulation_v8/output/v9j_documentary_source_manifest.json",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v9j_suffisance_documentaire.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v9j_suffisance_documentaire.md"
+  }
+}

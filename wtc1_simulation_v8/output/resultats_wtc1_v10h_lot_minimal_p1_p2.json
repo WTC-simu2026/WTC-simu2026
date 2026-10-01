@@ -1,0 +1,167 @@
+{
+  "iteration": "V10H",
+  "started_at_utc": "2026-09-01T14:57:31Z",
+  "completed_at_utc": "2026-09-01T14:57:31Z",
+  "validation_status": "PASS",
+  "dataset": {
+    "name": "Exact offline P1/P2 minimum document bundle predeclaration",
+    "version": "10.8.0",
+    "random_seed": 1010018,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10G. Using only immutable V10B and V10G derived matrices, solve an exact minimum-cardinality P1/P2 set-cover problem for the still-blocking drawing-dependent requirements, keep T02 on a separate Book 9 track, and keep D01, B01 and S01 on separate non-drawing evidence tracks. Predeclare exact document identifiers only; do not access any payload or page."
+  },
+  "observed_or_transcribed_facts": [
+    "V10B contains 53 exact candidate identifiers: 9 P0, 23 P1 and 21 P2.",
+    "V10G contains 22 unresolved requirements, all still solver blocking.",
+    "Forty-four P1/P2 candidate rows are available for the offline set-cover calculation."
+  ],
+  "official_model_results": [
+    "No new official-model result is produced and no inherited official-model output is independently validated."
+  ],
+  "archive_claims_used": [
+    "Register titles, book numbers, content summaries and drawing ranges are retained as archive claims only."
+  ],
+  "model_hypotheses": [
+    "V10B requirement-to-document links define nominal research coverage only; they do not prove content sufficiency, source authority or physical applicability."
+  ],
+  "derived_results": {
+    "candidate_document_count": 53,
+    "p1_p2_candidate_document_count": 44,
+    "primary_drawing_requirement_count": 18,
+    "p1_p2_reachable_primary_requirement_count": 16,
+    "p1_p2_reachable_primary_requirement_ids": [
+      "N02",
+      "N03",
+      "E02",
+      "E03",
+      "E04",
+      "C01",
+      "O01",
+      "O02",
+      "O03",
+      "O04",
+      "O05",
+      "P01",
+      "P02",
+      "P03",
+      "T01",
+      "M01"
+    ],
+    "p1_p2_unreachable_primary_requirement_count": 2,
+    "p1_p2_unreachable_primary_requirement_ids": [
+      "N01",
+      "E01"
+    ],
+    "minimum_primary_bundle_document_count": 4,
+    "minimum_primary_bundle_document_ids_in_v10b_sequence": [
+      "WTCI-000016-L",
+      "WTCI-000021-L",
+      "WTCI-000024-L",
+      "WTCI-000014-L"
+    ],
+    "minimum_primary_bundle_document_ids_in_request_order": [
+      "WTCI-000024-L",
+      "WTCI-000014-L",
+      "WTCI-000016-L",
+      "WTCI-000021-L"
+    ],
+    "maximum_coverage_by_maximum_file_count": {
+      "1": 10,
+      "2": 13,
+      "3": 15,
+      "4": 16
+    },
+    "separate_book9_primary_document_id": "WTCI-000030-L",
+    "separate_book9_fallback_document_id": "WTCI-000031-L",
+    "total_predeclared_primary_document_count": 5,
+    "requirements_closed_count": 0,
+    "requirements_solver_blocking_count": 22,
+    "physical_assignment_count": 0
+  },
+  "contradictions_and_missing_information": [
+    "N01 and E01 have no P1/P2 candidate and remain on the already acquired P0 Book 3 track.",
+    "The selected four-document primary set covers all 16 reachable requirement labels, but no selected payload or page has been inspected.",
+    "The V10B endpoint string '2 - C/2' for WTCI-000024-L is retained as a register anomaly and is not repaired by inference.",
+    "D01, B01 and S01 require evidence classes that a design-drawing bundle cannot provide.",
+    "T02 requires a separate Book 9 path; its selected identifier is not a content-sufficiency finding.",
+    "All 22 requirements remain open and solver blocking."
+  ],
+  "checks": {
+    "protected_input_hashes_all_match": true,
+    "v10g_validation_pass": true,
+    "v10g_page_branch_closed": true,
+    "v10g_requirement_count_and_blocking_state": true,
+    "v10b_candidate_document_count": true,
+    "v10b_priority_counts": true,
+    "p1_p2_candidate_document_count": true,
+    "v10b_and_v10g_requirement_ids_identical": true,
+    "all_v10g_requirements_remain_blocking": true,
+    "primary_drawing_requirement_count": true,
+    "reachable_primary_requirement_count": true,
+    "unreachable_primary_requirement_ids_exact": true,
+    "exact_set_cover_target_reached": true,
+    "minimum_primary_bundle_document_count": true,
+    "minimum_primary_bundle_document_ids_exact": true,
+    "no_smaller_bundle_covers_all_reachable_requirements": true,
+    "selected_primary_documents_are_p1": true,
+    "book9_primary_document_exact": true,
+    "book9_fallback_document_exact": true,
+    "total_predeclared_primary_document_count": true,
+    "all_requirements_remain_open_and_blocking": true,
+    "all_credits_zero": true,
+    "no_payload_or_page_access": true,
+    "source_archive_and_official_sources_not_read_or_modified": true,
+    "no_network_or_external_contact": true,
+    "solver_blender_thermal_gates_closed": true,
+    "protected_inputs_unchanged_after_v10h": true
+  },
+  "operation_counts": {
+    "target_payload_read": 0,
+    "drawing_page_content_read": 0,
+    "source_archive_read": 0,
+    "source_archive_write": 0,
+    "official_sources_read": 0,
+    "official_sources_write": 0,
+    "network_request": 0,
+    "external_contact": 0,
+    "structural_solver_run": 0,
+    "thermal_model_run": 0,
+    "blender_launch": 0,
+    "blender_master_write": 0
+  },
+  "physical_assignments": {
+    "coordinates": 0,
+    "member_sections": 0,
+    "materials": 0,
+    "mass": 0,
+    "stiffness": 0,
+    "capacity": 0,
+    "connection_laws": 0,
+    "damage_states": 0,
+    "load_path_credit": 0
+  },
+  "outputs": {
+    "source_manifest": "wtc1_simulation_v8/output/v10h_requirement_source_manifest.json",
+    "regression_audit": "wtc1_simulation_v8/output/v10h_regression_audit.json",
+    "candidate_coverage_csv": "wtc1_simulation_v8/output/v10h_p1_p2_candidate_coverage_matrix.csv",
+    "selected_bundle_csv": "wtc1_simulation_v8/output/v10h_selected_bundle_matrix.csv",
+    "bundle_predeclaration": "wtc1_simulation_v8/output/v10h_minimum_bundle_predeclaration.json",
+    "requirement_coverage_csv": "wtc1_simulation_v8/output/v10h_requirement_coverage_matrix.csv",
+    "separate_tracks_csv": "wtc1_simulation_v8/output/v10h_separate_evidence_tracks.csv",
+    "document_request_shortlist": "wtc1_simulation_v8/output/v10h_liste_courte_documents_recherches.md",
+    "model_gate": "wtc1_simulation_v8/output/v10h_structural_source_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10h_lot_minimal_p1_p2.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10h_lot_minimal_p1_p2.json",
+    "offline_audit": "wtc1_simulation_v8/output/v10h_offline_package_audit.json"
+  },
+  "software": {
+    "python": "3.14.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "elapsed_seconds_before_final_serialization": 0.098
+  },
+  "next_iteration": {
+    "id": "V10I",
+    "objective": "Preserve V8U through V10H. If the user supplies one or more exact files named in the immutable V10H five-document predeclaration, inspect only those explicitly supplied local paths for exact basename, byte size, SHA-256, PDF signature and container metadata, and create verified working copies inside wtc1_simulation_v8/input/v10i_structural_sources. If none is supplied, record the five exact missing identifiers without scanning any directory. Do not use the network, scan or read the source archive or work/official_sources, open or render any PDF page, transcribe drawing content, assign physical properties or damage, run a structural solver, continue a thermal model or launch Blender."
+  },
+  "errors": []
+}

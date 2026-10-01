@@ -1,0 +1,57 @@
+{
+  "analysis_id": "CGI_PLANE_PARALLAX_2026-08-22",
+  "coordinate_system": "WGS84 geographic coordinates; local distances by haversine",
+  "observed_identification": {
+    "occluding_building": "Downtown Athletic Club / The Downtown Club, 20 West Street",
+    "confidence": "high",
+    "adjacent_ornate_building": "Whitehall Building, 17 Battery Place"
+  },
+  "input_points": {
+    "camera_proxy": {
+      "name": "Castle Clinton National Monument",
+      "latitude": 40.70347,
+      "longitude": -74.01678,
+      "qualification": "Proxy for the NIST description 'ground level near Castle Clinton'; not an exact camera coordinate"
+    },
+    "downtown_athletic_club": {
+      "latitude": 40.70618,
+      "longitude": -74.01568,
+      "height_m_range": [158, 165.3]
+    },
+    "whitehall_building": {
+      "latitude": 40.705587,
+      "longitude": -74.016023
+    },
+    "wtc2_proxy": {
+      "name": "Center of the South Memorial Pool / original WTC 2 footprint",
+      "latitude": 40.7109875,
+      "longitude": -74.0131384,
+      "qualification": "Map proxy; the pool lies within the original WTC 2 footprint"
+    }
+  },
+  "derived_results": {
+    "downtown_athletic_club_to_wtc2_m": 575.9,
+    "whitehall_building_to_wtc2_m": 647.9,
+    "camera_proxy_to_downtown_athletic_club_m": 315.3,
+    "camera_proxy_to_whitehall_building_m": 243.9,
+    "camera_proxy_to_wtc2_m": 890.5,
+    "bearing_camera_to_downtown_athletic_club_deg": 17.1,
+    "bearing_camera_to_wtc2_deg": 20.16,
+    "angular_separation_deg": 3.06,
+    "downtown_athletic_club_range_fraction": 0.3541,
+    "line_of_sight_height_at_building_m": {
+      "aircraft_altitude_275_m": 98.7,
+      "aircraft_altitude_300_m": 107.5,
+      "aircraft_altitude_325_m": 116.4
+    }
+  },
+  "interpretation": "For the NIST camera-location proxy, the sight line toward an aircraft at 275-325 m altitude passes roughly 42-67 m below the 158-165 m top of 20 West Street. Foreground occlusion is therefore geometrically possible and expected when the wing crosses the building azimuth.",
+  "sources": [
+    "NIST NCSTAR 1-2, Table 6-1, p. 153: Video V4 recorded at ground level near Castle Clinton",
+    "Getty CONA 700088670: 20 West Street coordinates",
+    "NYC Landmarks Preservation Commission LP-2075: Downtown Athletic Club identity and address",
+    "9/11 Memorial backgrounder: reflecting pools in the footprints of the original towers",
+    "TopoQuest/USGS feature listing: South Pool coordinate",
+    "CTBUH Skyscraper Center building 3479 and published building records: height range"
+  ]
+}

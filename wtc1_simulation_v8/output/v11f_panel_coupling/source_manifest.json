@@ -1,0 +1,45 @@
+{
+  "iteration": "V11F",
+  "input_and_protected_sha256": {
+    "wtc1_simulation_v8/data/v11f_panel_coupling_predeclaration.json": "142bde3d65e4b1abac3746e9595cf9fc9aa4883921a7ce75f36508cd2b5e0f0f",
+    "wtc1_simulation_v8/data/v11d_slab_contact_predeclaration.json": "296c53dcebc86f77aa818bfa7bc9f810dca4c097338d5a066e427d6ba0d3b073",
+    "wtc1_simulation_v8/data/v11e_cracked_section_predeclaration.json": "8475b6013529c5002b17469d852fa32e67b8f2245bd90074a9984ec178fbcc50",
+    "wtc1_simulation_v8/data/v11c_floor_panel_predeclaration.json": "b08c925f82868c4585240c4c033e86701b4d45de27dbb08cbb7c3118f97494ce",
+    "wtc1_simulation_v8/data/v11a_component_resistance_predeclaration.json": "2e4919d56dc6284769fb49889dd75085f205025325a9a25ca562bdca95b7b9c9",
+    "wtc1_simulation_v8/data/nist_wtc1_transfer.json": "bdf4d779bb41f0d64c908702261ea2f571ba6d73b5d0e09876168c4c03cfe8fb",
+    "wtc1_simulation_v8/data/nist_wtc1_component_capacities_v8g.json": "dabeef9be7d0d382ba26941c24327ec77000d3c83074dc84fb5d322eb41f9130",
+    "wtc1_simulation_v8/scripts/v11e_section_model.py": "7ea7038d5ea5c11bdd176a403d1a20898d57cd6fad5d4399c37c6315fd8846b2",
+    "wtc1_simulation_v8/scripts/v11d_panel_model.py": "2b27b0881456e4f6095d1c9e99d404b4b5c31c9fe04ae0137ff0ba48129aceef",
+    "wtc1_simulation_v8/scripts/v11c_panel_model.py": "e1ce976e5534a462cf6e0370c92fbe5b038dfc92b1648db81e42bfd5929d476d",
+    "wtc1_simulation_v8/scripts/v11a_component_model.py": "401b820a8c35596c3f33a59f536d507ae03a050630d17340d5539e401dbbc92b",
+    "wtc1_simulation_v8/output/v11e_cracked_section/results_v11e.json": "76c69d537084ebb674ef73c2c5cbc7e9ff20cfa2517eb2dce884adf96295a5f1",
+    "wtc1_simulation_v8/output/v11e_cracked_section/offline_manifest.json": "d3a54853c329d238fa329eb380cfd6af0981b4de0c57ec510926053166a0bc16",
+    "wtc1_simulation_v8/output/v11d_slab_contact/results_v11d.json": "1ca70615174a5aabe1854d6e3c1b20536dc465ffc49a79b85393c4e7aac1aeef",
+    "wtc1_simulation_v8/output/v11b_initialization_mass/results_v11b.json": "ed409426b7a4986d3cd1d9c10ba151d5484898f2c4fec9a64961db7a93a5a12e",
+    "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1",
+    "wtc1_simulation_v8/scripts/v11f_panel_model.py": "19e5d9bb08a22dda468ce5626045ffb65a5746459dddad6dff542623ccae57c5",
+    "wtc1_simulation_v8/scripts/test_v11f_panel.py": "4c5be7a9c55df53cf89921fa2002dcb409d48ae3b6233bfb43229e39e9c385eb",
+    "wtc1_simulation_v8/scripts/run_v11f_panel_coupling.py": "faf669218fff4dd3ba851e391af7fea64943c37307ab9d56d6e69ee8db7489a6",
+    "wtc1_simulation_v8/scripts/audit_v11f_release.py": "c86e3bdd25924be6e4959806ccb597dd2009759dbe18001b853d6ed47f924dac",
+    "wtc1_simulation_v8/scripts/test_v11e_section.py": "53674b4ee4dc06358543aed443f4909a5c75fd52cbf5391f8c5c53a355620db2"
+  },
+  "method_references": [
+    {
+      "url": "https://opensees.github.io/OpenSeesDocumentation/user/manual/model/elements/dispBeamColumn.html",
+      "scope": "Displacement-based shape functions yield weak section equilibrium. Own small-strain implementation, no OpenSees execution.",
+      "accessed": "2026-09-06"
+    },
+    {
+      "url": "https://opensees.berkeley.edu/OpenSees/manuals/usermanual/633.htm",
+      "scope": "Prismatic section evaluations at longitudinal Gauss integration points.",
+      "accessed": "2026-09-06"
+    },
+    {
+      "url": "https://manuals.dianafea.com/d110/en/1465843-1466551-model-parameters.html",
+      "scope": "Area under tensile stress-strain law Gf/crack-bandwidth. Our quadrature tributary choice is explicit and tested, not a DIANA default claimed for this beam.",
+      "accessed": "2026-09-06"
+    }
+  ],
+  "source_pdf_or_media_analysis": false,
+  "notes": "Reused frozen dimensions/capacity transcriptions and V11E hypothetical constitutive laws. No new WTC reinforcement identification."
+}

@@ -1,0 +1,258 @@
+{
+  "iteration": "V10Z",
+  "created_at": "2026-09-05T10:30:05+02:00",
+  "configuration": {
+    "path": "wtc1_simulation_v8/data/v10z_blender_exploratory_visualization.json",
+    "sha256": "7fad3744531c7160b2d03365b77cd12ec04998ae90239e3a4d650683fe2e362e",
+    "size_bytes": 11199
+  },
+  "runner": {
+    "path": "wtc1_simulation_v8/scripts/run_v10z_blender_exploratory_visualization.py",
+    "sha256": "8df8f0a3f7ce6db844cdc5c7266bc7c5faac5a95591152bc60e47487fa7a424e",
+    "size_bytes": 24443
+  },
+  "builder": {
+    "path": "wtc1_3d_v4/scripts/build_v10z_exploratory_animation.py",
+    "sha256": "e74a548154b0721685b1bd589141eb2eb27b6ac7d817d0246793bd9d94874388",
+    "size_bytes": 22076
+  },
+  "inputs": [
+    {
+      "role": "v10y_configuration",
+      "path": "wtc1_simulation_v8/data/v10y_integrated_exploratory_chain.json",
+      "expected_sha256": "57cb235ce91ff6e855b932ad26200426f2db7901e66f7996ebf3e7cf39101b0b",
+      "sha256": "57cb235ce91ff6e855b932ad26200426f2db7901e66f7996ebf3e7cf39101b0b",
+      "size_bytes": 14041,
+      "hash_match": true
+    },
+    {
+      "role": "v10y_runner",
+      "path": "wtc1_simulation_v8/scripts/run_v10y_integrated_exploratory_chain.py",
+      "expected_sha256": "8b50f7514404f8fb6b5e81f39cef6cf602ff7f9428692e4df3a611a3abc3edd8",
+      "sha256": "8b50f7514404f8fb6b5e81f39cef6cf602ff7f9428692e4df3a611a3abc3edd8",
+      "size_bytes": 57795,
+      "hash_match": true
+    },
+    {
+      "role": "v10y_sensitivity_grid",
+      "path": "wtc1_simulation_v8/output/v10y_sensitivity_grid.csv",
+      "expected_sha256": "3ab621325d5b5d0a9a85a73bc5d4f4b6eac37ff2682e27b8323786dedbebfa99",
+      "sha256": "3ab621325d5b5d0a9a85a73bc5d4f4b6eac37ff2682e27b8323786dedbebfa99",
+      "size_bytes": 260306,
+      "hash_match": true
+    },
+    {
+      "role": "v10y_gate",
+      "path": "wtc1_simulation_v8/output/v10y_integrated_exploratory_gate.json",
+      "expected_sha256": "606891a1f3e258baec0bd6e4db2df4264a92646db48337ea7d804110174a0ef6",
+      "sha256": "606891a1f3e258baec0bd6e4db2df4264a92646db48337ea7d804110174a0ef6",
+      "size_bytes": 2347,
+      "hash_match": true
+    },
+    {
+      "role": "v10y_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10y_chaine_exploratoire.json",
+      "expected_sha256": "643647c6e9269a49f8d523a157dab090dc090fb2eb44b59619b08eada8a7c40c",
+      "sha256": "643647c6e9269a49f8d523a157dab090dc090fb2eb44b59619b08eada8a7c40c",
+      "size_bytes": 8365,
+      "hash_match": true
+    },
+    {
+      "role": "v4_2_parameters",
+      "path": "wtc1_3d_v4/data/wtc1_parameters.json",
+      "expected_sha256": "43b351dc434cafcc49436712d74517cb8160e35c72b6d843401675674715bc7f",
+      "sha256": "43b351dc434cafcc49436712d74517cb8160e35c72b6d843401675674715bc7f",
+      "size_bytes": 8006,
+      "hash_match": true
+    },
+    {
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1",
+      "sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1",
+      "size_bytes": 527455,
+      "hash_match": true
+    },
+    {
+      "id": "BLENDER_5_2",
+      "path": "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe",
+      "expected_sha256": "e27fbfea8564aa645d4463cb0949695fd85562b9de6df9561b06859a1074adf7",
+      "expected_version_prefix": "5.2",
+      "allowed_credit": "VISUALIZATION_ONLY_NO_MECHANICAL_FEEDBACK",
+      "sha256": "e27fbfea8564aa645d4463cb0949695fd85562b9de6df9561b06859a1074adf7",
+      "size_bytes": 112975320,
+      "hash_match": true
+    }
+  ],
+  "upstream_inputs": [
+    {
+      "role": "nist_transfer",
+      "path": "wtc1_simulation_v8/data/nist_wtc1_transfer.json",
+      "expected_sha256": "bdf4d779bb41f0d64c908702261ea2f571ba6d73b5d0e09876168c4c03cfe8fb",
+      "sha256": "bdf4d779bb41f0d64c908702261ea2f571ba6d73b5d0e09876168c4c03cfe8fb",
+      "size_bytes": 9516,
+      "hash_match": true
+    },
+    {
+      "role": "v8j_cold_gate_configuration",
+      "path": "wtc1_simulation_v8/data/v8j_cold_load_path_gate.json",
+      "expected_sha256": "4412e3dda043a50b5efb5fe2ce4a39c51cdd157c9023524ecbeb0b38667ca2d8",
+      "sha256": "4412e3dda043a50b5efb5fe2ce4a39c51cdd157c9023524ecbeb0b38667ca2d8",
+      "size_bytes": 6956,
+      "hash_match": true
+    },
+    {
+      "role": "v8j_cold_gate_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8j_gate_froid.json",
+      "expected_sha256": "4b93102974a8b9fdf1eff3af408e5c074385df9ae9c5886038b67914b430788e",
+      "sha256": "4b93102974a8b9fdf1eff3af408e5c074385df9ae9c5886038b67914b430788e",
+      "size_bytes": 15883,
+      "hash_match": true
+    },
+    {
+      "role": "v10p_impact_handoff",
+      "path": "wtc1_simulation_v8/output/v10p_three_track_handoff.json",
+      "expected_sha256": "458196235667e546d5eef53878ad401c17d807141422ebfa9aa8f3f0c7264868",
+      "sha256": "458196235667e546d5eef53878ad401c17d807141422ebfa9aa8f3f0c7264868",
+      "size_bytes": 36412,
+      "hash_match": true
+    },
+    {
+      "role": "v10p_damage_matrix",
+      "path": "wtc1_simulation_v8/output/v10p_official_model_damage_reference_matrix.csv",
+      "expected_sha256": "b95bc729d81b5cf406009250936aa53bbdf8ec9ea6257d0eb52ff564e5503bab",
+      "sha256": "b95bc729d81b5cf406009250936aa53bbdf8ec9ea6257d0eb52ff564e5503bab",
+      "size_bytes": 11883,
+      "hash_match": true
+    },
+    {
+      "role": "v10q_fire_thermal_handoff",
+      "path": "wtc1_simulation_v8/output/v10q_three_track_fire_thermal_handoff.json",
+      "expected_sha256": "7b14a3d67ba41a929fb557b07b3376f27206deee25597047e5bf16decb35e99c",
+      "sha256": "7b14a3d67ba41a929fb557b07b3376f27206deee25597047e5bf16decb35e99c",
+      "size_bytes": 10585,
+      "hash_match": true
+    },
+    {
+      "role": "v10q_temperature_matrix",
+      "path": "wtc1_simulation_v8/output/v10q_official_temperature_envelope_matrix.csv",
+      "expected_sha256": "bfb82536adf1482b73a59e8717af723d8a36d1141bd8294e83657759355ac2e0",
+      "sha256": "bfb82536adf1482b73a59e8717af723d8a36d1141bd8294e83657759355ac2e0",
+      "size_bytes": 24038,
+      "hash_match": true
+    },
+    {
+      "role": "v10r_initiation_handoff",
+      "path": "wtc1_simulation_v8/output/v10r_three_track_thermal_initiation_handoff.json",
+      "expected_sha256": "e025bd727d878191ea0b82bd5ff074ce8efb85de1b3ebfda399b116081feb827",
+      "sha256": "e025bd727d878191ea0b82bd5ff074ce8efb85de1b3ebfda399b116081feb827",
+      "size_bytes": 7699,
+      "hash_match": true
+    },
+    {
+      "role": "v10r_reduction_matrix",
+      "path": "wtc1_simulation_v8/output/v10r_material_reduction_envelope_matrix.csv",
+      "expected_sha256": "60ce371d7c129992c66a76a171d03bb6366eb5a3c3a850a91ff2d097cffaf510",
+      "sha256": "60ce371d7c129992c66a76a171d03bb6366eb5a3c3a850a91ff2d097cffaf510",
+      "size_bytes": 45264,
+      "hash_match": true
+    },
+    {
+      "role": "v10s_propagation_handoff",
+      "path": "wtc1_simulation_v8/output/v10s_three_track_propagation_arrest_handoff.json",
+      "expected_sha256": "1bc02c7d9ac54aaefccbda77e146c2f1cea93e81351247dbd60d3520a1b84e0b",
+      "sha256": "1bc02c7d9ac54aaefccbda77e146c2f1cea93e81351247dbd60d3520a1b84e0b",
+      "size_bytes": 8087,
+      "hash_match": true
+    },
+    {
+      "role": "v10s_propagation_contract",
+      "path": "wtc1_simulation_v8/output/v10s_propagation_contract_v2.json",
+      "expected_sha256": "61c7e737fa2a58e6f56563e33aa6c69e3e399c4035614c653ea8014ec5736617",
+      "sha256": "61c7e737fa2a58e6f56563e33aa6c69e3e399c4035614c653ea8014ec5736617",
+      "size_bytes": 6024,
+      "hash_match": true
+    },
+    {
+      "role": "v10x_configuration",
+      "path": "wtc1_simulation_v8/data/v10x_calculix_cyclic_plasticity_benchmark.json",
+      "expected_sha256": "56eb16ee2316fd31caa1bbe7c15142365f00dd078fa97505a8baf108a8c1c22f",
+      "sha256": "56eb16ee2316fd31caa1bbe7c15142365f00dd078fa97505a8baf108a8c1c22f",
+      "size_bytes": 16048,
+      "hash_match": true
+    },
+    {
+      "role": "v10x_runner",
+      "path": "wtc1_simulation_v8/scripts/run_v10x_calculix_cyclic_plasticity_benchmark.py",
+      "expected_sha256": "9e8df875ec235b14f3f7ce2196e85c7002c47ec655e2691b4950652ccc437478",
+      "sha256": "9e8df875ec235b14f3f7ce2196e85c7002c47ec655e2691b4950652ccc437478",
+      "size_bytes": 46665,
+      "hash_match": true
+    },
+    {
+      "role": "v10x_gate",
+      "path": "wtc1_simulation_v8/output/v10x_cyclic_plasticity_benchmark_gate.json",
+      "expected_sha256": "604c315b73020c449fa4ce00ff39474d08a490506fc1ea27ae49b1f0ac06f212",
+      "sha256": "604c315b73020c449fa4ce00ff39474d08a490506fc1ea27ae49b1f0ac06f212",
+      "size_bytes": 1970,
+      "hash_match": true
+    },
+    {
+      "role": "v10x_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10x_benchmark_plasticite_cyclique.json",
+      "expected_sha256": "6fe29a641bf93c987872ce27c6c09ea3aac3df35d9031b352706e3e17dfa9803",
+      "sha256": "6fe29a641bf93c987872ce27c6c09ea3aac3df35d9031b352706e3e17dfa9803",
+      "size_bytes": 24673,
+      "hash_match": true
+    },
+    {
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1",
+      "sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1",
+      "size_bytes": 527455,
+      "hash_match": true
+    }
+  ],
+  "epistemic_policy": {
+    "documented_input": "Tower dimensions and chronology are inherited from the hash-verified V10Y and V4.2 parameter packages.",
+    "official_model_dependent_input": "Impact-damage and localized structural-temperature envelopes remain dependent on the selected NIST model transcriptions used by V10Y.",
+    "exploratory_hypothesis": "Capacity shares, reserve, floor mass, story resistance, temperature quantile, load redistribution, truss-pull penalty and initial drop remain declared V10Y hypotheses.",
+    "derived_result": "The selected initiation and propagation timeline is a deterministic V10Y calculation replayed without parameter change.",
+    "visualization_status": "The 3D geometry and motion are schematic encodings of scalar V10Y outputs, not a finite-element deformation field or historical reconstruction.",
+    "unknown": "Member-by-member temperatures, connections, failure sequence, lateral motion, debris, dust, rotation and the real event outcome are not identified by V10Z."
+  },
+  "network_access": false,
+  "builder_at_prepare": {
+    "path": "tmp/v10z_attempt_02/builder_at_preview.py",
+    "sha256": "3ba4d48d1660661dbea03b0155e134eac6b68da7714e9ab978217d8646ea0d96",
+    "size_bytes": 22023
+  },
+  "runner_at_finalization": {
+    "path": "wtc1_simulation_v8/scripts/run_v10z_blender_exploratory_visualization.py",
+    "sha256": "40ace1ff39e458c852d2513708a00cdcc61c2e5ed3ba08c51872bbdcb3534c1d",
+    "size_bytes": 26375
+  },
+  "implementation_revision": {
+    "reason": "Blender 5.2 requires image_settings.media_type=VIDEO before selecting FFMPEG.",
+    "primary_documentation": "https://developer.blender.org/docs/release_notes/4.5/pipeline_assets_io/",
+    "local_api_verified": true,
+    "rejected_encoding_setup": {
+      "path": "tmp/v10z_attempt_02/rejected_render_01/render_execution.json",
+      "sha256": "0808f76fa1880321f04d78761f76cce5f6256d025498f54276720dd7a5439bee",
+      "size_bytes": 1267
+    },
+    "prior_framing_preview": {
+      "path": "tmp/v10z_attempt_01/preview_execution.json",
+      "sha256": "6d79adc2555171b9c83cd7482474501ccab5aba91df2f9acd00a1142d7076c89",
+      "size_bytes": 1278
+    },
+    "physical_model_changes": 0,
+    "accepted_blender_execution_count": 2,
+    "rejected_preview_count": 1,
+    "rejected_encoding_setup_count": 1,
+    "read_only_blender_api_probe_count": 2,
+    "design_research_network_access": true,
+    "render_execution_network_access": false
+  }
+}

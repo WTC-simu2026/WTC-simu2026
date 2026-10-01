@@ -1,0 +1,169 @@
+{
+  "iteration": "V9V",
+  "generated_at_utc": "2026-08-30T12:17:54Z",
+  "validation_status": "PASS",
+  "audit_type": "CACHED_SOURCE_ONLY_SUFFICIENCY_AUDIT",
+  "source_units": [
+    {
+      "id": "NCSTAR1_2B_FIGURE_9_124",
+      "source_class": "official_model_result",
+      "facts": [
+        "The text maps 1=A, 2=C and 3=B.",
+        "The calculated base-case disruption figure covers Floors 93-97.",
+        "The text states that stairwell positions are outlined with red boxes.",
+        "The global model included core partition walls only on Floors 94-97, limiting Floor 93 damage ascertainment."
+      ],
+      "derived_visual_audit": {
+        "visible_marker_count": 13,
+        "unrecoverable_markers": [
+          "F94-C",
+          "F95-C"
+        ],
+        "no_panel_floors": [
+          98,
+          99
+        ]
+      },
+      "authorized_use_in_v9v": "candidate inventory only",
+      "geometry_promoted": false
+    },
+    {
+      "id": "NCSTAR1_7_TABLE_2_2_BAND_83_95",
+      "floors_in_scope": [
+        93,
+        94,
+        95
+      ],
+      "source_class": "OFFICIAL_NIST_DOCUMENT_RECORD_SCHEMATIC",
+      "use": "categorical band topology only",
+      "exact_floor_panel": false,
+      "metric_scale_present": false,
+      "numeric_offset_present": false,
+      "promotion_supported": false
+    },
+    {
+      "id": "NCSTAR1_7_TABLE_2_2_BAND_96_102",
+      "floors_in_scope": [
+        96,
+        97,
+        98,
+        99
+      ],
+      "source_class": "OFFICIAL_NIST_DOCUMENT_RECORD_SCHEMATIC",
+      "use": "categorical band topology only",
+      "exact_floor_panel": false,
+      "metric_scale_present": false,
+      "numeric_offset_present": false,
+      "promotion_supported": false
+    },
+    {
+      "id": "NCSTAR1_7_FIGURE_5_2_FLOOR95",
+      "floors_in_scope": [
+        95
+      ],
+      "source_class": "OFFICIAL_NIST_IMPACT_MODEL_RESULT",
+      "use": "existing V9S qualitative Floor 95 registration source",
+      "exact_floor_panel": true,
+      "visible_stairs": [
+        "A",
+        "C",
+        "B"
+      ],
+      "metric_scale_present": false,
+      "numeric_offset_present": false,
+      "independent_as_built_measurement": false,
+      "promotion_supported": false
+    },
+    {
+      "id": "NCSTAR1_1A_FIGURE_2_2_REPRESENTATIVE_UPPER_FLOOR",
+      "floors_in_scope": [],
+      "source_class": "PORT_AUTHORITY_DRAWING_REPRODUCED_BY_NIST",
+      "use": "visual cross-check only",
+      "exact_floor_panel": false,
+      "metric_scale_present": false,
+      "numeric_offset_present": false,
+      "promotion_supported": false
+    },
+    {
+      "id": "NCSTAR1_2A_FIGURE_1_1_WTC2_FLOOR26",
+      "floors_in_scope": [],
+      "source_class": "PORT_AUTHORITY_DRAWING_REPRODUCED_BY_NIST",
+      "use": "reject as exact WTC 1 substitute",
+      "exact_floor_panel": false,
+      "metric_scale_present": false,
+      "numeric_offset_present": false,
+      "promotion_supported": false
+    },
+    {
+      "id": "NCSTAR1_6_AND_1_6C_FLOOR96_STRUCTURAL_GRIDS",
+      "floors_in_scope": [
+        96
+      ],
+      "source_class": "OFFICIAL_NIST_STRUCTURAL_MODEL_SCHEMATICS",
+      "use": "future registration landmarks only; stair internals absent",
+      "exact_floor_panel": true,
+      "visible_stairs": [],
+      "metric_scale_present": false,
+      "numeric_offset_present": false,
+      "promotion_supported": false
+    }
+  ],
+  "promotion_criteria": {
+    "bounded_qualitative_registration_candidate": [
+      "exact WTC 1 floor is identified",
+      "a numbered stair-position marker is source-visible",
+      "a future per-panel landmark and digitization-uncertainty audit is still required"
+    ],
+    "promote_beyond_categorical_placeholder": [
+      "floor-specific source geometry is registered reproducibly",
+      "the source semantics are retained as official-model rather than observed as-built geometry",
+      "missing markers are not imputed",
+      "no physical scale or mechanical property is introduced"
+    ],
+    "metric_as_built_geometry": [
+      "floor-specific WTC 1 as-built drawing identity",
+      "dimensioned position and orientation",
+      "complete enclosure or landing geometry",
+      "documented coordinate transform and uncertainty"
+    ],
+    "floor_specific_offset": [
+      "identified from-floor and to-floor",
+      "documented path or signed displacement",
+      "documented magnitude or dimension chain",
+      "orientation and fixed landmarks"
+    ]
+  },
+  "counts": {
+    "floor_count": 7,
+    "stair_count": 3,
+    "floor_stair_record_count": 21,
+    "exact_floor_panel_count": 5,
+    "visible_marker_count": 13,
+    "unrecoverable_marker_count": 2,
+    "floor_without_panel_count": 2,
+    "complete_visible_marker_floor_count": 3,
+    "partial_visible_marker_floor_count": 2,
+    "bounded_registration_candidate_record_count": 13,
+    "floor_specific_metric_plan_count": 0,
+    "numeric_floor_specific_offset_count": 0,
+    "geometry_promoted_record_count": 0,
+    "variant_count": 3
+  },
+  "decision": {
+    "cached_source_audit_complete": true,
+    "bounded_registration_candidate_floor_stair_records": 13,
+    "future_candidate_floors": [
+      93,
+      94,
+      95,
+      96,
+      97
+    ],
+    "geometry_promoted_beyond_categorical_in_v9v": false,
+    "floor_specific_metric_as_built_geometry_supported": false,
+    "numeric_floor_specific_offset_supported": false,
+    "floors_98_99_remain_categorical_only": true,
+    "missing_markers_imputed": false
+  },
+  "limitation": "The 13 visible boxes are floor-specific official-model position markers only. They require a later per-panel registration and cannot be treated as complete enclosures, as-built coordinates, measured offsets or independent component-damage observations."
+}

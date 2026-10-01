@@ -1,0 +1,93 @@
+{
+  "iteration": "V11E",
+  "random_seed": 1101005,
+  "random_draw_used": false,
+  "purpose": "Verify an isothermal reinforced slab fiber SECTION after tensile cracking, including cycles and energy. No panel integration, global capacity or predetermined collapse outcome.",
+  "base_configuration": "wtc1_simulation_v8/data/v11a_component_resistance_predeclaration.json",
+  "previous_configuration": "wtc1_simulation_v8/data/v11d_slab_contact_predeclaration.json",
+  "section": {
+    "width_in": 80.0,
+    "equivalent_thickness_in": 4.35,
+    "temperature_c": 20.0,
+    "reference_concrete_fibers": 160,
+    "verification_concrete_fibers": [80, 320],
+    "quadrature": "Equal midpoint fibers through depth; steel layers are distinct integration points. Concrete area is uniformly reduced by total steel ratio, so Ac+As=Ag. This smeared area replacement is an explicit geometric approximation, not the actual bar holes.",
+    "kinematics": "Small-strain plane section: eps(y)=eps0-y*kappa, y positive upward. N=sum(A*sigma), M=-sum(A*y*sigma). Virtual work per unit longitudinal length is N*d(eps0)+M*d(kappa).",
+    "geometry_status": "Reuse V11A/V11D equivalent strip, NOT an as-built reinforced/deck section. No topping/deck/chord/rebar double-counting or truss stiffness added."
+  },
+  "concrete": {
+    "E20_ksi": 2500.0,
+    "fc20_ksi": 3.0,
+    "ft20_MPa": 1.0,
+    "fracture_energy_J_m2": 100.0,
+    "characteristic_length_m": 0.1,
+    "law": "Compression linear elastic until the fc domain screen; tension elastic then linear softening to zero. Irreversible max tensile strain, secant unloading to origin, restored elastic compression at closure. No crack healing or compression plasticity.",
+    "regularization": "eps0=ft/E; epsf=2*Gf/(ft*Lch), require epsf>eps0. Total monotonic work per volume is Gf/Lch including the pre-peak triangle. Lch is longitudinal crack-band length, NOT slab depth or fiber thickness. No tensile residual stress floor.",
+    "status": "E/fc/ft inherited hypotheses; Gf/Lch new uncalibrated sensitivity hypotheses. No measured WTC tensile fracture curve, cycle law or crushing law."
+  },
+  "reinforcement": {
+    "E_GPa": 200.0,
+    "fy_MPa": 400.0,
+    "layer_center_distance_from_face_mm": 25.0,
+    "law": "Symmetric elastic-perfectly plastic, associative 1D return mapping; no hardening, buckling, fatigue, rupture or rate effect. Perfect steel-concrete strain compatibility.",
+    "absolute_mechanical_strain_domain_limit": 0.01,
+    "status": "All steel areas, grade and layer placement are EXPLORATORY assumptions, not an actual WTC reinforcement schedule. The 1 percent strain screen is a chosen model domain, not measured fracture strain."
+  },
+  "cases": [
+    {"id":"MONO_PLAIN","rho_total":0.0,"layout":"symmetric","kind":"monotonic"},
+    {"id":"MONO_RHO01","rho_total":0.001,"layout":"symmetric","kind":"monotonic"},
+    {"id":"MONO_REFERENCE","rho_total":0.002,"layout":"symmetric","kind":"monotonic"},
+    {"id":"MONO_RHO04","rho_total":0.004,"layout":"symmetric","kind":"monotonic"},
+    {"id":"MONO_TOP_ONLY","rho_total":0.002,"layout":"top","kind":"monotonic"},
+    {"id":"MONO_TOP_REVERSED","rho_total":0.002,"layout":"top","kind":"monotonic","direction":-1},
+    {"id":"MONO_BOTTOM_ONLY","rho_total":0.002,"layout":"bottom","kind":"monotonic"},
+    {"id":"MONO_GF50","rho_total":0.002,"layout":"symmetric","kind":"monotonic","Gf_J_m2":50.0},
+    {"id":"MONO_GF150","rho_total":0.002,"layout":"symmetric","kind":"monotonic","Gf_J_m2":150.0},
+    {"id":"MONO_LCH005","rho_total":0.002,"layout":"symmetric","kind":"monotonic","Lch_m":0.05},
+    {"id":"MONO_LCH020","rho_total":0.002,"layout":"symmetric","kind":"monotonic","Lch_m":0.2},
+    {"id":"MONO_AXIAL_COMPRESSION","rho_total":0.002,"layout":"symmetric","kind":"monotonic","compression_fraction_fc_Ac":0.05},
+    {"id":"CYCLE_REFERENCE","rho_total":0.002,"layout":"symmetric","kind":"cyclic"},
+    {"id":"CYCLE_TOP_ONLY","rho_total":0.002,"layout":"top","kind":"cyclic"}
+  ],
+  "paths": {
+    "monotonic_end_curvature_per_m": 0.08,
+    "cyclic_vertices_per_m": [0.0,0.012,0.0,-0.012,0.0,0.03,0.0,-0.03,0.0,0.05,0.0,-0.05,0.0],
+    "curvature_step_per_m": 0.00025,
+    "axial_preload_steps": 20,
+    "control": "Prescribed curvature, imposed constant axial force (usually N=0). Enumerate the exact piecewise-linear axial equation; require one positive axial tangent root. Multiple positive roots or absence of one stops as unresolved, not collapse. Neutral zero-stiffness alternatives are counted separately. Trial calls never commit state.",
+    "stop": "First concrete compression fc at either actual outer face of the equivalent strip (exact linear compressive strain recovery), or chosen steel strain domain screen, not tensile cracking/yield. Locate domain boundary by bisection from previous committed state. No compression continuation or floor failure inferred."
+  },
+  "acceptance": {
+    "relative_axial_equilibrium": 1e-8,
+    "relative_exact_material_energy_balance": 1e-9,
+    "external_trapezoid_energy_relative": 0.01,
+    "mesh_160_to_320_moment_relative": 0.02,
+    "mesh_160_to_320_domain_curvature_relative": 0.02,
+    "half_step_moment_relative": 0.01,
+    "half_step_domain_curvature_relative": 0.01,
+    "domain_curvature_bisection_tolerance_per_m": 1e-10,
+    "require_collapse_or_survival": false
+  },
+  "method_sources": [
+    {"id":"DIANA_LINEAR_GF","url":"https://manuals.dianafea.com/d108/en/1219784-1221375-total-strain-crack-models.html","accessed":"2026-09-06","scope":"Primary software manual: linear total-strain tensile softening can be parameterized by tensile strength, fracture energy and crack bandwidth. Not WTC material calibration, and DIANA is not run."},
+    {"id":"DIANA_CLOSURE","url":"https://manuals.dianafea.com/d102/Theory/Theorych74.html","accessed":"2026-09-06","scope":"Primary software manual, section74.2: distinguishes cracking, secant unloading and elastic compression after closure. V11E is an explicit 1D simplification, not the whole DIANA constitutive model."},
+    {"id":"OPENSEES_ELASTICPP","url":"https://opensees.berkeley.edu/OpenSees/manuals/usermanual/171.htm","accessed":"2026-09-06","scope":"Primary software manual: uniaxial elastic-perfectly plastic law. Own transparent implementation; no OpenSees executable or cross-solver validation claimed."}
+  ],
+  "protected_files": [
+    "wtc1_simulation_v8/scripts/v11d_panel_model.py",
+    "wtc1_simulation_v8/output/v11d_slab_contact/results_v11d.json",
+    "wtc1_simulation_v8/output/v11d_slab_contact/rapport_v11d_dalle_contact.md",
+    "wtc1_simulation_v8/output/v11d_slab_contact/offline_manifest.json",
+    "wtc1_simulation_v8/output/v11c_floor_panel/results_v11c.json",
+    "wtc1_simulation_v8/output/v11b_initialization_mass/results_v11b.json",
+    "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend"
+  ],
+  "global_energy_credit_J": 0.0,
+  "thermal_history_credit": false,
+  "panel_coupling": false,
+  "software_installation": false,
+  "gpu": false,
+  "expected_cpu_seconds_under": 180,
+  "output_directory": "wtc1_simulation_v8/output/v11e_cracked_section",
+  "scratch_directory": "tmp/v11e_cracked_section"
+}

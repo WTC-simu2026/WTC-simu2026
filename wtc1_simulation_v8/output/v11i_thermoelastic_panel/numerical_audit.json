@@ -1,0 +1,866 @@
+{
+  "iteration": "V11I",
+  "status": "PASS",
+  "test_count": 32,
+  "tests": [
+    {
+      "test": "three_declared_unique_panel_paths",
+      "pass": true,
+      "evidence": {
+        "paths": 3,
+        "unique": 3
+      }
+    },
+    {
+      "test": "v11f_saved_control_hashes_and_identity",
+      "pass": true,
+      "evidence": {
+        "status": "PASS",
+        "hashes": 36
+      }
+    },
+    {
+      "test": "v11h_saved_control_hashes_and_identity",
+      "pass": true,
+      "evidence": {
+        "status": "PASS",
+        "hashes": 36
+      }
+    },
+    {
+      "test": "deterministic_exact_replay",
+      "pass": true,
+      "evidence": 3
+    },
+    {
+      "test": "all_states_equilibrium",
+      "pass": true,
+      "evidence": 1.9242768805317673e-12
+    },
+    {
+      "test": "all_increments_mechanical_plus_thermal_energy",
+      "pass": true,
+      "evidence": 8.47587054708665e-09
+    },
+    {
+      "test": "all_paths_total_mechanical_plus_thermal_energy",
+      "pass": true,
+      "evidence": 6.346406192364514e-11
+    },
+    {
+      "test": "support_work_exactly_zero",
+      "pass": true,
+      "evidence": 0.0
+    },
+    {
+      "test": "zero_dissipation_and_global_credit",
+      "pass": true,
+      "evidence": 0.0
+    },
+    {
+      "test": "support_reactions_balance_gravity",
+      "pass": true,
+      "evidence": {
+        "vertical_relative": 1.985207980826266e-12,
+        "horizontal_absolute_N": 7.658531899886296e-09
+      }
+    },
+    {
+      "test": "delta_t_zero_is_exact_preload_replay",
+      "pass": true,
+      "evidence": {
+        "stored_J": 0.0,
+        "spring_stored_J": 0.0,
+        "slab_stored_J": 0.0,
+        "max_slab_down_m": 0.0,
+        "max_slab_up_m": 0.0,
+        "max_truss_down_m": 0.0,
+        "max_opening_m": 0.0,
+        "max_overlap_m": 0.0,
+        "seat_vertical_reaction_N": 0.0,
+        "seat_horizontal_reaction_N": 0.0,
+        "gravity_load_N": 0.0,
+        "max_DCR": 0.0
+      }
+    },
+    {
+      "test": "cold_v11f_cached_quarter_gravity_regression",
+      "pass": true,
+      "evidence": {
+        "maximum_relative": 1.1896998503683583e-12,
+        "errors": {
+          "stored_J": 1.1893909102748831e-12,
+          "spring_stored_J": 1.1896998503683583e-12,
+          "slab_stored_J": 1.1821928187717638e-12,
+          "max_slab_down_m": 6.075305410468245e-13,
+          "max_truss_down_m": 6.072672602695667e-13,
+          "max_opening_m": 0.0,
+          "max_overlap_m": 2.665081681480486e-13,
+          "seat_vertical_reaction_N": 4.903659859034774e-13,
+          "gravity_load_N": 0.0,
+          "component_max_DCR": 5.11045826469682e-13
+        },
+        "discrete": {
+          "contact_count": true,
+          "vertical_tension_count": true,
+          "governing_id": true,
+          "governing_kind": true
+        }
+      }
+    },
+    {
+      "test": "cold_zero_tangent_matches_v11f",
+      "pass": true,
+      "evidence": 1.9106075792149893e-15
+    },
+    {
+      "test": "reference_topology_is_one_v11f_panel",
+      "pass": true,
+      "evidence": {
+        "case_id": "COLD_DELTA_T_ZERO",
+        "panel_case": {
+          "id": "V11I_PANEL_R02",
+          "rho_total": 0.002,
+          "layout": "symmetric",
+          "cold_v11f_case_id": "COLD_R02",
+          "scope": "One symmetric equivalent V11F truss-pair panel. Reinforcement ratio and layout remain exploratory hypotheses, not an as-built schedule."
+        },
+        "subdivisions": 4,
+        "degrees_of_freedom": 261,
+        "steel_nodes": 33,
+        "steel_members": 63,
+        "slab_nodes": 65,
+        "slab_elements": 64,
+        "gauss_sections": 128,
+        "contact_stations": 17,
+        "span_m": 18.1102,
+        "quadrature_weight_sum_m": 18.110200000000034,
+        "section": {
+          "case_id": "COLD_DELTA_T_ZERO",
+          "mode": "FREE",
+          "width_m": 2.032,
+          "equivalent_thickness_m": 0.11048999999999999,
+          "span_m": 18.1102,
+          "concrete_fibers": 160,
+          "concrete_area_m2": 0.22406664864,
+          "steel_area_m2": 0.00044903136,
+          "gross_area_m2": 0.22451568,
+          "reinforcement_layers": 2,
+          "E_concrete_Pa": 17236893232.920902,
+          "E_steel_Pa": 200000000000.0,
+          "alpha_concrete_per_K": 1e-05,
+          "alpha_steel_per_K": 1.2e-05,
+          "section_stiffness": {
+            "K_N": 3952019171.666089,
+            "K_Nm": 7.450580596923828e-09,
+            "K_Nm2": 4011168.5338727497
+          },
+          "mass_kg_per_m": 541.284852912,
+          "heat_capacity_J_per_m_K": 486098.89876799996,
+          "energy_units": "Mechanical and sensible quantities are J/m longitudinal length; no global energy credit"
+        },
+        "cold_zero_tangent_relative_difference": 1.9106075792149893e-15,
+        "global_energy_credit_J": 0.0
+      }
+    },
+    {
+      "test": "accepted_states_stop_below_guard",
+      "pass": true,
+      "evidence": {
+        "maximum": 0.899999873152565,
+        "guard": 0.9
+      }
+    },
+    {
+      "test": "guard_crossing_trials_are_uncommitted",
+      "pass": true,
+      "evidence": [
+        {
+          "accepted_scale": 0.08235462506612141,
+          "accepted_DCR": 0.8999998731525536,
+          "rejected_scale": 0.08235470453898111,
+          "rejected_DCR": 0.9000006347939219,
+          "rejected_state_committed": false,
+          "accepted_governing_id": "SLAB-003-END-1-BOTTOM",
+          "accepted_governing_kind": "slab_concrete_tension_elastic_guard"
+        }
+      ]
+    },
+    {
+      "test": "no_nominal_limit_or_crack_state_accepted",
+      "pass": true,
+      "evidence": 0.899999873152565
+    },
+    {
+      "test": "uniform_coupling_produces_nonzero_thermal_response",
+      "pass": true,
+      "evidence": {
+        "thermal_scale": 1.0,
+        "thermoelastic_work_J": 2422.4294755080077,
+        "max_slab_up_m": 0.02064455302807063,
+        "seat_vertical_reaction_N": 35239.800129794225,
+        "spring_stored_J": 1658.0173358044258
+      }
+    },
+    {
+      "test": "gradient_coupling_produces_nonzero_thermal_response",
+      "pass": true,
+      "evidence": {
+        "thermal_scale": 0.08235462506612141,
+        "thermoelastic_work_J": 61.58586722674143,
+        "max_slab_up_m": -0.00018112068824421517,
+        "seat_vertical_reaction_N": 35239.80012978596,
+        "spring_stored_J": 108.2806043071206
+      }
+    },
+    {
+      "test": "uniform_and_gradient_temperature_faces_saved",
+      "pass": true,
+      "evidence": {
+        "uniform": [
+          120.0,
+          120.0
+        ],
+        "gradient": [
+          20.0,
+          28.23546250661214
+        ]
+      }
+    },
+    {
+      "test": "panel_sensible_enthalpy_closed_form_and_separate",
+      "pass": true,
+      "evidence": {
+        "COLD_DELTA_T_ZERO": 0.0,
+        "SLAB_UNIFORM_100K": 0.0,
+        "SLAB_GRADIENT_TOP_100K": 0.0
+      }
+    },
+    {
+      "test": "unilateral_contact_and_vertical_tie_signs",
+      "pass": true,
+      "evidence": "Contact compression only; tie tension only"
+    },
+    {
+      "test": "no_actuator_or_prescribed_motion",
+      "pass": true,
+      "evidence": "Only gravity and slab eigenstrain; fixed ground support coordinates do not move"
+    },
+    {
+      "test": "half_thermal_step_gate",
+      "pass": true,
+      "evidence": [
+        {
+          "case_id": "COLD_DELTA_T_ZERO",
+          "comparison": "half_step",
+          "other_subdivisions": 4,
+          "reference_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+          "other_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+          "reference_terminal_scale": 1.0,
+          "other_terminal_scale": 1.0,
+          "common_scale": 1.0,
+          "terminal_scale_absolute_difference": 0.0,
+          "terminal_scale_relative_difference": 0.0,
+          "displacement_relative_difference": 0.0,
+          "reaction_relative_difference": 0.0,
+          "energy_relative_difference": 0.0,
+          "field_relative_differences": {
+            "max_slab_down_m": 0.0,
+            "max_slab_up_m": 0.0,
+            "max_truss_down_m": 0.0,
+            "max_opening_m": 0.0,
+            "max_overlap_m": 0.0,
+            "seat_vertical_reaction_N": 0.0,
+            "seat_horizontal_reaction_N": 0.0,
+            "stored_J": 0.0,
+            "spring_stored_J": 0.0,
+            "slab_stored_J": 0.0,
+            "sensible_enthalpy_J": 0.0
+          },
+          "gates": {
+            "terminal": true,
+            "scale": true,
+            "displacement": true,
+            "reaction": true,
+            "energy": true
+          },
+          "pass": true
+        },
+        {
+          "case_id": "SLAB_UNIFORM_100K",
+          "comparison": "half_step",
+          "other_subdivisions": 4,
+          "reference_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+          "other_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+          "reference_terminal_scale": 1.0,
+          "other_terminal_scale": 1.0,
+          "common_scale": 1.0,
+          "terminal_scale_absolute_difference": 0.0,
+          "terminal_scale_relative_difference": 0.0,
+          "displacement_relative_difference": 0.0,
+          "reaction_relative_difference": 0.0,
+          "energy_relative_difference": 0.0,
+          "field_relative_differences": {
+            "max_slab_down_m": 0.0,
+            "max_slab_up_m": 0.0,
+            "max_truss_down_m": 0.0,
+            "max_opening_m": 0.0,
+            "max_overlap_m": 0.0,
+            "seat_vertical_reaction_N": 0.0,
+            "seat_horizontal_reaction_N": 0.0,
+            "stored_J": 0.0,
+            "spring_stored_J": 0.0,
+            "slab_stored_J": 0.0,
+            "sensible_enthalpy_J": 0.0
+          },
+          "gates": {
+            "terminal": true,
+            "scale": true,
+            "displacement": true,
+            "reaction": true,
+            "energy": true
+          },
+          "pass": true
+        },
+        {
+          "case_id": "SLAB_GRADIENT_TOP_100K",
+          "comparison": "half_step",
+          "other_subdivisions": 4,
+          "reference_terminal": "SAFE_DCR_GUARD_REACHED_BEFORE_NOMINAL_LIMIT",
+          "other_terminal": "SAFE_DCR_GUARD_REACHED_BEFORE_NOMINAL_LIMIT",
+          "reference_terminal_scale": 0.08235462506612141,
+          "other_terminal_scale": 0.08235462506612141,
+          "common_scale": 0.08235462506612141,
+          "terminal_scale_absolute_difference": 0.0,
+          "terminal_scale_relative_difference": 0.0,
+          "displacement_relative_difference": 0.0,
+          "reaction_relative_difference": 0.0,
+          "energy_relative_difference": 0.0,
+          "field_relative_differences": {
+            "max_slab_down_m": 0.0,
+            "max_slab_up_m": 0.0,
+            "max_truss_down_m": 0.0,
+            "max_opening_m": 0.0,
+            "max_overlap_m": 0.0,
+            "seat_vertical_reaction_N": 0.0,
+            "seat_horizontal_reaction_N": 0.0,
+            "stored_J": 0.0,
+            "spring_stored_J": 0.0,
+            "slab_stored_J": 0.0,
+            "sensible_enthalpy_J": 0.0
+          },
+          "gates": {
+            "terminal": true,
+            "scale": true,
+            "displacement": true,
+            "reaction": true,
+            "energy": true
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "test": "reference_to_fine_panel_mesh_gate",
+      "pass": true,
+      "evidence": [
+        {
+          "case_id": "COLD_DELTA_T_ZERO",
+          "comparison": "mesh",
+          "other_subdivisions": 8,
+          "reference_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+          "other_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+          "reference_terminal_scale": 1.0,
+          "other_terminal_scale": 1.0,
+          "common_scale": 1.0,
+          "terminal_scale_absolute_difference": 0.0,
+          "terminal_scale_relative_difference": 0.0,
+          "displacement_relative_difference": 1.0612015617409153e-11,
+          "reaction_relative_difference": 5.672044010658407e-08,
+          "energy_relative_difference": 1.1386014084810772e-05,
+          "field_relative_differences": {
+            "max_slab_down_m": 1.0612015617409153e-11,
+            "max_slab_up_m": 8.968450261093511e-12,
+            "max_truss_down_m": 1.0611424754188409e-11,
+            "max_opening_m": 0.0,
+            "max_overlap_m": 3.7311143540771546e-12,
+            "seat_vertical_reaction_N": 9.007868308648426e-12,
+            "seat_horizontal_reaction_N": 5.672044010658407e-08,
+            "stored_J": 5.775939137704013e-07,
+            "spring_stored_J": 2.111493059967585e-11,
+            "slab_stored_J": 1.1386014084810772e-05,
+            "sensible_enthalpy_J": 0.0
+          },
+          "gates": {
+            "terminal": true,
+            "scale": true,
+            "displacement": true,
+            "reaction": true,
+            "energy": true
+          },
+          "pass": true
+        },
+        {
+          "case_id": "SLAB_UNIFORM_100K",
+          "comparison": "mesh",
+          "other_subdivisions": 8,
+          "reference_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+          "other_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+          "reference_terminal_scale": 1.0,
+          "other_terminal_scale": 1.0,
+          "common_scale": 1.0,
+          "terminal_scale_absolute_difference": 0.0,
+          "terminal_scale_relative_difference": 0.0,
+          "displacement_relative_difference": 2.5659802057893354e-11,
+          "reaction_relative_difference": 4.839265615918757e-07,
+          "energy_relative_difference": 4.1090492756045156e-07,
+          "field_relative_differences": {
+            "max_slab_down_m": 2.5093678811768384e-11,
+            "max_slab_up_m": 1.5661669659549293e-11,
+            "max_truss_down_m": 2.5659802057893354e-11,
+            "max_opening_m": 0.0,
+            "max_overlap_m": 3.791426765301641e-12,
+            "seat_vertical_reaction_N": 2.582897014914106e-11,
+            "seat_horizontal_reaction_N": 4.839265615918757e-07,
+            "stored_J": 3.8962646044555696e-08,
+            "spring_stored_J": 3.834730764940288e-12,
+            "slab_stored_J": 4.1090492756045156e-07,
+            "sensible_enthalpy_J": 2.7082715759282943e-16
+          },
+          "gates": {
+            "terminal": true,
+            "scale": true,
+            "displacement": true,
+            "reaction": true,
+            "energy": true
+          },
+          "pass": true
+        },
+        {
+          "case_id": "SLAB_GRADIENT_TOP_100K",
+          "comparison": "mesh",
+          "other_subdivisions": 8,
+          "reference_terminal": "SAFE_DCR_GUARD_REACHED_BEFORE_NOMINAL_LIMIT",
+          "other_terminal": "SAFE_DCR_GUARD_REACHED_BEFORE_NOMINAL_LIMIT",
+          "reference_terminal_scale": 0.08235462506612141,
+          "other_terminal_scale": 0.0825958251953125,
+          "common_scale": 0.08235462506612141,
+          "terminal_scale_absolute_difference": 0.00024120012919108536,
+          "terminal_scale_relative_difference": 0.002928798825778504,
+          "displacement_relative_difference": 5.507268347975065e-15,
+          "reaction_relative_difference": 1.2770851719215356e-11,
+          "energy_relative_difference": 1.989606769224059e-06,
+          "field_relative_differences": {
+            "max_slab_down_m": 1.9198377904872585e-16,
+            "max_slab_up_m": 2.8433860147230473e-15,
+            "max_truss_down_m": 1.9200567664966539e-16,
+            "max_opening_m": 0.0,
+            "max_overlap_m": 5.507268347975065e-15,
+            "seat_vertical_reaction_N": 1.6517591104118712e-15,
+            "seat_horizontal_reaction_N": 1.2770851719215356e-11,
+            "stored_J": 4.950500186945856e-07,
+            "spring_stored_J": 5.249639972416551e-16,
+            "slab_stored_J": 1.989606769224059e-06,
+            "sensible_enthalpy_J": 2.0553426520928998e-16
+          },
+          "gates": {
+            "terminal": true,
+            "scale": true,
+            "displacement": true,
+            "reaction": true,
+            "energy": true
+          },
+          "pass": true
+        }
+      ]
+    },
+    {
+      "test": "all_mesh_topologies_declared",
+      "pass": true,
+      "evidence": {
+        "2": 3,
+        "8": 3
+      }
+    },
+    {
+      "test": "constant_inherited_moduli_COLD_DELTA_T_ZERO",
+      "pass": true,
+      "evidence": {
+        "E_concrete_Pa": 17236893232.920902,
+        "E_steel_Pa": 200000000000.0
+      }
+    },
+    {
+      "test": "constant_inherited_moduli_SLAB_UNIFORM_100K",
+      "pass": true,
+      "evidence": {
+        "E_concrete_Pa": 17236893232.920902,
+        "E_steel_Pa": 200000000000.0
+      }
+    },
+    {
+      "test": "constant_inherited_moduli_SLAB_GRADIENT_TOP_100K",
+      "pass": true,
+      "evidence": {
+        "E_concrete_Pa": 17236893232.920902,
+        "E_steel_Pa": 200000000000.0
+      }
+    },
+    {
+      "test": "scope_flags_remain_closed",
+      "pass": true,
+      "evidence": "Prescribed-temperature elastic local panel only"
+    },
+    {
+      "test": "v11h_heat_transfer_fields_remain_null",
+      "pass": true,
+      "evidence": {
+        "conductivity": null,
+        "emissivity": null,
+        "convection_coefficient": null,
+        "incident_heat_flux": null,
+        "gas_temperature_history": null,
+        "sfrm_state": null
+      }
+    },
+    {
+      "test": "serialized_reference_digest_replay",
+      "pass": true,
+      "evidence": "1f1a7264f18e23498adec2dd5dc18576bf1d7a1687ebccbaf0d0645f1de116cd"
+    }
+  ],
+  "comparisons": {
+    "half_step": [
+      {
+        "case_id": "COLD_DELTA_T_ZERO",
+        "comparison": "half_step",
+        "other_subdivisions": 4,
+        "reference_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+        "other_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+        "reference_terminal_scale": 1.0,
+        "other_terminal_scale": 1.0,
+        "common_scale": 1.0,
+        "terminal_scale_absolute_difference": 0.0,
+        "terminal_scale_relative_difference": 0.0,
+        "displacement_relative_difference": 0.0,
+        "reaction_relative_difference": 0.0,
+        "energy_relative_difference": 0.0,
+        "field_relative_differences": {
+          "max_slab_down_m": 0.0,
+          "max_slab_up_m": 0.0,
+          "max_truss_down_m": 0.0,
+          "max_opening_m": 0.0,
+          "max_overlap_m": 0.0,
+          "seat_vertical_reaction_N": 0.0,
+          "seat_horizontal_reaction_N": 0.0,
+          "stored_J": 0.0,
+          "spring_stored_J": 0.0,
+          "slab_stored_J": 0.0,
+          "sensible_enthalpy_J": 0.0
+        },
+        "gates": {
+          "terminal": true,
+          "scale": true,
+          "displacement": true,
+          "reaction": true,
+          "energy": true
+        },
+        "pass": true
+      },
+      {
+        "case_id": "SLAB_UNIFORM_100K",
+        "comparison": "half_step",
+        "other_subdivisions": 4,
+        "reference_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+        "other_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+        "reference_terminal_scale": 1.0,
+        "other_terminal_scale": 1.0,
+        "common_scale": 1.0,
+        "terminal_scale_absolute_difference": 0.0,
+        "terminal_scale_relative_difference": 0.0,
+        "displacement_relative_difference": 0.0,
+        "reaction_relative_difference": 0.0,
+        "energy_relative_difference": 0.0,
+        "field_relative_differences": {
+          "max_slab_down_m": 0.0,
+          "max_slab_up_m": 0.0,
+          "max_truss_down_m": 0.0,
+          "max_opening_m": 0.0,
+          "max_overlap_m": 0.0,
+          "seat_vertical_reaction_N": 0.0,
+          "seat_horizontal_reaction_N": 0.0,
+          "stored_J": 0.0,
+          "spring_stored_J": 0.0,
+          "slab_stored_J": 0.0,
+          "sensible_enthalpy_J": 0.0
+        },
+        "gates": {
+          "terminal": true,
+          "scale": true,
+          "displacement": true,
+          "reaction": true,
+          "energy": true
+        },
+        "pass": true
+      },
+      {
+        "case_id": "SLAB_GRADIENT_TOP_100K",
+        "comparison": "half_step",
+        "other_subdivisions": 4,
+        "reference_terminal": "SAFE_DCR_GUARD_REACHED_BEFORE_NOMINAL_LIMIT",
+        "other_terminal": "SAFE_DCR_GUARD_REACHED_BEFORE_NOMINAL_LIMIT",
+        "reference_terminal_scale": 0.08235462506612141,
+        "other_terminal_scale": 0.08235462506612141,
+        "common_scale": 0.08235462506612141,
+        "terminal_scale_absolute_difference": 0.0,
+        "terminal_scale_relative_difference": 0.0,
+        "displacement_relative_difference": 0.0,
+        "reaction_relative_difference": 0.0,
+        "energy_relative_difference": 0.0,
+        "field_relative_differences": {
+          "max_slab_down_m": 0.0,
+          "max_slab_up_m": 0.0,
+          "max_truss_down_m": 0.0,
+          "max_opening_m": 0.0,
+          "max_overlap_m": 0.0,
+          "seat_vertical_reaction_N": 0.0,
+          "seat_horizontal_reaction_N": 0.0,
+          "stored_J": 0.0,
+          "spring_stored_J": 0.0,
+          "slab_stored_J": 0.0,
+          "sensible_enthalpy_J": 0.0
+        },
+        "gates": {
+          "terminal": true,
+          "scale": true,
+          "displacement": true,
+          "reaction": true,
+          "energy": true
+        },
+        "pass": true
+      }
+    ],
+    "mesh": {
+      "2": [
+        {
+          "case_id": "COLD_DELTA_T_ZERO",
+          "comparison": "mesh",
+          "other_subdivisions": 2,
+          "reference_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+          "other_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+          "reference_terminal_scale": 1.0,
+          "other_terminal_scale": 1.0,
+          "common_scale": 1.0,
+          "terminal_scale_absolute_difference": 0.0,
+          "terminal_scale_relative_difference": 0.0,
+          "displacement_relative_difference": 3.6058062667783532e-12,
+          "reaction_relative_difference": 2.5214067127207416e-08,
+          "energy_relative_difference": 0.00018217654904000566,
+          "field_relative_differences": {
+            "max_slab_down_m": 3.6058062667783532e-12,
+            "max_slab_up_m": 2.8344419670454266e-12,
+            "max_truss_down_m": 3.605026499037182e-12,
+            "max_opening_m": 0.0,
+            "max_overlap_m": 1.2881228127171129e-12,
+            "seat_vertical_reaction_N": 2.5936747431292182e-12,
+            "seat_horizontal_reaction_N": 2.5214067127207416e-08,
+            "stored_J": 9.241833112605738e-06,
+            "spring_stored_J": 6.9832157951961225e-12,
+            "slab_stored_J": 0.00018217654904000566,
+            "sensible_enthalpy_J": 0.0
+          },
+          "gates": {
+            "terminal": true,
+            "scale": true,
+            "displacement": true,
+            "reaction": true,
+            "energy": true
+          },
+          "pass": true
+        },
+        {
+          "case_id": "SLAB_UNIFORM_100K",
+          "comparison": "mesh",
+          "other_subdivisions": 2,
+          "reference_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+          "other_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+          "reference_terminal_scale": 1.0,
+          "other_terminal_scale": 1.0,
+          "common_scale": 1.0,
+          "terminal_scale_absolute_difference": 0.0,
+          "terminal_scale_relative_difference": 0.0,
+          "displacement_relative_difference": 8.582597997733783e-12,
+          "reaction_relative_difference": 2.6814694768206107e-07,
+          "energy_relative_difference": 6.574391624293499e-06,
+          "field_relative_differences": {
+            "max_slab_down_m": 8.444928986295267e-12,
+            "max_slab_up_m": 5.733744438364499e-12,
+            "max_truss_down_m": 8.582597997733783e-12,
+            "max_opening_m": 0.0,
+            "max_overlap_m": 2.24012543232326e-12,
+            "seat_vertical_reaction_N": 7.554113821536908e-12,
+            "seat_horizontal_reaction_N": 2.6814694768206107e-07,
+            "stored_J": 6.233396684828811e-07,
+            "spring_stored_J": 1.258221749037197e-12,
+            "slab_stored_J": 6.574391624293499e-06,
+            "sensible_enthalpy_J": 1.3541357879641471e-16
+          },
+          "gates": {
+            "terminal": true,
+            "scale": true,
+            "displacement": true,
+            "reaction": true,
+            "energy": true
+          },
+          "pass": true
+        },
+        {
+          "case_id": "SLAB_GRADIENT_TOP_100K",
+          "comparison": "mesh",
+          "other_subdivisions": 2,
+          "reference_terminal": "SAFE_DCR_GUARD_REACHED_BEFORE_NOMINAL_LIMIT",
+          "other_terminal": "SAFE_DCR_GUARD_REACHED_BEFORE_NOMINAL_LIMIT",
+          "reference_terminal_scale": 0.08235462506612141,
+          "other_terminal_scale": 0.0813896656036377,
+          "common_scale": 0.0813896656036377,
+          "terminal_scale_absolute_difference": 0.0009649594624837193,
+          "terminal_scale_relative_difference": 0.011717125318814412,
+          "displacement_relative_difference": 5.547071770858431e-15,
+          "reaction_relative_difference": 3.62345178798416e-11,
+          "energy_relative_difference": 3.232835739296327e-05,
+          "field_relative_differences": {
+            "max_slab_down_m": 1.9154723453501253e-16,
+            "max_slab_up_m": 7.484054058626878e-16,
+            "max_truss_down_m": 0.0,
+            "max_opening_m": 0.0,
+            "max_overlap_m": 5.547071770858431e-15,
+            "seat_vertical_reaction_N": 0.0,
+            "seat_horizontal_reaction_N": 3.62345178798416e-11,
+            "stored_J": 7.947237883220843e-06,
+            "spring_stored_J": 2.62314217176348e-16,
+            "slab_stored_J": 3.232835739296327e-05,
+            "sensible_enthalpy_J": 0.0
+          },
+          "gates": {
+            "terminal": true,
+            "scale": true,
+            "displacement": true,
+            "reaction": true,
+            "energy": true
+          },
+          "pass": true
+        }
+      ],
+      "8": [
+        {
+          "case_id": "COLD_DELTA_T_ZERO",
+          "comparison": "mesh",
+          "other_subdivisions": 8,
+          "reference_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+          "other_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+          "reference_terminal_scale": 1.0,
+          "other_terminal_scale": 1.0,
+          "common_scale": 1.0,
+          "terminal_scale_absolute_difference": 0.0,
+          "terminal_scale_relative_difference": 0.0,
+          "displacement_relative_difference": 1.0612015617409153e-11,
+          "reaction_relative_difference": 5.672044010658407e-08,
+          "energy_relative_difference": 1.1386014084810772e-05,
+          "field_relative_differences": {
+            "max_slab_down_m": 1.0612015617409153e-11,
+            "max_slab_up_m": 8.968450261093511e-12,
+            "max_truss_down_m": 1.0611424754188409e-11,
+            "max_opening_m": 0.0,
+            "max_overlap_m": 3.7311143540771546e-12,
+            "seat_vertical_reaction_N": 9.007868308648426e-12,
+            "seat_horizontal_reaction_N": 5.672044010658407e-08,
+            "stored_J": 5.775939137704013e-07,
+            "spring_stored_J": 2.111493059967585e-11,
+            "slab_stored_J": 1.1386014084810772e-05,
+            "sensible_enthalpy_J": 0.0
+          },
+          "gates": {
+            "terminal": true,
+            "scale": true,
+            "displacement": true,
+            "reaction": true,
+            "energy": true
+          },
+          "pass": true
+        },
+        {
+          "case_id": "SLAB_UNIFORM_100K",
+          "comparison": "mesh",
+          "other_subdivisions": 8,
+          "reference_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+          "other_terminal": "TARGET_REACHED_WITHIN_ELASTIC_GUARD_NOT_SAFETY_PROOF",
+          "reference_terminal_scale": 1.0,
+          "other_terminal_scale": 1.0,
+          "common_scale": 1.0,
+          "terminal_scale_absolute_difference": 0.0,
+          "terminal_scale_relative_difference": 0.0,
+          "displacement_relative_difference": 2.5659802057893354e-11,
+          "reaction_relative_difference": 4.839265615918757e-07,
+          "energy_relative_difference": 4.1090492756045156e-07,
+          "field_relative_differences": {
+            "max_slab_down_m": 2.5093678811768384e-11,
+            "max_slab_up_m": 1.5661669659549293e-11,
+            "max_truss_down_m": 2.5659802057893354e-11,
+            "max_opening_m": 0.0,
+            "max_overlap_m": 3.791426765301641e-12,
+            "seat_vertical_reaction_N": 2.582897014914106e-11,
+            "seat_horizontal_reaction_N": 4.839265615918757e-07,
+            "stored_J": 3.8962646044555696e-08,
+            "spring_stored_J": 3.834730764940288e-12,
+            "slab_stored_J": 4.1090492756045156e-07,
+            "sensible_enthalpy_J": 2.7082715759282943e-16
+          },
+          "gates": {
+            "terminal": true,
+            "scale": true,
+            "displacement": true,
+            "reaction": true,
+            "energy": true
+          },
+          "pass": true
+        },
+        {
+          "case_id": "SLAB_GRADIENT_TOP_100K",
+          "comparison": "mesh",
+          "other_subdivisions": 8,
+          "reference_terminal": "SAFE_DCR_GUARD_REACHED_BEFORE_NOMINAL_LIMIT",
+          "other_terminal": "SAFE_DCR_GUARD_REACHED_BEFORE_NOMINAL_LIMIT",
+          "reference_terminal_scale": 0.08235462506612141,
+          "other_terminal_scale": 0.0825958251953125,
+          "common_scale": 0.08235462506612141,
+          "terminal_scale_absolute_difference": 0.00024120012919108536,
+          "terminal_scale_relative_difference": 0.002928798825778504,
+          "displacement_relative_difference": 5.507268347975065e-15,
+          "reaction_relative_difference": 1.2770851719215356e-11,
+          "energy_relative_difference": 1.989606769224059e-06,
+          "field_relative_differences": {
+            "max_slab_down_m": 1.9198377904872585e-16,
+            "max_slab_up_m": 2.8433860147230473e-15,
+            "max_truss_down_m": 1.9200567664966539e-16,
+            "max_opening_m": 0.0,
+            "max_overlap_m": 5.507268347975065e-15,
+            "seat_vertical_reaction_N": 1.6517591104118712e-15,
+            "seat_horizontal_reaction_N": 1.2770851719215356e-11,
+            "stored_J": 4.950500186945856e-07,
+            "spring_stored_J": 5.249639972416551e-16,
+            "slab_stored_J": 1.989606769224059e-06,
+            "sensible_enthalpy_J": 2.0553426520928998e-16
+          },
+          "gates": {
+            "terminal": true,
+            "scale": true,
+            "displacement": true,
+            "reaction": true,
+            "energy": true
+          },
+          "pass": true
+        }
+      ]
+    }
+  }
+}

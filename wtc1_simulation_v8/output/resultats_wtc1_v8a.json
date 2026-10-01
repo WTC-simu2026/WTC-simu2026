@@ -1,0 +1,842 @@
+{
+  "model": "WTC1_V8A_NIST_TRANSFER_CORE_ENVELOPE",
+  "version": "8.0.0",
+  "inputs": {
+    "nist_transfer": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_simulation_v8\\data\\nist_wtc1_transfer.json",
+    "core_schedule": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_3d_v4\\data\\core_sections_impact_zone.json"
+  },
+  "aircraft_cases": {
+    "less_severe": {
+      "mass_kg": 122206.09999999999,
+      "speed_m_s": 185.07456,
+      "kinetic_energy_gj": 2.092937887994644,
+      "momentum_MN_s": 22.617240186815994,
+      "source_parameters": {
+        "speed_mph": 414.0,
+        "trajectory_pitch_deg": 13.6,
+        "orientation_pitch_deg": 11.6,
+        "mass_factor": 0.95,
+        "aircraft_failure_strain_factor": 0.75,
+        "tower_failure_strain_factor": 1.2,
+        "design_live_load_fraction": 0.25
+      }
+    },
+    "base": {
+      "mass_kg": 128638.0,
+      "speed_m_s": 198.03871999999998,
+      "kinetic_energy_gj": 2.522548383374794,
+      "momentum_MN_s": 25.475304863359998,
+      "source_parameters": {
+        "speed_mph": 443.0,
+        "trajectory_pitch_deg": 10.6,
+        "orientation_pitch_deg": 8.6,
+        "mass_factor": 1.0,
+        "aircraft_failure_strain_factor": 1.0,
+        "tower_failure_strain_factor": 1.0,
+        "design_live_load_fraction": 0.25,
+        "lateral_approach_deg_clockwise_from_structure_north": 180.3,
+        "roll_deg_left_wing_down": 25.0
+      }
+    },
+    "more_severe": {
+      "mass_kg": 135069.9,
+      "speed_m_s": 211.00288,
+      "kinetic_energy_gj": 3.0068055887869938,
+      "momentum_MN_s": 28.500137901312,
+      "source_parameters": {
+        "speed_mph": 472.0,
+        "trajectory_pitch_deg": 7.6,
+        "orientation_pitch_deg": 5.6,
+        "mass_factor": 1.05,
+        "aircraft_failure_strain_factor": 1.25,
+        "tower_failure_strain_factor": 0.8,
+        "design_live_load_fraction": 0.2
+      }
+    }
+  },
+  "impact_damage_cases": {
+    "less_severe": {
+      "floor_results": {
+        "93": {
+          "schedule_band": "95-92",
+          "reported_damage_states": {
+            "504": "severed",
+            "505": "heavy",
+            "506": "moderate"
+          },
+          "removed_if_heavy_treated_as_severed": [
+            504,
+            505
+          ],
+          "remaining_column_count": 45,
+          "nominal_all_core_py_kip": 123094.9786989796,
+          "removed_nominal_py_kip": 5829.355102040817,
+          "remaining_nominal_py_kip": 117265.62359693878,
+          "remaining_nominal_py_MN": 521.6234816109047
+        },
+        "94": {
+          "schedule_band": "95-92",
+          "reported_damage_states": {
+            "504": "severed",
+            "505": "heavy",
+            "506": "moderate",
+            "606": "light"
+          },
+          "removed_if_heavy_treated_as_severed": [
+            504,
+            505
+          ],
+          "remaining_column_count": 45,
+          "nominal_all_core_py_kip": 123094.9786989796,
+          "removed_nominal_py_kip": 5829.355102040817,
+          "remaining_nominal_py_kip": 117265.62359693878,
+          "remaining_nominal_py_MN": 521.6234816109047
+        },
+        "95": {
+          "schedule_band": "98-95",
+          "reported_damage_states": {
+            "504": "severed",
+            "505": "heavy"
+          },
+          "removed_if_heavy_treated_as_severed": [
+            504,
+            505
+          ],
+          "remaining_column_count": 45,
+          "nominal_all_core_py_kip": 102304.94693877551,
+          "removed_nominal_py_kip": 4919.510204081633,
+          "remaining_nominal_py_kip": 97385.43673469388,
+          "remaining_nominal_py_MN": 433.1920046948492
+        },
+        "96": {
+          "schedule_band": "98-95",
+          "reported_damage_states": {
+            "504": "severed",
+            "505": "heavy",
+            "604": "light",
+            "702": "moderate",
+            "703": "light",
+            "704": "heavy",
+            "705": "light",
+            "802": "moderate",
+            "805": "light"
+          },
+          "removed_if_heavy_treated_as_severed": [
+            504,
+            505,
+            704
+          ],
+          "remaining_column_count": 44,
+          "nominal_all_core_py_kip": 102304.94693877551,
+          "removed_nominal_py_kip": 5698.285714285715,
+          "remaining_nominal_py_kip": 96606.6612244898,
+          "remaining_nominal_py_MN": 429.72783863692393
+        },
+        "97": {
+          "schedule_band": "98-95",
+          "reported_damage_states": {},
+          "removed_if_heavy_treated_as_severed": [],
+          "remaining_column_count": 47,
+          "nominal_all_core_py_kip": 102304.94693877551,
+          "removed_nominal_py_kip": 0,
+          "remaining_nominal_py_kip": 102304.94693877551,
+          "remaining_nominal_py_MN": 455.0750763211397
+        },
+        "98": {
+          "schedule_band": "101-98",
+          "reported_damage_states": {},
+          "removed_if_heavy_treated_as_severed": [],
+          "remaining_column_count": 47,
+          "nominal_all_core_py_kip": 83376.0,
+          "removed_nominal_py_kip": 0,
+          "remaining_nominal_py_kip": 83376.0,
+          "remaining_nominal_py_MN": 370.8749253939594
+        },
+        "99": {
+          "schedule_band": "101-98",
+          "reported_damage_states": {},
+          "removed_if_heavy_treated_as_severed": [],
+          "remaining_column_count": 47,
+          "nominal_all_core_py_kip": 83376.0,
+          "removed_nominal_py_kip": 0,
+          "remaining_nominal_py_kip": 83376.0,
+          "remaining_nominal_py_MN": 370.8749253939594
+        }
+      }
+    },
+    "base": {
+      "floor_results": {
+        "93": {
+          "schedule_band": "95-92",
+          "reported_damage_states": {
+            "504": "severed",
+            "505": "heavy",
+            "506": "heavy",
+            "604": "severed",
+            "706": "severed"
+          },
+          "removed_if_heavy_treated_as_severed": [
+            504,
+            505,
+            506,
+            604,
+            706
+          ],
+          "remaining_column_count": 42,
+          "nominal_all_core_py_kip": 123094.9786989796,
+          "removed_nominal_py_kip": 12663.771428571428,
+          "remaining_nominal_py_kip": 110431.20727040817,
+          "remaining_nominal_py_MN": 491.22248317954205
+        },
+        "94": {
+          "schedule_band": "95-92",
+          "reported_damage_states": {
+            "504": "severed",
+            "505": "heavy",
+            "506": "heavy",
+            "604": "severed",
+            "605": "moderate",
+            "704": "heavy",
+            "706": "severed",
+            "805": "moderate"
+          },
+          "removed_if_heavy_treated_as_severed": [
+            504,
+            505,
+            506,
+            604,
+            704,
+            706
+          ],
+          "remaining_column_count": 41,
+          "nominal_all_core_py_kip": 123094.9786989796,
+          "removed_nominal_py_kip": 13560.097959183675,
+          "remaining_nominal_py_kip": 109534.88073979592,
+          "remaining_nominal_py_MN": 487.2354241317412
+        },
+        "95": {
+          "schedule_band": "98-95",
+          "reported_damage_states": {
+            "504": "severed",
+            "505": "heavy",
+            "604": "severed",
+            "605": "moderate",
+            "705": "moderate",
+            "706": "severed"
+          },
+          "removed_if_heavy_treated_as_severed": [
+            504,
+            505,
+            604,
+            706
+          ],
+          "remaining_column_count": 43,
+          "nominal_all_core_py_kip": 102304.94693877551,
+          "removed_nominal_py_kip": 7215.281632653061,
+          "remaining_nominal_py_kip": 95089.66530612245,
+          "remaining_nominal_py_MN": 422.9799046025803
+        },
+        "96": {
+          "schedule_band": "98-95",
+          "reported_damage_states": {
+            "503": "heavy",
+            "504": "severed",
+            "505": "heavy",
+            "604": "severed",
+            "702": "moderate",
+            "703": "moderate",
+            "802": "moderate"
+          },
+          "removed_if_heavy_treated_as_severed": [
+            503,
+            504,
+            505,
+            604
+          ],
+          "remaining_column_count": 43,
+          "nominal_all_core_py_kip": 102304.94693877551,
+          "removed_nominal_py_kip": 9299.461224489796,
+          "remaining_nominal_py_kip": 93005.4857142857,
+          "remaining_nominal_py_MN": 413.7090118920873
+        },
+        "97": {
+          "schedule_band": "98-95",
+          "reported_damage_states": {},
+          "removed_if_heavy_treated_as_severed": [],
+          "remaining_column_count": 47,
+          "nominal_all_core_py_kip": 102304.94693877551,
+          "removed_nominal_py_kip": 0,
+          "remaining_nominal_py_kip": 102304.94693877551,
+          "remaining_nominal_py_MN": 455.0750763211397
+        },
+        "98": {
+          "schedule_band": "101-98",
+          "reported_damage_states": {},
+          "removed_if_heavy_treated_as_severed": [],
+          "remaining_column_count": 47,
+          "nominal_all_core_py_kip": 83376.0,
+          "removed_nominal_py_kip": 0,
+          "remaining_nominal_py_kip": 83376.0,
+          "remaining_nominal_py_MN": 370.8749253939594
+        },
+        "99": {
+          "schedule_band": "101-98",
+          "reported_damage_states": {},
+          "removed_if_heavy_treated_as_severed": [],
+          "remaining_column_count": 47,
+          "nominal_all_core_py_kip": 83376.0,
+          "removed_nominal_py_kip": 0,
+          "remaining_nominal_py_kip": 83376.0,
+          "remaining_nominal_py_MN": 370.8749253939594
+        }
+      }
+    },
+    "more_severe": {
+      "floor_results": {
+        "93": {
+          "schedule_band": "95-92",
+          "reported_damage_states": {
+            "504": "severed",
+            "505": "severed",
+            "506": "heavy",
+            "604": "severed",
+            "704": "severed",
+            "706": "severed",
+            "805": "heavy"
+          },
+          "removed_if_heavy_treated_as_severed": [
+            504,
+            505,
+            506,
+            604,
+            704,
+            706,
+            805
+          ],
+          "remaining_column_count": 40,
+          "nominal_all_core_py_kip": 123094.9786989796,
+          "removed_nominal_py_kip": 15028.897959183674,
+          "remaining_nominal_py_kip": 108066.08073979593,
+          "remaining_nominal_py_MN": 480.70187622324664
+        },
+        "94": {
+          "schedule_band": "95-92",
+          "reported_damage_states": {
+            "504": "severed",
+            "505": "severed",
+            "506": "heavy",
+            "604": "severed",
+            "605": "moderate",
+            "606": "light",
+            "704": "severed",
+            "706": "severed",
+            "804": "moderate",
+            "805": "heavy"
+          },
+          "removed_if_heavy_treated_as_severed": [
+            504,
+            505,
+            506,
+            604,
+            704,
+            706,
+            805
+          ],
+          "remaining_column_count": 40,
+          "nominal_all_core_py_kip": 123094.9786989796,
+          "removed_nominal_py_kip": 15028.897959183674,
+          "remaining_nominal_py_kip": 108066.08073979593,
+          "remaining_nominal_py_MN": 480.70187622324664
+        },
+        "95": {
+          "schedule_band": "98-95",
+          "reported_damage_states": {
+            "503": "severed",
+            "504": "severed",
+            "505": "severed",
+            "506": "heavy",
+            "604": "severed",
+            "605": "moderate",
+            "704": "severed",
+            "705": "moderate",
+            "706": "severed",
+            "804": "moderate",
+            "805": "heavy",
+            "904": "heavy",
+            "905": "light"
+          },
+          "removed_if_heavy_treated_as_severed": [
+            503,
+            504,
+            505,
+            506,
+            604,
+            704,
+            706,
+            805,
+            904
+          ],
+          "remaining_column_count": 38,
+          "nominal_all_core_py_kip": 102304.94693877551,
+          "removed_nominal_py_kip": 17138.351020408165,
+          "remaining_nominal_py_kip": 85166.59591836734,
+          "remaining_nominal_py_MN": 378.83989286223823
+        },
+        "96": {
+          "schedule_band": "98-95",
+          "reported_damage_states": {
+            "503": "severed",
+            "504": "severed",
+            "505": "severed",
+            "603": "moderate",
+            "604": "severed",
+            "703": "moderate",
+            "704": "severed",
+            "802": "light",
+            "803": "moderate",
+            "804": "moderate",
+            "903": "light",
+            "904": "heavy"
+          },
+          "removed_if_heavy_treated_as_severed": [
+            503,
+            504,
+            505,
+            604,
+            704,
+            904
+          ],
+          "remaining_column_count": 41,
+          "nominal_all_core_py_kip": 102304.94693877551,
+          "removed_nominal_py_kip": 11051.55918367347,
+          "remaining_nominal_py_kip": 91253.38775510204,
+          "remaining_nominal_py_MN": 405.9152918779927
+        },
+        "97": {
+          "schedule_band": "98-95",
+          "reported_damage_states": {
+            "603": "moderate",
+            "702": "light",
+            "803": "moderate"
+          },
+          "removed_if_heavy_treated_as_severed": [],
+          "remaining_column_count": 47,
+          "nominal_all_core_py_kip": 102304.94693877551,
+          "removed_nominal_py_kip": 0,
+          "remaining_nominal_py_kip": 102304.94693877551,
+          "remaining_nominal_py_MN": 455.0750763211397
+        },
+        "98": {
+          "schedule_band": "101-98",
+          "reported_damage_states": {},
+          "removed_if_heavy_treated_as_severed": [],
+          "remaining_column_count": 47,
+          "nominal_all_core_py_kip": 83376.0,
+          "removed_nominal_py_kip": 0,
+          "remaining_nominal_py_kip": 83376.0,
+          "remaining_nominal_py_MN": 370.8749253939594
+        },
+        "99": {
+          "schedule_band": "101-98",
+          "reported_damage_states": {},
+          "removed_if_heavy_treated_as_severed": [],
+          "remaining_column_count": 47,
+          "nominal_all_core_py_kip": 83376.0,
+          "removed_nominal_py_kip": 0,
+          "remaining_nominal_py_kip": 83376.0,
+          "remaining_nominal_py_MN": 370.8749253939594
+        }
+      }
+    }
+  },
+  "case_b_thermal_envelopes_at_100_min": {
+    "93": {
+      "temperature_min_c": 28.0,
+      "temperature_max_c": 193.0,
+      "temperature_midpoint_c_not_median": 110.5,
+      "capacity_uniform_min_kip": 105427.47872269875,
+      "capacity_uniform_midpoint_kip": 98050.92038537336,
+      "capacity_uniform_max_kip": 91231.34980946938,
+      "capacity_uniform_min_MN": 468.964789696725,
+      "capacity_uniform_midpoint_MN": 436.1522234544042,
+      "capacity_uniform_max_MN": 405.8172622118735,
+      "uniform_temperature_to_equal_floor98_core_demand_c": 687.9800451519789,
+      "two_temperature_hot_fraction_to_equal_floor98_core_demand": {
+        "status": "demand_not_reached_even_if_uniform_maximum",
+        "fraction": null
+      }
+    },
+    "94": {
+      "temperature_min_c": 31.0,
+      "temperature_max_c": 904.0,
+      "temperature_midpoint_c_not_median": 467.5,
+      "capacity_uniform_min_kip": 105148.93381542905,
+      "capacity_uniform_midpoint_kip": 69708.21771127873,
+      "capacity_uniform_max_kip": 8076.595978252045,
+      "capacity_uniform_min_MN": 467.72576021938715,
+      "capacity_uniform_midpoint_MN": 310.07760078459484,
+      "capacity_uniform_max_MN": 35.92648880818677,
+      "uniform_temperature_to_equal_floor98_core_demand_c": 687.9800451519789,
+      "two_temperature_hot_fraction_to_equal_floor98_core_demand": {
+        "status": "interpolated_two_temperature_envelope",
+        "fraction": 0.789832979442939
+      }
+    },
+    "95": {
+      "temperature_min_c": 52.0,
+      "temperature_max_c": 761.0,
+      "temperature_midpoint_c_not_median": 406.5,
+      "capacity_uniform_min_kip": 81348.442127509,
+      "capacity_uniform_midpoint_kip": 59191.30784095534,
+      "capacity_uniform_max_kip": 10759.231458629947,
+      "capacity_uniform_min_MN": 361.8558986393533,
+      "capacity_uniform_midpoint_MN": 263.29605497367584,
+      "capacity_uniform_max_MN": 47.859445937868486,
+      "uniform_temperature_to_equal_floor98_core_demand_c": 657.8818683339391,
+      "two_temperature_hot_fraction_to_equal_floor98_core_demand": {
+        "status": "interpolated_two_temperature_envelope",
+        "fraction": 0.7489875807722866
+      }
+    },
+    "96": {
+      "temperature_min_c": 29.0,
+      "temperature_max_c": 780.0,
+      "temperature_midpoint_c_not_median": 404.5,
+      "capacity_uniform_min_kip": 88946.81582483632,
+      "capacity_uniform_midpoint_kip": 63556.51838070647,
+      "capacity_uniform_max_kip": 9644.944247871106,
+      "capacity_uniform_min_MN": 395.65514876063156,
+      "capacity_uniform_midpoint_MN": 282.71347885175976,
+      "capacity_uniform_max_MN": 42.90284948136268,
+      "uniform_temperature_to_equal_floor98_core_demand_c": 667.3107892041207,
+      "two_temperature_hot_fraction_to_equal_floor98_core_demand": {
+        "status": "interpolated_two_temperature_envelope",
+        "fraction": 0.7625143596535329
+      }
+    },
+    "97": {
+      "temperature_min_c": 45.0,
+      "temperature_max_c": 901.0,
+      "temperature_midpoint_c_not_median": 473.0,
+      "capacity_uniform_min_kip": 98322.67919994195,
+      "capacity_uniform_midpoint_kip": 65464.876657694294,
+      "capacity_uniform_max_kip": 7647.347185433563,
+      "capacity_uniform_min_MN": 437.36106688750573,
+      "capacity_uniform_midpoint_MN": 291.2022793891183,
+      "capacity_uniform_max_MN": 34.017095049647125,
+      "uniform_temperature_to_equal_floor98_core_demand_c": 681.6016863371713,
+      "two_temperature_hot_fraction_to_equal_floor98_core_demand": {
+        "status": "interpolated_two_temperature_envelope",
+        "fraction": 0.7702721087226518
+      }
+    },
+    "98": {
+      "temperature_min_c": 41.0,
+      "temperature_max_c": 227.0,
+      "temperature_midpoint_c_not_median": 134.0,
+      "capacity_uniform_min_kip": 80413.41989195862,
+      "capacity_uniform_midpoint_kip": 74108.2151380468,
+      "capacity_uniform_max_kip": 68333.37634296653,
+      "capacity_uniform_min_MN": 357.69671252042895,
+      "capacity_uniform_midpoint_MN": 329.64976444543515,
+      "capacity_uniform_max_MN": 303.9620016925142,
+      "uniform_temperature_to_equal_floor98_core_demand_c": 654.833212368047,
+      "two_temperature_hot_fraction_to_equal_floor98_core_demand": {
+        "status": "demand_not_reached_even_if_uniform_maximum",
+        "fraction": null
+      }
+    },
+    "99": {
+      "temperature_min_c": 41.0,
+      "temperature_max_c": 192.0,
+      "temperature_midpoint_c_not_median": 116.5,
+      "capacity_uniform_min_kip": 80413.41989195862,
+      "capacity_uniform_midpoint_kip": 75252.33959226527,
+      "capacity_uniform_max_kip": 70448.90548626296,
+      "capacity_uniform_min_MN": 357.69671252042895,
+      "capacity_uniform_midpoint_MN": 334.7390835732379,
+      "capacity_uniform_max_MN": 313.3723441554389,
+      "uniform_temperature_to_equal_floor98_core_demand_c": 654.833212368047,
+      "two_temperature_hot_fraction_to_equal_floor98_core_demand": {
+        "status": "demand_not_reached_even_if_uniform_maximum",
+        "fraction": null
+      }
+    }
+  },
+  "material_curve": [
+    {
+      "temperature_c": 20,
+      "yield_ratio": 0.9824931005469242,
+      "young_modulus_gpa": 205.12026464000002,
+      "young_modulus_ratio_to_20c": 1.0
+    },
+    {
+      "temperature_c": 40,
+      "yield_ratio": 0.9653174329528813,
+      "young_modulus_gpa": 204.20934912,
+      "young_modulus_ratio_to_20c": 0.995559114933872
+    },
+    {
+      "temperature_c": 60,
+      "yield_ratio": 0.9484667291818765,
+      "young_modulus_gpa": 203.26408928,
+      "young_modulus_ratio_to_20c": 0.9909507948263536
+    },
+    {
+      "temperature_c": 80,
+      "yield_ratio": 0.9319348311874684,
+      "young_modulus_gpa": 202.28132096,
+      "young_modulus_ratio_to_20c": 0.9861596138003109
+    },
+    {
+      "temperature_c": 100,
+      "yield_ratio": 0.9157156597143372,
+      "young_modulus_gpa": 201.25788,
+      "young_modulus_ratio_to_20c": 0.9811701459786103
+    },
+    {
+      "temperature_c": 120,
+      "yield_ratio": 0.8998031353069581,
+      "young_modulus_gpa": 200.19060223999998,
+      "young_modulus_ratio_to_20c": 0.9759669654841177
+    },
+    {
+      "temperature_c": 140,
+      "yield_ratio": 0.8841910136312805,
+      "young_modulus_gpa": 199.07632352,
+      "young_modulus_ratio_to_20c": 0.9705346464396994
+    },
+    {
+      "temperature_c": 160,
+      "yield_ratio": 0.868872586449805,
+      "young_modulus_gpa": 197.91187968,
+      "young_modulus_ratio_to_20c": 0.9648577629682215
+    },
+    {
+      "temperature_c": 180,
+      "yield_ratio": 0.8538401898970747,
+      "young_modulus_gpa": 196.69410656,
+      "young_modulus_ratio_to_20c": 0.95892088919255
+    },
+    {
+      "temperature_c": 200,
+      "yield_ratio": 0.8390844532873832,
+      "young_modulus_gpa": 195.41984000000002,
+      "young_modulus_ratio_to_20c": 0.9527085992355514
+    },
+    {
+      "temperature_c": 220,
+      "yield_ratio": 0.8245932147223473,
+      "young_modulus_gpa": 194.08591584,
+      "young_modulus_ratio_to_20c": 0.9462054672200915
+    },
+    {
+      "temperature_c": 240,
+      "yield_ratio": 0.8103500244968966,
+      "young_modulus_gpa": 192.68916992,
+      "young_modulus_ratio_to_20c": 0.9393960672690365
+    },
+    {
+      "temperature_c": 260,
+      "yield_ratio": 0.7963321541915919,
+      "young_modulus_gpa": 191.22643807999998,
+      "young_modulus_ratio_to_20c": 0.9322649735052524
+    },
+    {
+      "temperature_c": 280,
+      "yield_ratio": 0.7825080292992416,
+      "young_modulus_gpa": 189.69455616000002,
+      "young_modulus_ratio_to_20c": 0.924796760051606
+    },
+    {
+      "temperature_c": 300,
+      "yield_ratio": 0.7688340079766486,
+      "young_modulus_gpa": 188.09035999999998,
+      "young_modulus_ratio_to_20c": 0.9169760010309626
+    },
+    {
+      "temperature_c": 320,
+      "yield_ratio": 0.7552504410635266,
+      "young_modulus_gpa": 186.41068544,
+      "young_modulus_ratio_to_20c": 0.9087872705661891
+    },
+    {
+      "temperature_c": 340,
+      "yield_ratio": 0.741676973922154,
+      "young_modulus_gpa": 184.65236831999997,
+      "young_modulus_ratio_to_20c": 0.9002151427801509
+    },
+    {
+      "temperature_c": 360,
+      "yield_ratio": 0.7280070969263875,
+      "young_modulus_gpa": 182.81224448,
+      "young_modulus_ratio_to_20c": 0.891244191795715
+    },
+    {
+      "temperature_c": 380,
+      "yield_ratio": 0.714102030611118,
+      "young_modulus_gpa": 180.88714976,
+      "young_modulus_ratio_to_20c": 0.8818589917357469
+    },
+    {
+      "temperature_c": 400,
+      "yield_ratio": 0.6997841607418375,
+      "young_modulus_gpa": 178.87392,
+      "young_modulus_ratio_to_20c": 0.872044116723113
+    },
+    {
+      "temperature_c": 420,
+      "yield_ratio": 0.6848304407754231,
+      "young_modulus_gpa": 176.76939104000002,
+      "young_modulus_ratio_to_20c": 0.8617841408806795
+    },
+    {
+      "temperature_c": 440,
+      "yield_ratio": 0.668966482269038,
+      "young_modulus_gpa": 174.57039872,
+      "young_modulus_ratio_to_20c": 0.851063638331312
+    },
+    {
+      "temperature_c": 460,
+      "yield_ratio": 0.6518624869701942,
+      "young_modulus_gpa": 172.27377888,
+      "young_modulus_ratio_to_20c": 0.8398671831978775
+    },
+    {
+      "temperature_c": 480,
+      "yield_ratio": 0.6331327586910278,
+      "young_modulus_gpa": 169.87636736,
+      "young_modulus_ratio_to_20c": 0.8281793496032415
+    },
+    {
+      "temperature_c": 500,
+      "yield_ratio": 0.61234126250661,
+      "young_modulus_gpa": 167.375,
+      "young_modulus_ratio_to_20c": 0.8159847116702705
+    },
+    {
+      "temperature_c": 520,
+      "yield_ratio": 0.589016506273477,
+      "young_modulus_gpa": 164.76651264,
+      "young_modulus_ratio_to_20c": 0.8032678435218306
+    },
+    {
+      "temperature_c": 540,
+      "yield_ratio": 0.5626797249283186,
+      "young_modulus_gpa": 162.04774112,
+      "young_modulus_ratio_to_20c": 0.7900133192807878
+    },
+    {
+      "temperature_c": 560,
+      "yield_ratio": 0.5328905905699738,
+      "young_modulus_gpa": 159.21552128000002,
+      "young_modulus_ratio_to_20c": 0.7762057130700083
+    },
+    {
+      "temperature_c": 580,
+      "yield_ratio": 0.49931384427940845,
+      "young_modulus_gpa": 156.26668895999998,
+      "young_modulus_ratio_to_20c": 0.761829599012358
+    },
+    {
+      "temperature_c": 600,
+      "yield_ratio": 0.46180748679604455,
+      "young_modulus_gpa": 153.19808,
+      "young_modulus_ratio_to_20c": 0.7468695512307038
+    },
+    {
+      "temperature_c": 620,
+      "yield_ratio": 0.42052750420190005
+    },
+    {
+      "temperature_c": 640,
+      "yield_ratio": 0.3760349190075996
+    },
+    {
+      "temperature_c": 660,
+      "yield_ratio": 0.32937887361073653
+    },
+    {
+      "temperature_c": 680,
+      "yield_ratio": 0.2821176347226198
+    },
+    {
+      "temperature_c": 700,
+      "yield_ratio": 0.23623462205431972
+    },
+    {
+      "temperature_c": 720,
+      "yield_ratio": 0.19391857970642168
+    },
+    {
+      "temperature_c": 740,
+      "yield_ratio": 0.15721424743895557
+    },
+    {
+      "temperature_c": 760,
+      "yield_ratio": 0.12761043585402299
+    },
+    {
+      "temperature_c": 780,
+      "yield_ratio": 0.10569409514697005
+    },
+    {
+      "temperature_c": 800,
+      "yield_ratio": 0.09101942591502014
+    },
+    {
+      "temperature_c": 820,
+      "yield_ratio": 0.08228052209300438
+    },
+    {
+      "temperature_c": 840,
+      "yield_ratio": 0.07773945161670998
+    },
+    {
+      "temperature_c": 860,
+      "yield_ratio": 0.07572431518923588
+    },
+    {
+      "temperature_c": 880,
+      "yield_ratio": 0.07497903062928964
+    },
+    {
+      "temperature_c": 900,
+      "yield_ratio": 0.07475551361388079
+    },
+    {
+      "temperature_c": 920,
+      "yield_ratio": 0.07470280151592996
+    },
+    {
+      "temperature_c": 940,
+      "yield_ratio": 0.07469335749080072
+    },
+    {
+      "temperature_c": 960,
+      "yield_ratio": 0.07469212063883707
+    },
+    {
+      "temperature_c": 980,
+      "yield_ratio": 0.07469200721612751
+    },
+    {
+      "temperature_c": 1000,
+      "yield_ratio": 0.07469200027494326
+    }
+  ],
+  "reference_demand": {
+    "value_kip": 28478.0,
+    "value_MN": 126.67645515938851,
+    "scope": "NIST global WTC 1 model, total core load at Floor 98, 100 min, Case B",
+    "warning": "Used on other floors only as a scale reference; it is not a floor-by-floor load field."
+  },
+  "limitations": [
+    "A×Fy(T) is a nominal gross axial-yield envelope, not a buckling resistance.",
+    "Heavy damage is treated as removed only to reproduce the conservative final Case B transfer rule.",
+    "The reported NIST temperature extrema are not spatial averages or percentiles.",
+    "The two-temperature hot-fraction calculation assumes damage is proportional to nominal column capacity and ignores load concentration.",
+    "No perimeter wall, floor diaphragm, hat truss, connection failure, thermal bowing, creep, or geometric imperfection is solved in V8A.",
+    "The 47-column schedule is a manual transcription and still needs an independent second reading."
+  ]
+}

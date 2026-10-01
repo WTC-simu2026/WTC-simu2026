@@ -1,0 +1,278 @@
+{
+  "iteration": "V10N",
+  "dataset": {
+    "name": "Local resource inventory and solver-neutral coupling freeze",
+    "version": "10.14.0",
+    "status": "PREDECLARED_BEFORE_V10N_HARDWARE_AND_EXECUTABLE_INVENTORY",
+    "created_at_local": "2026-09-02T19:25:00+02:00",
+    "random_seed": 1014001,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10M. Inventory the current Windows host, CPU, memory, GPU, writable storage and exact candidate executable files without installing software or launching a solver. Reverify selected cached impact, thermal, structural and visualization anchors. Freeze a solver-neutral coupling graph with units, mappings, uncertainty variables, validation gates, runtime classes and stop criteria from impact through separately modeled propagation/arrest and Blender visualization. Do not assign new physical properties, close any of the 22 mechanical source requirements, execute a solver, launch Blender, modify the protected Blender master, or infer real-event probabilities from synthetic ensembles."
+  },
+  "resource_policy": {
+    "read_only_host_inventory": true,
+    "software_installation_authorized": false,
+    "external_software_modification_authorized": false,
+    "solver_execution_authorized": false,
+    "solver_version_execution_probe_authorized": false,
+    "gpu_compute_authorized": false,
+    "blender_launch_authorized": false,
+    "blender_master_modification_authorized": false,
+    "source_archive_read": false,
+    "source_archive_modified": false,
+    "official_sources_directory_modified": false,
+    "file_version_metadata_read_authorized": true,
+    "nvidia_smi_read_only_query_authorized": true,
+    "workspace_filename_inventory_authorized": true,
+    "maximum_workspace_inventory_file_count": 200000,
+    "long_run_definition": "Any solver or GPU job expected to take several hours",
+    "long_run_announcement_required": true
+  },
+  "regression_files": [
+    {
+      "role": "v10m_configuration",
+      "path": "wtc1_simulation_v8/data/v10m_official_model_availability_audit.json",
+      "expected_sha256": "5f7dd257680eefae9dfaa98dacecf89738c099d858a0bec5cb7ab3a51321b2ea"
+    },
+    {
+      "role": "v10m_manual_evidence",
+      "path": "wtc1_simulation_v8/data/v10m_official_evidence_transcription.json",
+      "expected_sha256": "124a8b1fdebe1a5ff247190744002a8b22fb7704e1789a2d1c842766f5a62854"
+    },
+    {
+      "role": "v10m_script",
+      "path": "wtc1_simulation_v8/scripts/run_v10m_official_model_availability_audit.py",
+      "expected_sha256": "ebae4d79e0b0d297a747bdcee4ec285c52cd91f8bf626b161a685549aaf074ca"
+    },
+    {
+      "role": "v10m_source_manifest",
+      "path": "wtc1_simulation_v8/output/v10m_official_source_manifest.json",
+      "expected_sha256": "340a89c0a269613b42f44ad2fcf995a27813e0de18de8a44ae6155677bd95228"
+    },
+    {
+      "role": "v10m_evidence_audit",
+      "path": "wtc1_simulation_v8/output/v10m_official_evidence_audit.json",
+      "expected_sha256": "8b244609f511b242f3f51bc204f2dce09e081814d06fe2dde8cd66da8931e119"
+    },
+    {
+      "role": "v10m_availability_matrix",
+      "path": "wtc1_simulation_v8/output/v10m_model_availability_matrix.csv",
+      "expected_sha256": "b5804c82320b2eb0983e6c47e4a1db317d07bb60f6894a2ab3f4aa8637af1c9d"
+    },
+    {
+      "role": "v10m_source_gate",
+      "path": "wtc1_simulation_v8/output/v10m_structural_source_gate.json",
+      "expected_sha256": "f3e7108358bf0d1794b4c7151a777f1eca9dc62c3edcd579172ee9bb611844fd"
+    },
+    {
+      "role": "v10m_feasibility_plan",
+      "path": "wtc1_simulation_v8/output/plan_wtc1_v10m_vers_2026-09-11.md",
+      "expected_sha256": "e750da89228166233a17672bc74ed73cec8bce4bd5753b9434f21b44fba07df1"
+    },
+    {
+      "role": "v10m_report",
+      "path": "wtc1_simulation_v8/output/rapport_wtc1_v10m_provenance_disponibilite_modeles.md",
+      "expected_sha256": "231f7213b2f3226ec40aad2f48ddb50985f5e9067d0c85761c1de0cc16fbe7d6"
+    },
+    {
+      "role": "v10m_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10m_provenance_disponibilite_modeles.json",
+      "expected_sha256": "8e56ce1988c2c73db47c88a21df82158c55cd5005ceb2d79e60773f7ebc05a08"
+    },
+    {
+      "role": "v10m_offline_audit",
+      "path": "wtc1_simulation_v8/output/v10m_offline_package_audit.json",
+      "expected_sha256": "0dc0fde41fd71b53d1a794d7eb3a0dd49b81ec0f4afc935ef5e1c2ca7ec39591"
+    }
+  ],
+  "protected_files": [
+    {
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+    }
+  ],
+  "cached_anchor_files": [
+    {
+      "id": "V8E_THERMAL_FIELDS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8e_champs_thermiques.json",
+      "expected_sha256": "d26e0c2671bb2f0bd1839e6208739e1703597adb79f88a4d81c0df5c330b956e"
+    },
+    {
+      "id": "V8H_MECHANICAL_TRANSFER",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8h_transfert_mecanique.json",
+      "expected_sha256": "c3a593dbb2ebff57d0760e7d04e804fe70bc6e2f47d29a1c6ea778edc22eb7fd"
+    },
+    {
+      "id": "V8J_COLD_GATE",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8j_gate_froid.json",
+      "expected_sha256": "4b93102974a8b9fdf1eff3af408e5c074385df9ae9c5886038b67914b430788e"
+    },
+    {
+      "id": "V8L_MULTISTORY_COLD",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8l_multietages_froid.json",
+      "expected_sha256": "ecaa91fddfec2a04eeeafea130317ed585072d73107da4e10c9751536ec2f9dd"
+    },
+    {
+      "id": "V8R_NETWORK_BOUNDS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8r_flux_bornes.json",
+      "expected_sha256": "b469ae6085c2bdf0e4f2b16218613042f80d8006813bc109540cc5cb0a5811e7"
+    },
+    {
+      "id": "V8S_IMPACT_KINEMATICS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json",
+      "expected_sha256": "40bd3c0c9bc4cad3326f171f885702dc47a020e57f32c788e7276097c8b9c318"
+    },
+    {
+      "id": "V8T_OPENRADIOSS_SMOKE",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8t_openradioss.json",
+      "expected_sha256": "1047a8092aee8140a54f09f15f648ccaab47e8da4c450cacc46c328cc52f1a80"
+    },
+    {
+      "id": "V9M_IMPACT_BRANCH_CLOSURE",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json",
+      "expected_sha256": "2d403c87c558300f2b4460312da549b46e16dbd92d6eac34b0f1b51f5979eb7d"
+    },
+    {
+      "id": "V9P_ANIMATIC",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v9p_animatique.json",
+      "expected_sha256": "58efe4b3d0eb436845b09c3a02c9e4142621f35b7b7229e7b3132c2775574351"
+    },
+    {
+      "id": "V10A_SOLVER_NEUTRAL_SCHEMA",
+      "path": "wtc1_simulation_v8/data/v10a_solver_neutral_readiness_schema.json",
+      "expected_sha256": "96a5da53951b2568447dcf884fdfc12202a8f91f99a7695f8740ec7f6bfce318"
+    }
+  ],
+  "candidate_executables": [
+    {
+      "id": "OPENRADIOSS_STARTER_RUNTIME",
+      "role": "explicit_high_rate_starter",
+      "candidate_paths": [
+        "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+        "C:/OpenRadioss/exec/starter_win64.exe"
+      ]
+    },
+    {
+      "id": "OPENRADIOSS_ENGINE_RUNTIME",
+      "role": "explicit_high_rate_engine",
+      "candidate_paths": [
+        "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+        "C:/OpenRadioss/exec/engine_win64.exe"
+      ]
+    },
+    {
+      "id": "CALCULIX_CCX",
+      "role": "component_and_quasistatic_structural_solver",
+      "candidate_paths": [
+        "C:/Program Files/FreeCAD 1.1/bin/ccx.exe"
+      ]
+    },
+    {
+      "id": "BLENDER",
+      "role": "visualization_only",
+      "candidate_paths": [
+        "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe"
+      ]
+    },
+    {
+      "id": "FREECAD_CMD",
+      "role": "geometry_prepost",
+      "candidate_paths": [
+        "C:/Program Files/FreeCAD 1.1/bin/FreeCADCmd.exe"
+      ]
+    },
+    {
+      "id": "FDS",
+      "role": "fire_cfd_candidate",
+      "candidate_paths": [
+        "C:/Program Files/firemodels/FDS6/bin/fds.exe",
+        "C:/Program Files/FDS/FDS6/bin/fds.exe",
+        "C:/Program Files/FDS6/bin/fds.exe"
+      ]
+    },
+    {
+      "id": "SMOKEVIEW",
+      "role": "fire_postprocessing",
+      "candidate_paths": [
+        "C:/Program Files/firemodels/SMV6/smv.exe",
+        "C:/Program Files/FDS/FDS6/bin/smokeview.exe"
+      ]
+    },
+    {
+      "id": "LS_DYNA",
+      "role": "proprietary_explicit_reference_not_required_for_reduced_chain",
+      "candidate_paths": [
+        "C:/Program Files/LSTC/ls-dyna.exe",
+        "C:/Program Files/LS-DYNA/ls-dyna.exe"
+      ]
+    },
+    {
+      "id": "ANSYS",
+      "role": "proprietary_thermomechanical_reference_not_required_for_reduced_chain",
+      "candidate_paths": [
+        "C:/Program Files/ANSYS Inc"
+      ]
+    },
+    {
+      "id": "NVIDIA_SMI",
+      "role": "read_only_gpu_inventory",
+      "candidate_paths": [
+        "C:/Windows/System32/nvidia-smi.exe",
+        "C:/Program Files/NVIDIA Corporation/NVSMI/nvidia-smi.exe"
+      ]
+    }
+  ],
+  "coupling_module_ids": [
+    "IMPACT_KINEMATICS",
+    "IMPACT_DAMAGE_STATE",
+    "FIRE_GAS_PHASE",
+    "THERMAL_SOLIDS",
+    "COLD_GRAVITY_REDISTRIBUTION",
+    "THERMOMECHANICAL_INITIATION",
+    "PROPAGATION_OR_ARREST",
+    "UNCERTAINTY_ENSEMBLE",
+    "BLENDER_VISUALIZATION"
+  ],
+  "required_interface_ids": [
+    "I01_KINEMATICS_TO_DAMAGE",
+    "I02_DAMAGE_TO_FIRE",
+    "I03_DAMAGE_TO_COLD_STRUCTURE",
+    "I04_FIRE_TO_THERMAL_SOLIDS",
+    "I05_THERMAL_TO_INITIATION",
+    "I06_COLD_STATE_TO_INITIATION",
+    "I07_INITIATION_TO_PROPAGATION",
+    "I08_PROPAGATION_TO_ENSEMBLE",
+    "I09_ALL_VALIDATED_STATES_TO_BLENDER"
+  ],
+  "expected": {
+    "regression_file_count": 11,
+    "protected_file_count": 1,
+    "cached_anchor_count": 10,
+    "candidate_executable_count": 10,
+    "coupling_module_count": 9,
+    "required_interface_count": 9,
+    "mechanical_requirements_closed_count": 0,
+    "mechanical_requirements_blocking_count": 22,
+    "physical_assignment_count": 0,
+    "solver_run_count": 0,
+    "blender_run_count": 0
+  },
+  "outputs": {
+    "regression_audit": "wtc1_simulation_v8/output/v10n_regression_audit.json",
+    "cached_anchor_audit": "wtc1_simulation_v8/output/v10n_cached_anchor_audit.json",
+    "resource_inventory": "wtc1_simulation_v8/output/v10n_local_resource_inventory.json",
+    "solver_inventory": "wtc1_simulation_v8/output/v10n_solver_inventory.csv",
+    "coupling_graph": "wtc1_simulation_v8/output/v10n_solver_neutral_coupling_graph.json",
+    "coupling_matrix": "wtc1_simulation_v8/output/v10n_coupling_interface_matrix.csv",
+    "compute_budget": "wtc1_simulation_v8/output/v10n_compute_budget.json",
+    "source_gate": "wtc1_simulation_v8/output/v10n_coupling_readiness_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10n_ressources_et_couplage.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10n_ressources_et_couplage.json",
+    "offline_audit": "wtc1_simulation_v8/output/v10n_offline_package_audit.json"
+  },
+  "next_iteration": {
+    "id": "V10O",
+    "objective": "Implement schema-validated adapters for the frozen reduced-order coupling interfaces, replay the shortest cached baseline cases, and produce the first integrated no-propagation control without launching a multi-hour solve."
+  }
+}

@@ -1,0 +1,5715 @@
+{
+  "model": "WTC1_V8H_A_MECHANICALLY_CAPPED_CORE_TRANSFER",
+  "version": "8.7.0",
+  "generated_at_utc": "2026-08-22T08:25:43.782459+00:00",
+  "runtime_seconds": 234.69696230000045,
+  "configuration_file": "wtc1_simulation_v8/data/v8h_core_beam_network.json",
+  "facts_transferred": {
+    "global_model_rule": "NIST NCSTAR 1-6D modeled individually only core beams framed with moment connections; non-moment beam axial stiffness was combined with the in-plane slab stiffness.",
+    "global_model_local_redistribution": "NIST reports that the composite floor representation could redistribute load locally among neighboring columns.",
+    "floor96_full_floor_model": "NIST NCSTAR 1-6C modeled the Floor 96 core beams and slab explicitly; Floor 96 was treated as typical of the upper floors.",
+    "beam_steel_material": "NIST NCSTAR 1-6C Material ID 2: all 36 ksi core WF, channels and tubes; room-temperature model yield 37.0 ksi and ultimate 63.45 ksi.",
+    "beam_schedule_source": "NIST NCSTAR 1-2A identifies WTCAB-Bk5-BeamSched.xls and WTCAB_DBk5.mdb, but neither file was found in the local source archive.",
+    "connection_schedule_source": "NIST NCSTAR 1-2A identifies Drawing Book 6 core-bracing/connection data, but the relevant files were not found in the local source archive."
+  },
+  "model_assumptions": {
+    "beam_schedule": {
+      "status": "MODEL_HYPOTHESIS_NOT_AS_BUILT_ASSIGNMENT",
+      "source": "AISC historic WF properties already extracted and hash-recorded for V8B",
+      "profiles": [
+        "12WF65",
+        "14WF136",
+        "14WF228"
+      ],
+      "selection_basis": "Wide low/middle/high mechanical bracket using available historic WF rows; the actual Book 5 member schedule is required to replace it."
+    },
+    "moment_topology": {
+      "status": "MANUAL_TRANSCRIPTION_FROM_NIST_NCSTAR_1-6D_FIGURE_2-4",
+      "applies_to": "global-model moment-connected core beams at each office floor in the modeled upper-story range",
+      "edges": [
+        [
+          601,
+          602
+        ],
+        [
+          602,
+          603
+        ],
+        [
+          603,
+          604
+        ],
+        [
+          604,
+          605
+        ],
+        [
+          605,
+          606
+        ],
+        [
+          606,
+          607
+        ],
+        [
+          607,
+          608
+        ],
+        [
+          701,
+          702
+        ],
+        [
+          707,
+          708
+        ],
+        [
+          801,
+          802
+        ],
+        [
+          806,
+          807
+        ],
+        [
+          901,
+          902
+        ],
+        [
+          902,
+          903
+        ],
+        [
+          903,
+          904
+        ],
+        [
+          905,
+          906
+        ],
+        [
+          906,
+          907
+        ],
+        [
+          907,
+          908
+        ]
+      ],
+      "isolated_rows_in_this_subnetwork": [
+        500,
+        1000
+      ],
+      "note": "Absence from this edge list means absence from the individually modeled moment-beam subnetwork, not absence of all floor framing."
+    },
+    "proxy_topology": {
+      "name": "nearest_four_connected_proxy",
+      "status": "MODEL_HYPOTHESIS",
+      "construction": "Union of the four nearest reconstructed core-column neighbors for every core column.",
+      "purpose": "Connected sensitivity envelope for omitted non-moment beams and slab load paths; not an as-built framing transcription.",
+      "coordinate_uncertainty_m": 0.3
+    },
+    "mechanical_law": {
+      "type": "bilinear_relative_vertical_beam_spring_with_fracture",
+      "initial_stiffness": "k = n_planes * 12 E I / L^3",
+      "yield_transfer": "V_y = n_planes * connection_factor * 2 M_p / L",
+      "plastic_moment": "M_p = Fy(T) * Zx_proxy",
+      "plastic_modulus_proxy": "Zx reconstructed from rectangular flange and web dimensions; fillets omitted",
+      "post_yield_tangent_ratio": 0.01,
+      "ultimate_relative_rotation_rad": 0.02,
+      "active_floor_planes": [
+        1,
+        2
+      ],
+      "connection_to_beam_strength_factors": [
+        0.5,
+        1.0
+      ],
+      "beam_temperature_policies": [
+        "cold_20c_upper_transfer_bound",
+        "mean_endpoint_column_temperature_proxy"
+      ],
+      "warning": "The connection factors and rotation limit are sensitivity assumptions because Book 6 details are missing."
+    },
+    "vertical_coupling": "stable column-spring reactions at one story become nodal loads at the story below",
+    "column_support": "elastic axial spring EA/L capped by the V8B nominal temperature-reduced column capacity",
+    "column_failure_history": "fractured beam links persist within a story cascade; plastic offsets are recalculated after each column removal",
+    "beam_temperature_proxy": "endpoint mean uses synthetic column temperatures because beam temperature histories are unavailable",
+    "omitted": [
+      "story self weight",
+      "geometric P-delta compatibility between stories",
+      "slab cracking and membrane failure",
+      "connection-specific fracture",
+      "transient dynamics"
+    ],
+    "fractions_are_event_probabilities": false
+  },
+  "topology_summary": {
+    "nist_moment_only": {
+      "edge_count": 17,
+      "connected_column_count": 24
+    },
+    "nearest_four_proxy": {
+      "edge_count": 118,
+      "connected_column_count": 47
+    }
+  },
+  "component_envelopes": {
+    "nist_moment_only": {
+      "edge_count": 17,
+      "connected_column_count": 24,
+      "span_min_m": 2.771,
+      "span_median_m": 6.422000000000001,
+      "span_max_m": 8.336000000000002,
+      "profiles_at_median_span": {
+        "12WF65": {
+          "20c": {
+            "temperature_c": 20.0,
+            "length_m": 6.422000000000001,
+            "e_ksi": 29750.17913981091,
+            "fy_ksi": 36.35224472023619,
+            "ix_in4": 533.0,
+            "zx_proxy_in3": 95.33079323999999,
+            "initial_stiffness_kip_per_in": 11.77303096826707,
+            "yield_force_kip": 27.413081115217008,
+            "yield_displacement_in": 2.328464198311038,
+            "ultimate_displacement_in": 5.056692913385827
+          },
+          "600c": {
+            "temperature_c": 600.0,
+            "length_m": 6.422000000000001,
+            "e_ksi": 22219.50294318362,
+            "fy_ksi": 17.086877011453648,
+            "ix_in4": 533.0,
+            "zx_proxy_in3": 95.33079323999999,
+            "initial_stiffness_kip_per_in": 8.792918355894805,
+            "yield_force_kip": 12.885145033697723,
+            "yield_displacement_in": 1.4654002814730418,
+            "ultimate_displacement_in": 5.056692913385827
+          }
+        },
+        "14WF136": {
+          "20c": {
+            "temperature_c": 20.0,
+            "length_m": 6.422000000000001,
+            "e_ksi": 29750.17913981091,
+            "fy_ksi": 36.35224472023619,
+            "ix_in4": 1590.0,
+            "zx_proxy_in3": 240.75168897999998,
+            "initial_stiffness_kip_per_in": 35.120298760871755,
+            "yield_force_kip": 69.22994506107854,
+            "yield_displacement_in": 1.9712231246224203,
+            "ultimate_displacement_in": 5.056692913385827
+          },
+          "600c": {
+            "temperature_c": 600.0,
+            "length_m": 6.422000000000001,
+            "e_ksi": 22219.50294318362,
+            "fy_ksi": 17.086877011453648,
+            "ix_in4": 1590.0,
+            "zx_proxy_in3": 240.75168897999998,
+            "initial_stiffness_kip_per_in": 26.230281774620526,
+            "yield_force_kip": 32.54059180862205,
+            "yield_displacement_in": 1.2405734748952315,
+            "ultimate_displacement_in": 5.056692913385827
+          }
+        },
+        "14WF228": {
+          "20c": {
+            "temperature_c": 20.0,
+            "length_m": 6.422000000000001,
+            "e_ksi": 29750.17913981091,
+            "fy_ksi": 36.35224472023619,
+            "ix_in4": 2940.0,
+            "zx_proxy_in3": 424.91128191999996,
+            "initial_stiffness_kip_per_in": 64.93942035029116,
+            "yield_force_kip": 122.18641052025093,
+            "yield_displacement_in": 1.8815445204340064,
+            "ultimate_displacement_in": 5.056692913385827
+          },
+          "600c": {
+            "temperature_c": 600.0,
+            "length_m": 6.422000000000001,
+            "e_ksi": 22219.50294318362,
+            "fy_ksi": 17.086877011453648,
+            "ix_in4": 2940.0,
+            "zx_proxy_in3": 424.91128191999996,
+            "initial_stiffness_kip_per_in": 48.50127573420399,
+            "yield_force_kip": 57.43205639976086,
+            "yield_displacement_in": 1.1841349640883512,
+            "ultimate_displacement_in": 5.056692913385827
+          }
+        }
+      }
+    },
+    "nearest_four_proxy": {
+      "edge_count": 118,
+      "connected_column_count": 47,
+      "span_min_m": 2.684,
+      "span_median_m": 6.380000000000001,
+      "span_max_m": 11.81,
+      "profiles_at_median_span": {
+        "12WF65": {
+          "20c": {
+            "temperature_c": 20.0,
+            "length_m": 6.380000000000001,
+            "e_ksi": 29750.17913981091,
+            "fy_ksi": 36.35224472023619,
+            "ix_in4": 533.0,
+            "zx_proxy_in3": 95.33079323999999,
+            "initial_stiffness_kip_per_in": 12.007073079916868,
+            "yield_force_kip": 27.593543404690223,
+            "yield_displacement_in": 2.2981073922872524,
+            "ultimate_displacement_in": 5.023622047244095
+          },
+          "600c": {
+            "temperature_c": 600.0,
+            "length_m": 6.380000000000001,
+            "e_ksi": 22219.50294318362,
+            "fy_ksi": 17.086877011453648,
+            "ix_in4": 533.0,
+            "zx_proxy_in3": 95.33079323999999,
+            "initial_stiffness_kip_per_in": 8.967717282791774,
+            "yield_force_kip": 12.969968872477551,
+            "yield_displacement_in": 1.446295468899954,
+            "ultimate_displacement_in": 5.023622047244095
+          }
+        },
+        "14WF136": {
+          "20c": {
+            "temperature_c": 20.0,
+            "length_m": 6.380000000000001,
+            "e_ksi": 29750.17913981091,
+            "fy_ksi": 36.35224472023619,
+            "ix_in4": 1590.0,
+            "zx_proxy_in3": 240.75168897999998,
+            "initial_stiffness_kip_per_in": 35.81847316523044,
+            "yield_force_kip": 69.68569078091636,
+            "yield_displacement_in": 1.9455237653335087,
+            "ultimate_displacement_in": 5.023622047244095
+          },
+          "600c": {
+            "temperature_c": 600.0,
+            "length_m": 6.380000000000001,
+            "e_ksi": 22219.50294318362,
+            "fy_ksi": 17.086877011453648,
+            "ix_in4": 1590.0,
+            "zx_proxy_in3": 240.75168897999998,
+            "initial_stiffness_kip_per_in": 26.75172697868466,
+            "yield_force_kip": 32.754808870685075,
+            "yield_displacement_in": 1.224399789097114,
+            "ultimate_displacement_in": 5.023622047244095
+          }
+        },
+        "14WF228": {
+          "20c": {
+            "temperature_c": 20.0,
+            "length_m": 6.380000000000001,
+            "e_ksi": 29750.17913981091,
+            "fy_ksi": 36.35224472023619,
+            "ix_in4": 2940.0,
+            "zx_proxy_in3": 424.91128191999996,
+            "initial_stiffness_kip_per_in": 66.23038434325626,
+            "yield_force_kip": 122.99077247038424,
+            "yield_displacement_in": 1.8570143249200013,
+            "ultimate_displacement_in": 5.023622047244095
+          },
+          "600c": {
+            "temperature_c": 600.0,
+            "length_m": 6.380000000000001,
+            "e_ksi": 22219.50294318362,
+            "fy_ksi": 17.086877011453648,
+            "ix_in4": 2940.0,
+            "zx_proxy_in3": 424.91128191999996,
+            "initial_stiffness_kip_per_in": 49.46545743228484,
+            "yield_force_kip": 57.81013576790975,
+            "yield_displacement_in": 1.1686970821415783,
+            "ultimate_displacement_in": 5.023622047244095
+          }
+        }
+      }
+    }
+  },
+  "v8f_uncapped_reference": {
+    "case": "100 min, gamma 1, local four, NIST removals only, amplification 1.0",
+    "system_no_equilibrium_fraction": 0.615
+  },
+  "ensemble_rows": [
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 3,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 3,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 97,
+        "96": 3,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.0704657529153107
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07040857751447824
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07035776650565333
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07035921769240391
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 15,
+      "p90_maximum_story_displacement_in": 0.0703076398785984
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07031050212193339
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 13,
+      "p90_maximum_story_displacement_in": 0.07035776650565333
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07035921769240391
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 15,
+      "p90_maximum_story_displacement_in": 0.07035411254679749
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07031050212193339
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 15,
+      "p90_maximum_story_displacement_in": 0.07025751295827261
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07026196653872657
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 17,
+      "p90_maximum_story_displacement_in": 0.07019227583690127
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 8,
+      "p90_maximum_story_displacement_in": 0.07018152271302333
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 15,
+      "p90_maximum_story_displacement_in": 0.07030717527661041
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 11,
+      "p90_maximum_story_displacement_in": 0.07031263772070619
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 91,
+        "96": 9,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 28,
+      "p90_maximum_story_displacement_in": 0.07034076839015507
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07018152271302333
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 15,
+      "p90_maximum_story_displacement_in": 0.07021195043399223
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07019183230565663
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 91,
+        "96": 9,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 31,
+      "p90_maximum_story_displacement_in": 0.07011015565578305
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 13,
+      "p90_maximum_story_displacement_in": 0.07001421733499875
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 94,
+        "96": 6,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 35,
+      "p90_maximum_story_displacement_in": 0.07029480068336355
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07019183230565663
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 57,
+        "96": 43,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 28,
+      "p90_maximum_story_displacement_in": 2.1535811207033184
+    },
+    {
+      "time_min": 80,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 90,
+        "96": 10,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 21,
+      "p90_maximum_story_displacement_in": 0.07014230633785112
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07015225517564469
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 3,
+      "p90_maximum_story_displacement_in": 0.07015225517564469
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 3,
+      "p90_maximum_story_displacement_in": 0.07015225517564469
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 92,
+        "96": 8,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07039658158956476
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.070114125301652
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 10,
+      "p90_maximum_story_displacement_in": 0.07006966161581785
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07007091538304151
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 15,
+      "p90_maximum_story_displacement_in": 0.0700868778537097
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07002822283234679
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 13,
+      "p90_maximum_story_displacement_in": 0.07011939243139366
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07007091538304151
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 94,
+        "96": 6,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 12,
+      "p90_maximum_story_displacement_in": 0.07022201842378563
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 8,
+      "p90_maximum_story_displacement_in": 0.07008855066993212
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 15,
+      "p90_maximum_story_displacement_in": 0.0700445366962916
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.06998595876401181
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 94,
+        "96": 6,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 13,
+      "p90_maximum_story_displacement_in": 0.07005003310750901
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 8,
+      "p90_maximum_story_displacement_in": 0.06989461212141032
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 94,
+        "96": 6,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 13,
+      "p90_maximum_story_displacement_in": 0.07017847879851194
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 9,
+      "p90_maximum_story_displacement_in": 0.07004977532067147
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 61,
+        "96": 39,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 27,
+      "p90_maximum_story_displacement_in": 1.359208516932226
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 93,
+        "96": 7,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 13,
+      "p90_maximum_story_displacement_in": 0.07006315352487409
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 94,
+        "96": 6,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 13,
+      "p90_maximum_story_displacement_in": 0.07006907723603195
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 11,
+      "p90_maximum_story_displacement_in": 0.06991363430204907
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 59,
+        "96": 41,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 18,
+      "p90_maximum_story_displacement_in": 0.7789938059789776
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 96,
+        "96": 4,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 13,
+      "p90_maximum_story_displacement_in": 0.06980673729718263
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 65,
+        "96": 35,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 23,
+      "p90_maximum_story_displacement_in": 1.4373512091137344
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 96,
+        "96": 4,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 13,
+      "p90_maximum_story_displacement_in": 0.07001676411589212
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 96.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 25,
+        "96": 75,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 4.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 30,
+      "p90_maximum_story_displacement_in": 1.7739581499883061
+    },
+    {
+      "time_min": 80,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 70,
+        "96": 30,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 12,
+      "p90_maximum_story_displacement_in": 0.8675313117547861
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07315580863653304
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07309264499654755
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07303852967996714
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07304045490660001
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 10,
+      "p90_maximum_story_displacement_in": 0.07298350977541784
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07298743098762704
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 10,
+      "p90_maximum_story_displacement_in": 0.07303852967996714
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07304045490660001
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 18,
+      "p90_maximum_story_displacement_in": 0.07298350977541784
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07298743098762704
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 10,
+      "p90_maximum_story_displacement_in": 0.07293824982782558
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07294233799039518
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 15,
+      "p90_maximum_story_displacement_in": 0.07284524440831171
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07285342353427102
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 19,
+      "p90_maximum_story_displacement_in": 0.07293824982782558
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07294233799039518
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 94,
+        "96": 6,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 27,
+      "p90_maximum_story_displacement_in": 0.07302136310533924
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07285342353427102
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 15,
+      "p90_maximum_story_displacement_in": 0.07285924145294845
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07286568327581355
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 96,
+        "96": 4,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 25,
+      "p90_maximum_story_displacement_in": 0.07274168440967427
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07265875829395989
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 23,
+      "p90_maximum_story_displacement_in": 0.07289248598191403
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07286568327581355
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 81,
+        "96": 19,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 28,
+      "p90_maximum_story_displacement_in": 0.07326047040093576
+    },
+    {
+      "time_min": 100,
+      "gamma": 1.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 12,
+      "p90_maximum_story_displacement_in": 0.07273162317502949
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 95,
+        "96": 5,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07291717568404196
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nist_moment_only",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 2,
+      "p90_maximum_story_displacement_in": 0.07268918457114718
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 10,
+      "p90_maximum_story_displacement_in": 0.07264387517407346
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07264550310839632
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 15,
+      "p90_maximum_story_displacement_in": 0.07272329507093322
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07260142315201973
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 13,
+      "p90_maximum_story_displacement_in": 0.07275826595053596
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07264550310839632
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 97,
+        "96": 3,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 18,
+      "p90_maximum_story_displacement_in": 0.07273228945021366
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "12WF65",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07260142315201973
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 14,
+      "p90_maximum_story_displacement_in": 0.07267236105066767
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 100,
+        "96": 0,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.0725572492081693
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 96,
+        "96": 4,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 13,
+      "p90_maximum_story_displacement_in": 0.0726191778008082
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07251337082597994
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 96,
+        "96": 4,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 15,
+      "p90_maximum_story_displacement_in": 0.07272686992888583
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 9,
+      "p90_maximum_story_displacement_in": 0.07267918895547425
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 77,
+        "96": 23,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 26,
+      "p90_maximum_story_displacement_in": 0.1324299405111516
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF136",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 10,
+      "p90_maximum_story_displacement_in": 0.07255855008517646
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 96,
+        "96": 4,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 13,
+      "p90_maximum_story_displacement_in": 0.07263153712931776
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07253791508508334
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 78,
+        "96": 22,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 25,
+      "p90_maximum_story_displacement_in": 0.07346460332460304
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 0.5,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 98,
+        "96": 2,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 7,
+      "p90_maximum_story_displacement_in": 0.07234265040504034
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 80,
+        "96": 20,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 24,
+      "p90_maximum_story_displacement_in": 0.07363615144936979
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 1,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 99,
+        "96": 1,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 10,
+      "p90_maximum_story_displacement_in": 0.07253791508508334
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "cold_20c_upper_transfer_bound",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 96.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 46,
+        "96": 54,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 4.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 25,
+      "p90_maximum_story_displacement_in": 1.6730197785999523
+    },
+    {
+      "time_min": 100,
+      "gamma": 2.0,
+      "topology": "nearest_four_proxy",
+      "beam_profile_proxy": "14WF228",
+      "connection_factor": 1.0,
+      "active_floor_planes": 2,
+      "beam_temperature_policy": "mean_endpoint_column_temperature_proxy",
+      "field_count": 100,
+      "system_no_equilibrium_fraction": 1.0,
+      "median_first_failed_floor": 97.0,
+      "first_failed_floor_counts": {
+        "99": 0,
+        "98": 0,
+        "97": 87,
+        "96": 13,
+        "95": 0,
+        "94": 0
+      },
+      "failure_reason_counts": {
+        "disconnected_loaded_component": 100
+      },
+      "median_floors_reached": 3.0,
+      "median_floor94_peak_dcr_when_reached": null,
+      "p90_floor94_peak_dcr_when_reached": null,
+      "maximum_fractured_edges_in_any_reached_floor": 10,
+      "p90_maximum_story_displacement_in": 0.07277917492121712
+    }
+  ]
+}

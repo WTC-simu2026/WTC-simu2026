@@ -1,0 +1,137 @@
+{
+  "iteration": "V11I",
+  "random_seed": 1101009,
+  "random_draw_used": false,
+  "purpose": "Inject the V11H constant-property thermal eigenstrains into one bounded elastic V11F panel and verify cold regression, equilibrium, support reactions, gravity work, thermoelastic work and stored energy before any heated cracking or material-domain limit.",
+  "cold_panel_configuration": "wtc1_simulation_v8/data/v11f_panel_coupling_predeclaration.json",
+  "thermomechanical_configuration": "wtc1_simulation_v8/data/v11h_thermomechanical_predeclaration.json",
+  "section_configuration": "wtc1_simulation_v8/data/v11e_cracked_section_predeclaration.json",
+  "cold_panel_directory": "wtc1_simulation_v8/output/v11f_panel_coupling",
+  "thermomechanical_directory": "wtc1_simulation_v8/output/v11h_thermomechanical",
+  "previous_iteration_directory": "wtc1_simulation_v8/output/v11h_thermomechanical",
+  "panel_case": {
+    "id": "V11I_PANEL_R02",
+    "rho_total": 0.002,
+    "layout": "symmetric",
+    "cold_v11f_case_id": "COLD_R02",
+    "scope": "One symmetric equivalent V11F truss-pair panel. Reinforcement ratio and layout remain exploratory hypotheses, not an as-built schedule."
+  },
+  "scope": {
+    "constitutive_domain": "Small-displacement linear thermoelastic slab fibers with constant V11H properties. Steel truss members, seats, contact and ties retain their cold V11F elastic laws and capacities. No damage, cracking, crushing, yielding, creep, bond evolution, connection deletion, postbuckling, dynamics or geometric stiffness.",
+    "temperature_field": "Uniform or linear through-depth slab temperature change imposed everywhere along the panel. Steel truss, seats and ties remain at 20 C. No heat transfer, compartment fire, radiation, convection, incident flux or SFRM calculation.",
+    "history_policy": "No V11E/V11F history variable or property is edited. Only reversible elastic states below the predeclared DCR guard are accepted.",
+    "energy_policy": "Panel mechanical energy, gravity work and thermoelastic conjugate work are balanced in J. Slab sensible enthalpy is inventoried separately and receives no mechanical or global-collapse credit. Fixed ground supports do zero work."
+  },
+  "loading": {
+    "gravity_preload_factor": 0.25,
+    "gravity_steps": 5,
+    "reference_temperature_c": 20.0,
+    "thermal_steps": 24,
+    "half_step_thermal_steps": 48,
+    "accepted_DCR_guard": 0.9,
+    "nominal_material_or_component_limit_DCR": 1.0,
+    "guard_bisection_tolerance_scale": 1e-07,
+    "policy": "Apply gravity first from zero at DeltaT=0, then hold gravity fixed while varying the prescribed slab field. If a trial reaches DCR 0.90, bracket and save only a state at or below the guard; never continue to cracking, yielding or a nominal component limit."
+  },
+  "thermal_cases": [
+    {
+      "id": "COLD_DELTA_T_ZERO",
+      "delta_t_bottom_c": 0.0,
+      "delta_t_top_c": 0.0,
+      "target_scale": 1.0,
+      "interpretation": "Cold V11F regression at the common 0.25 gravity factor."
+    },
+    {
+      "id": "SLAB_UNIFORM_100K",
+      "delta_t_bottom_c": 100.0,
+      "delta_t_top_c": 100.0,
+      "target_scale": 1.0,
+      "interpretation": "Uniform prescribed slab temperature target of 120 C; stop earlier if the 0.90 DCR guard is reached."
+    },
+    {
+      "id": "SLAB_GRADIENT_TOP_100K",
+      "delta_t_bottom_c": 0.0,
+      "delta_t_top_c": 100.0,
+      "target_scale": 1.0,
+      "interpretation": "Linear prescribed slab gradient from 20 C at the bottom face to a 120 C top-face target; stop earlier at the 0.90 DCR guard."
+    }
+  ],
+  "discretization": {
+    "reference_subdivisions_per_steel_panel": 4,
+    "comparison_subdivisions": [2, 8],
+    "concrete_depth_fibers": 160,
+    "longitudinal_gauss_points_per_element": 2,
+    "topology_policy": "Retain the V11F 16-panel steel truss, 17 connection stations, 32-equivalent-knuckle density, two longitudinal Gauss points and slab actuator-compatible mesh. No actuator is applied in V11I.",
+    "comparison_normalization": "For common accepted thermal scales, use abs(a-b)/max(abs(reference response), declared SI floor). Compare guard scale separately."
+  },
+  "comparison_absolute_floors_si": {
+    "displacement_m": 1e-06,
+    "rotation_rad": 1e-06,
+    "force_N": 1.0,
+    "moment_Nm": 1.0,
+    "energy_J": 1.0
+  },
+  "acceptance": {
+    "relative_equilibrium": 1e-08,
+    "relative_incremental_energy": 1e-08,
+    "relative_total_energy": 1e-08,
+    "cold_v11f_cached_response_relative": 1e-09,
+    "cold_nodal_zero_temperature_exact_replay_relative": 1e-12,
+    "guard_DCR_absolute_tolerance": 1e-06,
+    "half_step_terminal_scale_absolute": 2e-06,
+    "half_step_common_response_relative": 1e-06,
+    "mesh_terminal_scale_relative": 0.03,
+    "mesh_common_displacement_relative": 0.05,
+    "mesh_common_reaction_relative": 0.05,
+    "mesh_common_energy_relative": 0.05,
+    "require_target_temperature": false,
+    "require_cracking_or_failure": false,
+    "require_historical_outcome": false
+  },
+  "sources": [
+    {
+      "id": "V11F_SAVED_COLD_PANEL",
+      "path": "wtc1_simulation_v8/output/v11f_panel_coupling/path_history.csv",
+      "scope": "Cached COLD_R02 row at gravity factor 0.25 for read-only regression; no V11F driver rerun."
+    },
+    {
+      "id": "V11H_THERMOELASTIC_SECTION",
+      "path": "wtc1_simulation_v8/output/v11h_thermomechanical/thermal_material_ledger.json",
+      "scope": "Qualified constant-property eigenstrain and energy conventions; not a fire model."
+    }
+  ],
+  "protected_files": [
+    "wtc1_simulation_v8/data/v11f_panel_coupling_predeclaration.json",
+    "wtc1_simulation_v8/scripts/v11f_panel_model.py",
+    "wtc1_simulation_v8/scripts/run_v11f_panel_coupling.py",
+    "wtc1_simulation_v8/scripts/test_v11f_panel.py",
+    "wtc1_simulation_v8/scripts/audit_v11f_release.py",
+    "wtc1_simulation_v8/output/v11f_panel_coupling/results_v11f.json",
+    "wtc1_simulation_v8/output/v11f_panel_coupling/path_history.csv",
+    "wtc1_simulation_v8/output/v11f_panel_coupling/offline_manifest.json",
+    "wtc1_simulation_v8/output/v11f_panel_coupling/release_audit.json",
+    "wtc1_simulation_v8/data/v11h_thermomechanical_predeclaration.json",
+    "wtc1_simulation_v8/scripts/v11h_thermomechanical_model.py",
+    "wtc1_simulation_v8/scripts/run_v11h_thermomechanical.py",
+    "wtc1_simulation_v8/scripts/test_v11h_thermomechanical.py",
+    "wtc1_simulation_v8/scripts/audit_v11h_release.py",
+    "wtc1_simulation_v8/output/v11h_thermomechanical/results_v11h.json",
+    "wtc1_simulation_v8/output/v11h_thermomechanical/thermal_material_ledger.json",
+    "wtc1_simulation_v8/output/v11h_thermomechanical/offline_manifest.json",
+    "wtc1_simulation_v8/output/v11h_thermomechanical/release_audit.json",
+    "harness/handoffs/WTC1_V11H_HANDOFF.md",
+    "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend"
+  ],
+  "global_energy_credit_j": 0.0,
+  "fire_solved": false,
+  "heat_transfer_solved": false,
+  "heated_fracture_solved": false,
+  "material_degradation_solved": false,
+  "geometric_nonlinearity_solved": false,
+  "blender_changed": false,
+  "gpu": false,
+  "software_installation": false,
+  "expected_cpu_seconds_under": 60,
+  "output_directory": "wtc1_simulation_v8/output/v11i_thermoelastic_panel",
+  "scratch_directory": "tmp/v11i_thermoelastic_panel"
+}

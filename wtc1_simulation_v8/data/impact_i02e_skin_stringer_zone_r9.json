@@ -1,0 +1,28 @@
+{
+  "extends": "wtc1_simulation_v8/data/impact_i02e_skin_stringer_zone.json",
+  "id": "IMPACT-I02E-R9",
+  "status": "FINE_BASELINE_SKIN_STRINGER_VARIANTS_AND_SECOND_REFINEMENT_NOT_ASYMPTOTIC_CONVERGENCE",
+  "authorization": "R9 is the immutable accepted-campaign candidate after R0-R8 exposed and corrected time-step, initial-velocity and topology preflight defects. No strength, stiffness or fracture energy is retuned.",
+  "gates": {
+    "max_h127_h0635_contact_impulse_difference_fraction": 0.10,
+    "max_h127_h0635_joint_work_difference_fraction": 0.15
+  },
+  "cases": [
+    {"id": "FREE_MERGED_H127_R9", "variant": "merged", "mesh_mm": 12.7, "dt_scale": 0.4, "contact": false, "role": "Fine cold free-flight control for the mass-balanced TYPE2 fused reference"},
+    {"id": "FREE_RUPTURABLE_H127_R9", "variant": "rupturable", "mesh_mm": 12.7, "dt_scale": 0.4, "contact": false, "role": "Fine cold free-flight control for finite-height LAW117"},
+    {"id": "CONTACT_MERGED_H127_R9", "variant": "merged", "mesh_mm": 12.7, "dt_scale": 0.4, "contact": true, "role": "Fine TYPE2 kinematically fused first-contact reference"},
+    {"id": "CONTACT_UNBREAKABLE_H127_R9", "variant": "unbreakable", "mesh_mm": 12.7, "dt_scale": 0.4, "contact": true, "role": "Fine same-initial-stiffness no-failure-over-window cohesive reference"},
+    {"id": "CONTACT_RUPTURABLE_H127_R9", "variant": "rupturable", "mesh_mm": 12.7, "dt_scale": 0.4, "contact": true, "role": "Fine I02D LAW117 attachment-band first contact"},
+    {"id": "CONTACT_RUPTURABLE_HALFDT_H127_R9", "variant": "rupturable", "mesh_mm": 12.7, "dt_scale": 0.2, "contact": true, "role": "Fine time-step sensitivity at identical mesh and material inputs"},
+    {"id": "CONTACT_RUPTURABLE_LOWMASS_H127_R9", "variant": "rupturable", "mesh_mm": 12.7, "dt_scale": 0.4, "contact": true, "numerical_areal_mass_g_per_mm2": 0.00001, "role": "Fine ten-times-lower declared numerical cohesive mass sensitivity"},
+    {"id": "CONTACT_RUPTURABLE_H0635_R9", "variant": "rupturable", "mesh_mm": 6.35, "dt_scale": 0.4, "contact": true, "role": "Second spatial refinement; still not an asymptotic convergence proof"}
+  ],
+  "preflight_history": {
+    "R0_R1": "Full-story preliminary models interrupted after the initial state; they did not isolate a zero-height issue.",
+    "R2_R5": "Bounded diagnostics isolated a 3.3674e-9 ms step from the former 1e-12 g/mm2 LAW117 numerical areal mass.",
+    "R6": "Initial velocity omitted cohesive part 8, causing pre-contact joint vibration; rejected.",
+    "R7": "An unintended intermediate cohesive node row was absent from the skin topology; rejected.",
+    "R8": "Correct topology. The 25.4 mm contact mesh missed the 5 percent energy gate while 12.7 mm passed; 12.7 mm becomes the R9 baseline."
+  },
+  "output_root": "wtc1_simulation_v8/output/impact_i02e_skin_stringer_zone"
+}

@@ -1,0 +1,149 @@
+{
+  "iteration": "V9L",
+  "dataset": {
+    "name": "Final bounded gap-closure audit for an open high-rate impact benchmark",
+    "version": "9.12.0",
+    "status": "PREDECLARED_SOURCE_AND_DECK_INSPECTION_ONLY_NO_SOLVER_NO_MODEL_CONVERSION",
+    "random_seed": 9122001,
+    "deterministic": true,
+    "scope": "Preserve V8U through V9K, inspect only the small official Altair RD-E-2602 input archive and the official FAA DOT/FAA/AR-08/36 flat-panel impact report plus directly necessary primary metadata, and decide whether they jointly or individually close every unchanged V9K benchmark gate. V9L performs no solver run, model conversion, material fit, WTC/CF6 substitution or facade calculation."
+  },
+  "targets": [
+    {
+      "id": "ALTAIR_RD_E_2602_INPUT_ARCHIVE",
+      "url": "https://2025.help.altair.com/2025/simulation/demos/hwsolvers/radioss/example/RD-E-2602_Ductile.zip",
+      "expected_content_length_bytes": 77961,
+      "allowed_action": "Download for read-only inspection only if the public official endpoint remains available; do not execute or republish the deck.",
+      "required_checks": [
+        "archive identity and file inventory",
+        "embedded license or rights notice",
+        "projectile deformability",
+        "material and failure cards",
+        "objective length or fracture-energy regularization",
+        "measured validation data",
+        "mesh convergence cases"
+      ]
+    },
+    {
+      "id": "FAA_DOT_FAA_AR_08_36_FLAT_PANEL_IMPACT",
+      "report_number": "DOT/FAA/AR-08/36",
+      "title": "Explicit Finite Element Analysis of 2024-T3/T351 Aluminum Material Under Impact Loading for Airplane Engine Containment and Fragment Shielding",
+      "allowed_domains": [
+        "rosap.ntl.bts.gov",
+        "faa.gov"
+      ],
+      "allowed_action": "Resolve and download one official primary PDF plus directly necessary repository metadata, then inspect only the pages needed for benchmark completeness.",
+      "required_checks": [
+        "test geometry and projectile definition",
+        "material and contact parameters",
+        "failure law and regularization",
+        "measured time histories or quantitative final observables",
+        "three-level mesh convergence or explicit uncertainty",
+        "public deck availability and reuse terms",
+        "bounded local execution route"
+      ]
+    }
+  ],
+  "unchanged_all_or_nothing_benchmark_gates": {
+    "authoritative_primary_provenance": true,
+    "lawful_open_access_and_license": true,
+    "bounded_downloadable_deck_or_reconstructible_definition": true,
+    "failure_and_regularization_complete": true,
+    "measured_validation_outputs": true,
+    "mesh_and_convergence_definition": true,
+    "local_execution_feasible_and_bounded": true
+  },
+  "source_limits": {
+    "maximum_single_file_bytes": 20971520,
+    "maximum_total_new_source_bytes": 31457280,
+    "maximum_primary_report_count": 1,
+    "maximum_archive_count": 1,
+    "maximum_directly_necessary_metadata_file_count": 2,
+    "large_archive_acquisition_authorized": false,
+    "recursive_archive_search_authorized": false,
+    "source_archive_rescan_authorized": false,
+    "external_contact_authorized": false,
+    "FOIA_request_authorized": false
+  },
+  "archive_handling": {
+    "download_path": "wtc1_simulation_v8/input/v9l_open_sources/RD-E-2602_Ductile.zip",
+    "extraction_path": "wtc1_simulation_v8/input/v9l_open_sources/altair_rd_e_2602_extracted",
+    "downloaded_archive_immutable_after_hash": true,
+    "extracted_files_read_only_inputs": true,
+    "execution_authorized": false
+  },
+  "stop_rules": {
+    "pass_rule": "At most one benchmark may pass, and only if every unchanged gate is directly supported by inspected primary material.",
+    "negative_rule": "If no inspected target combines measured quantitative validation, objective failure regularization and an explicit three-level convergence definition with a lawful executable or reconstructible model, record a validated negative result and close the external benchmark search.",
+    "no_relaxed_gate": true,
+    "no_additional_candidate_search_after_negative_result": true,
+    "no_solver_after_positive_result_in_V9L": true
+  },
+  "regressions": {
+    "required_files": {
+      "wtc1_simulation_v8/data/v9k_open_impact_benchmark_screening.json": "d8c72ba3e8b88c6be39a94a5f6a52aa4d71f78d8d3d3fb3bc8fda9e8ad4f454d",
+      "wtc1_simulation_v8/data/v9k_open_impact_screening_evidence.json": "69450aa22331ba7d1ab1f6a124f9887472d664a62f3c25ef1ecbb7df92319685",
+      "wtc1_simulation_v8/scripts/run_v9k_open_impact_benchmark_screening.py": "a98808a33af0a3647237aef0a615673a4b0332d1447ea0544c86c77da464f798",
+      "wtc1_simulation_v8/output/v9k_screening_source_manifest.json": "15e96c4ad91f59b751298adf51ad50d44ed275ab802dae879d8f0c9426522346",
+      "wtc1_simulation_v8/output/v9k_open_impact_candidate_matrix.json": "8e166fae53d245bfaf6447097fe5d839b7cc42f5dac693608e8134574941843f",
+      "wtc1_simulation_v8/output/resultats_wtc1_v9k_screening_benchmark_impact.json": "be8fb12dcfaa499aeb6d2c97238fe28685164932d0929638c79cb66a209a95b0",
+      "wtc1_simulation_v8/output/rapport_wtc1_v9k_screening_benchmark_impact.md": "ea02fde7c6e3964b802b4a85577cd30718c2becccc53f4428ad1402d61d35bd4"
+    },
+    "required_metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9k_screening_benchmark_impact.json",
+        "path": "iteration_execution_validated",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9k_screening_benchmark_impact.json",
+        "path": "selected_candidate_count",
+        "expected": 0
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9k_screening_benchmark_impact.json",
+        "path": "benchmark_selection_gate_passed",
+        "expected": false
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9k_screening_benchmark_impact.json",
+        "path": "no_candidate_selected_without_relaxing_gates",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9k_screening_benchmark_impact.json",
+        "path": "runtime.solver_executed",
+        "expected": false
+      }
+    ]
+  },
+  "evidence_policy": {
+    "observed_fact": "A source file, archive member, keyword card, table, figure, repository record or rights notice directly inspected in V9L.",
+    "official_model_result": "A result reported by FAA or Altair and not reproduced by V9L.",
+    "local_archive_claim": "No WTC archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "The unchanged seven selection gates and the final stop rule.",
+    "derived_result": "Per-target gate status, source-gap closure verdict and zero-or-one selection decision.",
+    "unknown": "Any license, model field, measurement, physical regularization or convergence evidence absent from the inspected primary material."
+  },
+  "scope_gates": {
+    "benchmark_solver_execution_authorized": false,
+    "model_conversion_authorized": false,
+    "material_fit_authorized": false,
+    "failure_law_fit_authorized": false,
+    "generic_material_substitution_authorized": false,
+    "WTC_or_CF6_solver_authorized": false,
+    "projectile_rupture_authorized": false,
+    "facade_impact_authorized": false,
+    "global_impact_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_inference_authorized": false
+  },
+  "output": {
+    "source_manifest": "wtc1_simulation_v8/output/v9l_gap_closure_source_manifest.json",
+    "deck_inventory": "wtc1_simulation_v8/output/v9l_altair_deck_inventory.json",
+    "gap_closure_matrix": "wtc1_simulation_v8/output/v9l_final_gap_closure_matrix.json",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v9l_cloture_benchmark_impact.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v9l_cloture_benchmark_impact.md"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "iteration": "V10S",
+  "generated_at_utc": "2026-09-04T07:57:44Z",
+  "validation_status": "PASS",
+  "configuration": {
+    "path": "wtc1_simulation_v8/data/v10s_three_track_propagation_arrest_contract.json",
+    "sha256": "51594076b26fc777755733fc05fe0ca484d70afe32feaf3c168cd04a596dc550"
+  },
+  "script": {
+    "path": "wtc1_simulation_v8/scripts/run_v10s_three_track_propagation_arrest_contract.py",
+    "sha256": "e0e392393ffeaaf4f5d5c0bbabef837526b05a21bc17d09be4e667d9f81ed706"
+  },
+  "source_files": [
+    {
+      "role": "V10N_SOLVER_NEUTRAL_COUPLING_GRAPH",
+      "path": "wtc1_simulation_v8/output/v10n_solver_neutral_coupling_graph.json",
+      "sha256": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98",
+      "bytes": 20965,
+      "read_mode": "FULL_ARTIFACT",
+      "status": "PASS",
+      "evidence_class": "CACHED_SOLVER_NEUTRAL_INTERFACE_SPECIFICATION"
+    },
+    {
+      "role": "V10O_INTERFACE_SCHEMAS",
+      "path": "wtc1_simulation_v8/output/v10o_interface_schemas.json",
+      "sha256": "9e5a2017ea7415037e54b2917610c72a85083cca8a0314982ea98332513867ca",
+      "bytes": 12238,
+      "read_mode": "FULL_ARTIFACT",
+      "status": "PASS",
+      "evidence_class": "CACHED_SOFTWARE_CONTROL_SCHEMA"
+    },
+    {
+      "role": "V10O_ZERO_CONTROL_TRACE",
+      "path": "wtc1_simulation_v8/output/v10o_null_control_trace.json",
+      "sha256": "62890121c6bc89aa5970e9266bcd89ff1b148c672d601c8ca2f293df81405864",
+      "bytes": 22005,
+      "read_mode": "FULL_ARTIFACT",
+      "status": "PASS",
+      "evidence_class": "SYNTHETIC_SOFTWARE_CONTROL_NOT_HISTORICAL"
+    },
+    {
+      "role": "NCSTAR1_6D_LOCAL",
+      "path": "work/official_sources/ncstar1-6d.pdf",
+      "sha256": "0d2a155fc820c83e4bc7df32a6da098261eb2e7f8d1358abd00d11c12bd6c9ff",
+      "bytes": 16929539,
+      "read_mode": "HASH_ONLY_NO_PAGE_READ",
+      "status": "PASS",
+      "use": "hash continuity only for initiation and structural-model scope context"
+    }
+  ],
+  "evidence_classes": {
+    "observed_facts": "Current file identities, exact interface fields, null states, counts and zero-control algebra.",
+    "official_model_results": "No official global-propagation result is imported; upstream thermal references remain dependent and blocked.",
+    "archive_claims": "No external archive is read; one local official PDF is hash-checked only.",
+    "model_hypotheses": "The version-2 schemas and minimum requirement catalogue are design constraints, not WTC properties.",
+    "derived_results": "Legacy interface coverage, gap resolutions, blocking matrix and conservation template.",
+    "unknowns": "Historical initiation, participating mass, dynamic state, resistance, contact, propagation, arrest and conservation ledgers remain unresolved."
+  }
+}

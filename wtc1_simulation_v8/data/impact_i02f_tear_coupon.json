@@ -1,0 +1,145 @@
+{
+  "id": "IMPACT-I02F-R0",
+  "scope": "Bounded prescribed-crack-band tensile coupons for numerical shell-deletion energy checks; not a Boeing part or ballistic validation.",
+  "units": {
+    "mass": "g",
+    "length": "mm",
+    "time": "ms",
+    "force": "N",
+    "stress": "MPa",
+    "energy": "J",
+    "fracture_energy": "N/mm"
+  },
+  "geometry": {
+    "width_mm": 8.0,
+    "thickness_mm": 2.3,
+    "active_length": "equal_to_h_mm",
+    "loading": "uniaxial_tension_with_free_transverse_contraction",
+    "localization": "one_predeclared_element_column_across_width",
+    "qualification": "numerical_crack_band_unit_cell_only",
+    "source_reference_coupon_not_reproduced": {
+      "type": "NASA_CR_191523_middle_crack_M_T",
+      "width_mm": 76.2,
+      "length_mm": 300.0,
+      "thickness_mm": 2.3,
+      "initial_total_crack_length_mm": 25.4
+    }
+  },
+  "materials": {
+    "AA2024_T3": {
+      "density_g_per_mm3": 0.00278,
+      "young_modulus_mpa": 73100.0,
+      "poisson_ratio": 0.33,
+      "yield_strength_mpa": 360.0,
+      "ultimate_strength_mpa_reported_not_used": 495.0,
+      "constitutive_law": "elastic_perfectly_plastic",
+      "source_status": {
+        "yield_and_ultimate": "NASA CR-191523, 2.3 mm 2024-T3 sheet",
+        "elastic_constants_and_density": "inherited generic I02E reference, not reported in CR-191523",
+        "post_yield_curve": "not identified; perfect plasticity is a bounded numerical hypothesis"
+      }
+    },
+    "AA7075_T6": {
+      "density_g_per_mm3": 0.00281,
+      "young_modulus_mpa": 69600.0,
+      "poisson_ratio": 0.33,
+      "yield_strength_mpa": 523.0,
+      "ultimate_strength_mpa_reported_not_used": 574.0,
+      "elongation_percent_reported_not_used": 12.0,
+      "constitutive_law": "elastic_perfectly_plastic",
+      "source_status": {
+        "elastic_modulus_yield_ultimate_elongation": "NASA TN D-7262, Table I, 2.3 mm 7075-T6 sheet",
+        "density_and_poisson": "generic hypotheses; not reported in Table I",
+        "post_yield_curve": "not identified; perfect plasticity is a bounded numerical hypothesis"
+      }
+    }
+  },
+  "fracture_model": {
+    "keyword": "/FAIL/TAB1",
+    "shell_deletion": true,
+    "constant_failure_plastic_strain_over_triaxiality": true,
+    "crack_band_equation": "eps_p_failure = Gf / (sigma_y * h)",
+    "target_plastic_work_equation": "Wp = Gf * width * thickness",
+    "regularization_status": "mesh-adjusted prescribed band energy; no measured internal length and no calibrated triaxiality/Lode/rate locus",
+    "aa2024_hypothesis_Gf_N_per_mm": [15.0, 30.0, 60.0],
+    "aa7075_elastic_equivalent_from_Kc": {
+      "equation": "G_equiv = Kc^2 / E",
+      "Kc_air_MPa_sqrt_m": [56.9, 55.0, 61.6, 53.7, 54.6, 58.7, 54.2, 45.7, 57.5, 50.5, 57.9, 56.6],
+      "Kc_min_MPa_sqrt_m": 45.7,
+      "Kc_mean_MPa_sqrt_m": 55.24166666666667,
+      "Kc_max_MPa_sqrt_m": 61.6,
+      "G_min_N_per_mm": 30.00704022988506,
+      "G_mean_of_K_squared_N_per_mm": 44.068857758620695,
+      "G_max_N_per_mm": 54.51954022988507,
+      "interpretation": "diagnostic elastic-equivalent bracket from specimen Kc, not a ductile shell fracture-energy measurement"
+    }
+  },
+  "execution": {
+    "end_ms": 8.0,
+    "post_failure_displacement_factor": 1.25,
+    "non_eroding_control_plastic_strain": 0.10,
+    "history_dt_ms": 0.002,
+    "animation_states": 21,
+    "dt_scale": 0.9,
+    "maximum_case_wall_seconds": 120,
+    "threads": 1
+  },
+  "gates": {
+    "maximum_peak_force_mesh_difference_fraction": 0.05,
+    "maximum_separation_work_mesh_difference_fraction": 0.10,
+    "maximum_plastic_work_target_error_fraction": 0.15,
+    "maximum_temporal_peak_force_difference_fraction": 0.03,
+    "maximum_global_energy_residual_fraction": 0.01,
+    "maximum_kinetic_to_internal_energy_fraction_before_failure": 0.05,
+    "required_eroded_band_fraction": 1.0,
+    "required_unbreakable_eroded_elements": 0
+  },
+  "sources": [
+    {
+      "id": "NASA_CR_191523",
+      "path": "wtc1_simulation_v8/input/impact_i02f_sources/NASA_CR_191523_2024T3_CTOA.pdf",
+      "sha256": "27d91f70b8816927b22f980ae7decb528837abfb19c04335a538ebaa7e6af156",
+      "use": "2024-T3 2.3 mm sheet, yield 360 MPa, ultimate 495 MPa, M(T) geometry and stable-tearing CTOA observations"
+    },
+    {
+      "id": "NASA_19990028733",
+      "path": "wtc1_simulation_v8/input/impact_i02f_sources/NASA_19990028733_wide_stiffened_panels.pdf",
+      "sha256": "44f8f628eb8d581ca00962b8a483a021d624fd42cf4a4952a8ddeaddbdd8d178",
+      "use": "independent 2024-T3 CTOA context and explicit fitted-model limitations"
+    },
+    {
+      "id": "NASA_TN_D_7262",
+      "path": "wtc1_simulation_v8/input/impact_i02f_sources/NASA_19730023698_7075T6_fracture.pdf",
+      "sha256": "5bc472e305e6fca41767f3b912c4c473c17f9ce3a186493cc0bf24f4baa35786",
+      "use": "7075-T6 Table I tensile properties and Table V atmospheric sheet-specimen Kc values"
+    },
+    {
+      "id": "NASA_19740003601_NOT_SELECTED",
+      "path": "wtc1_simulation_v8/input/impact_i02f_sources/NASA_19740003601_2024T3_1p02mm_fracture.pdf",
+      "sha256": "3b18f94515ff5447147c64f8b5b9711b7150d64f3ea1fb2b554c79d701dcf57f",
+      "use": "retained provenance only; broad Battelle compilation did not match the search-result description and supplies no I02F parameter"
+    },
+    {
+      "id": "ALTAIR_FAIL_TAB1",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/fail_tab1_starter_r.htm",
+      "use": "official keyword semantics and shell deletion controls"
+    }
+  ],
+  "cases": [
+    {"id": "AA2024_NOFAIL_H4_R0", "material": "AA2024_T3", "h_mm": 4.0, "failure": false, "role": "cold_non_eroding_control"},
+    {"id": "AA2024_NOFAIL_H2_R0", "material": "AA2024_T3", "h_mm": 2.0, "failure": false, "role": "cold_non_eroding_control"},
+    {"id": "AA2024_G15_H4_R0", "material": "AA2024_T3", "h_mm": 4.0, "failure": true, "Gf_N_per_mm": 15.0, "role": "heuristic_energy_low"},
+    {"id": "AA2024_G15_H2_R0", "material": "AA2024_T3", "h_mm": 2.0, "failure": true, "Gf_N_per_mm": 15.0, "role": "heuristic_energy_low"},
+    {"id": "AA2024_G30_H4_R0", "material": "AA2024_T3", "h_mm": 4.0, "failure": true, "Gf_N_per_mm": 30.0, "role": "heuristic_energy_base"},
+    {"id": "AA2024_G30_H2_R0", "material": "AA2024_T3", "h_mm": 2.0, "failure": true, "Gf_N_per_mm": 30.0, "role": "heuristic_energy_base"},
+    {"id": "AA2024_G30_H2_HALFDT_R0", "material": "AA2024_T3", "h_mm": 2.0, "failure": true, "Gf_N_per_mm": 30.0, "dt_scale": 0.45, "role": "temporal_sensitivity"},
+    {"id": "AA2024_G60_H4_R0", "material": "AA2024_T3", "h_mm": 4.0, "failure": true, "Gf_N_per_mm": 60.0, "role": "heuristic_energy_high"},
+    {"id": "AA2024_G60_H2_R0", "material": "AA2024_T3", "h_mm": 2.0, "failure": true, "Gf_N_per_mm": 60.0, "role": "heuristic_energy_high"},
+    {"id": "AA7075_GMIN_H4_R0", "material": "AA7075_T6", "h_mm": 4.0, "failure": true, "Gf_N_per_mm": 30.00704022988506, "role": "Kc_elastic_equivalent_low"},
+    {"id": "AA7075_GMIN_H2_R0", "material": "AA7075_T6", "h_mm": 2.0, "failure": true, "Gf_N_per_mm": 30.00704022988506, "role": "Kc_elastic_equivalent_low"},
+    {"id": "AA7075_GMEAN_H4_R0", "material": "AA7075_T6", "h_mm": 4.0, "failure": true, "Gf_N_per_mm": 44.068857758620695, "role": "Kc_elastic_equivalent_mean"},
+    {"id": "AA7075_GMEAN_H2_R0", "material": "AA7075_T6", "h_mm": 2.0, "failure": true, "Gf_N_per_mm": 44.068857758620695, "role": "Kc_elastic_equivalent_mean"},
+    {"id": "AA7075_GMAX_H4_R0", "material": "AA7075_T6", "h_mm": 4.0, "failure": true, "Gf_N_per_mm": 54.51954022988507, "role": "Kc_elastic_equivalent_high"},
+    {"id": "AA7075_GMAX_H2_R0", "material": "AA7075_T6", "h_mm": 2.0, "failure": true, "Gf_N_per_mm": 54.51954022988507, "role": "Kc_elastic_equivalent_high"}
+  ]
+}

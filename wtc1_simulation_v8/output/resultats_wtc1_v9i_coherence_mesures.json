@@ -1,0 +1,462 @@
+{
+  "iteration": "V9I",
+  "generated_at": "2026-08-27T17:38:13.596555+02:00",
+  "status": "validated_no_imputation_measurement_consistency_benchmark_no_fit_no_solver",
+  "iteration_execution_validated": true,
+  "measurement_consistency_gate_passed": true,
+  "configuration": "wtc1_simulation_v8/data/v9i_measurement_consistency_benchmark.json",
+  "DIC_quantile_table": "wtc1_simulation_v8/output/v9i_dic_field_quantiles.csv",
+  "scope": "Preserve V8U through V9H, verify the 55 cached V9H payloads, extract documentary definitions from the already acquired Zenodo metadata, and calculate time-grid, threshold-interval, recorded-path work and DIC robust-field summaries without imputing missing values or assuming cross-channel synchronization. Do not infer a complete pulse duration, stress, constitutive or fracture parameters, acquire additional payloads, run a solver or perform impact work.",
+  "evidence_policy": {
+    "observed_fact": "An explicit source description, header, unit, image label or numeric value in the verified V9H payloads.",
+    "official_model_result": "None is introduced by V9I.",
+    "local_archive_claim": "No local WTC archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "The 5 percent signal threshold, linear quantile definition and descriptive comparison rules.",
+    "derived_result": "Time-grid, overlap, extrema, recorded-path work, valid-count and quantile summaries; not stress, material response or event probability.",
+    "unknown": "Exact equation 12 implementation, correction-factor value, CSV-to-displayed coordinate mapping, absolute synchronization and applicability to WTC or CF6 materials."
+  },
+  "regressions": {
+    "files": {
+      "wtc1_simulation_v8/data/v9h_selective_payload_ingestion.json": {
+        "exists": true,
+        "expected_sha256": "fbe32c9f9a6c9e7719db4591a00de365d1f354f67736dc7919b0202607d6c416",
+        "actual_sha256": "fbe32c9f9a6c9e7719db4591a00de365d1f354f67736dc7919b0202607d6c416",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/run_v9h_selective_payload_ingestion.py": {
+        "exists": true,
+        "expected_sha256": "2fb583106c7a1bc0bc3af2481dac1f94456d970fa5caf0136be97400779b4b86",
+        "actual_sha256": "2fb583106c7a1bc0bc3af2481dac1f94456d970fa5caf0136be97400779b4b86",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9h_remote_range_acquisition_receipt.json": {
+        "exists": true,
+        "expected_sha256": "ea2792b734d69a3c6d1a32cab26b3dc46713e127410d9cf6e15a4ace794f17f1",
+        "actual_sha256": "ea2792b734d69a3c6d1a32cab26b3dc46713e127410d9cf6e15a4ace794f17f1",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9h_selective_payload_ingestion_manifest.json": {
+        "exists": true,
+        "expected_sha256": "e5c79018fbc1f2e6a556944af99329b8e0a49cc3381207b9738ee1b692295ba4",
+        "actual_sha256": "e5c79018fbc1f2e6a556944af99329b8e0a49cc3381207b9738ee1b692295ba4",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v9h_signaux_selectifs.json": {
+        "exists": true,
+        "expected_sha256": "b71a73401af94663aba37ccb57f0e8cf56d1afa82011f9a029da250a498b10e8",
+        "actual_sha256": "b71a73401af94663aba37ccb57f0e8cf56d1afa82011f9a029da250a498b10e8",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/rapport_wtc1_v9h_signaux_selectifs.md": {
+        "exists": true,
+        "expected_sha256": "3bb170d67ae0f45ae8077802f78fe2ad0d07a1803b95444aacc9d41e92c587f9",
+        "actual_sha256": "3bb170d67ae0f45ae8077802f78fe2ad0d07a1803b95444aacc9d41e92c587f9",
+        "passed": true
+      },
+      "wtc1_simulation_v8/input/v9f_open_sources/zenodo_17591440_metadata.json": {
+        "exists": true,
+        "expected_sha256": "e4c1d64a0a3b21c1b2841386f3b88884362fbb3051b52b19bf3b704a2b7beba3",
+        "actual_sha256": "e4c1d64a0a3b21c1b2841386f3b88884362fbb3051b52b19bf3b704a2b7beba3",
+        "passed": true
+      }
+    },
+    "metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9h_signaux_selectifs.json",
+        "path": "iteration_execution_validated",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9h_signaux_selectifs.json",
+        "path": "selective_payload_gate_passed",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9h_signaux_selectifs.json",
+        "path": "retrieval_summary.verified_entry_count",
+        "expected": 55,
+        "actual": 55,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9h_signaux_selectifs.json",
+        "path": "full_zip_downloaded",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9h_signaux_selectifs.json",
+        "path": "deferred_P6V035_DIC.acquired",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "payload_verification": {
+    "entry_count": 55,
+    "passed_count": 55,
+    "passed": true
+  },
+  "documentation_audit": {
+    "zenodo_record_id": 17591440,
+    "zenodo_doi": "10.5281/zenodo.17591440",
+    "dataset_title": "Split Hopkinson Pressure Bar (SHPB) investigations of steel S355 specimens and complementary characterization methods",
+    "publication_doi": "10.1016/j.ijmecsci.2024.109749",
+    "description_checks": {
+      "imaginary_trigger_defined": true,
+      "shortened_incident_bar_300_mm_defined": true,
+      "BC_Inc_and_BC_Trans_defined": true,
+      "equation_12_referenced": true,
+      "acoustic_velocity_4639_m_per_s_defined": true,
+      "correction_factor_referenced": true,
+      "quasi_static_relative_displacement_defined": true
+    },
+    "all_required_description_checks_passed": true,
+    "DIC_filename_time_reference": "Frame output times in file labels are associated with an imaginary trigger at the left end of the shortened 300 mm incident bar used in the SHPB simulation setup.",
+    "bar_boundary_condition_definition": "BC_Inc and BC_Trans displacement boundary conditions are calculated from incident/transmission-bar strain-gauge signals using equation 12 of the cited paper, an acoustic bar velocity of 4639 m/s and a correction factor.",
+    "quasi_static_curve_definition": "Force-displacement values use specimen relative displacements evaluated by DIC.",
+    "equation_12_full_text_acquired": false,
+    "correction_factor_numeric_value_available": false,
+    "coordinate_reference_transcription": {
+      "displayed_horizontal_axis": "z, positive to the right",
+      "displayed_vertical_axis": "y, positive upward",
+      "incident_bar_wave_arrow": "leftward, toward decreasing displayed z",
+      "CSV_coordinate_columns": [
+        "x",
+        "y",
+        "z"
+      ],
+      "CSV_displacement_columns": [
+        "displacement_x",
+        "displacement_y"
+      ],
+      "display_to_CSV_axis_mapping_resolved": false,
+      "possible_mapping_not_assumed": "CSV x numerically spans the displayed horizontal range while CSV z is zero, but V9I does not relabel CSV x as displayed z without an explicit source definition."
+    }
+  },
+  "dynamic_bar_summary": {
+    "incident": {
+      "path": "wtc1_simulation_v8/input/v9h_open_sources/selective_payloads/FurtherMeasurements/BarDisplBCs/BC_Inc_P4V035.txt",
+      "header": [
+        "t[s]",
+        "u[mm]"
+      ],
+      "row_count": 200,
+      "time_range_s": [
+        1e-06,
+        0.0002
+      ],
+      "strictly_increasing_time": true,
+      "time_step_s": {
+        "minimum": 9.9999999999997e-07,
+        "maximum": 1.0000000000000514e-06,
+        "mean": 1.0000000000000002e-06,
+        "uniform_within_1e_15_s": true
+      },
+      "displacement_range_mm": [
+        0.0,
+        0.5423796052845592
+      ],
+      "peak_absolute_displacement_mm": 0.5423796052845592,
+      "peak_time_s": 0.0002,
+      "final_displacement_mm": 0.5423796052845592,
+      "signal_threshold_fraction": 0.05,
+      "signal_threshold_mm": 0.02711898026422796,
+      "observed_above_threshold_range_s": [
+        2.7999999999999996e-05,
+        0.0002
+      ],
+      "observed_above_threshold_span_s": 0.000172,
+      "above_threshold_sample_count": 173,
+      "below_threshold_sample_count_between_first_and_last": 0,
+      "above_threshold_at_record_end": true,
+      "complete_pulse_duration_resolved": false,
+      "first_difference_velocity_range_mm_per_s": [
+        -449.54644333550357,
+        5915.981263084836
+      ],
+      "time_integral_displacement_mm_s": 6.59701996409162e-05
+    },
+    "transmitted": {
+      "path": "wtc1_simulation_v8/input/v9h_open_sources/selective_payloads/FurtherMeasurements/BarDisplBCs/BC_Trans_P4V035.txt",
+      "header": [
+        "t[s]",
+        "u[mm]"
+      ],
+      "row_count": 200,
+      "time_range_s": [
+        1e-06,
+        0.0002
+      ],
+      "strictly_increasing_time": true,
+      "time_step_s": {
+        "minimum": 9.9999999999997e-07,
+        "maximum": 1.0000000000000514e-06,
+        "mean": 1.0000000000000002e-06,
+        "uniform_within_1e_15_s": true
+      },
+      "displacement_range_mm": [
+        0.0,
+        0.0027338016608109317
+      ],
+      "peak_absolute_displacement_mm": 0.0027338016608109317,
+      "peak_time_s": 0.00019899999999999999,
+      "final_displacement_mm": 0.0027138908582294125,
+      "signal_threshold_fraction": 0.05,
+      "signal_threshold_mm": 0.0001366900830405466,
+      "observed_above_threshold_range_s": [
+        1.2e-05,
+        0.0002
+      ],
+      "observed_above_threshold_span_s": 0.00018800000000000002,
+      "above_threshold_sample_count": 189,
+      "below_threshold_sample_count_between_first_and_last": 0,
+      "above_threshold_at_record_end": true,
+      "complete_pulse_duration_resolved": false,
+      "first_difference_velocity_range_mm_per_s": [
+        -68.08440717393738,
+        91.52064683722281
+      ],
+      "time_integral_displacement_mm_s": 2.709664006665734e-07
+    }
+  },
+  "DIC_summary": {
+    "frame_count": 51,
+    "filename_time_range_ms": [
+      0.003,
+      0.241
+    ],
+    "filename_time_step_range_ms": [
+      0.003999999999999976,
+      0.0050000000000000044
+    ],
+    "stage_relative_time_range": [
+      2.2476,
+      2.4857
+    ],
+    "stage_minus_filename_offset_ms": {
+      "minimum": 2.2445,
+      "maximum": 2.2455000000000003,
+      "mean": 2.2449999999999997,
+      "spread": 0.001000000000000334,
+      "tolerance": 0.0011,
+      "consistent_with_rounding_tolerance": true
+    },
+    "row_count_range": [
+      364,
+      394
+    ],
+    "total_rows": 19169,
+    "missing_by_field": {
+      "displacement_x": 1414,
+      "displacement_y": 1414,
+      "epsilon_x": 1414,
+      "epsilon_xy": 1414,
+      "epsilon_y": 1414
+    },
+    "total_missing_cells": 7070,
+    "coordinate_ranges_from_CSV": {
+      "x": [
+        -1.6872,
+        1.6906
+      ],
+      "y": [
+        -1.3996,
+        1.4034
+      ],
+      "z": [
+        0.0,
+        0.0
+      ]
+    },
+    "CSV_z_is_identically_zero": true,
+    "peak_robust_absolute_p95_by_field": {
+      "displacement_x": {
+        "filename_time_ms": 0.145,
+        "absolute_p95": 0.82332
+      },
+      "displacement_y": {
+        "filename_time_ms": 0.141,
+        "absolute_p95": 0.024549999999999985
+      },
+      "epsilon_x": {
+        "filename_time_ms": 0.241,
+        "absolute_p95": 28.446834999999997
+      },
+      "epsilon_xy": {
+        "filename_time_ms": 0.236,
+        "absolute_p95": 0.4364199999999995
+      },
+      "epsilon_y": {
+        "filename_time_ms": 0.141,
+        "absolute_p95": 59.85828999999996
+      }
+    },
+    "peak_raw_absolute_by_field": {
+      "displacement_x": {
+        "filename_time_ms": 0.226,
+        "maximum_absolute": 0.8985
+      },
+      "displacement_y": {
+        "filename_time_ms": 0.241,
+        "maximum_absolute": 0.0545
+      },
+      "epsilon_x": {
+        "filename_time_ms": 0.122,
+        "maximum_absolute": 69.4234
+      },
+      "epsilon_xy": {
+        "filename_time_ms": 0.241,
+        "maximum_absolute": 0.9783
+      },
+      "epsilon_y": {
+        "filename_time_ms": 0.222,
+        "maximum_absolute": 145.8784
+      }
+    },
+    "cross_channel_synchronization_asserted": false
+  },
+  "quasi_static_summary": {
+    "path": "wtc1_simulation_v8/input/v9h_open_sources/selective_payloads/FurtherMeasurements/Fu_curves/P6V035.csv",
+    "header": [
+      "t[s]",
+      "u[mm]",
+      "F[kN]"
+    ],
+    "row_count": 826,
+    "time_range_s": [
+      0.0,
+      860.0
+    ],
+    "strictly_increasing_time": true,
+    "duplicate_or_nonincreasing_time_step_count": 0,
+    "time_step_range_s": [
+      1.0,
+      33.0
+    ],
+    "displacement_range_mm": [
+      0.000402,
+      0.108478
+    ],
+    "force_range_kN": [
+      0.328132,
+      19.021234
+    ],
+    "maximum_force": {
+      "force_kN": 19.021234,
+      "time_s": 857.0,
+      "displacement_mm": 0.09825
+    },
+    "maximum_displacement": {
+      "displacement_mm": 0.108478,
+      "time_s": 253.0,
+      "force_kN": 15.910532
+    },
+    "displacement_monotonic_nondecreasing": false,
+    "negative_displacement_increment_count": 267,
+    "recorded_path_work_J": 1.169840685383,
+    "positive_displacement_increment_work_J": 5.7572068388924995,
+    "negative_displacement_increment_work_J": -4.5873661535095,
+    "unit_identity": "1 kN*mm = 1 J",
+    "constitutive_energy_interpretation_authorized": false
+  },
+  "cross_channel_time_overlap": {
+    "bar_range_ms": [
+      0.001,
+      0.2
+    ],
+    "DIC_filename_range_ms": [
+      0.003,
+      0.241
+    ],
+    "range_ms": [
+      0.003,
+      0.2
+    ],
+    "duration_ms": 0.197,
+    "DIC_frame_count_inside": 42,
+    "absolute_synchronization_assumed": false
+  },
+  "outcome_gate_summary": {
+    "gates": {
+      "all_V9H_payloads_hash_and_crc_verified": true,
+      "all_required_documentation_clauses_found": true,
+      "two_bar_histories_processed": true,
+      "DIC_frame_count_matches": true,
+      "DIC_missing_count_preserved": true,
+      "DIC_internal_time_offset_consistent_with_tolerance": true,
+      "quasi_static_curve_processed": true,
+      "P6V035_DIC_remains_unacquired": true
+    },
+    "passed": true
+  },
+  "safety_gate_summary": {
+    "gates": {
+      "v9h_regressions_unchanged": true,
+      "no_imputation": true,
+      "no_additional_payload_acquired": true,
+      "full_zip_not_downloaded": true,
+      "source_archive_not_rescanned": true,
+      "equation_12_not_invented": true,
+      "coordinate_mapping_not_assumed": true,
+      "absolute_cross_channel_synchronization_not_asserted": true,
+      "stress_or_material_fit_not_executed": true,
+      "solver_not_executed": true,
+      "foia_request_unsent": true,
+      "external_contact_not_made": true
+    },
+    "passed": true
+  },
+  "analogue_measurement_benchmark_qualified": true,
+  "analogue_signal_reduction_authorized": true,
+  "analogue_stress_strain_reduction_authorized": false,
+  "analogue_material_fit_authorized": false,
+  "analogue_failure_law_fit_authorized": false,
+  "analogue_coupon_solver_authorized": false,
+  "wtc_high_rate_material_curve_qualification_passed": false,
+  "cf6_80a2_cowling_material_card_identification_passed": false,
+  "openradioss_wtc_coupon_authorized": false,
+  "failure_deletion_executed": false,
+  "projectile_rupture_executed": false,
+  "facade_impact_executed": false,
+  "global_wtc_impact_physics_qualification_passed": false,
+  "blender_executed": false,
+  "scope_gates": {
+    "no_imputation": true,
+    "absolute_cross_channel_synchronization_assertion_authorized": false,
+    "stress_inference_authorized": false,
+    "material_fit_authorized": false,
+    "failure_law_fit_authorized": false,
+    "coupon_solver_authorized": false,
+    "WTC_or_CF6_solver_authorized": false,
+    "failure_deletion_authorized": false,
+    "projectile_rupture_authorized": false,
+    "facade_impact_authorized": false,
+    "global_impact_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_inference_authorized": false
+  },
+  "interpretation": "V9I validates a no-imputation descriptive measurement benchmark for the selected S355 analogue pair. The cached payload identities remain exact; source metadata documents the virtual DIC trigger, processed bar-displacement boundary conditions and quasi-static relative displacement. The two DIC time axes have a stable 2.245000 ms mean offset within the predeclared rounding tolerance, but absolute bar/DIC synchronization is not asserted. All 7070 DIC blanks remain missing. The quasi-static force-displacement integral is reported only along its recorded path. Because equation 12, its correction-factor value, complete specimen geometry, dynamic force and the coordinate-axis mapping remain incomplete, V9I does not identify stress, constitutive response, fracture energy or regularization length. S355 remains an analogue and no WTC, CF6, rupture or facade-impact solver gate is opened.",
+  "runtime": {
+    "started_at": "2026-08-27T17:38:13.596555+02:00",
+    "completed_at": "2026-08-27T17:38:13.743922+02:00",
+    "software": "Python standard-library deterministic CSV reduction",
+    "python_version": "3.14.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "random_seed": 9112001,
+    "network_access_used_for_calculation": false,
+    "source_archive_rescanned": false,
+    "additional_payload_downloaded": false,
+    "full_zip_downloaded": false,
+    "external_contact_made": false,
+    "solver_executed": false
+  }
+}

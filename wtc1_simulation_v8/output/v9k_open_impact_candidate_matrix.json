@@ -1,0 +1,231 @@
+{
+  "iteration": "V9K",
+  "generated_at": "2026-08-28T10:58:46.883110+02:00",
+  "predeclared_required_gates": {
+    "authoritative_primary_provenance": {
+      "required": true,
+      "criterion": "Government, institutional repository, official solver project or original experimental publication with persistent identifier."
+    },
+    "lawful_open_access_and_license": {
+      "required": true,
+      "criterion": "Public access is verified and reuse/license terms for acquired model files are explicit; public-read-only access to a report alone is insufficient for a deck."
+    },
+    "bounded_downloadable_deck_or_reconstructible_definition": {
+      "required": true,
+      "criterion": "A solver input deck is downloadable, or geometry, mesh, materials, boundary/initial conditions and contacts are complete enough for deterministic reconstruction without generic substitutions."
+    },
+    "failure_and_regularization_complete": {
+      "required": true,
+      "criterion": "Failure/erosion law, all parameters, units and any characteristic length, nonlocal treatment or objective damage-energy rule are explicit; a bare deletion strain is insufficient."
+    },
+    "measured_validation_outputs": {
+      "required": true,
+      "criterion": "At least one measured time history or final quantitative observable relevant to impact transfer is available with units and test conditions, such as force, impulse, residual velocity, deformation or perforation."
+    },
+    "mesh_and_convergence_definition": {
+      "required": true,
+      "criterion": "At least three documented mesh levels or an explicit convergence/uncertainty study exists for force, impulse, residual velocity, deformation or another predeclared impact observable."
+    },
+    "local_execution_feasible_and_bounded": {
+      "required": true,
+      "criterion": "The case is compatible with an available local solver or has a documented conversion route, and a later qualification run is estimated below 60 minutes per mesh on CPU without a multi-hour GPU job."
+    }
+  },
+  "candidate_matrix": [
+    {
+      "id": "NASA_METAL_FAN_CONTAINMENT_IMPACT",
+      "title": "Impact Properties of Metal Fan Containment Materials Being Evaluated for the HSCT",
+      "required_gate_count": 7,
+      "passed_gate_count": 1,
+      "all_required_gates_passed": false,
+      "selected": false,
+      "gates": {
+        "authoritative_primary_provenance": {
+          "passed": true,
+          "reason": "NASA primary institutional record and government report."
+        },
+        "lawful_open_access_and_license": {
+          "passed": false,
+          "reason": "The report is public-use government work, but no model file or reusable model-file license exists in the record."
+        },
+        "bounded_downloadable_deck_or_reconstructible_definition": {
+          "passed": false,
+          "reason": "No deck, geometry, material identities, mesh, contacts or complete projectile definition are published."
+        },
+        "failure_and_regularization_complete": {
+          "passed": false,
+          "reason": "Post-test metallography is mentioned, but no numerical failure law, parameters or objective regularization are supplied."
+        },
+        "measured_validation_outputs": {
+          "passed": false,
+          "reason": "The graph has units but anonymizes materials and omits the projectile definition and complete test conditions needed for deterministic validation."
+        },
+        "mesh_and_convergence_definition": {
+          "passed": false,
+          "reason": "No mesh levels, convergence observable or numerical uncertainty study is reported."
+        },
+        "local_execution_feasible_and_bounded": {
+          "passed": false,
+          "reason": "No executable or reconstructible model is available for a bounded local run."
+        }
+      },
+      "controlling_rejection_reasons": [
+        "The report is public-use government work, but no model file or reusable model-file license exists in the record.",
+        "No deck, geometry, material identities, mesh, contacts or complete projectile definition are published.",
+        "Post-test metallography is mentioned, but no numerical failure law, parameters or objective regularization are supplied.",
+        "The graph has units but anonymizes materials and omits the projectile definition and complete test conditions needed for deterministic validation.",
+        "No mesh levels, convergence observable or numerical uncertainty study is reported.",
+        "No executable or reconstructible model is available for a bounded local run."
+      ]
+    },
+    {
+      "id": "NASA_TRANSIENT_FE_FAN_CONTAINMENT",
+      "title": "Transient Finite Element Analyses Developed to Model Fan Containment Impact Events",
+      "required_gate_count": 7,
+      "passed_gate_count": 1,
+      "all_required_gates_passed": false,
+      "selected": false,
+      "gates": {
+        "authoritative_primary_provenance": {
+          "passed": true,
+          "reason": "NASA primary institutional record and government article."
+        },
+        "lawful_open_access_and_license": {
+          "passed": false,
+          "reason": "The article is public-use government work, but no solver model file or model-file reuse terms are supplied."
+        },
+        "bounded_downloadable_deck_or_reconstructible_definition": {
+          "passed": false,
+          "reason": "The article omits the complete geometry, mesh, boundary conditions, contacts, material parameters and deck."
+        },
+        "failure_and_regularization_complete": {
+          "passed": false,
+          "reason": "Maximum effective plastic strain was varied for qualitative agreement; no fixed calibrated value, fracture energy or characteristic-length treatment is given."
+        },
+        "measured_validation_outputs": {
+          "passed": false,
+          "reason": "Penetration velocity and deflection are described only qualitatively; no measured time history or numeric validation table is published."
+        },
+        "mesh_and_convergence_definition": {
+          "passed": false,
+          "reason": "No mesh sequence or convergence/uncertainty result is published."
+        },
+        "local_execution_feasible_and_bounded": {
+          "passed": false,
+          "reason": "The legacy DYNA3D deck and a documented local conversion route are absent."
+        }
+      },
+      "controlling_rejection_reasons": [
+        "The article is public-use government work, but no solver model file or model-file reuse terms are supplied.",
+        "The article omits the complete geometry, mesh, boundary conditions, contacts, material parameters and deck.",
+        "Maximum effective plastic strain was varied for qualitative agreement; no fixed calibrated value, fracture energy or characteristic-length treatment is given.",
+        "Penetration velocity and deflection are described only qualitatively; no measured time history or numeric validation table is published.",
+        "No mesh sequence or convergence/uncertainty result is published.",
+        "The legacy DYNA3D deck and a documented local conversion route are absent."
+      ]
+    },
+    {
+      "id": "FAA_DOT_TC_14_43_GENERIC_FAN_BLADE_OUT",
+      "title": "Development of a Generic Gas-Turbine Engine Fan Blade-Out Full-Fan Rig Model",
+      "required_gate_count": 7,
+      "passed_gate_count": 1,
+      "all_required_gates_passed": false,
+      "selected": false,
+      "gates": {
+        "authoritative_primary_provenance": {
+          "passed": true,
+          "reason": "FAA primary report in the USDOT ROSA P repository with DOI and report number."
+        },
+        "lawful_open_access_and_license": {
+          "passed": false,
+          "reason": "The report is publicly readable, but the repository supplies no model file with explicit reuse terms."
+        },
+        "bounded_downloadable_deck_or_reconstructible_definition": {
+          "passed": false,
+          "reason": "No LS-DYNA deck or complete CAD/mesh definition is listed, and the full rig cannot be deterministically reconstructed from report figures alone."
+        },
+        "failure_and_regularization_complete": {
+          "passed": false,
+          "reason": "Johnson-Cook and constant-strain deletion are documented, but the report explicitly finds mesh/event-dependent tuning and supplies no objective damage-energy or characteristic-length regularization."
+        },
+        "measured_validation_outputs": {
+          "passed": false,
+          "reason": "Consistency with reported FBO tests is qualitative; no paired measured time history or fully specified quantitative rig-test comparator is exposed."
+        },
+        "mesh_and_convergence_definition": {
+          "passed": false,
+          "reason": "Three blade meshes are not a nested convergence sequence and change the fragmentation result; only two casing thickness meshes are compared for strain energy."
+        },
+        "local_execution_feasible_and_bounded": {
+          "passed": false,
+          "reason": "The required proprietary LS-DYNA deck is absent and reported full-model runtimes greatly exceed the 60-minute-per-mesh ceiling."
+        }
+      },
+      "controlling_rejection_reasons": [
+        "The report is publicly readable, but the repository supplies no model file with explicit reuse terms.",
+        "No LS-DYNA deck or complete CAD/mesh definition is listed, and the full rig cannot be deterministically reconstructed from report figures alone.",
+        "Johnson-Cook and constant-strain deletion are documented, but the report explicitly finds mesh/event-dependent tuning and supplies no objective damage-energy or characteristic-length regularization.",
+        "Consistency with reported FBO tests is qualitative; no paired measured time history or fully specified quantitative rig-test comparator is exposed.",
+        "Three blade meshes are not a nested convergence sequence and change the fragmentation result; only two casing thickness meshes are compared for strain energy.",
+        "The required proprietary LS-DYNA deck is absent and reported full-model runtimes greatly exceed the 60-minute-per-mesh ceiling."
+      ]
+    },
+    {
+      "id": "OPENRADIOSS_OFFICIAL_HIGH_RATE_IMPACT_EXAMPLE",
+      "title": "Altair RD-E 2602 Ductile Failure Model - ruptured plate",
+      "required_gate_count": 7,
+      "passed_gate_count": 3,
+      "all_required_gates_passed": false,
+      "selected": false,
+      "gates": {
+        "authoritative_primary_provenance": {
+          "passed": true,
+          "reason": "Official Altair Radioss example documentation."
+        },
+        "lawful_open_access_and_license": {
+          "passed": false,
+          "reason": "The files are publicly downloadable, but the inspected page states All Rights Reserved and no explicit reusable deck license was identified."
+        },
+        "bounded_downloadable_deck_or_reconstructible_definition": {
+          "passed": true,
+          "reason": "The official page declares a small downloadable input ZIP for the complete example."
+        },
+        "failure_and_regularization_complete": {
+          "passed": false,
+          "reason": "Failure parameters and deletion options are shown, but no characteristic length, nonlocal formulation or objective fracture-energy regularization is documented."
+        },
+        "measured_validation_outputs": {
+          "passed": false,
+          "reason": "The example is a numerical feature demonstration with no experimental measurement comparator."
+        },
+        "mesh_and_convergence_definition": {
+          "passed": false,
+          "reason": "No three-level mesh study or declared converged impact observable is supplied."
+        },
+        "local_execution_feasible_and_bounded": {
+          "passed": true,
+          "reason": "The small official Radioss example is compatible with the installed OpenRadioss solver and is expected to be bounded, although V9K does not execute it."
+        }
+      },
+      "controlling_rejection_reasons": [
+        "The files are publicly downloadable, but the inspected page states All Rights Reserved and no explicit reusable deck license was identified.",
+        "Failure parameters and deletion options are shown, but no characteristic length, nonlocal formulation or objective fracture-energy regularization is documented.",
+        "The example is a numerical feature demonstration with no experimental measurement comparator.",
+        "No three-level mesh study or declared converged impact observable is supplied."
+      ]
+    }
+  ],
+  "selected_candidate_ids": [],
+  "selection_rule": {
+    "maximum_selected_candidate_count": 1,
+    "all_required_gates_must_pass": true,
+    "ranking_if_multiple_pass": [
+      "directly executable OpenRadioss deck",
+      "measured impulse or force history",
+      "physical failure regularization",
+      "smallest lawful payload",
+      "shortest bounded CPU runtime"
+    ],
+    "no_candidate_passes": "Record a validated negative screening result and select no benchmark; do not weaken any gate."
+  }
+}

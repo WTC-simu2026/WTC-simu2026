@@ -1,0 +1,91 @@
+{
+  "iteration": "V10U",
+  "unit_system": {
+    "length": "mm",
+    "force": "N",
+    "stress": "N/mm2 (MPa)",
+    "work": "N mm"
+  },
+  "declared_inputs": {
+    "geometry": {
+      "length_mm": 2000.0,
+      "width_mm": 100.0,
+      "height_mm": 100.0,
+      "area_mm2": 10000.0,
+      "second_moment_mm4": 8333333.333333333
+    },
+    "material": {
+      "young_modulus_mpa": 200000.0,
+      "poisson_ratio": 0.3,
+      "shear_modulus_mpa": 76923.07692307692,
+      "shear_correction_factor": 0.8333333333333334,
+      "behavior": "isotropic linear elastic"
+    },
+    "maximum_tip_load_n": 10000.0
+  },
+  "formulas": {
+    "area": "A = b h",
+    "second_moment": "I = b h^3 / 12",
+    "shear_modulus": "G = E / (2 (1 + nu))",
+    "euler_bernoulli_tip_displacement": "delta_b = P L^3 / (3 E I)",
+    "timoshenko_shear_displacement": "delta_s = P L / (kappa G A)",
+    "total_reference_displacement": "delta_ref = delta_b + delta_s",
+    "linear_work": "W = 0.5 P delta"
+  },
+  "recomputed": {
+    "area_mm2": 10000.0,
+    "second_moment_mm4": 8333333.333333333,
+    "shear_modulus_mpa": 76923.07692307692,
+    "euler_bernoulli_tip_displacement_at_full_load_mm": 16.0,
+    "timoshenko_shear_displacement_at_full_load_mm": 0.031200000000000002,
+    "timoshenko_total_tip_displacement_at_full_load_mm": 16.0312,
+    "timoshenko_compliance_mm_per_n": 0.0016031199999999998,
+    "linear_force_displacement_work_at_full_load_n_mm": 80155.99999999999
+  },
+  "declared_reference_checks": {
+    "euler_bernoulli_tip_displacement_at_full_load_mm": {
+      "declared": 16.0,
+      "recomputed": 16.0,
+      "match": true
+    },
+    "timoshenko_shear_displacement_at_full_load_mm": {
+      "declared": 0.0312,
+      "recomputed": 0.031200000000000002,
+      "match": true
+    },
+    "timoshenko_total_tip_displacement_at_full_load_mm": {
+      "declared": 16.0312,
+      "recomputed": 16.0312,
+      "match": true
+    },
+    "timoshenko_compliance_mm_per_n": {
+      "declared": 0.00160312,
+      "recomputed": 0.0016031199999999998,
+      "match": true
+    },
+    "linear_force_displacement_work_at_full_load_n_mm": {
+      "declared": 80156.0,
+      "recomputed": 80155.99999999999,
+      "match": true
+    }
+  },
+  "derived_geometry_checks": {
+    "area_mm2": {
+      "declared": 10000.0,
+      "recomputed": 10000.0,
+      "match": true
+    },
+    "second_moment_mm4": {
+      "declared": 8333333.333333333,
+      "recomputed": 8333333.333333333,
+      "match": true
+    },
+    "shear_modulus_mpa": {
+      "declared": 76923.07692307692,
+      "recomputed": 76923.07692307692,
+      "match": true
+    }
+  },
+  "all_reproduced": true,
+  "wtc_attribution": false
+}

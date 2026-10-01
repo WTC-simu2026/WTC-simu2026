@@ -1,0 +1,198 @@
+{
+  "iteration": "V11K",
+  "random_seed": 1101111,
+  "random_draw_used": false,
+  "purpose": "Qualify synthetic convective and radiative surface-exchange boundaries on the separate V11J one-dimensional constant-property coupon. The boundary and conduction solve is coupled numerically, but no temperature is transferred to the V11I mechanical panel and no WTC fire is reconstructed.",
+  "inherited_conduction_configuration": "wtc1_simulation_v8/data/v11j_transient_conduction_predeclaration.json",
+  "inherited_conduction_directory": "wtc1_simulation_v8/output/v11j_transient_conduction",
+  "scope": {
+    "domain": "One square metre, one-dimensional coordinate x from the idealized slab bottom face x=0 to the top face x=L. Constant k, rho and cp inherited unchanged from V11J.",
+    "surface_boundary": "Each massless surface satisfies conduction through the adjacent half cell equals convection plus long-wave radiation into the coupon. Gas and radiative temperatures are synthetic verification inputs.",
+    "sign_convention": "Every reported boundary component is positive into the coupon. At every face q_in=q_conv_in+q_rad_in=2*k*(T_surface-T_adjacent_cell)/dx.",
+    "coupling_policy": "The calculated fields remain outside V11I. They are not panel loads, fire histories, WTC gas temperatures, mechanical states or evidence of collapse.",
+    "history_policy": "No V11E/V11F/V11H/V11I damage variable, stress state, material property or energy ledger is edited. The V11J constant-property results are a saved hash control, not re-executed.",
+    "energy_policy": "For unit area, sensible enthalpy change equals the time integral of bottom and top convective plus radiative heat. Surface storage is zero. Global collapse-energy credit is exactly zero."
+  },
+  "geometry": {
+    "equivalent_thickness_in": 4.35,
+    "inch_to_m": 0.0254,
+    "thickness_m": 0.11049,
+    "coupon_area_m2": 1.0,
+    "coordinate": "x=0 bottom face; x=L top face; cell-centred finite volumes",
+    "status": "Inherited bounded equivalent thickness, not a complete as-built deck/concrete assembly."
+  },
+  "constant_properties": {
+    "reference_temperature_c": 20.0,
+    "density_kg_m3": 2400.0,
+    "specific_heat_j_kg_k": 900.0,
+    "volumetric_heat_capacity_j_m3_k": 2160000.0,
+    "conductivity_w_m_k": 1.0,
+    "temperature_dependence": false,
+    "moisture_or_latent_heat": false,
+    "status": "Unchanged V11J verification constants; not calibrated WTC slab properties."
+  },
+  "surface_exchange": {
+    "celsius_to_kelvin_offset": 273.15,
+    "stefan_boltzmann_w_m2_k4": 5.670374419e-8,
+    "stefan_boltzmann_status": "2022 CODATA/NIST value; exact under the 2019 SI because k, h and c are exact.",
+    "convection_equation": "q_conv_in=h*(T_gas-T_surface)",
+    "radiation_equation": "q_rad_in=epsilon*sigma*((T_rad+273.15)^4-(T_surface+273.15)^4)",
+    "surface_balance": "2*k*(T_surface-T_cell)/dx=q_conv_in+q_rad_in",
+    "coefficient_status": "All h, emissivity, gas-temperature and radiative-temperature values in the six cases are synthetic verification parameters, not inferred WTC exposures."
+  },
+  "numerical_method": {
+    "scheme": "Backward Euler in time and conservative cell-centred finite volumes in space. A Newton solve couples both massless nonlinear surface balances to the conduction cells; the tridiagonal Jacobian includes exact boundary derivatives.",
+    "internal_face_conductance_w_m2_k": "k/dx",
+    "surface_half_cell_conductance_w_m2_k": "2*k/dx",
+    "absolute_temperature_policy": "Radiation powers use kelvins after adding exactly 273.15; convection and conduction use temperature differences, for which degC and K increments are identical.",
+    "enthalpy_definition": "H=rho*cp*sum_i[(T_i-T_ref)*dx], J/m2",
+    "increment_balance": "H_(n+1)-H_n=dt*sum_faces(q_conv_in,n+1+q_rad_in,n+1)",
+    "surface_storage_j_m2": 0.0,
+    "newton_residual_units": "W/m2"
+  },
+  "discretization": {
+    "reference_cells": 64,
+    "reference_steps": 1600,
+    "stored_history_intervals": 40,
+    "space_refinement_cells": [16, 32, 64, 128],
+    "space_refinement_mode": "Exact matrix exponential of the semi-discrete linear convection operator compared with the continuous even Robin eigenmode; isolates spatial error.",
+    "space_refinement_case": "CONVECTION_EIGENMODE_TRANSIENT",
+    "time_refinement_cells": 256,
+    "time_refinement_steps": [100, 200, 400, 800],
+    "time_refinement_case": "CONVECTION_EIGENMODE_TRANSIENT",
+    "sensitivity_case": "COMBINED_STEP_TRANSIENT",
+    "sensitivity_steps": 800,
+    "convection_h_top_w_m2_k": [10.0, 25.0, 50.0],
+    "emissivity_top": [0.0, 0.5, 0.9]
+  },
+  "cases": [
+    {
+      "id": "COMBINED_EQUILIBRIUM_CONTROL",
+      "duration_s": 3600.0,
+      "initial": {"kind": "uniform", "temperature_c": 60.0},
+      "bottom_boundary": {"kind": "surface_exchange", "gas_temperature_c": 60.0, "h_w_m2_k": 25.0, "radiative_temperature_c": 60.0, "emissivity": 0.7},
+      "top_boundary": {"kind": "surface_exchange", "gas_temperature_c": 60.0, "h_w_m2_k": 25.0, "radiative_temperature_c": 60.0, "emissivity": 0.7},
+      "analytical_reference": "Uniform 60 degC, zero convective flux, zero radiative flux and zero enthalpy change."
+    },
+    {
+      "id": "CONVECTION_STEADY_TWO_SIDED",
+      "duration_s": 3600.0,
+      "initial": {"kind": "steady_reference"},
+      "bottom_boundary": {"kind": "surface_exchange", "gas_temperature_c": 20.0, "h_w_m2_k": 15.0, "radiative_temperature_c": 20.0, "emissivity": 0.0},
+      "top_boundary": {"kind": "surface_exchange", "gas_temperature_c": 120.0, "h_w_m2_k": 25.0, "radiative_temperature_c": 120.0, "emissivity": 0.0},
+      "analytical_reference": "Closed series resistance q=(120-20)/(1/15+L/k+1/25), with exact linear solid profile and zero net input."
+    },
+    {
+      "id": "CONVECTION_EIGENMODE_TRANSIENT",
+      "duration_s": 1800.0,
+      "initial": {"kind": "robin_even_eigenmode", "ambient_temperature_c": 20.0, "amplitude_k": 80.0},
+      "bottom_boundary": {"kind": "surface_exchange", "gas_temperature_c": 20.0, "h_w_m2_k": 20.0, "radiative_temperature_c": 20.0, "emissivity": 0.0},
+      "top_boundary": {"kind": "surface_exchange", "gas_temperature_c": 20.0, "h_w_m2_k": 20.0, "radiative_temperature_c": 20.0, "emissivity": 0.0},
+      "analytical_reference": "T=Tinf+A*cos[zeta*(x-L/2)/(L/2)]*exp[-alpha*(zeta/(L/2))^2*t], where zeta*tan(zeta)=h*(L/2)/k."
+    },
+    {
+      "id": "RADIATION_STEADY_TWO_SIDED",
+      "duration_s": 3600.0,
+      "initial": {"kind": "steady_reference"},
+      "bottom_boundary": {"kind": "surface_exchange", "gas_temperature_c": 20.0, "h_w_m2_k": 0.0, "radiative_temperature_c": 20.0, "emissivity": 0.7},
+      "top_boundary": {"kind": "surface_exchange", "gas_temperature_c": 220.0, "h_w_m2_k": 0.0, "radiative_temperature_c": 220.0, "emissivity": 0.7},
+      "analytical_reference": "Independent scalar roots of the two fourth-power surface laws plus q=k*(T_surface_top-T_surface_bottom)/L; exact solid profile is linear."
+    },
+    {
+      "id": "COMBINED_STEADY_TWO_SIDED",
+      "duration_s": 3600.0,
+      "initial": {"kind": "steady_reference"},
+      "bottom_boundary": {"kind": "surface_exchange", "gas_temperature_c": 20.0, "h_w_m2_k": 10.0, "radiative_temperature_c": 20.0, "emissivity": 0.8},
+      "top_boundary": {"kind": "surface_exchange", "gas_temperature_c": 250.0, "h_w_m2_k": 25.0, "radiative_temperature_c": 250.0, "emissivity": 0.7},
+      "analytical_reference": "Independent scalar roots of the combined convection-radiation laws plus steady linear conduction."
+    },
+    {
+      "id": "COMBINED_STEP_TRANSIENT",
+      "duration_s": 1800.0,
+      "initial": {"kind": "uniform", "temperature_c": 20.0},
+      "bottom_boundary": {"kind": "surface_exchange", "gas_temperature_c": 20.0, "h_w_m2_k": 10.0, "radiative_temperature_c": 20.0, "emissivity": 0.8},
+      "top_boundary": {"kind": "surface_exchange", "gas_temperature_c": 250.0, "h_w_m2_k": 25.0, "radiative_temperature_c": 250.0, "emissivity": 0.7},
+      "analytical_reference": "No closed transient field is claimed; verification uses conservation, surface balances, nonlinear convergence, replay and bounded h/emissivity sensitivities."
+    }
+  ],
+  "acceptance": {
+    "geometry_conversion_absolute_m": 1e-14,
+    "constant_property_match_absolute": 1e-14,
+    "stefan_boltzmann_absolute": 1e-20,
+    "equilibrium_temperature_absolute_k": 1e-10,
+    "equilibrium_flux_absolute_w_m2": 1e-9,
+    "steady_temperature_linf_k": 1e-8,
+    "steady_flux_absolute_w_m2": 1e-7,
+    "eigenmode_reference_linf_k": 0.03,
+    "eigenmode_mean_absolute_k": 0.01,
+    "surface_balance_absolute_w_m2": 1e-8,
+    "nonlinear_residual_absolute_w_m2": 1e-7,
+    "increment_energy_absolute_j_m2": 1e-4,
+    "increment_energy_relative": 1e-10,
+    "total_energy_absolute_j_m2": 1e-3,
+    "total_energy_relative": 1e-10,
+    "component_ledger_absolute_j_m2": 1e-6,
+    "maximum_principle_tolerance_k": 1e-8,
+    "maximum_newton_iterations": 12,
+    "minimum_time_order": 0.8,
+    "maximum_time_order": 1.2,
+    "minimum_space_order": 1.75,
+    "maximum_space_order": 2.25,
+    "convergence_error_monotonic": true,
+    "sensitivity_monotonic": true,
+    "replay_digest_exact": true,
+    "v11j_hashes_must_match": true,
+    "require_historical_outcome": false
+  },
+  "method_sources": [
+    {
+      "id": "NIST_TN_1681",
+      "url": "https://nvlpubs.nist.gov/nistpubs/technicalnotes/nist.tn.1681.pdf",
+      "accessed": "2026-09-08",
+      "locator": "Section 7.1.3.1, report p.184",
+      "scope": "Primary NIST guidance states the simple convection relation Qc=h*As*(Ts-Tf), notes typical fire-compartment h values of about 10 to 30 W/(m2 K), and treats convection plus radiation as the surface boundary for conduction. V11K reverses the sign to report heat into the coupon."
+    },
+    {
+      "id": "NISTIR_6902_FDS_TECHNICAL_REFERENCE",
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir6902.pdf",
+      "accessed": "2026-09-08",
+      "locator": "Section 3.6, report pp.43-46",
+      "scope": "Primary NIST FDS technical reference describes net solid-surface heat flux as convective plus radiative contributions and couples it to one-dimensional solid conduction. V11K uses only the stated idealized boundary structure, not an FDS fire field."
+    },
+    {
+      "id": "NIST_CODATA_2022",
+      "url": "https://physics.nist.gov/cuu/pdf/all.pdf",
+      "accessed": "2026-09-08",
+      "locator": "2022 CODATA recommended values, Stefan-Boltzmann constant",
+      "scope": "Primary NIST constants table gives sigma=5.670374419...e-8 W m-2 K-4, exact in the 2019 SI."
+    }
+  ],
+  "protected_files": [
+    "wtc1_simulation_v8/data/v11j_transient_conduction_predeclaration.json",
+    "wtc1_simulation_v8/scripts/v11j_transient_conduction_model.py",
+    "wtc1_simulation_v8/scripts/test_v11j_transient_conduction.py",
+    "wtc1_simulation_v8/scripts/run_v11j_transient_conduction.py",
+    "wtc1_simulation_v8/scripts/audit_v11j_release.py",
+    "wtc1_simulation_v8/output/v11j_transient_conduction/results_v11j.json",
+    "wtc1_simulation_v8/output/v11j_transient_conduction/offline_manifest.json",
+    "wtc1_simulation_v8/output/v11j_transient_conduction/release_audit.json",
+    "harness/handoffs/WTC1_V11J_HANDOFF.md",
+    "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend"
+  ],
+  "heat_transfer_solved": true,
+  "surface_convection_solved": true,
+  "surface_radiation_solved": true,
+  "fire_solved": false,
+  "panel_coupled": false,
+  "thermal_strain_solved": false,
+  "heated_fracture_solved": false,
+  "material_properties_degraded": false,
+  "global_energy_credit_j": 0.0,
+  "blender_changed": false,
+  "gpu": false,
+  "external_solver": false,
+  "software_installation": false,
+  "expected_cpu_seconds_under": 180,
+  "output_directory": "wtc1_simulation_v8/output/v11k_surface_exchange",
+  "scratch_directory": "tmp/v11k_surface_exchange"
+}

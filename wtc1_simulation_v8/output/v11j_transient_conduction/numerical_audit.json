@@ -1,0 +1,354 @@
+{
+  "iteration": "V11J",
+  "status": "PASS",
+  "test_count": 31,
+  "tests": [
+    {
+      "test": "geometry_units_and_conversion",
+      "pass": true,
+      "evidence": {
+        "converted_m": 0.11048999999999999,
+        "declared_m": 0.11049,
+        "area_m2": 1.0
+      }
+    },
+    {
+      "test": "constant_property_units_and_capacity",
+      "pass": true,
+      "evidence": {
+        "rho_kg_m3": 2400.0,
+        "cp_j_kg_k": 900.0,
+        "rho_cp_j_m3_k": 2160000.0,
+        "k_w_m_k": 1.0
+      }
+    },
+    {
+      "test": "v11h_properties_inherited_without_relabeling",
+      "pass": true,
+      "evidence": {
+        "v11h_rho": 2400.0,
+        "v11h_cp": 900.0,
+        "v11h_k": null
+      }
+    },
+    {
+      "test": "declared_cases_are_unique_and_complete",
+      "pass": true,
+      "evidence": [
+        "UNIFORM_ADIABATIC_CONTROL",
+        "LINEAR_DIRICHLET_STEADY_CONTROL",
+        "SINE_DIRICHLET_TRANSIENT",
+        "CONSTANT_TOP_FLUX_BOTTOM_ADIABATIC",
+        "TOP_STEP_DIRICHLET_BOTTOM_ADIABATIC"
+      ]
+    },
+    {
+      "test": "reference_and_replay_are_byte_stable_numerically",
+      "pass": true,
+      "evidence": {
+        "reference": "a5c1f6be48af462ffd02293b4c342b7139fff3f502c03f753ebb431b046c4cd2",
+        "replay": "a5c1f6be48af462ffd02293b4c342b7139fff3f502c03f753ebb431b046c4cd2"
+      }
+    },
+    {
+      "test": "all_numerical_outputs_are_finite",
+      "pass": true,
+      "evidence": "reference, replay, convergence and sensitivity structures"
+    },
+    {
+      "test": "saved_v11h_and_v11i_controls_pass",
+      "pass": true,
+      "evidence": {
+        "V11H": "PASS",
+        "V11I": "PASS",
+        "old_drivers_reexecuted": false
+      }
+    },
+    {
+      "test": "uniform_adiabatic_temperature_exact",
+      "pass": true,
+      "evidence": {
+        "linf_k": 1.4210854715202004e-14,
+        "mean_c": 60.0
+      }
+    },
+    {
+      "test": "uniform_adiabatic_zero_flux_and_enthalpy_change",
+      "pass": true,
+      "evidence": {
+        "delta_h_j_m2": 0.0,
+        "q_j_m2": 0.0
+      }
+    },
+    {
+      "test": "linear_dirichlet_profile_exact",
+      "pass": true,
+      "evidence": {
+        "linf_k": 2.842170943040401e-14,
+        "mean_c": 70.0
+      }
+    },
+    {
+      "test": "linear_dirichlet_equal_opposite_face_fluxes",
+      "pass": true,
+      "evidence": {
+        "bottom_w_m2": -905.0592813829264,
+        "top_w_m2": 905.059281382947,
+        "net_w_m2": 2.05773176276125e-11
+      }
+    },
+    {
+      "test": "sine_transient_analytical_field",
+      "pass": true,
+      "evidence": {
+        "linf_k": 0.011296066484803191,
+        "mean_error_k": 0.009801187593190264,
+        "fourier": 0.06826102523478222
+      }
+    },
+    {
+      "test": "constant_flux_mean_temperature_analytical",
+      "pass": true,
+      "evidence": {
+        "numerical_c": 27.542160678191124,
+        "analytical_c": 27.542160678191088,
+        "error_k": 3.552713678800501e-14
+      }
+    },
+    {
+      "test": "constant_flux_enthalpy_gain_analytical",
+      "pass": true,
+      "evidence": {
+        "expected_j_m2": 1800000.0,
+        "delta_h_j_m2": 1800000.0000000086,
+        "integrated_flux_j_m2": 1800000.0
+      }
+    },
+    {
+      "test": "mixed_boundary_step_analytical_field",
+      "pass": true,
+      "evidence": {
+        "linf_k": 0.020168583158401532,
+        "mean_error_k": -0.008897030448771659,
+        "fourier": 0.06826102523478222
+      }
+    },
+    {
+      "test": "all_incremental_flux_enthalpy_balances",
+      "pass": true,
+      "evidence": {
+        "UNIFORM_ADIABATIC_CONTROL": {
+          "absolute_j_m2": 0.0,
+          "relative": 0.0
+        },
+        "LINEAR_DIRICHLET_STEADY_CONTROL": {
+          "absolute_j_m2": 4.629896466212813e-11,
+          "relative": 4.629896466212813e-11
+        },
+        "SINE_DIRICHLET_TRANSIENT": {
+          "absolute_j_m2": 4.102730599697679e-09,
+          "relative": 1.1465160735943277e-12
+        },
+        "CONSTANT_TOP_FLUX_BOTTOM_ADIABATIC": {
+          "absolute_j_m2": 4.656612873077393e-10,
+          "relative": 4.1392114427354603e-13
+        },
+        "TOP_STEP_DIRICHLET_BOTTOM_ADIABATIC": {
+          "absolute_j_m2": 2.3783286451362073e-09,
+          "relative": 1.0672414937688665e-12
+        }
+      }
+    },
+    {
+      "test": "all_total_flux_enthalpy_balances",
+      "pass": true,
+      "evidence": {
+        "UNIFORM_ADIABATIC_CONTROL": {
+          "absolute_j_m2": 0.0,
+          "relative": 0.0
+        },
+        "LINEAR_DIRICHLET_STEADY_CONTROL": {
+          "absolute_j_m2": 7.4078343459405e-08,
+          "relative": 7.4078343459405e-08
+        },
+        "SINE_DIRICHLET_TRANSIENT": {
+          "absolute_j_m2": 2.523884177207947e-07,
+          "relative": 7.172148969638028e-14
+        },
+        "CONSTANT_TOP_FLUX_BOTTOM_ADIABATIC": {
+          "absolute_j_m2": 8.614733815193176e-09,
+          "relative": 2.057479125344091e-13
+        },
+        "TOP_STEP_DIRICHLET_BOTTOM_ADIABATIC": {
+          "absolute_j_m2": 2.384185791015625e-07,
+          "relative": 3.396012894569343e-14
+        }
+      }
+    },
+    {
+      "test": "discrete_maximum_principle",
+      "pass": true,
+      "evidence": {
+        "UNIFORM_ADIABATIC_CONTROL": 1.4210854715202004e-14,
+        "LINEAR_DIRICHLET_STEADY_CONTROL": 0.0,
+        "SINE_DIRICHLET_TRANSIENT": 0.0,
+        "CONSTANT_TOP_FLUX_BOTTOM_ADIABATIC": 1.0658141036401503e-14,
+        "TOP_STEP_DIRICHLET_BOTTOM_ADIABATIC": 1.0658141036401503e-14
+      }
+    },
+    {
+      "test": "stored_histories_cover_initial_and_terminal_states",
+      "pass": true,
+      "evidence": {
+        "UNIFORM_ADIABATIC_CONTROL": 41,
+        "LINEAR_DIRICHLET_STEADY_CONTROL": 41,
+        "SINE_DIRICHLET_TRANSIENT": 41,
+        "CONSTANT_TOP_FLUX_BOTTOM_ADIABATIC": 41,
+        "TOP_STEP_DIRICHLET_BOTTOM_ADIABATIC": 41
+      }
+    },
+    {
+      "test": "profile_coordinates_and_counts",
+      "pass": true,
+      "evidence": {
+        "UNIFORM_ADIABATIC_CONTROL": {
+          "snapshots": 41,
+          "cells": 64
+        },
+        "LINEAR_DIRICHLET_STEADY_CONTROL": {
+          "snapshots": 41,
+          "cells": 64
+        },
+        "SINE_DIRICHLET_TRANSIENT": {
+          "snapshots": 41,
+          "cells": 64
+        },
+        "CONSTANT_TOP_FLUX_BOTTOM_ADIABATIC": {
+          "snapshots": 41,
+          "cells": 64
+        },
+        "TOP_STEP_DIRICHLET_BOTTOM_ADIABATIC": {
+          "snapshots": 41,
+          "cells": 64
+        }
+      }
+    },
+    {
+      "test": "spatial_operator_error_decreases_monotonically",
+      "pass": true,
+      "evidence": [
+        0.08783506728451584,
+        0.02204181457571508,
+        0.005515647753583153,
+        0.001379236626839031
+      ]
+    },
+    {
+      "test": "spatial_operator_second_order",
+      "pass": true,
+      "evidence": [
+        1.9945540389618812,
+        1.998640767661324,
+        1.9996603327210374
+      ]
+    },
+    {
+      "test": "time_error_decreases_sine_dirichlet_transient",
+      "pass": true,
+      "evidence": [
+        0.09259071820793707,
+        0.046544981691241105,
+        0.02346426503424226,
+        0.011909394242287874
+      ]
+    },
+    {
+      "test": "backward_euler_first_order_sine_dirichlet_transient",
+      "pass": true,
+      "evidence": [
+        0.9922419471213749,
+        0.988160358224688,
+        0.9783652378345438
+      ]
+    },
+    {
+      "test": "time_error_decreases_top_step_dirichlet_bottom_adiabatic",
+      "pass": true,
+      "evidence": [
+        0.138229933463478,
+        0.06946951535074675,
+        0.035094588649741354,
+        0.017908159851430128
+      ]
+    },
+    {
+      "test": "backward_euler_first_order_top_step_dirichlet_bottom_adiabatic",
+      "pass": true,
+      "evidence": [
+        0.9926181251655039,
+        0.9851314387277131,
+        0.9706314926116476
+      ]
+    },
+    {
+      "test": "conductivity_sensitivity_declared_order",
+      "pass": true,
+      "evidence": [
+        0.5,
+        1.0,
+        1.3
+      ]
+    },
+    {
+      "test": "conductivity_sensitivity_heating_is_monotonic",
+      "pass": true,
+      "evidence": {
+        "mean_c": [
+          40.83522237066782,
+          49.472051393017146,
+          53.60500883314705
+        ],
+        "bottom_cell_c": [
+          20.027082370399267,
+          21.369130701691564,
+          23.5327756874675
+        ],
+        "thermal_centroid_depth_m": [
+          0.018099020634610646,
+          0.025529509841128,
+          0.028962744744152887
+        ]
+      }
+    },
+    {
+      "test": "constant_flux_and_step_means_do_not_decrease",
+      "pass": true,
+      "evidence": {
+        "flux_minimum_step_k": 0.004713850423861743,
+        "step_minimum_step_k": 0.009217011609003123
+      }
+    },
+    {
+      "test": "primary_method_sources_and_context_limits_declared",
+      "pass": true,
+      "evidence": [
+        "NIST_NCSTAR_1_5G",
+        "NIST_NCSTAR_1_5F",
+        "NIST_TN_1681"
+      ]
+    },
+    {
+      "test": "thermal_only_scope_and_zero_global_credit",
+      "pass": true,
+      "evidence": {
+        "heat_transfer_solved": true,
+        "fire_solved": false,
+        "panel_coupled": false,
+        "heated_fracture_solved": false,
+        "global_energy_credit_j": 0.0
+      }
+    }
+  ],
+  "reference_digest_sha256": "a5c1f6be48af462ffd02293b4c342b7139fff3f502c03f753ebb431b046c4cd2",
+  "replay_digest_sha256": "a5c1f6be48af462ffd02293b4c342b7139fff3f502c03f753ebb431b046c4cd2"
+}

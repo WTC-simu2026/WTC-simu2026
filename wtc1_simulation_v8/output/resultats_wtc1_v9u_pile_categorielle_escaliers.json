@@ -1,0 +1,127 @@
+{
+  "iteration": "V9U",
+  "dataset_version": "9.21.0",
+  "generated_at_utc": "2026-08-30T07:16:11Z",
+  "validation_status": "PASS",
+  "random_seed": 9122006,
+  "random_draw_used": false,
+  "scope": "Preserve V8U through V9T, test Floors 93-99 against the V9R floor-band and transfer topology, and create separate low/base/high categorical stacks only where all three stairs are documented as continuing without a transfer event. Every Floor 95 placement and every cross-floor repetition remains hypothetical; no physical vertical scale, as-built geometry, mechanical property, damage result, solver or Blender use is authorized.",
+  "observed_or_transcribed_facts": {
+    "target_floor_count": 7,
+    "floor_stair_documentary_row_count": 21,
+    "all_rows_present_and_continue": true,
+    "listed_transfer_event_count": 0,
+    "floor_band_count": 2,
+    "floor_band_ranges_in_target": [
+      [
+        93,
+        95
+      ],
+      [
+        96,
+        99
+      ]
+    ],
+    "floor_95_labelled_overlay_row_count": 3,
+    "other_floor_labelled_overlay_row_count": 0
+  },
+  "official_model_results": {
+    "floor_bands_derive_from_nist_schematic_panels": true,
+    "floor_95_overlay_derives_from_nist_model_figure": true,
+    "independent_as_built_measurement": false,
+    "floor_specific_geometry_for_93_94_96_99_published_in_v9r": false
+  },
+  "archive_claims_used": [],
+  "model_hypotheses": {
+    "repeat_v9t_normalized_coordinates_for_categorical_display": true,
+    "all_repeated_placements_hypothetical": true,
+    "low_base_high_retained_separately": true,
+    "equal_display_spacing_has_physical_meaning": false,
+    "physical_scale": null,
+    "physical_vertical_coordinate": null
+  },
+  "derived_results": {
+    "categorical_stack_authorized": true,
+    "variant_count": 3,
+    "instances_per_variant": 21,
+    "total_hypothetical_instance_count": 63,
+    "floor95_hypothetical_instance_count": 9,
+    "cross_floor_hypothetical_repetition_count": 54,
+    "band_boundary_transition_count": 1,
+    "categorical_stack_fingerprint_sha256": "6c97dd0f5315832e7783638d06d85db237b98d6026fb30d2569676b9d3c811c4",
+    "inherited_common_relative_scale_common_px_per_published_in": 2.3245978260869564
+  },
+  "contradictions_and_missing_information": [
+    "Only Floor 95 has the labelled official-model overlay used upstream; Floors 93, 94 and 96-99 have no floor-specific footprint in V9R.",
+    "Floors 95 and 96 lie in different published categorical bands. No transfer is listed, but identical plan geometry is not thereby established.",
+    "The inherited 2.324597826 normalized-pixel-per-published-inch scale is not a physical conversion.",
+    "Exact offsets, orientations, walls, doors, flights, stringers, connections, floor-to-floor heights, as-built coordinates and component damage remain unresolved."
+  ],
+  "checks": {
+    "v8u_through_v9t_chained_regression_hashes": true,
+    "direct_input_artifact_hashes": true,
+    "protected_blender_master_before_after": true,
+    "v9t_geometry_layer_pass_and_fingerprint": true,
+    "floor_count": true,
+    "stairway_count": true,
+    "variant_count_and_separation": true,
+    "floor_stair_documentary_coverage": true,
+    "two_documented_floor_bands_preserved": true,
+    "all_three_stairs_documented_continuous": true,
+    "no_transfer_event_93_99": true,
+    "adjacent_transition_coverage": true,
+    "band_boundary_preserved_without_geometry_inference": true,
+    "floor95_overlay_not_extrapolated": true,
+    "published_landing_dimensions_consistent": true,
+    "upstream_metric_and_mechanical_qualifications_closed": true,
+    "categorical_stack_instance_count": true,
+    "all_placements_explicitly_hypothetical": true,
+    "no_physical_vertical_coordinate_or_scale": true,
+    "relative_scale_not_physical_conversion": true,
+    "zero_physical_properties_and_credit": true,
+    "mechanical_solver_blender_gates_closed": true,
+    "source_policy_closed": true,
+    "figures_created": true
+  },
+  "model_gate": {
+    "categorical_seven_floor_stack": true,
+    "three_separate_hypothetical_variants": true,
+    "documented_continuity_without_transfer_93_99": true,
+    "floor_band_boundary_preserved": true,
+    "identical_floor_specific_geometry": false,
+    "metric_as_built_geometry": false,
+    "whole_stair_enclosure_geometry": false,
+    "physical_vertical_scale": false,
+    "mechanical_properties": false,
+    "load_path_credit": false,
+    "component_damage_validation": false,
+    "structural_solver": false,
+    "blender": false,
+    "physical_validation": false
+  },
+  "source_policy": {
+    "source_archive_read": false,
+    "source_archive_rescanned": false,
+    "cached_official_sources_read_only": true,
+    "network_access_used": false,
+    "official_source_files_modified": false,
+    "structural_solver_authorized": false,
+    "blender_authorized": false,
+    "blender_master_modification_authorized": false,
+    "physical_interpretation_authorized": false,
+    "metric_as_built_geometry_authorized": false,
+    "physical_vertical_scale_authorized": false,
+    "mass_assignment_authorized": false,
+    "stiffness_assignment_authorized": false,
+    "strength_assignment_authorized": false,
+    "connection_assignment_authorized": false,
+    "load_path_credit_authorized": false,
+    "component_damage_validation_authorized": false,
+    "foia_request_sent": false,
+    "external_contact_count": 0
+  },
+  "next_iteration": {
+    "id": "V9V",
+    "objective": "Preserve V8U through V9U and perform a cached-source-only sufficiency audit for any floor-specific stairwell plan or offset evidence on Floors 93-99 before any geometry is promoted beyond categorical placeholders. Keep low/base/high separate, retain zero mechanical and damage credit, and do not run Blender or a structural solver unless a later explicitly authorized objective changes those gates."
+  }
+}

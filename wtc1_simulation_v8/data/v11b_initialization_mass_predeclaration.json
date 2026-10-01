@@ -1,0 +1,74 @@
+{
+  "iteration": "V11B",
+  "status": "PREDECLARED_BEFORE_CORRECTED_PROPAGATION_RUN",
+  "random_seed": 1102001,
+  "random_draw_used": false,
+  "purpose": "Correct the V10Y reduced-model start, mass inventory and terminal-state labelling without retuning any declared scenario; expose changes separately before coupling V11A components.",
+  "user_target": "An initially standing WTC1 model struck by a Boeing767 with documented initial conditions and their uncertainties, then calculated impact damage, fire and structural response, without a prescribed collapse result. WTC2 should reuse engines but retain separate building/event inputs.",
+  "baseline_configuration": "wtc1_simulation_v8/data/v10y_integrated_exploratory_chain.json",
+  "baseline_script": "wtc1_simulation_v8/scripts/run_v10y_integrated_exploratory_chain.py",
+  "baseline_named_summary": "wtc1_simulation_v8/output/v10y_named_scenario_summary.csv",
+  "baseline_grid_summary": "wtc1_simulation_v8/output/v10y_sensitivity_grid.csv",
+  "source_files": [
+    {"path": "wtc1_simulation_v8/data/v10y_integrated_exploratory_chain.json", "sha256": "57cb235ce91ff6e855b932ad26200426f2db7901e66f7996ebf3e7cf39101b0b"},
+    {"path": "wtc1_simulation_v8/scripts/run_v10y_integrated_exploratory_chain.py", "sha256": "8b50f7514404f8fb6b5e81f39cef6cf602ff7f9428692e4df3a611a3abc3edd8"},
+    {"path": "wtc1_simulation_v8/output/v10y_named_scenario_summary.csv", "sha256": "8896cea6d8db82fb38b13243115a21615cd93e9a61ed790391e988f0ae0307e8"},
+    {"path": "wtc1_simulation_v8/output/v10y_sensitivity_grid.csv", "sha256": "3ab621325d5b5d0a9a85a73bc5d4f4b6eac37ff2682e27b8323786dedbebfa99"},
+    {"path": "wtc1_simulation_v8/output/v10q_official_temperature_envelope_matrix.csv", "sha256": "bfb82536adf1482b73a59e8717af723d8a36d1141bd8294e83657759355ac2e0"},
+    {"path": "wtc1_simulation_v8/output/v10p_official_model_damage_reference_matrix.csv", "sha256": "b95bc729d81b5cf406009250936aa53bbdf8ec9ea6257d0eb52ff564e5503bab"},
+    {"path": "wtc1_simulation_v8/output/v11a_component_resistance/results_v11a.json", "sha256": "a32e86f41252950351ac1494fdec05f12db97136523a3b7fcf3b0ab4383ed294"}
+  ],
+  "protected_files": [
+    {"path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend", "sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"},
+    {"path": "wtc1_simulation_v8/output/v10z_grid0119_visualization_driver.json", "sha256": "06aa72d038f76b956ca6e891faa0e3fda46c50f33df6cc2a4111fdb4760eabd5"}
+  ],
+  "unchanged_inputs": ["all 729 grid scenarios and three named scenarios", "initiation rule and thermal sampling", "impact damage and steel-temperature references", "floor count 110 and uniform office-story height 3.6576m", "initial cluster mass (110-initiation_floor+0.5)*floor_mass", "declared initial gap fraction", "full-story resistance, gradient and frozen capacity retention", "perfectly inelastic stationary-floor capture"],
+  "corrected_law": {
+    "initial_condition": "t=0, downward displacement=0, velocity=0, kinetic energy=0 at the unchanged capacity trigger",
+    "initial_interval": "At the triggering floor i, traverse d=f*h against F=R_i/h. The work is f*R_i, not the full-story R_i.",
+    "mass_split": "Keep alpha=0.5 from V10Y independently of gap fraction f. Capture (1-alpha)*floor_mass at the end of the first interval, then floor_mass after each complete subsequent interval i-1..1. This is a lumped bookkeeping convention, not a spatial density reconstruction.",
+    "mass_accounts": "Cluster mass means mass already assigned/captured, even when velocity is zero. Unaccreted mass remains explicitly tracked. Cluster + unaccreted + deliberately omitted diagnostic mass = 110*floor_mass; corrected V11B has zero omitted mass.",
+    "initial_static_condition": "If F >= M*g at rest, record capacity trigger but no downward start under the constant-resistance law. Do not inject a velocity, lower resistance or infer real-world non-collapse.",
+    "motion": "a=g-F/M; v_minus^2=v_start^2+2*a*d; dt=2*d/(v_start+v_minus)",
+    "arrest": "If kinetic energy is exhausted within or exactly at the interval end, stop with v=0, distance=K_start/(F-M*g), dt=-v_start/a; do not capture mass or add collision loss.",
+    "capture": "v_plus=M*v_minus/(M+mass_added); loss=0.5*M*mass_added/(M+mass_added)*v_minus^2; audit impulse separately",
+    "energy": "K_initial=0. All gravity work, including the initial interval, is included once. K_final=W_gravity-W_resistance-loss_capture.",
+    "terminal_condition": "Stop at lower boundary of the uniform 1D stack, with terminal velocity and kinetic energy explicit. Do not call this debris settled or a foundation impact simulation.",
+    "post_arrest_policy": "Stop at frozen initiation-time resistance. No later heating or restart after arrest is simulated."
+  },
+  "variants": [
+    {"id": "TIME_ONLY_DIAGNOSTIC", "initial_resistance_active": false, "complete_mass_inventory": false, "status": "diagnostic isolates missing initial time; retains missing mass and unsupported initial fall for comparison only"},
+    {"id": "TIME_AND_RESISTANCE_DIAGNOSTIC", "initial_resistance_active": true, "complete_mass_inventory": false, "status": "diagnostic isolates initial resistance; retains missing mass for comparison only"},
+    {"id": "V11B_CORRECTED", "initial_resistance_active": true, "complete_mass_inventory": true, "status": "corrected reduced-model bookkeeping and start; not a validated structural collapse model"}
+  ],
+  "baseline_reference": "Replay legacy propagate with cached/rechecked initiation; never write V10Y files or re-run its publishing main.",
+  "thermal_cache_key_fields": ["impact_case", "temperature_quantile", "cold_capacity_demand_reserve", "load_redistribution_factor", "maximum_truss_pull_capacity_penalty"],
+  "detailed_scenario_ids": ["RESISTANT_ENVELOPE", "CENTRAL_EXPLORATORY", "VULNERABLE_ENVELOPE", "GRID-0119"],
+  "selection_warning": "GRID-0119 is retained because it was previously visualized, not newly selected as the best corrected match. No new chronology optimization.",
+  "acceptance": {
+    "named_scenarios": 3,
+    "grid_scenarios": 729,
+    "exact_scenario_inputs_preserved": true,
+    "initiation_reference_unchanged": true,
+    "legacy_propagation_matches_cached_summaries": true,
+    "time_only_duration_increment_equals_freefall_time": true,
+    "maximum_normalized_mass_residual": 1e-12,
+    "maximum_normalized_energy_residual": 1e-12,
+    "maximum_normalized_momentum_residual": 1e-12,
+    "deterministic_replay_exact": true,
+    "require_any_progression": false,
+    "require_any_arrest": false,
+    "require_chronology_match": false
+  },
+  "outcome_vocabulary": ["NO_CAPACITY_TRIGGER_IN_WINDOW", "CAPACITY_TRIGGER_NO_DOWNWARD_START_UNDER_CONSTANT_RESISTANCE", "DOWNWARD_MOTION_ARRESTED", "LOWER_MODEL_BOUNDARY_REACHED_WITH_RESIDUAL_MOTION"],
+  "epistemic_limits": [
+    "Impact damage and steel temperatures are still official-model-dependent references, not computed from an independently launched aircraft and solved fire.",
+    "A capacity trigger and a constant work-per-story resistance are separate hypotheses. Their disagreement is an exposed interface inconsistency, not proof of tower stability.",
+    "The uniform 1D stack does not become the mixed-height 3D structure by this bookkeeping correction.",
+    "V11A component forces and isolated spring work are not inserted as global collapse resistance.",
+    "No new Blender motion, WTC2 model, historical event probability or historical cause verdict is produced."
+  ],
+  "execution": {"expected_cpu_seconds_under": 120, "gpu": false, "blender": false, "software_installation": false, "source_archive_read": false},
+  "output_directory": "wtc1_simulation_v8/output/v11b_initialization_mass",
+  "scratch_directory": "tmp/v11b_initialization_mass"
+}

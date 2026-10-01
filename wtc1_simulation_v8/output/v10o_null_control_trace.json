@@ -1,0 +1,578 @@
+{
+  "iteration": "V10O",
+  "generated_at_utc": "2026-09-02T17:46:19Z",
+  "validation_status": "PASS_SOFTWARE_CONTROL_ONLY",
+  "scenario": {
+    "scenario_id": "V10O-CTRL-ZERO-001",
+    "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+    "epistemic_class": "ALGEBRAIC_SENTINEL_NOT_HISTORICAL",
+    "historical_event_claim": false,
+    "values_are_wtc_properties": false,
+    "input_mass_kg": 0.0,
+    "input_velocity_vector_m_s": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "input_attitude_rad": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "reference_temperature_K": 293.15,
+    "incremental_force_N": 0.0,
+    "expected_terminal_label": "CONTROL_NO_PROPAGATION",
+    "terminal_label_is_historical_noncollapse": false,
+    "visualization_mode": "CONTROL_CARD_ONLY_NO_OBJECT_TRANSFORMS"
+  },
+  "pipeline_topology": {
+    "order": [
+      "I01_KINEMATICS_TO_DAMAGE",
+      "I02_DAMAGE_TO_FIRE",
+      "I03_DAMAGE_TO_COLD_STRUCTURE",
+      "I04_FIRE_TO_THERMAL_SOLIDS",
+      "I05_THERMAL_TO_INITIATION",
+      "I06_COLD_STATE_TO_INITIATION",
+      "I07_INITIATION_TO_PROPAGATION",
+      "I08_PROPAGATION_TO_ENSEMBLE",
+      "I09_ALL_VALIDATED_STATES_TO_BLENDER"
+    ],
+    "branch": "I02 damage-to-fire and I03 damage-to-cold-structure share the same zero-damage state",
+    "join": "I05 thermal and I06 cold state meet before I07 initiation-to-propagation",
+    "release": "I09 emits a card-only record and does not launch Blender"
+  },
+  "records": {
+    "I01_KINEMATICS_TO_DAMAGE": {
+      "record_id": "V10O-CTRL-ZERO-001:I01_KINEMATICS_TO_DAMAGE",
+      "scenario_id": "V10O-CTRL-ZERO-001",
+      "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+      "epistemic_class": "ALGEBRAIC_SENTINEL_NOT_HISTORICAL",
+      "schema_id": "impact_kinematics_v1",
+      "schema_version": "1.0.0",
+      "validation_status": "CONTROL_PASS_SOFTWARE_ONLY",
+      "physical_credit": "NONE",
+      "source_hashes": {
+        "v10o_configuration": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46",
+        "v10n_coupling_graph": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98"
+      },
+      "units": {
+        "mass_kg": "kg",
+        "velocity_vector_m_s": "m/s",
+        "attitude_rad": "rad",
+        "contact_time_s": "s",
+        "kinetic_energy_J": "J"
+      },
+      "payload": {
+        "mass_kg": 0.0,
+        "velocity_vector_m_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "attitude_rad": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "contact_time_s": 0.0,
+        "kinetic_energy_J": 0.0,
+        "trajectory_frame": "SYNTHETIC_ZERO_FRAME",
+        "module_status": "CONTROL_ZERO_INPUT",
+        "provenance": {
+          "kind": "SYNTHETIC_SOFTWARE_CONTROL",
+          "interface_id": "I01_KINEMATICS_TO_DAMAGE",
+          "historical_event_claim": false,
+          "values_are_wtc_properties": false,
+          "purpose": "exercise serialization, unit, invariant, branch, join and stop-status handling"
+        }
+      }
+    },
+    "I02_DAMAGE_TO_FIRE": {
+      "record_id": "V10O-CTRL-ZERO-001:I02_DAMAGE_TO_FIRE",
+      "scenario_id": "V10O-CTRL-ZERO-001",
+      "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+      "epistemic_class": "ALGEBRAIC_SENTINEL_NOT_HISTORICAL",
+      "schema_id": "impact_damage_state_v1",
+      "schema_version": "1.0.0",
+      "validation_status": "CONTROL_PASS_SOFTWARE_ONLY",
+      "physical_credit": "NONE",
+      "source_hashes": {
+        "v10o_configuration": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46",
+        "v10n_coupling_graph": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98"
+      },
+      "units": {
+        "debris_mass_kg": "kg",
+        "fuel_mass_kg": "kg"
+      },
+      "payload": {
+        "member_states": [],
+        "opening_polygons_m": [],
+        "debris_mass_kg": 0.0,
+        "fuel_mass_kg": 0.0,
+        "damage_uncertainty": {
+          "class": "CONTROL_ONLY",
+          "historical_damage": null
+        },
+        "module_status": "CONTROL_ZERO_DAMAGE",
+        "provenance": {
+          "kind": "SYNTHETIC_SOFTWARE_CONTROL",
+          "interface_id": "I02_DAMAGE_TO_FIRE",
+          "historical_event_claim": false,
+          "values_are_wtc_properties": false,
+          "purpose": "exercise serialization, unit, invariant, branch, join and stop-status handling"
+        }
+      }
+    },
+    "I03_DAMAGE_TO_COLD_STRUCTURE": {
+      "record_id": "V10O-CTRL-ZERO-001:I03_DAMAGE_TO_COLD_STRUCTURE",
+      "scenario_id": "V10O-CTRL-ZERO-001",
+      "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+      "epistemic_class": "ALGEBRAIC_SENTINEL_NOT_HISTORICAL",
+      "schema_id": "impact_damage_state_v1",
+      "schema_version": "1.0.0",
+      "validation_status": "CONTROL_PASS_SOFTWARE_ONLY",
+      "physical_credit": "NONE",
+      "source_hashes": {
+        "v10o_configuration": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46",
+        "v10n_coupling_graph": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98"
+      },
+      "units": {
+        "debris_mass_kg": "kg",
+        "fuel_mass_kg": "kg"
+      },
+      "payload": {
+        "member_states": [],
+        "opening_polygons_m": [],
+        "debris_mass_kg": 0.0,
+        "fuel_mass_kg": 0.0,
+        "damage_uncertainty": {
+          "class": "CONTROL_ONLY",
+          "historical_damage": null
+        },
+        "module_status": "CONTROL_ZERO_DAMAGE",
+        "provenance": {
+          "kind": "SYNTHETIC_SOFTWARE_CONTROL",
+          "interface_id": "I03_DAMAGE_TO_COLD_STRUCTURE",
+          "historical_event_claim": false,
+          "values_are_wtc_properties": false,
+          "purpose": "exercise serialization, unit, invariant, branch, join and stop-status handling"
+        }
+      }
+    },
+    "I04_FIRE_TO_THERMAL_SOLIDS": {
+      "record_id": "V10O-CTRL-ZERO-001:I04_FIRE_TO_THERMAL_SOLIDS",
+      "scenario_id": "V10O-CTRL-ZERO-001",
+      "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+      "epistemic_class": "ALGEBRAIC_SENTINEL_NOT_HISTORICAL",
+      "schema_id": "fire_gas_history_v1",
+      "schema_version": "1.0.0",
+      "validation_status": "CONTROL_PASS_SOFTWARE_ONLY",
+      "physical_credit": "NONE",
+      "source_hashes": {
+        "v10o_configuration": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46",
+        "v10n_coupling_graph": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98"
+      },
+      "units": {
+        "time_s": "s",
+        "gas_temperature_K": "K",
+        "incident_heat_flux_W_m2": "W/m2",
+        "convection_coefficient_W_m2K": "W/(m2 K)"
+      },
+      "payload": {
+        "time_s": [
+          0.0
+        ],
+        "gas_temperature_K": [
+          293.15
+        ],
+        "incident_heat_flux_W_m2": [
+          0.0
+        ],
+        "convection_coefficient_W_m2K": [
+          0.0
+        ],
+        "fire_state": "CONTROL_NO_FIRE",
+        "module_status": "CONTROL_ZERO_FIRE_LOAD",
+        "provenance": {
+          "kind": "SYNTHETIC_SOFTWARE_CONTROL",
+          "interface_id": "I04_FIRE_TO_THERMAL_SOLIDS",
+          "historical_event_claim": false,
+          "values_are_wtc_properties": false,
+          "purpose": "exercise serialization, unit, invariant, branch, join and stop-status handling"
+        }
+      }
+    },
+    "I05_THERMAL_TO_INITIATION": {
+      "record_id": "V10O-CTRL-ZERO-001:I05_THERMAL_TO_INITIATION",
+      "scenario_id": "V10O-CTRL-ZERO-001",
+      "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+      "epistemic_class": "ALGEBRAIC_SENTINEL_NOT_HISTORICAL",
+      "schema_id": "thermal_member_history_v1",
+      "schema_version": "1.0.0",
+      "validation_status": "CONTROL_PASS_SOFTWARE_ONLY",
+      "physical_credit": "NONE",
+      "source_hashes": {
+        "v10o_configuration": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46",
+        "v10n_coupling_graph": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98"
+      },
+      "units": {
+        "time_s": "s",
+        "reference_temperature_K": "K"
+      },
+      "payload": {
+        "time_s": [
+          0.0
+        ],
+        "member_histories": [],
+        "reference_temperature_K": 293.15,
+        "thermal_state": "CONTROL_NO_TEMPERATURE_INCREMENT",
+        "module_status": "CONTROL_THERMAL_NEUTRAL",
+        "provenance": {
+          "kind": "SYNTHETIC_SOFTWARE_CONTROL",
+          "interface_id": "I05_THERMAL_TO_INITIATION",
+          "historical_event_claim": false,
+          "values_are_wtc_properties": false,
+          "purpose": "exercise serialization, unit, invariant, branch, join and stop-status handling"
+        }
+      }
+    },
+    "I06_COLD_STATE_TO_INITIATION": {
+      "record_id": "V10O-CTRL-ZERO-001:I06_COLD_STATE_TO_INITIATION",
+      "scenario_id": "V10O-CTRL-ZERO-001",
+      "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+      "epistemic_class": "ALGEBRAIC_SENTINEL_NOT_HISTORICAL",
+      "schema_id": "cold_structural_state_v1",
+      "schema_version": "1.0.0",
+      "validation_status": "CONTROL_PASS_SOFTWARE_ONLY",
+      "physical_credit": "NONE",
+      "source_hashes": {
+        "v10o_configuration": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46",
+        "v10n_coupling_graph": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98"
+      },
+      "units": {
+        "node_displacements_m": "m",
+        "element_forces_N": "N",
+        "equilibrium_residual_N": "N"
+      },
+      "payload": {
+        "node_displacements_m": {},
+        "element_forces_N": {},
+        "connection_state": {},
+        "boundary_state": "CONTROL_UNASSIGNED",
+        "equilibrium_residual_N": 0.0,
+        "structural_state": "CONTROL_ZERO_INCREMENT",
+        "module_status": "CONTROL_COLD_NEUTRAL",
+        "provenance": {
+          "kind": "SYNTHETIC_SOFTWARE_CONTROL",
+          "interface_id": "I06_COLD_STATE_TO_INITIATION",
+          "historical_event_claim": false,
+          "values_are_wtc_properties": false,
+          "purpose": "exercise serialization, unit, invariant, branch, join and stop-status handling"
+        }
+      }
+    },
+    "I07_INITIATION_TO_PROPAGATION": {
+      "record_id": "V10O-CTRL-ZERO-001:I07_INITIATION_TO_PROPAGATION",
+      "scenario_id": "V10O-CTRL-ZERO-001",
+      "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+      "epistemic_class": "ALGEBRAIC_SENTINEL_NOT_HISTORICAL",
+      "schema_id": "initiation_state_v1",
+      "schema_version": "1.0.0",
+      "validation_status": "CONTROL_PASS_SOFTWARE_ONLY",
+      "physical_credit": "NONE",
+      "source_hashes": {
+        "v10o_configuration": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46",
+        "v10n_coupling_graph": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98"
+      },
+      "units": {
+        "time_s": "s",
+        "displacements_m": "m",
+        "velocities_m_s": "m/s",
+        "participating_mass_kg": "kg",
+        "energy_J": "J",
+        "instability_time_s_or_null": "s"
+      },
+      "payload": {
+        "time_s": 0.0,
+        "failed_members": [],
+        "displacements_m": {},
+        "velocities_m_s": {},
+        "participating_mass_kg": 0.0,
+        "energy_J": 0.0,
+        "instability_time_s_or_null": null,
+        "initiation_label": "CONTROL_NO_INITIATION",
+        "module_status": "CONTROL_INITIATION_NEUTRAL",
+        "provenance": {
+          "kind": "SYNTHETIC_SOFTWARE_CONTROL",
+          "interface_id": "I07_INITIATION_TO_PROPAGATION",
+          "historical_event_claim": false,
+          "values_are_wtc_properties": false,
+          "purpose": "exercise serialization, unit, invariant, branch, join and stop-status handling"
+        }
+      }
+    },
+    "I08_PROPAGATION_TO_ENSEMBLE": {
+      "record_id": "V10O-CTRL-ZERO-001:I08_PROPAGATION_TO_ENSEMBLE",
+      "scenario_id": "V10O-CTRL-ZERO-001",
+      "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+      "epistemic_class": "ALGEBRAIC_SENTINEL_NOT_HISTORICAL",
+      "schema_id": "propagation_outcome_v1",
+      "schema_version": "1.0.0",
+      "validation_status": "CONTROL_PASS_SOFTWARE_ONLY",
+      "physical_credit": "NONE",
+      "source_hashes": {
+        "v10o_configuration": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46",
+        "v10n_coupling_graph": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98"
+      },
+      "units": {
+        "energy_residual_J": "J",
+        "momentum_residual_kg_m_s": "kg m/s"
+      },
+      "payload": {
+        "case_id": "V10O-CTRL-ZERO-001",
+        "outcome_label": "CONTROL_NO_PROPAGATION",
+        "arrest_story_or_null": null,
+        "energy_residual_J": 0.0,
+        "momentum_residual_kg_m_s": 0.0,
+        "validation_flags": [
+          "SOFTWARE_CONTROL_ONLY",
+          "NOT_HISTORICAL_NONCOLLAPSE"
+        ],
+        "fraction_is_historical_probability": false,
+        "module_status": "CONTROL_PROPAGATION_NEUTRAL",
+        "parameter_provenance": {
+          "kind": "SYNTHETIC_SOFTWARE_CONTROL",
+          "interface_id": "I08_PROPAGATION_TO_ENSEMBLE",
+          "historical_event_claim": false,
+          "values_are_wtc_properties": false,
+          "purpose": "exercise serialization, unit, invariant, branch, join and stop-status handling"
+        }
+      }
+    },
+    "I09_ALL_VALIDATED_STATES_TO_BLENDER": {
+      "record_id": "V10O-CTRL-ZERO-001:I09_ALL_VALIDATED_STATES_TO_BLENDER",
+      "scenario_id": "V10O-CTRL-ZERO-001",
+      "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+      "epistemic_class": "ALGEBRAIC_SENTINEL_NOT_HISTORICAL",
+      "schema_id": "visualization_state_v1",
+      "schema_version": "1.0.0",
+      "validation_status": "CONTROL_PASS_SOFTWARE_ONLY",
+      "physical_credit": "NONE",
+      "source_hashes": {
+        "v10o_configuration": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46",
+        "v10n_coupling_graph": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98"
+      },
+      "units": {
+        "time_s": "s"
+      },
+      "payload": {
+        "source_module": "VALIDATION_RELEASE_BUS",
+        "state_id": "V10O-CTRL-ZERO-001:CONTROL_CARD",
+        "time_s": 0.0,
+        "object_transforms": [],
+        "display_class": "CONTROL_CARD_ONLY",
+        "state_validation_status": "CONTROL_PASS_SOFTWARE_ONLY",
+        "uncertainty_label": "SYNTHETIC SOFTWARE CONTROL — NO WTC EVENT OR PHYSICAL CONCLUSION",
+        "source_hashes": {
+          "v10o_configuration": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46",
+          "v10n_coupling_graph": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98"
+        },
+        "module_status": "CONTROL_VISUALIZATION_NOT_RENDERED",
+        "provenance": {
+          "kind": "SYNTHETIC_SOFTWARE_CONTROL",
+          "interface_id": "I09_ALL_VALIDATED_STATES_TO_BLENDER",
+          "historical_event_claim": false,
+          "values_are_wtc_properties": false,
+          "purpose": "exercise serialization, unit, invariant, branch, join and stop-status handling"
+        }
+      }
+    }
+  },
+  "adapter_validation_details": [
+    {
+      "interface_id": "I01_KINEMATICS_TO_DAMAGE",
+      "positive": {
+        "interface_id": "I01_KINEMATICS_TO_DAMAGE",
+        "schema_id": "impact_kinematics_v1",
+        "status": "PASS_SOFTWARE_CONTRACT_ONLY",
+        "physical_ready": false,
+        "physical_credit": "NONE",
+        "required_payload_field_count": 8,
+        "unit_field_count": 5
+      },
+      "negative": {
+        "mutation": "removed payload.mass_kg",
+        "rejected": true,
+        "expected_error": "missing required payload field: mass_kg"
+      },
+      "record_digest": "78087647f19ca53a30553ef34e2fe264b349619875ccbfae733177b24a6b1844"
+    },
+    {
+      "interface_id": "I02_DAMAGE_TO_FIRE",
+      "positive": {
+        "interface_id": "I02_DAMAGE_TO_FIRE",
+        "schema_id": "impact_damage_state_v1",
+        "status": "PASS_SOFTWARE_CONTRACT_ONLY",
+        "physical_ready": false,
+        "physical_credit": "NONE",
+        "required_payload_field_count": 7,
+        "unit_field_count": 2
+      },
+      "negative": {
+        "mutation": "removed payload.member_states",
+        "rejected": true,
+        "expected_error": "missing required payload field: member_states"
+      },
+      "record_digest": "4985bd745b3c50affce45ed9c8107af8d4d1a2177b3a97a29a4d787783ec6333"
+    },
+    {
+      "interface_id": "I03_DAMAGE_TO_COLD_STRUCTURE",
+      "positive": {
+        "interface_id": "I03_DAMAGE_TO_COLD_STRUCTURE",
+        "schema_id": "impact_damage_state_v1",
+        "status": "PASS_SOFTWARE_CONTRACT_ONLY",
+        "physical_ready": false,
+        "physical_credit": "NONE",
+        "required_payload_field_count": 7,
+        "unit_field_count": 2
+      },
+      "negative": {
+        "mutation": "removed payload.member_states",
+        "rejected": true,
+        "expected_error": "missing required payload field: member_states"
+      },
+      "record_digest": "4d71d63273487cd45d77b796cd1632549f2f1c799c8ab6d6cee2b6097fe1216f"
+    },
+    {
+      "interface_id": "I04_FIRE_TO_THERMAL_SOLIDS",
+      "positive": {
+        "interface_id": "I04_FIRE_TO_THERMAL_SOLIDS",
+        "schema_id": "fire_gas_history_v1",
+        "status": "PASS_SOFTWARE_CONTRACT_ONLY",
+        "physical_ready": false,
+        "physical_credit": "NONE",
+        "required_payload_field_count": 7,
+        "unit_field_count": 4
+      },
+      "negative": {
+        "mutation": "removed payload.time_s",
+        "rejected": true,
+        "expected_error": "missing required payload field: time_s"
+      },
+      "record_digest": "5aab4f52d6354024ed9a65e2e7eedb7216838f7b4b73bcbbfbce1325f3cdd6a5"
+    },
+    {
+      "interface_id": "I05_THERMAL_TO_INITIATION",
+      "positive": {
+        "interface_id": "I05_THERMAL_TO_INITIATION",
+        "schema_id": "thermal_member_history_v1",
+        "status": "PASS_SOFTWARE_CONTRACT_ONLY",
+        "physical_ready": false,
+        "physical_credit": "NONE",
+        "required_payload_field_count": 6,
+        "unit_field_count": 2
+      },
+      "negative": {
+        "mutation": "removed payload.time_s",
+        "rejected": true,
+        "expected_error": "missing required payload field: time_s"
+      },
+      "record_digest": "db9a5b478c4467f8fc415b9261fccd38fcce1365d3b20ac588047c49813ac7cf"
+    },
+    {
+      "interface_id": "I06_COLD_STATE_TO_INITIATION",
+      "positive": {
+        "interface_id": "I06_COLD_STATE_TO_INITIATION",
+        "schema_id": "cold_structural_state_v1",
+        "status": "PASS_SOFTWARE_CONTRACT_ONLY",
+        "physical_ready": false,
+        "physical_credit": "NONE",
+        "required_payload_field_count": 8,
+        "unit_field_count": 3
+      },
+      "negative": {
+        "mutation": "removed payload.node_displacements_m",
+        "rejected": true,
+        "expected_error": "missing required payload field: node_displacements_m"
+      },
+      "record_digest": "205224f8614be0db85b110da1780e267b8ad8d23839c322b9a01430cd12a8e83"
+    },
+    {
+      "interface_id": "I07_INITIATION_TO_PROPAGATION",
+      "positive": {
+        "interface_id": "I07_INITIATION_TO_PROPAGATION",
+        "schema_id": "initiation_state_v1",
+        "status": "PASS_SOFTWARE_CONTRACT_ONLY",
+        "physical_ready": false,
+        "physical_credit": "NONE",
+        "required_payload_field_count": 10,
+        "unit_field_count": 6
+      },
+      "negative": {
+        "mutation": "removed payload.time_s",
+        "rejected": true,
+        "expected_error": "missing required payload field: time_s"
+      },
+      "record_digest": "5edf9505dde27992625281557c6825c37674c6416b08a6787b12b969afcf165e"
+    },
+    {
+      "interface_id": "I08_PROPAGATION_TO_ENSEMBLE",
+      "positive": {
+        "interface_id": "I08_PROPAGATION_TO_ENSEMBLE",
+        "schema_id": "propagation_outcome_v1",
+        "status": "PASS_SOFTWARE_CONTRACT_ONLY",
+        "physical_ready": false,
+        "physical_credit": "NONE",
+        "required_payload_field_count": 9,
+        "unit_field_count": 2
+      },
+      "negative": {
+        "mutation": "removed payload.case_id",
+        "rejected": true,
+        "expected_error": "missing required payload field: case_id"
+      },
+      "record_digest": "bf6e7e0259081b72da45b553edd57dbad014d0ae75fc8a121a18e4a9b0be0f13"
+    },
+    {
+      "interface_id": "I09_ALL_VALIDATED_STATES_TO_BLENDER",
+      "positive": {
+        "interface_id": "I09_ALL_VALIDATED_STATES_TO_BLENDER",
+        "schema_id": "visualization_state_v1",
+        "status": "PASS_SOFTWARE_CONTRACT_ONLY",
+        "physical_ready": false,
+        "physical_credit": "NONE",
+        "required_payload_field_count": 10,
+        "unit_field_count": 1
+      },
+      "negative": {
+        "mutation": "removed payload.source_module",
+        "rejected": true,
+        "expected_error": "missing required payload field: source_module"
+      },
+      "record_digest": "4ea619d0ff63eafbcea881a954bd9d050bd9952366dbcb277dc7d0e7beeba7c2"
+    }
+  ],
+  "cross_interface_checks": {
+    "one_scenario_id_across_all_interfaces": true,
+    "damage_branch_payloads_identical_except_interface_provenance": true,
+    "thermal_and_cold_join_both_neutral": true,
+    "no_initiation": true,
+    "terminal_label_matches_predeclaration": true,
+    "terminal_label_not_historical_noncollapse": true,
+    "ensemble_probability_prohibition": true,
+    "visualization_card_only": true,
+    "visualization_has_no_object_transforms": true,
+    "all_records_no_physical_credit": true
+  },
+  "deterministic_replay": {
+    "first_digest": "fe36497f5bd0ae9e468d98e83a937536115f668a5c8de31037d50578da66647d",
+    "second_digest": "fe36497f5bd0ae9e468d98e83a937536115f668a5c8de31037d50578da66647d",
+    "match": true
+  },
+  "terminal_control_outcome": {
+    "label": "CONTROL_NO_PROPAGATION",
+    "historical_noncollapse_conclusion": false,
+    "historical_collapse_conclusion": false,
+    "interpretation": "A zero-input algebraic sentinel reached the expected zero-propagation software state. No physical WTC state was evaluated."
+  }
+}

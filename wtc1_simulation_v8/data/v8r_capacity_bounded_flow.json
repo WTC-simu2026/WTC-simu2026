@@ -1,0 +1,113 @@
+{
+  "dataset": {
+    "name": "WTC 1 V8R capacity-bounded floor-flow feasibility audit",
+    "version": "8.17.0",
+    "status": "PREDECLARED_BOUNDED_FLOW_PROXY_AUDIT",
+    "scope": "Replace the unbounded V8Q flow gauge with exact lower/upper-bound circulation tests using V8P load intervals, V8L core-beam proxy laws and V8M geometry-compatible core-floor-perimeter transfer at declared relative drops.",
+    "warning": "The V8L beam profiles are mechanical brackets rather than as-built assignments, and V8M is an equivalent membrane envelope. Passing a proxy case is necessary but not sufficient for a real load path; failing all bounded proxy cases identifies a missing or insufficient modeled path, not an event probability or demolition proof."
+  },
+  "official_facts": [
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "fact": "V8P digitizes the before/after impact core-column axial-force contours over Floors 93-99 and uses the published Table 4-20 core totals.",
+      "confidence": "high within the bounded V8P digitization"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL_LIMITE",
+      "source": "NIST NCSTAR 1-6D",
+      "fact": "The isolated Case B core calculations did not converge and omitted transfer through office floors, perimeter walls and the hat truss.",
+      "confidence": "high; inherited from V8L source audit"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6C and 1-6D",
+      "fact": "The individually modeled moment-connected core-beam subnetwork contains 17 transcribed edges per office floor; the connected 79-edge orthogonal graph remains a figure-constrained reconstruction envelope.",
+      "confidence": "high for the 17-edge transcription; model hypothesis for the 79-edge envelope"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL_ET_HYPOTHESE_MECANIQUE",
+      "source": "V8M from NIST floor-truss geometry and published seat limits",
+      "fact": "The published-seat-capped membrane law computes vertical transfer from axial tension and geometry; the 44/94 kip seat values are not direct vertical spring capacities.",
+      "confidence": "high for the mapping rule; as-built pair assignments remain unavailable"
+    }
+  ],
+  "floors": [93, 94, 95, 96, 97, 98, 99],
+  "edge_cases": [
+    {"name": "moment_lower_yield", "topology": "nist_moment_only", "profile": "12WF65", "connection_factor": 0.5, "capacity_point": "yield_force"},
+    {"name": "moment_upper_prefracture", "topology": "nist_moment_only", "profile": "14WF228", "connection_factor": 1.0, "capacity_point": "prefracture_force"},
+    {"name": "orthogonal_lower_yield", "topology": "orthogonal_floor96_reconstruction", "profile": "12WF65", "connection_factor": 0.5, "capacity_point": "yield_force"},
+    {"name": "orthogonal_middle_yield", "topology": "orthogonal_floor96_reconstruction", "profile": "14WF136", "connection_factor": 1.0, "capacity_point": "yield_force"},
+    {"name": "orthogonal_upper_yield", "topology": "orthogonal_floor96_reconstruction", "profile": "14WF228", "connection_factor": 1.0, "capacity_point": "yield_force"},
+    {"name": "orthogonal_upper_prefracture", "topology": "orthogonal_floor96_reconstruction", "profile": "14WF228", "connection_factor": 1.0, "capacity_point": "prefracture_force"},
+    {"name": "unknown_internal_unbounded_diagnostic", "kind": "unknown_unbounded", "topology": "orthogonal_floor96_reconstruction", "capacity_kip_per_direction": 50000.0}
+  ],
+  "edge_mapping": {
+    "active_floors": [94, 95, 96, 97, 98, 99],
+    "temperature_c": 20.0,
+    "active_planes_per_floor": 1,
+    "post_yield_tangent_ratio": 0.01,
+    "ultimate_relative_rotation_rad": 0.02,
+    "floor96_damage": "Use V8L floor96_figure_damage removed edges in every bounded case.",
+    "floor93_policy": "No V8L edge capacity is extrapolated to Floor 93 in the primary audit.",
+    "unknown_unbounded_capacity_kip_per_direction": 50000.0,
+    "status": "PROXY_CAPACITY_NOT_AS_BUILT_BOOK5_BOOK6"
+  },
+  "port_cases": [
+    {"name": "no_external_path", "kind": "none"},
+    {"name": "damage_informed_drop2", "kind": "v8m", "topology": "all_faces_north_damage_scaled_5floors", "drop_in": 2.0, "active_floors": [95, 96, 97, 98, 99]},
+    {"name": "damage_informed_drop5", "kind": "v8m", "topology": "all_faces_north_damage_scaled_5floors", "drop_in": 5.0, "active_floors": [95, 96, 97, 98, 99]},
+    {"name": "damage_informed_drop12", "kind": "v8m", "topology": "all_faces_north_damage_scaled_5floors", "drop_in": 12.0, "active_floors": [95, 96, 97, 98, 99]},
+    {"name": "damage_informed_drop25", "kind": "v8m", "topology": "all_faces_north_damage_scaled_5floors", "drop_in": 25.0, "active_floors": [95, 96, 97, 98, 99]},
+    {"name": "intact_full_drop2", "kind": "v8m", "topology": "all_faces_full_6floors", "drop_in": 2.0, "active_floors": [94, 95, 96, 97, 98, 99]},
+    {"name": "intact_full_drop5", "kind": "v8m", "topology": "all_faces_full_6floors", "drop_in": 5.0, "active_floors": [94, 95, 96, 97, 98, 99]},
+    {"name": "intact_full_drop12", "kind": "v8m", "topology": "all_faces_full_6floors", "drop_in": 12.0, "active_floors": [94, 95, 96, 97, 98, 99]},
+    {"name": "intact_full_drop25", "kind": "v8m", "topology": "all_faces_full_6floors", "drop_in": 25.0, "active_floors": [94, 95, 96, 97, 98, 99]},
+    {"name": "unknown_external_unbounded_diagnostic", "kind": "unknown_unbounded", "active_floors": [93, 94, 95, 96, 97, 98, 99]}
+  ],
+  "port_mapping": {
+    "connection_regime": "published_seat_capped",
+    "concrete_effectiveness_factor": 1.0,
+    "distribution": "Divide each V8M face transfer by its active floor count and then uniformly over the reconstructed boundary columns on that face; corner columns receive the sum of their two face shares.",
+    "direction": "Symmetric signed capacity is an optimistic feasibility bracket because V8Q scalar signs do not recover the actual relative-displacement direction.",
+    "physical_drop_limit_in": 25.0,
+    "unknown_unbounded_capacity_kip_per_port": 50000.0,
+    "seat_warning": "Never assign 44 or 94 kip directly to a V8Q port. Only use V8M's computed vertical component."
+  },
+  "sensitivity": {
+    "minimum_joint_capacity_multiplier_low": 0.0,
+    "minimum_joint_capacity_multiplier_high": 64.0,
+    "bisection_iterations": 50,
+    "extrapolate_intact_drop25_and_v8l_edges_to_floor93_for_multiplier_only": true
+  },
+  "numerics": {
+    "capacity_tolerance_kip": 1e-7,
+    "maximum_flow_iterations": 1000000
+  },
+  "acceptance_gates": {
+    "all_seven_floors_feasible_in_one_mapped_bounded_case": true,
+    "unknown_external_path_forbidden": true,
+    "relative_drop_in_max": 25.0,
+    "as_built_edge_and_connection_mapping_required": true,
+    "thermal_or_blender_authorization": false
+  },
+  "future_impact_replay": {
+    "status": "REQUIRED_LATER_MILESTONE",
+    "scope": "Build a separate explicit aircraft-impact replay from official aircraft mass, velocity, attitude, impact floor and structural geometry before transferring damage into the fire/initiation model.",
+    "observation_to_test": "Distinguish the aircraft fuselage from fuel, engines, landing gear and other debris observed leaving an opposite facade; do not describe an entire aircraft exit without a source-resolved measurement.",
+    "solver_warning": "Blender is visualization only. High-rate contact, material failure and fragmentation require a validated explicit-dynamics solver or a documented reduced impact model."
+  },
+  "provenance": {
+    "v8p_digitization": "wtc1_simulation_v8/output/digitisation_wtc1_v8p_verticale.json",
+    "v8p_configuration": "wtc1_simulation_v8/data/v8p_vertical_state_graph.json",
+    "v8q_configuration": "wtc1_simulation_v8/data/v8q_floor_network_flow.json",
+    "v8q_results": "wtc1_simulation_v8/output/resultats_wtc1_v8q_flux_reseau.json",
+    "v8h_configuration": "wtc1_simulation_v8/data/v8h_core_beam_network.json",
+    "v8l_configuration": "wtc1_simulation_v8/data/v8l_multistory_cold_frame.json",
+    "v8m_configuration": "wtc1_simulation_v8/data/v8m_core_floor_perimeter_coupling.json",
+    "v8m_results": "wtc1_simulation_v8/output/resultats_wtc1_v8m_couplage_perimetre_froid.json",
+    "aisc_properties": "wtc1_simulation_v8/data/aisc_historic_wf_properties.json",
+    "nist_transfer": "wtc1_simulation_v8/data/nist_wtc1_transfer.json",
+    "core_geometry": "wtc1_3d_v4/data/wtc1_parameters.json"
+  }
+}

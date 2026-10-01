@@ -1,0 +1,183 @@
+{
+  "iteration": "V10T",
+  "generated_at_utc": "2026-09-04T13:06:48Z",
+  "validation_status": "PASS_STATIC_LABELLED_3D_STATUS_PACKAGE",
+  "dataset": {
+    "name": "Three-track static 3D status package",
+    "version": "10.20.0",
+    "status": "PREDECLARED_BEFORE_V10T_BLENDER_EXECUTION",
+    "created_at_local": "2026-09-04T10:30:00+02:00",
+    "random_seed": 1020001,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10S and the immutable V4.2 Blender master. Render only the three-track software/reference/unknown statuses already released by V10P-V10S. Produce six static labelled views, a proof sheet and a new derivative blend. Do not animate impact, fire, initiation, collapse, propagation or arrest; do not add physical values; do not run a structural, thermal, fire or propagation solver; do not feed Blender back into calculations; and do not conclude historical collapse or non-collapse."
+  },
+  "configuration": {
+    "path": "wtc1_simulation_v8/data/v10t_three_track_3d_status_package.json",
+    "sha256": "d1727996a61ad3b31b38256418ce983b655738e9fff6648a660ce4084bb96134"
+  },
+  "runner": {
+    "path": "wtc1_simulation_v8/scripts/run_v10t_three_track_3d_status_package.py",
+    "sha256": "a104da048723855797b9cbabf9cff7e416c2aca2457e06d2c8fcbb611457274a"
+  },
+  "blender_builder": {
+    "path": "wtc1_3d_v4/scripts/build_v10t_three_track_status.py",
+    "sha256": "a2b029ed896770d5f52f386f9cf2fddc3a5bb847c7cd430e1708ec6f7280297c"
+  },
+  "source_summary": {
+    "regression_file_count": 13,
+    "protected_file_count": 1,
+    "cached_input_file_count": 11,
+    "official_source_hash_only_file_count": 1,
+    "software_file_count": 1
+  },
+  "metrics": {
+    "impact_damage_official_reference_segment_count": 89,
+    "temperature_range_count": 105,
+    "temperature_endpoint_count": 210,
+    "temperature_hot_endpoint_blocked_count": 47,
+    "complete_material_range_count": 58,
+    "partial_material_range_count": 47,
+    "sfrm_available_field_count": 0,
+    "sfrm_total_field_count": 8,
+    "control_record_check_count": 16,
+    "control_record_pass_count": 16,
+    "control_conservation_identity_pass_count": 3,
+    "minimum_physical_requirement_count": 32,
+    "minimum_physical_ready_count": 0,
+    "minimum_physical_blocking_count": 32,
+    "visualization_status_release_count": 3,
+    "physical_state_release_count": 0,
+    "historical_outcome_assignment_count": 0
+  },
+  "status_matrix_summary": {
+    "track_count": 3,
+    "stage_count": 4,
+    "row_count": 12,
+    "physical_state_release_count": 0,
+    "historical_outcome_assignment_count": 0
+  },
+  "blender_summary": {
+    "version": "5.2.0 LTS",
+    "master": {
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "sha256_before": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1",
+      "sha256_after": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1",
+      "unchanged": true,
+      "overwritten": false
+    },
+    "derivative": {
+      "path": "wtc1_3d_v4/output/WTC1_V10T_THREE_TRACK_STATUS.blend",
+      "sha256": "561223f4d3a2c1880cd2616a20f8524b3d85e16b5a8659c6de33b2dbc50d3129",
+      "size_bytes": 600579,
+      "new_path": true
+    },
+    "technical_check_count": 17,
+    "technical_pass_count": 17,
+    "render_count": 6,
+    "proof_sheet": {
+      "path": "wtc1_3d_v4/renders/v10t/wtc1_v10t_proof_sheet.png",
+      "sha256": "75f73a562f60f8cbc6db09a7b57c2d7dffb1fd8e9e927ba135b45ca2f458e1ab",
+      "bytes": 1771234,
+      "dimensions_px": [
+        1920,
+        720
+      ]
+    }
+  },
+  "manual_visual_qa_status": "PASS",
+  "manual_visual_qa": {
+    "iteration": "V10T",
+    "inspected_at_utc": "2026-09-04T13:06:13Z",
+    "inspector": "MODEL_VISUAL_INSPECTION_VIA_LOCAL_RENDER",
+    "validation_status": "PASS",
+    "inspected_image_paths": [
+      "wtc1_3d_v4/renders/v10t/01_v10t_chain_overview.png",
+      "wtc1_3d_v4/renders/v10t/02_v10t_control_zero.png",
+      "wtc1_3d_v4/renders/v10t/03_v10t_official_impact_damage.png",
+      "wtc1_3d_v4/renders/v10t/04_v10t_official_fire_thermal.png",
+      "wtc1_3d_v4/renders/v10t/05_v10t_initiation_blocked.png",
+      "wtc1_3d_v4/renders/v10t/06_v10t_propagation_unknown.png",
+      "wtc1_3d_v4/renders/v10t/wtc1_v10t_proof_sheet.png"
+    ],
+    "checks": {
+      "proof_sheet_not_blank": true,
+      "six_views_present": true,
+      "permanent_banner_visible": true,
+      "critical_text_legible": true,
+      "tower_geometry_visible_where_expected": true,
+      "reference_zone_is_visibly_a_frame_not_a_field": true,
+      "no_depicted_collapse_or_postimpact_motion": true,
+      "no_critical_label_clipped": true
+    },
+    "observations": [
+      "The overview cleanly separates the zero-control, official-dependent and unknown-event tracks across four stages.",
+      "The full-tower views show the unchanged reference geometry; their darkness does not obscure the status text.",
+      "The Floors 93-99 marker is an open orange wireframe with no filled damage or temperature field.",
+      "All six individual images display the permanent non-prediction banner without clipping.",
+      "No image depicts impact penetration, fire, member failure, collapse, propagation or arrest motion."
+    ],
+    "rejected_attempts": [
+      {
+        "path": "tmp/v10t_failed_attempt_01",
+        "reason": "orthographic and perspective overlays clipped by an incorrect camera-frame convention",
+        "accepted_for_v10t": false
+      },
+      {
+        "path": "tmp/v10t_failed_attempt_02",
+        "reason": "orthographic framing corrected but perspective overlays remained clipped",
+        "accepted_for_v10t": false
+      }
+    ],
+    "accepted_render_note": "The current wtc1_3d_v4/renders/v10t package is the third render attempt and passes the declared visual checks.",
+    "physical_validation_credit": "NONE",
+    "historical_outcome_credit": "NONE"
+  },
+  "gates": {
+    "iteration": "V10T",
+    "generated_at_utc": "2026-09-04T13:06:48Z",
+    "validation_status": "PASS_STATIC_LABELLED_3D_STATUS_PACKAGE",
+    "regression_gate": "PASS",
+    "protected_blender_master_gate": "PASS_UNCHANGED",
+    "source_identity_gate": "PASS_11_CACHED_PLUS_1_OFFICIAL_HASH_ONLY",
+    "software_identity_gate": "PASS_BLENDER_5_2_HASH",
+    "three_track_separation_gate": "PASS_3_OF_3",
+    "stage_status_matrix_gate": "PASS_12_OF_12_STATUS_ROWS",
+    "static_scene_gate": "PASS_7_OF_7_FRAME_1_ONLY",
+    "render_integrity_gate": "PASS_6_OF_6_PLUS_PROOF_SHEET",
+    "manual_visual_qa_gate": "PASS",
+    "blender_physics_gate": "PASS_ZERO_KEYFRAMES_RIGID_BODIES_PARTICLES_FLUIDS",
+    "blender_feedback_to_calculations": false,
+    "physical_state_release_gate": "CLOSED_0_RELEASED",
+    "historical_outcome_assignment_gate": "CLOSED_0_ASSIGNED",
+    "collapse_or_noncollapse_conclusion_authorized": false,
+    "structural_solver_run_count": 0,
+    "thermal_solver_run_count": 0,
+    "fire_solver_run_count": 0,
+    "propagation_solver_run_count": 0,
+    "other_solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 1
+  },
+  "execution_counts": {
+    "structural_solver_run_count": 0,
+    "thermal_solver_run_count": 0,
+    "fire_solver_run_count": 0,
+    "propagation_solver_run_count": 0,
+    "other_solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 1
+  },
+  "epistemic_separation": {
+    "observed_facts": "Current file identities, rendered image dimensions and hashes, static-scene and no-physics counters.",
+    "official_model_results": "Only cached official-model-dependent impact/damage and thermal references already transcribed by V10P-V10R.",
+    "archive_claims": "No source archive is read. One local official PDF is hash-checked without page access.",
+    "model_hypotheses": "Colors, framing, cards and the Floors 93-99 reference frame are presentation choices with zero mechanical credit.",
+    "derived_results": "Three-track by four-stage status matrix, derivative blend, six stills and proof sheet.",
+    "unknowns": "Historical damage, fire, member temperatures, initiation, propagation, arrest and final outcome remain unknown."
+  },
+  "runtime_seconds": 0.15888679999989108,
+  "next_iteration": {
+    "id": "V10U",
+    "objective": "Qualifier un premier cas mécanique borné et indépendant dans CalculiX avec solution analytique, convergence de maillage et bilan force-déplacement. Le cas doit rester un benchmark logiciel de composant sans attribution au WTC 1 tant que les plans, sections, assemblages et chemins d’efforts réels manquent."
+  }
+}

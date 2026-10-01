@@ -1,0 +1,94 @@
+{
+  "iteration": "V10O",
+  "generated_at_utc": "2026-09-02T17:46:19Z",
+  "validation_status": "PASS_SOFTWARE_INTEGRATION_CONTROL_ONLY",
+  "dataset": {
+    "name": "Schema-validated coupling adapters and integrated null no-propagation control",
+    "version": "10.15.0",
+    "status": "PREDECLARED_BEFORE_V10O_ADAPTER_IMPLEMENTATION",
+    "created_at_local": "2026-09-02T19:45:00+02:00",
+    "random_seed": 1015001,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10N. Implement reusable, solver-neutral typed contracts for all nine frozen V10N interfaces. Verify one valid record and one deliberately invalid missing-field record per interface. Recompute a small set of exact cached invariants without rerunning their source models. Execute a deterministic zero-input sentinel from impact kinematics through a synthetic CONTROL_NO_PROPAGATION outcome and a Blender card-only release record. This is a software integration control, not a WTC 1 event scenario, collapse prediction, non-collapse prediction, physical assignment, solver run, GPU job or Blender run."
+  },
+  "configuration": {
+    "path": "wtc1_simulation_v8/data/v10o_integrated_adapter_control.json",
+    "sha256": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46"
+  },
+  "adapter_library": {
+    "path": "wtc1_simulation_v8/scripts/v10o_coupling_adapters.py",
+    "sha256": "c5f3d70fb8fa2bb65958200a5d4c1b19e8dc7845c88d1fe6e4a5e15aca06e1fd"
+  },
+  "script": {
+    "path": "wtc1_simulation_v8/scripts/run_v10o_integrated_adapter_control.py",
+    "sha256": "ecfad97a92bddf4081b1983a58b1b6680e487d1bab574c64965a7c1107e307c0"
+  },
+  "regression_summary": {
+    "files": 13,
+    "protected_files": 1,
+    "passed": true
+  },
+  "cached_replay_summary": {
+    "baseline_count": 5,
+    "passed_count": 5
+  },
+  "adapter_summary": {
+    "interface_count": 9,
+    "positive_validation_count": 9,
+    "negative_missing_field_rejection_count": 9,
+    "deterministic_replay_match": true,
+    "trace_digest": "fe36497f5bd0ae9e468d98e83a937536115f668a5c8de31037d50578da66647d",
+    "physically_ready_interface_count": 0
+  },
+  "control_summary": {
+    "scenario_id": "V10O-CTRL-ZERO-001",
+    "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+    "terminal_label": "PASS_CONTROL_NO_PROPAGATION",
+    "historical_scenario_count": 0,
+    "historical_collapse_conclusion": false,
+    "historical_noncollapse_conclusion": false
+  },
+  "gates": {
+    "iteration": "V10O",
+    "generated_at_utc": "2026-09-02T17:46:19Z",
+    "validation_status": "PASS",
+    "regression_gate": "PASS",
+    "protected_blender_master_gate": "PASS_UNCHANGED",
+    "cached_replay_gate": "PASS_5_OF_5",
+    "adapter_positive_gate": "PASS_9_OF_9",
+    "adapter_negative_gate": "PASS_9_OF_9",
+    "deterministic_replay_gate": "PASS",
+    "cross_interface_gate": "PASS_10_OF_10",
+    "terminal_control_gate": "PASS_CONTROL_NO_PROPAGATION",
+    "terminal_control_is_historical_noncollapse": false,
+    "historical_collapse_or_noncollapse_conclusion_authorized": false,
+    "physically_ready_interface_count": 0,
+    "mechanical_source_gate": "OPEN_0_OF_22_REQUIREMENTS",
+    "impact_physics_gate": "CLOSED_V9M",
+    "fire_event_reconstruction_gate": "CLOSED",
+    "thermal_member_history_gate": "CLOSED",
+    "cold_structural_gate": "CLOSED",
+    "initiation_physics_gate": "CLOSED",
+    "propagation_physics_gate": "CLOSED",
+    "blender_release_gate": "CONTROL_CARD_ONLY_NO_RENDER",
+    "physical_assignment_count": 0,
+    "solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 0,
+    "v10p_bounded_three_track_handoff_authorized": true,
+    "v10p_physical_damage_prediction_authorized": false
+  },
+  "epistemic_separation": {
+    "observed_facts": "File hashes, cached fields, arithmetic replay and software validator outcomes.",
+    "official_model_results": "No official-model field is promoted; dependencies retain their prior labels.",
+    "archive_claims": "No archive source is read.",
+    "model_hypotheses": "All zero values and the 293.15 K reference are software sentinels, not WTC properties.",
+    "derived_results": "Nine positive validations, nine negative rejections, deterministic trace and zero-input terminal control.",
+    "unknowns": "All physical impact, fire, thermal, structural, initiation and propagation states remain unresolved."
+  },
+  "runtime_seconds": 0.050269,
+  "next_iteration": {
+    "id": "V10P",
+    "objective": "Instantiate a bounded three-track impact-to-damage handoff using only a zero-input software control, official-model-dependent damage references and an explicit UNKNOWN_PHYSICAL_DAMAGE branch. Verify available mass, energy and momentum ledgers without reopening the unqualified explicit physical solver branch or presenting an official-model damage mask as independent evidence."
+  }
+}

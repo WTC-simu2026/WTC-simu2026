@@ -1,0 +1,59 @@
+{
+  "iteration": "V10N",
+  "generated_at_utc": "2026-09-02T17:34:08Z",
+  "host_summary": {
+    "physical_core_count": 6,
+    "logical_processor_count": 12,
+    "ram_gib": 15.916,
+    "workspace_drive": "C:",
+    "workspace_drive_free_gib": 265.992,
+    "openradioss_present": true,
+    "calculix_present": true,
+    "fds_present": false,
+    "blender_present": true
+  },
+  "runtime_classes": [
+    {
+      "class": "SHORT",
+      "wall_clock_bound": "<=15 minutes",
+      "authorized_next_use": "V10O schema adapters, unit checks and cached no-propagation control",
+      "recommended_cpu_threads": 4,
+      "recommended_ram_gib_max": 2.0,
+      "gpu": "not required",
+      "announcement_required": false
+    },
+    {
+      "class": "MEDIUM",
+      "wall_clock_bound": ">15 minutes and <=2 hours",
+      "authorized_next_use": "only after V10O controls pass; bounded reduced ensembles",
+      "recommended_cpu_threads": 6,
+      "recommended_ram_gib_max": 8.0,
+      "gpu": "optional only for a separately validated renderer; not needed for reduced calculations",
+      "announcement_required": false
+    },
+    {
+      "class": "LONG",
+      "wall_clock_bound": ">2 hours or otherwise described as several hours",
+      "authorized_next_use": "not authorized by V10N; estimate resources and deliverable to Jeremy before launch",
+      "recommended_cpu_threads": "case-specific",
+      "recommended_ram_gib_max": "case-specific with safety reserve",
+      "gpu": "case-specific",
+      "announcement_required": true
+    }
+  ],
+  "excluded_from_current_schedule": [
+    {
+      "job": "full high-rate aircraft/tower impact",
+      "reason": "physical inputs and convergence gates are open; executable presence is insufficient"
+    },
+    {
+      "job": "event-scale FDS plus member-resolved heat transfer",
+      "reason": "exact damage, fuel, furnishings, ventilation and interface inputs are unavailable"
+    },
+    {
+      "job": "full-building thermomechanical collapse propagation",
+      "reason": "22 mechanical requirements and both initiation/propagation validation chains are open"
+    }
+  ],
+  "deadline_policy": "Use cached verified calculations and short adapters first. A Sep 11 package can be a reproducible reduced-order uncertainty chain and labelled 3D, not a validated full-fidelity historical reconstruction."
+}

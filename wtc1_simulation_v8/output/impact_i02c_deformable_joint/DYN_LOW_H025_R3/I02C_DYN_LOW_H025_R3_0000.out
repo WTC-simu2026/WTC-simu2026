@@ -1,0 +1,3090 @@
+ I02C_DYN_LOW_H025_R3_0000.out
+************************************************************************
+**                                                                    **
+**                                                                    **
+**                        OpenRadioss Starter                         **
+**                                                                    **
+**            Non-linear Finite Element Analysis Software             **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+**                  Windows 64 bits, Intel compiler                   **
+**                      Double Precision Version                      **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+************************************************************************
+** OpenRadioss Software                                               **
+** COPYRIGHT (C) 2026 Siemens                                         **
+** Licensed under GNU Affero General Public License.                  **
+** See License file.                                                  **
+************************************************************************
+ 
+  
+ COMPUTATION HARDWARE DESCRIPTION
+  
+ HOSTNAME     CPU TYPE, FREQUENCY AND MEMORY
+ jeux   AMD Ryzen 5 5600 6-Core Processor               (x86_64), 3700 MHz,   7657 MB RAM,  18090 MB swap
+  
+ STACKSIZE  . . . . . . . . . . . . . . . . . . . . 1430 MB
+ THREAD STACKSIZE . . . . . . . . . . . . . . . . . 400 MB
+ 
+************************************************************************
+
+
+************************************************************************
+* INPUT READING PROCESS
+************************************************************************
+
+ -NO SYNTAX ERROR DETECTED DURING INPUT READING PROCESS
+
+
+
+
+************************************************************************
+
+
+
+    UNIT SYSTEMS DEFINITION     
+    -----------------------     
+
+                                                          MASS                LENGTH              TIME
+    WORK UNIT SYSTEM . . . . . . ( g  , mm , ms  ) 1.0000000000000E-03 1.0000000000000E-03 1.0000000000000E-03
+    INPUT UNIT SYSTEM  . . . . . ( g  , mm , ms  ) 1.0000000000000E-03 1.0000000000000E-03 1.0000000000000E-03
+I02C_DYN_LOW_H025_R3
+
+
+    CONTROL  PARAMETERS                                                                  
+    -------------------                                                                  
+
+    IPRI  : PRINTOUT FLAG . . . . . . . . . . . . . . . .         0
+    INVERS: MANUAL VERSION OF THIS INPUT DECK . . . . . .      2026
+    NSUBS:   NUMBER OF SUBSETS. . . . . . . . . . . . . .         1
+    NPART:   NUMBER OF PARTS. . . . . . . . . . . . . . .        14
+    NUMMAT: NUMBER OF MATERIALS . . . . . . . . . . . . .         1
+    NUMGEO: NUMBER OF PROPERTY SETS . . . . . . . . . . .        14
+    NUMNOD: NUMBER OF NODAL POINTS. . . . . . . . . . . .       408
+    NUMSKW: NUMBER OF SKEW REFERENCE FRAMES . . . . . . .         1
+    NUMBCS: NUMBER OF BOUNDARY CONDITIONS . . . . . . . .         2
+    NUMFRAM: NUMBER OF REFERENCE FRAMES . . . . . . . . .         0
+    NUMELQ: NUMBER OF 2D QUAD ELEMENTS. . . . . . . . . .         0
+    NUMELT3 : NUMBER OF 2D TRIA ELEMENTS. . . . . . . . .         0
+    NUMELS: NUMBER OF 3D SOLID ELEMENTS . . . . . . . . .         0
+    NUMELC: NUMBER OF 3D SHELL ELEMENTS (4-NODES) . . . .       352
+    NUMELT: NUMBER OF 3D TRUSS ELEMENTS . . . . . . . . .         0
+    NUMELP: NUMBER OF 3D BEAM  ELEMENTS . . . . . . . . .         0
+    NUMELR: NUMBER OF 3D SPRING ELEMENTS. . . . . . . . .        12
+    NUMELTG: NUMBER OF 3D SHELL ELEMENTS (3-NODES). . . .         0
+    NUMELX: NUMBER OF MULTIPURPOSE ELEMENTS . . . . . . .         0
+    NUMELIG3D: NUMBER OF ISO-GEOMETRIC ELEMENTS . . . . .         0
+    NUMSPH : NUMBER OF SMOOTH PARTICLES (SPH CELLS) . . .         0
+    NSPHBCS: NUMBER OF SPH SYMMETRY CONDITIONS. . . . . .         0
+    NSPHIO : NUMBER OF SPH INLET/OUTLET CONDITIONS. . . .         0
+
+    NFUNCT: NUMBER OF USER'S FUNCTIONS . . . . . . . . .         12
+    NGRAV:  NUMBER OF GRAVITY LOADS . . . . . . . . . . .         0
+    NFUNC2D:  NUMBER OF USER 2D FUNCTIONS . . . . . . . .         0
+    NINIGRV:NUMBER OF INITIAL GRAVITY LOADS . . . . . . .         0
+    NCONLD: NUMBER OF CONCENTRATED LOADS. . . . . . . . .         0
+    NINVEL: NUMBER OF INITIAL VELOCITIES. . . . . . . . .         1
+    NPRELD: NUMBER OF PRESSURE LOADS. . . . . . . . . . .         0
+    NINIMAP1D: NUMBER OF INITIAL 1D MAPPING.. . . . . . .         0
+    NINIMAP2D: NUMBER OF INITIAL 2D MAPPING.. . . . . . .         0
+    NUMBER OF ACCELEROMETERS. . . . . . . . . . . . . . .         0
+    NUMBER OF SENSORS . . . . . . . . . . . . . . . . . .         0
+    NUMBER OF GAUGES. . . . . . . . . . . . . . . . . . .         0
+    NINTER: NUMBER OF INTERFACES. . . . . . . . . . . . .         0
+    NRWALL: NUMBER OF RIGID WALLS . . . . . . . . . . . .         0
+    NRBODY: NUMBER OF RIGID BODIES. . . . . . . . . . . .         0
+    NFXBODY: NUMBER OF FLEXIBLE BODIES. . . . . . . . . .         0
+    NCONX : NUMBER OF RIGID LINKS TO MADYMO BODIES. . . .         0
+    NODMAS: NUMBER OF ADDED NODAL MASSES. . . . . . . . .         0
+    NIMPDISP: NUMBER OF IMPOSED DISPLACEMENTS . . . . . .         0
+    NIMPVEL: NUMBER OF IMPOSED VELOCITIES . . . . . . . .         0
+    NIMPACC: NUMBER OF IMPOSED ACCELERATIONS . . . . . .          0
+    NRIVET: NUMBER OF RIVETS OR SPOT WELDS. . . . . . . .         0
+    NSECT : NUMBER OF SECTIONS SAVED (TIME HISTORY PLOTS)         0
+    NJOINT: NUMBER OF JOINTS. . . . . . . . . . . . . . .         0
+    NACTIV: NUMBER OF ELEMENT DEACTIVATION GROUPS . . . .         0
+    NDAMP:  NUMBER OF RAYLEIGH DAMPING GROUPS . . . . . .         0
+    NGJOINT: NUMBER OF GEAR TYPE JOINTS . . . . . . . . .         0
+    NUMMPC: NUMBER OF MULTI-POINT CONSTRAINTS . . . . . .         0
+    NR2RLNK: NUMBER OF EXTERNAL COUPLING LINKS . . . . .          0
+    NSUBDOM: NUMBER OF SUBDOMAINS . . . . . .. . . . . .          0
+    NVOLU:  NUMBER OF MONITORED VOLUMES . . . . . . . . .         0
+    NEIG:   NUMBER OF EIGEN AND STATIC MODES PROBLEMS . .         0
+    NBEM:   NUMBER OF BEM SOLVED PROBLEMS . . . . . . . .         0
+    NRBE2:  NUMBER OF RBE2 RIGID ELEMENTS . . . . . . . .         0
+    NRBE3:  NUMBER OF RBE3 CONSTRAINT ELEMENTS  . . . . .         0
+    INITIAL STRESS FILE =
+                                          FLAG ISIGI. . .         0
+
+
+    N2D3D : ANALYSIS TYPE: 0=3D,1=AXISYM,2=PLANE STRAIN .         0
+
+
+    ANALYSIS OPTIONS
+    ----------------
+
+    INTEG8 : 8 GAUSS POINT CONDENSED INTEGRATION . . . . .         0
+    IPARITH: PARALLEL ARITHMETIC FLAG (2 OFF, 1 0N). . . .         1
+    IUSERW : GENERAL USER WINDOW FLAG. . . . . . . . . . .         0
+    ISOLID : DEFAULT BRICK FORMULATION FLAG. . . . . . . .         1
+    ITET4  : DEFAULT TETRA4 FORMULATION FLAG . . . . . . .         0
+    ITET10 : DEFAULT TETRA10 FORMULATION FLAG. . . . . . .      1000
+    ISMSTR : DEFAULT BRICK SMALL STRAIN FLAG . . . . . . .         0
+    ICPRE  : DEFAULT SOLID CONSTANT PRESSURE FLAG. . . . .         0
+    ISHELL : DEFAULT SHELL FORMULATION FLAG. . . . . . . .         1
+    ISST   : DEFAULT SHELL SMALL STRAIN FLAG . . . . . . .         0
+    ITHK   : DEFAULT SHELL THICKNESS VARIATION FLAG. . . .         0
+    IPLA   : DEFAULT PLANE STRESS PLASTICITY FLAG. . . . .         0
+    ISTR   : DEFAULT SHELL STRAIN COMPUTATION FLAG . . . .         1
+    ISHEA  : DEFAULT SHELL SHEAR COMPUTATION FLAG. . . . .         0
+    INSH   : SHELL INERTIA FLAG. . . . . . . . . . . . . .         0
+    ISH3N  : DEFAULT 3 NODE SHELL FORMULATION FLAG . . . .         2
+    NPTS   : SHELL PROPERTIES DEFAULT NUMBER OF           
+             INTEGRATION POINTS OR LAYERS. . . . . . . . .        -1
+    IFRAME : DEFAULT SOLID FRAME FORMULATION FLAG . . . .          1
+    IOFFSET: DEFAULT SHELL OFFSET FLAG. . . . . . . . . .          0
+    ICONTROL:DEFAULT SOLID DISTORTION CONTROL FLAG. . . .          0
+    ISHFRAM: LOCAL SHELL FRAME DEFINITION. . . . . . . . .         0
+
+
+    LAGRANGE MULTIPLIER OPTIONS
+    ---------------------------
+    LAGM_TOL:CONVERGENCE CRITERION. . . . . . . . . . . . 1.0000000000000E-11
+
+
+    NODAL MASS DISTRIBUTION FLAG . . . . . . . . .         0
+
+
+    SPEED PARAMETERS  
+    ----------------  
+
+    STARTER RUNNING ON. . . . . . . . . . . . . . . . . .         1 THREAD              
+    NUMBER OF SPMD DOMAINS. . . . . . . . . . . . . . . .         1
+    NUMBER OF THREADS PER DOMAIN. . . . . . . . . . . . .         1
+    ARCHITECTURE OPTIMIZATION . . . . . . . . . . . . . .        22, win64               
+    SIZE OF ELEMENT BUFFER. . . . . . . . . . . . . . . .       128
+ 
+     INFO : OMP_NUM_THREADS SET, DEFAULT SETTING IGNORED
+  
+
+
+    LOAD CURVES
+    -----------
+    NUMBER OF LOAD CURVES. . . . . . . . =        12
+
+
+    LOAD CURVE ID . . . . . . . . . . . =       100
+
+    X                     Y               
+    -100.0000000000        0.000000000000    
+     0.000000000000        0.000000000000    
+    2.0000000000000E-02    296.7272727270    
+    0.5000000000000        0.000000000000    
+     100.0000000000        0.000000000000    
+
+    LOAD CURVE ID . . . . . . . . . . . =       101
+
+    X                     Y               
+    -100.0000000000        0.000000000000    
+     0.000000000000        0.000000000000    
+    2.0000000000000E-02    593.4545454550    
+    0.5000000000000        0.000000000000    
+     100.0000000000        0.000000000000    
+
+    LOAD CURVE ID . . . . . . . . . . . =       102
+
+    X                     Y               
+    -100.0000000000        0.000000000000    
+     0.000000000000        0.000000000000    
+    2.0000000000000E-02    593.4545454550    
+    0.5000000000000        0.000000000000    
+     100.0000000000        0.000000000000    
+
+    LOAD CURVE ID . . . . . . . . . . . =       103
+
+    X                     Y               
+    -100.0000000000        0.000000000000    
+     0.000000000000        0.000000000000    
+    2.0000000000000E-02    593.4545454550    
+    0.5000000000000        0.000000000000    
+     100.0000000000        0.000000000000    
+
+    LOAD CURVE ID . . . . . . . . . . . =       104
+
+    X                     Y               
+    -100.0000000000        0.000000000000    
+     0.000000000000        0.000000000000    
+    2.0000000000000E-02    593.4545454550    
+    0.5000000000000        0.000000000000    
+     100.0000000000        0.000000000000    
+
+    LOAD CURVE ID . . . . . . . . . . . =       105
+
+    X                     Y               
+    -100.0000000000        0.000000000000    
+     0.000000000000        0.000000000000    
+    2.0000000000000E-02    593.4545454550    
+    0.5000000000000        0.000000000000    
+     100.0000000000        0.000000000000    
+
+    LOAD CURVE ID . . . . . . . . . . . =       106
+
+    X                     Y               
+    -100.0000000000        0.000000000000    
+     0.000000000000        0.000000000000    
+    2.0000000000000E-02    593.4545454550    
+    0.5000000000000        0.000000000000    
+     100.0000000000        0.000000000000    
+
+    LOAD CURVE ID . . . . . . . . . . . =       107
+
+    X                     Y               
+    -100.0000000000        0.000000000000    
+     0.000000000000        0.000000000000    
+    2.0000000000000E-02    593.4545454550    
+    0.5000000000000        0.000000000000    
+     100.0000000000        0.000000000000    
+
+    LOAD CURVE ID . . . . . . . . . . . =       108
+
+    X                     Y               
+    -100.0000000000        0.000000000000    
+     0.000000000000        0.000000000000    
+    2.0000000000000E-02    593.4545454550    
+    0.5000000000000        0.000000000000    
+     100.0000000000        0.000000000000    
+
+    LOAD CURVE ID . . . . . . . . . . . =       109
+
+    X                     Y               
+    -100.0000000000        0.000000000000    
+     0.000000000000        0.000000000000    
+    2.0000000000000E-02    593.4545454550    
+    0.5000000000000        0.000000000000    
+     100.0000000000        0.000000000000    
+
+    LOAD CURVE ID . . . . . . . . . . . =       110
+
+    X                     Y               
+    -100.0000000000        0.000000000000    
+     0.000000000000        0.000000000000    
+    2.0000000000000E-02    593.4545454550    
+    0.5000000000000        0.000000000000    
+     100.0000000000        0.000000000000    
+
+    LOAD CURVE ID . . . . . . . . . . . =       111
+
+    X                     Y               
+    -100.0000000000        0.000000000000    
+     0.000000000000        0.000000000000    
+    2.0000000000000E-02    296.7272727270    
+    0.5000000000000        0.000000000000    
+     100.0000000000        0.000000000000    
+
+
+    TABLES
+    ------
+    NUMBER OF TABLES . . . . . . . . . . =         0
+
+
+
+    MATERIAL LAWS
+    -------------
+    NUMBER OF MATERIALS. . . . . . . . . =         1
+
+
+     GENERIC_ELASTIC_NO_SHELL_FAILURE
+     MATERIAL NUMBER . . . . . . . . . . . .=         1
+     MATERIAL LAW. . . . . . . . . . . . . .=         1
+
+       ELASTIC MATERIAL (/MAT/LAW01)
+       -----------------------------
+     INITIAL DENSITY . . . . . . . . . . . .= 2.7000000000000E-03
+
+     YOUNG'S MODULUS . . . . . . . . . . . .=  0.7000E+05
+     POISSON'S RATIO . . . . . . . . . . . .=  0.3300E+00
+     SHEAR MODULUS . . . . . . . . . . . . .=  0.2632E+05
+
+
+     SKEW SYSTEM SETS                                                                    
+     -------------------                                                                 
+     NUMBER        N1        N2        N3          VECTORS                                          ORIGIN
+          1         0         0         0        1.0000000       0.0000000       0.0000000       0.0000000       0.0000000       0.0000000
+                                                 0.0000000       1.0000000       0.0000000
+                                                 0.0000000       0.0000000       1.0000000
+
+
+
+         PROPERTY SETS
+         -------------
+
+
+FULLY_INTEGRATED_ELASTIC                
+     ISOTROPIC SHELL PROPERTY SET
+     PROPERTY SET NUMBER . . . . . . . . . .=         1
+     NUMBER OF INTEGRATION POINTS. . . . . .=         0
+     POST PROCESSING STRAIN FLAG . . . . . .=         1
+     SHELL THICKNESS . . . . . . . . . . . .=  2.000000000000    
+     SMALL STRAIN FLAG . . . . . . . . . . .=        -1
+     SHELL FORMULATION FLAG. . . . . . . . .=        24
+     3NODE SHELL FORMULATION FLAG. . . . . .=         2
+     DRILLING D.O.F. FLAG  . . . . . . . . .=         0
+     PINCHING D.O.F. FLAG  . . . . . . . . .=         0
+     SHELL MEMBRANE DAMPING. . . . . . . . .=  0.000000000000    
+     SHELL NUMERICAL DAMPING . . . . . . . .= 1.5000000000000E-02
+     SHEAR AREA REDUCTION FACTOR . . . . . .= 0.8333333333333    
+     ELEMENT DELETION PARAMETER. . . . . . .= 0.9999990000000    
+      > 0.0 : FRACTION OF FAILED THICKNESS   
+      < 0.0 : FRACTION OF FAILED INTG. POINTS
+     SHEAR FORMULATION FLAG. . . . . . . . .=         0
+     THICKNESS VARIATION FLAG. . . . . . . .=         0
+     PLASTICITY FORMULATION FLAG . . . . . .=         0
+     SHELL OFFSET POSITION FLAG . . . . . . =         0
+
+
+FULLY_INTEGRATED_ELASTIC                
+     ISOTROPIC SHELL PROPERTY SET
+     PROPERTY SET NUMBER . . . . . . . . . .=         2
+     NUMBER OF INTEGRATION POINTS. . . . . .=         0
+     POST PROCESSING STRAIN FLAG . . . . . .=         1
+     SHELL THICKNESS . . . . . . . . . . . .=  3.000000000000    
+     SMALL STRAIN FLAG . . . . . . . . . . .=        -1
+     SHELL FORMULATION FLAG. . . . . . . . .=        24
+     3NODE SHELL FORMULATION FLAG. . . . . .=         2
+     DRILLING D.O.F. FLAG  . . . . . . . . .=         0
+     PINCHING D.O.F. FLAG  . . . . . . . . .=         0
+     SHELL MEMBRANE DAMPING. . . . . . . . .=  0.000000000000    
+     SHELL NUMERICAL DAMPING . . . . . . . .= 1.5000000000000E-02
+     SHEAR AREA REDUCTION FACTOR . . . . . .= 0.8333333333333    
+     ELEMENT DELETION PARAMETER. . . . . . .= 0.9999990000000    
+      > 0.0 : FRACTION OF FAILED THICKNESS   
+      < 0.0 : FRACTION OF FAILED INTG. POINTS
+     SHEAR FORMULATION FLAG. . . . . . . . .=         0
+     THICKNESS VARIATION FLAG. . . . . . . .=         0
+     PLASTICITY FORMULATION FLAG . . . . . .=         0
+     SHELL OFFSET POSITION FLAG . . . . . . =         0
+
+
+ZERO_LENGTH_SINGLE_MODE_H2              
+
+WARNING ID :    445
+** WARNING IN SPRING PROPERTY SET (MASS)
+DESCRIPTION :  
+   -- PROPERTY ID: 10
+   -- PROPERTY TITLE: ZERO_LENGTH_SINGLE_MODE_H2
+   NULL INERTIA
+     SPRING PROPERTY SET
+     PROPERTY SET NUMBER . . . . . . . . . .=        10
+     SPRING MASS . . . . . . . . . . . . . .=  0.000000000000    
+     SPRING INERTIA. . . . . . . . . . . . .= 1.0000000000000E-20
+     SKEW FRAME NUMBER (0:GLOBAL). . . . . .=         1
+     SENSOR NUMBER (0:NOT USED). . . . . . .=         0
+     SENSOR FLAG (0:ACTIV 1:DISACT 2:BOTH) .=         0
+     FAILURE FLAG (0:UNCOUPLED 1:COUPLED). .=         0
+     FAILURE CRITERION (DISPL/FORCE/ENERGY).=         0
+           0:DISPLACEMENT  1:FORCE  2:ENERGY 
+
+     X TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  14836.36378470    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=       100
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         2
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 0.5000000000000    
+
+     Y TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     Z TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     X ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Y ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Z ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     SMOOTH STRAIN RATE OPTION . . .. . . . =         0
+     STRAIN RATE CUTTING FREQUENCY .. . . . = 1.0000000000000E+30
+
+ZERO_LENGTH_SINGLE_MODE_H2              
+
+WARNING ID :    445
+** WARNING IN SPRING PROPERTY SET (MASS)
+DESCRIPTION :  
+   -- PROPERTY ID: 11
+   -- PROPERTY TITLE: ZERO_LENGTH_SINGLE_MODE_H2
+   NULL INERTIA
+     SPRING PROPERTY SET
+     PROPERTY SET NUMBER . . . . . . . . . .=        11
+     SPRING MASS . . . . . . . . . . . . . .=  0.000000000000    
+     SPRING INERTIA. . . . . . . . . . . . .= 1.0000000000000E-20
+     SKEW FRAME NUMBER (0:GLOBAL). . . . . .=         1
+     SENSOR NUMBER (0:NOT USED). . . . . . .=         0
+     SENSOR FLAG (0:ACTIV 1:DISACT 2:BOTH) .=         0
+     FAILURE FLAG (0:UNCOUPLED 1:COUPLED). .=         0
+     FAILURE CRITERION (DISPL/FORCE/ENERGY).=         0
+           0:DISPLACEMENT  1:FORCE  2:ENERGY 
+
+     X TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  29672.72756950    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=       101
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         2
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 0.5000000000000    
+
+     Y TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     Z TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     X ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Y ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Z ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     SMOOTH STRAIN RATE OPTION . . .. . . . =         0
+     STRAIN RATE CUTTING FREQUENCY .. . . . = 1.0000000000000E+30
+
+ZERO_LENGTH_SINGLE_MODE_H2              
+
+WARNING ID :    445
+** WARNING IN SPRING PROPERTY SET (MASS)
+DESCRIPTION :  
+   -- PROPERTY ID: 12
+   -- PROPERTY TITLE: ZERO_LENGTH_SINGLE_MODE_H2
+   NULL INERTIA
+     SPRING PROPERTY SET
+     PROPERTY SET NUMBER . . . . . . . . . .=        12
+     SPRING MASS . . . . . . . . . . . . . .=  0.000000000000    
+     SPRING INERTIA. . . . . . . . . . . . .= 1.0000000000000E-20
+     SKEW FRAME NUMBER (0:GLOBAL). . . . . .=         1
+     SENSOR NUMBER (0:NOT USED). . . . . . .=         0
+     SENSOR FLAG (0:ACTIV 1:DISACT 2:BOTH) .=         0
+     FAILURE FLAG (0:UNCOUPLED 1:COUPLED). .=         0
+     FAILURE CRITERION (DISPL/FORCE/ENERGY).=         0
+           0:DISPLACEMENT  1:FORCE  2:ENERGY 
+
+     X TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  29672.72756950    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=       102
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         2
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 0.5000000000000    
+
+     Y TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     Z TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     X ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Y ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Z ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     SMOOTH STRAIN RATE OPTION . . .. . . . =         0
+     STRAIN RATE CUTTING FREQUENCY .. . . . = 1.0000000000000E+30
+
+ZERO_LENGTH_SINGLE_MODE_H2              
+
+WARNING ID :    445
+** WARNING IN SPRING PROPERTY SET (MASS)
+DESCRIPTION :  
+   -- PROPERTY ID: 13
+   -- PROPERTY TITLE: ZERO_LENGTH_SINGLE_MODE_H2
+   NULL INERTIA
+     SPRING PROPERTY SET
+     PROPERTY SET NUMBER . . . . . . . . . .=        13
+     SPRING MASS . . . . . . . . . . . . . .=  0.000000000000    
+     SPRING INERTIA. . . . . . . . . . . . .= 1.0000000000000E-20
+     SKEW FRAME NUMBER (0:GLOBAL). . . . . .=         1
+     SENSOR NUMBER (0:NOT USED). . . . . . .=         0
+     SENSOR FLAG (0:ACTIV 1:DISACT 2:BOTH) .=         0
+     FAILURE FLAG (0:UNCOUPLED 1:COUPLED). .=         0
+     FAILURE CRITERION (DISPL/FORCE/ENERGY).=         0
+           0:DISPLACEMENT  1:FORCE  2:ENERGY 
+
+     X TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  29672.72756950    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=       103
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         2
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 0.5000000000000    
+
+     Y TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     Z TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     X ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Y ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Z ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     SMOOTH STRAIN RATE OPTION . . .. . . . =         0
+     STRAIN RATE CUTTING FREQUENCY .. . . . = 1.0000000000000E+30
+
+ZERO_LENGTH_SINGLE_MODE_H2              
+
+WARNING ID :    445
+** WARNING IN SPRING PROPERTY SET (MASS)
+DESCRIPTION :  
+   -- PROPERTY ID: 14
+   -- PROPERTY TITLE: ZERO_LENGTH_SINGLE_MODE_H2
+   NULL INERTIA
+     SPRING PROPERTY SET
+     PROPERTY SET NUMBER . . . . . . . . . .=        14
+     SPRING MASS . . . . . . . . . . . . . .=  0.000000000000    
+     SPRING INERTIA. . . . . . . . . . . . .= 1.0000000000000E-20
+     SKEW FRAME NUMBER (0:GLOBAL). . . . . .=         1
+     SENSOR NUMBER (0:NOT USED). . . . . . .=         0
+     SENSOR FLAG (0:ACTIV 1:DISACT 2:BOTH) .=         0
+     FAILURE FLAG (0:UNCOUPLED 1:COUPLED). .=         0
+     FAILURE CRITERION (DISPL/FORCE/ENERGY).=         0
+           0:DISPLACEMENT  1:FORCE  2:ENERGY 
+
+     X TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  29672.72756950    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=       104
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         2
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 0.5000000000000    
+
+     Y TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     Z TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     X ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Y ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Z ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     SMOOTH STRAIN RATE OPTION . . .. . . . =         0
+     STRAIN RATE CUTTING FREQUENCY .. . . . = 1.0000000000000E+30
+
+ZERO_LENGTH_SINGLE_MODE_H2              
+
+WARNING ID :    445
+** WARNING IN SPRING PROPERTY SET (MASS)
+DESCRIPTION :  
+   -- PROPERTY ID: 15
+   -- PROPERTY TITLE: ZERO_LENGTH_SINGLE_MODE_H2
+   NULL INERTIA
+     SPRING PROPERTY SET
+     PROPERTY SET NUMBER . . . . . . . . . .=        15
+     SPRING MASS . . . . . . . . . . . . . .=  0.000000000000    
+     SPRING INERTIA. . . . . . . . . . . . .= 1.0000000000000E-20
+     SKEW FRAME NUMBER (0:GLOBAL). . . . . .=         1
+     SENSOR NUMBER (0:NOT USED). . . . . . .=         0
+     SENSOR FLAG (0:ACTIV 1:DISACT 2:BOTH) .=         0
+     FAILURE FLAG (0:UNCOUPLED 1:COUPLED). .=         0
+     FAILURE CRITERION (DISPL/FORCE/ENERGY).=         0
+           0:DISPLACEMENT  1:FORCE  2:ENERGY 
+
+     X TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  29672.72756950    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=       105
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         2
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 0.5000000000000    
+
+     Y TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     Z TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     X ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Y ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Z ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     SMOOTH STRAIN RATE OPTION . . .. . . . =         0
+     STRAIN RATE CUTTING FREQUENCY .. . . . = 1.0000000000000E+30
+
+ZERO_LENGTH_SINGLE_MODE_H2              
+
+WARNING ID :    445
+** WARNING IN SPRING PROPERTY SET (MASS)
+DESCRIPTION :  
+   -- PROPERTY ID: 16
+   -- PROPERTY TITLE: ZERO_LENGTH_SINGLE_MODE_H2
+   NULL INERTIA
+     SPRING PROPERTY SET
+     PROPERTY SET NUMBER . . . . . . . . . .=        16
+     SPRING MASS . . . . . . . . . . . . . .=  0.000000000000    
+     SPRING INERTIA. . . . . . . . . . . . .= 1.0000000000000E-20
+     SKEW FRAME NUMBER (0:GLOBAL). . . . . .=         1
+     SENSOR NUMBER (0:NOT USED). . . . . . .=         0
+     SENSOR FLAG (0:ACTIV 1:DISACT 2:BOTH) .=         0
+     FAILURE FLAG (0:UNCOUPLED 1:COUPLED). .=         0
+     FAILURE CRITERION (DISPL/FORCE/ENERGY).=         0
+           0:DISPLACEMENT  1:FORCE  2:ENERGY 
+
+     X TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  29672.72756950    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=       106
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         2
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 0.5000000000000    
+
+     Y TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     Z TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     X ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Y ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Z ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     SMOOTH STRAIN RATE OPTION . . .. . . . =         0
+     STRAIN RATE CUTTING FREQUENCY .. . . . = 1.0000000000000E+30
+
+ZERO_LENGTH_SINGLE_MODE_H2              
+
+WARNING ID :    445
+** WARNING IN SPRING PROPERTY SET (MASS)
+DESCRIPTION :  
+   -- PROPERTY ID: 17
+   -- PROPERTY TITLE: ZERO_LENGTH_SINGLE_MODE_H2
+   NULL INERTIA
+     SPRING PROPERTY SET
+     PROPERTY SET NUMBER . . . . . . . . . .=        17
+     SPRING MASS . . . . . . . . . . . . . .=  0.000000000000    
+     SPRING INERTIA. . . . . . . . . . . . .= 1.0000000000000E-20
+     SKEW FRAME NUMBER (0:GLOBAL). . . . . .=         1
+     SENSOR NUMBER (0:NOT USED). . . . . . .=         0
+     SENSOR FLAG (0:ACTIV 1:DISACT 2:BOTH) .=         0
+     FAILURE FLAG (0:UNCOUPLED 1:COUPLED). .=         0
+     FAILURE CRITERION (DISPL/FORCE/ENERGY).=         0
+           0:DISPLACEMENT  1:FORCE  2:ENERGY 
+
+     X TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  29672.72756950    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=       107
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         2
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 0.5000000000000    
+
+     Y TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     Z TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     X ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Y ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Z ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     SMOOTH STRAIN RATE OPTION . . .. . . . =         0
+     STRAIN RATE CUTTING FREQUENCY .. . . . = 1.0000000000000E+30
+
+ZERO_LENGTH_SINGLE_MODE_H2              
+
+WARNING ID :    445
+** WARNING IN SPRING PROPERTY SET (MASS)
+DESCRIPTION :  
+   -- PROPERTY ID: 18
+   -- PROPERTY TITLE: ZERO_LENGTH_SINGLE_MODE_H2
+   NULL INERTIA
+     SPRING PROPERTY SET
+     PROPERTY SET NUMBER . . . . . . . . . .=        18
+     SPRING MASS . . . . . . . . . . . . . .=  0.000000000000    
+     SPRING INERTIA. . . . . . . . . . . . .= 1.0000000000000E-20
+     SKEW FRAME NUMBER (0:GLOBAL). . . . . .=         1
+     SENSOR NUMBER (0:NOT USED). . . . . . .=         0
+     SENSOR FLAG (0:ACTIV 1:DISACT 2:BOTH) .=         0
+     FAILURE FLAG (0:UNCOUPLED 1:COUPLED). .=         0
+     FAILURE CRITERION (DISPL/FORCE/ENERGY).=         0
+           0:DISPLACEMENT  1:FORCE  2:ENERGY 
+
+     X TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  29672.72756950    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=       108
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         2
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 0.5000000000000    
+
+     Y TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     Z TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     X ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Y ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Z ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     SMOOTH STRAIN RATE OPTION . . .. . . . =         0
+     STRAIN RATE CUTTING FREQUENCY .. . . . = 1.0000000000000E+30
+
+ZERO_LENGTH_SINGLE_MODE_H2              
+
+WARNING ID :    445
+** WARNING IN SPRING PROPERTY SET (MASS)
+DESCRIPTION :  
+   -- PROPERTY ID: 19
+   -- PROPERTY TITLE: ZERO_LENGTH_SINGLE_MODE_H2
+   NULL INERTIA
+     SPRING PROPERTY SET
+     PROPERTY SET NUMBER . . . . . . . . . .=        19
+     SPRING MASS . . . . . . . . . . . . . .=  0.000000000000    
+     SPRING INERTIA. . . . . . . . . . . . .= 1.0000000000000E-20
+     SKEW FRAME NUMBER (0:GLOBAL). . . . . .=         1
+     SENSOR NUMBER (0:NOT USED). . . . . . .=         0
+     SENSOR FLAG (0:ACTIV 1:DISACT 2:BOTH) .=         0
+     FAILURE FLAG (0:UNCOUPLED 1:COUPLED). .=         0
+     FAILURE CRITERION (DISPL/FORCE/ENERGY).=         0
+           0:DISPLACEMENT  1:FORCE  2:ENERGY 
+
+     X TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  29672.72756950    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=       109
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         2
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 0.5000000000000    
+
+     Y TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     Z TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     X ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Y ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Z ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     SMOOTH STRAIN RATE OPTION . . .. . . . =         0
+     STRAIN RATE CUTTING FREQUENCY .. . . . = 1.0000000000000E+30
+
+ZERO_LENGTH_SINGLE_MODE_H2              
+
+WARNING ID :    445
+** WARNING IN SPRING PROPERTY SET (MASS)
+DESCRIPTION :  
+   -- PROPERTY ID: 20
+   -- PROPERTY TITLE: ZERO_LENGTH_SINGLE_MODE_H2
+   NULL INERTIA
+     SPRING PROPERTY SET
+     PROPERTY SET NUMBER . . . . . . . . . .=        20
+     SPRING MASS . . . . . . . . . . . . . .=  0.000000000000    
+     SPRING INERTIA. . . . . . . . . . . . .= 1.0000000000000E-20
+     SKEW FRAME NUMBER (0:GLOBAL). . . . . .=         1
+     SENSOR NUMBER (0:NOT USED). . . . . . .=         0
+     SENSOR FLAG (0:ACTIV 1:DISACT 2:BOTH) .=         0
+     FAILURE FLAG (0:UNCOUPLED 1:COUPLED). .=         0
+     FAILURE CRITERION (DISPL/FORCE/ENERGY).=         0
+           0:DISPLACEMENT  1:FORCE  2:ENERGY 
+
+     X TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  29672.72756950    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=       110
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         2
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 0.5000000000000    
+
+     Y TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     Z TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     X ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Y ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Z ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     SMOOTH STRAIN RATE OPTION . . .. . . . =         0
+     STRAIN RATE CUTTING FREQUENCY .. . . . = 1.0000000000000E+30
+
+ZERO_LENGTH_SINGLE_MODE_H2              
+
+WARNING ID :    445
+** WARNING IN SPRING PROPERTY SET (MASS)
+DESCRIPTION :  
+   -- PROPERTY ID: 21
+   -- PROPERTY TITLE: ZERO_LENGTH_SINGLE_MODE_H2
+   NULL INERTIA
+     SPRING PROPERTY SET
+     PROPERTY SET NUMBER . . . . . . . . . .=        21
+     SPRING MASS . . . . . . . . . . . . . .=  0.000000000000    
+     SPRING INERTIA. . . . . . . . . . . . .= 1.0000000000000E-20
+     SKEW FRAME NUMBER (0:GLOBAL). . . . . .=         1
+     SENSOR NUMBER (0:NOT USED). . . . . . .=         0
+     SENSOR FLAG (0:ACTIV 1:DISACT 2:BOTH) .=         0
+     FAILURE FLAG (0:UNCOUPLED 1:COUPLED). .=         0
+     FAILURE CRITERION (DISPL/FORCE/ENERGY).=         0
+           0:DISPLACEMENT  1:FORCE  2:ENERGY 
+
+     X TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  14836.36378470    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=       111
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         2
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 0.5000000000000    
+
+     Y TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     Z TRANSLATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE DISPLACEMENT . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE DISPLACEMENT . . . . .= 1.0000000000000E+30
+
+     X ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Y ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     Z ROTATION
+     SPRING STIFFNESS. . . . . . . . . . . .=  0.000000000000    
+     SPRING DAMPING. . . . . . . . . . . . .=  0.000000000000    
+     FUNCTION IDENTIFIER FOR LOADING 
+     FORCE-DISPLACEMENT CURVE. . . . . . . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     FUNCTION IDENTIFIER FOR UNLOADING 
+     FORCE-DISPLACEMENT CURVE (H=4,5,7). . .=         0
+     ABSCISSA SCALE FACTOR ON CURVE . . . . =  1.000000000000    
+     HARDENING FLAG H. . . . . . . . . . . .=         0
+     0:ELASTIC   1:ISOTROPIC 2:UNCOUPLED
+     4:KINEMATIC 5:UNCOUPLED NL (UN/RE)LOADING
+     6:ELASTO PLASTIC WITH HARDENING 7: ELASTIC HYSTERESIS
+     DYNAMIC AMPLIFICATION FACTOR A. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR B. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR D. . . . .=  1.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR E. . . . .=  0.000000000000    
+     DYNAMIC AMPLIFICATION FACTOR IGF3 . . .=  1.000000000000    
+     FUNCTION IDENTIFIER FOR  
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     FUNCTION IDENTIFIER FOR THE ADDITIONAL 
+     FORCE-VELOCITY CURVE. . . . . . . . . .=         0
+     NEGATIVE FAILURE ROTATION . . . . . . .=-1.0000000000000E+30
+     POSITIVE FAILURE ROTATION . . . . . . .= 1.0000000000000E+30
+
+     SMOOTH STRAIN RATE OPTION . . .. . . . =         0
+     STRAIN RATE CUTTING FREQUENCY .. . . . = 1.0000000000000E+30
+
+
+
+       PARTS
+       -----
+
+
+
+PART:         1,ELASTIC_STRIP_1
+----
+     PROPERTY    :         1 (TYPE 01),FULLY_INTEGRATED_ELASTIC
+     MATERIAL    :         1 (LAW  01),GENERIC_ELASTIC_NO_SHELL_FAILURE
+     SUBSET      :         0
+     FRAMEWORK   :         LAGRANGE
+     VIRT. THICKN:         0.000000000000    
+
+PART:         2,ELASTIC_STRIP_2
+----
+     PROPERTY    :         2 (TYPE 01),FULLY_INTEGRATED_ELASTIC
+     MATERIAL    :         1 (LAW  01),GENERIC_ELASTIC_NO_SHELL_FAILURE
+     SUBSET      :         0
+     FRAMEWORK   :         LAGRANGE
+     VIRT. THICKN:         0.000000000000    
+
+PART:        10,WEIGHTED_SEAM_0
+----
+     PROPERTY    :        10 (TYPE 08),ZERO_LENGTH_SINGLE_MODE_H2
+     MATERIAL    :         0 (LAW  00),GENERIC_ELASTIC_NO_SHELL_FAILURE
+     SUBSET      :         0
+     FRAMEWORK   :         LAGRANGE
+
+PART:        11,WEIGHTED_SEAM_1
+----
+     PROPERTY    :        11 (TYPE 08),ZERO_LENGTH_SINGLE_MODE_H2
+     MATERIAL    :         0 (LAW  00),GENERIC_ELASTIC_NO_SHELL_FAILURE
+     SUBSET      :         0
+     FRAMEWORK   :         LAGRANGE
+
+PART:        12,WEIGHTED_SEAM_2
+----
+     PROPERTY    :        12 (TYPE 08),ZERO_LENGTH_SINGLE_MODE_H2
+     MATERIAL    :         0 (LAW  00),GENERIC_ELASTIC_NO_SHELL_FAILURE
+     SUBSET      :         0
+     FRAMEWORK   :         LAGRANGE
+
+PART:        13,WEIGHTED_SEAM_3
+----
+     PROPERTY    :        13 (TYPE 08),ZERO_LENGTH_SINGLE_MODE_H2
+     MATERIAL    :         0 (LAW  00),GENERIC_ELASTIC_NO_SHELL_FAILURE
+     SUBSET      :         0
+     FRAMEWORK   :         LAGRANGE
+
+PART:        14,WEIGHTED_SEAM_4
+----
+     PROPERTY    :        14 (TYPE 08),ZERO_LENGTH_SINGLE_MODE_H2
+     MATERIAL    :         0 (LAW  00),GENERIC_ELASTIC_NO_SHELL_FAILURE
+     SUBSET      :         0
+     FRAMEWORK   :         LAGRANGE
+
+PART:        15,WEIGHTED_SEAM_5
+----
+     PROPERTY    :        15 (TYPE 08),ZERO_LENGTH_SINGLE_MODE_H2
+     MATERIAL    :         0 (LAW  00),GENERIC_ELASTIC_NO_SHELL_FAILURE
+     SUBSET      :         0
+     FRAMEWORK   :         LAGRANGE
+
+PART:        16,WEIGHTED_SEAM_6
+----
+     PROPERTY    :        16 (TYPE 08),ZERO_LENGTH_SINGLE_MODE_H2
+     MATERIAL    :         0 (LAW  00),GENERIC_ELASTIC_NO_SHELL_FAILURE
+     SUBSET      :         0
+     FRAMEWORK   :         LAGRANGE
+
+PART:        17,WEIGHTED_SEAM_7
+----
+     PROPERTY    :        17 (TYPE 08),ZERO_LENGTH_SINGLE_MODE_H2
+     MATERIAL    :         0 (LAW  00),GENERIC_ELASTIC_NO_SHELL_FAILURE
+     SUBSET      :         0
+     FRAMEWORK   :         LAGRANGE
+
+PART:        18,WEIGHTED_SEAM_8
+----
+     PROPERTY    :        18 (TYPE 08),ZERO_LENGTH_SINGLE_MODE_H2
+     MATERIAL    :         0 (LAW  00),GENERIC_ELASTIC_NO_SHELL_FAILURE
+     SUBSET      :         0
+     FRAMEWORK   :         LAGRANGE
+
+PART:        19,WEIGHTED_SEAM_9
+----
+     PROPERTY    :        19 (TYPE 08),ZERO_LENGTH_SINGLE_MODE_H2
+     MATERIAL    :         0 (LAW  00),GENERIC_ELASTIC_NO_SHELL_FAILURE
+     SUBSET      :         0
+     FRAMEWORK   :         LAGRANGE
+
+PART:        20,WEIGHTED_SEAM_10
+----
+     PROPERTY    :        20 (TYPE 08),ZERO_LENGTH_SINGLE_MODE_H2
+     MATERIAL    :         0 (LAW  00),GENERIC_ELASTIC_NO_SHELL_FAILURE
+     SUBSET      :         0
+     FRAMEWORK   :         LAGRANGE
+
+PART:        21,WEIGHTED_SEAM_11
+----
+     PROPERTY    :        21 (TYPE 08),ZERO_LENGTH_SINGLE_MODE_H2
+     MATERIAL    :         0 (LAW  00),GENERIC_ELASTIC_NO_SHELL_FAILURE
+     SUBSET      :         0
+     FRAMEWORK   :         LAGRANGE
+
+ SPRING ELEMENTS
+ ---------------
+    LOC-EL     GLO-EL       GEOM      NODE1      NODE2    (NODE3)                                    (MAT_ID)     (SKEW)
+         1        353         10        193        205                                                                 1 
+         2        354         11        194        206                                                                 1 
+         3        355         12        195        207                                                                 1 
+         4        356         13        196        208                                                                 1 
+         5        357         14        197        209                                                                 1 
+         6        358         15        198        210                                                                 1 
+         7        359         16        199        211                                                                 1 
+         8        360         17        200        212                                                                 1 
+         9        361         18        201        213                                                                 1 
+        10        362         19        202        214                                                                 1 
+        11        363         20        203        215                                                                 1 
+        12        364         21        204        216                                                                 1 
+
+
+       HIERARCHICAL SUBSET ORGANIZATION
+       --------------------------------
+
+
+  
+  
+ SUBSET:         0,GLOBAL MODEL                                                                                                     
+ ~~~~~~
+  |
+  |________Part(s):         1,ELASTIC_STRIP_1                         
+                            2,ELASTIC_STRIP_2                         
+                           10,WEIGHTED_SEAM_0                         
+                           11,WEIGHTED_SEAM_1                         
+                           12,WEIGHTED_SEAM_2                         
+                           13,WEIGHTED_SEAM_3                         
+                           14,WEIGHTED_SEAM_4                         
+                           15,WEIGHTED_SEAM_5                         
+                           16,WEIGHTED_SEAM_6                         
+                           17,WEIGHTED_SEAM_7                         
+                           18,WEIGHTED_SEAM_8                         
+                           19,WEIGHTED_SEAM_9                         
+                           20,WEIGHTED_SEAM_10                        
+                           21,WEIGHTED_SEAM_11                        
+
+     BOUNDARY CONDITIONS                                                                 
+     -------------------                                                                 
+       NODE  TRANS. ROTAT.         SKEW
+
+  
+ SPMD IS CHECKING FOR ELEMENT DELETION IN : 
+ I02C_DYN_LOW_H025_R3_0001.rad                                                                                
+ 
+ DOMAIN DECOMPOSITION USING MULTILEVEL KWAY
+ ------------------------------------------
+ DOMAIN DECOMPOSITION OPTIMIZED FOR PARALLEL ARITHMETIC ON
+ DOMAIN DECOMPOSITION : OPTIMIZED FOR BROADWELL PROCESSOR
+
+MESSAGE ID :   1772
+** INFO IN SHELL PROPERTY DEFINITION
+DESCRIPTION :  
+   ISMSTR IS AUTOMATICALLY DETERMINED IN PROPERTY.
+   CONCERNING 2 PROPERTY(S)
+   PROPERTY ID=1         ,  PROPERTY TITLE: FULLY_INTEGRATED_ELASTIC,  ISMSTR=4         
+   PROPERTY ID=2         ,  PROPERTY TITLE: FULLY_INTEGRATED_ELASTIC,  ISMSTR=4         
+
+
+
+ SHELL GROUP         1 VECTORIZATION CODE =    0
+ SHELL GROUP         2 VECTORIZATION CODE =    0
+ SHELL GROUP         3 VECTORIZATION CODE =    0
+ SHELL GROUP         4 VECTORIZATION CODE =    0
+
+
+PART MASS & INERTIA
+-------------------
+
+
+PART :          1, ELASTIC_STRIP_1
+            Mass             Ixx             Iyy             Izz             Ixy             Iyz             Izx
+  5.48640000E+00  3.04310733E+02  7.41703091E+02  1.04154573E+03  2.16493490E-15  0.00000000E+00  0.00000000E+00
+               X               Y               Z     Kin. Energy              Vx              Vy              Vz
+ -2.00000000E+01  4.04718221E-17  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+
+PART :          2, ELASTIC_STRIP_2
+            Mass             Ixx             Iyy             Izz             Ixy             Iyz             Izx
+  8.22960000E+00  4.59895100E+02  1.11598364E+03  1.56574760E+03 -1.11022302E-14  0.00000000E+00  0.00000000E+00
+               X               Y               Z     Kin. Energy              Vx              Vy              Vz
+  2.00000000E+01  4.04718221E-17  0.00000000E+00  4.00000000E+02  9.85951677E+00  0.00000000E+00  0.00000000E+00
+
+PART :         10, WEIGHTED_SEAM_0
+            Mass             Ixx             Iyy             Izz             Ixy             Iyz             Izx
+  0.00000000E+00  1.00000000E-20  1.00000000E-20  1.00000000E-20  0.00000000E+00  0.00000000E+00  0.00000000E+00
+               X               Y               Z     Kin. Energy              Vx              Vy              Vz
+  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+
+PART :         11, WEIGHTED_SEAM_1
+            Mass             Ixx             Iyy             Izz             Ixy             Iyz             Izx
+  0.00000000E+00  1.00000000E-20  1.00000000E-20  1.00000000E-20  0.00000000E+00  0.00000000E+00  0.00000000E+00
+               X               Y               Z     Kin. Energy              Vx              Vy              Vz
+  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+
+PART :         12, WEIGHTED_SEAM_2
+            Mass             Ixx             Iyy             Izz             Ixy             Iyz             Izx
+  0.00000000E+00  1.00000000E-20  1.00000000E-20  1.00000000E-20  0.00000000E+00  0.00000000E+00  0.00000000E+00
+               X               Y               Z     Kin. Energy              Vx              Vy              Vz
+  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+
+PART :         13, WEIGHTED_SEAM_3
+            Mass             Ixx             Iyy             Izz             Ixy             Iyz             Izx
+  0.00000000E+00  1.00000000E-20  1.00000000E-20  1.00000000E-20  0.00000000E+00  0.00000000E+00  0.00000000E+00
+               X               Y               Z     Kin. Energy              Vx              Vy              Vz
+  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+
+PART :         14, WEIGHTED_SEAM_4
+            Mass             Ixx             Iyy             Izz             Ixy             Iyz             Izx
+  0.00000000E+00  1.00000000E-20  1.00000000E-20  1.00000000E-20  0.00000000E+00  0.00000000E+00  0.00000000E+00
+               X               Y               Z     Kin. Energy              Vx              Vy              Vz
+  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+
+PART :         15, WEIGHTED_SEAM_5
+            Mass             Ixx             Iyy             Izz             Ixy             Iyz             Izx
+  0.00000000E+00  1.00000000E-20  1.00000000E-20  1.00000000E-20  0.00000000E+00  0.00000000E+00  0.00000000E+00
+               X               Y               Z     Kin. Energy              Vx              Vy              Vz
+  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+
+PART :         16, WEIGHTED_SEAM_6
+            Mass             Ixx             Iyy             Izz             Ixy             Iyz             Izx
+  0.00000000E+00  1.00000000E-20  1.00000000E-20  1.00000000E-20  0.00000000E+00  0.00000000E+00  0.00000000E+00
+               X               Y               Z     Kin. Energy              Vx              Vy              Vz
+  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+
+PART :         17, WEIGHTED_SEAM_7
+            Mass             Ixx             Iyy             Izz             Ixy             Iyz             Izx
+  0.00000000E+00  1.00000000E-20  1.00000000E-20  1.00000000E-20  0.00000000E+00  0.00000000E+00  0.00000000E+00
+               X               Y               Z     Kin. Energy              Vx              Vy              Vz
+  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+
+PART :         18, WEIGHTED_SEAM_8
+            Mass             Ixx             Iyy             Izz             Ixy             Iyz             Izx
+  0.00000000E+00  1.00000000E-20  1.00000000E-20  1.00000000E-20  0.00000000E+00  0.00000000E+00  0.00000000E+00
+               X               Y               Z     Kin. Energy              Vx              Vy              Vz
+  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+
+PART :         19, WEIGHTED_SEAM_9
+            Mass             Ixx             Iyy             Izz             Ixy             Iyz             Izx
+  0.00000000E+00  1.00000000E-20  1.00000000E-20  1.00000000E-20  0.00000000E+00  0.00000000E+00  0.00000000E+00
+               X               Y               Z     Kin. Energy              Vx              Vy              Vz
+  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+
+PART :         20, WEIGHTED_SEAM_10
+            Mass             Ixx             Iyy             Izz             Ixy             Iyz             Izx
+  0.00000000E+00  1.00000000E-20  1.00000000E-20  1.00000000E-20  0.00000000E+00  0.00000000E+00  0.00000000E+00
+               X               Y               Z     Kin. Energy              Vx              Vy              Vz
+  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+
+PART :         21, WEIGHTED_SEAM_11
+            Mass             Ixx             Iyy             Izz             Ixy             Iyz             Izx
+  0.00000000E+00  1.00000000E-20  1.00000000E-20  1.00000000E-20  0.00000000E+00  0.00000000E+00  0.00000000E+00
+               X               Y               Z     Kin. Energy              Vx              Vy              Vz
+  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00  0.00000000E+00
+
+
+PART ELEMENT/MATERIAL PARAMETER REVIEW:
+-----------------------
+
+Part id,name:         1 ELASTIC_STRIP_1        Mat type:   1 Elm type: SHELL-4nodes           
+----
+  Ishell  Ismstr   Idril     NPT    ITHK   IPLAS    IPOS
+      24       4       2       0       0       0       0
+--      hm        hf        hr        dm        dn
+    0.0000    0.0000    0.0000    0.0150    0.0150
+
+Part id,name:         2 ELASTIC_STRIP_2        Mat type:   1 Elm type: SHELL-4nodes           
+----
+  Ishell  Ismstr   Idril     NPT    ITHK   IPLAS    IPOS
+      24       4       2       0       0       0       0
+--      hm        hf        hr        dm        dn
+    0.0000    0.0000    0.0000    0.0150    0.0150
+
+Part id,name:        10 WEIGHTED_SEAM_0                      Elm type: SPRING                 
+----
+Spring type:    8
+
+Part id,name:        11 WEIGHTED_SEAM_1                      Elm type: SPRING                 
+----
+Spring type:    8
+
+Part id,name:        12 WEIGHTED_SEAM_2                      Elm type: SPRING                 
+----
+Spring type:    8
+
+Part id,name:        13 WEIGHTED_SEAM_3                      Elm type: SPRING                 
+----
+Spring type:    8
+
+Part id,name:        14 WEIGHTED_SEAM_4                      Elm type: SPRING                 
+----
+Spring type:    8
+
+Part id,name:        15 WEIGHTED_SEAM_5                      Elm type: SPRING                 
+----
+Spring type:    8
+
+Part id,name:        16 WEIGHTED_SEAM_6                      Elm type: SPRING                 
+----
+Spring type:    8
+
+Part id,name:        17 WEIGHTED_SEAM_7                      Elm type: SPRING                 
+----
+Spring type:    8
+
+Part id,name:        18 WEIGHTED_SEAM_8                      Elm type: SPRING                 
+----
+Spring type:    8
+
+Part id,name:        19 WEIGHTED_SEAM_9                      Elm type: SPRING                 
+----
+Spring type:    8
+
+Part id,name:        20 WEIGHTED_SEAM_10                     Elm type: SPRING                 
+----
+Spring type:    8
+
+Part id,name:        21 WEIGHTED_SEAM_11                     Elm type: SPRING                 
+----
+Spring type:    8
+
+
+
+     TOTAL MASS AND MASS CENTER
+     --------------------------
+                     MASS                    X                    Y                    Z
+
+       13.71600000000       4.000000000000     -3.0353866596270E-17   0.000000000000    
+
+
+     TOTAL INERTIA
+     -------------
+                      IXX                  IYY                  IZZ                  IXY                  IYZ                  IZX
+       764.2058325620       7124.630727273       7874.237332562     -1.6653345369377E-15   0.000000000000       0.000000000000    
+
+
+
+      ADDED NODAL NON-STRUCTURAL MASSES 
+     -----------------------------------
+
+      TOTAL ADDED MASS =   0.000000000000    
+
+
+
+
+     TOTAL ADDED NON-STRUCTURAL INERTIA
+     ------------------
+
+      TOTAL ADDED INERTIA =   0.000000000000    
+
+
+
+         SHELL ELEMENTS TIME STEP
+         ------------------------
+
+      TIME STEP       ELEMENT NUMBER
+  4.1093665216617E-04            178
+  4.1093665216617E-04              2
+  4.1093665216617E-04            156
+  4.1093665216617E-04             68
+  4.1093665216617E-04            164
+  4.1093665216617E-04            307
+  4.1093665216617E-04             65
+  4.1093665216617E-04            167
+  4.1093665216617E-04            175
+  4.1093665216617E-04             57
+  4.1093665216617E-04            153
+  4.1093665216617E-04            186
+  4.1093665216617E-04             54
+  4.1093665216617E-04            189
+  4.1093665216617E-04            197
+  4.1093665216617E-04            299
+  4.1093665216617E-04            200
+  4.1093665216617E-04             46
+  4.1093665216617E-04            310
+  4.1093665216617E-04             76
+
+         SPRING ELEMENTS TIME STEP
+         ------------------------
+
+      TIME STEP       ELEMENT NUMBER
+   0.000000000000                360
+   0.000000000000                354
+   0.000000000000                363
+   0.000000000000                362
+   0.000000000000                361
+   0.000000000000                358
+   0.000000000000                359
+   0.000000000000                353
+   0.000000000000                357
+   0.000000000000                356
+   0.000000000000                355
+   0.000000000000                364
+
+
+         NODAL TIME STEP (estimation)
+         ---------------
+
+      TIME STEP       NODE NUMBER
+  3.6280205273045E-04            195
+  3.6280205273045E-04            202
+  3.6280205273096E-04            201
+  3.6280205273096E-04            196
+  3.6280205273096E-04            197
+  3.6280205273096E-04            203
+  3.6280205273096E-04            194
+  3.6280205273096E-04            200
+  3.6280205273148E-04            198
+  3.6280205273148E-04            199
+  3.6280205273206E-04            193
+  3.6280205273206E-04            204
+  3.7062393950118E-04            214
+  3.7062393950118E-04            207
+  3.7062393950171E-04            208
+  3.7062393950171E-04            213
+  3.7062393950171E-04            206
+  3.7062393950171E-04            212
+  3.7062393950171E-04            215
+  3.7062393950171E-04            209
+  3.7062393950223E-04            211
+  3.7062393950223E-04            210
+  3.7062393950282E-04            216
+  3.7062393950282E-04            205
+  3.8791636390979E-04            334
+  3.8791636390979E-04            315
+  3.8791636390979E-04            327
+  3.8791636390979E-04            310
+  3.8791636390979E-04            375
+  3.8791636390979E-04            291
+  3.8791636390979E-04            339
+  3.8791636390979E-04            279
+  3.8791636390979E-04            274
+  3.8791636390979E-04            363
+  3.8791636390979E-04            370
+  3.8791636390979E-04            351
+  3.8791636390979E-04            286
+  3.8791636390979E-04            346
+  3.8791636390979E-04            298
+  3.8791636390979E-04            303
+  3.8791636390979E-04            358
+  3.8791636390979E-04            322
+  3.8791636390979E-04            262
+  3.8791636390979E-04            255
+  3.8791636390979E-04            250
+  3.8791636390979E-04            406
+  3.8791636390979E-04            226
+  3.8791636390979E-04            267
+  3.8791636390979E-04            243
+  3.8791636390979E-04            231
+  3.8791636390979E-04            399
+  3.8791636390979E-04            219
+  3.8791636390979E-04            394
+  3.8791636390979E-04            238
+  3.8791636390979E-04            382
+  3.8791636390979E-04            387
+  3.8791636390979E-04            171
+  3.8791636390979E-04            154
+  3.8791636390979E-04             75
+  3.8791636390979E-04            147
+  3.8791636390979E-04            166
+  3.8791636390979E-04            106
+  3.8791636390979E-04            135
+  3.8791636390979E-04             94
+  3.8791636390979E-04            142
+  3.8791636390979E-04             82
+  3.8791636390979E-04             99
+  3.8791636390979E-04            159
+  3.8791636390979E-04             10
+  3.8791636390979E-04             87
+  3.8791636390979E-04            130
+  3.8791636390979E-04            178
+  3.8791636390979E-04            118
+  3.8791636390979E-04             70
+  3.8791636390979E-04             46
+  3.8791636390979E-04             34
+  3.8791636390979E-04             27
+  3.8791636390979E-04             51
+  3.8791636390979E-04             22
+  3.8791636390979E-04            123
+  3.8791636390979E-04             58
+  3.8791636390979E-04            190
+  3.8791636390979E-04            183
+  3.8791636390979E-04             39
+  3.8791636390979E-04              3
+  3.8791636390979E-04             15
+  3.8791636390979E-04             63
+  3.8791636390979E-04            111
+  3.8791636391035E-04            244
+  3.8791636391035E-04            141
+  3.8791636391035E-04            316
+  3.8791636391035E-04            321
+  3.8791636391035E-04            136
+  3.8791636391035E-04            309
+  3.8791636391035E-04            249
+  3.8791636391035E-04            129
+  3.8791636391035E-04            165
+  3.8791636391035E-04            304
+  3.8791636391035E-04            280
+  3.8791636391035E-04            153
+
+
+         NODAL TIME STEP DISTRIBUTION 
+         ----------------------------
+
+
+            % OF NODES
+                   ^
+                   |                                                            
+          78.431 --|                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+                   |                                                        #   
+           0.000 --|#  #   #  #  #   #  #  #  #   #  #  #  #   #  #  #   #  # # 
+                    -------------------------------------------------------------> NODAL TIME STEP
+                    |                                                          |
+                3.628E-04                                                  3.879E-04
+  
+  
+
+
+     INITIAL ADDED MASS ESTIMATION for /DT/NODA/CST
+     ----------------------------------------------
+
+
+            DM/M - at first cycle - scaling factor = 0.9
+                   ^
+                   |                                                            
+           0.100 --|                                                          * 
+                   |                                                            
+                   |                                                      *     
+                   |                                                   *        
+                   |                                                *           
+                   |                                             *              
+                   |                                                            
+                   |                                          *                 
+                   |                                       *                    
+                   |                                    *                       
+                   |                                 *                          
+                   |                              *                             
+                   |                                                            
+                   |                           *                                
+                   |                        *                                   
+                   |                     *                                      
+                   |                 *                                          
+                   |              *                                             
+                   |                                                            
+                   |           *                                                
+                   |        *                                                   
+                   |     *                                                      
+           0.005 --|* *                                                         
+                    -------------------------------------------------------------> TARGET TIME STEP
+                    |                                                          |
+                3.494E-04                                                  3.655E-04
+  
+  
+              DM/M at first cycle          |  Target time step - scaling factor = 0.9  |  Target time step - scaling factor = 0.67
+    -------------------------------------  |  ---------------------------------------  |  ---------------------------------------
+                 1.000E-02                 |                 3.502E-04                 |                 2.607E-04
+                 2.000E-02                 |                 3.520E-04                 |                 2.620E-04
+                 3.000E-02                 |                 3.537E-04                 |                 2.633E-04
+                 4.000E-02                 |                 3.554E-04                 |                 2.646E-04
+                 5.000E-02                 |                 3.571E-04                 |                 2.658E-04
+
+
+    WARNING : These added mass estimations are valid at first cycle only.
+    Because of element deformation or contacts the added mass can increase during the run
+
+
+ SUMMARY OF POSSIBLE INCOMPATIBLE KINEMATIC CONDITIONS :
+ -----------------------------------------------------
+                                  
+ NO TRUE INCOMPATIBLE KINEMATIC CONDITION
+
+ 
+    STARTER STORAGE 
+    --------------- 
+ 
+    STARTER MEMORY USAGE        164 MB
+
+
+     LOCAL ENGINE STORAGE EVALUATION FOR SPMD PROCESSOR     1
+     --------------------------------------------------------
+        RESTART FILE SIZE         0 MB
+ 
+
+     RESTART FILES I02C_DYN_LOW_H025_R3_0000 WRITTEN
+     -------------
+
+  
+------------------------------------------------------------------------
+  
+                   ** COMPUTE TIME INFORMATION **
+  
+ EXECUTION STARTED      :      2026/09/13  09:16:39
+ EXECUTION COMPLETED    :      2026/09/13  09:16:40
+  
+ ELAPSED TIME...........=          0.63 s
+                               00:00:00
+  
+------------------------------------------------------------------------
+
+
+
+     TERMINATION WITH WARNING           
+     ------------------                                                                  
+
+
+------------------------------------------------------------------------------------------------------------------------
+|            ERROR(S) SUMMARY                               |             WARNING(S) SUMMARY                           |
+------------------------------------------------------------------------------------------------------------------------
+|                                                           |                                                          |
+|                                                           |  --- PROPERTIES                            12 WARNING(S) |
+|                                                           |       |                                                  |
+|                                                           |       |                                                  |
+|                                                           |       |---    12 WARNING ID :          445               |
+|                                                           |       | ** WARNING IN SPRING PROPERTY SET (MASS)         |
+|                                                           |       |                                                  |
+|                                                           |                                                          |
+|                                                           |                                                          |
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+              0 ERROR(S)            
+             12 WARNING(S)          
+
+

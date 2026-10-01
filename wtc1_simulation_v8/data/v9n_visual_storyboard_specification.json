@@ -1,0 +1,462 @@
+{
+  "iteration": "V9N",
+  "dataset": {
+    "name": "WTC 1 visualization-only 3D storyboard specification",
+    "version": "9.14.0",
+    "status": "PREDECLARED_CACHED_STORYBOARD_SPECIFICATION_ONLY_NO_BLENDER_NO_SOLVER",
+    "random_seed": 9122001,
+    "deterministic": true,
+    "scope": "Preserve V8U through V9M, use only the cached V8S kinematic envelope and V9M qualification closure, and specify a labelled three-branch 3D storyboard. V9N does not execute Blender or a solver, does not animate post-contact physics, does not acquire sources, and does not predict force, impulse, rupture, debris, fuel dispersion, facade damage or tower response."
+  },
+  "evidence_policy": {
+    "observed_fact": "A field read directly from the frozen V8S configuration or results, or from the validated V9M closure result.",
+    "official_model_result": "An official NIST value already transcribed in V8S and displayed only with its official-model label.",
+    "local_archive_claim": "None introduced; the source archive is not read or rescanned.",
+    "model_hypothesis": "Constant-velocity rigid-silhouette motion before first contact, camera choices, colors, durations and the storyboard layout.",
+    "derived_result": "Pre-contact offsets calculated from frozen V8S velocity components and negative event times, plus the shot list and coverage checks.",
+    "contradiction_or_unknown": "Any post-contact force, deformation, failure, trajectory or structural response, all of which remain outside the storyboard."
+  },
+  "cached_inputs": [
+    {
+      "id": "V8S_CONFIGURATION",
+      "path": "wtc1_simulation_v8/data/v8s_wtc1_aircraft_impact_replay.json",
+      "role": "Frozen official transcriptions, provenance, geometry, uncertainty cases and source warnings."
+    },
+    {
+      "id": "V8S_RESULTS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json",
+      "role": "Frozen less-severe, base and more-severe derived kinematic envelopes."
+    },
+    {
+      "id": "V9M_RESULTS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json",
+      "role": "Qualification boundary and two-track closure."
+    }
+  ],
+  "regression_files": {
+    "wtc1_simulation_v8/data/v8s_wtc1_aircraft_impact_replay.json": "dc7ba078d6b1936a2b193742c97204c699e7ec618ef2af557dd9cc9ebd845c1d",
+    "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json": "40bd3c0c9bc4cad3326f171f885702dc47a020e57f32c788e7276097c8b9c318",
+    "wtc1_simulation_v8/data/v9m_impact_branch_closure.json": "12bacbab97e22af0fdb9faa2669eac29bc3a8e73379f786c6d76fa7bcc95276e",
+    "wtc1_simulation_v8/scripts/run_v9m_impact_branch_closure.py": "cdffb5407a7971a94d64c9a68583a749d1cf85a1c8b8ed0f15b10b867094551a",
+    "wtc1_simulation_v8/output/v9m_impact_qualification_matrix.json": "3c8501d1ac2f69a04001cbbe63315167d800e6c771dbcaeced48ad06f5c06432",
+    "wtc1_simulation_v8/output/v9m_impact_future_tracks.json": "aebff759b791447649a23e06704bd8f127a66b4bbc264175ed2b656fb3a8fa9d",
+    "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json": "2d403c87c558300f2b4460312da549b46e16dbd92d6eac34b0f1b51f5979eb7d",
+    "wtc1_simulation_v8/output/rapport_wtc1_v9m_cloture_branche_impact.md": "7a24d0fc6e46547b1690ba416524b145d25fc6cf2854f2f119c010118f7910a6"
+  },
+  "regression_metrics": [
+    {
+      "results": "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json",
+      "path": "comparison_to_reserved_official_outputs.tail_clearance.passed",
+      "comparator": "equals",
+      "expected": true
+    },
+    {
+      "results": "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json",
+      "path": "readiness.gates.global_aircraft_impact_replay_ready",
+      "comparator": "equals",
+      "expected": false
+    },
+    {
+      "results": "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json",
+      "path": "iteration_execution_validated",
+      "comparator": "equals",
+      "expected": true
+    },
+    {
+      "results": "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json",
+      "path": "physical_track_reopening_authorized",
+      "comparator": "equals",
+      "expected": false
+    },
+    {
+      "results": "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json",
+      "path": "physical_facade_impact_qualification_passed",
+      "comparator": "equals",
+      "expected": false
+    },
+    {
+      "results": "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json",
+      "path": "runtime.blender_executed",
+      "comparator": "equals",
+      "expected": false
+    }
+  ],
+  "storyboard_policy": {
+    "language": "fr",
+    "presentation_duration_s": 75,
+    "nominal_frame_rate_fps": 24,
+    "nominal_resolution_px": [
+      1920,
+      1080
+    ],
+    "event_time_origin": "t=0 is the first nose-contact reference at the north facade plane",
+    "maximum_animated_event_time_s": 0.0,
+    "post_contact_aircraft_motion_authorized": false,
+    "post_contact_physics_card_only": true,
+    "damage_animation_authorized": false,
+    "debris_animation_authorized": false,
+    "fuel_animation_authorized": false,
+    "fire_animation_authorized": false,
+    "collapse_animation_authorized": false,
+    "force_or_impulse_curve_authorized": false,
+    "permanent_banner": "VISUALISATION ILLUSTRATIVE — NON VALIDÉE PHYSIQUEMENT",
+    "contact_boundary_banner": "ARRÊT AU PREMIER CONTACT — AUCUNE DYNAMIQUE POST-CONTACT CALCULÉE",
+    "source_archive_access": "none",
+    "Blender_execution": "none_in_V9N"
+  },
+  "branch_style": {
+    "less_severe": {
+      "label": "Enveloppe basse",
+      "color_hex": "#3B82F6",
+      "line_style": "solid"
+    },
+    "base": {
+      "label": "Cas de base",
+      "color_hex": "#F59E0B",
+      "line_style": "solid"
+    },
+    "more_severe": {
+      "label": "Enveloppe haute",
+      "color_hex": "#EF4444",
+      "line_style": "solid"
+    }
+  },
+  "precontact_event_times_s": [
+    -0.5,
+    -0.25,
+    -0.1,
+    0.0
+  ],
+  "camera_definitions": [
+    {
+      "id": "CAM_DATA_CARD",
+      "type": "graphic_card",
+      "purpose": "Titles, provenance, limitations and timing-scale cards without 3D motion."
+    },
+    {
+      "id": "CAM_NORTH_ORTHO",
+      "type": "orthographic_north_elevation",
+      "purpose": "Show tower width, floor references, branch labels and the contact plane without perspective distortion."
+    },
+    {
+      "id": "CAM_NORTHWEST_OBLIQUE",
+      "type": "exterior_oblique",
+      "purpose": "Show the pre-contact approach direction and the tower envelope only."
+    },
+    {
+      "id": "CAM_SIDE_PROFILE_SCHEMATIC",
+      "type": "orthographic_side_profile",
+      "purpose": "Show vertical approach angle and rigid-silhouette pre-contact offsets; no penetration view is permitted."
+    },
+    {
+      "id": "CAM_THREE_BRANCH_SPLIT",
+      "type": "three_panel_comparison",
+      "purpose": "Compare the three frozen V8S branches at identical negative event times."
+    }
+  ],
+  "global_overlay_requirements": [
+    {
+      "id": "O01_NON_VALIDATION_BANNER",
+      "placement": "bottom_safe_area",
+      "content": "VISUALISATION ILLUSTRATIVE — NON VALIDÉE PHYSIQUEMENT",
+      "required_every_scene": true
+    },
+    {
+      "id": "O02_BRANCH_AND_TIME",
+      "placement": "top_left",
+      "content": "Branch label and event time relative to first nose contact",
+      "required_every_3d_scene": true
+    },
+    {
+      "id": "O03_EPISTEMIC_LABEL",
+      "placement": "top_right",
+      "content": "FACT / OFFICIAL MODEL / MODEL ASSUMPTION / DERIVED / UNKNOWN",
+      "required_every_scene": true
+    },
+    {
+      "id": "O04_SOURCE_POINTER",
+      "placement": "lower_left_above_banner",
+      "content": "V8S field path or source/page pointer",
+      "required_every_data_scene": true
+    },
+    {
+      "id": "O05_CONTACT_STOP",
+      "placement": "center",
+      "content": "ARRÊT AU PREMIER CONTACT — AUCUNE DYNAMIQUE POST-CONTACT CALCULÉE",
+      "required_at_or_after_contact": true
+    }
+  ],
+  "provenance_items": [
+    {
+      "id": "P01_AIRCRAFT_GEOMETRY",
+      "configuration_path": "aircraft_geometry",
+      "epistemic_status": "official_fact_transcribed_in_V8S",
+      "source_pointer": "NCSTAR 1-2B v1 Figure 7-6, printed page 164; wingtip deflection printed page 69",
+      "warning": "Wingtip deflection was estimated partly from the observed impact pattern and is not independent damage validation."
+    },
+    {
+      "id": "P02_VIDEO_KINEMATICS",
+      "configuration_path": "video_kinematics",
+      "epistemic_status": "official_video_analysis_transcribed_in_V8S",
+      "source_pointer": "NCSTAR 1-2B v1 Table 7-3, printed page 166",
+      "warning": "Video-derived speed and trajectory ranges do not determine post-contact response."
+    },
+    {
+      "id": "P03_THREE_GLOBAL_CASES",
+      "configuration_path": "nist_global_input_cases",
+      "epistemic_status": "official_model_inputs_transcribed_in_V8S",
+      "source_pointer": "NCSTAR 1-2B v2 Tables 9-2 and 9-7, printed pages 198 and 257",
+      "warning": "The three branches are official model input envelopes, not probabilities."
+    },
+    {
+      "id": "P04_DAMAGE_REFINED_LOCATION",
+      "configuration_path": "damage_refined_kinematics",
+      "epistemic_status": "official_model_setup_not_independent_validation",
+      "source_pointer": "NCSTAR 1-2B v1 Tables 7-4 and 7-5, printed page 170",
+      "warning": "Orientation and position were refined against observed facade damage; use only as a labelled reproduction input."
+    },
+    {
+      "id": "P05_TOWER_GEOMETRY",
+      "configuration_path": "tower_geometry",
+      "epistemic_status": "mixed_official_and_reconstructed_geometry",
+      "source_pointer": "wtc1_3d_v4/data/wtc1_parameters.json via frozen V8S configuration",
+      "warning": "Facade plate schedules, welds, bolts, windows, contents and exact local connections are incomplete."
+    },
+    {
+      "id": "P06_DERIVED_PRECONTACT_OFFSETS",
+      "results_path": "derived_results.cases.*.derived_kinematics",
+      "epistemic_status": "derived_constant_velocity_precontact_geometry",
+      "source_pointer": "V8S results",
+      "warning": "Valid only for negative event times up to first contact; no penetration path is produced."
+    },
+    {
+      "id": "P07_TAIL_CLEARANCE_SCALE",
+      "results_path": "comparison_to_reserved_official_outputs.tail_clearance",
+      "epistemic_status": "derived_timing_scale_compared_with_official_model_output",
+      "source_pointer": "V8S result and NCSTAR 1-2B v2 Chapter 9",
+      "warning": "Display as a timing card only, never as post-contact aircraft motion."
+    },
+    {
+      "id": "P08_PHYSICAL_QUALIFICATION_BOUNDARY",
+      "results_path": "V9M physical qualification booleans",
+      "epistemic_status": "derived_project_decision",
+      "source_pointer": "V9M results and qualification matrix",
+      "warning": "Facade impact, projectile rupture and global response remain physically unqualified."
+    }
+  ],
+  "shot_templates": [
+    {
+      "id": "S01_TITLE_AND_SCOPE",
+      "presentation_start_s": 0,
+      "presentation_end_s": 5,
+      "camera_id": "CAM_DATA_CARD",
+      "mode": "data_card",
+      "event_time": null,
+      "purpose": "State the visualization-only scope and permanent non-validation banner.",
+      "required_provenance_ids": [
+        "P08_PHYSICAL_QUALIFICATION_BOUNDARY"
+      ]
+    },
+    {
+      "id": "S02_PROVENANCE_MAP",
+      "presentation_start_s": 5,
+      "presentation_end_s": 12,
+      "camera_id": "CAM_DATA_CARD",
+      "mode": "data_card",
+      "event_time": null,
+      "purpose": "Separate official transcriptions, derived pre-contact geometry, assumptions and unknown post-contact physics.",
+      "required_provenance_ids": [
+        "P01_AIRCRAFT_GEOMETRY",
+        "P02_VIDEO_KINEMATICS",
+        "P03_THREE_GLOBAL_CASES",
+        "P05_TOWER_GEOMETRY"
+      ]
+    },
+    {
+      "id": "S03_GEOMETRY_AND_UNCERTAINTY",
+      "presentation_start_s": 12,
+      "presentation_end_s": 20,
+      "camera_id": "CAM_NORTH_ORTHO",
+      "mode": "static_geometry_overlay",
+      "event_time": null,
+      "purpose": "Show tower envelope, north facade plane, floor range and incomplete local-geometry warning.",
+      "required_provenance_ids": [
+        "P04_DAMAGE_REFINED_LOCATION",
+        "P05_TOWER_GEOMETRY"
+      ]
+    },
+    {
+      "id": "S04_THREE_BRANCH_APPROACH",
+      "presentation_start_s": 20,
+      "presentation_end_s": 30,
+      "camera_id": "CAM_THREE_BRANCH_SPLIT",
+      "mode": "precontact_motion",
+      "event_time_range_s": [
+        -0.5,
+        -0.25
+      ],
+      "purpose": "Compare the three constant-velocity pre-contact branches at common negative event times.",
+      "required_provenance_ids": [
+        "P03_THREE_GLOBAL_CASES",
+        "P06_DERIVED_PRECONTACT_OFFSETS"
+      ]
+    },
+    {
+      "id": "S05_LESS_SEVERE_BRANCH",
+      "presentation_start_s": 30,
+      "presentation_end_s": 36,
+      "camera_id": "CAM_SIDE_PROFILE_SCHEMATIC",
+      "mode": "precontact_motion",
+      "branch": "less_severe",
+      "event_time_range_s": [
+        -0.25,
+        0.0
+      ],
+      "purpose": "Show only the low-envelope approach geometry and stop at first contact.",
+      "required_provenance_ids": [
+        "P03_THREE_GLOBAL_CASES",
+        "P06_DERIVED_PRECONTACT_OFFSETS"
+      ]
+    },
+    {
+      "id": "S06_BASE_BRANCH",
+      "presentation_start_s": 36,
+      "presentation_end_s": 42,
+      "camera_id": "CAM_NORTHWEST_OBLIQUE",
+      "mode": "precontact_motion",
+      "branch": "base",
+      "event_time_range_s": [
+        -0.25,
+        0.0
+      ],
+      "purpose": "Show only the base approach geometry and stop at first contact.",
+      "required_provenance_ids": [
+        "P02_VIDEO_KINEMATICS",
+        "P03_THREE_GLOBAL_CASES",
+        "P06_DERIVED_PRECONTACT_OFFSETS"
+      ]
+    },
+    {
+      "id": "S07_MORE_SEVERE_BRANCH",
+      "presentation_start_s": 42,
+      "presentation_end_s": 48,
+      "camera_id": "CAM_SIDE_PROFILE_SCHEMATIC",
+      "mode": "precontact_motion",
+      "branch": "more_severe",
+      "event_time_range_s": [
+        -0.25,
+        0.0
+      ],
+      "purpose": "Show only the high-envelope approach geometry and stop at first contact.",
+      "required_provenance_ids": [
+        "P03_THREE_GLOBAL_CASES",
+        "P06_DERIVED_PRECONTACT_OFFSETS"
+      ]
+    },
+    {
+      "id": "S08_CONTACT_BOUNDARY",
+      "presentation_start_s": 48,
+      "presentation_end_s": 54,
+      "camera_id": "CAM_NORTH_ORTHO",
+      "mode": "frozen_contact_frame",
+      "event_time_s": 0.0,
+      "purpose": "Freeze all branches at the first-contact plane and display the contact-stop banner.",
+      "required_provenance_ids": [
+        "P06_DERIVED_PRECONTACT_OFFSETS",
+        "P08_PHYSICAL_QUALIFICATION_BOUNDARY"
+      ]
+    },
+    {
+      "id": "S09_TIMING_SCALE_CARD",
+      "presentation_start_s": 54,
+      "presentation_end_s": 61,
+      "camera_id": "CAM_DATA_CARD",
+      "mode": "postcontact_data_card_no_motion",
+      "event_time_display_only": true,
+      "purpose": "Display the 0.224811–0.257273 s rigid geometric tail-clearance range as a timing scale only.",
+      "required_provenance_ids": [
+        "P07_TAIL_CLEARANCE_SCALE",
+        "P08_PHYSICAL_QUALIFICATION_BOUNDARY"
+      ]
+    },
+    {
+      "id": "S10_UNQUALIFIED_PHYSICS",
+      "presentation_start_s": 61,
+      "presentation_end_s": 68,
+      "camera_id": "CAM_DATA_CARD",
+      "mode": "data_card",
+      "event_time": null,
+      "purpose": "List rupture, facade impulse, debris, fuel, fire and global response as unknown or unqualified.",
+      "required_provenance_ids": [
+        "P08_PHYSICAL_QUALIFICATION_BOUNDARY"
+      ]
+    },
+    {
+      "id": "S11_TWO_TRACKS_AND_CLOSE",
+      "presentation_start_s": 68,
+      "presentation_end_s": 75,
+      "camera_id": "CAM_DATA_CARD",
+      "mode": "data_card",
+      "event_time": null,
+      "purpose": "Separate the visualization-only track from the dormant physical-solver track.",
+      "required_provenance_ids": [
+        "P08_PHYSICAL_QUALIFICATION_BOUNDARY"
+      ]
+    }
+  ],
+  "forbidden_visual_claims": [
+    "an intact aircraft moving beyond the north-facade contact plane",
+    "predicted facade damage or column severing",
+    "predicted projectile, engine, wing or fuselage rupture",
+    "predicted debris or fragment trajectories",
+    "predicted fuel dispersion, ignition, fire or smoke",
+    "predicted force, impulse, pressure or energy transfer histories",
+    "predicted core damage, post-impact stability, collapse initiation or propagation",
+    "explosive, thermite or directed-energy mechanism inference",
+    "photorealism presented as physical accuracy"
+  ],
+  "expected_counts": {
+    "branch_count": 3,
+    "precontact_event_time_count": 4,
+    "camera_count": 5,
+    "overlay_requirement_count": 5,
+    "provenance_item_count": 8,
+    "shot_count": 11,
+    "precontact_motion_shot_count": 4,
+    "frozen_contact_shot_count": 1,
+    "postcontact_motion_shot_count": 0,
+    "forbidden_visual_claim_count": 9
+  },
+  "scope_gates": {
+    "new_source_acquisition_authorized": false,
+    "web_search_authorized": false,
+    "source_archive_read_authorized": false,
+    "source_archive_rescan_authorized": false,
+    "solver_execution_authorized": false,
+    "material_fit_authorized": false,
+    "failure_law_fit_authorized": false,
+    "generic_material_substitution_authorized": false,
+    "projectile_rupture_authorized": false,
+    "facade_impact_authorized": false,
+    "whole_aircraft_impact_authorized": false,
+    "global_tower_solver_authorized": false,
+    "thermal_solver_authorized": false,
+    "blender_execution_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "postcontact_animation_authorized": false,
+    "explosive_or_thermite_inference_authorized": false,
+    "foia_request_authorized": false,
+    "external_contact_authorized": false
+  },
+  "next_iteration": {
+    "id": "V9O",
+    "objective": "Implement the V9N visualization-only specification as a new bounded Blender scene and low-resolution proof sheet without modifying the existing master file. Animate constant-velocity rigid silhouettes only for negative event times, freeze at first contact, replace every post-contact interval with labelled data cards, and keep the permanent non-physical-validation banner. Do not enable rigid-body, collision, fracture, particle, fuel, fire, structural or solver-driven physics."
+  },
+  "output": {
+    "storyboard_specification": "wtc1_simulation_v8/output/v9n_storyboard_specification.json",
+    "provenance_matrix": "wtc1_simulation_v8/output/v9n_storyboard_provenance_matrix.json",
+    "safety_checklist": "wtc1_simulation_v8/output/v9n_storyboard_safety_checklist.json",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v9n_storyboard_illustratif.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v9n_storyboard_illustratif.md"
+  }
+}

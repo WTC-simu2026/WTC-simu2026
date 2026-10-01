@@ -1,0 +1,47 @@
+{
+  "iteration": "V10Y",
+  "created_at": "2026-09-05T10:00:16+02:00",
+  "decision": "PASS_EXPLORATORY_MODEL_INTEGRITY_NOT_PHYSICAL_VALIDATION",
+  "criteria": {
+    "regression_hashes_pass": true,
+    "protected_master_unchanged": true,
+    "named_scenario_count": true,
+    "sensitivity_grid_case_count": true,
+    "all_named_scenarios_cold_stable_immediately_after_impact": true,
+    "all_interpolated_temperatures_inside_declared_envelopes": true,
+    "all_outcome_labels_from_vocabulary": true,
+    "energy_ledger_residual": true,
+    "deterministic_replay_exact": true,
+    "aircraft_energy_not_reinjected": true,
+    "grid_fraction_not_historical_probability": true,
+    "documentary_requirement_closure_count_zero": true,
+    "scientific_validation_claim_count_zero": true
+  },
+  "metrics": {
+    "named_scenario_count": 3,
+    "sensitivity_grid_case_count": 729,
+    "reduced_order_solver_run_count": 732,
+    "outcome_counts_in_grid": {
+      "GLOBAL_PROGRESSION_TO_GROUND_IN_REDUCED_MODEL": 288,
+      "INITIATED_THEN_ARRESTED": 144,
+      "NO_INITIATION_WITHIN_THERMAL_WINDOW": 297
+    },
+    "outcome_fractions_in_grid_not_probabilities": {
+      "GLOBAL_PROGRESSION_TO_GROUND_IN_REDUCED_MODEL": 0.3950617283950617,
+      "INITIATED_THEN_ARRESTED": 0.19753086419753085,
+      "NO_INITIATION_WITHIN_THERMAL_WINDOW": 0.4074074074074074
+    },
+    "maximum_normalized_energy_residual": 1.0759944224849664e-16,
+    "deterministic_digest": "2be516f5142091e372fae2aff17726424da4e8729781cea2a989060c49a0e5b0",
+    "deterministic_replay_digest": "2be516f5142091e372fae2aff17726424da4e8729781cea2a989060c49a0e5b0",
+    "documentary_requirement_closure_count": 0,
+    "scientific_validation_claim_count": 0
+  },
+  "allowed_claim": "Within this declared reduced-order hypothesis space, the model can report whether impact-selected damage plus localized fire weakening allows initiation and whether gravity then progresses or arrests the crush front.",
+  "forbidden_claims": [
+    "A grid fraction is the probability that WTC 1 collapsed or would collapse.",
+    "A progressing scenario proves the historical collapse mechanism.",
+    "A non-initiating or arrested scenario disproves aircraft-plus-fire causation.",
+    "The model is a complete three-dimensional finite-element reconstruction."
+  ]
+}

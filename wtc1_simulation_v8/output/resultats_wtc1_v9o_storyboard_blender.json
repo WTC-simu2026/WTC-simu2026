@@ -1,0 +1,638 @@
+{
+  "iteration": "V9O",
+  "validation_status": "PASS",
+  "iteration_execution_validated": true,
+  "generated_at_local": "2026-08-28T17:50:37.866147+02:00",
+  "runtime": {
+    "python": "3.14.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "random_seed_declared": 9122001,
+    "random_draw_used": false,
+    "source_archive_read": false,
+    "source_archive_rescanned": false,
+    "network_access_used": false,
+    "external_contact_made": false,
+    "foia_request_sent": false,
+    "structural_solver_executed": false,
+    "blender_visualization_executed": true,
+    "blender_physics_executed": false
+  },
+  "configuration": {
+    "path": "wtc1_simulation_v8/data/v9o_blender_storyboard_preview.json",
+    "sha256": "42a3cd28bffbfaf38cf32794d92d38a2382a4942cd9c4d1e6f4b0005e5733605"
+  },
+  "scripts": {
+    "builder": {
+      "path": "wtc1_3d_v4/scripts/build_v9o_storyboard_preview.py",
+      "sha256": "1db7b882453be38cf3957bd42e5272e8c2d1f72ff806256adbd3f56b266ceb5f"
+    },
+    "blender_internal_audit": {
+      "path": "wtc1_3d_v4/scripts/audit_v9o_storyboard_preview.py",
+      "sha256": "becbef537ce3676b7f41261d6d45ea4f567e95ede31a640c1c91bec599653c88"
+    },
+    "report_audit": {
+      "path": "wtc1_simulation_v8/scripts/run_v9o_blender_storyboard_audit.py",
+      "sha256": "f015179c8d1fd63a0f0dd3e3422b82aaab1ca3a0919695aaf9bebe3ff7e63e3b"
+    }
+  },
+  "regression": {
+    "files": {
+      "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend": {
+        "exists": true,
+        "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1",
+        "actual_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1",
+        "passed": true
+      },
+      "wtc1_3d_v4/output/model_manifest.json": {
+        "exists": true,
+        "expected_sha256": "55b7d1c315c0c9ab06d70481153d32c9a401f6ee7efe7480b3882edb393d4b9d",
+        "actual_sha256": "55b7d1c315c0c9ab06d70481153d32c9a401f6ee7efe7480b3882edb393d4b9d",
+        "passed": true
+      },
+      "wtc1_3d_v4/data/wtc1_parameters.json": {
+        "exists": true,
+        "expected_sha256": "43b351dc434cafcc49436712d74517cb8160e35c72b6d843401675674715bc7f",
+        "actual_sha256": "43b351dc434cafcc49436712d74517cb8160e35c72b6d843401675674715bc7f",
+        "passed": true
+      },
+      "wtc1_simulation_v8/data/v9n_visual_storyboard_specification.json": {
+        "exists": true,
+        "expected_sha256": "37ec278fc9acd1b92467605f294477310e5deb27e6a951630bc5de1e24ec4493",
+        "actual_sha256": "37ec278fc9acd1b92467605f294477310e5deb27e6a951630bc5de1e24ec4493",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/run_v9n_visual_storyboard_specification.py": {
+        "exists": true,
+        "expected_sha256": "64979ff1443b05c499814bb4d4f2bedbd881dc6007a143c0fd7613abf81149bc",
+        "actual_sha256": "64979ff1443b05c499814bb4d4f2bedbd881dc6007a143c0fd7613abf81149bc",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9n_storyboard_specification.json": {
+        "exists": true,
+        "expected_sha256": "797a0614caa81510d45a5b00eed205944cf5b96213e56af7e96d48a1dfed3ede",
+        "actual_sha256": "797a0614caa81510d45a5b00eed205944cf5b96213e56af7e96d48a1dfed3ede",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9n_storyboard_provenance_matrix.json": {
+        "exists": true,
+        "expected_sha256": "cbe4db2a9c86ef83d6379705d6c2eed3822904bf509baeeeead5023aebfbd0e2",
+        "actual_sha256": "cbe4db2a9c86ef83d6379705d6c2eed3822904bf509baeeeead5023aebfbd0e2",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9n_storyboard_safety_checklist.json": {
+        "exists": true,
+        "expected_sha256": "53dd3fd6feda3bb2c73517d86cdffdac721a25354de24a4917c3633989d984a0",
+        "actual_sha256": "53dd3fd6feda3bb2c73517d86cdffdac721a25354de24a4917c3633989d984a0",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v9n_storyboard_illustratif.json": {
+        "exists": true,
+        "expected_sha256": "32619efc060084e8c99c98cb3978ac8166579a9f705185f59892de52c17ebd71",
+        "actual_sha256": "32619efc060084e8c99c98cb3978ac8166579a9f705185f59892de52c17ebd71",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/rapport_wtc1_v9n_storyboard_illustratif.md": {
+        "exists": true,
+        "expected_sha256": "79d0a887652f8af744786bd76ecc40c13d0ce4d1e785fa5dc6d698cf4801fbf7",
+        "actual_sha256": "79d0a887652f8af744786bd76ecc40c13d0ce4d1e785fa5dc6d698cf4801fbf7",
+        "passed": true
+      }
+    },
+    "metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9n_storyboard_illustratif.json",
+        "path": "iteration_execution_validated",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9n_storyboard_illustratif.json",
+        "path": "storyboard_shot_count",
+        "expected": 11,
+        "actual": 11,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9n_storyboard_illustratif.json",
+        "path": "branch_count",
+        "expected": 3,
+        "actual": 3,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9n_storyboard_illustratif.json",
+        "path": "postcontact_motion_shot_count",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9n_storyboard_illustratif.json",
+        "path": "maximum_animated_event_time_s",
+        "expected": 0.0,
+        "actual": 0.0,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9n_storyboard_illustratif.json",
+        "path": "physical_track_reopening_authorized",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "artifact_checks": {
+    "master": {
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1",
+      "actual_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1",
+      "unchanged": true
+    },
+    "derivative": {
+      "path": "wtc1_3d_v4/output/WTC1_V9O_STORYBOARD_PREVIEW.blend",
+      "exists": true,
+      "size_bytes": 596413,
+      "manifest_sha256": "7594b59876d74255d78c053a80ee5e2df2d605be715e4b74c02ef39fde01a4b5",
+      "actual_sha256": "7594b59876d74255d78c053a80ee5e2df2d605be715e4b74c02ef39fde01a4b5",
+      "new_path": true,
+      "passed": true
+    },
+    "manifest": {
+      "path": "wtc1_3d_v4/output/v9o_visualization_manifest.json",
+      "sha256": "9e93ae8e67d4c16cb03a861a697aac5eacca73e49fd33e57cb4ccebd3c425a5e"
+    },
+    "blender_internal_audit": {
+      "path": "wtc1_3d_v4/output/v9o_blender_internal_audit.json",
+      "sha256": "5f67e68f7a07d0acad2acf1aaaf30b6f61fcb368c3c175212957a85e6bdb0c11"
+    },
+    "renders": {
+      "shots": [
+        {
+          "shot_id": "S01_TITLE_AND_SCOPE",
+          "path": "wtc1_3d_v4/renders/v9o/01_title_scope.png",
+          "exists": true,
+          "expected_sha256": "f87c7ef266d0e83e92b6f05c3b59113430f5b41531ac62863cb8c8af89a88fa0",
+          "actual_sha256": "f87c7ef266d0e83e92b6f05c3b59113430f5b41531ac62863cb8c8af89a88fa0",
+          "expected_dimensions_px": [
+            640,
+            360
+          ],
+          "actual_dimensions_px": [
+            640,
+            360
+          ],
+          "passed": true
+        },
+        {
+          "shot_id": "S02_PROVENANCE_MAP",
+          "path": "wtc1_3d_v4/renders/v9o/02_provenance.png",
+          "exists": true,
+          "expected_sha256": "c4fcc5f6ac7616221055847b8b07e6fbb0d93771b575c07c36350f6da82e8543",
+          "actual_sha256": "c4fcc5f6ac7616221055847b8b07e6fbb0d93771b575c07c36350f6da82e8543",
+          "expected_dimensions_px": [
+            640,
+            360
+          ],
+          "actual_dimensions_px": [
+            640,
+            360
+          ],
+          "passed": true
+        },
+        {
+          "shot_id": "S03_GEOMETRY_AND_UNCERTAINTY",
+          "path": "wtc1_3d_v4/renders/v9o/03_geometry_uncertainty.png",
+          "exists": true,
+          "expected_sha256": "ae27ef24728caf7bb98f77f20fbc481b588ffb738e265537546d4336b7e228a3",
+          "actual_sha256": "ae27ef24728caf7bb98f77f20fbc481b588ffb738e265537546d4336b7e228a3",
+          "expected_dimensions_px": [
+            640,
+            360
+          ],
+          "actual_dimensions_px": [
+            640,
+            360
+          ],
+          "passed": true
+        },
+        {
+          "shot_id": "S04_THREE_BRANCH_APPROACH",
+          "path": "wtc1_3d_v4/renders/v9o/04_three_branches.png",
+          "exists": true,
+          "expected_sha256": "8691a8f622985d9948ba33f083a4f7da64aed91ab8be96bffb3312e60920c064",
+          "actual_sha256": "8691a8f622985d9948ba33f083a4f7da64aed91ab8be96bffb3312e60920c064",
+          "expected_dimensions_px": [
+            640,
+            360
+          ],
+          "actual_dimensions_px": [
+            640,
+            360
+          ],
+          "passed": true
+        },
+        {
+          "shot_id": "S05_LESS_SEVERE_BRANCH",
+          "path": "wtc1_3d_v4/renders/v9o/05_less_severe.png",
+          "exists": true,
+          "expected_sha256": "ce07716ca4b791df5572ce7dbb79ead367bb1e635b12914b992df669095d16c8",
+          "actual_sha256": "ce07716ca4b791df5572ce7dbb79ead367bb1e635b12914b992df669095d16c8",
+          "expected_dimensions_px": [
+            640,
+            360
+          ],
+          "actual_dimensions_px": [
+            640,
+            360
+          ],
+          "passed": true
+        },
+        {
+          "shot_id": "S06_BASE_BRANCH",
+          "path": "wtc1_3d_v4/renders/v9o/06_base.png",
+          "exists": true,
+          "expected_sha256": "188e9b1c0c6e04157dd6731729934e31c4d8dc04cdf2409dcae8e8cc15cb4d2c",
+          "actual_sha256": "188e9b1c0c6e04157dd6731729934e31c4d8dc04cdf2409dcae8e8cc15cb4d2c",
+          "expected_dimensions_px": [
+            640,
+            360
+          ],
+          "actual_dimensions_px": [
+            640,
+            360
+          ],
+          "passed": true
+        },
+        {
+          "shot_id": "S07_MORE_SEVERE_BRANCH",
+          "path": "wtc1_3d_v4/renders/v9o/07_more_severe.png",
+          "exists": true,
+          "expected_sha256": "0baa1b7c486dad90abd971814a1c2eb61bb64542b14643983620f0a2b8f1d4ff",
+          "actual_sha256": "0baa1b7c486dad90abd971814a1c2eb61bb64542b14643983620f0a2b8f1d4ff",
+          "expected_dimensions_px": [
+            640,
+            360
+          ],
+          "actual_dimensions_px": [
+            640,
+            360
+          ],
+          "passed": true
+        },
+        {
+          "shot_id": "S08_CONTACT_BOUNDARY",
+          "path": "wtc1_3d_v4/renders/v9o/08_contact_stop.png",
+          "exists": true,
+          "expected_sha256": "22a1e6265e6f1b30325a35ea49ad339f153458c6f4f78389afd8c4f970e93446",
+          "actual_sha256": "22a1e6265e6f1b30325a35ea49ad339f153458c6f4f78389afd8c4f970e93446",
+          "expected_dimensions_px": [
+            640,
+            360
+          ],
+          "actual_dimensions_px": [
+            640,
+            360
+          ],
+          "passed": true
+        },
+        {
+          "shot_id": "S09_TIMING_SCALE_CARD",
+          "path": "wtc1_3d_v4/renders/v9o/09_timing_scale.png",
+          "exists": true,
+          "expected_sha256": "462cefabb97f8bff58f8acb0154c3df0647a3b822720041570e3cae9fbe890c1",
+          "actual_sha256": "462cefabb97f8bff58f8acb0154c3df0647a3b822720041570e3cae9fbe890c1",
+          "expected_dimensions_px": [
+            640,
+            360
+          ],
+          "actual_dimensions_px": [
+            640,
+            360
+          ],
+          "passed": true
+        },
+        {
+          "shot_id": "S10_UNQUALIFIED_PHYSICS",
+          "path": "wtc1_3d_v4/renders/v9o/10_unknown_physics.png",
+          "exists": true,
+          "expected_sha256": "bd82ce02facde8c3f808dcabcff96cc5bfb23f1ece8fc32f9f98f27774b2263b",
+          "actual_sha256": "bd82ce02facde8c3f808dcabcff96cc5bfb23f1ece8fc32f9f98f27774b2263b",
+          "expected_dimensions_px": [
+            640,
+            360
+          ],
+          "actual_dimensions_px": [
+            640,
+            360
+          ],
+          "passed": true
+        },
+        {
+          "shot_id": "S11_TWO_TRACKS_AND_CLOSE",
+          "path": "wtc1_3d_v4/renders/v9o/11_two_tracks.png",
+          "exists": true,
+          "expected_sha256": "27cd1f506bf2d1f3554c258121e23d7b0bfd801595023e2b9333bbc44891cfd3",
+          "actual_sha256": "27cd1f506bf2d1f3554c258121e23d7b0bfd801595023e2b9333bbc44891cfd3",
+          "expected_dimensions_px": [
+            640,
+            360
+          ],
+          "actual_dimensions_px": [
+            640,
+            360
+          ],
+          "passed": true
+        }
+      ],
+      "proof_sheet": {
+        "path": "wtc1_3d_v4/renders/v9o/wtc1_v9o_proof_sheet.png",
+        "exists": true,
+        "expected_sha256": "1d4dc2d88faa4daa5c518bc9a1f2b30b554cf8ce4465321b55769e1dba910253",
+        "actual_sha256": "1d4dc2d88faa4daa5c518bc9a1f2b30b554cf8ce4465321b55769e1dba910253",
+        "expected_dimensions_px": [
+          1280,
+          540
+        ],
+        "actual_dimensions_px": [
+          1280,
+          540
+        ],
+        "passed": true
+      },
+      "passed": true
+    }
+  },
+  "structural_checks": {
+    "internal_audit_pass": true,
+    "opened_derivative_hash_matches": true,
+    "master_unchanged": true,
+    "required_scenes_present": true,
+    "storyboard_scene_flags_safe": true,
+    "permanent_banner_recorded": true,
+    "timeline_marker_count": true,
+    "new_camera_count": true,
+    "branch_count": true,
+    "keyframe_frames_match": true,
+    "postcontact_freeze_verified": true,
+    "rigid_body_count_zero": true,
+    "particle_count_zero": true,
+    "fluid_count_zero": true,
+    "rigidbody_world_absent": true,
+    "no_solver_or_blender_physics": true,
+    "blender_not_physical_validation": true,
+    "runtime_scope_preserved": true,
+    "expected_blender_version": true
+  },
+  "blender_internal_audit": {
+    "iteration": "V9O",
+    "status": "PASS",
+    "read_only_audit": true,
+    "opened_file": "wtc1_3d_v4/output/WTC1_V9O_STORYBOARD_PREVIEW.blend",
+    "opened_file_sha256": "7594b59876d74255d78c053a80ee5e2df2d605be715e4b74c02ef39fde01a4b5",
+    "master": {
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1",
+      "actual_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1",
+      "unchanged": true
+    },
+    "blender": {
+      "version": "5.2.0 LTS",
+      "version_tuple": [
+        5,
+        2,
+        0
+      ]
+    },
+    "scenes": {
+      "required": [
+        "V9O_STORYBOARD_3D",
+        "V9O_STORYBOARD_CARDS",
+        "V9O_PROOF_SHEET"
+      ],
+      "present": [
+        "V9O_STORYBOARD_3D",
+        "V9O_STORYBOARD_CARDS",
+        "V9O_PROOF_SHEET"
+      ],
+      "storyboard_flags": {
+        "iteration": "V9O",
+        "visualization_only": true,
+        "physical_validation": false,
+        "postcontact_motion_authorized": false,
+        "permanent_banner": "VISUALISATION ILLUSTRATIVE — NON VALIDÉE PHYSIQUEMENT",
+        "source_storyboard": "wtc1_simulation_v8/output/v9n_storyboard_specification.json"
+      },
+      "frame_start": 1,
+      "frame_end": 1800,
+      "fps": 24
+    },
+    "timeline_markers": [
+      {
+        "name": "S01_TITLE_AND_SCOPE",
+        "frame": 1
+      },
+      {
+        "name": "S02_PROVENANCE_MAP",
+        "frame": 121
+      },
+      {
+        "name": "S03_GEOMETRY_AND_UNCERTAINTY",
+        "frame": 289
+      },
+      {
+        "name": "S04_THREE_BRANCH_APPROACH",
+        "frame": 481
+      },
+      {
+        "name": "S05_LESS_SEVERE_BRANCH",
+        "frame": 721
+      },
+      {
+        "name": "S06_BASE_BRANCH",
+        "frame": 865
+      },
+      {
+        "name": "S07_MORE_SEVERE_BRANCH",
+        "frame": 1009
+      },
+      {
+        "name": "S08_CONTACT_BOUNDARY",
+        "frame": 1153
+      },
+      {
+        "name": "S09_TIMING_SCALE_CARD",
+        "frame": 1297
+      },
+      {
+        "name": "S10_UNQUALIFIED_PHYSICS",
+        "frame": 1465
+      },
+      {
+        "name": "S11_TWO_TRACKS_AND_CLOSE",
+        "frame": 1633
+      }
+    ],
+    "cameras": [
+      "CAM_V9O_NORTH",
+      "CAM_V9O_OBLIQUE",
+      "CAM_V9O_SIDE"
+    ],
+    "branches": {
+      "less_severe": {
+        "parent": "V9O_AA11_LESS_SEVERE_ROOT",
+        "expected_location_keyframe_frames": [
+          481,
+          721,
+          865,
+          1801
+        ],
+        "actual_location_keyframe_frames": [
+          481,
+          721,
+          865,
+          1801
+        ],
+        "keyframe_frames_match": true,
+        "contact_frame": 865,
+        "sampled_postcontact_locations_m": {
+          "865": [
+            -0.6096000075340271,
+            31.572200775146484,
+            358.678466796875
+          ],
+          "1332": [
+            -0.6096000075340271,
+            31.572200775146484,
+            358.678466796875
+          ],
+          "1800": [
+            -0.6096000075340271,
+            31.572200775146484,
+            358.678466796875
+          ]
+        },
+        "postcontact_freeze_verified": true
+      },
+      "base": {
+        "parent": "V9O_AA11_BASE_ROOT",
+        "expected_location_keyframe_frames": [
+          481,
+          721,
+          1009,
+          1801
+        ],
+        "actual_location_keyframe_frames": [
+          481,
+          721,
+          1009,
+          1801
+        ],
+        "keyframe_frames_match": true,
+        "contact_frame": 1009,
+        "sampled_postcontact_locations_m": {
+          "1009": [
+            -0.6096000075340271,
+            31.572200775146484,
+            358.678466796875
+          ],
+          "1404": [
+            -0.6096000075340271,
+            31.572200775146484,
+            358.678466796875
+          ],
+          "1800": [
+            -0.6096000075340271,
+            31.572200775146484,
+            358.678466796875
+          ]
+        },
+        "postcontact_freeze_verified": true
+      },
+      "more_severe": {
+        "parent": "V9O_AA11_MORE_SEVERE_ROOT",
+        "expected_location_keyframe_frames": [
+          481,
+          721,
+          1153,
+          1801
+        ],
+        "actual_location_keyframe_frames": [
+          481,
+          721,
+          1153,
+          1801
+        ],
+        "keyframe_frames_match": true,
+        "contact_frame": 1153,
+        "sampled_postcontact_locations_m": {
+          "1153": [
+            -0.6096000075340271,
+            31.572200775146484,
+            358.678466796875
+          ],
+          "1476": [
+            -0.6096000075340271,
+            31.572200775146484,
+            358.678466796875
+          ],
+          "1800": [
+            -0.6096000075340271,
+            31.572200775146484,
+            358.678466796875
+          ]
+        },
+        "postcontact_freeze_verified": true
+      }
+    },
+    "silhouette_object_count": 18,
+    "physics": {
+      "rigid_body_object_count": 0,
+      "rigid_body_objects": [],
+      "particle_system_object_count": 0,
+      "particle_system_objects": [],
+      "fluid_modifier_count": 0,
+      "fluid_modifiers": [],
+      "rigidbody_world_scene_count": 0,
+      "rigidbody_world_scenes": [],
+      "structural_solver_executed": false,
+      "blender_physics_executed": false,
+      "physical_validation": false
+    },
+    "scope": {
+      "source_archive_read": false,
+      "source_archive_rescanned": false,
+      "network_access_used": false,
+      "external_contact_made": false,
+      "foia_request_sent": false
+    }
+  },
+  "storyboard_shot_count": 11,
+  "three_dimensional_shot_count": 6,
+  "card_shot_count": 5,
+  "branch_count": 3,
+  "maximum_animated_event_time_s": 0.0,
+  "postcontact_motion_keyframe_count": 0,
+  "physical_track_reopening_authorized": false,
+  "blender_visualization_is_physical_validation": false,
+  "evidence_separation": {
+    "observed_fact": "A verified cached V9N field, a Blender data-block property, a render-file identity or an audit measurement.",
+    "official_model_result": "A V8S/V9N value already transcribed from NIST and shown with an official-model or official-input label.",
+    "local_archive_claim": "None introduced; the source archive is not read or rescanned.",
+    "model_hypothesis": "The rigid silhouette, camera framing, colors, materials, lighting, graphic layout and constant-velocity pre-contact interpolation.",
+    "derived_result": "Blender keyframe positions, render outputs, contact-sheet layout and visual safety audit.",
+    "contradiction_or_unknown": "All physical post-contact behavior, including force, impulse, damage, rupture, debris, fuel, fire and tower response."
+  },
+  "limitations": [
+    "Rigid schematic silhouettes are not a deformable aircraft model.",
+    "No deformable-deformable contact, rupture or impulse convergence was calculated.",
+    "No damage, debris, fuel, fire, core response or global tower response was calculated.",
+    "The visual result cannot validate impact physics."
+  ],
+  "next_iteration": {
+    "id": "V9P",
+    "objective": "Using the validated V9O derivative only, produce a bounded low-resolution 75-second animatic and verify the permanent non-validation banner, the contact freeze and the absence of post-contact object motion on sampled frames. Keep all Blender physics disabled, do not modify the V4.2 master, and do not present the animatic as a physical simulation."
+  }
+}

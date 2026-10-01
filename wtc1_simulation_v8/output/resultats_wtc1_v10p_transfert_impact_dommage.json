@@ -1,0 +1,147 @@
+{
+  "iteration": "V10P",
+  "generated_at_utc": "2026-09-04T07:20:15Z",
+  "validation_status": "PASS_THREE_TRACK_SOFTWARE_HANDOFF_ONLY",
+  "dataset": {
+    "name": "Three-track impact-to-damage handoff and bounded conservation ledger",
+    "version": "10.16.0",
+    "status": "PREDECLARED_BEFORE_V10P_HANDOFF_CONSTRUCTION",
+    "created_at_local": "2026-09-04T09:20:00+02:00",
+    "random_seed": 1016001,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10O. Construct exactly three epistemically separate impact-to-damage tracks: the V10O zero-input software control, the three cached NIST-model-dependent less/base/more-severe references, and one UNKNOWN_PHYSICAL_DAMAGE branch that preserves kinematic bounds while leaving all member damage, openings, debris and fuel distributions null. Recompute incoming mass, kinetic-energy and momentum ledgers; audit the published base-case fuel/debris accounting and retain every residual. Compare the cached damage transcription to the V8A transformation over Floors 93-99. Do not run an impact solver, infer missing damage, assign physical damage to a structural model, release a physical state downstream, launch Blender or make a historical collapse/non-collapse conclusion."
+  },
+  "configuration": {
+    "path": "wtc1_simulation_v8/data/v10p_three_track_impact_damage_handoff.json",
+    "sha256": "aa0fbeccc92bbba9a5d8fc1a1900f011ecb2a51e2c4822af727da36af960b54e"
+  },
+  "script": {
+    "path": "wtc1_simulation_v8/scripts/run_v10p_three_track_impact_damage_handoff.py",
+    "sha256": "f3017ba60ee009a0c81a5f6900959060791d7f8dbed11052c959b2c9111541c4"
+  },
+  "source_summary": {
+    "cached_input_count": 5,
+    "official_source_hash_only_count": 2
+  },
+  "track_summary": {
+    "track_ids": [
+      "CONTROL_ZERO_INPUT",
+      "OFFICIAL_MODEL_DEPENDENT_REFERENCE",
+      "UNKNOWN_PHYSICAL_DAMAGE"
+    ],
+    "track_count": 3,
+    "official_reference_case_count": 3,
+    "unknown_damage_fields_null": true,
+    "downstream_physical_release_count": 0
+  },
+  "damage_summary": {
+    "case_count": 3,
+    "expanded_segment_count": 89,
+    "case_floor_comparison_count": 21,
+    "case_floor_comparison_pass_count": 21,
+    "reference_removal_segment_count_all_cases": 57,
+    "final_case_b_removal_segment_count": 29,
+    "final_case_b_unique_removed_column_count": 9
+  },
+  "ledger_summary": {
+    "incoming_case_audits": [
+      {
+        "case_id": "less_severe",
+        "status": "PASS_INCOMING_SCALAR_LEDGER_ONLY",
+        "assertions": {
+          "mass_conversion": true,
+          "speed_conversion": true,
+          "scalar_momentum": true,
+          "scalar_kinetic_energy": true
+        },
+        "mass_kg": 122206.8563254,
+        "speed_m_s": 185.07456,
+        "momentum_mn_s": 22.617380163406622,
+        "kinetic_energy_gj": 2.0929508410476045
+      },
+      {
+        "case_id": "base",
+        "status": "PASS_INCOMING_SCALAR_LEDGER_ONLY",
+        "assertions": {
+          "mass_conversion": true,
+          "speed_conversion": true,
+          "scalar_momentum": true,
+          "scalar_kinetic_energy": true
+        },
+        "mass_kg": 128638.796132,
+        "speed_m_s": 198.03871999999998,
+        "momentum_mn_s": 25.475462528322232,
+        "kinetic_energy_gj": 2.5225639952584484
+      },
+      {
+        "case_id": "more_severe",
+        "status": "PASS_INCOMING_SCALAR_LEDGER_ONLY",
+        "assertions": {
+          "mass_conversion": true,
+          "speed_conversion": true,
+          "scalar_momentum": true,
+          "scalar_kinetic_energy": true
+        },
+        "mass_kg": 135070.7359386,
+        "speed_m_s": 211.00288,
+        "momentum_mn_s": 28.500314286764105,
+        "kinetic_energy_gj": 3.0068241977061865
+      }
+    ],
+    "incoming_scalar_ledger_pass_count": 3,
+    "base_component_count": 8,
+    "base_component_weight_sum_lb": 283600.0,
+    "base_component_mass_sum_kg": 128638.796132,
+    "base_component_energy_sum_gj": 2.522563995258449,
+    "fuel_bin_sum_lb": 66080.0,
+    "fuel_stated_total_lb": 66100.0,
+    "fuel_bin_rounding_residual_lb": 20.0,
+    "debris_bin_sum_lb": 195750.0,
+    "debris_stated_total_lb": 196000.0,
+    "debris_bin_rounding_residual_lb": 250.0,
+    "nonfuel_aircraft_mass_lb": 217500.0,
+    "nonfuel_mass_not_in_stated_debris_total_lb": 21500.0,
+    "full_postimpact_mass_momentum_energy_ledger_closed_count": 0
+  },
+  "gates": {
+    "iteration": "V10P",
+    "generated_at_utc": "2026-09-04T07:20:15Z",
+    "validation_status": "PASS",
+    "regression_gate": "PASS",
+    "protected_blender_master_gate": "PASS_UNCHANGED",
+    "source_identity_gate": "PASS_5_CACHED_PLUS_2_OFFICIAL_HASH_ONLY",
+    "three_track_separation_gate": "PASS_3_OF_3",
+    "incoming_scalar_mass_energy_momentum_gate": "PASS_3_OF_3",
+    "damage_transcription_to_v8a_gate": "PASS_21_OF_21",
+    "fuel_bin_sum_gate": "ROUNDING_RESIDUAL_RETAINED_20_LB",
+    "debris_bin_sum_gate": "ROUNDING_RESIDUAL_RETAINED_250_LB",
+    "nonfuel_mass_accounting_gate": "PARTIAL_21500_LB_NOT_IN_STATED_DEBRIS_TOTAL",
+    "full_postimpact_mass_conservation_gate": "INDETERMINATE",
+    "full_postimpact_vector_momentum_gate": "INDETERMINATE",
+    "full_postimpact_energy_gate": "INDETERMINATE",
+    "physical_impact_damage_gate": "CLOSED_V9M",
+    "historical_physical_damage_promotion_count": 0,
+    "downstream_physical_release_count": 0,
+    "v10q_dependent_fire_reference_handoff_authorized": true,
+    "v10q_physical_fire_initial_condition_authorized": false,
+    "mechanical_source_gate": "OPEN_0_OF_22_REQUIREMENTS",
+    "historical_collapse_or_noncollapse_conclusion_authorized": false,
+    "physical_assignment_count": 0,
+    "solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 0
+  },
+  "epistemic_separation": {
+    "observed_facts": "File identities, cached numeric values, arithmetic sums and exact cached transformation comparisons.",
+    "official_model_results": "All less/base/more-severe damage and fuel/debris distributions remain dependent NIST model outputs.",
+    "archive_claims": "No external source archive is read; two local official PDFs are hash-checked only.",
+    "model_hypotheses": "No new damage, opening, debris or fuel distribution is invented.",
+    "derived_results": "Incoming scalar ledgers, published-table residuals, expanded damage matrix and V8A consistency.",
+    "unknowns": "The physical damage state and full postimpact mass, momentum and energy ledgers remain indeterminate."
+  },
+  "runtime_seconds": 0.094386,
+  "next_iteration": {
+    "id": "V10Q",
+    "objective": "Build a bounded fire-to-thermal handoff with the same epistemic separation: zero-fire control, cached official-model-dependent fire/temperature envelopes, and UNKNOWN_EVENT_FIRE. Audit fuel-bin rounding, time/temperature units, SFRM uncertainty fields and conservative temporal mapping without running FDS or assigning exact member temperatures."
+  }
+}

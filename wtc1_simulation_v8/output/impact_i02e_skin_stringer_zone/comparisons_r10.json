@@ -1,0 +1,64 @@
+{
+  "configured_geometric_first_contact_ms": 0.25248607892755226,
+  "sampled_first_contact_ms_by_case": {
+    "CONTACT_MERGED_H127_R9": 0.2210339,
+    "CONTACT_UNBREAKABLE_H127_R9": 0.2210339,
+    "CONTACT_RUPTURABLE_H127_R9": 0.2210339,
+    "CONTACT_RUPTURABLE_HALFDT_H127_R9": 0.2210339,
+    "CONTACT_RUPTURABLE_LOWMASS_H127_R9": 0.2210339,
+    "CONTACT_RUPTURABLE_H0635_R9": 0.2250143
+  },
+  "h127_variant_comparison": {
+    "merged": {
+      "impulse_Ns": 124.68560000000001,
+      "max_global_nodal_relative_displacement_mm": 0.12922347340642332,
+      "joint_work_J": 0.0
+    },
+    "unbreakable": {
+      "impulse_Ns": 124.6892,
+      "max_global_nodal_relative_displacement_mm": 0.16023030415704712,
+      "joint_work_J": 2.24674264,
+      "minimum_active_area_fraction": 1.0
+    },
+    "rupturable": {
+      "impulse_Ns": 124.6795,
+      "max_global_nodal_relative_displacement_mm": 0.3158032813397809,
+      "joint_work_J": 4.888076200000001,
+      "minimum_active_area_fraction": 1.0
+    },
+    "merged_unbreakable_impulse_ratio": 0.9999711282131893,
+    "rupturable_relative_to_merged_impulse_change": -4.8923051258553885e-05,
+    "rupturable_relative_to_unbreakable_impulse_change": -7.779342557330673e-05
+  },
+  "time_step_sensitivity": {
+    "impulse_difference_fraction": 0.002483400658773126,
+    "joint_work_difference_fraction": 0.001949339496794427,
+    "maximum_relative_displacement_difference_fraction": 0.00470352604619375
+  },
+  "numerical_mass_sensitivity": {
+    "baseline_areal_mass_g_per_mm2": 0.0001,
+    "lower_areal_mass_g_per_mm2": 1e-05,
+    "baseline_declared_mass_g": 0.516128,
+    "lower_declared_mass_g": 0.0516128,
+    "impulse_difference_fraction": 3.2082155984971737e-06,
+    "joint_work_difference_fraction": 0.0032417006919822047,
+    "maximum_relative_displacement_difference_fraction": 0.0004459472265755239
+  },
+  "spatial_refinement": {
+    "h127_impulse_Ns": 124.6795,
+    "h0635_impulse_Ns": 127.2944,
+    "impulse_difference_fraction": 0.02054214482333859,
+    "h127_joint_work_J": 4.888076200000001,
+    "h0635_joint_work_J": 5.014671985999999,
+    "joint_work_difference_fraction": 0.025245078113469568,
+    "maximum_relative_displacement_difference_fraction": 0.14092403391921893,
+    "qualification": "One additional refinement passes the declared differences but does not establish asymptotic convergence."
+  },
+  "outcome_within_0_35_ms": {
+    "rupturable_any_deleted_h127": false,
+    "rupturable_any_deleted_h0635": false,
+    "rupturable_minimum_active_area_fraction_h127": 1.0,
+    "rupturable_minimum_active_area_fraction_h0635": 1.0,
+    "interpretation": "No cohesive cell deletion is sampled in the bounded window. This does not mean an aircraft wing remains intact; shell metal failure is disabled and later contact is not computed."
+  }
+}

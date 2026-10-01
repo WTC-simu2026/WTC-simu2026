@@ -1,0 +1,440 @@
+{
+  "experiment_id": "WTC1-V8S",
+  "status": "validated_input_freeze_reduced_kinematic_check_global_explicit_gate_not_passed",
+  "execution": {
+    "timestamp": "2026-08-24T15:24:27+02:00",
+    "runtime_seconds": 0.051328000001376495,
+    "random_seed": 9112001,
+    "random_draws": 0,
+    "python": "3.12.13",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "process_id": 12832
+  },
+  "dataset": {
+    "name": "WTC 1 V8S aircraft-impact replay freeze and readiness gate",
+    "version": "8.18.0",
+    "status": "PRIMARY_NIST_TRANSCRIPTION_WITH_DERIVED_KINEMATIC_ENVELOPE",
+    "scope": "AA11/WTC 1 aircraft kinematics, aircraft mass distribution, tower geometry, reduced geometric and energy checks, explicit-solver inventory, and predeclared validation metrics. No fire, collapse, explosive, thermite, or Blender rigid-body physics is solved in this iteration.",
+    "random_seed": 9112001,
+    "deterministic": true
+  },
+  "source_audit": [
+    {
+      "id": "NCSTAR1-2B-V1",
+      "path": "work/official_sources/ncstar1-2bv1.pdf",
+      "exists": true,
+      "status": "official_read_only",
+      "size_bytes": 25162623,
+      "sha256": "1504c598adcd9e492bc126530b593b2d467b7c01a7324913b221a5cb9e128ab4"
+    },
+    {
+      "id": "NCSTAR1-2B-V2",
+      "path": "work/official_sources/ncstar1-2bv2.pdf",
+      "exists": true,
+      "status": "official_read_only",
+      "size_bytes": 21574822,
+      "sha256": "c5bb701fad4103d072f89548c683c0e8ee583c49d94e3f165985088f3443ea1d"
+    },
+    {
+      "id": "WTC1-V4-GEOMETRY",
+      "path": "wtc1_3d_v4/data/wtc1_parameters.json",
+      "exists": true,
+      "status": "mixed_official_and_reconstructed",
+      "size_bytes": 8006,
+      "sha256": "43b351dc434cafcc49436712d74517cb8160e35c72b6d843401675674715bc7f"
+    }
+  ],
+  "input_integrity": {
+    "checks": {
+      "aircraft_component_mass_sum_matches_lb": true,
+      "tower_width_matches_geometry": true,
+      "facade_pitch_matches_geometry": true,
+      "perimeter_count_matches_geometry": true,
+      "official_outputs_separated_from_inputs": true,
+      "no_archive_claim_used_as_numerical_input": true
+    },
+    "component_sum_lb": 283600.0,
+    "expected_component_sum_lb": 283600.0,
+    "passed": true
+  },
+  "derived_results": {
+    "cases": {
+      "less_severe": {
+        "case": "less_severe",
+        "inputs": {
+          "mass_factor": 0.95,
+          "mass_lb": 269420.0,
+          "mass_kg": 122206.8563254,
+          "speed_mph": 414.0,
+          "speed_mps": 185.07456,
+          "trajectory_pitch_deg": 13.6,
+          "orientation_pitch_deg": 11.6,
+          "roll_deg": 25.0,
+          "aircraft_failure_strain_factor": 0.75,
+          "tower_failure_strain_factor": 1.2,
+          "design_live_load_fraction": 0.25
+        },
+        "derived_kinematics": {
+          "velocity_normal_to_facade_mps": 179.88278869667366,
+          "velocity_downward_mps": 43.51882311993208,
+          "momentum_total_mn_s": 22.617380163406622,
+          "momentum_normal_to_facade_mn_s": 21.982910113666687,
+          "momentum_downward_mn_s": 5.318298564468035,
+          "kinetic_energy_gj": 2.0929508410476045,
+          "kinetic_energy_normal_component_gj": 1.9771735874573373,
+          "kinetic_energy_vertical_component_gj": 0.11572304726303657,
+          "tail_clearance_time_s": 0.25727338022377005,
+          "nose_tower_depth_crossing_time_s": 0.35103080432267975
+        },
+        "reduced_silhouette_diagnostic": {
+          "wing_horizontal_projection_m": 43.968615980305245,
+          "wing_vertical_tip_separation_m": 20.502902350092587,
+          "nominal_facade_bays_spanned": 43.2761968310091,
+          "nominal_floor_heights_spanned_by_wingtips": 5.605561666145173,
+          "tail_above_nose_from_fuselage_pitch_m": 9.499725306619956,
+          "tail_above_nose_from_fuselage_pitch_ft": 31.167077777624524,
+          "warning": "Rigid projection only; it does not predict failed members, penetration, fragmentation, or debris trajectories."
+        }
+      },
+      "base": {
+        "case": "base",
+        "inputs": {
+          "mass_factor": 1.0,
+          "mass_lb": 283600.0,
+          "mass_kg": 128638.796132,
+          "speed_mph": 443.0,
+          "speed_mps": 198.03871999999998,
+          "trajectory_pitch_deg": 10.6,
+          "orientation_pitch_deg": 8.6,
+          "roll_deg": 25.0,
+          "aircraft_failure_strain_factor": 1.0,
+          "tower_failure_strain_factor": 1.0,
+          "design_live_load_fraction": 0.25
+        },
+        "derived_kinematics": {
+          "velocity_normal_to_facade_mps": 194.65659004738072,
+          "velocity_downward_mps": 36.42949001761431,
+          "momentum_total_mn_s": 25.475462528322232,
+          "momentum_normal_to_facade_mn_s": 25.04038940285531,
+          "momentum_downward_mn_s": 4.6862457395686175,
+          "kinetic_energy_gj": 2.5225639952584484,
+          "kinetic_energy_normal_component_gj": 2.4371384073091913,
+          "kinetic_energy_vertical_component_gj": 0.08535877119485126,
+          "tail_clearance_time_s": 0.23997546887477345,
+          "nose_tower_depth_crossing_time_s": 0.3243887092886515
+        },
+        "reduced_silhouette_diagnostic": {
+          "wing_horizontal_projection_m": 43.968615980305245,
+          "wing_vertical_tip_separation_m": 20.502902350092587,
+          "nominal_facade_bays_spanned": 43.2761968310091,
+          "nominal_floor_heights_spanned_by_wingtips": 5.605561666145173,
+          "tail_above_nose_from_fuselage_pitch_m": 7.0646477656546125,
+          "tail_above_nose_from_fuselage_pitch_ft": 23.177978233774976,
+          "warning": "Rigid projection only; it does not predict failed members, penetration, fragmentation, or debris trajectories."
+        }
+      },
+      "more_severe": {
+        "case": "more_severe",
+        "inputs": {
+          "mass_factor": 1.05,
+          "mass_lb": 297780.0,
+          "mass_kg": 135070.7359386,
+          "speed_mph": 472.0,
+          "speed_mps": 211.00288,
+          "trajectory_pitch_deg": 7.6,
+          "orientation_pitch_deg": 5.6,
+          "roll_deg": 25.0,
+          "aircraft_failure_strain_factor": 1.25,
+          "tower_failure_strain_factor": 0.8,
+          "design_live_load_fraction": 0.2
+        },
+        "derived_kinematics": {
+          "velocity_normal_to_facade_mps": 209.1464667265141,
+          "velocity_downward_mps": 27.906479242656776,
+          "momentum_total_mn_s": 28.500314286764105,
+          "momentum_normal_to_facade_mn_s": 28.249567179708176,
+          "momentum_downward_mn_s": 3.7693486887609153,
+          "kinetic_energy_gj": 3.0068241977061865,
+          "kinetic_energy_normal_component_gj": 2.9541485810946306,
+          "kinetic_energy_vertical_component_gj": 0.05259462547062101,
+          "tail_clearance_time_s": 0.2248114635674166,
+          "nose_tower_depth_crossing_time_s": 0.3019147346274294
+        },
+        "reduced_silhouette_diagnostic": {
+          "wing_horizontal_projection_m": 43.968615980305245,
+          "wing_vertical_tip_separation_m": 20.502902350092587,
+          "nominal_facade_bays_spanned": 43.2761968310091,
+          "nominal_floor_heights_spanned_by_wingtips": 5.605561666145173,
+          "tail_above_nose_from_fuselage_pitch_m": 4.6102065162212575,
+          "tail_above_nose_from_fuselage_pitch_ft": 15.125349462668167,
+          "warning": "Rigid projection only; it does not predict failed members, penetration, fragmentation, or debris trajectories."
+        }
+      }
+    },
+    "base_case_component_energy": [
+      {
+        "component": "wings",
+        "weight_lb": 37000.0,
+        "mass_kg": 16782.917690000002,
+        "mass_fraction": 0.1304654442877292,
+        "translational_kinetic_energy_gj": 0.32910743238562273
+      },
+      {
+        "component": "empennage",
+        "weight_lb": 8350.0,
+        "mass_kg": 3787.4962895000003,
+        "mass_fraction": 0.029442877291960507,
+        "translational_kinetic_energy_gj": 0.07427154217351216
+      },
+      {
+        "component": "fuselage",
+        "weight_lb": 103050.0,
+        "mass_kg": 46742.6937285,
+        "mass_fraction": 0.3633638928067701,
+        "translational_kinetic_energy_gj": 0.9166086731713087
+      },
+      {
+        "component": "landing_gear",
+        "weight_lb": 8400.0,
+        "mass_kg": 3810.175908,
+        "mass_fraction": 0.029619181946403384,
+        "translational_kinetic_energy_gj": 0.07471628194700625
+      },
+      {
+        "component": "engines_with_cowlings",
+        "weight_lb": 20100.0,
+        "mass_kg": 9117.206637000001,
+        "mass_fraction": 0.07087447108603667,
+        "translational_kinetic_energy_gj": 0.17878538894462206
+      },
+      {
+        "component": "uld_and_cargo",
+        "weight_lb": 12400.0,
+        "mass_kg": 5624.5453880000005,
+        "mass_fraction": 0.04372355430183357,
+        "translational_kinetic_energy_gj": 0.11029546382653302
+      },
+      {
+        "component": "seats_and_cabin_contents",
+        "weight_lb": 28200.0,
+        "mass_kg": 12791.304834,
+        "mass_fraction": 0.09943582510578279,
+        "translational_kinetic_energy_gj": 0.2508332322506638
+      },
+      {
+        "component": "fuel",
+        "weight_lb": 66100.0,
+        "mass_kg": 29982.455657000002,
+        "mass_fraction": 0.23307475317348378,
+        "translational_kinetic_energy_gj": 0.58794598055918
+      }
+    ]
+  },
+  "comparison_to_reserved_official_outputs": {
+    "tail_clearance": {
+      "predicted_from_inputs_s": 0.23997546887477345,
+      "nist_reported_approx_s": 0.25,
+      "absolute_error_s": 0.010024531125226555,
+      "predeclared_gate_s": 0.03,
+      "passed": true,
+      "qualification": "This validates only a geometric timing scale, not penetration force or damage."
+    },
+    "nist_output_equivalent_mean_transfer_force_to_0_25_s_mn": 71.33129507930224,
+    "mean_force_qualification": "Derived from the NIST residual-momentum output, not independently predicted by V8S.",
+    "outside_tower_reporting": {
+      "fuel_outside_fraction_of_fuel": 0.10136157337367625,
+      "debris_outside_fraction_of_table_debris": 0.08877551020408163,
+      "table_debris_accounting_fraction_of_nonfuel_aircraft": 0.9011494252873563,
+      "nonfuel_aircraft_minus_table_debris_lb": 21500.0,
+      "ambiguity": "The published outside total combines material rebounding from the north impact face and material passing through the south side; it is not a measured far-side-only mass."
+    },
+    "far_side_classification": {
+      "whole_aircraft_exit": false,
+      "intact_engine_exit_in_base_wtc1_model": false,
+      "small_fragment_exit_calculated": true,
+      "statement": "The bulk of aircraft debris and fuel was arrested before exiting the far side of the core; a small amount of aircraft debris was calculated to exit the south wall."
+    }
+  },
+  "solver_audit": {
+    "rows": [
+      {
+        "name": "Blender",
+        "role": "visualisation et animation uniquement",
+        "version_verified": "5.2.0 LTS",
+        "candidate_paths": [
+          "C:/Program Files/Blender Foundation/Blender 5.2/blender.exe"
+        ],
+        "existing_paths": [
+          "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe"
+        ],
+        "installation_present": true,
+        "executable_present": true,
+        "qualifies_for_global_high_rate_impact": false,
+        "reason": null
+      },
+      {
+        "name": "FreeCAD",
+        "role": "pré/post-traitement géométrique",
+        "version_verified": "1.1.3",
+        "candidate_paths": [
+          "C:/Program Files/FreeCAD 1.1/bin/FreeCADCmd.exe"
+        ],
+        "existing_paths": [
+          "C:\\Program Files\\FreeCAD 1.1\\bin\\FreeCADCmd.exe"
+        ],
+        "installation_present": true,
+        "executable_present": true,
+        "qualifies_for_global_high_rate_impact": false,
+        "reason": null
+      },
+      {
+        "name": "CalculiX",
+        "role": "solveur structurel pour contrôles de composants et quasi-statiques",
+        "version_verified": "2.22",
+        "candidate_paths": [
+          "C:/Program Files/FreeCAD 1.1/bin/ccx.exe"
+        ],
+        "existing_paths": [
+          "C:\\Program Files\\FreeCAD 1.1\\bin\\ccx.exe"
+        ],
+        "installation_present": true,
+        "executable_present": true,
+        "qualifies_for_global_high_rate_impact": false,
+        "reason": "The current workflow has no validated CalculiX formulation for coupled high-rate contact, fragmentation/erosion and SPH-like fuel dispersion at the required global scale."
+      },
+      {
+        "name": "LS-DYNA",
+        "role": "solveur explicite non linéaire de référence à grande vitesse",
+        "version_verified": null,
+        "candidate_paths": [
+          "C:/Program Files/LSTC",
+          "C:/Program Files/LS-DYNA"
+        ],
+        "existing_paths": [],
+        "installation_present": false,
+        "executable_present": false,
+        "qualifies_for_global_high_rate_impact": true,
+        "reason": null
+      },
+      {
+        "name": "Abaqus Explicit",
+        "role": "solveur explicite non linéaire candidat à grande vitesse",
+        "version_verified": null,
+        "candidate_paths": [
+          "C:/SIMULIA",
+          "C:/Program Files/Dassault Systemes"
+        ],
+        "existing_paths": [],
+        "installation_present": false,
+        "executable_present": false,
+        "qualifies_for_global_high_rate_impact": true,
+        "reason": null
+      },
+      {
+        "name": "OpenRadioss",
+        "role": "solveur explicite non linéaire candidat à grande vitesse",
+        "version_verified": null,
+        "candidate_paths": [
+          "C:/OpenRadioss",
+          "C:/Program Files/Altair"
+        ],
+        "existing_paths": [],
+        "installation_present": false,
+        "executable_present": false,
+        "qualifies_for_global_high_rate_impact": true,
+        "reason": null
+      }
+    ],
+    "qualified_explicit_solver_installed": false,
+    "interpretation": "No candidate high-rate explicit solver was found at the predeclared installation paths."
+  },
+  "validation_metrics_predeclared": [
+    {
+      "id": "M01_energy_balance",
+      "target": "global explicit solve",
+      "metric": "erreur absolue du bilan travail externe + énergie interne + énergie cinétique résiduelle, divisée par l’énergie cinétique initiale",
+      "gate": "inférieure ou égale à 0,05"
+    },
+    {
+      "id": "M02_tail_clearance_time",
+      "target": "NIST time at which the aircraft is completely inside the tower",
+      "metric": "écart absolu entre temps prédit et temps rapporté",
+      "gate": "inférieur ou égal à 0,03 s"
+    },
+    {
+      "id": "M03_north_facade_damage",
+      "target": "digitized observed north-facade column and spandrel damage mask",
+      "metric": "précision, rappel, F1 et intersection-sur-union à la résolution élément-par-étage",
+      "gate": "F1 supérieur ou égal à 0,80, sans utiliser d’entrée raffinée sur les dommages pour un test indépendant"
+    },
+    {
+      "id": "M04_core_damage",
+      "target": "NIST less/base/more-severe core damage tables reserved from input",
+      "metric": "score de classification pondéré par étage pour les états intact, léger, modéré, lourd et sectionné",
+      "gate": "macro-F1 supérieur ou égal à 0,70; publier chaque cas séparément"
+    },
+    {
+      "id": "M05_momentum_history",
+      "target": "NIST Figure 9-6 digitized normalized momentum curve",
+      "metric": "RMSE sur 0,00-0,70 s et fraction résiduelle à 0,25 s",
+      "gate": "RMSE inférieure ou égale à 0,10"
+    },
+    {
+      "id": "M06_debris_by_floor",
+      "target": "NIST Table 9-4 after correction for explicitly reported eroded mass",
+      "metric": "distance L1 normalisée et distance de transport sur les étages 92-99 plus l’extérieur",
+      "gate": "diagnostic seulement tant que l’érosion numérique et les fenêtres ne sont pas harmonisées"
+    },
+    {
+      "id": "M07_far_side_categories",
+      "target": "observed and modeled opposite-facade phenomena",
+      "metric": "masses et trajectoires séparées pour carburant, moteurs, trains d’atterrissage, fragments d’avion et débris de tour",
+      "gate": "aucune étiquette « avion intact sortant »; tout objet sortant conserve catégorie et provenance"
+    },
+    {
+      "id": "M08_post_impact_stability",
+      "target": "observed survival for about 102 min after impact",
+      "metric": "la structure endommagée à froid reprend les charges gravitaires avant couplage thermique",
+      "gate": "obligatoire avant le couplage incendie-effondrement"
+    }
+  ],
+  "model_hypotheses": [
+    "Tous les composants de l’avion partagent initialement la même vitesse de translation; leur part d’énergie cinétique suit donc leur part de masse.",
+    "Le diagnostic réduit de silhouette projette une envergure rigide et non déformée selon le roulis; ce n’est pas un calcul de rupture ni de dommages de façade.",
+    "L’estimation du franchissement de la queue projette la longueur du fuselage sur la direction de vitesse et néglige la flexion locale avant impact.",
+    "Aucune sortie NIST de dommage, moment, débris ou pénétration ne règle les calculs cinématiques V8S."
+  ],
+  "required_missing_inputs": [
+    "licensed or open nonlinear explicit high-rate solver validated for contact, fragmentation and erosion at this scale",
+    "solver-ready Boeing 767 material, thickness, joint, failure and fuel model with provenance",
+    "as-built WTC 1 facade plate, weld, bolt, window, floor and content mesh for Floors 92-100",
+    "independently digitized north-facade observed damage mask reserved from model setup",
+    "digitized NIST Figure 9-6 momentum history reserved from calibration",
+    "measured object-by-object far-side debris trajectories for WTC 1",
+    "computational convergence plan for mesh, time step, contact, erosion and mass scaling"
+  ],
+  "readiness": {
+    "gates": {
+      "source_files_present_and_hashed": true,
+      "input_integrity_passed": true,
+      "tail_clearance_scale_check_passed": true,
+      "validation_metrics_predeclared": true,
+      "damage_outputs_reserved_from_input_calculation": true,
+      "independent_facade_validation_available_with_refined_nist_orientation": false,
+      "as_built_impact_zone_mesh_complete": false,
+      "solver_ready_for_global_high_rate_impact": false,
+      "global_aircraft_impact_replay_ready": false,
+      "thermal_or_blender_coupling_authorized": false
+    },
+    "passed": false,
+    "interpretation": "V8S freezes a traceable replay specification, but the global explicit impact gate remains closed."
+  },
+  "interpretation": "The base AA11 input envelope carries about 2.52 GJ and the independent geometric tail-clearance estimate agrees with the NIST 0.25 s scale. This is not a damage or collapse validation. No qualified global high-rate explicit solver or complete as-built impact-zone mesh is presently available, so the impact replay, thermal coupling and Blender dynamics gates remain closed.",
+  "artifacts": {
+    "configuration": "wtc1_simulation_v8/data/v8s_wtc1_aircraft_impact_replay.json",
+    "script": "wtc1_simulation_v8/scripts/run_v8s_wtc1_aircraft_impact_replay.py",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v8s_impact_avion.md",
+    "plot": "wtc1_simulation_v8/output/synthese_wtc1_v8s_impact_avion.png"
+  }
+}

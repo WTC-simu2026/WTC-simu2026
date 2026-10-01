@@ -1,0 +1,47 @@
+{
+  "iteration": "V10U",
+  "scope": "Independent numerical benchmark only",
+  "configuration": {
+    "path": "wtc1_simulation_v8/data/v10u_calculix_linear_beam_benchmark.json",
+    "sha256": "a29dc965ae51de67ac630d426ec6bf191a083dce3a298745b99093cf8900bd33"
+  },
+  "local_software_syntax_precedent": [
+    {
+      "group": "software_reference",
+      "id": "FREECAD_B32R_RECTANGULAR_CANTILEVER_EXAMPLE",
+      "path": "C:/Program Files/FreeCAD 1.1/Mod/Fem/femtest/data/calculix/ccx_cantilever_beam_rect.inp",
+      "exists": true,
+      "expected_sha256": "0137436e0b588e39b2c011143268d542a80b46c29801a4eb7ee585c1bd845848",
+      "actual_sha256": "0137436e0b588e39b2c011143268d542a80b46c29801a4eb7ee585c1bd845848",
+      "hash_match": true
+    }
+  ],
+  "solver_binary": [
+    {
+      "group": "software",
+      "id": "CALCULIX_CCX_2_22",
+      "path": "C:/Program Files/FreeCAD 1.1/bin/ccx.exe",
+      "exists": true,
+      "expected_sha256": "2ff89a72b6aac9c361cb716e44220dfcd01d2bb3e66abd6b6455b01b7250f350",
+      "actual_sha256": "2ff89a72b6aac9c361cb716e44220dfcd01d2bb3e66abd6b6455b01b7250f350",
+      "hash_match": true
+    }
+  ],
+  "solver_version_query": {
+    "command": [
+      "C:/Program Files/FreeCAD 1.1/bin/ccx.exe",
+      "-v"
+    ],
+    "return_code": 201,
+    "detected_version": "2.22",
+    "expected_version": "2.22",
+    "version_match": true,
+    "stdout": "\nThis is Version 2.22\n\n",
+    "stderr": "",
+    "note": "The version query is not one of the nine structural benchmark jobs."
+  },
+  "web_sources_used": [],
+  "official_source_pages_read": 0,
+  "source_archive_files_read": 0,
+  "wtc_physical_sources_used": []
+}

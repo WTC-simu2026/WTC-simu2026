@@ -1,0 +1,310 @@
+{
+  "model": "WTC1_V8K_FLOOR96_NIST_TOPOLOGY",
+  "version": "8.10.0",
+  "generated_at_utc": "2026-08-24T08:58:45.054954+00:00",
+  "runtime_seconds": 0.11968860000069981,
+  "configuration_file": "wtc1_simulation_v8/data/v8k_floor96_nist_topology.json",
+  "facts_transferred": [
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6C",
+      "pdf_page": 53,
+      "printed_page": 5,
+      "fact": "Figure 2-2 identifies the Floor 96 core-column locations and numbers used to register the Figure 5-59 beam plan.",
+      "confidence": "high; complete page visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6C",
+      "pdf_pages": [
+        135,
+        136
+      ],
+      "printed_pages": [
+        87,
+        88
+      ],
+      "fact": "The full-floor base model was developed from the converted SAP2000 Floor 96 model and included core beams, slab, trusses, exterior/core columns and connection break elements.",
+      "confidence": "high for the official model description; it is not an as-built schedule"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL_LIMITE",
+      "source": "NIST NCSTAR 1-6C",
+      "pdf_page": 143,
+      "printed_page": 95,
+      "fact": "Refined Case A/B impact damage was never used in the full-floor model. Only severed columns were removed; damaged-but-not-severed columns were retained as undamaged. Case Ai structural damage was reused for Case Bi because Case Bi was not available at computation time.",
+      "confidence": "high; complete page visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6C",
+      "pdf_page": 155,
+      "printed_page": 107,
+      "fact": "Figure 5-59 compares the Floor 96 core-beam model before and after Case Ai impact damage. Figure 5-60 shows the corresponding core columns.",
+      "confidence": "high for what is plotted; beam labels and section designations are not printed"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL_LIMITE",
+      "source": "NIST NCSTAR 1-6C",
+      "pdf_page": 155,
+      "printed_page": 107,
+      "fact": "For the full-floor gravity and thermal analysis, vertical loads were not applied to the tops of the columns.",
+      "confidence": "high; complete page visually checked"
+    }
+  ],
+  "model_assumptions": {
+    "incoming_loads": "Loads arriving at Floor 96 are replayed from the validated V8J cold path through Floors 99, 98 and 97. They remain outputs of the V8I/V8J reduced model, not measured column loads.",
+    "local_topology_rule": "Figure 5-59 is used only to accept, reject or mark ambiguous the seven V8J cut-boundary connections. No diagonal nearest-four edge is retained unless an orthogonal path is visible.",
+    "support_rule": "A removed Floor 96 column is locally supported only if the figure shows a continuous beam route to at least one surviving core-column node.",
+    "force_displacement_rule": "Topology is tested before capacity. A loaded node with no surviving path has zero local transfer capacity regardless of the assumed beam section.",
+    "candidate_505_path": "The visible 505-506 and 505-605 paths are screened with the inherited 14WF136 plus cold-upper slab law only as a proxy sensitivity; that section is not claimed as the as-built Floor 96 assignment.",
+    "fractions_are_event_probabilities": false
+  },
+  "gate_definition": {
+    "required_condition": "Every loaded removed-column node must have a surviving, mechanically specified path with sourced topology, section, connection, stiffness and deformation capacity.",
+    "pass_policy": "A figure-constrained topology may falsify the local Floor 96 bridge hypothesis, but cannot validate the whole building or contradict observed stability when multistory frame action and global redistribution are omitted."
+  },
+  "replayed_floors": [
+    {
+      "floor": 99,
+      "equilibrium": true,
+      "final_peak_dcr": 0.47181533881694615,
+      "maximum_abs_displacement_in": 0.0844434605647588
+    },
+    {
+      "floor": 98,
+      "equilibrium": true,
+      "final_peak_dcr": 0.48104618389416687,
+      "maximum_abs_displacement_in": 0.08428736485632361
+    },
+    {
+      "floor": 97,
+      "equilibrium": true,
+      "final_peak_dcr": 0.4487182492785962,
+      "maximum_abs_displacement_in": 0.07934049594675548
+    }
+  ],
+  "incoming_loads_floor96_kip": {
+    "501": 1539.1898174182197,
+    "502": 1077.8938884857373,
+    "503": 1164.5155982160031,
+    "504": 865.7399499222515,
+    "505": 818.6951262374541,
+    "506": 1211.8538066151473,
+    "507": 1077.192862429558,
+    "508": 1536.0631026508836,
+    "601": 443.55677939790104,
+    "602": 562.3632027437504,
+    "603": 564.4658105484448,
+    "604": 407.2067056871947,
+    "605": 445.70206021541287,
+    "606": 563.0948294530521,
+    "607": 526.6554993301849,
+    "608": 394.5711477241748,
+    "701": 593.5524838887322,
+    "702": 666.6433916654397,
+    "703": 369.998809633801,
+    "704": 192.84140568806913,
+    "705": 173.3804533836727,
+    "706": 419.35219482421803,
+    "707": 663.1205949572084,
+    "708": 776.857497113834,
+    "801": 776.9630142880663,
+    "802": 701.0013866468474,
+    "803": 560.8087536654691,
+    "804": 300.3357074427934,
+    "805": 420.65936163957224,
+    "806": 631.8706527461821,
+    "807": 610.9065669949467,
+    "901": 479.19296477329453,
+    "902": 560.8754459443029,
+    "903": 741.3918085096072,
+    "904": 346.05671441590255,
+    "905": 369.29528283291654,
+    "906": 557.0505751545061,
+    "907": 559.2588477703549,
+    "908": 476.417985083435,
+    "1001": 1658.9605418272504,
+    "1002": 974.8634918033325,
+    "1003": 1280.0415614877568,
+    "1004": 855.7069800534098,
+    "1005": 780.7335033551142,
+    "1006": 1057.2444749407548,
+    "1007": 1016.5021728011782,
+    "1008": 1658.3551875926576
+  },
+  "topology_audit": {
+    "edge_rows": [
+      {
+        "edge": [
+          502,
+          503
+        ],
+        "v8j_role": "fractured cut boundary",
+        "figure_status": "removed_after_impact",
+        "geometry_status": "orthogonal_beam_path_visible_before_impact",
+        "confidence": "high"
+      },
+      {
+        "edge": [
+          503,
+          603
+        ],
+        "v8j_role": "fractured cut boundary",
+        "figure_status": "removed_after_impact",
+        "geometry_status": "orthogonal_beam_path_visible_before_impact",
+        "confidence": "high"
+      },
+      {
+        "edge": [
+          504,
+          605
+        ],
+        "v8j_role": "fractured cut boundary",
+        "figure_status": "not_a_direct_beam_path",
+        "geometry_status": "nearest_four_diagonal_proxy_not_visible_in_orthogonal_plan",
+        "confidence": "high"
+      },
+      {
+        "edge": [
+          505,
+          506
+        ],
+        "v8j_role": "fractured cut boundary",
+        "figure_status": "visible_after_impact",
+        "geometry_status": "orthogonal_beam_path",
+        "confidence": "high"
+      },
+      {
+        "edge": [
+          505,
+          605
+        ],
+        "v8j_role": "fractured cut boundary",
+        "figure_status": "visible_after_impact",
+        "geometry_status": "orthogonal_beam_path",
+        "confidence": "medium; beam is offset from the plotted column centroid and connected through the modeled joint region"
+      },
+      {
+        "edge": [
+          603,
+          604
+        ],
+        "v8j_role": "fractured cut boundary",
+        "figure_status": "removed_after_impact",
+        "geometry_status": "orthogonal_beam_path_visible_before_impact",
+        "confidence": "high"
+      },
+      {
+        "edge": [
+          604,
+          605
+        ],
+        "v8j_role": "fractured cut boundary",
+        "figure_status": "removed_after_impact",
+        "geometry_status": "orthogonal_beam_path_visible_before_impact",
+        "confidence": "high"
+      }
+    ],
+    "edge_status_counts": {
+      "removed_after_impact": 4,
+      "not_a_direct_beam_path": 1,
+      "visible_after_impact": 2
+    },
+    "node_rows": [
+      {
+        "column": 503,
+        "post_impact_local_path": "no visible beam path to a surviving core-column support",
+        "classification": "unsupported_in_floor96_figure_path",
+        "incoming_load_kip": 1164.5155982160031,
+        "topology_gate_pass": false
+      },
+      {
+        "column": 504,
+        "post_impact_local_path": "no visible beam path to a surviving core-column support",
+        "classification": "unsupported_in_floor96_figure_path",
+        "incoming_load_kip": 865.7399499222515,
+        "topology_gate_pass": false
+      },
+      {
+        "column": 505,
+        "post_impact_local_path": "visible paths toward surviving Columns 506 and 605",
+        "classification": "candidate_supported_in_floor96_figure_path",
+        "incoming_load_kip": 818.6951262374541,
+        "topology_gate_pass": true
+      },
+      {
+        "column": 604,
+        "post_impact_local_path": "no visible beam path to a surviving core-column support",
+        "classification": "unsupported_in_floor96_figure_path",
+        "incoming_load_kip": 407.2067056871947,
+        "topology_gate_pass": false
+      }
+    ],
+    "v8j_original_cut_load_kip": 3256.1573800629035,
+    "figure_constrained_unsupported_nodes": [
+      503,
+      504,
+      604
+    ],
+    "figure_constrained_unsupported_load_kip": 2437.4622538254494,
+    "candidate_supported_nodes": [
+      505
+    ],
+    "candidate_supported_load_kip": 818.6951262374541,
+    "load_conservation_check_kip": 0.0,
+    "unsupported_fraction_of_v8j_cut": 0.7485701608742148,
+    "gate_passed": false,
+    "reason": "positive incoming load remains on three removed nodes with no visible surviving local Floor 96 beam path"
+  },
+  "candidate_505_force_displacement_proxy": {
+    "edges": [
+      {
+        "edge": [
+          505,
+          506
+        ],
+        "section_assignment": "14WF136",
+        "section_status": "inherited_proxy_not_as_built",
+        "beam_initial_stiffness_kip_per_in": 74.970528424615,
+        "beam_yield_force_kip": 141.50054334253545,
+        "beam_yield_displacement_in": 1.8874155793742107,
+        "beam_ultimate_displacement_in": 4.948031496062992,
+        "slab_reinforcement_axial_yield_kip": 257.76644933882,
+        "slab_ultimate_vertical_displacement_in": 61.05357596568995
+      },
+      {
+        "edge": [
+          505,
+          605
+        ],
+        "section_assignment": "14WF136",
+        "section_status": "inherited_proxy_not_as_built",
+        "beam_initial_stiffness_kip_per_in": 111.02726368800171,
+        "beam_yield_force_kip": 161.28889345025388,
+        "beam_yield_displacement_in": 1.452696284612513,
+        "beam_ultimate_displacement_in": 4.340963163621915,
+        "slab_reinforcement_axial_yield_kip": 257.76644933882,
+        "slab_ultimate_vertical_displacement_in": 53.5629824679431
+      }
+    ],
+    "node": 505,
+    "incoming_demand_kip": 818.6951262374541,
+    "maximum_combined_proxy_force_kip": 308.5826170722224,
+    "displacement_at_maximum_in": 4.340963163621915,
+    "proxy_capacity_deficit_kip": 510.11250916523176,
+    "proxy_screen_passed": false,
+    "interpretation": "This is a common-displacement two-edge envelope using the inherited 14WF136 and cold-upper slab laws. It is not an as-built capacity because the beam sections and connections in Figure 5-59 are unlabeled."
+  },
+  "gate_result": {
+    "passed": false,
+    "status": "LOCAL_FLOOR96_PATH_REJECTED_MULTISTORY_PATH_REQUIRED",
+    "reason": "positive incoming load remains on three removed nodes with no visible surviving local Floor 96 beam path",
+    "thermal_runs_authorized": false,
+    "blender_coupling_authorized": false
+  },
+  "next_iteration": {
+    "id": "V8L",
+    "objective": "Construct an explicit multistory 95-99 frame-action path for Columns 503, 504 and 604, including column-segment flexure/shear, surviving beam connections and comparison with NIST cold post-impact global redistribution before thermal loading."
+  }
+}

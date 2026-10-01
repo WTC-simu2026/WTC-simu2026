@@ -1,0 +1,348 @@
+{
+  "iteration": "V10D",
+  "dataset": {
+    "name": "Bounded remote identity and acquisition check for the nine V10C P0 structural drawing identifiers",
+    "version": "10.4.0",
+    "status": "PREDECLARED_BOUNDED_REMOTE_IDENTITY_ACQUISITION_PASS_ALLOWED_WITH_REJECTIONS_OR_TRANSPORT_FAILURES_AND_SOLVER_GATE_CLOSED",
+    "random_seed": 1010004,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10C. Use only the nine exact register hyperlinks captured and hash-verified in V10C for a bounded remote identity and acquisition check. Require an allowed HTTPS Archive.org endpoint, an exact case-insensitive terminal filename, a PDF signature, a 16 MiB per-file payload cap and a 64 MiB aggregate accepted-payload cap. Hash each accepted payload and write it only inside wtc1_simulation_v8/input/v10d_structural_sources. Transcribe only container metadata and index-locator fields. Do not read the source archive or work/official_sources, contact a person or agency, assign physical properties, run a structural solver, continue a thermal model or launch Blender."
+  },
+  "source_policy": {
+    "source_archive_read": false,
+    "source_archive_modified": false,
+    "official_sources_directory_read": false,
+    "official_sources_directory_modified": false,
+    "v10c_outputs_read_only": true,
+    "network_access_authorized_only_for_exact_initial_register_hyperlinks": true,
+    "server_redirects_authorized_only_to_https_archive_org_hosts": true,
+    "search_engine_authorized": false,
+    "url_discovery_authorized": false,
+    "external_contact_authorized": false,
+    "drawing_page_content_read_authorized": false,
+    "pdf_text_extraction_authorized": false,
+    "pdf_rendering_authorized": false,
+    "target_working_copy_directory": "wtc1_simulation_v8/input/v10d_structural_sources",
+    "network_payload_write_authorized_only_inside_target_directory": true,
+    "structural_solver_authorized": false,
+    "blender_authorized": false,
+    "blender_master_modification_authorized": false,
+    "thermal_continuation_authorized": false,
+    "as_built_coordinate_assignment_authorized": false,
+    "member_section_assignment_authorized": false,
+    "material_assignment_authorized": false,
+    "mass_assignment_authorized": false,
+    "stiffness_assignment_authorized": false,
+    "capacity_assignment_authorized": false,
+    "connection_law_assignment_authorized": false,
+    "damage_state_assignment_authorized": false,
+    "load_path_credit_authorized": false
+  },
+  "regression_files": [
+    {
+      "role": "configuration",
+      "path": "wtc1_simulation_v8/data/v10c_p0_local_identity_check.json",
+      "expected_sha256": "d4b2102968de9eb258d0b25d9b098242dbaa2e99b7c8a98a438332f0979c6dd1"
+    },
+    {
+      "role": "script",
+      "path": "wtc1_simulation_v8/scripts/run_v10c_p0_local_identity_check.py",
+      "expected_sha256": "670eb385a693cb2787453929fa2c9e7719dc772a91f3cf6b3186e84a3a787275"
+    },
+    {
+      "role": "source_manifest",
+      "path": "wtc1_simulation_v8/output/v10c_p0_source_manifest.json",
+      "expected_sha256": "a5ee45c658021f63336080098ed27bc07fe0145cc7f41abe678167305b6cc081"
+    },
+    {
+      "role": "search_gate_audit",
+      "path": "wtc1_simulation_v8/output/v10c_p0_search_gate_audit.json",
+      "expected_sha256": "d087fcc5e8d74d934a2854d3078f30671b552cd477beff76f577ed5ae8a9f4b2"
+    },
+    {
+      "role": "identity_matrix_csv",
+      "path": "wtc1_simulation_v8/output/v10c_p0_identity_matrix.csv",
+      "expected_sha256": "e8a4d743426c86254b5558491538c6b65bad1ebf34287d4f4e20493ae984fa2a"
+    },
+    {
+      "role": "exact_match_inventory_csv",
+      "path": "wtc1_simulation_v8/output/v10c_p0_exact_match_inventory.csv",
+      "expected_sha256": "4b3d2ebc698ddb109743657be1ec33875f6afaffb50ce19aeacc6d7781e8d957"
+    },
+    {
+      "role": "locator_transcription",
+      "path": "wtc1_simulation_v8/output/v10c_p0_locator_transcription.json",
+      "expected_sha256": "b709ffb25f41fcd003b3a1995737a095e04453662406985d4f3e156385bb35ff"
+    },
+    {
+      "role": "working_copy_manifest",
+      "path": "wtc1_simulation_v8/output/v10c_p0_working_copy_manifest.json",
+      "expected_sha256": "ab9f320256d14509670375a61b145e895b4437405903f5ae0217c29dd0996732"
+    },
+    {
+      "role": "model_gate",
+      "path": "wtc1_simulation_v8/output/v10c_structural_source_gate.json",
+      "expected_sha256": "9d3829c31cb1aceeb423aab311324280aaf6d51f8956f94ba8b1673b178969db"
+    },
+    {
+      "role": "report",
+      "path": "wtc1_simulation_v8/output/rapport_wtc1_v10c_controle_identite_p0.md",
+      "expected_sha256": "7b3616dad75a7a3f12a2cabd9153bddf91631854a9ac512f30b14a4de3c64f29"
+    },
+    {
+      "role": "results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10c_controle_identite_p0.json",
+      "expected_sha256": "cad9e2cf577b910ad9e960706ffc6e84ce46884c0926ab83c653583bdde588c6"
+    }
+  ],
+  "v10c_locator": {
+    "path": "wtc1_simulation_v8/output/v10c_p0_locator_transcription.json",
+    "expected_sha256": "b709ffb25f41fcd003b3a1995737a095e04453662406985d4f3e156385bb35ff",
+    "required_validation_status": "PASS",
+    "required_local_identity_status": "NOT_LOCALIZED_IN_BOUNDED_VISIBLE_FILESYSTEM_NAME_CHECK",
+    "required_target_count": 9,
+    "evidence_class": "ARCHIVE_REGISTER_CLAIM_NOT_OFFICIAL_SOURCE"
+  },
+  "protected_files": [
+    {
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+    }
+  ],
+  "remote_policy": {
+    "allowed_scheme": "https",
+    "allowed_exact_host": "archive.org",
+    "allowed_host_suffix": ".archive.org",
+    "maximum_redirects_per_request": 5,
+    "maximum_requests_per_target": 3,
+    "maximum_total_requests": 27,
+    "request_timeout_seconds": 30,
+    "user_agent": "WTC1-V10D-Bounded-Acquisition/1.0",
+    "accept_encoding": "identity",
+    "preflight_method": "HEAD_THEN_OPTIONAL_BYTES_0_7_RANGE_ONLY_IF_LENGTH_UNAVAILABLE_OR_HEAD_UNSUPPORTED",
+    "range_probe": "bytes=0-7",
+    "range_probe_maximum_body_bytes_read": 8,
+    "require_known_positive_payload_length_before_full_get": true,
+    "require_exact_case_insensitive_terminal_filename": true,
+    "maximum_individual_payload_bytes": 16777216,
+    "maximum_aggregate_full_get_payload_bytes": 67108864,
+    "maximum_aggregate_accepted_payload_bytes": 67108864,
+    "require_pdf_signature": "%PDF-",
+    "full_get_status_required": 200,
+    "transport_failure_or_identity_rejection_semantics": "A transport failure or identity rejection is a documented bounded result, not by itself a validation failure. Validation PASS requires that no unauthorized endpoint, payload, write, cap breach or physical promotion occurred and that every accepted copy passed all identity, hash and container gates."
+  },
+  "working_copy_policy": {
+    "create_directory_only_if_at_least_one_target_passes_remote_preflight": true,
+    "destination_directory": "wtc1_simulation_v8/input/v10d_structural_sources",
+    "destination_filename_template": "{document_id}__{sha256_prefix16}.pdf",
+    "temporary_downloads_only_inside_destination_directory": true,
+    "delete_current_run_rejected_temporary_payloads": true,
+    "never_overwrite_nonmatching_destination": true,
+    "verify_destination_hash_and_size": true,
+    "accepted_payload_claims_provenance": false,
+    "accepted_payload_claims_as_built_or_revision_authority": false
+  },
+  "container_transcription": {
+    "library": "pypdf",
+    "allowed_fields": [
+      "pdf_header_version",
+      "file_size_bytes",
+      "sha256",
+      "page_count",
+      "encrypted",
+      "document_information_metadata",
+      "register_page_count",
+      "register_drawing_start",
+      "register_drawing_end"
+    ],
+    "maximum_metadata_value_characters": 512,
+    "extract_page_text": false,
+    "render_pages": false,
+    "inspect_drawing_geometry": false,
+    "assign_physical_properties": false
+  },
+  "targets": [
+    {
+      "acquisition_sequence": 1,
+      "document_id": "WTCI-000013-L",
+      "expected_filename": "WTCI-000013-L.pdf",
+      "workbook_row": 12,
+      "book_number": 3,
+      "group_id": "CORE_COLUMN_BOOK3",
+      "subsystem": "core_vertical",
+      "register_pdf_title": "Core Columns",
+      "register_content_summary": "146 page PDF file, Core Column Schedule/Detail",
+      "register_page_count": 146,
+      "register_tower_label": "A+B",
+      "register_drawing_start": "3 - A1 - 0",
+      "register_drawing_end": "3 - B3 - 16",
+      "register_hyperlink": "https://archive.org/download/WTCI000013L/WTCI-000013-L.pdf"
+    },
+    {
+      "acquisition_sequence": 2,
+      "document_id": "WTCI-000710-L",
+      "expected_filename": "WTCI-000710-L.pdf",
+      "workbook_row": 26,
+      "book_number": 5,
+      "group_id": "CORE_BEAM_BOOK5",
+      "subsystem": "core_inplane",
+      "register_pdf_title": "Beams,types,sched,typ,detail",
+      "register_content_summary": "036 page PDF file, Beams schedules,types, stud details",
+      "register_page_count": 36,
+      "register_tower_label": "A+B",
+      "register_drawing_start": "5 - AB0 - 0",
+      "register_drawing_end": "5 - AB3 - 5",
+      "register_hyperlink": "https://ia801502.us.archive.org/34/items/WTCI000016L/Drawing%20Book%205/Book%205/WTCI-000710-L.pdf"
+    },
+    {
+      "acquisition_sequence": 3,
+      "document_id": "WTCI-000020-L",
+      "expected_filename": "WTCI-000020-L.pdf",
+      "workbook_row": 30,
+      "book_number": 6,
+      "group_id": "CONNECTION_BOOK6",
+      "subsystem": "core_office_perimeter_connections",
+      "register_pdf_title": "Various",
+      "register_content_summary": "293 pg PDF file, Conns/Temp Elev/seats/louver/Anch",
+      "register_page_count": 293,
+      "register_tower_label": "A+B",
+      "register_drawing_start": "6 - AB0 - 0",
+      "register_drawing_end": "6 - AB1 - 119.1",
+      "register_hyperlink": "https://ia801405.us.archive.org/21/items/WTCI000020L/Drawing%20Book%206/WTCI-000020-L.pdf"
+    },
+    {
+      "acquisition_sequence": 4,
+      "document_id": "WTCI-000702-L",
+      "expected_filename": "WTCI-000702-L.pdf",
+      "workbook_row": 47,
+      "book_number": 7,
+      "group_id": "OFFICE_FLOOR_BOOK7",
+      "subsystem": "office_floor",
+      "register_pdf_title": "Floor System",
+      "register_content_summary": "063 page PDF file, Index to Drawing Book 7",
+      "register_page_count": 63,
+      "register_tower_label": "A+B",
+      "register_drawing_start": "",
+      "register_drawing_end": "",
+      "register_hyperlink": "https://ia601507.us.archive.org/21/items/WTCI000131L002/Drawing%20Book%207/WTCI-000702-L.PDF"
+    },
+    {
+      "acquisition_sequence": 5,
+      "document_id": "WTCI-000703-L",
+      "expected_filename": "WTCI-000703-L.pdf",
+      "workbook_row": 54,
+      "book_number": 8,
+      "group_id": "SLAB_REINFORCEMENT_BOOK8",
+      "subsystem": "office_floor_slab",
+      "register_pdf_title": "Concrete Reinforcing",
+      "register_content_summary": "115 page PDF file, Index to Book 8 - Concrete Reinf.",
+      "register_page_count": 115,
+      "register_tower_label": "A+B",
+      "register_drawing_start": "",
+      "register_drawing_end": "",
+      "register_hyperlink": "https://ia801401.us.archive.org/27/items/WTCI001067L/Drawing%20Book%208/WTCI-000703-L.pdf"
+    },
+    {
+      "acquisition_sequence": 6,
+      "document_id": "WTCI-000705-L",
+      "expected_filename": "WTCI-000705-L.pdf",
+      "workbook_row": 72,
+      "book_number": 11,
+      "group_id": "TRUSS_DETAIL_BOOK11",
+      "subsystem": "office_floor_truss",
+      "register_pdf_title": "Truss Details",
+      "register_content_summary": "018 page PDF file, Index to Book 11",
+      "register_page_count": 18,
+      "register_tower_label": "A+B",
+      "register_drawing_start": "",
+      "register_drawing_end": "",
+      "register_hyperlink": "https://ia801505.us.archive.org/17/items/WTCI000033L/Drawing%20Book%2011/WTCI-000705-L.pdf"
+    },
+    {
+      "acquisition_sequence": 7,
+      "document_id": "WTCI-000721-L",
+      "expected_filename": "WTCI-000721-L.pdf",
+      "workbook_row": 2,
+      "book_number": 1,
+      "group_id": "PERIMETER_COLUMN_BOOK1",
+      "subsystem": "perimeter_columns",
+      "register_pdf_title": "Exterior Columns to Elev 363",
+      "register_content_summary": "039 page PDF file, schedules for exterior panels",
+      "register_page_count": 39,
+      "register_tower_label": "A+B",
+      "register_drawing_start": "",
+      "register_drawing_end": "",
+      "register_hyperlink": "https://archive.org/download/WTCI000721L/Drawing%20Book%201/Book%201/WTCI-000721-L.pdf"
+    },
+    {
+      "acquisition_sequence": 8,
+      "document_id": "WTCI-000722-L",
+      "expected_filename": "WTCI-000722-L.pdf",
+      "workbook_row": 7,
+      "book_number": 2,
+      "group_id": "PERIMETER_TREE_BOOK2",
+      "subsystem": "perimeter_wall_trees",
+      "register_pdf_title": "Exterior Wall Trees",
+      "register_content_summary": "029 page PDF file,  Schdl,Notes,Index For Trees",
+      "register_page_count": 29,
+      "register_tower_label": "A+B",
+      "register_drawing_start": "",
+      "register_drawing_end": "",
+      "register_hyperlink": "https://archive.org/download/WTCI000722L/Drawing%20Book%202/Book%202/WTCI-000722-L.pdf"
+    },
+    {
+      "acquisition_sequence": 9,
+      "document_id": "WTCI-000709-L",
+      "expected_filename": "WTCI-000709-L.pdf",
+      "workbook_row": 21,
+      "book_number": 4,
+      "group_id": "PERIMETER_PANEL_BOOK4",
+      "subsystem": "perimeter_wall_panels",
+      "register_pdf_title": "Exterior Wall Panels",
+      "register_content_summary": "045 page PDF file, Schedules",
+      "register_page_count": 45,
+      "register_tower_label": "A+B",
+      "register_drawing_start": "",
+      "register_drawing_end": "",
+      "register_hyperlink": "https://archive.org/download/WTCI000017L/Drawing%20Book%204/WTCI-000709-L.pdf"
+    }
+  ],
+  "gates": {
+    "v10c_regression_hashes_all_match": true,
+    "v10c_locator_hash_and_status_match": true,
+    "protected_blender_master_unchanged": true,
+    "target_count_exactly_nine": true,
+    "initial_request_urls_exactly_match_v10c_locator": true,
+    "all_requested_urls_and_redirects_use_allowed_https_archive_org_hosts": true,
+    "maximum_request_counts_not_exceeded": true,
+    "all_full_gets_have_known_positive_preflight_length": true,
+    "accepted_payload_count_may_be_zero_to_nine": true,
+    "all_accepted_terminal_filenames_match": true,
+    "all_accepted_pdf_signatures_valid": true,
+    "all_accepted_individual_sizes_within_cap": true,
+    "aggregate_full_get_and_accepted_sizes_within_cap": true,
+    "all_accepted_payload_hashes_and_destination_copies_match": true,
+    "all_accepted_containers_parse_without_page_content_access": true,
+    "temporary_payload_count_zero_after_run": true,
+    "source_archive_and_official_sources_not_read_or_modified": true,
+    "no_search_engine_url_discovery_or_external_contact": true,
+    "physical_assignment_count_zero": true,
+    "solver_blender_thermal_gates_closed": true
+  },
+  "outputs": {
+    "source_manifest": "wtc1_simulation_v8/output/v10d_p0_remote_source_manifest.json",
+    "request_audit": "wtc1_simulation_v8/output/v10d_p0_remote_request_audit.json",
+    "identity_matrix_csv": "wtc1_simulation_v8/output/v10d_p0_remote_identity_matrix.csv",
+    "container_metadata": "wtc1_simulation_v8/output/v10d_p0_container_metadata.json",
+    "working_copy_manifest": "wtc1_simulation_v8/output/v10d_p0_working_copy_manifest.json",
+    "page_count_audit_csv": "wtc1_simulation_v8/output/v10d_p0_register_page_count_audit.csv",
+    "model_gate": "wtc1_simulation_v8/output/v10d_structural_source_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10d_acquisition_p0.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10d_acquisition_p0.json"
+  },
+  "next_iteration": {
+    "id": "V10E",
+    "objective": "Preserve V8U through V10D and perform a bounded drawing-index locator audit only on hash-verified V10D P0 copies. Predeclare exact page candidates from container and register locators, then transcribe only drawing identifiers, page locators, floor labels and revision/index fields needed to test Floors 93-99 source applicability. Do not promote geometry, infer as-built status, assign physical properties or damage, contact an external party, run a structural solver, continue a thermal model or launch Blender."
+  }
+}

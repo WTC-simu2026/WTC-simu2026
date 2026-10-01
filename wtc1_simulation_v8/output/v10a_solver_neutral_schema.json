@@ -1,0 +1,142 @@
+{
+  "iteration": "V10A",
+  "dataset_version": "10.1.0",
+  "generated_at_utc": "2026-08-31T11:41:04Z",
+  "validation_status": "PASS",
+  "scope": "Preserve V8U through V9Z. Enumerate the node, element, connection, boundary, property, unit and provenance records that a future seven-floor core-office-floor-perimeter-transfer model would require. Reuse only hashed cached artifacts. Treat official-model identifiers and loads as dependent reference data, keep reconstructed topology explicitly hypothetical, and leave every unsourced coordinate, section, material, stiffness, capacity, connection law and damage state null. Do not run a structural solver or Blender and do not modify the protected Blender master.",
+  "epistemic_classes": {
+    "observed_or_transcribed_fact": "File identities, column IDs, declared topology counts, unit labels and fields directly read from hashed cached artifacts.",
+    "official_model_result": "NIST-derived floor totals, axial-force contours, moment-subnetwork topology and Case Ai references remain dependent official-model outputs or idealizations.",
+    "archive_claim": "No source archive is read in V10A and no archive claim is promoted.",
+    "model_hypothesis": "The additional V8Q orthogonal edges, algebraic ports, office/perimeter face placeholders and V8M envelopes are hypotheses or requirements, not as-built members.",
+    "derived_result": "Catalogue counts, requirement matrices, source-gate classification and solver-readiness decision.",
+    "contradiction_or_unknown": "All missing coordinates, schedules, connection laws, boundary conditions, material properties and damage states remain null and blocking."
+  },
+  "schema_rules": {
+    "floors": [
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99
+    ],
+    "faces": [
+      "north",
+      "east",
+      "south",
+      "west"
+    ],
+    "core_node_rule": "Create one catalogue node for every V8Q core-column identifier on every floor. Preserve the identifier only; x, y and z remain null because the V8Q coordinates are reconstructed model coordinates, not accepted as-built solver coordinates.",
+    "office_node_rule": "Create one office-boundary placeholder and four face placeholders per floor. These are requirement records, not physical nodes or a discretization.",
+    "perimeter_node_rule": "Create four face-level perimeter placeholders per floor. Member-level perimeter columns, splices and connections remain missing.",
+    "core_vertical_element_rule": "Connect the same core-column identifier only between adjacent catalogue floors. Section, length, material, stiffness, capacity, connection law and damage state remain null.",
+    "core_inplane_element_rule": "Enumerate the 79 V8Q orthogonal candidate edges on each floor. Flag the 17 V8H official-model moment-subnetwork transcriptions separately; every other edge remains a reconstruction hypothesis. No edge receives a member assignment or capacity.",
+    "core_to_office_rule": "Enumerate one requirement record for each V8Q boundary-port column per floor. A V8Q port is an algebraic bookkeeping variable, not an identified physical connection.",
+    "office_to_perimeter_rule": "Enumerate one face-level requirement path per floor. V8M face paths are upper-envelope abstractions and do not establish individual trusses, seats, slab strips or perimeter attachments.",
+    "perimeter_vertical_rule": "Enumerate one face-level placeholder between adjacent floors. This does not substitute for member-level perimeter topology.",
+    "stairwell_exclusion_rule": "The 21 V9U floor-stair records remain categorical and hypothetical. They create zero solver nodes or elements and receive no structural credit.",
+    "case_ai_damage_rule": "The four V8L Floor 96 Case Ai removed edges may be carried only as an official-model reference flag. The V10A physical damage_state field remains null for every element.",
+    "v8r_multiplier_rule": "V8R joint multipliers are sensitivity diagnostics and are not copied into capacity fields."
+  },
+  "catalogue_columns": {
+    "nodes": [
+      "node_id",
+      "floor",
+      "subsystem",
+      "role",
+      "source_identifier",
+      "face",
+      "x",
+      "y",
+      "z",
+      "coordinate_unit",
+      "coordinate_status",
+      "evidence_class",
+      "source_path",
+      "official_model_dependency",
+      "solver_node_authorized",
+      "missing_required_fields"
+    ],
+    "elements": [
+      "element_id",
+      "element_family",
+      "floor_from",
+      "floor_to",
+      "node_i",
+      "node_j",
+      "face_or_membership",
+      "topology_status",
+      "official_model_reference",
+      "case_ai_floor96_removed_edge_reference",
+      "evidence_class",
+      "source_path",
+      "as_built_assignment",
+      "member_section",
+      "material_id",
+      "mass",
+      "length",
+      "area",
+      "inertia",
+      "stiffness",
+      "capacity",
+      "damage_state",
+      "connection_i",
+      "connection_j",
+      "solver_element_authorized",
+      "missing_required_fields"
+    ]
+  },
+  "catalogue_counts": {
+    "nodes": 392,
+    "elements_or_requirement_relations": 1083,
+    "node_roles": {
+      "core_column_identifier_catalogue": 329,
+      "office_boundary_requirement_placeholder": 7,
+      "office_face_requirement_placeholder": 28,
+      "perimeter_face_requirement_placeholder": 28
+    },
+    "element_families": {
+      "core_inplane_hypothetical_orthogonal_candidate": 434,
+      "core_inplane_official_model_moment_reference": 119,
+      "core_to_office_algebraic_port_requirement": 168,
+      "core_vertical_identifier_continuity": 282,
+      "office_boundary_to_face_distribution_requirement": 28,
+      "office_to_perimeter_face_requirement": 28,
+      "perimeter_face_vertical_requirement_placeholder": 24
+    },
+    "connection_requirement_families": 13,
+    "source_gate_requirements": 22
+  },
+  "null_assignment_policy": {
+    "node_coordinates_all_null": true,
+    "element_physical_fields_all_null": [
+      "member_section",
+      "material_id",
+      "mass",
+      "length",
+      "area",
+      "inertia",
+      "stiffness",
+      "capacity",
+      "damage_state",
+      "connection_i",
+      "connection_j"
+    ],
+    "mass_assignment_count": 0,
+    "stiffness_assignment_count": 0,
+    "capacity_assignment_count": 0,
+    "connection_law_assignment_count": 0,
+    "damage_state_assignment_count": 0,
+    "load_path_credit_count": 0
+  },
+  "official_model_dependency": {
+    "core_identifiers": true,
+    "moment_subnetwork_references": true,
+    "floor_totals_kip": true,
+    "floor_totals_applied_as_loads": false,
+    "floor96_case_ai_edges_are_reference_flags_only": true
+  },
+  "solver_readiness": false
+}

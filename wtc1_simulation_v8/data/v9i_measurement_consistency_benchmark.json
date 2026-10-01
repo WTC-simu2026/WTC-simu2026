@@ -1,0 +1,145 @@
+{
+  "iteration": "V9I",
+  "dataset": {
+    "name": "No-imputation measurement-consistency benchmark for the P4V035/P6V035 S355 analogue pair",
+    "version": "9.9.0",
+    "status": "PREDECLARED_DESCRIPTIVE_REDUCTION_ONLY_NO_STRESS_NO_FIT_NO_SOLVER",
+    "random_seed": 9112001,
+    "deterministic": true,
+    "scope": "Preserve V8U through V9H, verify the 55 cached V9H payloads, extract documentary definitions from the already acquired Zenodo metadata, and calculate time-grid, threshold-interval, recorded-path work and DIC robust-field summaries without imputing missing values or assuming cross-channel synchronization. Do not infer a complete pulse duration, stress, constitutive or fracture parameters, acquire additional payloads, run a solver or perform impact work."
+  },
+  "sources": [
+    {
+      "type": "open_dataset_metadata_local_copy",
+      "path": "wtc1_simulation_v8/input/v9f_open_sources/zenodo_17591440_metadata.json",
+      "sha256": "e4c1d64a0a3b21c1b2841386f3b88884362fbb3051b52b19bf3b704a2b7beba3",
+      "doi": "10.5281/zenodo.17591440",
+      "use": "Definitions of DIC frame labels, virtual trigger, shortened incident bar, processed displacement boundary conditions, acoustic velocity and quasi-static relative displacement."
+    },
+    {
+      "type": "primary_publication_identifier",
+      "doi": "10.1016/j.ijmecsci.2024.109749",
+      "title": "Shear Band Formation with Split Hopkinson Bar Experiments",
+      "full_equation_12_acquired": false,
+      "use": "Provenance target cited by the Zenodo description; the exact equation and correction-factor value are not used in V9I."
+    },
+    {
+      "type": "verified_payload_manifest",
+      "path": "wtc1_simulation_v8/output/v9h_selective_payload_ingestion_manifest.json",
+      "sha256": "e5c79018fbc1f2e6a556944af99329b8e0a49cc3381207b9738ee1b692295ba4",
+      "use": "Exact per-entry hashes, paths, units and cached payload identities."
+    },
+    {
+      "type": "coordinate_reference_image",
+      "path": "wtc1_simulation_v8/input/v9h_open_sources/selective_payloads/FurtherMeasurements/DIC/P4V035/P4V035_COS.jpg",
+      "sha256": "24029062c555a0edb403993d2939dd564aa95c91c3c3faf349135ad2f25fb120",
+      "use": "Visual transcription of displayed y-z axes and incident-wave arrow only."
+    }
+  ],
+  "documentation_transcription": {
+    "DIC_filename_times": "Frame output times in file labels are associated with an imaginary trigger at the left end of the shortened 300 mm incident bar used in the SHPB simulation setup.",
+    "bar_boundary_conditions": "BC_Inc and BC_Trans displacement boundary conditions are calculated from incident/transmission-bar strain-gauge signals using equation 12 of the cited paper, an acoustic bar velocity of 4639 m/s and a correction factor.",
+    "correction_factor_numeric_value_available": false,
+    "quasi_static_curve": "Force-displacement values use specimen relative displacements evaluated by DIC.",
+    "coordinate_image_observed": {
+      "displayed_horizontal_axis": "z, positive to the right",
+      "displayed_vertical_axis": "y, positive upward",
+      "incident_bar_wave_arrow": "leftward, toward decreasing displayed z",
+      "CSV_coordinate_columns": ["x", "y", "z"],
+      "CSV_displacement_columns": ["displacement_x", "displacement_y"],
+      "display_to_CSV_axis_mapping_resolved": false,
+      "possible_mapping_not_assumed": "CSV x numerically spans the displayed horizontal range while CSV z is zero, but V9I does not relabel CSV x as displayed z without an explicit source definition."
+    }
+  },
+  "methods": {
+    "missing_values": "Preserve blank cells as missing; exclude them only from the statistic for their own field; never replace them with zero or interpolate them.",
+    "quantile_probabilities": [0.05, 0.25, 0.5, 0.75, 0.95],
+    "quantile_definition": "Sorted-data linear interpolation at index (n-1)*p.",
+    "bar_signal_threshold_fraction_of_peak_absolute_displacement": 0.05,
+    "bar_derivative": "First difference divided by exact adjacent time interval; no smoothing.",
+    "quasi_static_work": "Trapezoidal integral along the recorded force-displacement path. One kN*mm equals one joule. Positive and negative displacement-increment contributions are retained separately.",
+    "DIC_time_offset_consistency_tolerance_ms": 0.0011,
+    "cross_channel_alignment": "Report numerical overlap after converting bar seconds to milliseconds, but do not assert synchronization.",
+    "stress_or_constitutive_reduction": "prohibited"
+  },
+  "expected_inputs": {
+    "verified_payload_entry_count": 55,
+    "dynamic_bar_file_count": 2,
+    "dynamic_DIC_csv_frame_count": 51,
+    "quasi_static_curve_count": 1,
+    "DIC_total_missing_cells": 7070,
+    "P6V035_DIC_acquired": false
+  },
+  "output": {
+    "DIC_quantile_table": "wtc1_simulation_v8/output/v9i_dic_field_quantiles.csv",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v9i_coherence_mesures.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v9i_coherence_mesures.md"
+  },
+  "regressions": {
+    "required_files": {
+      "wtc1_simulation_v8/data/v9h_selective_payload_ingestion.json": "fbe32c9f9a6c9e7719db4591a00de365d1f354f67736dc7919b0202607d6c416",
+      "wtc1_simulation_v8/scripts/run_v9h_selective_payload_ingestion.py": "2fb583106c7a1bc0bc3af2481dac1f94456d970fa5caf0136be97400779b4b86",
+      "wtc1_simulation_v8/output/v9h_remote_range_acquisition_receipt.json": "ea2792b734d69a3c6d1a32cab26b3dc46713e127410d9cf6e15a4ace794f17f1",
+      "wtc1_simulation_v8/output/v9h_selective_payload_ingestion_manifest.json": "e5c79018fbc1f2e6a556944af99329b8e0a49cc3381207b9738ee1b692295ba4",
+      "wtc1_simulation_v8/output/resultats_wtc1_v9h_signaux_selectifs.json": "b71a73401af94663aba37ccb57f0e8cf56d1afa82011f9a029da250a498b10e8",
+      "wtc1_simulation_v8/output/rapport_wtc1_v9h_signaux_selectifs.md": "3bb170d67ae0f45ae8077802f78fe2ad0d07a1803b95444aacc9d41e92c587f9",
+      "wtc1_simulation_v8/input/v9f_open_sources/zenodo_17591440_metadata.json": "e4c1d64a0a3b21c1b2841386f3b88884362fbb3051b52b19bf3b704a2b7beba3"
+    },
+    "required_metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9h_signaux_selectifs.json",
+        "path": "iteration_execution_validated",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9h_signaux_selectifs.json",
+        "path": "selective_payload_gate_passed",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9h_signaux_selectifs.json",
+        "path": "retrieval_summary.verified_entry_count",
+        "expected": 55
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9h_signaux_selectifs.json",
+        "path": "full_zip_downloaded",
+        "expected": false
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9h_signaux_selectifs.json",
+        "path": "deferred_P6V035_DIC.acquired",
+        "expected": false
+      }
+    ]
+  },
+  "evidence_policy": {
+    "observed_fact": "An explicit source description, header, unit, image label or numeric value in the verified V9H payloads.",
+    "official_model_result": "None is introduced by V9I.",
+    "local_archive_claim": "No local WTC archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "The 5 percent signal threshold, linear quantile definition and descriptive comparison rules.",
+    "derived_result": "Time-grid, overlap, extrema, recorded-path work, valid-count and quantile summaries; not stress, material response or event probability.",
+    "unknown": "Exact equation 12 implementation, correction-factor value, CSV-to-displayed coordinate mapping, absolute synchronization and applicability to WTC or CF6 materials."
+  },
+  "scientific_and_scope_gates": {
+    "no_imputation": true,
+    "absolute_cross_channel_synchronization_assertion_authorized": false,
+    "stress_inference_authorized": false,
+    "material_fit_authorized": false,
+    "failure_law_fit_authorized": false,
+    "coupon_solver_authorized": false,
+    "WTC_or_CF6_solver_authorized": false,
+    "failure_deletion_authorized": false,
+    "projectile_rupture_authorized": false,
+    "facade_impact_authorized": false,
+    "global_impact_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_inference_authorized": false
+  },
+  "foia_policy": {
+    "priority": "last_resort_only",
+    "request_sent": false,
+    "external_contact_authorized": false
+  }
+}

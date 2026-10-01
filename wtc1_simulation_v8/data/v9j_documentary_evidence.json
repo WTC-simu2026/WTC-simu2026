@@ -1,0 +1,148 @@
+{
+  "iteration": "V9J",
+  "evidence_capture": {
+    "method": "Manual visual inspection of the complete relevant PDF pages rendered from the verified institutional-repository source, supplemented by machine-readable OAI and Zenodo metadata.",
+    "inspected_pdf_pages": [3, 4, 5, 9, 10],
+    "render_resolution_dpi": [200, 220],
+    "random_seed": 9112001,
+    "stress_strain_reconstruction_performed": false
+  },
+  "acquired_sources": [
+    {
+      "id": "bam_primary_pdf",
+      "type": "primary_publication_institutional_repository_pdf",
+      "path": "wtc1_simulation_v8/input/v9j_open_sources/JentzschEtAl_2024_ShearBandFormationWithSHPBExperiments.pdf",
+      "url": "https://opus4.kobv.de/opus4-bam/files/61333/JentzschEtAl_2024_ShearBandFormationWithSHPBExperiments.pdf",
+      "doi": "10.1016/j.ijmecsci.2024.109749",
+      "urn": "urn:nbn:de:kobv:b43-613339",
+      "license": "CC BY 4.0",
+      "size_bytes": 5691258,
+      "sha256": "b6804bf77ec32c3c4cc5f6fbe673f8eedb67fdc03d6d4d28259d1ee7e556d379",
+      "acquired_at": "2026-08-28T10:33:40+02:00"
+    },
+    {
+      "id": "bam_oai_record",
+      "type": "institutional_repository_oai_dc_record",
+      "path": "wtc1_simulation_v8/input/v9j_open_sources/opus4_bam_61333_oai_dc.xml",
+      "url": "https://opus4.kobv.de/opus4-bam/oai?verb=GetRecord&metadataPrefix=oai_dc&identifier=oai:kobv.de-opus4-bam:61333",
+      "size_bytes": 4838,
+      "sha256": "03ba02c8fb54e2c81d6d89572818ca9bca0f44a07cfd4d0bd0bb0518d2faae69",
+      "acquired_at": "2026-08-28T10:33:40+02:00"
+    }
+  ],
+  "local_verified_sources": [
+    {
+      "id": "zenodo_metadata",
+      "path": "wtc1_simulation_v8/input/v9f_open_sources/zenodo_17591440_metadata.json",
+      "sha256": "e4c1d64a0a3b21c1b2841386f3b88884362fbb3051b52b19bf3b704a2b7beba3"
+    },
+    {
+      "id": "zenodo_geometry_figure",
+      "path": "wtc1_simulation_v8/input/v9g_open_sources/Fig1.jpg",
+      "sha256": "b8a7ab9de81761741a9157500118213419624848225d87bcd42bc3cf363e4c50"
+    },
+    {
+      "id": "p4v035_coordinate_image",
+      "path": "wtc1_simulation_v8/input/v9h_open_sources/selective_payloads/FurtherMeasurements/DIC/P4V035/P4V035_COS.jpg",
+      "sha256": "24029062c555a0edb403993d2939dd564aa95c91c3c3faf349135ad2f25fb120"
+    }
+  ],
+  "required_definition_findings": {
+    "equation_12_full_mathematical_form": {
+      "status": "documented",
+      "source_id": "bam_primary_pdf",
+      "location": "PDF page 4, equation (12), with explanatory text continuing on page 5",
+      "transcription": "u_bar_z(t) = b * c_B * integral_from_0_to_t epsilon_zz(t_tilde) d(t_tilde)",
+      "definitions": {
+        "u_bar_z": "Prescribed longitudinal displacement at the outer edge of the incident bar.",
+        "b": "Correction factor, dimensionless.",
+        "c_B": "Acoustic velocity of the cylindrical bars, 4639 m/s.",
+        "epsilon_zz": "Longitudinal strain measured by the incident-bar strain gauges.",
+        "integration": "From zero to the current time; the paper states that numerical integration uses the central-difference rule."
+      },
+      "criterion_passed": true
+    },
+    "correction_factor_numeric_value_and_application": {
+      "status": "documented",
+      "source_id": "bam_primary_pdf",
+      "location": "PDF page 5, continuation of section 2.6.1 immediately below Figure 5",
+      "numeric_value": 1.02,
+      "symbol": "b",
+      "units": "dimensionless",
+      "application": "Multiplies c_B times the integrated longitudinal strain in equation (12); selected so the reduced-model incident-bar strains coincide with measurements and then kept fixed for all reported simulations.",
+      "criterion_passed": true
+    },
+    "bar_and_specimen_coordinate_sign_conventions": {
+      "status": "partial",
+      "source_ids": ["bam_primary_pdf", "p4v035_coordinate_image"],
+      "locations": [
+        "PDF pages 4-5, Figure 3 and equation (12)",
+        "PDF pages 9-10, Figures 9, 11 and 12",
+        "P4V035_COS.jpg"
+      ],
+      "documented": [
+        "The paper expresses the longitudinal bar and specimen displacement as u_z.",
+        "Figure 3 draws the incident boundary displacement toward the specimen; the coordinate image displays positive z to the right, positive y upward and the incident wave to the left.",
+        "Figures 9, 11 and 12 show the reported u_z field and its negative sign during compression."
+      ],
+      "missing": [
+        "No inspected source explicitly maps CSV x to displayed physical z or CSV displacement_x to physical u_z.",
+        "No inspected source explicitly states the sign convention applied to the separate BC_Trans file."
+      ],
+      "criterion_passed": false
+    },
+    "complete_specimen_dimensions_for_reduction": {
+      "status": "partial",
+      "source_ids": ["bam_primary_pdf", "zenodo_metadata", "zenodo_geometry_figure"],
+      "locations": [
+        "PDF page 5, Figure 5 and section 3.1",
+        "Zenodo record 17591440 description and Fig1.jpg"
+      ],
+      "documented_dimensions_mm": {
+        "overall_width": 17.0,
+        "through_thickness": 10.0,
+        "overall_height": 12.2,
+        "vertical_notch_separation": 2.0,
+        "central_ligament_width_shown": 0.35,
+        "notch_radius_mean": 0.1741,
+        "notch_radius_95pct_interval_half_width": 0.00061,
+        "P4V035_notch_offset_from_dataset_description": 0.35
+      },
+      "missing": [
+        "The paper's Figure 5 explicitly reports the simulated paper geometry with x = 0, whereas the selected P4V035/P6V035 dataset pair is classified as offset x = 0.35 mm.",
+        "The inspected sources do not define a direct nominal stress/strain reduction for the offset specimen; the publication instead identifies response through an inverse finite-element model.",
+        "No source explicitly demonstrates that every geometric convention needed to reproduce the selected offset mesh follows uniquely from the drawing without additional CAD or modelling assumptions."
+      ],
+      "criterion_passed": false
+    },
+    "absolute_bar_DIC_time_alignment": {
+      "status": "unknown",
+      "source_ids": ["bam_primary_pdf", "zenodo_metadata"],
+      "locations": [
+        "PDF page 3, sections 2.1 and 2.3",
+        "Zenodo record 17591440 description"
+      ],
+      "documented": [
+        "The paper states that the two high-speed cameras are synchronized with each other.",
+        "The dataset description associates DIC filename times with an imaginary trigger at the left end of the shortened 300 mm incident bar."
+      ],
+      "missing": [
+        "No inspected source defines the absolute event or numerical offset aligning the DIC filename clock with the BC_Inc and BC_Trans time columns.",
+        "The stable V9I filename-to-stage offset and numerical bar/DIC overlap therefore remain descriptive only."
+      ],
+      "criterion_passed": false
+    }
+  },
+  "scientific_limits": {
+    "generic_SHPB_convention_imported": false,
+    "stress_strain_reconstruction_performed": false,
+    "material_or_failure_fit_performed": false,
+    "solver_executed": false,
+    "WTC_or_CF6_substitution_performed": false,
+    "source_archive_rescanned": false,
+    "P6V035_DIC_acquired": false,
+    "full_Zenodo_ZIP_acquired": false,
+    "FOIA_request_sent": false,
+    "external_contact_made": false
+  }
+}

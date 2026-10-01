@@ -1,0 +1,247 @@
+{
+  "iteration": "V11K",
+  "status": "PASS",
+  "audit_scope": "Independent serialized-artifact read-back; V11K kernel not imported",
+  "audit_count": 24,
+  "audits_passed": 24,
+  "checks": [
+    {
+      "test": "saved_output_hashes",
+      "pass": true,
+      "evidence": {
+        "count": 15,
+        "failed": []
+      }
+    },
+    {
+      "test": "frozen_input_and_protected_hashes",
+      "pass": true,
+      "evidence": {
+        "count": 15,
+        "failed": []
+      }
+    },
+    {
+      "test": "manifest_identity_and_integrity",
+      "pass": true,
+      "evidence": {
+        "iteration": "V11K",
+        "status": "PASS",
+        "unchanged": true
+      }
+    },
+    {
+      "test": "implementation_tests_saved_as_pass",
+      "pass": true,
+      "evidence": {
+        "tests": 41,
+        "passed": 41,
+        "status": "PASS"
+      }
+    },
+    {
+      "test": "saved_case_and_state_counts",
+      "pass": true,
+      "evidence": {
+        "ids": [
+          "COMBINED_EQUILIBRIUM_CONTROL",
+          "CONVECTION_STEADY_TWO_SIDED",
+          "CONVECTION_EIGENMODE_TRANSIENT",
+          "RADIATION_STEADY_TWO_SIDED",
+          "COMBINED_STEADY_TWO_SIDED",
+          "COMBINED_STEP_TRANSIENT"
+        ],
+        "states": 246
+      }
+    },
+    {
+      "test": "saved_csv_row_counts",
+      "pass": true,
+      "evidence": {
+        "profiles": 15744,
+        "history": 246,
+        "energy": 246,
+        "convergence": 8,
+        "sensitivity": 6
+      }
+    },
+    {
+      "test": "v11j_saved_control_readback",
+      "pass": true,
+      "evidence": {
+        "status": "PASS",
+        "old_driver_reexecuted": false
+      }
+    },
+    {
+      "test": "independent_kelvin_surface_laws",
+      "pass": true,
+      "evidence": {
+        "maximum_absolute_w_m2": 0.0
+      }
+    },
+    {
+      "test": "serialized_massless_surface_balances",
+      "pass": true,
+      "evidence": {
+        "maximum_absolute_w_m2": 6.59383658785373e-12
+      }
+    },
+    {
+      "test": "independent_equilibrium_control",
+      "pass": true,
+      "evidence": {
+        "minimum_c": 60.0,
+        "maximum_c": 60.0,
+        "heat_j_m2": 0.0
+      }
+    },
+    {
+      "test": "independent_three_steady_references",
+      "pass": true,
+      "evidence": {
+        "CONVECTION_STEADY_TWO_SIDED": 0.0,
+        "RADIATION_STEADY_TWO_SIDED": 0.0,
+        "COMBINED_STEADY_TWO_SIDED": 0.0
+      }
+    },
+    {
+      "test": "independent_closed_convection_resistance",
+      "pass": true,
+      "evidence": {
+        "closed_w_m2": 460.49702979415775,
+        "saved_w_m2": 460.4970297941578
+      }
+    },
+    {
+      "test": "independent_component_energy_ledger",
+      "pass": true,
+      "evidence": {
+        "component_j_m2": 0.0,
+        "enthalpy_identity_j_m2": 0.0
+      }
+    },
+    {
+      "test": "saved_energy_and_newton_gates",
+      "pass": true,
+      "evidence": {
+        "analytic_field_linf_k": 0.0023367775507026067,
+        "analytic_mean_absolute_k": 0.004037249052061043,
+        "surface_balance_w_m2": 1.77351466845721e-11,
+        "nonlinear_residual_w_m2": 7.594280759803951e-11,
+        "newton_iterations": 3,
+        "energy_increment_absolute_j_m2": 7.104972610250115e-09,
+        "energy_total_absolute_j_m2": 5.3783878684043884e-08,
+        "energy_relative": 8.96494040493082e-13,
+        "maximum_principle_violation_k": 0.0,
+        "space_order_minimum": 1.9738272735736067,
+        "space_order_maximum": 1.9937083729953011,
+        "time_order_minimum": 0.9719387565101305,
+        "time_order_maximum": 0.991932688953329
+      }
+    },
+    {
+      "test": "independent_convergence_orders",
+      "pass": true,
+      "evidence": {
+        "space": [
+          1.9738272735736067,
+          1.9872516687184407,
+          1.9937083729953011
+        ],
+        "time": [
+          0.991932688953329,
+          0.9854061584093937,
+          0.9719387565101305
+        ]
+      }
+    },
+    {
+      "test": "convergence_acceptance_readback",
+      "pass": true,
+      "evidence": {
+        "space": [
+          1.9738272735736067,
+          1.9872516687184407,
+          1.9937083729953011
+        ],
+        "time": [
+          0.991932688953329,
+          0.9854061584093937,
+          0.9719387565101305
+        ]
+      }
+    },
+    {
+      "test": "independent_sensitivity_monotonicity",
+      "pass": true,
+      "evidence": {
+        "h_enthalpy_j_m2": [
+          6556952.208192462,
+          8701001.435341608,
+          10734877.67766542
+        ],
+        "epsilon_enthalpy_j_m2": [
+          6590225.626464951,
+          8164236.663471011,
+          9188965.624429861
+        ]
+      }
+    },
+    {
+      "test": "independent_numerical_digest",
+      "pass": true,
+      "evidence": {
+        "recomputed": "5bc22ccf518507450a550200b5ce53ab544d76dfa2e2edfbaa04ad768263fb80",
+        "saved": "5bc22ccf518507450a550200b5ce53ab544d76dfa2e2edfbaa04ad768263fb80"
+      }
+    },
+    {
+      "test": "source_scope_and_primary_status",
+      "pass": true,
+      "evidence": "Saved V11J artifacts plus primary NIST equations/constants. No archive rescan, video analysis, downloaded source file or imported WTC fire field."
+    },
+    {
+      "test": "property_history_and_energy_boundary",
+      "pass": true,
+      "evidence": {
+        "surface_storage_j_m2": 0.0,
+        "global_energy_credit_j": 0.0
+      }
+    },
+    {
+      "test": "result_scope_flags",
+      "pass": true,
+      "evidence": {
+        "surface_conditions_are_synthetic": true,
+        "fire_solved": false,
+        "temperature_history_coupled_to_panel": false,
+        "heated_fracture_solved": false,
+        "collapse_validated": false,
+        "blender_changed": false,
+        "global_energy_credit_j": 0.0
+      }
+    },
+    {
+      "test": "report_scope_language",
+      "pass": true,
+      "evidence": {
+        "missing": []
+      }
+    },
+    {
+      "test": "next_iteration_is_bounded_v11l",
+      "pass": true,
+      "evidence": "V11L : effectuer un premier couplage unidirectionnel, limité et réversible, d'un profil transitoire V11K sauvegardé vers le panneau thermoélastique non endommagé V11I. Vérifier interpolation, dilatation libre/empêchée, réactions, travail thermique et bilan énergétique contre les contrôles V11H/V11I ; conserver le palier synthétique explicitement non-WTC et ne traiter ni fissuration chaude ni propriété dégradée avant une formulation d'histoire et d'énergie dédiée."
+    },
+    {
+      "test": "visual_and_report_artifacts_present",
+      "pass": true,
+      "evidence": {
+        "png_bytes": 98197,
+        "report_bytes": 8095
+      }
+    }
+  ],
+  "audited_utc": "2026-09-08T10:47:28.398587+00:00"
+}

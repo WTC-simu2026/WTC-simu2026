@@ -1,0 +1,44 @@
+{
+  "iteration": "V10X",
+  "created_at": "2026-09-05T09:42:55+02:00",
+  "decision": "PASS_INDEPENDENT_CALCULIX_C3D8_CYCLIC_PLASTICITY_BENCHMARK",
+  "criteria": {
+    "predeclared_input_hashes": true,
+    "protected_master_unchanged": true,
+    "calculix_version": true,
+    "solver_return_codes": true,
+    "all_five_steps_parsed": true,
+    "all_records_complete": true,
+    "analytical_force_and_energy": true,
+    "positive_cycle_dissipation": true,
+    "finest_pair_peak_force_mesh_invariance": true,
+    "finest_pair_cycle_energy_mesh_invariance": true,
+    "input_deck_count": true,
+    "all_solver_files_hashed": true,
+    "wtc_mechanical_requirement_closure_count_zero": true,
+    "physical_wtc_release_count_zero": true,
+    "historical_outcome_assignment_count_zero": true
+  },
+  "metrics": {
+    "solver_job_count": 4,
+    "solver_return_code_pass_count": 4,
+    "analytical_job_pass_count": 4,
+    "maximum_force_absolute_error_n": 0.004777664853463648,
+    "maximum_force_relative_error": 1.9110659413854592e-07,
+    "maximum_cycle_energy_relative_error": 7.482365382898035e-05,
+    "maximum_equilibrium_relative_residual": 0.0,
+    "finest_pair_peak_force_change_pct": 0.0,
+    "finest_pair_cycle_energy_change_pct": 0.0,
+    "diagnostic_finest_pair_force_error_change_pct": 0.0,
+    "high_resolution_reference_cycle_dissipation_n_mm": 125594.24419525055,
+    "mechanical_requirement_closed_count": 0,
+    "physical_wtc_state_release_count": 0,
+    "historical_outcome_assignment_count": 0
+  },
+  "allowed_claim": "CalculiX 2.22 reproduces this generic axial elastoplastic loading-unloading benchmark within the predeclared numerical tolerances.",
+  "forbidden_claims": [
+    "The benchmark validates any WTC 1 steel, connection, impact, fire, initiation or propagation model.",
+    "The benchmark shows that WTC 1 must collapse or must arrest.",
+    "The hysteresis curve is a measured WTC material law."
+  ]
+}

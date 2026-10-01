@@ -1,0 +1,154 @@
+{
+  "iteration": "V10K",
+  "started_at_utc": "2026-09-02T08:43:21Z",
+  "completed_at_utc": "2026-09-02T08:43:21Z",
+  "validation_status": "PASS",
+  "dataset": {
+    "name": "Bounded visual audit of three V10J cross-reference windows in two V10I structural working copies",
+    "version": "10.11.0",
+    "status": "COMPLETE_BOUNDED_CROSS_REFERENCE_REVIEW",
+    "random_seed": 1011020,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10J. Render and inspect only the eight pages frozen before new page reading in the immutable V10K predeclaration: Book 7 pages 49-51 around 7-AB2-1 and Book 5 pages 230-232 and 279-280 around 5-AB2-0 and 5-AB3-1. Transcribe only identifiers, title or index headings, tower labels, explicit floor labels or ranges, revision or issue fields and exact further cross-reference locators. Do not reread 5-AB0-0, scan full PDFs, use OCR or embedded-text extraction, read the source archive or work/official_sources, use the network, transcribe geometry or dimensions, assign physical properties or damage, run a structural solver, continue a thermal model or launch Blender."
+  },
+  "observed_or_transcribed_facts": [
+    "Exactly eight predeclared PDF pages were rendered and visually reviewed.",
+    "1 of the three V10J seed locators are visible as identifiers or exact references in the frozen windows.",
+    "The Book 5 index reached on PDF page 231 is identified as 5-AB2-1 rather than the V10J seed locator 5-AB2-0.",
+    "The Book 5 container-end pages 279 and 280 are identified as 5-AB3-4 and 5-AB3-5 rather than 5-AB3-1.",
+    "0 page(s) contain an explicit target-floor label or range.",
+    "0 new exact cross-reference locator(s) were transcribed."
+  ],
+  "official_model_results": [
+    "No official-model result is created or independently validated."
+  ],
+  "archive_claims_used": [
+    "V10I binary identity and the immutable V10J regression chain are retained as documentary inputs."
+  ],
+  "model_hypotheses": [
+    "The predicted center pages follow from the V10J-visible register counts and page order; adjacent pages are ordering controls only."
+  ],
+  "derived_results": {
+    "working_copy_document_count": 2,
+    "window_count": 3,
+    "candidate_page_count": 8,
+    "rendered_page_count": 8,
+    "manual_transcription_record_count": 8,
+    "classification_counts": {
+      "DRAWING_CONTENT_NOT_TRANSCRIBED": 6,
+      "DRAWING_INDEX_OR_SCHEDULE": 2
+    },
+    "seed_locator_count": 3,
+    "found_seed_locator_count": 1,
+    "found_seed_locators": [
+      "7-AB2-1"
+    ],
+    "unresolved_seed_locator_count": 2,
+    "unresolved_seed_locators": [
+      "5-AB2-0",
+      "5-AB3-1"
+    ],
+    "seed_locator_outcomes": {
+      "7-AB2-1": "FOUND_AS_TITLE_BLOCK_AND_INDEX_IDENTIFIER_ON_PDF_PAGE_50",
+      "5-AB2-0": "NOT_FOUND_IN_WINDOW_PDF_PAGES_230_232_PAGE_231_IS_5-AB2-1",
+      "5-AB3-1": "NOT_FOUND_IN_WINDOW_PDF_PAGES_279_280_PAGES_ARE_5-AB3-4_AND_5-AB3-5"
+    },
+    "visible_exact_cross_reference_locator_count": 2,
+    "visible_exact_cross_reference_locators": [
+      "7-AB1-1",
+      "7-AB1-55"
+    ],
+    "pages_with_explicit_floor93_99_label_count": 0,
+    "documents_with_explicit_floor93_99_labels": [],
+    "new_exact_cross_reference_locator_count": 0,
+    "new_exact_cross_reference_locators": [],
+    "aggregate_rendered_pixels": 32040016,
+    "aggregate_rendered_png_bytes": 1068816,
+    "requirements_closed_count": 0,
+    "requirements_solver_blocking_count": 22,
+    "physical_assignment_count": 0
+  },
+  "contradictions_and_missing_information": [
+    "Official NIST chain, governing revision, as-built authority and exact WTC 1/Floors 93-99 applicability remain unverified.",
+    "Failure to recover 5-AB2-0 and 5-AB3-1 inside the frozen windows is not evidence of global absence from the PDF.",
+    "A drawing identifier or identifier suffix is not an explicit floor label.",
+    "No drawing geometry, dimension, section, material, connection, damage or load-path content is transcribed.",
+    "All 22 structural requirements remain solver blocking."
+  ],
+  "checks": {
+    "v10j_regression_and_blender_hashes_all_match": true,
+    "v10j_register_evidence_hashes_all_match": true,
+    "immutable_predeclaration_hash_matches": true,
+    "two_working_copy_hashes_and_sizes_match": true,
+    "window_count_exactly_3": true,
+    "candidate_page_count_exactly_8": true,
+    "rendered_page_count_exactly_8": true,
+    "render_pixel_and_byte_caps_not_exceeded": true,
+    "source_pdf_hashes_unchanged_after_render": true,
+    "manual_transcription_record_count_exactly_8": true,
+    "manual_transcription_uses_only_allowed_fields": true,
+    "visual_review_complete": true,
+    "non_candidate_and_full_document_scan_count_zero": true,
+    "ocr_and_embedded_text_extraction_count_zero": true,
+    "drawing_geometry_and_dimension_transcription_count_zero": true,
+    "source_archive_and_official_sources_not_read_or_modified": true,
+    "no_network_or_external_contact": true,
+    "physical_assignment_count_zero": true,
+    "solver_blender_thermal_gates_closed": true
+  },
+  "operation_counts": {
+    "working_copy_pdf_read_count": 2,
+    "candidate_page_content_read_count": 8,
+    "unique_page_render_count": 8,
+    "render_invocation_count": 16,
+    "finalize_rerender_count": 0,
+    "non_candidate_page_content_read_count": 0,
+    "full_document_text_scan_count": 0,
+    "ocr_count": 0,
+    "embedded_text_extraction_count": 0,
+    "source_archive_read_count": 0,
+    "official_sources_read_count": 0,
+    "network_request_count": 0,
+    "external_contact_count": 0,
+    "structural_solver_run_count": 0,
+    "thermal_model_run_count": 0,
+    "blender_launch_count": 0,
+    "blender_master_write_count": 0
+  },
+  "physical_assignments": {
+    "coordinates": 0,
+    "member_sections": 0,
+    "materials": 0,
+    "mass": 0,
+    "stiffness": 0,
+    "capacity": 0,
+    "connection_laws": 0,
+    "damage_states": 0,
+    "load_path_credit": 0
+  },
+  "outputs": {
+    "source_manifest": "wtc1_simulation_v8/output/v10k_cross_reference_source_manifest.json",
+    "regression_audit": "wtc1_simulation_v8/output/v10k_regression_audit.json",
+    "candidate_page_manifest": "wtc1_simulation_v8/output/v10k_candidate_page_manifest.json",
+    "render_audit": "wtc1_simulation_v8/output/v10k_page_render_audit.json",
+    "manual_transcription_audit": "wtc1_simulation_v8/output/v10k_manual_transcription_audit.json",
+    "cross_reference_locator_matrix_csv": "wtc1_simulation_v8/output/v10k_cross_reference_locator_matrix.csv",
+    "floor93_99_locator_matrix_csv": "wtc1_simulation_v8/output/v10k_floor93_99_locator_matrix.csv",
+    "model_gate": "wtc1_simulation_v8/output/v10k_structural_source_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10k_audit_renvois_bornes.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10k_audit_renvois_bornes.json",
+    "contact_sheet": "wtc1_simulation_v8/output/v10k_cross_reference_figures/v10k_contact_sheet.png",
+    "offline_audit": "wtc1_simulation_v8/output/v10k_offline_package_audit.json"
+  },
+  "software": {
+    "python": "3.14.3",
+    "pillow": "12.2.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "elapsed_seconds_before_final_serialization": 0.166
+  },
+  "next_iteration": {
+    "id": "V10L",
+    "objective": "Preserve V8U through V10K. Record the bounded locator conflict in Book 5: the V10J reference 5-AB2-0 leads to an index visibly identified as 5-AB2-1, while the initial V10K end-window reaches 5-AB3-4 and 5-AB3-5 rather than the still-uninspected 5-AB3-1. Before any further page read, create an immutable corrected V10L micro-window tied only to unresolved 5-AB3-1 and derived from the V10J/V10K visible ordering evidence; do not reread V10K pages, expand to unrelated drawings, or assign geometry, physical properties, damage or load-path credit."
+  },
+  "errors": []
+}

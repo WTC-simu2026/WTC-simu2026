@@ -1,0 +1,244 @@
+{
+  "iteration": "V11J",
+  "random_seed": 1101010,
+  "random_draw_used": false,
+  "purpose": "Qualify a separate one-dimensional transient-conduction coupon through the V11H/V11I equivalent slab depth with constant properties, synthetic boundary conditions, analytical references, a conservative flux-enthalpy ledger and space-time refinement. No temperature history is coupled back to the mechanical panel in this iteration.",
+  "inherited_thermomechanical_configuration": "wtc1_simulation_v8/data/v11h_thermomechanical_predeclaration.json",
+  "previous_panel_configuration": "wtc1_simulation_v8/data/v11i_thermoelastic_panel_predeclaration.json",
+  "inherited_thermomechanical_directory": "wtc1_simulation_v8/output/v11h_thermomechanical",
+  "previous_panel_directory": "wtc1_simulation_v8/output/v11i_thermoelastic_panel",
+  "scope": {
+    "domain": "One square metre, one-dimensional coordinate x from the idealized slab bottom face x=0 to the top face x=L. Constant k, rho and cp; no in-plane conduction, deck, reinforcement, moisture, phase change, radiation, convection, SFRM or contact resistance.",
+    "boundary_conditions": "Adiabatic, prescribed-temperature and prescribed-inward-flux faces used only as synthetic verification inputs. Positive face flux means heat entering the coupon.",
+    "coupling_policy": "The calculated profiles remain outside V11I. They are not panel loads, gas temperatures, fire exposures or WTC histories. Mechanical work, thermal strain, damage and fracture are not evaluated.",
+    "history_policy": "No V11E/V11F/V11I damage variable, stress state, material property or energy ledger is edited. Constant-property conduction stores sensible enthalpy only.",
+    "energy_policy": "For unit area, Delta H equals the time integral of bottom-inward plus top-inward heat flux. H is in J/m2, flux in W/m2 and temperature in degC with increments identical to K. Global collapse-energy credit is exactly zero."
+  },
+  "geometry": {
+    "equivalent_thickness_in": 4.35,
+    "inch_to_m": 0.0254,
+    "thickness_m": 0.11049,
+    "coupon_area_m2": 1.0,
+    "coordinate": "x=0 bottom face; x=L top face; cell-centred finite volumes",
+    "status": "The 4.35 in equivalent thickness is inherited from the bounded slab-section model and is not a complete as-built metal-deck/concrete geometry."
+  },
+  "constant_properties": {
+    "reference_temperature_c": 20.0,
+    "density_kg_m3": 2400.0,
+    "specific_heat_j_kg_k": 900.0,
+    "volumetric_heat_capacity_j_m3_k": 2160000.0,
+    "reference_conductivity_w_m_k": 1.0,
+    "conductivity_sensitivity_w_m_k": [
+      0.5,
+      1.0,
+      1.3
+    ],
+    "density_and_cp_status": "The rho and cp values are inherited unchanged from V11H generic constant hypotheses solely to isolate and verify conduction. They are not measured WTC slab properties.",
+    "conductivity_status": "The 1.0 W/(m K) reference is a verification anchor. The 0.5 to 1.3 W/(m K) bracket spans simple constant values identified by NIST for lightweight and normal-weight concrete estimates and the WTC fire-model boundary assumption. It is not a calibrated property of the actual floor slab.",
+    "temperature_dependence": false,
+    "moisture_or_latent_heat": false
+  },
+  "numerical_method": {
+    "scheme": "Backward Euler in time, conservative cell-centred finite volume in space, harmonic-interface form reducing to k/dx for constant k, direct tridiagonal Thomas solve.",
+    "time_weight_theta": 1.0,
+    "dirichlet_face_conductance": "2*k/dx between a face value and the adjacent cell centre",
+    "internal_face_conductance": "k/dx",
+    "enthalpy_definition": "H=rho*cp*sum_i[(T_i-T_ref)*dx], J/m2",
+    "increment_balance": "H_(n+1)-H_n=dt*(q_bottom_in,n+1+q_top_in,n+1)",
+    "absolute_temperature_note": "Only temperature differences enter this constant-property equation; degC increments and K increments are numerically identical."
+  },
+  "discretization": {
+    "reference_cells": 64,
+    "reference_steps": 1600,
+    "stored_history_intervals": 40,
+    "space_refinement_cells": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "space_refinement_mode": "Exact-in-time eigenvalue of the cell-centred finite-volume spatial operator for the smooth sine mode; this isolates spatial truncation from backward-Euler error.",
+    "space_refinement_case": "SINE_DIRICHLET_TRANSIENT",
+    "time_refinement_cells": 256,
+    "time_refinement_steps": [
+      100,
+      200,
+      400,
+      800
+    ],
+    "time_convergence_cases": [
+      "SINE_DIRICHLET_TRANSIENT",
+      "TOP_STEP_DIRICHLET_BOTTOM_ADIABATIC"
+    ],
+    "conductivity_sensitivity_case": "TOP_STEP_DIRICHLET_BOTTOM_ADIABATIC"
+  },
+  "cases": [
+    {
+      "id": "UNIFORM_ADIABATIC_CONTROL",
+      "duration_s": 3600.0,
+      "initial": {
+        "kind": "uniform",
+        "temperature_c": 60.0
+      },
+      "bottom_boundary": {
+        "kind": "adiabatic"
+      },
+      "top_boundary": {
+        "kind": "adiabatic"
+      },
+      "analytical_reference": "T(x,t)=60 degC and both inward fluxes are zero."
+    },
+    {
+      "id": "LINEAR_DIRICHLET_STEADY_CONTROL",
+      "duration_s": 3600.0,
+      "initial": {
+        "kind": "linear",
+        "bottom_temperature_c": 20.0,
+        "top_temperature_c": 120.0
+      },
+      "bottom_boundary": {
+        "kind": "prescribed_temperature",
+        "temperature_c": 20.0
+      },
+      "top_boundary": {
+        "kind": "prescribed_temperature",
+        "temperature_c": 120.0
+      },
+      "analytical_reference": "The exact linear profile is stationary; q_bottom_in=-k*100/L, q_top_in=+k*100/L and net inward heat is zero."
+    },
+    {
+      "id": "SINE_DIRICHLET_TRANSIENT",
+      "duration_s": 1800.0,
+      "initial": {
+        "kind": "sine",
+        "reference_temperature_c": 20.0,
+        "amplitude_k": 80.0,
+        "mode": 1
+      },
+      "bottom_boundary": {
+        "kind": "prescribed_temperature",
+        "temperature_c": 20.0
+      },
+      "top_boundary": {
+        "kind": "prescribed_temperature",
+        "temperature_c": 20.0
+      },
+      "analytical_reference": "T=20+A*sin(pi*x/L)*exp[-alpha*pi^2*t/L^2]."
+    },
+    {
+      "id": "CONSTANT_TOP_FLUX_BOTTOM_ADIABATIC",
+      "duration_s": 1800.0,
+      "initial": {
+        "kind": "uniform",
+        "temperature_c": 20.0
+      },
+      "bottom_boundary": {
+        "kind": "adiabatic"
+      },
+      "top_boundary": {
+        "kind": "prescribed_inward_flux",
+        "inward_flux_w_m2": 1000.0
+      },
+      "analytical_reference": "No closed field comparator is used; mean(T)-20=q*t/(rho*cp*L) and DeltaH=q*t exactly."
+    },
+    {
+      "id": "TOP_STEP_DIRICHLET_BOTTOM_ADIABATIC",
+      "duration_s": 1800.0,
+      "initial": {
+        "kind": "uniform",
+        "temperature_c": 20.0
+      },
+      "bottom_boundary": {
+        "kind": "adiabatic"
+      },
+      "top_boundary": {
+        "kind": "prescribed_temperature",
+        "temperature_c": 120.0
+      },
+      "analytical_reference": "For theta=(T-Ts)/(Ti-Ts), theta=sum_n 2*(-1)^n/lambda_n*cos(lambda_n*x/L)*exp(-lambda_n^2*Fo)/lambda_n, lambda_n=(n+1/2)*pi."
+    }
+  ],
+  "analytical_series_terms": 200,
+  "acceptance": {
+    "geometry_conversion_absolute_m": 1e-14,
+    "volumetric_capacity_relative": 1e-14,
+    "uniform_temperature_absolute_k": 1e-10,
+    "linear_temperature_absolute_k": 1e-10,
+    "steady_net_flux_absolute_w_m2": 1e-9,
+    "reference_sine_linf_k": 0.02,
+    "reference_step_linf_k": 0.08,
+    "reference_analytic_mean_absolute_k": 0.01,
+    "flux_mean_temperature_absolute_k": 1e-9,
+    "increment_energy_absolute_j_m2": 1e-6,
+    "increment_energy_relative": 1e-11,
+    "total_energy_absolute_j_m2": 1e-5,
+    "total_energy_relative": 1e-11,
+    "maximum_principle_tolerance_k": 1e-9,
+    "replay_digest_exact": true,
+    "minimum_time_order": 0.85,
+    "maximum_time_order": 1.2,
+    "minimum_space_order": 1.75,
+    "maximum_space_order": 2.25,
+    "convergence_error_monotonic": true,
+    "conductivity_sensitivity_monotonic": true,
+    "v11h_and_v11i_hashes_must_match": true,
+    "require_historical_outcome": false
+  },
+  "method_sources": [
+    {
+      "id": "NIST_NCSTAR_1_5G",
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/NCSTAR/ncstar1-5g.pdf",
+      "accessed": "2026-09-08",
+      "locator": "Chapter 6 p.98 and Appendix A p.274 of the report pagination",
+      "scope": "Primary official model report: 4.35 in equivalent slab thickness; approximately 16 through-depth thermal elements were used to resolve thermal waves and steep surface gradients; lightweight-concrete conductivity was temperature dependent in the official thermal model. V11J does not reproduce that model."
+    },
+    {
+      "id": "NIST_NCSTAR_1_5F",
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/NCSTAR/ncstar1-5f.pdf",
+      "accessed": "2026-09-08",
+      "locator": "Chapter 5 p.52",
+      "scope": "Primary official fire-model report: the exposed slab underside used k=1.0 W/(m K), rho=2000 kg/m3 and cp=0.88 kJ/(kg K) as gas-phase boundary properties, while detailed member penetration was calculated separately. Only k=1.0 is used here as a numerical anchor, not as an as-built calibration."
+    },
+    {
+      "id": "NIST_TN_1681",
+      "url": "https://doi.org/10.6028/NIST.TN.1681",
+      "accessed": "2026-09-08",
+      "locator": "Section 4.2.1.1.1 p.64",
+      "scope": "Primary NIST design guidance: simple averaged constant conductivity estimates of 1.3 W/(m K) for normal-weight and 0.5 W/(m K) for lightweight normal-strength concrete, with cautions about density, aggregate, moisture and small-scale data. Used only to bracket conductivity sensitivity."
+    }
+  ],
+  "protected_files": [
+    "wtc1_simulation_v8/data/v11h_thermomechanical_predeclaration.json",
+    "wtc1_simulation_v8/scripts/v11h_thermomechanical_model.py",
+    "wtc1_simulation_v8/scripts/run_v11h_thermomechanical.py",
+    "wtc1_simulation_v8/scripts/test_v11h_thermomechanical.py",
+    "wtc1_simulation_v8/scripts/audit_v11h_release.py",
+    "wtc1_simulation_v8/output/v11h_thermomechanical/results_v11h.json",
+    "wtc1_simulation_v8/output/v11h_thermomechanical/offline_manifest.json",
+    "wtc1_simulation_v8/output/v11h_thermomechanical/release_audit.json",
+    "wtc1_simulation_v8/data/v11i_thermoelastic_panel_predeclaration.json",
+    "wtc1_simulation_v8/scripts/v11i_thermoelastic_panel_model.py",
+    "wtc1_simulation_v8/scripts/run_v11i_thermoelastic_panel.py",
+    "wtc1_simulation_v8/scripts/test_v11i_thermoelastic_panel.py",
+    "wtc1_simulation_v8/scripts/audit_v11i_release.py",
+    "wtc1_simulation_v8/output/v11i_thermoelastic_panel/results_v11i.json",
+    "wtc1_simulation_v8/output/v11i_thermoelastic_panel/offline_manifest.json",
+    "wtc1_simulation_v8/output/v11i_thermoelastic_panel/release_audit.json",
+    "harness/handoffs/WTC1_V11I_HANDOFF.md",
+    "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend"
+  ],
+  "heat_transfer_solved": true,
+  "fire_solved": false,
+  "panel_coupled": false,
+  "thermal_strain_solved": false,
+  "heated_fracture_solved": false,
+  "material_properties_degraded": false,
+  "global_energy_credit_j": 0.0,
+  "blender_changed": false,
+  "gpu": false,
+  "external_solver": false,
+  "software_installation": false,
+  "expected_cpu_seconds_under": 120,
+  "output_directory": "wtc1_simulation_v8/output/v11j_transient_conduction",
+  "scratch_directory": "tmp/v11j_transient_conduction"
+}

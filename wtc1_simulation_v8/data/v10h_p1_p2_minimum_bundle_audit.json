@@ -1,0 +1,162 @@
+{
+  "iteration": "V10H",
+  "dataset_version": "10.8.0",
+  "objective": "Preserve V8U through V10G. Using only immutable V10B and V10G derived matrices, solve an exact minimum-cardinality P1/P2 set-cover problem for the still-blocking drawing-dependent requirements, keep T02 on a separate Book 9 track, and keep D01, B01 and S01 on separate non-drawing evidence tracks. Predeclare exact document identifiers only; do not access any payload or page.",
+  "random_seed": 1010018,
+  "random_draw_used": false,
+  "selection_policy": {
+    "candidate_priorities": [
+      "P1_PRIMARY_DETAIL",
+      "P2_SUPPLEMENTAL"
+    ],
+    "primary_excluded_requirement_ids": [
+      "D01",
+      "T02",
+      "B01",
+      "S01"
+    ],
+    "separate_non_drawing_requirement_ids": [
+      "D01",
+      "B01",
+      "S01"
+    ],
+    "separate_book9_requirement_id": "T02",
+    "objective_order": [
+      "MAXIMIZE_REACHABLE_REQUIREMENT_COVERAGE",
+      "MINIMIZE_DOCUMENT_COUNT",
+      "MINIMIZE_P2_DOCUMENT_COUNT",
+      "MINIMIZE_SUM_OF_V10B_ACQUISITION_SEQUENCE",
+      "LEXICOGRAPHIC_ACQUISITION_SEQUENCE"
+    ],
+    "candidate_group_equivalence_claimed": false,
+    "selected_document_content_sufficiency_claimed": false,
+    "future_payload_access_authorized": false
+  },
+  "expected": {
+    "v10b_candidate_document_count": 53,
+    "p0_document_count": 9,
+    "p1_document_count": 23,
+    "p2_document_count": 21,
+    "p1_p2_candidate_document_count": 44,
+    "v10g_requirement_count": 22,
+    "primary_drawing_requirement_count": 18,
+    "p1_p2_reachable_primary_requirement_count": 16,
+    "p1_p2_unreachable_primary_requirement_ids": [
+      "N01",
+      "E01"
+    ],
+    "minimum_primary_bundle_document_count": 4,
+    "minimum_primary_bundle_document_ids": [
+      "WTCI-000016-L",
+      "WTCI-000021-L",
+      "WTCI-000024-L",
+      "WTCI-000014-L"
+    ],
+    "separate_book9_primary_document_id": "WTCI-000030-L",
+    "separate_book9_fallback_document_id": "WTCI-000031-L",
+    "total_predeclared_primary_document_count": 5,
+    "requirements_closed": 0,
+    "requirements_solver_blocking": 22,
+    "physical_assignment_count": 0
+  },
+  "policies": {
+    "source_archive_read_authorized": false,
+    "source_archive_write_authorized": false,
+    "official_sources_read_authorized": false,
+    "official_sources_write_authorized": false,
+    "network_authorized": false,
+    "external_contact_authorized": false,
+    "target_payload_read_authorized": false,
+    "drawing_page_content_read_authorized": false,
+    "geometry_transcription_authorized": false,
+    "as_built_coordinate_assignment_authorized": false,
+    "member_section_assignment_authorized": false,
+    "material_assignment_authorized": false,
+    "mass_assignment_authorized": false,
+    "stiffness_assignment_authorized": false,
+    "capacity_assignment_authorized": false,
+    "connection_law_assignment_authorized": false,
+    "damage_state_assignment_authorized": false,
+    "load_path_credit_authorized": false,
+    "structural_solver_authorized": false,
+    "thermal_continuation_authorized": false,
+    "blender_authorized": false,
+    "blender_master_modification_authorized": false
+  },
+  "protected_inputs": [
+    {
+      "role": "v10g_configuration",
+      "path": "wtc1_simulation_v8/data/v10g_p0_requirement_closure_audit.json",
+      "sha256": "53a88916f0c3e5c29f118142e0d18b37936e0c0c0425a428d613a8f095db3c80"
+    },
+    {
+      "role": "v10g_script",
+      "path": "wtc1_simulation_v8/scripts/run_v10g_p0_requirement_closure_audit.py",
+      "sha256": "1379dd8a193d63a947489abef28f586349b6d9faab17ebd9e6ed8672f73eb0bb"
+    },
+    {
+      "role": "v10g_source_manifest",
+      "path": "wtc1_simulation_v8/output/v10g_requirement_source_manifest.json",
+      "sha256": "1b00f9e5c8561782a8b3be34f6f18d22a782914fa0f5916b4e941e6c094e7d60"
+    },
+    {
+      "role": "v10g_regression_audit",
+      "path": "wtc1_simulation_v8/output/v10g_regression_audit.json",
+      "sha256": "494817e3f1b18380cc7d650a0221c509a7f71e0807b2ddc74708ade4c4d53303"
+    },
+    {
+      "role": "v10g_p0_document_status_matrix",
+      "path": "wtc1_simulation_v8/output/v10g_p0_document_status_matrix.csv",
+      "sha256": "0ed5c93f251e255fa1b7a8ca75335b2452d649321fc53b9b675fb34b5a088e5a"
+    },
+    {
+      "role": "v10g_unresolved_requirement_matrix",
+      "path": "wtc1_simulation_v8/output/v10g_unresolved_requirement_matrix.csv",
+      "sha256": "42ed9b5ae667cec9a556b7b5b214eeddc5d18ec03e9e354fb9199430057f5c45"
+    },
+    {
+      "role": "v10g_requirement_summary",
+      "path": "wtc1_simulation_v8/output/v10g_requirement_summary.json",
+      "sha256": "9a09e69bc80eb16cc610148c664d48955ab191b1f4f334524fa22f82eba9a08e"
+    },
+    {
+      "role": "v10g_gate",
+      "path": "wtc1_simulation_v8/output/v10g_structural_source_gate.json",
+      "sha256": "dc8817c2930e72c343b3ab60a7573148630ef443601cfa57b9e8a04673eb0702"
+    },
+    {
+      "role": "v10g_report",
+      "path": "wtc1_simulation_v8/output/rapport_wtc1_v10g_cloture_exigences_p0.md",
+      "sha256": "ba155f44d7a707d300e3bd8b5e16310f9026228b68674409625d41b4b9fdab04"
+    },
+    {
+      "role": "v10g_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10g_cloture_exigences_p0.json",
+      "sha256": "1eeb9302b2a32e8901a81d3759625d25c749a8f541cd11680f041b187bd996ef"
+    },
+    {
+      "role": "v10g_offline_audit",
+      "path": "wtc1_simulation_v8/output/v10g_offline_package_audit.json",
+      "sha256": "8d4180a64daab3f5e32b4f35ed3a3a19455da1655e4a85f10289d01b09e3753a"
+    },
+    {
+      "role": "v10b_requirement_matrix",
+      "path": "wtc1_simulation_v8/output/v10b_requirement_document_matrix.csv",
+      "sha256": "492e2ef594658c2d8148d8330bdfb60145d029269eb7c15632d44658706c529c"
+    },
+    {
+      "role": "v10b_priority_matrix",
+      "path": "wtc1_simulation_v8/output/v10b_prioritized_acquisition_transcription_matrix.csv",
+      "sha256": "aad4574e7580d0b50f16e70a0d2e029e77d24608e4407b0aa04d4b2ebd0d1298"
+    },
+    {
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+    }
+  ],
+  "next_iteration": {
+    "id": "V10I",
+    "objective": "Preserve V8U through V10H. If the user supplies one or more exact files named in the immutable V10H five-document predeclaration, inspect only those explicitly supplied local paths for exact basename, byte size, SHA-256, PDF signature and container metadata, and create verified working copies inside wtc1_simulation_v8/input/v10i_structural_sources. If none is supplied, record the five exact missing identifiers without scanning any directory. Do not use the network, scan or read the source archive or work/official_sources, open or render any PDF page, transcribe drawing content, assign physical properties or damage, run a structural solver, continue a thermal model or launch Blender."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "iteration": "V9Q",
+  "required_model_fields": [
+    {
+      "field": "exact plan position and orientation by floor",
+      "status": "PARTIAL",
+      "reason": "qualitative impact-zone positions and transfer ranges only; no metric as-built coordinates"
+    },
+    {
+      "field": "floor-by-floor continuity, offsets and transfer levels",
+      "status": "PARTIAL",
+      "reason": "vertical extents and two deviation ranges are documented, but exact offset geometry and interfaces are absent"
+    },
+    {
+      "field": "enclosure construction, thicknesses and material identities",
+      "status": "PARTIAL",
+      "reason": "generic shaft-wall build-up is documented; floor-specific layer count and as-built changes are not"
+    },
+    {
+      "field": "stairs, landings, stringers and their attachments",
+      "status": "MISSING",
+      "reason": "not supplied by the audited cached sources"
+    },
+    {
+      "field": "connections to slabs, core framing and surrounding partitions",
+      "status": "PARTIAL",
+      "reason": "wall channels and NIST merged-node approximation are known; actual stair and landing connections are not"
+    },
+    {
+      "field": "mass treatment and nonstructural versus structural classification",
+      "status": "PARTIAL",
+      "reason": "nonstructural classification and lumped NIST core loads are documented; discrete as-built masses are not"
+    },
+    {
+      "field": "impact, fire and damage state for the modeled scenario",
+      "status": "PARTIAL",
+      "reason": "official testimony/model statements cover parts of floors 92-97; complete component-level damage is unavailable"
+    }
+  ],
+  "field_status_counts": {
+    "COMPLETE": 0,
+    "PARTIAL": 6,
+    "MISSING": 1
+  },
+  "qualitative_topology_layer_authorized": true,
+  "closed_credits": {
+    "metric_solver_geometry": false,
+    "stair_or_enclosure_discrete_mass": false,
+    "stair_or_enclosure_stiffness": false,
+    "stair_or_enclosure_strength": false,
+    "stair_or_enclosure_load_path": false,
+    "global_solver": false,
+    "blender_physical_validation": false
+  },
+  "all_structural_and_physical_validation_credits_closed": true,
+  "floor_matrix_row_count": 330,
+  "decision": "DOCUMENT_THREE_STAIRS_AS_GEOMETRIC_VOIDS_AND_NONSTRUCTURAL_OBSTACLES_ONLY",
+  "structural_coherence_note": "The three stair systems matter to core openings, local framing topology, occupancy, debris and mass accounting, but V9Q does not qualify their exact geometry or any stiffness, strength or load path.",
+  "double_counting_warning": "Do not add discrete stair or enclosure mass on top of the NIST density-scaled core live/dead load without a traceable subtraction or remapping.",
+  "next_gate": {
+    "id": "V9R",
+    "objective": "Preserve V8U through V9Q and perform a bounded primary-plan gap closure for the three WTC 1 stairways. Search first for NIST NCSTAR 1-7 and traceable PANYNJ or architectural drawings that expose metric floor plans, the exact 42-48 and 76-82 transfer geometry, stair flights, landings, stringers and connections. Digitize only source-visible geometry with scale or fixed landmarks. Keep all mass, stiffness, strength, damage and solver gates closed if the primary geometry remains incomplete."
+  }
+}

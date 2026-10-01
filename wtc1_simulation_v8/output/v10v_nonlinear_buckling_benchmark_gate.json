@@ -1,0 +1,63 @@
+{
+  "iteration": "V10V",
+  "decision": "PASS_INDEPENDENT_B32R_NONLINEAR_BUCKLING_BENCHMARK",
+  "pass": true,
+  "criteria": {
+    "predeclared_input_hashes": true,
+    "protected_master_unchanged": true,
+    "calculix_version": true,
+    "solver_return_codes": true,
+    "eigenvalue_analytical_agreement": true,
+    "eigenvalue_mesh_convergence": true,
+    "nonlinear_target_shortening": true,
+    "nonlinear_end_reaction_equilibrium": true,
+    "nonlinear_postcritical_point_count": true,
+    "nonlinear_monotonic_shortening": true,
+    "nonlinear_monotonic_lateral_amplification": true,
+    "nonlinear_final_amplification": true,
+    "nonlinear_final_reaction_ratio": true,
+    "finest_postbuckling_small_slope_comparator": true,
+    "nonlinear_final_reaction_mesh_convergence": true,
+    "nonlinear_final_amplitude_mesh_convergence": true,
+    "generated_input_deck_count": true,
+    "all_run_files_hashed": true,
+    "no_wtc_mechanical_requirement_closed": true,
+    "no_physical_wtc_release": true,
+    "no_historical_outcome_assignment": true
+  },
+  "metrics": {
+    "unique_solver_job_count": 7,
+    "solver_return_code_pass_count": 7,
+    "eigenvalue_pass_count": 4,
+    "eigenvalue_finest_pair": {
+      "previous_element_count": 32,
+      "current_element_count": 64,
+      "relative_change_pct": 0.0
+    },
+    "nonlinear_target_reached_count": 3,
+    "nonlinear_equilibrium_pass_count": 3,
+    "nonlinear_finest_pair": {
+      "previous_element_count": 32,
+      "current_element_count": 64,
+      "final_reaction_relative_change_pct": 0.002046747717867785,
+      "final_amplitude_relative_change_pct": 0.08284966480889581
+    },
+    "finest_postbuckling_median_analytical_error_pct": 0.0765228602743764,
+    "generated_input_deck_count": 7,
+    "hashed_run_file_count": 43,
+    "mechanical_requirement_count": 22,
+    "mechanical_requirement_closed_count": 0,
+    "physical_wtc_state_release_count": 0,
+    "historical_outcome_assignment_count": 0
+  },
+  "allowed_credit": "Local CalculiX 2.22 B32R eigenvalue and geometrically nonlinear imperfect-column workflow only",
+  "forbidden_credit": [
+    "WTC 1 member, connection, floor, core or perimeter response",
+    "temperature-dependent material response, impact damage or fracture",
+    "collapse initiation, propagation, arrest, collapse or non-collapse of WTC 1"
+  ],
+  "next_iteration": {
+    "id": "V10W",
+    "objective": "Qualifier un benchmark thermo-mécanique indépendant et borné : dilatation libre, dilatation empêchée et gradient thermique simple, avec solutions analytiques et bilans. Ne transférer ensuite vers le WTC 1 que des capacités logicielles, jamais des états physiques sans données sources suffisantes."
+  }
+}

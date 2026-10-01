@@ -1,0 +1,95 @@
+{
+  "id": "IMPACT-I02B",
+  "seed": 9112001,
+  "deterministic": true,
+  "scope": "Uniaxial connector verification, cyclic history, energy-controlled complete separation, and uniform joint-row partition test. No aircraft-facade replay.",
+  "units": {"mass": "g", "length": "mm", "time": "ms", "force": "N", "energy_to_J": 0.001, "impulse_to_Ns": 0.001},
+  "source_envelope": {
+    "source_path": "work/official_sources/ncstar1-2bv1.pdf",
+    "source_sha256": "1504c598adcd9e492bc126530b593b2d467b7c01a7324913b221a5cb9e128ab4",
+    "pdf_pages": [176, 177],
+    "printed_pages": [78, 79],
+    "figure": "4-21",
+    "criterion_equation": "(normal_force/Fn)^2+(shear_force/Fs)^2=1, tensile normal force only in this transcription",
+    "rivet_diameter_in": 0.15625,
+    "original_plate_thickness_in": 0.063,
+    "normal_capacity_kN_approx": [4.3, 4.45, 4.6],
+    "shear_capacity_kN_approx": [2.4, 2.55, 2.7],
+    "classification": "Broad visual reading of a reprinted experimental failure-envelope figure; intervals are reading brackets, not confidence bounds or Boeing allowables.",
+    "figure_labels": "7050 countersunk rivet, diameter 4 mm, 2024-T351 plates, thickness 1.6 mm. Text uses 5/32 in and 0.063 in; retain rounding difference.",
+    "target_diameter_in": 0.25,
+    "target_spacing_in": 1.0,
+    "inch_to_mm": 25.4,
+    "capacity_scale_exponent": 2,
+    "scaling_classification": "Own D-squared same-failure-mode area-scaling hypothesis. NIST states scaling but this exponent is not explicit in the inspected pages.",
+    "not_identified": ["experimental force-displacement trace", "separation energy", "dynamic rate dependence", "actual Boeing rivet material and location", "mixed-mode postpeak law"]
+  },
+  "connector": {
+    "initial_length_mm": 10.0,
+    "peak_displacement_mm": 0.02,
+    "final_displacement_mm": {"low": 0.2, "base": 0.5, "high": 1.0},
+    "law": "Triangular force-displacement envelope with linear stiffness K=Fpeak/d0; irreversible tensile plastic slip on unloading with stiffness K; zero force after full separation at df.",
+    "spring_property": "OpenRadioss TYPE4 H2 (uncoupled plastic unloading), to be checked against an independent reference before acceptance",
+    "fracture_energy_formula_J": "0.5 * Fpeak_N * df_mm * 0.001",
+    "history_variable": "p=max(previous_p, delta-Fenvelope(delta)/K) on monotonic tensile loading; failed is irreversible",
+    "stored_energy_formula_J": "F^2/(2K)*0.001",
+    "dissipation_formula_J": "external/internal connector work minus recoverable spring energy",
+    "compression": "out of scope; all accepted loading paths keep delta nonnegative",
+    "assumptions": "d0, df, unloading form and D-squared scale are hypotheses. These parameter sweeps are not calibrated production joint predictions.",
+    "moving_mass_g": 100.0
+  },
+  "row": {
+    "length_mm": 200.0,
+    "partitions_mm": [50.0, 25.0, 12.5],
+    "weight_per_connector": "partition_length / rivet_spacing = h/25.4",
+    "classification": "Uniform imposed-separation patch test of capacity and energy weights only. Fractional rivet count and no plate compliance; not a spatial convergence study of an actual riveted joint."
+  },
+  "execution": {"history_dt_ms": 0.0002, "maximum_case_wall_seconds": 60, "threads": 1, "mass_scaling": false},
+  "accepted_revision_R1": {
+    "suffix": "R1",
+    "maximum_dt_ms": 0.0001,
+    "half_dt_maximum_ms": 0.00005,
+    "dynamic_low_energy_end_ms": 0.12,
+    "corrections": "Correct TYPE4 fixed-width unused field; correct BCS translation/rotation ordering; cap time step after separation with DTIX. R0 monotonic and cyclic preflights are retained and rejected for input warnings and conflicting imposed/blocked X motion."
+  },
+  "accepted_revision_R2": {
+    "samples_per_segment": 1000,
+    "corrections": "Smooth imposed displacement segment endpoints with cubic smoothstep sampled into FUNCT. Avoid instantaneous velocity jumps and staggered impulse/momentum mismatch. Dynamic cases keep R1 initial-velocity input; imposed cases use R2. Original R1 histories retained."
+  },
+  "predeclared_checks": {
+    "starter_warnings": 0,
+    "normal_termination": true,
+    "force_envelope_relative_error": 0.01,
+    "work_energy_relative_error": 0.01,
+    "minimum_dissipation_J": -0.00001,
+    "cyclic_reloading_force_relative_error": 0.01,
+    "post_failure_force_fraction": 0.00001,
+    "dynamic_energy_relative_error": 0.01,
+    "dynamic_momentum_relative_error": 0.01,
+    "half_dt_relative_error": 0.01,
+    "uniform_row_partition_relative_error": 0.001
+  },
+  "cases": [
+    {"id": "NORMAL_BASE_MONO_R0", "mode": "normal", "energy": "base", "loading": "monotonic", "hardening": 2, "dt_scale": 0.05, "count": 1, "weight": 1},
+    {"id": "NORMAL_BASE_CYCLE_R0", "mode": "normal", "energy": "base", "loading": "cycle", "hardening": 2, "dt_scale": 0.05, "count": 1, "weight": 1},
+    {"id": "NORMAL_LOW_MONO_R0", "mode": "normal", "energy": "low", "loading": "monotonic", "hardening": 2, "dt_scale": 0.05, "count": 1, "weight": 1},
+    {"id": "NORMAL_HIGH_MONO_R0", "mode": "normal", "energy": "high", "loading": "monotonic", "hardening": 2, "dt_scale": 0.05, "count": 1, "weight": 1},
+    {"id": "SHEAR_BASE_MONO_R0", "mode": "shear", "energy": "base", "loading": "monotonic", "hardening": 2, "dt_scale": 0.05, "count": 1, "weight": 1},
+    {"id": "NORMAL_BASE_HALFDT_R0", "mode": "normal", "energy": "base", "loading": "monotonic", "hardening": 2, "dt_scale": 0.025, "count": 1, "weight": 1},
+    {"id": "DYNAMIC_LOW_ENERGY_R0", "mode": "normal", "energy": "base", "loading": "dynamic", "velocity_m_s": 5.0, "end_ms": 3.0, "hardening": 2, "dt_scale": 0.05, "count": 1, "weight": 1},
+    {"id": "DYNAMIC_HIGH_ENERGY_R0", "mode": "normal", "energy": "base", "loading": "dynamic", "velocity_m_s": 10.0, "end_ms": 0.2, "hardening": 2, "dt_scale": 0.05, "count": 1, "weight": 1},
+    {"id": "DYNAMIC_G_LOW_V10_R0", "mode": "normal", "energy": "low", "loading": "dynamic", "velocity_m_s": 10.0, "end_ms": 0.2, "hardening": 2, "dt_scale": 0.05, "count": 1, "weight": 1},
+    {"id": "DYNAMIC_G_HIGH_V10_R0", "mode": "normal", "energy": "high", "loading": "dynamic", "velocity_m_s": 10.0, "end_ms": 0.2, "hardening": 2, "dt_scale": 0.05, "count": 1, "weight": 1},
+    {"id": "ROW_H050_R0", "mode": "normal", "energy": "base", "loading": "monotonic", "hardening": 2, "dt_scale": 0.05, "count": 4, "weight": 1.968503937007874},
+    {"id": "ROW_H025_R0", "mode": "normal", "energy": "base", "loading": "monotonic", "hardening": 2, "dt_scale": 0.05, "count": 8, "weight": 0.984251968503937},
+    {"id": "ROW_H0125_R0", "mode": "normal", "energy": "base", "loading": "monotonic", "hardening": 2, "dt_scale": 0.05, "count": 16, "weight": 0.4921259842519685}
+  ],
+  "sources": [
+    "https://nvlpubs.nist.gov/nistpubs/Legacy/NCSTAR/ncstar1-2bv1.pdf",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type4_spring_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/stiffness_formulation_spring_hardening_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/th_spring_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/impdisp_starter_r.htm"
+  ],
+  "output_root": "wtc1_simulation_v8/output/impact_i02b_joint_coupon"
+}

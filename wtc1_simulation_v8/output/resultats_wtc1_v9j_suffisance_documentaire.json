@@ -1,0 +1,285 @@
+{
+  "iteration": "V9J",
+  "generated_at": "2026-08-28T10:39:45.998857+02:00",
+  "status": "validated_partial_documentary_recovery_gate_failed_no_reconstruction_no_solver",
+  "iteration_execution_validated": true,
+  "documentary_sufficiency_gate_passed": false,
+  "configuration": "wtc1_simulation_v8/data/v9j_documentary_sufficiency_gate.json",
+  "documentary_evidence": "wtc1_simulation_v8/data/v9j_documentary_evidence.json",
+  "source_manifest": "wtc1_simulation_v8/output/v9j_documentary_source_manifest.json",
+  "scope": "Preserve V8U through V9I, inspect only the precisely identified primary publication and small public supplementary documentation, and decide whether equation 12, its numerical correction factor, coordinate and sign conventions, and complete specimen dimensions are sufficiently documented for a later stress-strain reconstruction. Missing or inaccessible definitions remain unknown. Do not reconstruct stress or strain, download the deferred P6V035 DIC series, fit a material or failure law, or run a solver.",
+  "evidence_policy": {
+    "observed_fact": "A statement, equation, dimension, unit or coordinate convention explicitly present in the inspected primary source.",
+    "official_model_result": "None is introduced by V9J.",
+    "local_archive_claim": "No local WTC archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "The all-required-items documentary gate and the prohibition on generic SHPB substitutions.",
+    "derived_result": "A documented, partial, absent or inaccessible status for each predeclared item and the resulting sufficiency decision.",
+    "unknown": "Any definition not explicitly recovered from the inspected primary publication, repository record or dataset documentation."
+  },
+  "regressions": {
+    "files": {
+      "wtc1_simulation_v8/data/v9i_measurement_consistency_benchmark.json": {
+        "exists": true,
+        "expected_sha256": "cd47cc8bf4a7c907d6b43bcaf5fe0ac478a901d5298e2c5f1638db56a288a2bc",
+        "actual_sha256": "cd47cc8bf4a7c907d6b43bcaf5fe0ac478a901d5298e2c5f1638db56a288a2bc",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/run_v9i_measurement_consistency_benchmark.py": {
+        "exists": true,
+        "expected_sha256": "e05e736a0972ad6b9d331fdad41724000014d71d9fee8b8598030d390c197b58",
+        "actual_sha256": "e05e736a0972ad6b9d331fdad41724000014d71d9fee8b8598030d390c197b58",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v9i_coherence_mesures.json": {
+        "exists": true,
+        "expected_sha256": "ac44396ecd357f66c9fca51df74187fc47de4f6e2b402a5f740a504680852681",
+        "actual_sha256": "ac44396ecd357f66c9fca51df74187fc47de4f6e2b402a5f740a504680852681",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/rapport_wtc1_v9i_coherence_mesures.md": {
+        "exists": true,
+        "expected_sha256": "817e1e530db2e03ac1b54a1c330da506870654da4ff4c84b828f5729f2b9d74f",
+        "actual_sha256": "817e1e530db2e03ac1b54a1c330da506870654da4ff4c84b828f5729f2b9d74f",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9i_dic_field_quantiles.csv": {
+        "exists": true,
+        "expected_sha256": "2bfc99ee37b8e0197411007d87f81f20f3b85ba110bb32a885ae5252854ccf83",
+        "actual_sha256": "2bfc99ee37b8e0197411007d87f81f20f3b85ba110bb32a885ae5252854ccf83",
+        "passed": true
+      }
+    },
+    "metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9i_coherence_mesures.json",
+        "path": "iteration_execution_validated",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9i_coherence_mesures.json",
+        "path": "DIC_summary.total_missing_cells",
+        "expected": 7070,
+        "actual": 7070,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9i_coherence_mesures.json",
+        "path": "dynamic_bar_summary.incident.complete_pulse_duration_resolved",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9i_coherence_mesures.json",
+        "path": "dynamic_bar_summary.transmitted.complete_pulse_duration_resolved",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9i_coherence_mesures.json",
+        "path": "analogue_stress_strain_reduction_authorized",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "source_identity_gate": {
+    "source_files_passed": true,
+    "oai_passed": true,
+    "passed": true
+  },
+  "required_definition_count": 5,
+  "finding_status_counts": {
+    "documented": 2,
+    "partial": 2,
+    "unknown": 1
+  },
+  "criterion_results": {
+    "equation_12_full_mathematical_form": true,
+    "correction_factor_numeric_value_and_application": true,
+    "bar_and_specimen_coordinate_sign_conventions": false,
+    "complete_specimen_dimensions_for_reduction": false,
+    "absolute_bar_DIC_time_alignment": false
+  },
+  "required_definition_findings": {
+    "equation_12_full_mathematical_form": {
+      "status": "documented",
+      "source_id": "bam_primary_pdf",
+      "location": "PDF page 4, equation (12), with explanatory text continuing on page 5",
+      "transcription": "u_bar_z(t) = b * c_B * integral_from_0_to_t epsilon_zz(t_tilde) d(t_tilde)",
+      "definitions": {
+        "u_bar_z": "Prescribed longitudinal displacement at the outer edge of the incident bar.",
+        "b": "Correction factor, dimensionless.",
+        "c_B": "Acoustic velocity of the cylindrical bars, 4639 m/s.",
+        "epsilon_zz": "Longitudinal strain measured by the incident-bar strain gauges.",
+        "integration": "From zero to the current time; the paper states that numerical integration uses the central-difference rule."
+      },
+      "criterion_passed": true
+    },
+    "correction_factor_numeric_value_and_application": {
+      "status": "documented",
+      "source_id": "bam_primary_pdf",
+      "location": "PDF page 5, continuation of section 2.6.1 immediately below Figure 5",
+      "numeric_value": 1.02,
+      "symbol": "b",
+      "units": "dimensionless",
+      "application": "Multiplies c_B times the integrated longitudinal strain in equation (12); selected so the reduced-model incident-bar strains coincide with measurements and then kept fixed for all reported simulations.",
+      "criterion_passed": true
+    },
+    "bar_and_specimen_coordinate_sign_conventions": {
+      "status": "partial",
+      "source_ids": [
+        "bam_primary_pdf",
+        "p4v035_coordinate_image"
+      ],
+      "locations": [
+        "PDF pages 4-5, Figure 3 and equation (12)",
+        "PDF pages 9-10, Figures 9, 11 and 12",
+        "P4V035_COS.jpg"
+      ],
+      "documented": [
+        "The paper expresses the longitudinal bar and specimen displacement as u_z.",
+        "Figure 3 draws the incident boundary displacement toward the specimen; the coordinate image displays positive z to the right, positive y upward and the incident wave to the left.",
+        "Figures 9, 11 and 12 show the reported u_z field and its negative sign during compression."
+      ],
+      "missing": [
+        "No inspected source explicitly maps CSV x to displayed physical z or CSV displacement_x to physical u_z.",
+        "No inspected source explicitly states the sign convention applied to the separate BC_Trans file."
+      ],
+      "criterion_passed": false
+    },
+    "complete_specimen_dimensions_for_reduction": {
+      "status": "partial",
+      "source_ids": [
+        "bam_primary_pdf",
+        "zenodo_metadata",
+        "zenodo_geometry_figure"
+      ],
+      "locations": [
+        "PDF page 5, Figure 5 and section 3.1",
+        "Zenodo record 17591440 description and Fig1.jpg"
+      ],
+      "documented_dimensions_mm": {
+        "overall_width": 17.0,
+        "through_thickness": 10.0,
+        "overall_height": 12.2,
+        "vertical_notch_separation": 2.0,
+        "central_ligament_width_shown": 0.35,
+        "notch_radius_mean": 0.1741,
+        "notch_radius_95pct_interval_half_width": 0.00061,
+        "P4V035_notch_offset_from_dataset_description": 0.35
+      },
+      "missing": [
+        "The paper's Figure 5 explicitly reports the simulated paper geometry with x = 0, whereas the selected P4V035/P6V035 dataset pair is classified as offset x = 0.35 mm.",
+        "The inspected sources do not define a direct nominal stress/strain reduction for the offset specimen; the publication instead identifies response through an inverse finite-element model.",
+        "No source explicitly demonstrates that every geometric convention needed to reproduce the selected offset mesh follows uniquely from the drawing without additional CAD or modelling assumptions."
+      ],
+      "criterion_passed": false
+    },
+    "absolute_bar_DIC_time_alignment": {
+      "status": "unknown",
+      "source_ids": [
+        "bam_primary_pdf",
+        "zenodo_metadata"
+      ],
+      "locations": [
+        "PDF page 3, sections 2.1 and 2.3",
+        "Zenodo record 17591440 description"
+      ],
+      "documented": [
+        "The paper states that the two high-speed cameras are synchronized with each other.",
+        "The dataset description associates DIC filename times with an imaginary trigger at the left end of the shortened 300 mm incident bar."
+      ],
+      "missing": [
+        "No inspected source defines the absolute event or numerical offset aligning the DIC filename clock with the BC_Inc and BC_Trans time columns.",
+        "The stable V9I filename-to-stage offset and numerical bar/DIC overlap therefore remain descriptive only."
+      ],
+      "criterion_passed": false
+    }
+  },
+  "outcome_gate_summary": {
+    "gates": {
+      "equation_12_full_mathematical_form": true,
+      "correction_factor_numeric_value_and_application": true,
+      "bar_and_specimen_coordinate_sign_conventions": false,
+      "complete_specimen_dimensions_for_reduction": false,
+      "absolute_bar_DIC_time_alignment": false
+    },
+    "passed": false,
+    "expected_negative_result_is_valid_iteration": true
+  },
+  "safety_gate_summary": {
+    "gates": {
+      "v9i_regressions_unchanged": true,
+      "all_documentary_sources_hash_verified": true,
+      "institutional_OAI_identity_and_license_verified": true,
+      "required_definition_keys_match_predeclaration": true,
+      "no_generic_SHPB_convention_imported": true,
+      "no_stress_strain_reconstruction": true,
+      "no_material_or_failure_fit": true,
+      "no_solver": true,
+      "no_WTC_or_CF6_substitution": true,
+      "source_archive_not_rescanned": true,
+      "P6V035_DIC_not_acquired": true,
+      "full_Zenodo_ZIP_not_acquired": true,
+      "FOIA_request_unsent": true,
+      "external_contact_not_made": true
+    },
+    "passed": true
+  },
+  "equation_12_recovered": true,
+  "correction_factor_recovered": true,
+  "correction_factor_b": 1.02,
+  "acoustic_velocity_m_per_s": 4639.0,
+  "absolute_bar_DIC_time_alignment_resolved": false,
+  "CSV_to_physical_coordinate_mapping_resolved": false,
+  "selected_offset_geometry_sufficient_for_nominal_reduction": false,
+  "analogue_stress_strain_reduction_authorized": false,
+  "analogue_material_fit_authorized": false,
+  "analogue_failure_law_fit_authorized": false,
+  "analogue_coupon_solver_authorized": false,
+  "WTC_or_CF6_solver_authorized": false,
+  "failure_deletion_executed": false,
+  "projectile_rupture_executed": false,
+  "facade_impact_executed": false,
+  "global_wtc_impact_physics_qualification_passed": false,
+  "blender_executed": false,
+  "scope_gates": {
+    "stress_strain_reconstruction_authorized": false,
+    "material_fit_authorized": false,
+    "failure_law_fit_authorized": false,
+    "coupon_solver_authorized": false,
+    "WTC_or_CF6_solver_authorized": false,
+    "failure_deletion_authorized": false,
+    "projectile_rupture_authorized": false,
+    "facade_impact_authorized": false,
+    "global_impact_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_inference_authorized": false
+  },
+  "interpretation": "V9J recovers the full published equation 12 and its dimensionless correction factor b=1.02 from the verified CC BY 4.0 primary paper. The documentary gate nevertheless fails because CSV-to-physical coordinate mapping and the separate BC_Trans sign remain incomplete, the selected x=0.35 mm geometry is not uniquely specified for a nominal reduction by the paper's x=0 figure, and absolute bar/DIC alignment is absent. No stress-strain reconstruction, fit, solver, WTC or CF6 substitution, rupture or facade-impact claim is authorized.",
+  "runtime": {
+    "started_at": "2026-08-28T10:39:45.998857+02:00",
+    "completed_at": "2026-08-28T10:39:46.016670+02:00",
+    "software": "Python standard-library deterministic documentary gate",
+    "python_version": "3.14.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "random_seed": 9112001,
+    "network_access_used_for_source_acquisition": true,
+    "network_access_used_for_calculation": false,
+    "source_acquisition_bytes": 5696096,
+    "source_archive_rescanned": false,
+    "additional_measurement_payload_downloaded": false,
+    "full_Zenodo_ZIP_downloaded": false,
+    "external_contact_made": false,
+    "FOIA_request_sent": false,
+    "stress_strain_reconstruction_performed": false,
+    "solver_executed": false
+  }
+}

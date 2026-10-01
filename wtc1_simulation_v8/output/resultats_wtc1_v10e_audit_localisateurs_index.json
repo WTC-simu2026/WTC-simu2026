@@ -1,0 +1,80 @@
+{
+  "iteration": "V10E",
+  "started_at_utc": "2026-09-01T06:42:54Z",
+  "completed_at_utc": "2026-09-01T06:43:29Z",
+  "validation_status": "PASS",
+  "dataset": {
+    "name": "Bounded drawing-index locator audit for the nine hash-verified V10D P0 PDF copies",
+    "version": "10.5.0",
+    "status": "PREDECLARED_BOUNDED_INDEX_PAGE_AUDIT_PASS_ALLOWED_WITH_ZERO_FLOOR_LOCATORS_AND_SOLVER_GATE_CLOSED",
+    "random_seed": 1010005,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10D. Read and render only 29 exact PDF pages predeclared from V10D container page counts and V10C/V10D register locator claims. Transcribe only visible drawing identifiers, page locators, Tower labels, floor labels, index headings, revision/index fields and cross-references needed to test Floors 93-99 source applicability. Do not transcribe drawing geometry, dimensions, member properties or connection details; do not promote Tower A to WTC 1, revision authority or as-built status; do not read the source archive or work/official_sources, use the network, contact an external party, assign physical properties or damage, run a structural solver, continue a thermal model or launch Blender."
+  },
+  "candidate_page_count": 29,
+  "rendered_page_count": 29,
+  "manual_transcription_record_count": 29,
+  "source_copy_count": 9,
+  "locator_summary": {
+    "exact_floor_locator_candidate_ids": [],
+    "exact_floor_locator_candidate_count": 0,
+    "index_continuation_cross_reference_candidate_ids": [
+      "WTCI-000020-L__p0002",
+      "WTCI-000709-L__p0003",
+      "WTCI-000710-L__p0003"
+    ],
+    "index_continuation_cross_reference_candidate_count": 3,
+    "documents_with_any_target_floor_label": [],
+    "documents_with_exact_target_floor_locator": [],
+    "v10f_second_bounded_window_condition_met": true
+  },
+  "render_caps": {
+    "render_count": 29,
+    "required_render_count": 29,
+    "maximum_render_count": 29,
+    "aggregate_rendered_pixels": 77159378,
+    "maximum_aggregate_rendered_pixels": 500000000,
+    "aggregate_rendered_png_bytes": 9868956,
+    "maximum_aggregate_rendered_png_bytes": 268435456,
+    "maximum_observed_pixels_per_page": 10957128,
+    "maximum_pixels_per_rendered_page": 22000000
+  },
+  "page_classification_counts": {
+    "COVER_OR_SEPARATOR": 12,
+    "DRAWING_INDEX_OR_SCHEDULE": 4,
+    "REVISION_OR_ISSUE_INDEX": 13
+  },
+  "operation_counts": {
+    "source_archive_read": 0,
+    "source_archive_write": 0,
+    "official_sources_read": 0,
+    "official_sources_write": 0,
+    "network_request": 0,
+    "external_contact": 0,
+    "structural_solver_run": 0,
+    "thermal_model_run": 0,
+    "blender_launch": 0,
+    "blender_master_write": 0
+  },
+  "physical_assignment_count": 0,
+  "drawing_geometry_or_dimension_transcription_count": 0,
+  "tower_a_promoted_to_wtc1": false,
+  "revision_or_as_built_authority_claimed": false,
+  "next_iteration": {
+    "id": "V10F",
+    "objective": "Preserve V8U through V10E. If and only if V10E documents an index continuation or an exact locator for Floors 93-99, predeclare a second bounded page window tied to those visible index cross-references and transcribe only identifier, floor, revision and page-locator fields. Otherwise leave P0 content expansion closed and return to the prioritized acquisition matrix without promoting geometry or physical properties. Do not use the network, contact an external party, run a structural solver, continue a thermal model or launch Blender."
+  },
+  "outputs": {
+    "source_manifest": "wtc1_simulation_v8/output/v10e_p0_index_source_manifest.json",
+    "candidate_page_manifest": "wtc1_simulation_v8/output/v10e_p0_candidate_page_manifest.json",
+    "render_audit": "wtc1_simulation_v8/output/v10e_p0_page_render_audit.json",
+    "manual_transcription_audit": "wtc1_simulation_v8/output/v10e_p0_manual_transcription_audit.json",
+    "index_locator_matrix_csv": "wtc1_simulation_v8/output/v10e_p0_index_locator_matrix.csv",
+    "floor93_99_locator_matrix_csv": "wtc1_simulation_v8/output/v10e_p0_floor93_99_locator_matrix.csv",
+    "model_gate": "wtc1_simulation_v8/output/v10e_structural_source_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10e_audit_localisateurs_index.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10e_audit_localisateurs_index.json",
+    "contact_sheet": "wtc1_simulation_v8/output/v10e_index_locator_figures/v10e_contact_sheet.png",
+    "offline_audit": "wtc1_simulation_v8/output/v10e_offline_package_audit.json"
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "iteration": "V10F",
+  "dataset": {
+    "name": "Second bounded cross-reference locator audit for three V10E P0 index pages",
+    "version": "10.6.0",
+    "status": "PREDECLARED_SECOND_BOUNDED_CROSS_REFERENCE_LOCATOR_AUDIT",
+    "random_seed": 1010006,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10E. Use only the immutable V10F predeclaration tied to the three visible V10E index cross-reference pages. Inspect embedded text only within the three exact declared PDF page ranges, retain no page text or snippets, render only pages matching one of the exact declared reference tokens, and transcribe only visible identifiers, target-floor labels or ranges, revision or issue fields, and page or sheet locators. Do not transcribe geometry, dimensions, member properties or connection geometry; do not promote drawing-number suffixes to floor labels, Tower A to WTC 1, revision authority or as-built status; do not read the source archive or work/official_sources, use the network, contact an external party, assign physical properties or damage, run a structural solver, continue a thermal model or launch Blender."
+  },
+  "predeclaration": {
+    "path": "wtc1_simulation_v8/data/v10f_bounded_locator_predeclaration.json",
+    "expected_sha256": "1817bb45d08dd15c0199a04b9762ea25f88163b89d1a55fae72c392c9dc1b073"
+  },
+  "source_policy": {
+    "v10d_working_copies_read_only": true,
+    "source_archive_read": false,
+    "source_archive_modified": false,
+    "official_sources_directory_read": false,
+    "official_sources_directory_modified": false,
+    "network_access_authorized": false,
+    "external_contact_authorized": false,
+    "bounded_embedded_text_locator_scan_authorized": true,
+    "store_extracted_page_text_authorized": false,
+    "store_page_text_snippets_authorized": false,
+    "matched_page_render_authorized": true,
+    "nonmatching_page_render_authorized": false,
+    "drawing_geometry_transcription_authorized": false,
+    "dimension_transcription_authorized": false,
+    "member_property_transcription_authorized": false,
+    "connection_detail_transcription_authorized": false,
+    "as_built_promotion_authorized": false,
+    "structural_solver_authorized": false,
+    "blender_authorized": false,
+    "blender_master_modification_authorized": false,
+    "thermal_continuation_authorized": false,
+    "physical_coordinate_assignment_authorized": false,
+    "member_section_assignment_authorized": false,
+    "material_assignment_authorized": false,
+    "mass_assignment_authorized": false,
+    "stiffness_assignment_authorized": false,
+    "capacity_assignment_authorized": false,
+    "connection_law_assignment_authorized": false,
+    "damage_state_assignment_authorized": false,
+    "load_path_credit_authorized": false
+  },
+  "regression_files": [
+    {
+      "role": "v10e_configuration",
+      "path": "wtc1_simulation_v8/data/v10e_p0_index_locator_audit.json",
+      "expected_sha256": "29e547028c65131cb08e1bb83697271367130263ff4f9e4a2a6da84adad49bee"
+    },
+    {
+      "role": "v10e_script",
+      "path": "wtc1_simulation_v8/scripts/run_v10e_p0_index_locator_audit.py",
+      "expected_sha256": "f40e3efd5d0e1fc664ad8992437c4d36b0b187877bc37cf0d80263bcd4a39c12"
+    },
+    {
+      "role": "v10e_manual_transcription",
+      "path": "wtc1_simulation_v8/data/v10e_p0_index_locator_transcription.json",
+      "expected_sha256": "c10ad501607371a636a21ab4b1acb74d3c510ea70f3a531abc40e82fecd970b5"
+    },
+    {
+      "role": "v10e_source_manifest",
+      "path": "wtc1_simulation_v8/output/v10e_p0_index_source_manifest.json",
+      "expected_sha256": "87bcec8444fc437474d7e9cc97995d325caf614c06e7df7c79065fd484d22407"
+    },
+    {
+      "role": "v10e_candidate_page_manifest",
+      "path": "wtc1_simulation_v8/output/v10e_p0_candidate_page_manifest.json",
+      "expected_sha256": "39d5a0092b4ee0ddabb556c21586508c1978ad5dc73040a8921e261c7e0c9ee0"
+    },
+    {
+      "role": "v10e_render_audit",
+      "path": "wtc1_simulation_v8/output/v10e_p0_page_render_audit.json",
+      "expected_sha256": "89b130605522c0abaf72081c8bcea257a0057b2c48c8d70167925712ed7dea96"
+    },
+    {
+      "role": "v10e_manual_transcription_audit",
+      "path": "wtc1_simulation_v8/output/v10e_p0_manual_transcription_audit.json",
+      "expected_sha256": "813e5dc524e33da7d4e9ae002c94877854cd5e47f0b788d9e561e1045649c8fe"
+    },
+    {
+      "role": "v10e_index_locator_matrix",
+      "path": "wtc1_simulation_v8/output/v10e_p0_index_locator_matrix.csv",
+      "expected_sha256": "b132cbf04d893198c25d0594ee50254502368d740073c688b5b9161773b8d46e"
+    },
+    {
+      "role": "v10e_floor93_99_locator_matrix",
+      "path": "wtc1_simulation_v8/output/v10e_p0_floor93_99_locator_matrix.csv",
+      "expected_sha256": "a64c5bb65826e54128d0178cbb04132124e5d6194e7c0184f859772d19ad5305"
+    },
+    {
+      "role": "v10e_model_gate",
+      "path": "wtc1_simulation_v8/output/v10e_structural_source_gate.json",
+      "expected_sha256": "7ad3e1473f5bad4ce6c216a297e6d8ea50a462081a8f32482c329b13cd1a3637"
+    },
+    {
+      "role": "v10e_report",
+      "path": "wtc1_simulation_v8/output/rapport_wtc1_v10e_audit_localisateurs_index.md",
+      "expected_sha256": "434defdfeeca09c4019f2bc61dee9fddbeef1e53568862b4203d5f27a27f0440"
+    },
+    {
+      "role": "v10e_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10e_audit_localisateurs_index.json",
+      "expected_sha256": "e5c79f158d35104acac1b27c58168a01f4f31a33011b16fc0bbce6cbddfb31bd"
+    },
+    {
+      "role": "v10e_contact_sheet",
+      "path": "wtc1_simulation_v8/output/v10e_index_locator_figures/v10e_contact_sheet.png",
+      "expected_sha256": "2cf2e40e282af375b215c26f2e2fc1613fbd1ebcc9d9246188dc1ace525da8d7"
+    },
+    {
+      "role": "v10e_offline_audit",
+      "path": "wtc1_simulation_v8/output/v10e_offline_package_audit.json",
+      "expected_sha256": "aab3cd827be507e07bea0178e5f22346aceea91b96458e1f9b98810629adedce"
+    }
+  ],
+  "protected_files": [
+    {
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+    }
+  ],
+  "scan_policy": {
+    "normalization": "uppercase, normalize Unicode dash variants to ASCII hyphen, remove whitespace adjacent to hyphens",
+    "match_method": "first normalized embedded-text occurrence of each exact predeclared visible parent cross-reference, deduplicated by PDF page in predeclared document and page order",
+    "maximum_document_count": 3,
+    "required_scanned_pdf_page_count": 365,
+    "maximum_scanned_pdf_page_count": 365,
+    "store_full_extracted_text": false,
+    "store_page_text_snippets": false,
+    "maximum_matched_page_count": 13
+  },
+  "render_policy": {
+    "renderer": "pdftoppm",
+    "format": "PNG",
+    "color_mode": "grayscale",
+    "dpi": 150,
+    "maximum_rendered_match_page_count": 13,
+    "maximum_pixels_per_rendered_page": 30000000,
+    "maximum_aggregate_rendered_pixels": 300000000,
+    "maximum_aggregate_rendered_png_bytes": 134217728,
+    "individual_page_directory": "wtc1_simulation_v8/output/v10f_cross_reference_locator_figures/pages",
+    "global_contact_sheet": "wtc1_simulation_v8/output/v10f_cross_reference_locator_figures/v10f_contact_sheet.png"
+  },
+  "manual_transcription": {
+    "path": "wtc1_simulation_v8/data/v10f_p0_cross_reference_locator_transcription.json",
+    "required_record_per_rendered_match_page": true,
+    "allowed_page_classifications": [
+      "DRAWING_INDEX_OR_SCHEDULE",
+      "REVISION_OR_ISSUE_INDEX",
+      "PARENT_OVERVIEW_OR_CROSS_REFERENCE",
+      "UNREADABLE"
+    ],
+    "allowed_transcription_fields": [
+      "visible_drawing_identifiers",
+      "visible_floor_labels",
+      "visible_floor_ranges",
+      "visible_revision_or_issue_fields",
+      "visible_page_or_sheet_locators"
+    ],
+    "forbidden_transcription_fields": [
+      "coordinates",
+      "dimensions",
+      "member_sections",
+      "materials",
+      "connection_geometry",
+      "capacity",
+      "damage_state",
+      "load_path"
+    ],
+    "floor_target_set": [93, 94, 95, 96, 97, 98, 99],
+    "transcription_method": "Manual visual review of only the seven PNG pages selected as the first normalized occurrence of each predeclared reference token, deduplicated by PDF page; drawing-number suffixes are not floor labels."
+  },
+  "outputs": {
+    "source_manifest": "wtc1_simulation_v8/output/v10f_p0_cross_reference_source_manifest.json",
+    "locator_scan_audit": "wtc1_simulation_v8/output/v10f_p0_bounded_locator_scan_audit.json",
+    "matched_page_manifest": "wtc1_simulation_v8/output/v10f_p0_matched_page_manifest.json",
+    "render_audit": "wtc1_simulation_v8/output/v10f_p0_page_render_audit.json",
+    "manual_transcription_audit": "wtc1_simulation_v8/output/v10f_p0_manual_transcription_audit.json",
+    "locator_matrix_csv": "wtc1_simulation_v8/output/v10f_p0_cross_reference_locator_matrix.csv",
+    "floor93_99_locator_matrix_csv": "wtc1_simulation_v8/output/v10f_p0_floor93_99_locator_matrix.csv",
+    "model_gate": "wtc1_simulation_v8/output/v10f_structural_source_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10f_localisateurs_renvois.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10f_localisateurs_renvois.json",
+    "contact_sheet": "wtc1_simulation_v8/output/v10f_cross_reference_locator_figures/v10f_contact_sheet.png",
+    "offline_audit": "wtc1_simulation_v8/output/v10f_offline_package_audit.json"
+  },
+  "next_iteration": {
+    "id": "V10G",
+    "objective": "Preserve V8U through V10F. If and only if V10F documents an explicit Floor 93-99 label together with an exact drawing or page locator, predeclare only those exact referenced pages for a source-identity, revision and floor-applicability audit without transcribing geometry or physical properties. Otherwise close this page-content expansion branch and return to the V10B prioritized acquisition matrix, recording which P0 requirements remain unresolved. Do not use the network, contact an external party, run a structural solver, continue a thermal model or launch Blender."
+  }
+}

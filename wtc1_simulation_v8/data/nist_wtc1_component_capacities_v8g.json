@@ -1,0 +1,123 @@
+{
+  "dataset": {
+    "name": "WTC 1 component capacities used by V8G",
+    "version": "8.6.0",
+    "status": "MANUAL_TRANSCRIPTION_FROM_PRIMARY_NIST_TABLES",
+    "warning": "Hat-truss demand and global core-load history come from the NIST global model and therefore test internal mechanical consistency, not independent reproduction of that global response."
+  },
+  "sources": [
+    {
+      "id": "NCSTAR1-6",
+      "path": "work/official_sources/ncstar1-6.pdf",
+      "tables": ["4-2", "4-3", "4-4"],
+      "used_for": "temperature-dependent truss-seat capacities and normal service seat load"
+    },
+    {
+      "id": "NCSTAR1-6D",
+      "path": "work/official_sources/ncstar1-6d.pdf",
+      "tables": ["4-22", "4-23", "4-24", "4-27", "4-29", "5-3"],
+      "used_for": "hat-truss load transfer, member/connection checks, and core-load history"
+    }
+  ],
+  "floor_truss_seats": {
+    "normal_service_load_per_paired_trusses_kip": 16.0,
+    "normal_service_load_note": "NIST states that the normal load at each seat for a paired floor truss is about 16 kip for an 80 psf service gravity load.",
+    "temperatures_c": [20, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
+    "interior_vertical_capacity_kip": {
+      "15": [233, 233, 232, 226, 207, 164, 101, 46, 23, 19, 19],
+      "17": [233, 233, 232, 226, 207, 164, 101, 46, 23, 19, 19],
+      "20": [274, 274, 273, 267, 244, 194, 119, 54, 27, 22, 22],
+      "21": [229, 229, 228, 223, 204, 162, 100, 45, 22, 18, 18],
+      "22": [194, 194, 194, 189, 173, 137, 85, 39, 19, 16, 16],
+      "23": [194, 194, 194, 189, 173, 137, 85, 39, 19, 16, 16],
+      "226A": [395, 395, 393, 384, 352, 279, 172, 78, 38, 32, 32]
+    },
+    "exterior_vertical_capacity_kip": {
+      "1013": [94, 94, 93, 91, 84, 69, 45, 29, 14, 12, 12],
+      "1111": [94, 94, 93, 91, 84, 69, 58, 26, 13, 11, 11],
+      "1212": [111, 111, 110, 108, 100, 81, 53, 34, 17, 14, 14],
+      "1311": [94, 94, 93, 91, 84, 69, 60, 27, 13, 11, 11],
+      "1313": [94, 94, 93, 91, 84, 69, 45, 29, 14, 12, 12],
+      "1411": [140, 140, 139, 136, 126, 102, 78, 35, 17, 14, 14],
+      "1511": [193, 193, 192, 187, 172, 136, 84, 38, 19, 16, 15],
+      "1611": [207, 207, 206, 201, 184, 146, 90, 41, 20, 17, 17]
+    },
+    "interior_horizontal_tension_capacity_kip": [44, 44, 44, 42, 34, 21, 9, 4, 4, 4, 4]
+  },
+  "hat_truss": {
+    "after_impact_core_load_floor_98_kip": 34429.0,
+    "net_outward_transfer_history_kip": {
+      "20": 0.0,
+      "40": 4135.0,
+      "60": 5663.0,
+      "80": 6748.0,
+      "100": 5951.0
+    },
+    "transfer_definition": "after-impact core load minus the NIST Floor 98 core-load history, clipped at zero",
+    "floor_98_minus_floor_105_transfer_difference_kip": {
+      "after_impact": 0.0,
+      "80": 35.0,
+      "100": 42.0
+    },
+    "outtrigger_dcr_at_80_min": {
+      "A": 0.54,
+      "B": 0.03,
+      "C": 0.04,
+      "D": 0.75,
+      "E": 0.97,
+      "F": 0.64,
+      "G": 0.59,
+      "H": 0.72,
+      "I": 0.29,
+      "J": -0.02,
+      "K": -0.04,
+      "L": 0.19,
+      "M": 0.70,
+      "N": 0.54,
+      "O": 0.57,
+      "P": 0.87
+    },
+    "outtrigger_dcr_at_100_min": {
+      "A": 0.52,
+      "B": 0.03,
+      "C": 0.04,
+      "D": 0.63,
+      "E": 0.96,
+      "F": 0.64,
+      "G": 0.61,
+      "H": 0.77,
+      "I": 0.28,
+      "J": -0.02,
+      "K": -0.04,
+      "L": 0.18,
+      "M": 0.73,
+      "N": 0.58,
+      "O": 0.61,
+      "P": 0.90
+    },
+    "connections_at_80_min": [
+      {"id": 1, "floor": 110, "column": "501", "yield_kip": 1250, "ultimate_kip": 1250, "demand_kip": 680},
+      {"id": 2, "floor": 108, "column": "502", "yield_kip": 1250, "ultimate_kip": 1250, "demand_kip": 680},
+      {"id": 3, "floor": 111, "column": "502", "yield_kip": 1930, "ultimate_kip": 1930, "demand_kip": 80},
+      {"id": 4, "floor": 108, "column": "502", "yield_kip": 520, "ultimate_kip": 520, "demand_kip": 100},
+      {"id": 5, "floor": 110, "column": "701", "yield_kip": 1340, "ultimate_kip": 1340, "demand_kip": 390},
+      {"id": 6, "floor": 107, "column": "702", "yield_kip": 950, "ultimate_kip": 950, "demand_kip": 370},
+      {"id": 7, "floor": 110, "column": "801", "yield_kip": 1340, "ultimate_kip": 1340, "demand_kip": 140},
+      {"id": 8, "floor": 107, "column": "802", "yield_kip": 335, "ultimate_kip": 260, "demand_kip": 140},
+      {"id": 9, "floor": 110, "column": "1001", "yield_kip": 1250, "ultimate_kip": 1250, "demand_kip": 400},
+      {"id": 10, "floor": 110, "column": "1008", "yield_kip": 1250, "ultimate_kip": 1250, "demand_kip": 290},
+      {"id": 11, "floor": 110, "column": "708", "yield_kip": 1340, "ultimate_kip": 1340, "demand_kip": 360},
+      {"id": 12, "floor": 108, "column": "217-218", "yield_kip": 4520, "ultimate_kip": 5880, "demand_kip": 1810},
+      {"id": 13, "floor": 108, "column": "508", "yield_kip": 870, "ultimate_kip": 760, "demand_kip": 410},
+      {"id": 14, "floor": 110, "column": "508", "yield_kip": 1250, "ultimate_kip": 1250, "demand_kip": 530},
+      {"id": 15, "floor": 108, "column": "507", "yield_kip": 1250, "ultimate_kip": 1250, "demand_kip": 530},
+      {"id": 16, "floor": 108, "column": "149-150", "yield_kip": 2640, "ultimate_kip": 2640, "demand_kip": 1310},
+      {"id": 17, "floor": 108, "column": "110-111", "yield_kip": 2640, "ultimate_kip": 2640, "demand_kip": 1170},
+      {"id": 18, "floor": 108, "column": "442-443", "yield_kip": 4520, "ultimate_kip": 5880, "demand_kip": 1650},
+      {"id": 19, "floor": 108, "column": "417-418", "yield_kip": 4520, "ultimate_kip": 5880, "demand_kip": 1200},
+      {"id": 20, "floor": 108, "column": "242-243", "yield_kip": 4520, "ultimate_kip": 5880, "demand_kip": 1230},
+      {"id": 21, "floor": 108, "column": "231-232", "yield_kip": 3010, "ultimate_kip": 3920, "demand_kip": 1070},
+      {"id": 22, "floor": 108, "column": "228-229", "yield_kip": 3010, "ultimate_kip": 3920, "demand_kip": 1150}
+    ]
+  }
+}

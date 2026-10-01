@@ -1,0 +1,135 @@
+{
+  "dataset": {
+    "name": "WTC 1 V8P floor-specific vertical state graph",
+    "version": "8.15.0",
+    "status": "BOUNDED_RASTER_DIGITIZATION_AND_RESERVED_COLUMN_VALIDATION",
+    "scope": "Digitize the floor-specific axial-force contours in NIST Figures 4-60 and 4-61 for all 47 core columns over Floors 93-99, reconstruct impact-induced vertical state increments, and test a graph interpolator on Columns 705, 804, and 605 kept out of model selection.",
+    "warning": "The contour images and DCR maps are outputs of the same NIST global model. This iteration tests internal cross-output predictivity and identifiability only; it is not an independent structural solution or evidence for any collapse mechanism."
+  },
+  "official_facts": [
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_pages": [283, 284],
+      "printed_pages": [219, 220],
+      "fact": "Figures 4-60 and 4-61 display axial-force contours along every WTC 1 core-column line before and immediately after impact. Compression is negative in the figures and each six-series panel has its own ten-level legend.",
+      "confidence": "high; complete pages visually checked and PDF image/color resources inspected"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 294,
+      "printed_page": 230,
+      "fact": "Table 4-20 reports total WTC 1 core-column loads at each Floor 93-99 before and immediately after impact.",
+      "confidence": "high; complete page visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 296,
+      "printed_page": 232,
+      "fact": "Figures 4-68 and 4-69 report the separate maximum axial DCR over Floors 93-99 before and after impact; severed or heavily damaged columns are black.",
+      "confidence": "high; complete page visually checked"
+    }
+  ],
+  "digitization": {
+    "pdf": "work/official_sources/ncstar1-6d.pdf",
+    "states": {
+      "before_impact": {
+        "zero_based_page_index": 282,
+        "pdf_page": 283,
+        "printed_page": 219,
+        "figure": "4-60"
+      },
+      "after_impact": {
+        "zero_based_page_index": 283,
+        "pdf_page": 284,
+        "printed_page": 220,
+        "figure": "4-61"
+      }
+    },
+    "series_by_panel_position": [500, 600, 700, 800, 900, 1000],
+    "columns_by_series_descending": {
+      "500": [508, 507, 506, 505, 504, 503, 502, 501],
+      "600": [608, 607, 606, 605, 604, 603, 602, 601],
+      "700": [708, 707, 706, 705, 704, 703, 702, 701],
+      "800": [807, 806, 805, 804, 803, 802, 801],
+      "900": [908, 907, 906, 905, 904, 903, 902, 901],
+      "1000": [1008, 1007, 1006, 1005, 1004, 1003, 1002, 1001]
+    },
+    "palette_low_to_high_force_rgb": [
+      [0, 0, 255],
+      [0, 179, 255],
+      [0, 255, 255],
+      [0, 255, 179],
+      [0, 255, 0],
+      [179, 255, 0],
+      [255, 255, 0],
+      [255, 179, 0],
+      [255, 0, 0]
+    ],
+    "contour_levels_lb": {
+      "before_impact": {
+        "500": [-1840000, -1690000, -1540000, -1390000, -1240000, -1090000, -935415, -785463, -635512, -485560],
+        "600": [-1110000, -1020000, -915828, -816282, -716736, -617190, -517644, -418098, -318552, -219006],
+        "700": [-925402, -842679, -759956, -677234, -594511, -511788, -429066, -346343, -263620, -180898],
+        "800": [-924408, -843055, -761702, -680350, -598997, -517644, -436291, -354939, -273586, -192233],
+        "900": [-1120000, -1020000, -924670, -826707, -728743, -630779, -532815, -434851, -336888, -238924],
+        "1000": [-1840000, -1700000, -1550000, -1400000, -1260000, -1110000, -961841, -815148, -668454, -521761]
+      },
+      "after_impact": {
+        "500": [-2090000, -1850000, -1620000, -1380000, -1140000, -908046, -672210, -436374, -200538, 35298],
+        "600": [-1520000, -1350000, -1180000, -1020000, -846297, -677036, -507774, -338513, -169251, 10.461],
+        "700": [-1010000, -899530, -787088, -674646, -562204, -449761, -337319, -224877, -112435, 7.227],
+        "800": [-1010000, -906521, -798619, -690717, -582815, -474913, -367011, -259110, -151208, -43306],
+        "900": [-1160000, -1050000, -932793, -817667, -702540, -587414, -472288, -357162, -242036, -126909],
+        "1000": [-1870000, -1720000, -1570000, -1420000, -1270000, -1120000, -972985, -823774, -674563, -525352]
+      }
+    },
+    "floors": [93, 94, 95, 96, 97, 98, 99],
+    "floor_tick_labels": [93, 95, 97, 99],
+    "x_cluster_gap_pixels": 5,
+    "x_padding_pixels": 2,
+    "y_window_pixels": 2,
+    "missing_segment_interpretation": "If no colored element crosses the sampled floor marker after an expanded local search, the axial-force interval is recorded as zero and separately flagged as an absent displayed segment."
+  },
+  "official_core_totals_kip": {
+    "93": {"before_impact": 43859.0, "after_impact": 43304.0},
+    "94": {"before_impact": 41903.0, "after_impact": 41551.0},
+    "95": {"before_impact": 39925.0, "after_impact": 39872.0},
+    "96": {"before_impact": 37956.0, "after_impact": 38217.0},
+    "97": {"before_impact": 35988.0, "after_impact": 36387.0},
+    "98": {"before_impact": 34029.0, "after_impact": 34429.0},
+    "99": {"before_impact": 32127.0, "after_impact": 32525.0}
+  },
+  "reserved_validation_columns": [705, 804, 605],
+  "damaged_boundary_columns": [503, 504, 505, 506, 604, 704, 706, 805, 904],
+  "vertical_state_graph": {
+    "state_definition": "delta_P(column,floor) = after-impact axial compression minus before-impact axial compression.",
+    "innovation_definition": "u(column,99)=delta_P(column,99); u(column,f)=delta_P(column,f)-delta_P(column,f+1). Reconstructing delta_P downward by cumulative summation enforces vertical state continuity exactly.",
+    "predictor": "Kernel regression of innovation residuals around the official per-floor mean innovation. Damaged columns remain known boundary references; reserved columns are never used during parameter selection.",
+    "transfer_length_x_bays": [0.5, 0.75, 1.0, 1.5, 2.5, 4.0],
+    "transfer_length_y_bays": [0.5, 0.75, 1.0, 1.5, 2.5, 4.0],
+    "vertical_length_floors": [0.5, 0.75, 1.0, 1.5, 2.5, 4.0],
+    "capacity_similarity_exponent": [0.0, 0.5, 1.0],
+    "inner_validation": "Leave one non-damaged, non-reserved column out at a time; all seven after-impact floor intervals for that column are untouched during its prediction.",
+    "selection_score": "Lexicographic minimum of mean distance outside the observed intervals, midpoint MAE, then maximum midpoint error."
+  },
+  "acceptance_gates": {
+    "digitized_observation_count_per_state": 329,
+    "floor98_bubble_interval_coverage_min": 0.85,
+    "reserved_interval_coverage_min": 0.70,
+    "reserved_interval_mae_kip_max": 75.0,
+    "reserved_midpoint_mae_kip_max": 180.0,
+    "reserved_midpoint_maximum_error_kip_max": 450.0,
+    "reserved_dcr_maximum_error_max": 0.30,
+    "vertical_reconstruction_error_kip_max": 1e-9,
+    "physical_interpretation": "Passing would validate only a bounded interpolation of selected NIST cold outputs. It would not identify the actual floor membrane, connection law, or real-event collapse mechanism."
+  },
+  "provenance": {
+    "v8b_results": "wtc1_simulation_v8/output/resultats_wtc1_v8b.json",
+    "v8n_configuration": "wtc1_simulation_v8/data/v8n_inverse_core_redistribution.json",
+    "v8o_digitization": "wtc1_simulation_v8/output/digitisation_wtc1_v8o_floor98.json",
+    "core_geometry": "wtc1_3d_v4/data/wtc1_parameters.json"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "iteration": "V10F",
+  "predeclared_at": "2026-09-01T15:46:37+02:00",
+  "random_seed": 1010006,
+  "random_draw_used": false,
+  "purpose": "One bounded second locator window, permitted only because V10E recorded exact visible index cross-references on three candidate pages.",
+  "selection_basis": {
+    "v10e_results_path": "wtc1_simulation_v8/output/resultats_wtc1_v10e_audit_localisateurs_index.json",
+    "v10e_results_sha256": "e5c79f158d35104acac1b27c58168a01f4f31a33011b16fc0bbce6cbddfb31bd",
+    "required_v10e_gate": "locator_summary.v10f_second_bounded_window_condition_met == true",
+    "allowed_parent_candidate_ids": [
+      "WTCI-000020-L__p0002",
+      "WTCI-000709-L__p0003",
+      "WTCI-000710-L__p0003"
+    ]
+  },
+  "bounded_documents": [
+    {
+      "document_id": "WTCI-000710-L",
+      "book_number": 5,
+      "source_path": "wtc1_simulation_v8/input/v10d_structural_sources/WTCI-000710-L__0f4c63f9c9204a61.pdf",
+      "source_sha256": "0f4c63f9c9204a6181135546d8f2707ab408230ccbcb1f366f42aa6472c52418",
+      "container_page_count": 36,
+      "locator_scan_first_pdf_page_1_based": 4,
+      "locator_scan_last_pdf_page_1_based": 36,
+      "visible_parent_cross_references": [
+        "5-AB2-0",
+        "5-AB3-1"
+      ]
+    },
+    {
+      "document_id": "WTCI-000020-L",
+      "book_number": 6,
+      "source_path": "wtc1_simulation_v8/input/v10d_structural_sources/WTCI-000020-L__0487e4d25e2d00c1.pdf",
+      "source_sha256": "0487e4d25e2d00c1db57deba8b5b027f2a79a8d1a1acee3ca0af970733e96671",
+      "container_page_count": 293,
+      "locator_scan_first_pdf_page_1_based": 4,
+      "locator_scan_last_pdf_page_1_based": 293,
+      "visible_parent_cross_references": [
+        "6-AB1-0",
+        "6-AB2-0",
+        "6-AB3-0",
+        "6-AB4-0",
+        "6-AB5-0",
+        "6-AB6-1",
+        "6-AB7-0",
+        "6-AB8-1",
+        "6-AB9-0"
+      ]
+    },
+    {
+      "document_id": "WTCI-000709-L",
+      "book_number": 4,
+      "source_path": "wtc1_simulation_v8/input/v10d_structural_sources/WTCI-000709-L__0568fdf310455ed5.pdf",
+      "source_sha256": "0568fdf310455ed543299b0eca5994d037fbcef37c26029e512a44a39e57a2d9",
+      "container_page_count": 45,
+      "locator_scan_first_pdf_page_1_based": 4,
+      "locator_scan_last_pdf_page_1_based": 45,
+      "visible_parent_cross_references": [
+        "4-AB2-1",
+        "4-AB3-1"
+      ]
+    }
+  ],
+  "locator_scan_policy": {
+    "maximum_document_count": 3,
+    "maximum_scanned_pdf_page_count": 365,
+    "embedded_text_only": true,
+    "normalize_case_and_dash_spacing_only": true,
+    "store_full_extracted_text": false,
+    "store_page_text_snippets": false,
+    "allowed_match_tokens": "visible_parent_cross_references only",
+    "render_only_exact_identifier_match_pages": true,
+    "maximum_rendered_match_page_count": 13,
+    "fallback_raster_or_ocr_scan_authorized": false,
+    "nonmatching_page_render_authorized": false
+  },
+  "allowed_transcription_fields": [
+    "visible_drawing_identifiers",
+    "visible_floor_labels",
+    "visible_floor_ranges",
+    "visible_revision_or_issue_fields",
+    "visible_page_or_sheet_locators"
+  ],
+  "forbidden_content": [
+    "geometry",
+    "coordinates",
+    "dimensions",
+    "member_sections",
+    "materials",
+    "connection_geometry",
+    "capacity",
+    "damage_state",
+    "load_path"
+  ],
+  "operation_policy": {
+    "source_archive_read": false,
+    "official_sources_read": false,
+    "network_access": false,
+    "external_contact": false,
+    "structural_solver": false,
+    "thermal_model": false,
+    "blender": false,
+    "blender_master_write": false
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "iteration": "V10R",
+  "generated_at_utc": "2026-09-04T07:46:12Z",
+  "validation_status": "PASS_THREE_TRACK_PREPROCESSOR_ONLY",
+  "dataset": {
+    "name": "Three-track thermal-to-initiation preprocessor and validity-domain audit",
+    "version": "10.18.0",
+    "status": "PREDECLARED_BEFORE_V10R_PREPROCESSOR_CONSTRUCTION",
+    "created_at_local": "2026-09-04T09:45:00+02:00",
+    "random_seed": 1018001,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10Q. Build exactly three non-merging thermal-to-initiation tracks: the zero-temperature software control, a cached official-model-dependent reduced-property reference, and UNKNOWN_PHYSICAL_INITIATION. Apply the selected yield-ratio and Young-modulus equations only inside a conservative joint 0-600 C domain, retain nulls above that domain, audit the V8E legacy tail-model dependence, and join every branch with the failed V8J cold-load-path gate. Do not assign member capacities or temperatures, rerun a structural model, release a physical initiation state, launch Blender, or conclude historical collapse or non-collapse."
+  },
+  "configuration": {
+    "path": "wtc1_simulation_v8/data/v10r_three_track_thermal_initiation_preprocessor.json",
+    "sha256": "f27528a719b4f64732bd214204d019cfdc9dd0cb12e91e8c0c0fa934f63930e9"
+  },
+  "script": {
+    "path": "wtc1_simulation_v8/scripts/run_v10r_three_track_thermal_initiation_preprocessor.py",
+    "sha256": "80ab847ce23ca64b514a2f7884d7be4516117d2d82a95457b74a6520acf969a5"
+  },
+  "source_summary": {
+    "regression_file_count": 12,
+    "protected_file_count": 1,
+    "cached_input_file_count": 6,
+    "official_source_hash_only_file_count": 2
+  },
+  "material_law_summary": {
+    "iteration": "V10R",
+    "identity_check_count": 5,
+    "identity_pass_count": 5,
+    "identity_checks": {
+      "yield_equation_exact": true,
+      "yield_parameters_exact": true,
+      "young_modulus_equation_exact": true,
+      "young_modulus_parameters_exact": true,
+      "young_modulus_domain_exact": true
+    },
+    "selected_equations": {
+      "yield_ratio": "(1-A2)*exp(-0.5*((T/s1)^m1 + (T/s2)^m2)) + A2",
+      "young_modulus_gpa": "e0 + e1*T + e2*T^2 + e3*T^3"
+    },
+    "selected_parameters": {
+      "yield_ratio": {
+        "A2": 0.074692,
+        "m1": 8.325929,
+        "m2": 1.0,
+        "s1_c": 638.384277,
+        "s2_c": 523.523132
+      },
+      "young_modulus": {
+        "e0": 206.0,
+        "e1": -0.04326,
+        "e2": -3.502e-05,
+        "e3": -6.592e-08
+      }
+    },
+    "declared_yield_ratio_domain": null,
+    "declared_young_modulus_domain_c": [
+      0.0,
+      600.0
+    ],
+    "conservative_joint_domain_c": [
+      0.0,
+      600.0
+    ],
+    "reference_temperature_c": 20.0,
+    "yield_ratio_direct_at_20c": 0.9824931005469242,
+    "young_modulus_gpa_at_20c": 205.12026464000002,
+    "anchors": [
+      {
+        "temperature_c": 0.0,
+        "domain_valid": true,
+        "yield_ratio_direct": 1.0,
+        "yield_ratio_to_20c": 1.0178188523088154,
+        "young_modulus_gpa": 206.0,
+        "young_modulus_ratio_to_20c": 1.0042888759018713
+      },
+      {
+        "temperature_c": 20.0,
+        "domain_valid": true,
+        "yield_ratio_direct": 0.9824931005469242,
+        "yield_ratio_to_20c": 1.0,
+        "young_modulus_gpa": 205.12026464000002,
+        "young_modulus_ratio_to_20c": 1.0
+      },
+      {
+        "temperature_c": 100.0,
+        "domain_valid": true,
+        "yield_ratio_direct": 0.9157156597143372,
+        "yield_ratio_to_20c": 0.9320326618116566,
+        "young_modulus_gpa": 201.25788,
+        "young_modulus_ratio_to_20c": 0.9811701459786103
+      },
+      {
+        "temperature_c": 200.0,
+        "domain_valid": true,
+        "yield_ratio_direct": 0.8390844532873832,
+        "yield_ratio_to_20c": 0.8540359752351343,
+        "young_modulus_gpa": 195.41984000000002,
+        "young_modulus_ratio_to_20c": 0.9527085992355514
+      },
+      {
+        "temperature_c": 300.0,
+        "domain_valid": true,
+        "yield_ratio_direct": 0.7688340079766486,
+        "yield_ratio_to_20c": 0.7825337476147791,
+        "young_modulus_gpa": 188.09035999999998,
+        "young_modulus_ratio_to_20c": 0.9169760010309626
+      },
+      {
+        "temperature_c": 400.0,
+        "domain_valid": true,
+        "yield_ratio_direct": 0.6997841607418375,
+        "yield_ratio_to_20c": 0.7122535113501447,
+        "young_modulus_gpa": 178.87392,
+        "young_modulus_ratio_to_20c": 0.872044116723113
+      },
+      {
+        "temperature_c": 500.0,
+        "domain_valid": true,
+        "yield_ratio_direct": 0.61234126250661,
+        "yield_ratio_to_20c": 0.6232524810258089,
+        "young_modulus_gpa": 167.375,
+        "young_modulus_ratio_to_20c": 0.8159847116702705
+      },
+      {
+        "temperature_c": 600.0,
+        "domain_valid": true,
+        "yield_ratio_direct": 0.46180748679604455,
+        "yield_ratio_to_20c": 0.4700363661983685,
+        "young_modulus_gpa": 153.19808,
+        "young_modulus_ratio_to_20c": 0.7468695512307038
+      }
+    ],
+    "anchor_count": 8,
+    "domain_grid": {
+      "start_c": 0.0,
+      "end_c": 600.0,
+      "step_c": 1.0,
+      "point_count": 601,
+      "yield_nonincreasing_adjacent_check_count": 600,
+      "yield_nonincreasing_pass_count": 600,
+      "young_modulus_nonincreasing_adjacent_check_count": 600,
+      "young_modulus_nonincreasing_pass_count": 600,
+      "yield_ratio_direct_minimum": 0.46180748679604455,
+      "yield_ratio_direct_maximum": 1.0,
+      "young_modulus_gpa_minimum": 153.19808,
+      "young_modulus_gpa_maximum": 206.0
+    },
+    "tail_model_invoked": false,
+    "above_600c_evaluation_count": 0,
+    "member_property_assignment_count": 0,
+    "physical_validation": false
+  },
+  "material_range_summary": {
+    "temperature_envelope_row_count": 105,
+    "temperature_endpoint_count": 210,
+    "joint_domain_valid_endpoint_count": 163,
+    "joint_domain_blocked_endpoint_count": 47,
+    "complete_reduced_property_range_count": 58,
+    "partial_domain_blocked_range_count": 47,
+    "fully_blocked_range_count": 0,
+    "blocked_maxima_by_family": {
+      "core_column": 19,
+      "perimeter_column": 8,
+      "floor_truss": 20
+    },
+    "blocked_maxima_by_time_min": {
+      "20": 7,
+      "40": 9,
+      "60": 10,
+      "80": 10,
+      "100": 11
+    },
+    "blocked_maxima_by_floor": {
+      "93": 0,
+      "94": 5,
+      "95": 13,
+      "96": 13,
+      "97": 11,
+      "98": 5,
+      "99": 0
+    },
+    "tail_model_invocation_count": 0,
+    "member_temperature_assignment_count": 0,
+    "member_section_assignment_count": 0,
+    "member_capacity_assignment_count": 0,
+    "physical_initiation_release_count": 0
+  },
+  "legacy_v8e_summary": {
+    "deterministic_row_count": 70,
+    "deterministic_inside_domain_row_count": 20,
+    "deterministic_outside_domain_row_count": 50,
+    "deterministic_tail_pair_count": 35,
+    "deterministic_inside_domain_identical_pair_count": 10,
+    "deterministic_outside_domain_divergent_pair_count": 25,
+    "ensemble_row_count": 40,
+    "ensemble_outside_domain_row_count": 40,
+    "ensemble_tail_pair_count": 20,
+    "ensemble_identical_pair_count": 9,
+    "ensemble_divergent_pair_count": 11,
+    "total_audit_row_count": 110,
+    "legacy_outcome_physical_authorization_count": 0,
+    "fractions_are_event_probabilities": false
+  },
+  "cold_gate_summary": {
+    "required_condition": "The post-impact 20 C model must have a mechanically specified, surviving force-displacement path for every loaded component before thermal studies or Blender coupling.",
+    "pass_policy": "Capacity arithmetic alone cannot pass the gate. The path topology, stiffness, deformation capacity, connection assignment, and impact survival must all be specified from drawings or a declared validated substitute.",
+    "observed_passed": false,
+    "observed_status": "NOT_VALIDATED_MISSING_FORCE_DISPLACEMENT_PATH",
+    "observed_reason": "V8J quantifies a loaded disconnected component and finds that published capacity envelopes straddle its demand, but the actual surviving topology, stiffness, ductility and connection assignment are not available.",
+    "thermal_runs_authorized_by_v8j": false,
+    "blender_coupling_authorized_by_v8j": false,
+    "missing_information": [
+      "Drawing Book 5 core beam schedule and real Floor 96 beam topology",
+      "Drawing Book 6 core connection details",
+      "Floor 96 seat-detail assignment and surviving floor-truss map",
+      "compatible force-displacement law for the core-floor-perimeter bridge",
+      "perimeter plate-thickness schedule at Floors 94-99"
+    ],
+    "join_rule": "A thermal reference cannot become a physical initiation state unless the cold-load-path precondition passes and all member-resolved thermal and mechanical inputs are available. A failed precondition produces INDETERMINATE_BLOCKED, not collapse and not non-collapse.",
+    "join_row_count": 3,
+    "physical_initiation_release_count": 0
+  },
+  "track_summary": {
+    "track_count": 3,
+    "track_ids": [
+      "CONTROL_ZERO_THERMAL_INPUT",
+      "OFFICIAL_DEPENDENT_REDUCED_PROPERTY_REFERENCE",
+      "UNKNOWN_PHYSICAL_INITIATION"
+    ],
+    "software_status_release_count": 3,
+    "physical_initiation_release_count": 0,
+    "historical_initiation_promotion_count": 0,
+    "unknown_physical_fields_null": true
+  },
+  "gates": {
+    "iteration": "V10R",
+    "generated_at_utc": "2026-09-04T07:46:12Z",
+    "validation_status": "PASS_SOFTWARE_PREPROCESSOR_ONLY",
+    "regression_gate": "PASS",
+    "protected_blender_master_gate": "PASS_UNCHANGED",
+    "source_identity_gate": "PASS_6_CACHED_PLUS_2_OFFICIAL_HASH_ONLY",
+    "three_track_separation_gate": "PASS_3_OF_3",
+    "temperature_range_input_gate": "PASS_105_OF_105",
+    "material_law_identity_gate": "PASS_5_OF_5",
+    "material_law_monotonicity_gate": "PASS_600_OF_600_FOR_EACH_LAW",
+    "complete_reduced_property_range_gate": "PASS_58_REFERENCE_RANGES_ONLY",
+    "partial_domain_blocked_range_gate": "BLOCKED_47_OF_105",
+    "silent_above_600c_extrapolation_gate": "PASS_NONE_PERFORMED",
+    "legacy_v8e_domain_gate": "WITHHELD_110_OF_110_FROM_PHYSICAL_INITIATION",
+    "legacy_v8e_tail_dependence_gate": "25_OF_25_OUTSIDE_DOMAIN_DETERMINISTIC_PAIRS_DIVERGE_AND_11_OF_20_ENSEMBLE_PAIRS_DIVERGE",
+    "cold_load_path_gate": "NOT_VALIDATED_MISSING_FORCE_DISPLACEMENT_PATH",
+    "thermal_to_initiation_physical_handoff_gate": "CLOSED_INDETERMINATE",
+    "historical_physical_initiation_promotion_count": 0,
+    "downstream_physical_release_count": 0,
+    "v10s_status_contract_authorized": true,
+    "v10s_physical_propagation_run_authorized": false,
+    "mechanical_source_gate": "OPEN_0_OF_22_REQUIREMENTS",
+    "historical_collapse_or_noncollapse_conclusion_authorized": false,
+    "member_temperature_assignment_count": 0,
+    "member_section_assignment_count": 0,
+    "member_capacity_assignment_count": 0,
+    "structural_solver_run_count": 0,
+    "thermal_solver_run_count": 0,
+    "other_solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 0
+  },
+  "execution_counts": {
+    "member_temperature_assignment_count": 0,
+    "member_section_assignment_count": 0,
+    "member_capacity_assignment_count": 0,
+    "structural_solver_run_count": 0,
+    "thermal_solver_run_count": 0,
+    "other_solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 0
+  },
+  "epistemic_separation": {
+    "observed_facts": "Current file identities, table counts, null fields, equation-domain checks and cached tail-pair comparisons.",
+    "official_model_results": "The temperature envelopes remain dependent NIST model outputs, not event measurements.",
+    "archive_claims": "No external archive is read in V10R; two local official PDFs are hash-checked only.",
+    "model_hypotheses": "The 0-600 C conservative joint domain and every V8E spatial field remain explicit modelling choices.",
+    "derived_results": "Within-domain reduction factors, monotonicity checks, blocked counts and legacy tail sensitivity.",
+    "unknowns": "Member-resolved thermal histories, sections, restraints, loads, connections, imperfections and failure criteria remain unresolved."
+  },
+  "runtime_seconds": 0.09584280000035506,
+  "next_iteration": {
+    "id": "V10S",
+    "objective": "Construire un contrat d’état à trois pistes pour le transfert initiation → propagation/arrêt. Conserver le contrôle logiciel à entrée nulle, transmettre la piste dépendante du modèle officiel uniquement comme INDETERMINATE_BLOCKED et garder la piste physique inconnue. Énumérer les entrées minimales et les contrôles de conservation nécessaires à la propagation et à l’arrêt, sans inventer de valeur, exécuter de solveur, lancer Blender ni conclure historiquement à l’effondrement ou au non-effondrement."
+  }
+}

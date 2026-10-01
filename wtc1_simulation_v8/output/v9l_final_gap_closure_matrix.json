@@ -1,0 +1,114 @@
+{
+  "iteration": "V9L",
+  "generated_at": "2026-08-28T15:34:43.204466+02:00",
+  "predeclared_required_gates": {
+    "authoritative_primary_provenance": true,
+    "lawful_open_access_and_license": true,
+    "bounded_downloadable_deck_or_reconstructible_definition": true,
+    "failure_and_regularization_complete": true,
+    "measured_validation_outputs": true,
+    "mesh_and_convergence_definition": true,
+    "local_execution_feasible_and_bounded": true
+  },
+  "candidate_matrix": [
+    {
+      "id": "ALTAIR_RD_E_2602_INPUT_ARCHIVE",
+      "title": "Altair RD-E 2602 Ductile Failure Model",
+      "required_gate_count": 7,
+      "passed_gate_count": 3,
+      "all_required_gates_passed": false,
+      "selected": false,
+      "gates": {
+        "authoritative_primary_provenance": {
+          "passed": true,
+          "reason": "The exact input archive was acquired from the official Altair 2025 endpoint and matched the predeclared content length."
+        },
+        "lawful_open_access_and_license": {
+          "passed": false,
+          "reason": "Public download is verified, but no reusable model-file license is embedded; the official documentation page carries an All Rights Reserved notice."
+        },
+        "bounded_downloadable_deck_or_reconstructible_definition": {
+          "passed": true,
+          "reason": "The small complete Radioss Starter/Engine decks are present and locally inspectable."
+        },
+        "failure_and_regularization_complete": {
+          "passed": false,
+          "reason": "Failure cards are present, but objective regularization is inactive or absent: BIQUAD Ref.El_Length is zero, TAB1 has no active element-length function and no /NONLOCAL card exists."
+        },
+        "measured_validation_outputs": {
+          "passed": false,
+          "reason": "The archive contains no measured force, impulse, residual velocity, deformation or perforation dataset."
+        },
+        "mesh_and_convergence_definition": {
+          "passed": false,
+          "reason": "The archive contains formulation and shell-option variants, not three documented mesh levels with a common convergence observable."
+        },
+        "local_execution_feasible_and_bounded": {
+          "passed": true,
+          "reason": "The small decks are compatible with the available OpenRadioss route and are expected to run within the bounded CPU limit; V9L intentionally does not execute them."
+        }
+      },
+      "controlling_rejection_reasons": [
+        "Public download is verified, but no reusable model-file license is embedded; the official documentation page carries an All Rights Reserved notice.",
+        "Failure cards are present, but objective regularization is inactive or absent: BIQUAD Ref.El_Length is zero, TAB1 has no active element-length function and no /NONLOCAL card exists.",
+        "The archive contains no measured force, impulse, residual velocity, deformation or perforation dataset.",
+        "The archive contains formulation and shell-option variants, not three documented mesh levels with a common convergence observable."
+      ]
+    },
+    {
+      "id": "FAA_DOT_FAA_AR_08_36_FLAT_PANEL_IMPACT",
+      "title": "Explicit Finite Element Analysis of 2024-T3/T351 Aluminum Material Under Impact Loading for Airplane Engine Containment and Fragment Shielding",
+      "required_gate_count": 7,
+      "passed_gate_count": 2,
+      "all_required_gates_passed": false,
+      "selected": false,
+      "gates": {
+        "authoritative_primary_provenance": {
+          "passed": true,
+          "reason": "The inspected report self-identifies as the FAA final report DOT/FAA/AR-08/36 with government sponsorship and public distribution."
+        },
+        "lawful_open_access_and_license": {
+          "passed": false,
+          "reason": "The report is public, but no solver deck or explicit model-file reuse license is supplied; report access alone does not license a benchmark deck."
+        },
+        "bounded_downloadable_deck_or_reconstructible_definition": {
+          "passed": false,
+          "reason": "Geometry, material tables and contact choices are informative, but the exact meshes, complete boundary/input data and LS-DYNA deck are not published for deterministic reconstruction."
+        },
+        "failure_and_regularization_complete": {
+          "passed": false,
+          "reason": "Johnson-Cook damage parameters are listed, but they are calibrated to element size and thickness; the nonlocal length is not numerically fixed and did not remove mesh dependency."
+        },
+        "measured_validation_outputs": {
+          "passed": true,
+          "reason": "The report exposes measured initial and residual velocities with units and test geometry for three target thicknesses, although measurement uncertainty is absent."
+        },
+        "mesh_and_convergence_definition": {
+          "passed": false,
+          "reason": "Three meshes are compared, but Mesh-III changes the in-plane topology and the study reports sensitivity rather than a converged sequence or numerical uncertainty bound."
+        },
+        "local_execution_feasible_and_bounded": {
+          "passed": false,
+          "reason": "The LS-DYNA deck is absent, the solver route is proprietary, and no documented deterministic OpenRadioss conversion is supplied."
+        }
+      },
+      "controlling_rejection_reasons": [
+        "The report is public, but no solver deck or explicit model-file reuse license is supplied; report access alone does not license a benchmark deck.",
+        "Geometry, material tables and contact choices are informative, but the exact meshes, complete boundary/input data and LS-DYNA deck are not published for deterministic reconstruction.",
+        "Johnson-Cook damage parameters are listed, but they are calibrated to element size and thickness; the nonlocal length is not numerically fixed and did not remove mesh dependency.",
+        "Three meshes are compared, but Mesh-III changes the in-plane topology and the study reports sensitivity rather than a converged sequence or numerical uncertainty bound.",
+        "The LS-DYNA deck is absent, the solver route is proprietary, and no documented deterministic OpenRadioss conversion is supplied."
+      ]
+    }
+  ],
+  "selected_candidate_ids": [],
+  "critical_gap_combo_absent": true,
+  "external_benchmark_search_closed": true,
+  "stop_rule": {
+    "pass_rule": "At most one benchmark may pass, and only if every unchanged gate is directly supported by inspected primary material.",
+    "negative_rule": "If no inspected target combines measured quantitative validation, objective failure regularization and an explicit three-level convergence definition with a lawful executable or reconstructible model, record a validated negative result and close the external benchmark search.",
+    "no_relaxed_gate": true,
+    "no_additional_candidate_search_after_negative_result": true,
+    "no_solver_after_positive_result_in_V9L": true
+  }
+}

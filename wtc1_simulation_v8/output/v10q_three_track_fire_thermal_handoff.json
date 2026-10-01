@@ -1,0 +1,291 @@
+{
+  "iteration": "V10Q",
+  "generated_at_utc": "2026-09-04T07:30:16Z",
+  "validation_status": "PASS_THREE_TRACK_SOFTWARE_HANDOFF_ONLY",
+  "contract": {
+    "required_track_ids": [
+      "CONTROL_ZERO_FIRE",
+      "OFFICIAL_MODEL_DEPENDENT_THERMAL_REFERENCE",
+      "UNKNOWN_EVENT_FIRE"
+    ],
+    "component_families": {
+      "core_column": "core_column_temperature_ranges_c",
+      "perimeter_column": "perimeter_column_temperature_ranges_c",
+      "floor_truss": "floor_truss_temperature_ranges_c"
+    },
+    "analysis_floors": [
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99
+    ],
+    "required_sfrm_unknown_fields": [
+      "thickness_m",
+      "density_kg_m3",
+      "thermal_conductivity_W_mK",
+      "specific_heat_J_kgK",
+      "emissivity",
+      "impact_damage_fraction",
+      "spatial_damage_map",
+      "adhesion_or_failure_law"
+    ],
+    "temporal_mapping_rule": "Retain only the five published support knots. Convert minutes to seconds exactly, require strict monotonicity, and authorize neither interpolation nor extrapolation in V10Q.",
+    "temperature_mapping_rule": "Convert every Celsius minimum and maximum to Kelvin with +273.15, retain both units, require min<=max, and do not assign a range endpoint to an individual member.",
+    "fuel_load_mapping_rule": "Retain 25 kg/m2 and 5 lb/ft2 as rounded parallel source values; do not force them equal or silently overwrite either.",
+    "upstream_track_mapping": {
+      "CONTROL_ZERO_INPUT": "CONTROL_ZERO_FIRE",
+      "OFFICIAL_MODEL_DEPENDENT_REFERENCE": "OFFICIAL_MODEL_DEPENDENT_THERMAL_REFERENCE",
+      "UNKNOWN_PHYSICAL_DAMAGE": "UNKNOWN_EVENT_FIRE"
+    },
+    "unit_conversions": {
+      "degC_to_K_offset": 273.15,
+      "min_to_s": 60.0,
+      "lb_to_kg": 0.45359237,
+      "ft_to_m": 0.3048
+    }
+  },
+  "tracks": [
+    {
+      "track_id": "CONTROL_ZERO_FIRE",
+      "upstream_track_id": "CONTROL_ZERO_INPUT",
+      "epistemic_class": "SYNTHETIC_SOFTWARE_CONTROL_NOT_HISTORICAL",
+      "status": "PASS_SOFTWARE_SENTINEL_ONLY",
+      "fire_record": {
+        "record_id": "V10O-CTRL-ZERO-001:I04_FIRE_TO_THERMAL_SOLIDS",
+        "scenario_id": "V10O-CTRL-ZERO-001",
+        "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+        "epistemic_class": "ALGEBRAIC_SENTINEL_NOT_HISTORICAL",
+        "schema_id": "fire_gas_history_v1",
+        "schema_version": "1.0.0",
+        "validation_status": "CONTROL_PASS_SOFTWARE_ONLY",
+        "physical_credit": "NONE",
+        "source_hashes": {
+          "v10o_configuration": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46",
+          "v10n_coupling_graph": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98"
+        },
+        "units": {
+          "time_s": "s",
+          "gas_temperature_K": "K",
+          "incident_heat_flux_W_m2": "W/m2",
+          "convection_coefficient_W_m2K": "W/(m2 K)"
+        },
+        "payload": {
+          "time_s": [
+            0.0
+          ],
+          "gas_temperature_K": [
+            293.15
+          ],
+          "incident_heat_flux_W_m2": [
+            0.0
+          ],
+          "convection_coefficient_W_m2K": [
+            0.0
+          ],
+          "fire_state": "CONTROL_NO_FIRE",
+          "module_status": "CONTROL_ZERO_FIRE_LOAD",
+          "provenance": {
+            "kind": "SYNTHETIC_SOFTWARE_CONTROL",
+            "interface_id": "I04_FIRE_TO_THERMAL_SOLIDS",
+            "historical_event_claim": false,
+            "values_are_wtc_properties": false,
+            "purpose": "exercise serialization, unit, invariant, branch, join and stop-status handling"
+          }
+        }
+      },
+      "thermal_record": {
+        "record_id": "V10O-CTRL-ZERO-001:I05_THERMAL_TO_INITIATION",
+        "scenario_id": "V10O-CTRL-ZERO-001",
+        "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+        "epistemic_class": "ALGEBRAIC_SENTINEL_NOT_HISTORICAL",
+        "schema_id": "thermal_member_history_v1",
+        "schema_version": "1.0.0",
+        "validation_status": "CONTROL_PASS_SOFTWARE_ONLY",
+        "physical_credit": "NONE",
+        "source_hashes": {
+          "v10o_configuration": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46",
+          "v10n_coupling_graph": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98"
+        },
+        "units": {
+          "time_s": "s",
+          "reference_temperature_K": "K"
+        },
+        "payload": {
+          "time_s": [
+            0.0
+          ],
+          "member_histories": [],
+          "reference_temperature_K": 293.15,
+          "thermal_state": "CONTROL_NO_TEMPERATURE_INCREMENT",
+          "module_status": "CONTROL_THERMAL_NEUTRAL",
+          "provenance": {
+            "kind": "SYNTHETIC_SOFTWARE_CONTROL",
+            "interface_id": "I05_THERMAL_TO_INITIATION",
+            "historical_event_claim": false,
+            "values_are_wtc_properties": false,
+            "purpose": "exercise serialization, unit, invariant, branch, join and stop-status handling"
+          }
+        }
+      },
+      "temperature_reference_K_is_wtc_property": false,
+      "downstream_software_control_release": true,
+      "downstream_physical_release": false,
+      "physical_validation": false
+    },
+    {
+      "track_id": "OFFICIAL_MODEL_DEPENDENT_THERMAL_REFERENCE",
+      "upstream_track_id": "OFFICIAL_MODEL_DEPENDENT_REFERENCE",
+      "epistemic_class": "OFFICIAL_MODEL_OUTPUT_DEPENDENT_PLUS_DERIVED_SYNTHETIC_FIELDS",
+      "status": "PASS_RANGE_TRANSCRIPTION_AND_UNIT_SUPPORT_ONLY",
+      "upstream_damage_reference_status": "PASS_REFERENCE_TRANSCRIPTION_AND_ACCOUNTING_ONLY",
+      "office_fuel_load": {
+        "kg_m2_stated": 25.0,
+        "lb_ft2_stated": 5.0,
+        "five_lb_ft2_converted_to_kg_m2": 24.412138181915253,
+        "stated_kg_m2_minus_converted_kg_m2": 0.5878618180847468,
+        "relative_difference_to_stated_kg_m2": 0.02351447272338987,
+        "status": "ROUNDED_PARALLEL_SOURCE_VALUES_RETAINED_NO_FORCED_EQUALITY"
+      },
+      "fuel_distribution_lb": {
+        "outside_tower": {
+          "fuel": 6700,
+          "aircraft_debris": 17400
+        },
+        "92": {
+          "fuel": 810,
+          "aircraft_debris": 260
+        },
+        "93": {
+          "fuel": 6100,
+          "aircraft_debris": 22600
+        },
+        "94": {
+          "fuel": 16100,
+          "aircraft_debris": 96000
+        },
+        "95": {
+          "fuel": 12200,
+          "aircraft_debris": 28000
+        },
+        "96": {
+          "fuel": 11700,
+          "aircraft_debris": 19400
+        },
+        "97": {
+          "fuel": 9500,
+          "aircraft_debris": 6000
+        },
+        "98": {
+          "fuel": 2200,
+          "aircraft_debris": 6000
+        },
+        "99": {
+          "fuel": 770,
+          "aircraft_debris": 90
+        },
+        "totals": {
+          "fuel": 66100,
+          "aircraft_debris": 196000
+        }
+      },
+      "fuel_distribution_bin_residual_lb": 20.0,
+      "fire_description": "More-severe impact case; combustibles disturbed and weighted toward the core; fireproofing damage follows the impact path.",
+      "fire_gas_history": null,
+      "incident_heat_flux_history": null,
+      "convection_boundary_history": null,
+      "fire_mesh_or_opening_map": null,
+      "sfrm_inputs": {
+        "thickness_m": null,
+        "density_kg_m3": null,
+        "thermal_conductivity_W_mK": null,
+        "specific_heat_J_kgK": null,
+        "emissivity": null,
+        "impact_damage_fraction": null,
+        "spatial_damage_map": null,
+        "adhesion_or_failure_law": null
+      },
+      "structural_temperature_envelopes": {
+        "matrix_path": "wtc1_simulation_v8/output/v10q_official_temperature_envelope_matrix.csv",
+        "row_count": 105,
+        "time_knots_min": [
+          20,
+          40,
+          60,
+          80,
+          100
+        ],
+        "time_knots_s": [
+          1200.0,
+          2400.0,
+          3600.0,
+          4800.0,
+          6000.0
+        ],
+        "component_families": [
+          "core_column",
+          "perimeter_column",
+          "floor_truss"
+        ],
+        "floors": [
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99
+        ],
+        "range_only_not_member_assignment": true
+      },
+      "member_temperature_histories": null,
+      "v8e_synthetic_fields": {
+        "path": "wtc1_simulation_v8/output/resultats_wtc1_v8e_champs_thermiques.json",
+        "status": "DERIVED_SYNTHETIC_FIELDS_INSIDE_OFFICIAL_EXTREMA_NOT_MEASURED",
+        "fractions_are_event_probabilities": false
+      },
+      "downstream_software_reference_release": true,
+      "downstream_physical_release": false,
+      "physical_validation": false
+    },
+    {
+      "track_id": "UNKNOWN_EVENT_FIRE",
+      "upstream_track_id": "UNKNOWN_PHYSICAL_DAMAGE",
+      "epistemic_class": "UNKNOWN_EVENT_FIRE_AND_THERMAL_STATE",
+      "status": "BLOCKED_EVENT_FIRE_AND_MEMBER_THERMAL_HISTORY_UNRESOLVED",
+      "upstream_unknown_damage_status": "BLOCKED_PHYSICAL_DAMAGE_UNRESOLVED",
+      "fuel_load": null,
+      "fuel_distribution": null,
+      "combustible_distribution": null,
+      "opening_and_ventilation_map": null,
+      "fire_gas_history": null,
+      "incident_heat_flux_history": null,
+      "sfrm_inputs": {
+        "thickness_m": null,
+        "density_kg_m3": null,
+        "thermal_conductivity_W_mK": null,
+        "specific_heat_J_kgK": null,
+        "emissivity": null,
+        "impact_damage_fraction": null,
+        "spatial_damage_map": null,
+        "adhesion_or_failure_law": null
+      },
+      "member_temperature_histories": null,
+      "blocking_reasons": [
+        "physical impact damage, openings, debris and fuel distribution are unresolved upstream",
+        "exact event FDS input package and fire mesh are unavailable",
+        "gas temperature, heat flux and convection histories are unavailable",
+        "SFRM thickness, properties, damage fraction and spatial map are unavailable in the selected inputs",
+        "official structural-temperature ranges are not member-resolved histories and are not independent event observations"
+      ],
+      "downstream_software_unknown_status_release": true,
+      "downstream_physical_release": false,
+      "physical_validation": false
+    }
+  ],
+  "epistemic_nonmerge_rule": "CONTROL_ZERO_FIRE, OFFICIAL_MODEL_DEPENDENT_THERMAL_REFERENCE and UNKNOWN_EVENT_FIRE retain distinct identifiers and cannot be averaged or promoted across evidence classes.",
+  "historical_physical_thermal_promotion_count": 0,
+  "downstream_physical_release_count": 0
+}

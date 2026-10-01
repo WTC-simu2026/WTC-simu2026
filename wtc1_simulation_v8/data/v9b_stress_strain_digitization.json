@@ -1,0 +1,192 @@
+{
+  "dataset": {
+    "name": "WTC 1 V9B uncertainty-bounded vector digitization and conditional non-eroding coupon",
+    "version": "9.2.0",
+    "status": "PREDECLARED_BEFORE_FORMAL_DIGITIZATION_NO_RUPTURE_NO_FACADE_IMPACT",
+    "random_seed": 9112001,
+    "deterministic": true,
+    "scope": "Preserve V8U through V9A, digitize only the published longitudinal engineering stress-strain figures for M26 and C80, validate digitized 1 percent offset yield and tensile strengths against the corresponding tabulated observations, and authorize a non-eroding uniaxial OpenRadioss implementation check only if every digitization gate passes. No failure deletion, facade impact, whole-aircraft, global tower, thermal or Blender calculation is authorized in V9B."
+  },
+  "evidence_policy": {
+    "observed_fact": "A value, curve, caption, specimen geometry or warning transcribed from the named official NIST report.",
+    "official_model_result": "A NIST modelling choice or reported analytical fit; not a direct property measurement.",
+    "local_archive_claim": "No local-archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "A declared digitization, interpolation or constitutive-processing choice used only within the bounded coupon exercise.",
+    "derived_result": "A deterministic value computed from the source vectors and the predeclared procedure.",
+    "unknown": "A parameter, material assignment or fracture datum absent from the audited public sources."
+  },
+  "units": {
+    "source_stress": "ksi",
+    "converted_stress": "MPa",
+    "engineering_strain": "in/in",
+    "strain_rate": "1/s",
+    "pdf_geometry": "point",
+    "ksi_to_mpa": 6.894757293168361
+  },
+  "sources": [
+    {
+      "id": "NIST_NCSTAR_1_3D",
+      "path": "work/official_sources/ncstar1-3d.pdf",
+      "sha256": "eee74f038b15bfd6263a4b5335ca96d124501d002e62883bb8fd4f84d22e52da",
+      "classification": "official_measurement_report",
+      "locations": [
+        "Figure A-28, report page 209, PDF physical page 243",
+        "Figure A-48, report page 219, PDF physical page 253",
+        "Table A-12, report page 177",
+        "Table A-14, report page 181",
+        "Sections 4.2.1 to 4.3.1, report pages 79 to 87",
+        "Appendix E, report pages 279 to 288"
+      ],
+      "uses": [
+        "vector engineering stress-strain traces for specified longitudinal M26 and C80 specimens and rates",
+        "tabulated 1 percent offset yield and tensile strengths",
+        "specimen geometry, orientation and strain rate",
+        "warnings that high-rate stress ringing remains, no mathematical filtering was applied, adiabatic heating was not corrected and elongation depends on specimen geometry"
+      ]
+    }
+  ],
+  "regressions": {
+    "required_files": {
+      "wtc1_simulation_v8/data/v9a_material_coupon_evidence.json": "f6ac522767c4fbd7031e3bd5e7312dc5044802944e56acff077338a565dd9b42",
+      "wtc1_simulation_v8/scripts/run_v9a_material_coupon_benchmarks.py": "65359f41a60a2d4b940776a46c22a44f98cf9548faf2efab3f9349c0dc9f7288",
+      "wtc1_simulation_v8/output/resultats_wtc1_v9a_eprouvettes_materiaux.json": "649d7aa0c4249b9e2bafab33f70df24a4942e532fcbe2c89e18561aee8b8e8f9",
+      "wtc1_simulation_v8/output/rapport_wtc1_v9a_eprouvettes_materiaux.md": "dcf3cb9f47ce621afc552241f7a992486ad7c8c789739c04704c983ab39052d3"
+    },
+    "required_metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9a_eprouvettes_materiaux.json",
+        "path": "wtc_rate_strength_benchmark_passed",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9a_eprouvettes_materiaux.json",
+        "path": "diagnostic_generalization.maximum_absolute_leave_one_out_relative_error",
+        "expected": 0.25188566307814064
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9a_eprouvettes_materiaux.json",
+        "path": "physical_fracture_card_identification_passed",
+        "expected": false
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9a_eprouvettes_materiaux.json",
+        "path": "cf6_80a2_or_cowling_material_card_identification_passed",
+        "expected": false
+      }
+    ],
+    "numeric_absolute_tolerance": 1e-12
+  },
+  "digitization_method": {
+    "input_representation": "PDF vector paths read with pdfplumber; rendered 300 dpi pages are visual QA only",
+    "coordinate_reduction": "For each declared trace colour, retain curve objects within the declared axes, group identical vector x coordinates, and use the median y coordinate as the centreline. Sort by x and preserve every resulting point.",
+    "axis_calibration": "Fit an affine map to the declared major tick coordinates and their printed engineering-strain and engineering-stress values.",
+    "yield_estimator": "First positive-to-negative intersection after 0.01 engineering strain between the digitized curve and sigma = E*(engineering_strain - 0.01), with E fixed at 29000 ksi solely as a declared post-processing hypothesis.",
+    "tensile_strength_estimator": "Maximum digitized engineering stress; no smoothing or filtering is applied.",
+    "quasi_static_duplicate_rule": "Where the plotted quasi-static rate corresponds to two tabulated M26 replicates, validate against the closed interval spanned by those replicate strengths rather than silently choosing one specimen. Relative error is zero inside the interval; otherwise it is the distance to the nearest bound divided by that bound.",
+    "c80_colour_continuation_rule": "The C80 401/s path may include the source's orange terminal segment only if its first point is contiguous with the green segment within 1.5 PDF points and no other candidate segment satisfies that condition.",
+    "elastic_modulus_ksi_hypothesis": 29000.0,
+    "no_curve_smoothing": true,
+    "no_failure_or_post_necking_calibration": true
+  },
+  "figures": [
+    {
+      "id": "M26_FIGURE_A28_LONGITUDINAL",
+      "coupon_series_id": "M26_PERIMETER_LONGITUDINAL",
+      "pdf_page_number": 243,
+      "report_page_number": 209,
+      "figure": "A-28",
+      "component": "WTC 1 perimeter-column flange plate M26-C1B1-RF",
+      "location": "column 130/131, floors 90 to 93, north face",
+      "orientation": "longitudinal",
+      "axis": {
+        "x_min": 0.0,
+        "x_max": 0.4,
+        "y_min_ksi": 0.0,
+        "y_max_ksi": 120.0,
+        "x_tick_pdf_points": [217.32, 265.8, 314.28, 362.76, 411.24],
+        "x_tick_values": [0.0, 0.1, 0.2, 0.3, 0.4],
+        "y_tick_pdf_top_points": [325.26, 251.64, 178.02, 104.46],
+        "y_tick_values_ksi": [0.0, 40.0, 80.0, 120.0],
+        "expected_line_width_pdf_points": 0.815066924
+      },
+      "curves": [
+        {"id": "M26_QS", "rate_per_s": 0.0000606, "rgb": [0.0, 0.0, 0.0], "yield_reference_ksi": [61.7, 63.2], "tensile_reference_ksi": [85.5, 86.1], "specimen_geometry": "Flat 2 inch, longitudinal, 2 inch gauge, 9/16 inch source plate"},
+        {"id": "M26_65", "rate_per_s": 65.0, "rgb": [1.0, 0.0, 0.0], "yield_reference_ksi": [72.2, 72.2], "tensile_reference_ksi": [99.9, 99.9], "specimen_geometry": "Flat HSR 1 inch TK, longitudinal, 1 inch gauge, 0.125 inch thick"},
+        {"id": "M26_100", "rate_per_s": 100.0, "rgb": [0.0, 0.0, 1.0], "yield_reference_ksi": [75.9, 75.9], "tensile_reference_ksi": [100.4, 100.4], "specimen_geometry": "Flat HSR 1 inch TN, longitudinal, 1 inch gauge, 0.0625 inch thick"},
+        {"id": "M26_260", "rate_per_s": 260.0, "rgb": [0.0, 0.60392, 0.2], "yield_reference_ksi": [75.9, 75.9], "tensile_reference_ksi": [102.8, 102.8], "specimen_geometry": "Flat HSR 1 inch TN, longitudinal, 1 inch gauge, 0.0625 inch thick"},
+        {"id": "M26_417", "rate_per_s": 417.0, "rgb": [1.0, 0.39608, 0.2], "yield_reference_ksi": [85.0, 85.0], "tensile_reference_ksi": [106.7, 106.7], "specimen_geometry": "Flat HSR 1 inch TN, longitudinal, 1 inch gauge, 0.0625 inch thick"}
+      ]
+    },
+    {
+      "id": "C80_FIGURE_A48_LONGITUDINAL",
+      "coupon_series_id": "C80_CORE_LONGITUDINAL",
+      "pdf_page_number": 253,
+      "report_page_number": 219,
+      "figure": "A-48",
+      "component": "WTC 1 core-column 14WF184 flange C80-A",
+      "location": "column 603, floors 92 to 95",
+      "orientation": "longitudinal",
+      "axis": {
+        "x_min": 0.0,
+        "x_max": 0.6,
+        "y_min_ksi": 0.0,
+        "y_max_ksi": 116.0301880066677,
+        "x_tick_pdf_points": [211.08, 280.44, 349.38, 418.74],
+        "x_tick_values": [0.0, 0.2, 0.4, 0.6],
+        "y_tick_pdf_top_points": [310.8, 273.0, 235.68, 197.88, 160.14, 122.34],
+        "y_tick_values_ksi": [0.0, 20.0, 40.0, 60.0, 80.0, 100.0],
+        "expected_line_width_pdf_points": 0.8721619500000001
+      },
+      "curves": [
+        {"id": "C80_QS", "rate_per_s": 0.0000875, "rgb": [0.0, 0.0, 0.0], "yield_reference_ksi": [37.1, 37.1], "tensile_reference_ksi": [67.3, 67.3], "specimen_geometry": "Round 1 inch, longitudinal, 1 inch gauge, 0.25 inch diameter"},
+        {"id": "C80_84", "rate_per_s": 84.0, "rgb": [1.0, 0.0, 0.0], "yield_reference_ksi": [57.3, 57.3], "tensile_reference_ksi": [85.0, 85.0], "specimen_geometry": "Flat HSR 1 inch TN, longitudinal, 1 inch gauge, 0.0625 inch thick"},
+        {"id": "C80_299", "rate_per_s": 299.0, "rgb": [0.0, 0.0, 1.0], "yield_reference_ksi": [62.5, 62.5], "tensile_reference_ksi": [80.1, 80.1], "specimen_geometry": "Flat HSR 1 inch TK, longitudinal, 1 inch gauge, 0.125 inch thick"},
+        {"id": "C80_401", "rate_per_s": 401.0, "rgb": [0.0, 0.60392, 0.2], "rgb_terminal_alias": [1.0, 0.39608, 0.0], "yield_reference_ksi": [59.5, 59.5], "tensile_reference_ksi": [89.1, 89.1], "specimen_geometry": "Flat HSR 1 inch TK, longitudinal, 1 inch gauge, 0.125 inch thick"}
+      ]
+    }
+  ],
+  "predeclared_digitization_gates": {
+    "maximum_axis_calibration_residual_pdf_points": 0.25,
+    "maximum_colour_component_difference": 0.0001,
+    "minimum_unique_centerline_points_per_curve": 30,
+    "minimum_engineering_strain_coverage": 0.12,
+    "maximum_terminal_alias_gap_pdf_points": 1.5,
+    "maximum_individual_yield_relative_error": 0.10,
+    "maximum_individual_tensile_relative_error": 0.10,
+    "maximum_median_yield_relative_error": 0.05,
+    "maximum_median_tensile_relative_error": 0.05,
+    "all_nine_plotted_curves_required": true,
+    "digitization_passed_if_all_above": true
+  },
+  "predeclared_conditional_coupon": {
+    "authorized_only_if_digitization_passed": true,
+    "purpose": "Verify only that a non-eroding uniaxial OpenRadioss coupon implements the supported pre-necking plasticity and rate response; this is not fracture or impact validation.",
+    "curve_processing_if_authorized": "Truncate each engineering curve at its tabulated tensile-strength neighbourhood, convert to true stress and true plastic strain, retain a monotone non-decreasing stress envelope, and record the transformation as a model hypothesis.",
+    "failure_deletion_allowed": false,
+    "contact_allowed": false,
+    "physical_internal_length_inference_allowed": false,
+    "required_checks": {
+      "normal_termination": true,
+      "no_failure_cards": true,
+      "no_deleted_elements": true,
+      "positive_time_step": true,
+      "maximum_relative_mass_drift": 1e-6,
+      "maximum_hourglass_to_internal_energy_ratio": 0.05,
+      "maximum_total_energy_relative_error": 0.02,
+      "maximum_mesh_response_relative_difference": 0.05,
+      "maximum_thread_response_relative_difference": 1e-6,
+      "maximum_reference_curve_relative_rmse": 0.05
+    }
+  },
+  "scope_gates": {
+    "fracture_identification_authorized": false,
+    "failure_deletion_authorized": false,
+    "facade_impact_authorized": false,
+    "whole_aircraft_authorized": false,
+    "global_tower_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_mechanism_tested": false,
+    "global_scope_warning": "A V9B PASS can validate only the reproducibility of vector digitization and, conditionally, a non-eroding coupon implementation. It cannot validate fracture, contact, facade impulse, a CF6-80A2/cowling material card, aircraft impact, global WTC 1 response, thermal response, collapse, Blender physics, or explosive/thermite mechanisms."
+  }
+}

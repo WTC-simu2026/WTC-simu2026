@@ -1,0 +1,33 @@
+id,category,requirement,unit,current_status,physical_ready,physical_value,source_document_or_model,validation_evidence,blocks_physical_propagation,schema_specification_is_physical_evidence
+P01,initial_state,Declared instability handoff time and event definition,s,MISSING_PHYSICAL_INITIATION,False,,,,True,False
+P02,initial_state,Failed member identifiers and failure modes,,MISSING_PHYSICAL_INITIATION,False,,,,True,False
+P03,initial_state,Node displacement field,m,MISSING_MEMBER_RESOLVED_STATE,False,,,,True,False
+P04,initial_state,Node velocity field,m/s,MISSING_MEMBER_RESOLVED_STATE,False,,,,True,False
+P05,initial_state,Participating mass distribution by story and component,kg,MISSING_PHYSICAL_DISTRIBUTION,False,,,,True,False
+P06,initial_state,Total participating mass closure,kg,MISSING_PHYSICAL_LEDGER,False,,,,True,False
+P07,initial_state,Surviving topology and connectivity state,,MISSING_AS_BUILT_DAMAGE_STATE,False,,,,True,False
+P08,initial_state,Boundary and support state,,MISSING_PHYSICAL_BOUNDARIES,False,,,,True,False
+P09,initial_state,"Element force, stress and strain state","N,Pa,1",MISSING_MEMBER_RESOLVED_STATE,False,,,,True,False
+P10,initial_state,Thermal and temperature-dependent material state,"K,Pa",MISSING_MEMBER_TEMPERATURE_HISTORY,False,,,,True,False
+P11,initial_state,Coordinate frame and identifier mapping,"m,rad",SCHEMA_ONLY_NOT_PHYSICAL_MAPPING,False,,,,True,False
+P12,initial_state,State-projection interpolation and conservation error,"m,N,J",NO_PHYSICAL_STATE_TO_PROJECT,False,,,,True,False
+P13,resistance,Column axial-flexural-shear interaction laws,"N,N m",MISSING_AS_BUILT_MEMBER_LAWS,False,,,,True,False
+P14,resistance,"Floor, truss, slab and connection force-deformation laws","N,m,rad",MISSING_AS_BUILT_CONNECTION_LAWS,False,,,,True,False
+P15,resistance,"Member, floor and debris contact laws","N,Pa",MISSING_VALIDATED_CONTACT_MODEL,False,,,,True,False
+P16,resistance,Buckling and post-buckling response,"N,m,rad",MISSING_VALIDATED_MEMBER_MODEL,False,,,,True,False
+P17,resistance,Fracture and mesh-objective regularization,"J/m2,m",MISSING_VALIDATED_FRACTURE_MODEL,False,,,,True,False
+P18,resistance,Strain-rate dependence,1/s,MISSING_VALIDATED_RATE_MODEL,False,,,,True,False
+P19,resistance,Damping and hysteretic dissipation,"J,1",MISSING_VALIDATED_DISSIPATION_MODEL,False,,,,True,False
+P20,resistance,"Debris compaction, entrainment and ejection laws","kg,m,Pa",MISSING_VALIDATED_DEBRIS_MODEL,False,,,,True,False
+P21,resistance,"Gravity field, story elevations and potential-energy reference","m/s2,m,J",PARTIAL_GEOMETRY_CONTEXT_NOT_PROPAGATION_QUALIFIED,False,,,,True,False
+P22,resistance,Lower-tower and foundation boundary response,"N,m,rad",MISSING_VALIDATED_BOUNDARY_MODEL,False,,,,True,False
+P23,validation,Declared solver formulation and version,,TOOLS_PRESENT_MODEL_NOT_IMPLEMENTED,False,,,,True,False
+P24,validation,Time-step convergence,s,NOT_RUN,False,,,,True,False
+P25,validation,Mesh and element-formulation convergence,m,NOT_RUN,False,,,,True,False
+P26,validation,Energy-conservation tolerance and closure,"J,1",NO_PHYSICAL_LEDGER,False,,,,True,False
+P27,validation,Three-component momentum tolerance and closure,"kg m/s,1",NO_PHYSICAL_LEDGER,False,,,,True,False
+P28,validation,Mass-conservation tolerance and closure,"kg,1",NO_PHYSICAL_LEDGER,False,,,,True,False
+P29,validation,Propagation and arrest verification benchmarks,,MISSING_BENCHMARK_SUITE,False,,,,True,False
+P30,validation,"Parameter provenance, uncertainty classes and fixed seeds",,SCHEMA_ONLY_NO_PHYSICAL_PARAMETER_SET,False,,,,True,False
+P31,output,Complete time-resolved story and member history,"s,m,N",NO_PHYSICAL_RUN,False,,,,True,False
+P32,output,"Predeclared propagation, arrest and termination criteria",,SCHEMA_ONLY_NOT_CALIBRATED,False,,,,True,False

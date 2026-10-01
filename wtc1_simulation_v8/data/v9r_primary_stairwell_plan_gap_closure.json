@@ -1,0 +1,331 @@
+{
+  "iteration": "V9R",
+  "dataset": {
+    "name": "Bounded primary-plan gap closure for the three WTC 1 stair systems",
+    "version": "9.18.0",
+    "status": "PREDECLARED_DOCUMENTARY_GAP_CLOSURE_NO_SOLVER_NO_METRIC_AS_BUILT_CREDIT",
+    "random_seed": 9122003,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V9Q, acquire the official final NIST NCSTAR 1-7 PDF, verify its stairwell tables and figures, compare them with cached NIST structural plans and the existing indexed Commission text, update the floor-by-floor stair topology and landing dimensions, and keep metric geometry and every mechanical credit closed where primary as-built drawings remain absent."
+  },
+  "source_policy": {
+    "source_archive_read": false,
+    "source_archive_rescanned": false,
+    "cached_official_sources_read_only": true,
+    "network_access_used": true,
+    "network_scope": "Official NIST publication discovery and exact final PDF acquisition only",
+    "official_source_files_modified": false,
+    "structural_solver_authorized": false,
+    "blender_authorized": false,
+    "physical_interpretation_authorized": false,
+    "foia_request_sent": false,
+    "external_contact_count": 0
+  },
+  "regression_files": {
+    "wtc1_simulation_v8/data/v9q_stairwell_source_audit.json": "5ce2368786e1d958163af96ed471f7acfdc50cc5fcff6057363660b08da749da",
+    "wtc1_simulation_v8/scripts/run_v9q_stairwell_source_audit.py": "782990d0652f8faba53b71395466774d251ac7e164b9acd4431fdba504a27617",
+    "wtc1_simulation_v8/output/v9q_stairwell_source_manifest.json": "8a713f56a52940edcf49005636c0747be7261f3c11e30cf3cde9f132cf575229",
+    "wtc1_simulation_v8/output/v9q_stairwell_geometry_matrix.json": "a6bcec5c212bf45cbc36a55e432ba1076ad268aeb37e3b4fc143a53b9d001d01",
+    "wtc1_simulation_v8/output/v9q_stairwell_floor_matrix.csv": "7ad73aa322cbff9fce5438da526055b48b77e33a5d7fce0fe6a58e2d0c5a5598",
+    "wtc1_simulation_v8/output/v9q_stairwell_model_gate.json": "92d04a083e46f920e5f3f3d1cf41faf5bc55c7f3a69818ca962da4ea89353633",
+    "wtc1_simulation_v8/output/resultats_wtc1_v9q_cages_escalier.json": "4d8afe8a92965fd06797968ba8429771639d1dad8d0e9927762343b5a93e3a84",
+    "wtc1_simulation_v8/output/rapport_wtc1_v9q_cages_escalier.md": "3d7deef06a7dded2f95c26fb6a135c76894b20276017eecdd0e70e7332c4565e"
+  },
+  "source_files": {
+    "wtc1_simulation_v8/input/v9r_official_sources/ncstar1-7.pdf": "453ba77636277ec4a66ab9682ec7e9c3e7d22ecd8a8432c8d9578fb7fc3584bc",
+    "work/official_sources/ncstar1-1a.pdf": "5765450d35e4230556db1deb7e897e390eeec54eed87a91b0ba92c2b07453740",
+    "work/official_sources/ncstar1-2a.pdf": "446ea5eea25b1bf9bb6b6e8451ea7867b99f35c1d9ebffec5b0ed0bd1879891d",
+    "work/official_sources/ncstar1-6.pdf": "b9098d16d365d7c1110d31df5ff43ac1274f9b0e58f98d1aff0e36aef5283439",
+    "work/official_sources/ncstar1-6c.pdf": "aab90082f22baaa41ed8dd22c89192040aa6f629b0cc800d1b47f07a5c7ef411",
+    "work/pdf_index/manifest.csv": "2ca5e5190266e492524f53e3ae4ff8ec1a069b47175fe0731115e4984f62ed9d",
+    "work/pdf_index/text/L049.txt": "ffe0042f35d66ede87e69072fbd614d03cab8c9120b6dc4168497f24b7db913c"
+  },
+  "acquisition": {
+    "source_title": "Occupant Behavior, Egress, and Emergency Communication, NIST NCSTAR 1-7",
+    "publication_page_url": "https://www.nist.gov/publications/occupant-behavior-egress-and-emergency-communication-federal-building-and-fire-safety-0",
+    "download_url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=101046",
+    "official_domain": "nist.gov",
+    "http_head_status": 200,
+    "http_head_content_type": "application/pdf; charset=UTF-8",
+    "http_head_content_length_bytes": 4420586,
+    "downloaded_size_bytes": 4420586,
+    "downloaded_sha256": "453ba77636277ec4a66ab9682ec7e9c3e7d22ecd8a8432c8d9578fb7fc3584bc",
+    "pdf_page_count": 298,
+    "acquisition_date": "2026-08-29",
+    "content_modified_after_download": false
+  },
+  "pdf_anchors": [
+    {
+      "source": "wtc1_simulation_v8/input/v9r_official_sources/ncstar1-7.pdf",
+      "pdf_page": 49,
+      "printed_page": "11",
+      "section": "Figure 2-2",
+      "required_terms": ["core in WTC 1 was oriented", "east-west direction", "Typical WTC tower architectural floor plan"]
+    },
+    {
+      "source": "wtc1_simulation_v8/input/v9r_official_sources/ncstar1-7.pdf",
+      "pdf_page": 57,
+      "printed_page": "19",
+      "section": "Design of the WTC Egress System",
+      "required_terms": ["three stairwells", "44 in", "56 in", "Table 2-2"]
+    },
+    {
+      "source": "wtc1_simulation_v8/input/v9r_official_sources/ncstar1-7.pdf",
+      "pdf_page": 58,
+      "printed_page": "20",
+      "section": "Table 2-2",
+      "required_terms": ["Plan view of stairwells", "Floors 9", "Floors 20", "Floors 35"]
+    },
+    {
+      "source": "wtc1_simulation_v8/input/v9r_official_sources/ncstar1-7.pdf",
+      "pdf_page": 59,
+      "printed_page": "21",
+      "section": "Table 2-2",
+      "required_terms": ["Floor 42", "transferred outside the core", "Floor 48", "transferred back inside the core"]
+    },
+    {
+      "source": "wtc1_simulation_v8/input/v9r_official_sources/ncstar1-7.pdf",
+      "pdf_page": 60,
+      "printed_page": "22",
+      "section": "Table 2-2",
+      "required_terms": ["between floors 66-68", "Floor 76", "Stairs A, B, and C transferred", "Floor 82"]
+    },
+    {
+      "source": "wtc1_simulation_v8/input/v9r_official_sources/ncstar1-7.pdf",
+      "pdf_page": 65,
+      "printed_page": "27",
+      "section": "2.2.2 Stairwells",
+      "required_terms": ["92 in", "78 in", "116 in", "floor 110", "floor 107"]
+    },
+    {
+      "source": "wtc1_simulation_v8/input/v9r_official_sources/ncstar1-7.pdf",
+      "pdf_page": 66,
+      "printed_page": "28",
+      "section": "Transfer Hallways",
+      "required_terms": ["Stairwell B required a horizontal transfer at floor 76", "floors 42, 48, 66, 68, 76, and 82", "over 100", "multiple right angles"]
+    },
+    {
+      "source": "wtc1_simulation_v8/input/v9r_official_sources/ncstar1-7.pdf",
+      "pdf_page": 67,
+      "printed_page": "29",
+      "section": "Figure 2-11",
+      "required_terms": ["Stairwells in the WTC towers"]
+    },
+    {
+      "source": "wtc1_simulation_v8/input/v9r_official_sources/ncstar1-7.pdf",
+      "pdf_page": 112,
+      "printed_page": "74",
+      "section": "Figure 5-2",
+      "required_terms": ["floor 95", "0.7 s after impact", "stairwells superimposed"]
+    },
+    {
+      "source": "work/official_sources/ncstar1-1a.pdf",
+      "pdf_page": 42,
+      "printed_page": "6",
+      "section": "Figure 2-2",
+      "required_terms": ["representative floor plan", "WTC 1 and WTC 2", "Port Authority"]
+    },
+    {
+      "source": "work/official_sources/ncstar1-2a.pdf",
+      "pdf_page": 36,
+      "printed_page": "2",
+      "section": "Figure 1-1",
+      "required_terms": ["135 ft by 87 ft", "floor 26", "WTC 2", "Port Authority"]
+    },
+    {
+      "source": "work/official_sources/ncstar1-6.pdf",
+      "pdf_page": 149,
+      "printed_page": "67",
+      "section": "Figure 4-7",
+      "required_terms": ["Floor structural subsystem", "WTC 1", "Floor 96"]
+    },
+    {
+      "source": "work/official_sources/ncstar1-6c.pdf",
+      "pdf_page": 53,
+      "printed_page": "5",
+      "section": "Figure 2-2",
+      "required_terms": ["Floor plan of Floor 96", "WTC 1", "Core area"]
+    }
+  ],
+  "visual_qa": [
+    {
+      "source": "wtc1_simulation_v8/input/v9r_official_sources/ncstar1-7.pdf",
+      "pdf_pages": [58, 59, 60, 61],
+      "figures": ["Table 2-2"],
+      "observation": "Twenty-two schematic plan panels show floor bands, transfer routes, core perimeter and distinct WTC 1/WTC 2 north arrows.",
+      "metric_scale_present": false,
+      "solver_geometry_qualified": false
+    },
+    {
+      "source": "wtc1_simulation_v8/input/v9r_official_sources/ncstar1-7.pdf",
+      "pdf_pages": [67],
+      "figures": ["Figure 2-11"],
+      "observation": "A three-dimensional schematic shows the vertical shafts and horizontal transfers, with separate WTC 1 and WTC 2 orientation markers.",
+      "metric_scale_present": false,
+      "solver_geometry_qualified": false
+    },
+    {
+      "source": "wtc1_simulation_v8/input/v9r_official_sources/ncstar1-7.pdf",
+      "pdf_pages": [112],
+      "figures": ["Figure 5-2"],
+      "observation": "The official Floor 95 impact-model image labels Stairwells A, B and C and superimposes their footprints on a model plan with a north arrow.",
+      "metric_scale_present": false,
+      "fixed_landmarks_present": true,
+      "solver_geometry_qualified": false,
+      "reason": "The image is a low-resolution official model result, not a dimensioned as-built drawing."
+    },
+    {
+      "source": "work/official_sources/ncstar1-1a.pdf",
+      "pdf_pages": [42],
+      "figures": ["Figure 2-2"],
+      "observation": "A Port Authority drawing reproduction shows three stair symbols and dimension chains, but the caption identifies only a representative upper-floor plan shared by WTC 1 and WTC 2.",
+      "metric_scale_present": false,
+      "solver_geometry_qualified": false
+    },
+    {
+      "source": "work/official_sources/ncstar1-2a.pdf",
+      "pdf_pages": [36],
+      "figures": ["Figure 1-1"],
+      "observation": "The visible architectural plan is explicitly Floor 26 of WTC 2 and cannot be substituted as an exact WTC 1 plan.",
+      "metric_scale_present": false,
+      "solver_geometry_qualified": false
+    },
+    {
+      "source": "work/official_sources/ncstar1-6.pdf and work/official_sources/ncstar1-6c.pdf",
+      "pdf_pages": [149, 53],
+      "figures": ["Figure 4-7", "Figure 2-2"],
+      "observation": "The Floor 96 structural diagrams expose perimeter and core column grids but omit interior stair flights, enclosure outlines and connections.",
+      "metric_scale_present": false,
+      "solver_geometry_qualified": false
+    }
+  ],
+  "stairways": [
+    {
+      "letter_alias": "A",
+      "v9q_numeric_alias": 1,
+      "clear_width_in": 44.0,
+      "landing_by_exit_door_width_in": 92.0,
+      "landing_by_exit_door_depth_in": 78.0,
+      "vertical_extent": "floor_2_to_floor_110",
+      "major_transfer_floors": [42, 48, 76, 82],
+      "minor_or_slight_change_floors": [66, 68],
+      "impact_floor_95_position": "northeastern member in north-up qualitative plan",
+      "exact_metric_plan_position": null
+    },
+    {
+      "letter_alias": "C",
+      "v9q_numeric_alias": 2,
+      "clear_width_in": 44.0,
+      "landing_by_exit_door_width_in": 92.0,
+      "landing_by_exit_door_depth_in": 78.0,
+      "vertical_extent": "floor_2_to_floor_110",
+      "major_transfer_floors": [42, 48, 76, 82],
+      "minor_or_slight_change_floors": [66, 68],
+      "impact_floor_95_position": "northwestern member in north-up qualitative plan",
+      "exact_metric_plan_position": null
+    },
+    {
+      "letter_alias": "B",
+      "v9q_numeric_alias": 3,
+      "clear_width_in": 56.0,
+      "landing_by_exit_door_width_in": 116.0,
+      "landing_by_exit_door_depth_in": 78.0,
+      "vertical_extent": "basement_B6_to_floor_107",
+      "major_transfer_floors": [76],
+      "minor_or_slight_change_floors": [],
+      "impact_floor_95_position": "southern-central member in north-up qualitative plan",
+      "exact_metric_plan_position": null
+    }
+  ],
+  "floor_bands": [
+    {"floor_start": 1, "floor_end": 1, "layout": "CONCOURSE_ONLY_B_SERVICED", "table_panel": true},
+    {"floor_start": 2, "floor_end": 2, "layout": "MEZZANINE_A_AND_C_START_B_NO_EXIT", "table_panel": true},
+    {"floor_start": 3, "floor_end": 8, "layout": "CONTINUITY_DOCUMENTED_TABLE_PANEL_ABSENT", "table_panel": false},
+    {"floor_start": 9, "floor_end": 19, "layout": "TABLE_2_2_BAND_A_EAST_IN_WTC1", "table_panel": true},
+    {"floor_start": 20, "floor_end": 26, "layout": "TABLE_2_2_BAND_NORTHEAST_CORE_SPACE_BECAME_TENANT", "table_panel": true},
+    {"floor_start": 27, "floor_end": 34, "layout": "TABLE_2_2_BAND", "table_panel": true},
+    {"floor_start": 35, "floor_end": 41, "layout": "TABLE_2_2_BAND", "table_panel": true},
+    {"floor_start": 42, "floor_end": 42, "layout": "A_C_MAJOR_TRANSFER_OUTSIDE_CORE", "table_panel": true},
+    {"floor_start": 43, "floor_end": 47, "layout": "A_C_OUTSIDE_CORE_SKYLOBBY_BAND", "table_panel": true},
+    {"floor_start": 48, "floor_end": 48, "layout": "A_C_MAJOR_TRANSFER_BACK_INSIDE_CORE", "table_panel": true},
+    {"floor_start": 49, "floor_end": 56, "layout": "TABLE_2_2_TWO_BANDS", "table_panel": true},
+    {"floor_start": 57, "floor_end": 65, "layout": "TABLE_2_2_BAND_PRE_MINOR_CHANGE", "table_panel": true},
+    {"floor_start": 66, "floor_end": 68, "layout": "A_C_SLIGHT_CHANGE_EXACT_GEOMETRY_UNKNOWN", "table_panel": true},
+    {"floor_start": 69, "floor_end": 75, "layout": "TABLE_2_2_BAND_POST_MINOR_CHANGE", "table_panel": true},
+    {"floor_start": 76, "floor_end": 76, "layout": "A_B_C_TRANSFER_A_C_MOVE_OUTSIDE_CORE", "table_panel": true},
+    {"floor_start": 77, "floor_end": 81, "layout": "A_C_OUTSIDE_CORE_SKYLOBBY_BAND", "table_panel": true},
+    {"floor_start": 82, "floor_end": 82, "layout": "A_C_MAJOR_TRANSFER_BACK_INSIDE_CORE", "table_panel": true},
+    {"floor_start": 83, "floor_end": 95, "layout": "TABLE_2_2_BAND_IMPACT_FLOOR_95_PLAN_AVAILABLE", "table_panel": true},
+    {"floor_start": 96, "floor_end": 102, "layout": "TABLE_2_2_BAND", "table_panel": true},
+    {"floor_start": 103, "floor_end": 104, "layout": "TABLE_2_2_BAND", "table_panel": true},
+    {"floor_start": 105, "floor_end": 106, "layout": "TABLE_2_2_BAND", "table_panel": true},
+    {"floor_start": 107, "floor_end": 107, "layout": "TABLE_2_2_BAND_B_TERMINATES", "table_panel": true},
+    {"floor_start": 108, "floor_end": 110, "layout": "A_C_CONTINUITY_DOCUMENTED_TABLE_PANEL_ABSENT", "table_panel": false}
+  ],
+  "v9q_reconciliation": {
+    "commission_report_statement": "A and C had two deviations spanning 42-48 and 76-82; B was described as essentially straight.",
+    "nist_final_detailed_statement": "A and C transfer at 42, 48, 66, 68, 76 and 82; B requires a horizontal transfer at 76.",
+    "classification": "DIFFERENCE_IN_LEVEL_OF_DETAIL_NOT_RESOLVED_BY_AS_BUILT_DRAWINGS",
+    "v9r_rule": "Use the more detailed final NIST transfer-floor set for topology while retaining the Commission wording as a documented simplification, not as proof that B had no transfer."
+  },
+  "candidate_figures": [
+    {"id": "NCSTAR1_7_TABLE_2_2", "source_class": "official_NIST_schematic_based_on_document_record", "floor_coverage": "occupied_floor_bands_1_to_107", "scale_or_dimensions": "none", "fixed_landmarks": "tower outline, core perimeter, WTC1/WTC2 north markers", "authorized_use": "categorical topology and transfer events", "metric_solver_geometry": false},
+    {"id": "NCSTAR1_7_FIGURE_2_11", "source_class": "official_NIST_three_dimensional_schematic", "floor_coverage": "vertical continuity and transfer levels", "scale_or_dimensions": "floor labels only", "fixed_landmarks": "floor index and tower orientation markers", "authorized_use": "vertical topology only", "metric_solver_geometry": false},
+    {"id": "NCSTAR1_7_FIGURE_5_2", "source_class": "official_model_result_with_stairwell_overlay", "floor_coverage": "WTC1_floor_95", "scale_or_dimensions": "none", "fixed_landmarks": "core plan, partitions, north marker", "authorized_use": "qualitative footprint registration target for V9S", "metric_solver_geometry": false},
+    {"id": "NCSTAR1_1A_FIGURE_2_2", "source_class": "Port_Authority_drawing_reproduced_by_NIST", "floor_coverage": "representative_upper_floor_WTC1_and_WTC2", "scale_or_dimensions": "dimension_chains_visible_but_floor_identity_and_reproduction_scale_not_solver_safe", "fixed_landmarks": "perimeter and core layout", "authorized_use": "visual cross_check_only", "metric_solver_geometry": false},
+    {"id": "NCSTAR1_2A_FIGURE_1_1", "source_class": "Port_Authority_drawing_reproduced_by_NIST", "floor_coverage": "WTC2_floor_26", "scale_or_dimensions": "core_global_135_by_87_ft_in_adjacent_text", "fixed_landmarks": "perimeter and core layout", "authorized_use": "reject_as_exact_WTC1_substitute", "metric_solver_geometry": false},
+    {"id": "NCSTAR1_6_AND_6C_FLOOR96", "source_class": "official_structural_model_schematics", "floor_coverage": "WTC1_floor_96", "scale_or_dimensions": "column identifiers", "fixed_landmarks": "core and perimeter column grids", "authorized_use": "future registration landmark only; stair internals absent", "metric_solver_geometry": false}
+  ],
+  "required_model_fields": [
+    {"field": "exact plan position and orientation by floor", "status": "PARTIAL", "v9r_change": "Floor-band schematics and a labelled Floor 95 overlay added; no metric as-built coordinates."},
+    {"field": "floor-by-floor continuity, offsets and transfer levels", "status": "PARTIAL", "v9r_change": "Transfer floors are now explicit for A/C and B, but offset distances and paths remain schematic."},
+    {"field": "enclosure construction, thicknesses and material identities", "status": "PARTIAL", "v9r_change": "No new as-built floor-specific layer schedules beyond V9Q."},
+    {"field": "stairs, landings, stringers and their attachments", "status": "PARTIAL", "v9r_change": "Landing rectangles by exit door are dimensioned; flight rise/run, stringers and attachments remain missing."},
+    {"field": "connections to slabs, core framing and surrounding partitions", "status": "PARTIAL", "v9r_change": "Structural grid landmarks are available, but actual stair and landing connections remain absent."},
+    {"field": "mass treatment and nonstructural versus structural classification", "status": "PARTIAL", "v9r_change": "Unchanged from V9Q; discrete masses remain unavailable and double counting remains prohibited."},
+    {"field": "impact, fire and damage state for the modeled scenario", "status": "PARTIAL", "v9r_change": "Floor 95 official-model overlay improves qualitative registration but is not independent damage validation."}
+  ],
+  "gates": {
+    "regression_hash_count_expected": 8,
+    "source_hash_count_expected": 7,
+    "pdf_anchor_count_expected": 13,
+    "visual_qa_record_count_expected": 6,
+    "candidate_figure_count_expected": 6,
+    "stairway_count_expected": 3,
+    "floor_matrix_row_count_expected": 330,
+    "complete_required_model_field_count_expected": 0,
+    "partial_required_model_field_count_expected": 7,
+    "topology_layer_authorized": true,
+    "landing_dimension_layer_authorized": true,
+    "metric_as_built_solver_geometry_authorized": false,
+    "discrete_mass_authorized": false,
+    "stiffness_authorized": false,
+    "strength_authorized": false,
+    "load_path_credit_authorized": false,
+    "component_damage_validation_authorized": false,
+    "global_solver_authorized": false,
+    "blender_physical_validation_authorized": false
+  },
+  "evidence_policy": {
+    "observed_or_transcribed_fact": "A page-verified statement, dimension, source identity or visible figure feature in an official source.",
+    "official_model_result": "A NIST calculation or visual overlay dependent on the official impact model.",
+    "indexed_government_report": "The cached Commission report text and its PANYNJ-attributed simplification.",
+    "model_hypothesis": "Any metric coordinate, enclosure footprint, offset distance, connection or mechanical property not dimensioned in the source.",
+    "derived_result": "Unit conversions, floor-band classification, transfer-event matrix and source-coverage count.",
+    "contradiction_or_unknown": "The Commission simplification versus detailed NIST transfer list, exact path geometry, flights, stringers, connections, discrete masses and component damage."
+  },
+  "outputs": {
+    "acquisition_receipt": "wtc1_simulation_v8/output/v9r_ncstar1_7_acquisition_receipt.json",
+    "source_manifest": "wtc1_simulation_v8/output/v9r_stairwell_source_manifest.json",
+    "candidate_matrix": "wtc1_simulation_v8/output/v9r_stairwell_plan_candidate_matrix.json",
+    "topology": "wtc1_simulation_v8/output/v9r_stairwell_topology.json",
+    "floor_matrix": "wtc1_simulation_v8/output/v9r_stairwell_floor_matrix.csv",
+    "model_gate": "wtc1_simulation_v8/output/v9r_stairwell_model_gate.json",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v9r_plans_escaliers.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v9r_plans_escaliers.md"
+  },
+  "next_iteration": {
+    "id": "V9S",
+    "objective": "Preserve V8U through V9R and perform a bounded two-figure registration of the three Floor 95 stairwell footprints. Digitize only source-visible outlines from NCSTAR 1-7 Figure 5-2 and NCSTAR 1-2B Figure 9-124 against common core-column or core-boundary landmarks, report pixel and inter-figure uncertainty, and produce qualitative footprint envelopes rather than exact as-built coordinates. Keep mass, stiffness, strength, connection, component-damage and solver gates closed unless a dimensioned primary plan is found."
+  }
+}

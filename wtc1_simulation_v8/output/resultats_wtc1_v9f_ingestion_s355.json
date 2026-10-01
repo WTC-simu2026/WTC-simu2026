@@ -1,0 +1,269 @@
+{
+  "iteration": "V9F",
+  "generated_at": "2026-08-27T11:22:55.132666+02:00",
+  "status": "validated_small_open_dataset_ingestion_signals_not_acquired_no_fit_no_solver",
+  "iteration_execution_validated": true,
+  "configuration": "wtc1_simulation_v8/data/v9f_open_dataset_ingestion.json",
+  "scope": "Preserve V8U through V9E, acquire only the small public Zenodo S355 SHPB overview workbook and repository metadata, verify provenance and workbook structure without modifying the source, and resolve the published FDOT A36/A1011 250 versus 500 per second range statement from primary sources. No FOIA request, proprietary contact, 955 MB archive download, material-law fit, solver, rupture or impact calculation is authorized.",
+  "evidence_policy": {
+    "observed_fact": "A value read directly from the acquired Zenodo metadata or immutable workbook, or a statement transcribed from the identified primary publication.",
+    "official_model_result": "A result reported by the FDOT-sponsored report or its author publication, not a V9F simulation result.",
+    "local_archive_claim": "No local-archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "The predeclared ingestion and usability gates in this configuration.",
+    "derived_result": "A deterministic inventory, checksum, completeness and permitted-use classification over acquired open files.",
+    "unknown": "Unacquired signal files inside the large Zenodo archive, exact strain-rate histories, and any transferable WTC or CF6 production parameters."
+  },
+  "regressions": {
+    "files": {
+      "wtc1_simulation_v8/data/v9e_open_analogue_evidence.json": {
+        "exists": true,
+        "expected_sha256": "d08e8dcb1f568c6d302b16e6c5be13fcaf167de4e11e587534f3071e0f4bf31e",
+        "actual_sha256": "d08e8dcb1f568c6d302b16e6c5be13fcaf167de4e11e587534f3071e0f4bf31e",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/run_v9e_open_analogue_evidence.py": {
+        "exists": true,
+        "expected_sha256": "e86a55286eabfc2ffc06ecea5b1a109c93d418fd9cb73b64cd7c12f3bc416686",
+        "actual_sha256": "e86a55286eabfc2ffc06ecea5b1a109c93d418fd9cb73b64cd7c12f3bc416686",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v9e_matrice_analogues_ouverts.json": {
+        "exists": true,
+        "expected_sha256": "52aac5a66274b38b0142b26767377faa287f436c714aaa3cd2b98836fa3ca626",
+        "actual_sha256": "52aac5a66274b38b0142b26767377faa287f436c714aaa3cd2b98836fa3ca626",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/rapport_wtc1_v9e_matrice_analogues_ouverts.md": {
+        "exists": true,
+        "expected_sha256": "8d36e1d5f3ba1c3442e136aa7ed52b76eee84132a08e1cf1e5e49ab76f1c5802",
+        "actual_sha256": "8d36e1d5f3ba1c3442e136aa7ed52b76eee84132a08e1cf1e5e49ab76f1c5802",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9e_note_eligibilite_foia.md": {
+        "exists": true,
+        "expected_sha256": "2763a9bcdeed7d739cf5857b96bae900d756725642895ab06df33d4665ace6d9",
+        "actual_sha256": "2763a9bcdeed7d739cf5857b96bae900d756725642895ab06df33d4665ace6d9",
+        "passed": true
+      }
+    },
+    "metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9e_matrice_analogues_ouverts.json",
+        "path": "iteration_execution_validated",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9e_matrice_analogues_ouverts.json",
+        "path": "open_analogue_summary.exact_target_source_count",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9e_matrice_analogues_ouverts.json",
+        "path": "cf6_80a2_cowling_material_card_identification_passed",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9e_matrice_analogues_ouverts.json",
+        "path": "openradioss_wtc_coupon_authorized",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9e_matrice_analogues_ouverts.json",
+        "path": "facade_impact_executed",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      }
+    ],
+    "files_passed": true,
+    "metrics_passed": true,
+    "passed": true
+  },
+  "foia_policy": {
+    "priority": "last_resort_only",
+    "request_sent": false,
+    "external_contact_authorized": false,
+    "reason": "Potential response time is incompatible with the current iteration; public open data must be exhausted first."
+  },
+  "metadata_audit": {
+    "title": "Split Hopkinson Pressure Bar (SHPB) investigations of steel S355 specimens and complementary characterization methods",
+    "record_id": 17591440,
+    "publication_date": "2025-11-12",
+    "license": "cc-by-4.0",
+    "declared_files": [
+      {
+        "key": "SHPB_S355.xlsx",
+        "size": 11191,
+        "checksum": "md5:1ebdc1413558998a0d25e184e56705c2"
+      },
+      {
+        "key": "Fig1.jpg",
+        "size": 59578,
+        "checksum": "md5:f82e31db6ab9799b18c76fd05d57cece"
+      },
+      {
+        "key": "FurtherMeasurements.zip",
+        "size": 954989097,
+        "checksum": "md5:45c4237981dcb4d5a0e4364ebc2c0da9"
+      }
+    ],
+    "gates": {
+      "record_id_matches": true,
+      "publication_date_matches": true,
+      "license_matches": true,
+      "workbook_file_declared": true,
+      "workbook_size_matches_metadata": true,
+      "workbook_md5_matches_metadata": true,
+      "large_archive_declared_not_acquired": true
+    },
+    "passed": true
+  },
+  "workbook_audit": {
+    "source_size_bytes": 11191,
+    "source_md5": "1ebdc1413558998a0d25e184e56705c2",
+    "source_sha256": "8f0b1e26b8f4db6a6468a24ec580f103f6ba9ff801e9d20401ee852da0688717",
+    "sheet_count": 1,
+    "selected_sheet": "S355_TestOverview",
+    "used_row_count_including_header": 15,
+    "used_column_count": 11,
+    "test_row_count": 14,
+    "dynamic_shpb_count": 12,
+    "quasi_static_count": 2,
+    "geometry_categories": [
+      "no offset",
+      "offset"
+    ],
+    "dynamic_pressure_bar_min": 0.6,
+    "dynamic_pressure_bar_max": 2.5,
+    "dynamic_projectile_velocity_m_per_s_min": 8.0,
+    "dynamic_projectile_velocity_m_per_s_max": 27.7,
+    "quasi_static_crosshead_speed_m_per_s_values": [
+      1.6e-06
+    ],
+    "projectile_length_mm_values": [
+      150.0,
+      250.0,
+      301.7
+    ],
+    "dic_available_count": 9,
+    "bar_strain_or_force_displacement_available_count": 14,
+    "microhardness_available_count": 2,
+    "ebsd_available_count": 2,
+    "semantic_column_checks": {
+      "specimen_or_test_identifier": true,
+      "test_type_or_loading_mode": true,
+      "geometry_or_notch_offset": true,
+      "projectile_pressure_or_quasi_static_marker": true,
+      "impact_velocity_or_quasi_static_marker": true,
+      "measurement_link_or_reference": true
+    },
+    "preferred_matched_pair": {
+      "dynamic_specimen_id": "P4V035",
+      "quasi_static_specimen_id": "P6V035",
+      "shared_geometry": "offset",
+      "dic_flagged_for_both": true,
+      "mechanical_signal_flagged_for_both": true,
+      "microhardness_flagged_for_both": true,
+      "ebsd_flagged_for_both": true,
+      "selection_scope": "Candidate for a future selective archive-index and signal-ingestion audit only."
+    },
+    "raw_time_series_embedded_in_small_workbook": false,
+    "specimen_dimensions_embedded_in_small_workbook": false,
+    "exact_strain_rate_definition_embedded_in_small_workbook": false,
+    "gates": {
+      "source_size_matches": true,
+      "source_md5_matches": true,
+      "artifact_inspection_sha256_matches": true,
+      "required_sheet_present": true,
+      "minimum_nonempty_rows": true,
+      "semantic_column_families_present": true,
+      "minimum_geometry_categories": true,
+      "dynamic_and_quasi_static_entries_present": true,
+      "pressure_velocity_and_length_units_present": true,
+      "source_not_modified_or_exported": true,
+      "preferred_matched_pair_identified": true
+    },
+    "passed": true
+  },
+  "fdot_range_cross_check": {
+    "report_title": "Validation and implementation of bridge design specifications for barge impact loading",
+    "report_url": "https://rosap.ntl.bts.gov/view/dot/27716",
+    "report_upper_rate_per_s": 500.0,
+    "companion_publication_title": "Strain rate sensitive steel constitutive models for finite element analysis of vessel-structure impacts",
+    "companion_publication_doi": "10.1016/j.marstruc.2015.09.001",
+    "companion_publication_url": "https://www.sciencedirect.com/science/article/abs/pii/S0951833915000684",
+    "companion_publication_upper_rate_per_s": 250.0,
+    "absolute_difference_per_s": 250.0,
+    "difference_preserved_without_assumed_reconciliation": true,
+    "interpretation_rule": "Treat the two maxima as source-specific reported test ranges until specimen-level tables establish whether one publication omitted or grouped the highest-rate tests. Do not average, merge or reinterpret the ranges."
+  },
+  "documentary_gate_summary": {
+    "gates": {
+      "v9e_regressions_unchanged": true,
+      "zenodo_metadata_identity_and_license": true,
+      "small_workbook_integrity_and_structure": true,
+      "fdot_range_difference_preserved": true,
+      "only_predeclared_small_files_acquired": true,
+      "large_archive_not_downloaded": true,
+      "foia_request_unsent": true,
+      "external_contact_not_authorized_or_made": true,
+      "source_archive_not_rescanned": true,
+      "generic_material_not_substituted": true,
+      "solver_not_executed": true
+    },
+    "passed": true
+  },
+  "selective_remote_archive_index_audit_permitted": true,
+  "full_large_archive_download_authorized": false,
+  "analogue_signal_reduction_authorized": false,
+  "analogue_material_fit_authorized": false,
+  "analogue_coupon_solver_authorized": false,
+  "wtc_high_rate_material_curve_qualification_passed": false,
+  "cf6_80a2_cowling_material_card_identification_passed": false,
+  "openradioss_wtc_coupon_authorized": false,
+  "openradioss_wtc_coupon_executed": false,
+  "failure_deletion_executed": false,
+  "projectile_rupture_executed": false,
+  "facade_impact_executed": false,
+  "global_wtc_impact_physics_qualification_passed": false,
+  "blender_executed": false,
+  "scope_gates": {
+    "open_dataset_ingestion_audit_authorized": true,
+    "analogue_signal_reduction_authorized": false,
+    "analogue_material_fit_authorized": false,
+    "analogue_coupon_solver_authorized": false,
+    "wtc_high_rate_material_curve_qualification_passed": false,
+    "cf6_80a2_cowling_material_card_identification_passed": false,
+    "openradioss_wtc_coupon_authorized": false,
+    "failure_deletion_authorized": false,
+    "projectile_rupture_authorized": false,
+    "facade_impact_authorized": false,
+    "whole_aircraft_authorized": false,
+    "global_tower_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_mechanism_tested": false
+  },
+  "interpretation": "V9F validates only a small-file provenance and inventory audit. The immutable 11,191-byte S355 workbook matches the Zenodo checksum and lists 12 SHPB plus 2 quasi-static tests, but it contains availability flags rather than the underlying DIC, bar-strain or force-displacement time series. P4V035 and P6V035 form the most completely documented same-geometry dynamic/quasi-static pair for a future selective archive-index audit. The FDOT report and companion article publish upper ranges of 500 and 250 per second respectively; V9F preserves that source-level discrepancy without fitting or substitution. FOIA remains last resort, the 955 MB archive is not downloaded, and no signal reduction, material identification, solver, rupture or facade impact is authorized.",
+  "runtime": {
+    "started_at": "2026-08-27T11:22:55.132666+02:00",
+    "completed_at": "2026-08-27T11:22:55.142210+02:00",
+    "software": "Python plus read-only @oai/artifact-tool workbook inspection",
+    "python_version": "3.12.13",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "random_seed": 9112001,
+    "source_workbook_modified": false,
+    "source_archive_rescanned": false,
+    "large_archive_downloaded": false,
+    "external_contact_made": false,
+    "solver_executed": false
+  }
+}

@@ -1,0 +1,1139 @@
+{
+  "iteration": "V10P",
+  "generated_at_utc": "2026-09-04T07:20:15Z",
+  "validation_status": "PASS_THREE_TRACK_SOFTWARE_HANDOFF_ONLY",
+  "contract": {
+    "required_track_ids": [
+      "CONTROL_ZERO_INPUT",
+      "OFFICIAL_MODEL_DEPENDENT_REFERENCE",
+      "UNKNOWN_PHYSICAL_DAMAGE"
+    ],
+    "control_rule": "Reuse the V10O zero-input sentinel only as a software control; it carries no historical event meaning.",
+    "official_reference_rule": "Carry the less/base/more-severe model outputs exactly as a dependent reference. Do not call them observations, independent validation or the unique real damage state.",
+    "unknown_rule": "Preserve the source-bounded kinematic envelope, but set member_states, opening_polygons_m, debris_distribution and fuel_distribution to JSON null and block downstream physical release.",
+    "state_labels": [
+      "severed",
+      "heavy",
+      "moderate",
+      "light"
+    ],
+    "analysis_floors": [
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99
+    ],
+    "unit_conversions": {
+      "lb_to_kg": 0.45359237,
+      "mph_to_m_s": 0.44704,
+      "in_to_m": 0.0254,
+      "GJ_to_J": 1000000000.0,
+      "MN_s_to_kg_m_s": 1000000.0
+    }
+  },
+  "tracks": [
+    {
+      "track_id": "CONTROL_ZERO_INPUT",
+      "epistemic_class": "SYNTHETIC_SOFTWARE_CONTROL_NOT_HISTORICAL",
+      "status": "PASS_SOFTWARE_SENTINEL_ONLY",
+      "source": {
+        "path": "wtc1_simulation_v8/output/v10o_null_control_trace.json",
+        "sha256": "62890121c6bc89aa5970e9266bcd89ff1b148c672d601c8ca2f293df81405864"
+      },
+      "kinematics": {
+        "mass_kg": 0.0,
+        "velocity_vector_m_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "kinetic_energy_J": 0.0
+      },
+      "damage_handoff": {
+        "member_states": [],
+        "opening_polygons_m": [],
+        "debris_mass_kg": 0.0,
+        "fuel_mass_kg": 0.0,
+        "module_status": "CONTROL_ZERO_DAMAGE"
+      },
+      "terminal_v10o_label": "CONTROL_NO_PROPAGATION",
+      "historical_noncollapse_conclusion": false,
+      "downstream_software_control_release": true,
+      "downstream_physical_release": false,
+      "physical_validation": false
+    },
+    {
+      "track_id": "OFFICIAL_MODEL_DEPENDENT_REFERENCE",
+      "epistemic_class": "OFFICIAL_MODEL_OUTPUT_DEPENDENT_NOT_INDEPENDENT_OBSERVATION",
+      "status": "PASS_REFERENCE_TRANSCRIPTION_AND_ACCOUNTING_ONLY",
+      "source": {
+        "path": "wtc1_simulation_v8/data/nist_wtc1_transfer.json",
+        "sha256": "bdf4d779bb41f0d64c908702261ea2f571ba6d73b5d0e09876168c4c03cfe8fb",
+        "official_source_ids": [
+          "NCSTAR1_2B_V2",
+          "NCSTAR1_6D_LOCAL"
+        ]
+      },
+      "cases": [
+        {
+          "case_id": "less_severe",
+          "kinematics": {
+            "mass_kg": 122206.8563254,
+            "speed_m_s": 185.07456,
+            "trajectory_pitch_deg": 13.6,
+            "orientation_pitch_deg": 11.6,
+            "roll_deg": 25.0,
+            "momentum_total_MN_s": 22.617380163406622,
+            "kinetic_energy_GJ": 2.0929508410476045
+          },
+          "damage_reference": {
+            "source_entry_count": 11,
+            "expanded_segment_count_floors93_99": 18,
+            "expanded_state_counts": {
+              "heavy": 5,
+              "light": 5,
+              "moderate": 4,
+              "severed": 4
+            },
+            "reference_removal_segment_count": 9,
+            "expanded_member_states": [
+              {
+                "member_segment_id": "CORE-504-F93",
+                "column_id": 504,
+                "floor": 93,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-505-F93",
+                "column_id": 505,
+                "floor": 93,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-506-F93",
+                "column_id": 506,
+                "floor": 93,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-504-F94",
+                "column_id": 504,
+                "floor": 94,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-505-F94",
+                "column_id": 505,
+                "floor": 94,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-506-F94",
+                "column_id": 506,
+                "floor": 94,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-606-F94",
+                "column_id": 606,
+                "floor": 94,
+                "state": "light"
+              },
+              {
+                "member_segment_id": "CORE-504-F95",
+                "column_id": 504,
+                "floor": 95,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-505-F95",
+                "column_id": 505,
+                "floor": 95,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-504-F96",
+                "column_id": 504,
+                "floor": 96,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-505-F96",
+                "column_id": 505,
+                "floor": 96,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-604-F96",
+                "column_id": 604,
+                "floor": 96,
+                "state": "light"
+              },
+              {
+                "member_segment_id": "CORE-702-F96",
+                "column_id": 702,
+                "floor": 96,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-703-F96",
+                "column_id": 703,
+                "floor": 96,
+                "state": "light"
+              },
+              {
+                "member_segment_id": "CORE-704-F96",
+                "column_id": 704,
+                "floor": 96,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-705-F96",
+                "column_id": 705,
+                "floor": 96,
+                "state": "light"
+              },
+              {
+                "member_segment_id": "CORE-802-F96",
+                "column_id": 802,
+                "floor": 96,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-805-F96",
+                "column_id": 805,
+                "floor": 96,
+                "state": "light"
+              }
+            ]
+          },
+          "fuel_distribution_lb": null,
+          "debris_distribution_lb": null,
+          "distribution_scope_warning": "No less/more-severe distribution table is carried in the selected cached transcription.",
+          "physical_validation": false,
+          "downstream_physical_release": false
+        },
+        {
+          "case_id": "base",
+          "kinematics": {
+            "mass_kg": 128638.796132,
+            "speed_m_s": 198.03871999999998,
+            "trajectory_pitch_deg": 10.6,
+            "orientation_pitch_deg": 8.6,
+            "roll_deg": 25.0,
+            "momentum_total_MN_s": 25.475462528322232,
+            "kinetic_energy_GJ": 2.5225639952584484
+          },
+          "damage_reference": {
+            "source_entry_count": 13,
+            "expanded_segment_count_floors93_99": 26,
+            "expanded_state_counts": {
+              "heavy": 8,
+              "moderate": 7,
+              "severed": 11
+            },
+            "reference_removal_segment_count": 19,
+            "expanded_member_states": [
+              {
+                "member_segment_id": "CORE-504-F93",
+                "column_id": 504,
+                "floor": 93,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-505-F93",
+                "column_id": 505,
+                "floor": 93,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-506-F93",
+                "column_id": 506,
+                "floor": 93,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-604-F93",
+                "column_id": 604,
+                "floor": 93,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-706-F93",
+                "column_id": 706,
+                "floor": 93,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-504-F94",
+                "column_id": 504,
+                "floor": 94,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-505-F94",
+                "column_id": 505,
+                "floor": 94,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-506-F94",
+                "column_id": 506,
+                "floor": 94,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-604-F94",
+                "column_id": 604,
+                "floor": 94,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-605-F94",
+                "column_id": 605,
+                "floor": 94,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-704-F94",
+                "column_id": 704,
+                "floor": 94,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-706-F94",
+                "column_id": 706,
+                "floor": 94,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-805-F94",
+                "column_id": 805,
+                "floor": 94,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-504-F95",
+                "column_id": 504,
+                "floor": 95,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-505-F95",
+                "column_id": 505,
+                "floor": 95,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-604-F95",
+                "column_id": 604,
+                "floor": 95,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-605-F95",
+                "column_id": 605,
+                "floor": 95,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-705-F95",
+                "column_id": 705,
+                "floor": 95,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-706-F95",
+                "column_id": 706,
+                "floor": 95,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-503-F96",
+                "column_id": 503,
+                "floor": 96,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-504-F96",
+                "column_id": 504,
+                "floor": 96,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-505-F96",
+                "column_id": 505,
+                "floor": 96,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-604-F96",
+                "column_id": 604,
+                "floor": 96,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-702-F96",
+                "column_id": 702,
+                "floor": 96,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-703-F96",
+                "column_id": 703,
+                "floor": 96,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-802-F96",
+                "column_id": 802,
+                "floor": 96,
+                "state": "moderate"
+              }
+            ]
+          },
+          "fuel_distribution_lb": {
+            "outside_tower": {
+              "fuel": 6700,
+              "aircraft_debris": 17400
+            },
+            "92": {
+              "fuel": 810,
+              "aircraft_debris": 260
+            },
+            "93": {
+              "fuel": 6100,
+              "aircraft_debris": 22600
+            },
+            "94": {
+              "fuel": 16100,
+              "aircraft_debris": 96000
+            },
+            "95": {
+              "fuel": 12200,
+              "aircraft_debris": 28000
+            },
+            "96": {
+              "fuel": 11700,
+              "aircraft_debris": 19400
+            },
+            "97": {
+              "fuel": 9500,
+              "aircraft_debris": 6000
+            },
+            "98": {
+              "fuel": 2200,
+              "aircraft_debris": 6000
+            },
+            "99": {
+              "fuel": 770,
+              "aircraft_debris": 90
+            },
+            "totals": {
+              "fuel": 66100,
+              "aircraft_debris": 196000
+            }
+          },
+          "debris_distribution_lb": {
+            "outside_tower": {
+              "fuel": 6700,
+              "aircraft_debris": 17400
+            },
+            "92": {
+              "fuel": 810,
+              "aircraft_debris": 260
+            },
+            "93": {
+              "fuel": 6100,
+              "aircraft_debris": 22600
+            },
+            "94": {
+              "fuel": 16100,
+              "aircraft_debris": 96000
+            },
+            "95": {
+              "fuel": 12200,
+              "aircraft_debris": 28000
+            },
+            "96": {
+              "fuel": 11700,
+              "aircraft_debris": 19400
+            },
+            "97": {
+              "fuel": 9500,
+              "aircraft_debris": 6000
+            },
+            "98": {
+              "fuel": 2200,
+              "aircraft_debris": 6000
+            },
+            "99": {
+              "fuel": 770,
+              "aircraft_debris": 90
+            },
+            "totals": {
+              "fuel": 66100,
+              "aircraft_debris": 196000
+            }
+          },
+          "distribution_scope_warning": "The base table combines north-face rebound and material passing through the south side; it is not a far-side-only measurement.",
+          "physical_validation": false,
+          "downstream_physical_release": false
+        },
+        {
+          "case_id": "more_severe",
+          "kinematics": {
+            "mass_kg": 135070.7359386,
+            "speed_m_s": 211.00288,
+            "trajectory_pitch_deg": 7.6,
+            "orientation_pitch_deg": 5.6,
+            "roll_deg": 25.0,
+            "momentum_total_MN_s": 28.500314286764105,
+            "kinetic_energy_GJ": 3.0068241977061865
+          },
+          "damage_reference": {
+            "source_entry_count": 20,
+            "expanded_segment_count_floors93_99": 45,
+            "expanded_state_counts": {
+              "heavy": 8,
+              "light": 5,
+              "moderate": 11,
+              "severed": 21
+            },
+            "reference_removal_segment_count": 29,
+            "expanded_member_states": [
+              {
+                "member_segment_id": "CORE-504-F93",
+                "column_id": 504,
+                "floor": 93,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-505-F93",
+                "column_id": 505,
+                "floor": 93,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-506-F93",
+                "column_id": 506,
+                "floor": 93,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-604-F93",
+                "column_id": 604,
+                "floor": 93,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-704-F93",
+                "column_id": 704,
+                "floor": 93,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-706-F93",
+                "column_id": 706,
+                "floor": 93,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-805-F93",
+                "column_id": 805,
+                "floor": 93,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-504-F94",
+                "column_id": 504,
+                "floor": 94,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-505-F94",
+                "column_id": 505,
+                "floor": 94,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-506-F94",
+                "column_id": 506,
+                "floor": 94,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-604-F94",
+                "column_id": 604,
+                "floor": 94,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-605-F94",
+                "column_id": 605,
+                "floor": 94,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-606-F94",
+                "column_id": 606,
+                "floor": 94,
+                "state": "light"
+              },
+              {
+                "member_segment_id": "CORE-704-F94",
+                "column_id": 704,
+                "floor": 94,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-706-F94",
+                "column_id": 706,
+                "floor": 94,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-804-F94",
+                "column_id": 804,
+                "floor": 94,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-805-F94",
+                "column_id": 805,
+                "floor": 94,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-503-F95",
+                "column_id": 503,
+                "floor": 95,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-504-F95",
+                "column_id": 504,
+                "floor": 95,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-505-F95",
+                "column_id": 505,
+                "floor": 95,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-506-F95",
+                "column_id": 506,
+                "floor": 95,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-604-F95",
+                "column_id": 604,
+                "floor": 95,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-605-F95",
+                "column_id": 605,
+                "floor": 95,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-704-F95",
+                "column_id": 704,
+                "floor": 95,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-705-F95",
+                "column_id": 705,
+                "floor": 95,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-706-F95",
+                "column_id": 706,
+                "floor": 95,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-804-F95",
+                "column_id": 804,
+                "floor": 95,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-805-F95",
+                "column_id": 805,
+                "floor": 95,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-904-F95",
+                "column_id": 904,
+                "floor": 95,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-905-F95",
+                "column_id": 905,
+                "floor": 95,
+                "state": "light"
+              },
+              {
+                "member_segment_id": "CORE-503-F96",
+                "column_id": 503,
+                "floor": 96,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-504-F96",
+                "column_id": 504,
+                "floor": 96,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-505-F96",
+                "column_id": 505,
+                "floor": 96,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-603-F96",
+                "column_id": 603,
+                "floor": 96,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-604-F96",
+                "column_id": 604,
+                "floor": 96,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-703-F96",
+                "column_id": 703,
+                "floor": 96,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-704-F96",
+                "column_id": 704,
+                "floor": 96,
+                "state": "severed"
+              },
+              {
+                "member_segment_id": "CORE-802-F96",
+                "column_id": 802,
+                "floor": 96,
+                "state": "light"
+              },
+              {
+                "member_segment_id": "CORE-803-F96",
+                "column_id": 803,
+                "floor": 96,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-804-F96",
+                "column_id": 804,
+                "floor": 96,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-903-F96",
+                "column_id": 903,
+                "floor": 96,
+                "state": "light"
+              },
+              {
+                "member_segment_id": "CORE-904-F96",
+                "column_id": 904,
+                "floor": 96,
+                "state": "heavy"
+              },
+              {
+                "member_segment_id": "CORE-603-F97",
+                "column_id": 603,
+                "floor": 97,
+                "state": "moderate"
+              },
+              {
+                "member_segment_id": "CORE-702-F97",
+                "column_id": 702,
+                "floor": 97,
+                "state": "light"
+              },
+              {
+                "member_segment_id": "CORE-803-F97",
+                "column_id": 803,
+                "floor": 97,
+                "state": "moderate"
+              }
+            ]
+          },
+          "fuel_distribution_lb": null,
+          "debris_distribution_lb": null,
+          "distribution_scope_warning": "No less/more-severe distribution table is carried in the selected cached transcription.",
+          "physical_validation": false,
+          "downstream_physical_release": false
+        }
+      ],
+      "ledger_summary": {
+        "incoming_case_audits": [
+          {
+            "case_id": "less_severe",
+            "status": "PASS_INCOMING_SCALAR_LEDGER_ONLY",
+            "assertions": {
+              "mass_conversion": true,
+              "speed_conversion": true,
+              "scalar_momentum": true,
+              "scalar_kinetic_energy": true
+            },
+            "mass_kg": 122206.8563254,
+            "speed_m_s": 185.07456,
+            "momentum_mn_s": 22.617380163406622,
+            "kinetic_energy_gj": 2.0929508410476045
+          },
+          {
+            "case_id": "base",
+            "status": "PASS_INCOMING_SCALAR_LEDGER_ONLY",
+            "assertions": {
+              "mass_conversion": true,
+              "speed_conversion": true,
+              "scalar_momentum": true,
+              "scalar_kinetic_energy": true
+            },
+            "mass_kg": 128638.796132,
+            "speed_m_s": 198.03871999999998,
+            "momentum_mn_s": 25.475462528322232,
+            "kinetic_energy_gj": 2.5225639952584484
+          },
+          {
+            "case_id": "more_severe",
+            "status": "PASS_INCOMING_SCALAR_LEDGER_ONLY",
+            "assertions": {
+              "mass_conversion": true,
+              "speed_conversion": true,
+              "scalar_momentum": true,
+              "scalar_kinetic_energy": true
+            },
+            "mass_kg": 135070.7359386,
+            "speed_m_s": 211.00288,
+            "momentum_mn_s": 28.500314286764105,
+            "kinetic_energy_gj": 3.0068241977061865
+          }
+        ],
+        "incoming_scalar_ledger_pass_count": 3,
+        "base_component_count": 8,
+        "base_component_weight_sum_lb": 283600.0,
+        "base_component_mass_sum_kg": 128638.796132,
+        "base_component_energy_sum_gj": 2.522563995258449,
+        "fuel_bin_sum_lb": 66080.0,
+        "fuel_stated_total_lb": 66100.0,
+        "fuel_bin_rounding_residual_lb": 20.0,
+        "debris_bin_sum_lb": 195750.0,
+        "debris_stated_total_lb": 196000.0,
+        "debris_bin_rounding_residual_lb": 250.0,
+        "nonfuel_aircraft_mass_lb": 217500.0,
+        "nonfuel_mass_not_in_stated_debris_total_lb": 21500.0,
+        "full_postimpact_mass_momentum_energy_ledger_closed_count": 0
+      },
+      "independent_damage_validation": false,
+      "downstream_software_reference_release": true,
+      "downstream_physical_release": false,
+      "physical_validation": false,
+      "usage_rule": "May drive explicitly labelled dependent sensitivity calculations only; cannot identify the unique historical damage state."
+    },
+    {
+      "track_id": "UNKNOWN_PHYSICAL_DAMAGE",
+      "epistemic_class": "UNKNOWN_PHYSICAL_STATE_WITH_SOURCE_BOUNDED_KINEMATICS",
+      "status": "BLOCKED_PHYSICAL_DAMAGE_UNRESOLVED",
+      "kinematic_envelope": {
+        "mass_kg": {
+          "minimum": 122206.8563254,
+          "maximum": 135070.7359386
+        },
+        "speed_m_s": {
+          "minimum": 185.07456,
+          "maximum": 211.00288
+        },
+        "momentum_MN_s": {
+          "minimum": 22.617380163406622,
+          "maximum": 28.500314286764105
+        },
+        "kinetic_energy_GJ": {
+          "minimum": 2.0929508410476045,
+          "maximum": 3.0068241977061865
+        },
+        "source_class": "OFFICIAL_INPUT_TRANSCRIPTION_WITH_DERIVED_KINEMATICS"
+      },
+      "damage_handoff": {
+        "member_states": null,
+        "opening_polygons_m": null,
+        "debris_distribution": null,
+        "fuel_distribution": null,
+        "module_status": "UNKNOWN_PHYSICAL_DAMAGE"
+      },
+      "full_postimpact_conservation": {
+        "mass": "INDETERMINATE",
+        "vector_momentum": "INDETERMINATE",
+        "energy": "INDETERMINATE"
+      },
+      "blocking_reasons": [
+        "projectile rupture is not objectively qualified",
+        "fracture energy or internal length is not independently identified",
+        "eroding contact impulse does not meet the fixed convergence gate",
+        "exact WTC M26/C80 fracture and joint data are incomplete",
+        "production CF6-80A2 core, cowling and attachment failure data are absent",
+        "no inspected open benchmark combines measurements, deformable-projectile rupture, objective regularization, convergence and a reusable bounded deck",
+        "independent observed facade-damage mask with refined orientation remains unavailable",
+        "object-by-object postimpact mass and velocity histories remain unavailable"
+      ],
+      "downstream_software_unknown_status_release": true,
+      "downstream_physical_release": false,
+      "physical_validation": false
+    }
+  ],
+  "damage_transformation_comparisons": [
+    {
+      "case_id": "less_severe",
+      "floor": 93,
+      "source_state_count": 3,
+      "v8a_state_count": 3,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 2,
+      "v8a_removed_count": 2,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "less_severe",
+      "floor": 94,
+      "source_state_count": 4,
+      "v8a_state_count": 4,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 2,
+      "v8a_removed_count": 2,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "less_severe",
+      "floor": 95,
+      "source_state_count": 2,
+      "v8a_state_count": 2,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 2,
+      "v8a_removed_count": 2,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "less_severe",
+      "floor": 96,
+      "source_state_count": 9,
+      "v8a_state_count": 9,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 3,
+      "v8a_removed_count": 3,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "less_severe",
+      "floor": 97,
+      "source_state_count": 0,
+      "v8a_state_count": 0,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 0,
+      "v8a_removed_count": 0,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "less_severe",
+      "floor": 98,
+      "source_state_count": 0,
+      "v8a_state_count": 0,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 0,
+      "v8a_removed_count": 0,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "less_severe",
+      "floor": 99,
+      "source_state_count": 0,
+      "v8a_state_count": 0,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 0,
+      "v8a_removed_count": 0,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "base",
+      "floor": 93,
+      "source_state_count": 5,
+      "v8a_state_count": 5,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 5,
+      "v8a_removed_count": 5,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "base",
+      "floor": 94,
+      "source_state_count": 8,
+      "v8a_state_count": 8,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 6,
+      "v8a_removed_count": 6,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "base",
+      "floor": 95,
+      "source_state_count": 6,
+      "v8a_state_count": 6,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 4,
+      "v8a_removed_count": 4,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "base",
+      "floor": 96,
+      "source_state_count": 7,
+      "v8a_state_count": 7,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 4,
+      "v8a_removed_count": 4,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "base",
+      "floor": 97,
+      "source_state_count": 0,
+      "v8a_state_count": 0,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 0,
+      "v8a_removed_count": 0,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "base",
+      "floor": 98,
+      "source_state_count": 0,
+      "v8a_state_count": 0,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 0,
+      "v8a_removed_count": 0,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "base",
+      "floor": 99,
+      "source_state_count": 0,
+      "v8a_state_count": 0,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 0,
+      "v8a_removed_count": 0,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "more_severe",
+      "floor": 93,
+      "source_state_count": 7,
+      "v8a_state_count": 7,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 7,
+      "v8a_removed_count": 7,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "more_severe",
+      "floor": 94,
+      "source_state_count": 10,
+      "v8a_state_count": 10,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 7,
+      "v8a_removed_count": 7,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "more_severe",
+      "floor": 95,
+      "source_state_count": 13,
+      "v8a_state_count": 13,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 9,
+      "v8a_removed_count": 9,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "more_severe",
+      "floor": 96,
+      "source_state_count": 12,
+      "v8a_state_count": 12,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 6,
+      "v8a_removed_count": 6,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "more_severe",
+      "floor": 97,
+      "source_state_count": 3,
+      "v8a_state_count": 3,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 0,
+      "v8a_removed_count": 0,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "more_severe",
+      "floor": 98,
+      "source_state_count": 0,
+      "v8a_state_count": 0,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 0,
+      "v8a_removed_count": 0,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    },
+    {
+      "case_id": "more_severe",
+      "floor": 99,
+      "source_state_count": 0,
+      "v8a_state_count": 0,
+      "state_mapping_exact_match": true,
+      "source_reference_removed_count": 0,
+      "v8a_removed_count": 0,
+      "removal_mapping_exact_match": true,
+      "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+    }
+  ],
+  "epistemic_nonmerge_rule": "CONTROL, OFFICIAL_MODEL_DEPENDENT and UNKNOWN_PHYSICAL_DAMAGE records must retain distinct track_id and epistemic_class fields in every downstream artifact.",
+  "historical_physical_damage_promotion_count": 0,
+  "downstream_physical_release_count": 0
+}

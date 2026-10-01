@@ -1,0 +1,223 @@
+{
+  "iteration": "V10U",
+  "dataset": {
+    "name": "Independent CalculiX linear cantilever benchmark",
+    "version": "10.21.1",
+    "status": "PREDECLARED_ATTEMPT_02_BEFORE_V10U_SOLVER_EXECUTION",
+    "created_at_local": "2026-09-04T15:24:02+02:00",
+    "random_seed": 1021002,
+    "random_draw_used": false,
+    "scope": "Qualify only the local CalculiX executable, a generated B32R linear-elastic cantilever deck, output parsing, force-reaction closure, analytical displacement comparison on the finest mesh, load linearity and mesh convergence. Coarse meshes are diagnostic convergence points and are not required to meet the final analytical tolerance. The geometry, section, material, load and boundary conditions are deliberately generic and independent of WTC 1. Do not assign this benchmark to any WTC member, connection, load path, damage state, fire state, initiation state, propagation model or historical outcome."
+  },
+  "attempt_history": [
+    {
+      "attempt": 1,
+      "status": "REJECTED_AND_PRESERVED",
+      "path": "tmp/v10u_failed_attempt_01",
+      "decision": "FAIL_INDEPENDENT_LINEAR_B32R_BENCHMARK",
+      "reason": "The first protocol incorrectly required deliberately coarse convergence meshes to satisfy the final analytical tolerance and stopped at 32 elements, where the 16-to-32 change was 0.3431246331 percent. Reaction closure and load linearity passed. No acceptance threshold was relaxed: attempt 02 extends the predeclared mesh sequence and scopes the unchanged 1 percent analytical threshold to the finest mesh and its nonzero load sweep.",
+      "preserved_evidence": [
+        {"path":"tmp/v10u_failed_attempt_01/v10u_calculix_linear_beam_benchmark.attempt01.json","sha256":"6b17ce700c0a1f58c8620c3a7d56a93b293dabff413d4ee31b8a5277a6811d11"},
+        {"path":"tmp/v10u_failed_attempt_01/run_v10u_calculix_linear_beam_benchmark.attempt01.py","sha256":"6262319416d923f07e3de6062804e0930513f812f9579198b0196262c6b6cafd"},
+        {"path":"tmp/v10u_failed_attempt_01/output/v10u_linear_beam_benchmark_gate.json","sha256":"2c2722d34ea08153e5bdd1690587645d45e6186b26b7e115dda30538352420e5"},
+        {"path":"tmp/v10u_failed_attempt_01/output/v10u_mesh_convergence.csv","sha256":"31312aba049297e539a24c352e1a098938c88d35110432c16f9473709d9c8429"},
+        {"path":"tmp/v10u_failed_attempt_01/output/resultats_wtc1_v10u_benchmark_poutre_lineaire.json","sha256":"a9e5e65e01473c703a689172711ead2712f8f6f64b36dcb5d5917e9c6b55788d"}
+      ]
+    }
+  ],
+  "execution_policy": {
+    "network_access": false,
+    "source_archive_read": false,
+    "source_archive_modified": false,
+    "official_source_pdf_hash_only_count": 0,
+    "official_source_pdf_page_read_count": 0,
+    "official_source_pdf_text_extraction_count": 0,
+    "official_sources_directory_modified": false,
+    "software_installation": false,
+    "structural_solver_execution": true,
+    "thermal_solver_execution": false,
+    "fire_solver_execution": false,
+    "impact_solver_execution": false,
+    "propagation_solver_execution": false,
+    "other_solver_execution": false,
+    "gpu_compute": false,
+    "blender_execution": false,
+    "wtc_parameter_assignment": false,
+    "physical_wtc_state_release": false,
+    "historical_collapse_or_noncollapse_conclusion": false,
+    "maximum_runtime_seconds": 300
+  },
+  "regression_files": [
+    {"role":"v10t_configuration","path":"wtc1_simulation_v8/data/v10t_three_track_3d_status_package.json","expected_sha256":"d1727996a61ad3b31b38256418ce983b655738e9fff6648a660ce4084bb96134"},
+    {"role":"v10t_runner","path":"wtc1_simulation_v8/scripts/run_v10t_three_track_3d_status_package.py","expected_sha256":"a104da048723855797b9cbabf9cff7e416c2aca2457e06d2c8fcbb611457274a"},
+    {"role":"v10t_blender_builder","path":"wtc1_3d_v4/scripts/build_v10t_three_track_status.py","expected_sha256":"a2b029ed896770d5f52f386f9cf2fddc3a5bb847c7cd430e1708ec6f7280297c"},
+    {"role":"v10t_regression_audit","path":"wtc1_simulation_v8/output/v10t_regression_audit.json","expected_sha256":"ee544ee29f1b93d44063390b351abec9fd1d5c3d214041f28540cf7f69bb3523"},
+    {"role":"v10t_source_manifest","path":"wtc1_simulation_v8/output/v10t_visualization_source_manifest.json","expected_sha256":"fdcb292c6b050810a5475a77ab50b0e6ba276dd711eb7622c8e4c1b303769efc"},
+    {"role":"v10t_status_matrix","path":"wtc1_simulation_v8/output/v10t_status_release_matrix.csv","expected_sha256":"72c8f838461dd9dce2e036639faa79b6d095f4ce52b43f47f7d6d087b72681a7"},
+    {"role":"v10t_blender_audit","path":"wtc1_simulation_v8/output/v10t_blender_audit.json","expected_sha256":"726a19583a1df3fcf97995cd429b4a973795076e4e5ef33fefdb4f6977add59a"},
+    {"role":"v10t_render_manifest","path":"wtc1_simulation_v8/output/v10t_render_manifest.json","expected_sha256":"674879b37f4967ef99abec74d9209768d8ec9da67cd1426d63379ae0a8391113"},
+    {"role":"v10t_visual_qa","path":"wtc1_simulation_v8/output/v10t_visual_qa.json","expected_sha256":"bedad4860c500e054a6c4382e9e9bd93cdfabf75810289a857ae1dc68cf4ede7"},
+    {"role":"v10t_gate","path":"wtc1_simulation_v8/output/v10t_visualization_gate.json","expected_sha256":"d1a04845aa108e49254a04a5b0c2e18e09b4a7c3f4f08357c5af1e1be7d4ea71"},
+    {"role":"v10t_report","path":"wtc1_simulation_v8/output/rapport_wtc1_v10t_visualisation_3d_statuts.md","expected_sha256":"c5b80c224370b7d0c5fa92e7f78e5d1019c15645409b9c50777fc24a02dedaef"},
+    {"role":"v10t_results","path":"wtc1_simulation_v8/output/resultats_wtc1_v10t_visualisation_3d_statuts.json","expected_sha256":"91b0fdb35447852fdbdc2b4d243a96074b4618cb0a15b66738114c26626421b6"},
+    {"role":"v10t_offline_audit","path":"wtc1_simulation_v8/output/v10t_offline_package_audit.json","expected_sha256":"ceb65c51a50674cfe4253bcc457c101b27fc2f084c8c82f0acfd0d55901809cc"},
+    {"role":"v10t_blender_internal_manifest","path":"wtc1_3d_v4/output/v10t_blender_internal_manifest.json","expected_sha256":"472889db701d3a8ec95607b3cc67b358b61b7181a0115d5e2c3ddf673827ef68"},
+    {"role":"v10t_blender_execution_log","path":"wtc1_3d_v4/output/v10t_blender_execution.log","expected_sha256":"b7a8fca6755400bfeabaa837bd7a2493c86931a4cf6de3be4586fe5c929bf578"},
+    {"role":"v10t_derivative_blend","path":"wtc1_3d_v4/output/WTC1_V10T_THREE_TRACK_STATUS.blend","expected_sha256":"561223f4d3a2c1880cd2616a20f8524b3d85e16b5a8659c6de33b2dbc50d3129"},
+    {"role":"v10t_proof_sheet","path":"wtc1_3d_v4/renders/v10t/wtc1_v10t_proof_sheet.png","expected_sha256":"75f73a562f60f8cbc6db09a7b57c2d7dffb1fd8e9e927ba135b45ca2f458e1ab"}
+  ],
+  "protected_files": [
+    {
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+    }
+  ],
+  "cached_input_files": [
+    {
+      "id": "V10N_SOLVER_INVENTORY",
+      "path": "wtc1_simulation_v8/output/v10n_solver_inventory.csv",
+      "expected_sha256": "7b3b06ebfeec139bbcdaba52910b5d5b77361946e2eae605abdeabf9a7fac68e",
+      "evidence_class": "CACHED_LOCAL_TOOL_IDENTITY_INVENTORY"
+    }
+  ],
+  "software_reference_files": [
+    {
+      "id": "FREECAD_B32R_RECTANGULAR_CANTILEVER_EXAMPLE",
+      "path": "C:/Program Files/FreeCAD 1.1/Mod/Fem/femtest/data/calculix/ccx_cantilever_beam_rect.inp",
+      "expected_sha256": "0137436e0b588e39b2c011143268d542a80b46c29801a4eb7ee585c1bd845848",
+      "use": "local installed syntax precedent for B32R node order and rectangular beam section only",
+      "physical_evidence_credit": "NONE"
+    }
+  ],
+  "software_files": [
+    {
+      "id": "CALCULIX_CCX_2_22",
+      "path": "C:/Program Files/FreeCAD 1.1/bin/ccx.exe",
+      "expected_sha256": "2ff89a72b6aac9c361cb716e44220dfcd01d2bb3e66abd6b6455b01b7250f350",
+      "expected_version": "2.22",
+      "allowed_credit": "THIS_LINEAR_ELASTIC_B32R_BENCHMARK_ONLY"
+    }
+  ],
+  "benchmark": {
+    "name": "generic_rectangular_cantilever_tip_load",
+    "unit_system": {
+      "length": "mm",
+      "force": "N",
+      "stress": "N/mm2 (MPa)",
+      "work": "N mm"
+    },
+    "element_type": "B32R",
+    "analysis_type": "LINEAR_STATIC_SMALL_DISPLACEMENT",
+    "beam_axis": "+X",
+    "load_axis": "-Z",
+    "section_orientation_vector": [0.0, 1.0, 0.0],
+    "geometry": {
+      "length_mm": 2000.0,
+      "width_mm": 100.0,
+      "height_mm": 100.0,
+      "area_mm2": 10000.0,
+      "second_moment_mm4": 8333333.333333333
+    },
+    "material": {
+      "young_modulus_mpa": 200000.0,
+      "poisson_ratio": 0.3,
+      "shear_modulus_mpa": 76923.07692307692,
+      "shear_correction_factor": 0.8333333333333334,
+      "behavior": "isotropic linear elastic"
+    },
+    "boundary_conditions": {
+      "node_at_x_zero": "fixed degrees of freedom 1 through 6",
+      "tip": "single nodal force in negative Z",
+      "imperfections": "none",
+      "contact": "none",
+      "geometric_nonlinearity": false,
+      "material_nonlinearity": false
+    },
+    "maximum_tip_load_n": 10000.0,
+    "mesh_element_counts": [1, 2, 4, 8, 16, 32, 64, 128],
+    "force_displacement_mesh_element_count": 128,
+    "load_fractions": [0.0, 0.25, 0.5, 0.75, 1.0],
+    "unique_solver_job_count": 11,
+    "analytical_reference": {
+      "euler_bernoulli_tip_displacement_at_full_load_mm": 16.0,
+      "timoshenko_shear_displacement_at_full_load_mm": 0.0312,
+      "timoshenko_total_tip_displacement_at_full_load_mm": 16.0312,
+      "timoshenko_compliance_mm_per_n": 0.00160312,
+      "linear_force_displacement_work_at_full_load_n_mm": 80156.0
+    },
+    "formulas": {
+      "area": "A = b h",
+      "second_moment": "I = b h^3 / 12",
+      "shear_modulus": "G = E / (2 (1 + nu))",
+      "euler_bernoulli_tip_displacement": "delta_b = P L^3 / (3 E I)",
+      "timoshenko_shear_displacement": "delta_s = P L / (kappa G A)",
+      "total_reference_displacement": "delta_ref = delta_b + delta_s",
+      "linear_work": "W = 0.5 P delta"
+    },
+    "wtc_attribution": false,
+    "physical_wtc_release": false
+  },
+  "acceptance": {
+    "solver_return_code": 0,
+    "maximum_absolute_tip_error_vs_timoshenko_pct": 1.0,
+    "analytical_displacement_scope": "finest full-load mesh plus its three nonzero fractional-load jobs; all coarser full-load meshes are diagnostic convergence points",
+    "require_monotonic_absolute_error_reduction_across_meshes": true,
+    "maximum_reaction_relative_error": 0.00001,
+    "maximum_finest_pair_relative_change_pct": 0.1,
+    "minimum_force_displacement_r_squared": 0.999999,
+    "maximum_force_displacement_slope_error_pct": 1.0,
+    "maximum_absolute_force_displacement_intercept_mm": 0.000001,
+    "all_input_and_solver_output_files_hashed": true,
+    "wtc_mechanical_requirement_closure_count": 0,
+    "physical_wtc_state_release_count": 0,
+    "historical_outcome_assignment_count": 0
+  },
+  "expected": {
+    "regression_file_count": 17,
+    "protected_file_count": 1,
+    "cached_input_file_count": 1,
+    "software_reference_file_count": 1,
+    "software_file_count": 1,
+    "mesh_case_count": 8,
+    "load_fraction_count": 5,
+    "unique_solver_job_count": 11,
+    "mesh_convergence_row_count": 8,
+    "force_displacement_row_count": 5,
+    "solver_return_code_pass_count": 11,
+    "reaction_closure_pass_count": 11,
+    "analytical_displacement_parse_count": 11,
+    "analytical_displacement_pass_count": 4,
+    "input_deck_count": 11,
+    "mechanical_requirement_count": 22,
+    "mechanical_requirement_closed_count": 0,
+    "physical_wtc_state_release_count": 0,
+    "historical_outcome_assignment_count": 0,
+    "structural_solver_run_count": 11,
+    "thermal_solver_run_count": 0,
+    "fire_solver_run_count": 0,
+    "impact_solver_run_count": 0,
+    "propagation_solver_run_count": 0,
+    "other_solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 0
+  },
+  "outputs": {
+    "run_directory": "wtc1_simulation_v8/calculix_v10u_linear_beam_benchmark",
+    "regression_audit": "wtc1_simulation_v8/output/v10u_regression_audit.json",
+    "source_manifest": "wtc1_simulation_v8/output/v10u_benchmark_source_manifest.json",
+    "analytical_reference": "wtc1_simulation_v8/output/v10u_analytical_reference.json",
+    "mesh_convergence": "wtc1_simulation_v8/output/v10u_mesh_convergence.csv",
+    "force_displacement": "wtc1_simulation_v8/output/v10u_force_displacement.csv",
+    "solver_execution_log": "wtc1_simulation_v8/output/v10u_solver_execution_log.json",
+    "solver_file_manifest": "wtc1_simulation_v8/output/v10u_solver_file_manifest.csv",
+    "handoff_gate": "wtc1_simulation_v8/output/v10u_linear_beam_benchmark_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10u_benchmark_poutre_lineaire.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10u_benchmark_poutre_lineaire.json",
+    "offline_audit": "wtc1_simulation_v8/output/v10u_offline_package_audit.json"
+  },
+  "next_iteration": {
+    "id": "V10V",
+    "objective": "Qualifier un second benchmark mécanique indépendant avec non-linéarité géométrique, flambement et réponse post-critique contrôlée en déplacement. Vérifier la convergence et les bilans sans attribuer le modèle au WTC 1 ni rouvrir les portes physiques tant que les données réelles restent absentes."
+  }
+}

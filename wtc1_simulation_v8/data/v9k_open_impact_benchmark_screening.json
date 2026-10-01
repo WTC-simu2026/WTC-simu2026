@@ -1,0 +1,159 @@
+{
+  "iteration": "V9K",
+  "dataset": {
+    "name": "Primary-source screening for one bounded open high-rate impact benchmark",
+    "version": "9.11.0",
+    "status": "PREDECLARED_SCREENING_AND_SOURCE_IDENTITY_ONLY_NO_SOLVER_NO_MATERIAL_SUBSTITUTION",
+    "random_seed": 9112001,
+    "deterministic": true,
+    "scope": "Preserve V8U through V9J, close the S355 pair at descriptive-comparator status, and screen primary government, institutional or official solver sources for at most one bounded open high-rate impact benchmark. Selection requires a downloadable solver deck or otherwise reconstructible model definition, measured validation outputs, explicit failure or regularization treatment, exact provenance and a declared convergence observable. V9K performs no solver run, material fit or WTC/CF6 substitution."
+  },
+  "existing_evidence": {
+    "analogue_matrix": "wtc1_simulation_v8/output/resultats_wtc1_v9e_matrice_analogues_ouverts.json",
+    "S355_documentary_verdict": "wtc1_simulation_v8/output/resultats_wtc1_v9j_suffisance_documentaire.json",
+    "S355_branch_status": "closed_at_descriptive_comparator_only"
+  },
+  "candidate_scope": [
+    {
+      "id": "NASA_METAL_FAN_CONTAINMENT_IMPACT",
+      "url": "https://ntrs.nasa.gov/citations/20050171018",
+      "reason": "Government primary report with generic metal-panel projectile experiments and finite-element comparison."
+    },
+    {
+      "id": "NASA_TRANSIENT_FE_FAN_CONTAINMENT",
+      "url": "https://ntrs.nasa.gov/citations/20050177899",
+      "reason": "Government primary report on transient finite-element modelling of fan-containment impact events."
+    },
+    {
+      "id": "FAA_DOT_TC_14_43_GENERIC_FAN_BLADE_OUT",
+      "url": "https://rosap.ntl.bts.gov/view/dot/79322",
+      "reason": "Government full-fan blade-out model/test report already classified as a tier-C method comparator."
+    },
+    {
+      "id": "OPENRADIOSS_OFFICIAL_HIGH_RATE_IMPACT_EXAMPLE",
+      "allowed_domains": ["openradioss.org", "github.com", "help.altair.com"],
+      "reason": "Official open-solver example may provide a directly executable deck; it still must satisfy the experimental and convergence gates."
+    }
+  ],
+  "predeclared_required_selection_gates": {
+    "authoritative_primary_provenance": {
+      "required": true,
+      "criterion": "Government, institutional repository, official solver project or original experimental publication with persistent identifier."
+    },
+    "lawful_open_access_and_license": {
+      "required": true,
+      "criterion": "Public access is verified and reuse/license terms for acquired model files are explicit; public-read-only access to a report alone is insufficient for a deck."
+    },
+    "bounded_downloadable_deck_or_reconstructible_definition": {
+      "required": true,
+      "criterion": "A solver input deck is downloadable, or geometry, mesh, materials, boundary/initial conditions and contacts are complete enough for deterministic reconstruction without generic substitutions."
+    },
+    "failure_and_regularization_complete": {
+      "required": true,
+      "criterion": "Failure/erosion law, all parameters, units and any characteristic length, nonlocal treatment or objective damage-energy rule are explicit; a bare deletion strain is insufficient."
+    },
+    "measured_validation_outputs": {
+      "required": true,
+      "criterion": "At least one measured time history or final quantitative observable relevant to impact transfer is available with units and test conditions, such as force, impulse, residual velocity, deformation or perforation."
+    },
+    "mesh_and_convergence_definition": {
+      "required": true,
+      "criterion": "At least three documented mesh levels or an explicit convergence/uncertainty study exists for force, impulse, residual velocity, deformation or another predeclared impact observable."
+    },
+    "local_execution_feasible_and_bounded": {
+      "required": true,
+      "criterion": "The case is compatible with an available local solver or has a documented conversion route, and a later qualification run is estimated below 60 minutes per mesh on CPU without a multi-hour GPU job."
+    }
+  },
+  "selection_rule": {
+    "maximum_selected_candidate_count": 1,
+    "all_required_gates_must_pass": true,
+    "ranking_if_multiple_pass": [
+      "directly executable OpenRadioss deck",
+      "measured impulse or force history",
+      "physical failure regularization",
+      "smallest lawful payload",
+      "shortest bounded CPU runtime"
+    ],
+    "no_candidate_passes": "Record a validated negative screening result and select no benchmark; do not weaken any gate."
+  },
+  "acquisition_limits": {
+    "maximum_single_file_bytes": 20971520,
+    "maximum_total_V9K_source_bytes": 52428800,
+    "allowed_in_V9K": "Primary reports, repository metadata, licenses and small source-index files needed for screening and identity only.",
+    "solver_deck_payload_acquisition_in_V9K_authorized": false,
+    "large_archive_acquisition_authorized": false,
+    "external_contact_authorized": false,
+    "FOIA_request_authorized": false
+  },
+  "predeclared_later_execution_convergence": {
+    "minimum_mesh_levels": 3,
+    "primary_observable_preference": ["contact_impulse", "force_time_integral", "residual_velocity"],
+    "adjacent_fine_mesh_relative_difference_maximum": 0.10,
+    "energy_error_absolute_maximum": 0.05,
+    "preimpact_contact_energy_allowed": false,
+    "note": "These thresholds govern a later executed benchmark only; V9K does not calculate them."
+  },
+  "regressions": {
+    "required_files": {
+      "wtc1_simulation_v8/data/v9j_documentary_sufficiency_gate.json": "00ec89a23026c897303f99a73f970a41ee9047b421b510a0d85e6819e0714d6f",
+      "wtc1_simulation_v8/data/v9j_documentary_evidence.json": "d64a68ce5a03a1bbdd2a524e01944abba5e936978dfea0af0b8d8139a7706c6c",
+      "wtc1_simulation_v8/scripts/run_v9j_documentary_sufficiency_gate.py": "08fefd772cd5f313db7d9eb2f986474e1a6e0b89c87b7eb229c345fbb46938e7",
+      "wtc1_simulation_v8/input/v9j_open_sources/JentzschEtAl_2024_ShearBandFormationWithSHPBExperiments.pdf": "b6804bf77ec32c3c4cc5f6fbe673f8eedb67fdc03d6d4d28259d1ee7e556d379",
+      "wtc1_simulation_v8/input/v9j_open_sources/opus4_bam_61333_oai_dc.xml": "03ba02c8fb54e2c81d6d89572818ca9bca0f44a07cfd4d0bd0bb0518d2faae69",
+      "wtc1_simulation_v8/output/v9j_documentary_source_manifest.json": "e3715c01cddbd5a61bca059a5e3304c8f43a8b52d3cc882264dd3d61fd5857c5",
+      "wtc1_simulation_v8/output/resultats_wtc1_v9j_suffisance_documentaire.json": "c7663ef4e6adc1462c7b9c1d386b3ddd5c7c8485dfe457db2394f7e1e2ff6b38",
+      "wtc1_simulation_v8/output/rapport_wtc1_v9j_suffisance_documentaire.md": "cf3eee4485e8c402a68ff922fc467f64985deff6730703ae1715f11c108afcfa"
+    },
+    "required_metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9j_suffisance_documentaire.json",
+        "path": "iteration_execution_validated",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9j_suffisance_documentaire.json",
+        "path": "documentary_sufficiency_gate_passed",
+        "expected": false
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9j_suffisance_documentaire.json",
+        "path": "analogue_stress_strain_reduction_authorized",
+        "expected": false
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9j_suffisance_documentaire.json",
+        "path": "runtime.solver_executed",
+        "expected": false
+      }
+    ]
+  },
+  "evidence_policy": {
+    "observed_fact": "A repository record, license, source file, report statement, table or figure from a primary authoritative source.",
+    "official_model_result": "A reported government or official-solver benchmark result; not reproduced by V9K.",
+    "local_archive_claim": "No WTC archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "The seven all-or-nothing selection gates and later 10 percent convergence threshold.",
+    "derived_result": "Per-candidate gate statuses, rejection reasons and zero-or-one selection decision.",
+    "unknown": "Any model field, measurement, license or convergence evidence absent from the inspected primary sources."
+  },
+  "scope_gates": {
+    "benchmark_solver_execution_authorized": false,
+    "stress_strain_reconstruction_authorized": false,
+    "material_fit_authorized": false,
+    "failure_law_fit_authorized": false,
+    "WTC_or_CF6_solver_authorized": false,
+    "failure_deletion_authorized": false,
+    "projectile_rupture_authorized": false,
+    "facade_impact_authorized": false,
+    "global_impact_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_inference_authorized": false
+  },
+  "output": {
+    "source_manifest": "wtc1_simulation_v8/output/v9k_screening_source_manifest.json",
+    "candidate_matrix": "wtc1_simulation_v8/output/v9k_open_impact_candidate_matrix.json",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v9k_screening_benchmark_impact.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v9k_screening_benchmark_impact.md"
+  }
+}

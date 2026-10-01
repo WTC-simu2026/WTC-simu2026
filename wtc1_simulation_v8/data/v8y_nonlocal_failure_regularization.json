@@ -1,0 +1,163 @@
+{
+  "dataset": {
+    "name": "WTC 1 V8Y non-local shell-failure regularization qualification",
+    "version": "8.24.0",
+    "status": "PREDECLARED_BEFORE_EXECUTION_NUMERICAL_QUALIFICATION_NOT_A_WTC_IMPACT_REPRODUCTION",
+    "random_seed": 9112001,
+    "deterministic": true,
+    "scope": "Preserve V8U through V8X, keep the V8W pairwise contact and free-flight qualification, replace LAW2 local EPSmax deletion with an explicit constant-strain /FAIL/JOHNSON criterion evaluated from /NONLOCAL/MAT plastic strain, and test 100, 50 and 25 mm diagonal mesh convergence plus time-step, thread and projectile-rupture ordering gates. V8Y is a bounded numerical regularization experiment on the same equivalent shell projectile and facade coupon; it is not a JT9D, whole-aircraft or global WTC 1 impact model."
+  },
+  "evidence_policy": {
+    "observed_fact": "Directly read from official documentation or a preserved solver output.",
+    "official_model_result": "No new NIST result is used as a V8Y target.",
+    "local_archive_claim": "No new local-archive claim is used and the source archive is not rescanned.",
+    "model_hypothesis": "The V8W geometry, materials and failure strains remain simplified equivalents rather than measured JT9D or panel-124 fracture data.",
+    "derived_result": "A deterministic calculation from declared inputs and solver outputs.",
+    "unknown": "The physical non-local length, high-rate fracture surfaces and as-built component data remain unknown."
+  },
+  "units": {
+    "mass": "g",
+    "length": "mm",
+    "time": "ms",
+    "stress": "MPa",
+    "velocity": "mm/ms",
+    "impulse": "g*mm/ms",
+    "energy_solver": "g*mm^2/ms^2",
+    "energy_solver_to_joule": 0.001
+  },
+  "sources": [
+    {
+      "id": "V8X_FROZEN_DIAGNOSTIC",
+      "results": "wtc1_simulation_v8/output/resultats_wtc1_v8x_mailles_erosion.json",
+      "classification": "prior_validated_derived_result",
+      "uses": [
+        "non-eroding diagonal 50-to-25 mm impulse difference of 1.9506 percent",
+        "erosion identified as the principal tested mesh-sensitivity driver",
+        "unchanged requirement that the deformable subassembly remains unqualified"
+      ]
+    },
+    {
+      "id": "ALTAIR_RADIOSS_2026_NONLOCAL_MAT",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/nonlocal_mat_starter_r.htm",
+      "classification": "official_solver_documentation",
+      "uses": [
+        "non-local plastic-strain regularization for mesh size and orientation dependence",
+        "LeMAX as the maximum element size targeted for convergence",
+        "compatibility with isotropic TYPE1 shells, LAW2 shell-thickness regularization and /FAIL/JOHNSON"
+      ]
+    },
+    {
+      "id": "ALTAIR_RADIOSS_FAIL_JOHNSON",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/fail_johnson_starter_r.htm",
+      "classification": "official_solver_documentation",
+      "uses": [
+        "explicit accumulated plastic-strain failure",
+        "constant failure strain when D2 through D5 are zero",
+        "Ifail_sh=1 shell deletion at accumulated damage one"
+      ]
+    }
+  ],
+  "base_configuration": {
+    "path": "wtc1_simulation_v8/data/v8w_projectile_freeflight_pairwise_contact.json",
+    "sha256": "6c1438590f30386e6928c66c0f531d730999e3ffa0026642f61b8f96d29f80f8",
+    "inherited_without_change": [
+      "facade and projectile geometry, masses and constitutive stress-strain curves",
+      "two reciprocal pairwise core-cowling TYPE7 interfaces and projectile-to-facade TYPE7 interface",
+      "443 mph initial speed, frictionless contact, QEPH shell formulation and output intervals"
+    ]
+  },
+  "regressions": {
+    "required_files": {
+      "wtc1_simulation_v8/data/v8w_projectile_freeflight_pairwise_contact.json": "6c1438590f30386e6928c66c0f531d730999e3ffa0026642f61b8f96d29f80f8",
+      "wtc1_simulation_v8/scripts/generate_v8w_pairwise_contact.py": "4e53ed25f68ba751a74fbeb71abf391daf8c3d4d24d314389fcd757de28a88bd",
+      "wtc1_simulation_v8/scripts/run_v8w_pairwise_contact.py": "f76ce12627247830fe3eabbe10f2886743d18b621940ceaf854b2f8eca82e88d",
+      "wtc1_simulation_v8/output/resultats_wtc1_v8w_contact_pairwise.json": "7062888f55873840d72abfacaccd5037befd47515f39a7f3c6886511d3bbb916",
+      "wtc1_simulation_v8/data/v8x_mesh_driver_diagnostic.json": "83c6e51299684383d3c03d904f1b49afefe9d8dc7449a041ce69cf3195db73b2",
+      "wtc1_simulation_v8/scripts/generate_v8x_mesh_driver.py": "5cc30c4a0351a3c76798e829aaa378b29b4dcbd75fa309be224fa4989ca8875e",
+      "wtc1_simulation_v8/scripts/run_v8x_mesh_driver.py": "93a17f78fee7fd191e2137cd989bed25a96b543bac41f7532364d872b07ec20d",
+      "wtc1_simulation_v8/output/resultats_wtc1_v8x_mailles_erosion.json": "f4dde0d97bc5f5a398b924ed2d1d954ef64cfa9a72de0c1ebb3ae07c0e75fad1",
+      "wtc1_simulation_v8/output/rapport_wtc1_v8x_mailles_erosion.md": "20ed5b89aba68e4ac5bdfda8e30a0f98f7a642010980205c02f105f107219904"
+    },
+    "required_metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8w_contact_pairwise.json",
+        "path": "projectile_free_flight_qualification_passed",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8x_mailles_erosion.json",
+        "path": "mesh_sensitivity_diagnostic_completed",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8x_mailles_erosion.json",
+        "path": "non_eroding_diagonal.medium_to_fine_relative_difference",
+        "expected": 0.01950619894567302
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8x_mailles_erosion.json",
+        "path": "deformable_subassembly_qualification_passed",
+        "expected": false
+      }
+    ],
+    "numeric_absolute_tolerance": 1e-12
+  },
+  "regularization": {
+    "material_law": "/MAT/PLAS_JOHNS (LAW2), inherited V8W stress-strain curves with EPSmax set to zero",
+    "failure_model": "/FAIL/JOHNSON with D1 equal to the declared constant plastic failure strain, D2=D3=D4=D5=0, Ifail_sh=1 and no XFEM",
+    "nonlocal_model": "/NONLOCAL/MAT applied to facade, core and cowling materials",
+    "nonlocal_internal_length_rlen_mm": 0.0,
+    "mesh_convergence_length_target_lemax_mm": 100.0,
+    "lemax_selection": "Predeclared numerical upper bound equal to the coarsest mesh target, so the tested 100, 50 and 25 mm meshes are all at or below LeMAX. It is not a measured material length and is not calibrated to an impulse.",
+    "reference_failure_strains": {
+      "facade": 0.2,
+      "core": 0.2,
+      "cowling": 0.12,
+      "status": "Inherited V8W hypotheses, not measured component fracture surfaces"
+    },
+    "projectile_failure_sensitivity": {
+      "low": {"core": 0.12, "cowling": 0.08},
+      "nominal": {"core": 0.2, "cowling": 0.12},
+      "high": {"core": 0.3, "cowling": 0.2}
+    }
+  },
+  "cases": [
+    {"id": "NL_M100_P100_DT090_T1", "phase": "facade_impact", "facade_mesh_target_mm": 100.0, "projectile_mesh_target_mm": 100.0, "time_step_scale": 0.9, "facade_failure_strain": 0.2, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "threads": 1, "erosion_mode": "johnson_nonlocal", "role": "nonlocal_mesh_coarse"},
+    {"id": "NL_M050_P050_DT090_T1", "phase": "facade_impact", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.9, "facade_failure_strain": 0.2, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "threads": 1, "erosion_mode": "johnson_nonlocal", "role": "nonlocal_mesh_medium_baseline"},
+    {"id": "NL_M025_P025_DT090_T1", "phase": "facade_impact", "facade_mesh_target_mm": 25.0, "projectile_mesh_target_mm": 25.0, "time_step_scale": 0.9, "facade_failure_strain": 0.2, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "threads": 1, "erosion_mode": "johnson_nonlocal", "role": "nonlocal_mesh_fine"},
+    {"id": "NL_M050_P050_DT045_T1", "phase": "facade_impact", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.45, "facade_failure_strain": 0.2, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "threads": 1, "erosion_mode": "johnson_nonlocal", "role": "nonlocal_time_step_half"},
+    {"id": "NL_M050_P050_DT090_T4", "phase": "facade_impact", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.9, "facade_failure_strain": 0.2, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "threads": 4, "erosion_mode": "johnson_nonlocal", "role": "nonlocal_thread_repeatability"},
+    {"id": "NL_M050_P050_DT090_FLO_T1", "phase": "facade_impact", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.9, "facade_failure_strain": 0.2, "core_failure_strain": 0.12, "cowling_failure_strain": 0.08, "threads": 1, "erosion_mode": "johnson_nonlocal", "role": "nonlocal_projectile_failure_low"},
+    {"id": "NL_M050_P050_DT090_FHI_T1", "phase": "facade_impact", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.9, "facade_failure_strain": 0.2, "core_failure_strain": 0.3, "cowling_failure_strain": 0.2, "threads": 1, "erosion_mode": "johnson_nonlocal", "role": "nonlocal_projectile_failure_high"}
+  ],
+  "execution_policy": {
+    "facade_impact_termination_time_ms": 18.0,
+    "output_root": "wtc1_simulation_v8/openradioss_benchmarks/v8y_nonlocal_failure",
+    "estimated_runtime": "Approximately 2 to 6 hours based on the unregistered coarse preflight; actual fine-mesh cost is uncertain.",
+    "conditional_execution": "Run the 100, 50 and 25 mm diagonal first. Execute the half-time-step, four-thread and low/high projectile-failure cases only if the diagonal passes all predeclared checks including the unchanged 10 percent impulse and final-momentum convergence gates.",
+    "mass_scaling": "disabled"
+  },
+  "predeclared_gates": {
+    "regressions_unchanged": true,
+    "all_starter_exit_code_zero": true,
+    "all_engine_exit_code_zero": true,
+    "all_normal_termination": true,
+    "maximum_initial_penetrating_node_count": 0,
+    "maximum_projectile_initial_mass_relative_error": 0.005,
+    "maximum_added_mass_fraction": 0.001,
+    "maximum_hourglass_to_initial_energy_fraction": 0.05,
+    "maximum_absolute_energy_error_percent": 5.0,
+    "maximum_pre_facade_elastic_contact_energy_solver": 0.0,
+    "maximum_contact_impulse_to_projectile_momentum_change_relative_error": 0.05,
+    "baseline_minimum_projectile_eroded_elements": 1,
+    "baseline_minimum_projectile_remaining_mass_fraction": 0.5,
+    "projectile_failure_ordering_required": true,
+    "medium_to_fine_contact_impulse_relative_difference": 0.1,
+    "medium_to_fine_projectile_final_momentum_relative_difference": 0.1,
+    "half_time_step_contact_impulse_relative_difference": 0.1,
+    "half_time_step_projectile_final_momentum_relative_difference": 0.1,
+    "thread_repeatability_contact_impulse_relative_difference": 0.01,
+    "thread_repeatability_projectile_final_momentum_relative_difference": 0.01,
+    "scope_warning": "Passing V8Y would qualify only this declared non-local numerical surrogate. Unknown physical length and fracture data still prevent claiming a JT9D, whole aircraft, global WTC 1 impact, fire, collapse, Blender physics, explosive or thermite mechanism."
+  }
+}

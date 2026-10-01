@@ -1,0 +1,684 @@
+{
+  "iteration": "V9A",
+  "generated_at": "2026-08-26T15:29:07.049408+02:00",
+  "configuration": "wtc1_simulation_v8/data/v9a_material_coupon_evidence.json",
+  "scope": "Preserve V8U through V8Z, correct the WTC 1 engine target from JT9D to CF6-80A2, transcribe source-backed high-rate coupon observables for two specific WTC 1 steels, reproduce the published log-log strength-rate slopes, and audit whether a fracture coupon or an aircraft-engine material card is identifiable. No facade, whole-aircraft, global tower, thermal or Blender calculation is authorized in V9A.",
+  "evidence_policy": {
+    "observed_fact": "A value transcribed from a named table or statement in an official source.",
+    "official_model_result": "A NIST modelling choice, calibration or uncertainty factor; not a direct property measurement.",
+    "local_archive_claim": "No local-archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "A declared analytical choice used only to reproduce a source equation or assess data completeness.",
+    "derived_result": "A deterministic regression or completeness decision computed from the transcribed inputs.",
+    "unknown": "A parameter or material assignment absent from the audited public sources."
+  },
+  "source_verification": {
+    "files": [
+      {
+        "id": "NIST_NCSTAR_1_3D",
+        "path": "work/official_sources/ncstar1-3d.pdf",
+        "expected_sha256": "eee74f038b15bfd6263a4b5335ca96d124501d002e62883bb8fd4f84d22e52da",
+        "actual_sha256": "eee74f038b15bfd6263a4b5335ca96d124501d002e62883bb8fd4f84d22e52da",
+        "passed": true,
+        "source_modified": false
+      },
+      {
+        "id": "NIST_NCSTAR_1_2B_VOLUME_1",
+        "path": "work/official_sources/ncstar1-2bv1.pdf",
+        "expected_sha256": "1504c598adcd9e492bc126530b593b2d467b7c01a7324913b221a5cb9e128ab4",
+        "actual_sha256": "1504c598adcd9e492bc126530b593b2d467b7c01a7324913b221a5cb9e128ab4",
+        "passed": true,
+        "source_modified": false
+      }
+    ],
+    "passed": true
+  },
+  "regressions": {
+    "files": {
+      "wtc1_simulation_v8/data/v8z_failure_length_identifiability.json": {
+        "exists": true,
+        "expected_sha256": "108978dbd7720ffd36741d9f77200f2534711fe96f6d2dab2a5c87320f9bbda0",
+        "actual_sha256": "108978dbd7720ffd36741d9f77200f2534711fe96f6d2dab2a5c87320f9bbda0",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/generate_v8z_failure_length.py": {
+        "exists": true,
+        "expected_sha256": "8f2ab4cf29e0f56601eb32f3ebc5d77e80f707eb7e2094aa8f4822f601858ad5",
+        "actual_sha256": "8f2ab4cf29e0f56601eb32f3ebc5d77e80f707eb7e2094aa8f4822f601858ad5",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/run_v8z_failure_length.py": {
+        "exists": true,
+        "expected_sha256": "9a1e5b553808b21ad49b5bc8d9504837e67c4554d80c27ddc8bc1f3b3f8914ed",
+        "actual_sha256": "9a1e5b553808b21ad49b5bc8d9504837e67c4554d80c27ddc8bc1f3b3f8914ed",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v8z_longueur_rupture.json": {
+        "exists": true,
+        "expected_sha256": "0487dfdb0632a4c6c2ab2ec30768fe75041aa0c50a8b74140f77a8f282845784",
+        "actual_sha256": "0487dfdb0632a4c6c2ab2ec30768fe75041aa0c50a8b74140f77a8f282845784",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/rapport_wtc1_v8z_longueur_rupture.md": {
+        "exists": true,
+        "expected_sha256": "d8a50bb01c271dff738b02dca3118868988654ba972a639cf3ca6114f77a12a7",
+        "actual_sha256": "d8a50bb01c271dff738b02dca3118868988654ba972a639cf3ca6114f77a12a7",
+        "passed": true
+      }
+    },
+    "metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8z_longueur_rupture.json",
+        "path": "source_audit.passed",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8z_longueur_rupture.json",
+        "path": "numerical_length_sensitivity_passed",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8z_longueur_rupture.json",
+        "path": "physical_failure_parameter_identification_passed",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8z_longueur_rupture.json",
+        "path": "medium_metrics.maximum_pairwise_contact_impulse_relative_difference",
+        "expected": 0.378369038435275,
+        "actual": 0.378369038435275,
+        "passed": true
+      }
+    ],
+    "files_passed": true,
+    "metrics_passed": true,
+    "passed": true
+  },
+  "engine_identity_audit": {
+    "wtc1_flight": "American Airlines Flight 11",
+    "source_backed_engine": "General Electric CF6-80A2",
+    "wtc2_flight": "United Airlines Flight 175",
+    "source_backed_engine_wtc2": "Pratt & Whitney JT9D-7R4D",
+    "nist_proxy_engine": "Pratt & Whitney PW4000",
+    "prior_workspace_target_to_correct": "JT9D",
+    "correction_required": true,
+    "cf6_80a2_component_material_cards_publicly_identified_in_audited_sources": false,
+    "cf6_80a2_high_rate_fracture_surfaces_publicly_identified_in_audited_sources": false,
+    "cowling_material_and_joint_fracture_data_publicly_identified_in_audited_sources": false
+  },
+  "benchmark_results": [
+    {
+      "coupon_series_id": "M26_PERIMETER_LONGITUDINAL",
+      "component": "WTC 1 perimeter column flange plate",
+      "location": "column 130/131, floors 90 to 93, north face, just above the impact zone",
+      "observable": "yield_1_percent_offset",
+      "source_observation_count": 7,
+      "published_slope_m": 0.0121,
+      "published_standard_uncertainty": 0.0033,
+      "reproduced_slope_m": 0.012097423884180312,
+      "absolute_slope_difference": 2.5761158196878353e-06,
+      "rounding_tolerance": 0.0001,
+      "passed": true,
+      "fit": {
+        "slope_m": 0.012097423884180312,
+        "intercept_ln_ksi": 4.286519797750186,
+        "slope_standard_error_from_rounded_rows": 0.0033164996898881575,
+        "r_squared_log_space": 0.7268556138914337,
+        "maximum_absolute_fit_relative_residual": 0.07978381917546222,
+        "maximum_absolute_leave_one_out_relative_error": 0.11171911610132289,
+        "fitted_rows": [
+          {
+            "sample": "M26-C1B1-RF-L1",
+            "rate_per_s": 6.061000000000003e-05,
+            "observed_strength_ksi": 63.2,
+            "predicted_strength_ksi": 64.6534263024475,
+            "relative_residual": 0.022997251621004695,
+            "log_residual": -0.022736800378397426
+          },
+          {
+            "sample": "M26-C1B1-RF-L2",
+            "rate_per_s": 6.061000000000003e-05,
+            "observed_strength_ksi": 61.7,
+            "predicted_strength_ksi": 64.6534263024475,
+            "relative_residual": 0.047867525161223605,
+            "log_residual": -0.04675717061986706
+          },
+          {
+            "sample": "M26-C1B1-L1",
+            "rate_per_s": 0.00010699999999999992,
+            "observed_strength_ksi": 70.59999999999998,
+            "predicted_strength_ksi": 65.0995021358725,
+            "relative_residual": -0.07791073461936945,
+            "log_residual": 0.08111324299636635
+          },
+          {
+            "sample": "M26-C1B1-RF-L2-HSR",
+            "rate_per_s": 64.99999999999999,
+            "observed_strength_ksi": 72.20000000000003,
+            "predicted_strength_ksi": 76.47922459368408,
+            "relative_residual": 0.05926903869368486,
+            "log_residual": -0.05757908411205914
+          },
+          {
+            "sample": "M26-C1B1-RF-L6-06",
+            "rate_per_s": 100.00000000000004,
+            "observed_strength_ksi": 75.90000000000002,
+            "predicted_strength_ksi": 76.87882596578442,
+            "relative_residual": 0.012896257783720617,
+            "log_residual": -0.012813809147289135
+          },
+          {
+            "sample": "M26-C1B1-RF-L7-06",
+            "rate_per_s": 259.99999999999994,
+            "observed_strength_ksi": 75.90000000000002,
+            "predicted_strength_ksi": 77.77264172212716,
+            "relative_residual": 0.024672486457538095,
+            "log_residual": -0.024373036123972014
+          },
+          {
+            "sample": "M26-C1B1-RF-L8-06",
+            "rate_per_s": 417.0,
+            "observed_strength_ksi": 85.00000000000001,
+            "predicted_strength_ksi": 78.21837537008572,
+            "relative_residual": -0.07978381917546222,
+            "log_residual": 0.08314665738522287
+          }
+        ],
+        "leave_one_out": [
+          {
+            "sample": "M26-C1B1-RF-L1",
+            "observed_strength_ksi": 63.2,
+            "predicted_strength_ksi": 65.41781180073015,
+            "relative_error": 0.035091958872312444
+          },
+          {
+            "sample": "M26-C1B1-RF-L2",
+            "observed_strength_ksi": 61.7,
+            "predicted_strength_ksi": 66.23516850237807,
+            "relative_error": 0.07350354136755381
+          },
+          {
+            "sample": "M26-C1B1-L1",
+            "observed_strength_ksi": 70.6,
+            "predicted_strength_ksi": 62.7126304032466,
+            "relative_error": -0.11171911610132289
+          },
+          {
+            "sample": "M26-C1B1-RF-L2-HSR",
+            "observed_strength_ksi": 72.2,
+            "predicted_strength_ksi": 77.73405487810179,
+            "relative_error": 0.07664895953049562
+          },
+          {
+            "sample": "M26-C1B1-RF-L6-06",
+            "observed_strength_ksi": 75.9,
+            "predicted_strength_ksi": 77.17926732916023,
+            "relative_error": 0.01685464201792121
+          },
+          {
+            "sample": "M26-C1B1-RF-L7-06",
+            "observed_strength_ksi": 75.9,
+            "predicted_strength_ksi": 78.46184795654584,
+            "relative_error": 0.03375293750389766
+          },
+          {
+            "sample": "M26-C1B1-RF-L8-06",
+            "observed_strength_ksi": 85.0,
+            "predicted_strength_ksi": 75.68523064787003,
+            "relative_error": -0.10958552178976437
+          }
+        ]
+      }
+    },
+    {
+      "coupon_series_id": "M26_PERIMETER_LONGITUDINAL",
+      "component": "WTC 1 perimeter column flange plate",
+      "location": "column 130/131, floors 90 to 93, north face, just above the impact zone",
+      "observable": "tensile_strength",
+      "source_observation_count": 7,
+      "published_slope_m": 0.0118,
+      "published_standard_uncertainty": 0.0023,
+      "reproduced_slope_m": 0.01184393748509859,
+      "absolute_slope_difference": 4.3937485098590606e-05,
+      "rounding_tolerance": 0.0001,
+      "passed": true,
+      "fit": {
+        "slope_m": 0.01184393748509859,
+        "intercept_ln_ksi": 4.566553728690192,
+        "slope_standard_error_from_rounded_rows": 0.002324876151595699,
+        "r_squared_log_space": 0.8384663288001668,
+        "maximum_absolute_fit_relative_residual": 0.05950027225074339,
+        "maximum_absolute_leave_one_out_relative_error": 0.10070901638330913,
+        "fitted_rows": [
+          {
+            "sample": "M26-C1B1-RF-L1",
+            "rate_per_s": 0.0012100000000000001,
+            "observed_strength_ksi": 85.50000000000003,
+            "predicted_strength_ksi": 88.85416254456834,
+            "relative_residual": 0.0392299712815007,
+            "log_residual": -0.038480026683444635
+          },
+          {
+            "sample": "M26-C1B1-RF-L2",
+            "rate_per_s": 0.0012100000000000001,
+            "observed_strength_ksi": 86.09999999999995,
+            "predicted_strength_ksi": 88.85416254456834,
+            "relative_residual": 0.03198795057570719,
+            "log_residual": -0.03148699119247489
+          },
+          {
+            "sample": "M26-C1B1-L1",
+            "rate_per_s": 0.00010699999999999992,
+            "observed_strength_ksi": 91.8,
+            "predicted_strength_ksi": 86.33787500738175,
+            "relative_residual": -0.05950027225074339,
+            "log_residual": 0.06134391971556852
+          },
+          {
+            "sample": "M26-C1B1-RF-L2-HSR",
+            "rate_per_s": 64.99999999999999,
+            "observed_strength_ksi": 99.90000000000002,
+            "predicted_strength_ksi": 101.08835238668536,
+            "relative_residual": 0.011895419286139517,
+            "log_residual": -0.011825224898919018
+          },
+          {
+            "sample": "M26-C1B1-RF-L6-06",
+            "rate_per_s": 100.00000000000004,
+            "observed_strength_ksi": 100.40000000000005,
+            "predicted_strength_ksi": 101.605439945458,
+            "relative_residual": 0.012006373958744555,
+            "log_residual": -0.011934869223645173
+          },
+          {
+            "sample": "M26-C1B1-RF-L7-06",
+            "rate_per_s": 259.99999999999994,
+            "observed_strength_ksi": 102.80000000000003,
+            "predicted_strength_ksi": 102.76184168747046,
+            "relative_residual": -0.00037118981059883834,
+            "log_residual": 0.0003712587185891181
+          },
+          {
+            "sample": "M26-C1B1-RF-L8-06",
+            "rate_per_s": 417.0,
+            "observed_strength_ksi": 106.69999999999999,
+            "predicted_strength_ksi": 103.33841910482084,
+            "relative_residual": -0.03150497558743341,
+            "log_residual": 0.03201193356432164
+          }
+        ],
+        "leave_one_out": [
+          {
+            "sample": "M26-C1B1-RF-L1",
+            "observed_strength_ksi": 85.5,
+            "predicted_strength_ksi": 90.25986177463216,
+            "relative_error": 0.05567089794891411
+          },
+          {
+            "sample": "M26-C1B1-RF-L2",
+            "observed_strength_ksi": 86.1,
+            "predicted_strength_ksi": 90.0027585728615,
+            "relative_error": 0.04532820642115565
+          },
+          {
+            "sample": "M26-C1B1-L1",
+            "observed_strength_ksi": 91.8,
+            "predicted_strength_ksi": 82.55491229601222,
+            "relative_error": -0.10070901638330913
+          },
+          {
+            "sample": "M26-C1B1-RF-L2-HSR",
+            "observed_strength_ksi": 99.9,
+            "predicted_strength_ksi": 101.41641400048383,
+            "relative_error": 0.015179319324162364
+          },
+          {
+            "sample": "M26-C1B1-RF-L6-06",
+            "observed_strength_ksi": 100.4,
+            "predicted_strength_ksi": 101.96746555250502,
+            "relative_error": 0.015612206698257098
+          },
+          {
+            "sample": "M26-C1B1-RF-L7-06",
+            "observed_strength_ksi": 102.8,
+            "predicted_strength_ksi": 102.74797766176285,
+            "relative_error": -0.000506053873902249
+          },
+          {
+            "sample": "M26-C1B1-RF-L8-06",
+            "observed_strength_ksi": 106.7,
+            "predicted_strength_ksi": 102.01383568587477,
+            "relative_error": -0.043919065736881306
+          }
+        ]
+      }
+    },
+    {
+      "coupon_series_id": "C80_CORE_LONGITUDINAL",
+      "component": "WTC 1 core-column 14WF184 flange",
+      "location": "column 603, floors 92 to 95",
+      "observable": "yield_1_percent_offset",
+      "source_observation_count": 5,
+      "published_slope_m": 0.0317,
+      "published_standard_uncertainty": 0.0027,
+      "reproduced_slope_m": 0.03173127997541468,
+      "absolute_slope_difference": 3.127997541468169e-05,
+      "rounding_tolerance": 0.0001,
+      "passed": true,
+      "fit": {
+        "slope_m": 0.03173127997541468,
+        "intercept_ln_ksi": 3.907626924460885,
+        "slope_standard_error_from_rounded_rows": 0.002695720635673839,
+        "r_squared_log_space": 0.9788069776715033,
+        "maximum_absolute_fit_relative_residual": 0.04558554366217241,
+        "maximum_absolute_leave_one_out_relative_error": 0.25188566307814064,
+        "fitted_rows": [
+          {
+            "sample": "C80-L18",
+            "rate_per_s": 8.750000000000007e-05,
+            "observed_strength_ksi": 37.1,
+            "predicted_strength_ksi": 37.00799289279506,
+            "relative_residual": -0.0024799759354431922,
+            "log_residual": 0.0024830561694213493
+          },
+          {
+            "sample": "C80-A-3-1",
+            "rate_per_s": 83.99999999999999,
+            "observed_strength_ksi": 57.300000000000004,
+            "predicted_strength_ksi": 57.29551869090847,
+            "relative_residual": -7.82078375485378e-05,
+            "log_residual": 7.821089594095554e-05
+          },
+          {
+            "sample": "C80-A-2-1",
+            "rate_per_s": 100.00000000000004,
+            "observed_strength_ksi": 55.499999999999986,
+            "predicted_strength_ksi": 57.613382107147515,
+            "relative_residual": 0.03807895688554108,
+            "log_residual": -0.037371848214517556
+          },
+          {
+            "sample": "C80-A-2-2",
+            "rate_per_s": 299.0000000000001,
+            "observed_strength_ksi": 62.50000000000002,
+            "predicted_strength_ksi": 59.650903521114245,
+            "relative_residual": -0.04558554366217241,
+            "log_residual": 0.046657261270158124
+          },
+          {
+            "sample": "C80-A-2-3",
+            "rate_per_s": 401.00000000000006,
+            "observed_strength_ksi": 59.50000000000001,
+            "predicted_strength_ksi": 60.20906923261926,
+            "relative_residual": 0.011917129959987387,
+            "log_residual": -0.01184668012100154
+          }
+        ],
+        "leave_one_out": [
+          {
+            "sample": "C80-L18",
+            "observed_strength_ksi": 37.1,
+            "predicted_strength_ksi": 27.755041899800982,
+            "relative_error": -0.25188566307814064
+          },
+          {
+            "sample": "C80-A-3-1",
+            "observed_strength_ksi": 57.3,
+            "predicted_strength_ksi": 57.29420143761711,
+            "relative_error": -0.00010119655118473934
+          },
+          {
+            "sample": "C80-A-2-1",
+            "observed_strength_ksi": 55.5,
+            "predicted_strength_ksi": 58.266590819442676,
+            "relative_error": 0.049848483233201374
+          },
+          {
+            "sample": "C80-A-2-2",
+            "observed_strength_ksi": 62.5,
+            "predicted_strength_ksi": 58.63716479376093,
+            "relative_error": -0.061805363299825104
+          },
+          {
+            "sample": "C80-A-2-3",
+            "observed_strength_ksi": 59.5,
+            "predicted_strength_ksi": 60.48841189410409,
+            "relative_error": 0.016611964606791423
+          }
+        ]
+      }
+    },
+    {
+      "coupon_series_id": "C80_CORE_LONGITUDINAL",
+      "component": "WTC 1 core-column 14WF184 flange",
+      "location": "column 603, floors 92 to 95",
+      "observable": "tensile_strength",
+      "source_observation_count": 5,
+      "published_slope_m": 0.0175,
+      "published_standard_uncertainty": 0.0039,
+      "reproduced_slope_m": 0.0175209117884256,
+      "absolute_slope_difference": 2.091178842559757e-05,
+      "rounding_tolerance": 0.0001,
+      "passed": true,
+      "fit": {
+        "slope_m": 0.0175209117884256,
+        "intercept_ln_ksi": 4.341174165824426,
+        "slope_standard_error_from_rounded_rows": 0.003877110690672922,
+        "r_squared_log_space": 0.8719149677526278,
+        "maximum_absolute_fit_relative_residual": 0.05947688411101926,
+        "maximum_absolute_leave_one_out_relative_error": 0.08253471220349101,
+        "fitted_rows": [
+          {
+            "sample": "C80-L18",
+            "rate_per_s": 0.0005520000000000001,
+            "observed_strength_ksi": 67.29999999999998,
+            "predicted_strength_ksi": 67.33855413711306,
+            "relative_residual": 0.0005728697936564832,
+            "log_residual": -0.0005727057663973412
+          },
+          {
+            "sample": "C80-A-3-1",
+            "rate_per_s": 83.99999999999999,
+            "observed_strength_ksi": 85.00000000000001,
+            "predicted_strength_ksi": 82.99713723918698,
+            "relative_residual": -0.02356309130368271,
+            "log_residual": 0.023845140382682928
+          },
+          {
+            "sample": "C80-A-2-1",
+            "rate_per_s": 100.00000000000004,
+            "observed_strength_ksi": 82.49999999999997,
+            "predicted_strength_ksi": 83.25106706897981,
+            "relative_residual": 0.009103843260361651,
+            "log_residual": -0.009062653083176109
+          },
+          {
+            "sample": "C80-A-2-2",
+            "rate_per_s": 299.0000000000001,
+            "observed_strength_ksi": 80.10000000000002,
+            "predicted_strength_ksi": 84.86409841729267,
+            "relative_residual": 0.05947688411101926,
+            "log_residual": -0.05777528075438809
+          },
+          {
+            "sample": "C80-A-2-3",
+            "rate_per_s": 401.00000000000006,
+            "observed_strength_ksi": 89.10000000000002,
+            "predicted_strength_ksi": 85.30165319466518,
+            "relative_residual": -0.04263015494202967,
+            "log_residual": 0.04356549922127417
+          }
+        ],
+        "leave_one_out": [
+          {
+            "sample": "C80-L18",
+            "observed_strength_ksi": 67.3,
+            "predicted_strength_ksi": 70.83588764079929,
+            "relative_error": 0.052539192285279174
+          },
+          {
+            "sample": "C80-A-3-1",
+            "observed_strength_ksi": 85.0,
+            "predicted_strength_ksi": 82.4264764174662,
+            "relative_error": -0.030276748029809356
+          },
+          {
+            "sample": "C80-A-2-1",
+            "observed_strength_ksi": 82.5,
+            "predicted_strength_ksi": 83.47598582213928,
+            "relative_error": 0.011830131177445805
+          },
+          {
+            "sample": "C80-A-2-2",
+            "observed_strength_ksi": 80.1,
+            "predicted_strength_ksi": 86.71103044749962,
+            "relative_error": 0.08253471220349101
+          },
+          {
+            "sample": "C80-A-2-3",
+            "observed_strength_ksi": 89.1,
+            "predicted_strength_ksi": 83.82686719199687,
+            "relative_error": -0.059182186397341484
+          }
+        ]
+      }
+    }
+  ],
+  "wtc_rate_strength_benchmark_passed": true,
+  "diagnostic_generalization": {
+    "gate_predeclared": false,
+    "interpretation": "Diagnostic only; the small, unevenly replicated dataset is not treated as a predictive validation set.",
+    "maximum_absolute_leave_one_out_relative_error": 0.25188566307814064,
+    "controlling_coupon_series_id": "C80_CORE_LONGITUDINAL",
+    "controlling_observable": "yield_1_percent_offset"
+  },
+  "wtc_fracture_card_completeness": {
+    "requirements": [
+      {
+        "id": "specific_material_and_product_form",
+        "description": "material grade, heat or specimen identity, orientation, thickness and component mapping",
+        "available": true
+      },
+      {
+        "id": "rate_strength_coverage",
+        "description": "quasi-static and at least three high-rate uniaxial yield and tensile-strength observations",
+        "available": true
+      },
+      {
+        "id": "numeric_true_stress_plastic_strain_curves",
+        "description": "machine-readable curves through uniform strain at each required rate, with acquisition and filtering metadata",
+        "available": false
+      },
+      {
+        "id": "geometry_consistent_fracture_strain",
+        "description": "replicated fracture strain or local displacement from geometrically comparable coupons over the rate range",
+        "available": false
+      },
+      {
+        "id": "triaxiality_coverage",
+        "description": "failure observations for at least three distinct loading states or notch levels",
+        "available": false
+      },
+      {
+        "id": "lode_and_shear_coverage",
+        "description": "failure observations that constrain shear or Lode-angle dependence",
+        "available": false
+      },
+      {
+        "id": "fracture_energy",
+        "description": "force-displacement or local-strain fields sufficient to derive work to separation",
+        "available": false
+      },
+      {
+        "id": "regularization_length",
+        "description": "size-effect or full-field localization data sufficient to identify a physical band width/internal length independently of facade impulse",
+        "available": false
+      },
+      {
+        "id": "joint_and_attachment_failure",
+        "description": "component-joint and cowling attachment failure data at relevant rates",
+        "available": false
+      }
+    ],
+    "available_count": 2,
+    "required_count": 9,
+    "passed": false
+  },
+  "cf6_80a2_or_cowling_card_completeness": {
+    "requirements": [
+      {
+        "id": "specific_material_and_product_form",
+        "description": "material grade, heat or specimen identity, orientation, thickness and component mapping",
+        "available": false
+      },
+      {
+        "id": "rate_strength_coverage",
+        "description": "quasi-static and at least three high-rate uniaxial yield and tensile-strength observations",
+        "available": false
+      },
+      {
+        "id": "numeric_true_stress_plastic_strain_curves",
+        "description": "machine-readable curves through uniform strain at each required rate, with acquisition and filtering metadata",
+        "available": false
+      },
+      {
+        "id": "geometry_consistent_fracture_strain",
+        "description": "replicated fracture strain or local displacement from geometrically comparable coupons over the rate range",
+        "available": false
+      },
+      {
+        "id": "triaxiality_coverage",
+        "description": "failure observations for at least three distinct loading states or notch levels",
+        "available": false
+      },
+      {
+        "id": "lode_and_shear_coverage",
+        "description": "failure observations that constrain shear or Lode-angle dependence",
+        "available": false
+      },
+      {
+        "id": "fracture_energy",
+        "description": "force-displacement or local-strain fields sufficient to derive work to separation",
+        "available": false
+      },
+      {
+        "id": "regularization_length",
+        "description": "size-effect or full-field localization data sufficient to identify a physical band width/internal length independently of facade impulse",
+        "available": false
+      },
+      {
+        "id": "joint_and_attachment_failure",
+        "description": "component-joint and cowling attachment failure data at relevant rates",
+        "available": false
+      }
+    ],
+    "available_count": 0,
+    "required_count": 9,
+    "passed": false
+  },
+  "physical_fracture_card_identification_passed": false,
+  "cf6_80a2_or_cowling_material_card_identification_passed": false,
+  "openradioss_coupon_execution_authorized": false,
+  "openradioss_coupon_executed": false,
+  "openradioss_coupon_not_executed_reason": "The audited sources do not provide a complete machine-readable plastic curve plus independently identified fracture surface, fracture energy and regularization length. A solver deck would require unmarked assumptions beyond the supported rate-strength benchmark.",
+  "facade_impact_interpretation_authorized": false,
+  "global_wtc_impact_physics_qualification_passed": false,
+  "thermal_qualification_passed": false,
+  "blender_physics_validation_passed": false,
+  "explosive_or_thermite_mechanism_supported": false,
+  "runtime": {
+    "elapsed_seconds": 0.03194869999788352,
+    "python": "stdlib deterministic log-linear regression",
+    "config_sha256": "f6ac522767c4fbd7031e3bd5e7312dc5044802944e56acff077338a565dd9b42",
+    "runner_sha256": "65359f41a60a2d4b940776a46c22a44f98cf9548faf2efab3f9349c0dc9f7288",
+    "source_archive_rescanned": false,
+    "official_source_files_modified": false,
+    "solver_executed": false,
+    "blender_executed": false
+  }
+}

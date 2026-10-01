@@ -1,0 +1,157 @@
+{
+  "id": "IMPACT-I02E",
+  "seed": 9112001,
+  "deterministic": true,
+  "status": "BOUNDED_SKIN_STRINGER_CONNECTION_ZONE_AT_LOCAL_COLUMN_FIRST_CONTACT_NOT_AIRCRAFT_VALIDATION",
+  "authorization": "Continuation requested by the user for the first aircraft-facade contact sequence. This iteration changes only one skin-stringer attachment zone in a small I02A-like wing bay.",
+  "units": {
+    "mass": "g",
+    "length": "mm",
+    "time": "ms",
+    "force": "N",
+    "stress": "MPa",
+    "energy_to_J": 0.001,
+    "impulse_to_Ns": 0.001
+  },
+  "speed": {
+    "original_mph": 443.0,
+    "conversion_mph_to_m_per_s": 0.44704,
+    "m_per_s": 198.03072,
+    "source": "Cached I02A value from NIST NCSTAR 1-2B Table 7-3; not inferred from a video"
+  },
+  "facade_column": {
+    "width_mm": 355.6,
+    "depth_mm": 355.6,
+    "height_mm": 508.0,
+    "shell_thickness_mm": 7.9375,
+    "classification": "One 508 mm long closed representative perimeter-column shell segment inherited from I01/I02A section dimensions, fixed only at its upper and lower ends. The 0.35 ms window ends near the first axial bar-wave support round trip estimated from sqrt(E/rho); shell-wave support influence is not rigorously excluded. No spandrel, neighboring columns, floor, core, global tower compliance, prestress or exact impact-panel plate schedule."
+  },
+  "wing_bay": {
+    "span_width_mm": 203.2,
+    "chord_length_mm": 304.8,
+    "height_mm": 101.6,
+    "center_y_mm": 0.0,
+    "front_z_mm": 50.0,
+    "skin_thickness_mm": 2.54,
+    "spar_thickness_mm": 3.175,
+    "rib_thickness_mm": 3.175,
+    "stringer_thickness_mm": 3.175,
+    "stringer_web_height_mm": 50.8,
+    "stringer_flange_width_mm": 25.4,
+    "stringer_web_z_mm": 202.4,
+    "classification": "Small rectangular I02A-like bay with two skins, front/rear spars, two end ribs and one top Z-stringer. Dimensions are a bounded numerical specimen, not Boeing rib-station geometry. Shell midsurfaces intersect ideally; offsets through shell thickness are not resolved."
+  },
+  "materials": {
+    "facade_steel": {
+      "density_g_per_mm3": 0.00786,
+      "young_modulus_mpa": 200000.0,
+      "poisson_ratio": 0.3,
+      "yield_strength_mpa": 427.656,
+      "ultimate_tensile_strength_mpa": 601.566,
+      "engineering_strain_at_uts": 0.15,
+      "rate_coefficient_c": 0.016,
+      "reference_strain_rate_per_ms": 0.001,
+      "classification": "Representative I01 LAW2 steel reference with failure disabled; not the exact struck WTC1 plate."
+    },
+    "skin_2024_t3_reference": {
+      "density_g_per_mm3": 0.00278,
+      "young_modulus_mpa": 73100.0,
+      "poisson_ratio": 0.33,
+      "yield_strength_mpa": 310.264,
+      "hardening_B_mpa": 0.0,
+      "hardening_exponent_n": 1.0,
+      "classification": "I02A elastic-perfectly-plastic 2024-T3 clad-sheet reference; no failure, no rate dependence, not Boeing production allowables."
+    },
+    "internal_7075_t6_reference": {
+      "density_g_per_mm3": 0.00281,
+      "young_modulus_mpa": 71700.0,
+      "poisson_ratio": 0.33,
+      "yield_strength_mpa": 503.32,
+      "hardening_B_mpa": 0.0,
+      "hardening_exponent_n": 1.0,
+      "classification": "I02A elastic-perfectly-plastic internal reference; no failure, no rate dependence, approximate assignment."
+    }
+  },
+  "connection": {
+    "reference_area_mm2": 254.0,
+    "normal_peak_force_per_reference_area_N": 11392.0,
+    "tangential_peak_force_per_reference_area_N": 6528.0,
+    "damage_initiation_displacement_mm": 0.02,
+    "complete_separation_displacement_mm": 0.5,
+    "shell_midsurface_offset_mm": 2.8575,
+    "cohesive_reference_thickness_mm": 0.0,
+    "numerical_areal_mass_g_per_mm2": 0.0001,
+    "law": "LAW117 with TYPE43, Imass=1, Idel=4, Irupt=2, EXP_B=2, EXP_BK=1, Gamma=1, full geometric nonlinearities",
+    "unbreakable_reference": {
+      "damage_initiation_displacement_mm": 10.0,
+      "complete_separation_displacement_mm": 100.0,
+      "classification": "Finite compliant no-failure-over-window upper reference. It preserves the rupturable law initial stiffness but deliberately moves damage initiation far outside the short contact window."
+    },
+    "classification": "The I02D traction, stiffness and energy proxy is spread by physical cohesive cell area over the full 203.2 x 25.4 mm attachment band. The area equals 20.32 I02D reference areas; this is a smeared equivalent, not a rivet count or calibrated Boeing joint. R0-R4 did not isolate the cost because output was not printed each cycle. R5 measured a constant 3.3674e-9 ms step caused by the former 1e-12 g/mm2 numerical areal mass. R6 uses 1e-4 g/mm2, totaling 0.516128 g or about 0.026 percent of the shell bay mass, and balances the same declared mass into the tied reference. A 1e-5 g/mm2 impact sensitivity is required. R6 retains the explicit half-thickness sum, (2.54 + 3.175)/2 = 2.8575 mm. Strength, initial separation stiffness and fracture energy are unchanged."
+  },
+  "contact": {
+    "type": "TYPE7 one-way all wing-bay shell nodes to the closed facade-column shell",
+    "friction": 0.0,
+    "self_contact": false,
+    "edge_to_edge": false,
+    "classification": "Short first-contact diagnostic. Post-folding, self-intersection and edge-dominated states remain outside qualification."
+  },
+  "execution": {
+    "end_ms": 0.35,
+    "history_dt_ms": 0.001,
+    "animation_states": 31,
+    "threads": 1,
+    "maximum_case_wall_seconds": 1200,
+    "mass_scaling": false
+  },
+  "gates": {
+    "normal_termination": true,
+    "max_starter_warnings": 0,
+    "max_initial_penetrations": 0,
+    "max_mass_relative_error": 0.000001,
+    "max_mass_variation_fraction": 0.000001,
+    "max_added_mass_fraction": 0.000001,
+    "max_initial_ke_error_fraction": 0.0001,
+    "max_abs_energy_error_fraction": 0.05,
+    "max_hourglass_over_initial_ke": 0.02,
+    "max_contact_wing_momentum_error_fraction": 0.03,
+    "max_support_total_momentum_error_fraction": 0.05,
+    "max_free_flight_speed_error_fraction": 0.0001,
+    "max_free_flight_internal_energy_over_ke": 0.0001,
+    "max_shell_mass_difference_between_variants_fraction": 0.000001,
+    "max_declared_numerical_mass_over_wing_shell_mass": 0.001,
+    "max_numerical_mass_sensitivity_contact_impulse_difference_fraction": 0.05,
+    "max_numerical_mass_sensitivity_joint_work_difference_fraction": 0.10,
+    "max_half_dt_contact_impulse_difference_fraction": 0.05,
+    "max_half_dt_joint_work_difference_fraction": 0.10,
+    "max_coarse_fine_contact_impulse_difference_fraction": 0.10,
+    "max_coarse_fine_joint_work_difference_fraction": 0.15,
+    "minimum_unbreakable_active_area_fraction": 0.999999,
+    "minimum_merged_to_unbreakable_impulse_ratio": 0.5,
+    "maximum_merged_to_unbreakable_impulse_ratio": 2.0
+  },
+  "cases": [
+    {"id": "FREE_RUPTURABLE_SHORT_H254_R3", "variant": "rupturable", "mesh_mm": 25.4, "dt_scale": 0.4, "contact": false, "end_ms": 0.001, "animation_states": 2, "accepted": false, "role": "One-step diagnostic retained to isolate the LAW117 first-cycle behavior"},
+    {"id": "FREE_RUPTURABLE_ZERO_SPEED_H254_R4", "variant": "rupturable", "mesh_mm": 25.4, "dt_scale": 0.4, "contact": false, "speed_m_per_s": 0.0, "end_ms": 0.001, "animation_states": 2, "accepted": false, "role": "Zero-speed one-step diagnostic for Galilean/free-translation isolation"},
+    {"id": "FREE_RUPTURABLE_PRINT_H254_R5", "variant": "rupturable", "mesh_mm": 25.4, "dt_scale": 0.4, "contact": false, "speed_m_per_s": 0.0, "end_ms": 0.001, "animation_states": 2, "print_frequency": 1, "accepted": false, "role": "Cycle-by-cycle output diagnostic for the LAW117 first-step collapse"},
+    {"id": "FREE_MERGED_H254_R8", "variant": "merged", "mesh_mm": 25.4, "dt_scale": 0.4, "contact": false, "role": "Cold free-flight control for a kinematically tied skin-stringer reference"},
+    {"id": "FREE_RUPTURABLE_H254_R8", "variant": "rupturable", "mesh_mm": 25.4, "dt_scale": 0.4, "contact": false, "role": "Finite-height LAW117 free-flight control with matched skin/flange/cohesive node lines"},
+    {"id": "CONTACT_MERGED_H254_R8", "variant": "merged", "mesh_mm": 25.4, "dt_scale": 0.4, "contact": true, "role": "TYPE2 kinematically tied skin-stringer reference at local first contact"},
+    {"id": "CONTACT_UNBREAKABLE_H254_R8", "variant": "unbreakable", "mesh_mm": 25.4, "dt_scale": 0.4, "contact": true, "role": "Same initial cohesive stiffness with damage initiation outside the short window"},
+    {"id": "CONTACT_RUPTURABLE_H254_R8", "variant": "rupturable", "mesh_mm": 25.4, "dt_scale": 0.4, "contact": true, "role": "I02D LAW117 attachment band at local first contact"},
+    {"id": "CONTACT_RUPTURABLE_HALFDT_H254_R8", "variant": "rupturable", "mesh_mm": 25.4, "dt_scale": 0.2, "contact": true, "role": "Time-step sensitivity at identical topology and constitutive inputs"},
+    {"id": "CONTACT_RUPTURABLE_LOWMASS_H254_R8", "variant": "rupturable", "mesh_mm": 25.4, "dt_scale": 0.4, "contact": true, "numerical_areal_mass_g_per_mm2": 0.00001, "role": "Ten-times-lower declared numerical cohesive mass sensitivity"},
+    {"id": "CONTACT_RUPTURABLE_H127_R8", "variant": "rupturable", "mesh_mm": 12.7, "dt_scale": 0.4, "contact": true, "role": "One spatial refinement of shell and cohesive cells; not an asymptotic convergence proof"}
+  ],
+  "sources": [
+    "wtc1_simulation_v8/data/impact_i02a_structured_wing.json",
+    "wtc1_simulation_v8/output/impact_i02a_structured_wing/release_audit.json",
+    "wtc1_simulation_v8/data/impact_i02d_lap_joint.json",
+    "wtc1_simulation_v8/output/impact_i02d_lap_joint/release_audit.json",
+    "work/official_sources/ncstar1-2bv1.pdf",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/mat_law117_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type43_connect_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inter_type7_starter_r.htm"
+  ],
+  "output_root": "wtc1_simulation_v8/output/impact_i02e_skin_stringer_zone"
+}

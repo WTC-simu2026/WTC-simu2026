@@ -1,0 +1,84 @@
+{
+  "iteration": "V11I",
+  "panel_case": {
+    "id": "V11I_PANEL_R02",
+    "rho_total": 0.002,
+    "layout": "symmetric",
+    "cold_v11f_case_id": "COLD_R02",
+    "scope": "One symmetric equivalent V11F truss-pair panel. Reinforcement ratio and layout remain exploratory hypotheses, not an as-built schedule."
+  },
+  "scope": {
+    "constitutive_domain": "Small-displacement linear thermoelastic slab fibers with constant V11H properties. Steel truss members, seats, contact and ties retain their cold V11F elastic laws and capacities. No damage, cracking, crushing, yielding, creep, bond evolution, connection deletion, postbuckling, dynamics or geometric stiffness.",
+    "temperature_field": "Uniform or linear through-depth slab temperature change imposed everywhere along the panel. Steel truss, seats and ties remain at 20 C. No heat transfer, compartment fire, radiation, convection, incident flux or SFRM calculation.",
+    "history_policy": "No V11E/V11F history variable or property is edited. Only reversible elastic states below the predeclared DCR guard are accepted.",
+    "energy_policy": "Panel mechanical energy, gravity work and thermoelastic conjugate work are balanced in J. Slab sensible enthalpy is inventoried separately and receives no mechanical or global-collapse credit. Fixed ground supports do zero work."
+  },
+  "loading": {
+    "gravity_preload_factor": 0.25,
+    "gravity_steps": 5,
+    "reference_temperature_c": 20.0,
+    "thermal_steps": 24,
+    "half_step_thermal_steps": 48,
+    "accepted_DCR_guard": 0.9,
+    "nominal_material_or_component_limit_DCR": 1.0,
+    "guard_bisection_tolerance_scale": 1e-07,
+    "policy": "Apply gravity first from zero at DeltaT=0, then hold gravity fixed while varying the prescribed slab field. If a trial reaches DCR 0.90, bracket and save only a state at or below the guard; never continue to cracking, yielding or a nominal component limit."
+  },
+  "thermal_properties": {
+    "reference_temperature_c": 20.0,
+    "common_alpha_control_per_k": 1.2e-05,
+    "concrete": {
+      "thermal_expansion_per_k": 1e-05,
+      "density_kg_m3": 2400.0,
+      "specific_heat_j_kg_k": 900.0,
+      "conductivity_w_m_k": null,
+      "status": "Generic constant hypotheses for a bounded sensitivity calculation; not measured WTC concrete properties."
+    },
+    "reinforcement": {
+      "thermal_expansion_per_k": 1.2e-05,
+      "density_kg_m3": 7850.0,
+      "specific_heat_j_kg_k": 600.0,
+      "conductivity_w_m_k": null,
+      "status": "Generic constant hypotheses. Alpha matches the cached V10W steel benchmark; density and heat capacity are not WTC-specific measurements."
+    },
+    "unused_heat_transfer_fields": {
+      "conductivity": null,
+      "emissivity": null,
+      "convection_coefficient": null,
+      "incident_heat_flux": null,
+      "gas_temperature_history": null,
+      "sfrm_state": null
+    }
+  },
+  "section_cold_properties": {
+    "concrete": {
+      "E20_ksi": 2500.0,
+      "fc20_ksi": 3.0,
+      "ft20_MPa": 1.0,
+      "fracture_energy_J_m2": 100.0,
+      "characteristic_length_m": 0.1,
+      "law": "Compression linear elastic until the fc domain screen; tension elastic then linear softening to zero. Irreversible max tensile strain, secant unloading to origin, restored elastic compression at closure. No crack healing or compression plasticity.",
+      "regularization": "eps0=ft/E; epsf=2*Gf/(ft*Lch), require epsf>eps0. Total monotonic work per volume is Gf/Lch including the pre-peak triangle. Lch is longitudinal crack-band length, NOT slab depth or fiber thickness. No tensile residual stress floor.",
+      "status": "E/fc/ft inherited hypotheses; Gf/Lch new uncalibrated sensitivity hypotheses. No measured WTC tensile fracture curve, cycle law or crushing law."
+    },
+    "reinforcement": {
+      "E_GPa": 200.0,
+      "fy_MPa": 400.0,
+      "layer_center_distance_from_face_mm": 25.0,
+      "law": "Symmetric elastic-perfectly plastic, associative 1D return mapping; no hardening, buckling, fatigue, rupture or rate effect. Perfect steel-concrete strain compatibility.",
+      "absolute_mechanical_strain_domain_limit": 0.01,
+      "status": "All steel areas, grade and layer placement are EXPLORATORY assumptions, not an actual WTC reinforcement schedule. The 1 percent strain screen is a chosen model domain, not measured fracture strain."
+    }
+  },
+  "formulas": {
+    "thermal_strain": "eps_th=alpha*(T-T_ref)",
+    "mechanical_strain": "eps_m=eps0-y*kappa-eps_th",
+    "stress": "sigma=E*eps_m",
+    "panel_mechanical_balance": "Delta U=W_gravity+W_thermoelastic",
+    "thermoelastic_work": "W_th=-integral_panel sum_fibers(A*sigma*d_eps_th)",
+    "support_work": "zero because eliminated ground coordinates are fixed",
+    "sensible_enthalpy": "H=integral_panel sum_fibers(rho*cp*A*DeltaT), separate from mechanical balance"
+  },
+  "no_damage_history_or_property_updated": true,
+  "global_energy_credit_J": 0.0
+}

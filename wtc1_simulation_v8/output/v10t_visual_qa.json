@@ -1,0 +1,47 @@
+{
+  "iteration": "V10T",
+  "inspected_at_utc": "2026-09-04T13:06:13Z",
+  "inspector": "MODEL_VISUAL_INSPECTION_VIA_LOCAL_RENDER",
+  "validation_status": "PASS",
+  "inspected_image_paths": [
+    "wtc1_3d_v4/renders/v10t/01_v10t_chain_overview.png",
+    "wtc1_3d_v4/renders/v10t/02_v10t_control_zero.png",
+    "wtc1_3d_v4/renders/v10t/03_v10t_official_impact_damage.png",
+    "wtc1_3d_v4/renders/v10t/04_v10t_official_fire_thermal.png",
+    "wtc1_3d_v4/renders/v10t/05_v10t_initiation_blocked.png",
+    "wtc1_3d_v4/renders/v10t/06_v10t_propagation_unknown.png",
+    "wtc1_3d_v4/renders/v10t/wtc1_v10t_proof_sheet.png"
+  ],
+  "checks": {
+    "proof_sheet_not_blank": true,
+    "six_views_present": true,
+    "permanent_banner_visible": true,
+    "critical_text_legible": true,
+    "tower_geometry_visible_where_expected": true,
+    "reference_zone_is_visibly_a_frame_not_a_field": true,
+    "no_depicted_collapse_or_postimpact_motion": true,
+    "no_critical_label_clipped": true
+  },
+  "observations": [
+    "The overview cleanly separates the zero-control, official-dependent and unknown-event tracks across four stages.",
+    "The full-tower views show the unchanged reference geometry; their darkness does not obscure the status text.",
+    "The Floors 93-99 marker is an open orange wireframe with no filled damage or temperature field.",
+    "All six individual images display the permanent non-prediction banner without clipping.",
+    "No image depicts impact penetration, fire, member failure, collapse, propagation or arrest motion."
+  ],
+  "rejected_attempts": [
+    {
+      "path": "tmp/v10t_failed_attempt_01",
+      "reason": "orthographic and perspective overlays clipped by an incorrect camera-frame convention",
+      "accepted_for_v10t": false
+    },
+    {
+      "path": "tmp/v10t_failed_attempt_02",
+      "reason": "orthographic framing corrected but perspective overlays remained clipped",
+      "accepted_for_v10t": false
+    }
+  ],
+  "accepted_render_note": "The current wtc1_3d_v4/renders/v10t package is the third render attempt and passes the declared visual checks.",
+  "physical_validation_credit": "NONE",
+  "historical_outcome_credit": "NONE"
+}

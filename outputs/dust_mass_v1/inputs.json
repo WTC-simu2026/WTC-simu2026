@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "iteration_id": "DUST-V1",
+  "created_at": "2026-08-25",
+  "purpose": "Bound the WTC settled-dust particle-size claim and build an explicitly conditional energy proxy without treating sample fractions as event probabilities or whole-building mass fractions.",
+  "local_source_files": [
+    "C:\\Users\\jeuxpc\\Desktop\\ARCH\\11 septembre 2001\\Nano Thermite\\Active Thermitic Material Discovered in Dust from the World Trade_Center Catastrophe-2009.pdf",
+    "C:\\Users\\jeuxpc\\Desktop\\ARCH\\11 septembre 2001\\USGS-Environmental Studies\\Laboratory Reflectance Spectroscopy (RS) Studies of WTC Samples.pdf",
+    "C:\\Users\\jeuxpc\\Desktop\\ARCH\\11 septembre 2001\\Judy Wood\\www.drjudywood.com\\articles\\dirt\\dirt4.html",
+    "C:\\Users\\jeuxpc\\Desktop\\ARCH\\11 septembre 2001\\Judy Wood\\www.drjudywood.com\\articles\\dirt\\dirt6.html",
+    "C:\\Users\\jeuxpc\\Desktop\\ARCH\\11 septembre 2001\\Judy Wood\\www.drjudywood.com\\articles\\dirt\\dirtAppendix2.html",
+    "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\tmp\\pdfs\\dust_extract\\Lioy_2002_Rutgers.pdf"
+  ],
+  "particle_size_samples": [
+    {
+      "sample": "Cortlandt Street",
+      "aerodynamic_mass_percent": {
+        "lt_2_5_um": 1.12,
+        "2_5_to_10_um": 0.35,
+        "10_to_53_um": 37.03,
+        "gt_53_um": 61.5
+      },
+      "sieved_mass_percent": {
+        "lt_75_um": 38.0,
+        "75_to_300_um": 46.0,
+        "gt_300_um": 16.0
+      }
+    },
+    {
+      "sample": "Cherry Street",
+      "aerodynamic_mass_percent": {
+        "lt_2_5_um": 0.88,
+        "2_5_to_10_um": 0.3,
+        "10_to_53_um": 46.61,
+        "gt_53_um": 52.21
+      },
+      "sieved_mass_percent": {
+        "lt_75_um": 30.0,
+        "75_to_300_um": 49.0,
+        "gt_300_um": 23.0
+      }
+    },
+    {
+      "sample": "Market Street",
+      "aerodynamic_mass_percent": {
+        "lt_2_5_um": 1.3,
+        "2_5_to_10_um": 0.4,
+        "10_to_53_um": 34.69,
+        "gt_53_um": 63.6
+      },
+      "sieved_mass_percent": {
+        "lt_75_um": 37.0,
+        "75_to_300_um": 42.0,
+        "gt_300_um": 21.0
+      }
+    }
+  ],
+  "target_threshold_um": 100.0,
+  "containing_sieve_bin_um": [75.0, 300.0],
+  "red_gray_chip_proxy": {
+    "chip_mass_fraction_of_hand_separated_dust": 0.001,
+    "dsc_energy_kj_per_g_chip": [1.5, 7.5],
+    "qualification": "The 0.1 percent estimate came from 1.74 mg of chips hand-extracted from a 1.6 g dust sample after readily identifiable glass and concrete fragments were removed. It is not a site-wide random sample."
+  },
+  "cohesive_fracture_surface_proxy": {
+    "concrete_density_kg_m3": [1800.0, 2400.0],
+    "particle_diameter_um": [75.0, 100.0],
+    "fracture_energy_j_m2": [100.0, 200.0],
+    "qualification": "This spherical-surface calculation is a sensitivity proxy. Concrete beam fracture energy is not a validated comminution law and does not include a calibrated impact-to-fragmentation efficiency."
+  },
+  "gravity_proxy": {
+    "g_m_s2": 9.80665,
+    "mass_weighted_drop_height_m": [150.0, 200.0, 250.0],
+    "qualification": "These are sensitivity values, not a reconstructed WTC mass-height distribution."
+  }
+}

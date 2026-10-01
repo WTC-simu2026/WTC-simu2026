@@ -1,0 +1,78 @@
+{
+  "iteration": "V11D",
+  "random_seed": 1101004,
+  "random_draw_used": false,
+  "purpose": "Elastic uncracked slab-bending predictor with independent vertical displacements, unilateral bearing and pullout ties. First cracking is a domain boundary, not floor failure. No predetermined global outcome.",
+  "base_configuration": "wtc1_simulation_v8/data/v11c_floor_panel_predeclaration.json",
+  "slab": {
+    "model": "Euler-Bernoulli strip, bilateral axial EA up to first combined extreme-fiber tensile/compressive limit. No reinforcement or postcracking credit. Symmetric 80in pair, equivalent 4.35in rectangular slab from V11A.",
+    "subdivisions_per_steel_panel": 2,
+    "verification_subdivisions": [1, 2, 4],
+    "mesh_policy": "Refine slab only; fixed16-panel steel truss, fixed17 connection stations and fixed32 equivalent-knuckle density. This is a slab discretization check, not actual layout validation.",
+    "tensile_screen_20c_MPa": 1.0,
+    "tensile_screen_alternatives_MPa": [0.5, 1.0, 2.0],
+    "tensile_temperature_c": [20, 200, 400, 600],
+    "tensile_reduction_ratios": [1.0, 0.9, 0.6, 0.3],
+    "tensile_strength_status": "Uncalibrated explicit assumptions, not an ACI formula or measured WTC concrete tensile strength.",
+    "attachment_eccentricity_fraction_of_thickness": 0.5,
+    "eccentricity_status": "Hypothesis: attachment at underside of uniform equivalent slab; actual deck/chord centroid geometry unresolved. Zero-offset diagnostic also tested.",
+    "moment_recovery": "Uniform signed upward load q: add bubble q*x^2*(x-L)^2/(24EI) to Hermite deflection; M=EI*(Hxx*u-kappa0)+q*(L^2-6Lx+6x^2)/12. Check endpoints and interior M extremum for fiber stress.",
+    "load_policy": "Apply all80psf reference weight once to slab with consistent distributed-load vector. No extra gravity on steel; reference includes self weight.",
+    "temperature_policy": "Average of prescribed top/bottom slab temperatures sets E,strength,axial expansion and knuckle table index. kappa0=-alpha*(Ttop-Tbottom)/thickness. Through-depth gradient affects free curvature only; no layered temperature-dependent section analysis."
+  },
+  "vertical_connection": {
+    "contact_stiffness_per_equivalent_knuckle_N_m": 1000000000.0,
+    "tension_stiffness_per_equivalent_knuckle_N_m": 100000000.0,
+    "tension_stiffness_alternatives_N_m": [10000000.0, 100000000.0, 1000000000.0],
+    "stiffness_status": "Unmeasured penalty/contact compliance and elastic tie hypotheses. No measured slip-to-failure curve or fracture energy.",
+    "gap_definition": "g = slab_vertical - steel_top_vertical, upward positive. g<0 compressive overlap/contact, g>0 opening and tension tie. At zero gap choose compressive tangent only.",
+    "pullout_capacity_source": "Reuse V11C verified NCSTAR1-6C Table5-7:15/12/10/7kip per knuckle at concrete20-300/450/600/750C. Linear interpolation hypothesis. No new source PDF scan.",
+    "capacity_strength_factor": 1.0,
+    "damage_diagnostic": "After first horizontal or vertical tie limit, remove both horizontal slip and vertical tension ties at affected stations; retain unilateral compressive contact. Quasistatic same-load diagnostic only, not fracture dynamics. Stop if slab/member limit earlier."
+  },
+  "cold_cases": [
+    {"id":"COLD_E0_FT05","eccentricity_fraction":0.0,"ft_MPa":0.5},
+    {"id":"COLD_E0_FT10","eccentricity_fraction":0.0,"ft_MPa":1.0},
+    {"id":"COLD_E0_FT20","eccentricity_fraction":0.0,"ft_MPa":2.0},
+    {"id":"COLD_E05_FT05","eccentricity_fraction":0.5,"ft_MPa":0.5},
+    {"id":"COLD_E05_FT10","eccentricity_fraction":0.5,"ft_MPa":1.0},
+    {"id":"COLD_E05_FT20","eccentricity_fraction":0.5,"ft_MPa":2.0},
+    {"id":"COLD_TIE_SOFT","eccentricity_fraction":0.5,"ft_MPa":1.0,"tie_k_N_m":10000000.0},
+    {"id":"COLD_TIE_STIFF","eccentricity_fraction":0.5,"ft_MPa":1.0,"tie_k_N_m":1000000000.0}
+  ],
+  "cold_load_factor_end": 1.25,
+  "cold_step": 0.05,
+  "prescribed_paths": [
+    {"id":"HEAT_UNIFORM_ROLLER","steel_end_c":600.0,"slab_top_end_c":600.0,"slab_bottom_end_c":600.0,"support_end_c":600.0,"horizontal_mode":"roller"},
+    {"id":"HEAT_UNIFORM_RESTRAINED","steel_end_c":600.0,"slab_top_end_c":600.0,"slab_bottom_end_c":600.0,"support_end_c":600.0,"horizontal_mode":"restrained"},
+    {"id":"HEAT_FROM_BELOW","steel_end_c":600.0,"slab_top_end_c":20.0,"slab_bottom_end_c":300.0,"support_end_c":200.0,"horizontal_mode":"roller"},
+    {"id":"LOCAL_TRUSS_LOWERING_COLD","steel_end_c":20.0,"slab_top_end_c":20.0,"slab_bottom_end_c":20.0,"support_end_c":20.0,"horizontal_mode":"roller","middle_top_lowering_m":0.02}
+  ],
+  "preload_factor": 0.25,
+  "prescribed_parameter_step": 0.025,
+  "path_policy": "Stop first uncracked concrete criterion, nominal steel/seat criterion or tie limit. No time or fire inferred. Mid-truss imposed motion is an actuator test, not spontaneous impact damage; its reaction/work are included.",
+  "acceptance": {
+    "relative_equilibrium_tolerance": 1e-8,
+    "state_energy_identity_tolerance": 1e-8,
+    "first_event_parameter_tolerance": 1e-7,
+    "half_step_first_event_tolerance": 2e-7,
+    "slab_mesh_first_event_relative_tolerance": 0.02,
+    "slab_mesh_nodal_deflection_relative_tolerance": 0.02,
+    "force_active_set_tolerance_N": 0.00001,
+    "require_any_failure_or_survival": false
+  },
+  "source_files": ["wtc1_simulation_v8/output/v11c_floor_panel/source_manifest.json", "wtc1_simulation_v8/output/v11c_floor_panel/source_table_5_7.png"],
+  "protected_files": [
+    "wtc1_simulation_v8/scripts/v11c_panel_model.py",
+    "wtc1_simulation_v8/output/v11c_floor_panel/results_v11c.json",
+    "wtc1_simulation_v8/output/v11c_floor_panel/panel_inventory.json",
+    "wtc1_simulation_v8/output/v11b_initialization_mass/results_v11b.json",
+    "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend"
+  ],
+  "global_energy_credit_J": 0,
+  "software_installation": false,
+  "gpu": false,
+  "expected_cpu_seconds_under": 180,
+  "output_directory": "wtc1_simulation_v8/output/v11d_slab_contact",
+  "scratch_directory": "tmp/v11d_slab_contact"
+}

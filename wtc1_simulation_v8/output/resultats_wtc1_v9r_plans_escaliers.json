@@ -1,0 +1,79 @@
+{
+  "iteration": "V9R",
+  "status": "PASS",
+  "purpose": "Preserve V8U through V9Q, acquire the official final NIST NCSTAR 1-7 PDF, verify its stairwell tables and figures, compare them with cached NIST structural plans and the existing indexed Commission text, update the floor-by-floor stair topology and landing dimensions, and keep metric geometry and every mechanical credit closed where primary as-built drawings remain absent.",
+  "checks": {
+    "source_manifest_passed": true,
+    "regression_hash_count_matches": true,
+    "source_hash_count_matches": true,
+    "candidate_figure_count_matches": true,
+    "zero_metric_solver_candidates": true,
+    "stairway_count_matches": true,
+    "floor_matrix_row_count_matches": true,
+    "complete_field_count_matches": true,
+    "partial_field_count_matches": true,
+    "all_mechanical_and_validation_credits_closed": true,
+    "archive_not_read_or_rescanned": true,
+    "no_solver_blender_foia_or_external_contact": true
+  },
+  "counts": {
+    "regression_hashes": 8,
+    "source_hashes": 7,
+    "pdf_anchors": 13,
+    "visual_qa_records": 6,
+    "candidate_figures": 6,
+    "stairways": 3,
+    "floor_bands": 23,
+    "floor_matrix_rows": 330,
+    "required_model_fields": {
+      "COMPLETE": 0,
+      "PARTIAL": 7,
+      "MISSING": 0
+    }
+  },
+  "new_documented_results": {
+    "A_C_transfer_floors": [
+      42,
+      48,
+      66,
+      68,
+      76,
+      82
+    ],
+    "B_transfer_floors": [
+      76
+    ],
+    "A_C_landing_in": [
+      92.0,
+      78.0
+    ],
+    "B_landing_in": [
+      116.0,
+      78.0
+    ],
+    "metric_as_built_geometry_qualified": false
+  },
+  "authorized_result": "USE_CATEGORICAL_TOPOLOGY_AND_LANDING_DIMENSIONS_ONLY",
+  "physical_result": "NONE",
+  "network_access_used": true,
+  "network_scope": "Official NIST publication discovery and exact final PDF acquisition only",
+  "source_archive_read": false,
+  "source_archive_rescanned": false,
+  "structural_solver_executed": false,
+  "blender_executed": false,
+  "physical_validation": false,
+  "foia_request_sent": false,
+  "external_contact_count": 0,
+  "next_iteration": {
+    "id": "V9S",
+    "objective": "Preserve V8U through V9R and perform a bounded two-figure registration of the three Floor 95 stairwell footprints. Digitize only source-visible outlines from NCSTAR 1-7 Figure 5-2 and NCSTAR 1-2B Figure 9-124 against common core-column or core-boundary landmarks, report pixel and inter-figure uncertainty, and produce qualitative footprint envelopes rather than exact as-built coordinates. Keep mass, stiffness, strength, connection, component-damage and solver gates closed unless a dimensioned primary plan is found."
+  },
+  "runtime": {
+    "executed_at": "2026-08-29T13:32:54+02:00",
+    "elapsed_s": 0.647487,
+    "python": "3.12.13",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "random_seed_declared": 9122003,
+    "random_draw_used": false
+  }
+}

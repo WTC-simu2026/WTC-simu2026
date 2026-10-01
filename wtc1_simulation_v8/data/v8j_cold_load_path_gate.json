@@ -1,0 +1,109 @@
+{
+  "dataset": {
+    "name": "WTC 1 V8J cold load-path gate and cut-set audit",
+    "version": "8.9.0",
+    "status": "OFFICIAL_COMPONENT_CAPACITIES_WITH_EXPLICIT_REDUCED_TOPOLOGY_AUDIT",
+    "scope": "Post-impact 20 C validation of the V8I core network; explicit capacity audit of the missing core-to-office-floor-to-perimeter and hat-truss paths",
+    "warning": "V8J does not convert truss-seat capacity into an assumed core-column bridge. It first identifies the disconnected load cut, then compares that demand with published component envelopes. A capacity comparison is not a force-displacement solution or proof that the physical path existed after impact."
+  },
+  "official_facts": [
+    {
+      "label": "FAIT_OFFICIEL",
+      "source": "NIST NCSTAR 1-6",
+      "pdf_page": 156,
+      "printed_page": 74,
+      "fact": "For an 80 psf service gravity load, each seat supporting a paired floor truss carried approximately 16 kip. NIST Table 4-2 gives 20 C interior-seat vertical capacities from 194 to 395 kip.",
+      "confidence": "high; complete page visually checked"
+    },
+    {
+      "label": "FAIT_OFFICIEL",
+      "source": "NIST NCSTAR 1-6",
+      "pdf_page": 157,
+      "printed_page": 75,
+      "fact": "NIST Table 4-3 gives 20 C exterior-seat vertical capacities from 94 to 207 kip for the eight Floor 96 details studied.",
+      "confidence": "high; complete page visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 295,
+      "printed_page": 231,
+      "fact": "Immediately after impact, the modeled core-load increase was 400 kip at both Floor 98 and Floor 105, so the differential change attributable to the core-to-wall path between those levels was zero. At 80 min, the modeled core load decreased by 6,748 kip at Floor 98 and 6,783 kip at Floor 105.",
+      "confidence": "high; Tables 4-22 and 4-23 visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 306,
+      "printed_page": 242,
+      "fact": "In the Case B hat-truss checks, outrigger E reached DCR 0.97 at 80 min; the listed exterior columns supporting the outriggers remained below DCR 0.67 at 80 min.",
+      "confidence": "high; Table 4-27 and Table 4-28 visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 308,
+      "printed_page": 244,
+      "fact": "All 22 primary-path hat-truss connections listed by NIST were classified safe at 80 min; published demands and yield/ultimate capacities are retained in the V8G component dataset.",
+      "confidence": "high; Table 4-29 visually checked"
+    },
+    {
+      "label": "FAIT_ET_RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 55,
+      "printed_page": "liii",
+      "fact": "NIST reports 38 of 59 north-wall columns, three of 59 south-wall columns, and nine of 47 core columns severed or heavily damaged. It also reports severe north office-floor damage between perimeter Columns 112 and 145 on Floors 94-98. In the global model, the core carried about one percent more load immediately after impact.",
+      "confidence": "high for the reported damage/model result; this does not provide a surviving truss-seat map"
+    },
+    {
+      "label": "FAIT_OFFICIEL",
+      "source": "NIST NCSTAR 1-3D",
+      "pdf_page": 38,
+      "printed_page": 4,
+      "fact": "Each tower face had 59 perimeter columns at 40 in spacing. The built-up box section was approximately 14 in square, but plate thickness varied by location.",
+      "confidence": "high; complete page visually checked"
+    },
+    {
+      "label": "FAIT_OFFICIEL_LIMITE",
+      "source": "NIST NCSTAR 1-3D",
+      "pdf_page": 62,
+      "printed_page": 28,
+      "fact": "Recovered WTC 1 perimeter Column 142 over Floors 97-100 was specified Fy = 60 ksi. This specimen does not establish all perimeter sections or plate thicknesses around Floors 94-99.",
+      "confidence": "high for the specimen; low for generalization"
+    }
+  ],
+  "local_archive_observations": [
+    {
+      "label": "OBSERVATION_ARCHIVE_LOCALE",
+      "path": "C:/Users/jeuxpc/Desktop/ARCH/11 septembre 2001/Disaster and Failure Studies Repository/Fire Tests and Analysis/FloorTrussSystems-20260813T183023Z-1-001.zip",
+      "observation": "Read-only archive listing contains 522 entries, all recognized image or video files, and no non-media/model entry.",
+      "scope_limit": "This does not prove that no model input or drawing exists elsewhere in the 145 GB archive."
+    },
+    {
+      "label": "OBSERVATION_ARCHIVE_LOCALE",
+      "path": "C:/Users/jeuxpc/Desktop/ARCH/11 septembre 2001/Disaster and Failure Studies Repository",
+      "observation": "A filename scan found no WTCAB, Drawing Book 5/6, BeamSched, C32T1 model input, or structural solver file with the searched extensions.",
+      "scope_limit": "Filename searches do not inspect the contents of every compressed archive."
+    }
+  ],
+  "model_hypotheses": {
+    "inherited_core_network": "V8I nearest-four proxy, 47 reconstructed core-column nodes and the cold_upper_envelope cracked-slab case",
+    "cold_demand": "NIST Case B Floor 98 after-impact core load, 34,429 kip",
+    "cut_set_definition": "At the first cold failure, remove every core proxy edge whose beam and membrane branches have both fractured; identify any loaded connected component containing no surviving column support",
+    "paired_truss_count_full_face": "tower width divided by 6.67 ft paired-truss tributary width, rounded to 31",
+    "north_surviving_pair_proxy": "31 multiplied by 21/59 surviving north-wall columns, rounded to 11; this is a sensitivity proxy, not a seat-by-seat impact map",
+    "seat_bridge_test": "The isolated cut load is divided by each published 20 C exterior-seat capacity. This is a capacity-only screening test and does not assert compatible stiffness, ductility, geometry, or survival of the floor path.",
+    "hat_truss_cold_rule": "No additional cold core unloading is credited because NIST Table 4-22 reports the same +400 kip core-load change at Floors 98 and 105. The hat truss can redistribute wall loads while its net differential core transfer is zero.",
+    "fractions_are_event_probabilities": false
+  },
+  "seat_path_cases": {
+    "full_undamaged_face_pairs": 31,
+    "north_damage_scaled_pairs": 11,
+    "normal_service_load_per_pair_kip": 16.0,
+    "exterior_seat_temperature_c": 20.0
+  },
+  "gate": {
+    "required_condition": "The post-impact 20 C model must have a mechanically specified, surviving force-displacement path for every loaded component before thermal studies or Blender coupling.",
+    "pass_policy": "Capacity arithmetic alone cannot pass the gate. The path topology, stiffness, deformation capacity, connection assignment, and impact survival must all be specified from drawings or a declared validated substitute."
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "iteration": "V10Q",
+  "generated_at_utc": "2026-09-04T07:30:16Z",
+  "validation_status": "PASS_THREE_TRACK_SOFTWARE_HANDOFF_ONLY",
+  "dataset": {
+    "name": "Three-track fire-to-thermal handoff and unit/support audit",
+    "version": "10.17.0",
+    "status": "PREDECLARED_BEFORE_V10Q_HANDOFF_CONSTRUCTION",
+    "created_at_local": "2026-09-04T09:35:00+02:00",
+    "random_seed": 1017001,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10P. Construct exactly three non-merging fire-to-thermal tracks: the V10O zero-fire software control, cached NIST-model-dependent Case B structural-temperature envelopes with their fuel-load and impact/fireproofing description, and UNKNOWN_EVENT_FIRE with null gas, heat-flux, SFRM and member-temperature histories. Expand all five times, seven floors and three component families to SI-unit range records; compare the seven core 100-minute endpoints to V8A; audit the rounded dual fuel-load units, V10P fuel-bin residual, temporal support, and Young-modulus validity ceiling. Do not run FDS, interpolate beyond support, invent SFRM inputs, assign exact member temperatures, release a physical thermal state, launch Blender or conclude collapse/non-collapse."
+  },
+  "configuration": {
+    "path": "wtc1_simulation_v8/data/v10q_three_track_fire_thermal_handoff.json",
+    "sha256": "63a47763c79a19640e7f5f4215ff0d81c26827764636a3ba0ea97f8d8d51f6db"
+  },
+  "script": {
+    "path": "wtc1_simulation_v8/scripts/run_v10q_three_track_fire_thermal_handoff.py",
+    "sha256": "81c75f632562167c85d57f2162eae3fbfc3d4465d99cdd3781abe32ac17e6f98"
+  },
+  "source_summary": {
+    "cached_input_count": 6,
+    "official_source_hash_only_count": 3
+  },
+  "track_summary": {
+    "track_ids": [
+      "CONTROL_ZERO_FIRE",
+      "OFFICIAL_MODEL_DEPENDENT_THERMAL_REFERENCE",
+      "UNKNOWN_EVENT_FIRE"
+    ],
+    "track_count": 3,
+    "unknown_event_fields_null": true,
+    "downstream_physical_release_count": 0
+  },
+  "temperature_summary": {
+    "time_knots_min": [
+      20,
+      40,
+      60,
+      80,
+      100
+    ],
+    "time_knots_s": [
+      1200.0,
+      2400.0,
+      3600.0,
+      4800.0,
+      6000.0
+    ],
+    "strictly_increasing_time_support": true,
+    "temperature_envelope_row_count": 105,
+    "celsius_to_kelvin_endpoint_check_count": 210,
+    "valid_minimum_maximum_range_count": 105,
+    "global_temperature_min_c": 23.0,
+    "global_temperature_max_c": 938.0,
+    "global_temperature_min_K": 296.15,
+    "global_temperature_max_K": 1211.15,
+    "temperature_range_max_above_600c_count": 47,
+    "v8a_core_100min_comparisons": [
+      {
+        "floor": 93,
+        "source_min_c": 28.0,
+        "v8a_min_c": 28.0,
+        "minimum_match": true,
+        "source_max_c": 193.0,
+        "v8a_max_c": 193.0,
+        "maximum_match": true,
+        "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+      },
+      {
+        "floor": 94,
+        "source_min_c": 31.0,
+        "v8a_min_c": 31.0,
+        "minimum_match": true,
+        "source_max_c": 904.0,
+        "v8a_max_c": 904.0,
+        "maximum_match": true,
+        "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+      },
+      {
+        "floor": 95,
+        "source_min_c": 52.0,
+        "v8a_min_c": 52.0,
+        "minimum_match": true,
+        "source_max_c": 761.0,
+        "v8a_max_c": 761.0,
+        "maximum_match": true,
+        "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+      },
+      {
+        "floor": 96,
+        "source_min_c": 29.0,
+        "v8a_min_c": 29.0,
+        "minimum_match": true,
+        "source_max_c": 780.0,
+        "v8a_max_c": 780.0,
+        "maximum_match": true,
+        "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+      },
+      {
+        "floor": 97,
+        "source_min_c": 45.0,
+        "v8a_min_c": 45.0,
+        "minimum_match": true,
+        "source_max_c": 901.0,
+        "v8a_max_c": 901.0,
+        "maximum_match": true,
+        "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+      },
+      {
+        "floor": 98,
+        "source_min_c": 41.0,
+        "v8a_min_c": 41.0,
+        "minimum_match": true,
+        "source_max_c": 227.0,
+        "v8a_max_c": 227.0,
+        "maximum_match": true,
+        "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+      },
+      {
+        "floor": 99,
+        "source_min_c": 41.0,
+        "v8a_min_c": 41.0,
+        "minimum_match": true,
+        "source_max_c": 192.0,
+        "v8a_max_c": 192.0,
+        "maximum_match": true,
+        "status": "PASS_CACHED_TRANSFORMATION_CONSISTENCY"
+      }
+    ],
+    "v8a_core_100min_comparison_count": 7,
+    "v8a_core_100min_comparison_pass_count": 7,
+    "exact_member_temperature_assignment_count": 0,
+    "gas_temperature_history_available_count": 0,
+    "incident_heat_flux_history_available_count": 0
+  },
+  "fuel_and_temporal_support": {
+    "office_fuel_load_parallel_source_values": {
+      "kg_m2_stated": 25.0,
+      "lb_ft2_stated": 5.0,
+      "five_lb_ft2_converted_to_kg_m2": 24.412138181915253,
+      "stated_kg_m2_minus_converted_kg_m2": 0.5878618180847468,
+      "relative_difference_to_stated_kg_m2": 0.02351447272338987,
+      "status": "ROUNDED_PARALLEL_SOURCE_VALUES_RETAINED_NO_FORCED_EQUALITY"
+    },
+    "v10p_fuel_bin_rounding_residual_lb": 20.0,
+    "v10p_fuel_bin_residual_status": "RETAINED_NOT_REDISTRIBUTED",
+    "time_support": [
+      {
+        "index": 0,
+        "time_min": 20,
+        "time_s": 1200.0,
+        "conversion_pass": true
+      },
+      {
+        "index": 1,
+        "time_min": 40,
+        "time_s": 2400.0,
+        "conversion_pass": true
+      },
+      {
+        "index": 2,
+        "time_min": 60,
+        "time_s": 3600.0,
+        "conversion_pass": true
+      },
+      {
+        "index": 3,
+        "time_min": 80,
+        "time_s": 4800.0,
+        "conversion_pass": true
+      },
+      {
+        "index": 4,
+        "time_min": 100,
+        "time_s": 6000.0,
+        "conversion_pass": true
+      }
+    ],
+    "time_support_strictly_increasing": true,
+    "temporal_interpolation_performed": false,
+    "temporal_extrapolation_performed": false,
+    "fire_gas_temperature_history_available": false,
+    "incident_heat_flux_history_available": false,
+    "spatial_fire_mesh_or_polygon_mapping_available": false
+  },
+  "sfrm_summary": {
+    "required_field_count": 8,
+    "numeric_or_spatial_field_available_count": 0
+  },
+  "gates": {
+    "iteration": "V10Q",
+    "generated_at_utc": "2026-09-04T07:30:16Z",
+    "validation_status": "PASS",
+    "regression_gate": "PASS",
+    "protected_blender_master_gate": "PASS_UNCHANGED",
+    "source_identity_gate": "PASS_6_CACHED_PLUS_3_OFFICIAL_HASH_ONLY",
+    "three_track_separation_gate": "PASS_3_OF_3",
+    "temperature_range_gate": "PASS_105_OF_105",
+    "temperature_unit_conversion_gate": "PASS_210_OF_210",
+    "temporal_support_gate": "PASS_5_KNOTS_NO_INTERPOLATION_NO_EXTRAPOLATION",
+    "v8a_core_100min_gate": "PASS_7_OF_7",
+    "v8e_identity_and_scope_gate": "PASS_6_OF_6_SYNTHETIC_NOT_PROBABILITY",
+    "fuel_load_dual_unit_gate": "ROUNDED_PARALLEL_VALUES_DIFFER_BY_0_587861818_KG_M2",
+    "fuel_bin_residual_gate": "RETAINED_20_LB",
+    "sfrm_input_gate": "CLOSED_0_OF_8_FIELDS_AVAILABLE",
+    "gas_temperature_history_gate": "CLOSED_0_AVAILABLE",
+    "incident_heat_flux_history_gate": "CLOSED_0_AVAILABLE",
+    "member_temperature_history_gate": "CLOSED_RANGE_OUTPUTS_ONLY",
+    "young_modulus_validity_gate": "PARTIAL_47_OF_105_RANGE_MAXIMA_ABOVE_600C",
+    "fire_to_thermal_physical_handoff_gate": "CLOSED",
+    "historical_physical_thermal_promotion_count": 0,
+    "downstream_physical_release_count": 0,
+    "v10r_labelled_range_preprocessor_authorized": true,
+    "v10r_silent_material_law_extrapolation_authorized": false,
+    "v10r_physical_initiation_conclusion_authorized": false,
+    "mechanical_source_gate": "OPEN_0_OF_22_REQUIREMENTS",
+    "historical_collapse_or_noncollapse_conclusion_authorized": false,
+    "physical_assignment_count": 0,
+    "fds_run_count": 0,
+    "thermal_solver_run_count": 0,
+    "other_solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 0
+  },
+  "epistemic_separation": {
+    "observed_facts": "File hashes, table structure, unit conversions, counts and cached transformation comparisons.",
+    "official_model_results": "All Case B structural-temperature ranges and fuel distributions remain dependent NIST model outputs.",
+    "archive_claims": "No external archive is read; three local official PDFs are hash-checked only.",
+    "model_hypotheses": "V8E spatial fields remain synthetic and no SFRM or member-temperature value is added.",
+    "derived_results": "SI ranges, dual-unit difference, temporal support and material-law-domain exceedance count.",
+    "unknowns": "Event gas/heat-flux histories, SFRM map/properties, exact member temperatures and physical fire remain unresolved."
+  },
+  "runtime_seconds": 0.122775,
+  "next_iteration": {
+    "id": "V10R",
+    "objective": "Build a three-track thermal-to-initiation preprocessor. Preserve the zero control, evaluate only labelled cached official-dependent/synthetic temperature envelopes through the already documented reduced laws inside their validity domains, and keep the physical branch unknown. Quantify every >600 C modulus-law exceedance, forbid silent extrapolation, join with the failed cold gate as INDETERMINATE, and run no structural solver."
+  }
+}

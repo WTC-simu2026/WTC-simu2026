@@ -1,0 +1,169 @@
+{
+  "iteration": "V8T",
+  "generated_at": "2026-08-24T15:50:37.1646426+02:00",
+  "configuration": "wtc1_simulation_v8/data/v8t_openradioss_qualification.json",
+  "execution_skipped": false,
+  "installation": {
+    "source_root": "C:/OpenRadioss",
+    "runtime_shim": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64",
+    "starter_sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+    "engine_sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+    "runtime_isolation_used": true,
+    "system32_modified": false,
+    "source_installation_modified": false
+  },
+  "source_hash_checks": [
+    {
+      "path": "data/TWISBEAM_0000.rad",
+      "expected_sha256": "744aedcce64eb815a24b104640911c551cd61d95effc718c37b4736ac95e1c2a",
+      "actual_sha256": "744aedcce64eb815a24b104640911c551cd61d95effc718c37b4736ac95e1c2a",
+      "passed": true
+    },
+    {
+      "path": "data/TWISBEAM_0001.rad",
+      "expected_sha256": "38b5e84fa8127dac953ec94cd10ccda3c3615f85bae619d0abdc77b58f838f3d",
+      "actual_sha256": "38b5e84fa8127dac953ec94cd10ccda3c3615f85bae619d0abdc77b58f838f3d",
+      "passed": true
+    },
+    {
+      "path": "data/TWISBEAMD0B",
+      "expected_sha256": "989a8c0e30b50fab199b83320a4ec8b601e29e75dc79f289b79bc064f3d15462",
+      "actual_sha256": "989a8c0e30b50fab199b83320a4ec8b601e29e75dc79f289b79bc064f3d15462",
+      "passed": true
+    },
+    {
+      "path": "reference/TWISBEAM_0001.out",
+      "expected_sha256": "97caa29d937831078ea96eb5fcd9f5355417cc0d7d1b6a45235d3261b33fb8c5",
+      "actual_sha256": "97caa29d937831078ea96eb5fcd9f5355417cc0d7d1b6a45235d3261b33fb8c5",
+      "passed": true
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+      "expected_sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+      "actual_sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+      "passed": true
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+      "expected_sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+      "actual_sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+      "passed": true
+    }
+  ],
+  "source_hash_gate_passed": true,
+  "execution": {
+    "starter_exit_code": 0,
+    "starter_elapsed_seconds": 0.612166,
+    "starter_warning_id_100214_present": true,
+    "engine_exit_code": 0,
+    "engine_elapsed_seconds": 3.756596,
+    "engine_normal_termination": true,
+    "total_cycles": 16796,
+    "comparison_cycle": 16750
+  },
+  "numerical_comparison": {
+    "generated_record": {
+      "line": "   16750  0.1996E-01  0.1191E-05 SHELL         65  -0.0%  0.4376E-02  0.1240E-02  0.1197E-03  0.5737E-02   0.000      0.9214E-02   0.000",
+      "cycle": 16750,
+      "time": 0.01996,
+      "time_step": 1.191E-06,
+      "element_type": "SHELL",
+      "element_id": 65,
+      "energy_error_percent_text": "-0.0%",
+      "internal_energy": 0.004376,
+      "translational_kinetic_energy": 0.00124,
+      "rotational_kinetic_energy": 0.0001197,
+      "external_work": 0.005737,
+      "mass_error": 0.0,
+      "total_mass": 0.009214,
+      "added_mass": 0.0
+    },
+    "reference_record": {
+      "line": "   16750  0.1996E-01  0.1191E-05 SHELL         65  -0.0%  0.4376E-02  0.1240E-02  0.1197E-03  0.5737E-02   0.000      0.9214E-02   0.000",
+      "cycle": 16750,
+      "time": 0.01996,
+      "time_step": 1.191E-06,
+      "element_type": "SHELL",
+      "element_id": 65,
+      "energy_error_percent_text": "-0.0%",
+      "internal_energy": 0.004376,
+      "translational_kinetic_energy": 0.00124,
+      "rotational_kinetic_energy": 0.0001197,
+      "external_work": 0.005737,
+      "mass_error": 0.0,
+      "total_mass": 0.009214,
+      "added_mass": 0.0
+    },
+    "fields": [
+      {
+        "field": "time",
+        "generated": 0.01996,
+        "reference": 0.01996,
+        "absolute_difference": 0.0,
+        "relative_difference": 0.0
+      },
+      {
+        "field": "time_step",
+        "generated": 1.191E-06,
+        "reference": 1.191E-06,
+        "absolute_difference": 0.0,
+        "relative_difference": 0.0
+      },
+      {
+        "field": "internal_energy",
+        "generated": 0.004376,
+        "reference": 0.004376,
+        "absolute_difference": 0.0,
+        "relative_difference": 0.0
+      },
+      {
+        "field": "translational_kinetic_energy",
+        "generated": 0.00124,
+        "reference": 0.00124,
+        "absolute_difference": 0.0,
+        "relative_difference": 0.0
+      },
+      {
+        "field": "rotational_kinetic_energy",
+        "generated": 0.0001197,
+        "reference": 0.0001197,
+        "absolute_difference": 0.0,
+        "relative_difference": 0.0
+      },
+      {
+        "field": "external_work",
+        "generated": 0.005737,
+        "reference": 0.005737,
+        "absolute_difference": 0.0,
+        "relative_difference": 0.0
+      },
+      {
+        "field": "mass_error",
+        "generated": 0.0,
+        "reference": 0.0,
+        "absolute_difference": 0.0,
+        "relative_difference": 0.0
+      },
+      {
+        "field": "total_mass",
+        "generated": 0.009214,
+        "reference": 0.009214,
+        "absolute_difference": 0.0,
+        "relative_difference": 0.0
+      },
+      {
+        "field": "added_mass",
+        "generated": 0.0,
+        "reference": 0.0,
+        "absolute_difference": 0.0,
+        "relative_difference": 0.0
+      }
+    ],
+    "maximum_absolute_difference": 0.0,
+    "maximum_relative_difference": 0.0,
+    "formatted_cycle_line_exact_match": true
+  },
+  "installation_smoke_gate_passed": true,
+  "global_wtc_impact_physics_qualification_passed": false,
+  "interpretation": "The official TWISBEAM smoke model completed normally and its cycle-16750 numerical record matches the official reference. This validates the local executable chain and deterministic basic shell-element regression only. It does not validate WTC material, contact, failure, erosion, mesh, impact, fire, collapse, explosive, or thermite physics."
+}

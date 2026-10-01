@@ -1,0 +1,186 @@
+{
+  "dataset": {
+    "name": "WTC 1 V8Z fracture-data identifiability and numerical LeMAX sensitivity",
+    "version": "8.25.0",
+    "status": "PREDECLARED_BEFORE_EXECUTION_NUMERICAL_SENSITIVITY_NOT_PHYSICAL_IDENTIFICATION",
+    "random_seed": 9112001,
+    "deterministic": true,
+    "scope": "Preserve V8U through V8Y as immutable regressions, audit source-backed high-rate fracture information, and test the V8Y equivalent deformable projectile/facade coupon at predeclared LeMAX values of 50, 100 and 200 mm. The 100 mm medium and fine cases are reused from V8Y. V8Z is not a JT9D, whole-aircraft or global WTC 1 impact model."
+  },
+  "evidence_policy": {
+    "observed_fact": "Directly transcribed from a named official document or preserved solver output.",
+    "official_model_result": "A result or modelling choice reported by NIST, not an observation of the real event.",
+    "local_archive_claim": "No new local-archive claim is used and the source archive is not rescanned.",
+    "model_hypothesis": "The V8Y geometry, material curves, failure strains and LeMAX bracket are simplified numerical assumptions.",
+    "derived_result": "A deterministic calculation from the frozen inputs and OpenRadioss outputs.",
+    "unknown": "Representative physical internal lengths and high-rate fracture surfaces for the WTC steels and the aircraft engine/cowling remain unidentified."
+  },
+  "units": {
+    "mass": "g",
+    "length": "mm",
+    "time": "ms",
+    "stress": "MPa",
+    "velocity": "mm/ms",
+    "impulse": "g*mm/ms",
+    "energy_solver": "g*mm^2/ms^2",
+    "energy_solver_to_joule": 0.001
+  },
+  "sources": [
+    {
+      "id": "NIST_NCSTAR_1_3D",
+      "path": "work/official_sources/ncstar1-3d.pdf",
+      "sha256": "eee74f038b15bfd6263a4b5335ca96d124501d002e62883bb8fd4f84d22e52da",
+      "classification": "official_measurement_report",
+      "locations": ["Chapter 4, report pages 79 onward"],
+      "uses": [
+        "NIST estimated impact strain rates up to 1000 per second for WTC steel",
+        "NIST reports high-rate tensile tests on selected perimeter and core steels at 50 to 500 per second and compression tests on selected materials up to 2500 per second",
+        "the public report supports rate-dependent strength data but does not identify a triaxiality-dependent fracture surface or a non-local internal length for V8Z"
+      ]
+    },
+    {
+      "id": "NIST_NCSTAR_1_2B_VOLUME_1",
+      "path": "work/official_sources/ncstar1-2bv1.pdf",
+      "sha256": "1504c598adcd9e492bc126530b593b2d467b7c01a7324913b221a5cb9e128ab4",
+      "classification": "official_model_documentation",
+      "locations": ["Section 2.3.1, report pages 16 to 18", "Section 2.5, report pages 31 to 33", "Sections 4.2.3 and 4.3.3", "Section 5.5.1"],
+      "uses": [
+        "NIST adjusted critical plastic failure strain with element resolution in component studies",
+        "NIST reports no aircraft structural-material testing and used open-literature aircraft properties",
+        "NIST used a detailed PW4000 model as a proxy and reports geometry/material information from proprietary manuals",
+        "these model calibrations do not identify a transferable physical internal length for the V8Y equivalent projectile"
+      ]
+    },
+    {
+      "id": "NIST_NCSTAR_1_2B_VOLUME_2",
+      "path": "work/official_sources/ncstar1-2bv2.pdf",
+      "sha256": "c5bb701fad4103d072f89548c683c0e8ee583c49d94e3f165985088f3443ea1d",
+      "classification": "official_model_uncertainty_report",
+      "locations": ["Section 9.6, report pages 256 to 257"],
+      "uses": [
+        "NIST varied aircraft failure strain from 75 to 125 percent of baseline and tower failure strain from 80 to 120 percent in its WTC 1 uncertainty study",
+        "these are official model uncertainty factors, not measured physical bounds for AA11 or a JT9D"
+      ]
+    },
+    {
+      "id": "ALTAIR_RADIOSS_2026_NONLOCAL_MAT",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/nonlocal_mat_starter_r.htm",
+      "classification": "official_solver_documentation",
+      "uses": [
+        "Rlen is the non-local internal length and LeMAX is the mesh convergence element-length target",
+        "when LeMAX is supplied Radioss computes Rlen automatically",
+        "LeMAX is treated here as a numerical convergence target and not as a measured material length"
+      ]
+    },
+    {
+      "id": "DAVAZE_2021_IJSS",
+      "doi": "10.1016/j.ijsolstr.2021.02.010",
+      "classification": "peer_reviewed_method_paper",
+      "uses": [
+        "the non-local method was identified and validated against experiments for a specific DP450 steel",
+        "that identification is not transferable evidence for WTC steel or aircraft engine/cowling components"
+      ]
+    },
+    {
+      "id": "DAVAZE_2023_CMAME",
+      "doi": "10.1016/j.cma.2023.116142",
+      "classification": "peer_reviewed_method_paper",
+      "uses": [
+        "the shell formulation links characteristic length, localization width and dissipated energy",
+        "mesh independence requires resolving the regularized band and does not itself identify a physical length for a different material"
+      ]
+    }
+  ],
+  "source_audit_conclusion": {
+    "high_rate_strength_information_available": true,
+    "representative_wtc_steel_fracture_surface_identified": false,
+    "representative_engine_or_cowling_fracture_surface_identified": false,
+    "representative_nonlocal_internal_length_identified": false,
+    "physical_failure_parameter_identification_passed": false,
+    "consequence": "Only a numerical LeMAX sensitivity can be run. Global, thermal, Blender, explosive and thermite claims remain closed regardless of the numerical result."
+  },
+  "base_configuration": {
+    "path": "wtc1_simulation_v8/data/v8w_projectile_freeflight_pairwise_contact.json",
+    "sha256": "6c1438590f30386e6928c66c0f531d730999e3ffa0026642f61b8f96d29f80f8",
+    "inherited_without_change": [
+      "facade and projectile geometry, masses and constitutive stress-strain curves",
+      "two reciprocal pairwise core-cowling TYPE7 interfaces and projectile-to-facade TYPE7 interface",
+      "443 mph initial speed, frictionless contact, QEPH shell formulation and output intervals",
+      "V8Y constant Johnson failure strains of 0.20, 0.20 and 0.12 for facade, core and cowling"
+    ]
+  },
+  "v8y_cached_reference": {
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v8y_rupture_nonlocale.json",
+    "medium_case_id": "NL_M050_P050_DT090_T1",
+    "fine_case_id": "NL_M025_P025_DT090_T1",
+    "lemax_mm": 100.0,
+    "status": "immutable cached solver results; no V8Y file is modified"
+  },
+  "regressions": {
+    "required_files": {
+      "wtc1_simulation_v8/data/v8w_projectile_freeflight_pairwise_contact.json": "6c1438590f30386e6928c66c0f531d730999e3ffa0026642f61b8f96d29f80f8",
+      "wtc1_simulation_v8/output/resultats_wtc1_v8w_contact_pairwise.json": "7062888f55873840d72abfacaccd5037befd47515f39a7f3c6886511d3bbb916",
+      "wtc1_simulation_v8/data/v8x_mesh_driver_diagnostic.json": "83c6e51299684383d3c03d904f1b49afefe9d8dc7449a041ce69cf3195db73b2",
+      "wtc1_simulation_v8/output/resultats_wtc1_v8x_mailles_erosion.json": "f4dde0d97bc5f5a398b924ed2d1d954ef64cfa9a72de0c1ebb3ae07c0e75fad1",
+      "wtc1_simulation_v8/data/v8y_nonlocal_failure_regularization.json": "d29300f38d54d04159a167871324e0b5296c34bccf4e108968abed9caea16810",
+      "wtc1_simulation_v8/scripts/generate_v8y_nonlocal_failure.py": "2029894a40d1904cbada63fc62357de7babc427f3397d4293988a890597066a9",
+      "wtc1_simulation_v8/scripts/run_v8y_nonlocal_failure.py": "4d7f50c22be386212540d947f23314bda2287a105436c32114ba5e1a3cca1381",
+      "wtc1_simulation_v8/output/resultats_wtc1_v8y_rupture_nonlocale.json": "e2367982209d59a5844482331b8c3189924ed8e4e1f8a03734b09f39c2572cfa",
+      "wtc1_simulation_v8/output/rapport_wtc1_v8y_rupture_nonlocale.md": "ce4caef323ee50d09b5a787116d122b3a75fdaee1e65cd40fee8060d0ec1187e"
+    },
+    "required_metrics": [
+      {"results": "wtc1_simulation_v8/output/resultats_wtc1_v8w_contact_pairwise.json", "path": "projectile_free_flight_qualification_passed", "expected": true},
+      {"results": "wtc1_simulation_v8/output/resultats_wtc1_v8x_mailles_erosion.json", "path": "mesh_sensitivity_diagnostic_completed", "expected": true},
+      {"results": "wtc1_simulation_v8/output/resultats_wtc1_v8y_rupture_nonlocale.json", "path": "deformable_subassembly_numerical_qualification_passed", "expected": true},
+      {"results": "wtc1_simulation_v8/output/resultats_wtc1_v8y_rupture_nonlocale.json", "path": "physical_failure_parameter_identification_passed", "expected": false},
+      {"results": "wtc1_simulation_v8/output/resultats_wtc1_v8y_rupture_nonlocale.json", "path": "diagonal_convergence.medium_to_fine_contact_impulse_relative_difference", "expected": 0.08341423507725203},
+      {"results": "wtc1_simulation_v8/output/resultats_wtc1_v8y_rupture_nonlocale.json", "path": "auxiliary_metrics.projectile_failure_ordering.passed", "expected": true}
+    ],
+    "numeric_absolute_tolerance": 1e-12
+  },
+  "regularization_sensitivity": {
+    "material_law": "/MAT/PLAS_JOHNS (LAW2), inherited V8Y curves with EPSmax zero",
+    "failure_model": "/FAIL/JOHNSON with inherited constant strains and Ifail_sh=1",
+    "nonlocal_model": "/NONLOCAL/MAT on facade, core and cowling",
+    "rlen_input_mm": 0.0,
+    "lemax_values_mm": [50.0, 100.0, 200.0],
+    "selection": "Predeclared factor-two numerical bracket around V8Y LeMAX=100 mm. It is not calibrated to an impulse and is not a physical material-length interval.",
+    "reference_failure_strains": {"facade": 0.2, "core": 0.2, "cowling": 0.12, "status": "inherited V8Y hypotheses"}
+  },
+  "cases": [
+    {"id": "LM050_M050_P050_DT090_T1", "phase": "facade_impact", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.9, "facade_failure_strain": 0.2, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "lemax_mm": 50.0, "threads": 1, "erosion_mode": "johnson_nonlocal", "role": "lemax_50_medium"},
+    {"id": "LM200_M050_P050_DT090_T1", "phase": "facade_impact", "facade_mesh_target_mm": 50.0, "projectile_mesh_target_mm": 50.0, "time_step_scale": 0.9, "facade_failure_strain": 0.2, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "lemax_mm": 200.0, "threads": 1, "erosion_mode": "johnson_nonlocal", "role": "lemax_200_medium"},
+    {"id": "LM050_M025_P025_DT090_T1", "phase": "facade_impact", "facade_mesh_target_mm": 25.0, "projectile_mesh_target_mm": 25.0, "time_step_scale": 0.9, "facade_failure_strain": 0.2, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "lemax_mm": 50.0, "threads": 1, "erosion_mode": "johnson_nonlocal", "role": "lemax_50_fine"},
+    {"id": "LM200_M025_P025_DT090_T1", "phase": "facade_impact", "facade_mesh_target_mm": 25.0, "projectile_mesh_target_mm": 25.0, "time_step_scale": 0.9, "facade_failure_strain": 0.2, "core_failure_strain": 0.2, "cowling_failure_strain": 0.12, "lemax_mm": 200.0, "threads": 1, "erosion_mode": "johnson_nonlocal", "role": "lemax_200_fine"}
+  ],
+  "execution_policy": {
+    "facade_impact_termination_time_ms": 18.0,
+    "output_root": "wtc1_simulation_v8/openradioss_benchmarks/v8z_failure_length",
+    "estimated_runtime": "Approximately 25 to 35 minutes if the medium gate fails; approximately 2 to 3 hours if the two fine cases are executed.",
+    "conditional_execution": "Run the new 50 mm mesh cases at LeMAX 50 and 200 first and compare them to cached V8Y LeMAX 100. Run the two new 25 mm mesh cases only if all medium-stage gates pass.",
+    "mass_scaling": "disabled"
+  },
+  "predeclared_gates": {
+    "regressions_unchanged": true,
+    "all_starter_exit_code_zero": true,
+    "all_engine_exit_code_zero": true,
+    "all_normal_termination": true,
+    "maximum_initial_penetrating_node_count": 0,
+    "maximum_projectile_initial_mass_relative_error": 0.005,
+    "maximum_added_mass_fraction": 0.001,
+    "maximum_hourglass_to_initial_energy_fraction": 0.05,
+    "maximum_absolute_energy_error_percent": 5.0,
+    "maximum_pre_facade_elastic_contact_energy_solver": 0.0,
+    "maximum_contact_impulse_to_projectile_momentum_change_relative_error": 0.05,
+    "minimum_projectile_eroded_elements_each_case": 1,
+    "minimum_projectile_remaining_mass_fraction_each_case": 0.5,
+    "maximum_medium_across_lemax_contact_impulse_relative_difference": 0.1,
+    "maximum_medium_across_lemax_projectile_final_momentum_relative_difference": 0.1,
+    "maximum_fine_across_lemax_contact_impulse_relative_difference": 0.1,
+    "maximum_fine_across_lemax_projectile_final_momentum_relative_difference": 0.1,
+    "maximum_medium_to_fine_contact_impulse_relative_difference_each_lemax": 0.1,
+    "maximum_medium_to_fine_projectile_final_momentum_relative_difference_each_lemax": 0.1,
+    "require_reported_solver_rlen_for_each_case": true,
+    "scope_warning": "A PASS qualifies only numerical robustness of this equivalent V8Y subassembly over the declared LeMAX bracket. Because physical failure parameters remain unidentified, the global WTC 1 impact, fire, collapse, Blender physics, explosive and thermite gates remain closed."
+  }
+}

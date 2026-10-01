@@ -1,0 +1,51 @@
+{
+  "iteration": "V10W",
+  "decision": "PASS_INDEPENDENT_PRESCRIBED_TEMPERATURE_MECHANICAL_BENCHMARK",
+  "pass": true,
+  "criteria": {
+    "predeclared_input_hashes": true,
+    "protected_master_unchanged": true,
+    "calculix_version": true,
+    "solver_return_codes": true,
+    "all_outputs_parsed": true,
+    "analytical_cases": true,
+    "explicit_temperature_assignments": true,
+    "uniform_free_mesh_invariance": true,
+    "uniform_restrained_mesh_invariance": true,
+    "gradient_free_mesh_invariance": true,
+    "generated_input_deck_count": true,
+    "all_run_files_hashed": true,
+    "heat_transfer_solver_not_run": true,
+    "coupled_temperature_displacement_solver_not_run": true,
+    "no_wtc_mechanical_requirement_closed": true,
+    "no_physical_wtc_release": true,
+    "no_historical_outcome_assignment": true
+  },
+  "metrics": {
+    "unique_solver_job_count": 12,
+    "solver_return_code_pass_count": 12,
+    "analytical_case_pass_count": 12,
+    "temperature_assignment_audit_pass_count": 12,
+    "mesh_convergence": {
+      "UNIFORM_FREE_tip_displacement_change_pct": 0.0,
+      "UNIFORM_RESTRAINED_force_change_pct": 0.0,
+      "AXIAL_LINEAR_GRADIENT_FREE_tip_displacement_change_pct": 0.0
+    },
+    "generated_input_deck_count": 12,
+    "hashed_run_file_count": 73,
+    "mechanical_requirement_count": 22,
+    "mechanical_requirement_closed_count": 0,
+    "physical_wtc_state_release_count": 0,
+    "historical_outcome_assignment_count": 0
+  },
+  "allowed_credit": "Local CalculiX 2.22 T3D2 axial mechanical response to explicitly prescribed temperature fields only",
+  "forbidden_credit": [
+    "heat-transfer, compartment-fire, SFRM or member-temperature prediction",
+    "WTC 1 member, connection, floor, core or perimeter response",
+    "collapse initiation, propagation, arrest, collapse or non-collapse of WTC 1"
+  ],
+  "next_iteration": {
+    "id": "V10X",
+    "objective": "Qualifier un benchmark de réponse matériau non linéaire indépendant avec plasticité et déchargement cyclique contrôlé, puis vérifier la dissipation et l'indépendance de maillage avant toute attribution WTC 1."
+  }
+}

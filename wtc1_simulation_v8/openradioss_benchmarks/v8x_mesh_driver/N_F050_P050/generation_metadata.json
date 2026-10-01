@@ -1,0 +1,73 @@
+{
+  "run_name": "V8X_N_F050_P050",
+  "case_id": "N_F050_P050",
+  "phase": "facade_impact",
+  "facade_mesh_target_mm": 50.0,
+  "projectile_mesh_target_mm": 50.0,
+  "time_step_scale": 0.9,
+  "threads": 1,
+  "node_count_total": 37826,
+  "shell_count_total": 37590,
+  "fixed_node_count": 192,
+  "projectile_node_count": 11282,
+  "element_ranges": {
+    "1": {
+      "first": 1,
+      "last": 21408,
+      "count": 21408
+    },
+    "2": {
+      "first": 21409,
+      "last": 26430,
+      "count": 5022
+    },
+    "3": {
+      "first": 26431,
+      "last": 29958,
+      "count": 3528
+    },
+    "4": {
+      "first": 29959,
+      "last": 37590,
+      "count": 7632
+    }
+  },
+  "projectile": {
+    "core_mid_surface_area_mm2": 8820000.0,
+    "cowling_mid_surface_area_mm2": 19080000.0,
+    "core_equivalent_thickness_mm": 51.92916861401048,
+    "cowling_equivalent_thickness_mm": 18.60787558234335,
+    "type7_pair_activation_gap_mm": 35.268522098176916,
+    "front_opening_mid_surface_radial_clearance_mm": 150.0,
+    "front_opening_net_shell_surface_clearance_mm": 114.73147790182308,
+    "net_clearance_to_activation_gap_ratio": 3.2530843674834258,
+    "core_target_mass_g": 3600000.0,
+    "cowling_target_mass_g": 958603.3185,
+    "total_target_mass_g": 4558603.3185
+  },
+  "contact_interfaces": {
+    "facade": 1,
+    "core_to_cowling": 2,
+    "cowling_to_core": 3,
+    "all_projectile_self_contact_present": false
+  },
+  "erosion_mode": "law2_default_non_eroding",
+  "study_role": "non_eroding_diagonal_medium",
+  "effective_failure_plastic_strains": {
+    "facade": 0.0,
+    "core": 0.0,
+    "cowling": 0.0
+  },
+  "non_eroding_default_interpretation": "LAW2 EPSmax=0 invokes the documented default 1e20 failure plastic strain",
+  "base_configuration": {
+    "path": "wtc1_simulation_v8/data/v8w_projectile_freeflight_pairwise_contact.json",
+    "sha256": "6c1438590f30386e6928c66c0f531d730999e3ffa0026642f61b8f96d29f80f8",
+    "inherited_without_change": [
+      "facade geometry and material curve",
+      "projectile geometry, masses, material curves and widened cowling opening",
+      "two reciprocal pairwise core-cowling TYPE7 interfaces",
+      "projectile-to-facade TYPE7 interface",
+      "443 mph initial speed, frictionless contact, shell formulation and output intervals"
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "iteration": "V9T",
+  "dataset": {
+    "name": "Geometry-only three-stair Floor 95 layer from V9S envelopes and V9R landing dimensions",
+    "version": "9.20.0",
+    "status": "PREDECLARED_HYPOTHETICAL_RELATIVE_FIT_NO_AS_BUILT_OR_MECHANICAL_CREDIT",
+    "random_seed": 9122005,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V9S, fit the separately published exit-door landing dimensions into the V9S qualitative normalized envelopes with one common relative scale, create deterministic low/base/high placement variants, and validate only transform reproducibility, envelope containment, topology and non-overlap."
+  },
+  "source_policy": {
+    "source_archive_read": false,
+    "source_archive_rescanned": false,
+    "cached_official_sources_read_only": true,
+    "network_access_used": false,
+    "official_source_files_modified": false,
+    "structural_solver_authorized": false,
+    "blender_authorized": false,
+    "blender_master_modification_authorized": false,
+    "physical_interpretation_authorized": false,
+    "metric_as_built_geometry_authorized": false,
+    "mass_assignment_authorized": false,
+    "stiffness_assignment_authorized": false,
+    "strength_assignment_authorized": false,
+    "connection_assignment_authorized": false,
+    "load_path_credit_authorized": false,
+    "component_damage_validation_authorized": false,
+    "foia_request_sent": false,
+    "external_contact_count": 0
+  },
+  "regression_files": {
+    "wtc1_simulation_v8/data/v9s_stairwell_footprint_registration.json": "c41664aee6cbcd5963d89e70f380efdaa24d8aa7b38802110e5c4a6cec853151",
+    "wtc1_simulation_v8/scripts/run_v9s_stairwell_footprint_registration.py": "2f67d25e82ecf07d25f3fdb3b5d9ac5a28ab244560fdf3d8f8d30a68a7ad9e3a",
+    "wtc1_simulation_v8/output/v9s_stairwell_registration_source_manifest.json": "6d5b41f91edeb47a4aa4b8e82cfd0974e07799e4c91233e8c66e145da01733a5",
+    "wtc1_simulation_v8/output/v9s_stairwell_digitization.json": "423bf728b102dc43a5f032f843f31d35ca0d24f48dfb53faffd7fceef72a9353",
+    "wtc1_simulation_v8/output/v9s_stairwell_qualitative_envelopes.json": "e2c2dfb989e3371725087788de4a52021566c2247ce939f5a40776aa60874384",
+    "wtc1_simulation_v8/output/v9s_stairwell_registration_metrics.csv": "89327dfac7815d9681e614128cafdf60129ecc2b5ab15488dfbd8ea48cfdac6d",
+    "wtc1_simulation_v8/output/v9s_stairwell_model_gate.json": "516c7912b33ba4a5f0f14668c8fdbd250534fd333262f61e48a317121dfa5f77",
+    "wtc1_simulation_v8/output/v9s_stairwell_registration_figures/v9s_contact_sheet.png": "676c6488b82be142e9ea51717846e9fffbd907e5849d9bade59a1eec27af9fd4",
+    "wtc1_simulation_v8/output/rapport_wtc1_v9s_registration_escaliers.md": "23fb432d7eae81314e36e768884575782fb93823e815daf3261445aa5c21865a",
+    "wtc1_simulation_v8/output/resultats_wtc1_v9s_registration_escaliers.json": "38dcd862fa590efeb08ab63d1f0d66211063b2011c50cfd096656523c8e046fd"
+  },
+  "input_artifacts": {
+    "wtc1_simulation_v8/output/v9s_stairwell_qualitative_envelopes.json": "e2c2dfb989e3371725087788de4a52021566c2247ce939f5a40776aa60874384",
+    "wtc1_simulation_v8/output/v9r_stairwell_topology.json": "b16d78dad57b98bdb8f1cd9655a446c3172f1a473c43845255f80d7e8487aa9d"
+  },
+  "protected_files": {
+    "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+  },
+  "geometry": {
+    "floor": 95,
+    "coordinate_system": "QUALITATIVE_CORE_NORMALIZED_PIXEL_CANVAS",
+    "common_canvas_size_px": [1000.0, 1000.0],
+    "physical_scale_assigned": false,
+    "common_relative_scale_rule": "minimum over all stairs and axes of V9S envelope span divided by oriented published landing dimension",
+    "scale_interpretation": "canvas units per published inch used only to preserve relative landing dimensions inside the qualitative envelopes; not a physical pixel-to-inch conversion",
+    "orientation_hypotheses": {
+      "A": {
+        "rotation_deg": 0.0,
+        "x_dimension": "landing_by_exit_door_width_in",
+        "y_dimension": "landing_by_exit_door_depth_in",
+        "basis": "V9S envelope is wider than tall"
+      },
+      "C": {
+        "rotation_deg": 0.0,
+        "x_dimension": "landing_by_exit_door_width_in",
+        "y_dimension": "landing_by_exit_door_depth_in",
+        "basis": "V9S envelope is wider than tall"
+      },
+      "B": {
+        "rotation_deg": 90.0,
+        "x_dimension": "landing_by_exit_door_depth_in",
+        "y_dimension": "landing_by_exit_door_width_in",
+        "basis": "V9S envelope is taller than wide"
+      }
+    },
+    "placement_variants": {
+      "low": {
+        "residual_fraction_x": 0.0,
+        "residual_fraction_y": 0.0,
+        "interpretation": "lower-left residual-envelope placement; not a lower confidence bound"
+      },
+      "base": {
+        "residual_fraction_x": 0.5,
+        "residual_fraction_y": 0.5,
+        "interpretation": "centered residual-envelope placement; not a best estimate"
+      },
+      "high": {
+        "residual_fraction_x": 1.0,
+        "residual_fraction_y": 1.0,
+        "interpretation": "upper-right residual-envelope placement; not an upper confidence bound"
+      }
+    },
+    "topology_relations": [
+      "C_WEST_OF_A",
+      "A_NORTH_OF_B",
+      "C_NORTH_OF_B",
+      "B_CENTROID_X_BETWEEN_C_AND_A"
+    ],
+    "assigned_physical_properties": {
+      "mass_kg": 0.0,
+      "stiffness_n_per_m": 0.0,
+      "strength_n": 0.0,
+      "connection_credit": 0.0,
+      "load_path_credit": 0.0,
+      "component_damage_credit": 0.0
+    }
+  },
+  "gates": {
+    "regression_hash_count_expected": 10,
+    "input_artifact_hash_count_expected": 2,
+    "protected_file_hash_count_expected": 1,
+    "stairway_count_expected": 3,
+    "variant_count_expected": 3,
+    "transform_reproduction_tolerance_common_px": 1e-09,
+    "dimension_reproduction_tolerance_in": 1e-09,
+    "containment_tolerance_common_px": 1e-06,
+    "intersection_area_tolerance_common_px2": 1e-09,
+    "minimum_pairwise_clearance_common_px_exclusive": 0.0,
+    "metric_as_built_solver_geometry_authorized": false,
+    "discrete_mass_authorized": false,
+    "stiffness_authorized": false,
+    "strength_authorized": false,
+    "connection_authorized": false,
+    "load_path_credit_authorized": false,
+    "component_damage_validation_authorized": false,
+    "global_solver_authorized": false,
+    "blender_authorized": false,
+    "blender_physical_validation_authorized": false
+  },
+  "evidence_policy": {
+    "observed_or_transcribed_fact": "Published exit-door landing dimensions and V9S source-visible normalized envelope bounds.",
+    "official_model_result": "V9S envelopes derive from two NIST official-model figures and are not independent as-built measurements.",
+    "model_hypothesis": "Landing orientation, one common relative fit scale, and low/base/high residual-placement fractions.",
+    "derived_result": "Nine deterministic rectangles, transform fingerprints, pairwise clearances, containment and categorical topology checks.",
+    "contradiction_or_unknown": "Whole enclosure, wall, door, flight, stringer, connection, exact metric position and component damage remain unknown."
+  },
+  "outputs": {
+    "figure_directory": "wtc1_simulation_v8/output/v9t_stairwell_geometry_figures",
+    "source_manifest": "wtc1_simulation_v8/output/v9t_stairwell_layer_source_manifest.json",
+    "geometry_layer": "wtc1_simulation_v8/output/v9t_floor95_stairwell_layer.json",
+    "transform_audit": "wtc1_simulation_v8/output/v9t_stairwell_transform_audit.json",
+    "metrics_csv": "wtc1_simulation_v8/output/v9t_stairwell_topology_metrics.csv",
+    "model_gate": "wtc1_simulation_v8/output/v9t_stairwell_model_gate.json",
+    "contact_sheet": "wtc1_simulation_v8/output/v9t_stairwell_geometry_figures/v9t_contact_sheet.png",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v9t_couche_geometrique_escaliers.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v9t_couche_geometrique_escaliers.md"
+  },
+  "next_iteration": {
+    "id": "V9U",
+    "objective": "Preserve V8U through V9T and test whether the geometry-only Floor 95 stairwell layer can be extended across Floors 93-99 using only the published V9R floor-band continuity and transfer topology. Create a categorical seven-floor stack only where continuity is supported, label every repeated placement hypothetical, preserve zero mass, stiffness, strength, connection and load-path credit, do not modify Blender, and do not run a structural solver."
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "iteration": "V9S",
+  "dataset_version": "9.19.0",
+  "generated_at_utc": "2026-08-29T17:45:55Z",
+  "validation_status": "PASS",
+  "random_seed": 9122004,
+  "random_draw_used": false,
+  "scope": "Preserve V8U through V9R, register only source-visible Floor 95 stairwell outlines or marker boxes from NCSTAR 1-7 Figure 5-2 and NCSTAR 1-2B Figure 9-124 against visible core-boundary landmarks, report digitization and inter-figure uncertainty, and create qualitative normalized envelopes without exact as-built coordinates or mechanical credit.",
+  "observed_or_transcribed_facts": {
+    "figure_5_2_visible_stair_count": 3,
+    "figure_9_124_floor_95_visible_marker_count": 2,
+    "figure_9_124_floor_95_stair_c_closed_outline_recoverable": false
+  },
+  "official_model_results": {
+    "both_figures_are_nist_model_visualizations": true,
+    "independent_as_built_measurements": false
+  },
+  "archive_claims_used": [],
+  "model_hypotheses": {
+    "core_rectangle_axis_normalization": true,
+    "physical_scale": null,
+    "missing_stair_c_outline_imputed": false
+  },
+  "derived_results": {
+    "common_canvas_size_px": [
+      1000,
+      1000
+    ],
+    "cross_figure_visible_stair_count": 2,
+    "metrics": {
+      "A": {
+        "stair": "A",
+        "figure_5_2_visible": true,
+        "figure_9_124_visible": true,
+        "cross_figure_comparable": true,
+        "centroid_distance_common_px": 56.83,
+        "distance_gate_common_px": 100.0,
+        "distance_gate_pass": true,
+        "envelope_status": "TWO_FIGURE_QUALITATIVE_UNION_WITH_BOUNDED_DIGITIZATION_ERROR",
+        "metric_as_built_geometry": false,
+        "mechanical_credit": false
+      },
+      "B": {
+        "stair": "B",
+        "figure_5_2_visible": true,
+        "figure_9_124_visible": true,
+        "cross_figure_comparable": true,
+        "centroid_distance_common_px": 65.924,
+        "distance_gate_common_px": 100.0,
+        "distance_gate_pass": true,
+        "envelope_status": "TWO_FIGURE_QUALITATIVE_UNION_WITH_BOUNDED_DIGITIZATION_ERROR",
+        "metric_as_built_geometry": false,
+        "mechanical_credit": false
+      },
+      "C": {
+        "stair": "C",
+        "figure_5_2_visible": true,
+        "figure_9_124_visible": false,
+        "cross_figure_comparable": false,
+        "centroid_distance_common_px": null,
+        "distance_gate_common_px": null,
+        "distance_gate_pass": null,
+        "envelope_status": "SINGLE_FIGURE_ONLY_NO_INTERFIGURE_BOUND",
+        "metric_as_built_geometry": false,
+        "mechanical_credit": false
+      }
+    },
+    "qualitative_envelopes": {
+      "A": {
+        "status": "TWO_FIGURE_QUALITATIVE_UNION_WITH_BOUNDED_DIGITIZATION_ERROR",
+        "contributing_sources": [
+          "figure_5_2",
+          "figure_9_124"
+        ],
+        "polygon_common_px": [
+          [
+            491.089,
+            178.947
+          ],
+          [
+            714.852,
+            178.947
+          ],
+          [
+            714.852,
+            383.692
+          ],
+          [
+            491.089,
+            383.692
+          ]
+        ],
+        "bounds_common_px": {
+          "min_x": 491.089,
+          "min_y": 178.947,
+          "max_x": 714.852,
+          "max_y": 383.692
+        },
+        "uncertainty_expansion_common_px": {
+          "x_common_px": 25.743,
+          "y_common_px": 34.211
+        },
+        "metric_as_built_boundary": false,
+        "solver_geometry_authorized": false,
+        "mechanical_credit": false
+      },
+      "B": {
+        "status": "TWO_FIGURE_QUALITATIVE_UNION_WITH_BOUNDED_DIGITIZATION_ERROR",
+        "contributing_sources": [
+          "figure_5_2",
+          "figure_9_124"
+        ],
+        "polygon_common_px": [
+          [
+            396.039,
+            510.526
+          ],
+          [
+            600.656,
+            510.526
+          ],
+          [
+            600.656,
+            810.527
+          ],
+          [
+            396.039,
+            810.527
+          ]
+        ],
+        "bounds_common_px": {
+          "min_x": 396.039,
+          "min_y": 510.526,
+          "max_x": 600.656,
+          "max_y": 810.527
+        },
+        "uncertainty_expansion_common_px": {
+          "x_common_px": 25.743,
+          "y_common_px": 34.211
+        },
+        "metric_as_built_boundary": false,
+        "solver_geometry_authorized": false,
+        "mechanical_credit": false
+      },
+      "C": {
+        "status": "SINGLE_FIGURE_ONLY_NO_INTERFIGURE_BOUND",
+        "contributing_sources": [
+          "figure_5_2"
+        ],
+        "polygon_common_px": [
+          [
+            198.019,
+            168.421
+          ],
+          [
+            411.882,
+            168.421
+          ],
+          [
+            411.882,
+            363.158
+          ],
+          [
+            198.019,
+            363.158
+          ]
+        ],
+        "bounds_common_px": {
+          "min_x": 198.019,
+          "min_y": 168.421,
+          "max_x": 411.882,
+          "max_y": 363.158
+        },
+        "uncertainty_expansion_common_px": {
+          "x_common_px": 25.743,
+          "y_common_px": 34.211
+        },
+        "metric_as_built_boundary": false,
+        "solver_geometry_authorized": false,
+        "mechanical_credit": false
+      }
+    }
+  },
+  "contradictions_and_missing_information": [
+    "Stair C / marker 2 has no recoverable closed outline in the Figure 9-124 Floor 95 panel.",
+    "The two figures have different visible-outline semantics and neither supplies dimensioned as-built coordinates.",
+    "Both figures are outputs of official models, not independent event measurements."
+  ],
+  "checks": {
+    "regression_hashes": true,
+    "source_hashes": true,
+    "pdf_anchors": true,
+    "rendered_pages": true,
+    "analysis_crops": true,
+    "figure_5_2_visible_count": true,
+    "figure_9_124_visible_count": true,
+    "cross_figure_count": true,
+    "cross_figure_centroid_distances": true,
+    "stair_c_missing_not_guessed": true,
+    "mechanical_and_blender_gates_closed": true,
+    "source_policy_closed": true
+  },
+  "model_gate": {
+    "qualitative_two_figure_registration": true,
+    "metric_as_built_geometry": false,
+    "floor_95_stair_c_cross_figure_bound": false,
+    "mechanical_properties": false,
+    "load_path_credit": false,
+    "component_damage_validation": false,
+    "structural_solver": false,
+    "blender_physical_validation": false
+  },
+  "source_policy": {
+    "source_archive_read": false,
+    "source_archive_rescanned": false,
+    "cached_official_sources_read_only": true,
+    "network_access_used": false,
+    "official_source_files_modified": false,
+    "structural_solver_authorized": false,
+    "blender_authorized": false,
+    "physical_interpretation_authorized": false,
+    "mass_assignment_authorized": false,
+    "stiffness_assignment_authorized": false,
+    "strength_assignment_authorized": false,
+    "connection_assignment_authorized": false,
+    "component_damage_validation_authorized": false,
+    "foia_request_sent": false,
+    "external_contact_count": 0
+  },
+  "next_iteration": {
+    "id": "V9T",
+    "objective": "Preserve V8U through V9S and construct a geometry-only three-envelope Floor 95 stairwell layer from the V9S normalized envelopes and the separately published landing dimensions. Generate explicitly hypothetical low, base and high placement variants, verify transform reproducibility and topology/non-overlap only, assign zero mass, stiffness, strength, connection or load-path credit, do not modify the Blender master, and do not run a structural solver."
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "name": "I02A_FREE_M050_R1",
+  "case": {
+    "id": "FREE_M050_R1",
+    "mesh_mm": 50.0,
+    "dt_scale": 0.9,
+    "contact": false,
+    "role": "Cold numerical free-flight control with the complete structured section"
+  },
+  "nodes": 21920,
+  "shells": 22074,
+  "shells_by_part": {
+    "1": 7200,
+    "2": 1674,
+    "3": 7200,
+    "4": 1200,
+    "5": 2400,
+    "6": 1200,
+    "7": 1200
+  },
+  "fixed_nodes": 192,
+  "wing_nodes": 12944,
+  "topology": {
+    "bounds_mm": {
+      "x": [
+        -1500.0,
+        1500.0
+      ],
+      "y": [
+        800.0,
+        1200.0
+      ],
+      "z": [
+        50.0,
+        2050.0
+      ]
+    },
+    "rib_x_mm": [
+      -1500.0,
+      -500.0,
+      500.0,
+      1500.0
+    ],
+    "stringer_z_mm": [
+      150.0,
+      350.0,
+      550.0,
+      750.0,
+      950.0,
+      1150.0,
+      1350.0,
+      1550.0,
+      1750.0,
+      1950.0
+    ],
+    "grid_counts": {
+      "x": 61,
+      "y": 11,
+      "z": 61
+    },
+    "stringer_interpretation": "10 per skin"
+  },
+  "element_ranges": {
+    "1": [
+      1,
+      7200
+    ],
+    "2": [
+      7201,
+      8874
+    ],
+    "3": [
+      8875,
+      16074
+    ],
+    "4": [
+      16075,
+      17274
+    ],
+    "5": [
+      17275,
+      19674
+    ],
+    "6": [
+      19675,
+      20874
+    ],
+    "7": [
+      20875,
+      22074
+    ]
+  },
+  "expected_mass_g_by_part": {
+    "1": 973745.5621824,
+    "2": 296374.1453150401,
+    "3": 84734.4,
+    "4": 21412.2,
+    "5": 28549.6,
+    "6": 27193.493999999973,
+    "7": 13596.747000000018
+  },
+  "expected_wing_mass_g": 175486.441,
+  "expected_initial_wing_ke_J": 3440952.7060934603,
+  "initial_gap_to_facade_midsurface_mm": 50.0,
+  "source_sha256": {
+    "wtc1_simulation_v8/data/impact_i02a_structured_wing.json": "4fd51f8afdffe020188b7a4ba55ab5d385daee64813ca77ad756e5f44fa56230",
+    "wtc1_simulation_v8/data/impact_i01_first_contact.json": "a53ee5a01c0960867e5b4d849aeb36085def51f4de8dad434e737325f4067434",
+    "work/official_sources/ncstar1-2bv1.pdf": "1504c598adcd9e492bc126530b593b2d467b7c01a7324913b221a5cb9e128ab4"
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "iteration": "V10S",
+  "generated_at_utc": "2026-09-04T07:57:44Z",
+  "validation_status": "PASS_THREE_TRACK_PROPAGATION_STATUS_CONTRACT_ONLY",
+  "dataset": {
+    "name": "Three-track initiation-to-propagation/arrest status contract",
+    "version": "10.19.0",
+    "status": "PREDECLARED_BEFORE_V10S_CONTRACT_CONSTRUCTION",
+    "created_at_local": "2026-09-04T10:05:00+02:00",
+    "random_seed": 1019001,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10R. Close the solver-neutral software chain from initiation into a separately modelled propagation-or-arrest stage without asserting a physical initiation. Replay the V10O zero control, keep the official-dependent branch INDETERMINATE_BLOCKED, keep the historical physical branch unknown, audit exact I07/I08 contract gaps, define version-2 schemas, enumerate minimum inputs and conservation-ledger terms, and perform only zero-control algebra. Do not invent a collapse initiation, run a propagation solver, launch Blender or conclude historical collapse or non-collapse."
+  },
+  "configuration": {
+    "path": "wtc1_simulation_v8/data/v10s_three_track_propagation_arrest_contract.json",
+    "sha256": "51594076b26fc777755733fc05fe0ca484d70afe32feaf3c168cd04a596dc550"
+  },
+  "script": {
+    "path": "wtc1_simulation_v8/scripts/run_v10s_three_track_propagation_arrest_contract.py",
+    "sha256": "e0e392393ffeaaf4f5d5c0bbabef837526b05a21bc17d09be4e667d9f81ed706"
+  },
+  "source_summary": {
+    "regression_file_count": 13,
+    "protected_file_count": 1,
+    "cached_input_file_count": 3,
+    "official_source_hash_only_file_count": 1
+  },
+  "control_audit": {
+    "check_count": 16,
+    "pass_count": 16,
+    "checks": {
+      "i07_schema_id": true,
+      "i07_time_zero": true,
+      "i07_failed_members_empty": true,
+      "i07_displacements_empty": true,
+      "i07_velocities_empty": true,
+      "i07_participating_mass_zero": true,
+      "i07_energy_zero": true,
+      "i07_instability_time_null": true,
+      "i07_control_label": true,
+      "i08_schema_id": true,
+      "i08_control_outcome": true,
+      "i08_arrest_story_null": true,
+      "i08_energy_residual_zero": true,
+      "i08_momentum_residual_zero": true,
+      "i08_not_historical_probability": true,
+      "i08_explicit_not_historical_noncollapse_flag": true
+    },
+    "terminal_label": "CONTROL_NO_PROPAGATION",
+    "terminal_label_is_historical_noncollapse": false
+  },
+  "interface_summary": {
+    "interface_count": 2,
+    "graph_required_field_count": 14,
+    "legacy_schema_exact_present_field_count": 12,
+    "legacy_schema_exact_gap_count": 2,
+    "v2_addressed_field_count": 14,
+    "by_interface": {
+      "I07_INITIATION_TO_PROPAGATION": {
+        "graph_required_field_count": 8,
+        "exact_present_field_count": 7,
+        "exact_gap_count": 1,
+        "v2_addressed_count": 8
+      },
+      "I08_PROPAGATION_TO_ENSEMBLE": {
+        "graph_required_field_count": 6,
+        "exact_present_field_count": 5,
+        "exact_gap_count": 1,
+        "v2_addressed_count": 6
+      }
+    },
+    "gap_fields": [
+      {
+        "interface_id": "I07_INITIATION_TO_PROPAGATION",
+        "field": "boundary_state",
+        "resolution": "LEGACY_GAP_V2_ADDS_BOUNDARY_STATE"
+      },
+      {
+        "interface_id": "I08_PROPAGATION_TO_ENSEMBLE",
+        "field": "conservation_residuals",
+        "resolution": "LEGACY_SPLIT_SCALARS_INCOMPLETE_V2_ADDS_AGGREGATE_MASS_VECTOR_MOMENTUM_ENERGY"
+      }
+    ],
+    "v2_schema_is_physical_data": false
+  },
+  "requirement_summary": {
+    "requirement_count": 32,
+    "physical_ready_count": 0,
+    "blocking_count": 32,
+    "by_category": {
+      "initial_state": {
+        "requirement_count": 12,
+        "physical_ready_count": 0,
+        "blocking_count": 12
+      },
+      "output": {
+        "requirement_count": 2,
+        "physical_ready_count": 0,
+        "blocking_count": 2
+      },
+      "resistance": {
+        "requirement_count": 10,
+        "physical_ready_count": 0,
+        "blocking_count": 10
+      },
+      "validation": {
+        "requirement_count": 8,
+        "physical_ready_count": 0,
+        "blocking_count": 8
+      }
+    }
+  },
+  "contract_v2_summary": {
+    "initiation_state_v2_required_field_count": 16,
+    "propagation_outcome_v2_required_field_count": 14,
+    "physical_ready": false
+  },
+  "conservation_ledger_summary": {
+    "ledger_field_count": 17,
+    "track_count": 3,
+    "row_count": 51,
+    "control_populated_field_count": 17,
+    "blocked_null_field_count": 34,
+    "control_identity_checks": {
+      "zero_control_mass_identity": true,
+      "zero_control_vector_momentum_identity": true,
+      "zero_control_energy_identity": true
+    },
+    "control_identity_check_count": 3,
+    "control_identity_pass_count": 3,
+    "physical_ledger_ready_track_count": 0,
+    "physical_value_count": 0
+  },
+  "track_summary": {
+    "track_count": 3,
+    "track_ids": [
+      "CONTROL_ZERO_INITIATION_PROPAGATION",
+      "OFFICIAL_DEPENDENT_PROPAGATION_BLOCKED",
+      "UNKNOWN_PHYSICAL_PROPAGATION_OR_ARREST"
+    ],
+    "visualization_status_release_count": 3,
+    "physical_propagation_release_count": 0,
+    "historical_physical_initiation_assignment_count": 0,
+    "historical_physical_propagation_assignment_count": 0,
+    "control_terminal_label": "CONTROL_NO_PROPAGATION",
+    "control_terminal_label_is_historical_noncollapse": false,
+    "official_dependent_outcome_is_null": true,
+    "unknown_physical_ledgers_and_outcome_null": true
+  },
+  "gates": {
+    "iteration": "V10S",
+    "generated_at_utc": "2026-09-04T07:57:44Z",
+    "validation_status": "PASS_SOFTWARE_STATUS_CONTRACT_ONLY",
+    "regression_gate": "PASS",
+    "protected_blender_master_gate": "PASS_UNCHANGED",
+    "source_identity_gate": "PASS_3_CACHED_PLUS_1_OFFICIAL_HASH_ONLY",
+    "three_track_separation_gate": "PASS_3_OF_3",
+    "v10o_control_replay_gate": "PASS_16_OF_16",
+    "legacy_interface_exact_coverage_gate": "GAP_12_OF_14_FIELDS_PRESENT",
+    "legacy_interface_gap_count": 2,
+    "v2_schema_coverage_gate": "PASS_14_OF_14_GRAPH_FIELDS_ADDRESSED_SCHEMA_ONLY",
+    "minimum_physical_input_gate": "CLOSED_0_OF_32_READY",
+    "control_conservation_gate": "PASS_3_OF_3_ZERO_SENTINEL_ONLY",
+    "official_dependent_conservation_gate": "INDETERMINATE_ALL_17_FIELDS_NULL",
+    "unknown_physical_conservation_gate": "INDETERMINATE_ALL_17_FIELDS_NULL",
+    "initiation_to_propagation_physical_handoff_gate": "CLOSED_UPSTREAM_INITIATION_BLOCKED",
+    "propagation_or_arrest_physical_gate": "CLOSED_NOT_RUN",
+    "historical_physical_initiation_assignment_count": 0,
+    "historical_physical_propagation_assignment_count": 0,
+    "downstream_physical_release_count": 0,
+    "v10t_visualization_status_package_authorized": true,
+    "v10t_predicted_collapse_motion_authorized": false,
+    "mechanical_source_gate": "OPEN_0_OF_22_REQUIREMENTS",
+    "historical_collapse_or_noncollapse_conclusion_authorized": false,
+    "structural_solver_run_count": 0,
+    "propagation_solver_run_count": 0,
+    "other_solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 0
+  },
+  "execution_counts": {
+    "historical_physical_initiation_assignment_count": 0,
+    "historical_physical_propagation_assignment_count": 0,
+    "physical_propagation_release_count": 0,
+    "structural_solver_run_count": 0,
+    "propagation_solver_run_count": 0,
+    "other_solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 0
+  },
+  "epistemic_separation": {
+    "observed_facts": "Current file identities, exact interface fields, null states, counts and zero-control algebra.",
+    "official_model_results": "No official global-propagation result is imported; upstream thermal references remain dependent and blocked.",
+    "archive_claims": "No external archive is read; one local official PDF is hash-checked only.",
+    "model_hypotheses": "The version-2 schemas and minimum requirement catalogue are design constraints, not WTC properties.",
+    "derived_results": "Legacy interface coverage, gap resolutions, blocking matrix and conservation template.",
+    "unknowns": "Historical initiation, participating mass, dynamic state, resistance, contact, propagation, arrest and conservation ledgers remain unresolved."
+  },
+  "runtime_seconds": 0.03685390000009647,
+  "next_iteration": {
+    "id": "V10T",
+    "objective": "Construire un paquet de visualisation 3D à trois pistes, strictement dérivé des états libérés : contrôle logiciel, références dépendantes du modèle officiel clairement étiquetées et cartes d’inconnues pour les étapes bloquées. Produire un fichier Blender dérivé et quelques images fixes avec bannière permanente, sans modifier le master, inventer de mouvement d’effondrement, réinjecter Blender dans les calculs ni présenter la visualisation comme une prédiction physique."
+  }
+}

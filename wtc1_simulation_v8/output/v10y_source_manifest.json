@@ -1,0 +1,167 @@
+{
+  "iteration": "V10Y",
+  "created_at": "2026-09-05T10:00:16+02:00",
+  "configuration": {
+    "path": "wtc1_simulation_v8/data/v10y_integrated_exploratory_chain.json",
+    "sha256": "57cb235ce91ff6e855b932ad26200426f2db7901e66f7996ebf3e7cf39101b0b"
+  },
+  "runner": {
+    "path": "wtc1_simulation_v8/scripts/run_v10y_integrated_exploratory_chain.py",
+    "sha256": "8b50f7514404f8fb6b5e81f39cef6cf602ff7f9428692e4df3a611a3abc3edd8"
+  },
+  "upstream_checks": [
+    {
+      "group": "regression",
+      "role": "nist_transfer",
+      "path": "wtc1_simulation_v8/data/nist_wtc1_transfer.json",
+      "exists": true,
+      "expected_sha256": "bdf4d779bb41f0d64c908702261ea2f571ba6d73b5d0e09876168c4c03cfe8fb",
+      "actual_sha256": "bdf4d779bb41f0d64c908702261ea2f571ba6d73b5d0e09876168c4c03cfe8fb",
+      "hash_match": true
+    },
+    {
+      "group": "regression",
+      "role": "v8j_cold_gate_configuration",
+      "path": "wtc1_simulation_v8/data/v8j_cold_load_path_gate.json",
+      "exists": true,
+      "expected_sha256": "4412e3dda043a50b5efb5fe2ce4a39c51cdd157c9023524ecbeb0b38667ca2d8",
+      "actual_sha256": "4412e3dda043a50b5efb5fe2ce4a39c51cdd157c9023524ecbeb0b38667ca2d8",
+      "hash_match": true
+    },
+    {
+      "group": "regression",
+      "role": "v8j_cold_gate_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8j_gate_froid.json",
+      "exists": true,
+      "expected_sha256": "4b93102974a8b9fdf1eff3af408e5c074385df9ae9c5886038b67914b430788e",
+      "actual_sha256": "4b93102974a8b9fdf1eff3af408e5c074385df9ae9c5886038b67914b430788e",
+      "hash_match": true
+    },
+    {
+      "group": "regression",
+      "role": "v10p_impact_handoff",
+      "path": "wtc1_simulation_v8/output/v10p_three_track_handoff.json",
+      "exists": true,
+      "expected_sha256": "458196235667e546d5eef53878ad401c17d807141422ebfa9aa8f3f0c7264868",
+      "actual_sha256": "458196235667e546d5eef53878ad401c17d807141422ebfa9aa8f3f0c7264868",
+      "hash_match": true
+    },
+    {
+      "group": "regression",
+      "role": "v10p_damage_matrix",
+      "path": "wtc1_simulation_v8/output/v10p_official_model_damage_reference_matrix.csv",
+      "exists": true,
+      "expected_sha256": "b95bc729d81b5cf406009250936aa53bbdf8ec9ea6257d0eb52ff564e5503bab",
+      "actual_sha256": "b95bc729d81b5cf406009250936aa53bbdf8ec9ea6257d0eb52ff564e5503bab",
+      "hash_match": true
+    },
+    {
+      "group": "regression",
+      "role": "v10q_fire_thermal_handoff",
+      "path": "wtc1_simulation_v8/output/v10q_three_track_fire_thermal_handoff.json",
+      "exists": true,
+      "expected_sha256": "7b14a3d67ba41a929fb557b07b3376f27206deee25597047e5bf16decb35e99c",
+      "actual_sha256": "7b14a3d67ba41a929fb557b07b3376f27206deee25597047e5bf16decb35e99c",
+      "hash_match": true
+    },
+    {
+      "group": "regression",
+      "role": "v10q_temperature_matrix",
+      "path": "wtc1_simulation_v8/output/v10q_official_temperature_envelope_matrix.csv",
+      "exists": true,
+      "expected_sha256": "bfb82536adf1482b73a59e8717af723d8a36d1141bd8294e83657759355ac2e0",
+      "actual_sha256": "bfb82536adf1482b73a59e8717af723d8a36d1141bd8294e83657759355ac2e0",
+      "hash_match": true
+    },
+    {
+      "group": "regression",
+      "role": "v10r_initiation_handoff",
+      "path": "wtc1_simulation_v8/output/v10r_three_track_thermal_initiation_handoff.json",
+      "exists": true,
+      "expected_sha256": "e025bd727d878191ea0b82bd5ff074ce8efb85de1b3ebfda399b116081feb827",
+      "actual_sha256": "e025bd727d878191ea0b82bd5ff074ce8efb85de1b3ebfda399b116081feb827",
+      "hash_match": true
+    },
+    {
+      "group": "regression",
+      "role": "v10r_reduction_matrix",
+      "path": "wtc1_simulation_v8/output/v10r_material_reduction_envelope_matrix.csv",
+      "exists": true,
+      "expected_sha256": "60ce371d7c129992c66a76a171d03bb6366eb5a3c3a850a91ff2d097cffaf510",
+      "actual_sha256": "60ce371d7c129992c66a76a171d03bb6366eb5a3c3a850a91ff2d097cffaf510",
+      "hash_match": true
+    },
+    {
+      "group": "regression",
+      "role": "v10s_propagation_handoff",
+      "path": "wtc1_simulation_v8/output/v10s_three_track_propagation_arrest_handoff.json",
+      "exists": true,
+      "expected_sha256": "1bc02c7d9ac54aaefccbda77e146c2f1cea93e81351247dbd60d3520a1b84e0b",
+      "actual_sha256": "1bc02c7d9ac54aaefccbda77e146c2f1cea93e81351247dbd60d3520a1b84e0b",
+      "hash_match": true
+    },
+    {
+      "group": "regression",
+      "role": "v10s_propagation_contract",
+      "path": "wtc1_simulation_v8/output/v10s_propagation_contract_v2.json",
+      "exists": true,
+      "expected_sha256": "61c7e737fa2a58e6f56563e33aa6c69e3e399c4035614c653ea8014ec5736617",
+      "actual_sha256": "61c7e737fa2a58e6f56563e33aa6c69e3e399c4035614c653ea8014ec5736617",
+      "hash_match": true
+    },
+    {
+      "group": "regression",
+      "role": "v10x_configuration",
+      "path": "wtc1_simulation_v8/data/v10x_calculix_cyclic_plasticity_benchmark.json",
+      "exists": true,
+      "expected_sha256": "56eb16ee2316fd31caa1bbe7c15142365f00dd078fa97505a8baf108a8c1c22f",
+      "actual_sha256": "56eb16ee2316fd31caa1bbe7c15142365f00dd078fa97505a8baf108a8c1c22f",
+      "hash_match": true
+    },
+    {
+      "group": "regression",
+      "role": "v10x_runner",
+      "path": "wtc1_simulation_v8/scripts/run_v10x_calculix_cyclic_plasticity_benchmark.py",
+      "exists": true,
+      "expected_sha256": "9e8df875ec235b14f3f7ce2196e85c7002c47ec655e2691b4950652ccc437478",
+      "actual_sha256": "9e8df875ec235b14f3f7ce2196e85c7002c47ec655e2691b4950652ccc437478",
+      "hash_match": true
+    },
+    {
+      "group": "regression",
+      "role": "v10x_gate",
+      "path": "wtc1_simulation_v8/output/v10x_cyclic_plasticity_benchmark_gate.json",
+      "exists": true,
+      "expected_sha256": "604c315b73020c449fa4ce00ff39474d08a490506fc1ea27ae49b1f0ac06f212",
+      "actual_sha256": "604c315b73020c449fa4ce00ff39474d08a490506fc1ea27ae49b1f0ac06f212",
+      "hash_match": true
+    },
+    {
+      "group": "regression",
+      "role": "v10x_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10x_benchmark_plasticite_cyclique.json",
+      "exists": true,
+      "expected_sha256": "6fe29a641bf93c987872ce27c6c09ea3aac3df35d9031b352706e3e17dfa9803",
+      "actual_sha256": "6fe29a641bf93c987872ce27c6c09ea3aac3df35d9031b352706e3e17dfa9803",
+      "hash_match": true
+    },
+    {
+      "group": "protected",
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "exists": true,
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1",
+      "actual_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1",
+      "hash_match": true
+    }
+  ],
+  "epistemic_policy": {
+    "documented_fact": "Directly transcribed from the selected local official-source cache or an earlier hash-verified handoff.",
+    "official_model_dependent": "A result of the NIST model chain reused as an input envelope, not an independent observation.",
+    "exploratory_hypothesis": "A numerical assumption selected to make the first integrated model executable; it receives no documentary closure credit.",
+    "derived_result": "Calculated deterministically from the declared inputs and equations.",
+    "unknown": "Not resolved by the selected sources and not silently promoted.",
+    "grid_fraction_rule": "Fractions of the deterministic parameter grid describe this grid only and are never probabilities of the historical event."
+  },
+  "warning": "Hash identity and model integrity do not convert official-model outputs or exploratory hypotheses into independent historical measurements."
+}

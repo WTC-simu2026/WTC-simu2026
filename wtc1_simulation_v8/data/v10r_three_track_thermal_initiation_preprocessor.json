@@ -1,0 +1,307 @@
+{
+  "iteration": "V10R",
+  "dataset": {
+    "name": "Three-track thermal-to-initiation preprocessor and validity-domain audit",
+    "version": "10.18.0",
+    "status": "PREDECLARED_BEFORE_V10R_PREPROCESSOR_CONSTRUCTION",
+    "created_at_local": "2026-09-04T09:45:00+02:00",
+    "random_seed": 1018001,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10Q. Build exactly three non-merging thermal-to-initiation tracks: the zero-temperature software control, a cached official-model-dependent reduced-property reference, and UNKNOWN_PHYSICAL_INITIATION. Apply the selected yield-ratio and Young-modulus equations only inside a conservative joint 0-600 C domain, retain nulls above that domain, audit the V8E legacy tail-model dependence, and join every branch with the failed V8J cold-load-path gate. Do not assign member capacities or temperatures, rerun a structural model, release a physical initiation state, launch Blender, or conclude historical collapse or non-collapse."
+  },
+  "execution_policy": {
+    "network_access": false,
+    "source_archive_read": false,
+    "source_archive_modified": false,
+    "official_source_pdf_hash_only_count": 2,
+    "official_source_pdf_page_read_count": 0,
+    "official_source_pdf_text_extraction_count": 0,
+    "official_sources_directory_modified": false,
+    "software_installation": false,
+    "structural_solver_execution": false,
+    "thermal_solver_execution": false,
+    "other_solver_execution": false,
+    "gpu_compute": false,
+    "blender_execution": false,
+    "blender_master_modification": false,
+    "member_temperature_assignment": false,
+    "member_section_assignment": false,
+    "member_capacity_assignment": false,
+    "material_law_extrapolation_above_600_c": false,
+    "historical_initiation_conclusion": false,
+    "historical_collapse_or_noncollapse_conclusion": false,
+    "maximum_runtime_seconds": 900
+  },
+  "regression_files": [
+    {
+      "role": "v10q_configuration",
+      "path": "wtc1_simulation_v8/data/v10q_three_track_fire_thermal_handoff.json",
+      "expected_sha256": "63a47763c79a19640e7f5f4215ff0d81c26827764636a3ba0ea97f8d8d51f6db"
+    },
+    {
+      "role": "v10q_script",
+      "path": "wtc1_simulation_v8/scripts/run_v10q_three_track_fire_thermal_handoff.py",
+      "expected_sha256": "81c75f632562167c85d57f2162eae3fbfc3d4465d99cdd3781abe32ac17e6f98"
+    },
+    {
+      "role": "v10q_regression_audit",
+      "path": "wtc1_simulation_v8/output/v10q_regression_audit.json",
+      "expected_sha256": "f013474cee300637c93d5a397f87e97341500d3d0e2f6c19baf3f44c0879fe5e"
+    },
+    {
+      "role": "v10q_source_manifest",
+      "path": "wtc1_simulation_v8/output/v10q_fire_thermal_source_manifest.json",
+      "expected_sha256": "9a0c10f6a38f959a8c82e2b9e6fb9e539eb5809b8b824d89132db5c79e38a077"
+    },
+    {
+      "role": "v10q_track_manifest",
+      "path": "wtc1_simulation_v8/output/v10q_three_track_fire_thermal_handoff.json",
+      "expected_sha256": "7b14a3d67ba41a929fb557b07b3376f27206deee25597047e5bf16decb35e99c"
+    },
+    {
+      "role": "v10q_temperature_matrix",
+      "path": "wtc1_simulation_v8/output/v10q_official_temperature_envelope_matrix.csv",
+      "expected_sha256": "bfb82536adf1482b73a59e8717af723d8a36d1141bd8294e83657759355ac2e0"
+    },
+    {
+      "role": "v10q_unit_temporal_audit",
+      "path": "wtc1_simulation_v8/output/v10q_unit_and_temporal_support_audit.json",
+      "expected_sha256": "3a5931a63c1b96946f0f40ff3237e0153c971d3d4798025d75c4408bfbb05d72"
+    },
+    {
+      "role": "v10q_sfrm_matrix",
+      "path": "wtc1_simulation_v8/output/v10q_sfrm_unknown_field_matrix.csv",
+      "expected_sha256": "4f9105a599c6916719711d70667e2acbcbe3fb8884210746732c9b86c7a4e49b"
+    },
+    {
+      "role": "v10q_gate",
+      "path": "wtc1_simulation_v8/output/v10q_fire_thermal_handoff_gate.json",
+      "expected_sha256": "b40ef250fd9aab9d9356d3748bb0cb44b8b8b0ca88f681771b31ac3dea113bf2"
+    },
+    {
+      "role": "v10q_report",
+      "path": "wtc1_simulation_v8/output/rapport_wtc1_v10q_transfert_feu_thermique.md",
+      "expected_sha256": "c42b782394a4a5a31461acc6bc465015d173639a8d57293f11bac3db6526e8cb"
+    },
+    {
+      "role": "v10q_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10q_transfert_feu_thermique.json",
+      "expected_sha256": "597a47da8ba1c3c34275c98549a3a786f1ced648a3b3ac205a802ee3d73f2198"
+    },
+    {
+      "role": "v10q_offline_audit",
+      "path": "wtc1_simulation_v8/output/v10q_offline_package_audit.json",
+      "expected_sha256": "9bf6b69ad96dc692a1a16dbb5c7e94bdba398a7ea06e632f69d24843ed470647"
+    }
+  ],
+  "protected_files": [
+    {
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+    }
+  ],
+  "cached_input_files": [
+    {
+      "id": "NIST_WTC1_TRANSFER_TRANSCRIPTION",
+      "path": "wtc1_simulation_v8/data/nist_wtc1_transfer.json",
+      "expected_sha256": "bdf4d779bb41f0d64c908702261ea2f571ba6d73b5d0e09876168c4c03cfe8fb",
+      "evidence_class": "MANUAL_TRANSCRIPTION_OF_OFFICIAL_MODEL_INPUTS_AND_OUTPUTS"
+    },
+    {
+      "id": "V8B_REDUCED_MATERIAL_AND_COLUMN_SCRIPT",
+      "path": "wtc1_simulation_v8/scripts/run_v8b_stability_network.py",
+      "expected_sha256": "61d4c751ce8f4540f6dba5ca8564ad8a211946da851ba56692e3e0115b175ab7",
+      "evidence_class": "CACHED_REDUCED_MODEL_CODE_NOT_VALIDATED_MEMBER_MODEL"
+    },
+    {
+      "id": "V8E_SYNTHETIC_THERMAL_SCRIPT",
+      "path": "wtc1_simulation_v8/scripts/run_v8e_spatial_thermal_fields.py",
+      "expected_sha256": "f43426749057c4f60be1460f4ded92e847acbd6c13626d1d206b91a60343b113",
+      "evidence_class": "CACHED_SYNTHETIC_TRANSFORMATION_CODE"
+    },
+    {
+      "id": "V8E_SYNTHETIC_THERMAL_RESULTS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8e_champs_thermiques.json",
+      "expected_sha256": "d26e0c2671bb2f0bd1839e6208739e1703597adb79f88a4d81c0df5c330b956e",
+      "evidence_class": "CACHED_SYNTHETIC_RESULT_NOT_EVENT_PROBABILITY"
+    },
+    {
+      "id": "V8J_COLD_LOAD_PATH_GATE",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8j_gate_froid.json",
+      "expected_sha256": "4b93102974a8b9fdf1eff3af408e5c074385df9ae9c5886038b67914b430788e",
+      "evidence_class": "CACHED_FAILED_REDUCED_MODEL_PRECONDITION"
+    },
+    {
+      "id": "V10O_ZERO_CONTROL_TRACE",
+      "path": "wtc1_simulation_v8/output/v10o_null_control_trace.json",
+      "expected_sha256": "62890121c6bc89aa5970e9266bcd89ff1b148c672d601c8ca2f293df81405864",
+      "evidence_class": "SYNTHETIC_SOFTWARE_CONTROL"
+    }
+  ],
+  "official_source_hash_only_files": [
+    {
+      "id": "NCSTAR1_5G",
+      "path": "work/official_sources/ncstar1-5g.pdf",
+      "expected_sha256": "f6aa637c05c4ff1ae2a6a5e9192471aa69e6e0aa97a4bbe5aa33afd68a3526ea",
+      "use": "hash continuity only for thermal-range and material-model context"
+    },
+    {
+      "id": "NCSTAR1_6D_LOCAL",
+      "path": "work/official_sources/ncstar1-6d.pdf",
+      "expected_sha256": "0d2a155fc820c83e4bc7df32a6da098261eb2e7f8d1358abd00d11c12bd6c9ff",
+      "use": "hash continuity only for structural and cold-gate context"
+    }
+  ],
+  "track_contract": {
+    "required_track_ids": [
+      "CONTROL_ZERO_THERMAL_INPUT",
+      "OFFICIAL_DEPENDENT_REDUCED_PROPERTY_REFERENCE",
+      "UNKNOWN_PHYSICAL_INITIATION"
+    ],
+    "upstream_track_mapping": {
+      "CONTROL_ZERO_FIRE": "CONTROL_ZERO_THERMAL_INPUT",
+      "OFFICIAL_MODEL_DEPENDENT_THERMAL_REFERENCE": "OFFICIAL_DEPENDENT_REDUCED_PROPERTY_REFERENCE",
+      "UNKNOWN_EVENT_FIRE": "UNKNOWN_PHYSICAL_INITIATION"
+    },
+    "material_model": {
+      "yield_ratio_equation": "(1-A2)*exp(-0.5*((T/s1)^m1 + (T/s2)^m2)) + A2",
+      "yield_ratio_parameters": {
+        "A2": 0.074692,
+        "m1": 8.325929,
+        "m2": 1.0,
+        "s1_c": 638.384277,
+        "s2_c": 523.523132
+      },
+      "yield_ratio_selected_transcription_explicit_domain": null,
+      "young_modulus_gpa_equation": "e0 + e1*T + e2*T^2 + e3*T^3",
+      "young_modulus_parameters": {
+        "e0": 206.0,
+        "e1": -0.04326,
+        "e2": -0.00003502,
+        "e3": -0.00000006592
+      },
+      "young_modulus_declared_valid_temperature_range_c": [
+        0.0,
+        600.0
+      ],
+      "conservative_joint_evaluation_range_c": [
+        0.0,
+        600.0
+      ],
+      "reference_temperature_c": 20.0,
+      "anchor_temperatures_c": [
+        0.0,
+        20.0,
+        100.0,
+        200.0,
+        300.0,
+        400.0,
+        500.0,
+        600.0
+      ],
+      "domain_grid_step_c": 1.0,
+      "above_domain_policy": "Set all new reduced-property values to null when T exceeds 600 C. Do not invoke either V8B tail model.",
+      "yield_ratio_policy": "Evaluate the selected formula only inside the same conservative joint 0-600 C domain because the selected transcription gives no separate explicit yield-ratio validity interval.",
+      "range_policy": "A complete reduced-property interval is released only when both published temperature endpoints are inside 0-600 C. Otherwise retain the valid lower-temperature endpoint and mark the interval PARTIAL_DOMAIN_BLOCKED.",
+      "capacity_policy": "Do not convert generic reduction ratios into a member capacity, DCR, failure state or initiation time without a validated cold load path, member identity, section, restraint, connection and temperature history."
+    },
+    "legacy_v8e_audit": {
+      "tail_models": [
+        "hold_e600_upper_bound",
+        "linear_to_5pct_at_1000c"
+      ],
+      "rule": "Audit cached rows only. Do not rerun cascades. A deterministic row is inside the declared modulus domain only if every assigned floor maximum is <=600 C. Every smooth-field aggregate is marked outside-domain because normalized fields reach the official maximum and each time has at least one core-floor maximum above 600 C.",
+      "physical_use": "All legacy V8E outcomes are withheld from physical initiation because the V8J cold gate failed and the spatial fields are synthetic."
+    },
+    "cold_gate_join": {
+      "canonical_input": "V8J_COLD_LOAD_PATH_GATE",
+      "required_pass_value": true,
+      "observed_pass_value": false,
+      "observed_status": "NOT_VALIDATED_MISSING_FORCE_DISPLACEMENT_PATH",
+      "join_rule": "A thermal reference cannot become a physical initiation state unless the cold-load-path precondition passes and all member-resolved thermal and mechanical inputs are available. A failed precondition produces INDETERMINATE_BLOCKED, not collapse and not non-collapse."
+    }
+  },
+  "expected": {
+    "regression_file_count": 12,
+    "protected_file_count": 1,
+    "cached_input_file_count": 6,
+    "official_source_hash_only_file_count": 2,
+    "track_count": 3,
+    "temperature_envelope_row_count": 105,
+    "temperature_endpoint_count": 210,
+    "joint_domain_valid_endpoint_count": 163,
+    "joint_domain_blocked_endpoint_count": 47,
+    "complete_reduced_property_range_count": 58,
+    "partial_domain_blocked_range_count": 47,
+    "fully_blocked_range_count": 0,
+    "blocked_maxima_by_family": {
+      "core_column": 19,
+      "perimeter_column": 8,
+      "floor_truss": 20
+    },
+    "blocked_maxima_by_time_min": {
+      "20": 7,
+      "40": 9,
+      "60": 10,
+      "80": 10,
+      "100": 11
+    },
+    "blocked_maxima_by_floor": {
+      "93": 0,
+      "94": 5,
+      "95": 13,
+      "96": 13,
+      "97": 11,
+      "98": 5,
+      "99": 0
+    },
+    "material_anchor_count": 8,
+    "material_domain_grid_point_count": 601,
+    "yield_monotonic_adjacent_check_count": 600,
+    "young_modulus_monotonic_adjacent_check_count": 600,
+    "v8e_deterministic_row_count": 70,
+    "v8e_deterministic_inside_domain_row_count": 20,
+    "v8e_deterministic_outside_domain_row_count": 50,
+    "v8e_deterministic_tail_pair_count": 35,
+    "v8e_deterministic_inside_domain_identical_pair_count": 10,
+    "v8e_deterministic_outside_domain_divergent_pair_count": 25,
+    "v8e_ensemble_row_count": 40,
+    "v8e_ensemble_outside_domain_row_count": 40,
+    "v8e_ensemble_tail_pair_count": 20,
+    "v8e_ensemble_identical_pair_count": 9,
+    "v8e_ensemble_divergent_pair_count": 11,
+    "v8e_total_audit_row_count": 110,
+    "cold_gate_join_row_count": 3,
+    "cold_gate_passed": false,
+    "physical_initiation_release_count": 0,
+    "historical_initiation_promotion_count": 0,
+    "mechanical_requirements_closed_count": 0,
+    "mechanical_requirements_blocking_count": 22,
+    "member_temperature_assignment_count": 0,
+    "member_section_assignment_count": 0,
+    "member_capacity_assignment_count": 0,
+    "structural_solver_run_count": 0,
+    "thermal_solver_run_count": 0,
+    "other_solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 0
+  },
+  "outputs": {
+    "regression_audit": "wtc1_simulation_v8/output/v10r_regression_audit.json",
+    "source_manifest": "wtc1_simulation_v8/output/v10r_thermal_initiation_source_manifest.json",
+    "track_manifest": "wtc1_simulation_v8/output/v10r_three_track_thermal_initiation_handoff.json",
+    "material_matrix": "wtc1_simulation_v8/output/v10r_material_reduction_envelope_matrix.csv",
+    "material_law_audit": "wtc1_simulation_v8/output/v10r_material_law_audit.json",
+    "legacy_v8e_audit": "wtc1_simulation_v8/output/v10r_legacy_v8e_domain_audit.csv",
+    "cold_gate_join_matrix": "wtc1_simulation_v8/output/v10r_cold_gate_join_matrix.csv",
+    "handoff_gate": "wtc1_simulation_v8/output/v10r_thermal_initiation_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10r_preprocesseur_thermique_initiation.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10r_preprocesseur_thermique_initiation.json",
+    "offline_audit": "wtc1_simulation_v8/output/v10r_offline_package_audit.json"
+  },
+  "next_iteration": {
+    "id": "V10S",
+    "objective": "Construire un contrat d’état à trois pistes pour le transfert initiation → propagation/arrêt. Conserver le contrôle logiciel à entrée nulle, transmettre la piste dépendante du modèle officiel uniquement comme INDETERMINATE_BLOCKED et garder la piste physique inconnue. Énumérer les entrées minimales et les contrôles de conservation nécessaires à la propagation et à l’arrêt, sans inventer de valeur, exécuter de solveur, lancer Blender ni conclure historiquement à l’effondrement ou au non-effondrement."
+  }
+}

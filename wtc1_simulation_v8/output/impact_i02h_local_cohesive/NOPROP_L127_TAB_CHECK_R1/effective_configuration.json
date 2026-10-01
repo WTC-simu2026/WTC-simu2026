@@ -1,0 +1,174 @@
+{
+  "id": "IMPACT-I02H-R0",
+  "scope": "Numerical regularization of the IMPACT-I02G 2024-T3 M(T) cohesive seam by local crack-tip refinement. This is not a Boeing 767 or WTC facade model.",
+  "units": {
+    "mass": "g",
+    "length": "mm",
+    "time": "ms",
+    "force": "N",
+    "stress": "MPa",
+    "energy": "J",
+    "fracture_energy": "N/mm"
+  },
+  "geometry": {
+    "width_mm": 76.2,
+    "length_mm": 300.0,
+    "thickness_mm": 2.3,
+    "initial_total_crack_length_mm": 25.4,
+    "orientation": "L-T",
+    "loading": "fixed lower grip and prescribed upper-grip displacement",
+    "source": "NASA CR-191523 Figure 1 and specimen description"
+  },
+  "material_baseline_applied": {
+    "name": "AA2024-T3",
+    "density_g_per_mm3": 0.00278,
+    "young_modulus_mpa": 73100.0,
+    "poisson_ratio": 0.33,
+    "yield_strength_mpa": 360.0,
+    "ultimate_strength_mpa": 495.0,
+    "constitutive_law": "elastic_perfectly_plastic",
+    "reason": "Preserved unchanged from I02G so that I02H isolates spatial and temporal discretization effects. It is a bounded baseline, not the newly identified measured curve."
+  },
+  "identified_material_curve_not_applied": {
+    "material": "2024-T3 aluminum sheet, L-T, 0.09 in / 2.3 mm",
+    "model_in_source": "piecewise-linear uniaxial input to the STAGS White-Besseling plasticity model",
+    "engineering_strain": [
+      0.0,
+      0.00483,
+      0.015,
+      0.04,
+      0.1,
+      0.16
+    ],
+    "engineering_stress_mpa": [
+      0.0,
+      345.0,
+      390.0,
+      430.0,
+      470.0,
+      491.0
+    ],
+    "young_modulus_mpa": 71400.0,
+    "poisson_ratio": 0.3,
+    "status": "identified primary-source curve; translated separately for fresh-state LAW36 sensitivity and never used to alter an already damaged state"
+  },
+  "material_tabulated_radioss": {
+    "name": "AA2024-T3 NASA L-T translated for fresh-state LAW36 sensitivity",
+    "density_g_per_mm3": 0.00278,
+    "young_modulus_mpa": 71400.0,
+    "poisson_ratio": 0.3,
+    "source_engineering_strain": [
+      0.0,
+      0.00483,
+      0.015,
+      0.04,
+      0.1,
+      0.16
+    ],
+    "source_engineering_stress_mpa": [
+      0.0,
+      345.0,
+      390.0,
+      430.0,
+      470.0,
+      491.0
+    ],
+    "law36_plastic_true_strain": [
+      0.0,
+      0.009344494846691831,
+      0.03295740783115245,
+      0.08806928344578145,
+      0.14044297430594838,
+      1.0
+    ],
+    "law36_true_stress_mpa": [
+      346.66635,
+      395.85,
+      447.2,
+      517.0,
+      569.56,
+      569.56
+    ],
+    "transformation": "epsilon_true=ln(1+epsilon_eng); sigma_true=sigma_eng*(1+epsilon_eng); epsilon_plastic_true=max(0,epsilon_true-sigma_true/E)",
+    "last_point_status": "explicit constant-stress numerical continuation beyond the final 0.16 engineering-strain source point; no failure strain is assigned",
+    "history_rule": "fresh undeformed case only; never substituted into an already damaged state"
+  },
+  "mesh": {
+    "outer_x_break_mm": 22.86,
+    "near_seam_half_height_mm": 12.7,
+    "far_field_target_step_mm": 5.08,
+    "construction": "symmetric tensor-product mesh; local_step in x from -outer_x_break to +outer_x_break and in y within near_seam_half_height; coarse far field outside",
+    "cohesive_node_tributary_rule": "Voronoi width clipped to the two intact ligament intervals",
+    "qualification": "local refinement only; no remeshing, XFEM, shell deletion or 3D crack tunneling"
+  },
+  "seam": {
+    "formulation": "massless zero-length TYPE8 springs along the prescribed horizontal crack path",
+    "peak_normal_traction_mpa": 495.0,
+    "normal_stiffness_per_area_equation": "K_n = E / local_step",
+    "tangential_stiffness_per_area_equation": "K_t = G / local_step",
+    "softening": "bilinear triangular traction-opening law",
+    "Gf_N_per_mm": 30.0,
+    "final_opening_equation": "delta_f = 2 Gf / peak_traction",
+    "process_zone_scale_equation": "l_cz = E Gf / peak_traction^2",
+    "process_zone_scale_mm": 8.950107131925312,
+    "qualification": "I02G numerical baseline; Gf remains hypothetical and is not fitted to the NASA stress or CTOA comparators"
+  },
+  "execution": {
+    "elastic_end_ms": 30.0,
+    "elastic_target_displacement_mm": 0.2,
+    "fracture_end_ms": 36.0,
+    "fracture_target_displacement_mm": 6.0,
+    "history_dt_ms": 0.01,
+    "animation_states": 25,
+    "dt_scale": 0.9,
+    "maximum_case_wall_seconds": 600,
+    "threads": 1
+  },
+  "gates": {
+    "maximum_initial_mass_error_fraction": 0.0001,
+    "maximum_global_energy_residual_fraction": 0.01,
+    "maximum_section_work_to_external_error_fraction": 0.01,
+    "maximum_kinetic_to_internal_energy_fraction_at_peak_force": 0.05,
+    "maximum_local_mesh_onset_stress_difference_fraction": 0.1,
+    "maximum_half_timestep_onset_stress_difference_fraction": 0.05,
+    "minimum_required_crack_extension_mm_for_ctoa": 2.3,
+    "minimum_fine_ctoa_states_after_extension": 2
+  },
+  "sources": [
+    {
+      "id": "NASA_CR_191523",
+      "path": "wtc1_simulation_v8/input/impact_i02f_sources/NASA_CR_191523_2024T3_CTOA.pdf",
+      "sha256": "27d91f70b8816927b22f980ae7decb528837abfb19c04335a538ebaa7e6af156",
+      "use": "M(T) geometry and independent stable-tearing stress and CTOA comparators"
+    },
+    {
+      "id": "NASA_CR_2006_214281",
+      "url": "https://ntrs.nasa.gov/citations/20060008654",
+      "use": "Table 15, piecewise-linear 2024-T3 L-T stress-strain data for 2.3 mm sheet"
+    },
+    {
+      "id": "NASA_STABLE_TEARING_19990021015",
+      "url": "https://ntrs.nasa.gov/api/citations/19990021015/downloads/19990021015.pdf?attachment=true",
+      "use": "independent NASA transcription of the same 0, 0.0048, 0.015, 0.040, 0.100, 0.160 strain sequence"
+    }
+  ],
+  "cases": [
+    {
+      "id": "NOPROP_L127_TAB_CHECK_R1",
+      "local_step_mm": 1.27,
+      "mode": "no_propagation",
+      "Gf_N_per_mm": null,
+      "dt_scale": 0.9,
+      "material_variant": "nasa_law36",
+      "run_end_ms": 12.0,
+      "loading_end_ms": 36.0,
+      "target_displacement_mm": 6.0
+    }
+  ],
+  "completion_provenance": {
+    "configuration": "wtc1_simulation_v8/data/impact_i02h_completion_r1.json",
+    "sha256": "9140dbcde75df74ef4b1aab141d8bd7472c77cae2eaaaadc03e272974a70c351",
+    "driver_sha256": "ab660032dd49e389bcd143b74d366ebbe12c1fbe0d4f9c77b5b491a5d09effb2",
+    "random_seed": null
+  }
+}

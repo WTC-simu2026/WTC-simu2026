@@ -1,0 +1,201 @@
+{
+  "dataset": {
+    "name": "WTC 1 V9A source-traceable material coupon evidence and rate-law benchmarks",
+    "version": "9.1.0",
+    "status": "PREDECLARED_BEFORE_BENCHMARK_NO_IMPACT_REPLAY_NO_FRACTURE_CARD_IDENTIFICATION",
+    "random_seed": 9112001,
+    "deterministic": true,
+    "scope": "Preserve V8U through V8Z, correct the WTC 1 engine target from JT9D to CF6-80A2, transcribe source-backed high-rate coupon observables for two specific WTC 1 steels, reproduce the published log-log strength-rate slopes, and audit whether a fracture coupon or an aircraft-engine material card is identifiable. No facade, whole-aircraft, global tower, thermal or Blender calculation is authorized in V9A."
+  },
+  "evidence_policy": {
+    "observed_fact": "A value transcribed from a named table or statement in an official source.",
+    "official_model_result": "A NIST modelling choice, calibration or uncertainty factor; not a direct property measurement.",
+    "local_archive_claim": "No local-archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "A declared analytical choice used only to reproduce a source equation or assess data completeness.",
+    "derived_result": "A deterministic regression or completeness decision computed from the transcribed inputs.",
+    "unknown": "A parameter or material assignment absent from the audited public sources."
+  },
+  "units": {
+    "source_stress": "ksi",
+    "converted_stress": "MPa",
+    "strain_rate": "1/s",
+    "elongation": "percent engineering elongation over stated gauge length",
+    "reduction_of_area": "percent",
+    "length": "inch in source tables; mm only if explicitly converted",
+    "ksi_to_mpa": 6.894757293168361
+  },
+  "sources": [
+    {
+      "id": "NIST_NCSTAR_1_3D",
+      "path": "work/official_sources/ncstar1-3d.pdf",
+      "sha256": "eee74f038b15bfd6263a4b5335ca96d124501d002e62883bb8fd4f84d22e52da",
+      "classification": "official_measurement_report",
+      "locations": [
+        "Section 4.1, report page 79",
+        "Sections 4.2.1 and 4.2.2, report pages 79 to 82",
+        "Tables 4-1 and 4-2, report pages 85 and 86",
+        "Sections 4.4 to 4.7, report pages 90 to 98",
+        "Table A-12, report page 177",
+        "Table A-14, report page 181",
+        "Appendix E, report pages 279 to 288"
+      ],
+      "uses": [
+        "measured strain rate, 1 percent offset yield strength, tensile strength, total elongation and reduction of area",
+        "published log-log strain-rate sensitivity slopes and their standard uncertainties",
+        "test-method limits, specimen-geometry dependence of elongation, and absence of a reported non-local fracture length"
+      ]
+    },
+    {
+      "id": "NIST_NCSTAR_1_2B_VOLUME_1",
+      "path": "work/official_sources/ncstar1-2bv1.pdf",
+      "sha256": "1504c598adcd9e492bc126530b593b2d467b7c01a7324913b221a5cb9e128ab4",
+      "classification": "official_model_documentation",
+      "locations": [
+        "Section 2.5, report pages 31 to 33",
+        "Section 4.2.3, report pages 66 to 67",
+        "Section 4.3.3, report pages 82 to 84"
+      ],
+      "uses": [
+        "no aircraft structural-material testing was performed by NIST",
+        "2024 and 7075 aluminum curves were taken from open literature and aircraft rate sensitivity was omitted for insufficient data",
+        "AA11 at WTC 1 used CF6-80A2 engines while UA175 at WTC 2 used JT9D-7R4 engines",
+        "NIST used a proprietary-manual-based PW4000 proxy model for all impact simulations and increased engine-material densities by 20 percent to smear omitted mass"
+      ]
+    },
+    {
+      "id": "GE_CF6_TECHNICAL_MANUAL_INDEX_2026_08_01",
+      "url": "https://www.geaerospace.com/sites/default/files/Cf6emm.pdf",
+      "classification": "manufacturer_manual_index",
+      "uses": [
+        "the index lists CF6-80A/A2 engine manual GEK 72501 and related manuals",
+        "the index labels the technical information proprietary and does not publish a component material/fracture dataset usable here"
+      ]
+    },
+    {
+      "id": "ALTAIR_RADIOSS_2026_FAIL_JOHNSON",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/fail_johnson_starter_r.htm",
+      "classification": "official_solver_documentation",
+      "uses": [
+        "Johnson-Cook failure uses D1 through D5, reference strain rate and cumulative plastic damage",
+        "Altair's simplified identification example requires at least three distinct loading states such as tension, shear and compression"
+      ]
+    },
+    {
+      "id": "ALTAIR_RADIOSS_2026_NONLOCAL_MAT",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/nonlocal_mat_starter_r.htm",
+      "classification": "official_solver_documentation",
+      "uses": [
+        "Rlen is a non-local internal length and LeMAX is a mesh-convergence element-length target",
+        "mesh convergence does not by itself identify a physical material length"
+      ]
+    }
+  ],
+  "engine_identity_audit": {
+    "wtc1_flight": "American Airlines Flight 11",
+    "source_backed_engine": "General Electric CF6-80A2",
+    "wtc2_flight": "United Airlines Flight 175",
+    "source_backed_engine_wtc2": "Pratt & Whitney JT9D-7R4D",
+    "nist_proxy_engine": "Pratt & Whitney PW4000",
+    "prior_workspace_target_to_correct": "JT9D",
+    "correction_required": true,
+    "cf6_80a2_component_material_cards_publicly_identified_in_audited_sources": false,
+    "cf6_80a2_high_rate_fracture_surfaces_publicly_identified_in_audited_sources": false,
+    "cowling_material_and_joint_fracture_data_publicly_identified_in_audited_sources": false
+  },
+  "regressions": {
+    "required_files": {
+      "wtc1_simulation_v8/data/v8z_failure_length_identifiability.json": "108978dbd7720ffd36741d9f77200f2534711fe96f6d2dab2a5c87320f9bbda0",
+      "wtc1_simulation_v8/scripts/generate_v8z_failure_length.py": "8f2ab4cf29e0f56601eb32f3ebc5d77e80f707eb7e2094aa8f4822f601858ad5",
+      "wtc1_simulation_v8/scripts/run_v8z_failure_length.py": "9a1e5b553808b21ad49b5bc8d9504837e67c4554d80c27ddc8bc1f3b3f8914ed",
+      "wtc1_simulation_v8/output/resultats_wtc1_v8z_longueur_rupture.json": "0487dfdb0632a4c6c2ab2ec30768fe75041aa0c50a8b74140f77a8f282845784",
+      "wtc1_simulation_v8/output/rapport_wtc1_v8z_longueur_rupture.md": "d8a50bb01c271dff738b02dca3118868988654ba972a639cf3ca6114f77a12a7"
+    },
+    "required_metrics": [
+      {"results": "wtc1_simulation_v8/output/resultats_wtc1_v8z_longueur_rupture.json", "path": "source_audit.passed", "expected": true},
+      {"results": "wtc1_simulation_v8/output/resultats_wtc1_v8z_longueur_rupture.json", "path": "numerical_length_sensitivity_passed", "expected": false},
+      {"results": "wtc1_simulation_v8/output/resultats_wtc1_v8z_longueur_rupture.json", "path": "physical_failure_parameter_identification_passed", "expected": false},
+      {"results": "wtc1_simulation_v8/output/resultats_wtc1_v8z_longueur_rupture.json", "path": "medium_metrics.maximum_pairwise_contact_impulse_relative_difference", "expected": 0.378369038435275}
+    ],
+    "numeric_absolute_tolerance": 1e-12
+  },
+  "coupon_series": [
+    {
+      "id": "M26_PERIMETER_LONGITUDINAL",
+      "component": "WTC 1 perimeter column flange plate",
+      "location": "column 130/131, floors 90 to 93, north face, just above the impact zone",
+      "nominal_yield_ksi": 50.0,
+      "orientation": "longitudinal",
+      "source_table": "NCSTAR 1-3D Table A-12, report page 177",
+      "published_rate_slopes": {
+        "yield_1_percent_offset_m": 0.0121,
+        "yield_standard_uncertainty": 0.0033,
+        "tensile_strength_m": 0.0118,
+        "tensile_strength_standard_uncertainty": 0.0023,
+        "source_table": "NCSTAR 1-3D Table 4-1, report page 85"
+      },
+      "observations": [
+        {"sample": "M26-C1B1-RF-L1", "yield_rate_per_s": 0.00006061, "yield_ksi": 63.2, "tensile_rate_per_s": 0.00121, "tensile_ksi": 85.5, "elongation_percent": 36.0, "gauge_length_in": 2.0, "reduction_of_area_percent": 61.0, "specimen": "Flat 2 inch", "thickness_in": 0.5625, "sqrt_area_over_gauge": 0.265},
+        {"sample": "M26-C1B1-RF-L2", "yield_rate_per_s": 0.00006061, "yield_ksi": 61.7, "tensile_rate_per_s": 0.00121, "tensile_ksi": 86.1, "elongation_percent": 35.0, "gauge_length_in": 2.0, "reduction_of_area_percent": 61.0, "specimen": "Flat 2 inch", "thickness_in": 0.5625, "sqrt_area_over_gauge": 0.265},
+        {"sample": "M26-C1B1-L1", "yield_rate_per_s": 0.000107, "yield_ksi": 70.6, "tensile_rate_per_s": 0.000107, "tensile_ksi": 91.8, "elongation_percent": 23.0, "gauge_length_in": 1.0, "reduction_of_area_percent": 58.0, "specimen": "Flat HSR 1 inch TK", "thickness_in": 0.125, "sqrt_area_over_gauge": 0.177},
+        {"sample": "M26-C1B1-RF-L2-HSR", "yield_rate_per_s": 65.0, "yield_ksi": 72.2, "tensile_rate_per_s": 65.0, "tensile_ksi": 99.9, "elongation_percent": 34.0, "gauge_length_in": 1.0, "reduction_of_area_percent": 55.0, "specimen": "Flat HSR 1 inch TK", "thickness_in": 0.125, "sqrt_area_over_gauge": 0.177},
+        {"sample": "M26-C1B1-RF-L6-06", "yield_rate_per_s": 100.0, "yield_ksi": 75.9, "tensile_rate_per_s": 100.0, "tensile_ksi": 100.4, "elongation_percent": 28.0, "gauge_length_in": 1.0, "reduction_of_area_percent": 58.0, "specimen": "Flat HSR 1 inch TN", "thickness_in": 0.0625, "sqrt_area_over_gauge": 0.125},
+        {"sample": "M26-C1B1-RF-L7-06", "yield_rate_per_s": 260.0, "yield_ksi": 75.9, "tensile_rate_per_s": 260.0, "tensile_ksi": 102.8, "elongation_percent": 32.0, "gauge_length_in": 1.0, "reduction_of_area_percent": 54.0, "specimen": "Flat HSR 1 inch TN", "thickness_in": 0.0625, "sqrt_area_over_gauge": 0.125},
+        {"sample": "M26-C1B1-RF-L8-06", "yield_rate_per_s": 417.0, "yield_ksi": 85.0, "tensile_rate_per_s": 417.0, "tensile_ksi": 106.7, "elongation_percent": 30.0, "gauge_length_in": 1.0, "reduction_of_area_percent": 57.0, "specimen": "Flat HSR 1 inch TN", "thickness_in": 0.0625, "sqrt_area_over_gauge": 0.125}
+      ]
+    },
+    {
+      "id": "C80_CORE_LONGITUDINAL",
+      "component": "WTC 1 core-column 14WF184 flange",
+      "location": "column 603, floors 92 to 95",
+      "nominal_yield_ksi": 36.0,
+      "orientation": "longitudinal",
+      "source_table": "NCSTAR 1-3D Table A-14, report page 181",
+      "published_rate_slopes": {
+        "yield_1_percent_offset_m": 0.0317,
+        "yield_standard_uncertainty": 0.0027,
+        "tensile_strength_m": 0.0175,
+        "tensile_strength_standard_uncertainty": 0.0039,
+        "source_table": "NCSTAR 1-3D Table 4-2, report page 86"
+      },
+      "observations": [
+        {"sample": "C80-L18", "yield_rate_per_s": 0.0000875, "yield_ksi": 37.1, "tensile_rate_per_s": 0.000552, "tensile_ksi": 67.3, "elongation_percent": 38.0, "gauge_length_in": 1.0, "reduction_of_area_percent": 69.0, "specimen": "Round 1 inch", "thickness_in": 0.25, "sqrt_area_over_gauge": 0.222},
+        {"sample": "C80-A-3-1", "yield_rate_per_s": 84.0, "yield_ksi": 57.3, "tensile_rate_per_s": 84.0, "tensile_ksi": 85.0, "elongation_percent": 40.0, "gauge_length_in": 1.0, "reduction_of_area_percent": 56.0, "specimen": "Flat HSR 1 inch TN", "thickness_in": 0.0625, "sqrt_area_over_gauge": 0.125},
+        {"sample": "C80-A-2-1", "yield_rate_per_s": 100.0, "yield_ksi": 55.5, "tensile_rate_per_s": 100.0, "tensile_ksi": 82.5, "elongation_percent": 44.0, "gauge_length_in": 1.0, "reduction_of_area_percent": 62.0, "specimen": "Flat HSR 1 inch TK", "thickness_in": 0.125, "sqrt_area_over_gauge": 0.177},
+        {"sample": "C80-A-2-2", "yield_rate_per_s": 299.0, "yield_ksi": 62.5, "tensile_rate_per_s": 299.0, "tensile_ksi": 80.1, "elongation_percent": null, "gauge_length_in": 1.0, "reduction_of_area_percent": 57.0, "specimen": "Flat HSR 1 inch TK", "thickness_in": 0.125, "sqrt_area_over_gauge": 0.177},
+        {"sample": "C80-A-2-3", "yield_rate_per_s": 401.0, "yield_ksi": 59.5, "tensile_rate_per_s": 401.0, "tensile_ksi": 89.1, "elongation_percent": 45.0, "gauge_length_in": 1.0, "reduction_of_area_percent": 60.0, "specimen": "Flat HSR 1 inch TK", "thickness_in": 0.125, "sqrt_area_over_gauge": 0.177}
+      ]
+    }
+  ],
+  "minimum_identification_requirements": [
+    {"id": "specific_material_and_product_form", "description": "material grade, heat or specimen identity, orientation, thickness and component mapping", "wtc_selected_series_available": true, "cf6_80a2_or_cowling_available": false},
+    {"id": "rate_strength_coverage", "description": "quasi-static and at least three high-rate uniaxial yield and tensile-strength observations", "wtc_selected_series_available": true, "cf6_80a2_or_cowling_available": false},
+    {"id": "numeric_true_stress_plastic_strain_curves", "description": "machine-readable curves through uniform strain at each required rate, with acquisition and filtering metadata", "wtc_selected_series_available": false, "cf6_80a2_or_cowling_available": false},
+    {"id": "geometry_consistent_fracture_strain", "description": "replicated fracture strain or local displacement from geometrically comparable coupons over the rate range", "wtc_selected_series_available": false, "cf6_80a2_or_cowling_available": false},
+    {"id": "triaxiality_coverage", "description": "failure observations for at least three distinct loading states or notch levels", "wtc_selected_series_available": false, "cf6_80a2_or_cowling_available": false},
+    {"id": "lode_and_shear_coverage", "description": "failure observations that constrain shear or Lode-angle dependence", "wtc_selected_series_available": false, "cf6_80a2_or_cowling_available": false},
+    {"id": "fracture_energy", "description": "force-displacement or local-strain fields sufficient to derive work to separation", "wtc_selected_series_available": false, "cf6_80a2_or_cowling_available": false},
+    {"id": "regularization_length", "description": "size-effect or full-field localization data sufficient to identify a physical band width/internal length independently of facade impulse", "wtc_selected_series_available": false, "cf6_80a2_or_cowling_available": false},
+    {"id": "joint_and_attachment_failure", "description": "component-joint and cowling attachment failure data at relevant rates", "wtc_selected_series_available": false, "cf6_80a2_or_cowling_available": false}
+  ],
+  "predeclared_benchmarks": {
+    "law": "ordinary least-squares fit of ln(strength_ksi) = intercept + m*ln(strain_rate_per_s), reproducing NCSTAR 1-3D Eq. 4-9 slopes from rounded table values",
+    "series": [
+      {"coupon_series_id": "M26_PERIMETER_LONGITUDINAL", "observables": ["yield_1_percent_offset", "tensile_strength"]},
+      {"coupon_series_id": "C80_CORE_LONGITUDINAL", "observables": ["yield_1_percent_offset", "tensile_strength"]}
+    ],
+    "maximum_absolute_slope_difference_from_published": 0.0001,
+    "tolerance_basis": "one ten-thousandth accommodates regression from stresses and rates rounded in the published tables; it is not a physical model tolerance",
+    "report_leave_one_out_residuals_without_gate": true,
+    "openradioss_coupon_execution_authorized": false,
+    "reason_openradioss_not_authorized": "The audited sources do not provide a complete machine-readable plastic curve plus independently identified fracture surface, fracture energy and regularization length. A solver deck would require unmarked assumptions beyond the supported rate-strength benchmark."
+  },
+  "predeclared_gates": {
+    "v8z_regressions_unchanged": true,
+    "official_source_hashes_unchanged": true,
+    "all_four_rate_slope_reproductions_within_rounding_tolerance": true,
+    "wtc_rate_strength_benchmark_passed_if_all_above": true,
+    "physical_fracture_card_identification_requires_all_minimum_requirements": true,
+    "cf6_80a2_or_cowling_card_requires_specific_source_data": true,
+    "global_scope_warning": "Passing the rate-strength regressions validates only transcription and implementation of the published scalar rate law for two WTC steel specimens. It cannot validate failure, a CF6-80A2 or cowling, facade impulse, the aircraft, global WTC 1 impact, thermal response, collapse, Blender physics, or explosive/thermite mechanisms."
+  }
+}

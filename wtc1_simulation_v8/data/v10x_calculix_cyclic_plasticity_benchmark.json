@@ -1,0 +1,231 @@
+{
+  "iteration": "V10X",
+  "dataset": {
+    "name": "Independent CalculiX cyclic axial plasticity benchmark",
+    "version": "10.24.4",
+    "status": "PREDECLARED_ATTEMPT_04_BEFORE_V10X_SOLVER_EXECUTION",
+    "created_at_local": "2026-09-05T09:25:31+02:00",
+    "random_seed": 1024004,
+    "random_draw_used": false,
+    "scope": "Qualify only the local CalculiX small-strain axial elastoplastic response, unloading, load reversal, hysteretic dissipation and axial-mesh invariance for a generic displacement-controlled C3D8 solid coupon. No WTC 1 geometry, material card, temperature, impact damage, connection, load path or historical outcome is assigned."
+  },
+  "design_research": {
+    "network_access_used_before_execution": true,
+    "retrieved_at_local": "2026-09-04T16:25:00+02:00",
+    "sources": [
+      {
+        "publisher": "Guido Dhondt / CalculiX",
+        "title": "CalculiX CrunchiX 2.22 User's Manual",
+        "url": "https://www.dhondt.de/ccx_2.22.pdf",
+        "section": "*PLASTIC",
+        "use": "Primary syntax and constitutive-definition reference: *PLASTIC follows *ELASTIC and tabulates von Mises yield stress against equivalent plastic strain; isotropic hardening is the default.",
+        "wtc_physical_evidence_credit": "NONE"
+      },
+      {
+        "publisher": "Guido Dhondt / CalculiX",
+        "title": "CalculiX CrunchiX 2.22 User's Manual",
+        "url": "https://www.dhondt.de/ccx_2.22.pdf",
+        "section": "C3D8 and *STATIC",
+        "use": "Primary element and nonlinear static-step syntax reference for the regular solid-coupon benchmark.",
+        "wtc_physical_evidence_credit": "NONE"
+      }
+    ]
+  },
+  "attempt_history": [
+    {
+      "attempt": 1,
+      "status": "REJECTED_AND_PRESERVED",
+      "path": "tmp/v10x_failed_attempt_01",
+      "decision": "EXECUTION_ABORTED_BEFORE_GATE_ASSEMBLY",
+      "reason": "All four CalculiX jobs produced solver files, but report assembly stopped because matplotlib was not installed. The mechanical inputs and acceptance thresholds are unchanged in attempt 02; only the optional plot writer is replaced by a dependency-free SVG generator.",
+      "preserved_evidence": [
+        {"path":"tmp/v10x_failed_attempt_01/v10x_calculix_cyclic_plasticity_benchmark.attempt01.json","sha256":"c3205b1d4f4e0a35fd87fcca24323033a81d3c77006c2de7eb87259bb66b118b"},
+        {"path":"tmp/v10x_failed_attempt_01/run_v10x_calculix_cyclic_plasticity_benchmark.attempt01.py","sha256":"d984ff4b7c8f579a6b44e35931cd32ecf77a22c0b1e99300acadfbfca3b37a47"},
+        {"path":"tmp/v10x_failed_attempt_01/calculix_v10x_cyclic_plasticity_benchmark/v10x_cyclic_001.dat","sha256":"12f072c91ad8799d740d8eabf037c1808bc954f899610430362ea65feb7214f1"},
+        {"path":"tmp/v10x_failed_attempt_01/calculix_v10x_cyclic_plasticity_benchmark/v10x_cyclic_002.dat","sha256":"7a438094dbbc0e227a4d8562d819458dbd2e0a0163143d5ec55f7ffcb3c54046"},
+        {"path":"tmp/v10x_failed_attempt_01/calculix_v10x_cyclic_plasticity_benchmark/v10x_cyclic_008.dat","sha256":"7f73489dd8ad5d1cfac15cca125b7f503a677d2d4cc1d02cba0308192c895e8e"},
+        {"path":"tmp/v10x_failed_attempt_01/calculix_v10x_cyclic_plasticity_benchmark/v10x_cyclic_032.dat","sha256":"33bca634c5ef3ebdd574f6309ea2c85c111ecbf418ed6ef221261d46d424d8ef"}
+      ]
+    },
+    {
+      "attempt": 2,
+      "status": "REJECTED_AND_PRESERVED",
+      "path": "tmp/v10x_failed_attempt_02",
+      "decision": "FAIL_INDEPENDENT_CALCULIX_T3D2_CYCLIC_PLASTICITY_BENCHMARK",
+      "reason": "The single-point ideal-plastic table has zero post-yield tangent. CalculiX reached the initial yield transition but then developed singular internal rotational MPC behaviour and returned code 201 before the five steps completed. Attempt 03 uses a small, explicit positive isotropic hardening slope from the locally installed CalculiX example pattern. Meshes, displacement history and numerical acceptance tolerances remain unchanged; the analytical return map and predeclared energy reference are updated to the declared hardening law.",
+      "preserved_evidence": [
+        {"path":"tmp/v10x_failed_attempt_02/v10x_calculix_cyclic_plasticity_benchmark.attempt02.json","sha256":"619e49a27290e2ad710aea04504efd2e0a88faccc4a36b86d7a1bd6c787a20c7"},
+        {"path":"tmp/v10x_failed_attempt_02/run_v10x_calculix_cyclic_plasticity_benchmark.attempt02.py","sha256":"41aed8a66b2dd938753f8e67ebe8614b9cfdfcfcc9301bfd865b3c922e9f1e05"},
+        {"path":"tmp/v10x_failed_attempt_02/output/v10x_cyclic_plasticity_benchmark_gate.json","sha256":"822f699fff4ef144c4309898c5f2158ebe0cd93348d1971026a1f83052686b41"},
+        {"path":"tmp/v10x_failed_attempt_02/output/v10x_solver_execution_log.json","sha256":"47ebb98ef4352f277da405c6f68fd0e9287b5990171e1b705d47e8d028a0897a"},
+        {"path":"tmp/v10x_failed_attempt_02/calculix_v10x_cyclic_plasticity_benchmark/v10x_cyclic_001.dat","sha256":"12f072c91ad8799d740d8eabf037c1808bc954f899610430362ea65feb7214f1"}
+      ]
+    },
+    {
+      "attempt": 3,
+      "status": "REJECTED_AND_PRESERVED",
+      "path": "tmp/v10x_failed_attempt_03",
+      "decision": "EXECUTION_ABORTED_ON_INCOMPLETE_SOLVER_RECORD",
+      "reason": "Positive hardening allowed the one-element T3D2 job to complete, but the multi-element collinear trusses generated internal mean-rotation MPC difficulties under reversed compression. The 2-element job cut back, while the 8- and 32-element jobs approached the 1000-increment limit or the 60-second job timeout. Attempt 04 retains the same material, history and tolerances but replaces the collinear truss chain with a regular 3D C3D8 solid coupon and symmetry-plane constraints, avoiding the T3D2 internal rotational MPC formulation.",
+      "preserved_evidence": [
+        {"path":"tmp/v10x_failed_attempt_03/v10x_calculix_cyclic_plasticity_benchmark.attempt03.json","sha256":"8ffafadab9043e4b5696d9d7be7ee830ce815b1bf102cbb0e810ff701803e77d"},
+        {"path":"tmp/v10x_failed_attempt_03/run_v10x_calculix_cyclic_plasticity_benchmark.attempt03.py","sha256":"311df509132a52995bfecfa9456cae8a3ab55e74ee13e1ae69f0ab35ab0e92db"},
+        {"path":"tmp/v10x_failed_attempt_03/calculix_v10x_cyclic_plasticity_benchmark/v10x_cyclic_001.dat","sha256":"2cb5ee9535f548bfacc6a4a0ae42ab96d0f37e7008d9d1d04799f41e948cceab"},
+        {"path":"tmp/v10x_failed_attempt_03/calculix_v10x_cyclic_plasticity_benchmark/v10x_cyclic_002.sta","sha256":"13c6cb717d28a41161bb3ef7d4a333de8e26bb677cb14328422cf7057d3dc6c9"},
+        {"path":"tmp/v10x_failed_attempt_03/calculix_v10x_cyclic_plasticity_benchmark/v10x_cyclic_008.sta","sha256":"f2013e7ac815d551180a1da96bb49798a99e53fd2f9d6d10cccd35502c50fc42"},
+        {"path":"tmp/v10x_failed_attempt_03/calculix_v10x_cyclic_plasticity_benchmark/v10x_cyclic_032.sta","sha256":"fd23800a568c533389bd0eb9da7176186a76d219b3716a7858ee3612226de6bd"}
+      ]
+    }
+  ],
+  "execution_policy": {
+    "network_access": false,
+    "source_archive_read": false,
+    "source_archive_modified": false,
+    "official_sources_directory_modified": false,
+    "software_installation": false,
+    "structural_solver_execution": true,
+    "heat_transfer_solver_execution": false,
+    "fire_solver_execution": false,
+    "impact_solver_execution": false,
+    "propagation_solver_execution": false,
+    "gpu_compute": false,
+    "blender_execution": false,
+    "wtc_parameter_assignment": false,
+    "physical_wtc_state_release": false,
+    "historical_collapse_or_noncollapse_conclusion": false,
+    "maximum_runtime_seconds": 300
+  },
+  "regression_files": [
+    {"role":"v10w_configuration","path":"wtc1_simulation_v8/data/v10w_calculix_prescribed_temperature_benchmark.json","expected_sha256":"ba929deaec111d5f67380fbef884758684c5120fc670a072bf31725ac42c7364"},
+    {"role":"v10w_runner","path":"wtc1_simulation_v8/scripts/run_v10w_calculix_prescribed_temperature_benchmark.py","expected_sha256":"f7f79a39453a7a4e42e3a060010a671d6b09baa9922218f5f53c2cb25991e66a"},
+    {"role":"v10w_regression_audit","path":"wtc1_simulation_v8/output/v10w_regression_audit.json","expected_sha256":"8f18626619dde4a9bf5b965249fb115f1c7922b328a72ad3839a8c4f4bd957b3"},
+    {"role":"v10w_source_manifest","path":"wtc1_simulation_v8/output/v10w_benchmark_source_manifest.json","expected_sha256":"4d27f2d5850b2e99739150fa61fc49be9f952017fd7c905fda004bf0ce1dc706"},
+    {"role":"v10w_analytical_reference","path":"wtc1_simulation_v8/output/v10w_analytical_reference.json","expected_sha256":"58157d1c761f68a2db5547532e5d44653b5345560961e893c6ab28eb51fff219"},
+    {"role":"v10w_case_matrix","path":"wtc1_simulation_v8/output/v10w_thermal_expansion_case_matrix.csv","expected_sha256":"6c331e7655eb16e91f853f879d6219e7f3a2a96201b84a2f090e0aabd5a80dce"},
+    {"role":"v10w_temperature_audit","path":"wtc1_simulation_v8/output/v10w_temperature_assignment_audit.csv","expected_sha256":"cae1efde0cfcc720595677568f384409ad6764ea490dd67d4f74e918d4ce7382"},
+    {"role":"v10w_solver_log","path":"wtc1_simulation_v8/output/v10w_solver_execution_log.json","expected_sha256":"0cbe8ae1756ca2d1e80e07a72c836d305b42ba2431683c0a2d9a65575b8e385f"},
+    {"role":"v10w_solver_manifest","path":"wtc1_simulation_v8/output/v10w_solver_file_manifest.csv","expected_sha256":"e7db0fba46e0d6cf749a33a6f686462ec060fa08cb952f01c4b7794fea81fc3e"},
+    {"role":"v10w_gate","path":"wtc1_simulation_v8/output/v10w_prescribed_temperature_benchmark_gate.json","expected_sha256":"c24368a551e80f97f1ed672cf93ca98666f100c6f93f2e098cf756753651eb91"},
+    {"role":"v10w_report","path":"wtc1_simulation_v8/output/rapport_wtc1_v10w_benchmark_temperature_prescrite.md","expected_sha256":"01e5c7a982462ce399c5c2881b86bc5e2987b4ee80f6cf84a081424a45c15523"},
+    {"role":"v10w_results","path":"wtc1_simulation_v8/output/resultats_wtc1_v10w_benchmark_temperature_prescrite.json","expected_sha256":"b084bfd21d5a75200fdf05d7c977ac650cf3e5f97d28d2f4d5693f19f0744d4d"},
+    {"role":"v10w_offline_audit","path":"wtc1_simulation_v8/output/v10w_offline_package_audit.json","expected_sha256":"d641b231682405adff30931f640d2ae2fc941c4cc51bf9224eeba7919936683d"}
+  ],
+  "protected_files": [
+    {"role":"blender_master","path":"wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend","expected_sha256":"1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"}
+  ],
+  "software_reference_files": [
+    {
+      "id": "FREECAD_CALCULIX_NONLINEAR_MATERIAL_EXAMPLE",
+      "path": "C:/Program Files/FreeCAD 1.1/Mod/Fem/femtest/data/calculix/material_nonlinear.inp",
+      "expected_sha256": "94b6eb5bccc9435930f92695cb0205cec31139eb3833be650f2265826bf11045",
+      "use": "Local installed syntax precedent for *ELASTIC followed by *PLASTIC only.",
+      "physical_evidence_credit": "NONE"
+    }
+  ],
+  "software_files": [
+    {
+      "id": "CALCULIX_CCX_2_22",
+      "path": "C:/Program Files/FreeCAD 1.1/bin/ccx.exe",
+      "expected_sha256": "2ff89a72b6aac9c361cb716e44220dfcd01d2bb3e66abd6b6455b01b7250f350",
+      "expected_version": "2.22",
+      "allowed_credit": "THIS_GENERIC_CYCLIC_PLASTICITY_C3D8_BENCHMARK_ONLY"
+    }
+  ],
+  "benchmark": {
+    "name": "generic_displacement_controlled_axial_elastoplastic_solid_coupon",
+    "unit_system": {"length":"mm","force":"N","stress":"N/mm2 (MPa)","energy":"N mm"},
+    "element_type": "C3D8",
+    "bar_axis": "+X",
+    "geometry": {"length_mm":1000.0,"width_mm":10.0,"height_mm":10.0,"area_mm2":100.0},
+    "material": {
+      "young_modulus_mpa": 200000.0,
+      "poisson_ratio": 0.3,
+      "yield_stress_mpa": 250.0,
+      "plastic_table": [
+        {"true_stress_mpa":250.0,"equivalent_plastic_strain":0.0},
+        {"true_stress_mpa":275.0,"equivalent_plastic_strain":0.025}
+      ],
+      "plastic_hardening_modulus_mpa": 1000.0,
+      "hardening": "linear isotropic hardening over the complete strain range reached by this benchmark",
+      "behavior": "generic rate-independent small-strain von Mises elastoplasticity"
+    },
+    "mesh_element_counts": [1,2,8,32],
+    "cross_section_element_counts": {"y":2,"z":2},
+    "boundary_conditions": "x=0 face fixed in U1; y=0 symmetry plane fixed in U2; z=0 symmetry plane fixed in U3; x=L face receives uniform U1 history; transverse contraction remains free elsewhere",
+    "displacement_history_mm": [0.0,2.5,0.0,-2.5,0.0,2.5],
+    "step_target_displacements_mm": [2.5,0.0,-2.5,0.0,2.5],
+    "static_increment": {"initial":0.02,"step_time":1.0,"minimum":1e-8,"maximum":0.05,"maximum_increments":1000},
+    "analytical_formulas": {
+      "yield_displacement":"u_y = (sigma_y/E) L",
+      "yield_force":"F_y = sigma_y A",
+      "linear_isotropic_return_mapping":"f_trial = abs(sigma_trial) - (sigma_y0 + H alpha); delta_gamma = max(f_trial,0)/(E+H); epsilon_p += delta_gamma sign(sigma_trial); alpha += delta_gamma",
+      "cycle_dissipation_reference":"deterministic one-dimensional return-map integration with 100000 subincrements per displacement segment"
+    },
+    "predeclared_analytical_reference": {
+      "yield_displacement_mm": 1.25,
+      "initial_yield_force_n": 25000.0,
+      "initial_loading_work_n_mm": 46952.7363184,
+      "closed_cycle_dissipation_n_mm": 125594.2441983
+    },
+    "analysis_type": "NONLINEAR_STATIC_MECHANICAL_DISPLACEMENT_CONTROLLED",
+    "wtc_attribution": false,
+    "physical_wtc_release": false
+  },
+  "acceptance": {
+    "solver_return_code": 0,
+    "maximum_force_absolute_error_n": 50.0,
+    "maximum_force_relative_error": 0.005,
+    "maximum_target_displacement_absolute_error_mm": 0.000001,
+    "maximum_end_reaction_equilibrium_relative_residual": 0.00001,
+    "maximum_cycle_energy_relative_error": 0.005,
+    "maximum_finest_pair_force_change_pct": 0.01,
+    "maximum_finest_pair_cycle_energy_change_pct": 0.01,
+    "require_positive_cycle_dissipation": true,
+    "all_input_and_solver_output_files_hashed": true,
+    "wtc_mechanical_requirement_closure_count": 0,
+    "physical_wtc_state_release_count": 0,
+    "historical_outcome_assignment_count": 0
+  },
+  "expected": {
+    "regression_file_count": 13,
+    "protected_file_count": 1,
+    "software_reference_file_count": 1,
+    "software_file_count": 1,
+    "mesh_case_count": 4,
+    "step_count_per_job": 5,
+    "unique_solver_job_count": 4,
+    "input_deck_count": 4,
+    "solver_return_code_pass_count": 4,
+    "analytical_job_pass_count": 4,
+    "structural_solver_run_count": 4,
+    "heat_transfer_solver_run_count": 0,
+    "fire_solver_run_count": 0,
+    "impact_solver_run_count": 0,
+    "propagation_solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 0,
+    "mechanical_requirement_count": 22,
+    "mechanical_requirement_closed_count": 0,
+    "physical_wtc_state_release_count": 0,
+    "historical_outcome_assignment_count": 0
+  },
+  "outputs": {
+    "run_directory":"wtc1_simulation_v8/calculix_v10x_cyclic_plasticity_benchmark",
+    "regression_audit":"wtc1_simulation_v8/output/v10x_regression_audit.json",
+    "source_manifest":"wtc1_simulation_v8/output/v10x_benchmark_source_manifest.json",
+    "analytical_reference":"wtc1_simulation_v8/output/v10x_analytical_reference.json",
+    "response_curve":"wtc1_simulation_v8/output/v10x_cyclic_response_curve.csv",
+    "summary":"wtc1_simulation_v8/output/v10x_cyclic_summary.csv",
+    "plot":"wtc1_simulation_v8/output/synthese_wtc1_v10x_plasticite_cyclique.svg",
+    "solver_execution_log":"wtc1_simulation_v8/output/v10x_solver_execution_log.json",
+    "solver_file_manifest":"wtc1_simulation_v8/output/v10x_solver_file_manifest.csv",
+    "handoff_gate":"wtc1_simulation_v8/output/v10x_cyclic_plasticity_benchmark_gate.json",
+    "report":"wtc1_simulation_v8/output/rapport_wtc1_v10x_benchmark_plasticite_cyclique.md",
+    "results":"wtc1_simulation_v8/output/resultats_wtc1_v10x_benchmark_plasticite_cyclique.json",
+    "offline_audit":"wtc1_simulation_v8/output/v10x_offline_package_audit.json"
+  },
+  "next_iteration": {
+    "id": "V10Y",
+    "objective": "Construire une première chaîne exploratoire WTC 1 impact plus feux localisés plus gravité avec paramètres bornés et sorties 3D pilotées par le calcul, sans prétention de reconstruction scientifique certifiée."
+  }
+}

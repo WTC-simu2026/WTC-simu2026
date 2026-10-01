@@ -1,0 +1,313 @@
+{
+  "status": "PASS",
+  "tests": [
+    {
+      "test": "independent_triangle_analytical_member_forces",
+      "pass": true,
+      "evidence": {
+        "computed_N": [
+          5000.0,
+          -7071.067811865476,
+          -7071.067811865476
+        ],
+        "expected_N": [
+          5000.0,
+          -7071.067811865475,
+          -7071.067811865475
+        ]
+      }
+    },
+    {
+      "test": "independent_triangle_virtual_work_energy",
+      "pass": true,
+      "evidence": 0.4785533905932738
+    },
+    {
+      "test": "zero_load_has_zero_force_displacement_energy",
+      "pass": true,
+      "evidence": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "test": "yield_reduction_normalized_at_20C",
+      "pass": true,
+      "evidence": 1.0
+    },
+    {
+      "test": "reject_modulus_extrapolation_above_600C",
+      "pass": true,
+      "evidence": "601 C rejected"
+    },
+    {
+      "test": "steel_E_and_yield_decrease_on_test_grid",
+      "pass": true,
+      "evidence": [
+        [
+          205120264640.00003,
+          1.0
+        ],
+        [
+          195419840000.00003,
+          0.8540359752351343
+        ],
+        [
+          178873920000.0,
+          0.7122535113501447
+        ],
+        [
+          153198080000.0,
+          0.4700363661983685
+        ]
+      ]
+    },
+    {
+      "test": "units_inch_foot_kip_psf",
+      "pass": true,
+      "evidence": {
+        "in_m": 0.0254,
+        "kip_N": 4448.2216152605,
+        "psf_Pa": 47.88025898033584
+      }
+    },
+    {
+      "test": "nonoverlapping_double_angle_area",
+      "pass": true,
+      "evidence": 1.6249999999999998
+    },
+    {
+      "test": "column_K_doubling_quarters_Euler_and_reduces_capacity",
+      "pass": true,
+      "evidence": {
+        "P1": 1249308.1316934687,
+        "P2": 331784.0454066712
+      }
+    },
+    {
+      "test": "beam_L_doubling_divides_stiffness_by_8",
+      "pass": true,
+      "evidence": 0.125
+    },
+    {
+      "test": "count_nodes",
+      "pass": true,
+      "evidence": 376
+    },
+    {
+      "test": "unique_identifiers_nodes",
+      "pass": true,
+      "evidence": 376
+    },
+    {
+      "test": "count_core_column_segments",
+      "pass": true,
+      "evidence": 329
+    },
+    {
+      "test": "unique_identifiers_core_column_segments",
+      "pass": true,
+      "evidence": 329
+    },
+    {
+      "test": "count_core_beam_candidates",
+      "pass": true,
+      "evidence": 553
+    },
+    {
+      "test": "unique_identifiers_core_beam_candidates",
+      "pass": true,
+      "evidence": 553
+    },
+    {
+      "test": "member_endpoints_exist_and_lengths_positive",
+      "pass": true,
+      "evidence": 882
+    },
+    {
+      "test": "official_moment_reference_count",
+      "pass": true,
+      "evidence": 119
+    },
+    {
+      "test": "moment_edges_match_source_at_each_floor",
+      "pass": true,
+      "evidence": 17
+    },
+    {
+      "test": "intact_baseline_does_not_claim_impact_assignment",
+      "pass": true,
+      "evidence": 882
+    },
+    {
+      "test": "no_beam_proxy_promoted_to_as_built",
+      "pass": true,
+      "evidence": 553
+    },
+    {
+      "test": "splice_band_boundary_convention",
+      "pass": true,
+      "evidence": {
+        "93": [
+          "95-92"
+        ],
+        "94": [
+          "95-92"
+        ],
+        "95": [
+          "98-95"
+        ],
+        "96": [
+          "98-95"
+        ],
+        "97": [
+          "98-95"
+        ],
+        "98": [
+          "101-98"
+        ],
+        "99": [
+          "101-98"
+        ]
+      }
+    },
+    {
+      "test": "existing_geometry_roof_height_reproduced",
+      "pass": true,
+      "evidence": 416.9664
+    },
+    {
+      "test": "column_capacity_matrix_count",
+      "pass": true,
+      "evidence": 3948
+    },
+    {
+      "test": "beam_capacity_matrix_count",
+      "pass": true,
+      "evidence": 13272
+    },
+    {
+      "test": "nominal_column_screen_positive_below_ideal_bounds",
+      "pass": true,
+      "evidence": 3948
+    },
+    {
+      "test": "seat_library_includes_all_15_details_11_temperatures",
+      "pass": true,
+      "evidence": 165
+    },
+    {
+      "test": "preserve_nonmonotonic_published_horizontal_capacity",
+      "pass": true,
+      "evidence": [
+        {
+          "side": "exterior",
+          "detail": "1013",
+          "temperature_c": 20,
+          "vertical_kip": 94,
+          "vertical_N": 418132.831834487,
+          "horizontal_tension_kip": 100,
+          "horizontal_tension_N": 444822.16152604995,
+          "capacity_applies_to": "PAIRED_TRUSSES_COMPLETE_SEAT",
+          "source_status": "OFFICIAL_MODEL_COMPUTED_NOT_AS_BUILT_ASSIGNMENT",
+          "combined_V_H_law": "NOT_AVAILABLE"
+        },
+        {
+          "side": "exterior",
+          "detail": "1013",
+          "temperature_c": 100,
+          "vertical_kip": 94,
+          "vertical_N": 418132.831834487,
+          "horizontal_tension_kip": 138,
+          "horizontal_tension_N": 613854.582905949,
+          "capacity_applies_to": "PAIRED_TRUSSES_COMPLETE_SEAT",
+          "source_status": "OFFICIAL_MODEL_COMPUTED_NOT_AS_BUILT_ASSIGNMENT",
+          "combined_V_H_law": "NOT_AVAILABLE"
+        }
+      ]
+    },
+    {
+      "test": "floor_bay_case_count",
+      "pass": true,
+      "evidence": 192
+    },
+    {
+      "test": "all_56_seat_pairs_evaluated_per_bay",
+      "pass": true,
+      "evidence": 10752
+    },
+    {
+      "test": "all_bay_equilibrium_residuals",
+      "pass": true,
+      "evidence": 6.86512380264934e-14
+    },
+    {
+      "test": "all_bay_strain_energy_equals_ramped_external_work",
+      "pass": true,
+      "evidence": 2.763258792480053e-13
+    },
+    {
+      "test": "paired_gravity_load_equals_both_paired_reactions",
+      "pass": true,
+      "evidence": 2.1018634679991064e-13
+    },
+    {
+      "test": "symmetric_bay_reactions",
+      "pass": true,
+      "evidence": 192
+    },
+    {
+      "test": "truss_connectivity_is_statically_determinate",
+      "pass": true,
+      "evidence": 6
+    },
+    {
+      "test": "member_first_limit_reaches_DCR_one",
+      "pass": true,
+      "evidence": 192
+    },
+    {
+      "test": "determinate_bar_forces_independent_of_stiffness_variants",
+      "pass": true,
+      "evidence": 192
+    },
+    {
+      "test": "long_bay_seat_service_load_near_published_16kip",
+      "pass": true,
+      "evidence": 15.84444444444469
+    },
+    {
+      "test": "paired_member_forces_are_twice_single_truss",
+      "pass": true,
+      "evidence": 12096
+    },
+    {
+      "test": "composite_force_sharing_balances_total",
+      "pass": true,
+      "evidence": 12096
+    },
+    {
+      "test": "no_reported_bay_curve_beyond_first_limit",
+      "pass": true,
+      "evidence": 2112
+    },
+    {
+      "test": "no_global_collapse_energy_credit",
+      "pass": true,
+      "evidence": 0
+    },
+    {
+      "test": "exact_deterministic_replay",
+      "pass": true,
+      "evidence": "4e0ff28266f0d36c135ab6a1307a70731bb895e8d1ef43ccb758265d256b8d7d"
+    }
+  ],
+  "tests_passed": 43,
+  "test_count": 43,
+  "numerical_digest_sha256": "4e0ff28266f0d36c135ab6a1307a70731bb895e8d1ef43ccb758265d256b8d7d",
+  "maximum_equilibrium_residual": 6.86512380264934e-14,
+  "maximum_energy_residual": 2.763258792480053e-13,
+  "physical_validation": false,
+  "historical_validation": false
+}

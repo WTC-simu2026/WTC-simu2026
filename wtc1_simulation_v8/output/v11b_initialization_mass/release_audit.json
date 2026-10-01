@@ -1,0 +1,40 @@
+{
+  "iteration": "V11B",
+  "checked_at_utc": "2026-09-06T07:21:42Z",
+  "status": "PASS_REDUCED_MODEL_PACKAGE_RELEASE",
+  "independent_hash_checks": {
+    "output_files": 15,
+    "inputs_and_protected_files": 9,
+    "configuration_and_code_files": 3,
+    "failures": []
+  },
+  "manual_visual_review": {
+    "file": "synthese_v11b_depart_masse.png",
+    "sha256": "8d934cad113fe093909970e49c2b9ee6ef5a324168eb8c5f3ff1f4c0ff09226d",
+    "complete_image_inspected": true,
+    "readable_and_unclipped": true,
+    "graph_stays_inside_axes": true,
+    "axis_title_does_not_overlap_tick": true,
+    "start_curve_uses_constant_acceleration_not_linear_position_interpolation": true,
+    "counts_and_selected_scenario_match_calculations": true
+  },
+  "independent_agent_review": {
+    "scope": "Read-only equation review, pure-kernel tests, two-story analytical case, driver and CSV cross-checks",
+    "blocking_anomalies": 0,
+    "correction_requested_and_applied": "Distinguish realized zero acceleration and mobilized Mg reaction at rest from available resistance capacity F and potential g-F/M acceleration.",
+    "driver_scenario_variant_rows_verified": 2196,
+    "grid_counts_verified": {"no_capacity_trigger": 297, "trigger_without_start": 90, "motion_then_arrest": 54, "lower_boundary": 288},
+    "mass_residual_kg": 0.0,
+    "selected_case_mass_units": "352000000 kg = 352000 metric tonnes; not 352 million tonnes"
+  },
+  "attempts": [
+    {"path": "tmp/v11b_initialization_mass/attempt01", "status": "75 tests pass; plot rejected because old curve exceeded plotted vertical range"},
+    {"path": "tmp/v11b_initialization_mass/attempt02", "status": "75 tests pass; axes and mechanical interpolation fixed, final small axis-title overlap identified"},
+    {"path": "wtc1_simulation_v8/output/v11b_initialization_mass", "status": "75 tests pass; numerical digest unchanged, axis title repositioned and final image accepted"}
+  ],
+  "numerical_digest_sha256": "858489bd44df431332edb3f2648a071a786cfd8424d56b32610ca1bb1eb06a73",
+  "harness_before_state_registration": {"status": "PASS", "registry_entries": 79, "required_files": 98, "source_hashes_verified": 8},
+  "historical_validation": false,
+  "full_spatial_structure_or_aircraft_fire_solver_coupled": false,
+  "release_audit_self_hash_excluded_from_offline_manifest": true
+}

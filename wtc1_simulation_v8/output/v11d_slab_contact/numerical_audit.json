@@ -1,0 +1,2051 @@
+{
+  "status": "PASS",
+  "test_count": 56,
+  "tests_passed": 56,
+  "tests": [
+    {
+      "test": "INDEPENDENT_GENERIC_EB_LOCAL_STIFFNESS_MATRIX",
+      "pass": true,
+      "evidence": {
+        "matrix": {
+          "actual": [
+            [
+              544883.8173454682,
+              1008035.0620891163,
+              -544883.8173454682,
+              1008035.0620891165
+            ],
+            [
+              1008035.0620891163,
+              2486486.486486486,
+              -1008035.0620891163,
+              1243243.2432432442
+            ],
+            [
+              -544883.8173454682,
+              -1008035.0620891163,
+              544883.8173454682,
+              -1008035.0620891165
+            ],
+            [
+              1008035.0620891165,
+              1243243.2432432442,
+              -1008035.0620891165,
+              2486486.4864864876
+            ]
+          ],
+          "expected": [
+            [
+              544883.8173454681,
+              1008035.0620891162,
+              -544883.8173454681,
+              1008035.0620891162
+            ],
+            [
+              1008035.0620891162,
+              2486486.4864864866,
+              -1008035.0620891162,
+              1243243.2432432433
+            ],
+            [
+              -544883.8173454681,
+              -1008035.0620891162,
+              544883.8173454681,
+              -1008035.0620891162
+            ],
+            [
+              1008035.0620891162,
+              1243243.2432432433,
+              -1008035.0620891162,
+              2486486.4864864866
+            ]
+          ],
+          "maximum_absolute_error": 9.313225746154785e-10,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "formula": "EI/L^3 times the standard cubic Hermite beam matrix"
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_EB_RIGID_TRANSLATION_AND_ROTATION",
+      "pass": true,
+      "evidence": [
+        {
+          "mode": "translation",
+          "force": {
+            "actual": [
+              0.0,
+              0.0
+            ],
+            "expected": [
+              0.0,
+              0.0
+            ],
+            "maximum_absolute_error": 0.0,
+            "relative_tolerance": 2e-08,
+            "absolute_tolerance": 1e-08
+          },
+          "energy_J": {
+            "actual": 0.0,
+            "expected": 0.0,
+            "maximum_absolute_error": 0.0,
+            "relative_tolerance": 2e-08,
+            "absolute_tolerance": 1e-16
+          },
+          "energy_identity_residual": 0.0,
+          "equilibrium_residual": 0.0
+        },
+        {
+          "mode": "rotation",
+          "force": {
+            "actual": [
+              0.0,
+              3.690624195140657e-12
+            ],
+            "expected": [
+              0.0,
+              0.0
+            ],
+            "maximum_absolute_error": 3.690624195140657e-12,
+            "relative_tolerance": 2e-08,
+            "absolute_tolerance": 1e-08
+          },
+          "energy_J": {
+            "actual": 1.6005531080796267e-30,
+            "expected": 0.0,
+            "maximum_absolute_error": 1.6005531080796267e-30,
+            "relative_tolerance": 2e-08,
+            "absolute_tolerance": 1e-16
+          },
+          "energy_identity_residual": 4.566259527520612e-32,
+          "equilibrium_residual": 0.0
+        }
+      ]
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_EB_CONSISTENT_UNIFORM_LOAD_FORCE_AND_MOMENT",
+      "pass": true,
+      "evidence": {
+        "vector": {
+          "actual": [
+            -320.05,
+            -197.3641666666667,
+            -320.05,
+            197.3641666666667
+          ],
+          "expected": [
+            -320.05,
+            -197.3641666666667,
+            -320.05,
+            197.3641666666667
+          ],
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "vertical_force": {
+          "actual": -640.1,
+          "expected": -640.1,
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "moment_about_left": {
+          "actual": -1184.1850000000002,
+          "expected": -1184.1850000000002,
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        }
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_EB_SIMPLY_SUPPORTED_UDL_2_ELEMENTS",
+      "pass": true,
+      "evidence": {
+        "elements": 2,
+        "midspan_m_left_right_slope": {
+          "actual": [
+            -0.0010956111496913585,
+            -0.0004802679012345683,
+            0.00048026790123456786
+          ],
+          "expected": [
+            -0.0010956111496913579,
+            -0.00048026790123456786,
+            0.00048026790123456786
+          ],
+          "maximum_absolute_error": 6.505213034913027e-19,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "reactions_N": {
+          "actual": [
+            2919.9999999999986,
+            2920.0000000000014
+          ],
+          "expected": [
+            2920.0,
+            2920.0
+          ],
+          "maximum_absolute_error": 1.3642420526593924e-12,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "formulas": "w(L/2)=5qL^4/(384EI); theta(0)=qL^3/(24EI)",
+        "energy_identity_residual": 0.0,
+        "equilibrium_residual": 9.607235609359347e-16
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_EB_SIMPLY_SUPPORTED_UDL_4_ELEMENTS",
+      "pass": true,
+      "evidence": {
+        "elements": 4,
+        "midspan_m_left_right_slope": {
+          "actual": [
+            -0.001095611149691374,
+            -0.00048026790123457475,
+            0.00048026790123457437
+          ],
+          "expected": [
+            -0.0010956111496913579,
+            -0.00048026790123456786,
+            0.00048026790123456786
+          ],
+          "maximum_absolute_error": 1.6046192152785466e-17,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "reactions_N": {
+          "actual": [
+            2920.0000000000223,
+            2920.000000000038
+          ],
+          "expected": [
+            2920.0,
+            2920.0
+          ],
+          "maximum_absolute_error": 3.8198777474462986e-11,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "formulas": "w(L/2)=5qL^4/(384EI); theta(0)=qL^3/(24EI)",
+        "energy_identity_residual": 1.4107405342903975e-14,
+        "equilibrium_residual": 3.093318718178313e-15
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_EB_SIMPLY_SUPPORTED_UDL_8_ELEMENTS",
+      "pass": true,
+      "evidence": {
+        "elements": 8,
+        "midspan_m_left_right_slope": {
+          "actual": [
+            -0.001095611149691607,
+            -0.0004802679012346761,
+            0.00048026790123467395
+          ],
+          "expected": [
+            -0.0010956111496913579,
+            -0.00048026790123456786,
+            0.00048026790123456786
+          ],
+          "maximum_absolute_error": 2.491496592371689e-16,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "reactions_N": {
+          "actual": [
+            2920.000000000475,
+            2920.00000000053
+          ],
+          "expected": [
+            2920.0,
+            2920.0
+          ],
+          "maximum_absolute_error": 5.297806637827307e-10,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "formulas": "w(L/2)=5qL^4/(384EI); theta(0)=qL^3/(24EI)",
+        "energy_identity_residual": 2.2579761678106858e-13,
+        "equilibrium_residual": 2.3466288824291702e-14
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_EB_CANTILEVER_TIP_LOAD_1_ELEMENTS",
+      "pass": true,
+      "evidence": {
+        "elements": 1,
+        "tip_m_and_rotation": {
+          "actual": [
+            -0.003208177192982452,
+            -0.0011191315789473666
+          ],
+          "expected": [
+            -0.0032081771929824555,
+            -0.0011191315789473683
+          ],
+          "maximum_absolute_error": 3.469446951953614e-18,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "root_force_N_moment_Nm": {
+          "actual": [
+            2300.000000000001,
+            9889.999999999993
+          ],
+          "expected": [
+            2300.0,
+            9890.0
+          ],
+          "maximum_absolute_error": 7.275957614183426e-12,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "energy_J": {
+          "actual": 3.6894037719298183,
+          "expected": 3.689403771929824,
+          "maximum_absolute_error": 5.773159728050814e-15,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "energy_identity_residual": 4.814753139559701e-16,
+        "equilibrium_residual": 8.760465803609501e-16
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_EB_CANTILEVER_TIP_LOAD_4_ELEMENTS",
+      "pass": true,
+      "evidence": {
+        "elements": 4,
+        "tip_m_and_rotation": {
+          "actual": [
+            -0.0032081771929823354,
+            -0.0011191315789473326
+          ],
+          "expected": [
+            -0.0032081771929824555,
+            -0.0011191315789473683
+          ],
+          "maximum_absolute_error": 1.201296007113939e-16,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "root_force_N_moment_Nm": {
+          "actual": [
+            2299.999999999809,
+            9889.999999999507
+          ],
+          "expected": [
+            2300.0,
+            9890.0
+          ],
+          "maximum_absolute_error": 4.929461283609271e-10,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "energy_J": {
+          "actual": 3.6894037719295576,
+          "expected": 3.689403771929824,
+          "maximum_absolute_error": 2.6645352591003757e-13,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "energy_identity_residual": 3.4666222604831114e-14,
+        "equilibrium_residual": 2.7396365785832863e-14
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_EB_FREE_IMPOSED_CURVATURE_1_ELEMENTS",
+      "pass": true,
+      "evidence": {
+        "elements": 1,
+        "all_dofs": {
+          "actual": [
+            0.0,
+            0.0,
+            0.016906500000000015,
+            0.006630000000000004
+          ],
+          "expected": [
+            0.0,
+            0.0,
+            0.016906499999999998,
+            0.00663
+          ],
+          "maximum_absolute_error": 1.734723475976807e-17,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "zero_bending_energy_J": {
+          "actual": 1.0167555936872458e-28,
+          "expected": 0.0,
+          "maximum_absolute_error": 1.0167555936872458e-28,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-14
+        },
+        "formula": "w(x)=kappa*x^2/2; theta(x)=kappa*x; free curvature",
+        "energy_identity_residual": 2.0702189962307236e-13,
+        "equilibrium_residual": 1.178285959793851e-11
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_EB_FREE_IMPOSED_CURVATURE_4_ELEMENTS",
+      "pass": true,
+      "evidence": {
+        "elements": 4,
+        "all_dofs": {
+          "actual": [
+            0.0,
+            0.0,
+            0.0010566562499999999,
+            0.0016575000000000016,
+            0.0042266250000000056,
+            0.0033150000000000085,
+            0.009509906250000021,
+            0.004972500000000017,
+            0.01690650000000004,
+            0.006630000000000012
+          ],
+          "expected": [
+            0.0,
+            0.0,
+            0.0010566562499999999,
+            0.0016575,
+            0.0042266249999999995,
+            0.003315,
+            0.009509906249999998,
+            0.0049724999999999995,
+            0.016906499999999998,
+            0.00663
+          ],
+          "maximum_absolute_error": 4.163336342344337e-17,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "zero_bending_energy_J": {
+          "actual": 1.9634893398847096e-27,
+          "expected": 0.0,
+          "maximum_absolute_error": 1.9634893398847096e-27,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-14
+        },
+        "formula": "w(x)=kappa*x^2/2; theta(x)=kappa*x; free curvature",
+        "energy_identity_residual": 6.325669155149466e-13,
+        "equilibrium_residual": 4.147566578474352e-10
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_EB_RESTRAINED_IMPOSED_CURVATURE_1_ELEMENTS",
+      "pass": true,
+      "evidence": {
+        "elements": 1,
+        "straight_beam": {
+          "actual": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "expected": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "energy_J": {
+          "actual": 137.904,
+          "expected": 137.904,
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "end_moments_Nm": {
+          "actual": [
+            41600.000000000015,
+            -41599.99999999999
+          ],
+          "expected": [
+            41600.0,
+            -41600.0
+          ],
+          "maximum_absolute_error": 1.4551915228366852e-11,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "formula": "M=-EI*kappa; U=EI*kappa^2*L/2",
+        "energy_identity_residual": 0.0,
+        "equilibrium_residual": 0.0
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_EB_RESTRAINED_IMPOSED_CURVATURE_4_ELEMENTS",
+      "pass": true,
+      "evidence": {
+        "elements": 4,
+        "straight_beam": {
+          "actual": [
+            0.0,
+            0.0,
+            3.4652281044600415e-20,
+            -8.153477892847148e-20,
+            5.464165405105106e-35,
+            -1.0871303857129535e-19,
+            -3.465228104460035e-20,
+            -8.153477892847153e-20,
+            0.0,
+            0.0
+          ],
+          "expected": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum_absolute_error": 1.0871303857129535e-19,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "energy_J": {
+          "actual": 137.904,
+          "expected": 137.904,
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "end_moments_Nm": {
+          "actual": [
+            41600.0,
+            -41600.0
+          ],
+          "expected": [
+            41600.0,
+            -41600.0
+          ],
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "formula": "M=-EI*kappa; U=EI*kappa^2*L/2",
+        "energy_identity_residual": 0.0,
+        "equilibrium_residual": 2.5245048600727815e-17
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_UNILATERAL_COMPRESSION_NEGATIVE_LOAD",
+      "pass": true,
+      "evidence": {
+        "branch": "compression",
+        "anchor_m": 0.0,
+        "external_load_N": -100.0,
+        "engaged": true,
+        "displacement_m": {
+          "actual": -0.01,
+          "expected": -0.01,
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "branch_force_N": {
+          "actual": -90.0,
+          "expected": -90.0,
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "energy_identity_residual": 0.0,
+        "equilibrium_residual": 0.0
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_UNILATERAL_COMPRESSION_POSITIVE_LOAD",
+      "pass": true,
+      "evidence": {
+        "branch": "compression",
+        "anchor_m": 0.0,
+        "external_load_N": 100.0,
+        "engaged": false,
+        "displacement_m": {
+          "actual": 0.1,
+          "expected": 0.1,
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "branch_force_N": {
+          "actual": 0.0,
+          "expected": 0.0,
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "energy_identity_residual": 1.77635683940025e-16,
+        "equilibrium_residual": 0.0
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_UNILATERAL_COMPRESSION_ANCHOR_UP",
+      "pass": true,
+      "evidence": {
+        "branch": "compression",
+        "anchor_m": 0.02,
+        "external_load_N": 0.0,
+        "engaged": true,
+        "displacement_m": {
+          "actual": 0.018000000000000002,
+          "expected": 0.018,
+          "maximum_absolute_error": 3.469446951953614e-18,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "branch_force_N": {
+          "actual": -17.999999999999986,
+          "expected": -18.000000000000014,
+          "maximum_absolute_error": 2.842170943040401e-14,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "energy_identity_residual": 2.7755575615628914e-16,
+        "equilibrium_residual": 4.934324553889587e-16
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_UNILATERAL_COMPRESSION_ANCHOR_DOWN",
+      "pass": true,
+      "evidence": {
+        "branch": "compression",
+        "anchor_m": -0.02,
+        "external_load_N": 0.0,
+        "engaged": false,
+        "displacement_m": {
+          "actual": 0.0,
+          "expected": 0.0,
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "branch_force_N": {
+          "actual": 0.0,
+          "expected": 0.0,
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "energy_identity_residual": 0.0,
+        "equilibrium_residual": 0.0
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_UNILATERAL_TENSION_NEGATIVE_LOAD",
+      "pass": true,
+      "evidence": {
+        "branch": "tension",
+        "anchor_m": 0.0,
+        "external_load_N": -100.0,
+        "engaged": false,
+        "displacement_m": {
+          "actual": -0.1,
+          "expected": -0.1,
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "branch_force_N": {
+          "actual": 0.0,
+          "expected": 0.0,
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "energy_identity_residual": 1.77635683940025e-16,
+        "equilibrium_residual": 0.0
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_UNILATERAL_TENSION_POSITIVE_LOAD",
+      "pass": true,
+      "evidence": {
+        "branch": "tension",
+        "anchor_m": 0.0,
+        "external_load_N": 100.0,
+        "engaged": true,
+        "displacement_m": {
+          "actual": 0.01,
+          "expected": 0.01,
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "branch_force_N": {
+          "actual": 90.0,
+          "expected": 90.0,
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "energy_identity_residual": 0.0,
+        "equilibrium_residual": 0.0
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_UNILATERAL_TENSION_ANCHOR_UP",
+      "pass": true,
+      "evidence": {
+        "branch": "tension",
+        "anchor_m": 0.02,
+        "external_load_N": 0.0,
+        "engaged": false,
+        "displacement_m": {
+          "actual": 0.0,
+          "expected": 0.0,
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "branch_force_N": {
+          "actual": 0.0,
+          "expected": 0.0,
+          "maximum_absolute_error": 0.0,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "energy_identity_residual": 0.0,
+        "equilibrium_residual": 0.0
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_UNILATERAL_TENSION_ANCHOR_DOWN",
+      "pass": true,
+      "evidence": {
+        "branch": "tension",
+        "anchor_m": -0.02,
+        "external_load_N": 0.0,
+        "engaged": true,
+        "displacement_m": {
+          "actual": -0.018000000000000002,
+          "expected": -0.018,
+          "maximum_absolute_error": 3.469446951953614e-18,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "branch_force_N": {
+          "actual": 17.999999999999986,
+          "expected": 18.000000000000014,
+          "maximum_absolute_error": 2.842170943040401e-14,
+          "relative_tolerance": 2e-08,
+          "absolute_tolerance": 1e-11
+        },
+        "energy_identity_residual": 2.7755575615628914e-16,
+        "equilibrium_residual": 4.934324553889587e-16
+      }
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_UNILATERAL_PRESCRIBED_GAP_AND_ZERO_FORCE",
+      "pass": true,
+      "evidence": [
+        {
+          "compression_only": true,
+          "u_m": 0.007,
+          "force_N": {
+            "actual": -6.0,
+            "expected": -6.0,
+            "maximum_absolute_error": 0.0,
+            "relative_tolerance": 2e-08,
+            "absolute_tolerance": 1e-11
+          },
+          "energy_J": {
+            "actual": 0.009000000000000001,
+            "expected": 0.009000000000000001,
+            "maximum_absolute_error": 0.0,
+            "relative_tolerance": 2e-08,
+            "absolute_tolerance": 1e-11
+          },
+          "energy_identity_residual": 6.938893903907228e-18,
+          "equilibrium_residual": 0.0
+        },
+        {
+          "compression_only": false,
+          "u_m": 0.007,
+          "force_N": {
+            "actual": 0.0,
+            "expected": 0.0,
+            "maximum_absolute_error": 0.0,
+            "relative_tolerance": 2e-08,
+            "absolute_tolerance": 1e-11
+          },
+          "energy_J": {
+            "actual": 0.0,
+            "expected": 0.0,
+            "maximum_absolute_error": 0.0,
+            "relative_tolerance": 2e-08,
+            "absolute_tolerance": 1e-11
+          },
+          "energy_identity_residual": 0.0,
+          "equilibrium_residual": 0.0
+        },
+        {
+          "compression_only": true,
+          "u_m": 0.01,
+          "force_N": {
+            "actual": 0.0,
+            "expected": 0.0,
+            "maximum_absolute_error": 0.0,
+            "relative_tolerance": 2e-08,
+            "absolute_tolerance": 1e-11
+          },
+          "energy_J": {
+            "actual": 0.0,
+            "expected": 0.0,
+            "maximum_absolute_error": 0.0,
+            "relative_tolerance": 2e-08,
+            "absolute_tolerance": 1e-11
+          },
+          "energy_identity_residual": 0.0,
+          "equilibrium_residual": 0.0
+        },
+        {
+          "compression_only": false,
+          "u_m": 0.01,
+          "force_N": {
+            "actual": 0.0,
+            "expected": 0.0,
+            "maximum_absolute_error": 0.0,
+            "relative_tolerance": 2e-08,
+            "absolute_tolerance": 1e-11
+          },
+          "energy_J": {
+            "actual": 0.0,
+            "expected": 0.0,
+            "maximum_absolute_error": 0.0,
+            "relative_tolerance": 2e-08,
+            "absolute_tolerance": 1e-11
+          },
+          "energy_identity_residual": 0.0,
+          "equilibrium_residual": 0.0
+        },
+        {
+          "compression_only": true,
+          "u_m": 0.013000000000000001,
+          "force_N": {
+            "actual": 0.0,
+            "expected": 0.0,
+            "maximum_absolute_error": 0.0,
+            "relative_tolerance": 2e-08,
+            "absolute_tolerance": 1e-11
+          },
+          "energy_J": {
+            "actual": 0.0,
+            "expected": 0.0,
+            "maximum_absolute_error": 0.0,
+            "relative_tolerance": 2e-08,
+            "absolute_tolerance": 1e-11
+          },
+          "energy_identity_residual": 0.0,
+          "equilibrium_residual": 0.0
+        },
+        {
+          "compression_only": false,
+          "u_m": 0.013000000000000001,
+          "force_N": {
+            "actual": 6.000000000000002,
+            "expected": 6.000000000000002,
+            "maximum_absolute_error": 0.0,
+            "relative_tolerance": 2e-08,
+            "absolute_tolerance": 1e-11
+          },
+          "energy_J": {
+            "actual": 0.009000000000000005,
+            "expected": 0.009000000000000005,
+            "maximum_absolute_error": 0.0,
+            "relative_tolerance": 2e-08,
+            "absolute_tolerance": 1e-11
+          },
+          "energy_identity_residual": 0.0,
+          "equilibrium_residual": 0.0
+        }
+      ]
+    },
+    {
+      "test": "INDEPENDENT_GENERIC_REMOVED_TENSILE_TIE_PRESERVES_COMPRESSION_CONTACT",
+      "pass": true,
+      "evidence": {
+        "states": [
+          {
+            "load_N": 100.0,
+            "before_and_after_m": {
+              "actual": [
+                0.02,
+                0.1
+              ],
+              "expected": [
+                0.02,
+                0.1
+              ],
+              "maximum_absolute_error": 0.0,
+              "relative_tolerance": 2e-08,
+              "absolute_tolerance": 1e-11
+            },
+            "surviving_contact_force_N": {
+              "actual": 0.0,
+              "expected": 0.0,
+              "maximum_absolute_error": 0.0,
+              "relative_tolerance": 2e-08,
+              "absolute_tolerance": 1e-11
+            },
+            "before_audits": {
+              "energy_identity_residual": 0.0,
+              "equilibrium_residual": 0.0
+            },
+            "after_audits": {
+              "energy_identity_residual": 1.77635683940025e-16,
+              "equilibrium_residual": 0.0
+            }
+          },
+          {
+            "load_N": -100.0,
+            "before_and_after_m": {
+              "actual": [
+                -0.01,
+                -0.01
+              ],
+              "expected": [
+                -0.01,
+                -0.01
+              ],
+              "maximum_absolute_error": 0.0,
+              "relative_tolerance": 2e-08,
+              "absolute_tolerance": 1e-11
+            },
+            "surviving_contact_force_N": {
+              "actual": -90.0,
+              "expected": -90.0,
+              "maximum_absolute_error": 0.0,
+              "relative_tolerance": 2e-08,
+              "absolute_tolerance": 1e-11
+            },
+            "before_audits": {
+              "energy_identity_residual": 0.0,
+              "equilibrium_residual": 0.0
+            },
+            "after_audits": {
+              "energy_identity_residual": 0.0,
+              "equilibrium_residual": 0.0
+            }
+          }
+        ],
+        "scope": "Removing the tensile tie preserves compression contact; this does not test fracture energy or physical pullout strength."
+      }
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_SINGLE_BEAM_EXACT_UDL_MOMENT_AND_TOTAL_ENERGY",
+      "pass": true,
+      "evidence": {
+        "moments_Nm": {
+          "actual": [
+            1.8189894035458565e-12,
+            0.0,
+            2344.4125000000013
+          ],
+          "expected": [
+            0.0,
+            0.0,
+            2344.4125000000004
+          ],
+          "maximum_absolute_error": 1.8189894035458565e-12
+        },
+        "extremum_x_m": {
+          "actual": 1.8499999999999996,
+          "expected": 1.85,
+          "maximum_absolute_error": 4.440892098500626e-16
+        },
+        "midpoint_Nm": {
+          "actual": 2344.4125000000013,
+          "expected": 2344.4125000000004,
+          "maximum_absolute_error": 9.094947017729282e-13
+        },
+        "total_energy_J": {
+          "actual": 2.357820161110509,
+          "expected": 2.357820161110508,
+          "maximum_absolute_error": 1.3322676295501878e-15
+        },
+        "bubble_J": {
+          "actual": 0.3929700268517513,
+          "expected": 0.3929700268517513,
+          "maximum_absolute_error": 0.0
+        },
+        "bubble_work_J": {
+          "actual": 0.7859400537035026,
+          "expected": 0.7859400537035026,
+          "maximum_absolute_error": 0.0
+        },
+        "equilibrium_residual": 1.6798356013344652e-16,
+        "energy_identity_residual": 0.0
+      }
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_CLAMPED_BEAM_UDL_BUBBLE_RECOVERS_NONZERO_STRESS",
+      "pass": true,
+      "evidence": {
+        "end_end_middle_Nm": {
+          "actual": [
+            -658.7833333333334,
+            -658.7833333333331,
+            329.39166666666654
+          ],
+          "expected": [
+            -658.7833333333334,
+            -658.7833333333334,
+            329.3916666666667
+          ],
+          "maximum_absolute_error": 3.410605131648481e-13
+        },
+        "all_energy_is_particular_solution_J": {
+          "actual": 0.026220560266782406,
+          "expected": 0.026220560266782406,
+          "maximum_absolute_error": 0.0
+        }
+      }
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_GENERAL_HERMITE_UDL_ENERGY_CURVATURE_0.0",
+      "pass": true,
+      "evidence": {
+        "moment_Nm": {
+          "actual": [
+            6075.302347195968,
+            -16586.323361688723
+          ],
+          "expected": [
+            6075.302347195972,
+            -16586.323361688716
+          ],
+          "maximum_absolute_error": 7.275957614183426e-12
+        },
+        "integrated_recovered_energy_J": {
+          "actual": 27.64583428209807,
+          "expected": 27.645834282098082,
+          "maximum_absolute_error": 1.4210854715202004e-14
+        },
+        "equilibrium_residual": 0.0,
+        "energy_identity_residual": 0.0
+      }
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_GENERAL_HERMITE_UDL_ENERGY_CURVATURE_0.0013",
+      "pass": true,
+      "evidence": {
+        "moment_Nm": {
+          "actual": [
+            2565.302347195968,
+            -20096.323361688723
+          ],
+          "expected": [
+            2565.3023471959727,
+            -20096.323361688716
+          ],
+          "maximum_absolute_error": 7.275957614183426e-12
+        },
+        "integrated_recovered_energy_J": {
+          "actual": 46.93328428209806,
+          "expected": 46.93328428209807,
+          "maximum_absolute_error": 1.4210854715202004e-14
+        },
+        "equilibrium_residual": 0.0,
+        "energy_identity_residual": 0.0
+      }
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_RIGID_ROTATION_WITH_UNDERSIDE_ECCENTRICITY",
+      "pass": true,
+      "evidence": {
+        "all_kinematic_strains": {
+          "quantity_count": 210,
+          "maximum_absolute_error": 3.415236843329339e-17,
+          "maximum_absolute_expected": 0.0,
+          "maximum_absolute_actual": 3.415236843329339e-17
+        },
+        "zero_energy_J": {
+          "actual": 4.0280662400849584e-27,
+          "expected": 0.0,
+          "maximum_absolute_error": 4.0280662400849584e-27
+        },
+        "equilibrium_residual": 0.0,
+        "energy_identity_residual": 2.4283987823232186e-27
+      }
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_FIXED_ATTACHMENT_AND_GRAVITY_INVENTORY_SUB1",
+      "pass": true,
+      "evidence": {
+        "subdivisions": 1,
+        "station_counts": {
+          "actual": [
+            17.0,
+            17.0,
+            17.0
+          ],
+          "expected": [
+            17.0,
+            17.0,
+            17.0
+          ],
+          "maximum_absolute_error": 0.0
+        },
+        "equivalent_knuckle_total": {
+          "actual": 32.0,
+          "expected": 32.0,
+          "maximum_absolute_error": 0.0
+        },
+        "gravity_once_N": {
+          "actual": 140959.20051914384,
+          "expected": 140959.20051914384,
+          "maximum_absolute_error": 0.0
+        },
+        "no_load_on_steel_or_slab_axial": {
+          "quantity_count": 83,
+          "maximum_absolute_error": 0.0,
+          "maximum_absolute_expected": 0.0,
+          "maximum_absolute_actual": 0.0
+        }
+      }
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_FIXED_ATTACHMENT_AND_GRAVITY_INVENTORY_SUB2",
+      "pass": true,
+      "evidence": {
+        "subdivisions": 2,
+        "station_counts": {
+          "actual": [
+            17.0,
+            17.0,
+            17.0
+          ],
+          "expected": [
+            17.0,
+            17.0,
+            17.0
+          ],
+          "maximum_absolute_error": 0.0
+        },
+        "equivalent_knuckle_total": {
+          "actual": 32.0,
+          "expected": 32.0,
+          "maximum_absolute_error": 0.0
+        },
+        "gravity_once_N": {
+          "actual": 140959.20051914375,
+          "expected": 140959.20051914384,
+          "maximum_absolute_error": 8.731149137020111e-11
+        },
+        "no_load_on_steel_or_slab_axial": {
+          "quantity_count": 99,
+          "maximum_absolute_error": 0.0,
+          "maximum_absolute_expected": 0.0,
+          "maximum_absolute_actual": 0.0
+        }
+      }
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_FIXED_ATTACHMENT_AND_GRAVITY_INVENTORY_SUB4",
+      "pass": true,
+      "evidence": {
+        "subdivisions": 4,
+        "station_counts": {
+          "actual": [
+            17.0,
+            17.0,
+            17.0
+          ],
+          "expected": [
+            17.0,
+            17.0,
+            17.0
+          ],
+          "maximum_absolute_error": 0.0
+        },
+        "equivalent_knuckle_total": {
+          "actual": 32.0,
+          "expected": 32.0,
+          "maximum_absolute_error": 0.0
+        },
+        "gravity_once_N": {
+          "actual": 140959.20051914372,
+          "expected": 140959.20051914384,
+          "maximum_absolute_error": 1.1641532182693481e-10
+        },
+        "no_load_on_steel_or_slab_axial": {
+          "quantity_count": 131,
+          "maximum_absolute_error": 0.0,
+          "maximum_absolute_expected": 0.0,
+          "maximum_absolute_actual": 0.0
+        }
+      }
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_ZERO_COLD_LOAD_STATE",
+      "pass": true,
+      "evidence": {
+        "all_displacements_zero": {
+          "quantity_count": 165,
+          "maximum_absolute_error": 0.0,
+          "maximum_absolute_expected": 0.0,
+          "maximum_absolute_actual": 0.0
+        },
+        "zero_demand_and_energy": {
+          "actual": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "expected": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "maximum_absolute_error": 0.0
+        },
+        "equilibrium_residual": 0.0,
+        "energy_identity_residual": 0.0,
+        "recovered_energy_identity_residual": 0.0
+      }
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_COLD_PAIR_REACTIONS_TRANSFER_SYMMETRY_AND_SIGNS",
+      "pass": true,
+      "evidence": {
+        "support_sum_N": {
+          "actual": 14095.920051915142,
+          "expected": 14095.92005191439,
+          "maximum_absolute_error": 7.512426236644387e-10
+        },
+        "slab_to_steel_transfer_N": {
+          "actual": -14095.920051918663,
+          "expected": -14095.92005191439,
+          "maximum_absolute_error": 4.272806108929217e-09
+        },
+        "symmetric_seat_reaction_N": {
+          "actual": [
+            -7047.960025957645,
+            -7047.960025957498
+          ],
+          "expected": [
+            -7047.960025957195,
+            -7047.960025957195
+          ],
+          "maximum_absolute_error": 4.4929038267582655e-10
+        },
+        "symmetric_slab_displacement": {
+          "quantity_count": 33,
+          "maximum_absolute_error": 2.6150956400350367e-16,
+          "maximum_absolute_expected": 0.004321822951098665,
+          "maximum_absolute_actual": 0.004321822951098665
+        },
+        "symmetric_opposite_rotations": {
+          "quantity_count": 33,
+          "maximum_absolute_error": 1.2584876717125493e-16,
+          "maximum_absolute_expected": 0.0007699100783329846,
+          "maximum_absolute_actual": 0.0007699100783329846
+        },
+        "first_domain_ratio": 0.058876470975900604,
+        "equilibrium_residual": 7.842763889107515e-13,
+        "energy_identity_residual": 2.4059401784836674e-14,
+        "recovered_energy_identity_residual": 2.4059160392151528e-14
+      }
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_ACTUATOR_REACTION_NOT_OMITTED_FROM_VERTICAL_BALANCE",
+      "pass": true,
+      "evidence": {
+        "seat_plus_actuator_N": {
+          "actual": 14095.920051915034,
+          "expected": 14095.92005191439,
+          "maximum_absolute_error": 6.439222488552332e-10
+        },
+        "moment_about_left_Nm": {
+          "actual": 127639.9656620884,
+          "expected": 127639.96566208999,
+          "maximum_absolute_error": 1.5861587598919868e-09
+        },
+        "imposed_node_m": {
+          "actual": -0.001,
+          "expected": -0.001,
+          "maximum_absolute_error": 0.0
+        },
+        "equilibrium_residual": 4.0936898395071397e-13,
+        "energy_identity_residual": 2.4489776184911575e-14,
+        "recovered_energy_identity_residual": 2.448852336905945e-14
+      }
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_PULLOUT_TABLE_USES_MEAN_CONCRETE_C_300.0",
+      "pass": true,
+      "evidence": [
+        {
+          "steel_c": 20.0,
+          "mean_temperature_C": {
+            "actual": 300.0,
+            "expected": 300.0,
+            "maximum_absolute_error": 0.0
+          },
+          "end_knuckle_capacity_N": {
+            "actual": 66723.3242289075,
+            "expected": 66723.3242289075,
+            "maximum_absolute_error": 0.0
+          }
+        },
+        {
+          "steel_c": 600.0,
+          "mean_temperature_C": {
+            "actual": 300.0,
+            "expected": 300.0,
+            "maximum_absolute_error": 0.0
+          },
+          "end_knuckle_capacity_N": {
+            "actual": 66723.3242289075,
+            "expected": 66723.3242289075,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_PULLOUT_TABLE_USES_MEAN_CONCRETE_C_450.0",
+      "pass": true,
+      "evidence": [
+        {
+          "steel_c": 20.0,
+          "mean_temperature_C": {
+            "actual": 450.0,
+            "expected": 450.0,
+            "maximum_absolute_error": 0.0
+          },
+          "end_knuckle_capacity_N": {
+            "actual": 53378.659383125996,
+            "expected": 53378.659383125996,
+            "maximum_absolute_error": 0.0
+          }
+        },
+        {
+          "steel_c": 600.0,
+          "mean_temperature_C": {
+            "actual": 450.0,
+            "expected": 450.0,
+            "maximum_absolute_error": 0.0
+          },
+          "end_knuckle_capacity_N": {
+            "actual": 53378.659383125996,
+            "expected": 53378.659383125996,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_PULLOUT_TABLE_USES_MEAN_CONCRETE_C_600.0",
+      "pass": true,
+      "evidence": [
+        {
+          "steel_c": 20.0,
+          "mean_temperature_C": {
+            "actual": 600.0,
+            "expected": 600.0,
+            "maximum_absolute_error": 0.0
+          },
+          "end_knuckle_capacity_N": {
+            "actual": 44482.216152605,
+            "expected": 44482.216152605,
+            "maximum_absolute_error": 0.0
+          }
+        },
+        {
+          "steel_c": 600.0,
+          "mean_temperature_C": {
+            "actual": 600.0,
+            "expected": 600.0,
+            "maximum_absolute_error": 0.0
+          },
+          "end_knuckle_capacity_N": {
+            "actual": 44482.216152605,
+            "expected": 44482.216152605,
+            "maximum_absolute_error": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_HOT_UNDERSIDE_FREE_CURVATURE_SIGN",
+      "pass": true,
+      "evidence": {
+        "curvature_1_m": {
+          "actual": 0.025341659878722063,
+          "expected": 0.025341659878722063,
+          "maximum_absolute_error": 0.0
+        }
+      }
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_REMOVED_STATION_RETAINS_CONTACT_NOT_TENSION",
+      "pass": true,
+      "evidence": {
+        "surviving_station": "CONTACT-008",
+        "tests": [
+          {
+            "gap_m": -1e-05,
+            "remaining_contact_N": {
+              "actual": -20000.0,
+              "expected": -20000.0,
+              "maximum_absolute_error": 0.0
+            },
+            "equilibrium_residual": 0.0,
+            "energy_identity_residual": 0.0
+          },
+          {
+            "gap_m": 1e-05,
+            "remaining_contact_N": {
+              "actual": 0.0,
+              "expected": 0.0,
+              "maximum_absolute_error": 0.0
+            },
+            "equilibrium_residual": 0.0,
+            "energy_identity_residual": 6.938893903907228e-18
+          }
+        ]
+      }
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_BENDING_GENERALIZED_QUANTITY_HAS_DISTINCT_UNITS",
+      "pass": true,
+      "evidence": {
+        "bending_terms": 64,
+        "physical_terms": 149,
+        "warning": "Internal legacy force_N key is generalized for bending; consumer must honor unit metadata."
+      }
+    },
+    {
+      "test": "INDEPENDENT_PANEL_REVIEW_FIBER_STRESS_COMBINES_AXIAL_AND_BENDING_WITH_SIGN",
+      "pass": true,
+      "evidence": {
+        "mean_stress_residual_Pa": {
+          "quantity_count": 80,
+          "maximum_absolute_error": 1.4551915228366852e-11,
+          "maximum_absolute_expected": 0.0,
+          "maximum_absolute_actual": 1.4551915228366852e-11
+        },
+        "moment_from_fiber_difference_residual_Nm": {
+          "quantity_count": 80,
+          "maximum_absolute_error": 1.1368683772161603e-13,
+          "maximum_absolute_expected": 0.0,
+          "maximum_absolute_actual": 1.1368683772161603e-13
+        }
+      }
+    },
+    {
+      "test": "declared_12_paths",
+      "pass": true,
+      "evidence": 12
+    },
+    {
+      "test": "deterministic_replay_exact",
+      "pass": true,
+      "evidence": "93499651e33446ed49ac2f3b40ba5ec6987791b8f407d40c3645ae2c6ab7960e"
+    },
+    {
+      "test": "all_path_equilibrium_residual",
+      "pass": true,
+      "evidence": 4.7892119461950494e-11
+    },
+    {
+      "test": "all_path_energy_identity_residual",
+      "pass": true,
+      "evidence": 2.2635347420131258e-11
+    },
+    {
+      "test": "all_path_recovered_energy_identity_residual",
+      "pass": true,
+      "evidence": 2.263523997888355e-11
+    },
+    {
+      "test": "seats_plus_actuator_balance_gravity_once",
+      "pass": true,
+      "evidence": 4.812606638073792e-12
+    },
+    {
+      "test": "all_contact_forces_compressive",
+      "pass": true,
+      "evidence": "No adhesion in contact branch"
+    },
+    {
+      "test": "all_vertical_ties_tensile",
+      "pass": true,
+      "evidence": "No compressive tie force"
+    },
+    {
+      "test": "no_bending_quadrature_values_exported_as_axial_force",
+      "pass": true,
+      "evidence": "Recovered physical moment and stress in separate file"
+    },
+    {
+      "test": "no_state_past_first_limit_promoted",
+      "pass": true,
+      "evidence": 278
+    },
+    {
+      "test": "zero_global_resistance_energy",
+      "pass": true,
+      "evidence": "No V11B coupling"
+    },
+    {
+      "test": "all_coupons_broken_tie_zero_and_recontact_retained",
+      "pass": true,
+      "evidence": 24
+    },
+    {
+      "test": "slab_only_mesh_2_to_4_same_termination_and_limit_kind",
+      "pass": true,
+      "evidence": [
+        {
+          "path_id": "COLD_E0_FT05",
+          "subdivisions": 4,
+          "same_terminal": true,
+          "same_limit_kind": true,
+          "parameter": 1.25,
+          "relative_parameter_difference": 0.0,
+          "max_slab_nodal_down_m": 0.05851921416037408,
+          "relative_nodal_deflection_difference": 2.2539850562175085e-12
+        },
+        {
+          "path_id": "COLD_E0_FT10",
+          "subdivisions": 4,
+          "same_terminal": true,
+          "same_limit_kind": true,
+          "parameter": 1.25,
+          "relative_parameter_difference": 0.0,
+          "max_slab_nodal_down_m": 0.05851921416037408,
+          "relative_nodal_deflection_difference": 2.2539850562175085e-12
+        },
+        {
+          "path_id": "COLD_E0_FT20",
+          "subdivisions": 4,
+          "same_terminal": true,
+          "same_limit_kind": true,
+          "parameter": 1.25,
+          "relative_parameter_difference": 0.0,
+          "max_slab_nodal_down_m": 0.05851921416037408,
+          "relative_nodal_deflection_difference": 2.2539850562175085e-12
+        },
+        {
+          "path_id": "COLD_E05_FT05",
+          "subdivisions": 4,
+          "same_terminal": true,
+          "same_limit_kind": true,
+          "parameter": 1.25,
+          "relative_parameter_difference": 0.0,
+          "max_slab_nodal_down_m": 0.05402278688863141,
+          "relative_nodal_deflection_difference": 1.886326154973582e-12
+        },
+        {
+          "path_id": "COLD_E05_FT10",
+          "subdivisions": 4,
+          "same_terminal": true,
+          "same_limit_kind": true,
+          "parameter": 1.25,
+          "relative_parameter_difference": 0.0,
+          "max_slab_nodal_down_m": 0.05402278688863141,
+          "relative_nodal_deflection_difference": 1.886326154973582e-12
+        },
+        {
+          "path_id": "COLD_E05_FT20",
+          "subdivisions": 4,
+          "same_terminal": true,
+          "same_limit_kind": true,
+          "parameter": 1.25,
+          "relative_parameter_difference": 0.0,
+          "max_slab_nodal_down_m": 0.05402278688863141,
+          "relative_nodal_deflection_difference": 1.886326154973582e-12
+        },
+        {
+          "path_id": "COLD_TIE_SOFT",
+          "subdivisions": 4,
+          "same_terminal": true,
+          "same_limit_kind": true,
+          "parameter": 1.25,
+          "relative_parameter_difference": 0.0,
+          "max_slab_nodal_down_m": 0.05402278688863141,
+          "relative_nodal_deflection_difference": 1.886326154973582e-12
+        },
+        {
+          "path_id": "COLD_TIE_STIFF",
+          "subdivisions": 4,
+          "same_terminal": true,
+          "same_limit_kind": true,
+          "parameter": 1.25,
+          "relative_parameter_difference": 0.0,
+          "max_slab_nodal_down_m": 0.05402278688863141,
+          "relative_nodal_deflection_difference": 1.886326154973582e-12
+        },
+        {
+          "path_id": "HEAT_UNIFORM_ROLLER",
+          "subdivisions": 4,
+          "same_terminal": true,
+          "same_limit_kind": true,
+          "parameter": 0.452406120300293,
+          "relative_parameter_difference": 0.0,
+          "max_slab_nodal_down_m": 0.028228952161032543,
+          "relative_nodal_deflection_difference": 5.5202265021712705e-12
+        },
+        {
+          "path_id": "HEAT_UNIFORM_RESTRAINED",
+          "subdivisions": 4,
+          "same_terminal": true,
+          "same_limit_kind": true,
+          "parameter": 0.10757980346679688,
+          "relative_parameter_difference": 0.0,
+          "max_slab_nodal_down_m": 0.028437437485637086,
+          "relative_nodal_deflection_difference": 1.1855743935062022e-11
+        },
+        {
+          "path_id": "HEAT_FROM_BELOW",
+          "subdivisions": 4,
+          "same_terminal": true,
+          "same_limit_kind": true,
+          "parameter": 0.039144420623779305,
+          "relative_parameter_difference": 0.0,
+          "max_slab_nodal_down_m": 0.018263116563324525,
+          "relative_nodal_deflection_difference": 6.91301367675673e-12
+        },
+        {
+          "path_id": "LOCAL_TRUSS_LOWERING_COLD",
+          "subdivisions": 4,
+          "same_terminal": true,
+          "same_limit_kind": true,
+          "parameter": 1.0,
+          "relative_parameter_difference": 0.0,
+          "max_slab_nodal_down_m": 0.030788776268193825,
+          "relative_nodal_deflection_difference": 6.676612610793236e-13
+        }
+      ]
+    },
+    {
+      "test": "slab_only_mesh_2_to_4_event_parameter_within_2percent",
+      "pass": true,
+      "evidence": 0.0
+    },
+    {
+      "test": "slab_only_mesh_2_to_4_nodal_deflection_within_2percent",
+      "pass": true,
+      "evidence": 1.1855743935062022e-11
+    },
+    {
+      "test": "half_path_step_same_first_event",
+      "pass": true,
+      "evidence": [
+        {
+          "path_id": "COLD_E0_FT05",
+          "delta_parameter": 0.0,
+          "same_end": true,
+          "same_kind": true
+        },
+        {
+          "path_id": "COLD_E0_FT10",
+          "delta_parameter": 0.0,
+          "same_end": true,
+          "same_kind": true
+        },
+        {
+          "path_id": "COLD_E0_FT20",
+          "delta_parameter": 0.0,
+          "same_end": true,
+          "same_kind": true
+        },
+        {
+          "path_id": "COLD_E05_FT05",
+          "delta_parameter": 0.0,
+          "same_end": true,
+          "same_kind": true
+        },
+        {
+          "path_id": "COLD_E05_FT10",
+          "delta_parameter": 0.0,
+          "same_end": true,
+          "same_kind": true
+        },
+        {
+          "path_id": "COLD_E05_FT20",
+          "delta_parameter": 0.0,
+          "same_end": true,
+          "same_kind": true
+        },
+        {
+          "path_id": "COLD_TIE_SOFT",
+          "delta_parameter": 0.0,
+          "same_end": true,
+          "same_kind": true
+        },
+        {
+          "path_id": "COLD_TIE_STIFF",
+          "delta_parameter": 0.0,
+          "same_end": true,
+          "same_kind": true
+        },
+        {
+          "path_id": "HEAT_UNIFORM_ROLLER",
+          "delta_parameter": 0.0,
+          "same_end": true,
+          "same_kind": true
+        },
+        {
+          "path_id": "HEAT_UNIFORM_RESTRAINED",
+          "delta_parameter": 0.0,
+          "same_end": true,
+          "same_kind": true
+        },
+        {
+          "path_id": "HEAT_FROM_BELOW",
+          "delta_parameter": 0.0,
+          "same_end": true,
+          "same_kind": true
+        },
+        {
+          "path_id": "LOCAL_TRUSS_LOWERING_COLD",
+          "delta_parameter": 0.0,
+          "same_end": true,
+          "same_kind": true
+        }
+      ]
+    }
+  ],
+  "path_residual_maxima": {
+    "equilibrium_residual": 4.7892119461950494e-11,
+    "energy_identity_residual": 2.2635347420131258e-11,
+    "recovered_energy_identity_residual": 2.263523997888355e-11
+  },
+  "mesh_comparison": [
+    {
+      "path_id": "COLD_E0_FT05",
+      "subdivisions": 1,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.25,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.058519214160568,
+      "relative_nodal_deflection_difference": 1.0598200027603815e-12
+    },
+    {
+      "path_id": "COLD_E0_FT10",
+      "subdivisions": 1,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.25,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.058519214160568,
+      "relative_nodal_deflection_difference": 1.0598200027603815e-12
+    },
+    {
+      "path_id": "COLD_E0_FT20",
+      "subdivisions": 1,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.25,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.058519214160568,
+      "relative_nodal_deflection_difference": 1.0598200027603815e-12
+    },
+    {
+      "path_id": "COLD_E05_FT05",
+      "subdivisions": 1,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.25,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.054022786888799745,
+      "relative_nodal_deflection_difference": 1.229721272485161e-12
+    },
+    {
+      "path_id": "COLD_E05_FT10",
+      "subdivisions": 1,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.25,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.054022786888799745,
+      "relative_nodal_deflection_difference": 1.229721272485161e-12
+    },
+    {
+      "path_id": "COLD_E05_FT20",
+      "subdivisions": 1,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.25,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.054022786888799745,
+      "relative_nodal_deflection_difference": 1.229721272485161e-12
+    },
+    {
+      "path_id": "COLD_TIE_SOFT",
+      "subdivisions": 1,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.25,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.054022786888799745,
+      "relative_nodal_deflection_difference": 1.229721272485161e-12
+    },
+    {
+      "path_id": "COLD_TIE_STIFF",
+      "subdivisions": 1,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.25,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.054022786888799745,
+      "relative_nodal_deflection_difference": 1.229721272485161e-12
+    },
+    {
+      "path_id": "HEAT_UNIFORM_ROLLER",
+      "subdivisions": 1,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 0.452406120300293,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.028228952160909836,
+      "relative_nodal_deflection_difference": 1.1733630728315512e-12
+    },
+    {
+      "path_id": "HEAT_UNIFORM_RESTRAINED",
+      "subdivisions": 1,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 0.10757980346679688,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.028437437486004143,
+      "relative_nodal_deflection_difference": 1.0517861248062248e-12
+    },
+    {
+      "path_id": "HEAT_FROM_BELOW",
+      "subdivisions": 1,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 0.039144420623779305,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.01826311656325161,
+      "relative_nodal_deflection_difference": 2.920601051565209e-12
+    },
+    {
+      "path_id": "LOCAL_TRUSS_LOWERING_COLD",
+      "subdivisions": 1,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.0,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.030788776268227742,
+      "relative_nodal_deflection_difference": 4.3395164834033337e-13
+    },
+    {
+      "path_id": "COLD_E0_FT05",
+      "subdivisions": 4,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.25,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.05851921416037408,
+      "relative_nodal_deflection_difference": 2.2539850562175085e-12
+    },
+    {
+      "path_id": "COLD_E0_FT10",
+      "subdivisions": 4,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.25,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.05851921416037408,
+      "relative_nodal_deflection_difference": 2.2539850562175085e-12
+    },
+    {
+      "path_id": "COLD_E0_FT20",
+      "subdivisions": 4,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.25,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.05851921416037408,
+      "relative_nodal_deflection_difference": 2.2539850562175085e-12
+    },
+    {
+      "path_id": "COLD_E05_FT05",
+      "subdivisions": 4,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.25,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.05402278688863141,
+      "relative_nodal_deflection_difference": 1.886326154973582e-12
+    },
+    {
+      "path_id": "COLD_E05_FT10",
+      "subdivisions": 4,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.25,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.05402278688863141,
+      "relative_nodal_deflection_difference": 1.886326154973582e-12
+    },
+    {
+      "path_id": "COLD_E05_FT20",
+      "subdivisions": 4,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.25,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.05402278688863141,
+      "relative_nodal_deflection_difference": 1.886326154973582e-12
+    },
+    {
+      "path_id": "COLD_TIE_SOFT",
+      "subdivisions": 4,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.25,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.05402278688863141,
+      "relative_nodal_deflection_difference": 1.886326154973582e-12
+    },
+    {
+      "path_id": "COLD_TIE_STIFF",
+      "subdivisions": 4,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.25,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.05402278688863141,
+      "relative_nodal_deflection_difference": 1.886326154973582e-12
+    },
+    {
+      "path_id": "HEAT_UNIFORM_ROLLER",
+      "subdivisions": 4,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 0.452406120300293,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.028228952161032543,
+      "relative_nodal_deflection_difference": 5.5202265021712705e-12
+    },
+    {
+      "path_id": "HEAT_UNIFORM_RESTRAINED",
+      "subdivisions": 4,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 0.10757980346679688,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.028437437485637086,
+      "relative_nodal_deflection_difference": 1.1855743935062022e-11
+    },
+    {
+      "path_id": "HEAT_FROM_BELOW",
+      "subdivisions": 4,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 0.039144420623779305,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.018263116563324525,
+      "relative_nodal_deflection_difference": 6.91301367675673e-12
+    },
+    {
+      "path_id": "LOCAL_TRUSS_LOWERING_COLD",
+      "subdivisions": 4,
+      "same_terminal": true,
+      "same_limit_kind": true,
+      "parameter": 1.0,
+      "relative_parameter_difference": 0.0,
+      "max_slab_nodal_down_m": 0.030788776268193825,
+      "relative_nodal_deflection_difference": 6.676612610793236e-13
+    }
+  ],
+  "half_step_comparison": [
+    {
+      "path_id": "COLD_E0_FT05",
+      "delta_parameter": 0.0,
+      "same_end": true,
+      "same_kind": true
+    },
+    {
+      "path_id": "COLD_E0_FT10",
+      "delta_parameter": 0.0,
+      "same_end": true,
+      "same_kind": true
+    },
+    {
+      "path_id": "COLD_E0_FT20",
+      "delta_parameter": 0.0,
+      "same_end": true,
+      "same_kind": true
+    },
+    {
+      "path_id": "COLD_E05_FT05",
+      "delta_parameter": 0.0,
+      "same_end": true,
+      "same_kind": true
+    },
+    {
+      "path_id": "COLD_E05_FT10",
+      "delta_parameter": 0.0,
+      "same_end": true,
+      "same_kind": true
+    },
+    {
+      "path_id": "COLD_E05_FT20",
+      "delta_parameter": 0.0,
+      "same_end": true,
+      "same_kind": true
+    },
+    {
+      "path_id": "COLD_TIE_SOFT",
+      "delta_parameter": 0.0,
+      "same_end": true,
+      "same_kind": true
+    },
+    {
+      "path_id": "COLD_TIE_STIFF",
+      "delta_parameter": 0.0,
+      "same_end": true,
+      "same_kind": true
+    },
+    {
+      "path_id": "HEAT_UNIFORM_ROLLER",
+      "delta_parameter": 0.0,
+      "same_end": true,
+      "same_kind": true
+    },
+    {
+      "path_id": "HEAT_UNIFORM_RESTRAINED",
+      "delta_parameter": 0.0,
+      "same_end": true,
+      "same_kind": true
+    },
+    {
+      "path_id": "HEAT_FROM_BELOW",
+      "delta_parameter": 0.0,
+      "same_end": true,
+      "same_kind": true
+    },
+    {
+      "path_id": "LOCAL_TRUSS_LOWERING_COLD",
+      "delta_parameter": 0.0,
+      "same_end": true,
+      "same_kind": true
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "dataset": {
+    "name": "WTC 1 V9C official ringing-aware yield-method audit and conditional revalidation",
+    "version": "9.3.0",
+    "status": "PREDECLARED_BEFORE_RINGING_AWARE_REVALIDATION_NO_SOLVER_NO_IMPACT",
+    "random_seed": 9112001,
+    "deterministic": true,
+    "scope": "Preserve V8U through V9B, audit official NIST repositories for raw M26/C80 high-rate records, implement the published third-order polynomial yield procedure on the immutable V9B digitized curves, and revalidate yield and tensile strengths without changing the V9B tensile estimator. A non-eroding OpenRadioss coupon remains conditional on every revalidation gate. Failure deletion, facade impact, whole-aircraft, global tower, thermal and Blender work are prohibited in V9C."
+  },
+  "evidence_policy": {
+    "observed_fact": "A statement, equation, table value or curve in an identified official NIST source.",
+    "official_model_result": "A NIST modelling or signal-reduction choice; not a new material measurement.",
+    "local_archive_claim": "No local-archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "A predeclared numerical implementation choice needed where the publication does not fully specify an algorithm.",
+    "derived_result": "A deterministic calculation from immutable V9B digitized traces using the predeclared V9C method.",
+    "unknown": "Raw channels, exact per-test elastic modulus and other information absent from the public sources audited here."
+  },
+  "sources": [
+    {
+      "id": "NIST_NCSTAR_1_3D_FINAL",
+      "path": "work/official_sources/ncstar1-3d.pdf",
+      "sha256": "eee74f038b15bfd6263a4b5335ca96d124501d002e62883bb8fd4f84d22e52da",
+      "classification": "official_measurement_report",
+      "locations": [
+        "Section 4.2.1, report page 80",
+        "Section 4.2.2 steps 1 to 11, report pages 81 to 82",
+        "Figure 4-3, report page 82",
+        "Section 4.3.1, report page 84",
+        "Figures A-28 and A-48",
+        "Tables A-12 and A-14"
+      ],
+      "direct_facts": [
+        "The high-rate apparatus acquired about 5000 points per test from load, displacement, specimen-section strain, grip-end strain and time channels.",
+        "The corrected load signal was constructed by aligning the grip-section load curve with the mean of the piezoelectric load-washer signal.",
+        "For ringing cases, NIST fitted a third-order polynomial over 1 percent through 5 percent strain and intersected it with a line parallel to the linear-elastic curve at 1 percent offset.",
+        "NIST defined tensile strength as maximum load divided by original test-section area.",
+        "The report states that ringing in the high-rate stress signal was not completely eliminated."
+      ]
+    },
+    {
+      "id": "NIST_NCSTAR_1_3D_DRAFT",
+      "url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=909059",
+      "retrieved_sha256": "6c3b820eaa429056be4d78400747d1e49b79b8cd5fb1a3cfb9a51b65651e61c0",
+      "classification": "official_draft_for_public_comment",
+      "uses": [
+        "independent text comparison of the same high-rate analysis steps",
+        "confirmation that the final report retained the third-order polynomial method"
+      ]
+    },
+    {
+      "id": "NIST_DISASTER_FAILURE_STUDIES_REPOSITORY",
+      "url": "https://www.nist.gov/world-trade-center-investigation/photos-videos-and-simulations",
+      "classification": "official_repository_index",
+      "finding": "The public WTC collection indexes NCSTAR reports and media, but the targeted search did not expose specimen-level M26/C80 raw load, strain and time files."
+    },
+    {
+      "id": "NIST_PDR_HIGH_TEMPERATURE_WTC_STEEL",
+      "url": "https://data.nist.gov/pdr/lps/59275E35E82149D8E0531A57068146E31859",
+      "classification": "official_data_repository_record",
+      "finding": "A machine-readable WTC-steel dataset is publicly catalogued for high-temperature quasistatic constitutive data, but it is not the room-temperature high-rate M26/C80 raw dataset required here."
+    },
+    {
+      "id": "ESIS_P7_00_INDEX",
+      "url": "https://www.esis.site/docs/Newsletter/ESIS%20NS72_DEF.pdf",
+      "classification": "standards_body_document_index",
+      "finding": "The ESIS index identifies P7-00, Procedure for Dynamic Tensile Tests, under TC5; the targeted public search did not locate the complete procedure or WTC-specific raw records."
+    }
+  ],
+  "public_raw_data_audit": {
+    "exact_specimen_queries": [
+      "M26-C1B1-RF",
+      "C80-A-2-2",
+      "C80-A-2-3"
+    ],
+    "raw_load_strain_time_channels_found": false,
+    "machine_readable_room_temperature_high_rate_m26_c80_curves_found": false,
+    "official_signal_reduction_method_found": true,
+    "full_esis_p7_00_text_found": false,
+    "audit_interpretation": "The report documents the channel types and reduction sequence, but the specimen-level raw channels needed to reproduce the corrected load signal and its uncertainty were not located in the audited public NIST indexes."
+  },
+  "regressions": {
+    "required_files": {
+      "wtc1_simulation_v8/data/v9b_stress_strain_digitization.json": "06dd90b6c8d06545d9ed914cb5f69c1003ac020d82bcd385d27ef5bd82b03539",
+      "wtc1_simulation_v8/scripts/run_v9b_digitization.py": "93012fc22bb41c6b118fe3694ac60e59eaef27576044489ef988f75ef101a65c",
+      "wtc1_simulation_v8/scripts/finalize_v9b_digitization.py": "a4eb8211070823d941b05c726dbbe3bfae19f11cf8baec4c1732b73526bbeb6f",
+      "wtc1_simulation_v8/output/resultats_wtc1_v9b_numerisation_preliminaire.json": "0a4496956de155b66e9cb7dc56a06cc72c076641c43547960c651e2269a1460a",
+      "wtc1_simulation_v8/output/v9b_cf6_public_source_audit.json": "08544ec71a8df3cf2410c20891d882b7419db14d23ee259a55e40a4fe56e29a4",
+      "wtc1_simulation_v8/output/resultats_wtc1_v9b_numerisation_courbes.json": "18bca7732505f10ae97aa78f11b5aa0b861d072733d902b03a24a73c4d93b8eb",
+      "wtc1_simulation_v8/output/rapport_wtc1_v9b_numerisation_courbes.md": "fe8a3ddcecb9009154083b21bbaf0a4f089125ba5c80829118a2a520ce8c6cec",
+      "wtc1_simulation_v8/output/v9b_digitized_curves/m26_qs.csv": "816e3290d9cd60181d4d8334fa5a205f409ed8236f66797ba520e1cc29a73d5f",
+      "wtc1_simulation_v8/output/v9b_digitized_curves/m26_65.csv": "a624f8016d213bd7088d7ad3c2c1cfc61ae4e024c0ef1d3c9a7a5eb7a0b6a7e9",
+      "wtc1_simulation_v8/output/v9b_digitized_curves/m26_100.csv": "e75ef935c0acd3bdf7406603da01ec9738e68505ca8915a426bf81739211c970",
+      "wtc1_simulation_v8/output/v9b_digitized_curves/m26_260.csv": "6fd2ebc3f2644e796b3aa175585d1000d379cb6f72a23fd6fbf3aa278cac0b53",
+      "wtc1_simulation_v8/output/v9b_digitized_curves/m26_417.csv": "7dd471db9f8dba7cedf56e2ab508870cba3a5bcbd0c3824c77c2f51aed5c3d75",
+      "wtc1_simulation_v8/output/v9b_digitized_curves/c80_qs.csv": "96a5b249dc8ebd3019f20090e22be6d6d3f4e385e162042c0bd064eda1fad65d",
+      "wtc1_simulation_v8/output/v9b_digitized_curves/c80_84.csv": "38d05df56bbac2c996b1d2fa8b96c9e8b9561b49c0342a8595b361772f2a285d",
+      "wtc1_simulation_v8/output/v9b_digitized_curves/c80_299.csv": "e15060b3d216119e36009d6e956b275a49a81d4c42c39e6a66f560578b50f2ca",
+      "wtc1_simulation_v8/output/v9b_digitized_curves/c80_401.csv": "9cd9e1c75c48082165486d133bfdaaf9cf71803f595422ecbb43c30172ae4704"
+    },
+    "required_metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9b_numerisation_courbes.json",
+        "path": "iteration_execution_validated",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9b_numerisation_courbes.json",
+        "path": "scientific_digitization_gate_passed",
+        "expected": false
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9b_numerisation_courbes.json",
+        "path": "digitization_gate_summary.maximum_tensile_relative_error",
+        "expected": 0.1338469356950109
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9b_numerisation_courbes.json",
+        "path": "openradioss_coupon_executed",
+        "expected": false
+      }
+    ],
+    "numeric_absolute_tolerance": 1e-12
+  },
+  "ringing_aware_method": {
+    "input_curves": "Immutable V9B engineering-strain/engineering-stress CSV files extracted from NCSTAR 1-3D Figures A-28 and A-48.",
+    "conversion": "Before fitting, convert every retained point to true strain ln(1+e_engineering) and true stress sigma_engineering*(1+e_engineering).",
+    "fit_window_true_strain": [0.01, 0.05],
+    "fit_model": "Unweighted ordinary least-squares third-order polynomial. Scale the fit-window coordinate linearly to [-1,1] for numerical conditioning; this does not change the cubic polynomial space.",
+    "offset_line": "sigma_true = E*(epsilon_true - 0.01)",
+    "elastic_modulus_ksi_values": [28000.0, 29000.0, 30000.0],
+    "central_elastic_modulus_ksi": 29000.0,
+    "elastic_modulus_status": "predeclared sensitivity hypothesis because the plotted axes do not resolve the per-test elastic slope and raw corrected channels were not found",
+    "yield_selection": "Select the smallest real intersection in the closed fit window for which the cubic slope is below E. Report all real in-window roots and fail identification if the selected root is not unique under that rule. Report the intersection in true stress and convert it back to engineering-equivalent stress sigma_true/exp(epsilon_true) for comparison with the tabulated engineering-stress strength.",
+    "tensile_strength": "Retain the V9B maximum digitized engineering stress without smoothing or filtering, because NCSTAR 1-3D defines TS from maximum load.",
+    "reference_intervals": "Use the unchanged V9B Table A-12/A-14 intervals; relative error is zero within an interval and otherwise the distance to the nearest bound divided by that bound.",
+    "no_post_hoc_filtering": true,
+    "no_failure_or_post_necking_calibration": true
+  },
+  "predeclared_revalidation_gates": {
+    "all_v9b_regressions_unchanged": true,
+    "official_source_hash_unchanged": true,
+    "minimum_fit_points_per_curve": 6,
+    "required_polynomial_rank": 4,
+    "maximum_fit_rmse_fraction_of_mean_true_stress": 0.15,
+    "maximum_yield_spread_across_modulus_range_relative_to_central": 0.05,
+    "maximum_individual_yield_relative_error": 0.10,
+    "maximum_median_yield_relative_error": 0.05,
+    "maximum_individual_tensile_relative_error": 0.10,
+    "maximum_median_tensile_relative_error": 0.05,
+    "all_nine_curves_required": true,
+    "revalidation_passed_if_all_above": true
+  },
+  "conditional_coupon": {
+    "authorized_only_if_revalidation_passed": true,
+    "failure_deletion_allowed": false,
+    "contact_allowed": false,
+    "physical_internal_length_inference_allowed": false,
+    "facade_impact_allowed": false
+  },
+  "scope_gates": {
+    "failure_deletion_authorized": false,
+    "facade_impact_authorized": false,
+    "whole_aircraft_authorized": false,
+    "global_tower_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_mechanism_tested": false,
+    "global_scope_warning": "A V9C method pass would validate only this published yield-extraction implementation against scalar table values. It would not recreate the missing corrected load channels, validate fracture or contact, identify a CF6-80A2/cowling card, or validate facade, whole-aircraft, global, thermal, Blender, explosive or thermite physics."
+  }
+}

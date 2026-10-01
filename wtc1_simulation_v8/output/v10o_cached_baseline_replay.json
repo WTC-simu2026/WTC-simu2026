@@ -1,0 +1,138 @@
+{
+  "iteration": "V10O",
+  "generated_at_utc": "2026-09-02T17:46:19Z",
+  "validation_status": "PASS",
+  "baseline_count": 5,
+  "passed_count": 5,
+  "failed_count": 0,
+  "checks": [
+    {
+      "id": "V8S_IMPACT_KINEMATICS",
+      "status": "PASS",
+      "source": {
+        "path": "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json",
+        "sha256": "40bd3c0c9bc4cad3326f171f885702dc47a020e57f32c788e7276097c8b9c318"
+      },
+      "assertions": {
+        "mass_matches": true,
+        "speed_matches": true,
+        "kinetic_energy_recomputed_matches": true,
+        "momentum_recomputed_matches": true
+      },
+      "observed": {
+        "mass_kg": 128638.796132,
+        "speed_mps": 198.03871999999998,
+        "kinetic_energy_gj_stored": 2.5225639952584484,
+        "kinetic_energy_gj_recomputed": 2.5225639952584484,
+        "momentum_total_mn_s_stored": 25.475462528322232,
+        "momentum_total_mn_s_recomputed": 25.475462528322232
+      },
+      "scope": "Arithmetic replay of the cached base kinematics only; no damage, force, impulse, breakup or collapse credit."
+    },
+    {
+      "id": "V8E_SYNTHETIC_THERMAL_FIELDS",
+      "status": "PASS",
+      "source": {
+        "path": "wtc1_simulation_v8/output/resultats_wtc1_v8e_champs_thermiques.json",
+        "sha256": "d26e0c2671bb2f0bd1839e6208739e1703597adb79f88a4d81c0df5c330b956e"
+      },
+      "assertions": {
+        "ensemble_seed_count": true,
+        "gamma_values": true,
+        "probability_prohibition": true,
+        "deterministic_case_count": true,
+        "smooth_field_case_count": true,
+        "first_case_time": true,
+        "first_case_field": true,
+        "first_case_equilibrium_flag": true
+      },
+      "observed": {
+        "ensemble_seeds": 200,
+        "gamma_values": [
+          0.5,
+          1.0,
+          2.0,
+          4.0
+        ],
+        "fields_are_probabilities": false,
+        "deterministic_case_count": 70,
+        "smooth_field_case_count": 40
+      },
+      "scope": "Cached synthetic-field identity/control only; fields are not measured member temperatures or event probabilities."
+    },
+    {
+      "id": "V8J_COLD_GATE",
+      "status": "PASS",
+      "source": {
+        "path": "wtc1_simulation_v8/output/resultats_wtc1_v8j_gate_froid.json",
+        "sha256": "4b93102974a8b9fdf1eff3af408e5c074385df9ae9c5886038b67914b430788e"
+      },
+      "assertions": {
+        "passed": true,
+        "status": true,
+        "thermal_runs_authorized": true,
+        "blender_coupling_authorized": true
+      },
+      "observed": {
+        "passed": false,
+        "status": "NOT_VALIDATED_MISSING_FORCE_DISPLACEMENT_PATH",
+        "thermal_runs_authorized": false,
+        "blender_coupling_authorized": false
+      },
+      "scope": "Replays the failed cold-gate status; it does not turn failure of a reduced model into a historical mechanism conclusion."
+    },
+    {
+      "id": "V8L_MULTISTORY_COLD",
+      "status": "PASS",
+      "source": {
+        "path": "wtc1_simulation_v8/output/resultats_wtc1_v8l_multietages_froid.json",
+        "sha256": "ecaa91fddfec2a04eeeafea130317ed585072d73107da4e10c9751536ec2f9dd"
+      },
+      "assertions": {
+        "case_count": true,
+        "official_topology_pass_count": true,
+        "reconstructed_topology_pass_count": true,
+        "any_official_topology_pass": true,
+        "any_reconstructed_topology_pass": true,
+        "best_reconstructed_maximum_stable_load_factor": true
+      },
+      "observed": {
+        "case_count": 36,
+        "official_topology_pass_count": 0,
+        "reconstructed_topology_pass_count": 0,
+        "any_official_topology_pass": false,
+        "any_reconstructed_topology_pass": false,
+        "best_reconstructed_maximum_stable_load_factor": 0.78
+      },
+      "scope": "Cached reduced topology diagnostic only; missing load paths and physical properties remain blocking."
+    },
+    {
+      "id": "V9M_IMPACT_BRANCH_CLOSURE",
+      "status": "PASS",
+      "source": {
+        "path": "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json",
+        "sha256": "2d403c87c558300f2b4460312da549b46e16dbd92d6eac34b0f1b51f5979eb7d"
+      },
+      "assertions": {
+        "numerically_qualified": true,
+        "conditional_numerical": true,
+        "failed_or_physically_unqualified": true,
+        "visualization_only": true,
+        "physical_track_met_trigger_count": true,
+        "physical_track_reopening_authorized": true,
+        "global_wtc_impact_physics_qualification_passed": true
+      },
+      "observed": {
+        "numerically_qualified": 4,
+        "conditional_numerical": 1,
+        "failed_or_physically_unqualified": 6,
+        "visualization_only": 1,
+        "physical_track_met_trigger_count": 0,
+        "physical_track_reopening_authorized": false,
+        "global_wtc_impact_physics_qualification_passed": false
+      },
+      "scope": "Preserves the closed physical-impact gate; no solver branch is reopened."
+    }
+  ],
+  "interpretation": "These are identity and arithmetic replays of cached records. No prior physical scope or failed gate changes."
+}

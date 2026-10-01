@@ -1,0 +1,259 @@
+{
+  "iteration": "V10Q",
+  "dataset": {
+    "name": "Three-track fire-to-thermal handoff and unit/support audit",
+    "version": "10.17.0",
+    "status": "PREDECLARED_BEFORE_V10Q_HANDOFF_CONSTRUCTION",
+    "created_at_local": "2026-09-04T09:35:00+02:00",
+    "random_seed": 1017001,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10P. Construct exactly three non-merging fire-to-thermal tracks: the V10O zero-fire software control, cached NIST-model-dependent Case B structural-temperature envelopes with their fuel-load and impact/fireproofing description, and UNKNOWN_EVENT_FIRE with null gas, heat-flux, SFRM and member-temperature histories. Expand all five times, seven floors and three component families to SI-unit range records; compare the seven core 100-minute endpoints to V8A; audit the rounded dual fuel-load units, V10P fuel-bin residual, temporal support, and Young-modulus validity ceiling. Do not run FDS, interpolate beyond support, invent SFRM inputs, assign exact member temperatures, release a physical thermal state, launch Blender or conclude collapse/non-collapse."
+  },
+  "execution_policy": {
+    "network_access": false,
+    "source_archive_read": false,
+    "source_archive_modified": false,
+    "official_source_pdf_hash_only_count": 3,
+    "official_source_pdf_page_read_count": 0,
+    "official_source_pdf_text_extraction_count": 0,
+    "official_sources_directory_modified": false,
+    "software_installation": false,
+    "fds_execution": false,
+    "thermal_solver_execution": false,
+    "other_solver_execution": false,
+    "gpu_compute": false,
+    "blender_execution": false,
+    "blender_master_modification": false,
+    "sfrm_property_assignment": false,
+    "member_temperature_assignment": false,
+    "temporal_interpolation": false,
+    "temporal_extrapolation": false,
+    "historical_collapse_or_noncollapse_conclusion": false,
+    "maximum_runtime_seconds": 900
+  },
+  "regression_files": [
+    {
+      "role": "v10p_configuration",
+      "path": "wtc1_simulation_v8/data/v10p_three_track_impact_damage_handoff.json",
+      "expected_sha256": "aa0fbeccc92bbba9a5d8fc1a1900f011ecb2a51e2c4822af727da36af960b54e"
+    },
+    {
+      "role": "v10p_script",
+      "path": "wtc1_simulation_v8/scripts/run_v10p_three_track_impact_damage_handoff.py",
+      "expected_sha256": "f3017ba60ee009a0c81a5f6900959060791d7f8dbed11052c959b2c9111541c4"
+    },
+    {
+      "role": "v10p_regression_audit",
+      "path": "wtc1_simulation_v8/output/v10p_regression_audit.json",
+      "expected_sha256": "97e3f20cb860a578b9a96af149c6fdc8d158a34c4020278710103c17c2f5b016"
+    },
+    {
+      "role": "v10p_source_manifest",
+      "path": "wtc1_simulation_v8/output/v10p_impact_damage_source_manifest.json",
+      "expected_sha256": "6c15795e2181fb9b9231ff2f7dcd455b775023acbec1fd72103d71a867e2b0fa"
+    },
+    {
+      "role": "v10p_track_manifest",
+      "path": "wtc1_simulation_v8/output/v10p_three_track_handoff.json",
+      "expected_sha256": "458196235667e546d5eef53878ad401c17d807141422ebfa9aa8f3f0c7264868"
+    },
+    {
+      "role": "v10p_damage_matrix",
+      "path": "wtc1_simulation_v8/output/v10p_official_model_damage_reference_matrix.csv",
+      "expected_sha256": "b95bc729d81b5cf406009250936aa53bbdf8ec9ea6257d0eb52ff564e5503bab"
+    },
+    {
+      "role": "v10p_conservation_ledger",
+      "path": "wtc1_simulation_v8/output/v10p_mass_energy_momentum_ledger.csv",
+      "expected_sha256": "52ab6a721ad053b77c3791f0daf9d573de5be9913d459ca490e9e71a802b06d2"
+    },
+    {
+      "role": "v10p_ledger_audit",
+      "path": "wtc1_simulation_v8/output/v10p_conservation_ledger_audit.json",
+      "expected_sha256": "cb7b597787456fffc4a78d107b440787554a97a8ef16d7b58bc3631cade2cd0a"
+    },
+    {
+      "role": "v10p_gate",
+      "path": "wtc1_simulation_v8/output/v10p_impact_damage_handoff_gate.json",
+      "expected_sha256": "f30460e8f79cd4e44c0fbf4e3927804d2b91e88c6d957cff9ca796a86f4ed196"
+    },
+    {
+      "role": "v10p_report",
+      "path": "wtc1_simulation_v8/output/rapport_wtc1_v10p_transfert_impact_dommage.md",
+      "expected_sha256": "39086e62f233239c663545c42ac738595ba9a94fb77d90a5ab4f52c8363f823f"
+    },
+    {
+      "role": "v10p_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10p_transfert_impact_dommage.json",
+      "expected_sha256": "f1e9f1aa47cc248244fae57e95c21b792798031a861786f84ca5dad97b64386f"
+    },
+    {
+      "role": "v10p_offline_audit",
+      "path": "wtc1_simulation_v8/output/v10p_offline_package_audit.json",
+      "expected_sha256": "3a18631aae0ab99c2c5c20f434615815d404722a8ed4ec0ee1a1e995825bbd0e"
+    }
+  ],
+  "protected_files": [
+    {
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "expected_sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+    }
+  ],
+  "cached_input_files": [
+    {
+      "id": "NIST_WTC1_TRANSFER_TRANSCRIPTION",
+      "path": "wtc1_simulation_v8/data/nist_wtc1_transfer.json",
+      "expected_sha256": "bdf4d779bb41f0d64c908702261ea2f571ba6d73b5d0e09876168c4c03cfe8fb",
+      "evidence_class": "MANUAL_TRANSCRIPTION_OF_OFFICIAL_MODEL_INPUTS_AND_OUTPUTS"
+    },
+    {
+      "id": "V8A_TRANSFER_RESULTS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8a.json",
+      "expected_sha256": "8cc833df3ae273b5fa09a54e94e9372e3a140dd3f6b0b49b3a8f11ddf63ca420",
+      "evidence_class": "CACHED_DERIVED_RESULT"
+    },
+    {
+      "id": "V8E_SYNTHETIC_THERMAL_SCRIPT",
+      "path": "wtc1_simulation_v8/scripts/run_v8e_spatial_thermal_fields.py",
+      "expected_sha256": "f43426749057c4f60be1460f4ded92e847acbd6c13626d1d206b91a60343b113",
+      "evidence_class": "CACHED_TRANSFORMATION_CODE"
+    },
+    {
+      "id": "V8E_SYNTHETIC_THERMAL_RESULTS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8e_champs_thermiques.json",
+      "expected_sha256": "d26e0c2671bb2f0bd1839e6208739e1703597adb79f88a4d81c0df5c330b956e",
+      "evidence_class": "CACHED_SYNTHETIC_FIELD_RESULT_NOT_MEMBER_TEMPERATURE_MEASUREMENT"
+    },
+    {
+      "id": "V10O_ZERO_FIRE_CONTROL_TRACE",
+      "path": "wtc1_simulation_v8/output/v10o_null_control_trace.json",
+      "expected_sha256": "62890121c6bc89aa5970e9266bcd89ff1b148c672d601c8ca2f293df81405864",
+      "evidence_class": "SYNTHETIC_SOFTWARE_CONTROL"
+    },
+    {
+      "id": "V10P_IMPACT_DAMAGE_TRACK_MANIFEST",
+      "path": "wtc1_simulation_v8/output/v10p_three_track_handoff.json",
+      "expected_sha256": "458196235667e546d5eef53878ad401c17d807141422ebfa9aa8f3f0c7264868",
+      "evidence_class": "THREE_TRACK_UPSTREAM_HANDOFF"
+    }
+  ],
+  "official_source_hash_only_files": [
+    {
+      "id": "NCSTAR1_2B_V2",
+      "path": "work/official_sources/ncstar1-2bv2.pdf",
+      "expected_sha256": "c5bb701fad4103d072f89548c683c0e8ee583c49d94e3f165985088f3443ea1d",
+      "use": "hash continuity only for base impact/fuel distribution source context"
+    },
+    {
+      "id": "NCSTAR1_5G",
+      "path": "work/official_sources/ncstar1-5g.pdf",
+      "expected_sha256": "f6aa637c05c4ff1ae2a6a5e9192471aa69e6e0aa97a4bbe5aa33afd68a3526ea",
+      "use": "hash continuity only for Case B fuel-load and structural-temperature range source context"
+    },
+    {
+      "id": "NCSTAR1_6D_LOCAL",
+      "path": "work/official_sources/ncstar1-6d.pdf",
+      "expected_sha256": "0d2a155fc820c83e4bc7df32a6da098261eb2e7f8d1358abd00d11c12bd6c9ff",
+      "use": "hash continuity only for global structural-model transfer context"
+    }
+  ],
+  "track_contract": {
+    "required_track_ids": [
+      "CONTROL_ZERO_FIRE",
+      "OFFICIAL_MODEL_DEPENDENT_THERMAL_REFERENCE",
+      "UNKNOWN_EVENT_FIRE"
+    ],
+    "component_families": {
+      "core_column": "core_column_temperature_ranges_c",
+      "perimeter_column": "perimeter_column_temperature_ranges_c",
+      "floor_truss": "floor_truss_temperature_ranges_c"
+    },
+    "analysis_floors": [
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99
+    ],
+    "required_sfrm_unknown_fields": [
+      "thickness_m",
+      "density_kg_m3",
+      "thermal_conductivity_W_mK",
+      "specific_heat_J_kgK",
+      "emissivity",
+      "impact_damage_fraction",
+      "spatial_damage_map",
+      "adhesion_or_failure_law"
+    ],
+    "temporal_mapping_rule": "Retain only the five published support knots. Convert minutes to seconds exactly, require strict monotonicity, and authorize neither interpolation nor extrapolation in V10Q.",
+    "temperature_mapping_rule": "Convert every Celsius minimum and maximum to Kelvin with +273.15, retain both units, require min<=max, and do not assign a range endpoint to an individual member.",
+    "fuel_load_mapping_rule": "Retain 25 kg/m2 and 5 lb/ft2 as rounded parallel source values; do not force them equal or silently overwrite either.",
+    "upstream_track_mapping": {
+      "CONTROL_ZERO_INPUT": "CONTROL_ZERO_FIRE",
+      "OFFICIAL_MODEL_DEPENDENT_REFERENCE": "OFFICIAL_MODEL_DEPENDENT_THERMAL_REFERENCE",
+      "UNKNOWN_PHYSICAL_DAMAGE": "UNKNOWN_EVENT_FIRE"
+    },
+    "unit_conversions": {
+      "degC_to_K_offset": 273.15,
+      "min_to_s": 60.0,
+      "lb_to_kg": 0.45359237,
+      "ft_to_m": 0.3048
+    }
+  },
+  "expected": {
+    "regression_file_count": 12,
+    "protected_file_count": 1,
+    "cached_input_file_count": 6,
+    "official_source_hash_only_file_count": 3,
+    "track_count": 3,
+    "time_knot_count": 5,
+    "component_family_count": 3,
+    "floor_count": 7,
+    "temperature_envelope_row_count": 105,
+    "celsius_to_kelvin_endpoint_check_count": 210,
+    "valid_minimum_maximum_range_count": 105,
+    "v8a_core_100min_comparison_count": 7,
+    "v8a_core_100min_comparison_pass_count": 7,
+    "v8e_cached_consistency_check_count": 6,
+    "sfrm_required_field_count": 8,
+    "sfrm_numeric_or_spatial_field_available_count": 0,
+    "gas_temperature_history_available_count": 0,
+    "incident_heat_flux_history_available_count": 0,
+    "exact_member_temperature_assignment_count": 0,
+    "temperature_range_max_above_600c_count": 47,
+    "global_temperature_min_c": 23.0,
+    "global_temperature_max_c": 938.0,
+    "fuel_load_from_5_lb_ft2_kg_m2": 24.412138181915253,
+    "fuel_load_dual_unit_difference_kg_m2": 0.5878618180847468,
+    "fuel_bin_rounding_residual_lb": 20.0,
+    "downstream_physical_release_count": 0,
+    "historical_physical_thermal_promotion_count": 0,
+    "mechanical_requirements_closed_count": 0,
+    "mechanical_requirements_blocking_count": 22,
+    "physical_assignment_count": 0,
+    "fds_run_count": 0,
+    "thermal_solver_run_count": 0,
+    "other_solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 0
+  },
+  "outputs": {
+    "regression_audit": "wtc1_simulation_v8/output/v10q_regression_audit.json",
+    "source_manifest": "wtc1_simulation_v8/output/v10q_fire_thermal_source_manifest.json",
+    "track_manifest": "wtc1_simulation_v8/output/v10q_three_track_fire_thermal_handoff.json",
+    "temperature_matrix": "wtc1_simulation_v8/output/v10q_official_temperature_envelope_matrix.csv",
+    "unit_temporal_audit": "wtc1_simulation_v8/output/v10q_unit_and_temporal_support_audit.json",
+    "sfrm_matrix": "wtc1_simulation_v8/output/v10q_sfrm_unknown_field_matrix.csv",
+    "handoff_gate": "wtc1_simulation_v8/output/v10q_fire_thermal_handoff_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10q_transfert_feu_thermique.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10q_transfert_feu_thermique.json",
+    "offline_audit": "wtc1_simulation_v8/output/v10q_offline_package_audit.json"
+  },
+  "next_iteration": {
+    "id": "V10R",
+    "objective": "Build a three-track thermal-to-initiation preprocessor. Preserve the zero control, evaluate only labelled cached official-dependent/synthetic temperature envelopes through the already documented reduced laws inside their validity domains, and keep the physical branch unknown. Quantify every >600 C modulus-law exceedance, forbid silent extrapolation, join with the failed cold gate as INDETERMINATE, and run no structural solver."
+  }
+}

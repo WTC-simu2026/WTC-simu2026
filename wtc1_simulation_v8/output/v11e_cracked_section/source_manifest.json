@@ -1,0 +1,42 @@
+{
+  "iteration": "V11E",
+  "inputs_and_protected_sha256": {
+    "wtc1_simulation_v8/data/v11a_component_resistance_predeclaration.json": "2e4919d56dc6284769fb49889dd75085f205025325a9a25ca562bdca95b7b9c9",
+    "wtc1_simulation_v8/data/v11d_slab_contact_predeclaration.json": "296c53dcebc86f77aa818bfa7bc9f810dca4c097338d5a066e427d6ba0d3b073",
+    "wtc1_simulation_v8/scripts/v11d_panel_model.py": "2b27b0881456e4f6095d1c9e99d404b4b5c31c9fe04ae0137ff0ba48129aceef",
+    "wtc1_simulation_v8/output/v11d_slab_contact/results_v11d.json": "1ca70615174a5aabe1854d6e3c1b20536dc465ffc49a79b85393c4e7aac1aeef",
+    "wtc1_simulation_v8/output/v11d_slab_contact/rapport_v11d_dalle_contact.md": "0893a8d50c8a24934737dbd18878759b15c2148be524f11c756bc961f12830d7",
+    "wtc1_simulation_v8/output/v11d_slab_contact/offline_manifest.json": "f56fa274104593ef8ec3cbdad6a424aa28f3c8b13e6bffdf096b54f728dd34c4",
+    "wtc1_simulation_v8/output/v11c_floor_panel/results_v11c.json": "f842418ea85a5684e9f69902326d3165617b50b238001b8c0da71dcef984a857",
+    "wtc1_simulation_v8/output/v11b_initialization_mass/results_v11b.json": "ed409426b7a4986d3cd1d9c10ba151d5484898f2c4fec9a64961db7a93a5a12e",
+    "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1",
+    "wtc1_simulation_v8/data/v11e_cracked_section_predeclaration.json": "8475b6013529c5002b17469d852fa32e67b8f2245bd90074a9984ec178fbcc50",
+    "wtc1_simulation_v8/scripts/v11e_section_model.py": "7ea7038d5ea5c11bdd176a403d1a20898d57cd6fad5d4399c37c6315fd8846b2",
+    "wtc1_simulation_v8/scripts/test_v11e_section.py": "53674b4ee4dc06358543aed443f4909a5c75fd52cbf5391f8c5c53a355620db2",
+    "wtc1_simulation_v8/scripts/run_v11e_cracked_section.py": "48578a9c2d3ec2da974c2807bb47164bed43938099c4b88a81ca1560e5a074dd"
+  },
+  "method_references": [
+    {
+      "id": "DIANA_LINEAR_GF",
+      "url": "https://manuals.dianafea.com/d108/en/1219784-1221375-total-strain-crack-models.html",
+      "accessed": "2026-09-06",
+      "scope": "Primary software manual: linear total-strain tensile softening can be parameterized by tensile strength, fracture energy and crack bandwidth. Not WTC material calibration, and DIANA is not run."
+    },
+    {
+      "id": "DIANA_CLOSURE",
+      "url": "https://manuals.dianafea.com/d102/Theory/Theorych74.html",
+      "accessed": "2026-09-06",
+      "scope": "Primary software manual, section74.2: distinguishes cracking, secant unloading and elastic compression after closure. V11E is an explicit 1D simplification, not the whole DIANA constitutive model."
+    },
+    {
+      "id": "OPENSEES_ELASTICPP",
+      "url": "https://opensees.berkeley.edu/OpenSees/manuals/usermanual/171.htm",
+      "accessed": "2026-09-06",
+      "scope": "Primary software manual: uniaxial elastic-perfectly plastic law. Own transparent implementation; no OpenSees executable or cross-solver validation claimed."
+    }
+  ],
+  "source_archive_reread": false,
+  "source_pdf_reread": false,
+  "web_method_reference_consultation": true,
+  "provenance": "Dimension and Ec/fc/ft reuse checked against old configurations; new reinforcement/Gf/Lch are explicit hypotheses."
+}

@@ -1,0 +1,193 @@
+{
+  "iteration": "V10A",
+  "dataset_version": "10.1.0",
+  "generated_at_utc": "2026-08-31T11:41:04Z",
+  "validation_status": "PASS",
+  "run": {
+    "python": "3.12.13",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "elapsed_seconds_before_final_serialization": 0.228,
+    "deterministic": true,
+    "structural_solver_executed": false,
+    "blender_executed": false
+  },
+  "random_seed": 1010007,
+  "random_draw_used": false,
+  "scope": "Preserve V8U through V9Z. Enumerate the node, element, connection, boundary, property, unit and provenance records that a future seven-floor core-office-floor-perimeter-transfer model would require. Reuse only hashed cached artifacts. Treat official-model identifiers and loads as dependent reference data, keep reconstructed topology explicitly hypothetical, and leave every unsourced coordinate, section, material, stiffness, capacity, connection law and damage state null. Do not run a structural solver or Blender and do not modify the protected Blender master.",
+  "input_manifest": "wtc1_simulation_v8/output/v10a_readiness_source_manifest.json",
+  "output_files": {
+    "source_manifest": "wtc1_simulation_v8/output/v10a_readiness_source_manifest.json",
+    "schema": "wtc1_simulation_v8/output/v10a_solver_neutral_schema.json",
+    "node_catalogue_csv": "wtc1_simulation_v8/output/v10a_floor93_99_node_catalogue.csv",
+    "element_catalogue_csv": "wtc1_simulation_v8/output/v10a_floor93_99_element_catalogue.csv",
+    "connection_matrix_csv": "wtc1_simulation_v8/output/v10a_connection_requirement_matrix.csv",
+    "floor_matrix_csv": "wtc1_simulation_v8/output/v10a_floor_readiness_matrix.csv",
+    "unit_dictionary": "wtc1_simulation_v8/output/v10a_property_unit_dictionary.json",
+    "source_gate_audit": "wtc1_simulation_v8/output/v10a_source_gate_audit.json",
+    "model_gate": "wtc1_simulation_v8/output/v10a_solver_readiness_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10a_schema_preparation_mecanique.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10a_schema_preparation_mecanique.json"
+  },
+  "observed_or_transcribed_facts": [
+    "The 11 selected cached inputs and 12 V9Z regression artifacts match their predeclared SHA-256 values.",
+    "V8Q contains 47 core-column identifiers, 79 orthogonal candidate edges and 24 algebraic boundary ports for each of Floors 93-99.",
+    "V8H contains 17 moment-subnetwork edge references; V8L contains four Floor 96 Case Ai removed-edge references.",
+    "V9U contains 21 categorical floor-stair records per LOW, BASE and HIGH variant and assigns no mechanical properties or load-path credit."
+  ],
+  "official_model_results": [
+    {
+      "source": "V8P transcription of NIST official-model outputs",
+      "floor_totals_kip": {
+        "93": {
+          "before_impact": 43859.0,
+          "after_impact": 43304.0
+        },
+        "94": {
+          "before_impact": 41903.0,
+          "after_impact": 41551.0
+        },
+        "95": {
+          "before_impact": 39925.0,
+          "after_impact": 39872.0
+        },
+        "96": {
+          "before_impact": 37956.0,
+          "after_impact": 38217.0
+        },
+        "97": {
+          "before_impact": 35988.0,
+          "after_impact": 36387.0
+        },
+        "98": {
+          "before_impact": 34029.0,
+          "after_impact": 34429.0
+        },
+        "99": {
+          "before_impact": 32127.0,
+          "after_impact": 32525.0
+        }
+      },
+      "use_in_v10a": "REFERENCE_ONLY_NOT_APPLIED_LOADS"
+    },
+    {
+      "source": "V8H/V8L official-model topology and Case Ai references",
+      "moment_edge_reference_count_per_floor": 17,
+      "floor96_case_ai_removed_edge_reference_count": 4,
+      "physical_damage_state_assigned": false
+    }
+  ],
+  "archive_claims_used": [],
+  "model_hypotheses": [
+    "The 62 V8Q non-moment orthogonal edges per floor remain reconstructed candidates, not as-built beams or slab strips.",
+    "The 24 V8Q ports per floor remain algebraic balance variables, not identified physical connections.",
+    "Office-boundary, office-face and perimeter-face records are requirement placeholders, not solver nodes or physical discretization.",
+    "V8M face paths remain upper-envelope abstractions and do not establish individual trusses, seats, slab strips or perimeter attachments.",
+    "LOW, BASE and HIGH stair placements remain separate categorical hypotheses and create zero V10A structural entities."
+  ],
+  "derived_results": {
+    "floor_count": 7,
+    "node_catalogue_count": 392,
+    "element_or_requirement_relation_count": 1083,
+    "connection_requirement_family_count": 13,
+    "source_gate_requirement_count": 22,
+    "source_gate_status_counts": {
+      "DOCUMENTED_REFERENCE_ONLY": 3,
+      "MISSING": 10,
+      "PARTIAL_NOT_SOLVER_READY": 9
+    },
+    "blocking_source_gate_count": 22,
+    "official_model_moment_edge_reference_count": 119,
+    "hypothetical_orthogonal_edge_candidate_count": 434,
+    "all_physical_assignment_counts": {
+      "coordinates": 0,
+      "member_sections": 0,
+      "materials": 0,
+      "mass": 0,
+      "stiffness": 0,
+      "capacity": 0,
+      "connection_laws": 0,
+      "damage_states": 0,
+      "load_path_credit": 0
+    },
+    "solver_readiness": false,
+    "structural_solver_executed": false,
+    "blender_executed": false
+  },
+  "contradictions_and_missing_information": [
+    "V8Q is algebraically balanced but has structural nullity 56; all 103 flow variables have null-space support, so its representative flows are not identified physical transfers.",
+    "No mapped bounded V8R case is feasible on any of Floors 93-99. V8R capacity multipliers are sensitivity diagnostics and are not adopted.",
+    "Source-qualified as-built coordinates, floor elevations, core and perimeter schedules, office-floor topology, connection laws, boundary conditions and physical damage states are absent from the selected inputs.",
+    "The V9U stair repetition is categorical continuity only and is neither observed repeated geometry nor a mechanical path."
+  ],
+  "checks": {
+    "v9z_regression_hashes": true,
+    "cached_input_hashes": true,
+    "protected_blender_master_before": true,
+    "exact_floor_range_93_99": true,
+    "v8q_topology_counts_reproduced": true,
+    "v8h_moment_subset_separated": true,
+    "v8l_case_ai_references_not_damage_assignments": true,
+    "v8q_null_space_warning_preserved": true,
+    "v8r_mapped_capacity_gate_preserved_closed": true,
+    "v8r_multipliers_not_adopted": true,
+    "node_catalogue_count": true,
+    "element_catalogue_count": true,
+    "connection_family_count": true,
+    "source_gate_requirement_count": true,
+    "all_source_gates_blocking": true,
+    "all_coordinates_null": true,
+    "all_physical_element_properties_null": true,
+    "all_catalogue_rows_solver_authorized_false": true,
+    "all_connection_families_zero_credit": true,
+    "official_model_outputs_not_applied_as_loads": true,
+    "v9u_stair_records_excluded_from_solver": true,
+    "unit_dictionary_has_no_assignments": true,
+    "source_archive_and_official_sources_not_read": true,
+    "no_external_contact_or_network": true,
+    "solver_blender_thermal_gates_closed": true,
+    "protected_blender_master_after": true
+  },
+  "model_gate": {
+    "documentary_schema_complete": true,
+    "catalogue_internal_consistency": true,
+    "official_model_dependence_explicit": true,
+    "model_hypotheses_explicit": true,
+    "as_built_geometry": false,
+    "member_sections": false,
+    "material_properties": false,
+    "connection_laws": false,
+    "boundary_conditions": false,
+    "physical_damage_states": false,
+    "structural_solver_ready": false,
+    "structural_solver_executed": false,
+    "blender_executed": false,
+    "physical_validation": false
+  },
+  "source_policy": {
+    "source_archive_read": false,
+    "source_archive_rescanned": false,
+    "source_archive_files_modified": false,
+    "official_sources_directory_read": false,
+    "official_sources_directory_modified": false,
+    "network_access_authorized": false,
+    "external_contact_authorized": false,
+    "new_source_acquisition_authorized": false,
+    "structural_solver_authorized": false,
+    "blender_authorized": false,
+    "blender_master_modification_authorized": false,
+    "as_built_coordinate_assignment_authorized": false,
+    "member_section_assignment_authorized": false,
+    "material_assignment_authorized": false,
+    "mass_assignment_authorized": false,
+    "stiffness_assignment_authorized": false,
+    "strength_assignment_authorized": false,
+    "connection_law_assignment_authorized": false,
+    "damage_state_assignment_authorized": false,
+    "load_path_credit_authorized": false,
+    "thermal_continuation_authorized": false
+  },
+  "next_iteration": {
+    "id": "V10B",
+    "objective": "Preserve V8U through V10A and perform a bounded index-only audit of cached structural drawing registers and data tables for the exact Drawing Book 5 beam, Drawing Book 6 connection, office-floor truss/slab and perimeter schedule identifiers required by V10A. Create a prioritized acquisition/transcription matrix without rescanning the source archive, contacting an external party, assigning solver properties, running a solver or launching Blender."
+  }
+}

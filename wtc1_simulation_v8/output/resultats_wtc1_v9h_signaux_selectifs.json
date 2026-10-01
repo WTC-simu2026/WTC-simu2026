@@ -1,0 +1,432 @@
+{
+  "iteration": "V9H",
+  "generated_at": "2026-08-27T11:49:49.354991+02:00",
+  "status": "validated_exact_selective_payloads_format_audited_no_fit_no_solver",
+  "iteration_execution_validated": true,
+  "selective_payload_gate_passed": true,
+  "configuration": "wtc1_simulation_v8/data/v9h_selective_payload_ingestion.json",
+  "ingestion_manifest": "wtc1_simulation_v8/output/v9h_selective_payload_ingestion_manifest.json",
+  "scope": "Preserve V8U through V9G, retrieve only the 55 entries frozen by the V9G candidate manifest, verify every local ZIP header, path, compression method, compressed size, uncompressed size and CRC32, preserve the extracted public payloads, and audit headers, units, timing, coordinates, missing values and numeric consistency. Do not download the full ZIP or the P6V035 DIC series, fit a material law, run a solver or perform impact work.",
+  "evidence_policy": {
+    "observed_fact": "A byte count, local-header field, CRC32, decompressed payload value or text/image metadata read directly from the public Zenodo source.",
+    "official_model_result": "None is introduced by V9H.",
+    "local_archive_claim": "No local WTC archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "The selection of P4V035/P6V035 as an analogue pair and all parsing or delimiter rules.",
+    "derived_result": "Format, completeness, timing and consistency metrics calculated from the acquired analogue payloads; not WTC or CF6 properties.",
+    "unknown": "Any undocumented calibration, sign convention, synchronization rule, specimen tolerance or applicability to WTC and CF6 materials."
+  },
+  "regressions": {
+    "files": {
+      "wtc1_simulation_v8/data/v9g_selective_zip_index.json": {
+        "exists": true,
+        "expected_sha256": "920d35d61b87bfaf01086c22fa1656879ff6150d12b1d28f575c3b134bc93fe8",
+        "actual_sha256": "920d35d61b87bfaf01086c22fa1656879ff6150d12b1d28f575c3b134bc93fe8",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/run_v9g_zip_index_audit.py": {
+        "exists": true,
+        "expected_sha256": "d727a71a8e90fce1e111c5a7da035babcfb4d5641d63d9be45141eb2da98a164",
+        "actual_sha256": "d727a71a8e90fce1e111c5a7da035babcfb4d5641d63d9be45141eb2da98a164",
+        "passed": true
+      },
+      "wtc1_simulation_v8/input/v9g_open_sources/Fig1.jpg": {
+        "exists": true,
+        "expected_sha256": "b8a7ab9de81761741a9157500118213419624848225d87bcd42bc3cf363e4c50",
+        "actual_sha256": "b8a7ab9de81761741a9157500118213419624848225d87bcd42bc3cf363e4c50",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9g_zip_central_directory_manifest.json": {
+        "exists": true,
+        "expected_sha256": "7d3f879d724f6b225f17b6de23254c2e218cc368fa0e8e709f1ec1c1bf85d2d3",
+        "actual_sha256": "7d3f879d724f6b225f17b6de23254c2e218cc368fa0e8e709f1ec1c1bf85d2d3",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9g_selective_payload_candidates.json": {
+        "exists": true,
+        "expected_sha256": "fd498ea34582b4aa0d3d42f589303bb932a15e945f25f1bf81e3f99c318bf5b7",
+        "actual_sha256": "fd498ea34582b4aa0d3d42f589303bb932a15e945f25f1bf81e3f99c318bf5b7",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v9g_index_zip_selectif.json": {
+        "exists": true,
+        "expected_sha256": "0c596144c6bb22a1691ff888a4e2be5a76c55cc2b90c1ef764f3bf7776c6747c",
+        "actual_sha256": "0c596144c6bb22a1691ff888a4e2be5a76c55cc2b90c1ef764f3bf7776c6747c",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/rapport_wtc1_v9g_index_zip_selectif.md": {
+        "exists": true,
+        "expected_sha256": "8e738a9ea05be741f885cd488ea00c8e270fcf8341181f884d4b9e6cc8032c43",
+        "actual_sha256": "8e738a9ea05be741f885cd488ea00c8e270fcf8341181f884d4b9e6cc8032c43",
+        "passed": true
+      }
+    },
+    "metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9g_index_zip_selectif.json",
+        "path": "iteration_execution_validated",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9g_index_zip_selectif.json",
+        "path": "target_inventory_gate_passed",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9g_index_zip_selectif.json",
+        "path": "range_audit.partial_content_supported",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9g_index_zip_selectif.json",
+        "path": "full_zip_downloaded",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9g_index_zip_selectif.json",
+        "path": "payload_entry_downloaded",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "selection_gates": {
+    "manifest_hash_matches": true,
+    "entry_count_matches": true,
+    "compressed_sum_matches": true,
+    "uncompressed_sum_matches": true,
+    "specimen_counts_match": true,
+    "use_counts_match": true,
+    "paths_unique": true
+  },
+  "retrieval_summary": {
+    "expected_entry_count": 55,
+    "verified_entry_count": 55,
+    "network_retrieved_entry_count": 0,
+    "cache_verified_entry_count": 55,
+    "network_bytes_transferred": 0,
+    "initial_acquisition_network_bytes": 569802,
+    "remote_acquisition_receipt": "wtc1_simulation_v8/output/v9h_remote_range_acquisition_receipt.json",
+    "maximum_network_bytes": 788937,
+    "verified_compressed_size_bytes": 563657,
+    "verified_uncompressed_size_bytes": 1443163,
+    "all_entry_identity_checks_passed": true,
+    "error": null
+  },
+  "payload_audit_summary": {
+    "source_modes": {
+      "verified_local_cache": 55
+    },
+    "dynamic_bar_files": [
+      {
+        "path": "FurtherMeasurements/BarDisplBCs/BC_Inc_P4V035.txt",
+        "header": [
+          "t[s]",
+          "u[mm]"
+        ],
+        "unit_tokens": [
+          "mm",
+          "s"
+        ],
+        "data_row_count": 200,
+        "consistent_column_count": true,
+        "numeric_columns": [
+          {
+            "index": 0,
+            "header": "t[s]",
+            "numeric_count": 200,
+            "missing_count": 0,
+            "non_numeric_count": 0,
+            "minimum": 1e-06,
+            "maximum": 0.0002,
+            "first": 1e-06,
+            "last": 0.0002,
+            "monotonic_nondecreasing": true,
+            "strictly_increasing": true
+          },
+          {
+            "index": 1,
+            "header": "u[mm]",
+            "numeric_count": 200,
+            "missing_count": 0,
+            "non_numeric_count": 0,
+            "minimum": 0.0,
+            "maximum": 0.5423796052845592,
+            "first": 0.0,
+            "last": 0.5423796052845592,
+            "monotonic_nondecreasing": false,
+            "strictly_increasing": false
+          }
+        ]
+      },
+      {
+        "path": "FurtherMeasurements/BarDisplBCs/BC_Trans_P4V035.txt",
+        "header": [
+          "t[s]",
+          "u[mm]"
+        ],
+        "unit_tokens": [
+          "mm",
+          "s"
+        ],
+        "data_row_count": 200,
+        "consistent_column_count": true,
+        "numeric_columns": [
+          {
+            "index": 0,
+            "header": "t[s]",
+            "numeric_count": 200,
+            "missing_count": 0,
+            "non_numeric_count": 0,
+            "minimum": 1e-06,
+            "maximum": 0.0002,
+            "first": 1e-06,
+            "last": 0.0002,
+            "monotonic_nondecreasing": true,
+            "strictly_increasing": true
+          },
+          {
+            "index": 1,
+            "header": "u[mm]",
+            "numeric_count": 200,
+            "missing_count": 0,
+            "non_numeric_count": 0,
+            "minimum": 0.0,
+            "maximum": 0.0027338016608109317,
+            "first": 0.0,
+            "last": 0.0027138908582294125,
+            "monotonic_nondecreasing": false,
+            "strictly_increasing": false
+          }
+        ]
+      }
+    ],
+    "dynamic_dic": {
+      "csv_frame_count": 51,
+      "filename_time_unit": "ms",
+      "first_time_ms": 0.003,
+      "last_time_ms": 0.241,
+      "strictly_increasing_unique_times": true,
+      "minimum_interval_ms": 0.003999999999999976,
+      "maximum_interval_ms": 0.0050000000000000044,
+      "declared_unit_maps": [
+        "{\"angle\": \"deg\", \"length\": \"mm\", \"strain\": \"%\", \"time\": \"ms\"}"
+      ],
+      "stage_relative_time_range": [
+        2.2476,
+        2.4857
+      ],
+      "stage_relative_time_strictly_increasing": true,
+      "unique_headers": [
+        "[\"id\", \"x\", \"y\", \"z\", \"displacement_x\", \"displacement_y\", \"epsilon_x\", \"epsilon_xy\", \"epsilon_y\"]"
+      ],
+      "data_row_count_range": [
+        364,
+        394
+      ],
+      "total_missing_cells": 7070,
+      "missing_by_column": {
+        "displacement_x": {
+          "missing_count": 1414,
+          "numeric_count": 17755,
+          "missing_fraction": 0.07376493296468256
+        },
+        "displacement_y": {
+          "missing_count": 1414,
+          "numeric_count": 17755,
+          "missing_fraction": 0.07376493296468256
+        },
+        "epsilon_x": {
+          "missing_count": 1414,
+          "numeric_count": 17755,
+          "missing_fraction": 0.07376493296468256
+        },
+        "epsilon_xy": {
+          "missing_count": 1414,
+          "numeric_count": 17755,
+          "missing_fraction": 0.07376493296468256
+        },
+        "epsilon_y": {
+          "missing_count": 1414,
+          "numeric_count": 17755,
+          "missing_fraction": 0.07376493296468256
+        },
+        "id": {
+          "missing_count": 0,
+          "numeric_count": 19169,
+          "missing_fraction": 0.0
+        },
+        "x": {
+          "missing_count": 0,
+          "numeric_count": 19169,
+          "missing_fraction": 0.0
+        },
+        "y": {
+          "missing_count": 0,
+          "numeric_count": 19169,
+          "missing_fraction": 0.0
+        },
+        "z": {
+          "missing_count": 0,
+          "numeric_count": 19169,
+          "missing_fraction": 0.0
+        }
+      },
+      "coordinate_reference_images": [
+        {
+          "path": "FurtherMeasurements/DIC/P4V035/P4V035_COS.jpg",
+          "jpeg_signature_valid": true,
+          "width_px": 2413,
+          "height_px": 1539,
+          "sof_marker_hex": "ffc0"
+        }
+      ]
+    },
+    "quasi_static_force_displacement": [
+      {
+        "path": "FurtherMeasurements/Fu_curves/P6V035.csv",
+        "header": [
+          "t[s]",
+          "u[mm]",
+          "F[kN]"
+        ],
+        "unit_tokens": [
+          "kn",
+          "mm",
+          "s"
+        ],
+        "data_row_count": 826,
+        "numeric_columns": [
+          {
+            "index": 0,
+            "header": "t[s]",
+            "numeric_count": 826,
+            "missing_count": 0,
+            "non_numeric_count": 0,
+            "minimum": 0.0,
+            "maximum": 860.0,
+            "first": 0.0,
+            "last": 860.0,
+            "monotonic_nondecreasing": true,
+            "strictly_increasing": true
+          },
+          {
+            "index": 1,
+            "header": "u[mm]",
+            "numeric_count": 826,
+            "missing_count": 0,
+            "non_numeric_count": 0,
+            "minimum": 0.000402,
+            "maximum": 0.108478,
+            "first": 0.000483,
+            "last": 0.098411,
+            "monotonic_nondecreasing": false,
+            "strictly_increasing": false
+          },
+          {
+            "index": 2,
+            "header": "F[kN]",
+            "numeric_count": 826,
+            "missing_count": 0,
+            "non_numeric_count": 0,
+            "minimum": 0.328132,
+            "maximum": 19.021234,
+            "first": 0.328132,
+            "last": 18.844306,
+            "monotonic_nondecreasing": false,
+            "strictly_increasing": false
+          }
+        ],
+        "consistent_column_count": true
+      }
+    ],
+    "all_text_files_decoded": true,
+    "all_text_files_consistent_column_count": true,
+    "total_missing_cells": 7070,
+    "total_non_numeric_data_cells": 0
+  },
+  "safety_gate_summary": {
+    "gates": {
+      "v9g_regressions_unchanged": true,
+      "selection_predeclaration_matches": true,
+      "total_transfer_under_cap": true,
+      "full_zip_not_present": true,
+      "only_predeclared_paths_written": true,
+      "P6V035_DIC_not_acquired": true,
+      "source_archive_not_rescanned": true,
+      "foia_request_unsent": true,
+      "external_contact_not_made": true,
+      "material_fit_not_executed": true,
+      "solver_not_executed": true,
+      "durable_remote_acquisition_receipt_valid": true
+    },
+    "passed": true
+  },
+  "outcome_gate_summary": {
+    "gates": {
+      "all_55_entries_verified": true,
+      "all_text_payloads_decoded": true,
+      "P4V035_DIC_filename_times_unique_and_increasing": true,
+      "two_dynamic_bar_files_present": true,
+      "one_quasi_static_force_displacement_file_present": true
+    },
+    "passed": true
+  },
+  "deferred_P6V035_DIC": {
+    "file_count": 875,
+    "compressed_size_bytes": 567110013,
+    "acquired": false
+  },
+  "full_zip_downloaded": false,
+  "local_full_zip_needed": false,
+  "analogue_signal_format_audit_passed": true,
+  "analogue_signal_reduction_authorized": false,
+  "analogue_material_fit_authorized": false,
+  "analogue_coupon_solver_authorized": false,
+  "wtc_high_rate_material_curve_qualification_passed": false,
+  "cf6_80a2_cowling_material_card_identification_passed": false,
+  "openradioss_wtc_coupon_authorized": false,
+  "failure_deletion_executed": false,
+  "projectile_rupture_executed": false,
+  "facade_impact_executed": false,
+  "global_wtc_impact_physics_qualification_passed": false,
+  "blender_executed": false,
+  "scope_gates": {
+    "S355_is_analogue_only": true,
+    "S355_substitution_for_WTC_or_CF6_prohibited": true,
+    "material_fit_authorized": false,
+    "failure_law_fit_authorized": false,
+    "coupon_solver_authorized": false,
+    "WTC_or_CF6_solver_authorized": false,
+    "failure_deletion_authorized": false,
+    "projectile_rupture_authorized": false,
+    "facade_impact_authorized": false,
+    "global_impact_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_inference_authorized": false
+  },
+  "interpretation": "V9H validates exact bounded ingestion and structural format auditing of the selected open S355 analogue payloads. All 55 acquired or cache-verified entries match their central-directory paths, uncompressed sizes and CRC32 values. The dynamic DIC filenames expose 51 ordered time points and the two bar files plus one quasi-static force-displacement comparator are present. This establishes traceable input identity and machine readability only. Units and sign conventions must be taken from explicit headers or repository documentation; no absent definition is inferred. The S355 notched shear data cannot identify WTC M26/C80 tensile fracture or production CF6-80A2 materials. No material fit, regularized failure law, solver, rupture or facade impact is authorized.",
+  "runtime": {
+    "started_at": "2026-08-27T11:49:49.354991+02:00",
+    "completed_at": "2026-08-27T11:49:50.021086+02:00",
+    "software": "Python standard-library bounded HTTP Range client, raw-deflate decoder and deterministic text/JPEG auditor",
+    "python_version": "3.14.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "random_seed": 9112001,
+    "source_archive_rescanned": false,
+    "full_zip_downloaded": false,
+    "P6V035_DIC_downloaded": false,
+    "external_contact_made": false,
+    "solver_executed": false
+  }
+}

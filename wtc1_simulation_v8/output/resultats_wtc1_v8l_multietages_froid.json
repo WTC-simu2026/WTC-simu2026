@@ -1,0 +1,5293 @@
+{
+  "model": "WTC1_V8L_MULTISTORY_COLD_FRAME",
+  "version": "8.11.0",
+  "generated_at_utc": "2026-08-24T09:22:21.259467+00:00",
+  "runtime_seconds": 6.443473100000119,
+  "configuration_file": "wtc1_simulation_v8/data/v8l_multistory_cold_frame.json",
+  "facts_transferred": [
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 88,
+      "printed_page": 24,
+      "fact": "Figure 2-17 maps the WTC 1 Case B severed or heavily damaged core-column segments between Floors 91 and 97.",
+      "confidence": "high; complete page visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL_LIMITE",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 198,
+      "printed_page": 134,
+      "fact": "The isolated WTC 1 core model extended from Floor 89 to Floor 106 and included columns, core beams and slabs. Case B structural-damage runs did not converge even with lateral restraints. The isolated model did not capture transfer between core and exterior walls through floors or the hat truss.",
+      "confidence": "high; complete page visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_pages": [
+        231,
+        233
+      ],
+      "printed_pages": [
+        167,
+        169
+      ],
+      "fact": "The global model used equivalent vertical springs at its truncated base. Individually modeled core beams were those with moment connections; non-moment beam axial stiffness was combined with the in-plane slab stiffness. NIST states that the composite floor representation could redistribute load locally among neighboring columns.",
+      "confidence": "high; complete pages visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 377,
+      "printed_page": 313,
+      "fact": "After impact, loads from severed columns were redistributed mostly to neighboring columns. At Floor 98 the core carried about one percent more gravity load; Column 705 buckled and Columns 605 and 804 showed minor buckling.",
+      "confidence": "high; complete page visually checked"
+    }
+  ],
+  "model_assumptions": {
+    "columns": "Elastic axial EA/L springs capped by the V8B room-temperature nominal compressive capacity for each historic WF proxy. Case B severed/heavy segments are removed before loading.",
+    "beams": "V8H bilinear vertical-transfer law: k=12EI/L^3, Vy=connection_factor*2Mp/L, one floor plane, 1 percent post-yield tangent, fracture at 0.02 rad relative rotation.",
+    "column_failure": "A column spring is removed if compressive force exceeds its V8B nominal room-temperature capacity.",
+    "omitted": [
+      "explicit shell slab bending and cracking",
+      "published adjusted slab modulus because its numeric value is unavailable",
+      "column and joint rotational degrees of freedom",
+      "geometric P-delta",
+      "perimeter walls and office-floor trusses",
+      "hat-truss transfer",
+      "transient dynamics"
+    ]
+  },
+  "gate_definition": {
+    "required_condition": "The Case B cold load must reach the Floor 93 support without a disconnected loaded component or capacity-triggered cascade in at least one physically sourced topology; a reconstructed upper envelope alone cannot validate the as-built path.",
+    "thermal_authorization_rule": "Thermal continuation remains blocked if only the reconstructed orthogonal envelope passes or if every core-only case fails."
+  },
+  "post_impact_core_demand_kip": 34429.0,
+  "topology_summary": {
+    "nist_moment_only": {
+      "edge_count_per_floor": 17,
+      "connected_column_count": 24
+    },
+    "orthogonal_floor96_reconstruction": {
+      "edge_count_per_floor": 79,
+      "connected_column_count": 47
+    }
+  },
+  "case_b_removed_segments": {
+    "99": [],
+    "98": [],
+    "97": [],
+    "96": [
+      503,
+      504,
+      505,
+      604,
+      704,
+      904
+    ],
+    "95": [
+      503,
+      504,
+      505,
+      506,
+      604,
+      704,
+      706,
+      805,
+      904
+    ],
+    "94": [
+      504,
+      505,
+      506,
+      604,
+      704,
+      706,
+      805
+    ]
+  },
+  "case_rows": [
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "no_beam_damage_upper_bound",
+      "beam_profile": "12WF65",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 0
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 0,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "no_beam_damage_upper_bound",
+      "beam_profile": "12WF65",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 0
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 0,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "no_beam_damage_upper_bound",
+      "beam_profile": "14WF136",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 0
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 0,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "no_beam_damage_upper_bound",
+      "beam_profile": "14WF136",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 0
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 0,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "no_beam_damage_upper_bound",
+      "beam_profile": "14WF228",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 0
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 0,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "no_beam_damage_upper_bound",
+      "beam_profile": "14WF228",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 0
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 0,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "floor96_figure_damage",
+      "beam_profile": "12WF65",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 2
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 2,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "floor96_figure_damage",
+      "beam_profile": "12WF65",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 2
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 2,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "floor96_figure_damage",
+      "beam_profile": "14WF136",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 2
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 2,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "floor96_figure_damage",
+      "beam_profile": "14WF136",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 2
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 2,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "floor96_figure_damage",
+      "beam_profile": "14WF228",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 2
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 2,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "floor96_figure_damage",
+      "beam_profile": "14WF228",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 2
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 2,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "repeat_floor96_damage_floors94_98",
+      "beam_profile": "12WF65",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 10
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 10,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "repeat_floor96_damage_floors94_98",
+      "beam_profile": "12WF65",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 10
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 10,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "repeat_floor96_damage_floors94_98",
+      "beam_profile": "14WF136",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 10
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 10,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "repeat_floor96_damage_floors94_98",
+      "beam_profile": "14WF136",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 10
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 10,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "repeat_floor96_damage_floors94_98",
+      "beam_profile": "14WF228",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 10
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 10,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "nist_moment_only",
+      "beam_damage_case": "repeat_floor96_damage_floors94_98",
+      "beam_profile": "14WF228",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 102,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 10
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.01,
+      "maximum_stable_load_factor": 0.0,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              706
+            ],
+            [
+              96,
+              706
+            ],
+            [
+              97,
+              706
+            ],
+            [
+              98,
+              706
+            ],
+            [
+              99,
+              706
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 12.182877378007626
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 11.724287446664027
+        },
+        {
+          "nodes": [
+            [
+              95,
+              805
+            ],
+            [
+              96,
+              805
+            ],
+            [
+              97,
+              805
+            ],
+            [
+              98,
+              805
+            ],
+            [
+              99,
+              805
+            ]
+          ],
+          "load_kip": 4.164336990942931
+        },
+        {
+          "nodes": [
+            [
+              96,
+              704
+            ],
+            [
+              97,
+              704
+            ],
+            [
+              98,
+              704
+            ],
+            [
+              99,
+              704
+            ]
+          ],
+          "load_kip": 1.7592345349652485
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              99,
+              504
+            ]
+          ],
+          "load_kip": 8.567042238768915
+        },
+        {
+          "nodes": [
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 8.171615200663892
+        }
+      ],
+      "additional_fractured_beam_count": 0,
+      "initially_removed_beam_count": 10,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "no_beam_damage_upper_bound",
+      "beam_profile": "12WF65",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 0
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.11,
+      "maximum_stable_load_factor": 0.1,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 134.0116511580839
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              96,
+              504
+            ],
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              503
+            ],
+            [
+              99,
+              504
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 313.09239374706516
+        }
+      ],
+      "additional_fractured_beam_count": 31,
+      "initially_removed_beam_count": 0,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "no_beam_damage_upper_bound",
+      "beam_profile": "12WF65",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 0
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.21000000000000002,
+      "maximum_stable_load_factor": 0.2,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 255.8404249381602
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              96,
+              504
+            ],
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              503
+            ],
+            [
+              99,
+              504
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 597.7218426080336
+        }
+      ],
+      "additional_fractured_beam_count": 33,
+      "initially_removed_beam_count": 0,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "no_beam_damage_upper_bound",
+      "beam_profile": "14WF136",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 0
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.27,
+      "maximum_stable_load_factor": 0.26,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              503
+            ],
+            [
+              96,
+              504
+            ],
+            [
+              96,
+              505
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              503
+            ],
+            [
+              99,
+              504
+            ],
+            [
+              99,
+              505
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 1097.4372011308205
+        }
+      ],
+      "additional_fractured_beam_count": 27,
+      "initially_removed_beam_count": 0,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "no_beam_damage_upper_bound",
+      "beam_profile": "14WF136",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 0
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.52,
+      "maximum_stable_load_factor": 0.51,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              503
+            ],
+            [
+              96,
+              504
+            ],
+            [
+              96,
+              505
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              503
+            ],
+            [
+              99,
+              504
+            ],
+            [
+              99,
+              505
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 2113.582757733432
+        }
+      ],
+      "additional_fractured_beam_count": 27,
+      "initially_removed_beam_count": 0,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "no_beam_damage_upper_bound",
+      "beam_profile": "14WF228",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 0
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.47000000000000003,
+      "maximum_stable_load_factor": 0.46,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              503
+            ],
+            [
+              96,
+              504
+            ],
+            [
+              96,
+              505
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              503
+            ],
+            [
+              99,
+              504
+            ],
+            [
+              99,
+              505
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 1910.3536464129097
+        }
+      ],
+      "additional_fractured_beam_count": 27,
+      "initially_removed_beam_count": 0,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "no_beam_damage_upper_bound",
+      "beam_profile": "14WF228",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 0
+      },
+      "added_column_failures": [
+        [
+          95,
+          605
+        ],
+        [
+          96,
+          605
+        ],
+        [
+          95,
+          705
+        ],
+        [
+          95,
+          606
+        ],
+        [
+          95,
+          804
+        ],
+        [
+          95,
+          703
+        ],
+        [
+          95,
+          603
+        ],
+        [
+          95,
+          803
+        ],
+        [
+          95,
+          905
+        ],
+        [
+          94,
+          806
+        ],
+        [
+          95,
+          806
+        ],
+        [
+          96,
+          806
+        ]
+      ],
+      "final_load_factor": 0.79,
+      "maximum_stable_load_factor": 0.78,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              503
+            ],
+            [
+              95,
+              504
+            ],
+            [
+              95,
+              505
+            ],
+            [
+              95,
+              506
+            ],
+            [
+              95,
+              603
+            ],
+            [
+              95,
+              604
+            ],
+            [
+              95,
+              605
+            ],
+            [
+              95,
+              606
+            ],
+            [
+              96,
+              503
+            ],
+            [
+              96,
+              504
+            ],
+            [
+              96,
+              505
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              96,
+              603
+            ],
+            [
+              96,
+              604
+            ],
+            [
+              96,
+              605
+            ],
+            [
+              96,
+              606
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              97,
+              603
+            ],
+            [
+              97,
+              604
+            ],
+            [
+              97,
+              605
+            ],
+            [
+              97,
+              606
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              98,
+              603
+            ],
+            [
+              98,
+              604
+            ],
+            [
+              98,
+              605
+            ],
+            [
+              98,
+              606
+            ],
+            [
+              99,
+              503
+            ],
+            [
+              99,
+              504
+            ],
+            [
+              99,
+              505
+            ],
+            [
+              99,
+              506
+            ],
+            [
+              99,
+              603
+            ],
+            [
+              99,
+              604
+            ],
+            [
+              99,
+              605
+            ],
+            [
+              99,
+              606
+            ]
+          ],
+          "load_kip": 4772.146180284932
+        }
+      ],
+      "additional_fractured_beam_count": 60,
+      "initially_removed_beam_count": 0,
+      "additional_failed_column_count": 12
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "floor96_figure_damage",
+      "beam_profile": "12WF65",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 4
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.09999999999999999,
+      "maximum_stable_load_factor": 0.09,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              503
+            ],
+            [
+              96,
+              504
+            ],
+            [
+              96,
+              505
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              503
+            ],
+            [
+              99,
+              504
+            ],
+            [
+              99,
+              505
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 406.45822264104453
+        }
+      ],
+      "additional_fractured_beam_count": 25,
+      "initially_removed_beam_count": 4,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "floor96_figure_damage",
+      "beam_profile": "12WF65",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 4
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.19,
+      "maximum_stable_load_factor": 0.18,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 231.4746701821449
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              96,
+              504
+            ],
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              503
+            ],
+            [
+              99,
+              504
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 540.7959528358399
+        }
+      ],
+      "additional_fractured_beam_count": 30,
+      "initially_removed_beam_count": 4,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "floor96_figure_damage",
+      "beam_profile": "14WF136",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 4
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.25,
+      "maximum_stable_load_factor": 0.24,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              503
+            ],
+            [
+              96,
+              504
+            ],
+            [
+              96,
+              505
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              503
+            ],
+            [
+              99,
+              504
+            ],
+            [
+              99,
+              505
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 1016.1455566026115
+        }
+      ],
+      "additional_fractured_beam_count": 25,
+      "initially_removed_beam_count": 4,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "floor96_figure_damage",
+      "beam_profile": "14WF136",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 4
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.48000000000000004,
+      "maximum_stable_load_factor": 0.47000000000000003,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              503
+            ],
+            [
+              96,
+              504
+            ],
+            [
+              96,
+              505
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              503
+            ],
+            [
+              99,
+              504
+            ],
+            [
+              99,
+              505
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 1950.9994686770142
+        }
+      ],
+      "additional_fractured_beam_count": 25,
+      "initially_removed_beam_count": 4,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "floor96_figure_damage",
+      "beam_profile": "14WF228",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 4
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.44,
+      "maximum_stable_load_factor": 0.43,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              503
+            ],
+            [
+              96,
+              504
+            ],
+            [
+              96,
+              505
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              503
+            ],
+            [
+              99,
+              504
+            ],
+            [
+              99,
+              505
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 1788.4161796205963
+        }
+      ],
+      "additional_fractured_beam_count": 25,
+      "initially_removed_beam_count": 4,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "floor96_figure_damage",
+      "beam_profile": "14WF228",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 4
+      },
+      "added_column_failures": [
+        [
+          95,
+          605
+        ],
+        [
+          96,
+          605
+        ],
+        [
+          95,
+          705
+        ],
+        [
+          95,
+          606
+        ],
+        [
+          95,
+          804
+        ],
+        [
+          95,
+          703
+        ],
+        [
+          95,
+          803
+        ],
+        [
+          95,
+          905
+        ]
+      ],
+      "final_load_factor": 0.74,
+      "maximum_stable_load_factor": 0.73,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              96,
+              604
+            ],
+            [
+              96,
+              605
+            ],
+            [
+              97,
+              604
+            ],
+            [
+              97,
+              605
+            ],
+            [
+              98,
+              604
+            ],
+            [
+              98,
+              605
+            ],
+            [
+              99,
+              604
+            ],
+            [
+              99,
+              605
+            ]
+          ],
+          "load_kip": 636.6941019808613
+        },
+        {
+          "nodes": [
+            [
+              95,
+              506
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              99,
+              506
+            ]
+          ],
+          "load_kip": 901.5329259725644
+        },
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 867.597271053138
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              504
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 1238.6606505180275
+        },
+        {
+          "nodes": [
+            [
+              95,
+              606
+            ],
+            [
+              96,
+              606
+            ],
+            [
+              97,
+              606
+            ],
+            [
+              98,
+              606
+            ],
+            [
+              99,
+              606
+            ]
+          ],
+          "load_kip": 412.81333119393776
+        }
+      ],
+      "additional_fractured_beam_count": 61,
+      "initially_removed_beam_count": 4,
+      "additional_failed_column_count": 8
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "repeat_floor96_damage_floors94_98",
+      "beam_profile": "12WF65",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 20
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.08,
+      "maximum_stable_load_factor": 0.07,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 93.79429957331222
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              504
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 133.90925951546245
+        }
+      ],
+      "additional_fractured_beam_count": 18,
+      "initially_removed_beam_count": 20,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "repeat_floor96_damage_floors94_98",
+      "beam_profile": "12WF65",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 20
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.13,
+      "maximum_stable_load_factor": 0.12000000000000001,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 152.41573680663237
+        }
+      ],
+      "additional_fractured_beam_count": 6,
+      "initially_removed_beam_count": 20,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "repeat_floor96_damage_floors94_98",
+      "beam_profile": "14WF136",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 20
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.2,
+      "maximum_stable_load_factor": 0.19,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 234.48574893328055
+        }
+      ],
+      "additional_fractured_beam_count": 6,
+      "initially_removed_beam_count": 20,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "repeat_floor96_damage_floors94_98",
+      "beam_profile": "14WF136",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 20
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.34,
+      "maximum_stable_load_factor": 0.33,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 398.62577318657696
+        }
+      ],
+      "additional_fractured_beam_count": 6,
+      "initially_removed_beam_count": 20,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "repeat_floor96_damage_floors94_98",
+      "beam_profile": "14WF228",
+      "connection_factor": 0.5,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 20
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.34,
+      "maximum_stable_load_factor": 0.33,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 398.62577318657696
+        },
+        {
+          "nodes": [
+            [
+              96,
+              504
+            ],
+            [
+              96,
+              505
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              99,
+              504
+            ],
+            [
+              99,
+              505
+            ]
+          ],
+          "load_kip": 569.1143529407154
+        }
+      ],
+      "additional_fractured_beam_count": 18,
+      "initially_removed_beam_count": 20,
+      "additional_failed_column_count": 0
+    },
+    {
+      "topology": "orthogonal_floor96_reconstruction",
+      "beam_damage_case": "repeat_floor96_damage_floors94_98",
+      "beam_profile": "14WF228",
+      "connection_factor": 1.0,
+      "equilibrium": false,
+      "reason": "disconnected_loaded_component",
+      "metadata": {
+        "column_spring_count": 282,
+        "beam_spring_count": 474,
+        "initial_removed_column_segments": 22,
+        "initial_removed_beam_edges": 20
+      },
+      "added_column_failures": [],
+      "final_load_factor": 0.62,
+      "maximum_stable_load_factor": 0.61,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              96,
+              503
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              99,
+              503
+            ]
+          ],
+          "load_kip": 726.9058216931697
+        }
+      ],
+      "additional_fractured_beam_count": 6,
+      "initially_removed_beam_count": 20,
+      "additional_failed_column_count": 0
+    }
+  ],
+  "summary": {
+    "case_count": 36,
+    "official_topology_pass_count": 0,
+    "reconstructed_topology_pass_count": 0,
+    "any_official_topology_pass": false,
+    "any_reconstructed_topology_pass": false,
+    "best_official_maximum_stable_load_factor": 0.0,
+    "best_reconstructed_maximum_stable_load_factor": 0.78,
+    "best_reconstructed_case": {
+      "beam_damage_case": "no_beam_damage_upper_bound",
+      "beam_profile": "14WF228",
+      "connection_factor": 1.0,
+      "reason": "disconnected_loaded_component",
+      "failure_load_factor": 0.79,
+      "additional_fractured_beam_count": 60,
+      "additional_failed_column_count": 12,
+      "loaded_disconnected_components": [
+        {
+          "nodes": [
+            [
+              95,
+              503
+            ],
+            [
+              95,
+              504
+            ],
+            [
+              95,
+              505
+            ],
+            [
+              95,
+              506
+            ],
+            [
+              95,
+              603
+            ],
+            [
+              95,
+              604
+            ],
+            [
+              95,
+              605
+            ],
+            [
+              95,
+              606
+            ],
+            [
+              96,
+              503
+            ],
+            [
+              96,
+              504
+            ],
+            [
+              96,
+              505
+            ],
+            [
+              96,
+              506
+            ],
+            [
+              96,
+              603
+            ],
+            [
+              96,
+              604
+            ],
+            [
+              96,
+              605
+            ],
+            [
+              96,
+              606
+            ],
+            [
+              97,
+              503
+            ],
+            [
+              97,
+              504
+            ],
+            [
+              97,
+              505
+            ],
+            [
+              97,
+              506
+            ],
+            [
+              97,
+              603
+            ],
+            [
+              97,
+              604
+            ],
+            [
+              97,
+              605
+            ],
+            [
+              97,
+              606
+            ],
+            [
+              98,
+              503
+            ],
+            [
+              98,
+              504
+            ],
+            [
+              98,
+              505
+            ],
+            [
+              98,
+              506
+            ],
+            [
+              98,
+              603
+            ],
+            [
+              98,
+              604
+            ],
+            [
+              98,
+              605
+            ],
+            [
+              98,
+              606
+            ],
+            [
+              99,
+              503
+            ],
+            [
+              99,
+              504
+            ],
+            [
+              99,
+              505
+            ],
+            [
+              99,
+              506
+            ],
+            [
+              99,
+              603
+            ],
+            [
+              99,
+              604
+            ],
+            [
+              99,
+              605
+            ],
+            [
+              99,
+              606
+            ]
+          ],
+          "load_kip": 4772.146180284932
+        }
+      ]
+    },
+    "gate_label": "GATE FROID NON VALIDE : noyau multi-etages insuffisant",
+    "gate_explanation": "Comme le noyau isole Case B de NIST, toutes les enveloppes perdent l'equilibre.",
+    "report_conclusion": "Les deux topologies multi-etages perdent l'equilibre avant la demande froide complete. Ce resultat est qualitativement coherent avec la non-convergence du noyau isole Case B de NIST et indique que le prochain chemin a introduire est le couplage vers les facades et le hat truss, pas une resistance locale arbitrairement augmentee.",
+    "gate_decision": "**NON VALIDE.** Le noyau reduit multi-etages ne suffit pas. La prochaine iteration doit ajouter les planchers de bureau, facades et/ou le hat truss froid avant toute thermique ou Blender dynamique.",
+    "thermal_runs_authorized": false,
+    "blender_coupling_authorized": false
+  }
+}

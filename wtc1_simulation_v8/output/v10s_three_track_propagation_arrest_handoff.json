@@ -1,0 +1,202 @@
+{
+  "iteration": "V10S",
+  "generated_at_utc": "2026-09-04T07:57:44Z",
+  "validation_status": "PASS_THREE_TRACK_STATUS_CONTRACT_ONLY",
+  "tracks": [
+    {
+      "track_id": "CONTROL_ZERO_INITIATION_PROPAGATION",
+      "upstream_track_id": "CONTROL_ZERO_THERMAL_INPUT",
+      "epistemic_class": "SYNTHETIC_ZERO_INPUT_SOFTWARE_CONTROL_NOT_HISTORICAL",
+      "status": "CONTROL_NO_PROPAGATION_SOFTWARE_ONLY",
+      "initiation_record_v1": {
+        "record_id": "V10O-CTRL-ZERO-001:I07_INITIATION_TO_PROPAGATION",
+        "scenario_id": "V10O-CTRL-ZERO-001",
+        "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+        "epistemic_class": "ALGEBRAIC_SENTINEL_NOT_HISTORICAL",
+        "schema_id": "initiation_state_v1",
+        "schema_version": "1.0.0",
+        "validation_status": "CONTROL_PASS_SOFTWARE_ONLY",
+        "physical_credit": "NONE",
+        "source_hashes": {
+          "v10o_configuration": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46",
+          "v10n_coupling_graph": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98"
+        },
+        "units": {
+          "time_s": "s",
+          "displacements_m": "m",
+          "velocities_m_s": "m/s",
+          "participating_mass_kg": "kg",
+          "energy_J": "J",
+          "instability_time_s_or_null": "s"
+        },
+        "payload": {
+          "time_s": 0.0,
+          "failed_members": [],
+          "displacements_m": {},
+          "velocities_m_s": {},
+          "participating_mass_kg": 0.0,
+          "energy_J": 0.0,
+          "instability_time_s_or_null": null,
+          "initiation_label": "CONTROL_NO_INITIATION",
+          "module_status": "CONTROL_INITIATION_NEUTRAL",
+          "provenance": {
+            "kind": "SYNTHETIC_SOFTWARE_CONTROL",
+            "interface_id": "I07_INITIATION_TO_PROPAGATION",
+            "historical_event_claim": false,
+            "values_are_wtc_properties": false,
+            "purpose": "exercise serialization, unit, invariant, branch, join and stop-status handling"
+          }
+        }
+      },
+      "propagation_outcome_v1": {
+        "record_id": "V10O-CTRL-ZERO-001:I08_PROPAGATION_TO_ENSEMBLE",
+        "scenario_id": "V10O-CTRL-ZERO-001",
+        "scenario_class": "SYNTHETIC_SOFTWARE_CONTROL",
+        "epistemic_class": "ALGEBRAIC_SENTINEL_NOT_HISTORICAL",
+        "schema_id": "propagation_outcome_v1",
+        "schema_version": "1.0.0",
+        "validation_status": "CONTROL_PASS_SOFTWARE_ONLY",
+        "physical_credit": "NONE",
+        "source_hashes": {
+          "v10o_configuration": "eee387eced9fad443fcee934fe02c94313b000c54a89784cc800c8fda6630f46",
+          "v10n_coupling_graph": "8dd4c810ab7ccecb4996e04e23430cdba51f9ce7ac8a3e20710b6e33d07d2f98"
+        },
+        "units": {
+          "energy_residual_J": "J",
+          "momentum_residual_kg_m_s": "kg m/s"
+        },
+        "payload": {
+          "case_id": "V10O-CTRL-ZERO-001",
+          "outcome_label": "CONTROL_NO_PROPAGATION",
+          "arrest_story_or_null": null,
+          "energy_residual_J": 0.0,
+          "momentum_residual_kg_m_s": 0.0,
+          "validation_flags": [
+            "SOFTWARE_CONTROL_ONLY",
+            "NOT_HISTORICAL_NONCOLLAPSE"
+          ],
+          "fraction_is_historical_probability": false,
+          "module_status": "CONTROL_PROPAGATION_NEUTRAL",
+          "parameter_provenance": {
+            "kind": "SYNTHETIC_SOFTWARE_CONTROL",
+            "interface_id": "I08_PROPAGATION_TO_ENSEMBLE",
+            "historical_event_claim": false,
+            "values_are_wtc_properties": false,
+            "purpose": "exercise serialization, unit, invariant, branch, join and stop-status handling"
+          }
+        }
+      },
+      "control_audit": {
+        "check_count": 16,
+        "pass_count": 16,
+        "checks": {
+          "i07_schema_id": true,
+          "i07_time_zero": true,
+          "i07_failed_members_empty": true,
+          "i07_displacements_empty": true,
+          "i07_velocities_empty": true,
+          "i07_participating_mass_zero": true,
+          "i07_energy_zero": true,
+          "i07_instability_time_null": true,
+          "i07_control_label": true,
+          "i08_schema_id": true,
+          "i08_control_outcome": true,
+          "i08_arrest_story_null": true,
+          "i08_energy_residual_zero": true,
+          "i08_momentum_residual_zero": true,
+          "i08_not_historical_probability": true,
+          "i08_explicit_not_historical_noncollapse_flag": true
+        },
+        "terminal_label": "CONTROL_NO_PROPAGATION",
+        "terminal_label_is_historical_noncollapse": false
+      },
+      "control_conservation_identity_pass_count": 3,
+      "historical_noncollapse_claim": false,
+      "downstream_visualization_status_release": true,
+      "downstream_physical_release": false,
+      "physical_validation": false
+    },
+    {
+      "track_id": "OFFICIAL_DEPENDENT_PROPAGATION_BLOCKED",
+      "upstream_track_id": "OFFICIAL_DEPENDENT_REDUCED_PROPERTY_REFERENCE",
+      "epistemic_class": "OFFICIAL_MODEL_DEPENDENT_REFERENCE_WITH_NO_PHYSICAL_INITIATION_STATE",
+      "status": "NOT_RUN_UPSTREAM_INITIATION_BLOCKED",
+      "upstream_status": "INDETERMINATE_BLOCKED_FAILED_COLD_GATE_AND_MEMBER_INPUTS",
+      "initiation_state_v2": null,
+      "propagation_outcome_v2": null,
+      "conservation_ledger_status": "NULL_UPSTREAM_INITIATION_BLOCKED",
+      "minimum_physical_requirement_summary": {
+        "requirement_count": 32,
+        "physical_ready_count": 0,
+        "blocking_count": 32,
+        "by_category": {
+          "initial_state": {
+            "requirement_count": 12,
+            "physical_ready_count": 0,
+            "blocking_count": 12
+          },
+          "output": {
+            "requirement_count": 2,
+            "physical_ready_count": 0,
+            "blocking_count": 2
+          },
+          "resistance": {
+            "requirement_count": 10,
+            "physical_ready_count": 0,
+            "blocking_count": 10
+          },
+          "validation": {
+            "requirement_count": 8,
+            "physical_ready_count": 0,
+            "blocking_count": 8
+          }
+        }
+      },
+      "outcome_label": null,
+      "arrest_story_or_null": null,
+      "historical_collapse_claim": false,
+      "historical_noncollapse_claim": false,
+      "downstream_visualization_status_release": true,
+      "downstream_physical_release": false,
+      "physical_validation": false
+    },
+    {
+      "track_id": "UNKNOWN_PHYSICAL_PROPAGATION_OR_ARREST",
+      "upstream_track_id": "UNKNOWN_PHYSICAL_INITIATION",
+      "epistemic_class": "UNKNOWN_HISTORICAL_INITIATION_PROPAGATION_AND_ARREST_STATE",
+      "status": "INDETERMINATE_UNKNOWN_PHYSICAL_EVENT",
+      "upstream_status": "INDETERMINATE_UNKNOWN_EVENT_INPUTS_AND_FAILED_COLD_GATE",
+      "initiation_state_v2": null,
+      "propagation_outcome_v2": null,
+      "mass_ledger": null,
+      "vector_momentum_ledger": null,
+      "energy_ledger": null,
+      "contact_and_failure_history": null,
+      "outcome_label": null,
+      "arrest_story_or_null": null,
+      "blocking_requirement_count": 32,
+      "historical_collapse_claim": false,
+      "historical_noncollapse_claim": false,
+      "downstream_visualization_status_release": true,
+      "downstream_physical_release": false,
+      "physical_validation": false
+    }
+  ],
+  "summary": {
+    "track_count": 3,
+    "track_ids": [
+      "CONTROL_ZERO_INITIATION_PROPAGATION",
+      "OFFICIAL_DEPENDENT_PROPAGATION_BLOCKED",
+      "UNKNOWN_PHYSICAL_PROPAGATION_OR_ARREST"
+    ],
+    "visualization_status_release_count": 3,
+    "physical_propagation_release_count": 0,
+    "historical_physical_initiation_assignment_count": 0,
+    "historical_physical_propagation_assignment_count": 0,
+    "control_terminal_label": "CONTROL_NO_PROPAGATION",
+    "control_terminal_label_is_historical_noncollapse": false,
+    "official_dependent_outcome_is_null": true,
+    "unknown_physical_ledgers_and_outcome_null": true
+  },
+  "non_merging_rule": "No official-dependent reference or zero control may populate the unknown physical-event branch."
+}

@@ -1,0 +1,124 @@
+{
+  "iteration": "V10I",
+  "started_at_utc": "2026-09-01T15:33:19Z",
+  "completed_at_utc": "2026-09-01T15:33:19Z",
+  "validation_status": "PASS",
+  "dataset": {
+    "name": "Five exact user-supplied local structural PDF container intake",
+    "version": "10.9.0",
+    "random_seed": 1010019,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V10H. Inspect only the five exact user-supplied local PDF paths resolved inside the read-only source archive, verify byte identity against the pre-observed Archive.org original-object size, MD5 and SHA-1 metadata, calculate SHA-256, inspect PDF signature and container metadata only, and create verified working copies inside wtc1_simulation_v8/input/v10i_structural_sources. Do not read or render page content."
+  },
+  "observed_or_transcribed_facts": [
+    "Five exact PDF basenames are present in the resolved read-only WTC1_HARNESS source directory.",
+    "All five local files match the pre-observed Archive.org original-object byte size, MD5 and SHA-1 metadata.",
+    "All five files have parseable PDF containers; V10I reads zero page content, renders zero pages and extracts zero text.",
+    "Five workspace working copies match their source SHA-256 values."
+  ],
+  "official_model_results": [
+    "No official-model result is created or independently validated."
+  ],
+  "archive_claims_used": [
+    "Archive.org metadata labels the matched file entries as original objects inside the named item containers."
+  ],
+  "user_assertions": [
+    "The user states that the five files are authentic and that a complete chain of custody is optional."
+  ],
+  "model_hypotheses": [
+    "The five exact identifiers remain V10H research candidates; binary identity does not establish content sufficiency or physical applicability."
+  ],
+  "derived_results": {
+    "source_file_count": 5,
+    "aggregate_source_bytes": 51518489,
+    "archive_metadata_identity_match_count": 5,
+    "parseable_pdf_container_count": 5,
+    "working_copy_count": 5,
+    "working_copy_total_bytes": 51518489,
+    "register_page_count_mismatch_count": 0,
+    "register_page_count_mismatch_document_ids": [],
+    "page_content_read_count": 0,
+    "page_render_count": 0,
+    "text_extraction_count": 0,
+    "requirements_closed_count": 0,
+    "requirements_solver_blocking_count": 22,
+    "physical_assignment_count": 0
+  },
+  "contradictions_and_missing_information": [
+    "Official NIST chain, governing revision, as-built authority and WTC 1/Floors 93-99 applicability remain unverified.",
+    "No title, revision, index or drawing page has been inspected.",
+    "The WTCI-000024-L register endpoint string '2 - C/2' remains an unresolved register anomaly.",
+    "All 22 structural requirements remain solver blocking."
+  ],
+  "checks": {
+    "protected_v10h_and_blender_hashes_all_match": true,
+    "exact_source_file_count": true,
+    "all_exact_source_files_exist": true,
+    "all_exact_basenames_and_parent_directory_match": true,
+    "aggregate_source_bytes_exact": true,
+    "all_size_md5_sha1_match_archive_original_metadata": true,
+    "all_pdf_signatures_eof_markers_and_containers_pass": true,
+    "parseable_pdf_container_count": true,
+    "working_copy_count_and_hashes": true,
+    "source_archive_exact_files_unchanged": true,
+    "protected_inputs_unchanged_after_v10i": true,
+    "page_content_read_render_and_text_extraction_count_zero": true,
+    "official_chain_revision_as_built_and_floor_applicability_not_promoted": true,
+    "all_physical_credit_zero": true,
+    "no_network_or_external_contact_during_v10i": true,
+    "official_sources_not_read_or_modified": true,
+    "solver_blender_thermal_gates_closed": true
+  },
+  "operation_counts": {
+    "pre_v10i_authorized_remote_discovery": 1,
+    "network_request_during_v10i": 0,
+    "exact_source_file_read": 5,
+    "source_directory_recursive_scan": 0,
+    "source_file_write": 0,
+    "source_file_rename_move_delete": 0,
+    "official_sources_read": 0,
+    "official_sources_write": 0,
+    "drawing_page_content_read": 0,
+    "page_render": 0,
+    "text_extraction": 0,
+    "structural_solver_run": 0,
+    "thermal_model_run": 0,
+    "blender_launch": 0,
+    "blender_master_write": 0
+  },
+  "physical_assignments": {
+    "coordinates": 0,
+    "member_sections": 0,
+    "materials": 0,
+    "mass": 0,
+    "stiffness": 0,
+    "capacity": 0,
+    "connection_laws": 0,
+    "damage_states": 0,
+    "load_path_credit": 0
+  },
+  "outputs": {
+    "source_manifest": "wtc1_simulation_v8/output/v10i_local_intake_source_manifest.json",
+    "identity_matrix_csv": "wtc1_simulation_v8/output/v10i_source_identity_matrix.csv",
+    "container_metadata": "wtc1_simulation_v8/output/v10i_pdf_container_metadata.json",
+    "page_count_audit_csv": "wtc1_simulation_v8/output/v10i_register_page_count_audit.csv",
+    "working_copy_manifest": "wtc1_simulation_v8/output/v10i_working_copy_manifest.json",
+    "archive_integrity_audit": "wtc1_simulation_v8/output/v10i_source_archive_integrity_audit.json",
+    "regression_audit": "wtc1_simulation_v8/output/v10i_regression_audit.json",
+    "model_gate": "wtc1_simulation_v8/output/v10i_structural_source_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10i_reception_locale.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10i_reception_locale.json",
+    "offline_audit": "wtc1_simulation_v8/output/v10i_offline_package_audit.json"
+  },
+  "software": {
+    "python": "3.12.13",
+    "pypdf": "6.10.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "elapsed_seconds_before_final_serialization": 0.762
+  },
+  "next_iteration": {
+    "id": "V10J",
+    "objective": "Preserve V8U through V10I. Using only the five hash-verified V10I working copies, create an immutable bounded front-matter/index-page predeclaration and then inspect at most five exact pages per document, with a hard aggregate cap of 25 rendered pages. Transcribe only visible document identifiers, title/index headings, tower labels, explicit floor labels or ranges, revision or issue fields, and cross-reference locators. Do not perform a full-text or full-document scan, read the source archive or work/official_sources, use the network, transcribe geometry or dimensions, assign physical properties or damage, run a structural solver, continue a thermal model or launch Blender."
+  },
+  "errors": []
+}

@@ -1,0 +1,252 @@
+{
+  "dataset": {
+    "name": "WTC 1 V9D source-access dossier for NIST high-rate tensile channels and CF6-80A2 material evidence",
+    "version": "9.4.0",
+    "status": "PREDECLARED_DOCUMENTARY_ITERATION_NO_EXTERNAL_REQUEST_NO_SOLVER_NO_IMPACT",
+    "random_seed": 9112001,
+    "deterministic": true,
+    "scope": "Preserve V8U through V9C, define a reproducible and complete request for the missing NIST room-temperature high-rate M26/C80 tensile channels, document the official access route without sending a request, and update the public CF6-80A2/Boeing 767 nacelle evidence audit without generic material substitution. No coupon, failure deletion, facade impact, whole-aircraft, global tower, thermal or Blender physics work is authorized."
+  },
+  "evidence_policy": {
+    "observed_fact": "A statement or identifier transcribed from an identified official or manufacturer source.",
+    "official_model_result": "A published NIST reduction or modelling result, not a new measurement by V9D.",
+    "local_archive_claim": "No local-archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "A declared dossier-completeness rule; it is not a material-property assumption.",
+    "derived_result": "A deterministic completeness and provenance check over the declared source-access dossier.",
+    "unknown": "The content and release status of the requested NIST channels and the production CF6-80A2/nacelle material-fracture records."
+  },
+  "regressions": {
+    "required_files": {
+      "wtc1_simulation_v8/data/v9c_official_ringing_method.json": "58e72a0d0d8440742bfc367543afce961076022e55f85e88865d3e861b2a8240",
+      "wtc1_simulation_v8/scripts/run_v9c_official_ringing_method.py": "711032492c5ec8cde2649ba27dd9e5ac39abac90eb669ad584cc0b2cc7fcd321",
+      "wtc1_simulation_v8/output/resultats_wtc1_v9c_methode_ringing.json": "273f48ffc7b07aa5e0ea5d4ecf5993b5c8cdd53b907427400b88b5cde3c8ab8e",
+      "wtc1_simulation_v8/output/rapport_wtc1_v9c_methode_ringing.md": "dde01b4c5011aa3b966069b939ad9c02ba4ee0df3eb76cde1d5a4e5d869fa5ba",
+      "wtc1_simulation_v8/data/v9a_material_coupon_evidence.json": "f6ac522767c4fbd7031e3bd5e7312dc5044802944e56acff077338a565dd9b42",
+      "wtc1_simulation_v8/output/v9b_cf6_public_source_audit.json": "08544ec71a8df3cf2410c20891d882b7419db14d23ee259a55e40a4fe56e29a4"
+    },
+    "required_metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9c_methode_ringing.json",
+        "path": "iteration_execution_validated",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9c_methode_ringing.json",
+        "path": "revalidation_gate_summary.revalidation_passed",
+        "expected": false
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9c_methode_ringing.json",
+        "path": "revalidation_gate_summary.failed_curve_ids",
+        "expected": ["C80_299", "C80_401"]
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9c_methode_ringing.json",
+        "path": "conditional_openradioss_coupon_authorized",
+        "expected": false
+      }
+    ]
+  },
+  "nist_source_access": {
+    "report": {
+      "title": "Mechanical Properties of Structural Steels. Federal Building and Fire Safety Investigation of the World Trade Center Disaster",
+      "series": "NIST NCSTAR 1-3D",
+      "final_publication_id": "101021",
+      "draft_publication_id": "909059",
+      "authors": [
+        "William E. Luecke",
+        "Joseph D. McColskey",
+        "Christopher N. McCowan",
+        "Stephen W. Banovic",
+        "Richard J. Fields",
+        "Timothy J. Foecke",
+        "Thomas A. Siewert",
+        "Frank W. Gayle"
+      ],
+      "relevant_locations": [
+        "Section 4.2.1, report page 80",
+        "Section 4.2.2, report pages 81-82",
+        "Figure 4-3, report page 82",
+        "Figures A-28 and A-48",
+        "Tables A-12 and A-14"
+      ]
+    },
+    "official_access_route": {
+      "route_id": "NIST_FOIA_OFFICE",
+      "url": "https://www.nist.gov/director/freedom-information-act",
+      "email": "foia@nist.gov",
+      "postal_address_lines": [
+        "National Institute of Standards and Technology",
+        "FOIA & Privacy Act Officer",
+        "100 Bureau Drive, STOP 1710",
+        "Gaithersburg, MD 20899-1710",
+        "United States"
+      ],
+      "official_instruction": "A request may be submitted in writing by email or letter and should describe the requested records with as much detail as possible.",
+      "request_sent": false,
+      "request_publicly_posted": false
+    },
+    "public_indexes_checked": [
+      {
+        "id": "NIST_DISASTER_FAILURE_STUDIES_DATA_ARCHIVE",
+        "url": "https://www.nist.gov/disaster-failure-studies/data-archive",
+        "finding": "The archive describes public WTC reports, media and simulations; the exact specimen-channel searches did not expose the requested tensile records."
+      },
+      {
+        "id": "NIST_WTC_REPOSITORY",
+        "url": "https://www.nist.gov/world-trade-center-investigation/photos-videos-and-simulations",
+        "finding": "The WTC repository indexes NCSTAR reports and media but did not expose specimen-level M26/C80 raw measurement channels in the targeted search."
+      },
+      {
+        "id": "NIST_PDR_HIGH_TEMPERATURE_WTC_STEEL",
+        "url": "https://data.nist.gov/pdr/lps/59275E35E82149D8E0531A57068146E31859",
+        "finding": "This machine-readable dataset is for high-temperature quasistatic WTC steel, not the required room-temperature high-rate measurements."
+      }
+    ],
+    "exact_queries_exhausted": [
+      "site:nist.gov M26-C1B1-RF",
+      "site:data.nist.gov M26-C1B1-RF",
+      "site:nist.gov C80-A-2-2",
+      "site:data.nist.gov C80-A-2-2",
+      "site:nist.gov C80-A-2-3",
+      "site:data.nist.gov C80-A-2-3",
+      "site:nist.gov NCSTAR 1-3D high strain rate raw data",
+      "site:data.nist.gov WTC steel high strain rate tensile raw data"
+    ],
+    "specimens_requested": [
+      {"id": "M26-C1B1-RF-L1", "series": "M26 perimeter longitudinal", "rate_class": "quasi-static reference"},
+      {"id": "M26-C1B1-RF-L2", "series": "M26 perimeter longitudinal", "rate_class": "quasi-static reference"},
+      {"id": "M26-C1B1-L1", "series": "M26 perimeter longitudinal", "rate_class": "quasi-static reference"},
+      {"id": "M26-C1B1-RF-L2-HSR", "series": "M26 perimeter longitudinal", "rate_per_s": 65.0},
+      {"id": "M26-C1B1-RF-L6-06", "series": "M26 perimeter longitudinal", "rate_per_s": 100.0},
+      {"id": "M26-C1B1-RF-L7-06", "series": "M26 perimeter longitudinal", "rate_per_s": 260.0},
+      {"id": "M26-C1B1-RF-L8-06", "series": "M26 perimeter longitudinal", "rate_per_s": 417.0},
+      {"id": "C80-L18", "series": "C80 core longitudinal", "rate_class": "quasi-static reference"},
+      {"id": "C80-A-3-1", "series": "C80 core longitudinal", "rate_per_s": 84.0},
+      {"id": "C80-A-2-1", "series": "C80 core longitudinal", "rate_per_s": 100.0},
+      {"id": "C80-A-2-2", "series": "C80 core longitudinal", "rate_per_s": 299.0},
+      {"id": "C80-A-2-3", "series": "C80 core longitudinal", "rate_per_s": 401.0}
+    ],
+    "records_requested": [
+      "Original machine-readable time channel for each declared specimen.",
+      "Original unfiltered load-channel record, including each piezoelectric load-washer channel if recorded separately.",
+      "Actuator displacement channel.",
+      "Gauge-section strain channel.",
+      "Grip-end strain channel used for load-signal alignment.",
+      "Corrected load/stress and strain records used for the published curves and scalar properties.",
+      "Sampling rate, channel units, sign conventions, calibration factors and calibration records.",
+      "Per-specimen t1/t2 alignment windows, filters, smoothing, baseline correction and data-reduction code or worksheet.",
+      "Original specimen dimensions, cross-sectional area, gauge length, orientation, extraction location and test temperature.",
+      "Per-specimen elastic-modulus estimate, uncertainty budget, rejected/repeated test notes and any record-retention or release restriction metadata."
+    ],
+    "preferred_delivery": {
+      "format": "Native machine-readable files when available; otherwise CSV or TSV with a data dictionary.",
+      "delivery": "Electronic delivery.",
+      "partial_release": "Release any segregable non-exempt portion and identify unavailable, destroyed, transferred or withheld records by category.",
+      "fee_commitment": "No fee commitment is made by this local draft; request advance notice before any charge."
+    }
+  },
+  "cf6_80a2_public_update": {
+    "target": "Production General Electric CF6-80A2 engine and Boeing 767 nacelle/cowling components applicable to the WTC 1 aircraft configuration.",
+    "sources": [
+      {
+        "id": "GE_CF6_TECHNICAL_MANUAL_INDEX_2026_02_01",
+        "url": "https://www.geaerospace.com/sites/default/files/2022-01/Cf6emm.pdf",
+        "classification": "manufacturer_manual_index",
+        "direct_facts": [
+          "The index identifies GEK 50460 as the CF6-80A/A2 Installation Manual, revision 2 dated 1983-09-01.",
+          "GE states that supplementary support manuals are available by contacting Fleet Support."
+        ],
+        "material_or_fracture_card_found": false,
+        "limitation": "The public index does not disclose component alloy/layup mapping, rate-dependent constitutive curves, fracture energy, localization length or attachment-failure data.",
+        "external_contact_made": false
+      },
+      {
+        "id": "GE_CF6_ENGINE_FAMILY",
+        "url": "https://www.geaerospace.com/commercial/aircraft-engines/cf6",
+        "classification": "manufacturer_product_page",
+        "direct_facts": [
+          "GE identifies the CF6-80A family as a Boeing 767 engine and publishes general dimensions and performance ranges."
+        ],
+        "material_or_fracture_card_found": false,
+        "limitation": "General dimensions and performance do not identify a production material or fracture card."
+      },
+      {
+        "id": "FAA_AD_2021_26_22",
+        "url": "https://drs.faa.gov/browse/excelExternalWindow/FR-ADFRAWD-2022-02455-0000000000.0001",
+        "classification": "official_airworthiness_directive",
+        "direct_facts": [
+          "The directive explicitly includes the CF6-80A2 and references GE CF6-80A Service Bulletin 72-0869 for specified high-pressure-turbine disks."
+        ],
+        "material_or_fracture_card_found": false,
+        "limitation": "The directive does not publish a reusable high-rate material/fracture law or nacelle attachment dataset."
+      },
+      {
+        "id": "NASA_CR_165212",
+        "url": "https://ntrs.nasa.gov/citations/19810015645",
+        "classification": "government_sponsored_generic_cf6_size_containment_research",
+        "direct_facts": [
+          "The report studies a lightweight sandwich shell wrapped with dry Kevlar for a CF6-size engine containment concept."
+        ],
+        "material_or_fracture_card_found": false,
+        "limitation": "A CF6-size research concept is not traceable to the production CF6-80A2 core/cowling or Boeing 767 attachments and cannot be substituted."
+      },
+      {
+        "id": "NASA_19950021857",
+        "url": "https://ntrs.nasa.gov/citations/19950021857",
+        "classification": "government_sponsored_new_generation_nacelle_research",
+        "direct_facts": [
+          "The record describes a later one-piece BMI/honeycomb inner-cowl research design and notes that existing hot-region nacelles used aluminum sandwich or skin-stringer construction."
+        ],
+        "material_or_fracture_card_found": false,
+        "limitation": "The research design is not identified as the production Boeing 767 CF6-80A2 nacelle and supplies no assignable high-rate joint/fracture dataset."
+      }
+    ],
+    "minimum_card_requirements": [
+      "specific_material_and_product_form",
+      "rate_strength_coverage",
+      "numeric_true_stress_plastic_strain_curves",
+      "geometry_consistent_fracture_strain",
+      "triaxiality_coverage",
+      "lode_and_shear_coverage",
+      "fracture_energy",
+      "regularization_length",
+      "joint_and_attachment_failure"
+    ],
+    "requirements_available": [],
+    "generic_alloy_substitution_authorized": false,
+    "ge_or_boeing_request_sent": false
+  },
+  "predeclared_documentary_gates": {
+    "all_v9c_regressions_unchanged": true,
+    "official_nist_access_route_required": true,
+    "minimum_exact_specimen_identifiers": 12,
+    "minimum_record_categories": 10,
+    "required_raw_channel_categories": [
+      "time",
+      "load",
+      "actuator displacement",
+      "gauge-section strain",
+      "grip-end strain"
+    ],
+    "request_must_state_no_fee_commitment": true,
+    "request_must_ask_for_partial_release_and_record_status": true,
+    "external_request_must_remain_unsent": true,
+    "cf6_requirement_count_must_remain_nine": true,
+    "generic_material_substitution_prohibited": true,
+    "dossier_complete_if_all_documentary_gates_pass": true
+  },
+  "scientific_and_scope_gates": {
+    "raw_nist_channels_acquired": false,
+    "wtc_high_rate_material_curve_qualification_passed": false,
+    "cf6_80a2_cowling_material_card_identification_passed": false,
+    "openradioss_coupon_authorized": false,
+    "failure_deletion_authorized": false,
+    "facade_impact_authorized": false,
+    "whole_aircraft_authorized": false,
+    "global_tower_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_mechanism_tested": false
+  }
+}

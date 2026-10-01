@@ -1,0 +1,231 @@
+{
+  "iteration": "V10W",
+  "dataset": {
+    "name": "Independent CalculiX prescribed-temperature axial truss benchmark",
+    "version": "10.23.1",
+    "status": "PREDECLARED_ATTEMPT_02_BEFORE_V10W_SOLVER_EXECUTION",
+    "created_at_local": "2026-09-04T15:55:57+02:00",
+    "random_seed": 1023002,
+    "random_draw_used": false,
+    "scope": "Qualify only the local CalculiX conversion of prescribed nodal temperature into axial thermal strain and restraint force in a generic T3D2 truss bar. Test uniform free expansion, uniform fully restrained expansion and a free axial linear temperature gradient against closed-form solutions and mesh invariance. This is a purely mechanical static analysis with a prescribed temperature field, not a heat-transfer, fire or coupled thermal solution. No WTC 1 geometry, temperature, fireproofing, connection, load path or historical outcome is assigned."
+  },
+  "design_research": {
+    "network_access_used_before_execution": true,
+    "retrieved_at_local": "2026-09-04T15:48:00+02:00",
+    "sources": [
+      {
+        "publisher": "Guido Dhondt / CalculiX",
+        "title": "CalculiX CrunchiX 2.20 User's Manual",
+        "url": "https://www.dhondt.de/ccx_2.20.pdf",
+        "page": 572,
+        "section": "7.125 *TEMPERATURE",
+        "use": "Primary syntax statement that *TEMPERATURE defines temperatures and beam/shell gradients inside a purely mechanical STEP; it is not used for a pure thermal or combined thermomechanical analysis.",
+        "wtc_physical_evidence_credit": "NONE"
+      },
+      {
+        "publisher": "Guido Dhondt / CalculiX",
+        "title": "CalculiX CrunchiX 2.22 User's Manual",
+        "url": "https://www.dhondt.de/ccx_2.22.pdf",
+        "page": 126,
+        "section": "6.2.35 Two-node 3D truss element (T3D2)",
+        "use": "Primary definition of T3D2 as an axial element without bending and requirement to use *SOLID SECTION instead of *BEAM SECTION.",
+        "wtc_physical_evidence_credit": "NONE"
+      }
+    ]
+  },
+  "attempt_history": [
+    {
+      "attempt": 1,
+      "status": "REJECTED_AND_PRESERVED",
+      "path": "tmp/v10w_failed_attempt_01",
+      "decision": "FAIL_INDEPENDENT_PRESCRIBED_TEMPERATURE_MECHANICAL_BENCHMARK",
+      "reason": "The B32R attempt passed uniform free expansion and the free axial gradient, but the fully restrained force became less accurate with refinement and changed by 0.4300904971 percent between 8 and 32 elements. B32R internally expands a beam cross-section and is not retained as the axial closed-form reference. Attempt 02 selects the documented axial-only T3D2 element and keeps all geometry, temperature fields and acceptance thresholds unchanged.",
+      "preserved_evidence": [
+        {"path":"tmp/v10w_failed_attempt_01/v10w_calculix_prescribed_temperature_benchmark.attempt01.json","sha256":"b56b848b7534d13d6f2cef8c40d733ba9f95bbd79b9455e809c2d74a7bb460c1"},
+        {"path":"tmp/v10w_failed_attempt_01/run_v10w_calculix_prescribed_temperature_benchmark.attempt01.py","sha256":"815fff5a888369c7fbcc011fd1ed27aee1a9abc3a866fbcdaccf32e19f689f1c"},
+        {"path":"tmp/v10w_failed_attempt_01/output/v10w_prescribed_temperature_benchmark_gate.json","sha256":"966f25897909c61b8b2d1afa061c63b5f23d6a513e4b5aa87c90cf76242e687e"},
+        {"path":"tmp/v10w_failed_attempt_01/output/v10w_thermal_expansion_case_matrix.csv","sha256":"ee234027585cf7f8c54940652ee2129afe52108a3cb4683a35ba457df033c0ce"},
+        {"path":"tmp/v10w_failed_attempt_01/output/resultats_wtc1_v10w_benchmark_temperature_prescrite.json","sha256":"13b3dd957aaaabc17a75243dde507948635c0d22ebae9f225d866a8ba5c35a89"}
+      ]
+    }
+  ],
+  "execution_policy": {
+    "network_access": false,
+    "source_archive_read": false,
+    "source_archive_modified": false,
+    "official_source_pdf_hash_only_count": 0,
+    "official_source_pdf_page_read_count": 0,
+    "official_source_pdf_text_extraction_count": 0,
+    "official_sources_directory_modified": false,
+    "software_installation": false,
+    "structural_solver_execution_with_prescribed_temperature": true,
+    "heat_transfer_solver_execution": false,
+    "coupled_temperature_displacement_solver_execution": false,
+    "fire_solver_execution": false,
+    "impact_solver_execution": false,
+    "propagation_solver_execution": false,
+    "other_solver_execution": false,
+    "gpu_compute": false,
+    "blender_execution": false,
+    "wtc_parameter_assignment": false,
+    "physical_wtc_state_release": false,
+    "historical_collapse_or_noncollapse_conclusion": false,
+    "maximum_runtime_seconds": 300
+  },
+  "regression_files": [
+    {"role":"v10v_configuration","path":"wtc1_simulation_v8/data/v10v_calculix_nonlinear_buckling_benchmark.json","expected_sha256":"186075b56b7d9ea618d91d82cf4919b16f6628e7d86fe01a8e31de16edf59952"},
+    {"role":"v10v_runner","path":"wtc1_simulation_v8/scripts/run_v10v_calculix_nonlinear_buckling_benchmark.py","expected_sha256":"bf72a37b511a0575255009a9c661dc3817ceb9ffb96f15d27d99b01bdc9bf980"},
+    {"role":"v10v_regression_audit","path":"wtc1_simulation_v8/output/v10v_regression_audit.json","expected_sha256":"c2f3fcbfd2a7ca0f7af1073616c1ce8e185f24931b305fb42d11e24e3879a63c"},
+    {"role":"v10v_source_manifest","path":"wtc1_simulation_v8/output/v10v_benchmark_source_manifest.json","expected_sha256":"5da38180f5aafcaa7b5dfbf49bc807ac4c984f48ee60b87b7df7df56d55ad714"},
+    {"role":"v10v_analytical_reference","path":"wtc1_simulation_v8/output/v10v_analytical_reference.json","expected_sha256":"a9c57a54f98d3377904082a890c72efdd0f4b5b7511d67a9d6a1cf1e9e8d2f02"},
+    {"role":"v10v_eigenvalue_convergence","path":"wtc1_simulation_v8/output/v10v_eigenvalue_convergence.csv","expected_sha256":"18ec83b3f925ed733ff77435f233fc759a04efeafd23d4ece0a2b0aea87dedf1"},
+    {"role":"v10v_postbuckling_summary","path":"wtc1_simulation_v8/output/v10v_postbuckling_summary.csv","expected_sha256":"d56dcc32257fc8f24590338da8eb53bca954981ef6a7adde91cc488a2d804e37"},
+    {"role":"v10v_postbuckling_curve","path":"wtc1_simulation_v8/output/v10v_postbuckling_curve.csv","expected_sha256":"9be198e2fb60b6706734f85791b658519a65184591622f70a1ced31cf3f8c1a6"},
+    {"role":"v10v_solver_execution_log","path":"wtc1_simulation_v8/output/v10v_solver_execution_log.json","expected_sha256":"c75fb9716282d1e9ce6c7cc3820687d1fa0dd82656c656d811277e1f892f03b7"},
+    {"role":"v10v_solver_file_manifest","path":"wtc1_simulation_v8/output/v10v_solver_file_manifest.csv","expected_sha256":"49468de810be987d50e8a1a4c21f164d55134f3c2bb97e0320027c242ac54d1d"},
+    {"role":"v10v_gate","path":"wtc1_simulation_v8/output/v10v_nonlinear_buckling_benchmark_gate.json","expected_sha256":"e7998dd3095808f31c0bd5604c58fa07b92fb21d424b2f3ea80401048f0b4819"},
+    {"role":"v10v_report","path":"wtc1_simulation_v8/output/rapport_wtc1_v10v_benchmark_flambement_non_lineaire.md","expected_sha256":"2141734a0531e60054375e30e77412ba0cb466a2d969035a4876a7e851f9350e"},
+    {"role":"v10v_results","path":"wtc1_simulation_v8/output/resultats_wtc1_v10v_benchmark_flambement_non_lineaire.json","expected_sha256":"d3894815bb904128059f209ea02149776abba9e62516b5e80c73912c0ef5decf"},
+    {"role":"v10v_offline_audit","path":"wtc1_simulation_v8/output/v10v_offline_package_audit.json","expected_sha256":"bb41e61ceeef827dcdc3922d1f789dbca010dde7d12e2d353514a64ac4f347ab"}
+  ],
+  "protected_files": [
+    {"role":"blender_master","path":"wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend","expected_sha256":"1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"}
+  ],
+  "software_reference_files": [
+    {
+      "id": "FREECAD_B32R_RECTANGULAR_CANTILEVER_EXAMPLE",
+      "path": "C:/Program Files/FreeCAD 1.1/Mod/Fem/femtest/data/calculix/ccx_cantilever_beam_rect.inp",
+      "expected_sha256": "0137436e0b588e39b2c011143268d542a80b46c29801a4eb7ee585c1bd845848",
+      "use": "local installed syntax precedent for *EXPANSION only; its B32R element is not reused in the accepted candidate",
+      "physical_evidence_credit": "NONE"
+    }
+  ],
+  "software_files": [
+    {
+      "id": "CALCULIX_CCX_2_22",
+      "path": "C:/Program Files/FreeCAD 1.1/bin/ccx.exe",
+      "expected_sha256": "2ff89a72b6aac9c361cb716e44220dfcd01d2bb3e66abd6b6455b01b7250f350",
+      "expected_version": "2.22",
+      "allowed_credit": "THIS_PRESCRIBED_TEMPERATURE_MECHANICAL_T3D2_BENCHMARK_ONLY"
+    }
+  ],
+  "benchmark": {
+    "name": "generic_axial_thermal_expansion_bar",
+    "unit_system": {"length":"mm","force":"N","stress":"N/mm2 (MPa)","temperature":"C relative to zero reference"},
+    "element_type": "T3D2",
+    "bar_axis": "+X",
+    "geometry": {
+      "length_mm": 1000.0,
+      "width_mm": 10.0,
+      "height_mm": 10.0,
+      "area_mm2": 100.0
+    },
+    "material": {
+      "young_modulus_mpa": 200000.0,
+      "poisson_ratio": 0.3,
+      "thermal_expansion_per_c": 0.000012,
+      "expansion_reference_temperature_c": 0.0,
+      "behavior": "isotropic linear elastic with constant total expansion coefficient"
+    },
+    "temperature": {
+      "initial_temperature_c": 0.0,
+      "maximum_temperature_change_c": 100.0,
+      "source": "synthetic benchmark input; not a WTC temperature"
+    },
+    "mesh_element_counts": [1, 2, 8, 32],
+    "cases": [
+      {
+        "id": "UNIFORM_FREE",
+        "temperature_field": "100 C at every beam node",
+        "tip_axial_constraint": false,
+        "analytical_tip_displacement_mm": 1.2,
+        "analytical_restraint_force_n": 0.0
+      },
+      {
+        "id": "UNIFORM_RESTRAINED",
+        "temperature_field": "100 C at every beam node",
+        "tip_axial_constraint": true,
+        "analytical_tip_displacement_mm": 0.0,
+        "analytical_restraint_force_magnitude_n": 24000.0,
+        "analytical_axial_stress_mpa": 240.0
+      },
+      {
+        "id": "AXIAL_LINEAR_GRADIENT_FREE",
+        "temperature_field": "linear from 0 C at x=0 to 100 C at x=L, assigned explicitly at every beam node",
+        "tip_axial_constraint": false,
+        "analytical_tip_displacement_mm": 0.6,
+        "analytical_restraint_force_n": 0.0
+      }
+    ],
+    "analytical_formulas": {
+      "uniform_free_displacement": "u = alpha DeltaT L",
+      "uniform_restrained_force": "N = E A alpha DeltaT",
+      "uniform_restrained_stress": "sigma = E alpha DeltaT",
+      "axial_linear_gradient_free_displacement": "u = alpha integral_0^L DeltaT(x) dx = alpha DeltaT_max L / 2"
+    },
+    "analysis_type": "LINEAR_STATIC_MECHANICAL_WITH_PRESCRIBED_NODAL_TEMPERATURE",
+    "heat_transfer_solved": false,
+    "coupled_temperature_displacement_solved": false,
+    "wtc_attribution": false,
+    "physical_wtc_release": false
+  },
+  "acceptance": {
+    "solver_return_code": 0,
+    "maximum_nonzero_displacement_relative_error": 0.001,
+    "maximum_zero_displacement_absolute_error_mm": 0.000001,
+    "maximum_free_case_reaction_absolute_n": 0.001,
+    "maximum_restrained_force_relative_error": 0.001,
+    "maximum_restrained_end_reaction_equilibrium_relative_residual": 0.00001,
+    "maximum_finest_pair_nonzero_displacement_change_pct": 0.01,
+    "maximum_finest_pair_restrained_force_change_pct": 0.01,
+    "require_explicit_temperature_assignment_for_every_original_truss_node": true,
+    "all_input_and_solver_output_files_hashed": true,
+    "wtc_mechanical_requirement_closure_count": 0,
+    "physical_wtc_state_release_count": 0,
+    "historical_outcome_assignment_count": 0
+  },
+  "expected": {
+    "regression_file_count": 14,
+    "protected_file_count": 1,
+    "software_reference_file_count": 1,
+    "software_file_count": 1,
+    "case_count": 3,
+    "mesh_case_count": 4,
+    "unique_solver_job_count": 12,
+    "input_deck_count": 12,
+    "solver_return_code_pass_count": 12,
+    "analytical_case_pass_count": 12,
+    "temperature_assignment_audit_pass_count": 12,
+    "mechanical_requirement_count": 22,
+    "mechanical_requirement_closed_count": 0,
+    "physical_wtc_state_release_count": 0,
+    "historical_outcome_assignment_count": 0,
+    "structural_solver_run_count": 12,
+    "heat_transfer_solver_run_count": 0,
+    "coupled_temperature_displacement_solver_run_count": 0,
+    "fire_solver_run_count": 0,
+    "impact_solver_run_count": 0,
+    "propagation_solver_run_count": 0,
+    "other_solver_run_count": 0,
+    "gpu_compute_run_count": 0,
+    "blender_run_count": 0
+  },
+  "outputs": {
+    "run_directory": "wtc1_simulation_v8/calculix_v10w_prescribed_temperature_benchmark",
+    "regression_audit": "wtc1_simulation_v8/output/v10w_regression_audit.json",
+    "source_manifest": "wtc1_simulation_v8/output/v10w_benchmark_source_manifest.json",
+    "analytical_reference": "wtc1_simulation_v8/output/v10w_analytical_reference.json",
+    "case_matrix": "wtc1_simulation_v8/output/v10w_thermal_expansion_case_matrix.csv",
+    "temperature_assignment_audit": "wtc1_simulation_v8/output/v10w_temperature_assignment_audit.csv",
+    "solver_execution_log": "wtc1_simulation_v8/output/v10w_solver_execution_log.json",
+    "solver_file_manifest": "wtc1_simulation_v8/output/v10w_solver_file_manifest.csv",
+    "handoff_gate": "wtc1_simulation_v8/output/v10w_prescribed_temperature_benchmark_gate.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v10w_benchmark_temperature_prescrite.md",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v10w_benchmark_temperature_prescrite.json",
+    "offline_audit": "wtc1_simulation_v8/output/v10w_offline_package_audit.json"
+  },
+  "next_iteration": {
+    "id": "V10X",
+    "objective": "Qualifier un benchmark de réponse matériau non linéaire indépendant avec plasticité et déchargement cyclique contrôlé, puis vérifier la dissipation et l'indépendance de maillage avant toute attribution WTC 1."
+  }
+}

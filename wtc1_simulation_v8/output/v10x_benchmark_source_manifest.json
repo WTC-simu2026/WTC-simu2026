@@ -1,0 +1,42 @@
+{
+  "iteration": "V10X",
+  "created_at": "2026-09-05T09:42:55+02:00",
+  "configuration": {
+    "path": "wtc1_simulation_v8/data/v10x_calculix_cyclic_plasticity_benchmark.json",
+    "sha256": "56eb16ee2316fd31caa1bbe7c15142365f00dd078fa97505a8baf108a8c1c22f"
+  },
+  "runner": {
+    "path": "wtc1_simulation_v8/scripts/run_v10x_calculix_cyclic_plasticity_benchmark.py",
+    "sha256": "9e8df875ec235b14f3f7ce2196e85c7002c47ec655e2691b4950652ccc437478"
+  },
+  "design_sources": [
+    {
+      "publisher": "Guido Dhondt / CalculiX",
+      "title": "CalculiX CrunchiX 2.22 User's Manual",
+      "url": "https://www.dhondt.de/ccx_2.22.pdf",
+      "section": "*PLASTIC",
+      "use": "Primary syntax and constitutive-definition reference: *PLASTIC follows *ELASTIC and tabulates von Mises yield stress against equivalent plastic strain; isotropic hardening is the default.",
+      "wtc_physical_evidence_credit": "NONE"
+    },
+    {
+      "publisher": "Guido Dhondt / CalculiX",
+      "title": "CalculiX CrunchiX 2.22 User's Manual",
+      "url": "https://www.dhondt.de/ccx_2.22.pdf",
+      "section": "C3D8 and *STATIC",
+      "use": "Primary element and nonlinear static-step syntax reference for the regular solid-coupon benchmark.",
+      "wtc_physical_evidence_credit": "NONE"
+    }
+  ],
+  "software_reference_checks": [
+    {
+      "group": "software_reference",
+      "id": "FREECAD_CALCULIX_NONLINEAR_MATERIAL_EXAMPLE",
+      "path": "C:/Program Files/FreeCAD 1.1/Mod/Fem/femtest/data/calculix/material_nonlinear.inp",
+      "exists": true,
+      "expected_sha256": "94b6eb5bccc9435930f92695cb0205cec31139eb3833be650f2265826bf11045",
+      "actual_sha256": "94b6eb5bccc9435930f92695cb0205cec31139eb3833be650f2265826bf11045",
+      "hash_match": true
+    }
+  ],
+  "epistemic_status": "Software and analytical benchmark sources only; zero WTC physical-evidence credit."
+}

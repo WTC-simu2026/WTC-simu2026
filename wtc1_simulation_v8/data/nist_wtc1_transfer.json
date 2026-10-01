@@ -1,0 +1,202 @@
+{
+  "dataset": {
+    "name": "WTC 1 impact-to-fire structural transfer inputs",
+    "version": "8.0.0",
+    "status": "PRIMARY_NIST_TRANSCRIPTION_WITH_DERIVED_SI_VALUES",
+    "purpose": "Carry the three NIST impact envelopes into an independently auditable reduced-order structural calculation.",
+    "warning": "The temperature values are spatial minima and maxima, not floor-average temperatures. They must not be applied uniformly without an explicit bounding-scenario label."
+  },
+  "sources": [
+    {
+      "id": "NCSTAR1-2B-V2",
+      "path": "work/official_sources/ncstar1-2bv2.pdf",
+      "used_for": "aircraft impact conditions, uncertainty cases, core damage, fuel and debris distribution",
+      "tables": ["9-2", "9-3", "9-4", "9-7", "9-8", "9-9"]
+    },
+    {
+      "id": "NCSTAR1-5G",
+      "path": "work/official_sources/ncstar1-5g.pdf",
+      "used_for": "WTC 1 Case B fuel-load assumptions and structural temperature ranges",
+      "tables": ["12-6", "12-8", "12-10"]
+    },
+    {
+      "id": "NCSTAR1-6D",
+      "path": "work/official_sources/ncstar1-6d.pdf",
+      "used_for": "final Case B damage transfer and global-model column loads"
+    },
+    {
+      "id": "NCSTAR1-3D",
+      "path": "work/official_sources/ncstar1-3d.pdf",
+      "used_for": "temperature-dependent steel yield strength and Young modulus",
+      "equations": ["2-2", "6-1"],
+      "tables": ["6-2"]
+    }
+  ],
+  "aircraft": {
+    "base_total_mass_kg": 128638.0,
+    "base_total_weight_lb": 283600.0,
+    "fuel_mass_kg": 29982.0,
+    "fuel_weight_lb": 66100.0,
+    "cargo_weight_lb": 40600.0,
+    "cases": {
+      "less_severe": {
+        "speed_mph": 414.0,
+        "trajectory_pitch_deg": 13.6,
+        "orientation_pitch_deg": 11.6,
+        "mass_factor": 0.95,
+        "aircraft_failure_strain_factor": 0.75,
+        "tower_failure_strain_factor": 1.20,
+        "design_live_load_fraction": 0.25
+      },
+      "base": {
+        "speed_mph": 443.0,
+        "trajectory_pitch_deg": 10.6,
+        "orientation_pitch_deg": 8.6,
+        "mass_factor": 1.00,
+        "aircraft_failure_strain_factor": 1.00,
+        "tower_failure_strain_factor": 1.00,
+        "design_live_load_fraction": 0.25,
+        "lateral_approach_deg_clockwise_from_structure_north": 180.3,
+        "roll_deg_left_wing_down": 25.0
+      },
+      "more_severe": {
+        "speed_mph": 472.0,
+        "trajectory_pitch_deg": 7.6,
+        "orientation_pitch_deg": 5.6,
+        "mass_factor": 1.05,
+        "aircraft_failure_strain_factor": 1.25,
+        "tower_failure_strain_factor": 0.80,
+        "design_live_load_fraction": 0.20
+      }
+    }
+  },
+  "core_damage": {
+    "less_severe": [
+      {"column": 504, "state": "severed", "floors": [92, 93, 94, 95, 96]},
+      {"column": 505, "state": "heavy", "max_lateral_deformation_in": 14, "floors": [93, 94, 95, 96]},
+      {"column": 506, "state": "moderate", "floors": [93, 94]},
+      {"column": 604, "state": "light", "floors": [96]},
+      {"column": 606, "state": "light", "floors": [94]},
+      {"column": 702, "state": "moderate", "floors": [96]},
+      {"column": 703, "state": "light", "floors": [96]},
+      {"column": 704, "state": "heavy", "max_lateral_deformation_in": 12, "floors": [96]},
+      {"column": 705, "state": "light", "floors": [96]},
+      {"column": 802, "state": "moderate", "floors": [96]},
+      {"column": 805, "state": "light", "floors": [96]}
+    ],
+    "base": [
+      {"column": 503, "state": "heavy", "max_lateral_deformation_in": 18, "floors": [96]},
+      {"column": 504, "state": "severed", "floors": [92, 93, 94, 95, 96]},
+      {"column": 505, "state": "heavy", "max_lateral_deformation_in": 20, "floors": [93, 94, 95, 96]},
+      {"column": 506, "state": "heavy", "max_lateral_deformation_in": 10, "floors": [93, 94]},
+      {"column": 604, "state": "severed", "floors": [92, 93, 94, 95, 96]},
+      {"column": 605, "state": "moderate", "floors": [94, 95]},
+      {"column": 702, "state": "moderate", "floors": [96]},
+      {"column": 703, "state": "moderate", "floors": [96]},
+      {"column": 704, "state": "heavy", "max_lateral_deformation_in": 18, "floors": [94]},
+      {"column": 705, "state": "moderate", "floors": [95]},
+      {"column": 706, "state": "severed", "floors": [93, 94, 95]},
+      {"column": 802, "state": "moderate", "floors": [96]},
+      {"column": 805, "state": "moderate", "floors": [94]}
+    ],
+    "more_severe": [
+      {"column": 503, "state": "severed", "floors": [95, 96]},
+      {"column": 504, "state": "severed", "floors": [92, 93, 94, 95, 96]},
+      {"column": 505, "state": "severed", "floors": [93, 94, 95, 96]},
+      {"column": 506, "state": "heavy", "max_lateral_deformation_in": 24, "floors": [93, 94, 95]},
+      {"column": 603, "state": "moderate", "floors": [96, 97]},
+      {"column": 604, "state": "severed", "floors": [92, 93, 94, 95, 96]},
+      {"column": 605, "state": "moderate", "floors": [94, 95]},
+      {"column": 606, "state": "light", "floors": [94]},
+      {"column": 702, "state": "light", "floors": [97]},
+      {"column": 703, "state": "moderate", "floors": [96]},
+      {"column": 704, "state": "severed", "floors": [92, 93, 94, 95, 96]},
+      {"column": 705, "state": "moderate", "floors": [95]},
+      {"column": 706, "state": "severed", "floors": [93, 94, 95]},
+      {"column": 802, "state": "light", "floors": [96]},
+      {"column": 803, "state": "moderate", "floors": [96, 97]},
+      {"column": 804, "state": "moderate", "floors": [94, 95, 96]},
+      {"column": 805, "state": "heavy", "max_lateral_deformation_in": 20, "floors": [93, 94, 95]},
+      {"column": 903, "state": "light", "floors": [96]},
+      {"column": 904, "state": "heavy", "max_lateral_deformation_in": 19, "floors": [95, 96]},
+      {"column": 905, "state": "light", "floors": [95]}
+    ],
+    "final_case_b_rule": {
+      "source_impact_case": "more_severe",
+      "states_removed_from_global_model": ["severed", "heavy"],
+      "removed_column_ids": [503, 504, 505, 506, 604, 704, 706, 805, 904],
+      "note": "Removal is applied only on the floors reported damaged, not to the full height of each column."
+    }
+  },
+  "base_case_fuel_and_debris_lb": {
+    "outside_tower": {"fuel": 6700, "aircraft_debris": 17400},
+    "92": {"fuel": 810, "aircraft_debris": 260},
+    "93": {"fuel": 6100, "aircraft_debris": 22600},
+    "94": {"fuel": 16100, "aircraft_debris": 96000},
+    "95": {"fuel": 12200, "aircraft_debris": 28000},
+    "96": {"fuel": 11700, "aircraft_debris": 19400},
+    "97": {"fuel": 9500, "aircraft_debris": 6000},
+    "98": {"fuel": 2200, "aircraft_debris": 6000},
+    "99": {"fuel": 770, "aircraft_debris": 90},
+    "totals": {"fuel": 66100, "aircraft_debris": 196000}
+  },
+  "fire_case_b": {
+    "office_fuel_load_kg_m2": 25.0,
+    "office_fuel_load_lb_ft2": 5.0,
+    "description": "More-severe impact case; combustibles disturbed and weighted toward the core; fireproofing damage follows the impact path.",
+    "times_min": [20, 40, 60, 80, 100],
+    "core_column_temperature_ranges_c": {
+      "93": [[27, 63], [27, 108], [27, 126], [27, 150], [28, 193]],
+      "94": [[27, 870], [27, 738], [28, 741], [29, 861], [31, 904]],
+      "95": [[28, 553], [31, 819], [36, 822], [44, 804], [52, 761]],
+      "96": [[27, 896], [27, 909], [28, 763], [28, 745], [29, 780]],
+      "97": [[27, 846], [30, 938], [34, 916], [39, 817], [45, 901]],
+      "98": [[27, 52], [29, 101], [32, 156], [37, 191], [41, 227]],
+      "99": [[27, 49], [29, 84], [31, 129], [36, 161], [41, 192]]
+    },
+    "perimeter_column_temperature_ranges_c": {
+      "93": [[25, 213], [25, 264], [25, 328], [30, 337], [44, 360]],
+      "94": [[25, 355], [26, 292], [27, 334], [27, 369], [29, 448]],
+      "95": [[26, 582], [25, 706], [29, 758], [36, 669], [46, 717]],
+      "96": [[26, 464], [26, 599], [28, 661], [34, 656], [39, 796]],
+      "97": [[25, 413], [25, 430], [25, 539], [26, 553], [35, 786]],
+      "98": [[25, 247], [25, 315], [27, 352], [34, 361], [45, 351]],
+      "99": [[25, 179], [25, 294], [28, 341], [33, 317], [43, 347]]
+    },
+    "floor_truss_temperature_ranges_c": {
+      "93": [[27, 56], [27, 142], [28, 263], [29, 349], [30, 386]],
+      "94": [[28, 62], [31, 154], [37, 212], [44, 346], [50, 411]],
+      "95": [[27, 798], [30, 760], [34, 664], [41, 881], [48, 861]],
+      "96": [[23, 911], [36, 883], [48, 831], [63, 839], [82, 902]],
+      "97": [[27, 886], [32, 888], [40, 852], [51, 777], [66, 927]],
+      "98": [[27, 913], [29, 914], [33, 896], [41, 876], [51, 926]],
+      "99": [[28, 54], [32, 143], [41, 275], [57, 420], [78, 461]]
+    }
+  },
+  "steel_temperature_model": {
+    "yield_ratio_equation": "(1-A2)*exp(-0.5*((T/s1)^m1 + (T/s2)^m2)) + A2",
+    "yield_ratio_parameters": {"A2": 0.074692, "m1": 8.325929, "m2": 1.0, "s1_c": 638.384277, "s2_c": 523.523132},
+    "young_modulus_gpa_equation_0_to_600_c": "e0 + e1*T + e2*T^2 + e3*T^3",
+    "young_modulus_parameters": {"e0": 206.0, "e1": -0.04326, "e2": -0.00003502, "e3": -0.00000006592},
+    "young_modulus_valid_temperature_range_c": [0, 600]
+  },
+  "nist_global_core_loads_floor_98_kip": {
+    "before_impact": 34029.0,
+    "after_impact": 34429.0,
+    "100_min_case_b": 28478.0,
+    "case_b_time_history": {
+      "after_impact": 34429.0,
+      "10": 36473.0,
+      "20": 34495.0,
+      "30": 32060.0,
+      "40": 30294.0,
+      "50": 29435.0,
+      "60": 28766.0,
+      "70": 28205.0,
+      "80": 27681.0,
+      "90": 28587.0,
+      "100": 28478.0
+    },
+    "time_history_source": "NCSTAR 1-6D Table 5-3; compression positive."
+  }
+}

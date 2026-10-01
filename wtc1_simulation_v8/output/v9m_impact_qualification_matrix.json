@@ -1,0 +1,455 @@
+{
+  "iteration": "V9M",
+  "generated_at": "2026-08-28T16:22:21.839455+02:00",
+  "evidence_policy": {
+    "observed_fact": "A value or boolean read directly from a previously registered local result artifact, with its path recorded.",
+    "official_model_result": "A value transcribed in a preserved prior result from an official source or model; V9M does not independently reproduce it.",
+    "local_archive_claim": "None introduced. The source archive is not read or rescanned in V9M.",
+    "model_hypothesis": "The unchanged 10 percent numerical gate, the qualification categories and the future-track reopening rules.",
+    "derived_result": "The row classification, qualification counts, closed-gate decision and future-track state produced from the cached checks.",
+    "contradiction_or_unknown": "A required physical datum, benchmark property or convergence result that remains absent, failed or unresolved."
+  },
+  "classification_counts": {
+    "numerically_qualified": 4,
+    "conditional_numerical": 1,
+    "failed_or_physically_unqualified": 6,
+    "visualization_only": 1
+  },
+  "qualification_rows": [
+    {
+      "id": "V8S_FROZEN_KINEMATIC_ENVELOPE",
+      "iteration": "V8S",
+      "domain": "kinematics",
+      "classification": "NUMERICALLY_QUALIFIED_INPUT_ENVELOPE",
+      "evidence_kind": "derived_result_plus_official_scale_comparator",
+      "result_summary": "The frozen base case gives 25.475462528 MN-s total momentum and a 0.239975469 s tail-clearance estimate, within 0.010024531 s of the approximately 0.25 s official scale.",
+      "permitted_use": "Scene timing, trajectory envelope and uncertainty storyboard inputs.",
+      "prohibited_inference": "No facade force, penetration, fragmentation, fuel dispersion or structural-damage validation.",
+      "checks": [
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json",
+          "path": "comparison_to_reserved_official_outputs.tail_clearance.passed",
+          "comparator": "equals",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json",
+          "path": "comparison_to_reserved_official_outputs.tail_clearance.absolute_error_s",
+          "comparator": "less_or_equal",
+          "expected": 0.03,
+          "actual": 0.010024531125226555,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json",
+          "path": "readiness.gates.global_aircraft_impact_replay_ready",
+          "comparator": "equals",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        }
+      ],
+      "evidence_checks_passed": true,
+      "classification_group": "numerically_qualified"
+    },
+    {
+      "id": "V8T_BOUNDED_DECK_EXECUTION",
+      "iteration": "V8T",
+      "domain": "solver_chain",
+      "classification": "NUMERICALLY_QUALIFIED_BOUNDED_EXECUTION",
+      "evidence_kind": "official_software_regression_and_local_execution",
+      "result_summary": "The official OpenRadioss installation smoke case and source-hash gate passed.",
+      "permitted_use": "Confirm that a bounded Radioss deck can be launched and checked locally.",
+      "prohibited_inference": "Software execution does not validate WTC-specific materials, contact, rupture or impact physics.",
+      "checks": [
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8t_openradioss.json",
+          "path": "source_hash_gate_passed",
+          "comparator": "equals",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8t_openradioss.json",
+          "path": "installation_smoke_gate_passed",
+          "comparator": "equals",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8t_openradioss.json",
+          "path": "global_wtc_impact_physics_qualification_passed",
+          "comparator": "equals",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        }
+      ],
+      "evidence_checks_passed": true,
+      "classification_group": "numerically_qualified"
+    },
+    {
+      "id": "V8W_PROJECTILE_FREE_FLIGHT",
+      "iteration": "V8W",
+      "domain": "projectile_free_flight",
+      "classification": "NUMERICALLY_QUALIFIED_FREE_FLIGHT",
+      "evidence_kind": "local_solver_result",
+      "result_summary": "All three free-flight meshes passed the pre-impact stability, momentum, mass and zero-erosion checks after the V8V self-contact defect was corrected.",
+      "permitted_use": "Preserve the minimal deformable projectile's pre-contact numerical stability as a regression.",
+      "prohibited_inference": "Free flight does not qualify projectile-facade contact or rupture.",
+      "checks": [
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8w_contact_pairwise.json",
+          "path": "projectile_free_flight_qualification_passed",
+          "comparator": "equals",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8w_contact_pairwise.json",
+          "path": "free_flight_gate_checks.z_momentum_conservation",
+          "comparator": "equals",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8w_contact_pairwise.json",
+          "path": "free_flight_gate_checks.zero_erosion",
+          "comparator": "equals",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ],
+      "evidence_checks_passed": true,
+      "classification_group": "numerically_qualified"
+    },
+    {
+      "id": "V8X_NON_ERODING_CONTACT_CONTROL",
+      "iteration": "V8X",
+      "domain": "contact_control",
+      "classification": "NUMERICALLY_QUALIFIED_CONTROL_ONLY",
+      "evidence_kind": "local_solver_result_with_rupture_deleted",
+      "result_summary": "With element erosion disabled, the diagonal contact impulse changes by 1.95062 percent from 50 to 25 mm.",
+      "permitted_use": "Localize the dominant sensitivity to the unregularized deletion law rather than to basic contact execution alone.",
+      "prohibited_inference": "Deleting rupture physics cannot qualify a real deformable impact.",
+      "checks": [
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8x_mailles_erosion.json",
+          "path": "gate_checks.non_eroding_zero_erosion",
+          "comparator": "equals",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8x_mailles_erosion.json",
+          "path": "non_eroding_diagonal.medium_to_fine_relative_difference",
+          "comparator": "less_or_equal",
+          "expected": 0.1,
+          "actual": 0.01950619894567302,
+          "passed": true
+        }
+      ],
+      "evidence_checks_passed": true,
+      "classification_group": "numerically_qualified"
+    },
+    {
+      "id": "V8U_RIGID_PROJECTILE_ERODING_IMPULSE",
+      "iteration": "V8U",
+      "domain": "eroding_impulse_convergence",
+      "classification": "FAILED_NUMERICAL_GATE",
+      "evidence_kind": "local_solver_result",
+      "result_summary": "The rigid-sphere surrogate executes, but its 50-to-25 mm impulse difference is 20.9001 percent and fails the fixed 10 percent gate.",
+      "permitted_use": "Immutable regression and execution diagnostic.",
+      "prohibited_inference": "No physical facade-impact validation and no aircraft representation.",
+      "checks": [
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8u_impact_openradioss.json",
+          "path": "gate_checks.medium_to_fine_impulse",
+          "comparator": "equals",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8u_impact_openradioss.json",
+          "path": "convergence.medium_to_fine_impulse_relative_difference",
+          "comparator": "greater_than",
+          "expected": 0.1,
+          "actual": 0.209001172779897,
+          "passed": true
+        }
+      ],
+      "evidence_checks_passed": true,
+      "classification_group": "failed_or_physically_unqualified"
+    },
+    {
+      "id": "V8W_ERODING_DEFORMABLE_IMPULSE",
+      "iteration": "V8W",
+      "domain": "eroding_impulse_convergence",
+      "classification": "FAILED_NUMERICAL_GATE",
+      "evidence_kind": "local_solver_result",
+      "result_summary": "After free-flight stabilization, the deformable eroding case still has a 32.8659 percent 50-to-25 mm impulse difference.",
+      "permitted_use": "Diagnose the remaining post-contact mesh sensitivity.",
+      "prohibited_inference": "No converged projectile breakup or facade impulse.",
+      "checks": [
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8w_contact_pairwise.json",
+          "path": "impact_gate_checks.medium_to_fine_contact_impulse",
+          "comparator": "equals",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8w_contact_pairwise.json",
+          "path": "convergence.medium_to_fine_contact_impulse_relative_difference",
+          "comparator": "greater_than",
+          "expected": 0.1,
+          "actual": 0.32865876527766763,
+          "passed": true
+        }
+      ],
+      "evidence_checks_passed": true,
+      "classification_group": "failed_or_physically_unqualified"
+    },
+    {
+      "id": "V8Y_NONLOCAL_REDUCED_SUBASSEMBLY",
+      "iteration": "V8Y",
+      "domain": "conditional_regularized_rupture",
+      "classification": "CONDITIONAL_NUMERICAL_PASS_PHYSICALLY_UNQUALIFIED",
+      "evidence_kind": "local_solver_result_with_hypothetical_length",
+      "result_summary": "The 50-to-25 mm impulse difference falls to 8.3414 percent with LeMAX=100 mm, while the 100-to-50 mm step remains 33.4297 percent and the length is not measured.",
+      "permitted_use": "Show that a regularized deletion formulation can improve one tested numerical step.",
+      "prohibited_inference": "The chosen internal length and failure strains are not physical WTC or CF6 properties.",
+      "checks": [
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8y_rupture_nonlocale.json",
+          "path": "deformable_subassembly_numerical_qualification_passed",
+          "comparator": "equals",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8y_rupture_nonlocale.json",
+          "path": "diagonal_convergence.medium_to_fine_contact_impulse_relative_difference",
+          "comparator": "less_or_equal",
+          "expected": 0.1,
+          "actual": 0.08341423507725203,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8y_rupture_nonlocale.json",
+          "path": "physical_failure_parameter_identification_passed",
+          "comparator": "equals",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        }
+      ],
+      "evidence_checks_passed": true,
+      "classification_group": "conditional_numerical"
+    },
+    {
+      "id": "V8Z_OBJECTIVE_LENGTH_SENSITIVITY",
+      "iteration": "V8Z",
+      "domain": "fracture_length_objectivity",
+      "classification": "FAILED_PHYSICAL_OBJECTIVITY_GATE",
+      "evidence_kind": "local_solver_sensitivity_result",
+      "result_summary": "At fixed 50 mm mesh, LeMAX=50, 100 and 200 mm changes facade impulse from 134.731 to 153.224 to 216.738 kN-s; the maximum difference is 37.8369 percent.",
+      "permitted_use": "Demonstrate that fracture length or energy must be independently bounded before physical use.",
+      "prohibited_inference": "No objective rupture prediction or tuned facade impulse.",
+      "checks": [
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8z_longueur_rupture.json",
+          "path": "numerical_length_sensitivity_passed",
+          "comparator": "equals",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v8z_longueur_rupture.json",
+          "path": "medium_metrics.maximum_pairwise_contact_impulse_relative_difference",
+          "comparator": "greater_than",
+          "expected": 0.1,
+          "actual": 0.378369038435275,
+          "passed": true
+        }
+      ],
+      "evidence_checks_passed": true,
+      "classification_group": "failed_or_physically_unqualified"
+    },
+    {
+      "id": "V9A_EXACT_WTC_AND_CF6_MATERIAL_CARDS",
+      "iteration": "V9A",
+      "domain": "material_and_joint_evidence",
+      "classification": "PHYSICALLY_UNQUALIFIED_MISSING_PRIMARY_DATA",
+      "evidence_kind": "documentary_audit_result",
+      "result_summary": "Only 2 of 9 minimum WTC fracture-card requirements and 0 of 9 production CF6-80A2/cowling requirements are available.",
+      "permitted_use": "Document the exact-data gap and retain published strength-rate observations as limited comparators.",
+      "prohibited_inference": "No generic alloy substitution, joint-failure assumption or calibrated aircraft breakup.",
+      "checks": [
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v9a_eprouvettes_materiaux.json",
+          "path": "wtc_fracture_card_completeness.available_count",
+          "comparator": "equals",
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v9a_eprouvettes_materiaux.json",
+          "path": "wtc_fracture_card_completeness.required_count",
+          "comparator": "equals",
+          "expected": 9,
+          "actual": 9,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v9a_eprouvettes_materiaux.json",
+          "path": "cf6_80a2_or_cowling_card_completeness.available_count",
+          "comparator": "equals",
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v9a_eprouvettes_materiaux.json",
+          "path": "physical_fracture_card_identification_passed",
+          "comparator": "equals",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        }
+      ],
+      "evidence_checks_passed": true,
+      "classification_group": "failed_or_physically_unqualified"
+    },
+    {
+      "id": "V9J_S355_ANALOGUE",
+      "iteration": "V9J",
+      "domain": "analogue_measurement",
+      "classification": "DESCRIPTIVE_ANALOGUE_ONLY",
+      "evidence_kind": "documentary_and_measurement_audit_result",
+      "result_summary": "Two of five documentary requirements are complete; the S355 dataset remains a no-imputation descriptive comparator without absolute bar-DIC alignment.",
+      "permitted_use": "Method and data-quality comparator only.",
+      "prohibited_inference": "No WTC/CF6 material fit, stress-strain reconstruction or fracture-law substitution.",
+      "checks": [
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v9j_suffisance_documentaire.json",
+          "path": "required_definition_count",
+          "comparator": "equals",
+          "expected": 5,
+          "actual": 5,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v9j_suffisance_documentaire.json",
+          "path": "finding_status_counts.documented",
+          "comparator": "equals",
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v9j_suffisance_documentaire.json",
+          "path": "documentary_sufficiency_gate_passed",
+          "comparator": "equals",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v9j_suffisance_documentaire.json",
+          "path": "absolute_bar_DIC_time_alignment_resolved",
+          "comparator": "equals",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        }
+      ],
+      "evidence_checks_passed": true,
+      "classification_group": "failed_or_physically_unqualified"
+    },
+    {
+      "id": "V9L_EXTERNAL_BENCHMARK_GAP",
+      "iteration": "V9L",
+      "domain": "external_impact_benchmark",
+      "classification": "SEARCH_CLOSED_NO_QUALIFIED_BENCHMARK",
+      "evidence_kind": "bounded_primary_source_audit_result",
+      "result_summary": "Neither the Altair rigid-sphere deck nor FAA AR-08/36 combines measured validation, deformable-projectile rupture, objective regularization, convergence and a reusable bounded deck.",
+      "permitted_use": "Retain both sources as method comparators and stop the bounded search.",
+      "prohibited_inference": "Search closure does not prove that no suitable benchmark exists anywhere.",
+      "checks": [
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v9l_cloture_benchmark_impact.json",
+          "path": "selected_candidate_count",
+          "comparator": "equals",
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v9l_cloture_benchmark_impact.json",
+          "path": "critical_gap_combo_absent",
+          "comparator": "equals",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v9l_cloture_benchmark_impact.json",
+          "path": "external_benchmark_search_closed",
+          "comparator": "equals",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        }
+      ],
+      "evidence_checks_passed": true,
+      "classification_group": "failed_or_physically_unqualified"
+    },
+    {
+      "id": "V9M_BLENDER_STATUS",
+      "iteration": "V9M",
+      "domain": "three_dimensional_visualization",
+      "classification": "VISUALIZATION_ONLY_NOT_EXECUTED",
+      "evidence_kind": "scope_gate",
+      "result_summary": "A future 3D storyboard may illustrate frozen kinematics and uncertainties, but no Blender run or physical interpretation occurs in V9M.",
+      "permitted_use": "Illustrative scene planning with explicit uncertainty overlays and permanent non-validation labels.",
+      "prohibited_inference": "No physical simulation, damage validation or solver coupling.",
+      "checks": [
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v9l_cloture_benchmark_impact.json",
+          "path": "blender_executed",
+          "comparator": "equals",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        },
+        {
+          "results": "wtc1_simulation_v8/output/resultats_wtc1_v9l_cloture_benchmark_impact.json",
+          "path": "scope_gates.blender_physics_validation_authorized",
+          "comparator": "equals",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        }
+      ],
+      "evidence_checks_passed": true,
+      "classification_group": "visualization_only"
+    }
+  ],
+  "all_evidence_checks_passed": true,
+  "physical_facade_impact_qualification_passed": false,
+  "global_wtc_impact_physics_qualification_passed": false
+}

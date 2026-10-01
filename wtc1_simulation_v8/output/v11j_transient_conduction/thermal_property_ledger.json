@@ -1,0 +1,70 @@
+{
+  "iteration": "V11J",
+  "geometry": {
+    "equivalent_thickness_in": 4.35,
+    "inch_to_m": 0.0254,
+    "thickness_m": 0.11049,
+    "coupon_area_m2": 1.0,
+    "coordinate": "x=0 bottom face; x=L top face; cell-centred finite volumes",
+    "status": "The 4.35 in equivalent thickness is inherited from the bounded slab-section model and is not a complete as-built metal-deck/concrete geometry."
+  },
+  "constant_properties": {
+    "reference_temperature_c": 20.0,
+    "density_kg_m3": 2400.0,
+    "specific_heat_j_kg_k": 900.0,
+    "volumetric_heat_capacity_j_m3_k": 2160000.0,
+    "reference_conductivity_w_m_k": 1.0,
+    "conductivity_sensitivity_w_m_k": [
+      0.5,
+      1.0,
+      1.3
+    ],
+    "density_and_cp_status": "The rho and cp values are inherited unchanged from V11H generic constant hypotheses solely to isolate and verify conduction. They are not measured WTC slab properties.",
+    "conductivity_status": "The 1.0 W/(m K) reference is a verification anchor. The 0.5 to 1.3 W/(m K) bracket spans simple constant values identified by NIST for lightweight and normal-weight concrete estimates and the WTC fire-model boundary assumption. It is not a calibrated property of the actual floor slab.",
+    "temperature_dependence": false,
+    "moisture_or_latent_heat": false
+  },
+  "numerical_method": {
+    "scheme": "Backward Euler in time, conservative cell-centred finite volume in space, harmonic-interface form reducing to k/dx for constant k, direct tridiagonal Thomas solve.",
+    "time_weight_theta": 1.0,
+    "dirichlet_face_conductance": "2*k/dx between a face value and the adjacent cell centre",
+    "internal_face_conductance": "k/dx",
+    "enthalpy_definition": "H=rho*cp*sum_i[(T_i-T_ref)*dx], J/m2",
+    "increment_balance": "H_(n+1)-H_n=dt*(q_bottom_in,n+1+q_top_in,n+1)",
+    "absolute_temperature_note": "Only temperature differences enter this constant-property equation; degC increments and K increments are numerically identical."
+  },
+  "scope": {
+    "domain": "One square metre, one-dimensional coordinate x from the idealized slab bottom face x=0 to the top face x=L. Constant k, rho and cp; no in-plane conduction, deck, reinforcement, moisture, phase change, radiation, convection, SFRM or contact resistance.",
+    "boundary_conditions": "Adiabatic, prescribed-temperature and prescribed-inward-flux faces used only as synthetic verification inputs. Positive face flux means heat entering the coupon.",
+    "coupling_policy": "The calculated profiles remain outside V11I. They are not panel loads, gas temperatures, fire exposures or WTC histories. Mechanical work, thermal strain, damage and fracture are not evaluated.",
+    "history_policy": "No V11E/V11F/V11I damage variable, stress state, material property or energy ledger is edited. Constant-property conduction stores sensible enthalpy only.",
+    "energy_policy": "For unit area, Delta H equals the time integral of bottom-inward plus top-inward heat flux. H is in J/m2, flux in W/m2 and temperature in degC with increments identical to K. Global collapse-energy credit is exactly zero."
+  },
+  "method_sources": [
+    {
+      "id": "NIST_NCSTAR_1_5G",
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/NCSTAR/ncstar1-5g.pdf",
+      "accessed": "2026-09-08",
+      "locator": "Chapter 6 p.98 and Appendix A p.274 of the report pagination",
+      "scope": "Primary official model report: 4.35 in equivalent slab thickness; approximately 16 through-depth thermal elements were used to resolve thermal waves and steep surface gradients; lightweight-concrete conductivity was temperature dependent in the official thermal model. V11J does not reproduce that model."
+    },
+    {
+      "id": "NIST_NCSTAR_1_5F",
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/NCSTAR/ncstar1-5f.pdf",
+      "accessed": "2026-09-08",
+      "locator": "Chapter 5 p.52",
+      "scope": "Primary official fire-model report: the exposed slab underside used k=1.0 W/(m K), rho=2000 kg/m3 and cp=0.88 kJ/(kg K) as gas-phase boundary properties, while detailed member penetration was calculated separately. Only k=1.0 is used here as a numerical anchor, not as an as-built calibration."
+    },
+    {
+      "id": "NIST_TN_1681",
+      "url": "https://doi.org/10.6028/NIST.TN.1681",
+      "accessed": "2026-09-08",
+      "locator": "Section 4.2.1.1.1 p.64",
+      "scope": "Primary NIST design guidance: simple averaged constant conductivity estimates of 1.3 W/(m K) for normal-weight and 0.5 W/(m K) for lightweight normal-strength concrete, with cautions about density, aggregate, moisture and small-scale data. Used only to bracket conductivity sensitivity."
+    }
+  ],
+  "mechanical_energy_j_m2": 0.0,
+  "global_energy_credit_j": 0.0,
+  "temperature_history_coupled_to_panel": false,
+  "no_damage_history_or_property_updated": true
+}

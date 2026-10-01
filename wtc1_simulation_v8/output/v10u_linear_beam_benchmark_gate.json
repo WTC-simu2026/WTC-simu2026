@@ -1,0 +1,66 @@
+{
+  "iteration": "V10U",
+  "decision": "PASS_INDEPENDENT_LINEAR_B32R_BENCHMARK",
+  "pass": true,
+  "criteria": {
+    "predeclared_input_hashes": true,
+    "protected_master_unchanged": true,
+    "calculix_version": true,
+    "solver_return_codes": true,
+    "all_dat_outputs_parsed": true,
+    "all_analytical_displacements_parsed": true,
+    "analytical_displacement_finest_scope": true,
+    "monotonic_mesh_error_reduction": true,
+    "reaction_closure": true,
+    "mesh_invariance": true,
+    "force_displacement_r_squared": true,
+    "force_displacement_slope": true,
+    "force_displacement_intercept": true,
+    "generated_input_deck_count": true,
+    "all_run_files_hashed": true,
+    "no_wtc_mechanical_requirement_closed": true,
+    "no_physical_wtc_release": true,
+    "no_historical_outcome_assignment": true
+  },
+  "metrics": {
+    "unique_solver_job_count": 11,
+    "solver_return_code_pass_count": 11,
+    "reaction_closure_pass_count": 11,
+    "analytical_displacement_parse_count": 11,
+    "analytical_displacement_required_scope_count": 4,
+    "analytical_displacement_required_scope_pass_count": 4,
+    "analytical_displacement_diagnostic_all_job_pass_count": 7,
+    "mesh_error_monotonic_nonincreasing": true,
+    "maximum_absolute_tip_error_vs_timoshenko_pct": 10.013037077698476,
+    "maximum_reaction_relative_error": 0.0,
+    "finest_pair": {
+      "previous_element_count": 64,
+      "current_element_count": 128,
+      "relative_change_pct": 0.056079148497208235
+    },
+    "force_displacement_regression": {
+      "slope_mm_per_n": 0.00159952512,
+      "intercept_mm": -2.0000000056086265e-07,
+      "r_squared": 0.99999999999997,
+      "slope_through_origin_mm_per_n": 0.0015995250933333333,
+      "reference_compliance_mm_per_n": 0.0016031199999999998,
+      "slope_error_pct": 0.22424272668295137
+    },
+    "generated_input_deck_count": 11,
+    "hashed_run_file_count": 67,
+    "mechanical_requirement_count": 22,
+    "mechanical_requirement_closed_count": 0,
+    "physical_wtc_state_release_count": 0,
+    "historical_outcome_assignment_count": 0
+  },
+  "allowed_credit": "Local CalculiX 2.22 B32R linear-elastic cantilever workflow only",
+  "forbidden_credit": [
+    "WTC 1 member, connection, floor, core or perimeter response",
+    "impact, fire, thermal, initiation or propagation physics",
+    "collapse or non-collapse of WTC 1"
+  ],
+  "next_iteration": {
+    "id": "V10V",
+    "objective": "Qualifier un second benchmark mécanique indépendant avec non-linéarité géométrique, flambement et réponse post-critique contrôlée en déplacement. Vérifier la convergence et les bilans sans attribuer le modèle au WTC 1 ni rouvrir les portes physiques tant que les données réelles restent absentes."
+  }
+}

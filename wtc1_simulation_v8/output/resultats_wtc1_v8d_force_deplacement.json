@@ -1,0 +1,272 @@
+{
+  "model": "WTC1_V8D_F95_C705_NONLINEAR_FORCE_DISPLACEMENT_PILOT",
+  "scope": "isolated pin-ended shell column pilot; no floor framing, creep, thermal gradient, strain-rate, connection fracture or load redistribution",
+  "shortening_target_mm": 400.0,
+  "material": "NIST Fy(T), NIST E(T) to 600 C, explicit V8B tail above 600 C, 1% numerical hardening",
+  "cases": [
+    {
+      "floor": 95,
+      "column": 705,
+      "designation": "14WF43",
+      "temperature_c": 52.0,
+      "temperature_status": "NIST Case B Floor 95 100-min minimum",
+      "imperfection_mm": 3.6576,
+      "imperfection_ratio": 1000.0,
+      "e_gpa": 203.64651704064,
+      "e_model": "NIST polynomial 0-600 C",
+      "fy_mpa": 296.3544466810038,
+      "mesh": {
+        "nodes": 929,
+        "elements": 864,
+        "top_reference_node": 928
+      },
+      "returncode": 201,
+      "curve_point_count": 9,
+      "max_compression_n": 1672350.0,
+      "last_shortening_mm": 3.75625,
+      "absorbed_energy_to_last_point_j": 3010.4470787499995,
+      "curve": [
+        {
+          "shortening_mm": 0.8,
+          "compression_n": 358733.9
+        },
+        {
+          "shortening_mm": 1.6,
+          "compression_n": 716966.9
+        },
+        {
+          "shortening_mm": 2.8,
+          "compression_n": 1251932.0
+        },
+        {
+          "shortening_mm": 3.25,
+          "compression_n": 1450883.0
+        },
+        {
+          "shortening_mm": 3.475,
+          "compression_n": 1549711.0
+        },
+        {
+          "shortening_mm": 3.5875,
+          "compression_n": 1598904.0
+        },
+        {
+          "shortening_mm": 3.64375,
+          "compression_n": 1623435.0
+        },
+        {
+          "shortening_mm": 3.7,
+          "compression_n": 1647918.0
+        },
+        {
+          "shortening_mm": 3.75625,
+          "compression_n": 1672350.0
+        }
+      ],
+      "stdout_tail": " matrix:\n\n Using up to 1 cpu(s) for setting up the structure of the matrix.\n number of equations\n 5383\n number of nonzero lower triangular matrix elements\n 138840\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.\n\n Factoring the system of equations using the symmetric spooles solver\n Using 1 cpu for spooles.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n average force= 4360.085727\n time avg. forc= 3524.305539\n largest residual force= 32.604166 in node 927 and dof 1\n largest increment of disp= 5.658739e-03\n largest correction to disp= 1.281986e-03 in node 913 and dof 1\n\n estimated number of iterations till convergence = 3\n no convergence\n\n iteration 11\n\n Decascading the MPC's\n\n *INFO in cascade: linear MPCs and\n       nonlinear MPCs depend on each other\n       common node: 1 in direction 1\n\n Determining the structure of the matrix:\n\n Using up to 1 cpu(s) for setting up the structure of the matrix.\n number of equations\n 5383\n number of nonzero lower triangular matrix elements\n 138840\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.\n\n Factoring the system of equations using the symmetric spooles solver\n Using 1 cpu for spooles.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n average force= 4346.293072\n time avg. forc= 3522.926274\n largest residual force= 30.073398 in node 929 and dof 1\n largest increment of disp= 5.658739e-03\n largest correction to disp= 1.281806e-03 in node 913 and dof 1\n\n estimated number of iterations till convergence = 18\n too slow convergence; the increment size is decreased to 2.197266e-06\n the increment is reattempted\n\n\n *ERROR: too many cutbacks\n best solution and residuals are in the frd file\n\n",
+      "stderr_tail": "",
+      "input_file": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_simulation_v8\\calculix_v8d_force_displacement\\v8d_f95_c705_t52p0_i1000.inp"
+    },
+    {
+      "floor": 95,
+      "column": 705,
+      "designation": "14WF43",
+      "temperature_c": 406.5,
+      "temperature_status": "arithmetic midpoint sensitivity; not a NIST mean/median",
+      "imperfection_mm": 3.6576,
+      "imperfection_ratio": 1000.0,
+      "e_gpa": 178.20011575772,
+      "e_model": "NIST polynomial 0-600 C",
+      "fy_mpa": 215.63544211499254,
+      "mesh": {
+        "nodes": 929,
+        "elements": 864,
+        "top_reference_node": 928
+      },
+      "returncode": 201,
+      "curve_point_count": 8,
+      "max_compression_n": 1359991.0,
+      "last_shortening_mm": 3.86875,
+      "absorbed_energy_to_last_point_j": 2758.701573125,
+      "curve": [
+        {
+          "shortening_mm": 0.8,
+          "compression_n": 313908.8
+        },
+        {
+          "shortening_mm": 1.6,
+          "compression_n": 627379.2
+        },
+        {
+          "shortening_mm": 2.8,
+          "compression_n": 1095499.0
+        },
+        {
+          "shortening_mm": 3.25,
+          "compression_n": 1269590.0
+        },
+        {
+          "shortening_mm": 3.7,
+          "compression_n": 1359991.0
+        },
+        {
+          "shortening_mm": 3.75625,
+          "compression_n": 1338806.0
+        },
+        {
+          "shortening_mm": 3.8125,
+          "compression_n": 1321667.0
+        },
+        {
+          "shortening_mm": 3.86875,
+          "compression_n": 1306928.0
+        }
+      ],
+      "stdout_tail": "and\n       nonlinear MPCs depend on each other\n       common node: 1 in direction 1\n\n Determining the structure of the matrix:\n\n Using up to 1 cpu(s) for setting up the structure of the matrix.\n number of equations\n 5383\n number of nonzero lower triangular matrix elements\n 138840\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.\n\n Factoring the system of equations using the symmetric spooles solver\n Using 1 cpu for spooles.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n average force= 3536.058059\n time avg. forc= 2921.982362\n largest residual force= 53.286635 in node 199 and dof 3\n largest increment of disp= 5.605435e-02\n largest correction to disp= 8.587105e-03 in node 451 and dof 1\n\n no convergence\n\n iteration 5\n\n Decascading the MPC's\n\n *INFO in cascade: linear MPCs and\n       nonlinear MPCs depend on each other\n       common node: 1 in direction 1\n\n Determining the structure of the matrix:\n\n Using up to 1 cpu(s) for setting up the structure of the matrix.\n number of equations\n 5383\n number of nonzero lower triangular matrix elements\n 138840\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.\n\n Factoring the system of equations using the symmetric spooles solver\n Using 1 cpu for spooles.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n average force= 3514.652325\n time avg. forc= 2919.603947\n largest residual force= 65.483833 in node 250 and dof 3\n largest increment of disp= 5.605435e-02\n largest correction to disp= 8.145915e-03 in node 451 and dof 1\n\n divergence; the increment size is decreased to 1.098633e-06\n the increment is reattempted\n\n\n *ERROR: too many cutbacks\n best solution and residuals are in the frd file\n\n",
+      "stderr_tail": "",
+      "input_file": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_simulation_v8\\calculix_v8d_force_displacement\\v8d_f95_c705_t406p5_i1000.inp"
+    },
+    {
+      "floor": 95,
+      "column": 705,
+      "designation": "14WF43",
+      "temperature_c": 761.0,
+      "temperature_status": "NIST Case B Floor 95 100-min maximum",
+      "imperfection_mm": 3.6576,
+      "imperfection_ratio": 1000.0,
+      "e_gpa": 95.66389812588,
+      "e_model": "V8B linear tail E600 to 5% E20 at 1000 C",
+      "fy_mpa": 39.19615425009941,
+      "mesh": {
+        "nodes": 929,
+        "elements": 864,
+        "top_reference_node": 928
+      },
+      "returncode": 201,
+      "curve_point_count": 8,
+      "max_compression_n": 291459.7,
+      "last_shortening_mm": 1.93125,
+      "absorbed_energy_to_last_point_j": 288.862523125,
+      "curve": [
+        {
+          "shortening_mm": 0.8,
+          "compression_n": 168516.9
+        },
+        {
+          "shortening_mm": 1.0,
+          "compression_n": 210616.7
+        },
+        {
+          "shortening_mm": 1.2,
+          "compression_n": 252699.3
+        },
+        {
+          "shortening_mm": 1.5,
+          "compression_n": 291459.7
+        },
+        {
+          "shortening_mm": 1.575,
+          "compression_n": 289418.5
+        },
+        {
+          "shortening_mm": 1.65,
+          "compression_n": 287138.7
+        },
+        {
+          "shortening_mm": 1.7625,
+          "compression_n": 283774.7
+        },
+        {
+          "shortening_mm": 1.93125,
+          "compression_n": 278903.9
+        }
+      ],
+      "stdout_tail": "ear MPCs depend on each other\n       common node: 1 in direction 1\n\n Determining the structure of the matrix:\n\n Using up to 1 cpu(s) for setting up the structure of the matrix.\n number of equations\n 5383\n number of nonzero lower triangular matrix elements\n 138840\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.\n\n Factoring the system of equations using the symmetric spooles solver\n Using 1 cpu for spooles.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n average force= 739.246119\n time avg. forc= 681.211468\n largest residual force= 176.387468 in node 2341 and dof 1\n largest increment of disp= 6.589790e-02\n largest correction to disp= 1.730405e-03 in node 914 and dof 1\n\n no convergence\n\n iteration 6\n\n Decascading the MPC's\n\n *INFO in cascade: linear MPCs and\n       nonlinear MPCs depend on each other\n       common node: 1 in direction 1\n\n Determining the structure of the matrix:\n\n Using up to 1 cpu(s) for setting up the structure of the matrix.\n number of equations\n 5383\n number of nonzero lower triangular matrix elements\n 138840\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.\n\n Factoring the system of equations using the symmetric spooles solver\n Using 1 cpu for spooles.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n average force= 747.723458\n time avg. forc= 682.153394\n largest residual force= 252.073082 in node 2340 and dof 2\n largest increment of disp= 6.589790e-02\n largest correction to disp= 1.730405e-03 in node 26 and dof 1\n\n divergence; the increment size is decreased to 8.239746e-07\n the increment is reattempted\n\n\n *ERROR: increment size smaller than minimum\n best solution and residuals are in the frd file\n\n",
+      "stderr_tail": "",
+      "input_file": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_simulation_v8\\calculix_v8d_force_displacement\\v8d_f95_c705_t761p0_i1000.inp"
+    },
+    {
+      "floor": 95,
+      "column": 705,
+      "designation": "14WF43",
+      "temperature_c": 406.5,
+      "temperature_status": "arithmetic midpoint sensitivity; not a NIST mean/median",
+      "imperfection_mm": 7.3152,
+      "imperfection_ratio": 500.0,
+      "e_gpa": 178.20011575772,
+      "e_model": "NIST polynomial 0-600 C",
+      "fy_mpa": 215.63544211499254,
+      "mesh": {
+        "nodes": 929,
+        "elements": 864,
+        "top_reference_node": 928
+      },
+      "returncode": 201,
+      "curve_point_count": 14,
+      "max_compression_n": 1225975.0,
+      "last_shortening_mm": 3.8125,
+      "absorbed_energy_to_last_point_j": 2589.8250087499996,
+      "curve": [
+        {
+          "shortening_mm": 0.8,
+          "compression_n": 310692.7
+        },
+        {
+          "shortening_mm": 1.6,
+          "compression_n": 619299.1
+        },
+        {
+          "shortening_mm": 2.2,
+          "compression_n": 848367.0
+        },
+        {
+          "shortening_mm": 2.5,
+          "compression_n": 961698.8
+        },
+        {
+          "shortening_mm": 2.8,
+          "compression_n": 1073905.0
+        },
+        {
+          "shortening_mm": 3.1,
+          "compression_n": 1181494.0
+        },
+        {
+          "shortening_mm": 3.25,
+          "compression_n": 1217854.0
+        },
+        {
+          "shortening_mm": 3.4,
+          "compression_n": 1225975.0
+        },
+        {
+          "shortening_mm": 3.475,
+          "compression_n": 1222502.0
+        },
+        {
+          "shortening_mm": 3.55,
+          "compression_n": 1215560.0
+        },
+        {
+          "shortening_mm": 3.625,
+          "compression_n": 1208635.0
+        },
+        {
+          "shortening_mm": 3.7,
+          "compression_n": 1201432.0
+        },
+        {
+          "shortening_mm": 3.775,
+          "compression_n": 1194748.0
+        },
+        {
+          "shortening_mm": 3.8125,
+          "compression_n": 1191551.0
+        }
+      ],
+      "stdout_tail": "MPCs depend on each other\n       common node: 1 in direction 1\n\n Determining the structure of the matrix:\n\n Using up to 1 cpu(s) for setting up the structure of the matrix.\n number of equations\n 5383\n number of nonzero lower triangular matrix elements\n 138840\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.\n\n Factoring the system of equations using the symmetric spooles solver\n Using 1 cpu for spooles.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n average force= 3356.129371\n time avg. forc= 2842.272627\n largest residual force= 237.096825 in node 609 and dof 3\n largest increment of disp= 1.109584e-02\n largest correction to disp= 2.978870e-03 in node 26 and dof 1\n\n no convergence\n\n iteration 4\n\n Decascading the MPC's\n\n *INFO in cascade: linear MPCs and\n       nonlinear MPCs depend on each other\n       common node: 1 in direction 1\n\n Determining the structure of the matrix:\n\n Using up to 1 cpu(s) for setting up the structure of the matrix.\n number of equations\n 5383\n number of nonzero lower triangular matrix elements\n 138840\n\n Using up to 1 cpu(s) for the stress calculation.\n\n Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.\n\n Factoring the system of equations using the symmetric spooles solver\n Using 1 cpu for spooles.\n\n Using up to 1 cpu(s) for the stress calculation.\n\n average force= 3329.888529\n time avg. forc= 2840.523238\n largest residual force= 1087.014393 in node 2607 and dof 1\n largest increment of disp= 1.109584e-02\n largest correction to disp= 1.084249e-02 in node 451 and dof 1\n\n divergence; the increment size is decreased to 3.662109e-07\n the increment is reattempted\n\n\n *ERROR: increment size smaller than minimum\n best solution and residuals are in the frd file\n\n",
+      "stderr_tail": "",
+      "input_file": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_simulation_v8\\calculix_v8d_force_displacement\\v8d_f95_c705_t406p5_i500.inp"
+    }
+  ]
+}

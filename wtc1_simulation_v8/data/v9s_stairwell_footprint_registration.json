@@ -1,0 +1,204 @@
+{
+  "iteration": "V9S",
+  "dataset": {
+    "name": "Bounded two-figure registration of the three WTC 1 Floor 95 stairwell footprints",
+    "version": "9.19.0",
+    "status": "PREDECLARED_QUALITATIVE_PIXEL_REGISTRATION_NO_AS_BUILT_OR_MECHANICAL_CREDIT",
+    "random_seed": 9122004,
+    "random_draw_used": false,
+    "scope": "Preserve V8U through V9R, register only source-visible Floor 95 stairwell outlines or marker boxes from NCSTAR 1-7 Figure 5-2 and NCSTAR 1-2B Figure 9-124 against visible core-boundary landmarks, report digitization and inter-figure uncertainty, and create qualitative normalized envelopes without exact as-built coordinates or mechanical credit."
+  },
+  "source_policy": {
+    "source_archive_read": false,
+    "source_archive_rescanned": false,
+    "cached_official_sources_read_only": true,
+    "network_access_used": false,
+    "official_source_files_modified": false,
+    "structural_solver_authorized": false,
+    "blender_authorized": false,
+    "physical_interpretation_authorized": false,
+    "mass_assignment_authorized": false,
+    "stiffness_assignment_authorized": false,
+    "strength_assignment_authorized": false,
+    "connection_assignment_authorized": false,
+    "component_damage_validation_authorized": false,
+    "foia_request_sent": false,
+    "external_contact_count": 0
+  },
+  "regression_files": {
+    "wtc1_simulation_v8/data/v9r_primary_stairwell_plan_gap_closure.json": "2d842492cee0a1f3a3639411163426e407cd4b55cde7fd14365d4be4cf9e83d8",
+    "wtc1_simulation_v8/scripts/run_v9r_primary_stairwell_plan_gap_closure.py": "02642f138622542021ddbbb91f6886b8206c41ba3a54cdd3ec87917484990e96",
+    "wtc1_simulation_v8/output/v9r_stairwell_source_manifest.json": "846600cdaa1c432cca41229dd19b43353c621f340211660a7a0be99506411e42",
+    "wtc1_simulation_v8/output/v9r_stairwell_plan_candidate_matrix.json": "1c8412615019c5021f33cac5bb829c4b640776ced8e32115d6968b4e9edceef1",
+    "wtc1_simulation_v8/output/v9r_stairwell_topology.json": "b16d78dad57b98bdb8f1cd9655a446c3172f1a473c43845255f80d7e8487aa9d",
+    "wtc1_simulation_v8/output/v9r_stairwell_model_gate.json": "4b8df7e72fa5d9eff0a4853c54ae036ed5b151a6677527dae29fbeb62b7eb356",
+    "wtc1_simulation_v8/output/resultats_wtc1_v9r_plans_escaliers.json": "78aa04b9566107901326ed9ff87be38f6024f348ca224fda3e04ff1b2924a9ca",
+    "wtc1_simulation_v8/output/rapport_wtc1_v9r_plans_escaliers.md": "77139cd4dc20e7966e3a50d27561627be224da0508d6191fd042b55406751e70"
+  },
+  "source_files": {
+    "wtc1_simulation_v8/input/v9r_official_sources/ncstar1-7.pdf": "453ba77636277ec4a66ab9682ec7e9c3e7d22ecd8a8432c8d9578fb7fc3584bc",
+    "work/official_sources/ncstar1-2bv2.pdf": "c5bb701fad4103d072f89548c683c0e8ee583c49d94e3f165985088f3443ea1d"
+  },
+  "pdf_anchors": [
+    {
+      "source": "wtc1_simulation_v8/input/v9r_official_sources/ncstar1-7.pdf",
+      "pdf_page": 112,
+      "printed_page": "74",
+      "figure": "Figure 5-2",
+      "required_terms": [
+        "floor 95",
+        "0.7 s after impact",
+        "stairwells superimposed"
+      ]
+    },
+    {
+      "source": "work/official_sources/ncstar1-2bv2.pdf",
+      "pdf_page": 164,
+      "printed_page": "346",
+      "figure": "Figure 9-124 introduction and first panel",
+      "required_terms": [
+        "Stairwell Disruption",
+        "floor 92",
+        "Figure 9-124",
+        "floors 93 through 97"
+      ]
+    },
+    {
+      "source": "work/official_sources/ncstar1-2bv2.pdf",
+      "pdf_page": 165,
+      "printed_page": "347",
+      "figure": "Figure 9-124 Floor 95 panel and caption",
+      "required_terms": [
+        "Floor 95",
+        "Base case stairwell disruption in WTC 1"
+      ]
+    }
+  ],
+  "rendering": {
+    "renderer": "pdftoppm",
+    "resolution_dpi": 300,
+    "color_mode": "RGB",
+    "figure_5_2": {
+      "source": "wtc1_simulation_v8/input/v9r_official_sources/ncstar1-7.pdf",
+      "pdf_page": 112,
+      "expected_page_size_px": [2550, 3300],
+      "analysis_crop_box_px": [350, 520, 1320, 1720],
+      "analysis_crop_size_px": [970, 1200]
+    },
+    "figure_9_124": {
+      "source": "work/official_sources/ncstar1-2bv2.pdf",
+      "pdf_page": 165,
+      "expected_page_size_px": [2255, 3188],
+      "analysis_crop_box_px": [1130, 980, 2140, 1990],
+      "analysis_crop_size_px": [1010, 1010]
+    }
+  },
+  "registration": {
+    "method": "independent_axis_normalization_against_visible_core_reference_rectangle",
+    "common_canvas_size_px": [1000, 1000],
+    "physical_scale_assigned": false,
+    "core_reference_rectangles_px": {
+      "figure_5_2": [250, 445, 755, 825],
+      "figure_9_124": [65, 63, 926, 641]
+    },
+    "core_reference_pick_uncertainty_px": {
+      "figure_5_2": 8.0,
+      "figure_9_124": 5.0
+    },
+    "inter_figure_centroid_distance_gate_common_px": 100.0,
+    "minimum_cross_figure_visible_stair_count": 2,
+    "rule": "Use the visible core reference rectangles only to compare relative positions. Do not convert normalized coordinates to feet, metres, solver nodes or as-built coordinates in V9S."
+  },
+  "digitizations": {
+    "figure_5_2": {
+      "source_semantics": "visible stair tread and local outline extent in the clean pre-damage plan panel",
+      "outline_pick_uncertainty_px": 5.0,
+      "stairs": {
+        "A": {
+          "source_label": "Stairwell A",
+          "polygon_px": [[511, 526], [598, 526], [598, 571], [511, 571]],
+          "visibility": "VISIBLE_CLOSED_BOUNDING_EXTENT",
+          "metric_as_built_boundary": false
+        },
+        "C": {
+          "source_label": "Stairwell C",
+          "polygon_px": [[363, 522], [445, 522], [445, 570], [363, 570]],
+          "visibility": "VISIBLE_CLOSED_BOUNDING_EXTENT",
+          "metric_as_built_boundary": false
+        },
+        "B": {
+          "source_label": "Stairwell B",
+          "polygon_px": [[463, 652], [522, 652], [522, 740], [463, 740]],
+          "visibility": "VISIBLE_CLOSED_BOUNDING_EXTENT",
+          "metric_as_built_boundary": false
+        }
+      }
+    },
+    "figure_9_124": {
+      "source_semantics": "numbered red stair-position marker box in the rendered Floor 95 official-model damage panel",
+      "outline_pick_uncertainty_px": 6.0,
+      "stairs": {
+        "A": {
+          "source_label": "1",
+          "polygon_px": [[600, 211], [651, 211], [651, 265], [600, 265]],
+          "visibility": "VISIBLE_NUMBERED_MARKER_BOX",
+          "metric_as_built_boundary": false
+        },
+        "C": {
+          "source_label": "2",
+          "polygon_px": null,
+          "visibility": "NOT_RECOVERABLE_ON_FLOOR_95_PANEL",
+          "reason": "No continuous closed marker box or stair outline can be distinguished from modeled disruption and raster loss in the Floor 95 panel. Other floors are not substituted for this V9S digitization.",
+          "metric_as_built_boundary": false
+        },
+        "B": {
+          "source_label": "3",
+          "polygon_px": [[510, 417], [560, 417], [560, 466], [510, 466]],
+          "visibility": "VISIBLE_NUMBERED_MARKER_BOX",
+          "metric_as_built_boundary": false
+        }
+      }
+    }
+  },
+  "gates": {
+    "regression_hash_count_expected": 8,
+    "source_hash_count_expected": 2,
+    "pdf_anchor_count_expected": 3,
+    "rendered_page_count_expected": 2,
+    "analysis_crop_count_expected": 2,
+    "stairway_count_expected": 3,
+    "figure_5_2_visible_outline_count_expected": 3,
+    "figure_9_124_visible_outline_count_expected": 2,
+    "cross_figure_visible_stair_count_expected": 2,
+    "metric_as_built_solver_geometry_authorized": false,
+    "discrete_mass_authorized": false,
+    "stiffness_authorized": false,
+    "strength_authorized": false,
+    "connection_authorized": false,
+    "load_path_credit_authorized": false,
+    "component_damage_validation_authorized": false,
+    "global_solver_authorized": false,
+    "blender_physical_validation_authorized": false
+  },
+  "evidence_policy": {
+    "observed_or_transcribed_fact": "A page-verified caption, visible outline, numbered marker box, label or core-boundary landmark.",
+    "official_model_result": "Both figures are NIST official-model visualizations and are not independent physical measurements.",
+    "model_hypothesis": "Any inferred closed outline where the source is interrupted, any physical scale, or any mass, stiffness, strength, connection or damage property.",
+    "derived_result": "Normalized coordinates, centroid distance, digitization uncertainty conversion and conservative union envelope.",
+    "contradiction_or_unknown": "Stair C is not recoverable in the Figure 9-124 Floor 95 panel; the two figures use different outline semantics and neither is a dimensioned as-built plan."
+  },
+  "outputs": {
+    "figure_directory": "wtc1_simulation_v8/output/v9s_stairwell_registration_figures",
+    "source_manifest": "wtc1_simulation_v8/output/v9s_stairwell_registration_source_manifest.json",
+    "digitization": "wtc1_simulation_v8/output/v9s_stairwell_digitization.json",
+    "envelopes": "wtc1_simulation_v8/output/v9s_stairwell_qualitative_envelopes.json",
+    "metrics_csv": "wtc1_simulation_v8/output/v9s_stairwell_registration_metrics.csv",
+    "model_gate": "wtc1_simulation_v8/output/v9s_stairwell_model_gate.json",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v9s_registration_escaliers.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v9s_registration_escaliers.md"
+  },
+  "next_iteration": {
+    "id": "V9T",
+    "objective": "Preserve V8U through V9S and construct a geometry-only three-envelope Floor 95 stairwell layer from the V9S normalized envelopes and the separately published landing dimensions. Generate explicitly hypothetical low, base and high placement variants, verify transform reproducibility and topology/non-overlap only, assign zero mass, stiffness, strength, connection or load-path credit, do not modify the Blender master, and do not run a structural solver."
+  }
+}

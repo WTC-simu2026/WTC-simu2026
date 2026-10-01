@@ -1,0 +1,92 @@
+{
+  "iteration": "V10V",
+  "unit_system": {
+    "length": "mm",
+    "force": "N",
+    "stress": "N/mm2 (MPa)",
+    "work": "N mm"
+  },
+  "declared_inputs": {
+    "geometry": {
+      "length_mm": 2000.0,
+      "width_mm": 40.0,
+      "height_mm": 40.0,
+      "area_mm2": 1600.0,
+      "second_moment_mm4": 213333.33333333334
+    },
+    "material": {
+      "young_modulus_mpa": 200000.0,
+      "poisson_ratio": 0.3,
+      "shear_modulus_mpa": 76923.07692307692,
+      "shear_correction_factor": 0.8333333333333334,
+      "behavior": "isotropic linear elastic"
+    },
+    "eigenvalue_cases": {
+      "geometry": "perfect straight column",
+      "element_counts": [
+        8,
+        16,
+        32,
+        64
+      ],
+      "reference_compressive_load_n": 1.0,
+      "requested_mode_count": 6
+    },
+    "nonlinear_cases": {
+      "geometry": "stress-free sinusoidal initial crookedness x(z)=e0 sin(pi z/L)",
+      "element_counts": [
+        16,
+        32,
+        64
+      ],
+      "initial_midspan_amplitude_mm": 2.0,
+      "initial_imperfection_ratio": 1000.0,
+      "target_axial_shortening_mm": 8.0,
+      "geometric_nonlinearity": true,
+      "material_nonlinearity": false,
+      "initial_time_increment": 0.002,
+      "minimum_time_increment": 1e-08,
+      "maximum_time_increment": 0.01,
+      "maximum_increment_count": 2000,
+      "postcritical_window_minimum_shortening_factor": 2.0
+    }
+  },
+  "recomputed": {
+    "area_mm2": 1600.0,
+    "second_moment_mm4": 213333.33333333334,
+    "shear_modulus_mpa": 76923.07692307692,
+    "euler_critical_load_n": 105275.7802782865,
+    "timoshenko_shear_corrected_critical_load_n": 105167.8319290131,
+    "timoshenko_critical_axial_shortening_mm": 0.657298949556332
+  },
+  "declared_reference_checks": {
+    "euler_critical_load_n": {
+      "declared": 105275.7802782865,
+      "recomputed": 105275.7802782865,
+      "match": true
+    },
+    "timoshenko_shear_corrected_critical_load_n": {
+      "declared": 105167.8319290131,
+      "recomputed": 105167.8319290131,
+      "match": true
+    },
+    "timoshenko_critical_axial_shortening_mm": {
+      "declared": 0.657298949556332,
+      "recomputed": 0.657298949556332,
+      "match": true
+    }
+  },
+  "derived_input_checks": {
+    "area_mm2": true,
+    "second_moment_mm4": true,
+    "shear_modulus_mpa": true,
+    "initial_imperfection_ratio": true
+  },
+  "imperfect_column_equations": {
+    "amplitude": "a = e0 / (1 - p), where p = P / Pcr and 0 <= p < 1",
+    "shortening": "Delta = P L / (E A) + pi^2 (a^2 - e0^2) / (4 L)",
+    "status": "bounded small-slope analytical comparator; not an exact finite-rotation solution"
+  },
+  "comparator_limit": "Small-slope imperfect-column relation; acceptance uses median error only on the finest mesh and cannot validate arbitrary finite-rotation postbuckling.",
+  "wtc_attribution": false
+}

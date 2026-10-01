@@ -1,0 +1,411 @@
+{
+  "model": "WTC1_V8J_COLD_LOAD_PATH_GATE",
+  "version": "8.9.0",
+  "generated_at_utc": "2026-08-24T08:34:55.608267+00:00",
+  "runtime_seconds": 9.927842699999928,
+  "configuration_file": "wtc1_simulation_v8/data/v8j_cold_load_path_gate.json",
+  "facts_transferred": [
+    {
+      "label": "FAIT_OFFICIEL",
+      "source": "NIST NCSTAR 1-6",
+      "pdf_page": 156,
+      "printed_page": 74,
+      "fact": "For an 80 psf service gravity load, each seat supporting a paired floor truss carried approximately 16 kip. NIST Table 4-2 gives 20 C interior-seat vertical capacities from 194 to 395 kip.",
+      "confidence": "high; complete page visually checked"
+    },
+    {
+      "label": "FAIT_OFFICIEL",
+      "source": "NIST NCSTAR 1-6",
+      "pdf_page": 157,
+      "printed_page": 75,
+      "fact": "NIST Table 4-3 gives 20 C exterior-seat vertical capacities from 94 to 207 kip for the eight Floor 96 details studied.",
+      "confidence": "high; complete page visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 295,
+      "printed_page": 231,
+      "fact": "Immediately after impact, the modeled core-load increase was 400 kip at both Floor 98 and Floor 105, so the differential change attributable to the core-to-wall path between those levels was zero. At 80 min, the modeled core load decreased by 6,748 kip at Floor 98 and 6,783 kip at Floor 105.",
+      "confidence": "high; Tables 4-22 and 4-23 visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 306,
+      "printed_page": 242,
+      "fact": "In the Case B hat-truss checks, outrigger E reached DCR 0.97 at 80 min; the listed exterior columns supporting the outriggers remained below DCR 0.67 at 80 min.",
+      "confidence": "high; Table 4-27 and Table 4-28 visually checked"
+    },
+    {
+      "label": "RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 308,
+      "printed_page": 244,
+      "fact": "All 22 primary-path hat-truss connections listed by NIST were classified safe at 80 min; published demands and yield/ultimate capacities are retained in the V8G component dataset.",
+      "confidence": "high; Table 4-29 visually checked"
+    },
+    {
+      "label": "FAIT_ET_RESULTAT_MODELE_OFFICIEL",
+      "source": "NIST NCSTAR 1-6D",
+      "pdf_page": 55,
+      "printed_page": "liii",
+      "fact": "NIST reports 38 of 59 north-wall columns, three of 59 south-wall columns, and nine of 47 core columns severed or heavily damaged. It also reports severe north office-floor damage between perimeter Columns 112 and 145 on Floors 94-98. In the global model, the core carried about one percent more load immediately after impact.",
+      "confidence": "high for the reported damage/model result; this does not provide a surviving truss-seat map"
+    },
+    {
+      "label": "FAIT_OFFICIEL",
+      "source": "NIST NCSTAR 1-3D",
+      "pdf_page": 38,
+      "printed_page": 4,
+      "fact": "Each tower face had 59 perimeter columns at 40 in spacing. The built-up box section was approximately 14 in square, but plate thickness varied by location.",
+      "confidence": "high; complete page visually checked"
+    },
+    {
+      "label": "FAIT_OFFICIEL_LIMITE",
+      "source": "NIST NCSTAR 1-3D",
+      "pdf_page": 62,
+      "printed_page": 28,
+      "fact": "Recovered WTC 1 perimeter Column 142 over Floors 97-100 was specified Fy = 60 ksi. This specimen does not establish all perimeter sections or plate thicknesses around Floors 94-99.",
+      "confidence": "high for the specimen; low for generalization"
+    }
+  ],
+  "local_archive_observations": [
+    {
+      "label": "OBSERVATION_ARCHIVE_LOCALE",
+      "path": "C:/Users/jeuxpc/Desktop/ARCH/11 septembre 2001/Disaster and Failure Studies Repository/Fire Tests and Analysis/FloorTrussSystems-20260813T183023Z-1-001.zip",
+      "observation": "Read-only archive listing contains 522 entries, all recognized image or video files, and no non-media/model entry.",
+      "scope_limit": "This does not prove that no model input or drawing exists elsewhere in the 145 GB archive."
+    },
+    {
+      "label": "OBSERVATION_ARCHIVE_LOCALE",
+      "path": "C:/Users/jeuxpc/Desktop/ARCH/11 septembre 2001/Disaster and Failure Studies Repository",
+      "observation": "A filename scan found no WTCAB, Drawing Book 5/6, BeamSched, C32T1 model input, or structural solver file with the searched extensions.",
+      "scope_limit": "Filename searches do not inspect the contents of every compressed archive."
+    }
+  ],
+  "model_assumptions": {
+    "inherited_core_network": "V8I nearest-four proxy, 47 reconstructed core-column nodes and the cold_upper_envelope cracked-slab case",
+    "cold_demand": "NIST Case B Floor 98 after-impact core load, 34,429 kip",
+    "cut_set_definition": "At the first cold failure, remove every core proxy edge whose beam and membrane branches have both fractured; identify any loaded connected component containing no surviving column support",
+    "paired_truss_count_full_face": "tower width divided by 6.67 ft paired-truss tributary width, rounded to 31",
+    "north_surviving_pair_proxy": "31 multiplied by 21/59 surviving north-wall columns, rounded to 11; this is a sensitivity proxy, not a seat-by-seat impact map",
+    "seat_bridge_test": "The isolated cut load is divided by each published 20 C exterior-seat capacity. This is a capacity-only screening test and does not assert compatible stiffness, ductility, geometry, or survival of the floor path.",
+    "hat_truss_cold_rule": "No additional cold core unloading is credited because NIST Table 4-22 reports the same +400 kip core-load change at Floors 98 and 105. The hat truss can redistribute wall loads while its net differential core transfer is zero.",
+    "fractions_are_event_probabilities": false
+  },
+  "gate_definition": {
+    "required_condition": "The post-impact 20 C model must have a mechanically specified, surviving force-displacement path for every loaded component before thermal studies or Blender coupling.",
+    "pass_policy": "Capacity arithmetic alone cannot pass the gate. The path topology, stiffness, deformation capacity, connection assignment, and impact survival must all be specified from drawings or a declared validated substitute."
+  },
+  "cold_gate_cases": [
+    {
+      "slab_case": "no_slab_v8h_reference",
+      "post_impact_demand_kip": 34429.0,
+      "equilibrium_at_post_impact_demand": false,
+      "first_failed_floor": 96,
+      "failure_reason": "disconnected_loaded_component",
+      "maximum_stable_demand_kip": 11939.960764914751,
+      "minimum_failed_demand_kip": 11939.96089317277,
+      "deficit_from_post_impact_demand_kip": 22489.03923508525
+    },
+    {
+      "slab_case": "high_ratio_full_area",
+      "post_impact_demand_kip": 34429.0,
+      "equilibrium_at_post_impact_demand": false,
+      "first_failed_floor": 96,
+      "failure_reason": "disconnected_loaded_component",
+      "maximum_stable_demand_kip": 11953.78031001985,
+      "minimum_failed_demand_kip": 11953.78043827787,
+      "deficit_from_post_impact_demand_kip": 22475.21968998015
+    },
+    {
+      "slab_case": "cold_upper_envelope",
+      "post_impact_demand_kip": 34429.0,
+      "equilibrium_at_post_impact_demand": false,
+      "first_failed_floor": 96,
+      "failure_reason": "disconnected_loaded_component",
+      "maximum_stable_demand_kip": 11953.78031001985,
+      "minimum_failed_demand_kip": 11953.78043827787,
+      "deficit_from_post_impact_demand_kip": 22475.21968998015
+    }
+  ],
+  "cold_cut_set": {
+    "selected_slab_case": "cold_upper_envelope",
+    "passed_floors": [
+      {
+        "floor": 99,
+        "equilibrium": true,
+        "final_peak_dcr": 0.47181533881694615,
+        "maximum_abs_displacement_in": 0.0844434605647588
+      },
+      {
+        "floor": 98,
+        "equilibrium": true,
+        "final_peak_dcr": 0.48104618389416687,
+        "maximum_abs_displacement_in": 0.08428736485632361
+      },
+      {
+        "floor": 97,
+        "equilibrium": true,
+        "final_peak_dcr": 0.4487182492785962,
+        "maximum_abs_displacement_in": 0.07934049594675548
+      }
+    ],
+    "failure_floor": 96,
+    "failure_reason": "disconnected_loaded_component",
+    "initially_removed_columns_floor_96": [
+      503,
+      504,
+      505,
+      604,
+      704,
+      904
+    ],
+    "fractured_beam_edges": [
+      [
+        502,
+        503
+      ],
+      [
+        503,
+        603
+      ],
+      [
+        504,
+        605
+      ],
+      [
+        505,
+        506
+      ],
+      [
+        505,
+        605
+      ],
+      [
+        603,
+        604
+      ],
+      [
+        604,
+        605
+      ]
+    ],
+    "fractured_membrane_edges": [
+      [
+        502,
+        503
+      ],
+      [
+        503,
+        603
+      ],
+      [
+        504,
+        605
+      ],
+      [
+        505,
+        506
+      ],
+      [
+        505,
+        605
+      ],
+      [
+        603,
+        604
+      ],
+      [
+        604,
+        605
+      ]
+    ],
+    "connected_components_after_fracture": [
+      {
+        "nodes": [
+          501,
+          502,
+          506,
+          507,
+          508,
+          601,
+          602,
+          603,
+          605,
+          606,
+          607,
+          608,
+          701,
+          702,
+          703,
+          704,
+          705,
+          706,
+          707,
+          708,
+          801,
+          802,
+          803,
+          804,
+          805,
+          806,
+          807,
+          901,
+          902,
+          903,
+          904,
+          905,
+          906,
+          907,
+          908,
+          1001,
+          1002,
+          1003,
+          1004,
+          1005,
+          1006,
+          1007,
+          1008
+        ],
+        "has_surviving_column_support": true,
+        "incoming_load_kip": 31172.842619937095
+      },
+      {
+        "nodes": [
+          503,
+          504,
+          505,
+          604
+        ],
+        "has_surviving_column_support": false,
+        "incoming_load_kip": 3256.1573800629035
+      }
+    ],
+    "disconnected_loaded_component": {
+      "nodes": [
+        503,
+        504,
+        505,
+        604
+      ],
+      "has_surviving_column_support": false,
+      "incoming_load_kip": 3256.1573800629035
+    },
+    "disconnected_load_fraction_of_core_demand": 0.09457600801832478
+  },
+  "office_floor_to_perimeter_capacity_screen": {
+    "cut_load_kip": 3256.1573800629035,
+    "service_load_equivalent_pairs": 203.50983625393147,
+    "full_face_pair_count": 31,
+    "north_damage_scaled_pair_count": 11,
+    "mean_capacity_per_pair_at_20c_kip": 128.375,
+    "rows": [
+      {
+        "exterior_seat_detail": "1013",
+        "capacity_per_pair_at_20c_kip": 94.0,
+        "required_pairs_for_cut_load": 35,
+        "full_face_capacity_31_pairs_kip": 2914.0,
+        "full_face_capacity_screen_pass": false,
+        "damage_scaled_capacity_11_pairs_kip": 1034.0,
+        "damage_scaled_capacity_screen_pass": false
+      },
+      {
+        "exterior_seat_detail": "1111",
+        "capacity_per_pair_at_20c_kip": 94.0,
+        "required_pairs_for_cut_load": 35,
+        "full_face_capacity_31_pairs_kip": 2914.0,
+        "full_face_capacity_screen_pass": false,
+        "damage_scaled_capacity_11_pairs_kip": 1034.0,
+        "damage_scaled_capacity_screen_pass": false
+      },
+      {
+        "exterior_seat_detail": "1212",
+        "capacity_per_pair_at_20c_kip": 111.0,
+        "required_pairs_for_cut_load": 30,
+        "full_face_capacity_31_pairs_kip": 3441.0,
+        "full_face_capacity_screen_pass": true,
+        "damage_scaled_capacity_11_pairs_kip": 1221.0,
+        "damage_scaled_capacity_screen_pass": false
+      },
+      {
+        "exterior_seat_detail": "1311",
+        "capacity_per_pair_at_20c_kip": 94.0,
+        "required_pairs_for_cut_load": 35,
+        "full_face_capacity_31_pairs_kip": 2914.0,
+        "full_face_capacity_screen_pass": false,
+        "damage_scaled_capacity_11_pairs_kip": 1034.0,
+        "damage_scaled_capacity_screen_pass": false
+      },
+      {
+        "exterior_seat_detail": "1313",
+        "capacity_per_pair_at_20c_kip": 94.0,
+        "required_pairs_for_cut_load": 35,
+        "full_face_capacity_31_pairs_kip": 2914.0,
+        "full_face_capacity_screen_pass": false,
+        "damage_scaled_capacity_11_pairs_kip": 1034.0,
+        "damage_scaled_capacity_screen_pass": false
+      },
+      {
+        "exterior_seat_detail": "1411",
+        "capacity_per_pair_at_20c_kip": 140.0,
+        "required_pairs_for_cut_load": 24,
+        "full_face_capacity_31_pairs_kip": 4340.0,
+        "full_face_capacity_screen_pass": true,
+        "damage_scaled_capacity_11_pairs_kip": 1540.0,
+        "damage_scaled_capacity_screen_pass": false
+      },
+      {
+        "exterior_seat_detail": "1511",
+        "capacity_per_pair_at_20c_kip": 193.0,
+        "required_pairs_for_cut_load": 17,
+        "full_face_capacity_31_pairs_kip": 5983.0,
+        "full_face_capacity_screen_pass": true,
+        "damage_scaled_capacity_11_pairs_kip": 2123.0,
+        "damage_scaled_capacity_screen_pass": false
+      },
+      {
+        "exterior_seat_detail": "1611",
+        "capacity_per_pair_at_20c_kip": 207.0,
+        "required_pairs_for_cut_load": 16,
+        "full_face_capacity_31_pairs_kip": 6417.0,
+        "full_face_capacity_screen_pass": true,
+        "damage_scaled_capacity_11_pairs_kip": 2277.0,
+        "damage_scaled_capacity_screen_pass": false
+      }
+    ],
+    "interpretation": "The full-face arithmetic envelope straddles the cut demand, while the 11-pair north-damage proxy does not pass for any published exterior seat detail. Neither result proves a physical bridge because the actual seat map, floor-truss stiffness, load compatibility and impact survival of the path are not established."
+  },
+  "hat_truss_path": {
+    "post_impact_core_change_floor_98_kip": 400.0,
+    "post_impact_core_change_floor_105_kip": 400.0,
+    "post_impact_differential_core_transfer_change_kip": 0.0,
+    "official_net_outward_transfer_history_kip": {
+      "20": 0.0,
+      "40": 4135.0,
+      "60": 5663.0,
+      "80": 6748.0,
+      "100": 5951.0
+    },
+    "demonstrated_80min_transfer_kip": 6748.0,
+    "controlling_80min_outrigger_dcr": 0.97,
+    "nist_calibrated_capacity_kip": 6956.701030927835,
+    "cold_gate_credit_kip": 0.0,
+    "interpretation": "The hat truss was mechanically active after impact and redistributed wall loads, but the official tables do not show net differential core unloading at the cold post-impact state. Crediting the later 6,748 kip transfer to the cold gate would double count a thermal-time response."
+  },
+  "gate_result": {
+    "passed": false,
+    "status": "NOT_VALIDATED_MISSING_FORCE_DISPLACEMENT_PATH",
+    "reason": "V8J quantifies a loaded disconnected component and finds that published capacity envelopes straddle its demand, but the actual surviving topology, stiffness, ductility and connection assignment are not available.",
+    "thermal_runs_authorized": false,
+    "blender_coupling_authorized": false
+  },
+  "missing_information": [
+    "Drawing Book 5 core beam schedule and real Floor 96 beam topology",
+    "Drawing Book 6 core connection details",
+    "Floor 96 seat-detail assignment and surviving floor-truss map",
+    "compatible force-displacement law for the core-floor-perimeter bridge",
+    "perimeter plate-thickness schedule at Floors 94-99"
+  ]
+}

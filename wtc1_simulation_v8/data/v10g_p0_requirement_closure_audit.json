@@ -1,0 +1,123 @@
+{
+  "iteration": "V10G",
+  "dataset_version": "10.7.0",
+  "objective": "Preserve V8U through V10F, enforce the closed V10F page-content expansion gate, return to the immutable V10B acquisition matrix, and record the exact closure status of all 22 structural source requirements without opening any drawing page or assigning any physical property.",
+  "random_seed": 1010007,
+  "random_draw_used": false,
+  "policies": {
+    "source_archive_read_authorized": false,
+    "source_archive_write_authorized": false,
+    "official_sources_read_authorized": false,
+    "official_sources_write_authorized": false,
+    "network_authorized": false,
+    "external_contact_authorized": false,
+    "drawing_page_content_read_authorized": false,
+    "geometry_transcription_authorized": false,
+    "as_built_coordinate_assignment_authorized": false,
+    "member_section_assignment_authorized": false,
+    "material_assignment_authorized": false,
+    "mass_assignment_authorized": false,
+    "stiffness_assignment_authorized": false,
+    "capacity_assignment_authorized": false,
+    "connection_law_assignment_authorized": false,
+    "damage_state_assignment_authorized": false,
+    "load_path_credit_authorized": false,
+    "structural_solver_authorized": false,
+    "thermal_continuation_authorized": false,
+    "blender_authorized": false,
+    "blender_master_modification_authorized": false
+  },
+  "expected_counts": {
+    "v10b_requirement_rows": 22,
+    "v10b_candidate_documents": 53,
+    "p0_documents": 9,
+    "p1_documents": 23,
+    "p2_documents": 21,
+    "v10d_local_working_copies": 9,
+    "v10e_index_transcription_rows": 29,
+    "v10f_exact_floor93_99_locator_candidates": 0,
+    "p0_linked_requirements": 18,
+    "requirements_without_p0_candidate": 4,
+    "requirements_closed": 0,
+    "requirements_solver_blocking": 22,
+    "physical_assignment_count": 0
+  },
+  "p0_document_ids": [
+    "WTCI-000013-L",
+    "WTCI-000710-L",
+    "WTCI-000020-L",
+    "WTCI-000702-L",
+    "WTCI-000703-L",
+    "WTCI-000705-L",
+    "WTCI-000721-L",
+    "WTCI-000722-L",
+    "WTCI-000709-L"
+  ],
+  "protected_inputs": [
+    {
+      "role": "v10b_requirement_matrix",
+      "path": "wtc1_simulation_v8/output/v10b_requirement_document_matrix.csv",
+      "sha256": "492e2ef594658c2d8148d8330bdfb60145d029269eb7c15632d44658706c529c"
+    },
+    {
+      "role": "v10b_priority_matrix",
+      "path": "wtc1_simulation_v8/output/v10b_prioritized_acquisition_transcription_matrix.csv",
+      "sha256": "aad4574e7580d0b50f16e70a0d2e029e77d24608e4407b0aa04d4b2ebd0d1298"
+    },
+    {
+      "role": "v10b_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10b_audit_index_structurel.json",
+      "sha256": "9071a10d0067615766a1c1a1ea384183f9491cc6687dd171856f0e0c5079730a"
+    },
+    {
+      "role": "v10d_working_copy_manifest",
+      "path": "wtc1_simulation_v8/output/v10d_p0_working_copy_manifest.json",
+      "sha256": "92b6d935930c20c90d3fbe73033392f3a0f72b11d54fa90da9a72f5be9c1af5e"
+    },
+    {
+      "role": "v10e_index_locator_matrix",
+      "path": "wtc1_simulation_v8/output/v10e_p0_index_locator_matrix.csv",
+      "sha256": "b132cbf04d893198c25d0594ee50254502368d740073c688b5b9161773b8d46e"
+    },
+    {
+      "role": "v10f_floor_locator_matrix",
+      "path": "wtc1_simulation_v8/output/v10f_p0_floor93_99_locator_matrix.csv",
+      "sha256": "b020975b989c78d20e669a86150e385c43ded93f48a45f79d9f697d057f99bf6"
+    },
+    {
+      "role": "v10f_results",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v10f_localisateurs_renvois.json",
+      "sha256": "b97d2c1e8e45e10e73a5910de5384d6b673721ab793c0e8e8d6a198fbc23a27b"
+    },
+    {
+      "role": "v10f_gate",
+      "path": "wtc1_simulation_v8/output/v10f_structural_source_gate.json",
+      "sha256": "96e4231b876e8664b48975ce16ea32d3f3c260a88d82e1ec492bc36b3493ae0a"
+    },
+    {
+      "role": "v10f_configuration",
+      "path": "wtc1_simulation_v8/data/v10f_p0_cross_reference_locator_audit.json",
+      "sha256": "0d1a91661695e34ed61ec7d320acd8677e89e12f9e265cc1f2cbee64b59276b5"
+    },
+    {
+      "role": "v10f_script",
+      "path": "wtc1_simulation_v8/scripts/run_v10f_p0_cross_reference_locator_audit.py",
+      "sha256": "834bd88c34e48ffc09a4d255919d541017f9c1c6dac06f9b2934935c10fd509c"
+    },
+    {
+      "role": "blender_master",
+      "path": "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend",
+      "sha256": "1322d1a216f99d99872aa2d6fc16ec40d71f8ee476b11fd89d074e313bb3a6b1"
+    }
+  ],
+  "non_p0_requirement_dispositions": {
+    "D01": "EVENT_DAMAGE_REQUIRES_EVENT_SPECIFIC_EVIDENCE_NOT_DESIGN_DRAWINGS",
+    "T02": "HAT_TRUSS_REQUIRES_SEPARATE_P1_BOOK9_SOURCE_PATH",
+    "B01": "TRUNCATED_MODEL_BOUNDARIES_REQUIRE_A_SEPARATE_BOUNDARY_MODEL",
+    "S01": "STAIRWELLS_REMAIN_CATEGORICAL_HYPOTHESES_WITH_ZERO_MECHANICAL_CREDIT"
+  },
+  "next_iteration": {
+    "id": "V10H",
+    "objective": "Preserve V8U through V10G. Using only the immutable V10B matrices and the V10G unresolved-requirement matrix, predeclare the smallest exact P1/P2 document bundle that maximizes marginal coverage of the still-blocking drawing-dependent requirements, while keeping D01, B01 and S01 on separate non-drawing evidence tracks and T02 on its separate Book 9 track. Do not access a payload or page, use the network, read the source archive or work/official_sources, assign physical properties or damage, run a structural solver, continue a thermal model or launch Blender."
+  }
+}

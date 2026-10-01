@@ -1,0 +1,28 @@
+{
+  "id": "IMPACT-I02-GEOM",
+  "seed": 9112001,
+  "deterministic": true,
+  "purpose": "User-requested web aircraft model intake and geometry-only integration. Does not complete planned IMPACT-I02 contact/fracture work.",
+  "repository": "Flightradar24/fr24-3d-models",
+  "commit": "dd53267690c6a4ecbb290a3acf0284333a5d68a9",
+  "declared_license": "GPL-2.0, per publisher README and LICENSE; original notices retained",
+  "files": ["README.md", "LICENSE", "models/b762.glb", "source/b762/767-200.blend", "source/b762/762.zip"],
+  "source_directory": "wtc1_simulation_v8/input/impact_i02_geom/fr24_dd532676",
+  "output_directory": "wtc1_3d_v4/output/impact_i02_geom",
+  "mechanical_credit": {"mass": 0, "stiffness": 0, "strength": 0, "fracture": 0, "connections": 0},
+  "source_execution": "Only geometry data imported; remote scripts and automatic Python execution disabled. No FlightGear system code executed.",
+  "boeing_dimension_reference": {
+    "url": "https://www.boeing.com/content/dam/boeing/v2/airports/acaps/767_REV_K.pdf",
+    "local_path": "wtc1_simulation_v8/input/impact_i02_geom/boeing/767_REV_K.pdf",
+    "document": "D6-58328 Rev K, December 2024",
+    "page_pdf_one_based": 28,
+    "page_printed": "2-8",
+    "section": "2.2.1 General Dimensions: Model 767-200, -200ER",
+    "transcription_method": "Full page rendered with Poppler and visually read; dimensions embedded in drawing are not in the PDF text layer",
+    "overall_length": {"feet":159,"inches":2,"printed_m":48.51,"exact_ft_in_conversion_m":48.514},
+    "wingspan": {"feet":156,"inches":1,"printed_m":47.57,"exact_ft_in_conversion_m":47.5742},
+    "use": "Overall outline only, not internal structure, exact airframe configuration or impact resistance"
+  },
+  "integration": {"primary_geometry":"models/b762.glb","source_glb_version":1,"output_glb_version":2,"scaling":"None; retain source metres and disclose dimensional discrepancies","solver_transfer":false,"mechanical_iteration_remaining":"IMPACT-I02"},
+  "planned_checks": ["Pinned commit and Git blob SHA1 plus local SHA256", "Variant and overall dimensions, no automatic nonuniform rescaling", "Inspect named parts and topology", "Retain original source files", "Separate graphics meshes from structural solver inputs", "Reopen derived scene and compare vertex positions", "Preserve I01, V11F and V11R"]
+}

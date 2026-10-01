@@ -1,0 +1,484 @@
+{
+  "contract_format": "V10O_SIMPLE_TYPED_SCHEMA_V1",
+  "schema_version": "1.0.0",
+  "validator": "Python standard-library validator in v10o_coupling_adapters.py",
+  "common_envelope_required": [
+    "record_id",
+    "scenario_id",
+    "scenario_class",
+    "epistemic_class",
+    "schema_id",
+    "schema_version",
+    "validation_status",
+    "physical_credit",
+    "source_hashes",
+    "units",
+    "payload"
+  ],
+  "interfaces": {
+    "I01_KINEMATICS_TO_DAMAGE": {
+      "producer": "IMPACT_KINEMATICS",
+      "consumer": "IMPACT_DAMAGE_STATE",
+      "schema_id": "impact_kinematics_v1",
+      "physical_ready": false,
+      "payload_fields": {
+        "mass_kg": {
+          "type": "number",
+          "required": true,
+          "unit": "kg",
+          "minimum": 0.0
+        },
+        "velocity_vector_m_s": {
+          "type": "vector3_number",
+          "required": true,
+          "unit": "m/s"
+        },
+        "attitude_rad": {
+          "type": "vector3_number",
+          "required": true,
+          "unit": "rad"
+        },
+        "contact_time_s": {
+          "type": "number",
+          "required": true,
+          "unit": "s",
+          "minimum": 0.0
+        },
+        "kinetic_energy_J": {
+          "type": "number",
+          "required": true,
+          "unit": "J",
+          "minimum": 0.0
+        },
+        "trajectory_frame": {
+          "type": "string",
+          "required": true
+        },
+        "module_status": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_ZERO_INPUT"
+          ]
+        },
+        "provenance": {
+          "type": "object",
+          "required": true
+        }
+      }
+    },
+    "I02_DAMAGE_TO_FIRE": {
+      "producer": "IMPACT_DAMAGE_STATE",
+      "consumer": "FIRE_GAS_PHASE",
+      "schema_id": "impact_damage_state_v1",
+      "physical_ready": false,
+      "payload_fields": {
+        "member_states": {
+          "type": "array_object",
+          "required": true
+        },
+        "opening_polygons_m": {
+          "type": "array",
+          "required": true
+        },
+        "debris_mass_kg": {
+          "type": "number",
+          "required": true,
+          "unit": "kg",
+          "minimum": 0.0
+        },
+        "fuel_mass_kg": {
+          "type": "number",
+          "required": true,
+          "unit": "kg",
+          "minimum": 0.0
+        },
+        "damage_uncertainty": {
+          "type": "object",
+          "required": true
+        },
+        "module_status": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_ZERO_DAMAGE"
+          ]
+        },
+        "provenance": {
+          "type": "object",
+          "required": true
+        }
+      }
+    },
+    "I03_DAMAGE_TO_COLD_STRUCTURE": {
+      "producer": "IMPACT_DAMAGE_STATE",
+      "consumer": "COLD_GRAVITY_REDISTRIBUTION",
+      "schema_id": "impact_damage_state_v1",
+      "physical_ready": false,
+      "payload_fields": {
+        "member_states": {
+          "type": "array_object",
+          "required": true
+        },
+        "opening_polygons_m": {
+          "type": "array",
+          "required": true
+        },
+        "debris_mass_kg": {
+          "type": "number",
+          "required": true,
+          "unit": "kg",
+          "minimum": 0.0
+        },
+        "fuel_mass_kg": {
+          "type": "number",
+          "required": true,
+          "unit": "kg",
+          "minimum": 0.0
+        },
+        "damage_uncertainty": {
+          "type": "object",
+          "required": true
+        },
+        "module_status": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_ZERO_DAMAGE"
+          ]
+        },
+        "provenance": {
+          "type": "object",
+          "required": true
+        }
+      }
+    },
+    "I04_FIRE_TO_THERMAL_SOLIDS": {
+      "producer": "FIRE_GAS_PHASE",
+      "consumer": "THERMAL_SOLIDS",
+      "schema_id": "fire_gas_history_v1",
+      "physical_ready": false,
+      "payload_fields": {
+        "time_s": {
+          "type": "array_number",
+          "required": true,
+          "unit": "s"
+        },
+        "gas_temperature_K": {
+          "type": "array_number",
+          "required": true,
+          "unit": "K"
+        },
+        "incident_heat_flux_W_m2": {
+          "type": "array_number",
+          "required": true,
+          "unit": "W/m2"
+        },
+        "convection_coefficient_W_m2K": {
+          "type": "array_number",
+          "required": true,
+          "unit": "W/(m2 K)"
+        },
+        "fire_state": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_NO_FIRE"
+          ]
+        },
+        "module_status": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_ZERO_FIRE_LOAD"
+          ]
+        },
+        "provenance": {
+          "type": "object",
+          "required": true
+        }
+      }
+    },
+    "I05_THERMAL_TO_INITIATION": {
+      "producer": "THERMAL_SOLIDS",
+      "consumer": "THERMOMECHANICAL_INITIATION",
+      "schema_id": "thermal_member_history_v1",
+      "physical_ready": false,
+      "payload_fields": {
+        "time_s": {
+          "type": "array_number",
+          "required": true,
+          "unit": "s"
+        },
+        "member_histories": {
+          "type": "array_object",
+          "required": true
+        },
+        "reference_temperature_K": {
+          "type": "number",
+          "required": true,
+          "unit": "K",
+          "minimum": 0.0
+        },
+        "thermal_state": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_NO_TEMPERATURE_INCREMENT"
+          ]
+        },
+        "module_status": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_THERMAL_NEUTRAL"
+          ]
+        },
+        "provenance": {
+          "type": "object",
+          "required": true
+        }
+      }
+    },
+    "I06_COLD_STATE_TO_INITIATION": {
+      "producer": "COLD_GRAVITY_REDISTRIBUTION",
+      "consumer": "THERMOMECHANICAL_INITIATION",
+      "schema_id": "cold_structural_state_v1",
+      "physical_ready": false,
+      "payload_fields": {
+        "node_displacements_m": {
+          "type": "object",
+          "required": true,
+          "unit": "m"
+        },
+        "element_forces_N": {
+          "type": "object",
+          "required": true,
+          "unit": "N"
+        },
+        "connection_state": {
+          "type": "object",
+          "required": true
+        },
+        "boundary_state": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_UNASSIGNED"
+          ]
+        },
+        "equilibrium_residual_N": {
+          "type": "number",
+          "required": true,
+          "unit": "N",
+          "minimum": 0.0
+        },
+        "structural_state": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_ZERO_INCREMENT"
+          ]
+        },
+        "module_status": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_COLD_NEUTRAL"
+          ]
+        },
+        "provenance": {
+          "type": "object",
+          "required": true
+        }
+      }
+    },
+    "I07_INITIATION_TO_PROPAGATION": {
+      "producer": "THERMOMECHANICAL_INITIATION",
+      "consumer": "PROPAGATION_OR_ARREST",
+      "schema_id": "initiation_state_v1",
+      "physical_ready": false,
+      "payload_fields": {
+        "time_s": {
+          "type": "number",
+          "required": true,
+          "unit": "s",
+          "minimum": 0.0
+        },
+        "failed_members": {
+          "type": "array_string",
+          "required": true
+        },
+        "displacements_m": {
+          "type": "object",
+          "required": true,
+          "unit": "m"
+        },
+        "velocities_m_s": {
+          "type": "object",
+          "required": true,
+          "unit": "m/s"
+        },
+        "participating_mass_kg": {
+          "type": "number",
+          "required": true,
+          "unit": "kg",
+          "minimum": 0.0
+        },
+        "energy_J": {
+          "type": "number",
+          "required": true,
+          "unit": "J",
+          "minimum": 0.0
+        },
+        "instability_time_s_or_null": {
+          "type": "nullable_number",
+          "required": true,
+          "unit": "s"
+        },
+        "initiation_label": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_NO_INITIATION"
+          ]
+        },
+        "module_status": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_INITIATION_NEUTRAL"
+          ]
+        },
+        "provenance": {
+          "type": "object",
+          "required": true
+        }
+      }
+    },
+    "I08_PROPAGATION_TO_ENSEMBLE": {
+      "producer": "PROPAGATION_OR_ARREST",
+      "consumer": "UNCERTAINTY_ENSEMBLE",
+      "schema_id": "propagation_outcome_v1",
+      "physical_ready": false,
+      "payload_fields": {
+        "case_id": {
+          "type": "string",
+          "required": true
+        },
+        "outcome_label": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_NO_PROPAGATION"
+          ]
+        },
+        "arrest_story_or_null": {
+          "type": "nullable_number",
+          "required": true
+        },
+        "energy_residual_J": {
+          "type": "number",
+          "required": true,
+          "unit": "J",
+          "minimum": 0.0
+        },
+        "momentum_residual_kg_m_s": {
+          "type": "number",
+          "required": true,
+          "unit": "kg m/s",
+          "minimum": 0.0
+        },
+        "validation_flags": {
+          "type": "array_string",
+          "required": true
+        },
+        "fraction_is_historical_probability": {
+          "type": "boolean",
+          "required": true,
+          "enum": [
+            false
+          ]
+        },
+        "module_status": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_PROPAGATION_NEUTRAL"
+          ]
+        },
+        "parameter_provenance": {
+          "type": "object",
+          "required": true
+        }
+      }
+    },
+    "I09_ALL_VALIDATED_STATES_TO_BLENDER": {
+      "producer": "VALIDATION_RELEASE_BUS",
+      "consumer": "BLENDER_VISUALIZATION",
+      "schema_id": "visualization_state_v1",
+      "physical_ready": false,
+      "payload_fields": {
+        "source_module": {
+          "type": "string",
+          "required": true
+        },
+        "state_id": {
+          "type": "string",
+          "required": true
+        },
+        "time_s": {
+          "type": "number",
+          "required": true,
+          "unit": "s",
+          "minimum": 0.0
+        },
+        "object_transforms": {
+          "type": "array_object",
+          "required": true
+        },
+        "display_class": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_CARD_ONLY"
+          ]
+        },
+        "state_validation_status": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_PASS_SOFTWARE_ONLY"
+          ]
+        },
+        "uncertainty_label": {
+          "type": "string",
+          "required": true
+        },
+        "source_hashes": {
+          "type": "object",
+          "required": true
+        },
+        "module_status": {
+          "type": "string",
+          "required": true,
+          "enum": [
+            "CONTROL_VISUALIZATION_NOT_RENDERED"
+          ]
+        },
+        "provenance": {
+          "type": "object",
+          "required": true
+        }
+      }
+    }
+  },
+  "scope_warning": "A schema PASS establishes syntax, units, declared invariants and provenance carriage only. It does not validate physical input values or historical causality.",
+  "iteration": "V10O",
+  "generated_at_utc": "2026-09-02T17:46:19Z",
+  "validation_status": "PASS",
+  "adapter_library": {
+    "path": "wtc1_simulation_v8/scripts/v10o_coupling_adapters.py",
+    "sha256": "c5f3d70fb8fa2bb65958200a5d4c1b19e8dc7845c88d1fe6e4a5e15aca06e1fd"
+  }
+}

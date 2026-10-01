@@ -1,0 +1,1415 @@
+{
+  "iteration": "V9G",
+  "generated_at": "2026-08-27T11:38:14.770434+02:00",
+  "status": "validated_remote_zip_index_targets_inventoried_no_payload_download",
+  "iteration_execution_validated": true,
+  "target_inventory_gate_passed": true,
+  "configuration": "wtc1_simulation_v8/data/v9g_selective_zip_index.json",
+  "manifest": "wtc1_simulation_v8/output/v9g_zip_central_directory_manifest.json",
+  "selective_payload_candidates_path": "wtc1_simulation_v8/output/v9g_selective_payload_candidates.json",
+  "scope": "Preserve V8U through V9F, acquire only the small Fig1 geometry image, test the Zenodo supplementary ZIP endpoint with safe streamed HTTP Range requests, retrieve only the end record and central directory under hard byte caps, and inventory exact paths for P4V035 and P6V035. Abort before reading a response body if partial content is not honored. Do not download the full ZIP, extract measurement payloads, fit material laws, run a solver or perform impact work.",
+  "evidence_policy": {
+    "observed_fact": "A byte count, hash, HTTP header or ZIP-directory field read directly from the public Zenodo source.",
+    "official_model_result": "None is introduced by V9G.",
+    "local_archive_claim": "No local WTC archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "The predeclared byte ceilings, target-name rules and permitted-use classifications.",
+    "derived_result": "A deterministic central-directory inventory and exact target-path match; not a material or physical result.",
+    "unknown": "The contents, units and quality of unacquired measurement payloads and their applicability to any constitutive model."
+  },
+  "regressions": {
+    "files": {
+      "wtc1_simulation_v8/data/v9f_open_dataset_ingestion.json": {
+        "exists": true,
+        "expected_sha256": "a7d7bf9ae9e5c3b7dca12bd92568149024bfe2e5d476314d662ed6d851364a8e",
+        "actual_sha256": "a7d7bf9ae9e5c3b7dca12bd92568149024bfe2e5d476314d662ed6d851364a8e",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/run_v9f_open_dataset_ingestion.py": {
+        "exists": true,
+        "expected_sha256": "1e59f0a3445216ffdee00d047a35ec60894e1ecaa128c6994c1c1179b94dee9a",
+        "actual_sha256": "1e59f0a3445216ffdee00d047a35ec60894e1ecaa128c6994c1c1179b94dee9a",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/v9f_artifact_tool/inspect_s355_workbook.mjs": {
+        "exists": true,
+        "expected_sha256": "458cc7226c6a8560b181a09b103876111348f8027a700f55dbfbbf58b8515d26",
+        "actual_sha256": "458cc7226c6a8560b181a09b103876111348f8027a700f55dbfbbf58b8515d26",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v9f_ingestion_s355.json": {
+        "exists": true,
+        "expected_sha256": "7b14e0398fc5147c49a6e83dcd3d0f8d7a6b6735d694b5e2b6314aae50d086d0",
+        "actual_sha256": "7b14e0398fc5147c49a6e83dcd3d0f8d7a6b6735d694b5e2b6314aae50d086d0",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/rapport_wtc1_v9f_ingestion_s355.md": {
+        "exists": true,
+        "expected_sha256": "50745318f5d11b83d56cc64cd722f64ad586d335e9addf22d7877973e0d24348",
+        "actual_sha256": "50745318f5d11b83d56cc64cd722f64ad586d335e9addf22d7877973e0d24348",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9f_s355_workbook_inspection.json": {
+        "exists": true,
+        "expected_sha256": "cdd9a7e829139f06f2d0c18d2e07f21c94173060f124fc193d10a451367ce31a",
+        "actual_sha256": "cdd9a7e829139f06f2d0c18d2e07f21c94173060f124fc193d10a451367ce31a",
+        "passed": true
+      },
+      "wtc1_simulation_v8/input/v9f_open_sources/SHPB_S355.xlsx": {
+        "exists": true,
+        "expected_sha256": "8f0b1e26b8f4db6a6468a24ec580f103f6ba9ff801e9d20401ee852da0688717",
+        "actual_sha256": "8f0b1e26b8f4db6a6468a24ec580f103f6ba9ff801e9d20401ee852da0688717",
+        "passed": true
+      },
+      "wtc1_simulation_v8/input/v9f_open_sources/zenodo_17591440_metadata.json": {
+        "exists": true,
+        "expected_sha256": "e4c1d64a0a3b21c1b2841386f3b88884362fbb3051b52b19bf3b704a2b7beba3",
+        "actual_sha256": "e4c1d64a0a3b21c1b2841386f3b88884362fbb3051b52b19bf3b704a2b7beba3",
+        "passed": true
+      }
+    },
+    "metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9f_ingestion_s355.json",
+        "path": "iteration_execution_validated",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9f_ingestion_s355.json",
+        "path": "workbook_audit.preferred_matched_pair.dynamic_specimen_id",
+        "expected": "P4V035",
+        "actual": "P4V035",
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9f_ingestion_s355.json",
+        "path": "workbook_audit.preferred_matched_pair.quasi_static_specimen_id",
+        "expected": "P6V035",
+        "actual": "P6V035",
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9f_ingestion_s355.json",
+        "path": "full_large_archive_download_authorized",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9f_ingestion_s355.json",
+        "path": "analogue_signal_reduction_authorized",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9f_ingestion_s355.json",
+        "path": "facade_impact_executed",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      }
+    ],
+    "files_passed": true,
+    "metrics_passed": true,
+    "passed": true
+  },
+  "foia_policy": {
+    "priority": "last_resort_only",
+    "request_sent": false,
+    "external_contact_authorized": false
+  },
+  "geometry_audit": {
+    "path": "wtc1_simulation_v8/input/v9g_open_sources/Fig1.jpg",
+    "exists": true,
+    "size_bytes": 59578,
+    "md5": "f82e31db6ab9799b18c76fd05d57cece",
+    "sha256": "b8a7ab9de81761741a9157500118213419624848225d87bcd42bc3cf363e4c50",
+    "size_matches": true,
+    "md5_matches": true,
+    "transcription": {
+      "units": "mm according to the Zenodo record description",
+      "overall_width": 17.0,
+      "overall_thickness": 10.0,
+      "overall_height": 12.2,
+      "vertical_notch_separation": 2.0,
+      "offset_x": 0.35,
+      "complete_for_constitutive_mesh": false
+    },
+    "passed": true
+  },
+  "range_audit": {
+    "declared_zip_size_bytes": 954989097,
+    "maximum_total_transferred_bytes": 20971520,
+    "head": {
+      "status_code": 200,
+      "final_url": "https://zenodo.org/api/records/17591440/files/FurtherMeasurements.zip/content",
+      "headers": {
+        "accept_ranges": null,
+        "content_length": "954989097",
+        "content_range": null,
+        "content_type": "application/octet-stream",
+        "etag": null,
+        "last_modified": "Wed, 12 Nov 2025 15:51:21 GMT"
+      },
+      "error": null
+    },
+    "initial_suffix_request": {
+      "requested_range": "bytes=-131072",
+      "status_code": 206,
+      "final_url": "https://zenodo.org/api/records/17591440/files/FurtherMeasurements.zip/content",
+      "headers": {
+        "accept_ranges": "bytes",
+        "content_length": "131072",
+        "content_range": "bytes 954858025-954989096/954989097",
+        "content_type": "application/octet-stream",
+        "etag": null,
+        "last_modified": null
+      },
+      "content_range": {
+        "start": 954858025,
+        "end": 954989096,
+        "total": 954989097,
+        "length": 131072
+      },
+      "body_read": true,
+      "bytes_read": 131072,
+      "body_sha256": "aaf9dbe4984a96eb00b6116b1555911f6f72cb67136c1fb108feaca756a50ada",
+      "error": null
+    },
+    "central_directory_request": {
+      "requested_range": "bytes=954753461-954989074",
+      "status_code": 206,
+      "final_url": "https://zenodo.org/api/records/17591440/files/FurtherMeasurements.zip/content",
+      "headers": {
+        "accept_ranges": "bytes",
+        "content_length": "235614",
+        "content_range": "bytes 954753461-954989074/954989097",
+        "content_type": "application/octet-stream",
+        "etag": null,
+        "last_modified": null
+      },
+      "content_range": {
+        "start": 954753461,
+        "end": 954989074,
+        "total": 954989097,
+        "length": 235614
+      },
+      "body_read": true,
+      "bytes_read": 235614,
+      "body_sha256": "f0e84d607761b6a22bc9e1c3644946ea18aac319b46e4d4e0d70e493ea31d243",
+      "error": null
+    },
+    "initial_range_status_code": 206,
+    "central_directory_status_code": 206,
+    "partial_content_supported": true,
+    "central_directory_acquired": true,
+    "total_bytes_read": 366686,
+    "error": null
+  },
+  "end_of_central_directory": {
+    "position_in_suffix": 131050,
+    "disk_number": 0,
+    "central_directory_disk": 0,
+    "entries_on_disk": 1931,
+    "total_entries": 1931,
+    "central_directory_size_bytes": 235614,
+    "central_directory_offset_bytes": 954753461,
+    "comment_length_bytes": 0
+  },
+  "central_directory_summary": {
+    "parsed_entry_count": 1931,
+    "expected_entry_count": 1931,
+    "entry_count_matches_end_record": true,
+    "file_entry_count": 1908,
+    "directory_entry_count": 23,
+    "sum_compressed_file_bytes": 954502767,
+    "sum_uncompressed_file_bytes": 2955377613,
+    "extension_counts": {
+      ".csv": 1861,
+      ".db": 5,
+      ".jpg": 9,
+      ".pdf": 2,
+      ".txt": 30,
+      ".xlsx": 1
+    },
+    "top_level_file_counts": {
+      "FurtherMeasurements": 1908
+    },
+    "target_match_counts": {
+      "P4V035": 60,
+      "P6V035": 881
+    },
+    "targets": {
+      "P4V035": {
+        "target_match_count": 60,
+        "compressed_size_bytes": 1959880,
+        "uncompressed_size_bytes": 3132227,
+        "family_stats": {
+          "DIC": {
+            "file_count": 53,
+            "compressed_size_bytes": 559221,
+            "uncompressed_size_bytes": 1408471
+          },
+          "EBSD": {
+            "file_count": 5,
+            "compressed_size_bytes": 1393898,
+            "uncompressed_size_bytes": 1703334
+          },
+          "bar_strain_or_bar_displacement_boundary_condition": {
+            "file_count": 2,
+            "compressed_size_bytes": 6761,
+            "uncompressed_size_bytes": 20422
+          }
+        },
+        "exact_mechanical_entries": [
+          {
+            "path": "FurtherMeasurements/BarDisplBCs/BC_Inc_P4V035.txt",
+            "compressed_size_bytes": 3361,
+            "uncompressed_size_bytes": 10211,
+            "crc32_hex": "7140bb75",
+            "compression_method": 8,
+            "flags": 8,
+            "local_header_offset_bytes": 41585,
+            "channel_family_guess": [
+              "bar_strain_or_bar_displacement_boundary_condition"
+            ]
+          },
+          {
+            "path": "FurtherMeasurements/BarDisplBCs/BC_Trans_P4V035.txt",
+            "compressed_size_bytes": 3400,
+            "uncompressed_size_bytes": 10211,
+            "crc32_hex": "517f5d1e",
+            "compression_method": 8,
+            "flags": 8,
+            "local_header_offset_bytes": 95804,
+            "channel_family_guess": [
+              "bar_strain_or_bar_displacement_boundary_condition"
+            ]
+          }
+        ],
+        "dic_summary": {
+          "file_count": 53,
+          "compressed_size_bytes": 559221,
+          "uncompressed_size_bytes": 1408471,
+          "first_entries_in_archive_order": [
+            {
+              "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.003 ms.csv",
+              "compressed_size_bytes": 8044,
+              "uncompressed_size_bytes": 23657,
+              "crc32_hex": "bf923ac7",
+              "compression_method": 8,
+              "flags": 8,
+              "local_header_offset_bytes": 3332859,
+              "channel_family_guess": [
+                "DIC"
+              ]
+            },
+            {
+              "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.007 ms.csv",
+              "compressed_size_bytes": 8025,
+              "uncompressed_size_bytes": 23648,
+              "crc32_hex": "68e0d611",
+              "compression_method": 8,
+              "flags": 8,
+              "local_header_offset_bytes": 3341031,
+              "channel_family_guess": [
+                "DIC"
+              ]
+            },
+            {
+              "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.012 ms.csv",
+              "compressed_size_bytes": 8008,
+              "uncompressed_size_bytes": 23651,
+              "crc32_hex": "c34f4203",
+              "compression_method": 8,
+              "flags": 8,
+              "local_header_offset_bytes": 3349184,
+              "channel_family_guess": [
+                "DIC"
+              ]
+            }
+          ],
+          "last_entries_in_archive_order": [
+            {
+              "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.241 ms.csv",
+              "compressed_size_bytes": 8160,
+              "uncompressed_size_bytes": 22822,
+              "crc32_hex": "a9c0d58a",
+              "compression_method": 8,
+              "flags": 8,
+              "local_header_offset_bytes": 3759161,
+              "channel_family_guess": [
+                "DIC"
+              ]
+            },
+            {
+              "path": "FurtherMeasurements/DIC/P4V035/P4V035_COS.jpg",
+              "compressed_size_bytes": 121354,
+              "uncompressed_size_bytes": 185980,
+              "crc32_hex": "e729ad20",
+              "compression_method": 8,
+              "flags": 8,
+              "local_header_offset_bytes": 3767449,
+              "channel_family_guess": [
+                "DIC"
+              ]
+            },
+            {
+              "path": "FurtherMeasurements/DIC/P4V035/Thumbs.db",
+              "compressed_size_bytes": 9805,
+              "uncompressed_size_bytes": 12800,
+              "crc32_hex": "ca9d1fdb",
+              "compression_method": 8,
+              "flags": 8,
+              "local_header_offset_bytes": 3888926,
+              "channel_family_guess": [
+                "DIC"
+              ]
+            }
+          ],
+          "non_csv_auxiliary_entries": [
+            {
+              "path": "FurtherMeasurements/DIC/P4V035/P4V035_COS.jpg",
+              "compressed_size_bytes": 121354,
+              "uncompressed_size_bytes": 185980,
+              "crc32_hex": "e729ad20",
+              "compression_method": 8,
+              "flags": 8,
+              "local_header_offset_bytes": 3767449,
+              "channel_family_guess": [
+                "DIC"
+              ]
+            },
+            {
+              "path": "FurtherMeasurements/DIC/P4V035/Thumbs.db",
+              "compressed_size_bytes": 9805,
+              "uncompressed_size_bytes": 12800,
+              "crc32_hex": "ca9d1fdb",
+              "compression_method": 8,
+              "flags": 8,
+              "local_header_offset_bytes": 3888926,
+              "channel_family_guess": [
+                "DIC"
+              ]
+            }
+          ]
+        }
+      },
+      "P6V035": {
+        "target_match_count": 881,
+        "compressed_size_bytes": 568712305,
+        "uncompressed_size_bytes": 1728940822,
+        "family_stats": {
+          "DIC": {
+            "file_count": 875,
+            "compressed_size_bytes": 567110013,
+            "uncompressed_size_bytes": 1726704003
+          },
+          "EBSD": {
+            "file_count": 5,
+            "compressed_size_bytes": 1594812,
+            "uncompressed_size_bytes": 2209749
+          },
+          "force_displacement": {
+            "file_count": 1,
+            "compressed_size_bytes": 7480,
+            "uncompressed_size_bytes": 27070
+          }
+        },
+        "exact_mechanical_entries": [
+          {
+            "path": "FurtherMeasurements/Fu_curves/P6V035.csv",
+            "compressed_size_bytes": 7480,
+            "uncompressed_size_bytes": 27070,
+            "crc32_hex": "14ec40a4",
+            "compression_method": 8,
+            "flags": 8,
+            "local_header_offset_bytes": 953059323,
+            "channel_family_guess": [
+              "force_displacement"
+            ]
+          }
+        ],
+        "dic_summary": {
+          "file_count": 875,
+          "compressed_size_bytes": 567110013,
+          "uncompressed_size_bytes": 1726704003,
+          "first_entries_in_archive_order": [
+            {
+              "path": "FurtherMeasurements/DIC/P6V035/P6V035_COS.jpg",
+              "compressed_size_bytes": 878010,
+              "uncompressed_size_bytes": 928330,
+              "crc32_hex": "7aed168b",
+              "compression_method": 8,
+              "flags": 8,
+              "local_header_offset_bytes": 4294715,
+              "channel_family_guess": [
+                "DIC"
+              ]
+            },
+            {
+              "path": "FurtherMeasurements/DIC/P6V035/Probe_6_Versatz_035_0001.csv",
+              "compressed_size_bytes": 315554,
+              "uncompressed_size_bytes": 1972269,
+              "crc32_hex": "2339bb2d",
+              "compression_method": 8,
+              "flags": 8,
+              "local_header_offset_bytes": 5172848,
+              "channel_family_guess": [
+                "DIC"
+              ]
+            },
+            {
+              "path": "FurtherMeasurements/DIC/P6V035/Probe_6_Versatz_035_0002.csv",
+              "compressed_size_bytes": 540185,
+              "uncompressed_size_bytes": 2027572,
+              "crc32_hex": "8daebb1e",
+              "compression_method": 8,
+              "flags": 8,
+              "local_header_offset_bytes": 5488539,
+              "channel_family_guess": [
+                "DIC"
+              ]
+            }
+          ],
+          "last_entries_in_archive_order": [
+            {
+              "path": "FurtherMeasurements/DIC/P6V035/Probe_6_Versatz_035_0872.csv",
+              "compressed_size_bytes": 582860,
+              "uncompressed_size_bytes": 1695150,
+              "crc32_hex": "1b4303d8",
+              "compression_method": 8,
+              "flags": 8,
+              "local_header_offset_bytes": 570346006,
+              "channel_family_guess": [
+                "DIC"
+              ]
+            },
+            {
+              "path": "FurtherMeasurements/DIC/P6V035/Probe_6_Versatz_035_0873.csv",
+              "compressed_size_bytes": 582666,
+              "uncompressed_size_bytes": 1694294,
+              "crc32_hex": "f6b662a0",
+              "compression_method": 8,
+              "flags": 8,
+              "local_header_offset_bytes": 570929003,
+              "channel_family_guess": [
+                "DIC"
+              ]
+            },
+            {
+              "path": "FurtherMeasurements/DIC/P6V035/Thumbs.db",
+              "compressed_size_bytes": 12646,
+              "uncompressed_size_bytes": 15872,
+              "crc32_hex": "df97576c",
+              "compression_method": 8,
+              "flags": 8,
+              "local_header_offset_bytes": 571511806,
+              "channel_family_guess": [
+                "DIC"
+              ]
+            }
+          ],
+          "non_csv_auxiliary_entries": [
+            {
+              "path": "FurtherMeasurements/DIC/P6V035/P6V035_COS.jpg",
+              "compressed_size_bytes": 878010,
+              "uncompressed_size_bytes": 928330,
+              "crc32_hex": "7aed168b",
+              "compression_method": 8,
+              "flags": 8,
+              "local_header_offset_bytes": 4294715,
+              "channel_family_guess": [
+                "DIC"
+              ]
+            },
+            {
+              "path": "FurtherMeasurements/DIC/P6V035/Thumbs.db",
+              "compressed_size_bytes": 12646,
+              "uncompressed_size_bytes": 15872,
+              "crc32_hex": "df97576c",
+              "compression_method": 8,
+              "flags": 8,
+              "local_header_offset_bytes": 571511806,
+              "channel_family_guess": [
+                "DIC"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "selective_payload_candidates": {
+    "iteration": "V9G",
+    "purpose": "Exact central-directory-derived candidate list for a separately predeclared V9H selective payload extraction.",
+    "payload_downloaded_in_v9g": false,
+    "selection_is_authorization": false,
+    "selected_entry_count": 55,
+    "selected_compressed_size_bytes": 563657,
+    "selected_uncompressed_size_bytes": 1443163,
+    "conservative_future_range_transfer_ceiling_bytes": 788937,
+    "selected_entries": [
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_bar_boundary_condition",
+        "path": "FurtherMeasurements/BarDisplBCs/BC_Inc_P4V035.txt",
+        "compressed_size_bytes": 3361,
+        "uncompressed_size_bytes": 10211,
+        "crc32_hex": "7140bb75",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 41585,
+        "channel_family_guess": [
+          "bar_strain_or_bar_displacement_boundary_condition"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_bar_boundary_condition",
+        "path": "FurtherMeasurements/BarDisplBCs/BC_Trans_P4V035.txt",
+        "compressed_size_bytes": 3400,
+        "uncompressed_size_bytes": 10211,
+        "crc32_hex": "517f5d1e",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 95804,
+        "channel_family_guess": [
+          "bar_strain_or_bar_displacement_boundary_condition"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.003 ms.csv",
+        "compressed_size_bytes": 8044,
+        "uncompressed_size_bytes": 23657,
+        "crc32_hex": "bf923ac7",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3332859,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.007 ms.csv",
+        "compressed_size_bytes": 8025,
+        "uncompressed_size_bytes": 23648,
+        "crc32_hex": "68e0d611",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3341031,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.012 ms.csv",
+        "compressed_size_bytes": 8008,
+        "uncompressed_size_bytes": 23651,
+        "crc32_hex": "c34f4203",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3349184,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.017 ms.csv",
+        "compressed_size_bytes": 8011,
+        "uncompressed_size_bytes": 23675,
+        "crc32_hex": "934b2823",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3357320,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.022 ms.csv",
+        "compressed_size_bytes": 8037,
+        "uncompressed_size_bytes": 23750,
+        "crc32_hex": "782fbe2b",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3365459,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.026 ms.csv",
+        "compressed_size_bytes": 8078,
+        "uncompressed_size_bytes": 23854,
+        "crc32_hex": "974d0445",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3373624,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.031 ms.csv",
+        "compressed_size_bytes": 8109,
+        "uncompressed_size_bytes": 23909,
+        "crc32_hex": "396132c6",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3381830,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.036 ms.csv",
+        "compressed_size_bytes": 8216,
+        "uncompressed_size_bytes": 24168,
+        "crc32_hex": "49151458",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3390067,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.041 ms.csv",
+        "compressed_size_bytes": 8384,
+        "uncompressed_size_bytes": 24261,
+        "crc32_hex": "3f6f7a2e",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3398411,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.045 ms.csv",
+        "compressed_size_bytes": 8428,
+        "uncompressed_size_bytes": 24324,
+        "crc32_hex": "178d414a",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3406923,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.050 ms.csv",
+        "compressed_size_bytes": 8489,
+        "uncompressed_size_bytes": 24305,
+        "crc32_hex": "7aefd168",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3415479,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.055 ms.csv",
+        "compressed_size_bytes": 8536,
+        "uncompressed_size_bytes": 24344,
+        "crc32_hex": "3a327fd4",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3424096,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.060 ms.csv",
+        "compressed_size_bytes": 8592,
+        "uncompressed_size_bytes": 24582,
+        "crc32_hex": "ae0f339f",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3432760,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.065 ms.csv",
+        "compressed_size_bytes": 8680,
+        "uncompressed_size_bytes": 24634,
+        "crc32_hex": "648e151c",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3441480,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.069 ms.csv",
+        "compressed_size_bytes": 8660,
+        "uncompressed_size_bytes": 24662,
+        "crc32_hex": "7fbff328",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3450288,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.074 ms.csv",
+        "compressed_size_bytes": 8680,
+        "uncompressed_size_bytes": 24692,
+        "crc32_hex": "b37faa3e",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3459076,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.079 ms.csv",
+        "compressed_size_bytes": 8585,
+        "uncompressed_size_bytes": 24692,
+        "crc32_hex": "dd2149eb",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3467884,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.084 ms.csv",
+        "compressed_size_bytes": 8747,
+        "uncompressed_size_bytes": 24704,
+        "crc32_hex": "d1ab1a24",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3476597,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.088 ms.csv",
+        "compressed_size_bytes": 8758,
+        "uncompressed_size_bytes": 24670,
+        "crc32_hex": "c5d62a76",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3485472,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.093 ms.csv",
+        "compressed_size_bytes": 8762,
+        "uncompressed_size_bytes": 24682,
+        "crc32_hex": "d749ef98",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3494358,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.098 ms.csv",
+        "compressed_size_bytes": 8861,
+        "uncompressed_size_bytes": 24682,
+        "crc32_hex": "45017437",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3503248,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.103 ms.csv",
+        "compressed_size_bytes": 8801,
+        "uncompressed_size_bytes": 24687,
+        "crc32_hex": "5872b0c1",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3512237,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.107 ms.csv",
+        "compressed_size_bytes": 8873,
+        "uncompressed_size_bytes": 24684,
+        "crc32_hex": "af037b47",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3521166,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.112 ms.csv",
+        "compressed_size_bytes": 8759,
+        "uncompressed_size_bytes": 24431,
+        "crc32_hex": "26fd9eb8",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3530167,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.117 ms.csv",
+        "compressed_size_bytes": 8692,
+        "uncompressed_size_bytes": 24174,
+        "crc32_hex": "c6290b02",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3539054,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.122 ms.csv",
+        "compressed_size_bytes": 8643,
+        "uncompressed_size_bytes": 24041,
+        "crc32_hex": "4bffcf4d",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3547874,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.126 ms.csv",
+        "compressed_size_bytes": 8534,
+        "uncompressed_size_bytes": 23679,
+        "crc32_hex": "097c557d",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3556645,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.131 ms.csv",
+        "compressed_size_bytes": 8421,
+        "uncompressed_size_bytes": 23476,
+        "crc32_hex": "0b1ae67a",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3565307,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.136 ms.csv",
+        "compressed_size_bytes": 8393,
+        "uncompressed_size_bytes": 23413,
+        "crc32_hex": "d8440183",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3573856,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.141 ms.csv",
+        "compressed_size_bytes": 8383,
+        "uncompressed_size_bytes": 23285,
+        "crc32_hex": "083f4bb3",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3582377,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.145 ms.csv",
+        "compressed_size_bytes": 8319,
+        "uncompressed_size_bytes": 23147,
+        "crc32_hex": "139169c0",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3590888,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.150 ms.csv",
+        "compressed_size_bytes": 8322,
+        "uncompressed_size_bytes": 23146,
+        "crc32_hex": "880c15ba",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3599335,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.155 ms.csv",
+        "compressed_size_bytes": 8277,
+        "uncompressed_size_bytes": 23145,
+        "crc32_hex": "783c3b3c",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3607785,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.160 ms.csv",
+        "compressed_size_bytes": 8289,
+        "uncompressed_size_bytes": 23141,
+        "crc32_hex": "b8d37640",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3616190,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.165 ms.csv",
+        "compressed_size_bytes": 8299,
+        "uncompressed_size_bytes": 23138,
+        "crc32_hex": "5128349a",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3624607,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.169 ms.csv",
+        "compressed_size_bytes": 8315,
+        "uncompressed_size_bytes": 23142,
+        "crc32_hex": "f802d206",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3633034,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.174 ms.csv",
+        "compressed_size_bytes": 8317,
+        "uncompressed_size_bytes": 23142,
+        "crc32_hex": "32812f1f",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3641477,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.179 ms.csv",
+        "compressed_size_bytes": 8293,
+        "uncompressed_size_bytes": 23136,
+        "crc32_hex": "d82981c2",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3649922,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.184 ms.csv",
+        "compressed_size_bytes": 8316,
+        "uncompressed_size_bytes": 23142,
+        "crc32_hex": "08876ee8",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3658343,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.188 ms.csv",
+        "compressed_size_bytes": 8293,
+        "uncompressed_size_bytes": 23139,
+        "crc32_hex": "6ce02b66",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3666787,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.193 ms.csv",
+        "compressed_size_bytes": 8323,
+        "uncompressed_size_bytes": 23141,
+        "crc32_hex": "4994fdbd",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3675208,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.198 ms.csv",
+        "compressed_size_bytes": 8266,
+        "uncompressed_size_bytes": 23076,
+        "crc32_hex": "fb14050b",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3683659,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.203 ms.csv",
+        "compressed_size_bytes": 8279,
+        "uncompressed_size_bytes": 23083,
+        "crc32_hex": "f8c92b54",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3692053,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.207 ms.csv",
+        "compressed_size_bytes": 8275,
+        "uncompressed_size_bytes": 23082,
+        "crc32_hex": "06dd08bd",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3700460,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.212 ms.csv",
+        "compressed_size_bytes": 8279,
+        "uncompressed_size_bytes": 23010,
+        "crc32_hex": "e5af2e1e",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3708863,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.217 ms.csv",
+        "compressed_size_bytes": 8235,
+        "uncompressed_size_bytes": 22953,
+        "crc32_hex": "ab8a350b",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3717270,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.222 ms.csv",
+        "compressed_size_bytes": 8271,
+        "uncompressed_size_bytes": 22951,
+        "crc32_hex": "ee55439b",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3725633,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.226 ms.csv",
+        "compressed_size_bytes": 8238,
+        "uncompressed_size_bytes": 22964,
+        "crc32_hex": "e1b6dfa2",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3734032,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.231 ms.csv",
+        "compressed_size_bytes": 8277,
+        "uncompressed_size_bytes": 22886,
+        "crc32_hex": "18caf755",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3742398,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.236 ms.csv",
+        "compressed_size_bytes": 8230,
+        "uncompressed_size_bytes": 22889,
+        "crc32_hex": "69aa5bc1",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3750803,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_0.241 ms.csv",
+        "compressed_size_bytes": 8160,
+        "uncompressed_size_bytes": 22822,
+        "crc32_hex": "a9c0d58a",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3759161,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P4V035",
+        "expected_use": "dynamic_dic_frame_or_coordinate_reference",
+        "path": "FurtherMeasurements/DIC/P4V035/P4V035_COS.jpg",
+        "compressed_size_bytes": 121354,
+        "uncompressed_size_bytes": 185980,
+        "crc32_hex": "e729ad20",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 3767449,
+        "channel_family_guess": [
+          "DIC"
+        ]
+      },
+      {
+        "specimen": "P6V035",
+        "expected_use": "quasi_static_force_displacement_comparator",
+        "path": "FurtherMeasurements/Fu_curves/P6V035.csv",
+        "compressed_size_bytes": 7480,
+        "uncompressed_size_bytes": 27070,
+        "crc32_hex": "14ec40a4",
+        "compression_method": 8,
+        "flags": 8,
+        "local_header_offset_bytes": 953059323,
+        "channel_family_guess": [
+          "force_displacement"
+        ]
+      }
+    ],
+    "deferred": {
+      "P6V035_DIC": {
+        "reason": "The quasi-static force-displacement file is the minimal comparator; the large DIC series is deferred pending signal inspection.",
+        "file_count": 875,
+        "compressed_size_bytes": 567110013,
+        "uncompressed_size_bytes": 1726704003
+      },
+      "microhardness_and_EBSD": "Outside the first mechanical-signal reduction and not selected."
+    }
+  },
+  "safety_gate_summary": {
+    "gates": {
+      "v9f_regressions_unchanged": true,
+      "geometry_file_verified": true,
+      "total_transfer_under_cap": true,
+      "full_zip_not_present": true,
+      "no_payload_entry_downloaded": true,
+      "response_200_body_not_read": true,
+      "foia_request_unsent": true,
+      "external_contact_not_authorized_or_made": true,
+      "source_archive_not_rescanned": true,
+      "generic_material_not_substituted": true,
+      "solver_not_executed": true
+    },
+    "passed": true
+  },
+  "target_outcome_gate_summary": {
+    "gates": {
+      "http_partial_content_supported": true,
+      "content_range_total_matches": true,
+      "end_of_central_directory_found": true,
+      "single_disk_zip": true,
+      "central_directory_under_cap": true,
+      "central_directory_acquired": true,
+      "central_directory_entry_count_matches": true,
+      "target_specimen_tokens_inventoried": true
+    },
+    "passed": true
+  },
+  "selective_payload_predeclaration_possible": true,
+  "local_full_zip_needed": false,
+  "full_zip_download_authorized": false,
+  "full_zip_downloaded": false,
+  "selective_payload_download_authorized": false,
+  "payload_entry_downloaded": false,
+  "analogue_signal_reduction_authorized": false,
+  "analogue_material_fit_authorized": false,
+  "analogue_coupon_solver_authorized": false,
+  "wtc_high_rate_material_curve_qualification_passed": false,
+  "cf6_80a2_cowling_material_card_identification_passed": false,
+  "openradioss_wtc_coupon_authorized": false,
+  "failure_deletion_executed": false,
+  "projectile_rupture_executed": false,
+  "facade_impact_executed": false,
+  "global_wtc_impact_physics_qualification_passed": false,
+  "blender_executed": false,
+  "scope_gates": {
+    "zip_central_directory_audit_authorized": true,
+    "selective_payload_download_authorized": false,
+    "full_zip_download_authorized": false,
+    "analogue_signal_reduction_authorized": false,
+    "analogue_material_fit_authorized": false,
+    "analogue_coupon_solver_authorized": false,
+    "wtc_high_rate_material_curve_qualification_passed": false,
+    "cf6_80a2_cowling_material_card_identification_passed": false,
+    "openradioss_wtc_coupon_authorized": false,
+    "failure_deletion_authorized": false,
+    "projectile_rupture_authorized": false,
+    "facade_impact_authorized": false,
+    "whole_aircraft_authorized": false,
+    "global_tower_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_mechanism_tested": false
+  },
+  "interpretation": "V9G validates a bounded remote ZIP-index audit only. Zenodo honored HTTP Range requests; 366686 bytes were read and the central directory exposes 60 P4V035 plus 881 P6V035 file entries. Their exact paths, sizes and CRC32 values can now support a separately predeclared selective-download iteration. The 955 MB ZIP and all measurement payloads remain undownloaded. Fig1 confirms several millimetre-scale dimensions but is incomplete for a constitutive mesh. No material law, WTC or CF6 property, solver, rupture or facade impact is authorized.",
+  "runtime": {
+    "started_at": "2026-08-27T11:38:14.770434+02:00",
+    "completed_at": "2026-08-27T11:38:45.456987+02:00",
+    "software": "Python standard-library HTTP client plus bounded binary ZIP central-directory parser",
+    "python_version": "3.14.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "random_seed": 9112001,
+    "source_archive_rescanned": false,
+    "full_zip_downloaded": false,
+    "payload_entry_downloaded": false,
+    "external_contact_made": false,
+    "solver_executed": false
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "dataset": {
+    "name": "WTC 1 V8H-A core-beam transfer network",
+    "version": "8.7.0",
+    "status": "OFFICIAL_TOPOLOGY_WITH_EXPLICIT_PROXY_ENVELOPES",
+    "scope": "Floors 94-99; reduced-order vertical load transfer between core columns",
+    "warning": "The original Drawing Book 5 beam schedule and Drawing Book 6 connection schedule are not present in the local archive. Proxy WF sections and connection factors are sensitivity bounds, not as-built member assignments."
+  },
+  "official_facts": {
+    "global_model_rule": "NIST NCSTAR 1-6D modeled individually only core beams framed with moment connections; non-moment beam axial stiffness was combined with the in-plane slab stiffness.",
+    "global_model_local_redistribution": "NIST reports that the composite floor representation could redistribute load locally among neighboring columns.",
+    "floor96_full_floor_model": "NIST NCSTAR 1-6C modeled the Floor 96 core beams and slab explicitly; Floor 96 was treated as typical of the upper floors.",
+    "beam_steel_material": "NIST NCSTAR 1-6C Material ID 2: all 36 ksi core WF, channels and tubes; room-temperature model yield 37.0 ksi and ultimate 63.45 ksi.",
+    "beam_schedule_source": "NIST NCSTAR 1-2A identifies WTCAB-Bk5-BeamSched.xls and WTCAB_DBk5.mdb, but neither file was found in the local source archive.",
+    "connection_schedule_source": "NIST NCSTAR 1-2A identifies Drawing Book 6 core-bracing/connection data, but the relevant files were not found in the local source archive."
+  },
+  "moment_beam_topology": {
+    "status": "MANUAL_TRANSCRIPTION_FROM_NIST_NCSTAR_1-6D_FIGURE_2-4",
+    "applies_to": "global-model moment-connected core beams at each office floor in the modeled upper-story range",
+    "edges": [
+      [601, 602], [602, 603], [603, 604], [604, 605], [605, 606], [606, 607], [607, 608],
+      [701, 702], [707, 708],
+      [801, 802], [806, 807],
+      [901, 902], [902, 903], [903, 904],
+      [905, 906], [906, 907], [907, 908]
+    ],
+    "isolated_rows_in_this_subnetwork": [500, 1000],
+    "note": "Absence from this edge list means absence from the individually modeled moment-beam subnetwork, not absence of all floor framing."
+  },
+  "proxy_topology": {
+    "name": "nearest_four_connected_proxy",
+    "status": "MODEL_HYPOTHESIS",
+    "construction": "Union of the four nearest reconstructed core-column neighbors for every core column.",
+    "purpose": "Connected sensitivity envelope for omitted non-moment beams and slab load paths; not an as-built framing transcription.",
+    "coordinate_uncertainty_m": 0.30
+  },
+  "beam_section_proxies": {
+    "status": "MODEL_HYPOTHESIS_NOT_AS_BUILT_ASSIGNMENT",
+    "source": "AISC historic WF properties already extracted and hash-recorded for V8B",
+    "profiles": ["12WF65", "14WF136", "14WF228"],
+    "selection_basis": "Wide low/middle/high mechanical bracket using available historic WF rows; the actual Book 5 member schedule is required to replace it."
+  },
+  "mechanical_law": {
+    "type": "bilinear_relative_vertical_beam_spring_with_fracture",
+    "initial_stiffness": "k = n_planes * 12 E I / L^3",
+    "yield_transfer": "V_y = n_planes * connection_factor * 2 M_p / L",
+    "plastic_moment": "M_p = Fy(T) * Zx_proxy",
+    "plastic_modulus_proxy": "Zx reconstructed from rectangular flange and web dimensions; fillets omitted",
+    "post_yield_tangent_ratio": 0.01,
+    "ultimate_relative_rotation_rad": 0.02,
+    "active_floor_planes": [1, 2],
+    "connection_to_beam_strength_factors": [0.5, 1.0],
+    "beam_temperature_policies": [
+      "cold_20c_upper_transfer_bound",
+      "mean_endpoint_column_temperature_proxy"
+    ],
+    "warning": "The connection factors and rotation limit are sensitivity assumptions because Book 6 details are missing."
+  },
+  "ensemble": {
+    "times_min": [80, 100],
+    "thermal_localization_gamma": [1.0, 2.0],
+    "seeds": {"first": 0, "last": 99, "count": 100},
+    "elastic_modulus_tail": "linear_to_5pct_at_1000c",
+    "column_damage_rule": "NIST Case B more-severe impact state; severed and heavy segments removed only on reported floors",
+    "fractions_are_event_probabilities": false
+  }
+}

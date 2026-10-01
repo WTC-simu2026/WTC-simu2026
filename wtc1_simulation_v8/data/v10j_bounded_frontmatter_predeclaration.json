@@ -1,0 +1,122 @@
+{
+  "iteration": "V10J",
+  "predeclaration_status": "IMMUTABLE_CREATED_BEFORE_ANY_V10J_PAGE_CONTENT_READ",
+  "predeclared_at_local": "2026-09-01T17:55:00+02:00",
+  "dataset_version": "10.10.0",
+  "random_seed": 1010020,
+  "random_draw_used": false,
+  "selection_rule": "For each of the five V10I hash-verified working copies, select PDF pages 1 through 5 inclusive before reading any page content.",
+  "selection_is_content_blind": true,
+  "document_count": 5,
+  "pages_per_document": 5,
+  "aggregate_candidate_page_count": 25,
+  "hard_aggregate_render_cap": 25,
+  "render_policy": {
+    "renderer": "pdftoppm",
+    "format": "PNG",
+    "color_mode": "grayscale",
+    "dpi": 120,
+    "maximum_pixels_per_page": 22000000,
+    "maximum_aggregate_pixels": 500000000,
+    "maximum_aggregate_png_bytes": 268435456,
+    "individual_page_directory": "wtc1_simulation_v8/output/v10j_frontmatter_figures/pages",
+    "per_document_contact_sheet_directory": "wtc1_simulation_v8/output/v10j_frontmatter_figures/documents",
+    "global_contact_sheet": "wtc1_simulation_v8/output/v10j_frontmatter_figures/v10j_contact_sheet.png"
+  },
+  "transcription_policy": {
+    "visual_review_required": true,
+    "allowed_fields": [
+      "visible_document_identifiers",
+      "visible_title_or_index_headings",
+      "visible_tower_labels",
+      "visible_floor_labels",
+      "visible_floor_ranges",
+      "visible_revision_or_issue_fields",
+      "visible_cross_reference_locators"
+    ],
+    "forbidden_fields": [
+      "coordinates",
+      "dimensions",
+      "drawing_geometry",
+      "member_sections",
+      "materials",
+      "mass",
+      "stiffness",
+      "strength_or_capacity",
+      "connection_geometry_or_law",
+      "damage_state",
+      "load_path_credit"
+    ],
+    "full_document_text_scan_authorized": false,
+    "non_candidate_page_read_authorized": false,
+    "ocr_authorized": false,
+    "embedded_text_extraction_authorized": false
+  },
+  "sources": [
+    {
+      "sequence": 1,
+      "document_id": "WTCI-000024-L",
+      "track": "PRIMARY_DRAWING_REQUIREMENTS",
+      "working_copy_path": "wtc1_simulation_v8/input/v10i_structural_sources/WTCI-000024-L__469c2322c9bf2e7c.pdf",
+      "expected_sha256": "469c2322c9bf2e7c79294ed14bbbb525a2903593ca7d13f67a512e1e7d4d406a",
+      "expected_size_bytes": 9427468,
+      "container_page_count": 276,
+      "candidate_pdf_pages_1_based": [1, 2, 3, 4, 5],
+      "candidate_rationale": "Content-blind first-five-page front-matter/index hypothesis; the unresolved register endpoint 2-C/2 is not interpreted as page content."
+    },
+    {
+      "sequence": 2,
+      "document_id": "WTCI-000014-L",
+      "track": "PRIMARY_DRAWING_REQUIREMENTS",
+      "working_copy_path": "wtc1_simulation_v8/input/v10i_structural_sources/WTCI-000014-L__fb97aaf1aa01929e.pdf",
+      "expected_sha256": "fb97aaf1aa01929e0be1bf15f38539a29b6dd3f9164863b68011e9523795336a",
+      "expected_size_bytes": 10760417,
+      "container_page_count": 300,
+      "candidate_pdf_pages_1_based": [1, 2, 3, 4, 5],
+      "candidate_rationale": "Content-blind first-five-page front-matter/index hypothesis."
+    },
+    {
+      "sequence": 3,
+      "document_id": "WTCI-000016-L",
+      "track": "PRIMARY_DRAWING_REQUIREMENTS",
+      "working_copy_path": "wtc1_simulation_v8/input/v10i_structural_sources/WTCI-000016-L__9c6354e1dc9915ec.pdf",
+      "expected_sha256": "9c6354e1dc9915ec27b44f97be0803d6dada6a8aa59a160c20095c69e1ebccaa",
+      "expected_size_bytes": 11095821,
+      "container_page_count": 280,
+      "candidate_pdf_pages_1_based": [1, 2, 3, 4, 5],
+      "candidate_rationale": "Content-blind first-five-page front-matter/index hypothesis."
+    },
+    {
+      "sequence": 4,
+      "document_id": "WTCI-000021-L",
+      "track": "PRIMARY_DRAWING_REQUIREMENTS",
+      "working_copy_path": "wtc1_simulation_v8/input/v10i_structural_sources/WTCI-000021-L__a587a8e798eb05df.pdf",
+      "expected_sha256": "a587a8e798eb05dfc10a62ec9ea3ff1ffbdf00ac0717b9ae7a7823209bf95c95",
+      "expected_size_bytes": 7904080,
+      "container_page_count": 282,
+      "candidate_pdf_pages_1_based": [1, 2, 3, 4, 5],
+      "candidate_rationale": "Content-blind first-five-page front-matter/index hypothesis."
+    },
+    {
+      "sequence": 5,
+      "document_id": "WTCI-000030-L",
+      "track": "SEPARATE_BOOK9_T02",
+      "working_copy_path": "wtc1_simulation_v8/input/v10i_structural_sources/WTCI-000030-L__b9a07815219c4bd0.pdf",
+      "expected_sha256": "b9a07815219c4bd0c1deb8ad03c109827f4b74353094181ef96f2841c2c750c6",
+      "expected_size_bytes": 12330703,
+      "container_page_count": 298,
+      "candidate_pdf_pages_1_based": [1, 2, 3, 4, 5],
+      "candidate_rationale": "Content-blind first-five-page front-matter/index hypothesis for the separate Book 9 T02 track."
+    }
+  ],
+  "prohibitions": {
+    "source_archive_read_or_scan": true,
+    "official_sources_read": true,
+    "network_use": true,
+    "geometry_or_dimension_transcription": true,
+    "physical_property_or_damage_assignment": true,
+    "structural_solver_execution": true,
+    "thermal_model_execution": true,
+    "blender_execution_or_master_modification": true
+  }
+}

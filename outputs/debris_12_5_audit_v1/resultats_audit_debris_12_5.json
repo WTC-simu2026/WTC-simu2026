@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "audit_id": "DEBRIS-12P5-V1",
+  "date": "2026-08-30",
+  "scope": "Audit documentaire et video en lecture seule; aucune integration au modele structurel.",
+  "source_integrity": {
+    "status": "PASS",
+    "source_count": 11,
+    "all_sizes_and_sha256_unchanged": true
+  },
+  "findings": {
+    "twelve_point_five_percent": {
+      "status": "NOT_ESTABLISHED_AS_RULE",
+      "quantity_type_in_supplied_claims": "pile_height_divided_by_original_building_height",
+      "is_residual_mass_fraction": false,
+      "main_reason": "No cited standard or dataset; pile height depends on footprint, material composition, bulk density, voids, lateral spread and below-grade volume."
+    },
+    "two_percent": {
+      "status": "CONFLATED_QUANTITIES",
+      "large_debris_mass_fraction_measured": false,
+      "supplied_uses": [
+        "approximate visible pile height relative to building height",
+        "approximately two percent iron by weight in selected dust samples"
+      ],
+      "usgs_iron_percent": {
+        "minimum": 0.55,
+        "maximum": 4.13,
+        "geometric_mean": 1.63,
+        "tower_wide_mass_inference_allowed": false
+      }
+    },
+    "fresh_kills": {
+      "processed_site_material_tons": 1200000,
+      "fines_below_quarter_inch_tons_low": 360000,
+      "fines_below_quarter_inch_tons_high": 480000,
+      "derived_fraction_low": 0.30,
+      "derived_fraction_high": 0.40,
+      "scope_limit": "WTC site stream, not WTC 1 alone; administrative scopes and recycling streams differ."
+    },
+    "large_debris": {
+      "claim_of_near_absence_supported": false,
+      "documented_evidence": [
+        "FEMA lateral heavy debris field approximately 400-500 feet",
+        "USACE separation of large structural steel pieces",
+        "EPA trucks hauling up to 30 tons of steel or concrete"
+      ]
+    },
+    "video": {
+      "dust_and_fragmentation_observed": true,
+      "steel_to_dust_identification_supported": false,
+      "limitations": [
+        "social-media re-encode",
+        "edited crops, captions and cuts",
+        "dust occlusion",
+        "no material identification",
+        "no scale or three-dimensional tracking",
+        "no authenticated camera provenance"
+      ]
+    },
+    "nonconventional_weapon": {
+      "status": "EVIDENTIARY_GATE_NOT_PASSED",
+      "integrate_into_structural_model": false,
+      "assigned_mass_stiffness_strength_connection_damage_or_load_path_credit": 0,
+      "missing_distinctive_quantitative_evidence": [
+        "closed mass balance",
+        "identified energy source and coupling",
+        "material or chemical signature",
+        "spatial and temporal predictions",
+        "authenticated calibrated observations"
+      ]
+    }
+  },
+  "software_actions": {
+    "blender_launched": false,
+    "structural_solver_launched": false,
+    "master_blender_file_modified": false,
+    "harness_state_modified": false
+  },
+  "overall_validation": "PASS"
+}

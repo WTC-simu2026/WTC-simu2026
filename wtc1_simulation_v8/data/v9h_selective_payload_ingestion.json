@@ -1,0 +1,123 @@
+{
+  "iteration": "V9H",
+  "dataset": {
+    "name": "Bounded selective ingestion of the P4V035 dynamic and P6V035 quasi-static S355 analogue channels",
+    "version": "9.8.0",
+    "status": "PREDECLARED_EXACT_55_ENTRY_RANGE_EXTRACTION_AND_FORMAT_AUDIT_NO_FIT_NO_SOLVER",
+    "random_seed": 9112001,
+    "deterministic": true,
+    "scope": "Preserve V8U through V9G, retrieve only the 55 entries frozen by the V9G candidate manifest, verify every local ZIP header, path, compression method, compressed size, uncompressed size and CRC32, preserve the extracted public payloads, and audit headers, units, timing, coordinates, missing values and numeric consistency. Do not download the full ZIP or the P6V035 DIC series, fit a material law, run a solver or perform impact work."
+  },
+  "source": {
+    "record_id": 17591440,
+    "zip_filename": "FurtherMeasurements.zip",
+    "url": "https://zenodo.org/api/records/17591440/files/FurtherMeasurements.zip/content",
+    "declared_zip_size_bytes": 954989097,
+    "declared_zip_md5": "45c4237981dcb4d5a0e4364ebc2c0da9",
+    "license": "cc-by-4.0",
+    "full_zip_download_authorized": false,
+    "full_zip_local_path_prohibited": "wtc1_simulation_v8/input/v9h_open_sources/FurtherMeasurements.zip"
+  },
+  "selection": {
+    "manifest": "wtc1_simulation_v8/output/v9g_selective_payload_candidates.json",
+    "manifest_sha256": "fd498ea34582b4aa0d3d42f589303bb932a15e945f25f1bf81e3f99c318bf5b7",
+    "expected_entry_count": 55,
+    "expected_compressed_size_bytes": 563657,
+    "expected_uncompressed_size_bytes": 1443163,
+    "required_specimen_counts": {
+      "P4V035": 54,
+      "P6V035": 1
+    },
+    "required_use_counts": {
+      "dynamic_bar_boundary_condition": 2,
+      "dynamic_dic_frame_or_coordinate_reference": 52,
+      "quasi_static_force_displacement_comparator": 1
+    },
+    "deferred_P6V035_DIC_file_count": 875,
+    "deferred_P6V035_DIC_compressed_size_bytes": 567110013
+  },
+  "range_policy": {
+    "required_http_status": 206,
+    "required_content_range_total_bytes": 954989097,
+    "local_header_probe_bytes_per_entry": 256,
+    "maximum_local_header_probe_bytes_per_entry": 4096,
+    "maximum_total_transferred_bytes": 788937,
+    "request_timeout_seconds": 60,
+    "response_200_body_read_prohibited": true,
+    "unlisted_entry_download_prohibited": true,
+    "stop_on_first_identity_or_crc_failure": true
+  },
+  "output": {
+    "payload_root": "wtc1_simulation_v8/input/v9h_open_sources/selective_payloads",
+    "remote_acquisition_receipt": "wtc1_simulation_v8/output/v9h_remote_range_acquisition_receipt.json",
+    "ingestion_manifest": "wtc1_simulation_v8/output/v9h_selective_payload_ingestion_manifest.json",
+    "results": "wtc1_simulation_v8/output/resultats_wtc1_v9h_signaux_selectifs.json",
+    "report": "wtc1_simulation_v8/output/rapport_wtc1_v9h_signaux_selectifs.md"
+  },
+  "regressions": {
+    "required_files": {
+      "wtc1_simulation_v8/data/v9g_selective_zip_index.json": "920d35d61b87bfaf01086c22fa1656879ff6150d12b1d28f575c3b134bc93fe8",
+      "wtc1_simulation_v8/scripts/run_v9g_zip_index_audit.py": "d727a71a8e90fce1e111c5a7da035babcfb4d5641d63d9be45141eb2da98a164",
+      "wtc1_simulation_v8/input/v9g_open_sources/Fig1.jpg": "b8a7ab9de81761741a9157500118213419624848225d87bcd42bc3cf363e4c50",
+      "wtc1_simulation_v8/output/v9g_zip_central_directory_manifest.json": "7d3f879d724f6b225f17b6de23254c2e218cc368fa0e8e709f1ec1c1bf85d2d3",
+      "wtc1_simulation_v8/output/v9g_selective_payload_candidates.json": "fd498ea34582b4aa0d3d42f589303bb932a15e945f25f1bf81e3f99c318bf5b7",
+      "wtc1_simulation_v8/output/resultats_wtc1_v9g_index_zip_selectif.json": "0c596144c6bb22a1691ff888a4e2be5a76c55cc2b90c1ef764f3bf7776c6747c",
+      "wtc1_simulation_v8/output/rapport_wtc1_v9g_index_zip_selectif.md": "8e738a9ea05be741f885cd488ea00c8e270fcf8341181f884d4b9e6cc8032c43"
+    },
+    "required_metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9g_index_zip_selectif.json",
+        "path": "iteration_execution_validated",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9g_index_zip_selectif.json",
+        "path": "target_inventory_gate_passed",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9g_index_zip_selectif.json",
+        "path": "range_audit.partial_content_supported",
+        "expected": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9g_index_zip_selectif.json",
+        "path": "full_zip_downloaded",
+        "expected": false
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9g_index_zip_selectif.json",
+        "path": "payload_entry_downloaded",
+        "expected": false
+      }
+    ]
+  },
+  "evidence_policy": {
+    "observed_fact": "A byte count, local-header field, CRC32, decompressed payload value or text/image metadata read directly from the public Zenodo source.",
+    "official_model_result": "None is introduced by V9H.",
+    "local_archive_claim": "No local WTC archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "The selection of P4V035/P6V035 as an analogue pair and all parsing or delimiter rules.",
+    "derived_result": "Format, completeness, timing and consistency metrics calculated from the acquired analogue payloads; not WTC or CF6 properties.",
+    "unknown": "Any undocumented calibration, sign convention, synchronization rule, specimen tolerance or applicability to WTC and CF6 materials."
+  },
+  "scientific_and_scope_gates": {
+    "S355_is_analogue_only": true,
+    "S355_substitution_for_WTC_or_CF6_prohibited": true,
+    "material_fit_authorized": false,
+    "failure_law_fit_authorized": false,
+    "coupon_solver_authorized": false,
+    "WTC_or_CF6_solver_authorized": false,
+    "failure_deletion_authorized": false,
+    "projectile_rupture_authorized": false,
+    "facade_impact_authorized": false,
+    "global_impact_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_inference_authorized": false
+  },
+  "foia_policy": {
+    "priority": "last_resort_only",
+    "request_sent": false,
+    "external_contact_authorized": false
+  }
+}

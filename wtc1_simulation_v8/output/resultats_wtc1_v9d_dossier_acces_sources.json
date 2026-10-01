@@ -1,0 +1,247 @@
+{
+  "iteration": "V9D",
+  "generated_at": "2026-08-27T10:32:08.593654+02:00",
+  "status": "validated_source_access_dossier_complete_data_not_acquired_coupon_not_authorized",
+  "iteration_execution_validated": true,
+  "configuration": "wtc1_simulation_v8/data/v9d_source_access_dossier.json",
+  "scope": "Preserve V8U through V9C, define a reproducible and complete request for the missing NIST room-temperature high-rate M26/C80 tensile channels, document the official access route without sending a request, and update the public CF6-80A2/Boeing 767 nacelle evidence audit without generic material substitution. No coupon, failure deletion, facade impact, whole-aircraft, global tower, thermal or Blender physics work is authorized.",
+  "evidence_policy": {
+    "observed_fact": "A statement or identifier transcribed from an identified official or manufacturer source.",
+    "official_model_result": "A published NIST reduction or modelling result, not a new measurement by V9D.",
+    "local_archive_claim": "No local-archive claim is introduced and the source archive is not rescanned.",
+    "model_hypothesis": "A declared dossier-completeness rule; it is not a material-property assumption.",
+    "derived_result": "A deterministic completeness and provenance check over the declared source-access dossier.",
+    "unknown": "The content and release status of the requested NIST channels and the production CF6-80A2/nacelle material-fracture records."
+  },
+  "regressions": {
+    "files": {
+      "wtc1_simulation_v8/data/v9c_official_ringing_method.json": {
+        "exists": true,
+        "expected_sha256": "58e72a0d0d8440742bfc367543afce961076022e55f85e88865d3e861b2a8240",
+        "actual_sha256": "58e72a0d0d8440742bfc367543afce961076022e55f85e88865d3e861b2a8240",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/run_v9c_official_ringing_method.py": {
+        "exists": true,
+        "expected_sha256": "711032492c5ec8cde2649ba27dd9e5ac39abac90eb669ad584cc0b2cc7fcd321",
+        "actual_sha256": "711032492c5ec8cde2649ba27dd9e5ac39abac90eb669ad584cc0b2cc7fcd321",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v9c_methode_ringing.json": {
+        "exists": true,
+        "expected_sha256": "273f48ffc7b07aa5e0ea5d4ecf5993b5c8cdd53b907427400b88b5cde3c8ab8e",
+        "actual_sha256": "273f48ffc7b07aa5e0ea5d4ecf5993b5c8cdd53b907427400b88b5cde3c8ab8e",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/rapport_wtc1_v9c_methode_ringing.md": {
+        "exists": true,
+        "expected_sha256": "dde01b4c5011aa3b966069b939ad9c02ba4ee0df3eb76cde1d5a4e5d869fa5ba",
+        "actual_sha256": "dde01b4c5011aa3b966069b939ad9c02ba4ee0df3eb76cde1d5a4e5d869fa5ba",
+        "passed": true
+      },
+      "wtc1_simulation_v8/data/v9a_material_coupon_evidence.json": {
+        "exists": true,
+        "expected_sha256": "f6ac522767c4fbd7031e3bd5e7312dc5044802944e56acff077338a565dd9b42",
+        "actual_sha256": "f6ac522767c4fbd7031e3bd5e7312dc5044802944e56acff077338a565dd9b42",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/v9b_cf6_public_source_audit.json": {
+        "exists": true,
+        "expected_sha256": "08544ec71a8df3cf2410c20891d882b7419db14d23ee259a55e40a4fe56e29a4",
+        "actual_sha256": "08544ec71a8df3cf2410c20891d882b7419db14d23ee259a55e40a4fe56e29a4",
+        "passed": true
+      }
+    },
+    "metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9c_methode_ringing.json",
+        "path": "iteration_execution_validated",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9c_methode_ringing.json",
+        "path": "revalidation_gate_summary.revalidation_passed",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9c_methode_ringing.json",
+        "path": "revalidation_gate_summary.failed_curve_ids",
+        "expected": [
+          "C80_299",
+          "C80_401"
+        ],
+        "actual": [
+          "C80_299",
+          "C80_401"
+        ],
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v9c_methode_ringing.json",
+        "path": "conditional_openradioss_coupon_authorized",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      }
+    ],
+    "files_passed": true,
+    "metrics_passed": true,
+    "passed": true
+  },
+  "nist_source_access_dossier": {
+    "report_series": "NIST NCSTAR 1-3D",
+    "final_publication_id": "101021",
+    "draft_publication_id": "909059",
+    "official_route": "NIST_FOIA_OFFICE",
+    "specimen_identifier_count": 12,
+    "specimen_identifiers": [
+      "M26-C1B1-RF-L1",
+      "M26-C1B1-RF-L2",
+      "M26-C1B1-L1",
+      "M26-C1B1-RF-L2-HSR",
+      "M26-C1B1-RF-L6-06",
+      "M26-C1B1-RF-L7-06",
+      "M26-C1B1-RF-L8-06",
+      "C80-L18",
+      "C80-A-3-1",
+      "C80-A-2-1",
+      "C80-A-2-2",
+      "C80-A-2-3"
+    ],
+    "record_category_count": 10,
+    "raw_channel_category_count": 5,
+    "raw_channel_checks": {
+      "time": true,
+      "load": true,
+      "actuator displacement": true,
+      "gauge-section strain": true,
+      "grip-end strain": true
+    },
+    "public_raw_channels_found": false,
+    "request_sent": false,
+    "request_publicly_posted": false,
+    "draft_path": "wtc1_simulation_v8/output/v9d_brouillon_demande_donnees_nist.md"
+  },
+  "cf6_80a2_public_update": {
+    "source_count": 5,
+    "sources": [
+      {
+        "id": "GE_CF6_TECHNICAL_MANUAL_INDEX_2026_02_01",
+        "url": "https://www.geaerospace.com/sites/default/files/2022-01/Cf6emm.pdf",
+        "classification": "manufacturer_manual_index",
+        "direct_facts": [
+          "The index identifies GEK 50460 as the CF6-80A/A2 Installation Manual, revision 2 dated 1983-09-01.",
+          "GE states that supplementary support manuals are available by contacting Fleet Support."
+        ],
+        "material_or_fracture_card_found": false,
+        "limitation": "The public index does not disclose component alloy/layup mapping, rate-dependent constitutive curves, fracture energy, localization length or attachment-failure data.",
+        "external_contact_made": false
+      },
+      {
+        "id": "GE_CF6_ENGINE_FAMILY",
+        "url": "https://www.geaerospace.com/commercial/aircraft-engines/cf6",
+        "classification": "manufacturer_product_page",
+        "direct_facts": [
+          "GE identifies the CF6-80A family as a Boeing 767 engine and publishes general dimensions and performance ranges."
+        ],
+        "material_or_fracture_card_found": false,
+        "limitation": "General dimensions and performance do not identify a production material or fracture card."
+      },
+      {
+        "id": "FAA_AD_2021_26_22",
+        "url": "https://drs.faa.gov/browse/excelExternalWindow/FR-ADFRAWD-2022-02455-0000000000.0001",
+        "classification": "official_airworthiness_directive",
+        "direct_facts": [
+          "The directive explicitly includes the CF6-80A2 and references GE CF6-80A Service Bulletin 72-0869 for specified high-pressure-turbine disks."
+        ],
+        "material_or_fracture_card_found": false,
+        "limitation": "The directive does not publish a reusable high-rate material/fracture law or nacelle attachment dataset."
+      },
+      {
+        "id": "NASA_CR_165212",
+        "url": "https://ntrs.nasa.gov/citations/19810015645",
+        "classification": "government_sponsored_generic_cf6_size_containment_research",
+        "direct_facts": [
+          "The report studies a lightweight sandwich shell wrapped with dry Kevlar for a CF6-size engine containment concept."
+        ],
+        "material_or_fracture_card_found": false,
+        "limitation": "A CF6-size research concept is not traceable to the production CF6-80A2 core/cowling or Boeing 767 attachments and cannot be substituted."
+      },
+      {
+        "id": "NASA_19950021857",
+        "url": "https://ntrs.nasa.gov/citations/19950021857",
+        "classification": "government_sponsored_new_generation_nacelle_research",
+        "direct_facts": [
+          "The record describes a later one-piece BMI/honeycomb inner-cowl research design and notes that existing hot-region nacelles used aluminum sandwich or skin-stringer construction."
+        ],
+        "material_or_fracture_card_found": false,
+        "limitation": "The research design is not identified as the production Boeing 767 CF6-80A2 nacelle and supplies no assignable high-rate joint/fracture dataset."
+      }
+    ],
+    "requirements_available_count": 0,
+    "requirements_required_count": 9,
+    "material_card_identification_passed": false,
+    "generic_alloy_substitution_authorized": false,
+    "external_request_sent": false
+  },
+  "documentary_gate_summary": {
+    "channel_checks": {
+      "time": true,
+      "load": true,
+      "actuator displacement": true,
+      "gauge-section strain": true,
+      "grip-end strain": true
+    },
+    "gates": {
+      "v9c_regressions_unchanged": true,
+      "official_nist_access_route_present": true,
+      "minimum_exact_specimen_identifiers_passed": true,
+      "minimum_record_categories_passed": true,
+      "required_raw_channels_all_named": true,
+      "no_fee_commitment_passed": true,
+      "partial_release_and_record_status_passed": true,
+      "nist_request_remains_unsent": true,
+      "nist_request_remains_unpublished": true,
+      "cf6_requirement_count_is_nine": true,
+      "cf6_available_requirement_count_is_zero": true,
+      "generic_material_substitution_prohibited": true,
+      "ge_or_boeing_request_remains_unsent": true,
+      "no_cf6_source_contact_made": true
+    },
+    "passed": true
+  },
+  "raw_nist_channels_acquired": false,
+  "scientific_material_qualification_passed": false,
+  "openradioss_coupon_authorized": false,
+  "openradioss_coupon_executed": false,
+  "failure_deletion_executed": false,
+  "facade_impact_executed": false,
+  "global_wtc_impact_physics_qualification_passed": false,
+  "blender_executed": false,
+  "scope_gates": {
+    "raw_nist_channels_acquired": false,
+    "wtc_high_rate_material_curve_qualification_passed": false,
+    "cf6_80a2_cowling_material_card_identification_passed": false,
+    "openradioss_coupon_authorized": false,
+    "failure_deletion_authorized": false,
+    "facade_impact_authorized": false,
+    "whole_aircraft_authorized": false,
+    "global_tower_authorized": false,
+    "thermal_authorized": false,
+    "blender_physics_validation_authorized": false,
+    "explosive_or_thermite_mechanism_tested": false
+  },
+  "interpretation": "V9D validates only the completeness and provenance of a local unsent source-access dossier. It does not acquire the missing NIST channels, identify a CF6-80A2/cowling material card, authorize a coupon or validate an impact simulation.",
+  "runtime": {
+    "started_at": "2026-08-27T10:32:08.588167+02:00",
+    "finished_at": "2026-08-27T10:32:08.593762+02:00",
+    "python": "3.14.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "external_network_writes": 0,
+    "solver_runs": 0
+  }
+}

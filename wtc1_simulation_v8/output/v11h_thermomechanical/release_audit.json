@@ -1,0 +1,239 @@
+{
+  "iteration": "V11H",
+  "status": "PASS",
+  "checked_at_utc": "2026-09-07T13:15:21.939298+00:00",
+  "check_count": 22,
+  "checks": [
+    {
+      "test": "saved_output_hashes",
+      "pass": true,
+      "evidence": {
+        "cold_v11f_control.json": true,
+        "energy_ledger.csv": true,
+        "mesh_convergence.json": true,
+        "numerical_audit.json": true,
+        "rapport_v11h_thermomecanique.md": true,
+        "results_v11h.json": true,
+        "section_fiber_states.csv": true,
+        "section_mesh_comparison.csv": true,
+        "section_paths.csv": true,
+        "section_paths.json": true,
+        "source_manifest.json": true,
+        "synthese_v11h_thermomecanique.png": true,
+        "thermal_material_ledger.json": true,
+        "v10w_bar_replay.json": true
+      }
+    },
+    {
+      "test": "frozen_input_and_protected_hashes",
+      "pass": true,
+      "evidence": {
+        "wtc1_simulation_v8/data/v11h_thermomechanical_predeclaration.json": true,
+        "wtc1_simulation_v8/data/v11e_cracked_section_predeclaration.json": true,
+        "wtc1_simulation_v8/data/v11f_panel_coupling_predeclaration.json": true,
+        "wtc1_simulation_v8/output/v10w_analytical_reference.json": true,
+        "wtc1_simulation_v8/scripts/v11f_panel_model.py": true,
+        "wtc1_simulation_v8/scripts/run_v11f_panel_coupling.py": true,
+        "wtc1_simulation_v8/scripts/test_v11f_panel.py": true,
+        "wtc1_simulation_v8/scripts/audit_v11f_release.py": true,
+        "wtc1_simulation_v8/output/v11f_panel_coupling/results_v11f.json": true,
+        "wtc1_simulation_v8/output/v11f_panel_coupling/offline_manifest.json": true,
+        "wtc1_simulation_v8/output/v11f_panel_coupling/release_audit.json": true,
+        "wtc1_simulation_v8/data/v11g_localization_predeclaration.json": true,
+        "wtc1_simulation_v8/scripts/v11g_localization_model.py": true,
+        "wtc1_simulation_v8/output/v11g_localization/results_v11g.json": true,
+        "wtc1_simulation_v8/output/v11g_localization/offline_manifest.json": true,
+        "wtc1_simulation_v8/output/v11g_localization/release_audit.json": true,
+        "harness/handoffs/WTC1_V11G_HANDOFF.md": true,
+        "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend": true,
+        "wtc1_simulation_v8/scripts/v11h_thermomechanical_model.py": true,
+        "wtc1_simulation_v8/scripts/test_v11h_thermomechanical.py": true,
+        "wtc1_simulation_v8/scripts/run_v11h_thermomechanical.py": true,
+        "wtc1_simulation_v8/scripts/audit_v11h_release.py": true
+      }
+    },
+    {
+      "test": "manifest_status_and_input_integrity",
+      "pass": true,
+      "evidence": {
+        "status": "PASS",
+        "unchanged": true
+      }
+    },
+    {
+      "test": "saved_case_and_state_counts",
+      "pass": true,
+      "evidence": {
+        "cases": 11,
+        "unique": 11,
+        "states": 323
+      }
+    },
+    {
+      "test": "saved_implementation_tests_pass",
+      "pass": true,
+      "evidence": 27
+    },
+    {
+      "test": "saved_mechanical_energy_identity",
+      "pass": true,
+      "evidence": 5.329070518200751e-15
+    },
+    {
+      "test": "saved_free_resultants",
+      "pass": true,
+      "evidence": 3.3945237591299597e-15
+    },
+    {
+      "test": "saved_support_mechanical_work_zero",
+      "pass": true,
+      "evidence": 3.771585690105898e-12
+    },
+    {
+      "test": "saved_no_dissipation_or_global_energy_credit",
+      "pass": true,
+      "evidence": {
+        "dissipation_exact_zero": true,
+        "global_exact_zero": true
+      }
+    },
+    {
+      "test": "saved_uniform_free_closed_form",
+      "pass": true,
+      "evidence": {
+        "eps0": 1.734723475976807e-15,
+        "extension": 1.724167737936772e-15,
+        "kappa": 3.465277570872923e-19,
+        "stress_scaled": 1.7347234759768069e-15
+      }
+    },
+    {
+      "test": "saved_uniform_restrained_closed_form",
+      "pass": true,
+      "evidence": {
+        "force": 1.8049107214155752e-15,
+        "reaction": 1.8049107214155752e-15,
+        "energy": 1.0575648758294388e-15,
+        "thermal_work": 1.0575648758294388e-15
+      }
+    },
+    {
+      "test": "saved_through_depth_gradient_closed_form",
+      "pass": true,
+      "evidence": {
+        "eps0": 1.3010426069826053e-15,
+        "kappa": 1.9166959686067738e-16,
+        "bow": 2.992104087527488e-16
+      }
+    },
+    {
+      "test": "saved_common_and_differential_alpha_controls",
+      "pass": true,
+      "evidence": {
+        "common_stress_Pa": 2.49366499671666e-07,
+        "differential_stress_Pa": 30270673.645224925
+      }
+    },
+    {
+      "test": "saved_cycles_return_to_reference",
+      "pass": true,
+      "evidence": {
+        "R02_UNIFORM_RESTRAINED_CYCLE": {
+          "eps0": 0.0,
+          "kappa_per_m": 0.0,
+          "maximum_absolute_stress_Pa": 0.0,
+          "stored_mechanical_J_per_m": 0.0,
+          "cumulative_thermoelastic_work_J_per_m": 5.329070518200751e-15,
+          "sensible_enthalpy_change_J_per_m": 0.0
+        },
+        "R02_GRADIENT_FREE_CYCLE": {
+          "eps0": 0.0,
+          "kappa_per_m": 0.0,
+          "maximum_absolute_stress_Pa": 0.0,
+          "stored_mechanical_J_per_m": 0.0,
+          "cumulative_thermoelastic_work_J_per_m": 3.5739857254246665e-14,
+          "sensible_enthalpy_change_J_per_m": 0.0
+        }
+      }
+    },
+    {
+      "test": "saved_v10w_bar_replay",
+      "pass": true,
+      "evidence": {
+        "uniform_free_tip_displacement_mm": 0.0,
+        "uniform_restrained_force_magnitude_N": 0.0,
+        "uniform_restrained_stress_MPa": 0.0,
+        "axial_linear_gradient_free_tip_displacement_mm": 0.0
+      }
+    },
+    {
+      "test": "saved_three_mesh_families",
+      "pass": true,
+      "evidence": {
+        "40": 11,
+        "80": 11,
+        "320": 11
+      }
+    },
+    {
+      "test": "saved_csv_row_counts",
+      "pass": true,
+      "evidence": {
+        "section_paths": 323,
+        "fiber_states": 1776,
+        "energy_ledger": 22,
+        "mesh_comparison": 33
+      }
+    },
+    {
+      "test": "saved_inherited_v11f_v11g_hash_checks",
+      "pass": true,
+      "evidence": {
+        "count": 53,
+        "failed": []
+      }
+    },
+    {
+      "test": "saved_v11f_cold_control",
+      "pass": true,
+      "evidence": {
+        "status": "PASS",
+        "tests": 132,
+        "cases": 14
+      }
+    },
+    {
+      "test": "bounded_scope_flags",
+      "pass": true,
+      "evidence": "Elastic prescribed-temperature section only"
+    },
+    {
+      "test": "no_undeclared_heat_transfer_properties",
+      "pass": true,
+      "evidence": {
+        "conductivity": null,
+        "emissivity": null,
+        "convection_coefficient": null,
+        "incident_heat_flux": null,
+        "gas_temperature_history": null,
+        "sfrm_state": null
+      }
+    },
+    {
+      "test": "report_and_figure_saved",
+      "pass": true,
+      "evidence": {
+        "report_bytes": 7863,
+        "figure_bytes": 113478
+      }
+    }
+  ],
+  "output_hash_count": 14,
+  "input_hash_count": 22,
+  "audit_script": "wtc1_simulation_v8/scripts/audit_v11h_release.py",
+  "audit_script_sha256": "3b18318ec4ac30146bb69ba61a2f09c7bcd40f60dcca26a12fe12aa0699552d5",
+  "scope": "Independent saved-file arithmetic and hash checks; no mechanics-kernel import or external validation.",
+  "maximum_reconstructed_energy_residual_relative": 5.329070518200751e-15,
+  "maximum_reconstructed_free_resultant_residual_relative": 3.3945237591299597e-15,
+  "global_energy_credit_J": 0.0
+}

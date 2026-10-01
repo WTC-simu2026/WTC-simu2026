@@ -1,0 +1,329 @@
+{
+  "iteration": "V11I",
+  "status": "PASS",
+  "checked_at_utc": "2026-09-08T07:28:21.021102+00:00",
+  "check_count": 26,
+  "checks": [
+    {
+      "test": "saved_output_hashes",
+      "pass": true,
+      "evidence": {
+        "count": 18,
+        "failed": []
+      }
+    },
+    {
+      "test": "frozen_input_and_protected_hashes",
+      "pass": true,
+      "evidence": {
+        "count": 31,
+        "failed": []
+      }
+    },
+    {
+      "test": "manifest_status_and_input_integrity",
+      "pass": true,
+      "evidence": {
+        "iteration": "V11I",
+        "status": "PASS",
+        "unchanged": true
+      }
+    },
+    {
+      "test": "saved_case_and_state_counts",
+      "pass": true,
+      "evidence": {
+        "ids": [
+          "COLD_DELTA_T_ZERO",
+          "SLAB_UNIFORM_100K",
+          "SLAB_GRADIENT_TOP_100K"
+        ],
+        "states": 54
+      }
+    },
+    {
+      "test": "saved_implementation_tests_pass",
+      "pass": true,
+      "evidence": {
+        "tests": 32,
+        "passed": 32,
+        "status": "PASS"
+      }
+    },
+    {
+      "test": "saved_numerical_digest_reconstructed",
+      "pass": true,
+      "evidence": {
+        "saved": "f44bf662b31a9d9058125f6fdb7935a28fe8a1a6c30b4f014f0e6df3cbebfa53",
+        "reconstructed": "f44bf662b31a9d9058125f6fdb7935a28fe8a1a6c30b4f014f0e6df3cbebfa53"
+      }
+    },
+    {
+      "test": "saved_states_are_finite",
+      "pass": true,
+      "evidence": 133
+    },
+    {
+      "test": "saved_mechanical_energy_identity",
+      "pass": true,
+      "evidence": {
+        "maximum_reconstructed": 6.346406192364514e-11,
+        "maximum_saved_difference": 0.0
+      }
+    },
+    {
+      "test": "saved_stored_energy_decomposition",
+      "pass": true,
+      "evidence": 1.103113602714734e-16
+    },
+    {
+      "test": "saved_equilibrium_and_support_reactions",
+      "pass": true,
+      "evidence": {
+        "equilibrium_relative": 1.9242768805317673e-12,
+        "vertical_relative": 1.985207980826266e-12,
+        "horizontal_absolute_N": 7.658531899886296e-09
+      }
+    },
+    {
+      "test": "saved_support_work_dissipation_and_global_credit_zero",
+      "pass": true,
+      "evidence": {
+        "support_work_exact_zero": true,
+        "dissipation_exact_zero": true,
+        "global_credit_exact_zero": true
+      }
+    },
+    {
+      "test": "saved_zero_temperature_exact_preload_replay",
+      "pass": true,
+      "evidence": {
+        "stored_J": 0.0,
+        "spring_stored_J": 0.0,
+        "slab_stored_J": 0.0,
+        "max_slab_down_m": 0.0,
+        "max_slab_up_m": 0.0,
+        "max_truss_down_m": 0.0,
+        "max_opening_m": 0.0,
+        "max_overlap_m": 0.0,
+        "seat_vertical_reaction_N": 0.0,
+        "seat_horizontal_reaction_N": 0.0,
+        "gravity_load_N": 0.0,
+        "max_DCR": 0.0
+      }
+    },
+    {
+      "test": "saved_v11f_quarter_gravity_regression",
+      "pass": true,
+      "evidence": {
+        "maximum_relative": 1.1896998503683583e-12,
+        "discrete": {
+          "contact_count": true,
+          "vertical_tension_count": true,
+          "governing_id": true,
+          "governing_kind": true
+        }
+      }
+    },
+    {
+      "test": "saved_cold_tangent_and_topology",
+      "pass": true,
+      "evidence": {
+        "maximum_tangent_relative": 1.9106075792149893e-15,
+        "topology": {
+          "case_id": "COLD_DELTA_T_ZERO",
+          "panel_case": {
+            "id": "V11I_PANEL_R02",
+            "rho_total": 0.002,
+            "layout": "symmetric",
+            "cold_v11f_case_id": "COLD_R02",
+            "scope": "One symmetric equivalent V11F truss-pair panel. Reinforcement ratio and layout remain exploratory hypotheses, not an as-built schedule."
+          },
+          "subdivisions": 4,
+          "degrees_of_freedom": 261,
+          "steel_nodes": 33,
+          "steel_members": 63,
+          "slab_nodes": 65,
+          "slab_elements": 64,
+          "gauss_sections": 128,
+          "contact_stations": 17,
+          "span_m": 18.1102,
+          "quadrature_weight_sum_m": 18.110200000000034,
+          "section": {
+            "case_id": "COLD_DELTA_T_ZERO",
+            "mode": "FREE",
+            "width_m": 2.032,
+            "equivalent_thickness_m": 0.11048999999999999,
+            "span_m": 18.1102,
+            "concrete_fibers": 160,
+            "concrete_area_m2": 0.22406664864,
+            "steel_area_m2": 0.00044903136,
+            "gross_area_m2": 0.22451568,
+            "reinforcement_layers": 2,
+            "E_concrete_Pa": 17236893232.920902,
+            "E_steel_Pa": 200000000000.0,
+            "alpha_concrete_per_K": 1e-05,
+            "alpha_steel_per_K": 1.2e-05,
+            "section_stiffness": {
+              "K_N": 3952019171.666089,
+              "K_Nm": 7.450580596923828e-09,
+              "K_Nm2": 4011168.5338727497
+            },
+            "mass_kg_per_m": 541.284852912,
+            "heat_capacity_J_per_m_K": 486098.89876799996,
+            "energy_units": "Mechanical and sensible quantities are J/m longitudinal length; no global energy credit"
+          },
+          "cold_zero_tangent_relative_difference": 1.9106075792149893e-15,
+          "global_energy_credit_J": 0.0
+        }
+      }
+    },
+    {
+      "test": "saved_dcr_guard_and_uncommitted_brackets",
+      "pass": true,
+      "evidence": {
+        "maximum_accepted_DCR": 0.899999873152565,
+        "guarded_cases": 1,
+        "brackets": [
+          {
+            "accepted_scale": 0.08235462506612141,
+            "accepted_DCR": 0.8999998731525536,
+            "rejected_scale": 0.08235470453898111,
+            "rejected_DCR": 0.9000006347939219,
+            "rejected_state_committed": false,
+            "accepted_governing_id": "SLAB-003-END-1-BOTTOM",
+            "accepted_governing_kind": "slab_concrete_tension_elastic_guard"
+          }
+        ]
+      }
+    },
+    {
+      "test": "saved_nonzero_uniform_and_gradient_response",
+      "pass": true,
+      "evidence": {
+        "SLAB_UNIFORM_100K": {
+          "scale": 1.0,
+          "thermoelastic_work_J": 2422.4294755080077,
+          "reaction_change_N": 2.21698428504169e-08,
+          "spring_energy_change_J": 1540.7422335586887
+        },
+        "SLAB_GRADIENT_TOP_100K": {
+          "scale": 0.08235462506612141,
+          "thermoelastic_work_J": 61.58586722674143,
+          "reaction_change_N": 1.3904355000704527e-08,
+          "spring_energy_change_J": -8.994497938616448
+        }
+      }
+    },
+    {
+      "test": "saved_temperature_faces",
+      "pass": true,
+      "evidence": {
+        "COLD_DELTA_T_ZERO": 0.0,
+        "SLAB_UNIFORM_100K": 0.0,
+        "SLAB_GRADIENT_TOP_100K": 0.0
+      }
+    },
+    {
+      "test": "saved_sensible_enthalpy_closed_form",
+      "pass": true,
+      "evidence": {
+        "COLD_DELTA_T_ZERO": 0.0,
+        "SLAB_UNIFORM_100K": 0.0,
+        "SLAB_GRADIENT_TOP_100K": 0.0
+      }
+    },
+    {
+      "test": "saved_unilateral_force_signs",
+      "pass": true,
+      "evidence": "contact <= 0 N; vertical tie >= 0 N"
+    },
+    {
+      "test": "saved_half_step_and_fine_mesh_gates",
+      "pass": true,
+      "evidence": {
+        "half_passed": 3,
+        "fine_passed": 3,
+        "coarse_diagnostic_passed": 3
+      }
+    },
+    {
+      "test": "saved_declared_mesh_families",
+      "pass": true,
+      "evidence": {
+        "half": 3,
+        "meshes": {
+          "2": 3,
+          "8": 3
+        }
+      }
+    },
+    {
+      "test": "saved_csv_row_counts",
+      "pass": true,
+      "evidence": {
+        "actual": {
+          "path_history": 54,
+          "panel_section_states": 384,
+          "critical_fiber_states": 486,
+          "connection_forces": 351,
+          "slab_nodes": 195,
+          "energy_ledger": 54,
+          "discretization_comparison": 9
+        },
+        "expected": {
+          "path_history": 54,
+          "panel_section_states": 384,
+          "critical_fiber_states": 486,
+          "connection_forces": 351,
+          "slab_nodes": 195,
+          "energy_ledger": 54,
+          "discretization_comparison": 9
+        }
+      }
+    },
+    {
+      "test": "saved_v11f_and_v11h_controls",
+      "pass": true,
+      "evidence": {
+        "V11F": "PASS",
+        "V11H": "PASS",
+        "old_drivers_reexecuted": false
+      }
+    },
+    {
+      "test": "saved_bounded_scope_flags",
+      "pass": true,
+      "evidence": "Prescribed-temperature reversible local panel only"
+    },
+    {
+      "test": "saved_unused_heat_transfer_fields_null",
+      "pass": true,
+      "evidence": {
+        "conductivity": null,
+        "emissivity": null,
+        "convection_coefficient": null,
+        "incident_heat_flux": null,
+        "gas_temperature_history": null,
+        "sfrm_state": null
+      }
+    },
+    {
+      "test": "report_and_figure_saved",
+      "pass": true,
+      "evidence": {
+        "report_bytes": 5650,
+        "figure_bytes": 98705
+      }
+    }
+  ],
+  "output_hash_count": 18,
+  "input_hash_count": 31,
+  "audit_script": "wtc1_simulation_v8/scripts/audit_v11i_release.py",
+  "audit_script_sha256": "20151fa31c20984d055fbf49f87431950ad410dd731e726bd0d44cd93d6c4a19",
+  "scope": "Independent saved-file hashes and arithmetic; no import of the mechanics kernel or external validation.",
+  "maximum_reconstructed_total_energy_residual_relative": 6.346406192364514e-11,
+  "maximum_saved_equilibrium_residual_relative": 1.9242768805317673e-12,
+  "maximum_accepted_DCR": 0.899999873152565,
+  "global_energy_credit_J": 0.0
+}

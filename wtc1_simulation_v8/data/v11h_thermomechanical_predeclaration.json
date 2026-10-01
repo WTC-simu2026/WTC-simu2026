@@ -1,0 +1,126 @@
+{
+  "iteration": "V11H",
+  "random_seed": 1101008,
+  "random_draw_used": false,
+  "purpose": "Qualify a bounded elastic thermomechanical section kernel before any heated fracture or full-panel coupling. Reproduce free/restrained expansion, through-depth slab gradients, cycles and energy identities while preserving V11F byte-for-byte as the cold control.",
+  "section_configuration": "wtc1_simulation_v8/data/v11e_cracked_section_predeclaration.json",
+  "cold_panel_configuration": "wtc1_simulation_v8/data/v11f_panel_coupling_predeclaration.json",
+  "cold_panel_directory": "wtc1_simulation_v8/output/v11f_panel_coupling",
+  "previous_iteration_directory": "wtc1_simulation_v8/output/v11g_localization",
+  "cached_bar_reference": "wtc1_simulation_v8/output/v10w_analytical_reference.json",
+  "scope": {
+    "constitutive_domain": "Small-strain, plane-section, linear thermoelastic response with constant properties. No concrete cracking/crushing, steel yielding, creep, transient strain, bond slip, geometric nonlinearity or contact evolution.",
+    "temperature_field": "Prescribed uniform or linear through-depth temperature change relative to 20 C. It is not obtained from a fire, heat-transfer, radiation, convection or SFRM calculation.",
+    "history_policy": "No V11E/V11F damage variable or material property is edited. Heated fracture is excluded until temperature-dependent free energy, irreversibility and prior damage history are formulated together.",
+    "energy_policy": "Mechanical Helmholtz energy and thermoelastic conjugate work are balanced in J/m. Constant-property sensible enthalpy is inventoried separately and is not inserted into mechanical work. No local energy receives global collapse credit."
+  },
+  "geometry": {
+    "span_m": 18.1102,
+    "span_source": "Exact V11F panel inventory value; used only to report centroid extension and small-slope simply-supported free thermal bow.",
+    "kinematics": "Inherited V11E convention eps(y)=eps0-y*kappa, y positive upward; N=sum(A*sigma), M=-sum(A*y*sigma).",
+    "bow_formula": "For a constant free eigen-curvature and zero vertical displacement at both ideal pins, |w_mid|=|kappa| L^2/8. This is a kinematic small-slope reference, not a V11F panel solution."
+  },
+  "thermal_properties": {
+    "reference_temperature_c": 20.0,
+    "common_alpha_control_per_k": 1.2e-05,
+    "concrete": {
+      "thermal_expansion_per_k": 1.0e-05,
+      "density_kg_m3": 2400.0,
+      "specific_heat_j_kg_k": 900.0,
+      "conductivity_w_m_k": null,
+      "status": "Generic constant hypotheses for a bounded sensitivity calculation; not measured WTC concrete properties."
+    },
+    "reinforcement": {
+      "thermal_expansion_per_k": 1.2e-05,
+      "density_kg_m3": 7850.0,
+      "specific_heat_j_kg_k": 600.0,
+      "conductivity_w_m_k": null,
+      "status": "Generic constant hypotheses. Alpha matches the cached V10W steel benchmark; density and heat capacity are not WTC-specific measurements."
+    },
+    "unused_heat_transfer_fields": {
+      "conductivity": null,
+      "emissivity": null,
+      "convection_coefficient": null,
+      "incident_heat_flux": null,
+      "gas_temperature_history": null,
+      "sfrm_state": null
+    }
+  },
+  "discretization": {
+    "reference_concrete_fibers": 160,
+    "comparison_concrete_fibers": [40, 80, 320],
+    "temperature_steps_per_segment": 24,
+    "half_step_temperature_steps_per_segment": 48,
+    "rule": "Equal midpoint concrete fibers through depth and explicit reinforcement layers, matching V11E geometry. Linear thermal fields are evaluated at every material point."
+  },
+  "cases": [
+    {"id":"COLD_R02_FREE","rho_total":0.002,"layout":"symmetric","mode":"FREE","delta_t_bottom_c":0.0,"delta_t_top_c":0.0,"scale_vertices":[0.0,1.0],"alpha_mode":"differential"},
+    {"id":"PLAIN_UNIFORM_FREE","rho_total":0.0,"layout":"symmetric","mode":"FREE","delta_t_bottom_c":100.0,"delta_t_top_c":100.0,"scale_vertices":[0.0,1.0],"alpha_mode":"differential"},
+    {"id":"PLAIN_UNIFORM_FULLY_RESTRAINED","rho_total":0.0,"layout":"symmetric","mode":"FULLY_RESTRAINED","delta_t_bottom_c":100.0,"delta_t_top_c":100.0,"scale_vertices":[0.0,1.0],"alpha_mode":"differential"},
+    {"id":"PLAIN_GRADIENT_FREE","rho_total":0.0,"layout":"symmetric","mode":"FREE","delta_t_bottom_c":0.0,"delta_t_top_c":100.0,"scale_vertices":[0.0,1.0],"alpha_mode":"differential"},
+    {"id":"R02_COMMON_ALPHA_GRADIENT_FREE","rho_total":0.002,"layout":"symmetric","mode":"FREE","delta_t_bottom_c":0.0,"delta_t_top_c":100.0,"scale_vertices":[0.0,1.0],"alpha_mode":"common"},
+    {"id":"R02_UNIFORM_FREE","rho_total":0.002,"layout":"symmetric","mode":"FREE","delta_t_bottom_c":100.0,"delta_t_top_c":100.0,"scale_vertices":[0.0,1.0],"alpha_mode":"differential"},
+    {"id":"R02_UNIFORM_AXIAL_RESTRAINED","rho_total":0.002,"layout":"symmetric","mode":"AXIAL_RESTRAINED_ROTATION_FREE","delta_t_bottom_c":100.0,"delta_t_top_c":100.0,"scale_vertices":[0.0,1.0],"alpha_mode":"differential"},
+    {"id":"R02_GRADIENT_FREE","rho_total":0.002,"layout":"symmetric","mode":"FREE","delta_t_bottom_c":0.0,"delta_t_top_c":100.0,"scale_vertices":[0.0,1.0],"alpha_mode":"differential"},
+    {"id":"R02_GRADIENT_FULLY_RESTRAINED","rho_total":0.002,"layout":"symmetric","mode":"FULLY_RESTRAINED","delta_t_bottom_c":0.0,"delta_t_top_c":100.0,"scale_vertices":[0.0,1.0],"alpha_mode":"differential"},
+    {"id":"R02_UNIFORM_RESTRAINED_CYCLE","rho_total":0.002,"layout":"symmetric","mode":"FULLY_RESTRAINED","delta_t_bottom_c":100.0,"delta_t_top_c":100.0,"scale_vertices":[0.0,1.0,0.0],"alpha_mode":"differential"},
+    {"id":"R02_GRADIENT_FREE_CYCLE","rho_total":0.002,"layout":"symmetric","mode":"FREE","delta_t_bottom_c":0.0,"delta_t_top_c":100.0,"scale_vertices":[0.0,1.0,0.0],"alpha_mode":"differential"}
+  ],
+  "acceptance": {
+    "closed_form_relative": 1e-10,
+    "free_resultant_relative": 1e-10,
+    "energy_relative": 1e-10,
+    "cycle_return_absolute_strain": 1e-12,
+    "cycle_return_energy_j_per_m": 1e-8,
+    "reference_to_320_relative": 0.0005,
+    "half_step_relative": 1e-12,
+    "comparison_absolute_floors_si": {
+      "eps0": 1e-09,
+      "kappa_per_m": 1e-09,
+      "N_N": 1.0,
+      "M_Nm": 1.0,
+      "stored_mechanical_J_per_m": 1.0,
+      "cumulative_thermoelastic_work_J_per_m": 1.0,
+      "sensible_enthalpy_change_J_per_m": 1.0
+    },
+    "comparison_normalization": "abs(a-b)/max(abs(a),abs(b),declared absolute SI floor); prevents ratios of roundoff residuals while retaining relative comparison for nonzero responses",
+    "v11f_hashes_must_match": true,
+    "require_historical_outcome": false
+  },
+  "cold_control": {
+    "expected_iteration": "V11F",
+    "expected_status": "PASS",
+    "expected_test_count": 132,
+    "expected_case_count": 14,
+    "expected_numerical_digest_sha256": "14c653db4392244bc377a41705597d40adbc687fbd4afc92ffb33389d1c3ccff"
+  },
+  "protected_files": [
+    "wtc1_simulation_v8/data/v11f_panel_coupling_predeclaration.json",
+    "wtc1_simulation_v8/scripts/v11f_panel_model.py",
+    "wtc1_simulation_v8/scripts/run_v11f_panel_coupling.py",
+    "wtc1_simulation_v8/scripts/test_v11f_panel.py",
+    "wtc1_simulation_v8/scripts/audit_v11f_release.py",
+    "wtc1_simulation_v8/output/v11f_panel_coupling/results_v11f.json",
+    "wtc1_simulation_v8/output/v11f_panel_coupling/offline_manifest.json",
+    "wtc1_simulation_v8/output/v11f_panel_coupling/release_audit.json",
+    "wtc1_simulation_v8/data/v11g_localization_predeclaration.json",
+    "wtc1_simulation_v8/scripts/v11g_localization_model.py",
+    "wtc1_simulation_v8/output/v11g_localization/results_v11g.json",
+    "wtc1_simulation_v8/output/v11g_localization/offline_manifest.json",
+    "wtc1_simulation_v8/output/v11g_localization/release_audit.json",
+    "harness/handoffs/WTC1_V11G_HANDOFF.md",
+    "wtc1_simulation_v8/output/v10w_analytical_reference.json",
+    "wtc1_3d_v4/output/WTC1_V4_2_MASTER.blend"
+  ],
+  "global_energy_credit_j": 0.0,
+  "fire_solved": false,
+  "heat_transfer_solved": false,
+  "heated_fracture_solved": false,
+  "full_panel_thermomechanical_coupling_solved": false,
+  "blender_changed": false,
+  "gpu": false,
+  "software_installation": false,
+  "expected_cpu_seconds_under": 30,
+  "output_directory": "wtc1_simulation_v8/output/v11h_thermomechanical",
+  "scratch_directory": "tmp/v11h_thermomechanical"
+}

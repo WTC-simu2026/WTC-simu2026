@@ -1,0 +1,288 @@
+{
+  "iteration": "V9N",
+  "generated_at": "2026-08-28T16:35:38.907264+02:00",
+  "evidence_policy": {
+    "observed_fact": "A field read directly from the frozen V8S configuration or results, or from the validated V9M closure result.",
+    "official_model_result": "An official NIST value already transcribed in V8S and displayed only with its official-model label.",
+    "local_archive_claim": "None introduced; the source archive is not read or rescanned.",
+    "model_hypothesis": "Constant-velocity rigid-silhouette motion before first contact, camera choices, colors, durations and the storyboard layout.",
+    "derived_result": "Pre-contact offsets calculated from frozen V8S velocity components and negative event times, plus the shot list and coverage checks.",
+    "contradiction_or_unknown": "Any post-contact force, deformation, failure, trajectory or structural response, all of which remain outside the storyboard."
+  },
+  "cached_inputs": [
+    {
+      "id": "V8S_CONFIGURATION",
+      "path": "wtc1_simulation_v8/data/v8s_wtc1_aircraft_impact_replay.json",
+      "role": "Frozen official transcriptions, provenance, geometry, uncertainty cases and source warnings."
+    },
+    {
+      "id": "V8S_RESULTS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v8s_impact_avion.json",
+      "role": "Frozen less-severe, base and more-severe derived kinematic envelopes."
+    },
+    {
+      "id": "V9M_RESULTS",
+      "path": "wtc1_simulation_v8/output/resultats_wtc1_v9m_cloture_branche_impact.json",
+      "role": "Qualification boundary and two-track closure."
+    }
+  ],
+  "provenance_items": [
+    {
+      "id": "P01_AIRCRAFT_GEOMETRY",
+      "configuration_path": "aircraft_geometry",
+      "epistemic_status": "official_fact_transcribed_in_V8S",
+      "source_pointer": "NCSTAR 1-2B v1 Figure 7-6, printed page 164; wingtip deflection printed page 69",
+      "warning": "Wingtip deflection was estimated partly from the observed impact pattern and is not independent damage validation.",
+      "resolved_value": {
+        "type": "Boeing 767-200ER",
+        "source": "NCSTAR 1-2B v1 Figure 7-6, printed page 164 (PDF page 262)",
+        "fuselage_length_ft": 155.0,
+        "wingspan_ft": 159.1666666667,
+        "video_apparent_fuselage_length_ft": 153.0,
+        "video_apparent_fuselage_length_uncertainty_ft": 2.0,
+        "inflight_wingtip_deflection_in": 52.0,
+        "wingtip_deflection_source": "NCSTAR 1-2B v1 printed page 69 (PDF page 167)",
+        "wingtip_deflection_circularity_warning": "The wingtip deflection used by NIST was estimated partly from the observed impact pattern and cannot independently validate that pattern."
+      }
+    },
+    {
+      "id": "P02_VIDEO_KINEMATICS",
+      "configuration_path": "video_kinematics",
+      "epistemic_status": "official_video_analysis_transcribed_in_V8S",
+      "source_pointer": "NCSTAR 1-2B v1 Table 7-3, printed page 166",
+      "warning": "Video-derived speed and trajectory ranges do not determine post-contact response.",
+      "resolved_value": {
+        "source": "NCSTAR 1-2B v1 Table 7-3, printed page 166 (PDF page 264)",
+        "impact_speed_mph": 443.0,
+        "impact_speed_uncertainty_mph": 30.0,
+        "vertical_approach_deg_below_horizontal": 10.6,
+        "vertical_approach_uncertainty_deg": 3.0,
+        "lateral_approach_deg_clockwise_from_structure_north": 180.3,
+        "lateral_approach_uncertainty_deg": 4.0,
+        "roll_deg_left_wing_down": 25.0,
+        "roll_uncertainty_deg": 4.0,
+        "missing_from_video_table": [
+          "AA11 vertical fuselage orientation",
+          "AA11 lateral fuselage orientation"
+        ],
+        "qualification": "The speed and velocity-vector ranges are video-analysis products. Table 7-3 lists the AA11 roll value but leaves both fuselage-orientation fields blank."
+      }
+    },
+    {
+      "id": "P03_THREE_GLOBAL_CASES",
+      "configuration_path": "nist_global_input_cases",
+      "epistemic_status": "official_model_inputs_transcribed_in_V8S",
+      "source_pointer": "NCSTAR 1-2B v2 Tables 9-2 and 9-7, printed pages 198 and 257",
+      "warning": "The three branches are official model input envelopes, not probabilities.",
+      "resolved_value": {
+        "source": "NCSTAR 1-2B v2 Tables 9-2 and 9-7, printed pages 198 and 257 (PDF pages 16 and 75)",
+        "less_severe": {
+          "speed_mph": 414.0,
+          "trajectory_pitch_deg": 13.6,
+          "orientation_pitch_deg": 11.6,
+          "roll_deg": 25.0,
+          "aircraft_mass_factor": 0.95,
+          "aircraft_failure_strain_factor": 0.75,
+          "tower_failure_strain_factor": 1.2,
+          "design_live_load_fraction": 0.25
+        },
+        "base": {
+          "speed_mph": 443.0,
+          "trajectory_pitch_deg": 10.6,
+          "orientation_pitch_deg": 8.6,
+          "roll_deg": 25.0,
+          "aircraft_mass_factor": 1.0,
+          "aircraft_failure_strain_factor": 1.0,
+          "tower_failure_strain_factor": 1.0,
+          "design_live_load_fraction": 0.25
+        },
+        "more_severe": {
+          "speed_mph": 472.0,
+          "trajectory_pitch_deg": 7.6,
+          "orientation_pitch_deg": 5.6,
+          "roll_deg": 25.0,
+          "aircraft_mass_factor": 1.05,
+          "aircraft_failure_strain_factor": 1.25,
+          "tower_failure_strain_factor": 0.8,
+          "design_live_load_fraction": 0.2
+        }
+      }
+    },
+    {
+      "id": "P04_DAMAGE_REFINED_LOCATION",
+      "configuration_path": "damage_refined_kinematics",
+      "epistemic_status": "official_model_setup_not_independent_validation",
+      "source_pointer": "NCSTAR 1-2B v1 Tables 7-4 and 7-5, printed page 170",
+      "warning": "Orientation and position were refined against observed facade damage; use only as a labelled reproduction input.",
+      "resolved_value": {
+        "source": "NCSTAR 1-2B v1 Tables 7-4 and 7-5, printed page 170 (PDF page 268)",
+        "impact_speed_mph": 443.0,
+        "impact_speed_uncertainty_mph": 30.0,
+        "vertical_approach_deg_below_horizontal": 10.6,
+        "vertical_approach_uncertainty_deg": 3.0,
+        "lateral_approach_deg_clockwise_from_structure_north": 180.3,
+        "lateral_approach_uncertainty_deg": 4.0,
+        "fuselage_nose_up_relative_to_trajectory_deg": 2.0,
+        "lateral_fuselage_orientation_relative_to_trajectory_deg": 0.0,
+        "roll_deg_left_wing_down": 25.0,
+        "roll_uncertainty_deg": 2.0,
+        "nose_impact_west_of_centerline_ft": 2.0,
+        "nose_impact_horizontal_uncertainty_ft": 3.0,
+        "nose_impact_above_floor_96_ft": 1.6,
+        "nose_impact_vertical_uncertainty_ft": 4.0,
+        "circularity_warning": "NIST refined aircraft orientation and position by matching projected aircraft component locations to the observed north-facade damage. A replay using these refined values is a reproduction check, not an independent validation of the facade damage pattern."
+      }
+    },
+    {
+      "id": "P05_TOWER_GEOMETRY",
+      "configuration_path": "tower_geometry",
+      "epistemic_status": "mixed_official_and_reconstructed_geometry",
+      "source_pointer": "wtc1_3d_v4/data/wtc1_parameters.json via frozen V8S configuration",
+      "warning": "Facade plate schedules, welds, bolts, windows, contents and exact local connections are incomplete.",
+      "resolved_value": {
+        "source": "wtc1_3d_v4/data/wtc1_parameters.json",
+        "impact_face": "north",
+        "tower_width_m": 63.1444,
+        "tower_depth_m": 63.1444,
+        "perimeter_columns_per_face": 59,
+        "perimeter_column_spacing_m": 1.016,
+        "upper_office_floor_height_ft": 12.0,
+        "impact_observation_floor_range": [
+          93,
+          99
+        ],
+        "geometry_status": "Facade bay spacing and count are official-level inputs; exact plate thicknesses, welds, bolts, windows, contents, and all local connections in the impact zone are not yet an as-built explicit mesh."
+      }
+    },
+    {
+      "id": "P06_DERIVED_PRECONTACT_OFFSETS",
+      "results_path": "derived_results.cases.*.derived_kinematics",
+      "epistemic_status": "derived_constant_velocity_precontact_geometry",
+      "source_pointer": "V8S results",
+      "warning": "Valid only for negative event times up to first contact; no penetration path is produced.",
+      "resolved_value": {
+        "less_severe": [
+          {
+            "event_time_s": -0.5,
+            "distance_before_facade_m": 89.94139434833683,
+            "height_above_contact_reference_m": 21.75941155996604,
+            "distance_along_velocity_vector_to_contact_m": 92.53728,
+            "motion_status": "constant_velocity_rigid_silhouette_precontact_only"
+          },
+          {
+            "event_time_s": -0.25,
+            "distance_before_facade_m": 44.970697174168414,
+            "height_above_contact_reference_m": 10.87970577998302,
+            "distance_along_velocity_vector_to_contact_m": 46.26864,
+            "motion_status": "constant_velocity_rigid_silhouette_precontact_only"
+          },
+          {
+            "event_time_s": -0.1,
+            "distance_before_facade_m": 17.988278869667365,
+            "height_above_contact_reference_m": 4.351882311993208,
+            "distance_along_velocity_vector_to_contact_m": 18.507456,
+            "motion_status": "constant_velocity_rigid_silhouette_precontact_only"
+          },
+          {
+            "event_time_s": 0.0,
+            "distance_before_facade_m": -0.0,
+            "height_above_contact_reference_m": -0.0,
+            "distance_along_velocity_vector_to_contact_m": -0.0,
+            "motion_status": "constant_velocity_rigid_silhouette_precontact_only"
+          }
+        ],
+        "base": [
+          {
+            "event_time_s": -0.5,
+            "distance_before_facade_m": 97.32829502369036,
+            "height_above_contact_reference_m": 18.214745008807157,
+            "distance_along_velocity_vector_to_contact_m": 99.01935999999999,
+            "motion_status": "constant_velocity_rigid_silhouette_precontact_only"
+          },
+          {
+            "event_time_s": -0.25,
+            "distance_before_facade_m": 48.66414751184518,
+            "height_above_contact_reference_m": 9.107372504403578,
+            "distance_along_velocity_vector_to_contact_m": 49.509679999999996,
+            "motion_status": "constant_velocity_rigid_silhouette_precontact_only"
+          },
+          {
+            "event_time_s": -0.1,
+            "distance_before_facade_m": 19.46565900473807,
+            "height_above_contact_reference_m": 3.6429490017614317,
+            "distance_along_velocity_vector_to_contact_m": 19.803872,
+            "motion_status": "constant_velocity_rigid_silhouette_precontact_only"
+          },
+          {
+            "event_time_s": 0.0,
+            "distance_before_facade_m": -0.0,
+            "height_above_contact_reference_m": -0.0,
+            "distance_along_velocity_vector_to_contact_m": -0.0,
+            "motion_status": "constant_velocity_rigid_silhouette_precontact_only"
+          }
+        ],
+        "more_severe": [
+          {
+            "event_time_s": -0.5,
+            "distance_before_facade_m": 104.57323336325705,
+            "height_above_contact_reference_m": 13.953239621328388,
+            "distance_along_velocity_vector_to_contact_m": 105.50144,
+            "motion_status": "constant_velocity_rigid_silhouette_precontact_only"
+          },
+          {
+            "event_time_s": -0.25,
+            "distance_before_facade_m": 52.28661668162852,
+            "height_above_contact_reference_m": 6.976619810664194,
+            "distance_along_velocity_vector_to_contact_m": 52.75072,
+            "motion_status": "constant_velocity_rigid_silhouette_precontact_only"
+          },
+          {
+            "event_time_s": -0.1,
+            "distance_before_facade_m": 20.91464667265141,
+            "height_above_contact_reference_m": 2.7906479242656776,
+            "distance_along_velocity_vector_to_contact_m": 21.100288000000003,
+            "motion_status": "constant_velocity_rigid_silhouette_precontact_only"
+          },
+          {
+            "event_time_s": 0.0,
+            "distance_before_facade_m": -0.0,
+            "height_above_contact_reference_m": -0.0,
+            "distance_along_velocity_vector_to_contact_m": -0.0,
+            "motion_status": "constant_velocity_rigid_silhouette_precontact_only"
+          }
+        ]
+      }
+    },
+    {
+      "id": "P07_TAIL_CLEARANCE_SCALE",
+      "results_path": "comparison_to_reserved_official_outputs.tail_clearance",
+      "epistemic_status": "derived_timing_scale_compared_with_official_model_output",
+      "source_pointer": "V8S result and NCSTAR 1-2B v2 Chapter 9",
+      "warning": "Display as a timing card only, never as post-contact aircraft motion.",
+      "resolved_value": {
+        "less_severe_s": 0.25727338022377005,
+        "base_s": 0.23997546887477345,
+        "more_severe_s": 0.2248114635674166,
+        "official_approx_s": 0.25,
+        "display_rule": "data_card_only_no_aircraft_motion_after_contact"
+      }
+    },
+    {
+      "id": "P08_PHYSICAL_QUALIFICATION_BOUNDARY",
+      "results_path": "V9M physical qualification booleans",
+      "epistemic_status": "derived_project_decision",
+      "source_pointer": "V9M results and qualification matrix",
+      "warning": "Facade impact, projectile rupture and global response remain physically unqualified.",
+      "resolved_value": {
+        "physical_facade_impact_qualification_passed": false,
+        "projectile_rupture_qualification_passed": false,
+        "eroding_impulse_convergence_passed": false,
+        "global_wtc_impact_physics_qualification_passed": false,
+        "blender_physics_validation_passed": false
+      }
+    }
+  ],
+  "provenance_item_count": 8,
+  "source_archive_read": false,
+  "source_archive_rescanned": false
+}

@@ -1,0 +1,2052 @@
+{
+  "iteration": "V8W",
+  "generated_at": "2026-08-24T19:05:40.325290+02:00",
+  "configuration": "wtc1_simulation_v8/data/v8w_projectile_freeflight_pairwise_contact.json",
+  "scope": "Preserve V8U and V8V by hash and metric, remove the conflicting all-projectile TYPE7 self-contact, qualify two non-overlapping directional core-cowling TYPE7 interfaces in free flight at 100, 50 and 25 mm, and only if that free-flight gate passes repeat the V8V facade-contact mesh, time-step, thread and rupture matrix. This is a two-part equivalent shell projectile and a simplified facade coupon, not a JT9D, whole aircraft or global WTC 1 impact reproduction.",
+  "regressions": {
+    "files": {
+      "wtc1_simulation_v8/data/v8u_openradioss_impact_submodel.json": {
+        "exists": true,
+        "expected_sha256": "8b11989184abc4c0f691ef17bf526d2be676edad0a7b5782dd191c28e6f77a60",
+        "actual_sha256": "8b11989184abc4c0f691ef17bf526d2be676edad0a7b5782dd191c28e6f77a60",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/generate_v8u_impact_panel.py": {
+        "exists": true,
+        "expected_sha256": "fb2bc2fc33b5ead1a0674692e7944d190a2afe995a2d87b47c298724ff8ecf1e",
+        "actual_sha256": "fb2bc2fc33b5ead1a0674692e7944d190a2afe995a2d87b47c298724ff8ecf1e",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/run_v8u_openradioss_impact.py": {
+        "exists": true,
+        "expected_sha256": "f5bae6aba888ab41c05b14261abae6d7bb560be8d994e1a26927fa78323b04e7",
+        "actual_sha256": "f5bae6aba888ab41c05b14261abae6d7bb560be8d994e1a26927fa78323b04e7",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v8u_impact_openradioss.json": {
+        "exists": true,
+        "expected_sha256": "ecefb3be005a9272b3616cb873c781deb2831e9ae1879ff8813b48a9f9e800a6",
+        "actual_sha256": "ecefb3be005a9272b3616cb873c781deb2831e9ae1879ff8813b48a9f9e800a6",
+        "passed": true
+      },
+      "wtc1_simulation_v8/data/v8v_openradioss_deformable_projectile.json": {
+        "exists": true,
+        "expected_sha256": "4b8f045f605cc693afd0109d15083b91386edd6b4d4a1901f2cfbebb39707536",
+        "actual_sha256": "4b8f045f605cc693afd0109d15083b91386edd6b4d4a1901f2cfbebb39707536",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/generate_v8v_deformable_projectile.py": {
+        "exists": true,
+        "expected_sha256": "5c605052e0a49cb014c719fe03da996c86b3d0418d397a9b45eded024fda17fa",
+        "actual_sha256": "5c605052e0a49cb014c719fe03da996c86b3d0418d397a9b45eded024fda17fa",
+        "passed": true
+      },
+      "wtc1_simulation_v8/scripts/run_v8v_deformable_projectile.py": {
+        "exists": true,
+        "expected_sha256": "8d7d1af71026547cbd57cccc15fd10cec6eedca4a5db065135e9975af13a5a5e",
+        "actual_sha256": "8d7d1af71026547cbd57cccc15fd10cec6eedca4a5db065135e9975af13a5a5e",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/resultats_wtc1_v8v_projectile_deformable.json": {
+        "exists": true,
+        "expected_sha256": "231e692c9a5a2ba639c29b1069d4fbb99c6dddfc2bc6310e0fd266433c81eea4",
+        "actual_sha256": "231e692c9a5a2ba639c29b1069d4fbb99c6dddfc2bc6310e0fd266433c81eea4",
+        "passed": true
+      },
+      "wtc1_simulation_v8/output/rapport_wtc1_v8v_projectile_deformable.md": {
+        "exists": true,
+        "expected_sha256": "0cb5c28a4c9110406721d6bf382e9490a0794ddf05233cb9404a9858d9da2bb2",
+        "actual_sha256": "0cb5c28a4c9110406721d6bf382e9490a0794ddf05233cb9404a9858d9da2bb2",
+        "passed": true
+      }
+    },
+    "metrics": [
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8u_impact_openradioss.json",
+        "path": "convergence.medium_to_fine_impulse_relative_difference",
+        "expected": 0.209001172779897,
+        "actual": 0.209001172779897,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8u_impact_openradioss.json",
+        "path": "surrogate_numerical_qualification_passed",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8v_projectile_deformable.json",
+        "path": "convergence.medium_to_fine_contact_impulse_relative_difference",
+        "expected": 0.43316371189295216,
+        "actual": 0.43316371189295216,
+        "passed": true
+      },
+      {
+        "results": "wtc1_simulation_v8/output/resultats_wtc1_v8v_projectile_deformable.json",
+        "path": "deformable_subassembly_qualification_passed",
+        "expected": false,
+        "actual": false,
+        "passed": true
+      }
+    ],
+    "files_passed": true,
+    "metrics_passed": true,
+    "passed": true
+  },
+  "cases": [
+    {
+      "id": "FF_P100_DT090_T1",
+      "phase": "free_flight",
+      "facade_mesh_target_mm": null,
+      "projectile_mesh_target_mm": 100.0,
+      "time_step_scale": 0.9,
+      "core_failure_strain": 0.2,
+      "cowling_failure_strain": 0.12,
+      "threads": 1,
+      "role": "free_flight_coarse",
+      "run_name": "V8W_FF_P100_DT090_T1",
+      "case_id": "FF_P100_DT090_T1",
+      "node_count_total": 2852,
+      "shell_count_total": 2790,
+      "fixed_node_count": 0,
+      "projectile_node_count": 2852,
+      "element_ranges": {
+        "3": {
+          "first": 1,
+          "last": 882,
+          "count": 882
+        },
+        "4": {
+          "first": 883,
+          "last": 2790,
+          "count": 1908
+        }
+      },
+      "projectile": {
+        "core_mid_surface_area_mm2": 8820000.0,
+        "cowling_mid_surface_area_mm2": 19080000.0,
+        "core_equivalent_thickness_mm": 51.92916861401048,
+        "cowling_equivalent_thickness_mm": 18.60787558234335,
+        "type7_pair_activation_gap_mm": 35.268522098176916,
+        "front_opening_mid_surface_radial_clearance_mm": 150.0,
+        "front_opening_net_shell_surface_clearance_mm": 114.73147790182308,
+        "net_clearance_to_activation_gap_ratio": 3.2530843674834258,
+        "core_target_mass_g": 3600000.0,
+        "cowling_target_mass_g": 958603.3185,
+        "total_target_mass_g": 4558603.3185
+      },
+      "contact_interfaces": {
+        "facade": null,
+        "core_to_cowling": 2,
+        "cowling_to_core": 3,
+        "all_projectile_self_contact_present": false
+      },
+      "starter": {
+        "exit_code": 0,
+        "elapsed_seconds": 0.6814770999990287,
+        "warning_count": 2,
+        "initial_penetration_warning_count": 0,
+        "initial_penetrating_node_count": 0
+      },
+      "engine": {
+        "exit_code": 0,
+        "elapsed_seconds": 0.32048070000018924,
+        "normal_termination": true,
+        "last_printed_cycle": {
+          "line": "     100   1.470      0.1470E-01 NODE        1285   0.0%   0.000      0.8939E+11   0.000       0.000       0.000      0.4559E+07   0.000",
+          "cycle": 100,
+          "time_ms": 1.47,
+          "time_step_ms": 0.0147,
+          "element_type": "NODE",
+          "element_id": 1285,
+          "energy_error_percent": 0.0,
+          "internal_energy_solver": 0.0,
+          "translational_kinetic_energy_solver": 89390000000.0,
+          "rotational_kinetic_energy_solver": 0.0,
+          "external_work_solver": 0.0,
+          "mass_error": 0.0,
+          "total_mass_g": 4559000.0,
+          "added_mass_g": 0.0
+        }
+      },
+      "time_history": {
+        "row_count": 100,
+        "time_final_ms": 1.984956,
+        "facade_contact": null,
+        "core_to_cowling_contact": {
+          "column": "TH_CORE_TO_COWLING_CONTACT               2 CORE_NODES_TO_COWLING_SURFACE            var 37",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": null,
+          "end_time_ms": null,
+          "signed_impulse_g_mm_per_ms": 0.0,
+          "absolute_impulse_g_mm_per_ms": 0.0,
+          "peak_absolute_channel_g_mm_per_ms": 0.0
+        },
+        "cowling_to_core_contact": {
+          "column": "TH_COWLING_TO_CORE_CONTACT               3 COWLING_NODES_TO_CORE_SURFACE            var 38",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": null,
+          "end_time_ms": null,
+          "signed_impulse_g_mm_per_ms": 0.0,
+          "absolute_impulse_g_mm_per_ms": 0.0,
+          "peak_absolute_channel_g_mm_per_ms": 0.0
+        },
+        "initial_projectile_z_momentum_g_mm_per_ms": -902745400.0,
+        "final_projectile_z_momentum_g_mm_per_ms": -902745400.0,
+        "projectile_z_momentum_change_g_mm_per_ms": 0.0,
+        "projectile_z_momentum_change_relative_fraction": 0.0,
+        "facade_contact_impulse_to_projectile_momentum_change_relative_error": null,
+        "initial_projectile_mass_g": 4558606.6,
+        "final_projectile_mass_g": 4558606.6,
+        "projectile_initial_mass_relative_error": 7.198476748915912e-07,
+        "projectile_mass_change_relative_fraction": 0.0,
+        "projectile_remaining_mass_fraction": 1.0,
+        "projectile_eroded_element_count": 0,
+        "core": {
+          "ie": 0.0,
+          "ke": 70589340000.0,
+          "zmom": -712912000.0,
+          "mass": 3600002.0,
+          "he": 0.0,
+          "eroded": 0.0,
+          "vz": -198.031
+        },
+        "cowling": {
+          "ie": 0.0,
+          "ke": 18796450000.0,
+          "zmom": -189833400.0,
+          "mass": 958604.6,
+          "he": 0.0,
+          "eroded": 0.0,
+          "vz": -198.031
+        },
+        "projectile_final_mass_weighted_velocity_z_mm_per_ms": -198.0309948219704,
+        "initial_total_energy_solver": 89385800000.0,
+        "final_internal_energy_solver": 0.0,
+        "final_kinetic_energy_solver": 89385800000.0,
+        "final_rotational_energy_solver": 0.0,
+        "final_total_energy_solver": 89385800000.0,
+        "external_work_solver": 0.0,
+        "derived_energy_error_percent": 0.0,
+        "initial_elastic_contact_energy_solver": 0.0,
+        "final_elastic_contact_energy_solver": 0.0,
+        "maximum_absolute_elastic_contact_energy_solver": 0.0,
+        "maximum_absolute_elastic_contact_energy_to_initial_energy_fraction": 0.0,
+        "maximum_pre_facade_elastic_contact_energy_solver": 0.0,
+        "hourglass_energy_solver": 0.0,
+        "hourglass_to_initial_energy_fraction": 0.0,
+        "added_mass_g": -9.313226e-10,
+        "percentage_added_mass": -2.042998e-14,
+        "added_mass_fraction": -2.0429980000000002e-16
+      },
+      "rupture": {
+        "event_count": 0,
+        "unique_element_count": 0,
+        "first_time_ms": null,
+        "last_time_ms": null,
+        "by_part": {
+          "3": {
+            "unique_element_count": 0,
+            "fraction_of_initial_part_shells": 0.0
+          },
+          "4": {
+            "unique_element_count": 0,
+            "fraction_of_initial_part_shells": 0.0
+          }
+        },
+        "projectile_unique_element_count": 0,
+        "facade_unique_element_count": 0
+      },
+      "artifacts": {
+        "starter": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/FF_P100_DT090_T1/V8W_FF_P100_DT090_T1_0000.rad",
+        "engine": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/FF_P100_DT090_T1/V8W_FF_P100_DT090_T1_0001.rad",
+        "time_history_csv": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/FF_P100_DT090_T1/V8W_FF_P100_DT090_T1T01.csv",
+        "engine_output": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/FF_P100_DT090_T1/V8W_FF_P100_DT090_T1_0001.out"
+      }
+    },
+    {
+      "id": "FF_P050_DT090_T1",
+      "phase": "free_flight",
+      "facade_mesh_target_mm": null,
+      "projectile_mesh_target_mm": 50.0,
+      "time_step_scale": 0.9,
+      "core_failure_strain": 0.2,
+      "cowling_failure_strain": 0.12,
+      "threads": 1,
+      "role": "free_flight_medium",
+      "run_name": "V8W_FF_P050_DT090_T1",
+      "case_id": "FF_P050_DT090_T1",
+      "node_count_total": 11282,
+      "shell_count_total": 11160,
+      "fixed_node_count": 0,
+      "projectile_node_count": 11282,
+      "element_ranges": {
+        "3": {
+          "first": 1,
+          "last": 3528,
+          "count": 3528
+        },
+        "4": {
+          "first": 3529,
+          "last": 11160,
+          "count": 7632
+        }
+      },
+      "projectile": {
+        "core_mid_surface_area_mm2": 8820000.0,
+        "cowling_mid_surface_area_mm2": 19080000.0,
+        "core_equivalent_thickness_mm": 51.92916861401048,
+        "cowling_equivalent_thickness_mm": 18.60787558234335,
+        "type7_pair_activation_gap_mm": 35.268522098176916,
+        "front_opening_mid_surface_radial_clearance_mm": 150.0,
+        "front_opening_net_shell_surface_clearance_mm": 114.73147790182308,
+        "net_clearance_to_activation_gap_ratio": 3.2530843674834258,
+        "core_target_mass_g": 3600000.0,
+        "cowling_target_mass_g": 958603.3185,
+        "total_target_mass_g": 4558603.3185
+      },
+      "contact_interfaces": {
+        "facade": null,
+        "core_to_cowling": 2,
+        "cowling_to_core": 3,
+        "all_projectile_self_contact_present": false
+      },
+      "starter": {
+        "exit_code": 0,
+        "elapsed_seconds": 0.7395321000003605,
+        "warning_count": 2,
+        "initial_penetration_warning_count": 0,
+        "initial_penetrating_node_count": 0
+      },
+      "engine": {
+        "exit_code": 0,
+        "elapsed_seconds": 1.8863818000027095,
+        "normal_termination": true,
+        "last_printed_cycle": {
+          "line": "     200   1.470      0.7352E-02 NODE        4272   0.0%   0.000      0.8939E+11   0.000       0.000       0.000      0.4559E+07   0.000",
+          "cycle": 200,
+          "time_ms": 1.47,
+          "time_step_ms": 0.007352,
+          "element_type": "NODE",
+          "element_id": 4272,
+          "energy_error_percent": 0.0,
+          "internal_energy_solver": 0.0,
+          "translational_kinetic_energy_solver": 89390000000.0,
+          "rotational_kinetic_energy_solver": 0.0,
+          "external_work_solver": 0.0,
+          "mass_error": 0.0,
+          "total_mass_g": 4559000.0,
+          "added_mass_g": 0.0
+        }
+      },
+      "time_history": {
+        "row_count": 100,
+        "time_final_ms": 1.984956,
+        "facade_contact": null,
+        "core_to_cowling_contact": {
+          "column": "TH_CORE_TO_COWLING_CONTACT               2 CORE_NODES_TO_COWLING_SURFACE            var 37",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": null,
+          "end_time_ms": null,
+          "signed_impulse_g_mm_per_ms": 0.0,
+          "absolute_impulse_g_mm_per_ms": 0.0,
+          "peak_absolute_channel_g_mm_per_ms": 0.0
+        },
+        "cowling_to_core_contact": {
+          "column": "TH_COWLING_TO_CORE_CONTACT               3 COWLING_NODES_TO_CORE_SURFACE            var 38",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": null,
+          "end_time_ms": null,
+          "signed_impulse_g_mm_per_ms": 0.0,
+          "absolute_impulse_g_mm_per_ms": 0.0,
+          "peak_absolute_channel_g_mm_per_ms": 0.0
+        },
+        "initial_projectile_z_momentum_g_mm_per_ms": -902745400.0,
+        "final_projectile_z_momentum_g_mm_per_ms": -902745400.0,
+        "projectile_z_momentum_change_g_mm_per_ms": 0.0,
+        "projectile_z_momentum_change_relative_fraction": 0.0,
+        "facade_contact_impulse_to_projectile_momentum_change_relative_error": null,
+        "initial_projectile_mass_g": 4558606.6,
+        "final_projectile_mass_g": 4558606.6,
+        "projectile_initial_mass_relative_error": 7.198476748915912e-07,
+        "projectile_mass_change_relative_fraction": 0.0,
+        "projectile_remaining_mass_fraction": 1.0,
+        "projectile_eroded_element_count": 0,
+        "core": {
+          "ie": 0.0,
+          "ke": 70589340000.0,
+          "zmom": -712912000.0,
+          "mass": 3600002.0,
+          "he": 0.0,
+          "eroded": 0.0,
+          "vz": -198.031
+        },
+        "cowling": {
+          "ie": 0.0,
+          "ke": 18796450000.0,
+          "zmom": -189833400.0,
+          "mass": 958604.6,
+          "he": 0.0,
+          "eroded": 0.0,
+          "vz": -198.031
+        },
+        "projectile_final_mass_weighted_velocity_z_mm_per_ms": -198.0309948219704,
+        "initial_total_energy_solver": 89385800000.0,
+        "final_internal_energy_solver": 0.0,
+        "final_kinetic_energy_solver": 89385800000.0,
+        "final_rotational_energy_solver": 0.0,
+        "final_total_energy_solver": 89385800000.0,
+        "external_work_solver": 0.0,
+        "derived_energy_error_percent": 0.0,
+        "initial_elastic_contact_energy_solver": 0.0,
+        "final_elastic_contact_energy_solver": 0.0,
+        "maximum_absolute_elastic_contact_energy_solver": 0.0,
+        "maximum_absolute_elastic_contact_energy_to_initial_energy_fraction": 0.0,
+        "maximum_pre_facade_elastic_contact_energy_solver": 0.0,
+        "hourglass_energy_solver": 0.0,
+        "hourglass_to_initial_energy_fraction": 0.0,
+        "added_mass_g": 0.0,
+        "percentage_added_mass": 0.0,
+        "added_mass_fraction": 0.0
+      },
+      "rupture": {
+        "event_count": 0,
+        "unique_element_count": 0,
+        "first_time_ms": null,
+        "last_time_ms": null,
+        "by_part": {
+          "3": {
+            "unique_element_count": 0,
+            "fraction_of_initial_part_shells": 0.0
+          },
+          "4": {
+            "unique_element_count": 0,
+            "fraction_of_initial_part_shells": 0.0
+          }
+        },
+        "projectile_unique_element_count": 0,
+        "facade_unique_element_count": 0
+      },
+      "artifacts": {
+        "starter": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/FF_P050_DT090_T1/V8W_FF_P050_DT090_T1_0000.rad",
+        "engine": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/FF_P050_DT090_T1/V8W_FF_P050_DT090_T1_0001.rad",
+        "time_history_csv": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/FF_P050_DT090_T1/V8W_FF_P050_DT090_T1T01.csv",
+        "engine_output": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/FF_P050_DT090_T1/V8W_FF_P050_DT090_T1_0001.out"
+      }
+    },
+    {
+      "id": "FF_P025_DT090_T1",
+      "phase": "free_flight",
+      "facade_mesh_target_mm": null,
+      "projectile_mesh_target_mm": 25.0,
+      "time_step_scale": 0.9,
+      "core_failure_strain": 0.2,
+      "cowling_failure_strain": 0.12,
+      "threads": 1,
+      "role": "free_flight_fine",
+      "run_name": "V8W_FF_P025_DT090_T1",
+      "case_id": "FF_P025_DT090_T1",
+      "node_count_total": 44882,
+      "shell_count_total": 44640,
+      "fixed_node_count": 0,
+      "projectile_node_count": 44882,
+      "element_ranges": {
+        "3": {
+          "first": 1,
+          "last": 14112,
+          "count": 14112
+        },
+        "4": {
+          "first": 14113,
+          "last": 44640,
+          "count": 30528
+        }
+      },
+      "projectile": {
+        "core_mid_surface_area_mm2": 8820000.0,
+        "cowling_mid_surface_area_mm2": 19080000.0,
+        "core_equivalent_thickness_mm": 51.92916861401048,
+        "cowling_equivalent_thickness_mm": 18.60787558234335,
+        "type7_pair_activation_gap_mm": 35.268522098176916,
+        "front_opening_mid_surface_radial_clearance_mm": 150.0,
+        "front_opening_net_shell_surface_clearance_mm": 114.73147790182308,
+        "net_clearance_to_activation_gap_ratio": 3.2530843674834258,
+        "core_target_mass_g": 3600000.0,
+        "cowling_target_mass_g": 958603.3185,
+        "total_target_mass_g": 4558603.3185
+      },
+      "contact_interfaces": {
+        "facade": null,
+        "core_to_cowling": 2,
+        "cowling_to_core": 3,
+        "all_projectile_self_contact_present": false
+      },
+      "starter": {
+        "exit_code": 0,
+        "elapsed_seconds": 1.143991900004039,
+        "warning_count": 2,
+        "initial_penetration_warning_count": 0,
+        "initial_penetrating_node_count": 0
+      },
+      "engine": {
+        "exit_code": 0,
+        "elapsed_seconds": 18.878692899997986,
+        "normal_termination": true,
+        "last_printed_cycle": {
+          "line": "     500   1.838      0.3676E-02 NODE       19883   0.0%   0.000      0.8939E+11   0.000       0.000       0.000      0.4559E+07   0.000",
+          "cycle": 500,
+          "time_ms": 1.838,
+          "time_step_ms": 0.003676,
+          "element_type": "NODE",
+          "element_id": 19883,
+          "energy_error_percent": 0.0,
+          "internal_energy_solver": 0.0,
+          "translational_kinetic_energy_solver": 89390000000.0,
+          "rotational_kinetic_energy_solver": 0.0,
+          "external_work_solver": 0.0,
+          "mass_error": 0.0,
+          "total_mass_g": 4559000.0,
+          "added_mass_g": 0.0
+        }
+      },
+      "time_history": {
+        "row_count": 100,
+        "time_final_ms": 1.98128,
+        "facade_contact": null,
+        "core_to_cowling_contact": {
+          "column": "TH_CORE_TO_COWLING_CONTACT               2 CORE_NODES_TO_COWLING_SURFACE            var 37",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": null,
+          "end_time_ms": null,
+          "signed_impulse_g_mm_per_ms": 0.0,
+          "absolute_impulse_g_mm_per_ms": 0.0,
+          "peak_absolute_channel_g_mm_per_ms": 0.0
+        },
+        "cowling_to_core_contact": {
+          "column": "TH_COWLING_TO_CORE_CONTACT               3 COWLING_NODES_TO_CORE_SURFACE            var 38",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": null,
+          "end_time_ms": null,
+          "signed_impulse_g_mm_per_ms": 0.0,
+          "absolute_impulse_g_mm_per_ms": 0.0,
+          "peak_absolute_channel_g_mm_per_ms": 0.0
+        },
+        "initial_projectile_z_momentum_g_mm_per_ms": -902745400.0,
+        "final_projectile_z_momentum_g_mm_per_ms": -902745400.0,
+        "projectile_z_momentum_change_g_mm_per_ms": 0.0,
+        "projectile_z_momentum_change_relative_fraction": 0.0,
+        "facade_contact_impulse_to_projectile_momentum_change_relative_error": null,
+        "initial_projectile_mass_g": 4558606.6,
+        "final_projectile_mass_g": 4558606.6,
+        "projectile_initial_mass_relative_error": 7.198476748915912e-07,
+        "projectile_mass_change_relative_fraction": 0.0,
+        "projectile_remaining_mass_fraction": 1.0,
+        "projectile_eroded_element_count": 0,
+        "core": {
+          "ie": 0.0,
+          "ke": 70589340000.0,
+          "zmom": -712912000.0,
+          "mass": 3600002.0,
+          "he": 0.0,
+          "eroded": 0.0,
+          "vz": -198.031
+        },
+        "cowling": {
+          "ie": 0.0,
+          "ke": 18796450000.0,
+          "zmom": -189833400.0,
+          "mass": 958604.6,
+          "he": 0.0,
+          "eroded": 0.0,
+          "vz": -198.031
+        },
+        "projectile_final_mass_weighted_velocity_z_mm_per_ms": -198.0309948219704,
+        "initial_total_energy_solver": 89385800000.0,
+        "final_internal_energy_solver": 0.0,
+        "final_kinetic_energy_solver": 89385800000.0,
+        "final_rotational_energy_solver": 0.0,
+        "final_total_energy_solver": 89385800000.0,
+        "external_work_solver": 0.0,
+        "derived_energy_error_percent": 0.0,
+        "initial_elastic_contact_energy_solver": 0.0,
+        "final_elastic_contact_energy_solver": 0.0,
+        "maximum_absolute_elastic_contact_energy_solver": 0.0,
+        "maximum_absolute_elastic_contact_energy_to_initial_energy_fraction": 0.0,
+        "maximum_pre_facade_elastic_contact_energy_solver": 0.0,
+        "hourglass_energy_solver": 0.0,
+        "hourglass_to_initial_energy_fraction": 0.0,
+        "added_mass_g": -2.793968e-09,
+        "percentage_added_mass": -6.128995e-14,
+        "added_mass_fraction": -6.1289950000000005e-16
+      },
+      "rupture": {
+        "event_count": 0,
+        "unique_element_count": 0,
+        "first_time_ms": null,
+        "last_time_ms": null,
+        "by_part": {
+          "3": {
+            "unique_element_count": 0,
+            "fraction_of_initial_part_shells": 0.0
+          },
+          "4": {
+            "unique_element_count": 0,
+            "fraction_of_initial_part_shells": 0.0
+          }
+        },
+        "projectile_unique_element_count": 0,
+        "facade_unique_element_count": 0
+      },
+      "artifacts": {
+        "starter": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/FF_P025_DT090_T1/V8W_FF_P025_DT090_T1_0000.rad",
+        "engine": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/FF_P025_DT090_T1/V8W_FF_P025_DT090_T1_0001.rad",
+        "time_history_csv": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/FF_P025_DT090_T1/V8W_FF_P025_DT090_T1T01.csv",
+        "engine_output": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/FF_P025_DT090_T1/V8W_FF_P025_DT090_T1_0001.out"
+      }
+    },
+    {
+      "id": "IM_M100_P100_DT090_T1",
+      "phase": "facade_impact",
+      "facade_mesh_target_mm": 100.0,
+      "projectile_mesh_target_mm": 100.0,
+      "time_step_scale": 0.9,
+      "core_failure_strain": 0.2,
+      "cowling_failure_strain": 0.12,
+      "threads": 1,
+      "role": "impact_mesh_coarse",
+      "run_name": "V8W_IM_M100_P100_DT090_T1",
+      "case_id": "IM_M100_P100_DT090_T1",
+      "node_count_total": 9722,
+      "shell_count_total": 9606,
+      "fixed_node_count": 96,
+      "projectile_node_count": 2852,
+      "element_ranges": {
+        "1": {
+          "first": 1,
+          "last": 5472,
+          "count": 5472
+        },
+        "2": {
+          "first": 5473,
+          "last": 6816,
+          "count": 1344
+        },
+        "3": {
+          "first": 6817,
+          "last": 7698,
+          "count": 882
+        },
+        "4": {
+          "first": 7699,
+          "last": 9606,
+          "count": 1908
+        }
+      },
+      "projectile": {
+        "core_mid_surface_area_mm2": 8820000.0,
+        "cowling_mid_surface_area_mm2": 19080000.0,
+        "core_equivalent_thickness_mm": 51.92916861401048,
+        "cowling_equivalent_thickness_mm": 18.60787558234335,
+        "type7_pair_activation_gap_mm": 35.268522098176916,
+        "front_opening_mid_surface_radial_clearance_mm": 150.0,
+        "front_opening_net_shell_surface_clearance_mm": 114.73147790182308,
+        "net_clearance_to_activation_gap_ratio": 3.2530843674834258,
+        "core_target_mass_g": 3600000.0,
+        "cowling_target_mass_g": 958603.3185,
+        "total_target_mass_g": 4558603.3185
+      },
+      "contact_interfaces": {
+        "facade": 1,
+        "core_to_cowling": 2,
+        "cowling_to_core": 3,
+        "all_projectile_self_contact_present": false
+      },
+      "starter": {
+        "exit_code": 0,
+        "elapsed_seconds": 0.7468473000044469,
+        "warning_count": 4,
+        "initial_penetration_warning_count": 0,
+        "initial_penetrating_node_count": 0
+      },
+      "engine": {
+        "exit_code": 0,
+        "elapsed_seconds": 14.002985799997987,
+        "normal_termination": true,
+        "last_printed_cycle": {
+          "line": "    1400   16.96      0.1266E-01 NODE        6039  -1.7%  0.1496E+11  0.7276E+11  0.1109E+09   0.000       0.000      0.8369E+07   0.000",
+          "cycle": 1400,
+          "time_ms": 16.96,
+          "time_step_ms": 0.01266,
+          "element_type": "NODE",
+          "element_id": 6039,
+          "energy_error_percent": -1.7,
+          "internal_energy_solver": 14960000000.0,
+          "translational_kinetic_energy_solver": 72760000000.0,
+          "rotational_kinetic_energy_solver": 110900000.0,
+          "external_work_solver": 0.0,
+          "mass_error": 0.0,
+          "total_mass_g": 8369000.0,
+          "added_mass_g": 0.0
+        }
+      },
+      "time_history": {
+        "row_count": 900,
+        "time_final_ms": 17.98556,
+        "facade_contact": {
+          "column": "TH_FACADE_CONTACT                        1 PROJECTILE_TO_FACADE_DEFORMABLE_CONTACT  var 37",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 0.4465101,
+          "end_time_ms": 17.98556,
+          "signed_impulse_g_mm_per_ms": -134657400.0,
+          "absolute_impulse_g_mm_per_ms": 134657400.0,
+          "peak_absolute_channel_g_mm_per_ms": 135442700.0
+        },
+        "core_to_cowling_contact": {
+          "column": "TH_CORE_TO_COWLING_CONTACT               2 CORE_NODES_TO_COWLING_SURFACE            var 38",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 8.749103,
+          "end_time_ms": 17.98556,
+          "signed_impulse_g_mm_per_ms": -32256.3,
+          "absolute_impulse_g_mm_per_ms": 32256.3,
+          "peak_absolute_channel_g_mm_per_ms": 88261.82
+        },
+        "cowling_to_core_contact": {
+          "column": "TH_COWLING_TO_CORE_CONTACT               3 COWLING_NODES_TO_CORE_SURFACE            var 39",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 8.700745,
+          "end_time_ms": 17.98556,
+          "signed_impulse_g_mm_per_ms": 24177.61,
+          "absolute_impulse_g_mm_per_ms": 24177.61,
+          "peak_absolute_channel_g_mm_per_ms": 31249.25
+        },
+        "initial_projectile_z_momentum_g_mm_per_ms": -902745400.0,
+        "final_projectile_z_momentum_g_mm_per_ms": -768613000.0,
+        "projectile_z_momentum_change_g_mm_per_ms": 134132400.0,
+        "projectile_z_momentum_change_relative_fraction": 0.14858275655572434,
+        "facade_contact_impulse_to_projectile_momentum_change_relative_error": 0.003914043139465185,
+        "initial_projectile_mass_g": 4558606.6,
+        "final_projectile_mass_g": 4423959.8,
+        "projectile_initial_mass_relative_error": 7.198476748915912e-07,
+        "projectile_mass_change_relative_fraction": 0.02953683259266106,
+        "projectile_remaining_mass_fraction": 0.970463167407339,
+        "projectile_eroded_element_count": 268,
+        "core": {
+          "ie": 367941400.0,
+          "ke": 60480660000.0,
+          "zmom": -659673600.0,
+          "mass": 3600002.0,
+          "he": 33579800.0,
+          "eroded": 0.0,
+          "vz": -183.2426
+        },
+        "cowling": {
+          "ie": 4810746000.0,
+          "ke": 6450769000.0,
+          "zmom": -108939400.0,
+          "mass": 823957.8,
+          "he": 159900200.0,
+          "eroded": 268.0,
+          "vz": -132.2148
+        },
+        "projectile_final_mass_weighted_velocity_z_mm_per_ms": -173.73869446101207,
+        "initial_total_energy_solver": 89385800000.0,
+        "final_internal_energy_solver": 15037150000.0,
+        "final_kinetic_energy_solver": 72675900000.0,
+        "final_rotational_energy_solver": 110635600.0,
+        "final_total_energy_solver": 87823685600.0,
+        "external_work_solver": 0.0,
+        "derived_energy_error_percent": -1.7476091280717967,
+        "initial_elastic_contact_energy_solver": 0.0,
+        "final_elastic_contact_energy_solver": 70645.63,
+        "maximum_absolute_elastic_contact_energy_solver": 483173400.0,
+        "maximum_absolute_elastic_contact_energy_to_initial_energy_fraction": 0.005405482750056497,
+        "maximum_pre_facade_elastic_contact_energy_solver": 0.0,
+        "hourglass_energy_solver": 0.0,
+        "hourglass_to_initial_energy_fraction": 0.0,
+        "added_mass_g": 1.862645e-09,
+        "percentage_added_mass": 2.225658e-14,
+        "added_mass_fraction": 2.225658e-16
+      },
+      "rupture": {
+        "event_count": 696,
+        "unique_element_count": 696,
+        "first_time_ms": 0.6766,
+        "last_time_ms": 17.14,
+        "by_part": {
+          "1": {
+            "unique_element_count": 356,
+            "fraction_of_initial_part_shells": 0.06505847953216375
+          },
+          "2": {
+            "unique_element_count": 72,
+            "fraction_of_initial_part_shells": 0.05357142857142857
+          },
+          "3": {
+            "unique_element_count": 0,
+            "fraction_of_initial_part_shells": 0.0
+          },
+          "4": {
+            "unique_element_count": 268,
+            "fraction_of_initial_part_shells": 0.14046121593291405
+          }
+        },
+        "projectile_unique_element_count": 268,
+        "facade_unique_element_count": 428
+      },
+      "artifacts": {
+        "starter": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M100_P100_DT090_T1/V8W_IM_M100_P100_DT090_T1_0000.rad",
+        "engine": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M100_P100_DT090_T1/V8W_IM_M100_P100_DT090_T1_0001.rad",
+        "time_history_csv": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M100_P100_DT090_T1/V8W_IM_M100_P100_DT090_T1T01.csv",
+        "engine_output": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M100_P100_DT090_T1/V8W_IM_M100_P100_DT090_T1_0001.out"
+      }
+    },
+    {
+      "id": "IM_M050_P050_DT090_T1",
+      "phase": "facade_impact",
+      "facade_mesh_target_mm": 50.0,
+      "projectile_mesh_target_mm": 50.0,
+      "time_step_scale": 0.9,
+      "core_failure_strain": 0.2,
+      "cowling_failure_strain": 0.12,
+      "threads": 1,
+      "role": "impact_mesh_medium_baseline",
+      "run_name": "V8W_IM_M050_P050_DT090_T1",
+      "case_id": "IM_M050_P050_DT090_T1",
+      "node_count_total": 37826,
+      "shell_count_total": 37590,
+      "fixed_node_count": 192,
+      "projectile_node_count": 11282,
+      "element_ranges": {
+        "1": {
+          "first": 1,
+          "last": 21408,
+          "count": 21408
+        },
+        "2": {
+          "first": 21409,
+          "last": 26430,
+          "count": 5022
+        },
+        "3": {
+          "first": 26431,
+          "last": 29958,
+          "count": 3528
+        },
+        "4": {
+          "first": 29959,
+          "last": 37590,
+          "count": 7632
+        }
+      },
+      "projectile": {
+        "core_mid_surface_area_mm2": 8820000.0,
+        "cowling_mid_surface_area_mm2": 19080000.0,
+        "core_equivalent_thickness_mm": 51.92916861401048,
+        "cowling_equivalent_thickness_mm": 18.60787558234335,
+        "type7_pair_activation_gap_mm": 35.268522098176916,
+        "front_opening_mid_surface_radial_clearance_mm": 150.0,
+        "front_opening_net_shell_surface_clearance_mm": 114.73147790182308,
+        "net_clearance_to_activation_gap_ratio": 3.2530843674834258,
+        "core_target_mass_g": 3600000.0,
+        "cowling_target_mass_g": 958603.3185,
+        "total_target_mass_g": 4558603.3185
+      },
+      "contact_interfaces": {
+        "facade": 1,
+        "core_to_cowling": 2,
+        "cowling_to_core": 3,
+        "all_projectile_self_contact_present": false
+      },
+      "starter": {
+        "exit_code": 0,
+        "elapsed_seconds": 1.0741689999995288,
+        "warning_count": 4,
+        "initial_penetration_warning_count": 0,
+        "initial_penetrating_node_count": 0
+      },
+      "engine": {
+        "exit_code": 0,
+        "elapsed_seconds": 115.1412535000054,
+        "normal_termination": true,
+        "last_printed_cycle": {
+          "line": "    2900   17.89      0.6187E-02 NODE       35121  -1.2%  0.9217E+10  0.7901E+11  0.1024E+09   0.000       0.000      0.8369E+07   0.000",
+          "cycle": 2900,
+          "time_ms": 17.89,
+          "time_step_ms": 0.006187,
+          "element_type": "NODE",
+          "element_id": 35121,
+          "energy_error_percent": -1.2,
+          "internal_energy_solver": 9217000000.0,
+          "translational_kinetic_energy_solver": 79010000000.0,
+          "rotational_kinetic_energy_solver": 102400000.0,
+          "external_work_solver": 0.0,
+          "mass_error": 0.0,
+          "total_mass_g": 8369000.0,
+          "added_mass_g": 0.0
+        }
+      },
+      "time_history": {
+        "row_count": 900,
+        "time_final_ms": 17.9836,
+        "facade_contact": {
+          "column": "TH_FACADE_CONTACT                        1 PROJECTILE_TO_FACADE_DEFORMABLE_CONTACT  var 37",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 0.4403896,
+          "end_time_ms": 17.9836,
+          "signed_impulse_g_mm_per_ms": -87607680.0,
+          "absolute_impulse_g_mm_per_ms": 87607680.0,
+          "peak_absolute_channel_g_mm_per_ms": 87607680.0
+        },
+        "core_to_cowling_contact": {
+          "column": "TH_CORE_TO_COWLING_CONTACT               2 CORE_NODES_TO_COWLING_SURFACE            var 38",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 6.540896,
+          "end_time_ms": 17.9836,
+          "signed_impulse_g_mm_per_ms": 398.9445,
+          "absolute_impulse_g_mm_per_ms": 398.9445,
+          "peak_absolute_channel_g_mm_per_ms": 1521.524
+        },
+        "cowling_to_core_contact": {
+          "column": "TH_COWLING_TO_CORE_CONTACT               3 COWLING_NODES_TO_CORE_SURFACE            var 39",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 6.540896,
+          "end_time_ms": 17.9836,
+          "signed_impulse_g_mm_per_ms": 1585.37,
+          "absolute_impulse_g_mm_per_ms": 1585.37,
+          "peak_absolute_channel_g_mm_per_ms": 2369.089
+        },
+        "initial_projectile_z_momentum_g_mm_per_ms": -902745400.0,
+        "final_projectile_z_momentum_g_mm_per_ms": -816120800.0,
+        "projectile_z_momentum_change_g_mm_per_ms": 86624600.0,
+        "projectile_z_momentum_change_relative_fraction": 0.09595684453224575,
+        "facade_contact_impulse_to_projectile_momentum_change_relative_error": 0.011348739272677738,
+        "initial_projectile_mass_g": 4558606.6,
+        "final_projectile_mass_g": 4448829.2,
+        "projectile_initial_mass_relative_error": 7.198476748915912e-07,
+        "projectile_mass_change_relative_fraction": 0.024081349770344176,
+        "projectile_remaining_mass_fraction": 0.9759186502296558,
+        "projectile_eroded_element_count": 874,
+        "core": {
+          "ie": 395678200.0,
+          "ke": 63260460000.0,
+          "zmom": -674681800.0,
+          "mass": 3600002.0,
+          "he": 26872250.0,
+          "eroded": 0.0,
+          "vz": -187.4115
+        },
+        "cowling": {
+          "ie": 2996891000.0,
+          "ke": 11025870000.0,
+          "zmom": -141439000.0,
+          "mass": 848827.2,
+          "he": 66773080.0,
+          "eroded": 874.0,
+          "vz": -166.6288
+        },
+        "projectile_final_mass_weighted_velocity_z_mm_per_ms": -183.44619748494728,
+        "initial_total_energy_solver": 89385800000.0,
+        "final_internal_energy_solver": 9216049000.0,
+        "final_kinetic_energy_solver": 79004780000.0,
+        "final_rotational_energy_solver": 102954100.0,
+        "final_total_energy_solver": 88323783100.0,
+        "external_work_solver": 0.0,
+        "derived_energy_error_percent": -1.1881270850627281,
+        "initial_elastic_contact_energy_solver": 0.0,
+        "final_elastic_contact_energy_solver": 484581.0,
+        "maximum_absolute_elastic_contact_energy_solver": 273915700.0,
+        "maximum_absolute_elastic_contact_energy_to_initial_energy_fraction": 0.003064420746919533,
+        "maximum_pre_facade_elastic_contact_energy_solver": 0.0,
+        "hourglass_energy_solver": 0.0,
+        "hourglass_to_initial_energy_fraction": 0.0,
+        "added_mass_g": 5.587935e-09,
+        "percentage_added_mass": 6.676972e-14,
+        "added_mass_fraction": 6.676972e-16
+      },
+      "rupture": {
+        "event_count": 2164,
+        "unique_element_count": 2164,
+        "first_time_ms": 0.5645,
+        "last_time_ms": 17.54,
+        "by_part": {
+          "1": {
+            "unique_element_count": 1030,
+            "fraction_of_initial_part_shells": 0.048112855007473844
+          },
+          "2": {
+            "unique_element_count": 260,
+            "fraction_of_initial_part_shells": 0.051772202309836715
+          },
+          "3": {
+            "unique_element_count": 0,
+            "fraction_of_initial_part_shells": 0.0
+          },
+          "4": {
+            "unique_element_count": 874,
+            "fraction_of_initial_part_shells": 0.11451781970649895
+          }
+        },
+        "projectile_unique_element_count": 874,
+        "facade_unique_element_count": 1290
+      },
+      "artifacts": {
+        "starter": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT090_T1/V8W_IM_M050_P050_DT090_T1_0000.rad",
+        "engine": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT090_T1/V8W_IM_M050_P050_DT090_T1_0001.rad",
+        "time_history_csv": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT090_T1/V8W_IM_M050_P050_DT090_T1T01.csv",
+        "engine_output": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT090_T1/V8W_IM_M050_P050_DT090_T1_0001.out"
+      }
+    },
+    {
+      "id": "IM_M025_P025_DT090_T1",
+      "phase": "facade_impact",
+      "facade_mesh_target_mm": 25.0,
+      "projectile_mesh_target_mm": 25.0,
+      "time_step_scale": 0.9,
+      "core_failure_strain": 0.2,
+      "cowling_failure_strain": 0.12,
+      "threads": 1,
+      "role": "impact_mesh_fine",
+      "run_name": "V8W_IM_M025_P025_DT090_T1",
+      "case_id": "IM_M025_P025_DT090_T1",
+      "node_count_total": 143882,
+      "shell_count_total": 143418,
+      "fixed_node_count": 360,
+      "projectile_node_count": 44882,
+      "element_ranges": {
+        "1": {
+          "first": 1,
+          "last": 79380,
+          "count": 79380
+        },
+        "2": {
+          "first": 79381,
+          "last": 98778,
+          "count": 19398
+        },
+        "3": {
+          "first": 98779,
+          "last": 112890,
+          "count": 14112
+        },
+        "4": {
+          "first": 112891,
+          "last": 143418,
+          "count": 30528
+        }
+      },
+      "projectile": {
+        "core_mid_surface_area_mm2": 8820000.0,
+        "cowling_mid_surface_area_mm2": 19080000.0,
+        "core_equivalent_thickness_mm": 51.92916861401048,
+        "cowling_equivalent_thickness_mm": 18.60787558234335,
+        "type7_pair_activation_gap_mm": 35.268522098176916,
+        "front_opening_mid_surface_radial_clearance_mm": 150.0,
+        "front_opening_net_shell_surface_clearance_mm": 114.73147790182308,
+        "net_clearance_to_activation_gap_ratio": 3.2530843674834258,
+        "core_target_mass_g": 3600000.0,
+        "cowling_target_mass_g": 958603.3185,
+        "total_target_mass_g": 4558603.3185
+      },
+      "contact_interfaces": {
+        "facade": 1,
+        "core_to_cowling": 2,
+        "cowling_to_core": 3,
+        "all_projectile_self_contact_present": false
+      },
+      "starter": {
+        "exit_code": 0,
+        "elapsed_seconds": 2.3878799000012805,
+        "warning_count": 4,
+        "initial_penetration_warning_count": 0,
+        "initial_penetrating_node_count": 0
+      },
+      "engine": {
+        "exit_code": 0,
+        "elapsed_seconds": 960.7245275999958,
+        "normal_termination": true,
+        "last_printed_cycle": {
+          "line": "    6600   17.76      0.3470E-02 NODE       44539  -1.1%  0.6394E+10  0.8197E+11  0.5616E+08   0.000       0.000      0.8369E+07   0.000",
+          "cycle": 6600,
+          "time_ms": 17.76,
+          "time_step_ms": 0.00347,
+          "element_type": "NODE",
+          "element_id": 44539,
+          "energy_error_percent": -1.1,
+          "internal_energy_solver": 6394000000.0,
+          "translational_kinetic_energy_solver": 81970000000.0,
+          "rotational_kinetic_energy_solver": 56160000.0,
+          "external_work_solver": 0.0,
+          "mass_error": 0.0,
+          "total_mass_g": 8369000.0,
+          "added_mass_g": 0.0
+        }
+      },
+      "time_history": {
+        "row_count": 900,
+        "time_final_ms": 17.98146,
+        "facade_contact": {
+          "column": "TH_FACADE_CONTACT                        1 PROJECTILE_TO_FACADE_DEFORMABLE_CONTACT  var 37",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 0.4421956,
+          "end_time_ms": 17.98146,
+          "signed_impulse_g_mm_per_ms": -65936930.0,
+          "absolute_impulse_g_mm_per_ms": 65936930.0,
+          "peak_absolute_channel_g_mm_per_ms": 65936930.0
+        },
+        "core_to_cowling_contact": {
+          "column": "TH_CORE_TO_COWLING_CONTACT               2 CORE_NODES_TO_COWLING_SURFACE            var 38",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 7.022134,
+          "end_time_ms": 17.98146,
+          "signed_impulse_g_mm_per_ms": 55.47662,
+          "absolute_impulse_g_mm_per_ms": 55.47662,
+          "peak_absolute_channel_g_mm_per_ms": 323.9703
+        },
+        "cowling_to_core_contact": {
+          "column": "TH_COWLING_TO_CORE_CONTACT               3 COWLING_NODES_TO_CORE_SURFACE            var 39",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 7.002147,
+          "end_time_ms": 17.98146,
+          "signed_impulse_g_mm_per_ms": -6097.553,
+          "absolute_impulse_g_mm_per_ms": 6097.553,
+          "peak_absolute_channel_g_mm_per_ms": 6109.874
+        },
+        "initial_projectile_z_momentum_g_mm_per_ms": -902745400.0,
+        "final_projectile_z_momentum_g_mm_per_ms": -837018900.0,
+        "projectile_z_momentum_change_g_mm_per_ms": 65726500.0,
+        "projectile_z_momentum_change_relative_fraction": 0.07280734966913152,
+        "facade_contact_impulse_to_projectile_momentum_change_relative_error": 0.003201600572067583,
+        "initial_projectile_mass_g": 4558606.6,
+        "final_projectile_mass_g": 4514739.6,
+        "projectile_initial_mass_relative_error": 7.198476748915912e-07,
+        "projectile_mass_change_relative_fraction": 0.009622896610556392,
+        "projectile_remaining_mass_fraction": 0.9903771033894436,
+        "projectile_eroded_element_count": 1397,
+        "core": {
+          "ie": 454688000.0,
+          "ke": 64359470000.0,
+          "zmom": -680532300.0,
+          "mass": 3600002.0,
+          "he": 25972500.0,
+          "eroded": 0.0,
+          "vz": -189.0366
+        },
+        "cowling": {
+          "ie": 1953025000.0,
+          "ke": 13592580000.0,
+          "zmom": -156486600.0,
+          "mass": 914737.6,
+          "he": 43470860.0,
+          "eroded": 1397.0,
+          "vz": -171.0726
+        },
+        "projectile_final_mass_weighted_velocity_z_mm_per_ms": -185.3969385078156,
+        "initial_total_energy_solver": 89385800000.0,
+        "final_internal_energy_solver": 6392686000.0,
+        "final_kinetic_energy_solver": 81974300000.0,
+        "final_rotational_energy_solver": 56184180.0,
+        "final_total_energy_solver": 88423170180.0,
+        "external_work_solver": 0.0,
+        "derived_energy_error_percent": -1.0769381937623201,
+        "initial_elastic_contact_energy_solver": 0.0,
+        "final_elastic_contact_energy_solver": 15164.61,
+        "maximum_absolute_elastic_contact_energy_solver": 464543200.0,
+        "maximum_absolute_elastic_contact_energy_to_initial_energy_fraction": 0.005197058145700995,
+        "maximum_pre_facade_elastic_contact_energy_solver": 0.0,
+        "hourglass_energy_solver": 0.0,
+        "hourglass_to_initial_energy_fraction": 0.0,
+        "added_mass_g": -7.264316e-08,
+        "percentage_added_mass": -8.680064e-13,
+        "added_mass_fraction": -8.680064e-15
+      },
+      "rupture": {
+        "event_count": 4590,
+        "unique_element_count": 4590,
+        "first_time_ms": 0.5045,
+        "last_time_ms": 17.98,
+        "by_part": {
+          "1": {
+            "unique_element_count": 2862,
+            "fraction_of_initial_part_shells": 0.03605442176870748
+          },
+          "2": {
+            "unique_element_count": 331,
+            "fraction_of_initial_part_shells": 0.01706361480565007
+          },
+          "3": {
+            "unique_element_count": 0,
+            "fraction_of_initial_part_shells": 0.0
+          },
+          "4": {
+            "unique_element_count": 1397,
+            "fraction_of_initial_part_shells": 0.04576126834381551
+          }
+        },
+        "projectile_unique_element_count": 1397,
+        "facade_unique_element_count": 3193
+      },
+      "artifacts": {
+        "starter": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M025_P025_DT090_T1/V8W_IM_M025_P025_DT090_T1_0000.rad",
+        "engine": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M025_P025_DT090_T1/V8W_IM_M025_P025_DT090_T1_0001.rad",
+        "time_history_csv": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M025_P025_DT090_T1/V8W_IM_M025_P025_DT090_T1T01.csv",
+        "engine_output": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M025_P025_DT090_T1/V8W_IM_M025_P025_DT090_T1_0001.out"
+      }
+    },
+    {
+      "id": "IM_M050_P050_DT045_T1",
+      "phase": "facade_impact",
+      "facade_mesh_target_mm": 50.0,
+      "projectile_mesh_target_mm": 50.0,
+      "time_step_scale": 0.45,
+      "core_failure_strain": 0.2,
+      "cowling_failure_strain": 0.12,
+      "threads": 1,
+      "role": "impact_time_step_half",
+      "run_name": "V8W_IM_M050_P050_DT045_T1",
+      "case_id": "IM_M050_P050_DT045_T1",
+      "node_count_total": 37826,
+      "shell_count_total": 37590,
+      "fixed_node_count": 192,
+      "projectile_node_count": 11282,
+      "element_ranges": {
+        "1": {
+          "first": 1,
+          "last": 21408,
+          "count": 21408
+        },
+        "2": {
+          "first": 21409,
+          "last": 26430,
+          "count": 5022
+        },
+        "3": {
+          "first": 26431,
+          "last": 29958,
+          "count": 3528
+        },
+        "4": {
+          "first": 29959,
+          "last": 37590,
+          "count": 7632
+        }
+      },
+      "projectile": {
+        "core_mid_surface_area_mm2": 8820000.0,
+        "cowling_mid_surface_area_mm2": 19080000.0,
+        "core_equivalent_thickness_mm": 51.92916861401048,
+        "cowling_equivalent_thickness_mm": 18.60787558234335,
+        "type7_pair_activation_gap_mm": 35.268522098176916,
+        "front_opening_mid_surface_radial_clearance_mm": 150.0,
+        "front_opening_net_shell_surface_clearance_mm": 114.73147790182308,
+        "net_clearance_to_activation_gap_ratio": 3.2530843674834258,
+        "core_target_mass_g": 3600000.0,
+        "cowling_target_mass_g": 958603.3185,
+        "total_target_mass_g": 4558603.3185
+      },
+      "contact_interfaces": {
+        "facade": 1,
+        "core_to_cowling": 2,
+        "cowling_to_core": 3,
+        "all_projectile_self_contact_present": false
+      },
+      "starter": {
+        "exit_code": 0,
+        "elapsed_seconds": 1.065889799996512,
+        "warning_count": 4,
+        "initial_penetration_warning_count": 0,
+        "initial_penetrating_node_count": 0
+      },
+      "engine": {
+        "exit_code": 0,
+        "elapsed_seconds": 224.21368919999804,
+        "normal_termination": true,
+        "last_printed_cycle": {
+          "line": "    5900   17.81      0.2960E-02 NODE       19237  -1.2%  0.9325E+10  0.7892E+11  0.1013E+09   0.000       0.000      0.8369E+07   0.000",
+          "cycle": 5900,
+          "time_ms": 17.81,
+          "time_step_ms": 0.00296,
+          "element_type": "NODE",
+          "element_id": 19237,
+          "energy_error_percent": -1.2,
+          "internal_energy_solver": 9325000000.0,
+          "translational_kinetic_energy_solver": 78920000000.0,
+          "rotational_kinetic_energy_solver": 101300000.0,
+          "external_work_solver": 0.0,
+          "mass_error": 0.0,
+          "total_mass_g": 8369000.0,
+          "added_mass_g": 0.0
+        }
+      },
+      "time_history": {
+        "row_count": 900,
+        "time_final_ms": 17.98067,
+        "facade_contact": {
+          "column": "TH_FACADE_CONTACT                        1 PROJECTILE_TO_FACADE_DEFORMABLE_CONTACT  var 37",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 0.4421221,
+          "end_time_ms": 17.98067,
+          "signed_impulse_g_mm_per_ms": -88555460.0,
+          "absolute_impulse_g_mm_per_ms": 88555460.0,
+          "peak_absolute_channel_g_mm_per_ms": 88555460.0
+        },
+        "core_to_cowling_contact": {
+          "column": "TH_CORE_TO_COWLING_CONTACT               2 CORE_NODES_TO_COWLING_SURFACE            var 38",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 6.220483,
+          "end_time_ms": 17.98067,
+          "signed_impulse_g_mm_per_ms": -1020.196,
+          "absolute_impulse_g_mm_per_ms": 1020.196,
+          "peak_absolute_channel_g_mm_per_ms": 1473.697
+        },
+        "cowling_to_core_contact": {
+          "column": "TH_COWLING_TO_CORE_CONTACT               3 COWLING_NODES_TO_CORE_SURFACE            var 39",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 6.220483,
+          "end_time_ms": 17.98067,
+          "signed_impulse_g_mm_per_ms": 6588.45,
+          "absolute_impulse_g_mm_per_ms": 6588.45,
+          "peak_absolute_channel_g_mm_per_ms": 6844.117
+        },
+        "initial_projectile_z_momentum_g_mm_per_ms": -902745400.0,
+        "final_projectile_z_momentum_g_mm_per_ms": -814302800.0,
+        "projectile_z_momentum_change_g_mm_per_ms": 88442600.0,
+        "projectile_z_momentum_change_relative_fraction": 0.09797070137383143,
+        "facade_contact_impulse_to_projectile_momentum_change_relative_error": 0.0012760818881398784,
+        "initial_projectile_mass_g": 4558606.6,
+        "final_projectile_mass_g": 4443177.1,
+        "projectile_initial_mass_relative_error": 7.198476748915912e-07,
+        "projectile_mass_change_relative_fraction": 0.025321224253042587,
+        "projectile_remaining_mass_fraction": 0.9746787757469574,
+        "projectile_eroded_element_count": 919,
+        "core": {
+          "ie": 417802900.0,
+          "ke": 63049020000.0,
+          "zmom": -673591600.0,
+          "mass": 3600002.0,
+          "he": 28106670.0,
+          "eroded": 0.0,
+          "vz": -187.1087
+        },
+        "cowling": {
+          "ie": 2967559000.0,
+          "ke": 10926830000.0,
+          "zmom": -140711200.0,
+          "mass": 843175.1,
+          "he": 62320270.0,
+          "eroded": 919.0,
+          "vz": -166.8826
+        },
+        "projectile_final_mass_weighted_velocity_z_mm_per_ms": -183.2703900098873,
+        "initial_total_energy_solver": 89385800000.0,
+        "final_internal_energy_solver": 9342854000.0,
+        "final_kinetic_energy_solver": 78899420000.0,
+        "final_rotational_energy_solver": 101140900.0,
+        "final_total_energy_solver": 88343414900.0,
+        "external_work_solver": 0.0,
+        "derived_energy_error_percent": -1.1661640887031273,
+        "initial_elastic_contact_energy_solver": 0.0,
+        "final_elastic_contact_energy_solver": 241558.6,
+        "maximum_absolute_elastic_contact_energy_solver": 303098700.0,
+        "maximum_absolute_elastic_contact_energy_to_initial_energy_fraction": 0.0033909043718353474,
+        "maximum_pre_facade_elastic_contact_energy_solver": 0.0,
+        "hourglass_energy_solver": 0.0,
+        "hourglass_to_initial_energy_fraction": 0.0,
+        "added_mass_g": 5.587935e-09,
+        "percentage_added_mass": 6.676972e-14,
+        "added_mass_fraction": 6.676972e-16
+      },
+      "rupture": {
+        "event_count": 2287,
+        "unique_element_count": 2287,
+        "first_time_ms": 0.5279,
+        "last_time_ms": 17.82,
+        "by_part": {
+          "1": {
+            "unique_element_count": 1145,
+            "fraction_of_initial_part_shells": 0.05348467862481315
+          },
+          "2": {
+            "unique_element_count": 223,
+            "fraction_of_initial_part_shells": 0.044404619673436875
+          },
+          "3": {
+            "unique_element_count": 0,
+            "fraction_of_initial_part_shells": 0.0
+          },
+          "4": {
+            "unique_element_count": 919,
+            "fraction_of_initial_part_shells": 0.12041404612159329
+          }
+        },
+        "projectile_unique_element_count": 919,
+        "facade_unique_element_count": 1368
+      },
+      "artifacts": {
+        "starter": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT045_T1/V8W_IM_M050_P050_DT045_T1_0000.rad",
+        "engine": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT045_T1/V8W_IM_M050_P050_DT045_T1_0001.rad",
+        "time_history_csv": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT045_T1/V8W_IM_M050_P050_DT045_T1T01.csv",
+        "engine_output": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT045_T1/V8W_IM_M050_P050_DT045_T1_0001.out"
+      }
+    },
+    {
+      "id": "IM_M050_P050_DT090_T4",
+      "phase": "facade_impact",
+      "facade_mesh_target_mm": 50.0,
+      "projectile_mesh_target_mm": 50.0,
+      "time_step_scale": 0.9,
+      "core_failure_strain": 0.2,
+      "cowling_failure_strain": 0.12,
+      "threads": 4,
+      "role": "impact_thread_repeatability",
+      "run_name": "V8W_IM_M050_P050_DT090_T4",
+      "case_id": "IM_M050_P050_DT090_T4",
+      "node_count_total": 37826,
+      "shell_count_total": 37590,
+      "fixed_node_count": 192,
+      "projectile_node_count": 11282,
+      "element_ranges": {
+        "1": {
+          "first": 1,
+          "last": 21408,
+          "count": 21408
+        },
+        "2": {
+          "first": 21409,
+          "last": 26430,
+          "count": 5022
+        },
+        "3": {
+          "first": 26431,
+          "last": 29958,
+          "count": 3528
+        },
+        "4": {
+          "first": 29959,
+          "last": 37590,
+          "count": 7632
+        }
+      },
+      "projectile": {
+        "core_mid_surface_area_mm2": 8820000.0,
+        "cowling_mid_surface_area_mm2": 19080000.0,
+        "core_equivalent_thickness_mm": 51.92916861401048,
+        "cowling_equivalent_thickness_mm": 18.60787558234335,
+        "type7_pair_activation_gap_mm": 35.268522098176916,
+        "front_opening_mid_surface_radial_clearance_mm": 150.0,
+        "front_opening_net_shell_surface_clearance_mm": 114.73147790182308,
+        "net_clearance_to_activation_gap_ratio": 3.2530843674834258,
+        "core_target_mass_g": 3600000.0,
+        "cowling_target_mass_g": 958603.3185,
+        "total_target_mass_g": 4558603.3185
+      },
+      "contact_interfaces": {
+        "facade": 1,
+        "core_to_cowling": 2,
+        "cowling_to_core": 3,
+        "all_projectile_self_contact_present": false
+      },
+      "starter": {
+        "exit_code": 0,
+        "elapsed_seconds": 1.1685118000023067,
+        "warning_count": 4,
+        "initial_penetration_warning_count": 0,
+        "initial_penetrating_node_count": 0
+      },
+      "engine": {
+        "exit_code": 0,
+        "elapsed_seconds": 39.20527809999476,
+        "normal_termination": true,
+        "last_printed_cycle": {
+          "line": "    2900   17.89      0.6187E-02 NODE       35121  -1.2%  0.9217E+10  0.7901E+11  0.1024E+09   0.000       0.000      0.8369E+07   0.000",
+          "cycle": 2900,
+          "time_ms": 17.89,
+          "time_step_ms": 0.006187,
+          "element_type": "NODE",
+          "element_id": 35121,
+          "energy_error_percent": -1.2,
+          "internal_energy_solver": 9217000000.0,
+          "translational_kinetic_energy_solver": 79010000000.0,
+          "rotational_kinetic_energy_solver": 102400000.0,
+          "external_work_solver": 0.0,
+          "mass_error": 0.0,
+          "total_mass_g": 8369000.0,
+          "added_mass_g": 0.0
+        }
+      },
+      "time_history": {
+        "row_count": 900,
+        "time_final_ms": 17.9836,
+        "facade_contact": {
+          "column": "TH_FACADE_CONTACT                        1 PROJECTILE_TO_FACADE_DEFORMABLE_CONTACT  var 37",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 0.4403896,
+          "end_time_ms": 17.9836,
+          "signed_impulse_g_mm_per_ms": -87607680.0,
+          "absolute_impulse_g_mm_per_ms": 87607680.0,
+          "peak_absolute_channel_g_mm_per_ms": 87607680.0
+        },
+        "core_to_cowling_contact": {
+          "column": "TH_CORE_TO_COWLING_CONTACT               2 CORE_NODES_TO_COWLING_SURFACE            var 38",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 6.540896,
+          "end_time_ms": 17.9836,
+          "signed_impulse_g_mm_per_ms": 398.9445,
+          "absolute_impulse_g_mm_per_ms": 398.9445,
+          "peak_absolute_channel_g_mm_per_ms": 1521.524
+        },
+        "cowling_to_core_contact": {
+          "column": "TH_COWLING_TO_CORE_CONTACT               3 COWLING_NODES_TO_CORE_SURFACE            var 39",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 6.540896,
+          "end_time_ms": 17.9836,
+          "signed_impulse_g_mm_per_ms": 1585.37,
+          "absolute_impulse_g_mm_per_ms": 1585.37,
+          "peak_absolute_channel_g_mm_per_ms": 2369.089
+        },
+        "initial_projectile_z_momentum_g_mm_per_ms": -902745400.0,
+        "final_projectile_z_momentum_g_mm_per_ms": -816120800.0,
+        "projectile_z_momentum_change_g_mm_per_ms": 86624600.0,
+        "projectile_z_momentum_change_relative_fraction": 0.09595684453224575,
+        "facade_contact_impulse_to_projectile_momentum_change_relative_error": 0.011348739272677738,
+        "initial_projectile_mass_g": 4558606.6,
+        "final_projectile_mass_g": 4448829.2,
+        "projectile_initial_mass_relative_error": 7.198476748915912e-07,
+        "projectile_mass_change_relative_fraction": 0.024081349770344176,
+        "projectile_remaining_mass_fraction": 0.9759186502296558,
+        "projectile_eroded_element_count": 874,
+        "core": {
+          "ie": 395678200.0,
+          "ke": 63260460000.0,
+          "zmom": -674681800.0,
+          "mass": 3600002.0,
+          "he": 26872250.0,
+          "eroded": 0.0,
+          "vz": -187.4115
+        },
+        "cowling": {
+          "ie": 2996891000.0,
+          "ke": 11025870000.0,
+          "zmom": -141439000.0,
+          "mass": 848827.2,
+          "he": 66773080.0,
+          "eroded": 874.0,
+          "vz": -166.6288
+        },
+        "projectile_final_mass_weighted_velocity_z_mm_per_ms": -183.44619748494728,
+        "initial_total_energy_solver": 89385800000.0,
+        "final_internal_energy_solver": 9216049000.0,
+        "final_kinetic_energy_solver": 79004780000.0,
+        "final_rotational_energy_solver": 102954100.0,
+        "final_total_energy_solver": 88323783100.0,
+        "external_work_solver": 0.0,
+        "derived_energy_error_percent": -1.1881270850627281,
+        "initial_elastic_contact_energy_solver": 0.0,
+        "final_elastic_contact_energy_solver": 484581.0,
+        "maximum_absolute_elastic_contact_energy_solver": 273915700.0,
+        "maximum_absolute_elastic_contact_energy_to_initial_energy_fraction": 0.003064420746919533,
+        "maximum_pre_facade_elastic_contact_energy_solver": 0.0,
+        "hourglass_energy_solver": 0.0,
+        "hourglass_to_initial_energy_fraction": 0.0,
+        "added_mass_g": 5.587935e-09,
+        "percentage_added_mass": 6.676972e-14,
+        "added_mass_fraction": 6.676972e-16
+      },
+      "rupture": {
+        "event_count": 2164,
+        "unique_element_count": 2164,
+        "first_time_ms": 0.5645,
+        "last_time_ms": 17.54,
+        "by_part": {
+          "1": {
+            "unique_element_count": 1030,
+            "fraction_of_initial_part_shells": 0.048112855007473844
+          },
+          "2": {
+            "unique_element_count": 260,
+            "fraction_of_initial_part_shells": 0.051772202309836715
+          },
+          "3": {
+            "unique_element_count": 0,
+            "fraction_of_initial_part_shells": 0.0
+          },
+          "4": {
+            "unique_element_count": 874,
+            "fraction_of_initial_part_shells": 0.11451781970649895
+          }
+        },
+        "projectile_unique_element_count": 874,
+        "facade_unique_element_count": 1290
+      },
+      "artifacts": {
+        "starter": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT090_T4/V8W_IM_M050_P050_DT090_T4_0000.rad",
+        "engine": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT090_T4/V8W_IM_M050_P050_DT090_T4_0001.rad",
+        "time_history_csv": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT090_T4/V8W_IM_M050_P050_DT090_T4T01.csv",
+        "engine_output": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT090_T4/V8W_IM_M050_P050_DT090_T4_0001.out"
+      }
+    },
+    {
+      "id": "IM_M050_P050_DT090_FLO_T1",
+      "phase": "facade_impact",
+      "facade_mesh_target_mm": 50.0,
+      "projectile_mesh_target_mm": 50.0,
+      "time_step_scale": 0.9,
+      "core_failure_strain": 0.12,
+      "cowling_failure_strain": 0.08,
+      "threads": 1,
+      "role": "impact_projectile_failure_low",
+      "run_name": "V8W_IM_M050_P050_DT090_FLO_T1",
+      "case_id": "IM_M050_P050_DT090_FLO_T1",
+      "node_count_total": 37826,
+      "shell_count_total": 37590,
+      "fixed_node_count": 192,
+      "projectile_node_count": 11282,
+      "element_ranges": {
+        "1": {
+          "first": 1,
+          "last": 21408,
+          "count": 21408
+        },
+        "2": {
+          "first": 21409,
+          "last": 26430,
+          "count": 5022
+        },
+        "3": {
+          "first": 26431,
+          "last": 29958,
+          "count": 3528
+        },
+        "4": {
+          "first": 29959,
+          "last": 37590,
+          "count": 7632
+        }
+      },
+      "projectile": {
+        "core_mid_surface_area_mm2": 8820000.0,
+        "cowling_mid_surface_area_mm2": 19080000.0,
+        "core_equivalent_thickness_mm": 51.92916861401048,
+        "cowling_equivalent_thickness_mm": 18.60787558234335,
+        "type7_pair_activation_gap_mm": 35.268522098176916,
+        "front_opening_mid_surface_radial_clearance_mm": 150.0,
+        "front_opening_net_shell_surface_clearance_mm": 114.73147790182308,
+        "net_clearance_to_activation_gap_ratio": 3.2530843674834258,
+        "core_target_mass_g": 3600000.0,
+        "cowling_target_mass_g": 958603.3185,
+        "total_target_mass_g": 4558603.3185
+      },
+      "contact_interfaces": {
+        "facade": 1,
+        "core_to_cowling": 2,
+        "cowling_to_core": 3,
+        "all_projectile_self_contact_present": false
+      },
+      "starter": {
+        "exit_code": 0,
+        "elapsed_seconds": 1.0799922000005608,
+        "warning_count": 4,
+        "initial_penetration_warning_count": 0,
+        "initial_penetrating_node_count": 0
+      },
+      "engine": {
+        "exit_code": 0,
+        "elapsed_seconds": 114.25679640000453,
+        "normal_termination": true,
+        "last_printed_cycle": {
+          "line": "    2900   17.94      0.6229E-02 NODE       37145  -1.3%  0.9172E+10  0.7898E+11  0.9590E+08   0.000       0.000      0.8369E+07   0.000",
+          "cycle": 2900,
+          "time_ms": 17.94,
+          "time_step_ms": 0.006229,
+          "element_type": "NODE",
+          "element_id": 37145,
+          "energy_error_percent": -1.3,
+          "internal_energy_solver": 9172000000.0,
+          "translational_kinetic_energy_solver": 78980000000.0,
+          "rotational_kinetic_energy_solver": 95900000.0,
+          "external_work_solver": 0.0,
+          "mass_error": 0.0,
+          "total_mass_g": 8369000.0,
+          "added_mass_g": 0.0
+        }
+      },
+      "time_history": {
+        "row_count": 900,
+        "time_final_ms": 17.98013,
+        "facade_contact": {
+          "column": "TH_FACADE_CONTACT                        1 PROJECTILE_TO_FACADE_DEFORMABLE_CONTACT  var 37",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 0.4403896,
+          "end_time_ms": 17.98013,
+          "signed_impulse_g_mm_per_ms": -89533210.0,
+          "absolute_impulse_g_mm_per_ms": 89533210.0,
+          "peak_absolute_channel_g_mm_per_ms": 89533210.0
+        },
+        "core_to_cowling_contact": {
+          "column": "TH_CORE_TO_COWLING_CONTACT               2 CORE_NODES_TO_COWLING_SURFACE            var 38",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 8.722591,
+          "end_time_ms": 17.98013,
+          "signed_impulse_g_mm_per_ms": 2081.774,
+          "absolute_impulse_g_mm_per_ms": 2081.774,
+          "peak_absolute_channel_g_mm_per_ms": 40469.66
+        },
+        "cowling_to_core_contact": {
+          "column": "TH_COWLING_TO_CORE_CONTACT               3 COWLING_NODES_TO_CORE_SURFACE            var 39",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 8.906241,
+          "end_time_ms": 17.98013,
+          "signed_impulse_g_mm_per_ms": 4664.313,
+          "absolute_impulse_g_mm_per_ms": 4664.313,
+          "peak_absolute_channel_g_mm_per_ms": 6729.605
+        },
+        "initial_projectile_z_momentum_g_mm_per_ms": -902745400.0,
+        "final_projectile_z_momentum_g_mm_per_ms": -814186200.0,
+        "projectile_z_momentum_change_g_mm_per_ms": 88559200.0,
+        "projectile_z_momentum_change_relative_fraction": 0.09809986292923785,
+        "facade_contact_impulse_to_projectile_momentum_change_relative_error": 0.010998405586319659,
+        "initial_projectile_mass_g": 4558606.6,
+        "final_projectile_mass_g": 4421698.9,
+        "projectile_initial_mass_relative_error": 7.198476748915912e-07,
+        "projectile_mass_change_relative_fraction": 0.03003279554765688,
+        "projectile_remaining_mass_fraction": 0.9699672044523431,
+        "projectile_eroded_element_count": 1090,
+        "core": {
+          "ie": 401682500.0,
+          "ke": 63114600000.0,
+          "zmom": -673953500.0,
+          "mass": 3600002.0,
+          "he": 28234030.0,
+          "eroded": 0.0,
+          "vz": -187.2092
+        },
+        "cowling": {
+          "ie": 2838816000.0,
+          "ke": 11066460000.0,
+          "zmom": -140232700.0,
+          "mass": 821696.9,
+          "he": 62798880.0,
+          "eroded": 1090.0,
+          "vz": -170.6623
+        },
+        "projectile_final_mass_weighted_velocity_z_mm_per_ms": -184.13424758524374,
+        "initial_total_energy_solver": 89385800000.0,
+        "final_internal_energy_solver": 9172694000.0,
+        "final_kinetic_energy_solver": 78977250000.0,
+        "final_rotational_energy_solver": 96261940.0,
+        "final_total_energy_solver": 88246205940.0,
+        "external_work_solver": 0.0,
+        "derived_energy_error_percent": -1.2749162171172603,
+        "initial_elastic_contact_energy_solver": 0.0,
+        "final_elastic_contact_energy_solver": 394435.6,
+        "maximum_absolute_elastic_contact_energy_solver": 273915700.0,
+        "maximum_absolute_elastic_contact_energy_to_initial_energy_fraction": 0.003064420746919533,
+        "maximum_pre_facade_elastic_contact_energy_solver": 0.0,
+        "hourglass_energy_solver": 0.0,
+        "hourglass_to_initial_energy_fraction": 0.0,
+        "added_mass_g": 5.587935e-09,
+        "percentage_added_mass": 6.676972e-14,
+        "added_mass_fraction": 6.676972e-16
+      },
+      "rupture": {
+        "event_count": 2392,
+        "unique_element_count": 2392,
+        "first_time_ms": 0.5527,
+        "last_time_ms": 17.75,
+        "by_part": {
+          "1": {
+            "unique_element_count": 1084,
+            "fraction_of_initial_part_shells": 0.05063527653213752
+          },
+          "2": {
+            "unique_element_count": 218,
+            "fraction_of_initial_part_shells": 0.04340900039824771
+          },
+          "3": {
+            "unique_element_count": 0,
+            "fraction_of_initial_part_shells": 0.0
+          },
+          "4": {
+            "unique_element_count": 1090,
+            "fraction_of_initial_part_shells": 0.1428197064989518
+          }
+        },
+        "projectile_unique_element_count": 1090,
+        "facade_unique_element_count": 1302
+      },
+      "artifacts": {
+        "starter": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT090_FLO_T1/V8W_IM_M050_P050_DT090_FLO_T1_0000.rad",
+        "engine": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT090_FLO_T1/V8W_IM_M050_P050_DT090_FLO_T1_0001.rad",
+        "time_history_csv": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT090_FLO_T1/V8W_IM_M050_P050_DT090_FLO_T1T01.csv",
+        "engine_output": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT090_FLO_T1/V8W_IM_M050_P050_DT090_FLO_T1_0001.out"
+      }
+    },
+    {
+      "id": "IM_M050_P050_DT090_FHI_T1",
+      "phase": "facade_impact",
+      "facade_mesh_target_mm": 50.0,
+      "projectile_mesh_target_mm": 50.0,
+      "time_step_scale": 0.9,
+      "core_failure_strain": 0.3,
+      "cowling_failure_strain": 0.2,
+      "threads": 1,
+      "role": "impact_projectile_failure_high",
+      "run_name": "V8W_IM_M050_P050_DT090_FHI_T1",
+      "case_id": "IM_M050_P050_DT090_FHI_T1",
+      "node_count_total": 37826,
+      "shell_count_total": 37590,
+      "fixed_node_count": 192,
+      "projectile_node_count": 11282,
+      "element_ranges": {
+        "1": {
+          "first": 1,
+          "last": 21408,
+          "count": 21408
+        },
+        "2": {
+          "first": 21409,
+          "last": 26430,
+          "count": 5022
+        },
+        "3": {
+          "first": 26431,
+          "last": 29958,
+          "count": 3528
+        },
+        "4": {
+          "first": 29959,
+          "last": 37590,
+          "count": 7632
+        }
+      },
+      "projectile": {
+        "core_mid_surface_area_mm2": 8820000.0,
+        "cowling_mid_surface_area_mm2": 19080000.0,
+        "core_equivalent_thickness_mm": 51.92916861401048,
+        "cowling_equivalent_thickness_mm": 18.60787558234335,
+        "type7_pair_activation_gap_mm": 35.268522098176916,
+        "front_opening_mid_surface_radial_clearance_mm": 150.0,
+        "front_opening_net_shell_surface_clearance_mm": 114.73147790182308,
+        "net_clearance_to_activation_gap_ratio": 3.2530843674834258,
+        "core_target_mass_g": 3600000.0,
+        "cowling_target_mass_g": 958603.3185,
+        "total_target_mass_g": 4558603.3185
+      },
+      "contact_interfaces": {
+        "facade": 1,
+        "core_to_cowling": 2,
+        "cowling_to_core": 3,
+        "all_projectile_self_contact_present": false
+      },
+      "starter": {
+        "exit_code": 0,
+        "elapsed_seconds": 1.0768047000019578,
+        "warning_count": 4,
+        "initial_penetration_warning_count": 0,
+        "initial_penetrating_node_count": 0
+      },
+      "engine": {
+        "exit_code": 0,
+        "elapsed_seconds": 113.13355710000178,
+        "normal_termination": true,
+        "last_printed_cycle": {
+          "line": "    2900   17.89      0.6509E-02 SHELL      11114  -1.1%  0.8956E+10  0.7940E+11  0.7098E+08   0.000       0.000      0.8369E+07   0.000",
+          "cycle": 2900,
+          "time_ms": 17.89,
+          "time_step_ms": 0.006509,
+          "element_type": "SHELL",
+          "element_id": 11114,
+          "energy_error_percent": -1.1,
+          "internal_energy_solver": 8956000000.0,
+          "translational_kinetic_energy_solver": 79400000000.0,
+          "rotational_kinetic_energy_solver": 70980000.0,
+          "external_work_solver": 0.0,
+          "mass_error": 0.0,
+          "total_mass_g": 8369000.0,
+          "added_mass_g": 0.0
+        }
+      },
+      "time_history": {
+        "row_count": 900,
+        "time_final_ms": 17.98017,
+        "facade_contact": {
+          "column": "TH_FACADE_CONTACT                        1 PROJECTILE_TO_FACADE_DEFORMABLE_CONTACT  var 37",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 0.4403896,
+          "end_time_ms": 17.98017,
+          "signed_impulse_g_mm_per_ms": -82900700.0,
+          "absolute_impulse_g_mm_per_ms": 82900700.0,
+          "peak_absolute_channel_g_mm_per_ms": 82900700.0
+        },
+        "core_to_cowling_contact": {
+          "column": "TH_CORE_TO_COWLING_CONTACT               2 CORE_NODES_TO_COWLING_SURFACE            var 38",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 6.705424,
+          "end_time_ms": 17.98017,
+          "signed_impulse_g_mm_per_ms": -539.8709,
+          "absolute_impulse_g_mm_per_ms": 539.8709,
+          "peak_absolute_channel_g_mm_per_ms": 580.9406
+        },
+        "cowling_to_core_contact": {
+          "column": "TH_COWLING_TO_CORE_CONTACT               3 COWLING_NODES_TO_CORE_SURFACE            var 39",
+          "channel_interpretation": "cumulative FNZ impulse; end-minus-start",
+          "start_time_ms": 6.705424,
+          "end_time_ms": 17.98017,
+          "signed_impulse_g_mm_per_ms": -1493.988,
+          "absolute_impulse_g_mm_per_ms": 1493.988,
+          "peak_absolute_channel_g_mm_per_ms": 1627.182
+        },
+        "initial_projectile_z_momentum_g_mm_per_ms": -902745400.0,
+        "final_projectile_z_momentum_g_mm_per_ms": -820738500.0,
+        "projectile_z_momentum_change_g_mm_per_ms": 82006900.0,
+        "projectile_z_momentum_change_relative_fraction": 0.09084167030925884,
+        "facade_contact_impulse_to_projectile_momentum_change_relative_error": 0.010899082882050168,
+        "initial_projectile_mass_g": 4558606.6,
+        "final_projectile_mass_g": 4511379.8,
+        "projectile_initial_mass_relative_error": 7.198476748915912e-07,
+        "projectile_mass_change_relative_fraction": 0.010359920068557751,
+        "projectile_remaining_mass_fraction": 0.9896400799314422,
+        "projectile_eroded_element_count": 376,
+        "core": {
+          "ie": 457043400.0,
+          "ke": 63134950000.0,
+          "zmom": -674003800.0,
+          "mass": 3600002.0,
+          "he": 32129850.0,
+          "eroded": 0.0,
+          "vz": -187.2231
+        },
+        "cowling": {
+          "ie": 2793402000.0,
+          "ke": 11399990000.0,
+          "zmom": -146734700.0,
+          "mass": 911377.8,
+          "he": 42248860.0,
+          "eroded": 376.0,
+          "vz": -161.0032
+        },
+        "projectile_final_mass_weighted_velocity_z_mm_per_ms": -181.92627009590282,
+        "initial_total_energy_solver": 89385800000.0,
+        "final_internal_energy_solver": 8953948000.0,
+        "final_kinetic_energy_solver": 79402250000.0,
+        "final_rotational_energy_solver": 71000420.0,
+        "final_total_energy_solver": 88427198420.0,
+        "external_work_solver": 0.0,
+        "derived_energy_error_percent": -1.0724316166549943,
+        "initial_elastic_contact_energy_solver": 0.0,
+        "final_elastic_contact_energy_solver": 9444.54,
+        "maximum_absolute_elastic_contact_energy_solver": 273915700.0,
+        "maximum_absolute_elastic_contact_energy_to_initial_energy_fraction": 0.003064420746919533,
+        "maximum_pre_facade_elastic_contact_energy_solver": 0.0,
+        "hourglass_energy_solver": 0.0,
+        "hourglass_to_initial_energy_fraction": 0.0,
+        "added_mass_g": 5.587935e-09,
+        "percentage_added_mass": 6.676972e-14,
+        "added_mass_fraction": 6.676972e-16
+      },
+      "rupture": {
+        "event_count": 1802,
+        "unique_element_count": 1802,
+        "first_time_ms": 0.648,
+        "last_time_ms": 16.14,
+        "by_part": {
+          "1": {
+            "unique_element_count": 1220,
+            "fraction_of_initial_part_shells": 0.05698804185351271
+          },
+          "2": {
+            "unique_element_count": 206,
+            "fraction_of_initial_part_shells": 0.04101951413779371
+          },
+          "3": {
+            "unique_element_count": 0,
+            "fraction_of_initial_part_shells": 0.0
+          },
+          "4": {
+            "unique_element_count": 376,
+            "fraction_of_initial_part_shells": 0.049266247379454925
+          }
+        },
+        "projectile_unique_element_count": 376,
+        "facade_unique_element_count": 1426
+      },
+      "artifacts": {
+        "starter": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT090_FHI_T1/V8W_IM_M050_P050_DT090_FHI_T1_0000.rad",
+        "engine": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT090_FHI_T1/V8W_IM_M050_P050_DT090_FHI_T1_0001.rad",
+        "time_history_csv": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT090_FHI_T1/V8W_IM_M050_P050_DT090_FHI_T1T01.csv",
+        "engine_output": "wtc1_simulation_v8/openradioss_benchmarks/v8w_pairwise_contact/IM_M050_P050_DT090_FHI_T1/V8W_IM_M050_P050_DT090_FHI_T1_0001.out"
+      }
+    }
+  ],
+  "free_flight_gate_checks": {
+    "regressions_unchanged": true,
+    "all_starter_exit_code_zero": true,
+    "all_engine_exit_code_zero": true,
+    "all_normal_termination": true,
+    "initial_penetrations": true,
+    "projectile_initial_mass": true,
+    "added_mass": true,
+    "hourglass_energy": true,
+    "energy_error": true,
+    "elastic_contact_energy": true,
+    "pairwise_contact_impulse": true,
+    "z_momentum_conservation": true,
+    "mass_conservation": true,
+    "zero_erosion": true
+  },
+  "projectile_free_flight_qualification_passed": true,
+  "facade_matrix_executed": true,
+  "impact_gate_checks": {
+    "all_starter_exit_code_zero": true,
+    "all_engine_exit_code_zero": true,
+    "all_normal_termination": true,
+    "initial_penetrations": true,
+    "projectile_initial_mass": true,
+    "added_mass": true,
+    "hourglass_energy": true,
+    "energy_error": true,
+    "baseline_projectile_erosion": true,
+    "baseline_projectile_remaining_mass": true,
+    "projectile_failure_ordering": true,
+    "contact_impulse_momentum_balance": true,
+    "medium_to_fine_contact_impulse": false,
+    "medium_to_fine_projectile_final_momentum": true,
+    "half_time_step_contact_impulse": true,
+    "half_time_step_projectile_final_momentum": true,
+    "thread_repeatability_contact_impulse": true,
+    "thread_repeatability_projectile_final_momentum": true
+  },
+  "convergence": {
+    "medium_to_fine_contact_impulse_relative_difference": 0.32865876527766763,
+    "medium_to_fine_projectile_final_momentum_relative_difference": 0.024967297632108428,
+    "half_time_step_contact_impulse_relative_difference": 0.010702671523585333,
+    "half_time_step_projectile_final_momentum_relative_difference": 0.002232584733836111,
+    "thread_repeatability_contact_impulse_relative_difference": 0.0,
+    "thread_repeatability_projectile_final_momentum_relative_difference": 0.0
+  },
+  "projectile_failure_ordering": {
+    "low_eroded_elements": 1090,
+    "baseline_eroded_elements": 874,
+    "high_eroded_elements": 376,
+    "passed": true
+  },
+  "deformable_subassembly_qualification_passed": false,
+  "global_wtc_impact_physics_qualification_passed": false,
+  "blender_physics_validation_passed": false,
+  "runtime": {
+    "total_elapsed_seconds": 1618.0532269000032,
+    "starter_sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+    "engine_sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+    "converter_sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+    "config_sha256": "6c1438590f30386e6928c66c0f531d730999e3ffa0026642f61b8f96d29f80f8",
+    "generator_sha256": "4e53ed25f68ba751a74fbeb71abf391daf8c3d4d24d314389fcd757de28a88bd",
+    "runner_sha256": "f76ce12627247830fe3eabbe10f2886743d18b621940ceaf854b2f8eca82e88d",
+    "source_installation_modified": false,
+    "system32_modified": false,
+    "source_archive_rescanned": false
+  },
+  "plot": {
+    "path": null,
+    "reason": "No visualization is used as a physical validation; solver histories and decks are preserved."
+  }
+}
