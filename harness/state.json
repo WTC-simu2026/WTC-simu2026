@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-01T07:49:51.393262+00:00",
+  "updated_at": "2026-10-03T07:01:58.304331+00:00",
   "active_thread": {
     "id": "019ffb88-05a7-7f60-adff-6804df0d66a5",
     "title": "Poursuivre enquete WTC 1 V4",
@@ -19,10 +19,10 @@
     "targeted_v10i_working_copy_count": 5,
     "targeted_v10i_working_copy_directory": "wtc1_simulation_v8/input/v10i_structural_sources"
   },
-  "current_iteration": "IMPACT-I02I-A",
-  "current_status": "completed_bounded_material_stage_with_unresolved_source_convention_and_deferred_fixed_penalty_campaign",
-  "next_iteration": "IMPACT-I02I-B",
-  "next_objective": "À partir d’états neufs, utiliser les options QEPH explicites vérifiées (Ismstr4, Ithick1, Iplas1) et deux interprétations NASA séparées ; fixer Kn/Kt par unité d’aire indépendamment de h et du matériau ; comparer trois maillages locaux avec contrôle sans propagation à déplacement/avance communs. Pré-déclarer énergie, inertie, pas/vitesse, domaine raffiné et coût. Gf15/30/60 restent hypothétiques ; convention source et propagation physique non qualifiées. Vérifier les canaux force/impulsion avant intégration. Branche thermique V11R/V11S et contrôle froid V11F préservés.",
+  "current_iteration": "IMPACT-I02I-C",
+  "current_status": "completed_bounded_sampling_diagnostic_with_failed_or_unassessed_qualification_gates",
+  "next_iteration": "IMPACT-I02I-D",
+  "next_objective": "Réutiliser C sauvegardée : clarifier OFF/FX et stockage/dissipation en mixte ; pré-déclarer étude bornée vitesse/pénalité/domaine à états neufs et historiques denses avant Gf15/60. Inertie ENG, angles et avances absentes non qualifiés. Conserver deux conventions, QEPH, aire initiale fixe, impulsions et travail des appuis. La paire B+C est due sur GitHub : confirmer commit, archives et CI avant remise à zéro de la cadence. V11F et V11R/V11S préservés.",
   "impact_i02h_key_results": {
     "accepted_cases": 7,
     "new_controls_executed": 2,
@@ -1153,7 +1153,18 @@
     "latest_material_translation_report": "wtc1_simulation_v8/output/impact_i02i_material/rapport_impact_i02i_material.md",
     "latest_material_translation_summary": "wtc1_simulation_v8/output/impact_i02i_material/verification_r4/summary_i02i_material.json",
     "latest_material_translation_handoff": "harness/handoffs/WTC1_IMPACT_I02I_A_HANDOFF.md",
-    "latest_material_translation_publication_verification": "wtc1_simulation_v8/output/impact_i02i_material/publication_verification.json"
+    "latest_material_translation_publication_verification": "wtc1_simulation_v8/output/impact_i02i_material/publication_verification.json",
+    "latest_fixed_penalty_configuration": "wtc1_simulation_v8/data/impact_i02i_fixed_penalty_predeclaration_r3.json",
+    "latest_fixed_penalty_report": "wtc1_simulation_v8/output/impact_i02i_fixed_penalty/rapport_impact_i02i_fixed_penalty.md",
+    "latest_fixed_penalty_summary": "wtc1_simulation_v8/output/impact_i02i_fixed_penalty/verification_r1/summary.json",
+    "latest_fixed_penalty_handoff": "harness/handoffs/WTC1_IMPACT_I02I_B_HANDOFF.md",
+    "latest_fixed_penalty_publication_verification": "wtc1_simulation_v8/output/impact_i02i_fixed_penalty/publication_verification.json",
+    "github_publication_cycle": "harness/publication_cycle.json",
+    "latest_sampling_configuration": "wtc1_simulation_v8/data/impact_i02i_sampling_predeclaration.json",
+    "latest_sampling_report": "wtc1_simulation_v8/output/impact_i02i_sampling/rapport_impact_i02i_sampling.md",
+    "latest_sampling_summary": "wtc1_simulation_v8/output/impact_i02i_sampling/verification_r2/summary.json",
+    "latest_sampling_handoff": "harness/handoffs/WTC1_IMPACT_I02I_C_HANDOFF.md",
+    "latest_sampling_publication_verification": "wtc1_simulation_v8/output/impact_i02i_sampling/publication_verification.json"
   },
   "v8g_key_results": {
     "nist_hat_transfer_at_80_min_kip": 6748.0,
@@ -6441,7 +6452,9 @@
     "Synthetic temperature-field fractions are robustness metrics, not event probabilities.",
     "The Blender model is not yet dynamically coupled to a validated structural solver.",
     "Initiation and propagation are not yet one continuous full-building finite-element solution.",
-    "I02I-A fresh uniaxial checks reveal that inherited I02H default plane-stress/thickness options fail the simple constitutive reference despite energy closure; only explicit Ismstr4/Ithick1/Iplas1 passes this homogeneous patch. NASA nominal/true convention remains indeterminate and fixed-penalty propagation has not been performed. Old outputs remain immutable numerical diagnostics."
+    "I02I-A fresh uniaxial checks reveal that inherited I02H default plane-stress/thickness options fail the simple constitutive reference despite energy closure; only explicit Ismstr4/Ithick1/Iplas1 passes this homogeneous patch. NASA nominal/true convention remains indeterminate and fixed-penalty propagation has not been performed. Old outputs remain immutable numerical diagnostics.",
+    "I02I-B fixed initial-area penalty campaign is a bounded generic plane coupon. Failed numerical gates and missing exact advance comparisons remain explicit; source interpretation, tip plastic extrapolation and physical propagation remain unqualified.",
+    "I02I-C: dense output resolves connector quadrature on two median coupons; mixed OFF/FX one-row transition, recoverable versus dissipated work, ENG inertia and common-event angle coverage remain unqualified. No physical fracture or real collapse validation."
   ],
   "evidence_policy": [
     "Separate observed facts, official-model outputs, local-archive claims, model assumptions, derived results, and unresolved contradictions.",
@@ -6471,5 +6484,53 @@
       "engineering": 516.99769999999,
       "true_total": 466.9341113631245
     }
+  },
+  "impact_i02i_b_key_results": {
+    "cases": 12,
+    "case_checks_passed": 175,
+    "case_checks_total": 180,
+    "comparison_checks_passed": 16,
+    "comparison_checks_total": 24,
+    "controls_pass": true,
+    "old_files_preserved": 583,
+    "source_convention_verified": false,
+    "physical_propagation_qualified": false,
+    "cold_V11F_preserved": true,
+    "thermal_V11R_preserved": true,
+    "normal_penalty_N_per_mm3": 56000.0,
+    "tangent_penalty_N_per_mm3": 21500.0,
+    "reference_area_fixed": true,
+    "hypothetical_Gf_N_per_mm": 30.0,
+    "runtime_seconds": 1743.6702483000054,
+    "all_case_gates_pass": false,
+    "all_comparison_gates_pass": false,
+    "github_pending_iterations": 1,
+    "maximum_global_energy_residual_fraction": 0.0004278367550283038,
+    "maximum_independent_boundary_work_error_fraction": 3.513965437249701e-05,
+    "maximum_connector_work_quadrature_error_fraction": 0.030465502124215782,
+    "maximum_kinetic_to_internal_significant_window": 0.021224714823307303,
+    "inertia_failures": 5,
+    "all_prior_source_and_output_hashes_verified": true
+  },
+  "impact_i02i_c_key_results": {
+    "cases": 8,
+    "control_checks_passed": 84,
+    "control_checks_total": 85,
+    "case_checks_passed": 29,
+    "case_checks_total": 30,
+    "comparison_checks_passed": 6,
+    "comparison_checks_total": 8,
+    "old_files_preserved": 896,
+    "source_convention_verified": false,
+    "physical_propagation_qualified": false,
+    "runtime_seconds": 335.03190029999996,
+    "maximum_dense_connector_work_error_fraction": 9.339714239808136e-08,
+    "dense_work_sampling_verified_on_two_median_coupons": true,
+    "all_controls_pass": false,
+    "mixed_OFF_FX_gate_pass": false,
+    "ENG_inertia_gate_pass": false,
+    "cold_V11F_preserved": true,
+    "thermal_V11R_preserved": true,
+    "github_pending_iterations": 2
   }
 }

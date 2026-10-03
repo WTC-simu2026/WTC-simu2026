@@ -1,0 +1,67 @@
+{
+  "case": {
+    "id": "NORMAL",
+    "kind": "normal",
+    "dt_scale": 0.2
+  },
+  "metrics": {
+    "normal_force_error_fraction_of_peak": 4.580001736948788e-07,
+    "shear_force_error_fraction_of_reference_peak": 0.0,
+    "energy_residual_fraction": 1.3860824429462645e-06,
+    "actuator_work_error_fraction": 0.00040396294795212647,
+    "mass_error_fraction": 0.0,
+    "spring_IE_sum_error_fraction": 0.0,
+    "active_normal_gap_error_mm": 0.0,
+    "final_external_work_J": 0.02999999,
+    "final_IE_J": 0.02999999,
+    "final_KE_J": 2.983463e-12,
+    "max_KE_J": 2.847342e-06,
+    "expected_scalar_work_J": 0.03,
+    "scalar_work_error_fraction": 2.0460857776590421e-07,
+    "free_plateau_max_force_N": null
+  },
+  "work_diagnostic": {
+    "rows": 2196,
+    "min_output_dt_ms": 0.00037789999999993107,
+    "max_output_dt_ms": 0.017106399999999966,
+    "spring_work_error_fraction": 3.020930912510902e-07,
+    "final_IE_J": 0.02999999,
+    "final_trapezoid_work_J": 0.029999993861742666,
+    "final_normal_trapezoid_work_J": 0.029999993861742666,
+    "final_shear_trapezoid_work_J": 0.0,
+    "max_absolute_work_discrepancy_J": 9.062789716601793e-09,
+    "deactivation_events": [
+      {
+        "element_id": 1,
+        "time_ms": 0.8145134,
+        "previous_time_ms": 0.8141355,
+        "normal_gap_before_mm": 0.1212096,
+        "normal_gap_after_mm": 0.1212426,
+        "normal_force_before_N": 0.01111348,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 0.0,
+        "trapezoid_increment_J": 1.8337242000002917e-10
+      }
+    ]
+  },
+  "checks": {
+    "three_jobs": true,
+    "preflight": true,
+    "normal_termination": true,
+    "mass": true,
+    "normal_force_H2": true,
+    "shear_force": true,
+    "energy_balance": true,
+    "boundary_work": true,
+    "spring_IE_sum": true,
+    "active_gap": true,
+    "irreversible_OFF": true,
+    "expected_final_status": true,
+    "work_quadrature": true,
+    "analytic_scalar_work": true
+  },
+  "pass": true,
+  "config_sha256": "9990941a36c573870db32eeeaef3c38471002b8e7cdbd3c322a57039590405bd",
+  "raw_csv_sha256": "b0a03ec37d64e5ad0e8bfd877c0286fe30b53e84fc2fec40b9ca2e94c87d85cc",
+  "reference": "Independent H2 positive-history scalar envelope + linear unloading Ku; no compression exercised. Mixed-mode total work is diagnostic, not a calibrated fracture energy."
+}

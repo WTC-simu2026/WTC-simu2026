@@ -1,0 +1,420 @@
+{
+  "created_utc": "2026-10-03T06:49:18.287308+00:00",
+  "iteration": "IMPACT-I02I-C",
+  "controls": {
+    "NORMAL": {
+      "case": {
+        "id": "NORMAL",
+        "kind": "normal",
+        "dt_scale": 0.2
+      },
+      "metrics": {
+        "normal_force_error_fraction_of_peak": 4.580001736948788e-07,
+        "shear_force_error_fraction_of_reference_peak": 0.0,
+        "energy_residual_fraction": 1.3860824429462645e-06,
+        "actuator_work_error_fraction": 0.00040396294795212647,
+        "mass_error_fraction": 0.0,
+        "spring_IE_sum_error_fraction": 0.0,
+        "active_normal_gap_error_mm": 0.0,
+        "final_external_work_J": 0.02999999,
+        "final_IE_J": 0.02999999,
+        "final_KE_J": 2.983463e-12,
+        "max_KE_J": 2.847342e-06,
+        "expected_scalar_work_J": 0.03,
+        "scalar_work_error_fraction": 2.0460857776590421e-07,
+        "free_plateau_max_force_N": null
+      },
+      "work_diagnostic": {
+        "rows": 2196,
+        "min_output_dt_ms": 0.00037789999999993107,
+        "max_output_dt_ms": 0.017106399999999966,
+        "spring_work_error_fraction": 3.020930912510902e-07,
+        "final_IE_J": 0.02999999,
+        "final_trapezoid_work_J": 0.029999993861742666,
+        "final_normal_trapezoid_work_J": 0.029999993861742666,
+        "final_shear_trapezoid_work_J": 0.0,
+        "max_absolute_work_discrepancy_J": 9.062789716601793e-09,
+        "deactivation_events": [
+          {
+            "element_id": 1,
+            "time_ms": 0.8145134,
+            "previous_time_ms": 0.8141355,
+            "normal_gap_before_mm": 0.1212096,
+            "normal_gap_after_mm": 0.1212426,
+            "normal_force_before_N": 0.01111348,
+            "normal_force_after_N": 0.0,
+            "IE_jump_J": 0.0,
+            "trapezoid_increment_J": 1.8337242000002917e-10
+          }
+        ]
+      },
+      "checks": {
+        "three_jobs": true,
+        "preflight": true,
+        "normal_termination": true,
+        "mass": true,
+        "normal_force_H2": true,
+        "shear_force": true,
+        "energy_balance": true,
+        "boundary_work": true,
+        "spring_IE_sum": true,
+        "active_gap": true,
+        "irreversible_OFF": true,
+        "expected_final_status": true,
+        "work_quadrature": true,
+        "analytic_scalar_work": true
+      },
+      "pass": true,
+      "config_sha256": "9990941a36c573870db32eeeaef3c38471002b8e7cdbd3c322a57039590405bd",
+      "raw_csv_sha256": "b0a03ec37d64e5ad0e8bfd877c0286fe30b53e84fc2fec40b9ca2e94c87d85cc",
+      "reference": "Independent H2 positive-history scalar envelope + linear unloading Ku; no compression exercised. Mixed-mode total work is diagnostic, not a calibrated fracture energy."
+    },
+    "NORMAL_HALF_DT": {
+      "case": {
+        "id": "NORMAL_HALF_DT",
+        "kind": "normal",
+        "dt_scale": 0.1
+      },
+      "metrics": {
+        "normal_force_error_fraction_of_peak": 4.673119852815595e-07,
+        "shear_force_error_fraction_of_reference_peak": 0.0,
+        "energy_residual_fraction": 6.929878888107673e-07,
+        "actuator_work_error_fraction": 0.0002024095889856076,
+        "mass_error_fraction": 0.0,
+        "spring_IE_sum_error_fraction": 0.0,
+        "active_normal_gap_error_mm": 0.0,
+        "final_external_work_J": 0.03,
+        "final_IE_J": 0.03,
+        "final_KE_J": 6.598418e-12,
+        "max_KE_J": 2.847342e-06,
+        "expected_scalar_work_J": 0.03,
+        "scalar_work_error_fraction": 8.251043586796995e-08,
+        "free_plateau_max_force_N": null
+      },
+      "work_diagnostic": {
+        "rows": 4357,
+        "min_output_dt_ms": 0.00018889999999993634,
+        "max_output_dt_ms": 0.01666780000000001,
+        "spring_work_error_fraction": 2.860215253299344e-07,
+        "final_IE_J": 0.03,
+        "final_trapezoid_work_J": 0.029999997524686923,
+        "final_normal_trapezoid_work_J": 0.029999997524686923,
+        "final_shear_trapezoid_work_J": 0.0,
+        "max_absolute_work_discrepancy_J": 8.580645759898031e-09,
+        "deactivation_events": [
+          {
+            "element_id": 1,
+            "time_ms": 0.8143244,
+            "previous_time_ms": 0.8141355,
+            "normal_gap_before_mm": 0.1212096,
+            "normal_gap_after_mm": 0.1212261,
+            "normal_force_before_N": 0.01111348,
+            "normal_force_after_N": 0.0,
+            "IE_jump_J": 0.0,
+            "trapezoid_increment_J": 9.168621000001458e-11
+          }
+        ]
+      },
+      "checks": {
+        "three_jobs": true,
+        "preflight": true,
+        "normal_termination": true,
+        "mass": true,
+        "normal_force_H2": true,
+        "shear_force": true,
+        "energy_balance": true,
+        "boundary_work": true,
+        "spring_IE_sum": true,
+        "active_gap": true,
+        "irreversible_OFF": true,
+        "expected_final_status": true,
+        "work_quadrature": true,
+        "analytic_scalar_work": true
+      },
+      "pass": true,
+      "config_sha256": "9990941a36c573870db32eeeaef3c38471002b8e7cdbd3c322a57039590405bd",
+      "raw_csv_sha256": "3e0d10d610fd17e9b452b5422a7129abdbf1aa947ed206049bac83143d742b13",
+      "reference": "Independent H2 positive-history scalar envelope + linear unloading Ku; no compression exercised. Mixed-mode total work is diagnostic, not a calibrated fracture energy."
+    },
+    "CYCLE": {
+      "case": {
+        "id": "CYCLE",
+        "kind": "cycle",
+        "dt_scale": 0.2
+      },
+      "metrics": {
+        "normal_force_error_fraction_of_peak": 1.3329383703518088e-06,
+        "shear_force_error_fraction_of_reference_peak": 0.0,
+        "energy_residual_fraction": 7.435824530278418e-07,
+        "actuator_work_error_fraction": 0.00016733474257872984,
+        "mass_error_fraction": 0.0,
+        "spring_IE_sum_error_fraction": 0.0,
+        "active_normal_gap_error_mm": 0.0,
+        "final_external_work_J": 0.02999999,
+        "final_IE_J": 0.02999999,
+        "final_KE_J": 9.937415e-12,
+        "max_KE_J": 9.297443e-07,
+        "expected_scalar_work_J": 0.03,
+        "scalar_work_error_fraction": 1.7551723951551396e-07,
+        "free_plateau_max_force_N": 0.0
+      },
+      "work_diagnostic": {
+        "rows": 9947,
+        "min_output_dt_ms": 0.0003769999999998497,
+        "max_output_dt_ms": 0.022768999999999817,
+        "spring_work_error_fraction": 2.7837401947895377e-07,
+        "final_IE_J": 0.02999999,
+        "final_trapezoid_work_J": 0.029999994734482813,
+        "final_normal_trapezoid_work_J": 0.029999994734482813,
+        "final_shear_trapezoid_work_J": 0.0,
+        "max_absolute_work_discrepancy_J": 8.351217800628419e-09,
+        "deactivation_events": [
+          {
+            "element_id": 1,
+            "time_ms": 3.742982,
+            "previous_time_ms": 3.742604,
+            "normal_gap_before_mm": 0.1211926,
+            "normal_gap_after_mm": 0.1212151,
+            "normal_force_before_N": 0.08611357,
+            "normal_force_after_N": 0.0,
+            "IE_jump_J": 0.0,
+            "trapezoid_increment_J": 9.687776625003713e-10
+          }
+        ]
+      },
+      "checks": {
+        "three_jobs": true,
+        "preflight": true,
+        "normal_termination": true,
+        "mass": true,
+        "normal_force_H2": true,
+        "shear_force": true,
+        "energy_balance": true,
+        "boundary_work": true,
+        "spring_IE_sum": true,
+        "active_gap": true,
+        "irreversible_OFF": true,
+        "expected_final_status": true,
+        "work_quadrature": true,
+        "analytic_scalar_work": true,
+        "H2_zero_force_plateau": true
+      },
+      "pass": true,
+      "config_sha256": "9990941a36c573870db32eeeaef3c38471002b8e7cdbd3c322a57039590405bd",
+      "raw_csv_sha256": "37f13bb5050098110d36aefbe4b453bc05709323f587a83f9fa3a114f4349bfb",
+      "reference": "Independent H2 positive-history scalar envelope + linear unloading Ku; no compression exercised. Mixed-mode total work is diagnostic, not a calibrated fracture energy."
+    },
+    "CYCLE_HALF_DT": {
+      "case": {
+        "id": "CYCLE_HALF_DT",
+        "kind": "cycle",
+        "dt_scale": 0.1
+      },
+      "metrics": {
+        "normal_force_error_fraction_of_peak": 1.3329383703518088e-06,
+        "shear_force_error_fraction_of_reference_peak": 0.0,
+        "energy_residual_fraction": 4.769471384438655e-07,
+        "actuator_work_error_fraction": 8.372355055625251e-05,
+        "mass_error_fraction": 0.0,
+        "spring_IE_sum_error_fraction": 0.0,
+        "active_normal_gap_error_mm": 0.0,
+        "final_external_work_J": 0.03,
+        "final_IE_J": 0.03,
+        "final_KE_J": 1.934126e-11,
+        "max_KE_J": 9.297443e-07,
+        "expected_scalar_work_J": 0.03,
+        "scalar_work_error_fraction": 6.463619732037056e-08,
+        "free_plateau_max_force_N": 0.0
+      },
+      "work_diagnostic": {
+        "rows": 19857,
+        "min_output_dt_ms": 0.0001879999999996329,
+        "max_output_dt_ms": 0.0221849999999999,
+        "spring_work_error_fraction": 3.101519713509064e-07,
+        "final_IE_J": 0.03,
+        "final_trapezoid_work_J": 0.02999999806091408,
+        "final_normal_trapezoid_work_J": 0.02999999806091408,
+        "final_shear_trapezoid_work_J": 0.0,
+        "max_absolute_work_discrepancy_J": 9.304559140527191e-09,
+        "deactivation_events": [
+          {
+            "element_id": 1,
+            "time_ms": 3.742982,
+            "previous_time_ms": 3.742793,
+            "normal_gap_before_mm": 0.1212038,
+            "normal_gap_after_mm": 0.1212151,
+            "normal_force_before_N": 0.03647585,
+            "normal_force_after_N": 0.0,
+            "IE_jump_J": 0.0,
+            "trapezoid_increment_J": 2.0608855250010487e-10
+          }
+        ]
+      },
+      "checks": {
+        "three_jobs": true,
+        "preflight": true,
+        "normal_termination": true,
+        "mass": true,
+        "normal_force_H2": true,
+        "shear_force": true,
+        "energy_balance": true,
+        "boundary_work": true,
+        "spring_IE_sum": true,
+        "active_gap": true,
+        "irreversible_OFF": true,
+        "expected_final_status": true,
+        "work_quadrature": true,
+        "analytic_scalar_work": true,
+        "H2_zero_force_plateau": true
+      },
+      "pass": true,
+      "config_sha256": "9990941a36c573870db32eeeaef3c38471002b8e7cdbd3c322a57039590405bd",
+      "raw_csv_sha256": "eea7abbc1e1a9616336464702895b5af5fc92c927cd155ffb5c54803fc19a7c7",
+      "reference": "Independent H2 positive-history scalar envelope + linear unloading Ku; no compression exercised. Mixed-mode total work is diagnostic, not a calibrated fracture energy."
+    },
+    "SHEAR": {
+      "case": {
+        "id": "SHEAR",
+        "kind": "shear",
+        "dt_scale": 0.2
+      },
+      "metrics": {
+        "normal_force_error_fraction_of_peak": 0.0,
+        "shear_force_error_fraction_of_reference_peak": 4.0697674421608097e-07,
+        "energy_residual_fraction": 1.4261939536107804e-06,
+        "actuator_work_error_fraction": 0.0005408892747118668,
+        "mass_error_fraction": 0.0,
+        "spring_IE_sum_error_fraction": 0.0,
+        "active_normal_gap_error_mm": 0.0,
+        "final_external_work_J": 0.0043,
+        "final_IE_J": 0.0043,
+        "final_KE_J": 4.8647039999999996e-18,
+        "max_KE_J": 7.031190999999999e-08,
+        "expected_scalar_work_J": 0.0043,
+        "scalar_work_error_fraction": 7.536488390722414e-09,
+        "free_plateau_max_force_N": null
+      },
+      "work_diagnostic": {
+        "rows": 2652,
+        "min_output_dt_ms": 0.00037789999999993107,
+        "max_output_dt_ms": 0.00037810000000004784,
+        "spring_work_error_fraction": 6.787324187019953e-07,
+        "final_IE_J": 0.0043,
+        "final_trapezoid_work_J": 0.0043000000324069,
+        "final_normal_trapezoid_work_J": 0.0,
+        "final_shear_trapezoid_work_J": 0.0043000000324069,
+        "max_absolute_work_discrepancy_J": 2.9185494004185797e-09,
+        "deactivation_events": []
+      },
+      "checks": {
+        "three_jobs": true,
+        "preflight": true,
+        "normal_termination": true,
+        "mass": true,
+        "normal_force_H2": true,
+        "shear_force": true,
+        "energy_balance": true,
+        "boundary_work": true,
+        "spring_IE_sum": true,
+        "active_gap": true,
+        "irreversible_OFF": true,
+        "expected_final_status": true,
+        "work_quadrature": true,
+        "analytic_scalar_work": true
+      },
+      "pass": true,
+      "config_sha256": "9990941a36c573870db32eeeaef3c38471002b8e7cdbd3c322a57039590405bd",
+      "raw_csv_sha256": "436764983c67f75cca68b981d476f2c2dc07fa8df468616c8c983ba085004d5b",
+      "reference": "Independent H2 positive-history scalar envelope + linear unloading Ku; no compression exercised. Mixed-mode total work is diagnostic, not a calibrated fracture energy."
+    },
+    "MIXED": {
+      "case": {
+        "id": "MIXED",
+        "kind": "mixed",
+        "dt_scale": 0.2
+      },
+      "metrics": {
+        "normal_force_error_fraction_of_peak": 4.580001736948788e-07,
+        "shear_force_error_fraction_of_reference_peak": 0.9526202325581395,
+        "energy_residual_fraction": 1.2742134053711049e-06,
+        "actuator_work_error_fraction": 0.0003213201022578104,
+        "mass_error_fraction": 0.0,
+        "spring_IE_sum_error_fraction": 0.0,
+        "active_normal_gap_error_mm": 0.0,
+        "final_external_work_J": 0.033903350000000006,
+        "final_IE_J": 0.033903350000000006,
+        "final_KE_J": 3.057136e-12,
+        "max_KE_J": 2.917654e-06,
+        "expected_scalar_work_J": null,
+        "scalar_work_error_fraction": null,
+        "free_plateau_max_force_N": null
+      },
+      "work_diagnostic": {
+        "rows": 2196,
+        "min_output_dt_ms": 0.00037789999999993107,
+        "max_output_dt_ms": 0.017106399999999966,
+        "spring_work_error_fraction": 3.3750938708727315e-07,
+        "final_IE_J": 0.033903350000000006,
+        "final_trapezoid_work_J": 0.033903346245153565,
+        "final_normal_trapezoid_work_J": 0.029999993861742666,
+        "final_shear_trapezoid_work_J": 0.003903352383410899,
+        "max_absolute_work_discrepancy_J": 1.1442698878705304e-08,
+        "deactivation_events": [
+          {
+            "element_id": 1,
+            "time_ms": 0.8145134,
+            "previous_time_ms": 0.8141355,
+            "normal_gap_before_mm": 0.1212096,
+            "normal_gap_after_mm": 0.1212426,
+            "normal_force_before_N": 0.01111348,
+            "normal_force_after_N": 0.0,
+            "IE_jump_J": 2.1199999999979015e-06,
+            "trapezoid_increment_J": 2.121761152420189e-06
+          }
+        ]
+      },
+      "checks": {
+        "three_jobs": true,
+        "preflight": true,
+        "normal_termination": true,
+        "mass": true,
+        "normal_force_H2": true,
+        "shear_force": false,
+        "energy_balance": true,
+        "boundary_work": true,
+        "spring_IE_sum": true,
+        "active_gap": true,
+        "irreversible_OFF": true,
+        "expected_final_status": true,
+        "work_quadrature": true
+      },
+      "pass": false,
+      "config_sha256": "9990941a36c573870db32eeeaef3c38471002b8e7cdbd3c322a57039590405bd",
+      "raw_csv_sha256": "edfc78ed9d9eb3cd594ad25ce519e7b3727f5c47108c9cc9fd977429b9f5692c",
+      "reference": "Independent H2 positive-history scalar envelope + linear unloading Ku; no compression exercised. Mixed-mode total work is diagnostic, not a calibrated fracture energy."
+    }
+  },
+  "all_controls_pass": false,
+  "control_checks_passed": 84,
+  "control_checks_total": 85,
+  "cases": {},
+  "sampling": {},
+  "comparisons": {},
+  "case_checks_passed": 0,
+  "case_checks_total": 0,
+  "comparison_checks_passed": 0,
+  "comparison_checks_total": 0,
+  "all_dense_work_gates_pass": null,
+  "source_convention_verified": false,
+  "physical_propagation_qualified": false,
+  "runtime_seconds": 18.799603899999966,
+  "software": {
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "solver": "OpenRadioss 20260728 win64, engine /VERS2026, one thread"
+  },
+  "config_sha256": "9990941a36c573870db32eeeaef3c38471002b8e7cdbd3c322a57039590405bd",
+  "audit_script_sha256": "bd98db4ea32ceb167b8e93a8957041798a507a415cdf264f75467933d308fb23",
+  "dependency_audit_sha256": "f34e051372107178a46c7f71727d93f2c799e439839123f9f8ee45ca94c7799d",
+  "no_old_calculation_rerun": true
+}

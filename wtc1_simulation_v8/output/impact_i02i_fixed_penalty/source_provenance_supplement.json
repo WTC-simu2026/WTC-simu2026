@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-10-02T08:56:57.770635+00:00",
+  "geometry_inherited_from": {
+    "path": "wtc1_simulation_v8/data/impact_i02h_local_cohesive.json",
+    "sha256": "80c21e9e879d94fe4557d18f907efffcab8bdc51c9f9d540afe9f67dd9bfbd19",
+    "geometry": {
+      "width_mm": 76.2,
+      "length_mm": 300.0,
+      "thickness_mm": 2.3,
+      "initial_total_crack_length_mm": 25.4,
+      "orientation": "L-T",
+      "loading": "fixed lower grip and prescribed upper-grip displacement",
+      "source": "NASA CR-191523 Figure 1 and specimen description"
+    },
+    "mesh": {
+      "outer_x_break_mm": 22.86,
+      "near_seam_half_height_mm": 12.7,
+      "far_field_target_step_mm": 5.08,
+      "construction": "symmetric tensor-product mesh; local_step in x from -outer_x_break to +outer_x_break and in y within near_seam_half_height; coarse far field outside",
+      "cohesive_node_tributary_rule": "Voronoi width clipped to the two intact ligament intervals",
+      "qualification": "local refinement only; no remeshing, XFEM, shell deletion or 3D crack tunneling"
+    }
+  },
+  "geometry_primary_source": {
+    "id": "NASA_CR_191523",
+    "path": "wtc1_simulation_v8/input/impact_i02f_sources/NASA_CR_191523_2024T3_CTOA.pdf",
+    "sha256": "27d91f70b8816927b22f980ae7decb528837abfb19c04335a538ebaa7e6af156",
+    "use": "M(T) geometry and independent stable-tearing stress and CTOA comparators"
+  },
+  "use": "Reuse already saved bounded geometry; no new PDF inspection, no stable-tearing physical comparator used here.",
+  "material_source_manifest": "wtc1_simulation_v8/output/impact_i02i_material/source_manifest.json",
+  "existing_new_docs_manifest": "wtc1_simulation_v8/output/impact_i02i_fixed_penalty/source_manifest.json"
+}

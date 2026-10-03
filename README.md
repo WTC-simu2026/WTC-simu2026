@@ -8,22 +8,11 @@ Le projet teste des mécanismes, des hypothèses explicites et des plages de par
 
 ## Où en est la simulation ?
 
-Instantané du **1er octobre 2026** : **IMPACT-I02I-A terminée**, prochaine étape **IMPACT-I02I-B**. Les 108 entrées du registre conservent la progression et les diagnostics. Les anciennes mentions de V8H ou V11H décrivent des étapes historiques.
+Instantané du **3 octobre 2026** : **IMPACT-I02I-C terminée**, prochaine étape **IMPACT-I02I-D**. Le registre contient 110 entrées. Les mentions V8H/V11H sont historiques.
 
-| Axe | État à cet instantané |
-| --- | --- |
-| Harnais de recherche | Configurations, unités, sources, scripts, contrôles, résultats et passations conservés. |
-| Impact et matériaux | Sous-modèles de contact, assemblages et déchirure étudiés. Dernière étape : dix tractions homogènes de coque QEPH ; les sept variantes explicites passent leurs 145 critères. |
-| Limites de cette étape | Les trois témoins hérités/petites déformations conservent leurs critères échoués. La convention de déformation d'une source NASA reste indéterminée ; deux interprétations sont gardées séparément. |
-| Thermique et structure | Branche V11R achevée, V11S prévue. Le contrôle froid V11F est conservé. Températures prescrites et essais thermiques limités ne constituent pas un incendie WTC calculé. |
-| Géométrie et visualisation | Modèles Blender et exports de certains états numériques disponibles. Leur portée dépend de celle du sous-modèle mécanique correspondant. |
-| Simulation complète | **Non atteinte** : couplage complet avion/bâtiment/feu/propagation et validation historique encore à construire. |
+La paire B+C conserve deux interprétations de la source NASA, des pénalités fixes par unité d’aire et des états neufs. B comporte 12 éprouvettes ; C ajoute six contrôles de connecteurs et deux éprouvettes avec des historiques denses. Les critères échoués et les comparaisons manquantes restent publiés. Ni la propagation physique ni la convention de la source ne sont qualifiées.
 
-![Vérification du matériau sur des tractions homogènes](wtc1_simulation_v8/output/impact_i02i_material/verification_r4/synthese_i02i_material.png)
-
-Cette figure concerne des éprouvettes numériques neuves, sans fracture, avion ou façade. Elle n'est pas une simulation de l'effondrement.
-
-Lire le [rapport de la dernière étape](wtc1_simulation_v8/output/impact_i02i_material/rapport_impact_i02i_material.md), sa [vérification finale](wtc1_simulation_v8/output/impact_i02i_material/publication_verification.json) et la [passation technique](harness/handoffs/WTC1_IMPACT_I02I_A_HANDOFF.md).
+Lire le [rapport C](wtc1_simulation_v8/output/impact_i02i_sampling/rapport_impact_i02i_sampling.md), la [vérification d’intégrité](wtc1_simulation_v8/output/impact_i02i_sampling/publication_verification.json) et la [passation D](harness/handoffs/WTC1_IMPACT_I02I_C_HANDOFF.md). La branche thermique V11R → V11S et le contrôle froid V11F restent conservés. La simulation complète avion/bâtiment/feu/effondrement n’est pas atteinte.
 
 ## Ce qui est publié
 
@@ -34,13 +23,9 @@ Lire le [rapport de la dernière étape](wtc1_simulation_v8/output/impact_i02i_m
 - `outputs/` : calculs exploratoires antérieurs et audits complémentaires. Leurs affirmations se lisent avec leurs propres limites ; leur présence n'est pas une validation.
 - `publication/` : inventaire complet, empreintes SHA-256, règles de publication, licences tierces et liste motivée des fichiers externes non redistribués.
 
-Inventaire : **4,132 fichiers scientifiques dans Git**, **7,095 fichiers en 23 archives**. Ensemble : 18.79 Go originaux ; archives compressées : 6.69 Go.
+Inventaire courant : **4,527 fichiers scientifiques dans Git**, **7,194 sorties dans 27 archives**.
 
-**Les sorties lourdes sont dans les [archives de la release](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-01-impact-i02i-a)**. Elles conservent les chemins relatifs et les octets des résultats originaux. Cela évite de placer les gros fichiers de solveur dans l'historique Git. Aucun résultat n'est écarté parce qu'un critère échoue.
-
-Les [archives complémentaires de diagnostics historiques](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-01-impact-i02i-a) ajoutent les préflights, essais interrompus et brouillons numériques conservés sous `tmp/`, ainsi que quatre anciens helpers de sources sous `work/`. **Ces brouillons ne remplacent pas les rapports finaux.** Les 23 archives sont regroupées dans la même release pour la restauration complète.
-
-Les exécutables installés, archives personnelles, PDF sources, pages web tierces et images documentaires sans licence de redistribution établie ne sont pas placés sous la licence du projet. Leurs références, empreintes et chemins attendus restent documentés ; voir [SOURCES.md](SOURCES.md) et [l'inventaire des exclusions](publication/excluded_sources.json).
+Restaurer les 23 archives de la [baseline A](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-01-impact-i02i-a), puis les 4 [archives complémentaires B+C](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-c). Le manifeste conserve le lien et le SHA-256 de chaque archive ; les anciennes archives ne sont pas remplacées. Aucun échec scientifique n’est exclu de la publication.
 
 ## Consulter et vérifier sans relancer les solveurs
 
@@ -69,9 +54,7 @@ Voir [REPRODUCIBILITY.md](REPRODUCIBILITY.md). La base Python utilise NumPy et P
 
 ## Prochaine étape
 
-IMPACT-I02I-B : créer des états matériels neufs, conserver séparément les deux interprétations de la source NASA, fixer les raideurs cohésives par unité d'aire indépendamment du maillage et du matériau, puis comparer trois maillages locaux avec un témoin sans propagation. Les bilans d'énergie, l'inertie, le pas de temps, la vitesse et les limites du domaine doivent être déclarés avant la campagne. Les valeurs Gf 15/30/60 restent des sensibilités hypothétiques.
-
-La branche thermique garde sa propre progression V11R → V11S. La passation et `harness/state.json` font autorité pour la reprise.
+IMPACT-I02I-D : traiter les limites encore ouvertes de C avec une pré-déclaration bornée et des états neufs. L’état et la passation C font autorité. Les sensibilités Gf15/30/60 restent hypothétiques et ne doivent pas anticiper la qualification du travail dissipé, de l’inertie ou de la propagation. La branche thermique garde V11R → V11S.
 
 ## Discipline de preuve
 
