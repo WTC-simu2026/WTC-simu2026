@@ -8,11 +8,11 @@ Le projet teste des mécanismes, des hypothèses explicites et des plages de par
 
 ## Où en est la simulation ?
 
-Instantané du **3 octobre 2026** : **IMPACT-I02I-C terminée**, prochaine étape **IMPACT-I02I-D**. Le registre contient 110 entrées. Les mentions V8H/V11H sont historiques.
+Instantané du **3 octobre 2026** : **IMPACT-I02I-E terminée**, prochaine étape **IMPACT-I02I-F**. Le registre contient 112 entrées. Les mentions V8H/V11H sont historiques.
 
-La paire B+C conserve deux interprétations de la source NASA, des pénalités fixes par unité d’aire et des états neufs. B comporte 12 éprouvettes ; C ajoute six contrôles de connecteurs et deux éprouvettes avec des historiques denses. Les critères échoués et les comparaisons manquantes restent publiés. Ni la propagation physique ni la convention de la source ne sont qualifiées.
+La paire D+E conserve les échecs et les non-évaluations. D distingue énergie élastique restituée et travail conservé après désactivation d'une liaison ; IE n'est pas une énergie de fracture mixte mesurée. E audite 8/8 nouvelles éprouvettes : vitesse de chargement moitié, pénalités ×0,5/2 et domaine raffiné étendu, avec deux conventions NASA. La vitesse de ces essais est celle de l'éprouvette, pas celle du Boeing.
 
-Lire le [rapport C](wtc1_simulation_v8/output/impact_i02i_sampling/rapport_impact_i02i_sampling.md), la [vérification d’intégrité](wtc1_simulation_v8/output/impact_i02i_sampling/publication_verification.json) et la [passation D](harness/handoffs/WTC1_IMPACT_I02I_C_HANDOFF.md). La branche thermique V11R → V11S et le contrôle froid V11F restent conservés. La simulation complète avion/bâtiment/feu/effondrement n’est pas atteinte.
+Lire le [rapport E](wtc1_simulation_v8/output/impact_i02i_sensitivity/rapport_impact_i02i_sensitivity.md), la [vérification d'intégrité](wtc1_simulation_v8/output/impact_i02i_sensitivity/publication_verification.json) et la [passation F](harness/handoffs/WTC1_IMPACT_I02I_E_HANDOFF.md). Les bilans numériques ne qualifient ni le matériau physique, ni l'impact complet, ni une pénétration historique. V11F et la branche V11R → V11S sont conservés.
 
 ## Ce qui est publié
 
@@ -23,9 +23,9 @@ Lire le [rapport C](wtc1_simulation_v8/output/impact_i02i_sampling/rapport_impac
 - `outputs/` : calculs exploratoires antérieurs et audits complémentaires. Leurs affirmations se lisent avec leurs propres limites ; leur présence n'est pas une validation.
 - `publication/` : inventaire complet, empreintes SHA-256, règles de publication, licences tierces et liste motivée des fichiers externes non redistribués.
 
-Inventaire courant : **4,527 fichiers scientifiques dans Git**, **7,194 sorties dans 27 archives**.
+Inventaire courant : **4,805 fichiers scientifiques dans Git**, **7,285 sorties dans 41 archives**.
 
-Restaurer les 23 archives de la [baseline A](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-01-impact-i02i-a), puis les 4 [archives complémentaires B+C](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-c). Le manifeste conserve le lien et le SHA-256 de chaque archive ; les anciennes archives ne sont pas remplacées. Aucun échec scientifique n’est exclu de la publication.
+Restaurer les 23 archives [A](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-01-impact-i02i-a), les 4 archives [B+C](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-c), puis les 14 archives [D+E](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-e). Les manifestes conservent les SHA-256 et URL ; les anciennes archives ne sont pas remplacées.
 
 ## Consulter et vérifier sans relancer les solveurs
 
@@ -54,7 +54,7 @@ Voir [REPRODUCIBILITY.md](REPRODUCIBILITY.md). La base Python utilise NumPy et P
 
 ## Prochaine étape
 
-IMPACT-I02I-D : traiter les limites encore ouvertes de C avec une pré-déclaration bornée et des états neufs. L’état et la passation C font autorité. Les sensibilités Gf15/30/60 restent hypothétiques et ne doivent pas anticiper la qualification du travail dissipé, de l’inertie ou de la propagation. La branche thermique garde V11R → V11S.
+IMPACT-I02I-F : traiter les sensibilités et couvertures encore ouvertes, puis vérifier le phasage force/état/impulsion et la libération d'énergie avant un sous-modèle d'impact libre. Réutiliser les résultats E ; Gf15/60 restent hypothétiques et différés. La simulation complète avion/bâtiment/feu/effondrement n'est pas atteinte.
 
 ## Discipline de preuve
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-03T07:01:58.304331+00:00",
+  "updated_at": "2026-10-03T12:36:45.465166+00:00",
   "active_thread": {
     "id": "019ffb88-05a7-7f60-adff-6804df0d66a5",
     "title": "Poursuivre enquete WTC 1 V4",
@@ -19,10 +19,10 @@
     "targeted_v10i_working_copy_count": 5,
     "targeted_v10i_working_copy_directory": "wtc1_simulation_v8/input/v10i_structural_sources"
   },
-  "current_iteration": "IMPACT-I02I-C",
-  "current_status": "completed_bounded_sampling_diagnostic_with_failed_or_unassessed_qualification_gates",
-  "next_iteration": "IMPACT-I02I-D",
-  "next_objective": "Réutiliser C sauvegardée : clarifier OFF/FX et stockage/dissipation en mixte ; pré-déclarer étude bornée vitesse/pénalité/domaine à états neufs et historiques denses avant Gf15/60. Inertie ENG, angles et avances absentes non qualifiés. Conserver deux conventions, QEPH, aire initiale fixe, impulsions et travail des appuis. La paire B+C est due sur GitHub : confirmer commit, archives et CI avant remise à zéro de la cadence. V11F et V11R/V11S préservés.",
+  "current_iteration": "IMPACT-I02I-E",
+  "current_status": "completed_bounded_sensitivity_with_failed_or_unassessed_qualification_gates",
+  "next_iteration": "IMPACT-I02I-F",
+  "next_objective": "Réutiliser E sauvegardée : traiter sensibilités vitesse/pénalité/domaine et couvertures encore ouvertes. Préparer témoin neuf à pas post-rupture contrôlé et vérifier phasage force/état/impulsion/libération d’énergie avant impact libre. Deux conventions NASA, Gf30 hypothétique, aire initiale fixe, QEPH et bilans appuis conservés ; Gf15/60 différés. Paire D+E GitHub due après contrôle distant/archives/CI. V11F/V11R/V11S préservés.",
   "impact_i02h_key_results": {
     "accepted_cases": 7,
     "new_controls_executed": 2,
@@ -1164,7 +1164,17 @@
     "latest_sampling_report": "wtc1_simulation_v8/output/impact_i02i_sampling/rapport_impact_i02i_sampling.md",
     "latest_sampling_summary": "wtc1_simulation_v8/output/impact_i02i_sampling/verification_r2/summary.json",
     "latest_sampling_handoff": "harness/handoffs/WTC1_IMPACT_I02I_C_HANDOFF.md",
-    "latest_sampling_publication_verification": "wtc1_simulation_v8/output/impact_i02i_sampling/publication_verification.json"
+    "latest_sampling_publication_verification": "wtc1_simulation_v8/output/impact_i02i_sampling/publication_verification.json",
+    "github_latest_pair_publication_verification": "publication/updates_i02i_bc_remote_verification.json",
+    "impact_i02i_d_report": "wtc1_simulation_v8/output/impact_i02i_energy/rapport_impact_i02i_energy.md",
+    "impact_i02i_d_results": "wtc1_simulation_v8/output/impact_i02i_energy/verification_r1/summary.json",
+    "impact_i02i_d_handoff": "harness/handoffs/WTC1_IMPACT_I02I_D_HANDOFF.md",
+    "impact_i02i_d_publication_verification": "wtc1_simulation_v8/output/impact_i02i_energy/publication_verification.json",
+    "impact_i02i_e_sensitivity_plan": "wtc1_simulation_v8/data/impact_i02i_sensitivity_plan.json",
+    "impact_i02i_e_report": "wtc1_simulation_v8/output/impact_i02i_sensitivity/rapport_impact_i02i_sensitivity.md",
+    "impact_i02i_e_results": "wtc1_simulation_v8/output/impact_i02i_sensitivity/verification_r1/summary.json",
+    "impact_i02i_e_handoff": "harness/handoffs/WTC1_IMPACT_I02I_E_HANDOFF.md",
+    "impact_i02i_e_publication_verification": "wtc1_simulation_v8/output/impact_i02i_sensitivity/publication_verification.json"
   },
   "v8g_key_results": {
     "nist_hat_transfer_at_80_min_kip": 6748.0,
@@ -6531,6 +6541,71 @@
     "ENG_inertia_gate_pass": false,
     "cold_V11F_preserved": true,
     "thermal_V11R_preserved": true,
-    "github_pending_iterations": 2
+    "github_pending_iterations": 0
+  },
+  "impact_i02i_d_key_results": {
+    "cases": 9,
+    "case_checks_passed": 150,
+    "case_checks_total": 153,
+    "comparison_checks_passed": 7,
+    "comparison_checks_total": 7,
+    "old_files_preserved": 1082,
+    "runtime_seconds": 12.671457499999633,
+    "source_convention_verified": false,
+    "physical_propagation_qualified": false,
+    "mixed_mode_dissipation_calibrated": false,
+    "github_pending_iterations": 1,
+    "mixed_fixed_shear_final_IE_J": 0.03429999,
+    "mixed_shear_return_before_failure_IE_J": 0.02999999,
+    "strict_same_row_force_failed_cases": [
+      "MIXED_FIXED_SHEAR_FAILURE",
+      "MIXED_FIXED_SHEAR_FAILURE_HALF_DT",
+      "MIXED_PROP_HALF_DT"
+    ],
+    "half_dt_phase_duration_ratio": 0.5,
+    "post_deactivation_impulse_diagnostic_max_fraction": 0.1420516566071658,
+    "post_deactivation_inertia_qualified": false
+  },
+  "impact_i02i_e_key_results": {
+    "completed_cases": 8,
+    "planned_cases": 8,
+    "missing_cases": [],
+    "case_checks_passed": 156,
+    "case_checks_total": 160,
+    "comparison_checks_passed": 30,
+    "comparison_checks_total": 40,
+    "runtime_seconds": 1751.8919036000043,
+    "old_files_preserved": 1247,
+    "source_convention_verified": false,
+    "physical_propagation_qualified": false,
+    "github_pending_iterations": 2,
+    "inertia_fractions_by_case": {
+      "ENG_SPEED_R1": 0.01992124502604201,
+      "TRUE_SPEED_R1": 0.0021831925073391065,
+      "ENG_PENALTY_HALF_R1": 0.018374122810123357,
+      "TRUE_PENALTY_HALF_R1": 0.002998656507604199,
+      "ENG_PENALTY_DOUBLE_R1": 0.021611393070105088,
+      "TRUE_PENALTY_DOUBLE_R1": 0.002212923076923077,
+      "ENG_DOMAIN_R1": 0.10957670765572179,
+      "TRUE_DOMAIN_R1": 0.002484129249086196
+    },
+    "failed_case_gates_by_case": {
+      "ENG_SPEED_R1": [
+        "inertia_significant_window"
+      ],
+      "TRUE_SPEED_R1": [],
+      "ENG_PENALTY_HALF_R1": [
+        "inertia_significant_window"
+      ],
+      "TRUE_PENALTY_HALF_R1": [],
+      "ENG_PENALTY_DOUBLE_R1": [
+        "inertia_significant_window"
+      ],
+      "TRUE_PENALTY_DOUBLE_R1": [],
+      "ENG_DOMAIN_R1": [
+        "inertia_significant_window"
+      ],
+      "TRUE_DOMAIN_R1": []
+    }
   }
 }

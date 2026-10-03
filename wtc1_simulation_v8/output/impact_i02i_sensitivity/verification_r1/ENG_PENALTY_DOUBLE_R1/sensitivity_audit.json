@@ -1,0 +1,813 @@
+{
+  "created_utc": "2026-10-03T12:17:47.634537+00:00",
+  "case": {
+    "id": "ENG_PENALTY_DOUBLE_R1",
+    "mode": "fracture",
+    "interpretation": "engineering",
+    "local_step_mm": 1.27,
+    "material_variant": "nasa_law36",
+    "Gf_N_per_mm": 30.0,
+    "loading_end_ms": 12.0,
+    "target_displacement_mm": 1.2,
+    "cached_B_case": "ENG_L127_R3",
+    "factor": "penalty_double",
+    "cached_C_case": "ENG_DENSE_R1",
+    "factor_specification": {
+      "name": "penalty_double",
+      "interpretations": [
+        "engineering",
+        "true_total"
+      ],
+      "Kn_N_per_mm3": 112000.0,
+      "Kt_N_per_mm3": 43000.0,
+      "other_values_unchanged": true
+    }
+  },
+  "case_audit": {
+    "case": {
+      "id": "ENG_PENALTY_DOUBLE_R1",
+      "mode": "fracture",
+      "interpretation": "engineering",
+      "local_step_mm": 1.27,
+      "material_variant": "nasa_law36",
+      "Gf_N_per_mm": 30.0,
+      "loading_end_ms": 12.0,
+      "target_displacement_mm": 1.2,
+      "cached_B_case": "ENG_L127_R3",
+      "factor": "penalty_double",
+      "cached_C_case": "ENG_DENSE_R1",
+      "factor_specification": {
+        "name": "penalty_double",
+        "interpretations": [
+          "engineering",
+          "true_total"
+        ],
+        "Kn_N_per_mm3": 112000.0,
+        "Kt_N_per_mm3": 43000.0,
+        "other_values_unchanged": true
+      }
+    },
+    "metrics": {
+      "mass_error_fraction": 2.736598806150208e-07,
+      "energy_residual_fraction": 0.0003484649775100644,
+      "independent_actuator_work_error_fraction": 2.8514118047221956e-05,
+      "momentum_residual_N_ms": 0.015499999989929236,
+      "momentum_residual_fraction_of_boundary_impulse": 1.282118515555674e-07,
+      "spring_energy_sum_error_fraction": 3.269822764084361e-07,
+      "spring_geometry_gap_error_mm": 1.4000000003082727e-07,
+      "elastic_spring_force_error_fraction_of_peak": 5.233907043560765e-07,
+      "maximum_kinetic_to_internal_significant_window": 0.021611393070105088,
+      "spring_work_quadrature_error_fraction": 8.280158019536487e-08,
+      "raw_upper_impulse_final_N_ms": 120893.65999999999,
+      "max_sampled_tip_plastic_strain": 0.02550936,
+      "last_source_plastic_strain": 0.14044297430594838,
+      "max_guard_distance_mm": 0.10610050043884105,
+      "maximum_area_advance_mm": 9.525000000000002,
+      "peak_section_force_N": 37465.5938,
+      "final_external_work_J": 19.801990000000004,
+      "final_actuator_work_J": 19.80251061517551,
+      "final_spring_energy_J": 1.7799129859999996,
+      "final_spring_integrated_work_J": 1.779913028535166,
+      "minimum_solver_dt_ms": 0.0001221559
+    },
+    "gates": {
+      "three_completed_jobs": true,
+      "normal_termination": true,
+      "preflight_and_no_unreviewed_engine_warnings": true,
+      "fixed_penalty_verified": true,
+      "mass": true,
+      "global_energy": true,
+      "independent_actuator_work": true,
+      "momentum_impulse_balance": true,
+      "spring_IE_sum": true,
+      "spring_gap_mapping": true,
+      "inertia_significant_window": false,
+      "control_no_failure": true,
+      "refined_domain_retained": true,
+      "end_reason_verified": true,
+      "resolved_explicit_shell_flags": true,
+      "dense_history_every_cycle": true,
+      "requested_history_interval_below_minimum_solver_dt": true,
+      "declared_dense_spring_work": true,
+      "zero_added_mass": true,
+      "generation_invariants": true
+    },
+    "all_case_gates_pass": false,
+    "events": [
+      {
+        "time_ms": 7.961738,
+        "displacement_mm": 0.9424520000000003,
+        "section_force_N": 36215.933999999994,
+        "remote_initial_area_stress_MPa": 206.64118452584728,
+        "external_work_J": 17.43048,
+        "internal_energy_J": 17.42989,
+        "kinetic_energy_J": 0.0005917658,
+        "actuator_work_J": 17.43099641525399,
+        "area_advance_mm": 0.6349999999999998,
+        "left_area_advance_mm": 0.6350000000000016,
+        "right_area_advance_mm": 0.634999999999998,
+        "nodal_advance_mm": -1.7763568394002505e-15,
+        "left_nodal_advance_mm": 0.0,
+        "right_nodal_advance_mm": -3.552713678800501e-15,
+        "CTOA_B_deg": 3.6317505416069173,
+        "CTOA_2B_deg": 2.1373329943721204
+      },
+      {
+        "time_ms": 8.364515,
+        "displacement_mm": 0.9995819000000005,
+        "section_force_N": 36616.4908,
+        "remote_initial_area_stress_MPa": 208.9266849252539,
+        "external_work_J": 19.54538,
+        "internal_energy_J": 19.541490000000003,
+        "kinetic_energy_J": 0.003843568,
+        "actuator_work_J": 19.545919716515,
+        "area_advance_mm": 1.9049999999999994,
+        "left_area_advance_mm": 1.9050000000000011,
+        "right_area_advance_mm": 1.9049999999999976,
+        "nodal_advance_mm": 1.2700000000000005,
+        "left_nodal_advance_mm": 1.2700000000000014,
+        "right_nodal_advance_mm": 1.2699999999999996,
+        "CTOA_B_deg": 4.80038249587891,
+        "CTOA_2B_deg": 2.7064936027776096
+      },
+      {
+        "time_ms": 8.381747,
+        "displacement_mm": 1.0018809999999998,
+        "section_force_N": 35699.670999999995,
+        "remote_initial_area_stress_MPa": 203.69548670546615,
+        "external_work_J": 19.63073,
+        "internal_energy_J": 19.61685,
+        "kinetic_energy_J": 0.013804690000000001,
+        "actuator_work_J": 19.631259903906713,
+        "area_advance_mm": 3.174999999999998,
+        "left_area_advance_mm": 3.174999999999999,
+        "right_area_advance_mm": 3.174999999999997,
+        "nodal_advance_mm": 2.5399999999999974,
+        "left_nodal_advance_mm": 2.539999999999999,
+        "right_nodal_advance_mm": 2.5399999999999956,
+        "CTOA_B_deg": 4.286130006142663,
+        "CTOA_2B_deg": 2.8625867454471328
+      },
+      {
+        "time_ms": 8.396049,
+        "displacement_mm": 1.0037799999999992,
+        "section_force_N": 34025.531200000005,
+        "remote_initial_area_stress_MPa": 194.14316558256309,
+        "external_work_J": 19.699759999999998,
+        "internal_energy_J": 19.66187,
+        "kinetic_energy_J": 0.0376702,
+        "actuator_work_J": 19.700287102427296,
+        "area_advance_mm": 4.445,
+        "left_area_advance_mm": 4.445,
+        "right_area_advance_mm": 4.445,
+        "nodal_advance_mm": 3.8099999999999987,
+        "left_nodal_advance_mm": 3.8099999999999987,
+        "right_nodal_advance_mm": 3.8099999999999987,
+        "CTOA_B_deg": 4.316583681995329,
+        "CTOA_2B_deg": 3.160512180659774
+      },
+      {
+        "time_ms": 8.402774,
+        "displacement_mm": 1.0046699999999997,
+        "section_force_N": 32383.0976,
+        "remote_initial_area_stress_MPa": 184.77175396553693,
+        "external_work_J": 19.73143,
+        "internal_energy_J": 19.65966,
+        "kinetic_energy_J": 0.0714446,
+        "actuator_work_J": 19.731957370186844,
+        "area_advance_mm": 5.715,
+        "left_area_advance_mm": 5.715,
+        "right_area_advance_mm": 5.715,
+        "nodal_advance_mm": 5.080000000000002,
+        "left_nodal_advance_mm": 5.080000000000002,
+        "right_nodal_advance_mm": 5.080000000000002,
+        "CTOA_B_deg": 4.1829330525929524,
+        "CTOA_2B_deg": 2.81592534559074
+      },
+      {
+        "time_ms": 8.408401,
+        "displacement_mm": 1.0054129999999997,
+        "section_force_N": 30356.977000000003,
+        "remote_initial_area_stress_MPa": 173.21109779755793,
+        "external_work_J": 19.75743,
+        "internal_energy_J": 19.62692,
+        "kinetic_energy_J": 0.1298997,
+        "actuator_work_J": 19.757956096762896,
+        "area_advance_mm": 6.985000000000001,
+        "left_area_advance_mm": 6.985000000000003,
+        "right_area_advance_mm": 6.984999999999999,
+        "nodal_advance_mm": 6.35,
+        "left_nodal_advance_mm": 6.350000000000001,
+        "right_nodal_advance_mm": 6.349999999999998,
+        "CTOA_B_deg": 4.254713900374816,
+        "CTOA_2B_deg": 2.871454049988156
+      },
+      {
+        "time_ms": 8.412069,
+        "displacement_mm": 1.0058969999999998,
+        "section_force_N": 29211.4724,
+        "remote_initial_area_stress_MPa": 166.6750678991213,
+        "external_work_J": 19.77399,
+        "internal_energy_J": 19.58227,
+        "kinetic_energy_J": 0.1908354,
+        "actuator_work_J": 19.774516948622157,
+        "area_advance_mm": 8.255,
+        "left_area_advance_mm": 8.254999999999999,
+        "right_area_advance_mm": 8.255000000000003,
+        "nodal_advance_mm": 7.620000000000001,
+        "left_nodal_advance_mm": 7.620000000000001,
+        "right_nodal_advance_mm": 7.620000000000001,
+        "CTOA_B_deg": 4.126872000965479,
+        "CTOA_2B_deg": 2.762548190910663
+      },
+      {
+        "time_ms": 8.416348,
+        "displacement_mm": 1.006461000000001,
+        "section_force_N": 26635.170000000002,
+        "remote_initial_area_stress_MPa": 151.97517973296817,
+        "external_work_J": 19.79306,
+        "internal_energy_J": 19.50377,
+        "kinetic_energy_J": 0.2881059,
+        "actuator_work_J": 19.79359654538345,
+        "area_advance_mm": 9.525000000000002,
+        "left_area_advance_mm": 9.525000000000002,
+        "right_area_advance_mm": 9.525000000000002,
+        "nodal_advance_mm": 8.890000000000002,
+        "left_nodal_advance_mm": 8.89,
+        "right_nodal_advance_mm": 8.890000000000004,
+        "CTOA_B_deg": 4.237276616021926,
+        "CTOA_2B_deg": 2.8368244286249356
+      }
+    ],
+    "final_state": {
+      "time_ms": 8.418382,
+      "displacement_mm": 1.0067280000000003,
+      "section_force_N": 21979.245800000004,
+      "remote_initial_area_stress_MPa": 125.40936779641679,
+      "external_work_J": 19.801990000000004,
+      "internal_energy_J": 19.37634,
+      "kinetic_energy_J": 0.4187497,
+      "actuator_work_J": 19.80251061517551,
+      "area_advance_mm": 9.525000000000002,
+      "left_area_advance_mm": 9.525000000000002,
+      "right_area_advance_mm": 9.525000000000002,
+      "nodal_advance_mm": 8.890000000000002,
+      "left_nodal_advance_mm": 8.89,
+      "right_nodal_advance_mm": 8.890000000000004,
+      "CTOA_B_deg": 4.9389626095959365,
+      "CTOA_2B_deg": 3.077107771754344
+    },
+    "source_constitutive_domain_exceeded_in_sampled_tip_shells": false,
+    "plastic_sampling": "Selected shells with abs(y_center)<=2h and a0-h<=abs(x_center)<=outer refined break; not a global upper bound.",
+    "domain_stop_activated": true,
+    "sensor_final_status": {
+      "501": 1.0,
+      "502": 1.0
+    },
+    "broken_springs_final": 16,
+    "runtime_seconds": 151.91233779999675,
+    "raw_csv_sha256": "2ee53bc6288c8e27106a543397e467f9e19d2f25a5f598e344ea64568e821870",
+    "maximum_csv_output_dt_ms": 0.000128000000000128,
+    "reaction_sign_convention": "Positive upper differentiated impulse gives positive actuator work. Signed sum of upper/lower impulses checked against global PY; residual normalized by largest boundary impulse, absolute residual also recorded.",
+    "spring_work_note": "Trapezoidal connector-work diagnostic; deactivation and hysteresis jumps are not interpolated as calibrated dissipation.",
+    "resolved_shell_flags": {
+      "Ishell": 24,
+      "Ismstr": 4,
+      "Idril": 2,
+      "NPT": 5,
+      "ITHK": 1,
+      "IPLAS": 1,
+      "IPOS": 0
+    },
+    "additional_energy_diagnostics": {
+      "max_added_mass_g": 0.0,
+      "max_hourglass_energy_J": 0.0,
+      "max_rotation_energy_J": 0.0,
+      "max_contact_energy_J": 0.0
+    }
+  },
+  "comparison": {
+    "name": "ENG_PENALTY_DOUBLE_R1_VS_C",
+    "common_displacements": [
+      {
+        "displacement_mm": 0.2,
+        "assessed": true,
+        "a": {
+          "section_force_N": 7907.170958974362,
+          "external_work_J": 0.7913128912820516
+        },
+        "b": {
+          "section_force_N": 7939.643980487804,
+          "external_work_J": 0.7945675219512194
+        },
+        "force_difference_fraction_of_peak": 0.000859536600931515,
+        "work_difference_fraction_of_max_final": 0.000161497851371759
+      },
+      {
+        "displacement_mm": 0.5,
+        "assessed": true,
+        "a": {
+          "section_force_N": 19676.5338238806,
+          "external_work_J": 4.935217492537315
+        },
+        "b": {
+          "section_force_N": 19742.568508444438,
+          "external_work_J": 4.9525197111111074
+        },
+        "force_difference_fraction_of_peak": 0.001747888729420879,
+        "work_difference_fraction_of_max_final": 0.0008585524465504398
+      },
+      {
+        "displacement_mm": 0.8,
+        "assessed": true,
+        "a": {
+          "section_force_N": 31151.965196078436,
+          "external_work_J": 12.57477337254903
+        },
+        "b": {
+          "section_force_N": 31244.37910186918,
+          "external_work_J": 12.615303224299085
+        },
+        "force_difference_fraction_of_peak": 0.002446126992811646,
+        "work_difference_fraction_of_max_final": 0.00201112956872723
+      },
+      {
+        "displacement_mm": 1.0,
+        "assessed": true,
+        "a": {
+          "section_force_N": 37778.33705685279,
+          "external_work_J": 19.511166294416267
+        },
+        "b": {
+          "section_force_N": 36551.86323478258,
+          "external_work_J": 19.5609591304348
+        },
+        "force_difference_fraction_of_peak": 0.03246384509422246,
+        "work_difference_fraction_of_max_final": 0.002470767607175421
+      },
+      {
+        "displacement_mm": 1.01,
+        "assessed": false,
+        "a": {
+          "section_force_N": 36889.9194842105,
+          "external_work_J": 19.888608947368443
+        },
+        "b": null,
+        "force_difference_fraction_of_peak": null,
+        "work_difference_fraction_of_max_final": null
+      },
+      {
+        "displacement_mm": 1.02,
+        "assessed": false,
+        "a": null,
+        "b": null,
+        "force_difference_fraction_of_peak": null,
+        "work_difference_fraction_of_max_final": null
+      },
+      {
+        "displacement_mm": 1.03,
+        "assessed": false,
+        "a": null,
+        "b": null,
+        "force_difference_fraction_of_peak": null,
+        "work_difference_fraction_of_max_final": null
+      },
+      {
+        "displacement_mm": 1.04,
+        "assessed": false,
+        "a": null,
+        "b": null,
+        "force_difference_fraction_of_peak": null,
+        "work_difference_fraction_of_max_final": null
+      },
+      {
+        "displacement_mm": 1.05,
+        "assessed": false,
+        "a": null,
+        "b": null,
+        "force_difference_fraction_of_peak": null,
+        "work_difference_fraction_of_max_final": null
+      },
+      {
+        "displacement_mm": 1.1,
+        "assessed": false,
+        "a": null,
+        "b": null,
+        "force_difference_fraction_of_peak": null,
+        "work_difference_fraction_of_max_final": null
+      },
+      {
+        "displacement_mm": 1.2,
+        "assessed": false,
+        "a": null,
+        "b": null,
+        "force_difference_fraction_of_peak": null,
+        "work_difference_fraction_of_max_final": null
+      }
+    ],
+    "common_advances": [
+      {
+        "nodal_advance_mm": 2.54,
+        "assessed": true,
+        "a": {
+          "time_ms": 8.460133,
+          "displacement_mm": 1.012183,
+          "section_force_N": 36214.945,
+          "remote_initial_area_stress_MPa": 206.6355414812279,
+          "external_work_J": 19.97005,
+          "internal_energy_J": 19.95841,
+          "kinetic_energy_J": 0.01156996,
+          "actuator_work_J": 19.970665939867917,
+          "area_advance_mm": 3.174999999999998,
+          "left_area_advance_mm": 3.174999999999999,
+          "right_area_advance_mm": 3.174999999999997,
+          "nodal_advance_mm": 2.5399999999999974,
+          "left_nodal_advance_mm": 2.539999999999999,
+          "right_nodal_advance_mm": 2.5399999999999956,
+          "CTOA_B_deg": 4.268808900889398,
+          "CTOA_2B_deg": 2.908199374181722
+        },
+        "b": {
+          "time_ms": 8.381747,
+          "displacement_mm": 1.0018809999999998,
+          "section_force_N": 35699.670999999995,
+          "remote_initial_area_stress_MPa": 203.69548670546615,
+          "external_work_J": 19.63073,
+          "internal_energy_J": 19.61685,
+          "kinetic_energy_J": 0.013804690000000001,
+          "actuator_work_J": 19.631259903906713,
+          "area_advance_mm": 3.174999999999998,
+          "left_area_advance_mm": 3.174999999999999,
+          "right_area_advance_mm": 3.174999999999997,
+          "nodal_advance_mm": 2.5399999999999974,
+          "left_nodal_advance_mm": 2.539999999999999,
+          "right_nodal_advance_mm": 2.5399999999999956,
+          "CTOA_B_deg": 4.286130006142663,
+          "CTOA_2B_deg": 2.8625867454471328
+        },
+        "CTOA_B_difference_fraction": 0.004041199223645072,
+        "CTOA_2B_difference_fraction": 0.015684147771822914
+      },
+      {
+        "nodal_advance_mm": 5.08,
+        "assessed": true,
+        "a": {
+          "time_ms": 8.483531,
+          "displacement_mm": 1.0152059999999994,
+          "section_force_N": 32719.3834,
+          "remote_initial_area_stress_MPa": 186.69053634600024,
+          "external_work_J": 20.0798,
+          "internal_energy_J": 20.01856,
+          "kinetic_energy_J": 0.0609123,
+          "actuator_work_J": 20.08039228400141,
+          "area_advance_mm": 5.715,
+          "left_area_advance_mm": 5.715,
+          "right_area_advance_mm": 5.715,
+          "nodal_advance_mm": 5.080000000000002,
+          "left_nodal_advance_mm": 5.080000000000002,
+          "right_nodal_advance_mm": 5.080000000000002,
+          "CTOA_B_deg": 4.043897794960428,
+          "CTOA_2B_deg": 2.8051541355154717
+        },
+        "b": {
+          "time_ms": 8.402774,
+          "displacement_mm": 1.0046699999999997,
+          "section_force_N": 32383.0976,
+          "remote_initial_area_stress_MPa": 184.77175396553693,
+          "external_work_J": 19.73143,
+          "internal_energy_J": 19.65966,
+          "kinetic_energy_J": 0.0714446,
+          "actuator_work_J": 19.731957370186844,
+          "area_advance_mm": 5.715,
+          "left_area_advance_mm": 5.715,
+          "right_area_advance_mm": 5.715,
+          "nodal_advance_mm": 5.080000000000002,
+          "left_nodal_advance_mm": 5.080000000000002,
+          "right_nodal_advance_mm": 5.080000000000002,
+          "CTOA_B_deg": 4.1829330525929524,
+          "CTOA_2B_deg": 2.81592534559074
+        },
+        "CTOA_B_difference_fraction": 0.033238700185827384,
+        "CTOA_2B_difference_fraction": 0.0038251049844536043
+      },
+      {
+        "nodal_advance_mm": 7.62,
+        "assessed": true,
+        "a": {
+          "time_ms": 8.493713,
+          "displacement_mm": 1.016514999999999,
+          "section_force_N": 29146.422599999998,
+          "remote_initial_area_stress_MPa": 166.30390619650805,
+          "external_work_J": 20.12557,
+          "internal_energy_J": 19.93843,
+          "kinetic_energy_J": 0.1860709,
+          "actuator_work_J": 20.12615228771867,
+          "area_advance_mm": 8.255,
+          "left_area_advance_mm": 8.254999999999999,
+          "right_area_advance_mm": 8.255000000000003,
+          "nodal_advance_mm": 7.620000000000001,
+          "left_nodal_advance_mm": 7.620000000000001,
+          "right_nodal_advance_mm": 7.620000000000001,
+          "CTOA_B_deg": 4.14571691141945,
+          "CTOA_2B_deg": 2.7201375133001777
+        },
+        "b": {
+          "time_ms": 8.412069,
+          "displacement_mm": 1.0058969999999998,
+          "section_force_N": 29211.4724,
+          "remote_initial_area_stress_MPa": 166.6750678991213,
+          "external_work_J": 19.77399,
+          "internal_energy_J": 19.58227,
+          "kinetic_energy_J": 0.1908354,
+          "actuator_work_J": 19.774516948622157,
+          "area_advance_mm": 8.255,
+          "left_area_advance_mm": 8.254999999999999,
+          "right_area_advance_mm": 8.255000000000003,
+          "nodal_advance_mm": 7.620000000000001,
+          "left_nodal_advance_mm": 7.620000000000001,
+          "right_nodal_advance_mm": 7.620000000000001,
+          "CTOA_B_deg": 4.126872000965479,
+          "CTOA_2B_deg": 2.762548190910663
+        },
+        "CTOA_B_difference_fraction": 0.004545633688123463,
+        "CTOA_2B_difference_fraction": 0.015352013677091665
+      }
+    ],
+    "coverage": {
+      "displacement_points_assessed": 4,
+      "displacement_points_requested": 11,
+      "displacement_points_after_first_complete_separation_in_both": 1,
+      "advance_points_assessed": 3,
+      "advance_points_requested": 3
+    },
+    "maximum_force_difference_fraction": 0.03246384509422246,
+    "maximum_work_difference_fraction": 0.002470767607175421,
+    "maximum_ctoa_difference_fraction": 0.033238700185827384,
+    "checks": {
+      "force_at_common_displacement": true,
+      "work_at_common_displacement": true,
+      "ctoa_at_exact_common_advance": true,
+      "all_requested_common_advances_assessed": true,
+      "all_requested_common_displacements_assessed": false
+    },
+    "all_comparison_checks_pass": false,
+    "unassessed_is_not_pass": true,
+    "force_work_checks_apply_only_to_assessed_points": true,
+    "baseline_case": "ENG_DENSE_R1",
+    "factor": "penalty_double",
+    "declared_force_work_ctoa_limits": {
+      "force": 0.05,
+      "work": 0.05,
+      "ctoa": 0.1
+    }
+  },
+  "onset_diagnostic": {
+    "baseline": {
+      "time_ms": 7.946789,
+      "displacement_mm": 0.9402124,
+      "section_force_N": 36084.586,
+      "remote_initial_area_stress_MPa": 205.8917379892731,
+      "external_work_J": 17.2969,
+      "internal_energy_J": 17.2963,
+      "kinetic_energy_J": 0.0005985194000000001,
+      "actuator_work_J": 17.297488586034202,
+      "area_advance_mm": 0.6349999999999998,
+      "left_area_advance_mm": 0.6350000000000016,
+      "right_area_advance_mm": 0.634999999999998,
+      "nodal_advance_mm": -1.7763568394002505e-15,
+      "left_nodal_advance_mm": 0.0,
+      "right_nodal_advance_mm": -3.552713678800501e-15,
+      "CTOA_B_deg": 3.6218156220007094,
+      "CTOA_2B_deg": 2.13419906163711
+    },
+    "variant": {
+      "time_ms": 7.961738,
+      "displacement_mm": 0.9424520000000003,
+      "section_force_N": 36215.933999999994,
+      "remote_initial_area_stress_MPa": 206.64118452584728,
+      "external_work_J": 17.43048,
+      "internal_energy_J": 17.42989,
+      "kinetic_energy_J": 0.0005917658,
+      "actuator_work_J": 17.43099641525399,
+      "area_advance_mm": 0.6349999999999998,
+      "left_area_advance_mm": 0.6350000000000016,
+      "right_area_advance_mm": 0.634999999999998,
+      "nodal_advance_mm": -1.7763568394002505e-15,
+      "left_nodal_advance_mm": 0.0,
+      "right_nodal_advance_mm": -3.552713678800501e-15,
+      "CTOA_B_deg": 3.6317505416069173,
+      "CTOA_2B_deg": 2.1373329943721204
+    },
+    "relative_onset_displacement_difference": 0.002382014957471675,
+    "relative_onset_section_force_difference": 0.003640002964146266,
+    "interpretation": "first recorded contiguous complete separation; diagnostic only, independent of requested later advances"
+  },
+  "spring_work": {
+    "rows": 68901,
+    "min_output_dt_ms": 0.00012199999999928934,
+    "max_output_dt_ms": 0.000128000000000128,
+    "spring_work_error_fraction": 8.280158044486534e-08,
+    "final_IE_J": 1.7799129860000005,
+    "final_trapezoid_work_J": 1.7799130285351668,
+    "final_normal_trapezoid_work_J": 1.7799129802170066,
+    "final_shear_trapezoid_work_J": 4.831816011373644e-08,
+    "max_absolute_work_discrepancy_J": 1.4737960829513952e-07,
+    "deactivation_events": [
+      {
+        "element_id": 3120,
+        "time_ms": 7.961738,
+        "previous_time_ms": 7.961615,
+        "normal_gap_before_mm": 0.1212028,
+        "normal_gap_after_mm": 0.1212137,
+        "normal_force_before_N": 0.05796727,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 0.0,
+        "trapezoid_increment_J": 3.185114929038826e-10
+      },
+      {
+        "element_id": 3121,
+        "time_ms": 7.961738,
+        "previous_time_ms": 7.961615,
+        "normal_gap_before_mm": 0.1212028,
+        "normal_gap_after_mm": 0.1212137,
+        "normal_force_before_N": 0.05796727,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 0.0,
+        "trapezoid_increment_J": 3.185114929038826e-10
+      },
+      {
+        "element_id": 3119,
+        "time_ms": 8.364515,
+        "previous_time_ms": 8.364393,
+        "normal_gap_before_mm": 0.1209423,
+        "normal_gap_after_mm": 0.1212132,
+        "normal_force_before_N": 3.340578,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 4.500000000007276e-07,
+        "trapezoid_increment_J": 4.52606279582436e-07
+      },
+      {
+        "element_id": 3122,
+        "time_ms": 8.364515,
+        "previous_time_ms": 8.364393,
+        "normal_gap_before_mm": 0.1209423,
+        "normal_gap_after_mm": 0.1212132,
+        "normal_force_before_N": 3.340578,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 4.500000000007276e-07,
+        "trapezoid_increment_J": 4.52606279582436e-07
+      },
+      {
+        "element_id": 3118,
+        "time_ms": 8.381747,
+        "previous_time_ms": 8.381625,
+        "normal_gap_before_mm": 0.1209884,
+        "normal_gap_after_mm": 0.1214521,
+        "normal_force_before_N": 2.770021,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 6.400000000041928e-07,
+        "trapezoid_increment_J": 6.422502759900133e-07
+      },
+      {
+        "element_id": 3123,
+        "time_ms": 8.381747,
+        "previous_time_ms": 8.381625,
+        "normal_gap_before_mm": 0.1209884,
+        "normal_gap_after_mm": 0.1214521,
+        "normal_force_before_N": 2.770021,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 6.400000000041928e-07,
+        "trapezoid_increment_J": 6.422502759900133e-07
+      },
+      {
+        "element_id": 3117,
+        "time_ms": 8.396049,
+        "previous_time_ms": 8.395926,
+        "normal_gap_before_mm": 0.1206454,
+        "normal_gap_after_mm": 0.1214448,
+        "normal_force_before_N": 7.015758,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 2.7999999999934743e-06,
+        "trapezoid_increment_J": 2.804184556884017e-06
+      },
+      {
+        "element_id": 3124,
+        "time_ms": 8.396049,
+        "previous_time_ms": 8.395926,
+        "normal_gap_before_mm": 0.1206454,
+        "normal_gap_after_mm": 0.1214448,
+        "normal_force_before_N": 7.015758,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 2.7999999999934743e-06,
+        "trapezoid_increment_J": 2.804184556884017e-06
+      },
+      {
+        "element_id": 3116,
+        "time_ms": 8.402774,
+        "previous_time_ms": 8.402651,
+        "normal_gap_before_mm": 0.1209603,
+        "normal_gap_after_mm": 0.12196,
+        "normal_force_before_N": 3.117011,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 1.5499999999946114e-06,
+        "trapezoid_increment_J": 1.5583294106656437e-06
+      },
+      {
+        "element_id": 3125,
+        "time_ms": 8.402774,
+        "previous_time_ms": 8.402651,
+        "normal_gap_before_mm": 0.1209603,
+        "normal_gap_after_mm": 0.12196,
+        "normal_force_before_N": 3.117011,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 1.5499999999946114e-06,
+        "trapezoid_increment_J": 1.5583294106656437e-06
+      },
+      {
+        "element_id": 3115,
+        "time_ms": 8.408401,
+        "previous_time_ms": 8.408278,
+        "normal_gap_before_mm": 0.1204015,
+        "normal_gap_after_mm": 0.1218483,
+        "normal_force_before_N": 10.03577,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 7.260000000002265e-06,
+        "trapezoid_increment_J": 7.260111385541004e-06
+      },
+      {
+        "element_id": 3126,
+        "time_ms": 8.408401,
+        "previous_time_ms": 8.408278,
+        "normal_gap_before_mm": 0.1204015,
+        "normal_gap_after_mm": 0.1218483,
+        "normal_force_before_N": 10.03577,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 7.260000000002265e-06,
+        "trapezoid_increment_J": 7.260111385541004e-06
+      },
+      {
+        "element_id": 3114,
+        "time_ms": 8.412069,
+        "previous_time_ms": 8.411947,
+        "normal_gap_before_mm": 0.1204863,
+        "normal_gap_after_mm": 0.1220855,
+        "normal_force_before_N": 8.985105,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 7.189999999994257e-06,
+        "trapezoid_increment_J": 7.184431939358206e-06
+      },
+      {
+        "element_id": 3127,
+        "time_ms": 8.412069,
+        "previous_time_ms": 8.411947,
+        "normal_gap_before_mm": 0.1204863,
+        "normal_gap_after_mm": 0.1220855,
+        "normal_force_before_N": 8.985105,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 7.189999999994257e-06,
+        "trapezoid_increment_J": 7.184431939358206e-06
+      },
+      {
+        "element_id": 3113,
+        "time_ms": 8.416348,
+        "previous_time_ms": 8.416225,
+        "normal_gap_before_mm": 0.1202533,
+        "normal_gap_after_mm": 0.1224758,
+        "normal_force_before_N": 11.86963,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 1.318000000000552e-05,
+        "trapezoid_increment_J": 1.3190177006504268e-05
+      },
+      {
+        "element_id": 3128,
+        "time_ms": 8.416348,
+        "previous_time_ms": 8.416225,
+        "normal_gap_before_mm": 0.1202533,
+        "normal_gap_after_mm": 0.1224758,
+        "normal_force_before_N": 11.86963,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 1.318000000000552e-05,
+        "trapezoid_increment_J": 1.3190177006504268e-05
+      }
+    ]
+  },
+  "sampling": {
+    "rows": 68901,
+    "engine_cycles": 68901,
+    "requested_interval_ms": 1e-05,
+    "minimum_solver_dt_ms": 0.0001221559,
+    "last_saved_time_ms": 8.418382,
+    "requested_run_end_ms": 12.0,
+    "maximum_saved_timestamp_increment_ms": 0.000128000000000128,
+    "note": "CSV times rounded. Row/cycle equality verifies coverage; last saved row is not extrapolated to requested end."
+  },
+  "config_sha256": "34698d6f904762e384eb9cabae0bf880e163fa1a84b313bf32e5820e56748660",
+  "effective_configuration_sha256": "b239080f40a0412c1a0dbbefdfae7d5ceeb489a472406b2c9220650ee2280205",
+  "audit_script_sha256": "8b0e512731525e42ae7865b965bfc5defa1aaf73466774f7cba1c1c70533e5e8",
+  "predecessor_audit_sha256": "f34e051372107178a46c7f71727d93f2c799e439839123f9f8ee45ca94c7799d",
+  "C_baseline_case_audit_sha256": "a370aa9c28bfd89c676544500470ebe88754c9fea15c6620164310e8596b311e",
+  "C_baseline_history_sha256": "b8b728e692ea8fb81e4f89a9bf47dc8ea1783be42ee13e71fea9b9021753e0be",
+  "mixed_mode_dissipation_calibrated": false,
+  "physical_propagation_qualified": false,
+  "historical_penetration_conclusion_authorized": false
+}

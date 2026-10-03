@@ -1,0 +1,122 @@
+{
+  "id": "IMPACT-I02I-E_PLAN_FROM_D",
+  "declared_utc": "2026-10-03T08:02:43.670722+00:00",
+  "seed": 1102013,
+  "random_draws": 0,
+  "scope": "Fresh bounded median M(T) sensitivities before Gf15/60; B/C trajectories reused as references",
+  "baseline": {
+    "configuration": "wtc1_simulation_v8/data/impact_i02i_sampling_predeclaration.json",
+    "sha256": "9990941a36c573870db32eeeaef3c38471002b8e7cdbd3c322a57039590405bd",
+    "case_ids": [
+      "ENG_DENSE_R1",
+      "TRUE_DENSE_R1"
+    ],
+    "h_mm": 1.27,
+    "Gf_N_per_mm": 30.0,
+    "Kn_N_per_mm3": 56000.0,
+    "Kt_N_per_mm3": 21500.0,
+    "loading_ms": 12.0,
+    "target_displacement_mm": 1.2,
+    "outer_x_break_mm": 22.86,
+    "near_seam_half_height_mm": 12.7
+  },
+  "factors_one_at_a_time": [
+    {
+      "name": "speed",
+      "interpretations": [
+        "engineering",
+        "true_total"
+      ],
+      "loading_ms": 24.0,
+      "other_values_unchanged": true
+    },
+    {
+      "name": "penalty_half",
+      "interpretations": [
+        "engineering",
+        "true_total"
+      ],
+      "Kn_N_per_mm3": 28000.0,
+      "Kt_N_per_mm3": 10750.0,
+      "other_values_unchanged": true
+    },
+    {
+      "name": "penalty_double",
+      "interpretations": [
+        "engineering",
+        "true_total"
+      ],
+      "Kn_N_per_mm3": 112000.0,
+      "Kt_N_per_mm3": 43000.0,
+      "other_values_unchanged": true
+    },
+    {
+      "name": "domain",
+      "interpretations": [
+        "engineering",
+        "true_total"
+      ],
+      "outer_x_break_mm": 30.48,
+      "near_seam_half_height_mm": 12.7,
+      "guard_at_mm": 30.48,
+      "refined_domain_maximum_area_advance_mm": 17.78,
+      "outer_width_mm": 76.2,
+      "other_values_unchanged": true
+    }
+  ],
+  "invariants": [
+    "fresh histories, no damaged property change",
+    "fixed initial reference area per connector",
+    "QEPH24 Ismstr4 Ithick1 Iplas1",
+    "both NASA conventions, no branch selected",
+    "dense TH <= minimum solved dt, explicitly check row/cycle count",
+    "no mass scaling, one thread",
+    "boundary impulse and work, connector work, global energy",
+    "no extrapolation of missing displacement or crack topology"
+  ],
+  "numerical_comparisons": {
+    "common_displacements_mm": [
+      0.2,
+      0.5,
+      0.8,
+      1.0,
+      1.01,
+      1.02,
+      1.03,
+      1.04,
+      1.05,
+      1.1,
+      1.2
+    ],
+    "common_nodal_advances_mm": [
+      2.54,
+      5.08,
+      7.62
+    ],
+    "force_fraction": 0.05,
+    "work_fraction": 0.05,
+    "ctoa_fraction": 0.1,
+    "inertia_significant_window_fraction": 0.01,
+    "energy_residual_fraction": 0.005,
+    "independent_boundary_work_fraction": 0.01,
+    "spring_work_fraction": 0.005,
+    "event": "first exact contiguous deactivation event at a requested nodal advance; missing event remains unassessed"
+  },
+  "cost": {
+    "expected_wall_minutes": [
+      15,
+      30
+    ],
+    "maximum_campaign_wall_minutes": 40,
+    "maximum_case_wall_seconds": 900,
+    "execution_order": [
+      "speed",
+      "penalty_half",
+      "penalty_double",
+      "domain"
+    ],
+    "rule": "announce bounded campaign before execution; stop at cost ceiling, preserve completed cases, continue remaining declared cases next iteration rather than expanding cost"
+  },
+  "qualification": "Sensitivity/mesh/domain coverage only; no mixed-mode, physical alloy, full Boeing, facade or historical penetration qualification. Gf15/60 deferred until these dependencies are assessed.",
+  "publication": "D alone = pending 1/2; update after a verified E. Private GitHub admin excluded."
+}
