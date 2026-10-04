@@ -1,0 +1,19 @@
+{
+  "id": "IMPACT-I02I-J-TERMINAL-INTERVAL",
+  "declared_utc": "2026-10-04T15:48:55.996060+00:00",
+  "seed": 1102018,
+  "random_draws": 0,
+  "parent_config_sha256": "fb6a12775d5bcf390e1a3d6399dfc9448a0a0cfad4c20b7f5f160c96fef2115d",
+  "raw_audit_sha256": "a00ba1f3301998480d2af658bc753f06984588b26c7c78124f9990c908721a8b",
+  "scope": "Separate conditional endpoint rounding diagnostic; does not reassess or override J raw timing gates",
+  "gates": {
+    "endpoint_rule": "Closed exact nearest float32 time cell intersects [declared_end-2*cap,declared_end]",
+    "old_raw_failures_retained": true,
+    "CSV_endpoint_in_binary_cell": true,
+    "no_new_time_shift": true
+  },
+  "rounding_assumption": "nearest binary32, not proven engine internal time precision",
+  "inputs": "Only J decoded_binary.csv and immutable J parent config",
+  "no_solver_or_converter": true,
+  "no_fit_or_new_empirical_tolerance": true
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-04T13:02:23.796217+00:00",
+  "updated_at": "2026-10-04T16:21:03.976041+00:00",
   "active_thread": {
     "id": "019ffb88-05a7-7f60-adff-6804df0d66a5",
     "title": "Poursuivre enquete WTC 1 V4",
@@ -19,10 +19,10 @@
     "targeted_v10i_working_copy_count": 5,
     "targeted_v10i_working_copy_directory": "wtc1_simulation_v8/input/v10i_structural_sources"
   },
-  "current_iteration": "IMPACT-I02I-I",
-  "current_status": "completed_bounded_normal_return_with_four_raw_energy_sign_failures",
-  "next_iteration": "IMPACT-I02I-J",
-  "next_objective": "J : diagnostiquer la précision des sorties sauvegardées T01/CSV et vérifier indépendamment IE-U avant nouveau mode mixte. Conserver les quatre échecs I de non-négativité brute et tous les échecs E/F/G ; ne pas corriger, déphaser, clipper ou réétiqueter une sortie. H+I publiée et vérifiée ; prochaine paire après deux itérations vérifiées J+K. Conventions NASA ouvertes, Gf30 hypothétique, Gf15/60 différés ; Boeing/façade/feu/effondrement non qualifiés. V11F/V11R/V11S préservés.",
+  "current_iteration": "IMPACT-I02I-K",
+  "current_status": "completed_bounded_separable_free_XY_without_separation",
+  "next_iteration": "IMPACT-I02I-L",
+  "next_objective": "L : établir un registre énergétique de la réserve tangentielle lors de OFF, d’abord à partir des cas F sauvegardés et des références H/K. Pré-déclarer le diagnostic, garder les lignes brutes et vérifier toute signature binaire avant lecture ; quantifier Ux avant, IE/KE/WE après et ce que les sorties ne permettent pas d’identifier. Aucun déphasage, clipping, modification d’état endommagé ou ancien solveur relancé. Aucun nouveau mode mixte libre avec séparation avant référence énergétique explicite. Conserver E/F/G, quatre signes I et trois fins brutes J ; NASA/Gf30 hypothétique/Gf15/60 ouverts, V11F/V11R/V11S conservés. J+K GitHub due après contrôle distant/archives/CI. Impact Boeing/façade, feu et effondrement non qualifiés.",
   "impact_i02h_key_results": {
     "accepted_cases": 7,
     "new_controls_executed": 2,
@@ -1194,7 +1194,17 @@
     "impact_i02i_i_results": "wtc1_simulation_v8/output/impact_i02i_free_return/verification_r1/summary.json",
     "impact_i02i_i_handoff": "harness/handoffs/WTC1_IMPACT_I02I_I_HANDOFF.md",
     "impact_i02i_i_publication_verification": "wtc1_simulation_v8/output/impact_i02i_free_return/publication_verification.json",
-    "impact_i02i_j_plan": "wtc1_simulation_v8/data/impact_i02i_j_plan_from_i.json"
+    "impact_i02i_j_plan": "wtc1_simulation_v8/data/impact_i02i_j_plan_from_i.json",
+    "impact_i02i_j_report": "wtc1_simulation_v8/output/impact_i02i_output_precision/rapport_impact_i02i_output_precision.md",
+    "impact_i02i_j_results": "wtc1_simulation_v8/output/impact_i02i_output_precision/resultats_impact_i02i_output_precision.json",
+    "impact_i02i_j_handoff": "harness/handoffs/WTC1_IMPACT_I02I_J_HANDOFF.md",
+    "impact_i02i_j_publication_verification": "wtc1_simulation_v8/output/impact_i02i_output_precision/publication_verification.json",
+    "impact_i02i_k_plan": "wtc1_simulation_v8/data/impact_i02i_k_plan_from_j.json",
+    "impact_i02i_k_report": "wtc1_simulation_v8/output/impact_i02i_free_mixed/rapport_impact_i02i_free_mixed.md",
+    "impact_i02i_k_results": "wtc1_simulation_v8/output/impact_i02i_free_mixed/verification_r1/summary.json",
+    "impact_i02i_k_handoff": "harness/handoffs/WTC1_IMPACT_I02I_K_HANDOFF.md",
+    "impact_i02i_k_publication_verification": "wtc1_simulation_v8/output/impact_i02i_free_mixed/publication_verification.json",
+    "impact_i02i_l_plan": "wtc1_simulation_v8/data/impact_i02i_l_plan_from_k.json"
   },
   "v8g_key_results": {
     "nist_hat_transfer_at_80_min_kip": 6748.0,
@@ -6736,5 +6746,69 @@
     },
     "precision_compatible_not_proven": true,
     "github_pending_iterations": 0
+  },
+  "impact_i02i_j_key_results": {
+    "case_checks_passed": 53,
+    "case_checks_total": 56,
+    "reference_checks_passed": 6,
+    "reference_checks_total": 6,
+    "terminal_interval_checks_passed": 8,
+    "terminal_interval_checks_total": 8,
+    "all_declared_raw_checks_pass": false,
+    "raw_failed_gates": {
+      "NORMAL_ARREST_RETURN_050NS": [
+        "no_truncation_or_extrapolation"
+      ],
+      "NORMAL_ARREST_RETURN_025NS": [],
+      "NORMAL_SUBPEAK_RETURN_025NS": [
+        "no_truncation_or_extrapolation"
+      ],
+      "NORMAL_SUBPEAK_RETURN_012P5NS": [
+        "no_truncation_or_extrapolation"
+      ]
+    },
+    "raw_failures_preserved": 3,
+    "binary_value_reader_verified": true,
+    "total_rows": 1203,
+    "total_values": 49323,
+    "runtime_seconds": 0.28570829999807756,
+    "binary_sign_observable_near_zero": false,
+    "official_binary_schema_verified": false,
+    "old_I_four_sign_failures_preserved": true,
+    "physical_fracture_calibrated": false,
+    "physical_propagation_qualified": false,
+    "mixed_mode_qualified": false,
+    "source_convention_verified": false,
+    "E_sensitivities_resolved": false,
+    "saved_cases_read": 4,
+    "solver_jobs": 0,
+    "old_files_preserved": 1967,
+    "github_pending_iterations": 1
+  },
+  "impact_i02i_k_key_results": {
+    "case_checks_passed": 254,
+    "case_checks_total": 254,
+    "comparison_checks_passed": 28,
+    "comparison_checks_total": 28,
+    "reference_checks_passed": 26,
+    "reference_checks_total": 26,
+    "all_declared_checks_pass": true,
+    "runtime_seconds": 3.5660642000075313,
+    "total_rows": 1922,
+    "no_old_solver_rerun": true,
+    "old_I_four_sign_failures_preserved": true,
+    "old_J_three_raw_endpoint_failures_preserved": true,
+    "official_schema_verified": false,
+    "mixed_fracture_calibrated": false,
+    "physical_propagation_qualified": false,
+    "aircraft_impact_qualified": false,
+    "cases": 4,
+    "solver_jobs": 12,
+    "old_files_preserved": 2011,
+    "numerical_two_separable_modes_verified": true,
+    "mixed_mode_qualified": false,
+    "source_convention_verified": false,
+    "E_sensitivities_resolved": false,
+    "github_pending_iterations": 2
   }
 }

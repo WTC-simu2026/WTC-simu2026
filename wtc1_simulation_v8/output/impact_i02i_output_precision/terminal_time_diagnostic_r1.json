@@ -1,0 +1,73 @@
+{
+  "created_utc": "2026-10-04T15:48:56.474882+00:00",
+  "pass": true,
+  "checks": {
+    "NORMAL_ARREST_RETURN_050NS_interval": true,
+    "NORMAL_ARREST_RETURN_050NS_CSV": true,
+    "NORMAL_ARREST_RETURN_025NS_interval": true,
+    "NORMAL_ARREST_RETURN_025NS_CSV": true,
+    "NORMAL_SUBPEAK_RETURN_025NS_interval": true,
+    "NORMAL_SUBPEAK_RETURN_025NS_CSV": true,
+    "NORMAL_SUBPEAK_RETURN_012P5NS_interval": true,
+    "NORMAL_SUBPEAK_RETURN_012P5NS_CSV": true
+  },
+  "cases": {
+    "NORMAL_ARREST_RETURN_050NS": {
+      "binary_end_ms": 0.012000000104308128,
+      "declared_end_ms": 0.012,
+      "binary_minus_declared_ms": 1.043081283569336e-10,
+      "lower_exact_ms": "25769803/2147483648",
+      "upper_exact_ms": "25769805/2147483648",
+      "lower_ms": 0.011999999638646841,
+      "upper_ms": 0.012000000569969416,
+      "endpoint_window_compatible": true,
+      "CSV_end_inside_binary_cell": true,
+      "raw_time_gate_still_passes": false,
+      "raw_gate_not_overridden": true
+    },
+    "NORMAL_ARREST_RETURN_025NS": {
+      "binary_end_ms": 0.01197499968111515,
+      "declared_end_ms": 0.012,
+      "binary_minus_declared_ms": -2.5000318884849547e-05,
+      "lower_exact_ms": "25716115/2147483648",
+      "upper_exact_ms": "25716117/2147483648",
+      "lower_ms": 0.011974999215453863,
+      "upper_ms": 0.011975000146776438,
+      "endpoint_window_compatible": true,
+      "CSV_end_inside_binary_cell": true,
+      "raw_time_gate_still_passes": true,
+      "raw_gate_not_overridden": true
+    },
+    "NORMAL_SUBPEAK_RETURN_025NS": {
+      "binary_end_ms": 0.004000000189989805,
+      "declared_end_ms": 0.004,
+      "binary_minus_declared_ms": 1.899898052215576e-10,
+      "lower_exact_ms": "17179869/4294967296",
+      "upper_exact_ms": "17179871/4294967296",
+      "lower_ms": 0.003999999957159162,
+      "upper_ms": 0.004000000422820449,
+      "endpoint_window_compatible": true,
+      "CSV_end_inside_binary_cell": true,
+      "raw_time_gate_still_passes": false,
+      "raw_gate_not_overridden": true
+    },
+    "NORMAL_SUBPEAK_RETURN_012P5NS": {
+      "binary_end_ms": 0.004000000189989805,
+      "declared_end_ms": 0.004,
+      "binary_minus_declared_ms": 1.899898052215576e-10,
+      "lower_exact_ms": "17179869/4294967296",
+      "upper_exact_ms": "17179871/4294967296",
+      "lower_ms": 0.003999999957159162,
+      "upper_ms": 0.004000000422820449,
+      "endpoint_window_compatible": true,
+      "CSV_end_inside_binary_cell": true,
+      "raw_time_gate_still_passes": false,
+      "raw_gate_not_overridden": true
+    }
+  },
+  "config_sha256": "a88d66ef9af479de2e5b3ab8c80c296dada0b617fd74445a0acb5d14a080443c",
+  "script_sha256": "e9c33851418b2564f34d0a718ab7a9faa31ec245cfe40072c1dd1b3d5b055afb",
+  "parent_raw_gates_unchanged": true,
+  "raw_failures_preserved": 3,
+  "interpretation": "Endpoint compatibility only under quantization assumption; no missing CSV row, no extrapolation used; three raw binary-end tests stay failed."
+}

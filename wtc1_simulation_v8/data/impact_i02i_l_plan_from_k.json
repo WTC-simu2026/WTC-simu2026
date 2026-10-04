@@ -1,0 +1,51 @@
+{
+  "id": "IMPACT-I02I-L_PLAN_FROM_K",
+  "created_utc": "2026-10-04T16:20:29.331376+00:00",
+  "seed": 1102020,
+  "random_draws": 0,
+  "scope": "Saved-output energy ledger at whole-element deletion before new free mixed separation",
+  "inputs": {
+    "saved_F_summary": {
+      "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/verification_r1/summary.json",
+      "sha256": "c8a6c7dd5400abc32afae6c6d15009ebf8381bd0e61c8e3310913a05c87f40f4"
+    },
+    "saved_H_reference": {
+      "path": "wtc1_simulation_v8/output/impact_i02i_free_fracture/reference_verification.json",
+      "sha256": "a0acd546c9ec594066a50817fe003cddf21f70cb4c53fb4a42238b66b7d443f8"
+    },
+    "saved_K_summary": {
+      "path": "wtc1_simulation_v8/output/impact_i02i_free_mixed/verification_r1/summary.json",
+      "sha256": "6499197f6ba45904908ee9539203d7c449ddd80d691c61c57802ed9917347654"
+    },
+    "saved_K_reference": {
+      "path": "wtc1_simulation_v8/output/impact_i02i_free_mixed/reference_verification.json",
+      "sha256": "1f550718044701a0ee4e4a9f99ed389dc18f86ec0937fc43c7b5bf0b4b01dc1c"
+    }
+  },
+  "before_analysis": [
+    "Read saved F event measures and H/K references; do not rerun historical engines",
+    "Predeclare inventory, exact signature guards, raw-row event selection and rational quantization; reject unknown binary layouts",
+    "Separate Ux, Uy, accumulated IE, KE and external work on original times; do not move OFF/FX or reinterpret same-row failures",
+    "Compare a conditional ledger with released Ux versus retained Ux at deletion, explicitly distinguishing bookkeeping from a material law",
+    "Identify unobservable internal channel/centering and do not infer thermal or physical mixed fracture energy from IE alone"
+  ],
+  "expected_F_control": "FIXED cases retain IE about 0.0343 J after OFF with pre-OFF elastic X reserve about 0.0043 J; imposed kinematics are not a free-release validation",
+  "before_future_engine": "Derive separable free mixed separation plus declared deletion-energy policy; fresh state only, no modification of an old damaged material",
+  "budget": {
+    "maximum_diagnostic_seconds": 120,
+    "solver_jobs_planned": 0,
+    "source_archive_scan": false
+  },
+  "unchanged": [
+    "Five same-row OFF/FX F failures",
+    "Eight strict G diagnostics",
+    "E inertia/angle/coverage",
+    "Four raw I sign failures",
+    "Three raw J endpoint failures",
+    "NASA conventions",
+    "Gf30 hypothetical;15/60 deferred",
+    "V11F/V11R/V11S"
+  ],
+  "physical_propagation_qualified": false,
+  "publication": "J+K due after K verified, then next pair L+M; local cadence authoritative"
+}

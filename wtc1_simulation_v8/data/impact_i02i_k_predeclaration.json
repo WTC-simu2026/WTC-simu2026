@@ -1,0 +1,466 @@
+{
+  "id": "IMPACT-I02I-K",
+  "seed": 1102019,
+  "random_draws": 0,
+  "scope": "Two free translational modes X/Y simultaneously, no separation or compression; fresh states only",
+  "units": {
+    "mass": "g",
+    "length": "mm",
+    "time": "ms",
+    "force": "N",
+    "solver_energy": "N mm = mJ",
+    "reported_energy": "J = 0.001 N mm",
+    "reaction_history": "cumulative impulse N ms, independently checked by boundary work"
+  },
+  "connector": {
+    "initial_area_mm2": 1.0,
+    "kn_N_per_mm": 56000.0,
+    "kt_N_per_mm": 21500.0,
+    "peak_normal_force_N": 495.0,
+    "hypothetical_Gf_N_per_mm": 30.0,
+    "mass_g": 0.2,
+    "rotational_inertia_g_mm2": 0.001,
+    "H_normal": 2,
+    "H_shear": 2,
+    "shear_failure_disabled": true,
+    "normal_failure": "whole element deactivation when normal gap reaches 2 Gf/peak",
+    "damping": 0.0,
+    "rotations": "blocked at both nodes",
+    "history": "all fresh; no restart, damaged-state property substitution or mass scaling"
+  },
+  "loading": {
+    "segment_ms": 1.0,
+    "subdivisions": 800,
+    "path": "quintic 10s3-15s4+6s5 per segment",
+    "shear_target_mm": 0.02,
+    "normal_scale": "deltaf=2 Gf/peak; coordinates below are fractions of deltaf"
+  },
+  "execution": {
+    "threads": 1,
+    "history_dt_ms": 1e-06,
+    "maximum_case_wall_seconds": 90,
+    "maximum_campaign_wall_seconds": 600,
+    "expected_wall_minutes": [
+      1,
+      5
+    ],
+    "no_mass_scaling": true,
+    "preflight": "all warnings/errors block engine",
+    "end_hold_ms": 0.002,
+    "maximum_time_step_keyword": "/DTIX",
+    "initial_dt_equals_maximum": true
+  },
+  "gates": {
+    "raw_amplitude_fraction": 0.01,
+    "energy_fraction": 0.005,
+    "work_fraction": 0.005,
+    "comparison_fraction": 0.005,
+    "mass_fraction": 1e-05,
+    "added_mass_g": 1e-12,
+    "no_external_work_J": 1e-12,
+    "fixed_gap_mm": 1e-10,
+    "force_zero_N": 1e-05,
+    "free_axis_reaction_N_ms": 1e-10,
+    "other_axis_momentum_N_ms": 1e-10,
+    "initial_fraction": 1e-06,
+    "maximum_solver_dt_relative_tolerance": 1e-05,
+    "csv_time_difference_tolerance_ms": 2e-08,
+    "end_coverage_steps": 2,
+    "turn_time_steps": 2,
+    "signed_D_tolerance": null,
+    "quantized_D_rule": "Exact nearest IEEE32 cell: D_upper >=0 on every row; in historically elastic phase D_lower<=0<=D_upper",
+    "time_end_rule": "Exact nearest IEEE32 time cell intersects [requested_end-2*maximum_dt,requested_end]",
+    "raw_signed_D_J_reported_without_override": 1e-10
+  },
+  "cases": [
+    {
+      "id": "FREE_MIXED_ARREST_025NS",
+      "family": "FREE_MIXED_ARREST",
+      "stage": "normal",
+      "maximum_dt_ms": 2.5e-05,
+      "dt_scale": 0.2,
+      "fails": true,
+      "expected_OFF": 1,
+      "end_ms": 0.012,
+      "initial_velocity_mm_per_ms": 20.0,
+      "initial_vX_mm_per_ms": 10.0
+    },
+    {
+      "id": "FREE_MIXED_ARREST_012P5NS",
+      "family": "FREE_MIXED_ARREST",
+      "stage": "normal",
+      "maximum_dt_ms": 1.25e-05,
+      "dt_scale": 0.2,
+      "fails": true,
+      "expected_OFF": 1,
+      "end_ms": 0.012,
+      "initial_velocity_mm_per_ms": 20.0,
+      "initial_vX_mm_per_ms": 10.0
+    },
+    {
+      "id": "FREE_MIXED_ELASTIC_RETURN_025NS",
+      "family": "FREE_MIXED_ELASTIC_RETURN",
+      "stage": "normal",
+      "maximum_dt_ms": 2.5e-05,
+      "dt_scale": 0.2,
+      "fails": true,
+      "expected_OFF": 1,
+      "end_ms": 0.004,
+      "initial_velocity_mm_per_ms": 4.47213595499958,
+      "initial_vX_mm_per_ms": 1.0
+    },
+    {
+      "id": "FREE_MIXED_ELASTIC_RETURN_012P5NS",
+      "family": "FREE_MIXED_ELASTIC_RETURN",
+      "stage": "normal",
+      "maximum_dt_ms": 1.25e-05,
+      "dt_scale": 0.2,
+      "fails": true,
+      "expected_OFF": 1,
+      "end_ms": 0.004,
+      "initial_velocity_mm_per_ms": 4.47213595499958,
+      "initial_vX_mm_per_ms": 1.0
+    }
+  ],
+  "sources": [
+    {
+      "id": "ALTAIR_H2",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/stiffness_formulation_spring_hardening_r.htm",
+      "use": "unloading stiffness and positive zero-force plateau; reuse C saved page"
+    },
+    {
+      "id": "ALTAIR_TYPE8",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type8_spr_gene_starter_r.htm",
+      "use": "six independent modes and deformation-based failure"
+    },
+    {
+      "id": "ALTAIR_SPRING_HISTORY",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/th_spring_starter_r.htm",
+      "use": "OFF, force, displacement and IE definitions"
+    },
+    {
+      "id": "OPENRADIOSS_CODE_ATTEMPT",
+      "url": "https://github.com/OpenRadioss/OpenRadioss",
+      "access": "404 on 2026-10-03 via web and public API; exact engine integration phase not read",
+      "use": "no code-derived explanation claimed; runtime hashes and experimental phase diagnostic retained"
+    },
+    {
+      "id": "ALTAIR_DTIX_2026",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/dtix_engine_r.htm",
+      "use": "Initial and maximum step, without mass scaling; confirm actual TIME STEP through deletion"
+    },
+    {
+      "id": "ALTAIR_INIVEL",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inivel_starter_r.htm",
+      "use": "Initial translational velocity, node group, zero start time and optional units"
+    },
+    {
+      "id": "ALTAIR_TH_NODE",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/th_node_starter_r.htm",
+      "use": "VX/DX and constrained-node REACX; documentation calls REACX force whereas cached runtime checks identify cumulative impulse: discrepancy retained"
+    },
+    {
+      "id": "ALTAIR_DYNAMIC_THEORY_2017",
+      "url": "https://2017.help.altair.com/2017/hwsolvers/theory_dynamic_analysis.pdf",
+      "use": "Central difference half-step velocities and second-order accuracy; does not establish 2026 time-history centering"
+    },
+    {
+      "id": "H_ANALYTIC_REFERENCE",
+      "use": "Own exact derivation and independent quadrature, to be checked before any free fracture declaration"
+    },
+    {
+      "id": "I_OWN_REFERENCE",
+      "use": "Own positive-gap H2 history derivation, checked by RK4, quadrature, ODE and energy before engines"
+    },
+    {
+      "id": "K_OWN_REFERENCE",
+      "use": "Separable X/Y exact reference, RK4 and energy/impulse independently checked before engines"
+    }
+  ],
+  "qualification": {
+    "source_convention_verified": false,
+    "mixed_mode_dissipation_calibrated": false,
+    "physical_propagation_qualified": false,
+    "aircraft_facade_qualified": false,
+    "thermal_branch_resumed": false,
+    "blender_executed": false,
+    "post_deactivation_free_inertia_qualified": false,
+    "prescribed_motion_is_not_free_release": true,
+    "E_sensitivity_gates_closed": false,
+    "free_fracture_qualified": false,
+    "free_elastic_control_only": false,
+    "exact_time_history_centering_verified": false,
+    "numerical_pure_normal_witness_only": false,
+    "numerical_unload_only": true,
+    "physical_fracture_calibrated": false,
+    "numerical_two_independent_modes_only": true
+  },
+  "deferred": [
+    "All prior E/F/G failed gates",
+    "Both NASA conventions",
+    "Gf15/60",
+    "Mixed-mode free fracture",
+    "Plate/connection wavefield",
+    "Boeing/facade/fire/collapse",
+    "V11S thermal branch"
+  ],
+  "precision_policy": {
+    "nearest_rounding_assumed": true,
+    "interval_arithmetic": "Exact rational dyadic cells, squared Fx/Kt and Fy/Kn; J conversion rational 1/1000",
+    "raw_signs_retained": true,
+    "old_I_J_gates_not_reassessed": true,
+    "no_phase_shift": true,
+    "no_clipping": true,
+    "all_values_must_reproduce_original_6e_CSV": true,
+    "official_schema_verified": false
+  },
+  "declared_utc": "2026-10-04T16:12:45.180759+00:00",
+  "predeclared_tolerance_rationale": {
+    "raw": "Gap, velocity, force, P and initial-P impulse residual <=1% declared amplitude, no phase shift.",
+    "energy": "IE+KE, history energy, force-work and analytic energy <=0.5% initial energy; U and unrecovered work explicitly separated.",
+    "history": "delta_max retained through unloading and force-zero branch; positive gap only; OFF must remain 1.",
+    "comparison": "Two caps per family at declared common covered times, <=0.5% respective amplitude; no extrapolation."
+  },
+  "references": {
+    "FREE_MIXED_ARREST": {
+      "normal": {
+        "moving_mass_g": 0.1,
+        "fixed_mass_g": 0.1,
+        "k_N_per_mm": 56000.0,
+        "peak_N": 495.0,
+        "delta0_mm": 0.008839285714285714,
+        "deltaf_mm": 0.12121212121212122,
+        "softening_N_per_mm": 4404.979173187586,
+        "omega_rad_per_ms": 748.3314773547883,
+        "lambda_rad_per_ms": 209.88042245973267,
+        "v0_mm_per_ms": 20.0,
+        "initial_energy_J": 0.02,
+        "initial_momentum_N_ms": 2.0,
+        "hypothetical_Gf_N_per_mm": 30.0,
+        "area_mm2": 1.0,
+        "domain": "fresh positive-gap trajectory; no compression or separation",
+        "family": "NORMAL_ARREST_RETURN",
+        "turning_gap_mm": 0.05383024986847916,
+        "force_amplitude_N": 495.0,
+        "force_at_turn_N": 296.81573991914865,
+        "residual_gap_mm": 0.04852996879849436,
+        "recoverable_at_turn_J": 0.0007866034237834972,
+        "retained_work_J": 0.019213396576216502,
+        "peak_time_ms": 0.0004504462830179676,
+        "peak_velocity_mm_per_ms": 18.874467825988784,
+        "turn_time_ms": 0.005688609454883516,
+        "zero_force_time_ms": 0.0077876743403369085,
+        "release_velocity_mm_per_ms": -3.9663671634973414,
+        "positive_domain_end_ms": 0.020023044087524686
+      },
+      "moving_mass_g": 0.1,
+      "fixed_mass_g": 0.1,
+      "kt_N_per_mm": 21500.0,
+      "vx0_mm_per_ms": 10.0,
+      "omega_x_rad_per_ms": 463.6809247747852,
+      "period_x_ms": 0.013550665924485457,
+      "amplitude_x_mm": 0.02156655464068768,
+      "force_x_amplitude_N": 463.6809247747852,
+      "initial_Px_N_ms": 1.0,
+      "initial_Py_N_ms": 2.0,
+      "initial_Ex_J": 0.005,
+      "initial_Ey_J": 0.02,
+      "initial_energy_J": 0.025
+    },
+    "FREE_MIXED_ELASTIC_RETURN": {
+      "normal": {
+        "moving_mass_g": 0.1,
+        "fixed_mass_g": 0.1,
+        "k_N_per_mm": 56000.0,
+        "peak_N": 495.0,
+        "delta0_mm": 0.008839285714285714,
+        "deltaf_mm": 0.12121212121212122,
+        "softening_N_per_mm": 4404.979173187586,
+        "omega_rad_per_ms": 748.3314773547883,
+        "lambda_rad_per_ms": 209.88042245973267,
+        "v0_mm_per_ms": 4.47213595499958,
+        "initial_energy_J": 0.0010000000000000002,
+        "initial_momentum_N_ms": 0.447213595499958,
+        "hypothetical_Gf_N_per_mm": 30.0,
+        "area_mm2": 1.0,
+        "domain": "fresh positive-gap trajectory; no compression or separation",
+        "family": "NORMAL_SUBPEAK_RETURN",
+        "turning_gap_mm": 0.005976143046671969,
+        "force_amplitude_N": 334.66401061363024,
+        "turn_time_ms": 0.0020990648854533923,
+        "positive_domain_end_ms": 0.004198129770906785,
+        "retained_work_J": 0.0,
+        "peak_time_ms": null,
+        "zero_force_time_ms": 0.004198129770906785,
+        "release_velocity_mm_per_ms": -4.47213595499958
+      },
+      "moving_mass_g": 0.1,
+      "fixed_mass_g": 0.1,
+      "kt_N_per_mm": 21500.0,
+      "vx0_mm_per_ms": 1.0,
+      "omega_x_rad_per_ms": 463.6809247747852,
+      "period_x_ms": 0.013550665924485457,
+      "amplitude_x_mm": 0.002156655464068768,
+      "force_x_amplitude_N": 46.36809247747852,
+      "initial_Px_N_ms": 0.1,
+      "initial_Py_N_ms": 0.447213595499958,
+      "initial_Ex_J": 5e-05,
+      "initial_Ey_J": 0.0010000000000000002,
+      "initial_energy_J": 0.0010500000000000002
+    }
+  },
+  "reference_guard_sha256": "1f550718044701a0ee4e4a9f99ed389dc18f86ec0937fc43c7b5bf0b4b01dc1c",
+  "plan_sha256": "b35478fd4234211d5c4fc478a5842fcdaa0c4a35d15f9ea2275a794cf363c913",
+  "comparison_times_ms": {
+    "FREE_MIXED_ARREST": [
+      0.006,
+      0.008,
+      0.01,
+      0.011
+    ],
+    "FREE_MIXED_ELASTIC_RETURN": [
+      0.001,
+      0.002,
+      0.003,
+      0.0039
+    ]
+  },
+  "binary_schema": {
+    "origin": "Own byte inspection of I NORMAL_SUBPEAK_RETURN_025NS header before assessment; derived bounded schema, not official schema",
+    "endian": ">",
+    "record_markers": "4-byte big-endian signed length repeated after payload, exact EOF consumption",
+    "version": 3040,
+    "header_payload_bytes": [
+      84,
+      80,
+      24,
+      88,
+      60,
+      44,
+      44,
+      60,
+      4,
+      60,
+      44,
+      24,
+      60,
+      44,
+      44,
+      24
+    ],
+    "counts_signature": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      22
+    ],
+    "global_codes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "spring_group_signature": [
+      2,
+      6,
+      0,
+      1,
+      6
+    ],
+    "spring_codes": [
+      1,
+      2,
+      3,
+      8,
+      9,
+      14
+    ],
+    "node_group_signature": [
+      3,
+      0,
+      0,
+      2,
+      6
+    ],
+    "node_codes": [
+      1,
+      2,
+      4,
+      5,
+      620,
+      621
+    ],
+    "node_ids": [
+      1,
+      2
+    ],
+    "row_payload_bytes": [
+      4,
+      88,
+      24,
+      48
+    ],
+    "header_end_byte": 916,
+    "global_order_from_existing_converter_and_model_card": [
+      "INTERNAL ENERGY",
+      "KINETIC ENERGY",
+      "X-MOMENTUM",
+      "Y-MOMENTUM",
+      "Z-MOMENTUM",
+      "MASS",
+      "TIME STEP",
+      "ROTATION ENERGY",
+      "EXTERNAL WORK",
+      "SPRING ENERGY",
+      "CONTACT ENERGY",
+      "HOURGLASS ENERGY",
+      "ELASTIC CONTACT ENERGY",
+      "FRICTIONAL CONTACT ENERGY",
+      "DAMPING CONTACT ENERGY",
+      "PLASTIC WORK",
+      "ADDED MASS",
+      "PERCENTAGE ADDED MASS",
+      "INLET MASS",
+      "OUTLET MASS",
+      "INLET ENERGY",
+      "OUTLET ENERGY"
+    ],
+    "spring_order_from_saved_card": [
+      "OFF",
+      "FX",
+      "FY",
+      "LX",
+      "LY",
+      "IE"
+    ],
+    "node_order_from_saved_card": [
+      "DX",
+      "DY",
+      "VX",
+      "VY",
+      "REACX",
+      "REACY"
+    ]
+  },
+  "binary_reader_sha256": "4f02ed200691e9d3aa2d58e56b720b0066a298d083ff71340bd21acabf081eb1"
+}

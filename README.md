@@ -8,11 +8,11 @@ Le projet teste des mécanismes, des hypothèses explicites et des plages de par
 
 ## Où en est la simulation ?
 
-Instantané du **4 octobre 2026** : **IMPACT-I02I-I terminée comme campagne bornée avec quatre échecs de signe brut**, prochaine étape **IMPACT-I02I-J**. Le registre contient 116 entrées. Les mentions V8H/V11H sont historiques.
+Instantané du **4 octobre 2026** : **IMPACT-I02I-K terminée comme témoin de deux modes libres indépendants sans séparation**, prochaine étape **IMPACT-I02I-L**. Registre : 118 entrées. Les mentions V8H/V11H sont historiques.
 
-H vérifie quatre états neufs : contrôles élastiques libres à 25/12,5 ns (champs bruts ≤1 %) puis séparation normale libre à 50/25 ns et mouvement ensuite sans force. 122/122 critères de cas, 14/14 comparaisons et 9/9 références. I ajoute quatre états neufs d'arrêt et retour sans séparation : **170/174 critères**, 16/16 comparaisons et 16/16 références. Les quatre échecs concernent IE−U légèrement négatif ; ils restent échoués. Le diagnostic est compatible avec l'arrondi, sans preuve de l'algorithme interne ni changement de seuil. Ces témoins restent numériques, sans calibration physique.
+J analyse les sorties I sauvegardées : 49323 valeurs binaires reproduisent les CSV, audit brut **53/56**, références **6/6** et diagnostic terminal distinct **8/8**. Les trois critères de fin brute restent échoués, ainsi que les quatre signes I. L'hypothèse d'arrondi borne la représentation, sans déterminer le signe interne. K ajoute quatre états neufs X/Y libres sans séparation : **254/254 critères**, **28/28** comparaisons et **26/26** références. IE=Ux+Uy+Dy et les impulsions initiales sont contrôlées séparément. Les signes et fins bruts K restent affichés ; les intervalles sont déclarés avant moteur.
 
-Lire les [rapports H](wtc1_simulation_v8/output/impact_i02i_free_fracture/rapport_impact_i02i_free_fracture.md) et [I](wtc1_simulation_v8/output/impact_i02i_free_return/rapport_impact_i02i_free_return.md), la [vérification d'intégrité I](wtc1_simulation_v8/output/impact_i02i_free_return/publication_verification.json) et la [passation J](harness/handoffs/WTC1_IMPACT_I02I_I_HANDOFF.md). Les cinq échecs OFF/FX F, les huit diagnostics historiques G et les sensibilités/couvertures E restent ouverts. V11F et V11R → V11S sont conservés. Impact complet Boeing/façade, incendie et effondrement réel non qualifiés.
+Lire les [rapports J](wtc1_simulation_v8/output/impact_i02i_output_precision/rapport_impact_i02i_output_precision.md) et [K](wtc1_simulation_v8/output/impact_i02i_free_mixed/rapport_impact_i02i_free_mixed.md), la [vérification K](wtc1_simulation_v8/output/impact_i02i_free_mixed/publication_verification.json) et la [passation L](harness/handoffs/WTC1_IMPACT_I02I_K_HANDOFF.md). K conserve la réserve tangentielle après décharge normale tant que la liaison reste active ; son devenir à OFF reste ouvert. Les échecs E/F/G/I/J, NASA/Gf et V11F/V11R/V11S sont conservés. Impact complet Boeing/façade, incendie et effondrement réel non qualifiés.
 
 ## Ce qui est publié
 
@@ -23,9 +23,9 @@ Lire les [rapports H](wtc1_simulation_v8/output/impact_i02i_free_fracture/rappor
 - `outputs/` : calculs exploratoires antérieurs et audits complémentaires. Leurs affirmations se lisent avec leurs propres limites ; leur présence n'est pas une validation.
 - `publication/` : inventaire complet, empreintes SHA-256, règles de publication, licences tierces et liste motivée des fichiers externes non redistribués.
 
-Inventaire courant : **5,209 fichiers scientifiques dans Git**, **7,392 sorties dans 43 archives**.
+Inventaire courant : **5,339 fichiers scientifiques dans Git**, **7,404 sorties dans 44 archives**.
 
-Restaurer les 23 archives [A](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-01-impact-i02i-a), les 4 archives [B+C](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-c), les 14 archives [D+E](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-e), l'archive [F+G](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-04-impact-i02i-g), puis les 1 archives [H+I](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-04-impact-i02i-i). Les manifestes conservent les SHA-256 et URL ; les anciennes archives ne sont pas remplacées.
+Restaurer les 23 archives [A](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-01-impact-i02i-a), les 4 archives [B+C](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-c), les 14 archives [D+E](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-e), l'archive [F+G](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-04-impact-i02i-g), l'archive [H+I](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-04-impact-i02i-i), puis les 1 archives [J+K](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-04-impact-i02i-k). Les manifestes conservent SHA-256 et URL ; aucune ancienne archive remplacée.
 
 ## Consulter et vérifier sans relancer les solveurs
 
@@ -54,7 +54,7 @@ Voir [REPRODUCIBILITY.md](REPRODUCIBILITY.md). La base Python utilise NumPy et P
 
 ## Prochaine étape
 
-IMPACT-I02I-J : établir la précision des sorties binaires T01/CSV sauvegardées et examiner IE−U sans relancer les anciens calculs. Conserver les quatre échecs I et toutes les limites E/F/G. Toute nouvelle mesure de précision doit être pré-déclarée ; aucun clipping, déphasage ou substitution de propriété sur état endommagé. Les modes mixtes libres et la calibration physique restent différés, ainsi que Gf15/60.
+IMPACT-I02I-L : registre énergétique de la réserve tangentielle à OFF sur les cas F sauvegardés avant nouvelle séparation mixte libre. Pré-déclarer le diagnostic, préserver les lignes et tous les échecs, sans déphasage, clipping, ancien moteur ou changement d'un état endommagé. Une référence énergétique explicite est requise avant tout futur essai libre avec désactivation. K combine deux lois indépendantes : contact, matériau et fracture mixte physiques restent non qualifiés.
 
 ## Discipline de preuve
 

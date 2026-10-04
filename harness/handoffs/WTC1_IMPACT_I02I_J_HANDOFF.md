@@ -1,0 +1,11 @@
+# Passation compacte — IMPACT-I02I-J vers K
+
+Lire AGENTS.md, harness/state.json (prioritaire), cette passation et impact_i02i_k_plan_from_j.json. J terminée comme lecture bornée et diagnostic de représentation ; K prochaine. J seule pending1/2, publication J+K après K vérifiée ; H+I reste base distante.
+
+J : quatre T01 I lus sans moteur/convertisseur, 1203 lignes et 49323 valeurs reproduisent exactement les CSV .6e. Deux lecteurs concordent ; IE globale/SPRING ENERGY/IE liaison bit identiques. Audit brut 53/56 : trois temps binaires finaux dépassent la fin demandée d'environ 1e−10 ms, critères maintenus échoués. Référence 6/6 ; diagnostic terminal distinct 8/8, hypothèse d'arrondi au plus proche. Les négatifs D=IE−Fy²/(2Kn) sont tous compatibles avec une cellule binaire contenant zéro en branche élastique. Le signe interne demeure non observable. Quatre échecs I inchangés ; aucun seuil changé, clipping ou phase ajustée.
+
+Résultats/rapport/publication_verification.json : wtc1_simulation_v8/output/impact_i02i_output_precision/. Pré-déclarations impact_i02i_j_predeclaration.json et impact_i02i_j_terminal_interval_predeclaration.json. Lecteur decode_impact_i02i_t01.py limité aux signatures 3040 déclarées ; code officiel convertisseur inaccessible (404), ne pas prétendre schéma universel. Vérifier sans moteur avec complete_impact_i02i_output_precision.py verify. 1967 anciens fichiers épinglés, originaux inchangés.
+
+K : d'abord référence exacte et intégration indépendante, puis quatre états neufs X/Y libres, Z/rotations bloqués, sans séparation. Arrêt : vx=10,vy=20 mm/ms,E0=0,025 J,fin0,012 ms. Sous-pic : vx=1,vy=√20,E0=0,00105 J,fin0,004 ms. Caps25/12,5 ns, seuils bruts1% par mode/impulsion et0,5% énergie avant moteur. IE=Ux+Uy+Dy ; P0 et J support séparément X/Y. Intervalles de temps/signe à pré-déclarer sans promouvoir I/J. Ne pas changer matériau endommagé ni relancer anciens calculs. Annoncer budget90s/cas,600s total avant moteur.
+
+Conserver E/F/G, cinq OFF/FX F et réservoir tangentiel supprimé avec OFF, huit diagnostics historiques G, quatre signes I, trois temps bruts J, REACX/REACY/centrage, conventions NASA, Gf30 hypothétique/Gf15/60 différés, V11F/V11R/V11S. Aucun transfert avion/façade/feu/effondrement ou Blender dynamique ; flexion post-fracture non validée. Aucun post X.

@@ -1,0 +1,73 @@
+{
+  "id": "IMPACT-I02I-K_PLAN_FROM_J",
+  "created_utc": "2026-10-04T15:54:11.254079+00:00",
+  "seed": 1102019,
+  "random_draws": 0,
+  "saved_J_summary": "wtc1_simulation_v8/output/impact_i02i_output_precision/resultats_impact_i02i_output_precision.json",
+  "saved_J_sha256": "dbf46c3492e0795e50a9a0d064e506a0442f005ad6018bacf735ad56ec51e1d7",
+  "scope": "First two free translational modes together before separation; explicit sums of recoverable and unrecovered energy, no real joint calibration",
+  "cases_proposed": [
+    {
+      "family": "FREE_MIXED_ARREST",
+      "initial_vX_mm_per_ms": 10.0,
+      "initial_vY_mm_per_ms": 20.0,
+      "initial_total_energy_J": 0.025,
+      "end_ms": 0.012,
+      "maximum_dt_ms": [
+        2.5e-05,
+        1.25e-05
+      ]
+    },
+    {
+      "family": "FREE_MIXED_ELASTIC_RETURN",
+      "initial_vX_mm_per_ms": 1.0,
+      "initial_vY_mm_per_ms": 4.47213595499958,
+      "initial_total_energy_J": 0.00105,
+      "end_ms": 0.004,
+      "maximum_dt_ms": [
+        2.5e-05,
+        1.25e-05
+      ]
+    }
+  ],
+  "properties": {
+    "moving_mass_g": 0.1,
+    "fixed_mass_g": 0.1,
+    "Kn_N_per_mm": 56000.0,
+    "Kt_N_per_mm": 21500.0,
+    "normal_peak_N": 495.0,
+    "Gf_N_per_mm_hypothetical": 30.0,
+    "rotations": "blocked",
+    "Z": "blocked",
+    "X_Y": "both free with initial velocities; no imposed path",
+    "shear_failure": "disabled; unchanged linear X law"
+  },
+  "before_engine": [
+    "Derive Y reference from I and X oscillator from H/G, with scaled initial velocity, and verify total E/P and independent integration",
+    "Verify Y stays positive and OFF never expected in declared window; retain both histories, no damaged-property changes",
+    "Declare all raw per-axis amplitudes <=1%, total energy/work <=0.5%, initial momentum included separately for X and Y",
+    "Predeclare IEEE32 and decimal representation intervals for sign/time; report raw signs independently; never override old I/J failures",
+    "Validate the exact decoder signature on each new file before using J reader, reject unknown layouts"
+  ],
+  "energy_reference": "IE=Ux+Uy+Dy; KE=m_g(vx^2+vy^2)/2; WE=0; Ux=Fx^2/(2Kt), Uy=Fy^2/(2Kn); J_support_axis=P_axis-P0_axis",
+  "cost": {
+    "maximum_case_wall_seconds": 90,
+    "maximum_campaign_wall_seconds": 600,
+    "announce_before_run": true
+  },
+  "unchanged": [
+    "I four raw sign failures",
+    "J three raw endpoint failures",
+    "E/F/G failures",
+    "NASA conventions",
+    "Gf15/60 deferred",
+    "F tangential energy lost at whole deletion remains open",
+    "V11F/V11R/V11S"
+  ],
+  "deferred": [
+    "Mixed free separation",
+    "Actual coupling/contact/plate waves and fracture calibration",
+    "Boeing/facade/fire/collapse"
+  ],
+  "publication": "J pending1/2; publish J+K only after K documented and verified; retain H+I baseline"
+}
