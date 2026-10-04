@@ -1,0 +1,327 @@
+{
+  "id": "IMPACT-I02I-H-ELASTIC",
+  "created_utc": "2026-10-04T11:47:55.730103+00:00",
+  "cases": {
+    "ELASTIC_025NS": {
+      "case": {
+        "id": "ELASTIC_025NS",
+        "stage": "elastic",
+        "maximum_dt_ms": 2.5e-05,
+        "dt_scale": 0.2,
+        "fails": false,
+        "end_ms": 0.10840532739588365
+      },
+      "metrics": {
+        "displacement_fraction": 0.0002813873035621716,
+        "nodal_velocity_fraction": 0.0057872480855379925,
+        "force_fraction": 0.00028138735747855806,
+        "global_momentum_fraction": 0.00027269498388712366,
+        "nodal_global_momentum_fraction": 0.0057960699999999995,
+        "raw_initial_momentum_impulse_fraction": 0.005796554000000007,
+        "support_integrated_force_impulse_fraction": 0.00579663086649404,
+        "moving_X_reaction_peak_N_ms": 0.0,
+        "energy_residual_fraction": 3.370721999991855e-05,
+        "recoverable_energy_fraction": 6.403334999282966e-07,
+        "analytic_IE_fraction": 0.0002857179831826205,
+        "analytic_KE_fraction": 0.0002771611803034494,
+        "maximum_external_work_J": 0.0,
+        "fixed_displacement_peak_mm": 0.0,
+        "initial_velocity_mm_per_ms": 1.0,
+        "maximum_added_mass_g": 0.0,
+        "mass_relative_error": 0.0,
+        "maximum_solver_dt_ms": 2.5e-05,
+        "maximum_recorded_interval_ms": 2.5000000000011124e-05,
+        "rows": 4337,
+        "end_record_ms": 0.1084,
+        "declared_end_ms": 0.10840532739588365,
+        "initial_IE_J": 0.0,
+        "initial_KE_J": 5e-05,
+        "initial_global_P_N_ms": 0.1,
+        "positive_zero_crossings_ms": [
+          0.01355059006651726,
+          0.027101180131459606,
+          0.04065177019406953,
+          0.05420236025493288,
+          0.06775295031522978,
+          0.08130354037425216,
+          0.09485413043116525
+        ],
+        "measured_periods_ms": [
+          0.013550590064942346,
+          0.013550590062609922,
+          0.01355059006086335,
+          0.0135505900602969,
+          0.013550590059022385,
+          0.013550590056913087
+        ],
+        "period_fraction": 5.598807674367379e-06
+      },
+      "checks": {
+        "preflight": true,
+        "normal_termination": true,
+        "TH_every_cycle": true,
+        "maximum_saved_solver_dt": true,
+        "maximum_recorded_dt_with_CSV_roundoff": true,
+        "end_covered_without_extrapolation": true,
+        "mass": true,
+        "no_added_mass": true,
+        "no_deactivation": true,
+        "no_imposed_moving_X": true,
+        "fixed_node": true,
+        "initial_velocity": true,
+        "initial_momentum": true,
+        "initial_energy": true,
+        "moving_X_reaction_zero": true,
+        "energy": true,
+        "recoverable_energy": true,
+        "period": true,
+        "displacement_fraction": true,
+        "nodal_velocity_fraction": true,
+        "force_fraction": true,
+        "global_momentum_fraction": true,
+        "nodal_global_momentum_fraction": true,
+        "raw_initial_momentum_impulse_fraction": true,
+        "support_integrated_force_impulse_fraction": true
+      },
+      "all_checks_pass": true,
+      "strict_raw_1pct_diagnostics": {
+        "nodal_velocity_fraction": true,
+        "force_fraction": true,
+        "nodal_global_momentum_fraction": true,
+        "raw_initial_momentum_impulse_fraction": true,
+        "support_integrated_force_impulse_fraction": true
+      },
+      "analytic_reference": {
+        "moving_mass_g": 0.1,
+        "fixed_mass_g": 0.1,
+        "k_N_per_mm": 21500.0,
+        "u0_mm": 0.0,
+        "v0_mm_per_ms": 1.0,
+        "omega_rad_per_ms": 463.6809247747852,
+        "period_ms": 0.013550665924485457,
+        "duration_periods": 8,
+        "amplitude_mm": 0.002156655464068768,
+        "force_amplitude_N": 46.36809247747852,
+        "initial_momentum_N_ms": 0.1,
+        "initial_energy_J": 5e-05,
+        "formulas": "u=v0/omega*sin(omega*t); v=v0*cos(omega*t); F=k*u; U=k*u^2/2; K=m*v^2/2; P=m*v; J_support=P-P0",
+        "normal_mode": "non-failing linear, Y blocked; X symmetric linear H2 with no fracture",
+        "time_centering": "Exact 2026 TH output centering not documented; raw common times audited without shift or extrapolation"
+      },
+      "cycles": 4337,
+      "raw_history_sha256": "95162ea1202e656f200dffc33a0c098cde23b7e4fe25f5ed20c9686a69be2103",
+      "audit_script_sha256": "c9a1070bf69b40f1bda23f7fa807de85cc646085cbca0f85f9d35e994ee3f896",
+      "no_time_shift": true,
+      "no_extrapolation": true,
+      "free_fracture_qualified": false,
+      "REACX_units_test": "Saved support REACX compared to integral(-FX dt) and P-P0 in N ms; software documentation labels force, discrepancy not erased",
+      "H_audit_sha256": "438f46935ebcff2a94ed7183b4e88100180bea65512ec5071e3bff579be274d0"
+    },
+    "ELASTIC_012P5NS": {
+      "case": {
+        "id": "ELASTIC_012P5NS",
+        "stage": "elastic",
+        "maximum_dt_ms": 1.25e-05,
+        "dt_scale": 0.2,
+        "fails": false,
+        "end_ms": 0.10840532739588365
+      },
+      "metrics": {
+        "displacement_fraction": 7.034524905555208e-05,
+        "nodal_velocity_fraction": 0.0028958198797648968,
+        "force_fraction": 7.034568038664457e-05,
+        "global_momentum_fraction": 6.817498388712352e-05,
+        "nodal_global_momentum_fraction": 0.00289801849,
+        "raw_initial_momentum_impulse_fraction": 0.0028982099999999827,
+        "support_integrated_force_impulse_fraction": 0.002898209762499937,
+        "moving_X_reaction_peak_N_ms": 0.0,
+        "energy_residual_fraction": 8.525719999940694e-06,
+        "recoverable_energy_fraction": 6.239759998570484e-07,
+        "analytic_IE_fraction": 7.15179831826116e-05,
+        "analytic_KE_fraction": 6.936118030348166e-05,
+        "maximum_external_work_J": 0.0,
+        "fixed_displacement_peak_mm": 0.0,
+        "initial_velocity_mm_per_ms": 1.0,
+        "maximum_added_mass_g": 0.0,
+        "mass_relative_error": 0.0,
+        "maximum_solver_dt_ms": 1.25e-05,
+        "maximum_recorded_interval_ms": 1.2500000000012501e-05,
+        "rows": 8673,
+        "end_record_ms": 0.1084,
+        "declared_end_ms": 0.10840532739588365,
+        "initial_IE_J": 0.0,
+        "initial_KE_J": 5e-05,
+        "initial_global_P_N_ms": 0.1,
+        "positive_zero_crossings_ms": [
+          0.013550646960051378,
+          0.027101293918826215,
+          0.040651940877031355,
+          0.05420258783475406,
+          0.06775323479164867,
+          0.0813038817480257,
+          0.09485452870360978
+        ],
+        "measured_periods_ms": [
+          0.013550646958774837,
+          0.01355064695820514,
+          0.013550646957722706,
+          0.013550646956894612,
+          0.013550646956377033,
+          0.01355064695558407
+        ],
+        "period_fraction": 1.3998501249279371e-06
+      },
+      "checks": {
+        "preflight": true,
+        "normal_termination": true,
+        "TH_every_cycle": true,
+        "maximum_saved_solver_dt": true,
+        "maximum_recorded_dt_with_CSV_roundoff": true,
+        "end_covered_without_extrapolation": true,
+        "mass": true,
+        "no_added_mass": true,
+        "no_deactivation": true,
+        "no_imposed_moving_X": true,
+        "fixed_node": true,
+        "initial_velocity": true,
+        "initial_momentum": true,
+        "initial_energy": true,
+        "moving_X_reaction_zero": true,
+        "energy": true,
+        "recoverable_energy": true,
+        "period": true,
+        "displacement_fraction": true,
+        "nodal_velocity_fraction": true,
+        "force_fraction": true,
+        "global_momentum_fraction": true,
+        "nodal_global_momentum_fraction": true,
+        "raw_initial_momentum_impulse_fraction": true,
+        "support_integrated_force_impulse_fraction": true
+      },
+      "all_checks_pass": true,
+      "strict_raw_1pct_diagnostics": {
+        "nodal_velocity_fraction": true,
+        "force_fraction": true,
+        "nodal_global_momentum_fraction": true,
+        "raw_initial_momentum_impulse_fraction": true,
+        "support_integrated_force_impulse_fraction": true
+      },
+      "analytic_reference": {
+        "moving_mass_g": 0.1,
+        "fixed_mass_g": 0.1,
+        "k_N_per_mm": 21500.0,
+        "u0_mm": 0.0,
+        "v0_mm_per_ms": 1.0,
+        "omega_rad_per_ms": 463.6809247747852,
+        "period_ms": 0.013550665924485457,
+        "duration_periods": 8,
+        "amplitude_mm": 0.002156655464068768,
+        "force_amplitude_N": 46.36809247747852,
+        "initial_momentum_N_ms": 0.1,
+        "initial_energy_J": 5e-05,
+        "formulas": "u=v0/omega*sin(omega*t); v=v0*cos(omega*t); F=k*u; U=k*u^2/2; K=m*v^2/2; P=m*v; J_support=P-P0",
+        "normal_mode": "non-failing linear, Y blocked; X symmetric linear H2 with no fracture",
+        "time_centering": "Exact 2026 TH output centering not documented; raw common times audited without shift or extrapolation"
+      },
+      "cycles": 8673,
+      "raw_history_sha256": "8c90c184af50743e87507b3440bd0b37f5f1caf53b7c4f64ff75720a3475f22c",
+      "audit_script_sha256": "c9a1070bf69b40f1bda23f7fa807de85cc646085cbca0f85f9d35e994ee3f896",
+      "no_time_shift": true,
+      "no_extrapolation": true,
+      "free_fracture_qualified": false,
+      "REACX_units_test": "Saved support REACX compared to integral(-FX dt) and P-P0 in N ms; software documentation labels force, discrepancy not erased",
+      "H_audit_sha256": "438f46935ebcff2a94ed7183b4e88100180bea65512ec5071e3bff579be274d0"
+    }
+  },
+  "comparisons": [
+    {
+      "case": "ELASTIC_025NS",
+      "cached_G_case": "FREE_ELASTIC_050NS",
+      "metrics": {
+        "displacement_fraction": {
+          "H_over_G50": 0.24997594358399572,
+          "expected": 0.25,
+          "relative_scaling_error": 9.62256640171244e-05
+        },
+        "global_momentum_fraction": {
+          "H_over_G50": 0.24998967562640834,
+          "expected": 0.25,
+          "relative_scaling_error": 4.129749436665442e-05
+        },
+        "energy_residual_fraction": {
+          "H_over_G50": 0.25062881718059987,
+          "expected": 0.25,
+          "relative_scaling_error": 0.0025152687223994885
+        },
+        "nodal_velocity_fraction": {
+          "H_over_G50": 0.5007438978812663,
+          "expected": 0.5,
+          "relative_scaling_error": 0.001487795762532551
+        },
+        "raw_initial_momentum_impulse_fraction": {
+          "H_over_G50": 0.49999922367789884,
+          "expected": 0.5,
+          "relative_scaling_error": 1.5526442023183762e-06
+        }
+      },
+      "checks": {
+        "displacement_fraction": true,
+        "global_momentum_fraction": true,
+        "energy_residual_fraction": true,
+        "nodal_velocity_fraction": true,
+        "raw_initial_momentum_impulse_fraction": true
+      },
+      "no_rerun": true
+    },
+    {
+      "case": "ELASTIC_012P5NS",
+      "cached_G_case": "FREE_ELASTIC_050NS",
+      "metrics": {
+        "displacement_fraction": {
+          "H_over_G50": 0.06249258508363206,
+          "expected": 0.0625,
+          "relative_scaling_error": 0.0001186386618869939
+        },
+        "global_momentum_fraction": {
+          "H_over_G50": 0.06249855374982707,
+          "expected": 0.0625,
+          "relative_scaling_error": 2.31400027669304e-05
+        },
+        "energy_residual_fraction": {
+          "H_over_G50": 0.06339268320565396,
+          "expected": 0.0625,
+          "relative_scaling_error": 0.014282931290463319
+        },
+        "nodal_velocity_fraction": {
+          "H_over_G50": 0.250561944593176,
+          "expected": 0.25,
+          "relative_scaling_error": 0.002247778372703957
+        },
+        "raw_initial_momentum_impulse_fraction": {
+          "H_over_G50": 0.24999383255215302,
+          "expected": 0.25,
+          "relative_scaling_error": 2.466979138793235e-05
+        }
+      },
+      "checks": {
+        "displacement_fraction": true,
+        "global_momentum_fraction": true,
+        "energy_residual_fraction": true,
+        "nodal_velocity_fraction": true,
+        "raw_initial_momentum_impulse_fraction": true
+      },
+      "no_rerun": true
+    }
+  ],
+  "all_checks_pass": true,
+  "case_checks_passed": 50,
+  "case_checks_total": 50,
+  "comparison_checks_passed": 10,
+  "comparison_checks_total": 10,
+  "strict_raw_1pct_all_pass": true,
+  "config_sha256": "780735b75bc222969dbc28342a8fb5ffd0a54a08f57e7a07b1ce2322987bb954",
+  "audit_sha256": "438f46935ebcff2a94ed7183b4e88100180bea65512ec5071e3bff579be274d0",
+  "old_G_failed_diagnostics_preserved": true,
+  "no_time_shift": true,
+  "physical_impact_qualified": false
+}

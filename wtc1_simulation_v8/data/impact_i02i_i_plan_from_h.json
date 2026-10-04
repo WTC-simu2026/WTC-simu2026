@@ -1,0 +1,66 @@
+{
+  "id": "IMPACT-I02I-I_PLAN_FROM_H",
+  "created_utc": "2026-10-04T11:56:10.327175+00:00",
+  "seed": 1102017,
+  "random_draws": 0,
+  "saved_H_summary": "wtc1_simulation_v8/output/impact_i02i_free_fracture/verification_r1/summary.json",
+  "saved_H_sha256": "a1e87db46085953f8931c6879e17e5578bc985b9c3b67f3d4383874129c5e0bb",
+  "scope": "Verify non-separation, history-dependent unloading and rebound before mixed-mode or plate integration",
+  "proposed_cases": [
+    {
+      "family": "NORMAL_ARREST_RETURN",
+      "initial_vY_mm_per_ms": 20.0,
+      "initial_energy_J": 0.02,
+      "maximum_dt_ms": [
+        5e-05,
+        2.5e-05
+      ],
+      "proposed_end_ms": 0.012,
+      "expected_no_deactivation": true,
+      "turning_gap_mm": 0.05383024986847916,
+      "force_at_turn_N": 296.81573991914865,
+      "positive_residual_gap_mm": 0.04852996879849436,
+      "recoverable_energy_at_turn_J": 0.0007866034237834972,
+      "ideal_release_velocity_mm_per_ms": -3.9663671634973414,
+      "retained_numerical_IE_after_unloading_J": 0.019213396576216502,
+      "history": "m=max historical positive gap; unloading F=max(0,F(m)+Kn*(delta-m)), while delta stays positive; derive crossing times and stop before compression"
+    },
+    {
+      "family": "NORMAL_SUBPEAK_RETURN",
+      "initial_vY_mm_per_ms": 4.47213595499958,
+      "initial_energy_J": 0.001,
+      "maximum_dt_ms": [
+        2.5e-05,
+        1.25e-05
+      ],
+      "proposed_end_ms": 0.004,
+      "expected_no_deactivation": true,
+      "reason": "Initial energy below elastic-peak energy; reversible elastic return, positive-gap window before first negative gap"
+    }
+  ],
+  "before_engine": [
+    "Derive and independently verify piecewise unloading/zero-force times and energy identities",
+    "Verify entire proposed record remains positive gap before compression; shorten end before declaration if needed",
+    "Declare raw velocity/force/impulse <=1%, global energy/work <=0.5%; retain actual histories with initial P",
+    "Fresh states only, never modify a damaged property or relabel old failed gates"
+  ],
+  "cost": {
+    "maximum_case_wall_seconds": 90,
+    "maximum_campaign_wall_seconds": 600,
+    "announce_before_run": true
+  },
+  "unchanged": [
+    "Both NASA conventions",
+    "Gf30 hypothetical, Gf15/60 deferred",
+    "All E inertia/angle/coverage limitations",
+    "F OFF/FX mixed-phase mismatch",
+    "TH/REACX labeling and exact centering unresolved",
+    "V11F/V11R and deferred V11S"
+  ],
+  "deferred": [
+    "Mixed-mode free separation",
+    "Plate/connection wavefield and physical fracture calibration",
+    "Boeing/façade/fire/collapse"
+  ],
+  "publication": "H pending 1/2; publish H+I after verified I and remote digest/CI checks; F+G baseline preserved"
+}

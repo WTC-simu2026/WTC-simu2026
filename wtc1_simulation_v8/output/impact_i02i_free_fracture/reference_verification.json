@@ -1,0 +1,104 @@
+{
+  "created_utc": "2026-10-04T11:47:43.290754+00:00",
+  "pass": true,
+  "checks": {
+    "initial_state": true,
+    "monotone_positive_path": true,
+    "energy_identity": true,
+    "quadrature_exact_time": true,
+    "quadrature_converged": true,
+    "force_is_work_derivative": true,
+    "equation_of_motion": true,
+    "continuity_at_peak_and_failure": true,
+    "final_work_and_speed": true
+  },
+  "parameters": {
+    "moving_mass_g": 0.1,
+    "fixed_mass_g": 0.1,
+    "k_N_per_mm": 56000.0,
+    "peak_N": 495.0,
+    "reference_area_mm2": 1.0,
+    "hypothetical_Gf_N_per_mm": 30.0,
+    "delta0_mm": 0.008839285714285714,
+    "deltaf_mm": 0.12121212121212122,
+    "softening_N_per_mm": 4404.979173187586,
+    "v0_mm_per_ms": 30.0,
+    "initial_energy_N_mm": 45.0,
+    "initial_energy_J": 0.045,
+    "initial_momentum_N_ms": 3.0,
+    "normal_total_work_N_mm": 30.0,
+    "normal_total_work_J": 0.03,
+    "omega_rad_per_ms": 748.3314773547883,
+    "lambda_rad_per_ms": 209.88042245973267,
+    "peak_time_ms": 0.00029708404642769034,
+    "failure_time_ms": 0.00561201925604344,
+    "peak_velocity_mm_per_ms": 29.26167349476591,
+    "post_failure_velocity_mm_per_ms": 17.320508075688775,
+    "formulas": {
+      "elastic": "delta=v0/w*sin(w*t); v=v0*cos(w*t)",
+      "softening": "x=df-delta=x0*cosh(lambda*tau)-vpeak/lambda*sinh(lambda*tau); v=vpeak*cosh(lambda*tau)-lambda*x0*sinh(lambda*tau)",
+      "after": "delta=df+vf*(t-tf); v=vf; F=0; W=G*area",
+      "force_work": "F=k*delta to d0, then soft*(df-delta) to df, then 0; W=integral F d(delta)",
+      "units": "W in N mm, J=0.001*N mm; v(delta)=sqrt(v0^2-2W_N_mm/m_g)",
+      "impulse": "J_support=m*v-m*v0; moving support reaction=0",
+      "energy": "E0_J=0.001*(m*v^2/2+W_N_mm)"
+    },
+    "domain": "Fresh monotone positive opening with E0>G*area, no shear reservoir or unloading"
+  },
+  "quadrature": [
+    {
+      "subdivisions_each_branch": 512,
+      "peak_time_ms": 0.00029708404642769093,
+      "failure_time_ms": 0.005612019256043344,
+      "exact_failure_time_difference_ms": -9.627715291671279e-17
+    },
+    {
+      "subdivisions_each_branch": 1024,
+      "peak_time_ms": 0.00029708404642769034,
+      "failure_time_ms": 0.005612019256043436,
+      "exact_failure_time_difference_ms": -4.336808689942018e-18
+    },
+    {
+      "subdivisions_each_branch": 2048,
+      "peak_time_ms": 0.0002970840464276903,
+      "failure_time_ms": 0.00561201925604344,
+      "exact_failure_time_difference_ms": 0.0
+    },
+    {
+      "subdivisions_each_branch": 4096,
+      "peak_time_ms": 0.0002970840464276903,
+      "failure_time_ms": 0.005612019256043441,
+      "exact_failure_time_difference_ms": 8.673617379884035e-19
+    }
+  ],
+  "maximum_energy_identity_error_J": 2.7755575615628914e-17,
+  "force_work_derivative_errors_over_peak": [
+    1.6877901994075268e-12,
+    2.022906843157758e-10,
+    0.0
+  ],
+  "motion_equation_residuals_over_peak": [
+    1.8559062068975022e-08,
+    6.801572659825446e-07,
+    0.0
+  ],
+  "continuity": [
+    {
+      "time_ms": 0.00029708404642769034,
+      "gap_range_mm": 5.852334762634914e-11,
+      "velocity_range_mm_ms": 9.899999042772833e-09
+    },
+    {
+      "time_ms": 0.00561201925604344,
+      "gap_range_mm": 3.4641053914263864e-11,
+      "velocity_range_mm_ms": 3.552713678800501e-15
+    }
+  ],
+  "elapsed_seconds": 0.008453499998722691,
+  "script_sha256": "4e249c7f568f2cd0529f53e067a6d7626d7f088d445c75db1e5a5564317be6ab",
+  "elastic_config_sha256": "780735b75bc222969dbc28342a8fb5ffd0a54a08f57e7a07b1ce2322987bb954",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.4.6",
+  "source": "Own piecewise analytic solution; independent Simpson quadrature and differential/energy checks; no source-derived physical property",
+  "physical_fracture_energy_calibrated": false
+}

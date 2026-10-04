@@ -8,11 +8,11 @@ Le projet teste des mécanismes, des hypothèses explicites et des plages de par
 
 ## Où en est la simulation ?
 
-Instantané du **4 octobre 2026** : **IMPACT-I02I-G terminée**, prochaine étape **IMPACT-I02I-H**. Le registre contient 114 entrées. Les mentions V8H/V11H sont historiques.
+Instantané du **4 octobre 2026** : **IMPACT-I02I-I terminée comme campagne bornée avec quatre échecs de signe brut**, prochaine étape **IMPACT-I02I-J**. Le registre contient 116 entrées. Les mentions V8H/V11H sont historiques.
 
-La paire F+G vérifie les petits modèles avant impact libre. F contrôle le pas après désactivation et conserve cinq échecs stricts OFF/FX. G raffine les trajectoires : résidu d'impulsion 0,192454 % à 800 subdivisions → 0,0962401 % à 1600 → 0,0481333 % à 3200. Deux oscillateurs élastiques libres retrouvent période et énergie ; les écarts bruts d'impulsion restent 2,319/1,159 % à 100/50 ns. Succès aux tolérances déclarées, huit diagnostics stricts à 1 % encore échoués. Ces contrôles ne qualifient pas la rupture libre ou l'impact complet.
+H vérifie quatre états neufs : contrôles élastiques libres à 25/12,5 ns (champs bruts ≤1 %) puis séparation normale libre à 50/25 ns et mouvement ensuite sans force. 122/122 critères de cas, 14/14 comparaisons et 9/9 références. I ajoute quatre états neufs d'arrêt et retour sans séparation : **170/174 critères**, 16/16 comparaisons et 16/16 références. Les quatre échecs concernent IE−U légèrement négatif ; ils restent échoués. Le diagnostic est compatible avec l'arrondi, sans preuve de l'algorithme interne ni changement de seuil. Ces témoins restent numériques, sans calibration physique.
 
-Lire le [rapport G](wtc1_simulation_v8/output/impact_i02i_table_free/rapport_impact_i02i_table_free.md), la [vérification d'intégrité](wtc1_simulation_v8/output/impact_i02i_table_free/publication_verification.json) et la [passation H](harness/handoffs/WTC1_IMPACT_I02I_G_HANDOFF.md). Les sensibilités et couvertures E restent ouvertes. V11F et V11R → V11S sont conservés.
+Lire les [rapports H](wtc1_simulation_v8/output/impact_i02i_free_fracture/rapport_impact_i02i_free_fracture.md) et [I](wtc1_simulation_v8/output/impact_i02i_free_return/rapport_impact_i02i_free_return.md), la [vérification d'intégrité I](wtc1_simulation_v8/output/impact_i02i_free_return/publication_verification.json) et la [passation J](harness/handoffs/WTC1_IMPACT_I02I_I_HANDOFF.md). Les cinq échecs OFF/FX F, les huit diagnostics historiques G et les sensibilités/couvertures E restent ouverts. V11F et V11R → V11S sont conservés. Impact complet Boeing/façade, incendie et effondrement réel non qualifiés.
 
 ## Ce qui est publié
 
@@ -23,9 +23,9 @@ Lire le [rapport G](wtc1_simulation_v8/output/impact_i02i_table_free/rapport_imp
 - `outputs/` : calculs exploratoires antérieurs et audits complémentaires. Leurs affirmations se lisent avec leurs propres limites ; leur présence n'est pas une validation.
 - `publication/` : inventaire complet, empreintes SHA-256, règles de publication, licences tierces et liste motivée des fichiers externes non redistribués.
 
-Inventaire courant : **5,035 fichiers scientifiques dans Git**, **7,364 sorties dans 42 archives**.
+Inventaire courant : **5,209 fichiers scientifiques dans Git**, **7,392 sorties dans 43 archives**.
 
-Restaurer les 23 archives [A](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-01-impact-i02i-a), les 4 archives [B+C](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-c), les 14 archives [D+E](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-e), puis les 1 archives [F+G](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-04-impact-i02i-g). Les manifestes conservent les SHA-256 et URL ; les anciennes archives ne sont pas remplacées.
+Restaurer les 23 archives [A](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-01-impact-i02i-a), les 4 archives [B+C](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-c), les 14 archives [D+E](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-e), l'archive [F+G](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-04-impact-i02i-g), puis les 1 archives [H+I](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-04-impact-i02i-i). Les manifestes conservent les SHA-256 et URL ; les anciennes archives ne sont pas remplacées.
 
 ## Consulter et vérifier sans relancer les solveurs
 
@@ -54,7 +54,7 @@ Voir [REPRODUCIBILITY.md](REPRODUCIBILITY.md). La base Python utilise NumPy et P
 
 ## Prochaine étape
 
-IMPACT-I02I-H : resserrer les contrôles élastiques libres à 25/12,5 ns avec critères bruts à 1 %, puis seulement dériver et déclarer un témoin neuf de rupture normale libre si ces contrôles passent. Réutiliser G, conserver les limites E et les échecs F. Gf15/60 différés. La simulation complète avion/bâtiment/feu/effondrement n'est pas atteinte.
+IMPACT-I02I-J : établir la précision des sorties binaires T01/CSV sauvegardées et examiner IE−U sans relancer les anciens calculs. Conserver les quatre échecs I et toutes les limites E/F/G. Toute nouvelle mesure de précision doit être pré-déclarée ; aucun clipping, déphasage ou substitution de propriété sur état endommagé. Les modes mixtes libres et la calibration physique restent différés, ainsi que Gf15/60.
 
 ## Discipline de preuve
 

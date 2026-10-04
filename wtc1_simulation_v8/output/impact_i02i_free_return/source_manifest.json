@@ -1,0 +1,58 @@
+{
+  "created_utc": "2026-10-04T12:51:22.829171+00:00",
+  "sources": [
+    {
+      "id": "ALTAIR_H2",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/stiffness_formulation_spring_hardening_r.htm",
+      "use": "unloading stiffness and positive zero-force plateau; reuse C saved page"
+    },
+    {
+      "id": "ALTAIR_TYPE8",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type8_spr_gene_starter_r.htm",
+      "use": "six independent modes and deformation-based failure"
+    },
+    {
+      "id": "ALTAIR_SPRING_HISTORY",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/th_spring_starter_r.htm",
+      "use": "OFF, force, displacement and IE definitions"
+    },
+    {
+      "id": "OPENRADIOSS_CODE_ATTEMPT",
+      "url": "https://github.com/OpenRadioss/OpenRadioss",
+      "access": "404 on 2026-10-03 via web and public API; exact engine integration phase not read",
+      "use": "no code-derived explanation claimed; runtime hashes and experimental phase diagnostic retained"
+    },
+    {
+      "id": "ALTAIR_DTIX_2026",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/dtix_engine_r.htm",
+      "use": "Initial and maximum step, without mass scaling; confirm actual TIME STEP through deletion"
+    },
+    {
+      "id": "ALTAIR_INIVEL",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inivel_starter_r.htm",
+      "use": "Initial translational velocity, node group, zero start time and optional units"
+    },
+    {
+      "id": "ALTAIR_TH_NODE",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/th_node_starter_r.htm",
+      "use": "VX/DX and constrained-node REACX; documentation calls REACX force whereas cached runtime checks identify cumulative impulse: discrepancy retained"
+    },
+    {
+      "id": "ALTAIR_DYNAMIC_THEORY_2017",
+      "url": "https://2017.help.altair.com/2017/hwsolvers/theory_dynamic_analysis.pdf",
+      "use": "Central difference half-step velocities and second-order accuracy; does not establish 2026 time-history centering"
+    },
+    {
+      "id": "H_ANALYTIC_REFERENCE",
+      "use": "Own exact derivation and independent quadrature, to be checked before any free fracture declaration"
+    },
+    {
+      "id": "I_OWN_REFERENCE",
+      "use": "Own positive-gap H2 history derivation, checked by RK4, quadrature, ODE and energy before engines"
+    }
+  ],
+  "cached_H_source_manifest": "wtc1_simulation_v8/output/impact_i02i_free_fracture/source_manifest.json",
+  "cached_H_sha256": "616556af469745b412c710f9c877dc11171ffa690ce68a1072ed831aa7387b61",
+  "no_new_physical_property": true,
+  "copyright_documentation_not_redistributed": true
+}
