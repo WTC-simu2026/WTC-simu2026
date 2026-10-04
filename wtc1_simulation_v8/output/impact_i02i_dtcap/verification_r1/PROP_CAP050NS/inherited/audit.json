@@ -1,0 +1,208 @@
+{
+  "case": {
+    "id": "PROP_CAP050NS",
+    "x_mm": [
+      0,
+      0.02
+    ],
+    "y_deltaf": [
+      0,
+      1.05
+    ],
+    "dt_scale": 0.2,
+    "fails": true,
+    "expected_final": "proportional_failure",
+    "cached_D_case": "MIXED_PROP_HALF_DT",
+    "maximum_dt_ms": 5e-05
+  },
+  "metrics": {
+    "rows": 20041,
+    "engine_cycles": 20041,
+    "max_force_normal_error_over_peak": 4.7427541500127005e-07,
+    "max_force_shear_error_over_430N": 0.9524053488372093,
+    "mass_error_fraction": 0.0,
+    "energy_residual_fraction": 3.673937259085351e-07,
+    "boundary_work_error_fraction": 4.316101761885067e-05,
+    "spring_IE_sum_error_fraction": 0.0,
+    "active_gap_error_mm": 0.0,
+    "expected_final_IE_J": 0.03390022675736961,
+    "final_IE_J": 0.033900570000000005,
+    "analytic_final_IE_error_fraction": 1.0124864617250168e-05,
+    "max_KE_J": 2.917654e-06,
+    "final_KE_J": 2.018362e-16,
+    "final_U_J": 0.0,
+    "final_unrecovered_work_J": 0.033900570000000005,
+    "initial_state_zero": true,
+    "normal_loaded_reference_J": 0.024822430356583918,
+    "normal_U_at_0_6deltaf_reference_J": 0.00040726940083885905,
+    "shear_U_at_0_02mm_reference_J": 0.0043
+  },
+  "work": {
+    "rows": 20041,
+    "min_output_dt_ms": 4.999999999988347e-05,
+    "max_output_dt_ms": 5.0000000000105516e-05,
+    "spring_work_error_fraction": 3.143997655272163e-07,
+    "final_IE_J": 0.033900570000000005,
+    "final_trapezoid_work_J": 0.03390056705700074,
+    "final_normal_trapezoid_work_J": 0.029999999994023904,
+    "final_shear_trapezoid_work_J": 0.0039005670629768357,
+    "max_absolute_work_discrepancy_J": 1.0658331259238985e-08,
+    "deactivation_events": [
+      {
+        "element_id": 1,
+        "time_ms": 0.8142,
+        "previous_time_ms": 0.81415,
+        "normal_gap_before_mm": 0.1212109,
+        "normal_gap_after_mm": 0.1212152,
+        "normal_force_before_N": 0.0055308,
+        "normal_force_after_N": 0.0,
+        "IE_jump_J": 2.7000000000043655e-07,
+        "trapezoid_increment_J": 2.825854867204531e-07
+      }
+    ]
+  },
+  "endpoints": [
+    {
+      "segment": 1,
+      "row": 20000,
+      "time_ms": 1.0,
+      "OFF": 0.0,
+      "nodal_x_mm": 0.02,
+      "nodal_y_mm": 0.1272727,
+      "IE_J": 0.033900570000000005,
+      "KE_J": 2.0183630000000002e-16,
+      "WX_J": 0.0039005670629768357,
+      "WY_J": 0.029999999994023904,
+      "U_shear_J": 0.0,
+      "U_normal_J": 0.0,
+      "unrecovered_work_J": 0.033900570000000005
+    }
+  ],
+  "deactivation_events": [
+    {
+      "row": 16284,
+      "OFF_time_ms": 0.8142,
+      "last_active_time_ms": 0.81415,
+      "FX_at_OFF_N": 409.5343,
+      "force_zero_row": 16285,
+      "lag_rows": 1,
+      "lag_ms": 4.999999999999449e-05,
+      "local_dt_ms": 4.999999999999449e-05,
+      "nodal_gap_overshoot_mm": 3.0787878787796874e-06,
+      "U_shear_before_J": 0.003900146576375814,
+      "IE_before_J": 0.03390015,
+      "IE_after_settled_J": 0.033900570000000005,
+      "KE_before_J": 3.90051e-07,
+      "KE_after_settled_J": 3.90051e-07,
+      "transition_partition_ambiguous": true,
+      "rows_near_event": [
+        {
+          "row": 16282,
+          "time_ms": 0.8141,
+          "OFF": 1.0,
+          "FX_N": 409.5048,
+          "FY_N": 0.02474811,
+          "LX_mm": 0.01904674,
+          "LY_mm": 0.1212065,
+          "nodal_x_mm": 0.01904674,
+          "nodal_y_mm": 0.1212065,
+          "IE_J": 0.03389986,
+          "KE_J": 3.90051e-07,
+          "external_work_J": 0.03390025
+        },
+        {
+          "row": 16283,
+          "time_ms": 0.81415,
+          "OFF": 1.0,
+          "FX_N": 409.5196,
+          "FY_N": 0.0055308,
+          "LX_mm": 0.01904742,
+          "LY_mm": 0.1212109,
+          "nodal_x_mm": 0.01904742,
+          "nodal_y_mm": 0.1212109,
+          "IE_J": 0.03390015,
+          "KE_J": 3.90051e-07,
+          "external_work_J": 0.03390054
+        },
+        {
+          "row": 16284,
+          "time_ms": 0.8142,
+          "OFF": 0.0,
+          "FX_N": 409.5343,
+          "FY_N": 0.0,
+          "LX_mm": 0.01904811,
+          "LY_mm": 0.1212152,
+          "nodal_x_mm": 0.01904811,
+          "nodal_y_mm": 0.1212152,
+          "IE_J": 0.03390042,
+          "KE_J": 3.90051e-07,
+          "external_work_J": 0.033900820000000005
+        },
+        {
+          "row": 16285,
+          "time_ms": 0.81425,
+          "OFF": 0.0,
+          "FX_N": 0.0,
+          "FY_N": 0.0,
+          "LX_mm": 0.01904879,
+          "LY_mm": 0.1212196,
+          "nodal_x_mm": 0.01904879,
+          "nodal_y_mm": 0.1212196,
+          "IE_J": 0.033900570000000005,
+          "KE_J": 3.90051e-07,
+          "external_work_J": 0.03390096
+        },
+        {
+          "row": 16286,
+          "time_ms": 0.8143,
+          "OFF": 0.0,
+          "FX_N": 0.0,
+          "FY_N": 0.0,
+          "LX_mm": 0.01904948,
+          "LY_mm": 0.121224,
+          "nodal_x_mm": 0.01904948,
+          "nodal_y_mm": 0.121224,
+          "IE_J": 0.033900570000000005,
+          "KE_J": 3.90051e-07,
+          "external_work_J": 0.03390096
+        },
+        {
+          "row": 16287,
+          "time_ms": 0.81435,
+          "OFF": 0.0,
+          "FX_N": 0.0,
+          "FY_N": 0.0,
+          "LX_mm": 0.01905016,
+          "LY_mm": 0.1212283,
+          "nodal_x_mm": 0.01905016,
+          "nodal_y_mm": 0.1212283,
+          "IE_J": 0.033900570000000005,
+          "KE_J": 3.90051e-07,
+          "external_work_J": 0.03390096
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "preflight": true,
+    "three_successful_jobs": true,
+    "normal_termination": true,
+    "mass": true,
+    "normal_H2_force": true,
+    "strict_same_row_OFF_FX": false,
+    "energy_balance": true,
+    "independent_boundary_work": true,
+    "spring_IE_sum": true,
+    "work_quadrature": true,
+    "active_gap": true,
+    "initial_state_zero": true,
+    "OFF_irreversible": true,
+    "expected_final_OFF": true,
+    "analytic_final_IE": true,
+    "TH_every_cycle": true,
+    "transition_within_one_cycle": true
+  },
+  "all_checks_pass": false,
+  "raw_csv_sha256": "25780ee99ffcca3f452e514c77607111815d70b72c7da1d779aba57987a9599d",
+  "interpretation": "IE is integrated internal work. U is reversible unloading energy away from deactivation; residual is unrecovered numerical work, not calibrated physical dissipation."
+}

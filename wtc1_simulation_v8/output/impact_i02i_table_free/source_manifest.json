@@ -1,0 +1,76 @@
+{
+  "created_utc": "2026-10-04T11:17:19.704964+00:00",
+  "sources": [
+    {
+      "id": "ALTAIR_H2",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/stiffness_formulation_spring_hardening_r.htm",
+      "use": "unloading stiffness and positive zero-force plateau; reuse C saved page"
+    },
+    {
+      "id": "ALTAIR_TYPE8",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type8_spr_gene_starter_r.htm",
+      "use": "six independent modes and deformation-based failure"
+    },
+    {
+      "id": "ALTAIR_SPRING_HISTORY",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/th_spring_starter_r.htm",
+      "use": "OFF, force, displacement and IE definitions"
+    },
+    {
+      "id": "OPENRADIOSS_CODE_ATTEMPT",
+      "url": "https://github.com/OpenRadioss/OpenRadioss",
+      "access": "404 on 2026-10-03 via web and public API; exact engine integration phase not read",
+      "use": "no code-derived explanation claimed; runtime hashes and experimental phase diagnostic retained"
+    },
+    {
+      "id": "ALTAIR_DTIX_2026",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/dtix_engine_r.htm",
+      "use": "Initial and maximum step, without mass scaling; confirm actual TIME STEP through deletion"
+    },
+    {
+      "id": "ALTAIR_INIVEL",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inivel_starter_r.htm",
+      "use": "Initial translational velocity, node group, zero start time and optional units"
+    },
+    {
+      "id": "ALTAIR_TH_NODE",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/th_node_starter_r.htm",
+      "use": "VX/DX and constrained-node REACX; documentation calls REACX force whereas cached runtime checks identify cumulative impulse: discrepancy retained"
+    },
+    {
+      "id": "ALTAIR_DYNAMIC_THEORY_2017",
+      "url": "https://2017.help.altair.com/2017/hwsolvers/theory_dynamic_analysis.pdf",
+      "use": "Central difference half-step velocities and second-order accuracy; does not establish 2026 time-history centering"
+    }
+  ],
+  "new_primary_snapshots": [
+    {
+      "id": "ALTAIR_INIVEL",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inivel_starter_r.htm",
+      "path": "wtc1_simulation_v8/output/impact_i02i_table_free/sources/altair_inivel.html",
+      "sha256": "ecc172733fb5fcb222b0b54903b822590b3c7273c36544e8df16ea56406bbffe",
+      "bytes": 95085,
+      "use": "Initial translational velocity, node group, zero start time and optional units"
+    },
+    {
+      "id": "ALTAIR_TH_NODE",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/th_node_starter_r.htm",
+      "path": "wtc1_simulation_v8/output/impact_i02i_table_free/sources/altair_th_node.html",
+      "sha256": "252464f3d8986fe900f485aa81f1c677e39d25888173d8358d6873a65e8d88df",
+      "bytes": 95217,
+      "use": "VX/DX and constrained-node REACX; documentation calls REACX force whereas cached runtime checks identify cumulative impulse: discrepancy retained"
+    },
+    {
+      "id": "ALTAIR_DYNAMIC_THEORY_2017",
+      "url": "https://2017.help.altair.com/2017/hwsolvers/theory_dynamic_analysis.pdf",
+      "path": "wtc1_simulation_v8/output/impact_i02i_table_free/sources/altair_dynamic_theory_2017.pdf",
+      "sha256": "85fe4454d38317f1652476f8a9af9d16ecc70791b60f9ebee3a961d1423b6f07",
+      "bytes": 1151,
+      "use": "Central difference half-step velocities and second-order accuracy; does not establish 2026 time-history centering"
+    }
+  ],
+  "cached_F_manifest": "wtc1_simulation_v8/output/impact_i02i_dtcap/source_manifest.json",
+  "cached_F_sha256": "213f3b879f9ff0bc2a7d616647b3d2e6b22c0e7fadb19ef5c094470bd3366846",
+  "documentation_excluded_from_redistribution": true,
+  "REACX_documentation_runtime_discrepancy_retained": true
+}

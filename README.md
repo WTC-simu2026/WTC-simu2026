@@ -8,11 +8,11 @@ Le projet teste des mécanismes, des hypothèses explicites et des plages de par
 
 ## Où en est la simulation ?
 
-Instantané du **3 octobre 2026** : **IMPACT-I02I-E terminée**, prochaine étape **IMPACT-I02I-F**. Le registre contient 112 entrées. Les mentions V8H/V11H sont historiques.
+Instantané du **4 octobre 2026** : **IMPACT-I02I-G terminée**, prochaine étape **IMPACT-I02I-H**. Le registre contient 114 entrées. Les mentions V8H/V11H sont historiques.
 
-La paire D+E conserve les échecs et les non-évaluations. D distingue énergie élastique restituée et travail conservé après désactivation d'une liaison ; IE n'est pas une énergie de fracture mixte mesurée. E audite 8/8 nouvelles éprouvettes : vitesse de chargement moitié, pénalités ×0,5/2 et domaine raffiné étendu, avec deux conventions NASA. La vitesse de ces essais est celle de l'éprouvette, pas celle du Boeing.
+La paire F+G vérifie les petits modèles avant impact libre. F contrôle le pas après désactivation et conserve cinq échecs stricts OFF/FX. G raffine les trajectoires : résidu d'impulsion 0,192454 % à 800 subdivisions → 0,0962401 % à 1600 → 0,0481333 % à 3200. Deux oscillateurs élastiques libres retrouvent période et énergie ; les écarts bruts d'impulsion restent 2,319/1,159 % à 100/50 ns. Succès aux tolérances déclarées, huit diagnostics stricts à 1 % encore échoués. Ces contrôles ne qualifient pas la rupture libre ou l'impact complet.
 
-Lire le [rapport E](wtc1_simulation_v8/output/impact_i02i_sensitivity/rapport_impact_i02i_sensitivity.md), la [vérification d'intégrité](wtc1_simulation_v8/output/impact_i02i_sensitivity/publication_verification.json) et la [passation F](harness/handoffs/WTC1_IMPACT_I02I_E_HANDOFF.md). Les bilans numériques ne qualifient ni le matériau physique, ni l'impact complet, ni une pénétration historique. V11F et la branche V11R → V11S sont conservés.
+Lire le [rapport G](wtc1_simulation_v8/output/impact_i02i_table_free/rapport_impact_i02i_table_free.md), la [vérification d'intégrité](wtc1_simulation_v8/output/impact_i02i_table_free/publication_verification.json) et la [passation H](harness/handoffs/WTC1_IMPACT_I02I_G_HANDOFF.md). Les sensibilités et couvertures E restent ouvertes. V11F et V11R → V11S sont conservés.
 
 ## Ce qui est publié
 
@@ -23,9 +23,9 @@ Lire le [rapport E](wtc1_simulation_v8/output/impact_i02i_sensitivity/rapport_im
 - `outputs/` : calculs exploratoires antérieurs et audits complémentaires. Leurs affirmations se lisent avec leurs propres limites ; leur présence n'est pas une validation.
 - `publication/` : inventaire complet, empreintes SHA-256, règles de publication, licences tierces et liste motivée des fichiers externes non redistribués.
 
-Inventaire courant : **4,805 fichiers scientifiques dans Git**, **7,285 sorties dans 41 archives**.
+Inventaire courant : **5,035 fichiers scientifiques dans Git**, **7,364 sorties dans 42 archives**.
 
-Restaurer les 23 archives [A](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-01-impact-i02i-a), les 4 archives [B+C](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-c), puis les 14 archives [D+E](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-e). Les manifestes conservent les SHA-256 et URL ; les anciennes archives ne sont pas remplacées.
+Restaurer les 23 archives [A](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-01-impact-i02i-a), les 4 archives [B+C](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-c), les 14 archives [D+E](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-e), puis les 1 archives [F+G](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-04-impact-i02i-g). Les manifestes conservent les SHA-256 et URL ; les anciennes archives ne sont pas remplacées.
 
 ## Consulter et vérifier sans relancer les solveurs
 
@@ -54,7 +54,7 @@ Voir [REPRODUCIBILITY.md](REPRODUCIBILITY.md). La base Python utilise NumPy et P
 
 ## Prochaine étape
 
-IMPACT-I02I-F : traiter les sensibilités et couvertures encore ouvertes, puis vérifier le phasage force/état/impulsion et la libération d'énergie avant un sous-modèle d'impact libre. Réutiliser les résultats E ; Gf15/60 restent hypothétiques et différés. La simulation complète avion/bâtiment/feu/effondrement n'est pas atteinte.
+IMPACT-I02I-H : resserrer les contrôles élastiques libres à 25/12,5 ns avec critères bruts à 1 %, puis seulement dériver et déclarer un témoin neuf de rupture normale libre si ces contrôles passent. Réutiliser G, conserver les limites E et les échecs F. Gf15/60 différés. La simulation complète avion/bâtiment/feu/effondrement n'est pas atteinte.
 
 ## Discipline de preuve
 

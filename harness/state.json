@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-03T12:45:16.918506+00:00",
+  "updated_at": "2026-10-04T11:25:17.176989+00:00",
   "active_thread": {
     "id": "019ffb88-05a7-7f60-adff-6804df0d66a5",
     "title": "Poursuivre enquete WTC 1 V4",
@@ -19,10 +19,10 @@
     "targeted_v10i_working_copy_count": 5,
     "targeted_v10i_working_copy_directory": "wtc1_simulation_v8/input/v10i_structural_sources"
   },
-  "current_iteration": "IMPACT-I02I-E",
-  "current_status": "completed_bounded_sensitivity_with_failed_or_unassessed_qualification_gates",
-  "next_iteration": "IMPACT-I02I-F",
-  "next_objective": "Réutiliser E sauvegardée : traiter sensibilités vitesse/pénalité/domaine et couvertures encore ouvertes. Préparer témoin neuf à pas post-rupture contrôlé et vérifier phasage force/état/impulsion/libération d’énergie avant impact libre. Deux conventions NASA, Gf30 hypothétique, aire initiale fixe, QEPH et bilans appuis conservés ; Gf15/60 différés. Paire D+E publiée et vérifiée ; prochaine paire après deux itérations vérifiées F+G. V11F/V11R/V11S préservés.",
+  "current_iteration": "IMPACT-I02I-G",
+  "current_status": "completed_bounded_table_resolution_and_free_elastic_controls_with_stricter_raw_accuracy_open",
+  "next_iteration": "IMPACT-I02I-H",
+  "next_objective": "Réutiliser G : résidu de trajectoire imposée ~1/N ; oscillateur libre élastique vérifié aux seuils déclarés, diagnostics bruts impulsion/vitesse à 1 % encore échoués. H : états neufs à 25/12,5 ns, critères bruts 1 % et P0 inclus ; si succès dériver référence puis déclarer témoin neuf de rupture normale libre. Conserver échecs OFF/FX F, toutes sensibilités/couvertures E, conventions NASA, Gf30 hypothétique et Gf15/60 différés. Paire F+G GitHub due après contrôle distant/archives/CI. V11F/V11R/V11S préservés.",
   "impact_i02h_key_results": {
     "accepted_cases": 7,
     "new_controls_executed": 2,
@@ -1174,7 +1174,17 @@
     "impact_i02i_e_report": "wtc1_simulation_v8/output/impact_i02i_sensitivity/rapport_impact_i02i_sensitivity.md",
     "impact_i02i_e_results": "wtc1_simulation_v8/output/impact_i02i_sensitivity/verification_r1/summary.json",
     "impact_i02i_e_handoff": "harness/handoffs/WTC1_IMPACT_I02I_E_HANDOFF.md",
-    "impact_i02i_e_publication_verification": "wtc1_simulation_v8/output/impact_i02i_sensitivity/publication_verification.json"
+    "impact_i02i_e_publication_verification": "wtc1_simulation_v8/output/impact_i02i_sensitivity/publication_verification.json",
+    "impact_i02i_f_report": "wtc1_simulation_v8/output/impact_i02i_dtcap/rapport_impact_i02i_dtcap.md",
+    "impact_i02i_f_results": "wtc1_simulation_v8/output/impact_i02i_dtcap/verification_r1/summary.json",
+    "impact_i02i_f_handoff": "harness/handoffs/WTC1_IMPACT_I02I_F_HANDOFF.md",
+    "impact_i02i_f_publication_verification": "wtc1_simulation_v8/output/impact_i02i_dtcap/publication_verification.json",
+    "impact_i02i_g_plan": "wtc1_simulation_v8/data/impact_i02i_g_plan_from_f.json",
+    "impact_i02i_g_report": "wtc1_simulation_v8/output/impact_i02i_table_free/rapport_impact_i02i_table_free.md",
+    "impact_i02i_g_results": "wtc1_simulation_v8/output/impact_i02i_table_free/verification_r1/summary.json",
+    "impact_i02i_g_handoff": "harness/handoffs/WTC1_IMPACT_I02I_G_HANDOFF.md",
+    "impact_i02i_g_publication_verification": "wtc1_simulation_v8/output/impact_i02i_table_free/publication_verification.json",
+    "impact_i02i_h_plan": "wtc1_simulation_v8/data/impact_i02i_h_plan_from_g.json"
   },
   "v8g_key_results": {
     "nist_hat_transfer_at_80_min_kip": 6748.0,
@@ -6607,5 +6617,52 @@
       ],
       "TRUE_DOMAIN_R1": []
     }
+  },
+  "impact_i02i_f_key_results": {
+    "cases": 8,
+    "case_checks_passed": 217,
+    "case_checks_total": 222,
+    "comparison_checks_passed": 10,
+    "comparison_checks_total": 10,
+    "runtime_seconds": 32.19021410000187,
+    "old_files_preserved": 1453,
+    "source_convention_verified": false,
+    "physical_propagation_qualified": false,
+    "free_body_inertia_qualified": false,
+    "mixed_mode_dissipation_calibrated": false,
+    "E_sensitivities_resolved": false,
+    "strict_same_row_OFF_FX_failed_cases": [
+      "FIXED_CAP200NS",
+      "FIXED_CAP100NS",
+      "FIXED_CAP050NS",
+      "PROP_CAP100NS",
+      "PROP_CAP050NS"
+    ],
+    "after_failure_X_raw_boundary_residual_fractions": {
+      "AFTER_CAP100NS": 0.001924541544710622,
+      "AFTER_CAP050NS": 0.001924541544710622
+    },
+    "github_pending_iterations": 1
+  },
+  "impact_i02i_g_key_results": {
+    "cases": 6,
+    "case_checks_passed": 162,
+    "case_checks_total": 162,
+    "comparison_checks_passed": 8,
+    "comparison_checks_total": 8,
+    "runtime_seconds": 30.114385900000343,
+    "old_files_preserved": 1632,
+    "free_fracture_qualified": false,
+    "physical_propagation_qualified": false,
+    "E_sensitivities_resolved": false,
+    "source_convention_verified": false,
+    "strict_1pct_failed_diagnostics": 8,
+    "table_residuals": {
+      "AFTER_N1600_100NS": 0.0009624010265611273,
+      "AFTER_N1600_050NS": 0.0009624010265611273,
+      "AFTER_N3200_100NS": 0.00048133346168889796,
+      "AFTER_N3200_050NS": 0.00048133346168889796
+    },
+    "github_pending_iterations": 2
   }
 }

@@ -1,0 +1,59 @@
+{
+  "id": "IMPACT-I02I-H_PLAN_FROM_G",
+  "created_utc": "2026-10-04T11:24:19.334116+00:00",
+  "seed": 1102016,
+  "random_draws": 0,
+  "saved_G_summary": "wtc1_simulation_v8/output/impact_i02i_table_free/verification_r1/summary.json",
+  "saved_G_summary_sha256": "547597478de9ec36d20a469aedfdaa52dd8d127c4a8f41f0223956f33721a156",
+  "scope": "First tighten raw free elastic impulse/velocity accuracy before a minimal fresh free normal fracture witness",
+  "stage_1": {
+    "fresh_cases": "Same free X elastic oscillator, 8 periods, caps 25 and 12.5 ns; no restart or prescribed X",
+    "maximum_dt_ms": [
+      2.5e-05,
+      1.25e-05
+    ],
+    "strict_raw_amplitude_tolerance_fraction": 0.01,
+    "rule": "Predeclare all tolerances and reference before engines. Retain all raw fields and include P0. Reuse G 100/50 ns, no rephasing to close a gate.",
+    "question": "Do raw nodal/global momentum and support impulse fall below 1% as step decreases? Exact internal TH centering remains unverified."
+  },
+  "stage_2_if_stage_1_passes": {
+    "fresh_free_normal_witness": true,
+    "moving_mass_g": 0.1,
+    "initial_vY_mm_per_ms": 30.0,
+    "X_blocked_Y_free": true,
+    "Kn_N_per_mm": 56000.0,
+    "peak_normal_N": 495.0,
+    "Gf_N_per_mm": 30.0,
+    "reference_area_mm2": 1.0,
+    "initial_energy_J": 0.045,
+    "monotone_normal_work_J": 0.03,
+    "ideal_post_failure_velocity_mm_per_ms": 17.32050807568877,
+    "proposed_maximum_dt_ms": [
+      5e-05,
+      2.5e-05
+    ],
+    "precondition": "Before declaring solve, derive/check piecewise cohesive W(delta), quadrature t(delta)=integral d(delta)/sqrt(v0^2-2W(delta)/m), impulse and E0=KE+IE; distinguish numerical IE retention from physical fracture calibration.",
+    "rule": "Fresh initial histories only, no property replacement. No shear energy reservoir, aircraft, mixed-mode calibration or Gf15/60 in this witness. Do not execute stage 2 if strict elastic controls fail."
+  },
+  "cost": {
+    "maximum_case_wall_seconds": 90,
+    "maximum_campaign_wall_seconds": 600,
+    "announce_before_run": true
+  },
+  "still_open": [
+    "F strict same-row OFF/FX mismatch",
+    "TH/REACX documentation-runtime discrepancy and precise output centering",
+    "All E inertia/angle/missing coverage limitations",
+    "NASA nominal/true convention unidentified",
+    "Gf15/60",
+    "Mixed-mode physical dissipation",
+    "Aircraft/façade/fire/collapse"
+  ],
+  "publication": "F+G due only after G integrity verification; after verified publication H will be pending 1/2",
+  "preserved": [
+    "V11F cold control",
+    "V11R and deferred V11S",
+    "No source/archive edits",
+    "Blender visual only"
+  ]
+}

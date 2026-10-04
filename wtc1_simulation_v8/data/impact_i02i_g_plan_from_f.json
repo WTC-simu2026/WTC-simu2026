@@ -1,0 +1,71 @@
+{
+  "id": "IMPACT-I02I-G_PLAN_FROM_F",
+  "declared_utc": "2026-10-04T08:31:05.877941+00:00",
+  "seed": 1102015,
+  "random_draws": 0,
+  "scope": "Close input-table and free elastic inertia controls before any free fracture or aircraft impact",
+  "saved_F_baselines": [
+    "AFTER_CAP100NS",
+    "AFTER_CAP050NS"
+  ],
+  "saved_baseline_summary": "wtc1_simulation_v8/output/impact_i02i_dtcap/verification_r1/summary.json",
+  "saved_baseline_sha256": "c8a6c7dd5400abc32afae6c6d15009ebf8381bd0e61c8e3310913a05c87f40f4",
+  "stage_1": {
+    "fresh_after_failure_controls": [
+      {
+        "subdivisions_per_segment": 1600,
+        "maximum_dt_ms": 0.0001
+      },
+      {
+        "subdivisions_per_segment": 1600,
+        "maximum_dt_ms": 5e-05
+      },
+      {
+        "subdivisions_per_segment": 3200,
+        "maximum_dt_ms": 0.0001
+      },
+      {
+        "subdivisions_per_segment": 3200,
+        "maximum_dt_ms": 5e-05
+      }
+    ],
+    "unchanged": "1 ms segments, same 0.02 mm displacement, same connector law/mass, fresh histories",
+    "question": "Does the unshifted residual plateau scale with the input-table spacing?",
+    "rule": "Define all new force/work/momentum gates before execution; compare old F without rerun or forced rephasing"
+  },
+  "stage_2": {
+    "fresh_free_elastic_witness": true,
+    "moving_nodal_mass_g": 0.1,
+    "fixed_nodal_mass_g": 0.1,
+    "tangent_stiffness_N_per_mm": 21500.0,
+    "initial_velocity_mm_per_ms": 1.0,
+    "initial_displacement_mm": 0.0,
+    "maximum_dt_ms": [
+      0.0001,
+      5e-05
+    ],
+    "duration_in_analytic_periods": 8,
+    "analytic_reference": "omega=sqrt(k/m), u=v0/omega*sin(omega*t), v=v0*cos(omega*t), E=0.5*m*v0^2; include initial momentum in impulse balance",
+    "precondition": "Verify primary keyword and output time-centering definitions before generating a fresh deck; no restart, imposed moving X or fracture in the free witness"
+  },
+  "cost": {
+    "maximum_case_wall_seconds": 90,
+    "maximum_campaign_wall_seconds": 600,
+    "announce_before_run": true
+  },
+  "invariants": [
+    "No mass scaling",
+    "Fresh states only",
+    "No damaged-property replacement",
+    "Raw OFF/force/impulse histories kept",
+    "No source convention selection",
+    "No Gf calibration"
+  ],
+  "deferred": [
+    "All E inertia/angle/coverage failures",
+    "Gf15/60",
+    "Free fracture transfer",
+    "Aircraft/facade/fire/collapse qualification"
+  ],
+  "publication": "F pending 1/2; publish F+G only after verified G; current public baseline E retained"
+}

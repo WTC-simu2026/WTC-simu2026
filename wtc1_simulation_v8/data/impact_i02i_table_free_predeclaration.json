@@ -1,0 +1,302 @@
+{
+  "id": "IMPACT-I02I-G",
+  "seed": 1102015,
+  "random_draws": 0,
+  "scope": "Four refined imposed AFTER histories and two fresh free elastic oscillators; no free fracture",
+  "units": {
+    "mass": "g",
+    "length": "mm",
+    "time": "ms",
+    "force": "N",
+    "solver_energy": "N mm = mJ",
+    "reported_energy": "J = 0.001 N mm",
+    "reaction_history": "cumulative impulse N ms, independently checked by boundary work"
+  },
+  "connector": {
+    "initial_area_mm2": 1.0,
+    "kn_N_per_mm": 56000.0,
+    "kt_N_per_mm": 21500.0,
+    "peak_normal_force_N": 495.0,
+    "hypothetical_Gf_N_per_mm": 30.0,
+    "mass_g": 0.2,
+    "rotational_inertia_g_mm2": 0.001,
+    "H_normal": 2,
+    "H_shear": 2,
+    "shear_failure_disabled": true,
+    "normal_failure": "whole element deactivation when normal gap reaches 2 Gf/peak",
+    "damping": 0.0,
+    "rotations": "blocked at both nodes",
+    "history": "all fresh; no restart, damaged-state property substitution or mass scaling"
+  },
+  "loading": {
+    "segment_ms": 1.0,
+    "subdivisions": 800,
+    "path": "quintic 10s3-15s4+6s5 per segment",
+    "shear_target_mm": 0.02,
+    "normal_scale": "deltaf=2 Gf/peak; coordinates below are fractions of deltaf"
+  },
+  "execution": {
+    "threads": 1,
+    "history_dt_ms": 1e-06,
+    "maximum_case_wall_seconds": 90,
+    "maximum_campaign_wall_seconds": 600,
+    "expected_wall_minutes": [
+      1,
+      5
+    ],
+    "no_mass_scaling": true,
+    "preflight": "all warnings/errors block engine",
+    "end_hold_ms": 0.002,
+    "maximum_time_step_keyword": "/DTIX",
+    "initial_dt_equals_maximum": true
+  },
+  "gates": {
+    "force_fraction": 0.005,
+    "energy_fraction": 0.005,
+    "work_fraction": 0.005,
+    "mass_fraction": 1e-05,
+    "gap_mm": 1e-05,
+    "transition_max_cycles": 1,
+    "force_zero_N": 1e-05,
+    "phase_energy_fraction": 0.005,
+    "maximum_solver_dt_relative_tolerance": 1e-05,
+    "csv_time_difference_tolerance_ms": 2e-06,
+    "end_coverage_steps": 2,
+    "impulse_boundary_fraction": 0.01,
+    "nodal_momentum_fraction": 0.01,
+    "added_mass_g": 1e-12,
+    "comparison_energy_fraction": 0.005,
+    "after_failure_impulse_comparison_fraction": 0.01,
+    "table_residual_ratio_relative_tolerance": 0.1,
+    "table_energy_difference_fraction": 0.005,
+    "free_displacement_fraction": 0.01,
+    "free_nodal_velocity_fraction": 0.03,
+    "free_force_fraction": 0.03,
+    "free_global_momentum_fraction": 0.01,
+    "free_impulse_fraction": 0.03,
+    "free_nodal_global_momentum_fraction": 0.03,
+    "free_energy_fraction": 0.005,
+    "free_recoverable_energy_fraction": 0.005,
+    "free_period_fraction": 0.005,
+    "free_fixed_displacement_mm": 1e-10,
+    "free_initial_velocity_fraction": 1e-06
+  },
+  "reference": {
+    "positive_H2": "F=max(0,F_envelope(m)+kn*(delta-m)); m=max historical normal gap; no compression exercised",
+    "recoverable_before_failure": "U=Fn^2/(2kn)+Ft^2/(2kt) from reversible unloading at fixed history",
+    "residual": "IE minus U is unrecovered numerical work, not identified fracture dissipation",
+    "at_deactivation": "Report OFF/FX phase mismatch without masking the strict same-row force gate; U partition ambiguous during that row"
+  },
+  "cases": [
+    {
+      "id": "AFTER_N1600_100NS",
+      "x_mm": [
+        0,
+        0,
+        0.02
+      ],
+      "y_deltaf": [
+        0,
+        1.05,
+        1.05
+      ],
+      "dt_scale": 0.2,
+      "fails": true,
+      "expected_final": "normal_only",
+      "cached_D_case": "SHEAR_AFTER_FAILURE",
+      "maximum_dt_ms": 0.0001,
+      "subdivisions": 1600,
+      "stage": "table"
+    },
+    {
+      "id": "AFTER_N1600_050NS",
+      "x_mm": [
+        0,
+        0,
+        0.02
+      ],
+      "y_deltaf": [
+        0,
+        1.05,
+        1.05
+      ],
+      "dt_scale": 0.2,
+      "fails": true,
+      "expected_final": "normal_only",
+      "cached_D_case": "SHEAR_AFTER_FAILURE",
+      "maximum_dt_ms": 5e-05,
+      "subdivisions": 1600,
+      "stage": "table"
+    },
+    {
+      "id": "AFTER_N3200_100NS",
+      "x_mm": [
+        0,
+        0,
+        0.02
+      ],
+      "y_deltaf": [
+        0,
+        1.05,
+        1.05
+      ],
+      "dt_scale": 0.2,
+      "fails": true,
+      "expected_final": "normal_only",
+      "cached_D_case": "SHEAR_AFTER_FAILURE",
+      "maximum_dt_ms": 0.0001,
+      "subdivisions": 3200,
+      "stage": "table"
+    },
+    {
+      "id": "AFTER_N3200_050NS",
+      "x_mm": [
+        0,
+        0,
+        0.02
+      ],
+      "y_deltaf": [
+        0,
+        1.05,
+        1.05
+      ],
+      "dt_scale": 0.2,
+      "fails": true,
+      "expected_final": "normal_only",
+      "cached_D_case": "SHEAR_AFTER_FAILURE",
+      "maximum_dt_ms": 5e-05,
+      "subdivisions": 3200,
+      "stage": "table"
+    },
+    {
+      "id": "FREE_ELASTIC_100NS",
+      "stage": "free",
+      "maximum_dt_ms": 0.0001,
+      "dt_scale": 0.2,
+      "fails": false,
+      "end_ms": 0.10840532739588365
+    },
+    {
+      "id": "FREE_ELASTIC_050NS",
+      "stage": "free",
+      "maximum_dt_ms": 5e-05,
+      "dt_scale": 0.2,
+      "fails": false,
+      "end_ms": 0.10840532739588365
+    }
+  ],
+  "sources": [
+    {
+      "id": "ALTAIR_H2",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/stiffness_formulation_spring_hardening_r.htm",
+      "use": "unloading stiffness and positive zero-force plateau; reuse C saved page"
+    },
+    {
+      "id": "ALTAIR_TYPE8",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type8_spr_gene_starter_r.htm",
+      "use": "six independent modes and deformation-based failure"
+    },
+    {
+      "id": "ALTAIR_SPRING_HISTORY",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/th_spring_starter_r.htm",
+      "use": "OFF, force, displacement and IE definitions"
+    },
+    {
+      "id": "OPENRADIOSS_CODE_ATTEMPT",
+      "url": "https://github.com/OpenRadioss/OpenRadioss",
+      "access": "404 on 2026-10-03 via web and public API; exact engine integration phase not read",
+      "use": "no code-derived explanation claimed; runtime hashes and experimental phase diagnostic retained"
+    },
+    {
+      "id": "ALTAIR_DTIX_2026",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/dtix_engine_r.htm",
+      "use": "Initial and maximum step, without mass scaling; confirm actual TIME STEP through deletion"
+    },
+    {
+      "id": "ALTAIR_INIVEL",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inivel_starter_r.htm",
+      "use": "Initial translational velocity, node group, zero start time and optional units"
+    },
+    {
+      "id": "ALTAIR_TH_NODE",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/th_node_starter_r.htm",
+      "use": "VX/DX and constrained-node REACX; documentation calls REACX force whereas cached runtime checks identify cumulative impulse: discrepancy retained"
+    },
+    {
+      "id": "ALTAIR_DYNAMIC_THEORY_2017",
+      "url": "https://2017.help.altair.com/2017/hwsolvers/theory_dynamic_analysis.pdf",
+      "use": "Central difference half-step velocities and second-order accuracy; does not establish 2026 time-history centering"
+    }
+  ],
+  "qualification": {
+    "source_convention_verified": false,
+    "mixed_mode_dissipation_calibrated": false,
+    "physical_propagation_qualified": false,
+    "aircraft_facade_qualified": false,
+    "thermal_branch_resumed": false,
+    "blender_executed": false,
+    "post_deactivation_free_inertia_qualified": false,
+    "prescribed_motion_is_not_free_release": true,
+    "E_sensitivity_gates_closed": false,
+    "free_fracture_qualified": false,
+    "free_elastic_control_only": true,
+    "exact_time_history_centering_verified": false
+  },
+  "comparison_pairs": [],
+  "deferred": [
+    "All E failed inertia/angle and missing-coverage gates remain open",
+    "Gf15/60",
+    "Free-body release and free impact",
+    "Source nominal/true convention identification"
+  ],
+  "precision_policy": {
+    "raw_impulse_residual_retained": true,
+    "net_momentum_residual_is_diagnostic": true,
+    "reason": "Cancellation of two large float32 impulses limits small net momentum; no precision correction promotes a gate",
+    "output": "TFILE/4 IEEE32; converter decimal precision and saved TIME STEP both audited"
+  },
+  "comparison_common_post_failure_times_ms": [
+    1.1,
+    1.25,
+    1.5,
+    1.75,
+    1.9,
+    2.0
+  ],
+  "audit_alignment_before_execution": {
+    "created_utc": "2026-10-04T08:22:03.380463+00:00",
+    "rule": "Explicit common comparison times moved into JSON before any solver; initial declaration preserved"
+  },
+  "declared_utc": "2026-10-04T11:17:02.058777+00:00",
+  "free_reference": {
+    "moving_mass_g": 0.1,
+    "fixed_mass_g": 0.1,
+    "k_N_per_mm": 21500.0,
+    "u0_mm": 0.0,
+    "v0_mm_per_ms": 1.0,
+    "omega_rad_per_ms": 463.6809247747852,
+    "period_ms": 0.013550665924485457,
+    "duration_periods": 8,
+    "amplitude_mm": 0.002156655464068768,
+    "force_amplitude_N": 46.36809247747852,
+    "initial_momentum_N_ms": 0.1,
+    "initial_energy_J": 5e-05,
+    "formulas": "u=v0/omega*sin(omega*t); v=v0*cos(omega*t); F=k*u; U=k*u^2/2; K=m*v^2/2; P=m*v; J_support=P-P0",
+    "normal_mode": "non-failing linear, Y blocked; X symmetric linear H2 with no fracture",
+    "time_centering": "Exact 2026 TH output centering not documented; raw common times audited without shift or extrapolation"
+  },
+  "predeclared_tolerance_rationale": {
+    "free_staggered_fields": "3% of analytic amplitude for raw force, nodal velocity and reaction impulse. At 100 ns omega*h/2=0.023184 rad; 8-period central-difference dispersion adds about 0.004505 rad; conservative sum below 0.03. No fitted time shift.",
+    "centered_fields": "1% displacement and global momentum; 0.5% energy and period.",
+    "table_ratio": "Residual expected to scale linearly with 1/N; compare G/F to 800/N within 10%, with both step caps independently. Hypothesis tested, not guaranteed.",
+    "stricter_raw_1pct": "Also save 1% diagnostics for all staggered channels. A failed stricter diagnostic remains visible and does not become a successful 1% qualification."
+  },
+  "saved_F_baseline": {
+    "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/verification_r1/summary.json",
+    "sha256": "c8a6c7dd5400abc32afae6c6d15009ebf8381bd0e61c8e3310913a05c87f40f4",
+    "cases": [
+      "AFTER_CAP100NS",
+      "AFTER_CAP050NS"
+    ]
+  }
+}
