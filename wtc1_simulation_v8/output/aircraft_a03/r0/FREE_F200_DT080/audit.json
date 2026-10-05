@@ -1,0 +1,369 @@
+{
+  "created_utc": "2026-10-05T09:00:12.298077+00:00",
+  "case": {
+    "id": "FREE_F200_DT080",
+    "contact": false,
+    "dt_scale": 0.8
+  },
+  "revision": "r0",
+  "checks": {
+    "starter_zero_errors": true,
+    "starter_zero_warnings": true,
+    "engine_normal_termination": true,
+    "native_total_mass_within_predeclared_fraction": true,
+    "initial_KE_matches_flying_aircraft_only": true,
+    "added_mass_fraction_below_declared_limit": true,
+    "global_energy_residual_within_declared_limit": true,
+    "hourglass_below_declared_fraction": true,
+    "fixed_support_displacements_zero": true,
+    "all_nodes_and_finite_states": true,
+    "original_aircraft_and_new_facade_connectivity_preserved": false,
+    "global_momentum_support_balance_with_CSV_allowance": true,
+    "end_overshoot_within_one_native_step": false,
+    "zero_external_work": true,
+    "free_whole_scene_displacement": true,
+    "free_whole_scene_velocity": true,
+    "free_internal_energy_zero": true
+  },
+  "numerical_checks_pass": false,
+  "failed_checks": [
+    "original_aircraft_and_new_facade_connectivity_preserved",
+    "end_overshoot_within_one_native_step"
+  ],
+  "native_total_mass_kg": 191470.1632498,
+  "initial_KE_J": 2444955000.0,
+  "energy_terms_without_double_counting": [
+    "KINETIC ENERGY",
+    "ROTATION ENERGY",
+    "INTERNAL ENERGY",
+    "HOURGLASS ENERGY",
+    "SPRING ENERGY",
+    "ELASTIC CONTACT ENERGY",
+    "FRICTIONAL CONTACT ENERGY",
+    "DAMPING CONTACT ENERGY "
+  ],
+  "energy_residual_max_J": 0.0,
+  "energy_residual_max_initial_KE_fraction": 0.0,
+  "last_history_energy_J": {
+    "KINETIC ENERGY": 2444955000.0,
+    "ROTATION ENERGY": 0.0,
+    "INTERNAL ENERGY": 0.0,
+    "HOURGLASS ENERGY": 0.0,
+    "SPRING ENERGY": 0.0,
+    "ELASTIC CONTACT ENERGY": 0.0,
+    "FRICTIONAL CONTACT ENERGY": 0.0,
+    "DAMPING CONTACT ENERGY ": 0.0
+  },
+  "last_history_time_ms": 0.4953531,
+  "final_state_time_ms": 0.47551,
+  "end_overshoot_ms": -0.024490000000000012,
+  "last_native_dt_ms": 0.0007349452,
+  "last_contact_impulse_Ns": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "last_facade_momentum_Ns": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "last_aircraft_delta_momentum_Ns": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "contact_raw_cumulative_impulse_balance_max_error_Ns": 0.0,
+  "contact_raw_as_force_integral_balance_max_error_Ns": 0.0,
+  "momentum_declared_absolute_and_relative_allowance_Ns": 10.0,
+  "last_contact_raw": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "last_contact_raw_as_force_integral_Ns": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "contact_onset_history_ms": null,
+  "support_raw_max_abs": 0.0,
+  "support_unit_interpretation": "Both cumulative and force-integrated forms retained. Support signals nearly zero on this short window, so their units are NOT independently distinguished here.",
+  "contact_unit_interpretation": "Native TH FNX/FNY/FNZ behaves as cumulative Nms on this build, demonstrated against facade momentum; documented force name is insufficient. Raw columns and competing N-force integration preserved.",
+  "maximum_added_mass_g": 0.0002129376,
+  "maximum_added_mass_fraction": 1.1121189661398715e-12,
+  "free_reference_max_displacement_difference_mm": 0.00010000000000331966,
+  "free_reference_max_velocity_difference_m_s": 0.0,
+  "coordinate_serialization_max_identity_error_mm": 0.051857100002578704,
+  "maximum_aircraft_edge_extension_fraction": 6.217248937900877e-15,
+  "maximum_shell_midplane_stress_MPa": {
+    "skin": 0.0,
+    "internals": 0.0,
+    "steel": 0.0
+  },
+  "beam_stress_not_exported": true,
+  "first_saved_elastic_diagnostic_exceedance_ms": null,
+  "elastic_diagnostics_pass": true,
+  "physical_impact_qualified": false,
+  "states": [
+    {
+      "time_ms": 0.0,
+      "maximum_aircraft_edge_extension_fraction": 0.0,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 1.0644074000001638
+    },
+    {
+      "time_ms": 0.0257231,
+      "maximum_aircraft_edge_extension_fraction": 2.6645352591003757e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.9760558000007222
+    },
+    {
+      "time_ms": 0.0507112,
+      "maximum_aircraft_edge_extension_fraction": 6.106226635438361e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.9726176999993186
+    },
+    {
+      "time_ms": 0.0756994,
+      "maximum_aircraft_edge_extension_fraction": 6.106226635438361e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.972216600000138
+    },
+    {
+      "time_ms": 0.100687,
+      "maximum_aircraft_edge_extension_fraction": 6.217248937900877e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.9750742999995055
+    },
+    {
+      "time_ms": 0.125676,
+      "maximum_aircraft_edge_extension_fraction": 2.6645352591003757e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.9765281999998479
+    },
+    {
+      "time_ms": 0.150664,
+      "maximum_aircraft_edge_extension_fraction": 1.5543122344752192e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.9755513999998584
+    },
+    {
+      "time_ms": 0.175652,
+      "maximum_aircraft_edge_extension_fraction": 6.106226635438361e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.9718071999996027
+    },
+    {
+      "time_ms": 0.20064,
+      "maximum_aircraft_edge_extension_fraction": 6.217248937900877e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.9770062999996298
+    },
+    {
+      "time_ms": 0.225628,
+      "maximum_aircraft_edge_extension_fraction": 2.6645352591003757e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 1.0262705000004644
+    },
+    {
+      "time_ms": 0.250616,
+      "maximum_aircraft_edge_extension_fraction": 1.7763568394002505e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.9612279000002673
+    },
+    {
+      "time_ms": 0.275604,
+      "maximum_aircraft_edge_extension_fraction": 3.1086244689504383e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.9614788999997472
+    },
+    {
+      "time_ms": 0.300593,
+      "maximum_aircraft_edge_extension_fraction": 6.217248937900877e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.9628327999998874
+    },
+    {
+      "time_ms": 0.325581,
+      "maximum_aircraft_edge_extension_fraction": 1.5543122344752192e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.9617299999999886
+    },
+    {
+      "time_ms": 0.350569,
+      "maximum_aircraft_edge_extension_fraction": 2.6645352591003757e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.961588600000141
+    },
+    {
+      "time_ms": 0.375557,
+      "maximum_aircraft_edge_extension_fraction": 3.1086244689504383e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.9687162000000171
+    },
+    {
+      "time_ms": 0.400545,
+      "maximum_aircraft_edge_extension_fraction": 6.217248937900877e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.962643300000309
+    },
+    {
+      "time_ms": 0.425533,
+      "maximum_aircraft_edge_extension_fraction": 6.217248937900877e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.9727847000003749
+    },
+    {
+      "time_ms": 0.450521,
+      "maximum_aircraft_edge_extension_fraction": 3.1086244689504383e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.985376699999506
+    },
+    {
+      "time_ms": 0.47551,
+      "maximum_aircraft_edge_extension_fraction": 3.1086244689504383e-15,
+      "midplane_shell_von_mises_MPa": {
+        "skin": 0.0,
+        "internals": 0.0,
+        "steel": 0.0
+      },
+      "elastic_diagnostic_exceeded": false,
+      "converter_seconds": 0.9705833999996685
+    }
+  ],
+  "runtime": [
+    {
+      "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+      "sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+      "args": [
+        "-i",
+        "A03_FREE_F200_DT080_0000.rad",
+        "-np",
+        "1"
+      ],
+      "seconds": 1.5079052999999476,
+      "exit_code": 0,
+      "timeout_s": 120,
+      "created_utc": "2026-10-05T08:53:39.775636+00:00"
+    },
+    {
+      "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+      "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+      "args": [
+        "-i",
+        "A03_FREE_F200_DT080_0001.rad"
+      ],
+      "seconds": 9.163115299999845,
+      "exit_code": 0,
+      "timeout_s": 300,
+      "created_utc": "2026-10-05T08:53:48.939895+00:00"
+    },
+    {
+      "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+      "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+      "args": [
+        "A03_FREE_F200_DT080T01"
+      ],
+      "seconds": 0.11504289999993489,
+      "exit_code": 0,
+      "timeout_s": 60,
+      "created_utc": "2026-10-05T08:53:49.055491+00:00"
+    }
+  ]
+}

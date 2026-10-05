@@ -8,17 +8,19 @@ Le projet teste des mécanismes, des hypothèses explicites et des plages de par
 
 ## Où en est la simulation ?
 
-Instantané du **5 octobre 2026** : **AIRCRAFT-A01 terminée comme premier assemblage paramétrique de l'avion entier**, prochaine étape **AIRCRAFT-A02**. Registre : **120 entrées**. Avant cette étape :119,dont22 dans la branche impact; les12 dernières I02I-A à L étaient des diagnostics locaux.
+Instantané du **5 octobre 2026** : **AIRCRAFT-A03 — premier contact de l'avion entier avec une façade représentative**, prochaine étape **AIRCRAFT-A04**. Registre : **122 entrées**. A02 et A03 sont deux itérations d'assemblage/calcul de l'avion complet, avec leurs essais et diagnostics conservés.
 
-La priorité a été recentrée sur l'avion complet et les conditions d'entrée, sans ajuster le modèle pour rejoindre NIST. A01 assemble fuselage,deux ailes/caisson central,longerons,nervures,raidisseurs,empennages et deux moteurs/pylônes équivalents; les dimensions externes viennent des plans primaires Boeing. Les sources Boeing restent en lecture seule et ne sont pas redistribuées comme logiciel libre. La structure interne,les épaisseurs et les masses détaillées sont encore hypothétiques.
+Le Boeing paramétrique est maintenant exécuté dans OpenRadioss : 2860 nœuds structuraux + 368 masses/RBE3, 6538 coques triangulaires et 4600 poutres. A02 conserve la translation libre aux facteurs de pas 0,8/0,4 ; **43/49 critères littéraux passent**, avec échecs CG de 1,204527 mm, masse ajoutée apparente et horodatage final. Ces échecs restent visibles, sans correction de masse ajustée.
 
-Neuf scénarios de carburant,charge,épaisseur et répartition du vide :**66/66** contrôles de construction,**4/4** contrôles des masses exportées,**6/6** contrôles de géométrie/conversion. La première sortie r0 conserve neuf échecs de symétrie : le découpage a été corrigé en miroir, sans modifier les seuils. Toutes les versions sont conservées. Nominal :122,159t,dont19,972t de structure explicite,9t de moteurs équivalents et53,187t de vide non résolu,plus30t carburant et10t de charge. La réserve non résolue représente64,7% du vide et ne reçoit aucune raideur cachée. Ni masse niCG historiques ne sont établis. Aucun impact calculé en A01.
+A03 ajoute une bande de façade de **59 colonnes × 3 étages**, 31792 nœuds et 31986 quadrilatères. Trois calculs nouveaux : contact désactivé et deux contacts avec pas divisé par deux. Tous terminent normalement, sans erreur ni avertissement ; chaque cas sauvegarde 20 états de 35020 nœuds. Le premier contact apparaît vers **0,226 ms** sous les conditions déclarées (-200,5,2)m/s, attitude nulle, **hypothétiques et non attribuées à AA11**. L'impulsion varie de **0,112 %** quand le pas est réduit de moitié.
 
-![Avion entier - géométrie et masses hypothétiques](publication/aircraft_a01_preview.png)
+**La réponse élastique est déjà dépassée vers 0,275 ms** : contraintes de coque jusqu'à 2,47 GPa pour la peau et 2,34 GPa pour l'acier. Ce sont des extrapolations du modèle intact, pas des contraintes physiques après rupture. Le bilan global laisse ~49,6 kJ de résidu : 0,00203 % de l'énergie initiale, mais ~16,6 % des énergies mobilisées par ce court contact. **Bilan local et impact physique non qualifiés.** Le dernier état est vers 0,475 ms et l'histoire vers 0,495 ms ; le critère de fin exacte reste non vérifié. Les premiers faux échecs de connectivité du convertisseur (triangles paddés) et leur audit corrigé sont conservés.
 
-Lire le [rapport A01](wtc1_simulation_v8/output/aircraft_a01/rapport_aircraft_a01.md), le [modèle 3D GLB](publication/aircraft_a01_model.glb), la [vérification](wtc1_simulation_v8/output/aircraft_a01/publication_verification.json) et la [passation A02](harness/handoffs/WTC1_AIRCRAFT_A01_HANDOFF.md). L conserve les cinq échecs OFF/FX, les réserves et les diagnostics I/J : son bilan numérique conditionnel n'identifie pas une fracture physique. Le [rapport L](wtc1_simulation_v8/output/impact_i02i_deletion_ledger/rapport_impact_i02i_deletion_ledger.md) est aussi publié. I02I-M est différée par ce recentrage, son plan conservé. V11F/V11R/V11S et toutes les limites antérieures restent ouvertes.
+Le nez reste une fermeture aluminium hypothétique, sans radome composite reconstruit. Les moteurs sont des masses/attaches équivalentes sans surfaces de contact. Les dimensions nominales de façade dépendent d'entrées NIST déjà documentées ; **aucun résultat de dégâts NIST n'est une cible**, aucun résultat attendu n'est imposé. Structure interne, sections, assemblages et répartition du vide restent hypothétiques ; 53,187 t du vide ne reçoivent aucune raideur cachée.
 
-**Aucun résultat NIST ne sert de cible dans le nouveau constructeur.** Les comparaisons de dommages auront lieu après gel des conditions; un écart restera visible. Maillage intact élastique et masses vérifiés pour ces hypothèses seulement; transfert au solveur,vol libre,résistance d'impact et rupture encore à vérifier. Aucun incendie ou effondrement historique validé.
+![Premier contact, états mécaniques sauvegardés et limites élastiques](wtc1_simulation_v8/output/aircraft_a03/cached_review/A03_premier_contact.png)
+
+Lire les [résultats A02](wtc1_simulation_v8/output/aircraft_a02/rapport_aircraft_a02.md), le [rapport A03](wtc1_simulation_v8/output/aircraft_a03/rapport_aircraft_a03.md), la [vérification d'intégrité A03](wtc1_simulation_v8/output/aircraft_a03/publication_verification.json) et la [passation vers A04](harness/handoffs/WTC1_AIRCRAFT_A03_HANDOFF.md). V11F froid, V11R/V11S, tous les échecs antérieurs et I02I-M différérée sont conservés. Pas d'incendie ni d'effondrement calculé. Tests numériques et dessin ne valident pas l'événement réel.
 
 ## Ce qui est publié
 
@@ -29,9 +31,9 @@ Lire le [rapport A01](wtc1_simulation_v8/output/aircraft_a01/rapport_aircraft_a0
 - `outputs/` : calculs exploratoires antérieurs et audits complémentaires. Leurs affirmations se lisent avec leurs propres limites ; leur présence n'est pas une validation.
 - `publication/` : inventaire complet, empreintes SHA-256, règles de publication, licences tierces et liste motivée des fichiers externes non redistribués.
 
-Inventaire courant : **5,430 fichiers scientifiques dans Git**, **7,413 sorties dans 45 archives**.
+Inventaire courant : **5,569 fichiers scientifiques dans Git**, **7,524 sorties dans 46 archives**.
 
-Restaurer les44 anciennes archives des releases A à J+K, puis les 1 archives [L+A01](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-05-aircraft-a01). Manifestes,SHA-256 et URL conservés; aucune ancienne archive reconstruite ou remplacée.
+Restaurer les 45 anciennes archives des releases A à L+A01, puis les 1 archives [A02+A03](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-05-aircraft-a02-a03). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
 
 ## Consulter et vérifier sans relancer les solveurs
 
@@ -60,7 +62,7 @@ Voir [REPRODUCIBILITY.md](REPRODUCIBILITY.md). La base Python utilise NumPy et P
 
 ## Prochaine étape
 
-AIRCRAFT-A02 : transfert cohérent des masses et inerties au solveur et vol libre intact court; préciser les données de structure/moteur qui dominent les inconnues. Puis impact limité de l'avion entier sur façade représentative, avec vitesse/attitude et sensibilités déclarées avant comparaison des dégâts. Aucune adaptation pour faire coïncider les résultats NIST. I02I-M est différée et ne sera reprise automatiquement qu'en présence d'un blocage concret de sa loi. La priorité reste l'assemblage complet.
+A04 : poursuivre le premier contact de l'avion entier avec une plasticité métallique explicite et des paramètres indépendants, dans un nouveau départ intact à t=0. Traiter la limite du nez/radome, les contraintes de poutres/fibres, le bilan local des énergies/amortissements et l'horodatage final. Conserver A03 et ses limites ; ne pas changer arbitrairement l'historique d'un matériau endommagé. Aucun ajustement vers NIST. Prochaine paire après A04+A05 vérifiées.
 
 ## Discipline de preuve
 

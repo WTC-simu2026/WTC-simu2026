@@ -1,0 +1,13 @@
+# Passation compacte AIRCRAFT-A02 → A03
+
+Lire AGENTS.md puis harness/state.json(prioritaire) et cette passation. Route voulue: Boeing entier et conditions explicites, sans ajuster versNIST. AncienV8H périmé; I02I-M différée et son plan intact.
+
+A02: avionA01 transféré àOpenRadioss,2860nœuds structuraux+368masses/RBE3,6538triangles+4600poutres. Dossiersr0/r1 conservés. Deux contrôles finaux de translationlibre~1ms,v=(-200,5,2)m/s(test, pasAA11),facteursdt0,8/0,4: terminaisonnormale,0erreur/0avertissement,3228nœuds×5états,csv etNPZ. Aucune forceextérieure,gravité,appui,contact ou corpsrigideglobal. Energieinterne/rotation/hourglass/travail0; énergie etP conservées àprécisionCSV. TroisEngine au total(r0+2r1),4Starter(dontdiagnostic entier sansRBE3),zéro anciencalcul relancé.
+
+Résultats: r1/summary.json,rapport_aircraft_a02.md,configaircraft_a02_predeclaration.json. **43/49critères littéraux**, contrôletranslation seul passe; transfert completmassique/déformation/impact nonqualifiés. Échecs×2: CG1,204527mm(contre10µm),addedmass4,917383e-7g(contre1e-8g, fraction4e-15),fin1,000260ms(contre1ms,tol1e-5ms). Seuils immuables. Inertie native écartnorme0,127335%,predictionnodes0,067305%. M122159,1859781kg. Diagnostic sansRBE3 retrouve exactementCG/inertieStarter; native_part_moment_audit explique l'écartCG par centresdesparts triangulaires, à1.029e-09m. Algorithmeprecisàdocumenter, pas de massecompensatrice ajustée. Exportcoordonnéesarrondi~0,05mm; contrôlerdéplacements/vitesses auxhorodatagesréels.
+
+A03 concret: avionentier+façadereprésentative,conditionsgelées,bilanforces/énergie,calculpremiercontact borné. Utiliser momentsnatifs sauvegardés en exposantl'écartCG; résolutionlocale siimpactée. Déclarer vitesse/attitude etportéeélastique/intact, sans simulerune rupture nonqualifiée. Sourcesindépendantes nécessaires pour conditionsAA11; géométriefaçade héritée peut dépendreNIST, le signaler séparément desortiescibles. Pasde nouvelenchaînement automatique decoupons. Garder échecsprédictifs; pasdefitversNIST. Toute correction devra avoir justificationindépendante et versionvisible.
+
+Réservevide53,187t inclut structuremanquante,pasraideurcachée. Moteurséquivalents4500kg chacun,fuelsansécoulement,attachesélastiques sansrupture; toushypothèsesA01. Défautsamortissementnatif signalés dansrapport. V11F/V11R/brancheV11S etéchecsI02Ipréservés. Flexionaprèsfracture/feu/effondrementréel nonvalidés; Blender visualisation.
+
+Vérification rapide sansrecalcul: C:/Python314/python.exe -X utf8 wtc1_simulation_v8/scripts/complete_aircraft_a02.py verify. Préserver2214fichiersanciens etnouveaumanifeste. CadenceGithub: A02pending1/2; prochainepublicationA02+A03après vérification. Pas depublication immédiate niX niYoremi. Registre121aprèsA02.
