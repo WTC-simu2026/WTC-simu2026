@@ -1,0 +1,21 @@
+# Passation compacte AIRCRAFT-A04 → A05
+
+Lire AGENTS.md, harness/state.json (prioritaire), puis cette passation. A04 est terminée comme itération exploratoire, avec des critères numériques et physiques échoués conservés. Route avion entier, aucun fit vers NIST ; V8H périmée, I02I-M et V11S différées, contrôle V11F conservé.
+
+Graphe A03 inchangé : 35 020 nœuds, 6 538 triangles avion + 4 600 poutres + 31 986 quads façade, 59 colonnes×3 étages, 944 appuis fixes. v=(-200,5,2) m/s, attitude nulle, conditions de test propres au modèle. Masse avion 122159,1859781 kg, façade 69310,977272 kg. Moteurs masses/RBE3 sans contact ; nez métallique hypothétique, pas un radôme composite reconstruit.
+
+A04 r1 : 8 départs intacts, tous Starter sans erreur/avertissement. LAW2 σ=a+Hεp, a=324/503/427,656 MPa, n=1,c=0 ; N=5, dm=0,df=10⁻²⁰, aucune fracture/érosion/mass scaling/autocontact. Variantes a×0,8/1,2 et H=0,02E déclarées avant calcul. Références Kaiser T4/T351 et T651, pas nomenclature767 ; Boeing ARFF page6 identifie le radôme composite sans propriétés/épaisseurs historiques. PDF sources dans input/aircraft_a04_sources, exclure de publication et ne pas modifier.
+
+FREE plastique : uniforme, PW=0. Contrôles élastiques à0,6004377 ms. Cas nominal et½dt/a×0,8/a×1,2 plafonnés300s à~1,63ms ; derniers états~1,6ms, histoires1,620001/1,630002/1,63ms : aucune fin vérifiée. Triangle4050=fuselage_caps, nœuds2040/17/18,X0=0,aireinitiale1,980619225e−4m² ; aire à1,60003ms=1.669% initiale,Δt terminalnominal~6e−8ms. Pas assimilé à une fracture. H=0,02E termine en40.54s à2.0001510ms, mais εp coque0,871/poutre0,738 : non qualifié en grandes déformations, ne pas retenir comme vérité parce qu’il termine.
+
+PW nominal onset0,2401098ms, premier étatplastique0,300254ms. Nominal dernier PW561,388kJ,IE784,251kJ, résidu−64,879kJ (~7,88%gen823,121kJ),Jx−5189,161Ns.½dt diffJ0.05772%,diffgen0.02587% à1,620001ms, pas qualification spatiale. Coquesεp3,726,poutres5,408. H dernierPW1166,090kJ,Jx−10160,490Ns. Touscontacts échouent bilanlocal5%gen+1000J au-delà1kJ, malgré bilan globalpetit/K0. dfmin seul améliore résiduA03 d’environ1,51kJ à0,4955922ms, ne résout pas ledger. PW inclus dansIE, ne pas additionner.
+
+TH contact brut secomportecomme impulsioncumulée Nms (retestPfaçade : erreurmax38Ns contre~1941Ns si forceintégrée). Réactions petites facequantificationPglobal, unités non distinguées ; conserver deuxinterprétations. Poutres ordre natif prouvé par history_label_probe : F1,F2,F3,M1,M2,M3,IE,SX,EPSP. Les cinqpremiersaudits avaient mauvaisordre ; premiersaudits immuables, métriquescorrectes dans cached_review/review.json ; SXnominalmax503MPa, pas contraintefibreflexion. VONM moyen>limite tandisque tenseursextremes≈limite : différence non expliquée, ne pas effacer.
+
+r0 uneanimationA007 écrasée par premierobservateur, nonrécupérée et tentative nonacceptée. r1 observe dans dossierisolé et hashes principaux identiques. PremierT02/animation observe fin principale, soncyclecontinuation exclu ; nepasutiliserd’observateur pour prétendrefin desTIMEOUT. A02CG1,204527mm etancienséchecs restentvisibles. 2464anciensfichierspréservés. 9calculsprincipauxneufs/6observations/9Starter, zéroancienEngine relancé. Rapport,NPZ,raws,decks,manifestes conservés ; complete_aircraft_a04.py verify sanssolveur.
+
+Figure retenue cached_review/A04_contact_plastique_v2.png : projectionXY, déplacement×1, planINITIALfaçade seulement, pas façade déformée. PremierPNG conservé avec défautdedécoupe ; v2corrige présentation sanschangerétats. Ailes pas encoreaucontact ; feu/effondrement absents. Les limitesflexionpostfracture/V11F/thermique/Blender demeurent.
+
+Suite : AIRCRAFT-A05 : améliorer le nez/radôme dans le modèle d’avion entier à partir de sources primaires et de variantes explicites, puis reprendre un départ intact. Traiter la dégénérescence du maillage et le besoin d’autocontact sans érosion ni mass scaling arbitraires ; conserver les comparaisons A03/A04 et le bilan local ouvert. Ne pas choisir H=0,02E simplement pour atteindre 2 ms et ne pas forcer un résultat NIST. Préserver V11F et la branche thermique différée.
+
+Cadence GitHub : lire publication_cycle.json, A03 dernière publiée ; aprèsA04 pending1/2, envoyerA04+A05 seulementaprèsvérificationA05 avec ceséchecs. AucunpostX ni opérationYoremi demandé.

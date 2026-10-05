@@ -8,19 +8,20 @@ Le projet teste des mécanismes, des hypothèses explicites et des plages de par
 
 ## Où en est la simulation ?
 
-Instantané du **5 octobre 2026** : **AIRCRAFT-A03 — premier contact de l'avion entier avec une façade représentative**, prochaine étape **AIRCRAFT-A04**. Registre : **122 entrées**. A02 et A03 sont deux itérations d'assemblage/calcul de l'avion complet, avec leurs essais et diagnostics conservés.
+Instantané du **5 octobre 2026** : **AIRCRAFT-A05 — nez arrondi et sandwich composite de référence dans l’avion entier**, prochaine étape **AIRCRAFT-A06**. Registre : **124 entrées historiques**, dont **cinq itérations de l’avion entier A01–A05**. Ce compteur ne mesure pas la fidélité physique.
 
-Le Boeing paramétrique est maintenant exécuté dans OpenRadioss : 2860 nœuds structuraux + 368 masses/RBE3, 6538 coques triangulaires et 4600 poutres. A02 conserve la translation libre aux facteurs de pas 0,8/0,4 ; **43/49 critères littéraux passent**, avec échecs CG de 1,204527 mm, masse ajoutée apparente et horodatage final. Ces échecs restent visibles, sans correction de masse ajustée.
+**A04 ajoute la plasticité métallique.** Le premier travail plastique apparaît vers 0,2401 ms. Quatre variantes sans écrouissage sont arrêtées après300 s vers1,63 ms : la fermeture plate hypothétique du nez devient dégénérée. Une variante H=0,02E atteint2 ms mais ses grandes déformations restent non qualifiées ; elle n’est pas choisie simplement parce qu’elle termine. Les essais arrêtés, les premières interprétations et les corrections d’audit sont conservés.
 
-A03 ajoute une bande de façade de **59 colonnes × 3 étages**, 31792 nœuds et 31986 quadrilatères. Trois calculs nouveaux : contact désactivé et deux contacts avec pas divisé par deux. Tous terminent normalement, sans erreur ni avertissement ; chaque cas sauvegarde 20 états de 35020 nœuds. Le premier contact apparaît vers **0,226 ms** sous les conditions déclarées (-200,5,2)m/s, attitude nulle, **hypothétiques et non attribuées à AA11**. L'impulsion varie de **0,112 %** quand le pas est réduit de moitié.
+**A05 remplace ce nez par une surface arrondie et un sandwich élastique explicite.** Neuf départs intacts : contrôle libre, forme métallique seule, composite avec/sans autocontact, demi-pas, gap selon épaisseur, deux épaisseurs de face et maillage affiné. Tous les cas retenus ont Starter sans erreur/avertissement et Engine normal : huit contacts atteignent2 ms, contrôle libre0,6 ms. Les masses sont recalculées sans compensation ; les sources Hexcel et Boeing ne sont pas une reconstruction de la fabrication du radôme767.
 
-**La réponse élastique est déjà dépassée vers 0,275 ms** : contraintes de coque jusqu'à 2,47 GPa pour la peau et 2,34 GPa pour l'acier. Ce sont des extrapolations du modèle intact, pas des contraintes physiques après rupture. Le bilan global laisse ~49,6 kJ de résidu : 0,00203 % de l'énergie initiale, mais ~16,6 % des énergies mobilisées par ce court contact. **Bilan local et impact physique non qualifiés.** Le dernier état est vers 0,475 ms et l'histoire vers 0,495 ms ; le critère de fin exacte reste non vérifié. Les premiers faux échecs de connectivité du convertisseur (triangles paddés) et leur audit corrigé sont conservés.
+**Les limites restent visibles.** La réduction du pas donne0,39547 % d’écart d’impulsion et0,15931 % d’énergie générée, dans les seuils annoncés. Le maillage affiné, à géométrie et masse identiques, donne14,34646 %/43,25002 % : convergence spatiale en échec. La référence de résistance du sandwich nominal est dépassée dès l’état0,60045 ms. Tous les contacts échouent le bilan énergétique local ; nominal : résidu−78,642 kJ pour283,168 kJ générés, ~27,77 %. L’autocontact est présent mais inactif sur cette fenêtre, donc non validé après pliage. Rupture, écrasement de l’âme et délaminage restent absents. Une nouvelle observation des listings révèle de l’amortissement numérique métallique natif malgré des zéros d’entrée ; son effet sur le bilan reste à mesurer.
 
-Le nez reste une fermeture aluminium hypothétique, sans radome composite reconstruit. Les moteurs sont des masses/attaches équivalentes sans surfaces de contact. Les dimensions nominales de façade dépendent d'entrées NIST déjà documentées ; **aucun résultat de dégâts NIST n'est une cible**, aucun résultat attendu n'est imposé. Structure interne, sections, assemblages et répartition du vide restent hypothétiques ; 53,187 t du vide ne reçoivent aucune raideur cachée.
+![Avion entier et comparaison mécanique des deux maillages de nez](wtc1_simulation_v8/output/aircraft_a05/cached_review/summary_aircraft_a05.png)
 
-![Premier contact, états mécaniques sauvegardés et limites élastiques](wtc1_simulation_v8/output/aircraft_a03/cached_review/A03_premier_contact.png)
+Conditions de test propres au modèle : v=(-200,5,2)m/s, attitude nulle, façade représentative59 colonnes×3 étages. Ailes et moteurs n’ont pas encore atteint la façade ; les moteurs restent des masses/attaches sans surfaces de contact. Dimensions nominales de façade héritées de sources NIST, dépendance déclarée ; **aucune sortie de dégâts NIST n’est une cible et aucun résultat attendu n’est imposé**. Incendie et effondrement non calculés. V11F froid, V11R/V11S différée, A02/A03 et leurs échecs sont conservés. Blender et les tests numériques ne valident pas l’événement réel.
 
-Lire les [résultats A02](wtc1_simulation_v8/output/aircraft_a02/rapport_aircraft_a02.md), le [rapport A03](wtc1_simulation_v8/output/aircraft_a03/rapport_aircraft_a03.md), la [vérification d'intégrité A03](wtc1_simulation_v8/output/aircraft_a03/publication_verification.json) et la [passation vers A04](harness/handoffs/WTC1_AIRCRAFT_A03_HANDOFF.md). V11F froid, V11R/V11S, tous les échecs antérieurs et I02I-M différérée sont conservés. Pas d'incendie ni d'effondrement calculé. Tests numériques et dessin ne valident pas l'événement réel.
+Lire le [rapport A04](wtc1_simulation_v8/output/aircraft_a04/rapport_aircraft_a04.md), le [rapport A05](wtc1_simulation_v8/output/aircraft_a05/rapport_aircraft_a05.md), la [relecture autoritative A05](wtc1_simulation_v8/output/aircraft_a05/cached_review/review.json), la [vérification d’intégrité](wtc1_simulation_v8/output/aircraft_a05/publication_verification.json) et la [passation vers A06](harness/handoffs/WTC1_AIRCRAFT_A05_HANDOFF.md). La publication conserve les sorties, reprises, binaires, scripts, configurations, tentatives et critères échoués ; elle ne relance aucun solveur ancien.
+
 
 ## Ce qui est publié
 
@@ -31,9 +32,9 @@ Lire les [résultats A02](wtc1_simulation_v8/output/aircraft_a02/rapport_aircraf
 - `outputs/` : calculs exploratoires antérieurs et audits complémentaires. Leurs affirmations se lisent avec leurs propres limites ; leur présence n'est pas une validation.
 - `publication/` : inventaire complet, empreintes SHA-256, règles de publication, licences tierces et liste motivée des fichiers externes non redistribués.
 
-Inventaire courant : **5,569 fichiers scientifiques dans Git**, **7,524 sorties dans 46 archives**.
+Inventaire courant : **6,084 fichiers scientifiques dans Git**, **7,976 sorties dans 53 archives**.
 
-Restaurer les 45 anciennes archives des releases A à L+A01, puis les 1 archives [A02+A03](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-05-aircraft-a02-a03). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
+Restaurer les 46 anciennes archives des releases précédentes, puis les 7 archives [A04+A05](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-05-aircraft-a04-a05). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
 
 ## Consulter et vérifier sans relancer les solveurs
 
@@ -62,7 +63,8 @@ Voir [REPRODUCIBILITY.md](REPRODUCIBILITY.md). La base Python utilise NumPy et P
 
 ## Prochaine étape
 
-A04 : poursuivre le premier contact de l'avion entier avec une plasticité métallique explicite et des paramètres indépendants, dans un nouveau départ intact à t=0. Traiter la limite du nez/radome, les contraintes de poutres/fibres, le bilan local des énergies/amortissements et l'horodatage final. Conserver A03 et ses limites ; ne pas changer arbitrairement l'historique d'un matériau endommagé. Aucun ajustement vers NIST. Prochaine paire après A04+A05 vérifiées.
+**A06 : traiter le radôme au-delà de sa limite élastique**, avec endommagement/rupture et énergie explicites issus de références indépendantes ou de plages annoncées. Vérifier un mécanisme simple avant son transfert dans un nouveau départ intact de l’avion entier ; examiner aussi la sensibilité spatiale/contact et l’amortissement natif métallique. Ne pas ajuster résistances, énergie, maillage ou érosion à un résultat NIST. Les moteurs géométriques et leur contact restent un domaine manquant. Préserver V11F et la branche thermique différée. Prochaine mise à jour après deux nouvelles itérations vérifiées, A06+A07 si la route locale reste inchangée.
+
 
 ## Discipline de preuve
 

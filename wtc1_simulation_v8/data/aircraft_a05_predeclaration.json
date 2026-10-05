@@ -1,0 +1,37 @@
+{
+  "iteration":"AIRCRAFT-A05","seed":1102030,"random_draws":0,
+  "scope":"Whole aircraft fresh intact starts, rounded nose and explicit elastic reference sandwich; no 767 as-built claim or fracture deletion. Metal laws remain A04 EPP.",
+  "input_deck":"wtc1_simulation_v8/output/aircraft_a04/r1/PLASTIC_NOMINAL/A04_PLASTIC_NOMINAL_0000.rad",
+  "input_mesh":"wtc1_simulation_v8/output/aircraft_a04/r1/mesh.json",
+  "velocity_m_s":[-200,5,2],"historical_AA11_conditions_established":false,
+  "nose":{"root_X_mm":2000,"first_ring_X_mm":250,"shape":"ellipsoid section r(x)/r(root)=sqrt(1-(1-x/root)^2), joined to inherited X=2m ring; own hypothesis","root_joint":"common nodes, ideal perfect bond, no fastener failure","metal_frames_and_stringers_inside_radome":"remove in composite cases; retain in geometry-only metal control","mass_policy":"derive physical mass change; no top-up to old/historical mass, no hidden stiffness","fine_mesh":"subdivide all radome edges except root boundary, exact piecewise-flat geometry; conforming 3-triangle root transitions, no hanging node"},
+  "sandwich":{"face_thickness_mm":0.5,"core_thickness_mm":8,"ply_integration_points":3,"thickness_integration":"Gauss","property":"TYPE51 plus TYPE19 plies","material_law":"LAW25 Iform0, elastic by very high internal yield/failure caps; diagnostic real reference strengths separate","failure_disabled":true,"numerical_yield_MPa":1e12,"numerical_failure_strain":1e30,"core_crushing_not_represented":true,"delamination_not_represented":true,
+    "face":{"rho_g_mm3":0.00183,"E11_MPa":22000,"E22_MPa":22000,"nu12":0.25,"G12_MPa":4000,"G23_MPa":4000,"G31_MPa":4000,"E33_MPa":10000,"reference":"Hexcel HexPly913,7781GL/R913, PDF page4: rho1.83g/cc,E1 tension22GPa; E2,nu and G values own balanced-woven approximations, no assignment to actual767","diagnostic_tension_MPa":450,"diagnostic_compression_MPa":460,"short_beam_shear_MPa_not_inplane_shear_strength":65},
+    "core":{"rho_g_mm3":0.000048,"E11_MPa":1,"E22_MPa":1,"nu12":0.1,"G12_MPa":0.5,"G23_MPa":24,"G31_MPa":41,"E33_MPa":138,"reference":"HexWeb HRH10-3.2-48,PDF page4: transverse E138MPa,G_L41MPa,G_W24MPa; in-plane E1/E2,G12 and nu own placeholders; E33 unused in plane-stress shell","diagnostic_shear_L_MPa":1.21,"diagnostic_shear_W_MPa":0.69,"bare_normal_crushing_strength_MPa_not_resolved":2.07}
+  },
+  "contact":{"external_base":"A04 TYPE7 constant gap5mm","true_gap_variant":"Igap1,Gapmin1mm, sum half native thicknesses","radome_self_only":"TYPE7, same secondary/main radome; constant gap actual total sandwich thickness, friction0,normal viscosity1e-20","global_aircraft_self_contact_established":false,"no_initial_adjustment":true,"no_erosion_or_mass_scaling":true},
+  "units":{"native":"g mm ms MPa N Nmm","g_to_kg":0.001,"mm_to_m":0.001,"ms_to_s":0.001,"Nmm_to_J":0.001,"Nms_to_Ns":0.001,"g_cc_to_kg_m3":1000,"GPa_to_MPa":1000},
+  "execution":{"threads":2,"starter_timeout_s":120,"engine_timeout_s":300,"converter_timeout_s":90,"history_dt_ms":0.02,"animation_dt_ms":0.2,"additional_observation_time_ms":0.000001,"cases":[
+    {"id":"ROUND_METAL","composite":false,"contact":true,"self_contact":false,"fine":false,"face_mm":0.5,"gap_mode":"base","dt_scale":0.8,"end_ms":2},
+    {"id":"COMP_FREE","composite":true,"contact":false,"self_contact":false,"fine":false,"face_mm":0.5,"gap_mode":"base","dt_scale":0.8,"end_ms":0.6},
+    {"id":"COMP_NOSC","composite":true,"contact":true,"self_contact":false,"fine":false,"face_mm":0.5,"gap_mode":"base","dt_scale":0.8,"end_ms":2},
+    {"id":"COMP_SELF","composite":true,"contact":true,"self_contact":true,"fine":false,"face_mm":0.5,"gap_mode":"base","dt_scale":0.8,"end_ms":2},
+    {"id":"COMP_HALF_DT","composite":true,"contact":true,"self_contact":true,"fine":false,"face_mm":0.5,"gap_mode":"base","dt_scale":0.4,"end_ms":2},
+    {"id":"COMP_TRUE_GAP","composite":true,"contact":true,"self_contact":true,"fine":false,"face_mm":0.5,"gap_mode":"thickness","dt_scale":0.8,"end_ms":2},
+    {"id":"COMP_FACE_THIN","composite":true,"contact":true,"self_contact":true,"fine":false,"face_mm":0.25,"gap_mode":"base","dt_scale":0.8,"end_ms":2},
+    {"id":"COMP_FACE_THICK","composite":true,"contact":true,"self_contact":true,"fine":false,"face_mm":1,"gap_mode":"base","dt_scale":0.8,"end_ms":2},
+    {"id":"COMP_FINE","composite":true,"contact":true,"self_contact":true,"fine":true,"face_mm":0.5,"gap_mode":"base","dt_scale":0.8,"end_ms":2}
+  ]},
+  "acceptance":{"mass_relative_error":1e-6,"added_mass_fraction":1e-9,"global_energy_residual_initial_KE_fraction":0.005,"local_energy_residual_generated_energy_fraction":0.05,"local_energy_comparison_minimum_J":1000,"CSV_KE_precision_allowance_J":1000,"momentum_absolute_allowance_Ns":10,"momentum_relative_allowance":0.02,"half_dt_impulse_difference_fraction":0.05,"half_dt_generated_energy_difference_fraction":0.1,"mesh_impulse_difference_fraction":0.1,"mesh_generated_energy_difference_fraction":0.1,"free_displacement_error_mm":0.02,"free_velocity_error_m_s":0.001,"final_timestamp_overshoot_native_step_factor":1.1,"metal_plastic_strain_diagnostic_limit":0.1,"negative_plastic_work_allowance_J":1e-6,"laminate_quadrature_relative_error":1e-12,"starter_errors":0,"starter_warnings":0},
+  "sources":[
+    "https://www.boeing.com/content/dam/boeing/v2/airports/arff/arff767.pdf",
+    "https://www.hexcel.com/wp-content/uploads/2026/01/HexPly_913_us_DataSheet.pdf",
+    "https://www.hexcel.com/wp-content/uploads/2025/12/HexWeb_HRH10_DataSheet_eu1.pdf",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/tsai_wu_formulation_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type51_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type19_ply_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inter_type7_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/anim_shell_tens_engine_r.htm"
+  ],
+  "NIST_outcomes_used_as_target":false,"NIST_nominal_facade_input_dependency":true,"physical_impact_qualified":false,"historical_radome_reconstructed":false,"V11F_preserved":true
+}

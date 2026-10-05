@@ -1,0 +1,3927 @@
+{
+  "created_utc": "2026-10-05T15:36:11.004738+00:00",
+  "revision": "r3",
+  "cases": [
+    {
+      "created_utc": "2026-10-05T15:27:21.433471+00:00",
+      "case": {
+        "id": "ROUND_METAL",
+        "composite": false,
+        "contact": true,
+        "self_contact": false,
+        "fine": false,
+        "face_mm": 0.5,
+        "gap_mode": "base",
+        "dt_scale": 0.8,
+        "end_ms": 2
+      },
+      "checks": {
+        "starter_zero_errors": true,
+        "starter_zero_warnings": true,
+        "main_engine_normal_termination": true,
+        "observer_normal_termination": true,
+        "observer_did_not_change_main_outputs": true,
+        "mass_preserved": true,
+        "added_mass_within_fraction": true,
+        "native_original_connectivity_preserved": true,
+        "all_exported_states_finite": true,
+        "supports_fixed": true,
+        "native_end_timestamp_observed_within_step": true,
+        "energy_global_within_declared_limit": true,
+        "energy_local_within_declared_limit": false,
+        "momentum_global_support_balance": true,
+        "momentum_contact_facade_balance": true,
+        "global_and_part_plastic_work_nonnegative": true,
+        "plastic_strain_below_diagnostic_limit": false,
+        "no_erosion": true,
+        "no_external_work": true
+      },
+      "all_declared_checks_pass": false,
+      "core_execution_and_transfer_checks_pass": true,
+      "failed_checks": [
+        "energy_local_within_declared_limit",
+        "plastic_strain_below_diagnostic_limit"
+      ],
+      "native_total_mass_kg": 191518.93101240002,
+      "actual_main_end_time_ms": 2.000521,
+      "last_history_time_ms": 2.000521,
+      "last_animation_time_ms": 2.00052,
+      "main_end_observed": true,
+      "requested_horizon_reached": true,
+      "observer_timestamp_role": "T02 initial saved history plus first observer animation; continuation step excluded. No observer for a timed-out run; last saved history is not a verified end timestamp.",
+      "initial_KE_J": 2445931000.0,
+      "energy_terms_without_double_counting": [
+        "KINETIC ENERGY",
+        "ROTATION ENERGY",
+        "INTERNAL ENERGY",
+        "HOURGLASS ENERGY",
+        "SPRING ENERGY",
+        "ELASTIC CONTACT ENERGY",
+        "FRICTIONAL CONTACT ENERGY",
+        "DAMPING CONTACT ENERGY "
+      ],
+      "global_plastic_work_is_subset_of_IE_not_added_again": true,
+      "maximum_energy_residual_J": 208848.40000009537,
+      "maximum_energy_residual_initial_KE_fraction": 8.538605545295242e-05,
+      "maximum_local_energy_residual_fraction_above_1kJ": 3.591440512188626,
+      "final_energy_residual_J": -208848.40000009537,
+      "final_generated_energy_J": 1123151.6,
+      "final_energy_terms_J": {
+        "KINETIC ENERGY": 2444599000.0,
+        "ROTATION ENERGY": 228778.6,
+        "INTERNAL ENERGY": 891219.3,
+        "HOURGLASS ENERGY": 0.0,
+        "SPRING ENERGY": 0.0,
+        "ELASTIC CONTACT ENERGY": 3153.7000000000003,
+        "FRICTIONAL CONTACT ENERGY": 0.0,
+        "DAMPING CONTACT ENERGY ": 0.0
+      },
+      "final_global_plastic_work_J": 616961.3,
+      "final_sum_part_plastic_work_J": 616961.21,
+      "contact_onset_history_ms": 0.2403271,
+      "plastic_work_onset_history_ms": 0.3005926,
+      "first_saved_plastic_strain_ms": 0.400545,
+      "maximum_shell_plastic_strain": 0.195964,
+      "maximum_sampled_beam_plastic_strain": 0.09521048,
+      "maximum_sampled_beam_abs_SX_MPa": 502.8535,
+      "maximum_sampled_beam_bending_moment_Nmm": 14225453.784945631,
+      "beam_history_native_order": [
+        "F1",
+        "F2",
+        "F3",
+        "M1",
+        "M2",
+        "M3",
+        "IE",
+        "SX",
+        "EPSP"
+      ],
+      "beam_history_scope": "696 forward beams with max endpoint X<=8m; SX is native axial stress, not an outer-fiber bending maximum. Native resultants are preserved; section resolved yielding unknown.",
+      "final_contact_impulse_Ns": [
+        -9787.799,
+        193.33520000000001,
+        -18.782349999999997
+      ],
+      "final_facade_momentum_Ns": [
+        -9783.23,
+        192.70270000000002,
+        -17.1962732
+      ],
+      "contact_balance_max_error_Ns": 77.26086475939692,
+      "global_support_balance_max_error_Ns": 2.556469775152135,
+      "momentum_allowance_Ns": 205.79452550123213,
+      "maximum_support_raw": 2555.908792977978,
+      "support_units_independently_distinguished": false,
+      "contact_impulse_interpretation_inherited_and_balance_checked": true,
+      "maximum_added_mass_g": 0.000213027,
+      "maximum_export_coordinate_rounding_mm": 0.051857100002578704,
+      "free_reference_max_displacement_difference_mm": 279.061,
+      "states": [
+        {
+          "time_ms": 0.0,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 2.6572832000019844
+        },
+        {
+          "time_ms": 0.20064,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 6.217248937900877e-15,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 2.5630582999983744
+        },
+        {
+          "time_ms": 0.400545,
+          "maximum_plastic_strain": 0.00820697,
+          "skin_plastic_strain": 0.00820697,
+          "steel_plastic_strain": 0.00183623,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 328.431,
+          "steel_mean_von_mises_MPa": 420.157,
+          "skin_outermost_point_von_mises_MPa": 324.0004629016292,
+          "steel_outermost_point_von_mises_MPa": 427.6562847943636,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.012577482914834182,
+          "maximum_free_flight_relative_X_mm": 26.058399999999992,
+          "converter_seconds": 2.6147284999969997
+        },
+        {
+          "time_ms": 0.60045,
+          "maximum_plastic_strain": 0.0155024,
+          "skin_plastic_strain": 0.0155024,
+          "steel_plastic_strain": 0.00886884,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 330.585,
+          "steel_mean_von_mises_MPa": 416.105,
+          "skin_outermost_point_von_mises_MPa": 324.00044932473475,
+          "steel_outermost_point_von_mises_MPa": 427.6566911042665,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.019271650208204094,
+          "maximum_free_flight_relative_X_mm": 52.463800000000006,
+          "converter_seconds": 2.624589399998513
+        },
+        {
+          "time_ms": 0.800355,
+          "maximum_plastic_strain": 0.026456,
+          "skin_plastic_strain": 0.026456,
+          "steel_plastic_strain": 0.0204739,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 327.733,
+          "steel_mean_von_mises_MPa": 425.919,
+          "skin_outermost_point_von_mises_MPa": 324.0006661883892,
+          "steel_outermost_point_von_mises_MPa": 427.6568386921107,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.028734447741740277,
+          "maximum_free_flight_relative_X_mm": 74.0552,
+          "converter_seconds": 2.658942299996852
+        },
+        {
+          "time_ms": 1.00026,
+          "maximum_plastic_strain": 0.0425668,
+          "skin_plastic_strain": 0.0333712,
+          "steel_plastic_strain": 0.0425668,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 326.26,
+          "steel_mean_von_mises_MPa": 443.938,
+          "skin_outermost_point_von_mises_MPa": 324.0007470083981,
+          "steel_outermost_point_von_mises_MPa": 427.6567051758221,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03512999908977188,
+          "maximum_free_flight_relative_X_mm": 99.54599999999999,
+          "converter_seconds": 2.671279800000775
+        },
+        {
+          "time_ms": 1.20017,
+          "maximum_plastic_strain": 0.0701931,
+          "skin_plastic_strain": 0.0393562,
+          "steel_plastic_strain": 0.0701931,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 325.806,
+          "steel_mean_von_mises_MPa": 444.557,
+          "skin_outermost_point_von_mises_MPa": 324.00073249261334,
+          "steel_outermost_point_von_mises_MPa": 427.6566947219347,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.04086124469674268,
+          "maximum_free_flight_relative_X_mm": 127.84799999999998,
+          "converter_seconds": 2.704380499999388
+        },
+        {
+          "time_ms": 1.40007,
+          "maximum_plastic_strain": 0.101841,
+          "skin_plastic_strain": 0.0500146,
+          "steel_plastic_strain": 0.101841,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 329.482,
+          "steel_mean_von_mises_MPa": 449.746,
+          "skin_outermost_point_von_mises_MPa": 324.0004358199538,
+          "steel_outermost_point_von_mises_MPa": 427.6568003048706,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.05086863760287352,
+          "maximum_free_flight_relative_X_mm": 145.67000000000002,
+          "converter_seconds": 2.7571672999984003
+        },
+        {
+          "time_ms": 1.60071,
+          "maximum_plastic_strain": 0.135668,
+          "skin_plastic_strain": 0.0535064,
+          "steel_plastic_strain": 0.135668,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 327.276,
+          "steel_mean_von_mises_MPa": 456.662,
+          "skin_outermost_point_von_mises_MPa": 324.000541095721,
+          "steel_outermost_point_von_mises_MPa": 427.6567598840102,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.05390875350602575,
+          "maximum_free_flight_relative_X_mm": 170.226,
+          "converter_seconds": 2.650115700002061
+        },
+        {
+          "time_ms": 1.80062,
+          "maximum_plastic_strain": 0.172159,
+          "skin_plastic_strain": 0.067521,
+          "steel_plastic_strain": 0.172159,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 337.592,
+          "steel_mean_von_mises_MPa": 454.062,
+          "skin_outermost_point_von_mises_MPa": 324.00084226896695,
+          "steel_outermost_point_von_mises_MPa": 427.65683030447144,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.06335665834047854,
+          "maximum_free_flight_relative_X_mm": 198.979,
+          "converter_seconds": 2.6797417999987374
+        },
+        {
+          "time_ms": 2.00052,
+          "maximum_plastic_strain": 0.195964,
+          "skin_plastic_strain": 0.10284,
+          "steel_plastic_strain": 0.195964,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 333.215,
+          "steel_mean_von_mises_MPa": 435.897,
+          "skin_outermost_point_von_mises_MPa": 324.0007574481887,
+          "steel_outermost_point_von_mises_MPa": 427.65690626469484,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.09541304992652444,
+          "maximum_free_flight_relative_X_mm": 279.061,
+          "converter_seconds": 2.7659175000007963
+        }
+      ],
+      "native_animations": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/ROUND_METAL/A05_ROUND_METALA001",
+          "sha256": "6f6623e2981e96d8e0968951ccf2e6dba0e0b195ab05d3ba2355be36f105c58c"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/ROUND_METAL/A05_ROUND_METALA002",
+          "sha256": "2aa397394ee4d802380a0b60ed891bd817eff3fda0eb915f035d49f1ede22e81"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/ROUND_METAL/A05_ROUND_METALA003",
+          "sha256": "83379628ca132b6768ffd6da199a49a494a307da0ab9ada8aca9655abfd1476f"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/ROUND_METAL/A05_ROUND_METALA004",
+          "sha256": "31b00ed66d7a278d40a4ba25cb8505edb8fb017e8ae68a3063e0e6371abcd927"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/ROUND_METAL/A05_ROUND_METALA005",
+          "sha256": "5f8972bfa54e97ec91f4a4311a1652deb7a97a1f6e3dc41847501a22686c2742"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/ROUND_METAL/A05_ROUND_METALA006",
+          "sha256": "c93a0a453052f823810611cca2b0de75f7da2c323cb60ebbb3001d5f84132ed6"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/ROUND_METAL/A05_ROUND_METALA007",
+          "sha256": "001702de08d87a37d91195d364d4ddba0c862002ef5bd32369dd0f5cb217742d"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/ROUND_METAL/A05_ROUND_METALA008",
+          "sha256": "7ad20461dcc33c0cafc092df2d535d5292e7cc61b663dc5d48a833a6820a41c4"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/ROUND_METAL/A05_ROUND_METALA009",
+          "sha256": "1b4455bcd2af568cb125531346793517e87f82825c4fd66568650d4791d377c8"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/ROUND_METAL/A05_ROUND_METALA010",
+          "sha256": "11a459351fb57099687409de1ef01f062edef6e973b059a1d91e955ff269a7e9"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/ROUND_METAL/A05_ROUND_METALA011",
+          "sha256": "e89d7d124e40d8341178bb0d4d9f17d3306132a73378b26ed0bbc59806e16c76"
+        }
+      ],
+      "physical_impact_qualified": false,
+      "radome_reconstructed": false,
+      "no_fracture": true,
+      "runtime": [
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+          "sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+          "args": [
+            "-i",
+            "A05_ROUND_METAL_0000.rad",
+            "-np",
+            "1"
+          ],
+          "seconds": 1.3847275999978592,
+          "exit_code": 0,
+          "timeout_s": 120,
+          "created_utc": "2026-10-05T15:24:16.131089+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_ROUND_METAL_0001.rad"
+          ],
+          "seconds": 35.850435899999866,
+          "exit_code": 0,
+          "timeout_s": 300,
+          "created_utc": "2026-10-05T15:24:51.990295+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_ROUND_METAL_0002.rad"
+          ],
+          "seconds": 0.5564706000004662,
+          "exit_code": 0,
+          "timeout_s": 60,
+          "created_utc": "2026-10-05T15:24:52.770483+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_ROUND_METALT01"
+          ],
+          "seconds": 0.41761530000076164,
+          "exit_code": 0,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:24:53.392226+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_ROUND_METALT02"
+          ],
+          "seconds": 0.03607200000260491,
+          "exit_code": 0,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:24:52.973994+00:00"
+        }
+      ]
+    },
+    {
+      "created_utc": "2026-10-05T15:26:20.223582+00:00",
+      "case": {
+        "id": "COMP_FREE",
+        "composite": true,
+        "contact": false,
+        "self_contact": false,
+        "fine": false,
+        "face_mm": 0.5,
+        "gap_mode": "base",
+        "dt_scale": 0.8,
+        "end_ms": 0.6
+      },
+      "checks": {
+        "starter_zero_errors": true,
+        "starter_zero_warnings": true,
+        "main_engine_normal_termination": true,
+        "observer_normal_termination": true,
+        "observer_did_not_change_main_outputs": true,
+        "mass_preserved": true,
+        "added_mass_within_fraction": true,
+        "native_original_connectivity_preserved": true,
+        "all_exported_states_finite": true,
+        "supports_fixed": true,
+        "native_end_timestamp_observed_within_step": true,
+        "energy_global_within_declared_limit": true,
+        "energy_local_within_declared_limit": true,
+        "momentum_global_support_balance": true,
+        "momentum_contact_facade_balance": true,
+        "global_and_part_plastic_work_nonnegative": true,
+        "plastic_strain_below_diagnostic_limit": true,
+        "no_erosion": true,
+        "no_external_work": true,
+        "free_displacement_uniform": true,
+        "free_velocity_uniform": true,
+        "free_plastic_strain_zero": true,
+        "free_energies_zero": true,
+        "radome_elastic_reference_stress_below_tension_compression": true,
+        "radome_plastic_strain_zero": true
+      },
+      "all_declared_checks_pass": true,
+      "core_execution_and_transfer_checks_pass": true,
+      "failed_checks": [],
+      "native_total_mass_kg": 191273.8379427,
+      "actual_main_end_time_ms": 0.6004502,
+      "last_history_time_ms": 0.6004502,
+      "last_animation_time_ms": 0.60045,
+      "main_end_observed": true,
+      "requested_horizon_reached": true,
+      "observer_timestamp_role": "T02 initial saved history plus first observer animation; continuation step excluded. No observer for a timed-out run; last saved history is not a verified end timestamp.",
+      "initial_KE_J": 2441026000.0,
+      "energy_terms_without_double_counting": [
+        "KINETIC ENERGY",
+        "ROTATION ENERGY",
+        "INTERNAL ENERGY",
+        "HOURGLASS ENERGY",
+        "SPRING ENERGY",
+        "ELASTIC CONTACT ENERGY",
+        "FRICTIONAL CONTACT ENERGY",
+        "DAMPING CONTACT ENERGY "
+      ],
+      "global_plastic_work_is_subset_of_IE_not_added_again": true,
+      "maximum_energy_residual_J": 0.0,
+      "maximum_energy_residual_initial_KE_fraction": 0.0,
+      "maximum_local_energy_residual_fraction_above_1kJ": 0.0,
+      "final_energy_residual_J": 0.0,
+      "final_generated_energy_J": 0.0,
+      "final_energy_terms_J": {
+        "KINETIC ENERGY": 2441026000.0,
+        "ROTATION ENERGY": 0.0,
+        "INTERNAL ENERGY": 0.0,
+        "HOURGLASS ENERGY": 0.0,
+        "SPRING ENERGY": 0.0,
+        "ELASTIC CONTACT ENERGY": 0.0,
+        "FRICTIONAL CONTACT ENERGY": 0.0,
+        "DAMPING CONTACT ENERGY ": 0.0
+      },
+      "final_global_plastic_work_J": 0.0,
+      "final_sum_part_plastic_work_J": 0.0,
+      "contact_onset_history_ms": null,
+      "plastic_work_onset_history_ms": null,
+      "first_saved_plastic_strain_ms": null,
+      "maximum_shell_plastic_strain": 0.0,
+      "maximum_sampled_beam_plastic_strain": 0.0,
+      "maximum_sampled_beam_abs_SX_MPa": 0.0,
+      "maximum_sampled_beam_bending_moment_Nmm": 0.0,
+      "beam_history_native_order": [
+        "F1",
+        "F2",
+        "F3",
+        "M1",
+        "M2",
+        "M3",
+        "IE",
+        "SX",
+        "EPSP"
+      ],
+      "beam_history_scope": "504 forward beams with max endpoint X<=8m; SX is native axial stress, not an outer-fiber bending maximum. Native resultants are preserved; section resolved yielding unknown.",
+      "final_contact_impulse_Ns": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "final_facade_momentum_Ns": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "contact_balance_max_error_Ns": 0.0,
+      "global_support_balance_max_error_Ns": 0.0,
+      "momentum_allowance_Ns": 10.0,
+      "maximum_support_raw": 0.0,
+      "support_units_independently_distinguished": false,
+      "contact_impulse_interpretation_inherited_and_balance_checked": true,
+      "maximum_added_mass_g": 0.0002118349,
+      "maximum_export_coordinate_rounding_mm": 0.051857100002578704,
+      "free_reference_max_displacement_difference_mm": 5.000000000254801e-06,
+      "states": [
+        {
+          "time_ms": 0.0,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.2575517000004766,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.20064,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 6.217248937900877e-15,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.152564200001507,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.400545,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 6.217248937900877e-15,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.0926851999975042,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.60045,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 6.217248937900877e-15,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.1262327000004007,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        }
+      ],
+      "native_animations": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/COMP_FREE/A05_COMP_FREEA001",
+          "sha256": "a802f55b440e0b6cfc82e656fb6d1aac75a0abefce76613e788c2d6f1e6ed282"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/COMP_FREE/A05_COMP_FREEA002",
+          "sha256": "e7d4f88c3b76c6786851bae77684471d85077a7c4421fd42c4580e73a10593e0"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/COMP_FREE/A05_COMP_FREEA003",
+          "sha256": "09dce65ac3b4129edc65813642c5b8a65f0f8230d7e54ae3f185b8ba6a459d14"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/COMP_FREE/A05_COMP_FREEA004",
+          "sha256": "f52fccbb173a7bc50b15843dd28c5f3a4ebd40659b9e955eda8ffcc482627449"
+        }
+      ],
+      "physical_impact_qualified": false,
+      "radome_reconstructed": false,
+      "no_fracture": true,
+      "runtime": [
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+          "sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+          "args": [
+            "-i",
+            "A05_COMP_FREE_0000.rad",
+            "-np",
+            "1"
+          ],
+          "seconds": 1.5241657000005944,
+          "exit_code": 0,
+          "timeout_s": 120,
+          "created_utc": "2026-10-05T15:23:24.880034+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_COMP_FREE_0001.rad"
+          ],
+          "seconds": 10.03518880000047,
+          "exit_code": 0,
+          "timeout_s": 300,
+          "created_utc": "2026-10-05T15:23:34.924479+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_COMP_FREE_0002.rad"
+          ],
+          "seconds": 0.4829304000013508,
+          "exit_code": 0,
+          "timeout_s": 60,
+          "created_utc": "2026-10-05T15:23:35.577070+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_COMP_FREET01"
+          ],
+          "seconds": 0.09286499999871012,
+          "exit_code": 0,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:23:35.829275+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_COMP_FREET02"
+          ],
+          "seconds": 0.03174609999769018,
+          "exit_code": 0,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:23:35.735830+00:00"
+        }
+      ]
+    },
+    {
+      "created_utc": "2026-10-05T15:27:28.384916+00:00",
+      "case": {
+        "id": "COMP_NOSC",
+        "composite": true,
+        "contact": true,
+        "self_contact": false,
+        "fine": false,
+        "face_mm": 0.5,
+        "gap_mode": "base",
+        "dt_scale": 0.8,
+        "end_ms": 2
+      },
+      "checks": {
+        "starter_zero_errors": true,
+        "starter_zero_warnings": true,
+        "main_engine_normal_termination": true,
+        "observer_normal_termination": true,
+        "observer_did_not_change_main_outputs": true,
+        "mass_preserved": true,
+        "added_mass_within_fraction": true,
+        "native_original_connectivity_preserved": true,
+        "all_exported_states_finite": true,
+        "supports_fixed": true,
+        "native_end_timestamp_observed_within_step": true,
+        "energy_global_within_declared_limit": true,
+        "energy_local_within_declared_limit": false,
+        "momentum_global_support_balance": true,
+        "momentum_contact_facade_balance": true,
+        "global_and_part_plastic_work_nonnegative": true,
+        "plastic_strain_below_diagnostic_limit": true,
+        "no_erosion": true,
+        "no_external_work": true,
+        "radome_elastic_reference_stress_below_tension_compression": false,
+        "radome_plastic_strain_zero": true
+      },
+      "all_declared_checks_pass": false,
+      "core_execution_and_transfer_checks_pass": true,
+      "failed_checks": [
+        "energy_local_within_declared_limit",
+        "radome_elastic_reference_stress_below_tension_compression"
+      ],
+      "native_total_mass_kg": 191273.8379427,
+      "actual_main_end_time_ms": 2.000428,
+      "last_history_time_ms": 2.000428,
+      "last_animation_time_ms": 2.00043,
+      "main_end_observed": true,
+      "requested_horizon_reached": true,
+      "observer_timestamp_role": "T02 initial saved history plus first observer animation; continuation step excluded. No observer for a timed-out run; last saved history is not a verified end timestamp.",
+      "initial_KE_J": 2441026000.0,
+      "energy_terms_without_double_counting": [
+        "KINETIC ENERGY",
+        "ROTATION ENERGY",
+        "INTERNAL ENERGY",
+        "HOURGLASS ENERGY",
+        "SPRING ENERGY",
+        "ELASTIC CONTACT ENERGY",
+        "FRICTIONAL CONTACT ENERGY",
+        "DAMPING CONTACT ENERGY "
+      ],
+      "global_plastic_work_is_subset_of_IE_not_added_again": true,
+      "maximum_energy_residual_J": 78832.39799976349,
+      "maximum_energy_residual_initial_KE_fraction": 3.229478014562872e-05,
+      "maximum_local_energy_residual_fraction_above_1kJ": 3.4699245951560522,
+      "final_energy_residual_J": -78832.39799976349,
+      "final_generated_energy_J": 283167.602,
+      "final_energy_terms_J": {
+        "KINETIC ENERGY": 2440664000.0,
+        "ROTATION ENERGY": 48953.99,
+        "INTERNAL ENERGY": 229922.2,
+        "HOURGLASS ENERGY": 0.0,
+        "SPRING ENERGY": 0.0,
+        "ELASTIC CONTACT ENERGY": 4291.412,
+        "FRICTIONAL CONTACT ENERGY": 0.0,
+        "DAMPING CONTACT ENERGY ": 0.0
+      },
+      "final_global_plastic_work_J": 4243.5960000000005,
+      "final_sum_part_plastic_work_J": 4243.5960000000005,
+      "contact_onset_history_ms": 0.2403271,
+      "plastic_work_onset_history_ms": 0.7004028,
+      "first_saved_plastic_strain_ms": 0.800355,
+      "maximum_shell_plastic_strain": 0.011739,
+      "maximum_sampled_beam_plastic_strain": 3.623269e-19,
+      "maximum_sampled_beam_abs_SX_MPa": 39.739,
+      "maximum_sampled_beam_bending_moment_Nmm": 314855.1910166005,
+      "beam_history_native_order": [
+        "F1",
+        "F2",
+        "F3",
+        "M1",
+        "M2",
+        "M3",
+        "IE",
+        "SX",
+        "EPSP"
+      ],
+      "beam_history_scope": "504 forward beams with max endpoint X<=8m; SX is native axial stress, not an outer-fiber bending maximum. Native resultants are preserved; section resolved yielding unknown.",
+      "final_contact_impulse_Ns": [
+        -2619.302,
+        -31.66084,
+        -26.15314
+      ],
+      "final_facade_momentum_Ns": [
+        -2596.277,
+        -25.732018,
+        -8.65525
+      ],
+      "contact_balance_max_error_Ns": 46.38940635762937,
+      "global_support_balance_max_error_Ns": 1.4370999742597081,
+      "momentum_allowance_Ns": 62.39247794378642,
+      "maximum_support_raw": 1436.6223951623213,
+      "support_units_independently_distinguished": false,
+      "contact_impulse_interpretation_inherited_and_balance_checked": true,
+      "maximum_added_mass_g": 0.0002118051,
+      "maximum_export_coordinate_rounding_mm": 0.051857100002578704,
+      "free_reference_max_displacement_difference_mm": 338.4862,
+      "states": [
+        {
+          "time_ms": 0.0,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.2449259999993956,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.20064,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 6.217248937900877e-15,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.1674109999985376,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.400545,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 33.9446,
+          "steel_mean_von_mises_MPa": 130.937,
+          "skin_outermost_point_von_mises_MPa": 306.13109024551886,
+          "steel_outermost_point_von_mises_MPa": 195.99675247371994,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.014106183159359298,
+          "maximum_free_flight_relative_X_mm": 31.421999999999997,
+          "converter_seconds": 3.2502768999984255,
+          "radome_face_strength_ratio": 0.7247560537740294,
+          "radome_face_max_tension_principal_MPa": 9.817739596581298,
+          "radome_face_max_compression_principal_MPa": 333.3877847360535,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0142453,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.60045,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 48.8621,
+          "steel_mean_von_mises_MPa": 107.818,
+          "skin_outermost_point_von_mises_MPa": 444.811073933732,
+          "steel_outermost_point_von_mises_MPa": 289.84437557467766,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.01988501825021205,
+          "maximum_free_flight_relative_X_mm": 67.52690000000001,
+          "converter_seconds": 3.2742785999980697,
+          "radome_face_strength_ratio": 1.021153862824878,
+          "radome_face_max_tension_principal_MPa": 71.05428745834425,
+          "radome_face_max_compression_principal_MPa": 469.73077689944387,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.020389,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.800355,
+          "maximum_plastic_strain": 0.000955505,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.000955505,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 63.4707,
+          "steel_mean_von_mises_MPa": 93.2229,
+          "skin_outermost_point_von_mises_MPa": 583.1121869563694,
+          "steel_outermost_point_von_mises_MPa": 427.6562908249003,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.02493907013681851,
+          "maximum_free_flight_relative_X_mm": 103.4513,
+          "converter_seconds": 3.2183923999982653,
+          "radome_face_strength_ratio": 1.2755661320051037,
+          "radome_face_max_tension_principal_MPa": 133.2058383707102,
+          "radome_face_max_compression_principal_MPa": 586.7604207223477,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0260682,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.00026,
+          "maximum_plastic_strain": 0.00358319,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00358319,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 77.0082,
+          "steel_mean_von_mises_MPa": 162.294,
+          "skin_outermost_point_von_mises_MPa": 715.004284756504,
+          "steel_outermost_point_von_mises_MPa": 427.656489743813,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.030146631363232368,
+          "maximum_free_flight_relative_X_mm": 138.7182,
+          "converter_seconds": 3.2793133000013768,
+          "radome_face_strength_ratio": 1.5757152123692544,
+          "radome_face_max_tension_principal_MPa": 319.2208574805471,
+          "radome_face_max_compression_principal_MPa": 724.828997689857,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0320874,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.20017,
+          "maximum_plastic_strain": 0.0063681,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0063681,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 82.0001,
+          "steel_mean_von_mises_MPa": 240.284,
+          "skin_outermost_point_von_mises_MPa": 768.6344191019485,
+          "steel_outermost_point_von_mises_MPa": 427.65645437111084,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03149014868136335,
+          "maximum_free_flight_relative_X_mm": 174.4244,
+          "converter_seconds": 3.2540219000002253,
+          "radome_face_strength_ratio": 1.6655826483301277,
+          "radome_face_max_tension_principal_MPa": 549.9660859026279,
+          "radome_face_max_compression_principal_MPa": 766.1680182318587,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0341236,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.40007,
+          "maximum_plastic_strain": 0.00908106,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00908106,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 88.9624,
+          "steel_mean_von_mises_MPa": 290.943,
+          "skin_outermost_point_von_mises_MPa": 884.9473958202261,
+          "steel_outermost_point_von_mises_MPa": 427.65647531854347,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03343619708607126,
+          "maximum_free_flight_relative_X_mm": 211.0859,
+          "converter_seconds": 3.3109433999998146,
+          "radome_face_strength_ratio": 1.751290358346374,
+          "radome_face_max_tension_principal_MPa": 730.0185100864819,
+          "radome_face_max_compression_principal_MPa": 805.593564839332,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0363062,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.60071,
+          "maximum_plastic_strain": 0.0108999,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0108999,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 97.4044,
+          "steel_mean_von_mises_MPa": 316.66,
+          "skin_outermost_point_von_mises_MPa": 981.6835555763374,
+          "steel_outermost_point_von_mises_MPa": 427.65648622583757,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03653278250948433,
+          "maximum_free_flight_relative_X_mm": 249.44799999999998,
+          "converter_seconds": 3.3622040999980527,
+          "radome_face_strength_ratio": 1.8738176492212315,
+          "radome_face_max_tension_principal_MPa": 802.9646400026663,
+          "radome_face_max_compression_principal_MPa": 861.9561186417665,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0391526,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.80052,
+          "maximum_plastic_strain": 0.011739,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.011739,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 156.649,
+          "steel_mean_von_mises_MPa": 352.015,
+          "skin_outermost_point_von_mises_MPa": 1598.3246282501561,
+          "steel_outermost_point_von_mises_MPa": 427.65645486521316,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0516665389045563,
+          "maximum_free_flight_relative_X_mm": 288.33349999999996,
+          "converter_seconds": 3.3355851999986044,
+          "radome_face_strength_ratio": 3.5355915350758234,
+          "radome_face_max_tension_principal_MPa": 813.3939204616627,
+          "radome_face_max_compression_principal_MPa": 1626.3721061348788,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0637891,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 2.00043,
+          "maximum_plastic_strain": 0.011739,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.011739,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 141.936,
+          "steel_mean_von_mises_MPa": 348.744,
+          "skin_outermost_point_von_mises_MPa": 1429.0958319164604,
+          "steel_outermost_point_von_mises_MPa": 427.6564801814343,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0573338686277719,
+          "maximum_free_flight_relative_X_mm": 338.4862,
+          "converter_seconds": 3.4701891000004252,
+          "radome_face_strength_ratio": 3.4699245951560522,
+          "radome_face_max_tension_principal_MPa": 986.9872290761903,
+          "radome_face_max_compression_principal_MPa": 1596.165313771784,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0701271,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        }
+      ],
+      "native_animations": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/COMP_NOSC/A05_COMP_NOSCA001",
+          "sha256": "1876ee18258793e27d89d1fb7f08b84599c2efcf1e75398b1042bccfe9277efd"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/COMP_NOSC/A05_COMP_NOSCA002",
+          "sha256": "bf016e85544b3203daacc7519bb1a6068593b48fee01ce07b34e2aa7b6d951e7"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/COMP_NOSC/A05_COMP_NOSCA003",
+          "sha256": "117f613d2a400987fc7e9dd6a7200eaec790e609c9c18a223f167793f5e917af"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/COMP_NOSC/A05_COMP_NOSCA004",
+          "sha256": "cffb5a5fc3e4b93d34fb7aa4d8e9f50b6fd2fdaeca82be0018724c8c9257ad1a"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/COMP_NOSC/A05_COMP_NOSCA005",
+          "sha256": "c2f473630f07e6606cb46991386dffb5305b9407edb2c350843aefd986628831"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/COMP_NOSC/A05_COMP_NOSCA006",
+          "sha256": "a48e7395f7381c4ba84a0d0bdac9655513b7fa7ee3ffb1a5eb675e159bb09789"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/COMP_NOSC/A05_COMP_NOSCA007",
+          "sha256": "b359433ba3f23cf2c31c12f5d0f35e3ac03a8b8a96a63b03e2b0d28e07424cef"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/COMP_NOSC/A05_COMP_NOSCA008",
+          "sha256": "074abccc8496487e76b373d6928c6868a2879b1d075cd1ed73f333407f4b6c28"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/COMP_NOSC/A05_COMP_NOSCA009",
+          "sha256": "395aa5e194bfe2d67048f1904b242026a78ad4c7280a838abe7698ec50ffcd2a"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/COMP_NOSC/A05_COMP_NOSCA010",
+          "sha256": "5c823a0532bdc99d92024a8d15a213e90908396474f2b89b3014a53374d4dd54"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r2/COMP_NOSC/A05_COMP_NOSCA011",
+          "sha256": "a6d764762ba80e47e7c0d86a7b53cf8d2885db9304d9e2ab7202cb03be63dc6a"
+        }
+      ],
+      "physical_impact_qualified": false,
+      "radome_reconstructed": false,
+      "no_fracture": true,
+      "runtime": [
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+          "sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+          "args": [
+            "-i",
+            "A05_COMP_NOSC_0000.rad",
+            "-np",
+            "1"
+          ],
+          "seconds": 1.3662069999991218,
+          "exit_code": 0,
+          "timeout_s": 120,
+          "created_utc": "2026-10-05T15:24:16.349489+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_COMP_NOSC_0001.rad"
+          ],
+          "seconds": 36.086445099997945,
+          "exit_code": 0,
+          "timeout_s": 300,
+          "created_utc": "2026-10-05T15:24:52.446624+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_COMP_NOSC_0002.rad"
+          ],
+          "seconds": 0.590395900002477,
+          "exit_code": 0,
+          "timeout_s": 60,
+          "created_utc": "2026-10-05T15:24:53.260001+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_COMP_NOSCT01"
+          ],
+          "seconds": 0.3275291999998444,
+          "exit_code": 0,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:24:53.789906+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_COMP_NOSCT02"
+          ],
+          "seconds": 0.030498699998133816,
+          "exit_code": 0,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:24:53.461902+00:00"
+        }
+      ]
+    },
+    {
+      "created_utc": "2026-10-05T15:33:26.936569+00:00",
+      "case": {
+        "id": "COMP_SELF",
+        "composite": true,
+        "contact": true,
+        "self_contact": true,
+        "fine": false,
+        "face_mm": 0.5,
+        "gap_mode": "base",
+        "dt_scale": 0.8,
+        "end_ms": 2
+      },
+      "checks": {
+        "starter_zero_errors": true,
+        "starter_zero_warnings": true,
+        "main_engine_normal_termination": true,
+        "observer_normal_termination": true,
+        "observer_did_not_change_main_outputs": true,
+        "mass_preserved": true,
+        "added_mass_within_fraction": true,
+        "native_original_connectivity_preserved": true,
+        "all_exported_states_finite": true,
+        "supports_fixed": true,
+        "native_end_timestamp_observed_within_step": true,
+        "energy_global_within_declared_limit": true,
+        "energy_local_within_declared_limit": false,
+        "momentum_global_support_balance": true,
+        "momentum_contact_facade_balance": true,
+        "global_and_part_plastic_work_nonnegative": true,
+        "plastic_strain_below_diagnostic_limit": true,
+        "no_erosion": true,
+        "no_external_work": true,
+        "radome_elastic_reference_stress_below_tension_compression": false,
+        "radome_plastic_strain_zero": true
+      },
+      "all_declared_checks_pass": false,
+      "core_execution_and_transfer_checks_pass": true,
+      "failed_checks": [
+        "energy_local_within_declared_limit",
+        "radome_elastic_reference_stress_below_tension_compression"
+      ],
+      "native_total_mass_kg": 191273.8379427,
+      "actual_main_end_time_ms": 2.00042772,
+      "last_history_time_ms": 2.00042772,
+      "last_animation_time_ms": 2.00043,
+      "main_end_observed": true,
+      "requested_horizon_reached": true,
+      "observer_timestamp_role": "T02 initial saved history plus first observer animation; continuation step excluded. No observer for a timed-out run; last saved history is not a verified end timestamp.",
+      "initial_KE_J": 2441026000.0,
+      "energy_terms_without_double_counting": [
+        "KINETIC ENERGY",
+        "ROTATION ENERGY",
+        "INTERNAL ENERGY",
+        "HOURGLASS ENERGY",
+        "SPRING ENERGY",
+        "ELASTIC CONTACT ENERGY",
+        "FRICTIONAL CONTACT ENERGY",
+        "DAMPING CONTACT ENERGY "
+      ],
+      "global_plastic_work_is_subset_of_IE_not_added_again": true,
+      "maximum_energy_residual_J": 78642.38800001144,
+      "maximum_energy_residual_initial_KE_fraction": 3.221693992608495e-05,
+      "maximum_local_energy_residual_fraction_above_1kJ": 3.4699245951560522,
+      "final_energy_residual_J": -78642.38800001144,
+      "final_generated_energy_J": 283167.612,
+      "final_energy_terms_J": {
+        "KINETIC ENERGY": 2440664190.0,
+        "ROTATION ENERGY": 48953.992,
+        "INTERNAL ENERGY": 229922.208,
+        "HOURGLASS ENERGY": 0.0,
+        "SPRING ENERGY": 0.0,
+        "ELASTIC CONTACT ENERGY": 4291.412,
+        "FRICTIONAL CONTACT ENERGY": 0.0,
+        "DAMPING CONTACT ENERGY ": 0.0
+      },
+      "final_global_plastic_work_J": 4243.5965,
+      "final_sum_part_plastic_work_J": 4243.596620000001,
+      "contact_onset_history_ms": 0.2403271,
+      "plastic_work_onset_history_ms": 0.7004028,
+      "first_saved_plastic_strain_ms": 0.800355,
+      "maximum_shell_plastic_strain": 0.011739,
+      "maximum_sampled_beam_plastic_strain": 3.62326925e-19,
+      "maximum_sampled_beam_abs_SX_MPa": 39.7389984,
+      "maximum_sampled_beam_bending_moment_Nmm": 314855.1717919156,
+      "beam_history_native_order": [
+        "F1",
+        "F2",
+        "F3",
+        "M1",
+        "M2",
+        "M3",
+        "IE",
+        "SX",
+        "EPSP"
+      ],
+      "beam_history_scope": "504 forward beams with max endpoint X<=8m; SX is native axial stress, not an outer-fiber bending maximum. Native resultants are preserved; section resolved yielding unknown.",
+      "final_contact_impulse_Ns": [
+        -2619.3015,
+        -31.6608418,
+        -26.1531387
+      ],
+      "final_facade_momentum_Ns": [
+        -2596.277,
+        -25.73201811,
+        -8.655252
+      ],
+      "contact_balance_max_error_Ns": 46.38940635762937,
+      "global_support_balance_max_error_Ns": 1.4370999742597081,
+      "momentum_allowance_Ns": 62.39246794519073,
+      "maximum_support_raw": 1436.6223951623213,
+      "support_units_independently_distinguished": false,
+      "contact_impulse_interpretation_inherited_and_balance_checked": true,
+      "maximum_added_mass_g": 0.000211805105,
+      "maximum_export_coordinate_rounding_mm": 0.051857100002578704,
+      "free_reference_max_displacement_difference_mm": 338.4862,
+      "states": [
+        {
+          "time_ms": 0.0,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.533955999999307,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.20064,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 6.217248937900877e-15,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.2955105999972147,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.400545,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 33.9446,
+          "steel_mean_von_mises_MPa": 130.937,
+          "skin_outermost_point_von_mises_MPa": 306.13109024551886,
+          "steel_outermost_point_von_mises_MPa": 195.99675247371994,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.014106183159359298,
+          "maximum_free_flight_relative_X_mm": 31.421999999999997,
+          "converter_seconds": 3.4758188999985578,
+          "radome_face_strength_ratio": 0.7247560537740294,
+          "radome_face_max_tension_principal_MPa": 9.817739596581298,
+          "radome_face_max_compression_principal_MPa": 333.3877847360535,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0142453,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.60045,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 48.8621,
+          "steel_mean_von_mises_MPa": 107.818,
+          "skin_outermost_point_von_mises_MPa": 444.811073933732,
+          "steel_outermost_point_von_mises_MPa": 289.84437557467766,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.01988501825021205,
+          "maximum_free_flight_relative_X_mm": 67.52690000000001,
+          "converter_seconds": 4.271032399999967,
+          "radome_face_strength_ratio": 1.021153862824878,
+          "radome_face_max_tension_principal_MPa": 71.05428745834425,
+          "radome_face_max_compression_principal_MPa": 469.73077689944387,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.020389,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.800355,
+          "maximum_plastic_strain": 0.000955505,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.000955505,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 63.4707,
+          "steel_mean_von_mises_MPa": 93.2229,
+          "skin_outermost_point_von_mises_MPa": 583.1121869563694,
+          "steel_outermost_point_von_mises_MPa": 427.6562908249003,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.02493907013681851,
+          "maximum_free_flight_relative_X_mm": 103.4513,
+          "converter_seconds": 3.279536599999119,
+          "radome_face_strength_ratio": 1.2755661320051037,
+          "radome_face_max_tension_principal_MPa": 133.2058383707102,
+          "radome_face_max_compression_principal_MPa": 586.7604207223477,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0260682,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.00026,
+          "maximum_plastic_strain": 0.00358319,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00358319,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 77.0082,
+          "steel_mean_von_mises_MPa": 162.294,
+          "skin_outermost_point_von_mises_MPa": 715.004284756504,
+          "steel_outermost_point_von_mises_MPa": 427.656489743813,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.030146631363232368,
+          "maximum_free_flight_relative_X_mm": 138.7182,
+          "converter_seconds": 3.93328819999806,
+          "radome_face_strength_ratio": 1.5757152123692544,
+          "radome_face_max_tension_principal_MPa": 319.2208574805471,
+          "radome_face_max_compression_principal_MPa": 724.828997689857,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0320874,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.20017,
+          "maximum_plastic_strain": 0.0063681,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0063681,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 82.0001,
+          "steel_mean_von_mises_MPa": 240.284,
+          "skin_outermost_point_von_mises_MPa": 768.6344191019485,
+          "steel_outermost_point_von_mises_MPa": 427.65645437111084,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03149014868136335,
+          "maximum_free_flight_relative_X_mm": 174.4244,
+          "converter_seconds": 3.373793700000533,
+          "radome_face_strength_ratio": 1.6655826483301277,
+          "radome_face_max_tension_principal_MPa": 549.9660859026279,
+          "radome_face_max_compression_principal_MPa": 766.1680182318587,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0341236,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.40007,
+          "maximum_plastic_strain": 0.00908106,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00908106,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 88.9624,
+          "steel_mean_von_mises_MPa": 290.943,
+          "skin_outermost_point_von_mises_MPa": 884.9473958202261,
+          "steel_outermost_point_von_mises_MPa": 427.65647531854347,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03343619708607126,
+          "maximum_free_flight_relative_X_mm": 211.0859,
+          "converter_seconds": 3.3038181999982044,
+          "radome_face_strength_ratio": 1.751290358346374,
+          "radome_face_max_tension_principal_MPa": 730.0185100864819,
+          "radome_face_max_compression_principal_MPa": 805.593564839332,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0363062,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.60071,
+          "maximum_plastic_strain": 0.0108999,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0108999,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 97.4044,
+          "steel_mean_von_mises_MPa": 316.66,
+          "skin_outermost_point_von_mises_MPa": 981.6835555763374,
+          "steel_outermost_point_von_mises_MPa": 427.65648622583757,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03653278250948433,
+          "maximum_free_flight_relative_X_mm": 249.44799999999998,
+          "converter_seconds": 3.71650000000227,
+          "radome_face_strength_ratio": 1.8738176492212315,
+          "radome_face_max_tension_principal_MPa": 802.9646400026663,
+          "radome_face_max_compression_principal_MPa": 861.9561186417665,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0391526,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.80052,
+          "maximum_plastic_strain": 0.011739,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.011739,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 156.649,
+          "steel_mean_von_mises_MPa": 352.015,
+          "skin_outermost_point_von_mises_MPa": 1598.3246282501561,
+          "steel_outermost_point_von_mises_MPa": 427.65645486521316,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0516665389045563,
+          "maximum_free_flight_relative_X_mm": 288.33349999999996,
+          "converter_seconds": 3.395104299997911,
+          "radome_face_strength_ratio": 3.5355915350758234,
+          "radome_face_max_tension_principal_MPa": 813.3939204616627,
+          "radome_face_max_compression_principal_MPa": 1626.3721061348788,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0637891,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 2.00043,
+          "maximum_plastic_strain": 0.011739,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.011739,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 141.936,
+          "steel_mean_von_mises_MPa": 348.744,
+          "skin_outermost_point_von_mises_MPa": 1429.0958319164604,
+          "steel_outermost_point_von_mises_MPa": 427.6564801814343,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0573338686277719,
+          "maximum_free_flight_relative_X_mm": 338.4862,
+          "converter_seconds": 3.4022872999994433,
+          "radome_face_strength_ratio": 3.4699245951560522,
+          "radome_face_max_tension_principal_MPa": 986.9872290761903,
+          "radome_face_max_compression_principal_MPa": 1596.165313771784,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0701271,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        }
+      ],
+      "native_animations": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_SELF/A05_COMP_SELFA001",
+          "sha256": "1876ee18258793e27d89d1fb7f08b84599c2efcf1e75398b1042bccfe9277efd"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_SELF/A05_COMP_SELFA002",
+          "sha256": "bf016e85544b3203daacc7519bb1a6068593b48fee01ce07b34e2aa7b6d951e7"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_SELF/A05_COMP_SELFA003",
+          "sha256": "117f613d2a400987fc7e9dd6a7200eaec790e609c9c18a223f167793f5e917af"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_SELF/A05_COMP_SELFA004",
+          "sha256": "cffb5a5fc3e4b93d34fb7aa4d8e9f50b6fd2fdaeca82be0018724c8c9257ad1a"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_SELF/A05_COMP_SELFA005",
+          "sha256": "c2f473630f07e6606cb46991386dffb5305b9407edb2c350843aefd986628831"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_SELF/A05_COMP_SELFA006",
+          "sha256": "a48e7395f7381c4ba84a0d0bdac9655513b7fa7ee3ffb1a5eb675e159bb09789"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_SELF/A05_COMP_SELFA007",
+          "sha256": "b359433ba3f23cf2c31c12f5d0f35e3ac03a8b8a96a63b03e2b0d28e07424cef"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_SELF/A05_COMP_SELFA008",
+          "sha256": "074abccc8496487e76b373d6928c6868a2879b1d075cd1ed73f333407f4b6c28"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_SELF/A05_COMP_SELFA009",
+          "sha256": "395aa5e194bfe2d67048f1904b242026a78ad4c7280a838abe7698ec50ffcd2a"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_SELF/A05_COMP_SELFA010",
+          "sha256": "5c823a0532bdc99d92024a8d15a213e90908396474f2b89b3014a53374d4dd54"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_SELF/A05_COMP_SELFA011",
+          "sha256": "a6d764762ba80e47e7c0d86a7b53cf8d2885db9304d9e2ab7202cb03be63dc6a"
+        }
+      ],
+      "physical_impact_qualified": false,
+      "radome_reconstructed": false,
+      "no_fracture": true,
+      "runtime": [
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+          "sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+          "args": [
+            "-i",
+            "A05_COMP_SELF_0000.rad",
+            "-np",
+            "1"
+          ],
+          "seconds": 1.7440350000033504,
+          "exit_code": 0,
+          "timeout_s": 120,
+          "created_utc": "2026-10-05T15:28:47.931887+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_COMP_SELF_0001.rad"
+          ],
+          "seconds": 36.15237319999869,
+          "exit_code": 0,
+          "timeout_s": 300,
+          "created_utc": "2026-10-05T15:29:24.092354+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_COMP_SELF_0002.rad"
+          ],
+          "seconds": 0.5895039000024553,
+          "exit_code": 0,
+          "timeout_s": 60,
+          "created_utc": "2026-10-05T15:29:24.912498+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_COMP_SELFT01"
+          ],
+          "seconds": 0.3316190999976243,
+          "exit_code": 0,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:30:06.657248+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_COMP_SELFT02"
+          ],
+          "seconds": 0.37194739999904414,
+          "exit_code": 3221225477,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:29:25.468200+00:00"
+        }
+      ]
+    },
+    {
+      "created_utc": "2026-10-05T15:34:04.133949+00:00",
+      "case": {
+        "id": "COMP_HALF_DT",
+        "composite": true,
+        "contact": true,
+        "self_contact": true,
+        "fine": false,
+        "face_mm": 0.5,
+        "gap_mode": "base",
+        "dt_scale": 0.4,
+        "end_ms": 2
+      },
+      "checks": {
+        "starter_zero_errors": true,
+        "starter_zero_warnings": true,
+        "main_engine_normal_termination": true,
+        "observer_normal_termination": true,
+        "observer_did_not_change_main_outputs": true,
+        "mass_preserved": true,
+        "added_mass_within_fraction": true,
+        "native_original_connectivity_preserved": true,
+        "all_exported_states_finite": true,
+        "supports_fixed": true,
+        "native_end_timestamp_observed_within_step": true,
+        "energy_global_within_declared_limit": true,
+        "energy_local_within_declared_limit": false,
+        "momentum_global_support_balance": true,
+        "momentum_contact_facade_balance": true,
+        "global_and_part_plastic_work_nonnegative": true,
+        "plastic_strain_below_diagnostic_limit": true,
+        "no_erosion": true,
+        "no_external_work": true,
+        "radome_elastic_reference_stress_below_tension_compression": false,
+        "radome_plastic_strain_zero": true
+      },
+      "all_declared_checks_pass": false,
+      "core_execution_and_transfer_checks_pass": true,
+      "failed_checks": [
+        "energy_local_within_declared_limit",
+        "radome_elastic_reference_stress_below_tension_compression"
+      ],
+      "native_total_mass_kg": 191273.8379427,
+      "actual_main_end_time_ms": 2.00034308,
+      "last_history_time_ms": 2.00034308,
+      "last_animation_time_ms": 2.00034,
+      "main_end_observed": true,
+      "requested_horizon_reached": true,
+      "observer_timestamp_role": "T02 initial saved history plus first observer animation; continuation step excluded. No observer for a timed-out run; last saved history is not a verified end timestamp.",
+      "initial_KE_J": 2441026000.0,
+      "energy_terms_without_double_counting": [
+        "KINETIC ENERGY",
+        "ROTATION ENERGY",
+        "INTERNAL ENERGY",
+        "HOURGLASS ENERGY",
+        "SPRING ENERGY",
+        "ELASTIC CONTACT ENERGY",
+        "FRICTIONAL CONTACT ENERGY",
+        "DAMPING CONTACT ENERGY "
+      ],
+      "global_plastic_work_is_subset_of_IE_not_added_again": true,
+      "maximum_energy_residual_J": 77708.10150003433,
+      "maximum_energy_residual_initial_KE_fraction": 3.1834196563262466e-05,
+      "maximum_local_energy_residual_fraction_above_1kJ": 3.485380376327759,
+      "final_energy_residual_J": -77708.10150003433,
+      "final_generated_energy_J": 283581.8985,
+      "final_energy_terms_J": {
+        "KINETIC ENERGY": 2440664710.0,
+        "ROTATION ENERGY": 49051.308000000005,
+        "INTERNAL ENERGY": 230330.128,
+        "HOURGLASS ENERGY": 0.0,
+        "SPRING ENERGY": 0.0,
+        "ELASTIC CONTACT ENERGY": 4200.4625,
+        "FRICTIONAL CONTACT ENERGY": 0.0,
+        "DAMPING CONTACT ENERGY ": 0.0
+      },
+      "final_global_plastic_work_J": 4248.204,
+      "final_sum_part_plastic_work_J": 4248.204,
+      "contact_onset_history_ms": 0.2403271,
+      "plastic_work_onset_history_ms": 0.7000353,
+      "first_saved_plastic_strain_ms": 0.800355,
+      "maximum_shell_plastic_strain": 0.0117467,
+      "maximum_sampled_beam_plastic_strain": 7.35342316e-19,
+      "maximum_sampled_beam_abs_SX_MPa": 39.7279472,
+      "maximum_sampled_beam_bending_moment_Nmm": 314801.85564070824,
+      "beam_history_native_order": [
+        "F1",
+        "F2",
+        "F3",
+        "M1",
+        "M2",
+        "M3",
+        "IE",
+        "SX",
+        "EPSP"
+      ],
+      "beam_history_scope": "504 forward beams with max endpoint X<=8m; SX is native axial stress, not an outer-fiber bending maximum. Native resultants are preserved; section resolved yielding unknown.",
+      "final_contact_impulse_Ns": [
+        -2608.50725,
+        -30.982666000000002,
+        -26.9568887
+      ],
+      "final_facade_momentum_Ns": [
+        -2589.58613,
+        -26.08367972,
+        -10.0787285
+      ],
+      "contact_balance_max_error_Ns": 33.63561200659991,
+      "global_support_balance_max_error_Ns": 1.43900498227488,
+      "momentum_allowance_Ns": 62.176610364198304,
+      "maximum_support_raw": 1438.5290747455188,
+      "support_units_independently_distinguished": false,
+      "contact_impulse_interpretation_inherited_and_balance_checked": true,
+      "maximum_added_mass_g": 0.000211805105,
+      "maximum_export_coordinate_rounding_mm": 0.05087780000081921,
+      "free_reference_max_displacement_difference_mm": 338.5419,
+      "states": [
+        {
+          "time_ms": 0.0,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.576677399996697,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.200273,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 3.1086244689504383e-15,
+          "maximum_free_flight_relative_X_mm": 0.00010000000000331966,
+          "converter_seconds": 3.0204864000006637,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.400178,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 33.9113,
+          "steel_mean_von_mises_MPa": 131.833,
+          "skin_outermost_point_von_mises_MPa": 305.82600677156285,
+          "steel_outermost_point_von_mises_MPa": 196.82111675286615,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.014093101195764124,
+          "maximum_free_flight_relative_X_mm": 31.403600000000004,
+          "converter_seconds": 3.082676199999696,
+          "radome_face_strength_ratio": 0.7241192074048196,
+          "radome_face_max_tension_principal_MPa": 9.745541005752212,
+          "radome_face_max_compression_principal_MPa": 333.09483540621704,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0142316,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.600083,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 48.8071,
+          "steel_mean_von_mises_MPa": 107.509,
+          "skin_outermost_point_von_mises_MPa": 444.3046468009985,
+          "steel_outermost_point_von_mises_MPa": 289.9342122171911,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.019862567035827783,
+          "maximum_free_flight_relative_X_mm": 67.46830000000001,
+          "converter_seconds": 3.126451200001611,
+          "radome_face_strength_ratio": 1.0199455202595415,
+          "radome_face_max_tension_principal_MPa": 70.89014531790231,
+          "radome_face_max_compression_principal_MPa": 469.17493931938907,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0203653,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.800355,
+          "maximum_plastic_strain": 0.000956023,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.000956023,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 63.4585,
+          "steel_mean_von_mises_MPa": 93.0628,
+          "skin_outermost_point_von_mises_MPa": 583.0049150227467,
+          "steel_outermost_point_von_mises_MPa": 427.6564342201943,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.024933986872542446,
+          "maximum_free_flight_relative_X_mm": 103.455,
+          "converter_seconds": 3.1620636000006925,
+          "radome_face_strength_ratio": 1.2752973671632244,
+          "radome_face_max_tension_principal_MPa": 133.24271522374627,
+          "radome_face_max_compression_principal_MPa": 586.6367888950832,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.026063,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.00026,
+          "maximum_plastic_strain": 0.0035842,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0035842,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 76.9952,
+          "steel_mean_von_mises_MPa": 162.327,
+          "skin_outermost_point_von_mises_MPa": 714.8876767825069,
+          "steel_outermost_point_von_mises_MPa": 427.6565433885,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03014149823466583,
+          "maximum_free_flight_relative_X_mm": 138.7122,
+          "converter_seconds": 3.180666399999609,
+          "radome_face_strength_ratio": 1.5754393648024747,
+          "radome_face_max_tension_principal_MPa": 319.29166899111317,
+          "radome_face_max_compression_principal_MPa": 724.7021078091384,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0320819,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.20017,
+          "maximum_plastic_strain": 0.00636767,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00636767,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 82.0007,
+          "steel_mean_von_mises_MPa": 240.583,
+          "skin_outermost_point_von_mises_MPa": 768.6363605782906,
+          "steel_outermost_point_von_mises_MPa": 427.65651770762247,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03149054032312992,
+          "maximum_free_flight_relative_X_mm": 174.4305,
+          "converter_seconds": 3.2644688000000315,
+          "radome_face_strength_ratio": 1.6655653159761439,
+          "radome_face_max_tension_principal_MPa": 549.9548613106135,
+          "radome_face_max_compression_principal_MPa": 766.1600453490262,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0341235,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.40007,
+          "maximum_plastic_strain": 0.00907891,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00907891,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 88.9566,
+          "steel_mean_von_mises_MPa": 291.245,
+          "skin_outermost_point_von_mises_MPa": 884.8975102660194,
+          "steel_outermost_point_von_mises_MPa": 427.65652073948314,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03343317080167729,
+          "maximum_free_flight_relative_X_mm": 211.0832,
+          "converter_seconds": 3.2418753000019933,
+          "radome_face_strength_ratio": 1.751268862381548,
+          "radome_face_max_tension_principal_MPa": 729.9537126962774,
+          "radome_face_max_compression_principal_MPa": 805.583676695512,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0363056,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.60034,
+          "maximum_plastic_strain": 0.0108951,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0108951,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 97.3927,
+          "steel_mean_von_mises_MPa": 316.69,
+          "skin_outermost_point_von_mises_MPa": 981.552300279002,
+          "steel_outermost_point_von_mises_MPa": 427.65649702764955,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0365279898681643,
+          "maximum_free_flight_relative_X_mm": 249.38000000000005,
+          "converter_seconds": 3.24434630000178,
+          "radome_face_strength_ratio": 1.8735772519652458,
+          "radome_face_max_tension_principal_MPa": 802.8564048843801,
+          "radome_face_max_compression_principal_MPa": 861.8455359040131,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0391474,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.80007,
+          "maximum_plastic_strain": 0.0117467,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0117467,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 156.804,
+          "steel_mean_von_mises_MPa": 351.943,
+          "skin_outermost_point_von_mises_MPa": 1599.7678021112938,
+          "steel_outermost_point_von_mises_MPa": 427.65637911083473,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.051702027602600786,
+          "maximum_free_flight_relative_X_mm": 288.2298,
+          "converter_seconds": 3.2549681999989843,
+          "radome_face_strength_ratio": 3.539633351729362,
+          "radome_face_max_tension_principal_MPa": 813.1815383648403,
+          "radome_face_max_compression_principal_MPa": 1628.2313417955065,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.063821,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 2.00034,
+          "maximum_plastic_strain": 0.0117467,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0117467,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 142.757,
+          "steel_mean_von_mises_MPa": 348.942,
+          "skin_outermost_point_von_mises_MPa": 1429.3211392042028,
+          "steel_outermost_point_von_mises_MPa": 427.6566762941985,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.05749916502268615,
+          "maximum_free_flight_relative_X_mm": 338.5419,
+          "converter_seconds": 3.270222900002409,
+          "radome_face_strength_ratio": 3.485380376327759,
+          "radome_face_max_tension_principal_MPa": 988.8954411603979,
+          "radome_face_max_compression_principal_MPa": 1603.274973110769,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0711207,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        }
+      ],
+      "native_animations": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_HALF_DT/A05_COMP_HALF_DTA001",
+          "sha256": "1876ee18258793e27d89d1fb7f08b84599c2efcf1e75398b1042bccfe9277efd"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_HALF_DT/A05_COMP_HALF_DTA002",
+          "sha256": "bd261f71e063249bd71f993843f423a3f778e2ce3b33a86edce2b9fca2166e3f"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_HALF_DT/A05_COMP_HALF_DTA003",
+          "sha256": "6d2afc56e3c2d5aefee30d90b503889bac55f001459700f0263792fb43b9eafd"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_HALF_DT/A05_COMP_HALF_DTA004",
+          "sha256": "fb00f911872967b62ce18dd39a1915bb91baa10a5698d83ae58666b208c8c30b"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_HALF_DT/A05_COMP_HALF_DTA005",
+          "sha256": "65279d2e67ebc7d2b9aecc59f502ad94d59cd16019bf2dce2a293aec2a4108d9"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_HALF_DT/A05_COMP_HALF_DTA006",
+          "sha256": "acc25d9c38bf3e36172ff1d4dd2bae4a9fcdb5ef1bf8db97306230ef4ee3453b"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_HALF_DT/A05_COMP_HALF_DTA007",
+          "sha256": "d8ef0d06f6bf00968cac3bd6e529e34e72abf8c5604309d5d22f3c92c4206c42"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_HALF_DT/A05_COMP_HALF_DTA008",
+          "sha256": "916e16a778e7d1a6700179f29dcf7c9c2ddf8abaf3e3ad4aa6e44106fdc33e80"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_HALF_DT/A05_COMP_HALF_DTA009",
+          "sha256": "24ede386506ae7dc2b322c898e2638c100293c91cef52d6b6c8149732be9ead0"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_HALF_DT/A05_COMP_HALF_DTA010",
+          "sha256": "bd38ea75e2f8a4c2fe0b301de8819fbd74436b62859926aedb89930e2539c117"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_HALF_DT/A05_COMP_HALF_DTA011",
+          "sha256": "43b290e835c7c8184a2a82ab2ab4bd96195de5025dbfa3e66b903004b44cf723"
+        }
+      ],
+      "physical_impact_qualified": false,
+      "radome_reconstructed": false,
+      "no_fracture": true,
+      "runtime": [
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+          "sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+          "args": [
+            "-i",
+            "A05_COMP_HALF_DT_0000.rad",
+            "-np",
+            "1"
+          ],
+          "seconds": 1.5437516999991203,
+          "exit_code": 0,
+          "timeout_s": 120,
+          "created_utc": "2026-10-05T15:28:47.931481+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_COMP_HALF_DT_0001.rad"
+          ],
+          "seconds": 80.17752200000177,
+          "exit_code": 0,
+          "timeout_s": 300,
+          "created_utc": "2026-10-05T15:30:08.117416+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_COMP_HALF_DT_0002.rad"
+          ],
+          "seconds": 0.5621595999982674,
+          "exit_code": 0,
+          "timeout_s": 60,
+          "created_utc": "2026-10-05T15:30:08.905645+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_COMP_HALF_DTT01"
+          ],
+          "seconds": 0.3399574000031862,
+          "exit_code": 0,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:31:52.545705+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_COMP_HALF_DTT02"
+          ],
+          "seconds": 0.2837452000021585,
+          "exit_code": 3221225477,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:30:09.360366+00:00"
+        }
+      ]
+    },
+    {
+      "created_utc": "2026-10-05T15:34:42.453962+00:00",
+      "case": {
+        "id": "COMP_TRUE_GAP",
+        "composite": true,
+        "contact": true,
+        "self_contact": true,
+        "fine": false,
+        "face_mm": 0.5,
+        "gap_mode": "thickness",
+        "dt_scale": 0.8,
+        "end_ms": 2
+      },
+      "checks": {
+        "starter_zero_errors": true,
+        "starter_zero_warnings": true,
+        "main_engine_normal_termination": true,
+        "observer_normal_termination": true,
+        "observer_did_not_change_main_outputs": true,
+        "mass_preserved": true,
+        "added_mass_within_fraction": true,
+        "native_original_connectivity_preserved": true,
+        "all_exported_states_finite": true,
+        "supports_fixed": true,
+        "native_end_timestamp_observed_within_step": true,
+        "energy_global_within_declared_limit": true,
+        "energy_local_within_declared_limit": false,
+        "momentum_global_support_balance": true,
+        "momentum_contact_facade_balance": true,
+        "global_and_part_plastic_work_nonnegative": true,
+        "plastic_strain_below_diagnostic_limit": true,
+        "no_erosion": true,
+        "no_external_work": true,
+        "radome_elastic_reference_stress_below_tension_compression": false,
+        "radome_plastic_strain_zero": true
+      },
+      "all_declared_checks_pass": false,
+      "core_execution_and_transfer_checks_pass": true,
+      "failed_checks": [
+        "energy_local_within_declared_limit",
+        "radome_elastic_reference_stress_below_tension_compression"
+      ],
+      "native_total_mass_kg": 191273.8379427,
+      "actual_main_end_time_ms": 2.00052071,
+      "last_history_time_ms": 2.00052071,
+      "last_animation_time_ms": 2.00052,
+      "main_end_observed": true,
+      "requested_horizon_reached": true,
+      "observer_timestamp_role": "T02 initial saved history plus first observer animation; continuation step excluded. No observer for a timed-out run; last saved history is not a verified end timestamp.",
+      "initial_KE_J": 2441026000.0,
+      "energy_terms_without_double_counting": [
+        "KINETIC ENERGY",
+        "ROTATION ENERGY",
+        "INTERNAL ENERGY",
+        "HOURGLASS ENERGY",
+        "SPRING ENERGY",
+        "ELASTIC CONTACT ENERGY",
+        "FRICTIONAL CONTACT ENERGY",
+        "DAMPING CONTACT ENERGY "
+      ],
+      "global_plastic_work_is_subset_of_IE_not_added_again": true,
+      "maximum_energy_residual_J": 62032.01999998093,
+      "maximum_energy_residual_initial_KE_fraction": 2.5412273363733498e-05,
+      "maximum_local_energy_residual_fraction_above_1kJ": 4.017267393178812,
+      "final_energy_residual_J": -56701.21899986267,
+      "final_generated_energy_J": 302748.781,
+      "final_energy_terms_J": {
+        "KINETIC ENERGY": 2440666550.0,
+        "ROTATION ENERGY": 53766.012,
+        "INTERNAL ENERGY": 244114.384,
+        "HOURGLASS ENERGY": 0.0,
+        "SPRING ENERGY": 0.0,
+        "ELASTIC CONTACT ENERGY": 4868.385,
+        "FRICTIONAL CONTACT ENERGY": 0.0,
+        "DAMPING CONTACT ENERGY ": 0.0
+      },
+      "final_global_plastic_work_J": 4161.386,
+      "final_sum_part_plastic_work_J": 4161.386,
+      "contact_onset_history_ms": 0.2204836,
+      "plastic_work_onset_history_ms": 0.7202463,
+      "first_saved_plastic_strain_ms": 0.800355,
+      "maximum_shell_plastic_strain": 0.0115,
+      "maximum_sampled_beam_plastic_strain": 4.41997395e-19,
+      "maximum_sampled_beam_abs_SX_MPa": 42.0169716,
+      "maximum_sampled_beam_bending_moment_Nmm": 315972.1505607673,
+      "beam_history_native_order": [
+        "F1",
+        "F2",
+        "F3",
+        "M1",
+        "M2",
+        "M3",
+        "IE",
+        "SX",
+        "EPSP"
+      ],
+      "beam_history_scope": "504 forward beams with max endpoint X<=8m; SX is native axial stress, not an outer-fiber bending maximum. Native resultants are preserved; section resolved yielding unknown.",
+      "final_contact_impulse_Ns": [
+        -2538.737,
+        -2.1291572299999997,
+        -56.069046900000004
+      ],
+      "final_facade_momentum_Ns": [
+        -2535.55512,
+        -2.313476345,
+        -55.909074200000006
+      ],
+      "contact_balance_max_error_Ns": 12.988860141145016,
+      "global_support_balance_max_error_Ns": 1.4701214963096068,
+      "momentum_allowance_Ns": 60.787139421313285,
+      "maximum_support_raw": 1469.542852034728,
+      "support_units_independently_distinguished": false,
+      "contact_impulse_interpretation_inherited_and_balance_checked": true,
+      "maximum_added_mass_g": 0.000211805105,
+      "maximum_export_coordinate_rounding_mm": 0.051857100002578704,
+      "free_reference_max_displacement_difference_mm": 343.6991,
+      "states": [
+        {
+          "time_ms": 0.0,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.1170639999982086,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.20064,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 6.217248937900877e-15,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.028321699999651,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.400545,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 40.4471,
+          "steel_mean_von_mises_MPa": 122.832,
+          "skin_outermost_point_von_mises_MPa": 364.72645709259973,
+          "steel_outermost_point_von_mises_MPa": 188.6175468048063,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.016813268635057166,
+          "maximum_free_flight_relative_X_mm": 32.83879999999999,
+          "converter_seconds": 3.0876646999968216,
+          "radome_face_strength_ratio": 0.8639754757656538,
+          "radome_face_max_tension_principal_MPa": 11.639853949363177,
+          "radome_face_max_compression_principal_MPa": 397.42871885220075,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0169997,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.60045,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 47.6413,
+          "steel_mean_von_mises_MPa": 109.988,
+          "skin_outermost_point_von_mises_MPa": 433.9880085843502,
+          "steel_outermost_point_von_mises_MPa": 310.1883719159536,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.019530060545160266,
+          "maximum_free_flight_relative_X_mm": 68.3657,
+          "converter_seconds": 3.131358900001942,
+          "radome_face_strength_ratio": 1.0128874324287727,
+          "radome_face_max_tension_principal_MPa": 88.69281679955535,
+          "radome_face_max_compression_principal_MPa": 465.9282189172354,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0200245,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.800355,
+          "maximum_plastic_strain": 0.00105911,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00105911,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 68.0413,
+          "steel_mean_von_mises_MPa": 113.01,
+          "skin_outermost_point_von_mises_MPa": 623.977668790807,
+          "steel_outermost_point_von_mises_MPa": 427.6564926435399,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.026657112020003537,
+          "maximum_free_flight_relative_X_mm": 104.2075,
+          "converter_seconds": 3.141751600000134,
+          "radome_face_strength_ratio": 1.3569513421721966,
+          "radome_face_max_tension_principal_MPa": 149.2919028937881,
+          "radome_face_max_compression_principal_MPa": 624.1976173992105,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0278282,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.00026,
+          "maximum_plastic_strain": 0.00355866,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00355866,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 76.8046,
+          "steel_mean_von_mises_MPa": 169.255,
+          "skin_outermost_point_von_mises_MPa": 713.9292422062917,
+          "steel_outermost_point_von_mises_MPa": 427.6564862190681,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.030195735089004194,
+          "maximum_free_flight_relative_X_mm": 139.9697,
+          "converter_seconds": 3.1708050000015646,
+          "radome_face_strength_ratio": 1.5846397682441495,
+          "radome_face_max_tension_principal_MPa": 334.6498213683036,
+          "radome_face_max_compression_principal_MPa": 728.9342933923087,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0321623,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.20017,
+          "maximum_plastic_strain": 0.00633534,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00633534,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 80.1544,
+          "steel_mean_von_mises_MPa": 240.853,
+          "skin_outermost_point_von_mises_MPa": 752.7509856136692,
+          "steel_outermost_point_von_mises_MPa": 427.6565855542155,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03130772448766184,
+          "maximum_free_flight_relative_X_mm": 175.9553,
+          "converter_seconds": 3.1917609999982233,
+          "radome_face_strength_ratio": 1.651176255179754,
+          "radome_face_max_tension_principal_MPa": 551.7212167126227,
+          "radome_face_max_compression_principal_MPa": 759.5410773826868,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0336723,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.40007,
+          "maximum_plastic_strain": 0.00901736,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00901736,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 89.5172,
+          "steel_mean_von_mises_MPa": 295.808,
+          "skin_outermost_point_von_mises_MPa": 890.4233906064012,
+          "steel_outermost_point_von_mises_MPa": 427.6568268869445,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03368805916490003,
+          "maximum_free_flight_relative_X_mm": 213.27620000000002,
+          "converter_seconds": 3.213285600002564,
+          "radome_face_strength_ratio": 1.7616740587690436,
+          "radome_face_max_tension_principal_MPa": 735.8099732898454,
+          "radome_face_max_compression_principal_MPa": 810.37006703376,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0365071,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.60071,
+          "maximum_plastic_strain": 0.0107687,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0107687,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 98.173,
+          "steel_mean_von_mises_MPa": 319.628,
+          "skin_outermost_point_von_mises_MPa": 987.9202433172428,
+          "steel_outermost_point_von_mises_MPa": 427.6565593171001,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03686307576740244,
+          "maximum_free_flight_relative_X_mm": 252.84969999999998,
+          "converter_seconds": 3.2364004000010027,
+          "radome_face_strength_ratio": 1.888581212251447,
+          "radome_face_max_tension_principal_MPa": 810.3281967131463,
+          "radome_face_max_compression_principal_MPa": 868.7473576356656,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0393642,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.80062,
+          "maximum_plastic_strain": 0.0115,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0115,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 170.158,
+          "steel_mean_von_mises_MPa": 350.809,
+          "skin_outermost_point_von_mises_MPa": 1746.9822508829334,
+          "steel_outermost_point_von_mises_MPa": 427.65630391046216,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.056043923949004815,
+          "maximum_free_flight_relative_X_mm": 291.8107,
+          "converter_seconds": 3.267161199997645,
+          "radome_face_strength_ratio": 3.9698870279716223,
+          "radome_face_max_tension_principal_MPa": 840.9521877389961,
+          "radome_face_max_compression_principal_MPa": 1826.1480328669463,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0688746,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 2.00052,
+          "maximum_plastic_strain": 0.0115,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0115,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 166.766,
+          "steel_mean_von_mises_MPa": 333.198,
+          "skin_outermost_point_von_mises_MPa": 1627.820188100332,
+          "steel_outermost_point_von_mises_MPa": 427.656525110982,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.06440688710058606,
+          "maximum_free_flight_relative_X_mm": 343.6991,
+          "converter_seconds": 3.2805910000024596,
+          "radome_face_strength_ratio": 4.017267393178812,
+          "radome_face_max_tension_principal_MPa": 1063.4573398167765,
+          "radome_face_max_compression_principal_MPa": 1847.9430008622533,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0825633,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        }
+      ],
+      "native_animations": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_TRUE_GAP/A05_COMP_TRUE_GAPA001",
+          "sha256": "1876ee18258793e27d89d1fb7f08b84599c2efcf1e75398b1042bccfe9277efd"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_TRUE_GAP/A05_COMP_TRUE_GAPA002",
+          "sha256": "bf016e85544b3203daacc7519bb1a6068593b48fee01ce07b34e2aa7b6d951e7"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_TRUE_GAP/A05_COMP_TRUE_GAPA003",
+          "sha256": "a36b5a88928584417cae2b0814ae8e348b38a9b658d00a54a2264327f830eae6"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_TRUE_GAP/A05_COMP_TRUE_GAPA004",
+          "sha256": "efbefe10df58f8e82ebc549070dc77c1ceb9eadb1945c076801574b1ca7261b8"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_TRUE_GAP/A05_COMP_TRUE_GAPA005",
+          "sha256": "e6410f9a6e871878c7935151d3f3c28f1d2fd63b4ff7814bb97593f1fd2d348a"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_TRUE_GAP/A05_COMP_TRUE_GAPA006",
+          "sha256": "1eff4fab4e68bfd9e247d07218f3743c96443a050c28ba7461adfcc6393722c3"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_TRUE_GAP/A05_COMP_TRUE_GAPA007",
+          "sha256": "12a5221d126e335829aaab667d7a02e96a8cceb76cf66b2b936f5122b65a10ab"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_TRUE_GAP/A05_COMP_TRUE_GAPA008",
+          "sha256": "a686c0bb2c41f0a2614e78d46bd3dab31fa4fc113390280e612895781c715827"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_TRUE_GAP/A05_COMP_TRUE_GAPA009",
+          "sha256": "4503d6a1c505db5973cae0858296d49fa0922d399ead6ea2f121f7e4fafd5852"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_TRUE_GAP/A05_COMP_TRUE_GAPA010",
+          "sha256": "bd4fe546e98bff7ef2899d1d292e686911576723ed7a9b6e6cba7bb4b864f036"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_TRUE_GAP/A05_COMP_TRUE_GAPA011",
+          "sha256": "e14ed26bebd71a042a39d418ddd94a5ba09e313411fe160aa4c32b6a24fc14ca"
+        }
+      ],
+      "physical_impact_qualified": false,
+      "radome_reconstructed": false,
+      "no_fracture": true,
+      "runtime": [
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+          "sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+          "args": [
+            "-i",
+            "A05_COMP_TRUE_GAP_0000.rad",
+            "-np",
+            "1"
+          ],
+          "seconds": 1.3969302000004973,
+          "exit_code": 0,
+          "timeout_s": 120,
+          "created_utc": "2026-10-05T15:30:38.521196+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_COMP_TRUE_GAP_0001.rad"
+          ],
+          "seconds": 50.941880200000014,
+          "exit_code": 0,
+          "timeout_s": 300,
+          "created_utc": "2026-10-05T15:31:29.471168+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_COMP_TRUE_GAP_0002.rad"
+          ],
+          "seconds": 0.5724864000003436,
+          "exit_code": 0,
+          "timeout_s": 60,
+          "created_utc": "2026-10-05T15:31:30.276950+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_COMP_TRUE_GAPT01"
+          ],
+          "seconds": 0.33804700000109733,
+          "exit_code": 0,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:34:04.760250+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_COMP_TRUE_GAPT02"
+          ],
+          "seconds": 0.3558319000003394,
+          "exit_code": 3221225477,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:31:30.813420+00:00"
+        }
+      ]
+    },
+    {
+      "created_utc": "2026-10-05T15:35:21.073180+00:00",
+      "case": {
+        "id": "COMP_FACE_THIN",
+        "composite": true,
+        "contact": true,
+        "self_contact": true,
+        "fine": false,
+        "face_mm": 0.25,
+        "gap_mode": "base",
+        "dt_scale": 0.8,
+        "end_ms": 2
+      },
+      "checks": {
+        "starter_zero_errors": true,
+        "starter_zero_warnings": true,
+        "main_engine_normal_termination": true,
+        "observer_normal_termination": true,
+        "observer_did_not_change_main_outputs": true,
+        "mass_preserved": true,
+        "added_mass_within_fraction": true,
+        "native_original_connectivity_preserved": true,
+        "all_exported_states_finite": true,
+        "supports_fixed": true,
+        "native_end_timestamp_observed_within_step": true,
+        "energy_global_within_declared_limit": true,
+        "energy_local_within_declared_limit": false,
+        "momentum_global_support_balance": true,
+        "momentum_contact_facade_balance": true,
+        "global_and_part_plastic_work_nonnegative": true,
+        "plastic_strain_below_diagnostic_limit": true,
+        "no_erosion": true,
+        "no_external_work": true,
+        "radome_elastic_reference_stress_below_tension_compression": false,
+        "radome_plastic_strain_zero": true
+      },
+      "all_declared_checks_pass": false,
+      "core_execution_and_transfer_checks_pass": true,
+      "failed_checks": [
+        "energy_local_within_declared_limit",
+        "radome_elastic_reference_stress_below_tension_compression"
+      ],
+      "native_total_mass_kg": 191256.8675759,
+      "actual_main_end_time_ms": 2.00003529,
+      "last_history_time_ms": 2.00003529,
+      "last_animation_time_ms": 2.00004,
+      "main_end_observed": true,
+      "requested_horizon_reached": true,
+      "observer_timestamp_role": "T02 initial saved history plus first observer animation; continuation step excluded. No observer for a timed-out run; last saved history is not a verified end timestamp.",
+      "initial_KE_J": 2440686000.0,
+      "energy_terms_without_double_counting": [
+        "KINETIC ENERGY",
+        "ROTATION ENERGY",
+        "INTERNAL ENERGY",
+        "HOURGLASS ENERGY",
+        "SPRING ENERGY",
+        "ELASTIC CONTACT ENERGY",
+        "FRICTIONAL CONTACT ENERGY",
+        "DAMPING CONTACT ENERGY "
+      ],
+      "global_plastic_work_is_subset_of_IE_not_added_again": true,
+      "maximum_energy_residual_J": 44821.311120033264,
+      "maximum_energy_residual_initial_KE_fraction": 1.836422674610059e-05,
+      "maximum_local_energy_residual_fraction_above_1kJ": 3.3825665279372736,
+      "final_energy_residual_J": -44821.311120033264,
+      "final_generated_energy_J": 146858.68888,
+      "final_energy_terms_J": {
+        "KINETIC ENERGY": 2440494320.0,
+        "ROTATION ENERGY": 27212.022,
+        "INTERNAL ENERGY": 117722.176,
+        "HOURGLASS ENERGY": 0.0,
+        "SPRING ENERGY": 0.0,
+        "ELASTIC CONTACT ENERGY": 1924.4908799999998,
+        "FRICTIONAL CONTACT ENERGY": 0.0,
+        "DAMPING CONTACT ENERGY ": 0.0
+      },
+      "final_global_plastic_work_J": 645.991125,
+      "final_sum_part_plastic_work_J": 645.991156,
+      "contact_onset_history_ms": 0.2403271,
+      "plastic_work_onset_history_ms": 0.9003078,
+      "first_saved_plastic_strain_ms": 1.00026,
+      "maximum_shell_plastic_strain": 0.00380144,
+      "maximum_sampled_beam_plastic_strain": 1.41149492e-19,
+      "maximum_sampled_beam_abs_SX_MPa": 22.9124279,
+      "maximum_sampled_beam_bending_moment_Nmm": 191063.70505552608,
+      "beam_history_native_order": [
+        "F1",
+        "F2",
+        "F3",
+        "M1",
+        "M2",
+        "M3",
+        "IE",
+        "SX",
+        "EPSP"
+      ],
+      "beam_history_scope": "504 forward beams with max endpoint X<=8m; SX is native axial stress, not an outer-fiber bending maximum. Native resultants are preserved; section resolved yielding unknown.",
+      "final_contact_impulse_Ns": [
+        -1372.76925,
+        -21.4407539,
+        -38.5511562
+      ],
+      "final_facade_momentum_Ns": [
+        -1391.848375,
+        -16.35293405,
+        -14.50605665
+      ],
+      "contact_balance_max_error_Ns": 32.674922616707725,
+      "global_support_balance_max_error_Ns": 2.7015275517551385,
+      "momentum_allowance_Ns": 37.469556321991945,
+      "maximum_support_raw": 872.1912225855405,
+      "support_units_independently_distinguished": false,
+      "contact_impulse_interpretation_inherited_and_balance_checked": true,
+      "maximum_added_mass_g": 0.000211805105,
+      "maximum_export_coordinate_rounding_mm": 0.051857100002578704,
+      "free_reference_max_displacement_difference_mm": 361.1237,
+      "states": [
+        {
+          "time_ms": 0.0,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.204442400001426,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.20064,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 6.217248937900877e-15,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.195914299998549,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.400545,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 18.6124,
+          "steel_mean_von_mises_MPa": 77.1927,
+          "skin_outermost_point_von_mises_MPa": 316.8483862062106,
+          "steel_outermost_point_von_mises_MPa": 115.95321503173574,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.014617176037925228,
+          "maximum_free_flight_relative_X_mm": 32.293899999999994,
+          "converter_seconds": 3.4030444999989413,
+          "radome_face_strength_ratio": 0.7525214684125595,
+          "radome_face_max_tension_principal_MPa": 8.322418901514723,
+          "radome_face_max_compression_principal_MPa": 346.1598754697774,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0147596,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.60045,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 26.3956,
+          "steel_mean_von_mises_MPa": 61.3612,
+          "skin_outermost_point_von_mises_MPa": 453.17100958078726,
+          "steel_outermost_point_von_mises_MPa": 167.16615131075633,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0203535279352266,
+          "maximum_free_flight_relative_X_mm": 68.9203,
+          "converter_seconds": 3.2969412000020384,
+          "radome_face_strength_ratio": 1.0482454053626207,
+          "radome_face_max_tension_principal_MPa": 63.34971047489999,
+          "radome_face_max_compression_principal_MPa": 482.1928864668055,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0208344,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.800355,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 34.4494,
+          "steel_mean_von_mises_MPa": 54.9544,
+          "skin_outermost_point_von_mises_MPa": 596.4413198186222,
+          "steel_outermost_point_von_mises_MPa": 333.54090509155105,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.025555767011360864,
+          "maximum_free_flight_relative_X_mm": 106.50880000000001,
+          "converter_seconds": 3.284033300002193,
+          "radome_face_strength_ratio": 1.3035258070162998,
+          "radome_face_max_tension_principal_MPa": 117.5878361318003,
+          "radome_face_max_compression_principal_MPa": 599.6218712274979,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0266394,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.00026,
+          "maximum_plastic_strain": 0.000837332,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.000837332,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 40.8153,
+          "steel_mean_von_mises_MPa": 75.2833,
+          "skin_outermost_point_von_mises_MPa": 714.5425773035432,
+          "steel_outermost_point_von_mises_MPa": 427.65645081008455,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03020160542392325,
+          "maximum_free_flight_relative_X_mm": 143.82229999999998,
+          "converter_seconds": 3.670885999999882,
+          "radome_face_strength_ratio": 1.5769432939663597,
+          "radome_face_max_tension_principal_MPa": 299.64004311275903,
+          "radome_face_max_compression_principal_MPa": 725.3939152245255,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0320625,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.20017,
+          "maximum_plastic_strain": 0.00209606,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00209606,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 46.6999,
+          "steel_mean_von_mises_MPa": 118.046,
+          "skin_outermost_point_von_mises_MPa": 824.863314309274,
+          "steel_outermost_point_von_mises_MPa": 427.6564254459765,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0343771149702814,
+          "maximum_free_flight_relative_X_mm": 181.5769,
+          "converter_seconds": 3.6615732999998727,
+          "radome_face_strength_ratio": 1.8251240356576461,
+          "radome_face_max_tension_principal_MPa": 533.751509158802,
+          "radome_face_max_compression_principal_MPa": 839.5570564025172,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.037049,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.40007,
+          "maximum_plastic_strain": 0.00327979,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00327979,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 48.9528,
+          "steel_mean_von_mises_MPa": 154.745,
+          "skin_outermost_point_von_mises_MPa": 919.0538597051861,
+          "steel_outermost_point_von_mises_MPa": 427.65684567969913,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03423975775568622,
+          "maximum_free_flight_relative_X_mm": 220.2178,
+          "converter_seconds": 3.2492152999984683,
+          "radome_face_strength_ratio": 1.8092069847912566,
+          "radome_face_max_tension_principal_MPa": 743.4110451482409,
+          "radome_face_max_compression_principal_MPa": 832.2352130039781,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0371953,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.60071,
+          "maximum_plastic_strain": 0.00377385,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00377385,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 54.9494,
+          "steel_mean_von_mises_MPa": 164.542,
+          "skin_outermost_point_von_mises_MPa": 1040.3296036396348,
+          "steel_outermost_point_von_mises_MPa": 427.65661366286616,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.039766936259177266,
+          "maximum_free_flight_relative_X_mm": 261.2306,
+          "converter_seconds": 3.398552300001029,
+          "radome_face_strength_ratio": 1.9517977907437676,
+          "radome_face_max_tension_principal_MPa": 878.3090058346954,
+          "radome_face_max_compression_principal_MPa": 859.436001234513,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0390038,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.80013,
+          "maximum_plastic_strain": 0.00380144,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00380144,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 85.3819,
+          "steel_mean_von_mises_MPa": 182.741,
+          "skin_outermost_point_von_mises_MPa": 1667.536278930986,
+          "steel_outermost_point_von_mises_MPa": 427.65625249025356,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.050528502224158944,
+          "maximum_free_flight_relative_X_mm": 304.9349,
+          "converter_seconds": 3.37408349999896,
+          "radome_face_strength_ratio": 3.2225479883044756,
+          "radome_face_max_tension_principal_MPa": 893.577902392288,
+          "radome_face_max_compression_principal_MPa": 1482.3720746200588,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0629988,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 2.00004,
+          "maximum_plastic_strain": 0.00380144,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00380144,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 82.7137,
+          "steel_mean_von_mises_MPa": 154.727,
+          "skin_outermost_point_von_mises_MPa": 1558.8205958611786,
+          "steel_outermost_point_von_mises_MPa": 408.9639700255268,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.053146846188841135,
+          "maximum_free_flight_relative_X_mm": 361.1237,
+          "converter_seconds": 3.283691500000714,
+          "radome_face_strength_ratio": 3.3825665279372736,
+          "radome_face_max_tension_principal_MPa": 1055.1041228303086,
+          "radome_face_max_compression_principal_MPa": 1555.980602851146,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0647575,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        }
+      ],
+      "native_animations": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THIN/A05_COMP_FACE_THINA001",
+          "sha256": "1876ee18258793e27d89d1fb7f08b84599c2efcf1e75398b1042bccfe9277efd"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THIN/A05_COMP_FACE_THINA002",
+          "sha256": "bf016e85544b3203daacc7519bb1a6068593b48fee01ce07b34e2aa7b6d951e7"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THIN/A05_COMP_FACE_THINA003",
+          "sha256": "7f461b6e2444fd1e832fc30c245a6ffddb42a90118f6f41ad9395a6d5414140d"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THIN/A05_COMP_FACE_THINA004",
+          "sha256": "31e2406fef26a3fc66dd644c496e0df01cfbc3d61130d6d397c3fecf347d5748"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THIN/A05_COMP_FACE_THINA005",
+          "sha256": "c79062641c20b4e57a64fd4432fbe83c488a6141567287936a8c448aa411cad2"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THIN/A05_COMP_FACE_THINA006",
+          "sha256": "17ad7c5601108ef7d6e2c43a75b5192b2092fa71b745903aed4d2c6a7dbaec51"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THIN/A05_COMP_FACE_THINA007",
+          "sha256": "27f1709e2523780df830c8efdb5ee63cdbb5738f352d960893c44860274be0fa"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THIN/A05_COMP_FACE_THINA008",
+          "sha256": "cab3cf9661f887e955c2ed8cf6be44160c51b88d6648f7f930a51df948418fbe"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THIN/A05_COMP_FACE_THINA009",
+          "sha256": "d9e4e9457a9f5e69215a96237f38f7d093fb0eb89dd05cac51813c202b9b2f64"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THIN/A05_COMP_FACE_THINA010",
+          "sha256": "b943f3e43e12cb8c02cfa6bc6084ddbf73ba639b42dbb0a25294e072c5added8"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THIN/A05_COMP_FACE_THINA011",
+          "sha256": "9b9df0853510dd7c7c2e285175530225e1e6d258613355c1a0712b725cc9a3c0"
+        }
+      ],
+      "physical_impact_qualified": false,
+      "radome_reconstructed": false,
+      "no_fracture": true,
+      "runtime": [
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+          "sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+          "args": [
+            "-i",
+            "A05_COMP_FACE_THIN_0000.rad",
+            "-np",
+            "1"
+          ],
+          "seconds": 1.3671611999998277,
+          "exit_code": 0,
+          "timeout_s": 120,
+          "created_utc": "2026-10-05T15:30:38.731913+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_COMP_FACE_THIN_0001.rad"
+          ],
+          "seconds": 51.06286969999928,
+          "exit_code": 0,
+          "timeout_s": 300,
+          "created_utc": "2026-10-05T15:31:29.804961+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_COMP_FACE_THIN_0002.rad"
+          ],
+          "seconds": 0.5672099000003072,
+          "exit_code": 0,
+          "timeout_s": 60,
+          "created_utc": "2026-10-05T15:31:30.596026+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_COMP_FACE_THINT01"
+          ],
+          "seconds": 0.3383685000007972,
+          "exit_code": 0,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:34:05.693444+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_COMP_FACE_THINT02"
+          ],
+          "seconds": 0.3038797999979579,
+          "exit_code": 3221225477,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:31:31.084329+00:00"
+        }
+      ]
+    },
+    {
+      "created_utc": "2026-10-05T15:35:27.110151+00:00",
+      "case": {
+        "id": "COMP_FACE_THICK",
+        "composite": true,
+        "contact": true,
+        "self_contact": true,
+        "fine": false,
+        "face_mm": 1,
+        "gap_mode": "base",
+        "dt_scale": 0.8,
+        "end_ms": 2
+      },
+      "checks": {
+        "starter_zero_errors": true,
+        "starter_zero_warnings": true,
+        "main_engine_normal_termination": true,
+        "observer_normal_termination": true,
+        "observer_did_not_change_main_outputs": true,
+        "mass_preserved": true,
+        "added_mass_within_fraction": true,
+        "native_original_connectivity_preserved": true,
+        "all_exported_states_finite": true,
+        "supports_fixed": true,
+        "native_end_timestamp_observed_within_step": true,
+        "energy_global_within_declared_limit": true,
+        "energy_local_within_declared_limit": false,
+        "momentum_global_support_balance": true,
+        "momentum_contact_facade_balance": true,
+        "global_and_part_plastic_work_nonnegative": true,
+        "plastic_strain_below_diagnostic_limit": true,
+        "no_erosion": true,
+        "no_external_work": true,
+        "radome_elastic_reference_stress_below_tension_compression": false,
+        "radome_plastic_strain_zero": true
+      },
+      "all_declared_checks_pass": false,
+      "core_execution_and_transfer_checks_pass": true,
+      "failed_checks": [
+        "energy_local_within_declared_limit",
+        "radome_elastic_reference_stress_below_tension_compression"
+      ],
+      "native_total_mass_kg": 191307.77867640002,
+      "actual_main_end_time_ms": 2.00019431,
+      "last_history_time_ms": 2.00019431,
+      "last_animation_time_ms": 2.00019,
+      "main_end_observed": true,
+      "requested_horizon_reached": true,
+      "observer_timestamp_role": "T02 initial saved history plus first observer animation; continuation step excluded. No observer for a timed-out run; last saved history is not a verified end timestamp.",
+      "initial_KE_J": 2441705000.0,
+      "energy_terms_without_double_counting": [
+        "KINETIC ENERGY",
+        "ROTATION ENERGY",
+        "INTERNAL ENERGY",
+        "HOURGLASS ENERGY",
+        "SPRING ENERGY",
+        "ELASTIC CONTACT ENERGY",
+        "FRICTIONAL CONTACT ENERGY",
+        "DAMPING CONTACT ENERGY "
+      ],
+      "global_plastic_work_is_subset_of_IE_not_added_again": true,
+      "maximum_energy_residual_J": 142662.953499794,
+      "maximum_energy_residual_initial_KE_fraction": 5.842759608543784e-05,
+      "maximum_local_energy_residual_fraction_above_1kJ": 3.418180872352394,
+      "final_energy_residual_J": -142662.953499794,
+      "final_generated_energy_J": 542947.0465,
+      "final_energy_terms_J": {
+        "KINETIC ENERGY": 2441019390.0,
+        "ROTATION ENERGY": 90371.784,
+        "INTERNAL ENERGY": 445828.576,
+        "HOURGLASS ENERGY": 0.0,
+        "SPRING ENERGY": 0.0,
+        "ELASTIC CONTACT ENERGY": 6746.6865,
+        "FRICTIONAL CONTACT ENERGY": 0.0,
+        "DAMPING CONTACT ENERGY ": 0.0
+      },
+      "final_global_plastic_work_J": 21693.742000000002,
+      "final_sum_part_plastic_work_J": 21693.742000000002,
+      "contact_onset_history_ms": 0.2403271,
+      "plastic_work_onset_history_ms": 0.5600283,
+      "first_saved_plastic_strain_ms": 0.60045,
+      "maximum_shell_plastic_strain": 0.0360792,
+      "maximum_sampled_beam_plastic_strain": 1.2510931e-18,
+      "maximum_sampled_beam_abs_SX_MPa": 68.07404,
+      "maximum_sampled_beam_bending_moment_Nmm": 492149.3005484139,
+      "beam_history_native_order": [
+        "F1",
+        "F2",
+        "F3",
+        "M1",
+        "M2",
+        "M3",
+        "IE",
+        "SX",
+        "EPSP"
+      ],
+      "beam_history_scope": "504 forward beams with max endpoint X<=8m; SX is native axial stress, not an outer-fiber bending maximum. Native resultants are preserved; section resolved yielding unknown.",
+      "final_contact_impulse_Ns": [
+        -4921.4155,
+        -35.748835899999996,
+        -28.1509414
+      ],
+      "final_facade_momentum_Ns": [
+        -4887.279,
+        -23.368974620000003,
+        -3.820910099999997
+      ],
+      "contact_balance_max_error_Ns": 63.56987415925414,
+      "global_support_balance_max_error_Ns": 2.3266492899568996,
+      "momentum_allowance_Ns": 108.43251694112097,
+      "maximum_support_raw": 2325.854769012114,
+      "support_units_independently_distinguished": false,
+      "contact_impulse_interpretation_inherited_and_balance_checked": true,
+      "maximum_added_mass_g": 0.00021186471,
+      "maximum_export_coordinate_rounding_mm": 0.051857100002578704,
+      "free_reference_max_displacement_difference_mm": 308.1304,
+      "states": [
+        {
+          "time_ms": 0.0,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.465620899998612,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.20064,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 6.217248937900877e-15,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.231864500001393,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.400545,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 58.3312,
+          "steel_mean_von_mises_MPa": 231.675,
+          "skin_outermost_point_von_mises_MPa": 292.41379375255195,
+          "steel_outermost_point_von_mises_MPa": 345.49952468073906,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.013464396521297273,
+          "maximum_free_flight_relative_X_mm": 30.027399999999993,
+          "converter_seconds": 3.3130103000003146,
+          "radome_face_strength_ratio": 0.6909586416483979,
+          "radome_face_max_tension_principal_MPa": 10.431737353222427,
+          "radome_face_max_compression_principal_MPa": 317.84097515826306,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0135988,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.60045,
+          "maximum_plastic_strain": 0.000446382,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.000446382,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 84.6494,
+          "steel_mean_von_mises_MPa": 191.702,
+          "skin_outermost_point_von_mises_MPa": 428.85559887640505,
+          "steel_outermost_point_von_mises_MPa": 427.6563732942246,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.019103169661930264,
+          "maximum_free_flight_relative_X_mm": 64.7368,
+          "converter_seconds": 3.7002288999974553,
+          "radome_face_strength_ratio": 0.9803722227183452,
+          "radome_face_max_tension_principal_MPa": 73.43116879878613,
+          "radome_face_max_compression_principal_MPa": 450.9712224504388,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0196273,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.800355,
+          "maximum_plastic_strain": 0.00404087,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00404087,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 107.291,
+          "steel_mean_von_mises_MPa": 165.413,
+          "skin_outermost_point_von_mises_MPa": 549.33228109737,
+          "steel_outermost_point_von_mises_MPa": 427.6565025516975,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.02340369035501988,
+          "maximum_free_flight_relative_X_mm": 97.7749,
+          "converter_seconds": 3.5809560000016063,
+          "radome_face_strength_ratio": 1.201765568192078,
+          "radome_face_max_tension_principal_MPa": 139.90626356374253,
+          "radome_face_max_compression_principal_MPa": 552.8121613683559,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0245678,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.00026,
+          "maximum_plastic_strain": 0.00964255,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00964255,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 133.492,
+          "steel_mean_von_mises_MPa": 312.48,
+          "skin_outermost_point_von_mises_MPa": 690.6062750688485,
+          "steel_outermost_point_von_mises_MPa": 427.656621085375,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.028977764513259063,
+          "maximum_free_flight_relative_X_mm": 128.9441,
+          "converter_seconds": 3.285592300002463,
+          "radome_face_strength_ratio": 1.5185196081129684,
+          "radome_face_max_tension_principal_MPa": 321.5259003681117,
+          "radome_face_max_compression_principal_MPa": 698.5190197319655,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0309866,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.20017,
+          "maximum_plastic_strain": 0.0163651,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0163651,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 137.125,
+          "steel_mean_von_mises_MPa": 401.995,
+          "skin_outermost_point_von_mises_MPa": 716.2281155829173,
+          "steel_outermost_point_von_mises_MPa": 427.65677660566774,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.02940140859191609,
+          "maximum_free_flight_relative_X_mm": 160.4497,
+          "converter_seconds": 3.3491472999994585,
+          "radome_face_strength_ratio": 1.5503236607240378,
+          "radome_face_max_tension_principal_MPa": 538.494041670378,
+          "radome_face_max_compression_principal_MPa": 713.1488839330574,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0318359,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.40007,
+          "maximum_plastic_strain": 0.0226124,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0226124,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 151.492,
+          "steel_mean_von_mises_MPa": 429.065,
+          "skin_outermost_point_von_mises_MPa": 837.2890867979828,
+          "steel_outermost_point_von_mises_MPa": 427.6567549039767,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03188666026358877,
+          "maximum_free_flight_relative_X_mm": 192.9086,
+          "converter_seconds": 3.321100299999671,
+          "radome_face_strength_ratio": 1.6773872761817756,
+          "radome_face_max_tension_principal_MPa": 695.3909894866583,
+          "radome_face_max_compression_principal_MPa": 771.5981470436168,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0348826,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.60071,
+          "maximum_plastic_strain": 0.0293763,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0293763,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 167.795,
+          "steel_mean_von_mises_MPa": 430.201,
+          "skin_outermost_point_von_mises_MPa": 912.7606588498433,
+          "steel_outermost_point_von_mises_MPa": 427.656589715393,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.035030023730003856,
+          "maximum_free_flight_relative_X_mm": 227.30180000000001,
+          "converter_seconds": 3.2643174000004365,
+          "radome_face_strength_ratio": 1.8408812728064365,
+          "radome_face_max_tension_principal_MPa": 715.7638899723877,
+          "radome_face_max_compression_principal_MPa": 846.8053854909608,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0384966,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.80029,
+          "maximum_plastic_strain": 0.0350703,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0350703,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 265.663,
+          "steel_mean_von_mises_MPa": 429.649,
+          "skin_outermost_point_von_mises_MPa": 1517.6070916373576,
+          "steel_outermost_point_von_mises_MPa": 427.65687233220046,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.048947699305323056,
+          "maximum_free_flight_relative_X_mm": 264.0624,
+          "converter_seconds": 3.2537252999973134,
+          "radome_face_strength_ratio": 3.4616169805082575,
+          "radome_face_max_tension_principal_MPa": 727.7777059478963,
+          "radome_face_max_compression_principal_MPa": 1592.3438110337984,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0612872,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 2.00019,
+          "maximum_plastic_strain": 0.0360792,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0360792,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 263.009,
+          "steel_mean_von_mises_MPa": 415.929,
+          "skin_outermost_point_von_mises_MPa": 1399.0035532107236,
+          "steel_outermost_point_von_mises_MPa": 427.65686680678937,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.05993169229136919,
+          "maximum_free_flight_relative_X_mm": 308.1304,
+          "converter_seconds": 3.2719996999985597,
+          "radome_face_strength_ratio": 3.418180872352394,
+          "radome_face_max_tension_principal_MPa": 897.0248753803944,
+          "radome_face_max_compression_principal_MPa": 1572.3632012821013,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.066026,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        }
+      ],
+      "native_animations": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THICK/A05_COMP_FACE_THICKA001",
+          "sha256": "1876ee18258793e27d89d1fb7f08b84599c2efcf1e75398b1042bccfe9277efd"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THICK/A05_COMP_FACE_THICKA002",
+          "sha256": "bf016e85544b3203daacc7519bb1a6068593b48fee01ce07b34e2aa7b6d951e7"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THICK/A05_COMP_FACE_THICKA003",
+          "sha256": "0c8c1e8707a54bda5385672bb3e66f8150eec407f160479dd223706d6852128b"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THICK/A05_COMP_FACE_THICKA004",
+          "sha256": "19a3105010899411ee0f4d856f9698b75b105e6c6f44a349e2fd343987b05cf2"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THICK/A05_COMP_FACE_THICKA005",
+          "sha256": "18651702ae501d2dfb6f6418a659395f4e7e4894c2a45ebe78f0f229b5fc6895"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THICK/A05_COMP_FACE_THICKA006",
+          "sha256": "7fcf89ead077f82cbd69e18465b7f29719526687fa9df7d1edc06aa8efc6e6a2"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THICK/A05_COMP_FACE_THICKA007",
+          "sha256": "d3d2799319fd214238fe7b00ee4915d11ed889218b6d452fbd9f19c9b8b11ed2"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THICK/A05_COMP_FACE_THICKA008",
+          "sha256": "a09bb053ccd148fa644de36637164c3257d43e32228eb21d8a0b9fa5dd1271dc"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THICK/A05_COMP_FACE_THICKA009",
+          "sha256": "0c0806c50ffb926068ef0681fcfc2c13de3dd85f5b9277757544cb18367c6976"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THICK/A05_COMP_FACE_THICKA010",
+          "sha256": "0b6fe4b17db54a42086b0f010d689e1cefdf69461f5fc3024525321cfcad6853"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FACE_THICK/A05_COMP_FACE_THICKA011",
+          "sha256": "dd9150d2e02b5a216e2cf378a5145a890f3eb426fea988e423d268094313ccce"
+        }
+      ],
+      "physical_impact_qualified": false,
+      "radome_reconstructed": false,
+      "no_fracture": true,
+      "runtime": [
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+          "sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+          "args": [
+            "-i",
+            "A05_COMP_FACE_THICK_0000.rad",
+            "-np",
+            "1"
+          ],
+          "seconds": 1.3758216999995057,
+          "exit_code": 0,
+          "timeout_s": 120,
+          "created_utc": "2026-10-05T15:32:37.114332+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_COMP_FACE_THICK_0001.rad"
+          ],
+          "seconds": 51.21397649999926,
+          "exit_code": 0,
+          "timeout_s": 300,
+          "created_utc": "2026-10-05T15:33:28.337593+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_COMP_FACE_THICK_0002.rad"
+          ],
+          "seconds": 0.6516326000019035,
+          "exit_code": 0,
+          "timeout_s": 60,
+          "created_utc": "2026-10-05T15:33:29.241939+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_COMP_FACE_THICKT01"
+          ],
+          "seconds": 0.3259548999994877,
+          "exit_code": 0,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:34:47.245642+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_COMP_FACE_THICKT02"
+          ],
+          "seconds": 0.3648286999996344,
+          "exit_code": 3221225477,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:33:29.809549+00:00"
+        }
+      ]
+    },
+    {
+      "created_utc": "2026-10-05T15:36:04.014561+00:00",
+      "case": {
+        "id": "COMP_FINE",
+        "composite": true,
+        "contact": true,
+        "self_contact": true,
+        "fine": true,
+        "face_mm": 0.5,
+        "gap_mode": "base",
+        "dt_scale": 0.8,
+        "end_ms": 2
+      },
+      "checks": {
+        "starter_zero_errors": true,
+        "starter_zero_warnings": true,
+        "main_engine_normal_termination": true,
+        "observer_normal_termination": true,
+        "observer_did_not_change_main_outputs": true,
+        "mass_preserved": true,
+        "added_mass_within_fraction": true,
+        "native_original_connectivity_preserved": true,
+        "all_exported_states_finite": true,
+        "supports_fixed": true,
+        "native_end_timestamp_observed_within_step": true,
+        "energy_global_within_declared_limit": true,
+        "energy_local_within_declared_limit": false,
+        "momentum_global_support_balance": true,
+        "momentum_contact_facade_balance": true,
+        "global_and_part_plastic_work_nonnegative": true,
+        "plastic_strain_below_diagnostic_limit": true,
+        "no_erosion": true,
+        "no_external_work": true,
+        "radome_elastic_reference_stress_below_tension_compression": false,
+        "radome_plastic_strain_zero": true
+      },
+      "all_declared_checks_pass": false,
+      "core_execution_and_transfer_checks_pass": true,
+      "failed_checks": [
+        "energy_local_within_declared_limit",
+        "radome_elastic_reference_stress_below_tension_compression"
+      ],
+      "native_total_mass_kg": 191273.8379427,
+      "actual_main_end_time_ms": 2.00052071,
+      "last_history_time_ms": 2.00052071,
+      "last_animation_time_ms": 2.00052,
+      "main_end_observed": true,
+      "requested_horizon_reached": true,
+      "observer_timestamp_role": "T02 initial saved history plus first observer animation; continuation step excluded. No observer for a timed-out run; last saved history is not a verified end timestamp.",
+      "initial_KE_J": 2441026000.0,
+      "energy_terms_without_double_counting": [
+        "KINETIC ENERGY",
+        "ROTATION ENERGY",
+        "INTERNAL ENERGY",
+        "HOURGLASS ENERGY",
+        "SPRING ENERGY",
+        "ELASTIC CONTACT ENERGY",
+        "FRICTIONAL CONTACT ENERGY",
+        "DAMPING CONTACT ENERGY "
+      ],
+      "global_plastic_work_is_subset_of_IE_not_added_again": true,
+      "maximum_energy_residual_J": 44893.71250009537,
+      "maximum_energy_residual_initial_KE_fraction": 1.8391329096902437e-05,
+      "maximum_local_energy_residual_fraction_above_1kJ": 1.2999561749581987,
+      "final_energy_residual_J": -44598.418155670166,
+      "final_generated_energy_J": 160711.58184400003,
+      "final_energy_terms_J": {
+        "KINETIC ENERGY": 2440820690.0,
+        "ROTATION ENERGY": 24326.722,
+        "INTERNAL ENERGY": 136000.272,
+        "HOURGLASS ENERGY": 0.0,
+        "SPRING ENERGY": 0.0,
+        "ELASTIC CONTACT ENERGY": 384.587844,
+        "FRICTIONAL CONTACT ENERGY": 0.0,
+        "DAMPING CONTACT ENERGY ": 0.0
+      },
+      "final_global_plastic_work_J": 209.74670300000002,
+      "final_sum_part_plastic_work_J": 209.74670280000004,
+      "contact_onset_history_ms": 0.2403271,
+      "plastic_work_onset_history_ms": 0.8804643,
+      "first_saved_plastic_strain_ms": 1.00026,
+      "maximum_shell_plastic_strain": 0.00178216,
+      "maximum_sampled_beam_plastic_strain": 5.68142994e-20,
+      "maximum_sampled_beam_abs_SX_MPa": 18.92972,
+      "maximum_sampled_beam_bending_moment_Nmm": 94237.37485192355,
+      "beam_history_native_order": [
+        "F1",
+        "F2",
+        "F3",
+        "M1",
+        "M2",
+        "M3",
+        "IE",
+        "SX",
+        "EPSP"
+      ],
+      "beam_history_scope": "504 forward beams with max endpoint X<=8m; SX is native axial stress, not an outer-fiber bending maximum. Native resultants are preserved; section resolved yielding unknown.",
+      "final_contact_impulse_Ns": [
+        -2248.281,
+        24.7371875,
+        -6.5753374
+      ],
+      "final_facade_momentum_Ns": [
+        -2247.1040000000003,
+        24.64352248,
+        -6.4200707999999995
+      ],
+      "contact_balance_max_error_Ns": 12.60097444407086,
+      "global_support_balance_max_error_Ns": 0.9169620073775645,
+      "momentum_allowance_Ns": 54.96853396973636,
+      "maximum_support_raw": 806.186502605845,
+      "support_units_independently_distinguished": false,
+      "contact_impulse_interpretation_inherited_and_balance_checked": true,
+      "maximum_added_mass_g": 0.0002115369,
+      "maximum_export_coordinate_rounding_mm": 0.051857100002578704,
+      "free_reference_max_displacement_difference_mm": 605.385,
+      "states": [
+        {
+          "time_ms": 0.0,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.155494099999487,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.20064,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 0.0,
+          "steel_mean_von_mises_MPa": 0.0,
+          "skin_outermost_point_von_mises_MPa": 0.0,
+          "steel_outermost_point_von_mises_MPa": 0.0,
+          "maximum_aircraft_geometric_edge_extension_fraction": 6.217248937900877e-15,
+          "maximum_free_flight_relative_X_mm": 0.0,
+          "converter_seconds": 3.052904000000126,
+          "radome_face_strength_ratio": 0.0,
+          "radome_face_max_tension_principal_MPa": 0.0,
+          "radome_face_max_compression_principal_MPa": -0.0,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.400545,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 48.1052,
+          "steel_mean_von_mises_MPa": 46.4943,
+          "skin_outermost_point_von_mises_MPa": 438.56800604804727,
+          "steel_outermost_point_von_mises_MPa": 66.75006642222873,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.01925357870011346,
+          "maximum_free_flight_relative_X_mm": 30.658699999999996,
+          "converter_seconds": 3.1240145999981905,
+          "radome_face_strength_ratio": 0.9743156255091034,
+          "radome_face_max_tension_principal_MPa": 80.22192257019333,
+          "radome_face_max_compression_principal_MPa": 448.1851877341876,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0197866,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.60045,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 73.5567,
+          "steel_mean_von_mises_MPa": 80.4466,
+          "skin_outermost_point_von_mises_MPa": 691.0375383327305,
+          "steel_outermost_point_von_mises_MPa": 167.1287694227035,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.028618403760963917,
+          "maximum_free_flight_relative_X_mm": 68.9269,
+          "converter_seconds": 3.1521099000019603,
+          "radome_face_strength_ratio": 1.520023169891556,
+          "radome_face_max_tension_principal_MPa": 200.698036274991,
+          "radome_face_max_compression_principal_MPa": 699.2106581501158,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0309991,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 0.800355,
+          "maximum_plastic_strain": 0.0,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.0,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 89.6207,
+          "steel_mean_von_mises_MPa": 59.8448,
+          "skin_outermost_point_von_mises_MPa": 879.9041728188361,
+          "steel_outermost_point_von_mises_MPa": 352.22288195850064,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.034805977864471815,
+          "maximum_free_flight_relative_X_mm": 107.2328,
+          "converter_seconds": 3.2266605000004347,
+          "radome_face_strength_ratio": 2.0046972017837357,
+          "radome_face_max_tension_principal_MPa": 327.29721712035285,
+          "radome_face_max_compression_principal_MPa": 922.1607128205185,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0401555,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.00026,
+          "maximum_plastic_strain": 0.000764937,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.000764937,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 92.0783,
+          "steel_mean_von_mises_MPa": 68.96,
+          "skin_outermost_point_von_mises_MPa": 911.0832905593263,
+          "steel_outermost_point_von_mises_MPa": 427.6561465009714,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.0339714062055102,
+          "maximum_free_flight_relative_X_mm": 154.8671,
+          "converter_seconds": 3.2092323999968357,
+          "radome_face_strength_ratio": 2.026544269391798,
+          "radome_face_max_tension_principal_MPa": 522.4298444321181,
+          "radome_face_max_compression_principal_MPa": 932.2103639202271,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0413484,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.20017,
+          "maximum_plastic_strain": 0.00135494,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00135494,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 90.886,
+          "steel_mean_von_mises_MPa": 168.244,
+          "skin_outermost_point_von_mises_MPa": 924.7394480338774,
+          "steel_outermost_point_von_mises_MPa": 427.6564124185715,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.03409538851851113,
+          "maximum_free_flight_relative_X_mm": 234.87032,
+          "converter_seconds": 3.233097299998917,
+          "radome_face_strength_ratio": 2.1621040425825617,
+          "radome_face_max_tension_principal_MPa": 611.4878729685797,
+          "radome_face_max_compression_principal_MPa": 994.5678595879784,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0435932,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.40007,
+          "maximum_plastic_strain": 0.00178216,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00178216,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 59.5402,
+          "steel_mean_von_mises_MPa": 138.354,
+          "skin_outermost_point_von_mises_MPa": 739.3299505944555,
+          "steel_outermost_point_von_mises_MPa": 427.65591572392447,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.023491153216174343,
+          "maximum_free_flight_relative_X_mm": 347.8589,
+          "converter_seconds": 3.2572137999995903,
+          "radome_face_strength_ratio": 1.6650976115741987,
+          "radome_face_max_tension_principal_MPa": 665.8906882942529,
+          "radome_face_max_compression_principal_MPa": 765.9449013241314,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0297267,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.60071,
+          "maximum_plastic_strain": 0.00178216,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00178216,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 138.905,
+          "steel_mean_von_mises_MPa": 166.834,
+          "skin_outermost_point_von_mises_MPa": 1523.27533837025,
+          "steel_outermost_point_von_mises_MPa": 365.75806579623094,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.05256864489423563,
+          "maximum_free_flight_relative_X_mm": 446.006,
+          "converter_seconds": 3.274278199998662,
+          "radome_face_strength_ratio": 3.0619012411750073,
+          "radome_face_max_tension_principal_MPa": 897.7750432209239,
+          "radome_face_max_compression_principal_MPa": 1408.4745709405033,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0688799,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 1.80062,
+          "maximum_plastic_strain": 0.00178216,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00178216,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 136.801,
+          "steel_mean_von_mises_MPa": 129.391,
+          "skin_outermost_point_von_mises_MPa": 1521.4328460832571,
+          "steel_outermost_point_von_mises_MPa": 325.40988261229603,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.05367024846946844,
+          "maximum_free_flight_relative_X_mm": 496.91200000000003,
+          "converter_seconds": 3.2947688000022026,
+          "radome_face_strength_ratio": 3.6216816373384826,
+          "radome_face_max_tension_principal_MPa": 1227.5599728457591,
+          "radome_face_max_compression_principal_MPa": 1665.973553175702,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.0880576,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        },
+        {
+          "time_ms": 2.00052,
+          "maximum_plastic_strain": 0.00178216,
+          "skin_plastic_strain": 0.0,
+          "steel_plastic_strain": 0.00178216,
+          "internal_shell_plastic_strain": 0.0,
+          "skin_mean_von_mises_MPa": 155.585,
+          "steel_mean_von_mises_MPa": 106.126,
+          "skin_outermost_point_von_mises_MPa": 1839.2571310306234,
+          "steel_outermost_point_von_mises_MPa": 427.6566972829959,
+          "maximum_aircraft_geometric_edge_extension_fraction": 0.06196193289371099,
+          "maximum_free_flight_relative_X_mm": 605.385,
+          "converter_seconds": 3.310125700001663,
+          "radome_face_strength_ratio": 4.519664208067071,
+          "radome_face_max_tension_principal_MPa": 834.4296424630035,
+          "radome_face_max_compression_principal_MPa": 2079.0455357108526,
+          "radome_plastic_strain": 0.0,
+          "radome_face_max_output_strain_component": 0.102408,
+          "core_mean_layer2_max_tensor_component_MPa": 0.0
+        }
+      ],
+      "native_animations": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FINE/A05_COMP_FINEA001",
+          "sha256": "56782c553d85a01cff2fc0aa354a57c1e2b963a6dcdbf3739e430ba3e04f4ba5"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FINE/A05_COMP_FINEA002",
+          "sha256": "32d7495c5919013a9f4b97ee7b3f08dbde0bd6386447f16a361bb62a69c86e20"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FINE/A05_COMP_FINEA003",
+          "sha256": "b6a5f128fb94f6690fece60fdece377b6f22639384d7d614c969e1d0bed922c5"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FINE/A05_COMP_FINEA004",
+          "sha256": "68b40342fcd6d0784cb6a9dec032e34668679cd6cc10f882b3650abab9db0808"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FINE/A05_COMP_FINEA005",
+          "sha256": "ff3802e20b7c807d7352036db58d57b78790114dc622ba8ea3f195082214499a"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FINE/A05_COMP_FINEA006",
+          "sha256": "8bc6375ead600b3a84147253497eb0c292f3bb5fd7f9e5d512fe5a7fa1cc0051"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FINE/A05_COMP_FINEA007",
+          "sha256": "fd9fb0fc4e5dfd1832c3e29b7d135a3f3c96a607c3c1c0b0c4bd563119d4025b"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FINE/A05_COMP_FINEA008",
+          "sha256": "b5d7897d23c03d76fc75f85e4551d4db85f17170a3da968bf4bbe936b15e4b09"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FINE/A05_COMP_FINEA009",
+          "sha256": "32495a625be4c0955b9a35c41f661a25710800dfbe5c146bb3939f77babde2d1"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FINE/A05_COMP_FINEA010",
+          "sha256": "c36bd7815083461ec0e539916803acebd3430501d0670e759c61ff3cce8f5b74"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a05/r3/COMP_FINE/A05_COMP_FINEA011",
+          "sha256": "ee3bced04b5a8bb17a1a58b66505cd93ccd68ae000a503afb58f26c4184e9868"
+        }
+      ],
+      "physical_impact_qualified": false,
+      "radome_reconstructed": false,
+      "no_fracture": true,
+      "runtime": [
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+          "sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+          "args": [
+            "-i",
+            "A05_COMP_FINE_0000.rad",
+            "-np",
+            "1"
+          ],
+          "seconds": 1.3824109000015596,
+          "exit_code": 0,
+          "timeout_s": 120,
+          "created_utc": "2026-10-05T15:32:37.399219+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_COMP_FINE_0001.rad"
+          ],
+          "seconds": 51.389233600002626,
+          "exit_code": 0,
+          "timeout_s": 300,
+          "created_utc": "2026-10-05T15:33:28.797826+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+          "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+          "args": [
+            "-i",
+            "A05_COMP_FINE_0002.rad"
+          ],
+          "seconds": 0.6816122000018368,
+          "exit_code": 0,
+          "timeout_s": 60,
+          "created_utc": "2026-10-05T15:33:29.738250+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_COMP_FINET01"
+          ],
+          "seconds": 0.3367328999993333,
+          "exit_code": 0,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:34:48.156993+00:00"
+        },
+        {
+          "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+          "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+          "args": [
+            "A05_COMP_FINET02"
+          ],
+          "seconds": 0.31143990000055055,
+          "exit_code": 3221225477,
+          "timeout_s": 90,
+          "created_utc": "2026-10-05T15:33:30.251561+00:00"
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "saved_mass_graph_and_states": true,
+    "all_case_core_execution_checks": true,
+    "half_dt_impulse": true,
+    "half_dt_energy": true,
+    "spatial_mesh_impulse": false,
+    "spatial_mesh_energy": false
+  },
+  "integrity_only_pass": true,
+  "all_declared_checks_pass": false,
+  "comparisons": [
+    {
+      "comparison": "half_dt",
+      "common_time_ms": 2.00034308,
+      "impulse_relative_difference": 0.003954685106489182,
+      "generated_energy_relative_difference": 0.0015930500554904282,
+      "impulse_pass": true,
+      "energy_pass": true,
+      "same_piecewise_flat_geometry": false,
+      "both_requested_horizons_reached": true
+    },
+    {
+      "comparison": "spatial_mesh",
+      "common_time_ms": 2.00042772,
+      "impulse_relative_difference": 0.1434645719370789,
+      "generated_energy_relative_difference": 0.43250015719394325,
+      "impulse_pass": false,
+      "energy_pass": false,
+      "same_piecewise_flat_geometry": true,
+      "both_requested_horizons_reached": true
+    }
+  ],
+  "A04_cached_comparison": [
+    {
+      "case": "ROUND_METAL",
+      "common_time_ms": 1.620001,
+      "A04_residual_J": -64878.541999816895,
+      "A05_residual_J": -172490.38831532886,
+      "not_pure_single_parameter_vs_A04": false,
+      "old_solver_rerun": false
+    },
+    {
+      "case": "COMP_NOSC",
+      "common_time_ms": 1.620001,
+      "A04_residual_J": -64878.541999816895,
+      "A05_residual_J": -7125.753027427314,
+      "not_pure_single_parameter_vs_A04": true,
+      "old_solver_rerun": false
+    },
+    {
+      "case": "COMP_SELF",
+      "common_time_ms": 1.620001,
+      "A04_residual_J": -64878.541999816895,
+      "A05_residual_J": -7125.753027427314,
+      "not_pure_single_parameter_vs_A04": true,
+      "old_solver_rerun": false
+    },
+    {
+      "case": "COMP_HALF_DT",
+      "common_time_ms": 1.620001,
+      "A04_residual_J": -64878.541999816895,
+      "A05_residual_J": -7149.809142965191,
+      "not_pure_single_parameter_vs_A04": true,
+      "old_solver_rerun": false
+    },
+    {
+      "case": "COMP_TRUE_GAP",
+      "common_time_ms": 1.620001,
+      "A04_residual_J": -64878.541999816895,
+      "A05_residual_J": -8743.785622934376,
+      "not_pure_single_parameter_vs_A04": true,
+      "old_solver_rerun": false
+    },
+    {
+      "case": "COMP_FACE_THIN",
+      "common_time_ms": 1.620001,
+      "A04_residual_J": -64878.541999816895,
+      "A05_residual_J": -3460.3954709311197,
+      "not_pure_single_parameter_vs_A04": true,
+      "old_solver_rerun": false
+    },
+    {
+      "case": "COMP_FACE_THICK",
+      "common_time_ms": 1.620001,
+      "A04_residual_J": -64878.541999816895,
+      "A05_residual_J": -18718.009192373393,
+      "not_pure_single_parameter_vs_A04": true,
+      "old_solver_rerun": false
+    },
+    {
+      "case": "COMP_FINE",
+      "common_time_ms": 1.620001,
+      "A04_residual_J": -64878.541999816895,
+      "A05_residual_J": -43776.968310080105,
+      "not_pure_single_parameter_vs_A04": true,
+      "old_solver_rerun": false
+    }
+  ],
+  "fine_mass_difference_kg": 1.4551915228366852e-11,
+  "fine_area_difference_m2": 2.842170943040401e-14,
+  "physical_impact_qualified": false,
+  "historical_radome_reconstructed": false,
+  "core_crushing_and_delamination_modeled": false,
+  "local_energy_ledger_fully_qualified": false,
+  "NIST_outcomes_used_as_target": false,
+  "old_solver_reruns": 0
+}
