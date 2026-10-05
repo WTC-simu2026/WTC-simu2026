@@ -8,11 +8,17 @@ Le projet teste des mécanismes, des hypothèses explicites et des plages de par
 
 ## Où en est la simulation ?
 
-Instantané du **4 octobre 2026** : **IMPACT-I02I-K terminée comme témoin de deux modes libres indépendants sans séparation**, prochaine étape **IMPACT-I02I-L**. Registre : 118 entrées. Les mentions V8H/V11H sont historiques.
+Instantané du **5 octobre 2026** : **AIRCRAFT-A01 terminée comme premier assemblage paramétrique de l'avion entier**, prochaine étape **AIRCRAFT-A02**. Registre : **120 entrées**. Avant cette étape :119,dont22 dans la branche impact; les12 dernières I02I-A à L étaient des diagnostics locaux.
 
-J analyse les sorties I sauvegardées : 49323 valeurs binaires reproduisent les CSV, audit brut **53/56**, références **6/6** et diagnostic terminal distinct **8/8**. Les trois critères de fin brute restent échoués, ainsi que les quatre signes I. L'hypothèse d'arrondi borne la représentation, sans déterminer le signe interne. K ajoute quatre états neufs X/Y libres sans séparation : **254/254 critères**, **28/28** comparaisons et **26/26** références. IE=Ux+Uy+Dy et les impulsions initiales sont contrôlées séparément. Les signes et fins bruts K restent affichés ; les intervalles sont déclarés avant moteur.
+La priorité a été recentrée sur l'avion complet et les conditions d'entrée, sans ajuster le modèle pour rejoindre NIST. A01 assemble fuselage,deux ailes/caisson central,longerons,nervures,raidisseurs,empennages et deux moteurs/pylônes équivalents; les dimensions externes viennent des plans primaires Boeing. Les sources Boeing restent en lecture seule et ne sont pas redistribuées comme logiciel libre. La structure interne,les épaisseurs et les masses détaillées sont encore hypothétiques.
 
-Lire les [rapports J](wtc1_simulation_v8/output/impact_i02i_output_precision/rapport_impact_i02i_output_precision.md) et [K](wtc1_simulation_v8/output/impact_i02i_free_mixed/rapport_impact_i02i_free_mixed.md), la [vérification K](wtc1_simulation_v8/output/impact_i02i_free_mixed/publication_verification.json) et la [passation L](harness/handoffs/WTC1_IMPACT_I02I_K_HANDOFF.md). K conserve la réserve tangentielle après décharge normale tant que la liaison reste active ; son devenir à OFF reste ouvert. Les échecs E/F/G/I/J, NASA/Gf et V11F/V11R/V11S sont conservés. Impact complet Boeing/façade, incendie et effondrement réel non qualifiés.
+Neuf scénarios de carburant,charge,épaisseur et répartition du vide :**66/66** contrôles de construction,**4/4** contrôles des masses exportées,**6/6** contrôles de géométrie/conversion. La première sortie r0 conserve neuf échecs de symétrie : le découpage a été corrigé en miroir, sans modifier les seuils. Toutes les versions sont conservées. Nominal :122,159t,dont19,972t de structure explicite,9t de moteurs équivalents et53,187t de vide non résolu,plus30t carburant et10t de charge. La réserve non résolue représente64,7% du vide et ne reçoit aucune raideur cachée. Ni masse niCG historiques ne sont établis. Aucun impact calculé en A01.
+
+![Avion entier - géométrie et masses hypothétiques](wtc1_simulation_v8/output/aircraft_a01/verification_r2/preview_corrected/B767_assemblage_A01.png)
+
+Lire le [rapport A01](wtc1_simulation_v8/output/aircraft_a01/rapport_aircraft_a01.md), le [modèle 3D GLB](wtc1_simulation_v8/output/aircraft_a01/verification_r2/B767_airframe_A01.glb), la [vérification](wtc1_simulation_v8/output/aircraft_a01/publication_verification.json) et la [passation A02](harness/handoffs/WTC1_AIRCRAFT_A01_HANDOFF.md). L conserve les cinq échecs OFF/FX, les réserves et les diagnostics I/J : son bilan numérique conditionnel n'identifie pas une fracture physique. Le [rapport L](wtc1_simulation_v8/output/impact_i02i_deletion_ledger/rapport_impact_i02i_deletion_ledger.md) est aussi publié. I02I-M est différée par ce recentrage, son plan conservé. V11F/V11R/V11S et toutes les limites antérieures restent ouvertes.
+
+**Aucun résultat NIST ne sert de cible dans le nouveau constructeur.** Les comparaisons de dommages auront lieu après gel des conditions; un écart restera visible. Maillage intact élastique et masses vérifiés pour ces hypothèses seulement; transfert au solveur,vol libre,résistance d'impact et rupture encore à vérifier. Aucun incendie ou effondrement historique validé.
 
 ## Ce qui est publié
 
@@ -23,9 +29,9 @@ Lire les [rapports J](wtc1_simulation_v8/output/impact_i02i_output_precision/rap
 - `outputs/` : calculs exploratoires antérieurs et audits complémentaires. Leurs affirmations se lisent avec leurs propres limites ; leur présence n'est pas une validation.
 - `publication/` : inventaire complet, empreintes SHA-256, règles de publication, licences tierces et liste motivée des fichiers externes non redistribués.
 
-Inventaire courant : **5,339 fichiers scientifiques dans Git**, **7,404 sorties dans 44 archives**.
+Inventaire courant : **5,430 fichiers scientifiques dans Git**, **7,413 sorties dans 45 archives**.
 
-Restaurer les 23 archives [A](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-01-impact-i02i-a), les 4 archives [B+C](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-c), les 14 archives [D+E](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-03-impact-i02i-e), l'archive [F+G](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-04-impact-i02i-g), l'archive [H+I](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-04-impact-i02i-i), puis les 1 archives [J+K](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-04-impact-i02i-k). Les manifestes conservent SHA-256 et URL ; aucune ancienne archive remplacée.
+Restaurer les44 anciennes archives des releases A à J+K, puis les 1 archives [L+A01](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-05-aircraft-a01). Manifestes,SHA-256 et URL conservés; aucune ancienne archive reconstruite ou remplacée.
 
 ## Consulter et vérifier sans relancer les solveurs
 
@@ -54,7 +60,7 @@ Voir [REPRODUCIBILITY.md](REPRODUCIBILITY.md). La base Python utilise NumPy et P
 
 ## Prochaine étape
 
-IMPACT-I02I-L : registre énergétique de la réserve tangentielle à OFF sur les cas F sauvegardés avant nouvelle séparation mixte libre. Pré-déclarer le diagnostic, préserver les lignes et tous les échecs, sans déphasage, clipping, ancien moteur ou changement d'un état endommagé. Une référence énergétique explicite est requise avant tout futur essai libre avec désactivation. K combine deux lois indépendantes : contact, matériau et fracture mixte physiques restent non qualifiés.
+AIRCRAFT-A02 : transfert cohérent des masses et inerties au solveur et vol libre intact court; préciser les données de structure/moteur qui dominent les inconnues. Puis impact limité de l'avion entier sur façade représentative, avec vitesse/attitude et sensibilités déclarées avant comparaison des dégâts. Aucune adaptation pour faire coïncider les résultats NIST. I02I-M est différée et ne sera reprise automatiquement qu'en présence d'un blocage concret de sa loi. La priorité reste l'assemblage complet.
 
 ## Discipline de preuve
 

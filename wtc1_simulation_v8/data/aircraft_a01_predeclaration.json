@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "iteration": "AIRCRAFT-A01",
+  "seed": 1102026,
+  "random_draws": 0,
+  "purpose": "Whole 767-200ER parametric intact airframe mesh and spatial mass ledger, before any tower impact",
+  "user_steering": "2026-10-05: construire les conditions et l'avion complet; aucun ajustement pour rejoindre un resultat NIST",
+  "units": {"length":"m","mass":"kg","time":"s","force":"N","energy":"J","stress":"Pa","inertia":"kg m2"},
+  "outcome_calibration": {"allowed":false,"observed_damage_as_target":false,"NIST_damage_as_target":false,"NIST_results_used_in_build":false},
+  "primary_sources": [
+    {"id":"BOEING-CAD","url":"https://www.boeing.com/content/dam/boeing/v2/airports/dwgs/7672.zip","local":"wtc1_simulation_v8/input/aircraft_a01/767-200.dxf","role":"airport-planning external views, approximate accuracy +/-6 inches, not production structure"},
+    {"id":"BOEING-ACAP","url":"https://www.boeing.com/content/dam/boeing/v2/airports/acaps/767_REV_K.pdf","local":"wtc1_simulation_v8/input/impact_i02_geom/boeing/767_REV_K.pdf","pages_1_based":[21,23,28],"role":"OEW definition, 767-200ER typical weights/capacity, external dimensions"},
+    {"id":"GE-CF6","url":"https://www.geaerospace.com/commercial/aircraft-engines/cf6","role":"CF6-80A applications and length, no engine mass or internal structure retrieved"},
+    {"id":"AL-STATIC","url":"https://everyspec.com/USAF/USAF-Tech-Manuals/download.php?spec=TO_1-1A1-A_15JAN2016.056663.pdf","cached_configuration":"wtc1_simulation_v8/data/impact_i02a_structured_wing.json","role":"previously transcribed generic static alloy density and elastic moduli; not Boeing manufacturing assignments"}
+  ],
+  "envelope": {
+    "inch_to_m":0.0254,"ft_to_m":0.3048,"lb_to_kg":0.45359237,
+    "length":{"original":"159 ft 2 in","value_in":1910,"value_m":48.514,"source":"BOEING-ACAP p28"},
+    "span":{"original":"156 ft 1 in","value_in":1873,"value_m":47.5742,"source":"BOEING-ACAP p28"},
+    "fuselage_width":{"original":"16 ft 6 in","value_in":198,"value_m":5.0292,"source":"BOEING-ACAP p28"},
+    "fuselage_height":{"original":"17 ft 9 in","value_in":213,"value_m":5.4102,"source":"BOEING-ACAP p28"},
+    "horizontal_tail_span":{"original":"61 ft 1 in","value_in":733,"value_m":18.6182,"source":"BOEING-ACAP p28"},
+    "engine_y":{"original":"26 ft 0 in","value_in":312,"value_m":7.9248,"source":"BOEING-ACAP p28 plan"},
+    "GE_engine_front_x":{"original":"50 ft 9 in","value_in":609,"value_m":15.4686,"source":"BOEING-ACAP p28"},
+    "CF6_80A_length":{"original":"167 inches","value_m":4.2418,"source":"GE-CF6; family length, simplified nacelle not production boundary"}
+  },
+  "CAD_interpretation": {
+    "plan_datum_in":[92.7878,-637.838561],
+    "unit_verification":"dimension extension endpoints x92.7878 and x2002.7878 differ by1910; inches agrees with ACAP",
+    "wing_profile":"x increases aft; y positive starboard; approximate symmetric interpolation of port plan contour, not production stations",
+    "wing_stations_m":[
+      [0.0,15.578958,26.216564,0.12],
+      [2.5146,15.578958,26.216564,0.12],
+      [3.061429,16.448951,26.275,0.12],
+      [7.311878,19.332,26.745938,0.11],
+      [8.967605,20.455,27.133403,0.105],
+      [17.952890,26.550,30.345405,0.095],
+      [23.7871,31.050,32.605937,0.09]
+    ],
+    "trace":"root leading POLYLINE82; leading LINE65; aft contour LINE64,63,62,61; rounded tip simplified to ACAP span. Selected x/y rounded and interpolated; expected external tolerance0.1524m does not bound internal hypotheses.",
+    "height_profile":"elliptic fuselage and piecewise airfoil thickness are own hypotheses"
+  },
+  "materials": {
+    "skin_al2024_reference":{"rho_kg_m3":2780.0,"E_Pa":73100000000.0,"nu":0.33,"law":"linear elastic only","assignment":"own hypothesis using cached generic static properties"},
+    "internal_al7075_reference":{"rho_kg_m3":2810.0,"E_Pa":71700000000.0,"nu":0.33,"law":"linear elastic only","assignment":"own hypothesis, not as-built 767 schedule"}
+  },
+  "structure_hypotheses": {
+    "fuselage_stations_x_radius_factor":[[0,0.015],[1,0.42],[3,0.81],[4.7,0.97],[8.2,1],[33.76,1],[37.83,0.88],[43.6,0.38],[48.514,0.015]],
+    "fuselage_skin_m":0.00254,"wing_skin_m":0.003175,"tail_skin_m":0.002,
+    "spar_and_rib_web_m":0.003175,"spar_chord_fractions":[0.25,0.65],
+    "fuselage_frame_spacing_m":0.6,"frame_area_m2":0.0012,"frame_I_m4":0.000002,
+    "fuselage_stringer_count":24,"stringer_area_m2":0.0004,"stringer_I_m4":0.00000008,
+    "wing_stringer_area_m2":0.0006,"wing_stringer_I_m4":0.0000002,
+    "attachment_area_m2":0.003,"attachment_I_m4":0.00001,
+    "wing_base_z_m":-1.2,"wing_dihedral_deg":6.0,
+    "engine_center_z_m":-3.0,"engine_equivalent_radius_m":1.25,
+    "tail_root_LE_TE_x_m":[40.2,47.5],"tail_tip_LE_TE_x_m":[46.2,48.4],"tail_z_m":1.1,"tail_tc":0.08,
+    "vertical_tail_root_LE_TE_x_m":[37.8,47.4],"vertical_tail_tip_LE_TE_x_m":[45.0,48.2],"vertical_tail_height_m":8.0,
+    "joint_model":"merged shell/beam nodes internally; explicit equivalent elastic beams at fuselage/wing/tail and engine pylons, no joint failure",
+    "continuous_fuselage_skin_at_wing_intersection":true,
+    "unmodelled":"doors/window cutouts, fasteners, equipment supports, landing gear detailed structure, composite distribution, engine internal deformation, damage, sloshing",
+    "strength_failure_and_crush_laws":null
+  },
+  "mesh": {"longitudinal_max_step_m":0.6,"wing_span_max_step_m":1.0,"fuselage_circumference_nodes":24,"chord_fractions":[0.0,0.1,0.25,0.45,0.65,0.85,1.0],"refinement_factor":2,"quadrature":"3-point degree2 triangles; 2-point Gauss rods; 8-point uniform boxes"},
+  "mass_hypotheses": {
+    "OEW_reference":{"original_lb":181130,"converted_kg":82159.1859811,"printed_kg":82159,"all_typical_ER_lb":[181130,181250,181350,181500,181610,181610],"source":"BOEING-ACAP PDF23, typical ER configurations; actual N334AA OEW not established"},
+    "engine_equivalent_kg_each":4500.0,"engine_mass_source":"own hypothesis; no substitution of NIST PW4000 model",
+    "payload_kg":10000.0,"payload_distribution":"uniform cabin box x7..37,y+-2,z0.5..1.7; hypothesis, not manifest",
+    "fuel_kg":30000.0,"fuel_density_kg_m3":800.0,"fuel_source":"own round-number scenario, NOT reconstructed Flight11 fuel",
+    "fuel_fill":"equal symmetric wing-box volume weighting between0.25c..0.65c, to75% semispan; center box included; no pressure or sloshing",
+    "usable_fuel_capacities_L":[63216,77752,77752,91379,91379,91379],
+    "unresolved_empty_mass":"OEW minus generated structure minus engines; kept as explicitly unresolved inertia with no stiffness credit. Includes missing structure as well as systems, furnishings and operating items; not exclusively nonstructural.",
+    "unresolved_distribution":"uniform fuselage box x6..39,y+-2,z+-1.5; paired longitudinal sensitivity +/-3m; not calibrated CG"
+  },
+  "cases": [
+    {"id":"NOMINAL","fuel_kg":30000,"payload_kg":10000,"skin_factor":1.0,"unresolved_x_shift_m":0},
+    {"id":"FUEL20","fuel_kg":20000,"payload_kg":10000,"skin_factor":1.0,"unresolved_x_shift_m":0},
+    {"id":"FUEL40","fuel_kg":40000,"payload_kg":10000,"skin_factor":1.0,"unresolved_x_shift_m":0},
+    {"id":"PAYLOAD5","fuel_kg":30000,"payload_kg":5000,"skin_factor":1.0,"unresolved_x_shift_m":0},
+    {"id":"PAYLOAD15","fuel_kg":30000,"payload_kg":15000,"skin_factor":1.0,"unresolved_x_shift_m":0},
+    {"id":"SKIN07","fuel_kg":30000,"payload_kg":10000,"skin_factor":0.7,"unresolved_x_shift_m":0},
+    {"id":"SKIN13","fuel_kg":30000,"payload_kg":10000,"skin_factor":1.3,"unresolved_x_shift_m":0},
+    {"id":"MASS_FORWARD","fuel_kg":30000,"payload_kg":10000,"skin_factor":1.0,"unresolved_x_shift_m":-3},
+    {"id":"MASS_AFT","fuel_kg":30000,"payload_kg":10000,"skin_factor":1.0,"unresolved_x_shift_m":3}
+  ],
+  "predeclared_acceptance": {"mass_relative_error":1e-10,"bilateral_CG_y_abs_m":1e-9,"minimum_shell_area_m2":1e-10,"topology_connected_components":1,"inertia_min_eigenvalue_positive":true,"coarse_fine_mass_relative_difference_max":0.02,"coarse_fine_inertia_relative_norm_difference_max":0.02,"reject_negative_unresolved_mass":true,"reject_geometric_tank_overfill":true,"no_physical_impact_validation_claim":true},
+  "physics_status": {"intact_linear_elastic_topology_only":true,"full_aircraft_dynamics_executed":false,"mass_mapping_to_solver_validated":false,"deformation_strength_fracture_qualified":false,"real_event_reconstructed":false,"impact_inputs_speed_attitude_and_tower_registered":false},
+  "next_iteration":"AIRCRAFT-A02",
+  "next_objective":"Map whole-aircraft consistent masses to solver and check unforced intact free flight; replace highest-impact missing construction/engine data where primary records available; freeze speed/attitude ranges independently of damage comparison. Then limited complete-aircraft/representative-façade impact; preserve predictive failures. I02I-M deferred, not cancelled."
+}

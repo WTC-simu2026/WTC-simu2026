@@ -1,0 +1,719 @@
+{
+  "id": "IMPACT-I02I-L",
+  "seed": 1102020,
+  "random_draws": 0,
+  "declared_utc": "2026-10-04T16:34:51.969663+00:00",
+  "scope": "Saved-output energy ledger at whole-element deletion before new free mixed separation",
+  "plan_sha256": "fbcea7b39d932ce6584f8b3c0790dd0fbd14282555b7cda453da401882d240bf",
+  "cached_references": {
+    "saved_F_summary": {
+      "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/verification_r1/summary.json",
+      "sha256": "c8a6c7dd5400abc32afae6c6d15009ebf8381bd0e61c8e3310913a05c87f40f4"
+    },
+    "saved_H_reference": {
+      "path": "wtc1_simulation_v8/output/impact_i02i_free_fracture/reference_verification.json",
+      "sha256": "a0acd546c9ec594066a50817fe003cddf21f70cb4c53fb4a42238b66b7d443f8"
+    },
+    "saved_K_summary": {
+      "path": "wtc1_simulation_v8/output/impact_i02i_free_mixed/verification_r1/summary.json",
+      "sha256": "6499197f6ba45904908ee9539203d7c449ddd80d691c61c57802ed9917347654"
+    },
+    "saved_K_reference": {
+      "path": "wtc1_simulation_v8/output/impact_i02i_free_mixed/reference_verification.json",
+      "sha256": "1f550718044701a0ee4e4a9f99ed389dc18f86ec0937fc43c7b5bf0b4b01dc1c"
+    }
+  },
+  "connector": {
+    "initial_area_mm2": 1.0,
+    "kn_N_per_mm": 56000.0,
+    "kt_N_per_mm": 21500.0,
+    "peak_normal_force_N": 495.0,
+    "hypothetical_Gf_N_per_mm": 30.0,
+    "mass_g": 0.2,
+    "rotational_inertia_g_mm2": 0.001,
+    "H_normal": 2,
+    "H_shear": 2,
+    "shear_failure_disabled": true,
+    "normal_failure": "whole element deactivation when normal gap reaches 2 Gf/peak",
+    "damping": 0.0,
+    "rotations": "blocked at both nodes",
+    "history": "all fresh; no restart, damaged-state property substitution or mass scaling"
+  },
+  "binary_schema": {
+    "origin": "Own byte inspection of I NORMAL_SUBPEAK_RETURN_025NS header before assessment; derived bounded schema, not official schema",
+    "endian": ">",
+    "record_markers": "4-byte big-endian signed length repeated after payload, exact EOF consumption",
+    "version": 3040,
+    "header_payload_bytes": [
+      84,
+      80,
+      24,
+      88,
+      60,
+      44,
+      44,
+      60,
+      4,
+      60,
+      44,
+      24,
+      60,
+      44,
+      44,
+      24
+    ],
+    "counts_signature": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      22
+    ],
+    "global_codes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "spring_group_signature": [
+      2,
+      6,
+      0,
+      1,
+      6
+    ],
+    "spring_codes": [
+      1,
+      2,
+      3,
+      8,
+      9,
+      14
+    ],
+    "node_group_signature": [
+      3,
+      0,
+      0,
+      2,
+      6
+    ],
+    "node_codes": [
+      1,
+      2,
+      4,
+      5,
+      620,
+      621
+    ],
+    "node_ids": [
+      1,
+      2
+    ],
+    "row_payload_bytes": [
+      4,
+      88,
+      24,
+      48
+    ],
+    "header_end_byte": 916,
+    "global_order_from_existing_converter_and_model_card": [
+      "INTERNAL ENERGY",
+      "KINETIC ENERGY",
+      "X-MOMENTUM",
+      "Y-MOMENTUM",
+      "Z-MOMENTUM",
+      "MASS",
+      "TIME STEP",
+      "ROTATION ENERGY",
+      "EXTERNAL WORK",
+      "SPRING ENERGY",
+      "CONTACT ENERGY",
+      "HOURGLASS ENERGY",
+      "ELASTIC CONTACT ENERGY",
+      "FRICTIONAL CONTACT ENERGY",
+      "DAMPING CONTACT ENERGY",
+      "PLASTIC WORK",
+      "ADDED MASS",
+      "PERCENTAGE ADDED MASS",
+      "INLET MASS",
+      "OUTLET MASS",
+      "INLET ENERGY",
+      "OUTLET ENERGY"
+    ],
+    "spring_order_from_saved_card": [
+      "OFF",
+      "FX",
+      "FY",
+      "LX",
+      "LY",
+      "IE"
+    ],
+    "node_order_from_saved_card": [
+      "DX",
+      "DY",
+      "VX",
+      "VY",
+      "REACX",
+      "REACY"
+    ]
+  },
+  "reader_sha256": "4f02ed200691e9d3aa2d58e56b720b0066a298d083ff71340bd21acabf081eb1",
+  "cases": [
+    {
+      "id": "FIXED_CAP200NS",
+      "title": "I02IF_FIXED_CAP200NS",
+      "saved_case": {
+        "id": "FIXED_CAP200NS",
+        "x_mm": [
+          0,
+          0.02,
+          0.02,
+          0.02
+        ],
+        "y_deltaf": [
+          0,
+          0,
+          1.05,
+          1.05
+        ],
+        "dt_scale": 0.2,
+        "fails": true,
+        "expected_final": "normal_plus_elastic_shear",
+        "cached_D_case": "MIXED_FIXED_SHEAR_FAILURE",
+        "maximum_dt_ms": 0.0002
+      },
+      "inputs": {
+        "generation": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP200NS/generation.json",
+          "bytes": 223642,
+          "sha256": "5b9efa3f422711039eb9be20101b724fcec4fc18cff84f4624ecc70a24a4156d"
+        },
+        "starter": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP200NS/I02IF_FIXED_CAP200NS_0000.rad",
+          "bytes": 200882,
+          "sha256": "aa62b3d499eb0f23e2795c46a00b22cc28394dbaf7b1a4394f4bc124e576f6ff"
+        },
+        "engine": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP200NS/I02IF_FIXED_CAP200NS_0001.rad",
+          "bytes": 206,
+          "sha256": "dfea4f35eb134315d85c6fbe585b8c9fa53b1538fcd7b0518b1cf6ac481a72b1"
+        },
+        "T01": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP200NS/I02IF_FIXED_CAP200NST01",
+          "bytes": 2943072,
+          "sha256": "e4ba4942146fb34fdca9dbbb06edbc7db1ed019d912fa44248659b58c2cf8228"
+        },
+        "csv": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP200NS/I02IF_FIXED_CAP200NST01.csv",
+          "bytes": 8042944,
+          "sha256": "60343ab787ff3137cce24fb5be03027fc27eed6dd819e4113979596ac62f9fe3"
+        },
+        "execution": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP200NS/execution.json",
+          "bytes": 1236,
+          "sha256": "3028ee40832c347b01f91ab2259a048bbfb4807ed8b1736d8f8f856a9568b4b0"
+        }
+      },
+      "expected_event_count": 1,
+      "normal_work_J": 0.03,
+      "energy_scale_J": 0.0343
+    },
+    {
+      "id": "FIXED_CAP100NS",
+      "title": "I02IF_FIXED_CAP100NS",
+      "saved_case": {
+        "id": "FIXED_CAP100NS",
+        "x_mm": [
+          0,
+          0.02,
+          0.02,
+          0.02
+        ],
+        "y_deltaf": [
+          0,
+          0,
+          1.05,
+          1.05
+        ],
+        "dt_scale": 0.2,
+        "fails": true,
+        "expected_final": "normal_plus_elastic_shear",
+        "cached_D_case": "MIXED_FIXED_SHEAR_FAILURE",
+        "maximum_dt_ms": 0.0001
+      },
+      "inputs": {
+        "generation": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP100NS/generation.json",
+          "bytes": 223642,
+          "sha256": "f34ea880f1f5aa80a2a503f75161cbffcad8dc6db2190a2860d37345c31b1790"
+        },
+        "starter": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP100NS/I02IF_FIXED_CAP100NS_0000.rad",
+          "bytes": 200882,
+          "sha256": "cfd801cb50f181f885ed9b098963dd63650da48d00c9c5187479346d063b8605"
+        },
+        "engine": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP100NS/I02IF_FIXED_CAP100NS_0001.rad",
+          "bytes": 206,
+          "sha256": "7d1c8ee75a457e5a6922181516851492742f74b79a8c5ba00fe078bb85aa811b"
+        },
+        "T01": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP100NS/I02IF_FIXED_CAP100NST01",
+          "bytes": 5884836,
+          "sha256": "4d1a27b8c0260cd890efdbd90b622c630e8b4ef9b73e6a303ba99e9f50c1be06"
+        },
+        "csv": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP100NS/I02IF_FIXED_CAP100NST01.csv",
+          "bytes": 16082768,
+          "sha256": "18f5be04c967ec64381baad178c10a96484ab6a27478b11a54051238399479b1"
+        },
+        "execution": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP100NS/execution.json",
+          "bytes": 1237,
+          "sha256": "c4ea140749d4c5fa124e293b3ee746c52144f69553524f012bd256e42abc28b4"
+        }
+      },
+      "expected_event_count": 1,
+      "normal_work_J": 0.03,
+      "energy_scale_J": 0.0343
+    },
+    {
+      "id": "FIXED_CAP050NS",
+      "title": "I02IF_FIXED_CAP050NS",
+      "saved_case": {
+        "id": "FIXED_CAP050NS",
+        "x_mm": [
+          0,
+          0.02,
+          0.02,
+          0.02
+        ],
+        "y_deltaf": [
+          0,
+          0,
+          1.05,
+          1.05
+        ],
+        "dt_scale": 0.2,
+        "fails": true,
+        "expected_final": "normal_plus_elastic_shear",
+        "cached_D_case": "MIXED_FIXED_SHEAR_FAILURE",
+        "maximum_dt_ms": 5e-05
+      },
+      "inputs": {
+        "generation": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP050NS/generation.json",
+          "bytes": 223640,
+          "sha256": "ad658674c53eeaae845c3749d0e0caeba20057ce85545ff3b80b0586ff4506c1"
+        },
+        "starter": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP050NS/I02IF_FIXED_CAP050NS_0000.rad",
+          "bytes": 200882,
+          "sha256": "24a7b52662d8e0c64dcb1a6cf9a8f0d568e9b486aa0765676b75b366aa66ce94"
+        },
+        "engine": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP050NS/I02IF_FIXED_CAP050NS_0001.rad",
+          "bytes": 206,
+          "sha256": "976d2f02f0e62d2f216003a78d0a58eae5ea456b3352e658661d5b71ad0bbf1f"
+        },
+        "T01": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP050NS/I02IF_FIXED_CAP050NST01",
+          "bytes": 11768952,
+          "sha256": "694ae32a27cd3ecca8cbecaa063ec66301b2ad6d5ad9d1bc7fef9abd20576b5c"
+        },
+        "csv": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP050NS/I02IF_FIXED_CAP050NST01.csv",
+          "bytes": 32164024,
+          "sha256": "7c16da4ab43f8ec42c9fad4bf752cd8445899e71561d948e1d8433c21a6947ae"
+        },
+        "execution": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/FIXED_CAP050NS/execution.json",
+          "bytes": 1236,
+          "sha256": "726bf6b85835bb86b3aee5700f45912d5b8b82408e387a6f8e26787404a8d5ff"
+        }
+      },
+      "expected_event_count": 1,
+      "normal_work_J": 0.03,
+      "energy_scale_J": 0.0343
+    },
+    {
+      "id": "PROP_CAP100NS",
+      "title": "I02IF_PROP_CAP100NS",
+      "saved_case": {
+        "id": "PROP_CAP100NS",
+        "x_mm": [
+          0,
+          0.02
+        ],
+        "y_deltaf": [
+          0,
+          1.05
+        ],
+        "dt_scale": 0.2,
+        "fails": true,
+        "expected_final": "proportional_failure",
+        "cached_D_case": "MIXED_PROP_HALF_DT",
+        "maximum_dt_ms": 0.0001
+      },
+      "inputs": {
+        "generation": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/PROP_CAP100NS/generation.json",
+          "bytes": 87233,
+          "sha256": "b23928d50796dac0f14d5931c65ff1a9694a769f823bf27ca65f8ff03b6dde5a"
+        },
+        "starter": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/PROP_CAP100NS/I02IF_PROP_CAP100NS_0000.rad",
+          "bytes": 69680,
+          "sha256": "1b1503c6e7c7977ef25951afc7ea2d01b732e0b2036725dce5335e1a78e6cc98"
+        },
+        "engine": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/PROP_CAP100NS/I02IF_PROP_CAP100NS_0001.rad",
+          "bytes": 205,
+          "sha256": "41965ea8dfdf2317444875cf7fdde1dc7afc162a471274f453153571d59ff32d"
+        },
+        "T01": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/PROP_CAP100NS/I02IF_PROP_CAP100NST01",
+          "bytes": 1965032,
+          "sha256": "4e5174f016b48d6efb69686640e5a7eb12aff473c20758193dc6ecbc32a6edd4"
+        },
+        "csv": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/PROP_CAP100NS/I02IF_PROP_CAP100NST01.csv",
+          "bytes": 5373304,
+          "sha256": "35a6e0c85cdf9e836d935beba70f72b1193a88d10b69110d9838f9092b8c1923"
+        },
+        "execution": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/PROP_CAP100NS/execution.json",
+          "bytes": 1235,
+          "sha256": "2d2ed5de556017b75e81c2bbc6b74a5364c207d5e4fb970329fe234ee47b134b"
+        }
+      },
+      "expected_event_count": 1,
+      "normal_work_J": 0.03,
+      "energy_scale_J": 0.03
+    },
+    {
+      "id": "PROP_CAP050NS",
+      "title": "I02IF_PROP_CAP050NS",
+      "saved_case": {
+        "id": "PROP_CAP050NS",
+        "x_mm": [
+          0,
+          0.02
+        ],
+        "y_deltaf": [
+          0,
+          1.05
+        ],
+        "dt_scale": 0.2,
+        "fails": true,
+        "expected_final": "proportional_failure",
+        "cached_D_case": "MIXED_PROP_HALF_DT",
+        "maximum_dt_ms": 5e-05
+      },
+      "inputs": {
+        "generation": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/PROP_CAP050NS/generation.json",
+          "bytes": 87231,
+          "sha256": "f942c620dc97f27b3bdea24fe4e11369736392eb0cec77d6dfe1426e10c41d05"
+        },
+        "starter": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/PROP_CAP050NS/I02IF_PROP_CAP050NS_0000.rad",
+          "bytes": 69680,
+          "sha256": "2b5b0cd70513c5e9f6108d76b9cbadfb282e78720963b59e68c7416223800d60"
+        },
+        "engine": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/PROP_CAP050NS/I02IF_PROP_CAP050NS_0001.rad",
+          "bytes": 205,
+          "sha256": "74bde5e92f92910f8b2210c2a0aedc0390ad5dd86050dd3c2374cc2849485caf"
+        },
+        "T01": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/PROP_CAP050NS/I02IF_PROP_CAP050NST01",
+          "bytes": 3928952,
+          "sha256": "e641ff30b18cc669b9586cb71113eba4b7f632cb33e78d61eefd434ea5f13d19"
+        },
+        "csv": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/PROP_CAP050NS/I02IF_PROP_CAP050NST01.csv",
+          "bytes": 10744024,
+          "sha256": "25780ee99ffcca3f452e514c77607111815d70b72c7da1d779aba57987a9599d"
+        },
+        "execution": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/PROP_CAP050NS/execution.json",
+          "bytes": 1235,
+          "sha256": "cab2978a68ab83b72de7ace52736306cc74b925b39d9aaa61af35ad1e2f02344"
+        }
+      },
+      "expected_event_count": 1,
+      "normal_work_J": 0.03,
+      "energy_scale_J": 0.03
+    },
+    {
+      "id": "AFTER_CAP100NS",
+      "title": "I02IF_AFTER_CAP100NS",
+      "saved_case": {
+        "id": "AFTER_CAP100NS",
+        "x_mm": [
+          0,
+          0,
+          0.02
+        ],
+        "y_deltaf": [
+          0,
+          1.05,
+          1.05
+        ],
+        "dt_scale": 0.2,
+        "fails": true,
+        "expected_final": "normal_only",
+        "cached_D_case": "SHEAR_AFTER_FAILURE",
+        "maximum_dt_ms": 0.0001
+      },
+      "inputs": {
+        "generation": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/AFTER_CAP100NS/generation.json",
+          "bytes": 161478,
+          "sha256": "f01c9519efd57114b53be9d04cc2f4d2455b237ae53a362ec12a859ec3df44d7"
+        },
+        "starter": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/AFTER_CAP100NS/I02IF_AFTER_CAP100NS_0000.rad",
+          "bytes": 135282,
+          "sha256": "31ec09ffa90c172465268e2c9325acb9506daaaa286f21ebab70c661f155b7c6"
+        },
+        "engine": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/AFTER_CAP100NS/I02IF_AFTER_CAP100NS_0001.rad",
+          "bytes": 206,
+          "sha256": "13b16751a9966ae4cdb4b365d9a14e39ae2edafd57cef28b273caf544a61bf84"
+        },
+        "T01": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/AFTER_CAP100NS/I02IF_AFTER_CAP100NST01",
+          "bytes": 3925032,
+          "sha256": "37614689566927d73e6e521bb94bfe5666ad02c1ca91339d8da5d3ba931fe362"
+        },
+        "csv": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/AFTER_CAP100NS/I02IF_AFTER_CAP100NST01.csv",
+          "bytes": 10713284,
+          "sha256": "9b263c48b32b103434774f4636c203a9f14ded4710259fa0310b0bb1dff32f08"
+        },
+        "execution": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/AFTER_CAP100NS/execution.json",
+          "bytes": 1238,
+          "sha256": "b705bccfe96f7d3b751a0f0652b97df73d36fc5a8f2991ae5e6aa639dafba02f"
+        }
+      },
+      "expected_event_count": 1,
+      "normal_work_J": 0.03,
+      "energy_scale_J": 0.03
+    },
+    {
+      "id": "AFTER_CAP050NS",
+      "title": "I02IF_AFTER_CAP050NS",
+      "saved_case": {
+        "id": "AFTER_CAP050NS",
+        "x_mm": [
+          0,
+          0,
+          0.02
+        ],
+        "y_deltaf": [
+          0,
+          1.05,
+          1.05
+        ],
+        "dt_scale": 0.2,
+        "fails": true,
+        "expected_final": "normal_only",
+        "cached_D_case": "SHEAR_AFTER_FAILURE",
+        "maximum_dt_ms": 5e-05
+      },
+      "inputs": {
+        "generation": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/AFTER_CAP050NS/generation.json",
+          "bytes": 161476,
+          "sha256": "4cac705225fc37e5e797dd50c7e463f4b8bd8bc411b62cda5e08649c8ec38325"
+        },
+        "starter": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/AFTER_CAP050NS/I02IF_AFTER_CAP050NS_0000.rad",
+          "bytes": 135282,
+          "sha256": "cfdab5da7712ae6b659e8d0e9ac49e2cff2e5d07b11c4d5dc7d17dbb0e4a9546"
+        },
+        "engine": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/AFTER_CAP050NS/I02IF_AFTER_CAP050NS_0001.rad",
+          "bytes": 206,
+          "sha256": "99f14043cff0b364789d8013fed62e8667a5e1ffdcd055883398e0718b48d998"
+        },
+        "T01": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/AFTER_CAP050NS/I02IF_AFTER_CAP050NST01",
+          "bytes": 7848756,
+          "sha256": "8f73d18cdbdcc074ea1e960bee156336d23742f7eba25612e569aac993851c4b"
+        },
+        "csv": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/AFTER_CAP050NS/I02IF_AFTER_CAP050NST01.csv",
+          "bytes": 21423449,
+          "sha256": "da6842b840d1cdd87696ff914e237f4e1fcb60135ab7347b31ed933783b91e2a"
+        },
+        "execution": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/AFTER_CAP050NS/execution.json",
+          "bytes": 1237,
+          "sha256": "68243c3a5007907bbd65a4bbd4a1364094edacfbf89ebc20086b36f6eb6a4ac8"
+        }
+      },
+      "expected_event_count": 1,
+      "normal_work_J": 0.03,
+      "energy_scale_J": 0.03
+    },
+    {
+      "id": "RETURN_CAP100NS",
+      "title": "I02IF_RETURN_CAP100NS",
+      "saved_case": {
+        "id": "RETURN_CAP100NS",
+        "x_mm": [
+          0,
+          0.02,
+          0
+        ],
+        "y_deltaf": [
+          0,
+          0,
+          0
+        ],
+        "dt_scale": 0.2,
+        "fails": false,
+        "expected_final": "zero",
+        "cached_D_case": "SHEAR_RETURN",
+        "maximum_dt_ms": 0.0001
+      },
+      "inputs": {
+        "generation": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/RETURN_CAP100NS/generation.json",
+          "bytes": 149648,
+          "sha256": "b9defaa4c3519989c87a9cdd7bed135e48ff5d0d7aa03e3bc8bd9194c7277812"
+        },
+        "starter": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/RETURN_CAP100NS/I02IF_RETURN_CAP100NS_0000.rad",
+          "bytes": 135284,
+          "sha256": "a920a3028bf9be151eab5544b095c6cb10f72fbc7755a057f923c04aa404a3a4"
+        },
+        "engine": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/RETURN_CAP100NS/I02IF_RETURN_CAP100NS_0001.rad",
+          "bytes": 207,
+          "sha256": "24c0c34aee6362999e1fc6642e39ecec5fab20dbfe2ca63dbc0c4b8b92ff0480"
+        },
+        "T01": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/RETURN_CAP100NS/I02IF_RETURN_CAP100NST01",
+          "bytes": 3925032,
+          "sha256": "a24cd8d9070703ce7998c4419310a614485e56e045a2983dac34702f4edab499"
+        },
+        "csv": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/RETURN_CAP100NS/I02IF_RETURN_CAP100NST01.csv",
+          "bytes": 10733384,
+          "sha256": "15f3a7c0392054e8cf6bacea8da836e847f5de0a88fb899dbd7092084b835bd4"
+        },
+        "execution": {
+          "path": "wtc1_simulation_v8/output/impact_i02i_dtcap/RETURN_CAP100NS/execution.json",
+          "bytes": 1240,
+          "sha256": "89668cc1100cce5f8bff127230211080a7be3e435123ba7ed6d57062b274293a"
+        }
+      },
+      "expected_event_count": 0,
+      "normal_work_J": 0.0,
+      "energy_scale_J": 0.0043
+    }
+  ],
+  "event_selection": {
+    "OFF": "First consecutive 1 to 0 transition; require no reactivation",
+    "pre": "OFF row minus1",
+    "settled": "OFF row plus2, fixed before analysis, never chosen to optimize a residual",
+    "inspect_rows": "OFF minus2 through OFF plus3, original times/values; no partition asserted on OFF row",
+    "force_zero": "First row on/after OFF with both forces below fixed tolerance, diagnostic only"
+  },
+  "units": {
+    "mass": "g",
+    "length": "mm",
+    "time": "ms",
+    "force": "N",
+    "raw_energy": "N mm",
+    "energy_conversion_J_per_N_mm": 0.001,
+    "impulse": "N ms"
+  },
+  "precision": {
+    "policy": "Conditional nearest rounding IEEE32; exact Fraction cells only at selected rows, no empirical sign margin",
+    "Ux": "Fx^2/(2Kt)",
+    "Uy": "Fy^2/(2Kn)",
+    "D": "IE-Ux-Uy",
+    "delta": "Intervals of post minus pre, exact independent bounds; do not assume correlation or internal channels",
+    "all_binary_values_reproduce_saved_CSV_6e": true,
+    "official_schema_verified": false
+  },
+  "gates": {
+    "energy_fraction": 0.005,
+    "reservoir_fraction": 0.005,
+    "force_zero_N": 1e-05,
+    "no_added_mass_g": 1e-12,
+    "mass_fraction": 1e-05,
+    "known_reference_error_J": 1e-12,
+    "maximum_diagnostic_seconds": 120,
+    "raw_same_OFF_FX_gate": "Old F values preserved; reported separately, never promoted",
+    "near_event_quantization": "Report exact cells and zero inclusion; not a proof of the true rounding algorithm"
+  },
+  "reference": {
+    "normal_work_J": 0.03,
+    "linear_x_at_0p02_mm_J": 0.0043,
+    "future_fresh_velocity_X_mm_ms": [
+      5.0,
+      10.0
+    ],
+    "future_fresh_velocity_Y_mm_ms": 30.0,
+    "future_end_ms": 0.012,
+    "numerical_retention": "Continuous x,y,vx,vy at normal deletion; force X=Y=0 after; IE retains G+Ux_at_deletion",
+    "release_counterfactual": "IE drops by Ux, so energy closure requires gain in KE, work/channel flux or another explicit reservoir; direction/impulse not specified",
+    "calibration": false
+  },
+  "solver_jobs": 0,
+  "old_solver_rerun": false,
+  "sources": [
+    {
+      "id": "ALTAIR_H2",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/stiffness_formulation_spring_hardening_r.htm",
+      "use": "unloading stiffness and positive zero-force plateau; reuse C saved page"
+    },
+    {
+      "id": "ALTAIR_TYPE8",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type8_spr_gene_starter_r.htm",
+      "use": "six independent modes and deformation-based failure"
+    },
+    {
+      "id": "ALTAIR_SPRING_HISTORY",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/th_spring_starter_r.htm",
+      "use": "OFF, force, displacement and IE definitions"
+    },
+    {
+      "id": "OPENRADIOSS_CODE_ATTEMPT",
+      "url": "https://github.com/OpenRadioss/OpenRadioss",
+      "access": "404 on 2026-10-03 via web and public API; exact engine integration phase not read",
+      "use": "no code-derived explanation claimed; runtime hashes and experimental phase diagnostic retained"
+    },
+    {
+      "id": "ALTAIR_DTIX_2026",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/dtix_engine_r.htm",
+      "use": "Initial and maximum step, without mass scaling; confirm actual TIME STEP through deletion"
+    }
+  ]
+}

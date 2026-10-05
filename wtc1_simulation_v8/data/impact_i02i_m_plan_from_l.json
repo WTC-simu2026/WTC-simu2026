@@ -1,0 +1,188 @@
+{
+  "id": "IMPACT-I02I-M_PLAN_FROM_L",
+  "created_utc": "2026-10-04T16:46:53.807889+00:00",
+  "seed": 1102021,
+  "random_draws": 0,
+  "saved_L_summary": {
+    "path": "wtc1_simulation_v8/output/impact_i02i_deletion_ledger/verification_r1/summary.json",
+    "sha256": "af6238dd115d83dcc82742c3590f49a27a1980e607ed1bd6bb32a2dcb28d9469"
+  },
+  "saved_L_conditional_reference": {
+    "path": "wtc1_simulation_v8/output/impact_i02i_deletion_ledger/reference_verification.json",
+    "sha256": "2d96c2ad5c8c50dd812a0476788e5fbd78c27e46d7360e183aae208a4d3addee"
+  },
+  "scope": "Fresh two-node free XY normal whole-element deletion with explicitly retained X reserve; numerical witness only",
+  "cases_proposed": [
+    {
+      "family": "FREE_X5_NORMAL_SEPARATION",
+      "vx0_mm_per_ms": 5.0,
+      "vy0_mm_per_ms": 30.0,
+      "E0_J": 0.04625,
+      "end_ms": 0.012,
+      "maximum_dt_ms": [
+        2.5e-05,
+        1.25e-05
+      ]
+    },
+    {
+      "family": "FREE_X10_NORMAL_SEPARATION",
+      "vx0_mm_per_ms": 10.0,
+      "vy0_mm_per_ms": 30.0,
+      "E0_J": 0.05,
+      "end_ms": 0.012,
+      "maximum_dt_ms": [
+        2.5e-05,
+        1.25e-05
+      ]
+    }
+  ],
+  "reference_parameters": {
+    "vx5": {
+      "normal": {
+        "moving_mass_g": 0.1,
+        "fixed_mass_g": 0.1,
+        "k_N_per_mm": 56000.0,
+        "peak_N": 495.0,
+        "reference_area_mm2": 1.0,
+        "hypothetical_Gf_N_per_mm": 30.0,
+        "delta0_mm": 0.008839285714285714,
+        "deltaf_mm": 0.12121212121212122,
+        "softening_N_per_mm": 4404.979173187586,
+        "v0_mm_per_ms": 30.0,
+        "initial_energy_N_mm": 45.0,
+        "initial_energy_J": 0.045,
+        "initial_momentum_N_ms": 3.0,
+        "normal_total_work_N_mm": 30.0,
+        "normal_total_work_J": 0.03,
+        "omega_rad_per_ms": 748.3314773547883,
+        "lambda_rad_per_ms": 209.88042245973267,
+        "peak_time_ms": 0.00029708404642769034,
+        "failure_time_ms": 0.00561201925604344,
+        "peak_velocity_mm_per_ms": 29.26167349476591,
+        "post_failure_velocity_mm_per_ms": 17.320508075688775,
+        "formulas": {
+          "elastic": "delta=v0/w*sin(w*t); v=v0*cos(w*t)",
+          "softening": "x=df-delta=x0*cosh(lambda*tau)-vpeak/lambda*sinh(lambda*tau); v=vpeak*cosh(lambda*tau)-lambda*x0*sinh(lambda*tau)",
+          "after": "delta=df+vf*(t-tf); v=vf; F=0; W=G*area",
+          "force_work": "F=k*delta to d0, then soft*(df-delta) to df, then 0; W=integral F d(delta)",
+          "units": "W in N mm, J=0.001*N mm; v(delta)=sqrt(v0^2-2W_N_mm/m_g)",
+          "impulse": "J_support=m*v-m*v0; moving support reaction=0",
+          "energy": "E0_J=0.001*(m*v^2/2+W_N_mm)"
+        },
+        "domain": "Fresh monotone positive opening with E0>G*area, no shear reservoir or unloading"
+      },
+      "m_g": 0.1,
+      "kt_N_mm": 21500.0,
+      "vx0_mm_ms": 5.0,
+      "omega_x_rad_ms": 463.6809247747852,
+      "tf_ms": 0.00561201925604344,
+      "x_at_deletion_mm": 0.005538579618177442,
+      "vx_at_deletion_mm_ms": -4.2900686707579085,
+      "Ux_at_deletion_J": 0.0003297655400090737,
+      "Ex0_J": 0.00125,
+      "E0_J": 0.04625,
+      "retained_IE_after_J": 0.030329765540009074,
+      "free_KE_after_J": 0.01592023445999093,
+      "release_policy_missing_energy_if_velocities_continuous_J": 0.0003297655400090737,
+      "calibrated": false
+    },
+    "vx10": {
+      "normal": {
+        "moving_mass_g": 0.1,
+        "fixed_mass_g": 0.1,
+        "k_N_per_mm": 56000.0,
+        "peak_N": 495.0,
+        "reference_area_mm2": 1.0,
+        "hypothetical_Gf_N_per_mm": 30.0,
+        "delta0_mm": 0.008839285714285714,
+        "deltaf_mm": 0.12121212121212122,
+        "softening_N_per_mm": 4404.979173187586,
+        "v0_mm_per_ms": 30.0,
+        "initial_energy_N_mm": 45.0,
+        "initial_energy_J": 0.045,
+        "initial_momentum_N_ms": 3.0,
+        "normal_total_work_N_mm": 30.0,
+        "normal_total_work_J": 0.03,
+        "omega_rad_per_ms": 748.3314773547883,
+        "lambda_rad_per_ms": 209.88042245973267,
+        "peak_time_ms": 0.00029708404642769034,
+        "failure_time_ms": 0.00561201925604344,
+        "peak_velocity_mm_per_ms": 29.26167349476591,
+        "post_failure_velocity_mm_per_ms": 17.320508075688775,
+        "formulas": {
+          "elastic": "delta=v0/w*sin(w*t); v=v0*cos(w*t)",
+          "softening": "x=df-delta=x0*cosh(lambda*tau)-vpeak/lambda*sinh(lambda*tau); v=vpeak*cosh(lambda*tau)-lambda*x0*sinh(lambda*tau)",
+          "after": "delta=df+vf*(t-tf); v=vf; F=0; W=G*area",
+          "force_work": "F=k*delta to d0, then soft*(df-delta) to df, then 0; W=integral F d(delta)",
+          "units": "W in N mm, J=0.001*N mm; v(delta)=sqrt(v0^2-2W_N_mm/m_g)",
+          "impulse": "J_support=m*v-m*v0; moving support reaction=0",
+          "energy": "E0_J=0.001*(m*v^2/2+W_N_mm)"
+        },
+        "domain": "Fresh monotone positive opening with E0>G*area, no shear reservoir or unloading"
+      },
+      "m_g": 0.1,
+      "kt_N_mm": 21500.0,
+      "vx0_mm_ms": 10.0,
+      "omega_x_rad_ms": 463.6809247747852,
+      "tf_ms": 0.00561201925604344,
+      "x_at_deletion_mm": 0.011077159236354883,
+      "vx_at_deletion_mm_ms": -8.580137341515817,
+      "Ux_at_deletion_J": 0.0013190621600362947,
+      "Ex0_J": 0.005,
+      "E0_J": 0.049999999999999996,
+      "retained_IE_after_J": 0.03131906216003629,
+      "free_KE_after_J": 0.018680937839963708,
+      "release_policy_missing_energy_if_velocities_continuous_J": 0.0013190621600362947,
+      "calibrated": false
+    }
+  },
+  "properties": {
+    "initial_area_mm2": 1.0,
+    "kn_N_per_mm": 56000.0,
+    "kt_N_per_mm": 21500.0,
+    "peak_normal_force_N": 495.0,
+    "hypothetical_Gf_N_per_mm": 30.0,
+    "mass_g": 0.2,
+    "rotational_inertia_g_mm2": 0.001,
+    "H_normal": 2,
+    "H_shear": 2,
+    "shear_failure_disabled": true,
+    "normal_failure": "whole element deactivation when normal gap reaches 2 Gf/peak",
+    "damping": 0.0,
+    "rotations": "blocked at both nodes",
+    "history": "all fresh; no restart, damaged-state property substitution or mass scaling"
+  },
+  "boundary_conditions": "node1 fixed; node2 X/Y free, Z/rotations blocked; initial velocity only",
+  "energy_policy": "Before normal deletion: IE=Wn+Ux. After: IE=Garea+Ux(tf), forces zero and velocities continuous; no invented KE jump or energy source.",
+  "before_engine": [
+    "Verify cached reference and independent ODE/quadrature guards; record all source/runtime hashes",
+    "Predeclare amplitudes/impulses/energy per axis, P0 per axis, mass, work, exact binary intervals and time coverage",
+    "At discontinuous X force, preserve every raw row and strict same-row OFF/FX result; any failed raw criterion remains failed",
+    "Predeclare any limited pre/post observation windows around analytic tf, separately from complete raw traces; never fit phase or use windows to override an old gate",
+    "Check IE retains deleted Ux, terminal ballistic velocity/momentum and two-axis support impulses; compare caps at common covered times",
+    "Keep retention interpretation conditional; data can refute it, and never impose a material change on an old damaged state"
+  ],
+  "cost": {
+    "maximum_case_wall_seconds": 90,
+    "maximum_campaign_wall_seconds": 600,
+    "announce_before_engine": true
+  },
+  "unchanged": [
+    "Five strict F OFF/FX failures",
+    "Eight G strict diagnostics",
+    "E sensitivity and coverage",
+    "Four I signs",
+    "Three J raw endpoints",
+    "REAC/TH and exact engine/converter provenance",
+    "NASA conventions",
+    "Gf30 hypothetical;15/60 deferred",
+    "V11F/V11R/V11S"
+  ],
+  "not_qualified": [
+    "Released X-energy law",
+    "Physical mixed fracture",
+    "Plate/contact/waves",
+    "Boeing/facade/fire/collapse"
+  ],
+  "publication": "L pending1/2; publish L+M only after M audited, including any failures; preserve J+K baseline"
+}
