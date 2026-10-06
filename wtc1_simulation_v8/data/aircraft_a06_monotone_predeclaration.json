@@ -1,0 +1,12 @@
+{
+ "iteration":"AIRCRAFT-A06","stage":"supplementary_monotone_witness","seed":1102031,"random_draws":0,
+ "trigger":"Cyclic witnesses cannot identify single-path fracture energy; abrupt velocity corners and L500 reaction-work residual require a smooth monotone discriminator before failure transfer.",
+ "native_law_unchanged_from_initial_A06":true,"G_N_mm":50,"strength_tension_MPa":450,
+ "path":"log strain=0.12*(3u^2-2u^3), u=t/1ms; transverse log strain=-0.25*axial, 10001 displacement-function samples, hold after1ms",
+ "cases":[{"id":"MONO_L10","L_mm":10,"failure":true,"dt_cap_ms":0.000025},{"id":"MONO_L20","L_mm":20,"failure":true,"dt_cap_ms":0.000025},{"id":"MONO_L500","L_mm":500,"failure":true,"dt_cap_ms":0.000025}],
+ "history_dt_ms":0.00005,"animation_dt_ms":0.01,
+ "reference":{"E_MPa":22000,"Le_candidate":"L/sqrt(2), check from early native damage slope","epsilon0":"sigma/E","a":"Le*sigma/(2G)","sigma_damaged_candidate":"E*epsilon*(1-a*(epsilon-epsilon0)) after onset, zero after D=1","G_total_candidate_N_mm":"Le*sigma^2/(2E)+G+2*E*G^2/(3*Le*sigma^2)","G_total_target_is_not_assumed_equal_G_input":true},
+ "acceptance":{"reaction_impulse_work_fraction":0.01,"energy_balance_fraction":0.01,"analytic_total_energy_fraction":0.02,"actual_G_input_equality_fraction":0.05},
+ "failure_transfer":"disabled unless physically appropriate fracture-energy accounting and irreversible cycle are verified; preserve failed tests instead of tuning G or strengths",
+ "NIST_outcomes_used_as_target":false,"no_old_solver_rerun":true
+}

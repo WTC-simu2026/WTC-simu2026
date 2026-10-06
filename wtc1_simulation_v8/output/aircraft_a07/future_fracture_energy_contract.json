@@ -1,0 +1,70 @@
+{
+  "created_utc": "2026-10-06T09:19:08.078794+00:00",
+  "scope": "Analytical energy/history contract only, NOT a qualified native material or whole-radome transfer",
+  "properties": {
+    "E_MPa": 22000,
+    "sigma_MPa": 450,
+    "G_N_mm": 50,
+    "G_is_unmeasured_trial": true,
+    "candidate": "traction-opening law with maximum-opening history and explicit stored/dissipated energy; not transferred to Engine or whole airplane"
+  },
+  "maximum_admissible_Le_mm": 10.864197530864198,
+  "example_Le_mm": 5.0,
+  "opening_initiation_mm": 0.10227272727272728,
+  "opening_complete_mm": 0.2222222222222222,
+  "integrated_total_work_N_mm": 49.999999996007794,
+  "checks": {
+    "total_surface_work_matches_G": true,
+    "same_peak_reload_no_new_damage": true,
+    "complete_failure_zero_traction": true,
+    "candidate_length_admissible": true
+  },
+  "path": [
+    {
+      "opening_mm": 0,
+      "maximum_opening_history_mm": 0.0,
+      "damage": 0.0,
+      "traction_MPa": 0.0,
+      "stored_energy_N_mm": 0.0
+    },
+    {
+      "opening_mm": 0.10227272727272728,
+      "maximum_opening_history_mm": 0.10227272727272728,
+      "damage": 0.0,
+      "traction_MPa": 450.0,
+      "stored_energy_N_mm": 23.011363636363637
+    },
+    {
+      "opening_mm": 0.16224747474747475,
+      "maximum_opening_history_mm": 0.16224747474747475,
+      "damage": 0.6848249027237354,
+      "traction_MPa": 225.0,
+      "stored_energy_N_mm": 18.25284090909091
+    },
+    {
+      "opening_mm": 0,
+      "maximum_opening_history_mm": 0.16224747474747475,
+      "damage": 0.6848249027237354,
+      "traction_MPa": 0.0,
+      "stored_energy_N_mm": 0.0
+    },
+    {
+      "opening_mm": 0.16224747474747475,
+      "maximum_opening_history_mm": 0.16224747474747475,
+      "damage": 0.6848249027237354,
+      "traction_MPa": 225.0,
+      "stored_energy_N_mm": 18.25284090909091
+    },
+    {
+      "opening_mm": 0.2222222222222222,
+      "maximum_opening_history_mm": 0.2222222222222222,
+      "damage": 1.0,
+      "traction_MPa": 0.0,
+      "stored_energy_N_mm": 0.0
+    }
+  ],
+  "elastic_storage_and_irreversible_work_must_be_tracked": true,
+  "Le_and_actual_G_need_identification": true,
+  "native_implementation_verified": false,
+  "failure_transfer_enabled": false
+}
