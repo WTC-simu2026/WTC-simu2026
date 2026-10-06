@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-06T12:11:25.546708+00:00",
+  "updated_at": "2026-10-06T16:44:15.327263+00:00",
   "active_thread": {
     "id": "019ffb88-05a7-7f60-adff-6804df0d66a5",
     "title": "Poursuivre enquete WTC 1 V4",
@@ -19,10 +19,10 @@
     "targeted_v10i_working_copy_count": 5,
     "targeted_v10i_working_copy_directory": "wtc1_simulation_v8/input/v10i_structural_sources"
   },
-  "current_iteration": "AIRCRAFT-A07",
-  "current_status": "completed_coupled_engine_shells_mounts_and_bounded_contact_controls_with_failed_energy_gates",
-  "next_iteration": "AIRCRAFT-A08",
-  "next_objective": "AIRCRAFT-A08 : poursuivre les moteurs dans l’avion entier par un contact segmenté explicite, avec historiques locaux de masse/énergie/impulsion des coques, inerties et liaisons. Résoudre ou borner la perte d’énergie de contact, puis comparer un maillage moteur affiné à masse et géométrie égales avant tout horizon prolongé ou fragmentation. Le contrôle moteurs A07 touche d’abord la nacelle ; le fan/core ne sont pas encore entrés directement en contact à0,8ms. Aucun calage NIST ; géométrie interne, alliages, rupture des attaches et écrasement restent hypothétiques. Radôme : ne pas transférer ORTHENERG A06 ; contrat analytique A07 avec énergie totale et historique maximal reste sans implémentation native qualifiée. Préserver V11F, V11S et IMPACT-I02I-M différées, défauts de convergence/bilan et toutes les anciennes sorties. Prochaine paire GitHub A08+A09 après publication A06+A07 vérifiée.",
+  "current_iteration": "AIRCRAFT-A09",
+  "current_status": "completed_contact_stiffness_RBE3_and_native_rotation_controls_with_retained_energy_and_spatial_failures",
+  "next_iteration": "AIRCRAFT-A10",
+  "next_objective": "AIRCRAFT-A10 : isoler le premier contact dans un témoin élastique sans redistribution RBE3, avec un bilan analytique et les mêmes conventions de sortie. Identifier dans les propriétés/formulations natives la définition des inerties de coque et du canal RKE avant d’ajouter une énergie indépendante au bilan. Comparer contact et pas de temps sur ce témoin avant de retransférer une option qualifiée vers l’avion. Le contact moteur A09 reste énergétiquement et spatialement non qualifié ; ne pas choisir Stfac pour ajuster un résultat et ne pas prolonger la scène comme un écrasement validé. Ensuite seulement : écrasement/rupture avec historique et dissipation, autocontact/fragments, structure et rotors plus réalistes, planchers/noyau et plages d’entrée AA11. Aucun calage sur les dégâts NIST. Préserver V11F/V11R ; V11S/I02I-M différées. Publication A08+A09 due après vérification ; paire suivante A10+A11.",
   "impact_i02h_key_results": {
     "accepted_cases": 7,
     "new_controls_executed": 2,
@@ -1243,7 +1243,15 @@
     "aircraft_a07_report": "wtc1_simulation_v8/output/aircraft_a07/rapport_aircraft_a07.md",
     "aircraft_a07_results": "wtc1_simulation_v8/output/aircraft_a07/authoritative_review.json",
     "aircraft_a07_handoff": "harness/handoffs/WTC1_AIRCRAFT_A07_HANDOFF.md",
-    "aircraft_a07_figure": "wtc1_simulation_v8/output/aircraft_a07/summary_aircraft_a07.png"
+    "aircraft_a07_figure": "wtc1_simulation_v8/output/aircraft_a07/summary_aircraft_a07.png",
+    "aircraft_a08_report": "wtc1_simulation_v8/output/aircraft_a08/rapport_aircraft_a08.md",
+    "aircraft_a08_results": "wtc1_simulation_v8/output/aircraft_a08/authoritative_review.json",
+    "aircraft_a08_handoff": "harness/handoffs/WTC1_AIRCRAFT_A08_HANDOFF.md",
+    "aircraft_a08_figure": "wtc1_simulation_v8/output/aircraft_a08/summary_aircraft_a08.png",
+    "aircraft_a09_report": "wtc1_simulation_v8/output/aircraft_a09/rapport_aircraft_a09.md",
+    "aircraft_a09_results": "wtc1_simulation_v8/output/aircraft_a09/authoritative_review.json",
+    "aircraft_a09_handoff": "harness/handoffs/WTC1_AIRCRAFT_A09_HANDOFF.md",
+    "aircraft_a09_figure": "wtc1_simulation_v8/output/aircraft_a09/summary_aircraft_a09.png"
   },
   "v8g_key_results": {
     "nist_hat_transfer_at_80_min_kip": 6748.0,
@@ -6907,7 +6915,7 @@
     "instruction": "Build complete aircraft, conditions rather than outcome-fitting; NIST discrepancy must not be forced away",
     "deferred_iteration": "IMPACT-I02I-M",
     "preserved_plan": "wtc1_simulation_v8/data/impact_i02i_m_plan_from_l.json",
-    "next": "AIRCRAFT-A08",
+    "next": "AIRCRAFT-A10",
     "outcome_calibration_allowed": false,
     "microtests_only_when_concrete_model_blocker": true
   },
@@ -7085,5 +7093,225 @@
     "engine_geometry_and_materials_identified": false,
     "NIST_outcomes_used_as_target": false,
     "next_iteration": "AIRCRAFT-A08"
+  },
+  "aircraft_a08_key_results": {
+    "experiment_id": "WTC1-AIRCRAFT-A08",
+    "registered_at": "2026-10-06T13:04:40.620509+00:00",
+    "status": "completed_engine_native_energy_and_mass_diagnostics_with_spatial_contact_controls_and_retained_failed_gates",
+    "configuration": "wtc1_simulation_v8/data/aircraft_a08_predeclaration.json",
+    "report": "wtc1_simulation_v8/output/aircraft_a08/rapport_aircraft_a08.md",
+    "results": "wtc1_simulation_v8/output/aircraft_a08/authoritative_review.json",
+    "handoff": "harness/handoffs/WTC1_AIRCRAFT_A08_HANDOFF.md",
+    "artifact_manifest": "wtc1_simulation_v8/output/aircraft_a08/artifact_manifest.json",
+    "publication_verification": "wtc1_simulation_v8/output/aircraft_a08/publication_verification.json",
+    "integrity_only_pass": true,
+    "all_declared_checks_pass": false,
+    "physical_impact_qualified": false,
+    "engine_crushing_qualified": false,
+    "failure_transfer_enabled": false,
+    "local_energy_ledger_fully_qualified": false,
+    "spatial_convergence_qualified": false,
+    "engine_spatial_sensitivity_tested": true,
+    "energy_cause_identified": false,
+    "whole_aircraft_iteration_count": 8,
+    "whole_aircraft_cases": 5,
+    "main_solver_jobs": 5,
+    "observation_jobs": 5,
+    "old_solver_reruns": 0,
+    "old_files_preserved": 4829,
+    "engine_coarse_shells": 960,
+    "engine_fine_shells": 3840,
+    "engine_joint_beams": 56,
+    "engine_assembly_budget_kg": 9000,
+    "A07_CG_review_corrected_without_model_change": true,
+    "native_nodal_mass_reader_verified": true,
+    "engine_geometry_and_materials_identified": false,
+    "comparisons": [
+      {
+        "comparison": "instrument",
+        "cases": [
+          "DENSE",
+          "SPLIT"
+        ],
+        "common_time_ms": 0.800513864,
+        "impulse_difference_fraction": 0.0,
+        "generated_energy_difference_fraction": 0.0,
+        "impulse_pass": true,
+        "generated_energy_pass": true
+      },
+      {
+        "comparison": "mesh",
+        "cases": [
+          "SPLIT",
+          "FINE"
+        ],
+        "common_time_ms": 0.800513864,
+        "impulse_difference_fraction": 0.24893816803669258,
+        "generated_energy_difference_fraction": 0.2750018225162506,
+        "impulse_pass": false,
+        "generated_energy_pass": false
+      },
+      {
+        "comparison": "half_dt",
+        "cases": [
+          "FINE",
+          "FINE_HALF"
+        ],
+        "common_time_ms": 0.800140798,
+        "impulse_difference_fraction": 0.0008069383448720213,
+        "generated_energy_difference_fraction": 0.0008048544181833644,
+        "impulse_pass": true,
+        "generated_energy_pass": true
+      }
+    ],
+    "NIST_outcomes_used_as_target": false,
+    "next_iteration": "AIRCRAFT-A09"
+  },
+  "aircraft_a09_key_results": {
+    "experiment_id": "WTC1-AIRCRAFT-A09",
+    "registered_at": "2026-10-06T16:44:15.327263+00:00",
+    "status": "completed_contact_stiffness_RBE3_and_native_rotation_controls_with_retained_energy_and_spatial_failures",
+    "configuration": "wtc1_simulation_v8/data/aircraft_a09_predeclaration.json",
+    "extension_configuration": "wtc1_simulation_v8/data/aircraft_a09_effective_stiffness_extension.json",
+    "report": "wtc1_simulation_v8/output/aircraft_a09/rapport_aircraft_a09.md",
+    "results": "wtc1_simulation_v8/output/aircraft_a09/authoritative_review.json",
+    "handoff": "harness/handoffs/WTC1_AIRCRAFT_A09_HANDOFF.md",
+    "artifact_manifest": "wtc1_simulation_v8/output/aircraft_a09/artifact_manifest.json",
+    "publication_verification": "wtc1_simulation_v8/output/aircraft_a09/publication_verification.json",
+    "integrity_only_pass": true,
+    "all_declared_checks_pass": false,
+    "physical_impact_qualified": false,
+    "engine_crushing_qualified": false,
+    "failure_transfer_enabled": false,
+    "local_energy_ledger_fully_qualified": false,
+    "spatial_convergence_qualified": false,
+    "energy_cause_identified": false,
+    "whole_aircraft_iteration_count": 9,
+    "whole_aircraft_cases": 9,
+    "main_solver_jobs": 9,
+    "observation_jobs": 9,
+    "old_solver_reruns": 0,
+    "old_files_preserved": 5076,
+    "materials_changed": false,
+    "effective_stiffness_controls_declared_separately": true,
+    "penalty_RBE3_confirmed_by_native_Starter": true,
+    "native_shell_rotation_semantics_qualified": false,
+    "exact_saved_history_pair_differences": {
+      "Stfac0.1_vs1_fine": {
+        "different_channel_count": 0,
+        "total_channel_count": 21549,
+        "all_saved_channels_identical": true,
+        "global_energy_channels_identical": true,
+        "contact_raw_channels_identical": true,
+        "maximum_engine_translation_difference_m_s": 0.0,
+        "maximum_engine_rotation_difference_rad_ms": 0.0,
+        "maximum_global_energy_channel_difference_J": 0.0
+      },
+      "penalty_vs_kinematic_fine": {
+        "different_channel_count": 4886,
+        "total_channel_count": 21549,
+        "all_saved_channels_identical": false,
+        "global_energy_channels_identical": true,
+        "contact_raw_channels_identical": true,
+        "maximum_engine_translation_difference_m_s": 0.00010000000000331966,
+        "maximum_engine_rotation_difference_rad_ms": 7.333975310000001e-09,
+        "maximum_global_energy_channel_difference_J": 0.0
+      }
+    },
+    "comparisons": [
+      {
+        "comparison": "instrument",
+        "cases": [
+          "A08/FINE",
+          "BASE_FINE"
+        ],
+        "common_time_ms": 0.4006299380000001,
+        "impulse_difference_fraction": 8.047317716166193e-08,
+        "generated_energy_difference_fraction": 1.6298587248899176e-07,
+        "declared_acceptance_comparison": true,
+        "impulse_pass": true,
+        "generated_energy_pass": true
+      },
+      {
+        "comparison": "SERIES_FINE",
+        "cases": [
+          "BASE_FINE",
+          "SERIES_FINE"
+        ],
+        "common_time_ms": 0.4006299380000001,
+        "impulse_difference_fraction": 0.0003033614677290543,
+        "generated_energy_difference_fraction": 0.005253672424683053,
+        "declared_acceptance_comparison": false,
+        "impulse_pass": null,
+        "generated_energy_pass": null
+      },
+      {
+        "comparison": "SOFT_FINE",
+        "cases": [
+          "BASE_FINE",
+          "SOFT_FINE"
+        ],
+        "common_time_ms": 0.4006299380000001,
+        "impulse_difference_fraction": 0.0,
+        "generated_energy_difference_fraction": 0.0,
+        "declared_acceptance_comparison": false,
+        "impulse_pass": null,
+        "generated_energy_pass": null
+      },
+      {
+        "comparison": "PENALTY_FINE",
+        "cases": [
+          "BASE_FINE",
+          "PENALTY_FINE"
+        ],
+        "common_time_ms": 0.4006299380000001,
+        "impulse_difference_fraction": 0.0,
+        "generated_energy_difference_fraction": 0.0,
+        "declared_acceptance_comparison": false,
+        "impulse_pass": null,
+        "generated_energy_pass": null
+      },
+      {
+        "comparison": "EFFECTIVE_FINE_01",
+        "cases": [
+          "BASE_FINE",
+          "EFFECTIVE_FINE_01"
+        ],
+        "common_time_ms": 0.4006299380000001,
+        "impulse_difference_fraction": 0.01320816682038687,
+        "generated_energy_difference_fraction": 0.14030905289238751,
+        "declared_acceptance_comparison": false,
+        "impulse_pass": null,
+        "generated_energy_pass": null
+      },
+      {
+        "comparison": "EFFECTIVE_FINE_001",
+        "cases": [
+          "BASE_FINE",
+          "EFFECTIVE_FINE_001"
+        ],
+        "common_time_ms": 0.400148422,
+        "impulse_difference_fraction": 0.07805631717420271,
+        "generated_energy_difference_fraction": 0.1660184153392434,
+        "declared_acceptance_comparison": false,
+        "impulse_pass": null,
+        "generated_energy_pass": null
+      },
+      {
+        "comparison": "mesh",
+        "cases": [
+          "EFFECTIVE_COARSE_001",
+          "EFFECTIVE_FINE_001"
+        ],
+        "common_time_ms": 0.400148422,
+        "impulse_difference_fraction": 0.34873040943495187,
+        "generated_energy_difference_fraction": 0.028325998410982163,
+        "declared_acceptance_comparison": true,
+        "impulse_pass": false,
+        "generated_energy_pass": true
+      }
+    ],
+    "NIST_outcomes_used_as_target": false,
+    "next_iteration": "AIRCRAFT-A10"
   }
 }

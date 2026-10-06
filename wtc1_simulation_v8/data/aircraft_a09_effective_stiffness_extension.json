@@ -1,0 +1,55 @@
+{
+  "iteration": "AIRCRAFT-A09",
+  "declared_utc": "2026-10-06T16:24:40.863595+00:00",
+  "seed": 1102034,
+  "random_draws": 0,
+  "parent_configuration_sha256": "7784e1ac41b9ba613e0db06e4bb24735dbd4567378900f7ebedbd266c3597cec",
+  "reason": "Saved BASE/SOFT0.1 native histories identical. Official TYPE7 formula scales only main stiffness Km=Stfac*E*t; secondary Ks=E*t and Istf4 uses min. Thus0.1 need not change effective stiffness. Test0.01/0.001 separately without changing materials, gap or gate thresholds. No criterion or old result edited.",
+  "primary_source": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inter_type7_starter_r.htm",
+  "cases": [
+    {
+      "id": "EFFECTIVE_FINE_01",
+      "parent": "FINE",
+      "contact": true,
+      "composite": true,
+      "self_contact": true,
+      "domain": "engines_only",
+      "dt_scale": 0.8,
+      "end_ms": 0.4,
+      "fine": true,
+      "Istf": 4,
+      "Stfac": 0.01,
+      "engine_RBE3_Iform": 2
+    },
+    {
+      "id": "EFFECTIVE_FINE_001",
+      "parent": "FINE",
+      "contact": true,
+      "composite": true,
+      "self_contact": true,
+      "domain": "engines_only",
+      "dt_scale": 0.8,
+      "end_ms": 0.4,
+      "fine": true,
+      "Istf": 4,
+      "Stfac": 0.001,
+      "engine_RBE3_Iform": 2
+    },
+    {
+      "id": "EFFECTIVE_COARSE_001",
+      "parent": "SPLIT",
+      "contact": true,
+      "composite": true,
+      "self_contact": true,
+      "domain": "engines_only",
+      "dt_scale": 0.8,
+      "end_ms": 0.4,
+      "fine": false,
+      "Istf": 4,
+      "Stfac": 0.001,
+      "engine_RBE3_Iform": 2
+    }
+  ],
+  "selection_by_NIST_outcome": false,
+  "new_cases_before_execution": true
+}

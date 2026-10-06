@@ -1,0 +1,260 @@
+{
+  "created_utc": "2026-10-06T13:00:50.271389+00:00",
+  "checks": {
+    "same_engine_piecewise_surface_independently_verified": true,
+    "native_inertia_and_shell_reporting_semantics_verified": true,
+    "suspect_beam_RKE_retained_and_not_used_in_global_energy": true
+  },
+  "pass": true,
+  "cases": [
+    {
+      "case": "FREE",
+      "checks": {
+        "actual_coplanar_area_recomputed_once": true,
+        "engine_dependent_ADMAS_nodes_zero_native_mass": true,
+        "engine_ADMAS_mass_found_on_hosts": true,
+        "redistributed_nodal_mass_nonnegative_with_rounding": true,
+        "native_shell_part_KE_matches_equal_thirds_within_50J": true,
+        "native_beam_part_RKE_compatible_with_global_initial_rotation": false
+      },
+      "actual_surface_area_mm2_by_part": {
+        "22": 29801243.831359588,
+        "23": 7236372.096679643,
+        "24": 10473097.958780238,
+        "25": 29801243.831359603,
+        "26": 7236372.096679643,
+        "27": 10473097.958780237
+      },
+      "old_generator_area_metadata_double_counted_coarse": true,
+      "engine_ADMAS_expected_mass_kg": 7181.098443549797,
+      "native_redistributed_ADMAS_mass_kg": 7181.098405171214,
+      "redistributed_mass_error_kg": -3.837858275801409e-05,
+      "native_shell_part_equal_thirds_KE_max_error_J": 0.25085488706827164,
+      "initial_native_beam_part_RKE_J": 112545600000.0,
+      "initial_native_global_rotation_J": 0.0,
+      "raw_beam_RKE_semantics_qualified": false,
+      "redistributed_host_minus_original_point_KE_J": [
+        -0.7681281268596649,
+        -0.7681281268596649,
+        -0.7681281268596649,
+        -0.7681281268596649,
+        -0.7681281268596649,
+        -0.7681281268596649,
+        -0.7681281268596649,
+        -0.7681281268596649,
+        -0.7681281268596649
+      ],
+      "largest_loss_interval_global_PW_J": [
+        0.0,
+        0.0
+      ],
+      "largest_loss_before_plastic_work": true,
+      "native_mass_output_initial_CG_mm": [
+        19866.518965845476,
+        0.6067864377185799,
+        -185.32619749319548
+      ],
+      "finding": "Native mass is redistributed away from RBE3 dependent ADMAS points onto hosts. Element-based shell PART KE matches equal-third allocation, while native global nodal mass uses angle-weighted allocation; sums are different definitions. Beam PART RKE is inconsistent with zero initial global rotation and cannot be added to a physical ledger. Neither observation alone identifies the cause of the global contact energy deficit."
+    },
+    {
+      "case": "DENSE",
+      "checks": {
+        "actual_coplanar_area_recomputed_once": true,
+        "engine_dependent_ADMAS_nodes_zero_native_mass": true,
+        "engine_ADMAS_mass_found_on_hosts": true,
+        "redistributed_nodal_mass_nonnegative_with_rounding": true,
+        "native_shell_part_KE_matches_equal_thirds_within_50J": true,
+        "native_beam_part_RKE_compatible_with_global_initial_rotation": false
+      },
+      "actual_surface_area_mm2_by_part": {
+        "22": 29801243.831359588,
+        "23": 7236372.096679643,
+        "24": 10473097.958780238,
+        "25": 29801243.831359603,
+        "26": 7236372.096679643,
+        "27": 10473097.958780237
+      },
+      "old_generator_area_metadata_double_counted_coarse": true,
+      "engine_ADMAS_expected_mass_kg": 7181.098443549797,
+      "native_redistributed_ADMAS_mass_kg": 7181.098405171214,
+      "redistributed_mass_error_kg": -3.837858275801409e-05,
+      "native_shell_part_equal_thirds_KE_max_error_J": 12.077470950782299,
+      "initial_native_beam_part_RKE_J": 112545600000.0,
+      "initial_native_global_rotation_J": 0.0,
+      "raw_beam_RKE_semantics_qualified": false,
+      "redistributed_host_minus_original_point_KE_J": [
+        -0.7681281268596649,
+        -0.7681281268596649,
+        -0.7681281268596649,
+        -0.7730527818202972,
+        26.222264498472214,
+        676.7307777106762,
+        5413.54789057374,
+        18133.48163548112,
+        32162.70047235489
+      ],
+      "largest_loss_interval_global_PW_J": [
+        0.0,
+        0.0
+      ],
+      "largest_loss_before_plastic_work": true,
+      "native_mass_output_initial_CG_mm": [
+        19866.518965845476,
+        0.6067864377185799,
+        -185.32619749319548
+      ],
+      "finding": "Native mass is redistributed away from RBE3 dependent ADMAS points onto hosts. Element-based shell PART KE matches equal-third allocation, while native global nodal mass uses angle-weighted allocation; sums are different definitions. Beam PART RKE is inconsistent with zero initial global rotation and cannot be added to a physical ledger. Neither observation alone identifies the cause of the global contact energy deficit."
+    },
+    {
+      "case": "SPLIT",
+      "checks": {
+        "actual_coplanar_area_recomputed_once": true,
+        "engine_dependent_ADMAS_nodes_zero_native_mass": true,
+        "engine_ADMAS_mass_found_on_hosts": true,
+        "redistributed_nodal_mass_nonnegative_with_rounding": true,
+        "native_shell_part_KE_matches_equal_thirds_within_50J": true,
+        "native_beam_part_RKE_compatible_with_global_initial_rotation": false
+      },
+      "actual_surface_area_mm2_by_part": {
+        "22": 29801243.831359588,
+        "23": 7236372.096679643,
+        "24": 10473097.958780238,
+        "25": 29801243.831359603,
+        "26": 7236372.096679643,
+        "27": 10473097.958780237
+      },
+      "old_generator_area_metadata_double_counted_coarse": true,
+      "engine_ADMAS_expected_mass_kg": 7181.098443549797,
+      "native_redistributed_ADMAS_mass_kg": 7181.098405171214,
+      "redistributed_mass_error_kg": -3.837858275801409e-05,
+      "native_shell_part_equal_thirds_KE_max_error_J": 12.077470950782299,
+      "initial_native_beam_part_RKE_J": 112545600000.0,
+      "initial_native_global_rotation_J": 0.0,
+      "raw_beam_RKE_semantics_qualified": false,
+      "redistributed_host_minus_original_point_KE_J": [
+        -0.7681281268596649,
+        -0.7681281268596649,
+        -0.7681281268596649,
+        -0.7730527818202972,
+        26.222264498472214,
+        676.7307777106762,
+        5413.54789057374,
+        18133.48163548112,
+        32162.70047235489
+      ],
+      "largest_loss_interval_global_PW_J": [
+        0.0,
+        0.0
+      ],
+      "largest_loss_before_plastic_work": true,
+      "native_mass_output_initial_CG_mm": [
+        19866.518965845476,
+        0.6067864377185799,
+        -185.32619749319548
+      ],
+      "finding": "Native mass is redistributed away from RBE3 dependent ADMAS points onto hosts. Element-based shell PART KE matches equal-third allocation, while native global nodal mass uses angle-weighted allocation; sums are different definitions. Beam PART RKE is inconsistent with zero initial global rotation and cannot be added to a physical ledger. Neither observation alone identifies the cause of the global contact energy deficit."
+    },
+    {
+      "case": "FINE",
+      "checks": {
+        "actual_coplanar_area_recomputed_once": true,
+        "engine_dependent_ADMAS_nodes_zero_native_mass": true,
+        "engine_ADMAS_mass_found_on_hosts": true,
+        "redistributed_nodal_mass_nonnegative_with_rounding": true,
+        "native_shell_part_KE_matches_equal_thirds_within_50J": true,
+        "native_beam_part_RKE_compatible_with_global_initial_rotation": false
+      },
+      "actual_surface_area_mm2_by_part": {
+        "22": 29801243.831359524,
+        "23": 7236372.096679678,
+        "24": 10473097.958780251,
+        "25": 29801243.831359524,
+        "26": 7236372.096679676,
+        "27": 10473097.95878027
+      },
+      "old_generator_area_metadata_double_counted_coarse": false,
+      "engine_ADMAS_expected_mass_kg": 7181.098443549797,
+      "native_redistributed_ADMAS_mass_kg": 7181.098412861644,
+      "redistributed_mass_error_kg": -3.068815294682281e-05,
+      "native_shell_part_equal_thirds_KE_max_error_J": 5.460147365927696,
+      "initial_native_beam_part_RKE_J": 112545600000.0,
+      "initial_native_global_rotation_J": 0.0,
+      "raw_beam_RKE_semantics_qualified": false,
+      "redistributed_host_minus_original_point_KE_J": [
+        -0.6142080426216125,
+        -0.6142080426216125,
+        -0.6142080426216125,
+        -0.6176734864711761,
+        -0.6191040575504303,
+        -0.6578172445297241,
+        -313.4235990345478,
+        -1931.2215864360332,
+        -5293.260663986206
+      ],
+      "largest_loss_interval_global_PW_J": [
+        0.0,
+        0.0
+      ],
+      "largest_loss_before_plastic_work": true,
+      "native_mass_output_initial_CG_mm": [
+        19866.53418761351,
+        0.6067864777231291,
+        -185.32619756633446
+      ],
+      "finding": "Native mass is redistributed away from RBE3 dependent ADMAS points onto hosts. Element-based shell PART KE matches equal-third allocation, while native global nodal mass uses angle-weighted allocation; sums are different definitions. Beam PART RKE is inconsistent with zero initial global rotation and cannot be added to a physical ledger. Neither observation alone identifies the cause of the global contact energy deficit."
+    },
+    {
+      "case": "FINE_HALF",
+      "checks": {
+        "actual_coplanar_area_recomputed_once": true,
+        "engine_dependent_ADMAS_nodes_zero_native_mass": true,
+        "engine_ADMAS_mass_found_on_hosts": true,
+        "redistributed_nodal_mass_nonnegative_with_rounding": true,
+        "native_shell_part_KE_matches_equal_thirds_within_50J": true,
+        "native_beam_part_RKE_compatible_with_global_initial_rotation": false
+      },
+      "actual_surface_area_mm2_by_part": {
+        "22": 29801243.831359524,
+        "23": 7236372.096679678,
+        "24": 10473097.958780251,
+        "25": 29801243.831359524,
+        "26": 7236372.096679676,
+        "27": 10473097.95878027
+      },
+      "old_generator_area_metadata_double_counted_coarse": false,
+      "engine_ADMAS_expected_mass_kg": 7181.098443549797,
+      "native_redistributed_ADMAS_mass_kg": 7181.098412861644,
+      "redistributed_mass_error_kg": -3.068815294682281e-05,
+      "native_shell_part_equal_thirds_KE_max_error_J": 5.027858801186085,
+      "initial_native_beam_part_RKE_J": 112545600000.0,
+      "initial_native_global_rotation_J": 0.0,
+      "raw_beam_RKE_semantics_qualified": false,
+      "redistributed_host_minus_original_point_KE_J": [
+        -0.6142080426216125,
+        -0.6142080426216125,
+        -0.6142080426216125,
+        -0.6176668703556061,
+        -0.6190982758998871,
+        -0.6574600338935852,
+        -302.48928213119507,
+        -1926.9797043800354,
+        -5314.853057414293
+      ],
+      "largest_loss_interval_global_PW_J": [
+        0.0,
+        0.0
+      ],
+      "largest_loss_before_plastic_work": true,
+      "native_mass_output_initial_CG_mm": [
+        19866.53418761351,
+        0.6067864777231291,
+        -185.32619756633446
+      ],
+      "finding": "Native mass is redistributed away from RBE3 dependent ADMAS points onto hosts. Element-based shell PART KE matches equal-third allocation, while native global nodal mass uses angle-weighted allocation; sums are different definitions. Beam PART RKE is inconsistent with zero initial global rotation and cannot be added to a physical ledger. Neither observation alone identifies the cause of the global contact energy deficit."
+    }
+  ],
+  "actual_surface_area_max_difference_mm2": 7.82310962677002e-08,
+  "old_solver_reruns": 0,
+  "first_summary_and_failed_checks_preserved": true,
+  "geometry_and_material_changes": false
+}

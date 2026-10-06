@@ -1,0 +1,90 @@
+{
+  "created_utc": "2026-10-06T16:41:48.090004+00:00",
+  "cases": [
+    {
+      "case": "BASE_FINE",
+      "Iform": 2,
+      "original_dependent_points_mass_kg": 0.0,
+      "host_redistributed_mass_kg": 7181.098412861644,
+      "expected_remaining_engine_mass_kg": 7181.098443549797,
+      "error_kg": -3.068815294682281e-05,
+      "pass_same_1e_4_kg_limit": true
+    },
+    {
+      "case": "SERIES_FINE",
+      "Iform": 2,
+      "original_dependent_points_mass_kg": 0.0,
+      "host_redistributed_mass_kg": 7181.098412861644,
+      "expected_remaining_engine_mass_kg": 7181.098443549797,
+      "error_kg": -3.068815294682281e-05,
+      "pass_same_1e_4_kg_limit": true
+    },
+    {
+      "case": "SOFT_FINE",
+      "Iform": 2,
+      "original_dependent_points_mass_kg": 0.0,
+      "host_redistributed_mass_kg": 7181.098412861644,
+      "expected_remaining_engine_mass_kg": 7181.098443549797,
+      "error_kg": -3.068815294682281e-05,
+      "pass_same_1e_4_kg_limit": true
+    },
+    {
+      "case": "SOFT_COARSE",
+      "Iform": 2,
+      "original_dependent_points_mass_kg": 0.0,
+      "host_redistributed_mass_kg": 7181.098405171214,
+      "expected_remaining_engine_mass_kg": 7181.098443549797,
+      "error_kg": -3.837858275801409e-05,
+      "pass_same_1e_4_kg_limit": true
+    },
+    {
+      "case": "PENALTY_FINE",
+      "Iform": 3,
+      "original_dependent_points_mass_kg": 7181.0985,
+      "host_redistributed_mass_kg": -1.6825856288218977e-05,
+      "expected_remaining_engine_mass_kg": 7181.098443549797,
+      "error_kg": 3.962434675486293e-05,
+      "pass_same_1e_4_kg_limit": true
+    },
+    {
+      "case": "PENALTY_FREE",
+      "Iform": 3,
+      "original_dependent_points_mass_kg": 7181.0985,
+      "host_redistributed_mass_kg": -1.6825856288218977e-05,
+      "expected_remaining_engine_mass_kg": 7181.098443549797,
+      "error_kg": 3.962434675486293e-05,
+      "pass_same_1e_4_kg_limit": true
+    },
+    {
+      "case": "EFFECTIVE_FINE_01",
+      "Iform": 2,
+      "original_dependent_points_mass_kg": 0.0,
+      "host_redistributed_mass_kg": 7181.098412861644,
+      "expected_remaining_engine_mass_kg": 7181.098443549797,
+      "error_kg": -3.068815294682281e-05,
+      "pass_same_1e_4_kg_limit": true
+    },
+    {
+      "case": "EFFECTIVE_FINE_001",
+      "Iform": 2,
+      "original_dependent_points_mass_kg": 0.0,
+      "host_redistributed_mass_kg": 7181.098412861644,
+      "expected_remaining_engine_mass_kg": 7181.098443549797,
+      "error_kg": -3.068815294682281e-05,
+      "pass_same_1e_4_kg_limit": true
+    },
+    {
+      "case": "EFFECTIVE_COARSE_001",
+      "Iform": 2,
+      "original_dependent_points_mass_kg": 0.0,
+      "host_redistributed_mass_kg": 7181.098405171214,
+      "expected_remaining_engine_mass_kg": 7181.098443549797,
+      "error_kg": -3.837858275801409e-05,
+      "pass_same_1e_4_kg_limit": true
+    }
+  ],
+  "pass": true,
+  "finding": "Observed Iform2 moves engine dependent mass onto hosts; Iform3 retains it on original points. Previous host-only test assumed kinematic behavior for both and is preserved; sum of both domains uses same mass tolerance.",
+  "solver_material_or_energy_changes": false,
+  "solver_rerun": false
+}

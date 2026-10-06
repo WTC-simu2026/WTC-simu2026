@@ -8,15 +8,15 @@ Le projet teste des mécanismes, des hypothèses explicites et des plages de par
 
 ## Où en est la simulation ?
 
-Instantané du **6 octobre 2026** : AIRCRAFT-A06 et AIRCRAFT-A07 terminées comme investigations limitées ; prochaine étape AIRCRAFT-A08.
+Instantané du **6 octobre 2026** : AIRCRAFT-A08 et AIRCRAFT-A09 terminées comme contrôles limités ; prochaine étape AIRCRAFT-A10. **Neuf itérations de la branche avion entier**, aucune calibration sur les dommages NIST.
 
-Les moteurs appartiennent désormais au modèle mécanique couplé du 767 : **960 triangles de coque, 56 liaisons**, deux budgets de 4 500 kg sans double comptage. Cinq départs intacts A07 sont conservés : vol libre, début du contact par le nez, trois contrôles limités au contact initial des nacelles. Le vol libre passe ses critères ; demi-pas moteur : impulsion 0,1354 %, énergie générée 0,0591 %, dans les limites annoncées.
+Les moteurs sont couplés au modèle mécanique du 767, avec **960 ou 3 840 triangles de coque et 56 liaisons**, deux budgets hypothétiques de 4 500 kg. A08 ajoute les historiques des pièces/inerties et corrige le contrôle du centre de masse A07 selon la répartition nodale native ; aucune masse ou force modifiée. Deux maillages à même surface facettée sont comparés. A09 exécute neuf contrôles du premier contact, avec formulations de raideur et variantes RBE3 déclarées avant calcul.
 
-**Bilan local d’énergie échoué, fortes déformations plastiques, convergence spatiale moteur non testée.** Écart supplémentaire de centre de masse 0,0203 mm conservé contre le seuil strict, lié aux centroïdes natifs des nacelles coniques et non expliqué complètement. Les carters internes ne sont pas encore directement heurtés à 0,8 ms, pales/disques/spin/écrasement/fragments et autocontact moteur absents. Profils internes, matériaux et attaches restent des hypothèses.
+**Bilan local d’énergie et critères spatiaux échoués, interprétation de rotation non qualifiée.** À environ 0,4 ms, résidu du maillage fin −36,07 kJ au réglage de base ; −69,62 et −65,17 kJ avec les facteurs de contact effectivement réduits. Le facteur 0,1 est inactif dans ce contrôle. La variante RBE3 est activée par le Starter, conserve les impulsions/énergies globales sauvegardées mais présente des différences internes. Aucun canal suspect ajouté pour compenser le déficit ; aucun réglage choisi pour atteindre un résultat attendu.
 
-A06 refuse le transfert de la rupture ORTHENERG au radôme : énergie totale dépendante de la longueur et dommage supplémentaire à la recharge au même pic. A07 localise la plus forte perte A06 entre 1,640568 et 1,660712 ms depuis ses sorties sauvegardées, sans cause établie ni ancien calcul relancé. Un contrat de rupture analytique avec énergie totale et historique maximal est conservé, sans implémentation native qualifiée. Aucun résultat de dégâts NIST utilisé comme cible.
+Les nacelles sont touchées en premier ; les carters fan/core ne sont pas encore directement heurtés. Ces scènes ne constituent pas la traversée historique complète : contact extérieur limité aux moteurs, absence de planchers/noyau, rotors et fragmentation. Géométrie interne, matériaux et attaches restent des hypothèses. Le contrat de fracture à historique maximal demeure analytique ; la loi native refusée A06 n’est pas transférée.
 
-Sources primaires EASA/GE/Boeing distinguées des hypothèses. Ces contrôles et leur publication ne valident **ni l’impact historique, ni un incendie calculé, ni un effondrement réel**. V11F froid, branches différées et toutes les limites anciennes restent préservés.
+Tous les échecs et premières erreurs des lecteurs sont conservés avec leurs corrections documentées. Publication = intégrité et reproductibilité des fichiers, sans nouveau calcul scientifique. V11F/V11R préservés ; température imposée distincte d’un incendie calculé ; Blender reste une visualisation. **Ni impact historique ni effondrement réel validés.**
 
 
 ## Ce qui est publié
@@ -28,9 +28,9 @@ Sources primaires EASA/GE/Boeing distinguées des hypothèses. Ces contrôles et
 - `outputs/` : calculs exploratoires antérieurs et audits complémentaires. Leurs affirmations se lisent avec leurs propres limites ; leur présence n'est pas une validation.
 - `publication/` : inventaire complet, empreintes SHA-256, règles de publication, licences tierces et liste motivée des fichiers externes non redistribués.
 
-Inventaire courant : **6,446 fichiers scientifiques dans Git**, **9,012 sorties dans 57 archives**.
+Inventaire courant : **6,818 fichiers scientifiques dans Git**, **9,307 sorties dans 64 archives**.
 
-Restaurer les 53 anciennes archives des releases précédentes, puis les 4 archives [A06+A07](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-06-aircraft-a06-a07). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
+Restaurer les 57 anciennes archives des releases précédentes, puis les 7 archives [A08+A09](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-06-aircraft-a08-a09). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
 
 ## Consulter et vérifier sans relancer les solveurs
 
@@ -59,7 +59,7 @@ Voir [REPRODUCIBILITY.md](REPRODUCIBILITY.md). La base Python utilise NumPy et P
 
 ## Prochaine étape
 
-AIRCRAFT-A08 : poursuivre les moteurs dans l’avion entier par un contact segmenté et des historiques locaux de masse, énergie, impulsion et efforts. Expliquer ou borner le déficit de contact et l’écart du premier moment, puis comparer un maillage moteur affiné à masse et géométrie constantes avant un horizon prolongé ou la fragmentation. Les carters, pales et assemblages réels restent à identifier ; aucune calibration sur des dégâts attendus. Le contrat énergétique du radôme reste analytique tant qu’une implémentation native et son historique ne sont pas vérifiés. Prochaine publication après deux nouvelles itérations vérifiées A08+A09.
+AIRCRAFT-A10 : isoler le premier contact dans un témoin élastique sans redistribution RBE3, avec un bilan analytique et des conventions de sortie explicites. Identifier les inerties natives de coque et la signification du canal RKE, puis vérifier les options de contact et le pas de temps avant transfert vers l’avion. Ne pas ajuster Stfac aux dégâts attendus. Rupture/écrasement à historique et énergie contrôlés, rotors, autocontact/fragments, planchers/noyau et conditions AA11 restent à traiter. Prochaine publication après deux itérations vérifiées A10+A11.
 
 
 ## Discipline de preuve

@@ -1,12 +1,12 @@
-# AIRCRAFT-A06 + AIRCRAFT-A07 — 6 octobre 2026
+# AIRCRAFT-A08 + AIRCRAFT-A09 — 6 octobre 2026
 
-Deux itérations conservées avec tous les résultats natifs et critères échoués. A06 : contrôle de viscosité métallique et refus motivé du transfert ORTHENERG au radôme. A07 : nouvelles enveloppes mécaniques des deux moteurs, 960 triangles et 56 liaisons, budgets de masse fermés sans double comptage et inerties raccordées aux nouvelles coques.
+Deux itérations et tous leurs résultats natifs, configurations, scripts, passations et critères échoués conservés. A08 : cinq contrôles de 0,8 ms avec contact segmenté, historiques complets des moteurs, masses nodales et subdivision coplanaire 960→3840 triangles. L’écart de centre de masse A07 est expliqué dans le reviewer par la répartition native selon les angles ; aucun ancien calcul ni matériau changé.
 
-Cinq calculs A07 courts de l’avion entier, vol libre vérifié, trois contrôles locaux nacelle/façade avec demi-pas et attaches plus souples. Déficit d’énergie local et déformations hors diagnostic conservés, convergence spatiale moteur non testée. Écart de centre de masse strict conservé (0,0203 mm), géométrie interne et matériaux hypothétiques ; aucune qualification d’écrasement, fragmentation ou impact historique.
+A09 : neuf nouveaux contrôles de 0,4 ms, matériaux inchangés, formulations TYPE7 et RBE3, vitesses de rotation observées. Stfac multiplie seulement la branche principale de raideur : 0,1 ne change pas les historiques sauvegardés ici. Les facteurs 0,01/0,001 sont déclarés séparément avant leur exécution et changent la réponse sans résoudre l’énergie. La variante pénalité des 32 RBE3 est confirmée par le Starter ; les canaux globaux sont identiques mais pas tous les canaux internes. La masse native est effectivement répartie différemment : vers les hôtes en cinématique, conservée aux points internes en pénalité ; la somme des deux domaines reste vérifiée.
 
-Rapports, passations, configurations, graines, scripts, historiques et états natifs sauvegardés ; revue des sorties A06 sans relancer ses calculs. Contrat de fracture analytique à énergie totale/historique maximal, pas loi native qualifiée. Sources externes exclues avec liens et hashes de provenance ; aucune archive ancienne remplacée.
+Déficit énergétique, sensibilité spatiale et dépassements plastiques restent visibles. La formule de rotation indépendante des coques ne reproduit pas les RKE natifs ; le RKE brut des poutres initial incompatible avec la rotation globale n’est jamais ajouté au bilan. Premiers diagnostics des lecteurs, erreurs d’unités/métadonnées et corrections conservés, sans nouvelle exécution mécanique ni changement de tolérance.
 
-Aucun résultat NIST de dégâts employé comme cible. Température imposée distincte d’un incendie calculé ; Blender reste visualisation. Vérification de publication = intégrité des fichiers, pas validation scientifique de l’événement.
+Ces contrôles portent sur l’amorce du contact moteur dans l’avion couplé, avec façade déplacée ; pas traversée historique, écrasement réel ou fragmentation qualifiés. Prochaine étape A10 : référence élastique sans redistribution RBE3 et identification de la convention d’inertie native. Aucun résultat de dégâts NIST utilisé comme cible. Sources tierces exclues, liens et hashes conservés ; aucune ancienne release remplacée.
 
 
-4 archives complémentaires ; 53 archives précédentes conservées. Sources externes exclues, scripts et résultats propres sous MIT. Vérification de publication sans relancer les solveurs.
+7 archives complémentaires ; 57 archives précédentes conservées. Sources externes exclues, scripts et résultats propres sous MIT. Vérification de publication sans relancer les solveurs.
