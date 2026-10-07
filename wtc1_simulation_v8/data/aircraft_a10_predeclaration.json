@@ -1,0 +1,228 @@
+{
+  "iteration": "AIRCRAFT-A10",
+  "created_utc": "2026-10-07T09:16:59.802889+00:00",
+  "seed": 1102035,
+  "random_draws": 0,
+  "scope": "Elastic LAW1 single quad translating normally into a fixed elastic quad. No aircraft, RBE3, rigid-body mass redistribution, fracture, gravity or fitted event target.",
+  "units": {
+    "native": [
+      "g",
+      "mm",
+      "ms"
+    ],
+    "mass_g_to_kg": 0.001,
+    "energy_g_mm2_ms2_to_J": 0.001,
+    "momentum_g_mm_ms_to_Ns": 0.001,
+    "force_native_to_N": 1.0,
+    "velocity_mm_ms_to_m_s": 1.0
+  },
+  "geometry": {
+    "moving_side_mm": 20.0,
+    "wall_side_mm": 40.0,
+    "initial_midsurface_x_mm": -1.01,
+    "wall_x_mm": 0.0,
+    "contact_gap_mm": 1.0,
+    "thickness_mm": 1.0
+  },
+  "material_hypothesis": {
+    "rho_g_mm3": 0.00278,
+    "E_MPa": 70000.0,
+    "nu": 0.3,
+    "law": "LAW1 linear elasticity",
+    "origin": "Synthetic verification values, no Boeing/WTC material qualification"
+  },
+  "motion": {
+    "initial_velocity_m_s": 1.0,
+    "moving_BCS": "   011 111",
+    "wall_BCS": "   111 111"
+  },
+  "contact": {
+    "type": 7,
+    "Istf": 4,
+    "Igap": 0,
+    "Inacti": 2,
+    "friction": 0.0,
+    "viscous_coefficients": 1e-20,
+    "Iform": 2,
+    "Irem_gap": 0,
+    "stiffness_selection": "Three declared sensitivities, none selected to fit an event"
+  },
+  "formulation": {
+    "Ishell": 24,
+    "Ismstr": 4,
+    "Ish3n": 2,
+    "Idrill": 2,
+    "N": 5,
+    "hm_hf_hr_dm_dn": 1e-20
+  },
+  "analytical_reference": {
+    "mass_g": 1.112,
+    "initial_KE_J": 0.000556,
+    "initial_Px_Ns": 0.001112,
+    "frictionless_complete_rebound_impulse_magnitude_Ns": 0.002224,
+    "first_gap_entry_time_ms": 0.01,
+    "laws": [
+      "Delta P=contact impulse on moving part",
+      "Ekin+Eint+Ehourglass+Econtact+Edamping+Efriction-Ework constant",
+      "Unstrained complete conservative rebound gives vx=-v0 and |J|=2 M v0"
+    ],
+    "no_claim_of_exact_linear_contact_force_law": true
+  },
+  "acceptance": {
+    "initial_mass_relative": 1e-05,
+    "initial_KE_relative": 1e-05,
+    "momentum_residual_relative_to_initial": 0.01,
+    "maximum_energy_residual_relative_to_initial": 0.01,
+    "rebound_speed_relative": 0.01,
+    "half_dt_impulse_relative": 0.01,
+    "half_dt_energy_residual_change_relative_to_initial": 0.005,
+    "free_energy_relative": 1e-06,
+    "free_velocity_absolute_m_s": 1e-06,
+    "zero_rotation_allowance_J": 1e-10,
+    "native_binary_csv_relative": 6e-07,
+    "native_binary_csv_absolute": 1e-12,
+    "support_momentum_relative": 0.02,
+    "all_criteria_predeclared": true
+  },
+  "execution": {
+    "cases": [
+      {
+        "id": "FREE",
+        "contact": false,
+        "Stfac": 1.0,
+        "dt_scale": 0.8
+      },
+      {
+        "id": "K1_DT080",
+        "contact": true,
+        "Stfac": 1.0,
+        "dt_scale": 0.8
+      },
+      {
+        "id": "K1_DT040",
+        "contact": true,
+        "Stfac": 1.0,
+        "dt_scale": 0.4
+      },
+      {
+        "id": "K01_DT080",
+        "contact": true,
+        "Stfac": 0.01,
+        "dt_scale": 0.8
+      },
+      {
+        "id": "K01_DT040",
+        "contact": true,
+        "Stfac": 0.01,
+        "dt_scale": 0.4
+      },
+      {
+        "id": "K001_DT080",
+        "contact": true,
+        "Stfac": 0.001,
+        "dt_scale": 0.8
+      },
+      {
+        "id": "K001_DT040",
+        "contact": true,
+        "Stfac": 0.001,
+        "dt_scale": 0.4
+      }
+    ],
+    "end_ms": 0.4,
+    "history_interval_ms": 0.0001,
+    "animation_interval_ms": 0.05,
+    "threads": 2,
+    "GPU": false,
+    "starter_timeout_s": 90,
+    "engine_timeout_s": 120,
+    "converter_timeout_s": 60,
+    "estimated_campaign_minutes": [
+      2,
+      8
+    ]
+  },
+  "sources": [
+    {
+      "path": "wtc1_simulation_v8/input/aircraft_a10_sources/TH_PART.html",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/th_part_starter_r.htm",
+      "sha256": "5a661804e3df60d6913c2bf7714a08fb20df2543d5472d8ad3395373869aa12d",
+      "bytes": 93621,
+      "redistribution": "exclude_third_party"
+    },
+    {
+      "path": "wtc1_simulation_v8/input/aircraft_a10_sources/PROP_TYPE1.html",
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type1_shell_starter_r.htm",
+      "sha256": "b2f641599cda9e3a98ee7f1576389ab7c89a353090dfd2292e29abe2f7080209",
+      "bytes": 156998,
+      "redistribution": "exclude_third_party"
+    },
+    {
+      "path": "wtc1_simulation_v8/input/aircraft_a10_sources/c3inmas.F",
+      "url": "https://raw.githubusercontent.com/OpenCourant/OpenCourant/0168ab344bd743051e996d90c7c8d80728bb04a8/starter/source/elements/sh3n/coque3n/c3inmas.F",
+      "sha256": "17218f450465558b6858316022b8fd2584baabd9c775aba7ef2cf89b0a0958a8",
+      "bytes": 76288,
+      "redistribution": "exclude_third_party"
+    },
+    {
+      "path": "wtc1_simulation_v8/input/aircraft_a10_sources/cinmas.F",
+      "url": "https://raw.githubusercontent.com/OpenCourant/OpenCourant/0168ab344bd743051e996d90c7c8d80728bb04a8/starter/source/elements/shell/coque/cinmas.F",
+      "sha256": "9604cc1b87b636b275cb87f8af10f44808f3b8c4c4a1fc9f331eda9b215553fd",
+      "bytes": 91571,
+      "redistribution": "exclude_third_party"
+    },
+    {
+      "path": "wtc1_simulation_v8/input/aircraft_a10_sources/pmass.F",
+      "url": "https://raw.githubusercontent.com/OpenCourant/OpenCourant/0168ab344bd743051e996d90c7c8d80728bb04a8/starter/source/elements/beam/pmass.F",
+      "sha256": "d54610042be00f163ab20d4b81241ba343d75bae56945edc8b5b5de8b6c65189",
+      "bytes": 9688,
+      "redistribution": "exclude_third_party"
+    },
+    {
+      "path": "wtc1_simulation_v8/input/aircraft_a10_sources/hist1.F",
+      "url": "https://raw.githubusercontent.com/OpenCourant/OpenCourant/0168ab344bd743051e996d90c7c8d80728bb04a8/engine/source/output/th/hist1.F",
+      "sha256": "31f2e73be1612ad2dd2ab9ef9a49536b0c2c854ad3b60f60c4138d4b66e2be81",
+      "bytes": 23695,
+      "redistribution": "exclude_third_party"
+    },
+    {
+      "path": "wtc1_simulation_v8/input/aircraft_a10_sources/hist2.F",
+      "url": "https://raw.githubusercontent.com/OpenCourant/OpenCourant/0168ab344bd743051e996d90c7c8d80728bb04a8/engine/source/output/th/hist2.F",
+      "sha256": "15cfea558040ac86a99cacc880dffcc5f397c9f05a47d4558cfa0f566f526acb",
+      "bytes": 64396,
+      "redistribution": "exclude_third_party"
+    },
+    {
+      "path": "wtc1_simulation_v8/input/aircraft_a10_sources/hist13.F",
+      "url": "https://raw.githubusercontent.com/OpenCourant/OpenCourant/0168ab344bd743051e996d90c7c8d80728bb04a8/engine/source/output/th/hist13.F",
+      "sha256": "61aaaa3f322ad0848650f45970e95a7e3ddd1d17d4f863e2fcb68ecb3aad8021",
+      "bytes": 20035,
+      "redistribution": "exclude_third_party"
+    },
+    {
+      "path": "wtc1_simulation_v8/input/aircraft_a10_sources/th_titles.F90",
+      "url": "https://raw.githubusercontent.com/OpenCourant/OpenCourant/0168ab344bd743051e996d90c7c8d80728bb04a8/starter/source/output/th/th_titles.F90",
+      "sha256": "ff189a767161c1797ab5aafa9d644fc34b613cd398754ba719ae694b9e9fe9d9",
+      "bytes": 125786,
+      "redistribution": "exclude_third_party"
+    },
+    {
+      "path": "wtc1_simulation_v8/input/aircraft_a10_sources/hm_read_thgrpa.F",
+      "url": "https://raw.githubusercontent.com/OpenCourant/OpenCourant/0168ab344bd743051e996d90c7c8d80728bb04a8/starter/source/output/th/hm_read_thgrpa.F",
+      "sha256": "408fa231063e4ca1a277b5a416e54b3d0ed58ce0c5b19ca5b95556d2b344b4df",
+      "bytes": 13682,
+      "redistribution": "exclude_third_party"
+    },
+    {
+      "path": "wtc1_simulation_v8/input/aircraft_a10_sources/inivel.cfg",
+      "url": "https://raw.githubusercontent.com/OpenCourant/OpenCourant/0168ab344bd743051e996d90c7c8d80728bb04a8/hm_cfg_files/config/CFG/radioss2025/LOADS/inivel.cfg",
+      "sha256": "dfff0e752b4f43414272983366004cbb59d665c687a342a2511ffcefa8a102c3",
+      "bytes": 4752,
+      "redistribution": "exclude_third_party"
+    }
+  ],
+  "inherited_TYPE7_source": "wtc1_simulation_v8/input/aircraft_a09_sources/TYPE7.html",
+  "source_binary_equivalence_established": false,
+  "NIST_outcomes_used_as_target": false,
+  "physical_impact_qualified": false
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-06T16:48:09.851072+00:00",
+  "updated_at": "2026-10-07T14:11:00.510469+00:00",
   "active_thread": {
     "id": "019ffb88-05a7-7f60-adff-6804df0d66a5",
     "title": "Poursuivre enquete WTC 1 V4",
@@ -19,10 +19,10 @@
     "targeted_v10i_working_copy_count": 5,
     "targeted_v10i_working_copy_directory": "wtc1_simulation_v8/input/v10i_structural_sources"
   },
-  "current_iteration": "AIRCRAFT-A09",
-  "current_status": "completed_contact_stiffness_RBE3_and_native_rotation_controls_with_retained_energy_and_spatial_failures",
-  "next_iteration": "AIRCRAFT-A10",
-  "next_objective": "AIRCRAFT-A10 : isoler le premier contact dans un témoin élastique sans redistribution RBE3, avec un bilan analytique et les mêmes conventions de sortie. Identifier dans les propriétés/formulations natives la définition des inerties de coque et du canal RKE avant d’ajouter une énergie indépendante au bilan. Comparer contact et pas de temps sur ce témoin avant de retransférer une option qualifiée vers l’avion. Le contact moteur A09 reste énergétiquement et spatialement non qualifié ; ne pas choisir Stfac pour ajuster un résultat et ne pas prolonger la scène comme un écrasement validé. Ensuite seulement : écrasement/rupture avec historique et dissipation, autocontact/fragments, structure et rotors plus réalistes, planchers/noyau et plages d’entrée AA11. Aucun calage sur les dégâts NIST. Préserver V11F/V11R ; V11S/I02I-M différées. Publication A08+A09 due après vérification ; paire suivante A10+A11.",
+  "current_iteration": "AIRCRAFT-A11",
+  "current_status": "completed_whole_aircraft_nose_first_contact_diagnostic_with_failed_local_energy_gate",
+  "next_iteration": "AIRCRAFT-A12",
+  "next_objective": "AIRCRAFT-A12 : réutiliser la scène A11 et ses échecs. Isoler le premier contact du nez/radôme dans un témoin sans redistribution RBE3, avec inerties natives et énergie LAW25/TYPE19 vérifiables ; comparer à un témoin élastique simple et à une formulation de contact déclarée. Ajouter le contrôle spatial encore manquant. Ne pas prolonger comme impact qualifié avant fermeture du bilan local. Examiner ensuite le module Boeing parallèle s’il est livré, sans modifier implicitement matériaux/masses. Impact historique, rupture et écrasement restent non qualifiés.",
   "impact_i02h_key_results": {
     "accepted_cases": 7,
     "new_controls_executed": 2,
@@ -1251,7 +1251,13 @@
     "aircraft_a09_report": "wtc1_simulation_v8/output/aircraft_a09/rapport_aircraft_a09.md",
     "aircraft_a09_results": "wtc1_simulation_v8/output/aircraft_a09/authoritative_review.json",
     "aircraft_a09_handoff": "harness/handoffs/WTC1_AIRCRAFT_A09_HANDOFF.md",
-    "aircraft_a09_figure": "wtc1_simulation_v8/output/aircraft_a09/summary_aircraft_a09.png"
+    "aircraft_a09_figure": "wtc1_simulation_v8/output/aircraft_a09/summary_aircraft_a09.png",
+    "aircraft_a10_report": "wtc1_simulation_v8/output/aircraft_a10/rapport_aircraft_a10.md",
+    "aircraft_a10_results": "wtc1_simulation_v8/output/aircraft_a10/authoritative_review.json",
+    "aircraft_a10_handoff": "harness/handoffs/WTC1_AIRCRAFT_A10_HANDOFF.md",
+    "aircraft_a11_report": "wtc1_simulation_v8/output/aircraft_a11/rapport_aircraft_a11.md",
+    "aircraft_a11_results": "wtc1_simulation_v8/output/aircraft_a11/authoritative_review.json",
+    "aircraft_a11_handoff": "harness/handoffs/WTC1_AIRCRAFT_A11_HANDOFF.md"
   },
   "v8g_key_results": {
     "nist_hat_transfer_at_80_min_kip": 6748.0,
@@ -6915,7 +6921,7 @@
     "instruction": "Build complete aircraft, conditions rather than outcome-fitting; NIST discrepancy must not be forced away",
     "deferred_iteration": "IMPACT-I02I-M",
     "preserved_plan": "wtc1_simulation_v8/data/impact_i02i_m_plan_from_l.json",
-    "next": "AIRCRAFT-A10",
+    "next": "AIRCRAFT-A11",
     "outcome_calibration_allowed": false,
     "microtests_only_when_concrete_model_blocker": true
   },
@@ -7313,5 +7319,72 @@
     ],
     "NIST_outcomes_used_as_target": false,
     "next_iteration": "AIRCRAFT-A10"
+  },
+  "aircraft_a10_key_results": {
+    "experiment_id": "WTC1-AIRCRAFT-A10",
+    "registered_at": "2026-10-07T09:32:13.031416+00:00",
+    "status": "completed_isolated_elastic_contact_and_native_inertia_diagnostic_with_retained_failed_gates",
+    "configuration": "wtc1_simulation_v8/data/aircraft_a10_predeclaration.json",
+    "report": "wtc1_simulation_v8/output/aircraft_a10/rapport_aircraft_a10.md",
+    "results": "wtc1_simulation_v8/output/aircraft_a10/authoritative_review.json",
+    "handoff": "harness/handoffs/WTC1_AIRCRAFT_A10_HANDOFF.md",
+    "artifact_manifest": "wtc1_simulation_v8/output/aircraft_a10/artifact_manifest.json",
+    "publication_verification": "wtc1_simulation_v8/output/aircraft_a10/publication_verification.json",
+    "integrity_only_pass": true,
+    "all_declared_checks_pass": false,
+    "branch_iteration_count": 10,
+    "whole_aircraft_iteration_count": 9,
+    "whole_aircraft_cases": 0,
+    "main_solver_jobs": 17,
+    "old_solver_reruns": 0,
+    "old_files_preserved": 5505,
+    "qualified_1D_contact_cases": [
+      "K1_DT0025",
+      "K1_DT0050"
+    ],
+    "native_global_initial_inertias_identified": true,
+    "native_part_RKE_ledger_qualified": false,
+    "spatial_convergence_tested": false,
+    "energy_cause_identified": false,
+    "contact_option_transferred_to_aircraft": false,
+    "physical_impact_qualified": false,
+    "engine_crushing_qualified": false,
+    "next_iteration": "AIRCRAFT-A11",
+    "NIST_outcomes_used_as_target": false
+  },
+  "aircraft_a11_key_results": {
+    "experiment_id": "WTC1-AIRCRAFT-A11",
+    "registered_at": "2026-10-07T14:11:00.510469+00:00",
+    "status": "completed_whole_aircraft_nose_first_contact_diagnostic_with_failed_local_energy_gate",
+    "configuration": "wtc1_simulation_v8/data/aircraft_a11_predeclaration.json",
+    "report": "wtc1_simulation_v8/output/aircraft_a11/rapport_aircraft_a11.md",
+    "results": "wtc1_simulation_v8/output/aircraft_a11/authoritative_review.json",
+    "handoff": "harness/handoffs/WTC1_AIRCRAFT_A11_HANDOFF.md",
+    "artifact_manifest": "wtc1_simulation_v8/output/aircraft_a11/artifact_manifest.json",
+    "publication_verification": "wtc1_simulation_v8/output/aircraft_a11/publication_verification.json",
+    "integrity_only_pass": true,
+    "all_declared_checks_pass": false,
+    "branch_iteration_count": 11,
+    "whole_aircraft_iteration_count": 10,
+    "main_engine_jobs": 4,
+    "old_solver_reruns": 0,
+    "old_files_preserved": 6085,
+    "max_horizon_ms": 0.400077164,
+    "nose_contact_onset_ms": 0.2250279,
+    "seconds_impact_calculated": false,
+    "local_energy_ledger_qualified": false,
+    "spatial_convergence_qualified": false,
+    "native_RKE_ledger_qualified": false,
+    "contact_option_transferred_as_qualified": false,
+    "physical_impact_qualified": false,
+    "engine_crushing_qualified": false,
+    "NIST_outcomes_used_as_target": false,
+    "next_iteration": "AIRCRAFT-A12"
+  },
+  "user_steering_2026_10_07": {
+    "request": "Boeing construction, start first impact seconds if feasible; second-agent prompt",
+    "implemented": "new nose-first coupled aircraft scene and first0.4ms contact, local energy failure retained",
+    "parallel_prompt": "harness/handoffs/WTC1_A11_PARALLEL_BOEING_PROMPT.md",
+    "next": "AIRCRAFT-A12"
   }
 }

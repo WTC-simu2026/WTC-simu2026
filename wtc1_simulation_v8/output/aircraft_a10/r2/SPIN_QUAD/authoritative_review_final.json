@@ -1,0 +1,40 @@
+{
+  "case": {
+    "id": "SPIN_QUAD",
+    "contact": false,
+    "Stfac": 1.0,
+    "dt_scale": 0.1,
+    "spin_form": "QUAD",
+    "omega_rad_ms": 0.01,
+    "end_ms": 0.01
+  },
+  "checks": {
+    "binary_integrity": true,
+    "normal_termination": true,
+    "initial_global_RKE_matches_native_inertia": true,
+    "initial_part_RKE_matches_global": true,
+    "initial_angular_velocity_matches": true,
+    "initial_translation_zero": true
+  },
+  "failed_checks": [],
+  "native_binary": {
+    "all_channels_match": true,
+    "header_records": 24,
+    "records_per_frame": 4,
+    "sizes_bytes": [
+      4,
+      88,
+      72,
+      192
+    ],
+    "frames": 29
+  },
+  "initial_global_RKE_J": 1.8579670000000002e-06,
+  "initial_part_RKE_J": 1.8579670000000002e-06,
+  "predicted_inertia_sum_g_mm2": 37.159333333333336,
+  "runtime_effective_inertia_sum_g_mm2": 37.15934,
+  "reference_RKE_J": 1.857966666666667e-06,
+  "global_relative_error": 1.794075960085988e-07,
+  "part_relative_error": 0.0,
+  "scope": "Initial-state inertia/output test, translations fixed; no rigid-body physical spin or large-rotation qualification"
+}

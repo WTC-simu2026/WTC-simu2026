@@ -1,0 +1,90 @@
+{
+  "created_utc": "2026-10-07T09:23:03.343935+00:00",
+  "revision": "r2",
+  "cases": [
+    {
+      "id": "K1_DT010",
+      "contact": true,
+      "Stfac": 1.0,
+      "dt_scale": 0.1
+    },
+    {
+      "id": "K1_DT0025",
+      "contact": true,
+      "Stfac": 1.0,
+      "dt_scale": 0.025
+    },
+    {
+      "id": "K01_DT010",
+      "contact": true,
+      "Stfac": 0.01,
+      "dt_scale": 0.1
+    },
+    {
+      "id": "K01_DT0025",
+      "contact": true,
+      "Stfac": 0.01,
+      "dt_scale": 0.025
+    },
+    {
+      "id": "K001_DT010",
+      "contact": true,
+      "Stfac": 0.001,
+      "dt_scale": 0.1
+    },
+    {
+      "id": "K001_DT0025",
+      "contact": true,
+      "Stfac": 0.001,
+      "dt_scale": 0.025
+    },
+    {
+      "id": "SPIN_QUAD",
+      "contact": false,
+      "Stfac": 1.0,
+      "dt_scale": 0.1,
+      "spin_form": "QUAD",
+      "omega_rad_ms": 0.01,
+      "end_ms": 0.01
+    },
+    {
+      "id": "SPIN_TRIA",
+      "contact": false,
+      "Stfac": 1.0,
+      "dt_scale": 0.1,
+      "spin_form": "TRIA",
+      "omega_rad_ms": 0.01,
+      "end_ms": 0.01
+    },
+    {
+      "id": "SPIN_BEAM",
+      "contact": false,
+      "Stfac": 1.0,
+      "dt_scale": 0.1,
+      "spin_form": "BEAM",
+      "omega_rad_ms": 0.01,
+      "end_ms": 0.01
+    }
+  ],
+  "reason": "Retained failures with dt .8/.4; distinguish temporal discretization at fixed contact stiffness and identify native inertia/part RKE from a known initial spin. No outcome fitting.",
+  "acceptance": {
+    "initial_mass_relative": 1e-05,
+    "initial_KE_relative": 1e-05,
+    "momentum_residual_relative_to_initial": 0.01,
+    "maximum_energy_residual_relative_to_initial": 0.01,
+    "rebound_speed_relative": 0.01,
+    "half_dt_impulse_relative": 0.01,
+    "half_dt_energy_residual_change_relative_to_initial": 0.005,
+    "free_energy_relative": 1e-06,
+    "free_velocity_absolute_m_s": 1e-06,
+    "zero_rotation_allowance_J": 1e-10,
+    "native_binary_csv_relative": 6e-07,
+    "native_binary_csv_absolute": 1e-12,
+    "support_momentum_relative": 0.02,
+    "all_criteria_predeclared": true
+  },
+  "spin_initial_energy_relative_allowance": 0.0001,
+  "spin_initial_part_vs_global_RKE_relative_allowance": 0.0001,
+  "all_criteria_unchanged_for_contact": true,
+  "before_any_r2_solver": true
+}

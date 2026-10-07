@@ -1,0 +1,44 @@
+{
+  "errors": [
+    {
+      "stage": "figure_runtime_discovery",
+      "command": "python -c import matplotlib",
+      "error": "ModuleNotFoundError: No module named matplotlib",
+      "resolution": "use existing bundled workspace Python, no installation or runtime modification"
+    },
+    {
+      "stage": "early_output_inspection",
+      "paths": [
+        "NOSE_04_DT10/audit.json",
+        "NOSE_04_DT05/audit.json"
+      ],
+      "error": "not yet written while reviewer running",
+      "resolution": "wait for reviewer completion; no synthesized results"
+    },
+    {
+      "stage": "publication_script_discovery",
+      "path": "outputs/github_publication/prepare_updates_aircraft_a08_a09.py",
+      "error": "file does not exist",
+      "resolution": "use discovered update_aircraft_a08_a09.py read-only as template"
+    },
+    {
+      "stage": "figure_runtime_discovery",
+      "runtime": "bundled workspace Python",
+      "error": "ModuleNotFoundError: matplotlib; plotly/scipy/bokeh also unavailable",
+      "resolution": "use installed ReportLab chart generator and SVG export; no software modification"
+    },
+    {
+      "stage": "optional_visual_preview",
+      "action": "start read-only localhost HTTP helper",
+      "error": "automatic approval review rejected: blocked by policy",
+      "resolution": "no helper started; continue file/data checks"
+    },
+    {
+      "stage": "optional_visual_preview",
+      "action": "open local HTML in in-app browser",
+      "error": "browser URL policy refuses file: protocol; allowed http/https only",
+      "resolution": "do not circumvent; provide local artifact; GUI render unverified"
+    }
+  ],
+  "native_solver_failure": false
+}

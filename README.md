@@ -8,15 +8,13 @@ Le projet teste des mécanismes, des hypothèses explicites et des plages de par
 
 ## Où en est la simulation ?
 
-Instantané du **6 octobre 2026** : AIRCRAFT-A08 et AIRCRAFT-A09 terminées comme contrôles limités ; prochaine étape AIRCRAFT-A10. **Neuf itérations de la branche avion entier**, aucune calibration sur les dommages NIST.
+Instantané du **7 octobre 2026**, mis à jour jusqu’à **AIRCRAFT-A11**. Suite : **AIRCRAFT-A12**. Onze itérations de la branche avion/contact, dont dix comportant l’avion entier ; A10 est un témoin isolé. Cette publication conserve les critères échoués et ne qualifie ni l’impact historique, ni l’écrasement, ni l’effondrement réel.
 
-Les moteurs sont couplés au modèle mécanique du 767, avec **960 ou 3 840 triangles de coque et 56 liaisons**, deux budgets hypothétiques de 4 500 kg. A08 ajoute les historiques des pièces/inerties et corrige le contrôle du centre de masse A07 selon la répartition nodale native ; aucune masse ou force modifiée. Deux maillages à même surface facettée sont comparés. A09 exécute neuf contrôles du premier contact, avec formulations de raideur et variantes RBE3 déclarées avant calcul.
+A10 isole le contact élastique sans RBE3 : le témoin contraint ferme ses bilans à Stfac1 avec réduction du pas, tandis que des contacts plus souples conservent des pertes. Les inerties natives initiales des quads, triangles et poutres reproduisent le RKE global initial, mais les canaux RKE par pièce restent non qualifiés. REAC brut est une impulsion cumulée dans le build testé.
 
-**Bilan local d’énergie et critères spatiaux échoués, interprétation de rotation non qualifiée.** À environ 0,4 ms, résidu du maillage fin −36,07 kJ au réglage de base ; −69,62 et −65,17 kJ avec les facteurs de contact effectivement réduits. Le facteur 0,1 est inactif dans ce contrôle. La variante RBE3 est activée par le Starter, conserve les impulsions/énergies globales sauvegardées mais présente des différences internes. Aucun canal suspect ajouté pour compenser le déficit ; aucun réglage choisi pour atteindre un résultat attendu.
+A11 remet la façade représentative devant le nez et active le contact des surfaces extérieures de l’avion couplé, avec les mêmes masses, matériaux et assemblages. Le premier contact du nez apparaît vers **0,225 ms**, avant les ailes et moteurs. Trois pas de temps sont comparés sur **0,4 ms = 0,0004 s** ; le déficit énergétique local persiste malgré des impulsions proches. Ce critère échoué bloque le prolongement déclaré à 1 ms. Les premières secondes, la rupture, la délamination et la traversée historique ne sont pas calculées ou qualifiées.
 
-Les nacelles sont touchées en premier ; les carters fan/core ne sont pas encore directement heurtés. Ces scènes ne constituent pas la traversée historique complète : contact extérieur limité aux moteurs, absence de planchers/noyau, rotors et fragmentation. Géométrie interne, matériaux et attaches restent des hypothèses. Le contrat de fracture à historique maximal demeure analytique ; la loi native refusée A06 n’est pas transférée.
-
-Tous les échecs et premières erreurs des lecteurs sont conservés avec leurs corrections documentées. Publication = intégrité et reproductibilité des fichiers, sans nouveau calcul scientifique. V11F/V11R préservés ; température imposée distincte d’un incendie calculé ; Blender reste une visualisation. **Ni impact historique ni effondrement réel validés.**
+La vue hors ligne utilise les états natifs, avec déplacement ×1 et temps physique en millisecondes ; elle reste une visualisation. Les données d’entrée représentatives de façade héritent de sources NIST, sans utiliser les dégâts observés ou les sorties NIST comme cibles de réglage. Archives et anciennes itérations restent inchangées. V11F/V11R préservées ; V11S/I02I-M différées.
 
 
 ## Ce qui est publié
@@ -28,9 +26,9 @@ Tous les échecs et premières erreurs des lecteurs sont conservés avec leurs c
 - `outputs/` : calculs exploratoires antérieurs et audits complémentaires. Leurs affirmations se lisent avec leurs propres limites ; leur présence n'est pas une validation.
 - `publication/` : inventaire complet, empreintes SHA-256, règles de publication, licences tierces et liste motivée des fichiers externes non redistribués.
 
-Inventaire courant : **6,818 fichiers scientifiques dans Git**, **9,307 sorties dans 64 archives**.
+Inventaire courant : **7,254 fichiers scientifiques dans Git**, **9,644 sorties dans 69 archives**.
 
-Restaurer les 57 anciennes archives des releases précédentes, puis les 7 archives [A08+A09](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-06-aircraft-a08-a09). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
+Restaurer les 64 anciennes archives des releases précédentes, puis les 5 archives [A10+A11](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-07-aircraft-a10-a11). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
 
 ## Consulter et vérifier sans relancer les solveurs
 
@@ -59,7 +57,7 @@ Voir [REPRODUCIBILITY.md](REPRODUCIBILITY.md). La base Python utilise NumPy et P
 
 ## Prochaine étape
 
-AIRCRAFT-A10 : isoler le premier contact dans un témoin élastique sans redistribution RBE3, avec un bilan analytique et des conventions de sortie explicites. Identifier les inerties natives de coque et la signification du canal RKE, puis vérifier les options de contact et le pas de temps avant transfert vers l’avion. Ne pas ajuster Stfac aux dégâts attendus. Rupture/écrasement à historique et énergie contrôlés, rotors, autocontact/fragments, planchers/noyau et conditions AA11 restent à traiter. Prochaine publication après deux itérations vérifiées A10+A11.
+AIRCRAFT-A12 : isoler le contact du nez/radôme sans redistribution RBE3, vérifier les inerties et le bilan natif LAW25/TYPE19, comparer à un témoin élastique simple et à une formulation de contact déclarée, puis compléter le contrôle spatial. Réutiliser A10/A11 et conserver chaque échec. Ne pas prolonger comme impact qualifié tant que le bilan local ne ferme pas. Examiner le module mécanique Boeing parallèle lorsqu’il est réellement livré, avec un contrôle explicite des masses, assemblages et paramètres hypothétiques.
 
 
 ## Discipline de preuve

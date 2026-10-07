@@ -1,0 +1,1312 @@
+{
+  "created_utc": "2026-10-07T09:28:44.395466+00:00",
+  "iteration": "AIRCRAFT-A10",
+  "cases": [
+    {
+      "case": {
+        "id": "FREE",
+        "contact": false,
+        "Stfac": 1.0,
+        "dt_scale": 0.8
+      },
+      "created_utc": "2026-10-07T09:19:30.373529+00:00",
+      "checks": {
+        "binary_all_channels_match_native_converter": true,
+        "normal_engine_termination": true,
+        "finite_monotone_history": true,
+        "end_sample_within_2pct": true,
+        "mass_analytic": true,
+        "initial_KE_analytic": true,
+        "energy_closure": true,
+        "momentum_contact": true,
+        "support_momentum": true,
+        "native_rotation_zero": true,
+        "part_RKE_zero_expected": true,
+        "free_velocity": true,
+        "free_energy": true,
+        "independent_translation_KE": true
+      },
+      "all_checks_pass": true,
+      "failed_checks": [],
+      "native_binary_schema": {
+        "header_records": 24,
+        "records_per_frame": 4,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          192
+        ],
+        "all_channels_verified": true
+      },
+      "mass_kg": 0.0011120000000000001,
+      "initial_energy_J": 0.0005560000000000001,
+      "last_saved_time_ms": 0.3993135,
+      "max_energy_residual_fraction": 0.0,
+      "final_energy_residual_J": 0.0,
+      "final_velocity_m_s": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_raw_contact_impulse_Ns": 0.0,
+      "momentum_plus_relative": 0.0,
+      "momentum_minus_relative": 0.0,
+      "support_momentum_relative": 0.0,
+      "maximum_native_rotation_energy_J": 0.0,
+      "maximum_part_RKE_J": 0.0,
+      "physical_impact_qualified": false,
+      "support_final_momentum_relative": 0.0,
+      "support_raw_units": "Cumulative native impulse g mm/ms, convert *0.001 to N s; no second integration",
+      "independent_translation_KE_max_error_J": 1.0842021724855044e-19,
+      "original_review_retained": "wtc1_simulation_v8/output/aircraft_a10/r1/FREE/review.json",
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 24,
+        "records_per_frame": 4,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          192
+        ],
+        "frames": 141
+      }
+    },
+    {
+      "case": {
+        "id": "K1_DT080",
+        "contact": true,
+        "Stfac": 1.0,
+        "dt_scale": 0.8
+      },
+      "created_utc": "2026-10-07T09:19:45.718767+00:00",
+      "checks": {
+        "binary_all_channels_match_native_converter": true,
+        "normal_engine_termination": true,
+        "finite_monotone_history": true,
+        "end_sample_within_2pct": true,
+        "mass_analytic": true,
+        "initial_KE_analytic": true,
+        "energy_closure": false,
+        "momentum_contact": false,
+        "support_momentum": false,
+        "native_rotation_zero": true,
+        "part_RKE_zero_expected": true,
+        "complete_rebound_speed": false,
+        "independent_translation_KE": false
+      },
+      "all_checks_pass": false,
+      "failed_checks": [
+        "energy_closure",
+        "momentum_contact",
+        "support_momentum",
+        "complete_rebound_speed",
+        "independent_translation_KE"
+      ],
+      "native_binary_schema": {
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "all_channels_verified": true
+      },
+      "mass_kg": 0.0011120000000000001,
+      "initial_energy_J": 0.0005560000000000001,
+      "last_saved_time_ms": 0.3977045,
+      "max_energy_residual_fraction": 0.18237994604316557,
+      "final_energy_residual_J": -5.495849999999998e-05,
+      "final_velocity_m_s": [
+        -0.9492912,
+        -0.9492912,
+        -0.9492912,
+        -0.9492912
+      ],
+      "final_raw_contact_impulse_Ns": 0.002437563,
+      "momentum_plus_relative": 4.141344424460431,
+      "momentum_minus_relative": 0.7989344424460432,
+      "support_momentum_relative": 0.2786919874100716,
+      "maximum_native_rotation_energy_J": 0.0,
+      "maximum_part_RKE_J": 0.0,
+      "physical_impact_qualified": false,
+      "support_final_momentum_relative": 0.0,
+      "support_raw_units": "Cumulative native impulse g mm/ms, convert *0.001 to N s; no second integration",
+      "independent_translation_KE_max_error_J": 0.00018415939382035085,
+      "original_review_retained": "wtc1_simulation_v8/output/aircraft_a10/r1/K1_DT080/review.json",
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "frames": 150
+      }
+    },
+    {
+      "case": {
+        "id": "K1_DT040",
+        "contact": true,
+        "Stfac": 1.0,
+        "dt_scale": 0.4
+      },
+      "created_utc": "2026-10-07T09:19:47.046415+00:00",
+      "checks": {
+        "binary_all_channels_match_native_converter": true,
+        "normal_engine_termination": true,
+        "finite_monotone_history": true,
+        "end_sample_within_2pct": true,
+        "mass_analytic": true,
+        "initial_KE_analytic": true,
+        "energy_closure": false,
+        "momentum_contact": false,
+        "support_momentum": false,
+        "native_rotation_zero": true,
+        "part_RKE_zero_expected": true,
+        "complete_rebound_speed": false,
+        "independent_translation_KE": false
+      },
+      "all_checks_pass": false,
+      "failed_checks": [
+        "energy_closure",
+        "momentum_contact",
+        "support_momentum",
+        "complete_rebound_speed",
+        "independent_translation_KE"
+      ],
+      "native_binary_schema": {
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "all_channels_verified": true
+      },
+      "mass_kg": 0.0011120000000000001,
+      "initial_energy_J": 0.0005560000000000001,
+      "last_saved_time_ms": 0.3987505,
+      "max_energy_residual_fraction": 0.04779685251798571,
+      "final_energy_residual_J": -2.5402600000000095e-05,
+      "final_velocity_m_s": [
+        -0.9768889,
+        -0.9768889,
+        -0.9768889,
+        -0.9768889
+      ],
+      "final_raw_contact_impulse_Ns": 0.002364429,
+      "momentum_plus_relative": 4.103173561151079,
+      "momentum_minus_relative": 0.33677016187050374,
+      "support_momentum_relative": 0.09373530575539547,
+      "maximum_native_rotation_energy_J": 0.0,
+      "maximum_part_RKE_J": 0.0,
+      "physical_impact_qualified": false,
+      "support_final_momentum_relative": 3.597122299484906e-07,
+      "support_raw_units": "Cumulative native impulse g mm/ms, convert *0.001 to N s; no second integration",
+      "independent_translation_KE_max_error_J": 8.124129999999996e-05,
+      "original_review_retained": "wtc1_simulation_v8/output/aircraft_a10/r1/K1_DT040/review.json",
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "frames": 306
+      }
+    },
+    {
+      "case": {
+        "id": "K01_DT080",
+        "contact": true,
+        "Stfac": 0.01,
+        "dt_scale": 0.8
+      },
+      "created_utc": "2026-10-07T09:19:48.070621+00:00",
+      "checks": {
+        "binary_all_channels_match_native_converter": true,
+        "normal_engine_termination": true,
+        "finite_monotone_history": true,
+        "end_sample_within_2pct": true,
+        "mass_analytic": true,
+        "initial_KE_analytic": true,
+        "energy_closure": false,
+        "momentum_contact": false,
+        "support_momentum": false,
+        "native_rotation_zero": true,
+        "part_RKE_zero_expected": true,
+        "complete_rebound_speed": true,
+        "independent_translation_KE": false
+      },
+      "all_checks_pass": false,
+      "failed_checks": [
+        "energy_closure",
+        "momentum_contact",
+        "support_momentum",
+        "independent_translation_KE"
+      ],
+      "native_binary_schema": {
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "all_channels_verified": true
+      },
+      "mass_kg": 0.0011120000000000001,
+      "initial_energy_J": 0.0005560000000000001,
+      "last_saved_time_ms": 0.3978279,
+      "max_energy_residual_fraction": 0.014801131294964076,
+      "final_energy_residual_J": -7.091100000000011e-06,
+      "final_velocity_m_s": [
+        -0.9936026,
+        -0.9936026,
+        -0.9936026,
+        -0.9936026
+      ],
+      "final_raw_contact_impulse_Ns": 0.002217373,
+      "momentum_plus_relative": 3.987642985611511,
+      "momentum_minus_relative": 0.09299738129496402,
+      "support_momentum_relative": 0.04623025179856098,
+      "maximum_native_rotation_energy_J": 0.0,
+      "maximum_part_RKE_J": 0.0,
+      "physical_impact_qualified": false,
+      "support_final_momentum_relative": 0.0,
+      "support_raw_units": "Cumulative native impulse g mm/ms, convert *0.001 to N s; no second integration",
+      "independent_translation_KE_max_error_J": 2.6200314099883947e-05,
+      "original_review_retained": "wtc1_simulation_v8/output/aircraft_a10/r1/K01_DT080/review.json",
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "frames": 149
+      }
+    },
+    {
+      "case": {
+        "id": "K01_DT040",
+        "contact": true,
+        "Stfac": 0.01,
+        "dt_scale": 0.4
+      },
+      "created_utc": "2026-10-07T09:19:49.102774+00:00",
+      "checks": {
+        "binary_all_channels_match_native_converter": true,
+        "normal_engine_termination": true,
+        "finite_monotone_history": true,
+        "end_sample_within_2pct": true,
+        "mass_analytic": true,
+        "initial_KE_analytic": true,
+        "energy_closure": false,
+        "momentum_contact": false,
+        "support_momentum": false,
+        "native_rotation_zero": true,
+        "part_RKE_zero_expected": true,
+        "complete_rebound_speed": true,
+        "independent_translation_KE": false
+      },
+      "all_checks_pass": false,
+      "failed_checks": [
+        "energy_closure",
+        "momentum_contact",
+        "support_momentum",
+        "independent_translation_KE"
+      ],
+      "native_binary_schema": {
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "all_channels_verified": true
+      },
+      "mass_kg": 0.0011120000000000001,
+      "initial_energy_J": 0.0005560000000000001,
+      "last_saved_time_ms": 0.3996068,
+      "max_energy_residual_fraction": 0.012591174460431856,
+      "final_energy_residual_J": -6.852900000000098e-06,
+      "final_velocity_m_s": [
+        -0.9938182,
+        -0.9938182,
+        -0.9938182,
+        -0.9938182
+      ],
+      "final_raw_contact_impulse_Ns": 0.0022174589999999997,
+      "momentum_plus_relative": 3.9879361510791367,
+      "momentum_minus_relative": 0.044214064748201505,
+      "support_momentum_relative": 0.021918129496402882,
+      "maximum_native_rotation_energy_J": 0.0,
+      "maximum_part_RKE_J": 0.0,
+      "physical_impact_qualified": false,
+      "support_final_momentum_relative": 3.9000078146960594e-16,
+      "support_raw_units": "Cumulative native impulse g mm/ms, convert *0.001 to N s; no second integration",
+      "independent_translation_KE_max_error_J": 1.2279619439421383e-05,
+      "original_review_retained": "wtc1_simulation_v8/output/aircraft_a10/r1/K01_DT040/review.json",
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "frames": 302
+      }
+    },
+    {
+      "case": {
+        "id": "K001_DT080",
+        "contact": true,
+        "Stfac": 0.001,
+        "dt_scale": 0.8
+      },
+      "created_utc": "2026-10-07T09:19:50.104677+00:00",
+      "checks": {
+        "binary_all_channels_match_native_converter": true,
+        "normal_engine_termination": true,
+        "finite_monotone_history": true,
+        "end_sample_within_2pct": true,
+        "mass_analytic": true,
+        "initial_KE_analytic": true,
+        "energy_closure": false,
+        "momentum_contact": false,
+        "support_momentum": true,
+        "native_rotation_zero": true,
+        "part_RKE_zero_expected": true,
+        "complete_rebound_speed": false,
+        "independent_translation_KE": false
+      },
+      "all_checks_pass": false,
+      "failed_checks": [
+        "energy_closure",
+        "momentum_contact",
+        "complete_rebound_speed",
+        "independent_translation_KE"
+      ],
+      "native_binary_schema": {
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "all_channels_verified": true
+      },
+      "mass_kg": 0.0011120000000000001,
+      "initial_energy_J": 0.0005560000000000001,
+      "last_saved_time_ms": 0.3978958,
+      "max_energy_residual_fraction": 0.038181291366906754,
+      "final_energy_residual_J": -2.1144200000000027e-05,
+      "final_velocity_m_s": [
+        -0.9808012,
+        -0.9808012,
+        -0.9808012,
+        -0.9808012
+      ],
+      "final_raw_contact_impulse_Ns": 0.0022026710000000002,
+      "momentum_plus_relative": 3.961620503597122,
+      "momentum_minus_relative": 0.031249199640287707,
+      "support_momentum_relative": 0.015597994604316257,
+      "maximum_native_rotation_energy_J": 0.0,
+      "maximum_part_RKE_J": 0.0,
+      "physical_impact_qualified": false,
+      "support_final_momentum_relative": 1.7985611516924567e-07,
+      "support_raw_units": "Cumulative native impulse g mm/ms, convert *0.001 to N s; no second integration",
+      "independent_translation_KE_max_error_J": 8.644757799575078e-06,
+      "original_review_retained": "wtc1_simulation_v8/output/aircraft_a10/r1/K001_DT080/review.json",
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "frames": 149
+      }
+    },
+    {
+      "case": {
+        "id": "K001_DT040",
+        "contact": true,
+        "Stfac": 0.001,
+        "dt_scale": 0.4
+      },
+      "created_utc": "2026-10-07T09:19:51.158683+00:00",
+      "checks": {
+        "binary_all_channels_match_native_converter": true,
+        "normal_engine_termination": true,
+        "finite_monotone_history": true,
+        "end_sample_within_2pct": true,
+        "mass_analytic": true,
+        "initial_KE_analytic": true,
+        "energy_closure": false,
+        "momentum_contact": false,
+        "support_momentum": true,
+        "native_rotation_zero": true,
+        "part_RKE_zero_expected": true,
+        "complete_rebound_speed": false,
+        "independent_translation_KE": false
+      },
+      "all_checks_pass": false,
+      "failed_checks": [
+        "energy_closure",
+        "momentum_contact",
+        "complete_rebound_speed",
+        "independent_translation_KE"
+      ],
+      "native_binary_schema": {
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "all_channels_verified": true
+      },
+      "mass_kg": 0.0011120000000000001,
+      "initial_energy_J": 0.0005560000000000001,
+      "last_saved_time_ms": 0.3998514,
+      "max_energy_residual_fraction": 0.03732608273381309,
+      "final_energy_residual_J": -2.07508000000001e-05,
+      "final_velocity_m_s": [
+        -0.9811617,
+        -0.9811617,
+        -0.9811617,
+        -0.9811617
+      ],
+      "final_raw_contact_impulse_Ns": 0.002203066,
+      "momentum_plus_relative": 3.9623363309352526,
+      "momentum_minus_relative": 0.015367095323740799,
+      "support_momentum_relative": 0.007671025179855933,
+      "maximum_native_rotation_energy_J": 0.0,
+      "maximum_part_RKE_J": 0.0,
+      "physical_impact_qualified": false,
+      "support_final_momentum_relative": 0.0,
+      "support_raw_units": "Cumulative native impulse g mm/ms, convert *0.001 to N s; no second integration",
+      "independent_translation_KE_max_error_J": 4.229924280848814e-06,
+      "original_review_retained": "wtc1_simulation_v8/output/aircraft_a10/r1/K001_DT040/review.json",
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "frames": 302
+      }
+    },
+    {
+      "case": {
+        "id": "K1_DT010",
+        "contact": true,
+        "Stfac": 1.0,
+        "dt_scale": 0.1
+      },
+      "created_utc": "2026-10-07T09:23:05.706492+00:00",
+      "checks": {
+        "binary_all_channels_match_native_converter": true,
+        "normal_engine_termination": true,
+        "finite_monotone_history": true,
+        "end_sample_within_2pct": true,
+        "mass_analytic": true,
+        "initial_KE_analytic": true,
+        "energy_closure": true,
+        "momentum_contact": false,
+        "support_momentum": true,
+        "native_rotation_zero": true,
+        "part_RKE_zero_expected": true,
+        "complete_rebound_speed": true,
+        "independent_translation_KE": false
+      },
+      "all_checks_pass": false,
+      "failed_checks": [
+        "momentum_contact",
+        "independent_translation_KE"
+      ],
+      "native_binary_schema": {
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "all_channels_verified": true
+      },
+      "mass_kg": 0.0011120000000000001,
+      "initial_energy_J": 0.0005560000000000001,
+      "last_saved_time_ms": 0.3997908,
+      "max_energy_residual_fraction": 0.004664569784172567,
+      "final_energy_residual_J": -2.5922000000000054e-06,
+      "final_velocity_m_s": [
+        -0.9976662,
+        -0.9976662,
+        -0.9976662,
+        -0.9976662
+      ],
+      "final_raw_contact_impulse_Ns": 0.002233566,
+      "momentum_plus_relative": 4.006268884892087,
+      "momentum_minus_relative": 0.02487220377697817,
+      "support_momentum_relative": 0.006959004496402734,
+      "maximum_native_rotation_energy_J": 0.0,
+      "maximum_part_RKE_J": 0.0,
+      "physical_impact_qualified": false,
+      "support_final_momentum_relative": 1.7985611516924567e-07,
+      "support_raw_units": "Cumulative native impulse g mm/ms, convert *0.001 to N s; no second integration",
+      "independent_translation_KE_max_error_J": 4.889299999999994e-06,
+      "original_review_retained": "wtc1_simulation_v8/output/aircraft_a10/r2/K1_DT010/review.json",
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "frames": 1248
+      }
+    },
+    {
+      "case": {
+        "id": "K1_DT0025",
+        "contact": true,
+        "Stfac": 1.0,
+        "dt_scale": 0.025
+      },
+      "created_utc": "2026-10-07T09:23:08.095087+00:00",
+      "checks": {
+        "binary_all_channels_match_native_converter": true,
+        "normal_engine_termination": true,
+        "finite_monotone_history": true,
+        "end_sample_within_2pct": true,
+        "mass_analytic": true,
+        "initial_KE_analytic": true,
+        "energy_closure": true,
+        "momentum_contact": true,
+        "support_momentum": true,
+        "native_rotation_zero": true,
+        "part_RKE_zero_expected": true,
+        "complete_rebound_speed": true,
+        "independent_translation_KE": false
+      },
+      "all_checks_pass": false,
+      "failed_checks": [
+        "independent_translation_KE"
+      ],
+      "native_binary_schema": {
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "all_channels_verified": true
+      },
+      "mass_kg": 0.0011120000000000001,
+      "initial_energy_J": 0.0005560000000000001,
+      "last_saved_time_ms": 0.3999041,
+      "max_energy_residual_fraction": 0.0014242805755397055,
+      "final_energy_residual_J": -7.919000000000762e-07,
+      "final_velocity_m_s": [
+        -0.9992877,
+        -0.9992877,
+        -0.9992877,
+        -0.9992877
+      ],
+      "final_raw_contact_impulse_Ns": 0.0022237230000000004,
+      "momentum_plus_relative": 3.9990386690647486,
+      "momentum_minus_relative": 0.0013468956834531238,
+      "support_momentum_relative": 0.0004412140287767777,
+      "maximum_native_rotation_energy_J": 0.0,
+      "maximum_part_RKE_J": 0.0,
+      "physical_impact_qualified": false,
+      "support_final_momentum_relative": 0.0,
+      "support_raw_units": "Cumulative native impulse g mm/ms, convert *0.001 to N s; no second integration",
+      "independent_translation_KE_max_error_J": 2.4527583779586403e-07,
+      "original_review_retained": "wtc1_simulation_v8/output/aircraft_a10/r2/K1_DT0025/review.json",
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "frames": 4000
+      }
+    },
+    {
+      "case": {
+        "id": "K01_DT010",
+        "contact": true,
+        "Stfac": 0.01,
+        "dt_scale": 0.1
+      },
+      "created_utc": "2026-10-07T09:23:09.385492+00:00",
+      "checks": {
+        "binary_all_channels_match_native_converter": true,
+        "normal_engine_termination": true,
+        "finite_monotone_history": true,
+        "end_sample_within_2pct": true,
+        "mass_analytic": true,
+        "initial_KE_analytic": true,
+        "energy_closure": false,
+        "momentum_contact": true,
+        "support_momentum": true,
+        "native_rotation_zero": true,
+        "part_RKE_zero_expected": true,
+        "complete_rebound_speed": true,
+        "independent_translation_KE": false
+      },
+      "all_checks_pass": false,
+      "failed_checks": [
+        "energy_closure",
+        "independent_translation_KE"
+      ],
+      "native_binary_schema": {
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "all_channels_verified": true
+      },
+      "mass_kg": 0.0011120000000000001,
+      "initial_energy_J": 0.0005560000000000001,
+      "last_saved_time_ms": 0.3997564,
+      "max_energy_residual_fraction": 0.011993942071582758,
+      "final_energy_residual_J": -6.666400000000035e-06,
+      "final_velocity_m_s": [
+        -0.993987,
+        -0.993987,
+        -0.993987,
+        -0.993987
+      ],
+      "final_raw_contact_impulse_Ns": 0.002217396,
+      "momentum_plus_relative": 3.988048561151079,
+      "momentum_minus_relative": 0.00812546762589908,
+      "support_momentum_relative": 0.0040127248201437355,
+      "maximum_native_rotation_energy_J": 0.0,
+      "maximum_part_RKE_J": 0.0,
+      "physical_impact_qualified": false,
+      "support_final_momentum_relative": 3.597122299484906e-07,
+      "support_raw_units": "Cumulative native impulse g mm/ms, convert *0.001 to N s; no second integration",
+      "independent_translation_KE_max_error_J": 2.2233919716177974e-06,
+      "original_review_retained": "wtc1_simulation_v8/output/aircraft_a10/r2/K01_DT010/review.json",
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "frames": 1311
+      }
+    },
+    {
+      "case": {
+        "id": "K01_DT0025",
+        "contact": true,
+        "Stfac": 0.01,
+        "dt_scale": 0.025
+      },
+      "created_utc": "2026-10-07T09:23:11.634724+00:00",
+      "checks": {
+        "binary_all_channels_match_native_converter": true,
+        "normal_engine_termination": true,
+        "finite_monotone_history": true,
+        "end_sample_within_2pct": true,
+        "mass_analytic": true,
+        "initial_KE_analytic": true,
+        "energy_closure": false,
+        "momentum_contact": true,
+        "support_momentum": true,
+        "native_rotation_zero": true,
+        "part_RKE_zero_expected": true,
+        "complete_rebound_speed": true,
+        "independent_translation_KE": false
+      },
+      "all_checks_pass": false,
+      "failed_checks": [
+        "energy_closure",
+        "independent_translation_KE"
+      ],
+      "native_binary_schema": {
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "all_channels_verified": true
+      },
+      "mass_kg": 0.0011120000000000001,
+      "initial_energy_J": 0.0005560000000000001,
+      "last_saved_time_ms": 0.3999754,
+      "max_energy_residual_fraction": 0.011945131115108006,
+      "final_energy_residual_J": -6.641300000000041e-06,
+      "final_velocity_m_s": [
+        -0.9940096,
+        -0.9940096,
+        -0.9940096,
+        -0.9940096
+      ],
+      "final_raw_contact_impulse_Ns": 0.002217361,
+      "momentum_plus_relative": 3.9880395683453247,
+      "momentum_minus_relative": 0.0008446762589927128,
+      "support_momentum_relative": 0.0004097212230214458,
+      "maximum_native_rotation_energy_J": 0.0,
+      "maximum_part_RKE_J": 0.0,
+      "physical_impact_qualified": false,
+      "support_final_momentum_relative": 1.7985611555924645e-07,
+      "support_raw_units": "Cumulative native impulse g mm/ms, convert *0.001 to N s; no second integration",
+      "independent_translation_KE_max_error_J": 2.2598518150979564e-07,
+      "original_review_retained": "wtc1_simulation_v8/output/aircraft_a10/r2/K01_DT0025/review.json",
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "frames": 4000
+      }
+    },
+    {
+      "case": {
+        "id": "K001_DT010",
+        "contact": true,
+        "Stfac": 0.001,
+        "dt_scale": 0.1
+      },
+      "created_utc": "2026-10-07T09:23:13.850214+00:00",
+      "checks": {
+        "binary_all_channels_match_native_converter": true,
+        "normal_engine_termination": true,
+        "finite_monotone_history": true,
+        "end_sample_within_2pct": true,
+        "mass_analytic": true,
+        "initial_KE_analytic": true,
+        "energy_closure": false,
+        "momentum_contact": true,
+        "support_momentum": true,
+        "native_rotation_zero": true,
+        "part_RKE_zero_expected": true,
+        "complete_rebound_speed": false,
+        "independent_translation_KE": false
+      },
+      "all_checks_pass": false,
+      "failed_checks": [
+        "energy_closure",
+        "complete_rebound_speed",
+        "independent_translation_KE"
+      ],
+      "native_binary_schema": {
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "all_channels_verified": true
+      },
+      "mass_kg": 0.0011120000000000001,
+      "initial_energy_J": 0.0005560000000000001,
+      "last_saved_time_ms": 0.399963,
+      "max_energy_residual_fraction": 0.03715810251798597,
+      "final_energy_residual_J": -2.065920000000009e-05,
+      "final_velocity_m_s": [
+        -0.9812458,
+        -0.9812458,
+        -0.9812458,
+        -0.9812458
+      ],
+      "final_raw_contact_impulse_Ns": 0.0022031520000000003,
+      "momentum_plus_relative": 3.9624973021582734,
+      "momentum_minus_relative": 0.003468947841726405,
+      "support_momentum_relative": 0.0017260341726617523,
+      "maximum_native_rotation_energy_J": 0.0,
+      "maximum_part_RKE_J": 0.0,
+      "physical_impact_qualified": false,
+      "support_final_momentum_relative": 1.7985611477924488e-07,
+      "support_raw_units": "Cumulative native impulse g mm/ms, convert *0.001 to N s; no second integration",
+      "independent_translation_KE_max_error_J": 9.471641404007643e-07,
+      "original_review_retained": "wtc1_simulation_v8/output/aircraft_a10/r2/K001_DT010/review.json",
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "frames": 1296
+      }
+    },
+    {
+      "case": {
+        "id": "K001_DT0025",
+        "contact": true,
+        "Stfac": 0.001,
+        "dt_scale": 0.025
+      },
+      "created_utc": "2026-10-07T09:23:16.166043+00:00",
+      "checks": {
+        "binary_all_channels_match_native_converter": true,
+        "normal_engine_termination": true,
+        "finite_monotone_history": true,
+        "end_sample_within_2pct": true,
+        "mass_analytic": true,
+        "initial_KE_analytic": true,
+        "energy_closure": false,
+        "momentum_contact": true,
+        "support_momentum": true,
+        "native_rotation_zero": true,
+        "part_RKE_zero_expected": true,
+        "complete_rebound_speed": false,
+        "independent_translation_KE": false
+      },
+      "all_checks_pass": false,
+      "failed_checks": [
+        "energy_closure",
+        "complete_rebound_speed",
+        "independent_translation_KE"
+      ],
+      "native_binary_schema": {
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "all_channels_verified": true
+      },
+      "mass_kg": 0.0011120000000000001,
+      "initial_energy_J": 0.0005560000000000001,
+      "last_saved_time_ms": 0.3999806,
+      "max_energy_residual_fraction": 0.037126798561151336,
+      "final_energy_residual_J": -2.0642400000000106e-05,
+      "final_velocity_m_s": [
+        -0.9812611,
+        -0.9812611,
+        -0.9812611,
+        -0.9812611
+      ],
+      "final_raw_contact_impulse_Ns": 0.0022031679999999997,
+      "momentum_plus_relative": 3.9625269784172663,
+      "momentum_minus_relative": 0.0005922113309350269,
+      "support_momentum_relative": 0.00029026079136674896,
+      "maximum_native_rotation_energy_J": 0.0,
+      "maximum_part_RKE_J": 0.0,
+      "physical_impact_qualified": false,
+      "support_final_momentum_relative": 3.5971223033849133e-07,
+      "support_raw_units": "Cumulative native impulse g mm/ms, convert *0.001 to N s; no second integration",
+      "independent_translation_KE_max_error_J": 1.580965949049204e-07,
+      "original_review_retained": "wtc1_simulation_v8/output/aircraft_a10/r2/K001_DT0025/review.json",
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "frames": 4000
+      }
+    },
+    {
+      "case": {
+        "id": "K1_DT0050",
+        "contact": true,
+        "Stfac": 1.0,
+        "dt_scale": 0.05
+      },
+      "created_utc": "2026-10-07T09:24:35.061511+00:00",
+      "checks": {
+        "binary_all_channels_match_native_converter": true,
+        "normal_engine_termination": true,
+        "finite_monotone_history": true,
+        "end_sample_within_2pct": true,
+        "mass_analytic": true,
+        "initial_KE_analytic": true,
+        "energy_closure": true,
+        "momentum_contact": true,
+        "support_momentum": true,
+        "native_rotation_zero": true,
+        "part_RKE_zero_expected": true,
+        "complete_rebound_speed": true,
+        "independent_translation_KE": false
+      },
+      "all_checks_pass": false,
+      "failed_checks": [
+        "independent_translation_KE"
+      ],
+      "native_binary_schema": {
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "all_channels_verified": true
+      },
+      "mass_kg": 0.0011120000000000001,
+      "initial_energy_J": 0.0005560000000000001,
+      "last_saved_time_ms": 0.3998612,
+      "max_energy_residual_fraction": 0.0018074999622303854,
+      "final_energy_residual_J": -1.0032000000001397e-06,
+      "final_velocity_m_s": [
+        -0.9990974,
+        -0.9990974,
+        -0.9990974,
+        -0.9990974
+      ],
+      "final_raw_contact_impulse_Ns": 0.002224405,
+      "momentum_plus_relative": 3.9994613309352522,
+      "momentum_minus_relative": 0.00479105215827325,
+      "support_momentum_relative": 0.0017602958633092217,
+      "maximum_native_rotation_energy_J": 0.0,
+      "maximum_part_RKE_J": 0.0,
+      "physical_impact_qualified": false,
+      "support_final_momentum_relative": 3.597122299484906e-07,
+      "support_raw_units": "Cumulative native impulse g mm/ms, convert *0.001 to N s; no second integration",
+      "independent_translation_KE_max_error_J": 9.786610722201344e-07,
+      "original_review_retained": "wtc1_simulation_v8/output/aircraft_a10/r2/K1_DT0050/review.json",
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 27,
+        "records_per_frame": 5,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          8,
+          192
+        ],
+        "frames": 2394
+      }
+    }
+  ],
+  "spin_controls": [
+    {
+      "case": {
+        "id": "SPIN_QUAD",
+        "contact": false,
+        "Stfac": 1.0,
+        "dt_scale": 0.1,
+        "spin_form": "QUAD",
+        "omega_rad_ms": 0.01,
+        "end_ms": 0.01
+      },
+      "checks": {
+        "binary_integrity": true,
+        "normal_termination": true,
+        "initial_global_RKE_matches_native_inertia": true,
+        "initial_part_RKE_matches_global": true,
+        "initial_angular_velocity_matches": true,
+        "initial_translation_zero": true
+      },
+      "failed_checks": [],
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 24,
+        "records_per_frame": 4,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          192
+        ],
+        "frames": 29
+      },
+      "initial_global_RKE_J": 1.8579670000000002e-06,
+      "initial_part_RKE_J": 1.8579670000000002e-06,
+      "predicted_inertia_sum_g_mm2": 37.159333333333336,
+      "runtime_effective_inertia_sum_g_mm2": 37.15934,
+      "reference_RKE_J": 1.857966666666667e-06,
+      "global_relative_error": 1.794075960085988e-07,
+      "part_relative_error": 0.0,
+      "scope": "Initial-state inertia/output test, translations fixed; no rigid-body physical spin or large-rotation qualification"
+    },
+    {
+      "case": {
+        "id": "SPIN_TRIA",
+        "contact": false,
+        "Stfac": 1.0,
+        "dt_scale": 0.1,
+        "spin_form": "TRIA",
+        "omega_rad_ms": 0.01,
+        "end_ms": 0.01
+      },
+      "checks": {
+        "binary_integrity": true,
+        "normal_termination": true,
+        "initial_global_RKE_matches_native_inertia": true,
+        "initial_part_RKE_matches_global": false,
+        "initial_angular_velocity_matches": true,
+        "initial_translation_zero": true
+      },
+      "failed_checks": [
+        "initial_part_RKE_matches_global"
+      ],
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 24,
+        "records_per_frame": 4,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          192
+        ],
+        "frames": 36
+      },
+      "initial_global_RKE_J": 2.4757440000000002e-06,
+      "initial_part_RKE_J": 9.313000000000001e-07,
+      "predicted_inertia_sum_g_mm2": 49.51488888888888,
+      "runtime_effective_inertia_sum_g_mm2": 49.51488,
+      "reference_RKE_J": 2.4757444444444443e-06,
+      "global_relative_error": 1.7951951584927393e-07,
+      "part_relative_error": 0.6238301386339463,
+      "scope": "Initial-state inertia/output test, translations fixed; no rigid-body physical spin or large-rotation qualification"
+    },
+    {
+      "case": {
+        "id": "SPIN_BEAM",
+        "contact": false,
+        "Stfac": 1.0,
+        "dt_scale": 0.1,
+        "spin_form": "BEAM",
+        "omega_rad_ms": 0.01,
+        "end_ms": 0.01
+      },
+      "checks": {
+        "binary_integrity": true,
+        "normal_termination": true,
+        "initial_global_RKE_matches_native_inertia": true,
+        "initial_part_RKE_matches_global": false,
+        "initial_angular_velocity_matches": true,
+        "initial_translation_zero": true
+      },
+      "failed_checks": [
+        "initial_part_RKE_matches_global"
+      ],
+      "native_binary": {
+        "all_channels_match": true,
+        "header_records": 24,
+        "records_per_frame": 4,
+        "sizes_bytes": [
+          4,
+          88,
+          72,
+          192
+        ],
+        "frames": 26
+      },
+      "initial_global_RKE_J": 3.2071930000000003e-07,
+      "initial_part_RKE_J": 0.0,
+      "predicted_inertia_sum_g_mm2": 6.414386666666666,
+      "runtime_effective_inertia_sum_g_mm2": 6.414386,
+      "reference_RKE_J": 3.2071933333333334e-07,
+      "global_relative_error": 1.0393303380446132e-07,
+      "part_relative_error": 0.9999998960669662,
+      "scope": "Initial-state inertia/output test, translations fixed; no rigid-body physical spin or large-rotation qualification"
+    }
+  ],
+  "comparisons": [
+    {
+      "type": "original_half_dt",
+      "cases": [
+        "K1_DT080",
+        "K1_DT040"
+      ],
+      "common_time_ms": 0.3977045,
+      "impulse_difference_fraction": 0.03000291684768758,
+      "maximum_energy_residual_change_fraction_of_initial": 0.13458309352517986,
+      "impulse_pass": false,
+      "energy_change_pass": false,
+      "both_cases_individually_pass": false
+    },
+    {
+      "type": "original_half_dt",
+      "cases": [
+        "K01_DT080",
+        "K01_DT040"
+      ],
+      "common_time_ms": 0.3978279,
+      "impulse_difference_fraction": 3.878312969928022e-05,
+      "maximum_energy_residual_change_fraction_of_initial": 0.00220995683453222,
+      "impulse_pass": true,
+      "energy_change_pass": true,
+      "both_cases_individually_pass": false
+    },
+    {
+      "type": "original_half_dt",
+      "cases": [
+        "K001_DT080",
+        "K001_DT040"
+      ],
+      "common_time_ms": 0.3978958,
+      "impulse_difference_fraction": 0.00017929558170287345,
+      "maximum_energy_residual_change_fraction_of_initial": 0.000855208633093664,
+      "impulse_pass": true,
+      "energy_change_pass": true,
+      "both_cases_individually_pass": false
+    },
+    {
+      "type": "fine_half_dt",
+      "cases": [
+        "K1_DT0050",
+        "K1_DT0025"
+      ],
+      "common_time_ms": 0.3998612,
+      "impulse_difference_fraction": 0.000306598843286038,
+      "maximum_energy_residual_change_fraction_of_initial": 0.0003832193866906799,
+      "impulse_pass": true,
+      "energy_change_pass": true,
+      "both_cases_individually_pass": false
+    },
+    {
+      "type": "fourfold_time_refinement",
+      "cases": [
+        "K1_DT010",
+        "K1_DT0025"
+      ],
+      "common_time_ms": 0.3997908,
+      "impulse_difference_fraction": 0.00440685433069801,
+      "maximum_energy_residual_change_fraction_of_initial": 0.0032402892086328614,
+      "impulse_pass": true,
+      "energy_change_pass": true,
+      "both_cases_individually_pass": false
+    },
+    {
+      "type": "fourfold_time_refinement",
+      "cases": [
+        "K01_DT010",
+        "K01_DT0025"
+      ],
+      "common_time_ms": 0.3997564,
+      "impulse_difference_fraction": 1.5784280299861704e-05,
+      "maximum_energy_residual_change_fraction_of_initial": 4.881095647475166e-05,
+      "impulse_pass": true,
+      "energy_change_pass": true,
+      "both_cases_individually_pass": false
+    },
+    {
+      "type": "fourfold_time_refinement",
+      "cases": [
+        "K001_DT010",
+        "K001_DT0025"
+      ],
+      "common_time_ms": 0.399963,
+      "impulse_difference_fraction": 7.262269604217456e-06,
+      "maximum_energy_residual_change_fraction_of_initial": 3.1303956834635716e-05,
+      "impulse_pass": true,
+      "energy_change_pass": true,
+      "both_cases_individually_pass": false
+    }
+  ],
+  "integrity_only_pass": true,
+  "all_declared_checks_pass": false,
+  "qualified_1D_numerical_contact_cases": [],
+  "whole_aircraft_cases": 0,
+  "main_solver_jobs": 17,
+  "old_solver_reruns": 0,
+  "native_global_initial_inertias_identified_for_tested_forms": true,
+  "native_part_RKE_ledger_qualified": false,
+  "spatial_convergence_tested": false,
+  "contact_option_transferred_to_aircraft": false,
+  "energy_cause_identified": false,
+  "physical_impact_qualified": false,
+  "next_iteration": "AIRCRAFT-A11"
+}

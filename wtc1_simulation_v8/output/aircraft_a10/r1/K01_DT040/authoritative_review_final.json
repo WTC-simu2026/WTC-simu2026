@@ -1,0 +1,80 @@
+{
+  "case": {
+    "id": "K01_DT040",
+    "contact": true,
+    "Stfac": 0.01,
+    "dt_scale": 0.4
+  },
+  "created_utc": "2026-10-07T09:19:49.102774+00:00",
+  "checks": {
+    "binary_all_channels_match_native_converter": true,
+    "normal_engine_termination": true,
+    "finite_monotone_history": true,
+    "end_sample_within_2pct": true,
+    "mass_analytic": true,
+    "initial_KE_analytic": true,
+    "energy_closure": false,
+    "momentum_contact": false,
+    "support_momentum": false,
+    "native_rotation_zero": true,
+    "part_RKE_zero_expected": true,
+    "complete_rebound_speed": true
+  },
+  "all_checks_pass": false,
+  "failed_checks": [
+    "energy_closure",
+    "momentum_contact",
+    "support_momentum"
+  ],
+  "native_binary_schema": {
+    "header_records": 27,
+    "records_per_frame": 5,
+    "sizes_bytes": [
+      4,
+      88,
+      72,
+      8,
+      192
+    ],
+    "all_channels_verified": true
+  },
+  "mass_kg": 0.0011120000000000001,
+  "initial_energy_J": 0.0005560000000000001,
+  "last_saved_time_ms": 0.3996068,
+  "max_energy_residual_fraction": 0.012591174460431856,
+  "final_energy_residual_J": -6.852900000000098e-06,
+  "final_velocity_m_s": [
+    -0.9938182,
+    -0.9938182,
+    -0.9938182,
+    -0.9938182
+  ],
+  "final_raw_contact_impulse_Ns": 0.0022174589999999997,
+  "momentum_plus_relative": 3.9879361510791367,
+  "momentum_minus_relative": 0.044214064748201505,
+  "support_momentum_relative": 0.021918129496402882,
+  "maximum_native_rotation_energy_J": 0.0,
+  "maximum_part_RKE_J": 0.0,
+  "physical_impact_qualified": false,
+  "support_final_momentum_relative": 3.9000078146960594e-16,
+  "support_raw_units": "Cumulative native impulse g mm/ms, convert *0.001 to N s; no second integration",
+  "independent_translation_KE_max_error_J": 1.2279619439421383e-05,
+  "exploratory_checks_not_predeclared": {
+    "independent_translation_KE_at_1e_minus_9J": false
+  },
+  "independent_translation_KE_temporal_alignment_qualified": false,
+  "original_review_retained": "wtc1_simulation_v8/output/aircraft_a10/r1/K01_DT040/review.json",
+  "native_binary": {
+    "all_channels_match": true,
+    "header_records": 27,
+    "records_per_frame": 5,
+    "sizes_bytes": [
+      4,
+      88,
+      72,
+      8,
+      192
+    ],
+    "frames": 302
+  }
+}

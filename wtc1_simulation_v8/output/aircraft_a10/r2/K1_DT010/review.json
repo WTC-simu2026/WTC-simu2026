@@ -1,0 +1,58 @@
+{
+  "case": {
+    "id": "K1_DT010",
+    "contact": true,
+    "Stfac": 1.0,
+    "dt_scale": 0.1
+  },
+  "created_utc": "2026-10-07T09:23:05.706492+00:00",
+  "checks": {
+    "binary_all_channels_match_native_converter": true,
+    "normal_engine_termination": true,
+    "finite_monotone_history": true,
+    "end_sample_within_2pct": true,
+    "mass_analytic": true,
+    "initial_KE_analytic": true,
+    "energy_closure": true,
+    "momentum_contact": false,
+    "support_momentum": false,
+    "native_rotation_zero": true,
+    "part_RKE_zero_expected": true,
+    "complete_rebound_speed": true
+  },
+  "all_checks_pass": false,
+  "failed_checks": [
+    "momentum_contact",
+    "support_momentum"
+  ],
+  "native_binary_schema": {
+    "header_records": 27,
+    "records_per_frame": 5,
+    "sizes_bytes": [
+      4,
+      88,
+      72,
+      8,
+      192
+    ],
+    "all_channels_verified": true
+  },
+  "mass_kg": 0.0011120000000000001,
+  "initial_energy_J": 0.0005560000000000001,
+  "last_saved_time_ms": 0.3997908,
+  "max_energy_residual_fraction": 0.004664569784172567,
+  "final_energy_residual_J": -2.5922000000000054e-06,
+  "final_velocity_m_s": [
+    -0.9976662,
+    -0.9976662,
+    -0.9976662,
+    -0.9976662
+  ],
+  "final_raw_contact_impulse_Ns": 0.002233566,
+  "momentum_plus_relative": 4.006268884892087,
+  "momentum_minus_relative": 0.02487220377697817,
+  "support_momentum_relative": 1.988783199781215,
+  "maximum_native_rotation_energy_J": 0.0,
+  "maximum_part_RKE_J": 0.0,
+  "physical_impact_qualified": false
+}
