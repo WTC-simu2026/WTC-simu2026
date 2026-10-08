@@ -1,0 +1,149 @@
+{
+  "created_utc": "2026-10-08T07:44:42.523935+00:00",
+  "delivered": true,
+  "static_module": {
+    "schema_version": 1,
+    "created_utc": "2026-10-07T14:13:26.297399+00:00",
+    "module_id": "AIRCRAFT-A11-BOEING-PARALLEL-ELASTIC-PORTS",
+    "status": "STATIC_NUMERICAL_MODULE_READY_FOR_MAIN_AGENT_REVIEW_NATIVE_INTEGRATION_BLOCKED",
+    "ready_for_main_agent_review": true,
+    "ready_for_solver_integration": false,
+    "ready_for_physical_collision": false,
+    "physical_validation": false,
+    "accepted_revision": "r1",
+    "all_module_static_checks_pass": true,
+    "all_original_declared_checks_pass": false,
+    "first_failed_CG_check_retained": true,
+    "harness_before_after_and_final_PASS": true,
+    "deliverables": {
+      "inventory": "wtc1_simulation_v8/data/aircraft_a11_boeing_parallel/inventory_r1.json",
+      "configuration": "wtc1_simulation_v8/data/aircraft_a11_boeing_parallel/construction_config.json",
+      "generator": "wtc1_simulation_v8/scripts/aircraft_a11_boeing_parallel/generator.py",
+      "audit": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/r1/audit_summary.json",
+      "report": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/rapport_boeing_parallel.md",
+      "integration_spec": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/integration_spec.json",
+      "handoff": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/HANDOFF_TO_MAIN_AGENT.md",
+      "final_validation": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/final_validation.json",
+      "case_patches": {
+        "SOFT": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/r1/SOFT/assembly_patch.json",
+        "BASE": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/r1/BASE/assembly_patch.json",
+        "STIFF": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/r1/STIFF/assembly_patch.json"
+      },
+      "artifact_manifest": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/artifact_manifest_r1.json",
+      "delivery_verification": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/delivery_verification.json"
+    },
+    "numerical_change": {
+      "six_DOF_ports": 12,
+      "sensitivity_scales": [
+        0.1,
+        1,
+        10
+      ],
+      "hypothetical": true,
+      "mass_delta_kg": 0,
+      "geometric_CG_delta_m": [
+        0,
+        0,
+        0
+      ],
+      "geometric_inertia_delta_relative": 0,
+      "native_mass_inertia_after_patch_verified": false,
+      "materials_or_mass_budgets_changed": false
+    },
+    "blocking_items": [
+      "No installed-build native TYPE8/skew exporter/witness executed",
+      "Native nodal/rotational inertia and local RKE ledger require A11 main review",
+      "Small-rotation law only; crushing, rupture and self-contact absent",
+      "Unresolved inherited duplicate tail beam/triangle intent",
+      "Historical internal construction, connection stiffness/strength and impact remain unknown"
+    ],
+    "preservation": {
+      "targeted_old_files_hash_verified": 47,
+      "V11F_V11R_metadata_hash_verified": 23,
+      "old_solver_reruns": 0,
+      "archive_general_scans": 0,
+      "main_agent_files_written": 0,
+      "global_state_registry_publication_handoffs_written": 0,
+      "old_rejections_preserved": true
+    },
+    "not_performed": [
+      "Native solver/Starter",
+      "GPU",
+      "Blender",
+      "Software installation",
+      "GitHub/X/Yoremi publication",
+      "External messaging",
+      "V11S/I02I-M"
+    ],
+    "main_agent_next_action": "Review inventory_r1 and retained errors, then realize/qualify native adapter in its own new iteration before contact/impact integration; no registration by parallel worker.",
+    "delivery_manifest_revision": "r1; original manifest retained after detecting finalizer log was hashed before close",
+    "delivery_first_error_retained": "rejected/finalize_manifest_r0_verification.json"
+  },
+  "native_v2_module": {
+    "schema_version": 2,
+    "created_utc": "2026-10-07T17:01:18.170063+00:00",
+    "module_id": "AIRCRAFT-A11-BOEING-PARALLEL-NATIVE-V2",
+    "status": "NATIVE_EXPORT_CANDIDATE_AND_CONSTITUTIVE_WITNESS_READY_STRICT_INERTIA_CONTRACT_BLOCKED",
+    "ready_for_main_agent_review": true,
+    "ready_for_native_export_as_diagnostic_candidate": true,
+    "ready_for_solver_integration": false,
+    "ready_for_physical_collision": false,
+    "physical_validation": false,
+    "all_constitutive_witness_checks_pass": true,
+    "native_constitutive_cases": 6,
+    "native_constitutive_checks": 96,
+    "all_original_declared_checks_pass": false,
+    "native_whole_starter_all_checks_pass": false,
+    "native_post_RBE3_inertia_after_patch_verified": false,
+    "harness_before_after_PASS": true,
+    "old_static_revision_and_manifest_preserved": true,
+    "deliverables": {
+      "native_inventory_extension": "wtc1_simulation_v8/data/aircraft_a11_boeing_parallel/native_adapter_v2/inventory_native_extension.json",
+      "unchanged_inventory": "wtc1_simulation_v8/data/aircraft_a11_boeing_parallel/inventory_r1.json",
+      "configuration": "wtc1_simulation_v8/data/aircraft_a11_boeing_parallel/native_adapter_v2/predeclaration.json",
+      "accepted_witness_extension": "wtc1_simulation_v8/data/aircraft_a11_boeing_parallel/native_adapter_v2/witness_r4_extension.json",
+      "native_adapter": "wtc1_simulation_v8/scripts/aircraft_a11_boeing_parallel/native_adapter_v2.py",
+      "witness_generator": "wtc1_simulation_v8/scripts/aircraft_a11_boeing_parallel/native_witness_v2_r4.py",
+      "audit": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/native_adapter_v2/audit_summary.json",
+      "report": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/native_adapter_v2/rapport_native_v2.md",
+      "integration_spec": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/native_adapter_v2/integration_spec.json",
+      "handoff": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/native_adapter_v2/HANDOFF_TO_MAIN_AGENT.md",
+      "preservation": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/native_adapter_v2/preservation_after.json",
+      "retained_errors": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/native_adapter_v2/retained_error_index.json",
+      "artifact_manifest": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/native_adapter_v2/artifact_manifest.json",
+      "delivery_verification": "wtc1_simulation_v8/output/aircraft_a11_boeing_parallel/native_adapter_v2/delivery_verification.json"
+    },
+    "mechanical_changes": {
+      "ports": 12,
+      "beam_endpoint_rewrites": 12,
+      "mass_budget_or_material_changes": false,
+      "candidate_scene": "A09 retained, not main A11/A12",
+      "new_ports_inherited_velocity_groups_extended": false,
+      "fixed_skew_small_rotation_only": true
+    },
+    "native_execution": {
+      "wall_seconds_all_attempts": 28.325320600008126,
+      "cap_s": 120,
+      "CPU_threads": 1,
+      "GPU": false,
+      "whole_aircraft_Engine": false,
+      "old_Engine_reruns": 0
+    },
+    "blocking_items": [
+      "Strict zero-inertia TYPE8 not accepted by installed Starter",
+      "Element dt at zero spring mass is zero; small forced witness needs nodal dt and support at both ends",
+      "No free dynamics, co-rotation or post-RBE3 inertia ledger qualified",
+      "Main A11 nose-contact energy remains outside this module scope",
+      "New ports must explicitly inherit main-scene kinematics",
+      "No measured historical stiffness/strength; inherited duplicates unresolved"
+    ],
+    "main_agent_next_action": "Keep A12 nose checks independent. Review zero-inertia violation, define new native inertial/kinematic parent contract and free-motion witness before contact integration.",
+    "global_state_registry_publication_handoffs_written": false,
+    "V11F_V11R_preserved": true,
+    "V11S_I02IM_performed": false,
+    "external_actions": []
+  },
+  "main_agent_review": "12 ports and six constitutive witnesses exist. Strict inertia contract and free dynamics remain blocked; no integration into A12. Initial witness matrix pass cannot qualify aircraft collision.",
+  "integrated": false,
+  "materials_or_mass_budgets_changed": false
+}

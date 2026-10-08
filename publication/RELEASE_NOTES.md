@@ -1,13 +1,14 @@
-# AIRCRAFT-A10 + AIRCRAFT-A11 — 7 octobre 2026
+# Instantané A12+A13 — 8 octobre 2026
 
-Le témoin isolé A10 sépare les pertes de contact et l’attribution native des inerties. A11 construit une scène où le nez de l’avion couplé entre en contact avec la façade représentative, au lieu du témoin déplacé devant les moteurs.
+A12 retire le reste de l'avion et RBE3 pour isoler le premier contact du nez. Onze cas instrumentés acceptés, quatre niveaux de maillage et un premier essai libre conservé avec instrumentation rejetée. Inertie initiale vérifiée, mais fermeture énergétique locale et convergence spatiale échouées. Le témoin LAW1 conserve la masse surfacique, sans équivalence mécanique avec le sandwich.
 
-- A10 : 17 nouveaux Engine et un Starter rejeté conservé ; aucun ancien calcul relancé. Les critères du contact Stfac1 passent au pas réduit dans le témoin contraint 1D. Les variantes plus souples et le ledger RKE par pièce restent non qualifiés. Premières erreurs de syntaxe/lecteurs et seuil exploratoire ajouté après calcul explicitement conservés.
-- A11 : témoin libre et trois contacts sur 0,4 ms, avec réduction du pas ; masses, matériaux et RBE3 hérités inchangés. Premier contact du nez vers 0,225 ms. La perte locale d’énergie persiste et bloque le passage à 1 ms selon les critères déclarés. Aucun résultat de première seconde ou de traversée historique.
-- Configuration, unités, scripts, sorties natives, bilans, preuves de lecture indépendante, rapport, passation et vue des états sont conservés. L’aperçu GUI de la vue hors ligne reste non vérifié ; données et syntaxe vérifiées.
-- Aucune nouvelle analyse d’archive, aucune cible de dégâts historiques/NIST, aucun transfert de rupture/érosion ni qualification de l’écrasement. V11F/V11R préservées ; V11S/I02I-M différées. Température imposée distincte d’un incendie calculé ; Blender reste une visualisation.
+A13 : treize nouveaux cas principaux et treize reprises observateur, sans erreur ou avertissement Starter. TYPE25 ferme le budget énergétique dans cinq cas radôme et passe le rebond conservatif du petit témoin à 200 m/s. Le raffinement 3456→13824 change encore l'impulsion de 23,53 % et l'énergie générée de 38,30 % : échecs à 10 % conservés. DKT18 en gardant TYPE7 ne ferme pas l'énergie. Les essais de demi-pas stables ne compensent pas les échecs spatiaux. La reconstruction v+dt·a/2 réduit le mismatch KE/RKE, mais reste un diagnostic, sans ajout au ledger ou changement rétroactif de critère.
 
-La vérification de publication porte sur la conservation et l’intégrité des fichiers ; elle ne transforme pas les critères scientifiques échoués en validation physique. Sources tierces référencées et exclues de la redistribution ; anciennes releases et archives conservées. Aucun X ni action Yoremi.
+Tous les résultats définitifs A13 sont dans campaign_review.json. authoritative_review.json est un agrégat intermédiaire conservé pendant l'exécution ; il n'est pas la revue finale. Les réactions cumulatives principales sont séparées de la reprise observateur qui réinitialise REAC. Aucun ancien solveur relancé. Un nouveau contrôle SHA-256 de 7240 fichiers antérieurs (34,64 Go) ne trouve aucune différence.
+
+La fenêtre reste 0,4 ms, sans avion complet, écrasement, délamination, fracture ni impact historique qualifiés. Le module Boeing parallèle demeure séparé. Les animations sont des coordonnées natives à déplacement ×1, avec lecture ralentie et temps en millisecondes. L'intégrité de publication et la réussite CI ne valident pas la physique.
+
+Archives complémentaires A12+A13 uniquement. Restaurer aussi les archives précédentes, puis lancer les outils de vérification de l'inventaire public. Empreintes SHA-256, échecs et tentatives conservés ; aucune archive antérieure reconstruite.
 
 
-5 archives complémentaires ; 64 archives précédentes conservées. Sources externes exclues, scripts et résultats propres sous MIT. Vérification de publication sans relancer les solveurs.
+10 archives complémentaires ; 69 archives précédentes conservées. Sources externes exclues, scripts et résultats propres sous MIT. Vérification de publication sans relancer les solveurs.

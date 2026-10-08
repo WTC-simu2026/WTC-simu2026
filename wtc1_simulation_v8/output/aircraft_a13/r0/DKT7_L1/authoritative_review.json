@@ -1,0 +1,136 @@
+{
+  "case": {
+    "id": "DKT7_L1",
+    "witness": false,
+    "contact": true,
+    "contact_type": 7,
+    "simple": false,
+    "fine": true,
+    "refinement_levels": 1,
+    "Istf": 4,
+    "Ish3n": 30,
+    "dt_scale": 0.05,
+    "end_ms": 0.4
+  },
+  "created_utc": "2026-10-08T08:33:47.628529+00:00",
+  "checks": {
+    "native_CSV_all_channels_verified": true,
+    "starter_zero_errors_warnings": true,
+    "normal_engine_termination": true,
+    "observer_outputs_preserved": true,
+    "finite_monotone_history": true,
+    "analytic_mass": true,
+    "mass_constant": true,
+    "zero_added_mass": true,
+    "supports_fixed": true,
+    "no_external_work": true,
+    "no_plastic_work": true,
+    "zero_spring": true,
+    "energy_global": true,
+    "energy_local": false,
+    "momentum_support": true,
+    "momentum_contact_support": true,
+    "independent_translation_KE_change": false,
+    "independent_momentum_change": true
+  },
+  "all_checks_pass": false,
+  "failed_checks": [
+    "energy_local",
+    "independent_translation_KE_change"
+  ],
+  "main_last_time_ms": 0.3997605,
+  "actual_end_ms": 0.400434673,
+  "onset_ms": 0.2257962,
+  "mass_kg": 41.06272362518311,
+  "initial_KE_J": 821849.9,
+  "final_impulse_Ns": [
+    -26.93775,
+    -4.603719,
+    1.542165e-15
+  ],
+  "final_generated_J": 2469.7519843140003,
+  "final_energy_residual_J": -1228.4680156860268,
+  "max_energy_residual_J": 1228.4680156860268,
+  "max_local_residual_fraction": 8.96742985280596,
+  "main_support_residual_Ns": 0.12710922332988928,
+  "main_contact_support_residual_Ns": 0.3013438701179385,
+  "opposite_contact_support_residual_Ns": 54.59899455221658,
+  "max_dense_KE_change_error_J": 37.09999999997672,
+  "max_dense_momentum_error_Ns": 0.18712629425039726,
+  "final_velocity_m_s": [
+    -199.30150877461713,
+    5.126928260393875,
+    2.0000239656892784
+  ],
+  "timing_candidates": [
+    {
+      "factor": 0,
+      "max_KE_change_difference_J": 37.09999999997672,
+      "max_momentum_change_difference_Ns": 0.18712629425039726,
+      "max_C0_RKE_difference_J": 0.0026190222536403573,
+      "no_acceptance_credit": true,
+      "ledger_unchanged": true
+    },
+    {
+      "factor": -0.5,
+      "max_KE_change_difference_J": 53.09030177490786,
+      "max_momentum_change_difference_Ns": 0.26758620863847515,
+      "max_C0_RKE_difference_J": 0.005138967085334872,
+      "no_acceptance_credit": true,
+      "ledger_unchanged": true
+    },
+    {
+      "factor": 0.5,
+      "max_KE_change_difference_J": 21.18458168313373,
+      "max_momentum_change_difference_Ns": 0.10666640950466012,
+      "max_C0_RKE_difference_J": 0.00038399552517820457,
+      "no_acceptance_credit": true,
+      "ledger_unchanged": true
+    }
+  ],
+  "native_initial_inertia": {
+    "native_tensor_kg_m2": [
+      [
+        71.7790787,
+        6.68558149e-17,
+        -1.58665707e-15
+      ],
+      [
+        6.68558149e-17,
+        51.247865700000006,
+        0.00126168691
+      ],
+      [
+        -1.58665707e-15,
+        0.00126168691,
+        47.122165900000006
+      ]
+    ],
+    "C0_predicted_tensor_kg_m2": [
+      [
+        71.77907873129979,
+        -5.447031714567174e-16,
+        -3.382710778154774e-16
+      ],
+      [
+        -5.447031714567174e-16,
+        51.24786566642669,
+        0.0012616492058892077
+      ],
+      [
+        -3.382710778154774e-16,
+        0.0012616492058892077,
+        47.12216596914486
+      ]
+    ],
+    "C0_algorithm_relative_error": 9.633009318421912e-10,
+    "C0_formula_applicable": false,
+    "initial_C0_inertia_consistent": null,
+    "source_binary_equivalence_established": false,
+    "dynamic_RKE_qualified": false
+  },
+  "observer_REAC_endpoint_used_for_acceptance": false,
+  "main_native_reactions_not_integrated": true,
+  "physical_impact_qualified": false,
+  "whole_aircraft_extension_allowed": false
+}

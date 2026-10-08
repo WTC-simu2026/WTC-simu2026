@@ -1,0 +1,67 @@
+{
+  "created_utc": "2026-10-08T07:38:19.239251+00:00",
+  "declared_before_new_solver": true,
+  "decision": "Both sandwich and simple control fail energy locally; deficit decreases on coplanar refinement. Add third/fourth spatial levels and one half-step without new material/contact tuning. No coupled extension.",
+  "decision_evidence": [
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a12/r1/SAND_HALF/review.json",
+      "sha256": "c70639bc7cae3cd8f16b4195ce8870f64d29be4a6906345097bd8fc09a47b84c"
+    },
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a12/r1/SAND_FINE/review.json",
+      "sha256": "e0327376f1689fadf55b32234221a5328e2d2f27a11184933b1a49000261625f"
+    },
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a12/r1/SIMPLE/review.json",
+      "sha256": "ef344030e65ba61b114e41200212cca6b2c58c57c476d250f7bd1ae3af2f889a"
+    },
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a12/r1/SIMPLE_FINE/review.json",
+      "sha256": "a31ea19539e8cf4d046f376d72063b9deb30eff876210533f83fd1de0fec23a8"
+    }
+  ],
+  "cases": [
+    {
+      "id": "SAND_FINE2",
+      "contact": true,
+      "simple": false,
+      "fine": true,
+      "refinement_levels": 2,
+      "Istf": 4,
+      "dt_scale": 0.05
+    },
+    {
+      "id": "SAND_FINE2_HALF",
+      "contact": true,
+      "simple": false,
+      "fine": true,
+      "refinement_levels": 2,
+      "Istf": 4,
+      "dt_scale": 0.025
+    },
+    {
+      "id": "SAND_FINE3",
+      "contact": true,
+      "simple": false,
+      "fine": true,
+      "refinement_levels": 3,
+      "Istf": 4,
+      "dt_scale": 0.05
+    },
+    {
+      "id": "SIMPLE_FINE2",
+      "contact": true,
+      "simple": true,
+      "fine": true,
+      "refinement_levels": 2,
+      "Istf": 4,
+      "dt_scale": 0.05
+    }
+  ],
+  "end_ms_unchanged": 0.4,
+  "acceptance_unchanged": true,
+  "estimated_minutes": [
+    2,
+    8
+  ]
+}

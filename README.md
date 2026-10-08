@@ -8,13 +8,13 @@ Le projet teste des mécanismes, des hypothèses explicites et des plages de par
 
 ## Où en est la simulation ?
 
-Instantané du **7 octobre 2026**, mis à jour jusqu’à **AIRCRAFT-A11**. Suite : **AIRCRAFT-A12**. Onze itérations de la branche avion/contact, dont dix comportant l’avion entier ; A10 est un témoin isolé. Cette publication conserve les critères échoués et ne qualifie ni l’impact historique, ni l’écrasement, ni l’effondrement réel.
+Instantané du **8 octobre 2026** : **AIRCRAFT-A13 terminée**, prochaine étape **AIRCRAFT-A14**. Le registre contient 132 expériences. Les anciennes mentions V8H/V11H sont historiques.
 
-A10 isole le contact élastique sans RBE3 : le témoin contraint ferme ses bilans à Stfac1 avec réduction du pas, tandis que des contacts plus souples conservent des pertes. Les inerties natives initiales des quads, triangles et poutres reproduisent le RKE global initial, mais les canaux RKE par pièce restent non qualifiés. REAC brut est une impulsion cumulée dans le build testé.
+A12 isole le radôme, vérifie l'inertie initiale et conserve les échecs de fermeture énergétique et de convergence sur quatre maillages. A13 ajoute treize témoins : le contact TYPE25 ferme l'énergie du radôme, mais l'impulsion varie encore de **23,53 %** entre 3456 et 13824 triangles (seuil 10 %). Le demi-pas ne change cette impulsion que de 0,093 %. Le témoin de rebond à 200 m/s passe avec TYPE25 ; TYPE7 perd environ 20,8 % de son énergie initiale. Le contrôle DKT18/TYPE7 conserve un déficit. La correction temporelle v+dt·a/2 reste un diagnostic sans requalification rétroactive.
 
-A11 remet la façade représentative devant le nez et active le contact des surfaces extérieures de l’avion couplé, avec les mêmes masses, matériaux et assemblages. Le premier contact du nez apparaît vers **0,225 ms**, avant les ailes et moteurs. Trois pas de temps sont comparés sur **0,4 ms = 0,0004 s** ; le déficit énergétique local persiste malgré des impulsions proches. Ce critère échoué bloque le prolongement déclaré à 1 ms. Les premières secondes, la rupture, la délamination et la traversée historique ne sont pas calculées ou qualifiées.
+Lire le [rapport A12](wtc1_simulation_v8/output/aircraft_a12/rapport_aircraft_a12.md), le [rapport A13](wtc1_simulation_v8/output/aircraft_a13/rapport_aircraft_a13.md), les [résultats définitifs A13](wtc1_simulation_v8/output/aircraft_a13/campaign_review.json) et la [passation A14](harness/handoffs/WTC1_AIRCRAFT_A13_HANDOFF.md). L'agrégat intermédiaire A13 est conservé comme tentative incomplète et remplacé scientifiquement par campaign_review.json.
 
-La vue hors ligne utilise les états natifs, avec déplacement ×1 et temps physique en millisecondes ; elle reste une visualisation. Les données d’entrée représentatives de façade héritent de sources NIST, sans utiliser les dégâts observés ou les sorties NIST comme cibles de réglage. Archives et anciennes itérations restent inchangées. V11F/V11R préservées ; V11S/I02I-M différées.
+Le temps radôme reste **0,4 milliseconde**, soit **0,0004 seconde**. Premières secondes, rupture, écrasement, pénétration historique et effondrement ne sont pas qualifiés. Le module Boeing parallèle v2 reste séparé ; le contrat d'inertie et la dynamique libre demeurent bloqués. V11F/V11R et les branches différées sont conservées.
 
 
 ## Ce qui est publié
@@ -26,9 +26,9 @@ La vue hors ligne utilise les états natifs, avec déplacement ×1 et temps phys
 - `outputs/` : calculs exploratoires antérieurs et audits complémentaires. Leurs affirmations se lisent avec leurs propres limites ; leur présence n'est pas une validation.
 - `publication/` : inventaire complet, empreintes SHA-256, règles de publication, licences tierces et liste motivée des fichiers externes non redistribués.
 
-Inventaire courant : **7,254 fichiers scientifiques dans Git**, **9,644 sorties dans 69 archives**.
+Inventaire courant : **7,858 fichiers scientifiques dans Git**, **10,314 sorties dans 79 archives**.
 
-Restaurer les 64 anciennes archives des releases précédentes, puis les 5 archives [A10+A11](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-07-aircraft-a10-a11). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
+Restaurer les 69 anciennes archives des releases précédentes, puis les 10 archives [A12+A13](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-08-aircraft-a12-a13). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
 
 ## Consulter et vérifier sans relancer les solveurs
 
@@ -57,7 +57,7 @@ Voir [REPRODUCIBILITY.md](REPRODUCIBILITY.md). La base Python utilise NumPy et P
 
 ## Prochaine étape
 
-AIRCRAFT-A12 : isoler le contact du nez/radôme sans redistribution RBE3, vérifier les inerties et le bilan natif LAW25/TYPE19, comparer à un témoin élastique simple et à une formulation de contact déclarée, puis compléter le contrôle spatial. Réutiliser A10/A11 et conserver chaque échec. Ne pas prolonger comme impact qualifié tant que le bilan local ne ferme pas. Examiner le module mécanique Boeing parallèle lorsqu’il est réellement livré, avec un contrôle explicite des masses, assemblages et paramètres hypothétiques.
+**AIRCRAFT-A14** : contrôler la dépendance spatiale de la pénalité de contact sur une plaque plane à 200 m/s, avec aire, masse et gap fixes. Examiner le nombre de nœuds actifs et l'aire tributaire, puis déclarer séparément tout contact pondéré par aire. Aucun Stfac choisi sur les dégâts NIST. Qualifier d'abord les bilans et le demi-pas du témoin analytique, puis réessayer le radôme si ces contrôles passent. Vérifier la convention temporelle native à partir des sorties et de la source exacte. Aucun allongement à l'avion complet avant fermeture locale et convergence spatiale ; premières secondes non calculées.
 
 
 ## Discipline de preuve

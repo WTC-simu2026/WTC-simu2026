@@ -1,0 +1,198 @@
+{
+  "case": {
+    "id": "SIMPLE",
+    "contact": true,
+    "simple": true,
+    "fine": false,
+    "Istf": 4,
+    "dt_scale": 0.05
+  },
+  "created_utc": "2026-10-08T07:34:54.623745+00:00",
+  "checks": {
+    "native_CSV_all_channels_verified": true,
+    "starter_zero_errors_warnings": true,
+    "normal_engine_termination": true,
+    "observer_outputs_preserved": true,
+    "finite_monotone_history": true,
+    "native_mass_preserved": true,
+    "analytic_radome_mass": true,
+    "native_nodal_mass_lumping": true,
+    "zero_added_mass": true,
+    "connectivity_preserved": true,
+    "supports_fixed": true,
+    "no_external_work": true,
+    "no_plastic_work": true,
+    "zero_spring_channel": true,
+    "energy_global": false,
+    "energy_local": false,
+    "momentum_support": true,
+    "momentum_contact_support": true,
+    "independent_translation_KE_change": true,
+    "independent_momentum_change": true,
+    "part_IE_matches_global_IE": true
+  },
+  "all_checks_pass": false,
+  "failed_checks": [
+    "energy_global",
+    "energy_local"
+  ],
+  "actual_end_ms": 0.400310755,
+  "onset_ms": 0.2253324,
+  "radome_mass_kg": 41.06272229003907,
+  "analytic_mass_relative_error": 3.3892439290289203e-09,
+  "nodal_mass_relative_error": 3.222890416419644e-08,
+  "initial_KE_J": 821849.9,
+  "final_impulse_Ns": [
+    -420.83,
+    -55.455699200000005,
+    1.13406264e-13
+  ],
+  "final_generated_J": 51946.03125,
+  "max_energy_residual_J": 4737.045999999973,
+  "final_energy_residual_J": -4737.020750000025,
+  "max_local_residual_fraction": 15.298392158166639,
+  "max_independent_KE_change_error_J": 93.55019279313274,
+  "max_independent_momentum_error_Ns": 0.5302337573722886,
+  "native_global_rotation_J": 18777.252,
+  "native_part_channels": [
+    "SIMPLE_RADOME                             IE ",
+    "SIMPLE_RADOME                             KE ",
+    "SIMPLE_RADOME                             XMOM ",
+    "SIMPLE_RADOME                             YMOM ",
+    "SIMPLE_RADOME                             ZMOM ",
+    "SIMPLE_RADOME                             MASS ",
+    "SIMPLE_RADOME                             HE ",
+    "SIMPLE_RADOME                             RKE ",
+    "SIMPLE_RADOME                             PW "
+  ],
+  "native_part_RKE_qualified": false,
+  "native_inertia_reconstructed": false,
+  "physical_impact_qualified": false,
+  "full_aircraft_extension_allowed": false,
+  "seconds_impact_calculated": false,
+  "native_animation_states": 17,
+  "plastic_strain_samples": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    null
+  ],
+  "first_review_preserved": {
+    "path": "wtc1_simulation_v8/output/aircraft_a12/r1/SIMPLE/review.json",
+    "sha256": "ef344030e65ba61b114e41200212cca6b2c58c57c476d250f7bd1ae3af2f889a",
+    "failed_checks": [
+      "energy_global",
+      "energy_local",
+      "momentum_support",
+      "momentum_contact_support"
+    ]
+  },
+  "support_comparison_window_ms": [
+    0.0,
+    0.3999146
+  ],
+  "observer_reaction_reset_detected": true,
+  "observer_REAC_endpoint_used_for_acceptance": false,
+  "main_support_residual_Ns": 0.7174305476657804,
+  "main_contact_support_residual_Ns": 0.9783057018136333,
+  "observer_support_Ns": [
+    1.05953480242,
+    0.1062483559000003,
+    7.347385958399999e-16
+  ],
+  "main_last_support_Ns": [
+    420.74829900000003,
+    55.471920000000075,
+    -1.1528956900000003e-13
+  ],
+  "max_dense_KE_change_error_J": 99.31605899601709,
+  "max_dense_momentum_error_Ns": 0.715613522312318,
+  "A11_local_gate_pass_in_isolated_witness": false,
+  "no_A11_extension_credit": true,
+  "native_initial_inertia_audit": {
+    "native_radome_mass_kg": 41.0627224,
+    "native_CG_m": [
+      1.05383601,
+      8.50518292e-18,
+      2.5249761800000002e-17
+    ],
+    "native_tensor_kg_m2": [
+      [
+        74.04600260000001,
+        1.20623829e-15,
+        -2.5776998400000005e-15
+      ],
+      [
+        1.20623829e-15,
+        53.418130700000006,
+        0.0050467475000000005
+      ],
+      [
+        -2.5776998400000005e-15,
+        0.0050467475000000005,
+        49.188126600000004
+      ]
+    ],
+    "angle_lumped_lever_tensor_kg_m2": [
+      [
+        73.20171447492906,
+        1.0412519530126e-16,
+        -9.176494817057674e-17
+      ],
+      [
+        1.0412519530126e-16,
+        52.57384275772759,
+        0.005046839656580537
+      ],
+      [
+        -9.176494817057674e-17,
+        0.005046839656580537,
+        48.34383856947992
+      ]
+    ],
+    "scalar_rotational_inertia_sum_kg_m2": 0.8442877984080903,
+    "predicted_tensor_kg_m2": [
+      [
+        74.04600227333715,
+        1.0412519530126e-16,
+        -9.176494817057674e-17
+      ],
+      [
+        1.0412519530126e-16,
+        53.41813055613568,
+        0.005046839656580537
+      ],
+      [
+        -9.176494817057674e-17,
+        0.005046839656580537,
+        49.18812636788801
+      ]
+    ],
+    "maximum_relative_tensor_error": 4.411620415609238e-09,
+    "maximum_CG_error_m": 4.315835688828429e-09,
+    "initial_inertia_consistent_with_saved_c3inmas_algorithm": true,
+    "source_binary_equivalence_established": false,
+    "not_a_physical_inertia_validation": true
+  },
+  "dynamic_inertia_diagnostic": {
+    "maximum_reconstructed_global_RKE_error_J": 43.740647710466874,
+    "native_global_RKE_final_main_J": 18744.0,
+    "reconstructed_global_RKE_final_main_J": 18727.47444526406,
+    "qualified": false,
+    "energy_ledger_changed": false,
+    "missing_energy_filled": false
+  }
+}
