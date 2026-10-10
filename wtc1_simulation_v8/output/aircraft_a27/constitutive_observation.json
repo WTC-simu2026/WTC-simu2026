@@ -1,0 +1,219 @@
+{
+  "created_utc": "2026-10-10T10:32:27.796655+00:00",
+  "native_stresses": [
+    {
+      "revision": "w1",
+      "time_ms": 0.100025,
+      "vtk": "wtc1_simulation_v8/output/aircraft_a27/native_field_audit/w1/MEMBRANE_N12/A27_COMP_MEMBRANE_N12A005.vtk",
+      "native_global_stress_MPa_mean": [
+        [
+          21.98810000000002,
+          -7.334286875000001e-16,
+          -4.982960722222222e-19
+        ],
+        [
+          -7.334286875000001e-16,
+          -0.0036670400000000042,
+          5.256533472222221e-19
+        ],
+        [
+          -4.982960722222222e-19,
+          5.256533472222221e-19,
+          -2.500310000000008
+        ]
+      ],
+      "native_global_stress_MPa_min": [
+        [
+          21.9881,
+          -7.51926e-16,
+          -1.6523e-17
+        ],
+        [
+          -7.51926e-16,
+          -0.00366704,
+          -4.73964e-17
+        ],
+        [
+          -1.6523e-17,
+          -4.73964e-17,
+          -2.50031
+        ]
+      ],
+      "native_global_stress_MPa_max": [
+        [
+          21.9881,
+          -7.12575e-16,
+          1.44108e-17
+        ],
+        [
+          -7.12575e-16,
+          -0.00366704,
+          6.76196e-17
+        ],
+        [
+          1.44108e-17,
+          6.76196e-17,
+          -2.50031
+        ]
+      ],
+      "qualification": "actual native field; not an independently established complete 3D constitutive matrix"
+    },
+    {
+      "revision": "w2",
+      "time_ms": 0.100025,
+      "vtk": "wtc1_simulation_v8/output/aircraft_a27/native_field_audit/w2/MEMBRANE_N12/A27_COMP_MEMBRANE_N12A005.vtk",
+      "native_global_stress_MPa_mean": [
+        [
+          21.98810000000002,
+          -7.32954527777778e-16,
+          -5.771453284722223e-19
+        ],
+        [
+          -7.32954527777778e-16,
+          -0.0036670400000000042,
+          -8.347495499999995e-18
+        ],
+        [
+          -5.771453284722223e-19,
+          -8.347495499999995e-18,
+          7.137313090277779e-19
+        ]
+      ],
+      "native_global_stress_MPa_min": [
+        [
+          21.9881,
+          -7.56405e-16,
+          -1.20136e-16
+        ],
+        [
+          -7.56405e-16,
+          -0.00366704,
+          -1.63696e-16
+        ],
+        [
+          -1.20136e-16,
+          -1.63696e-16,
+          -3.46927e-18
+        ]
+      ],
+      "native_global_stress_MPa_max": [
+        [
+          21.9881,
+          -7.12754e-16,
+          7.50657e-17
+        ],
+        [
+          -7.12754e-16,
+          -0.00366704,
+          1.58226e-16
+        ],
+        [
+          7.50657e-17,
+          1.58226e-16,
+          7.12023e-18
+        ]
+      ],
+      "qualification": "actual native field; not an independently established complete 3D constitutive matrix"
+    },
+    {
+      "revision": "w3",
+      "time_ms": 0.100025,
+      "vtk": "wtc1_simulation_v8/output/aircraft_a27/native_field_audit/w3/MEMBRANE_N12/A27_COMP_MEMBRANE_N12A005.vtk",
+      "native_global_stress_MPa_mean": [
+        [
+          21.98810000000002,
+          -7.336561319444448e-16,
+          -5.250502229166666e-19
+        ],
+        [
+          -7.336561319444448e-16,
+          -0.0036670400000000042,
+          -8.055896381944442e-18
+        ],
+        [
+          -5.250502229166666e-19,
+          -8.055896381944442e-18,
+          -5.934937611111114e-20
+        ]
+      ],
+      "native_global_stress_MPa_min": [
+        [
+          21.9881,
+          -7.46475e-16,
+          -1.19563e-16
+        ],
+        [
+          -7.46475e-16,
+          -0.00366704,
+          -1.63051e-16
+        ],
+        [
+          -1.19563e-16,
+          -1.63051e-16,
+          -3.85172e-18
+        ]
+      ],
+      "native_global_stress_MPa_max": [
+        [
+          21.9881,
+          -7.18719e-16,
+          7.51665e-17
+        ],
+        [
+          -7.18719e-16,
+          -0.00366704,
+          1.5827e-16
+        ],
+        [
+          7.51665e-17,
+          1.5827e-16,
+          1.94513e-18
+        ]
+      ],
+      "qualification": "actual native field; not an independently established complete 3D constitutive matrix"
+    }
+  ],
+  "transverse_loading_diagnostic": {
+    "old_IE_J": 0.0005649465,
+    "new_IE_J": 0.0005494129,
+    "difference_J": 1.553360000000007e-05,
+    "candidate_independent_E33_extra_J": 1.5625e-05,
+    "reference_plane_J": 0.0005499999999999999,
+    "original_failed_reference_preserved": true,
+    "no_old_review_changed": true
+  },
+  "contradiction": "LAW25 theory gives a transverse-Poisson-coupled 3D compliance matrix; actual TYPE22 prescribed membrane shows sigma_z approximately E33*epsilon_z, while plane stresses approximately match the plane constitutive relation. No complete 3D material-equivalence claim. Plane controls are explicitly different boundary conditions.",
+  "bending_quadrature": [
+    {
+      "motion": "MEMBRANE",
+      "difference_fraction": 0.0,
+      "previous_spatial_threshold_comparison_pass": true,
+      "qualification": "diagnostic sensitivity; no originally declared standalone quadrature-pass threshold added",
+      "layers": [
+        3,
+        9
+      ],
+      "native_J": [
+        0.0005494129,
+        0.0005494129
+      ]
+    },
+    {
+      "motion": "BENDING",
+      "difference_fraction": 0.09993901961575243,
+      "previous_spatial_threshold_comparison_pass": false,
+      "qualification": "diagnostic sensitivity; no originally declared standalone quadrature-pass threshold added",
+      "layers": [
+        3,
+        9
+      ],
+      "native_J": [
+        1.137984e-05,
+        1.264341e-05
+      ]
+    }
+  ],
+  "midpoint_second_moment_is_only_one_error_component": true,
+  "native_material_fields_unchanged": true,
+  "historical_strength_and_fracture_qualified": false
+}

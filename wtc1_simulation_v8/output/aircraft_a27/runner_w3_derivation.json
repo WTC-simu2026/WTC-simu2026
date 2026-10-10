@@ -1,0 +1,44 @@
+{
+  "created_utc": "2026-10-10T10:29:21.953458+00:00",
+  "source": "wtc1_simulation_v8/scripts/test_aircraft_a26_solidshell_w2.py",
+  "source_sha256": "ed37b7dd9961e4e65cd9f725f143d82ba165e0c16e9d8ec994709dec75b2800b",
+  "changes": [
+    {
+      "old": "OUT/'w2'",
+      "new": "OUT/'w3'",
+      "count": 1
+    },
+    {
+      "old": "n='A26_HA8_'+cid",
+      "new": "n='A27_COMP_'+cid",
+      "count": 1
+    },
+    {
+      "old": ";free=cid.startswith('FREE')",
+      "new": ";m=m*(.00183/.00278);free=cid.startswith('FREE')",
+      "count": 1
+    },
+    {
+      "old": "prop=['/PROP/TYPE20/1','HALF_MM_HA8_SOLID_SHELL_TRANSLATIONS',ii(14,4)+' '*20+ii(10,222)+' '*20+ff(0),ff(0,0,0),ff(0,0,0,0,0),' '*20+ii(2)]",
+      "new": "prop=composite_property()",
+      "count": 1
+    },
+    {
+      "old": "P['/MAT/LAW2/1']+prop",
+      "new": "P['/MAT/LAW25/4']+prop",
+      "count": 1
+    },
+    {
+      "old": "'METAL_FULL_VOLUME',ii(1,1,0)",
+      "new": "'ORTHOTROPIC_SKIN_VOLUME',ii(1,4,0)",
+      "count": 1
+    },
+    {
+      "old": "'TYPE20':True,'Icstr':10",
+      "new": "'TYPE22':True,'Icstr':10",
+      "count": 1
+    }
+  ],
+  "derived_function_source": "def run_one(cid):\n    guard();ncell=int(re.search(r'_N(6|12)',cid).group(1));X,b,m,left,right=brick_grid([ncell,ncell,1],[-5,-5,-.25],[5,5,.25]);m=m*(.00183/.00278);free=cid.startswith('FREE');half=cid.endswith('_HALF');duration=.05 if free else .1;d=OUT/'w3'/cid;n='A27_COMP_'+cid;assert not d.exists();d.mkdir(parents=True);P=parent();prop=composite_property();materials=P['/MAT/LAW25/4']+prop+['/PART/1','ORTHOTROPIC_SKIN_VOLUME',ii(1,4,0),'/BRICK/1']+[ii(j+1,*conn) for j,conn in enumerate(b)];L=['#RADIOSS STARTER','/BEGIN',n,ii(2026,0),ff('g','mm','ms'),ff('g','mm','ms'),'/TITLE',n,'/ANALY',ii(0)+ff(0)+ii(0),'/SPMD',ii(0,0)+ff(0,1),'/NODE']+[ii(i+1)+ff(*q) for i,q in enumerate(X)]+materials;omega=np.zeros(3);V=np.zeros_like(X)\n    if free:\n        omega=np.eye(3)['XYZ'.index(re.search('ROTATION_([XYZ])',cid).group(1))]*10 if 'ROTATION' in cid else np.zeros(3);V=np.cross(omega,X) if 'ROTATION' in cid else np.tile([-200,5,2],(len(X),1))\n        for ni,v in enumerate(V,1):L+=group(ni,f'INITIAL_NODE_{ni}',[ni])+[f'/INIVEL/TRA/{ni}','INITIAL_TRANSLATIONAL_VELOCITY',ff(*v)+ii(ni,0),ff(0)+ii(0)]\n    else:L=imposed(L,X,cid)\n    L+=['/TH/PART/1','VOLUME_SCOPE',''.join(f'{v:>10}' for v in ['IE','KE','HE','PW']),ii(1),'/TH/NODE/1','NATIVE_SCOPE_NODES',''.join(f'{v:>10}' for v in ['DX','DY','DZ','VX','VY','VZ'])]+[ii(i,0) for i in range(1,len(X)+1)]+['/END'];(d/(n+'_0000.rad')).write_text('\\n'.join(L)+'\\n',encoding='utf-8');E=['/ANIM/DT',ff(0,.025),'/ANIM/MASS','/ANIM/VECT/DISP','/ANIM/VECT/VEL','/ANIM/ELEM/ENER','/ANIM/BRICK/TENS/STRESS','/DT',ff(.2 if half else .4,0),'/DTIX',ff(.0000125 if half else .000025,.0000125 if half else .000025),'/PRINT/-100/100',f'/RUN/{n}/1',ff(duration),'/TFILE/4',ff(.001),'/VERS/2026'];(d/(n+'_0001.rad')).write_text('\\n'.join(E)+'\\n',encoding='utf-8');shutil.copy2(__file__,d/'generator_snapshot.py');dump(d/'generation.json',{'created_utc':now(),'case':cid,'name':n,'mesh_n':ncell,'free':free,'duration_ms':duration,'nodes_mm':X.tolist(),'bricks':b,'known_nodal_masses_g':m.tolist(),'known_mass_g':float(m.sum()),'initial_velocity_m_s':V.tolist(),'initial_omega_rad_ms':omega.tolist(),'physical_plate_dimensions_mm':[10,10,.5],'TYPE22':True,'Icstr':10,'rotational_initial_conditions':False,'configuration_sha256':streamsha(CFG),'generator_sha256':streamsha(Path(__file__))});en=env();en.update(OMP_NUM_THREADS='1',RAD_HMPP_DOMAINS='1')\n    try:\n        ok=execute(RUNTIME/'starter_win64.exe',['-i',n+'_0000.rad','-np','1'],d,'starter.log',600,en);t=(d/'starter.log').read_text(errors='replace');nw=int(re.findall(r'(\\d+) WARNING\\(S\\)',t)[-1]);ne=int(re.findall(r'(\\d+) ERROR\\(S\\)',t)[-1]);dump(d/'starter_gate.json',{'created_utc':now(),'warnings':nw,'errors':ne,'pass':bool(ok and nw==0 and ne==0)});assert ok and nw==0 and ne==0,t[-4000:]\n        assert execute(RUNTIME/'engine_win64.exe',['-i',n+'_0001.rad'],d,'engine.log',600,en);assert 'NORMAL TERMINATION' in (d/'engine.log').read_text(errors='replace');assert execute(RUNTIME/'th_to_csv_win64.exe',[n+'T01'],d,'converter.log',600,en);review(d,n)\n    except Exception:dump(d/'retained_failure.json',{'created_utc':now(),'traceback':traceback.format_exc(),'whole_insertion_ready':False});raise\n",
+  "old_generator_unchanged": true
+}

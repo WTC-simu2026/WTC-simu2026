@@ -1,0 +1,56 @@
+{
+  "created_utc": "2026-10-10T10:28:48.437294+00:00",
+  "source": "wtc1_simulation_v8/scripts/test_aircraft_a27_regular_layers.py",
+  "source_sha256": "21f4fe051c895d355cf19a4c2011f9eaef9c75e33f3d9843929392791736c053",
+  "target": "wtc1_simulation_v8/scripts/test_aircraft_a27_plane_w3.py",
+  "target_sha256": "f04d3b7d3de525a8b1c0c306b483adea63d7f06d18971a945ad043e1fc1dbdad",
+  "changes": [
+    {
+      "old": "aircraft_a27_regular_layers.json",
+      "new": "aircraft_a27_plane_w3.json",
+      "count": 1
+    },
+    {
+      "old": "OUT/'regular_layers_guard.json'",
+      "new": "OUT/'plane_w3_guard.json'",
+      "count": 2
+    },
+    {
+      "old": "OUT/'w1'",
+      "new": "OUT/'w3'",
+      "count": 3
+    },
+    {
+      "old": "OUT/'native_case_summary_w1.json'",
+      "new": "OUT/'native_case_summary_w3.json'",
+      "count": 1
+    },
+    {
+      "old": "OUT/'runner_w1_derivation.json'",
+      "new": "OUT/'runner_w3_derivation.json'",
+      "count": 1
+    },
+    {
+      "old": "OUT/'review_w1_derivation.json'",
+      "new": "OUT/'review_w3_derivation.json'",
+      "count": 1
+    },
+    {
+      "old": "def imposed(L,X,cid):\n    # Only E/Poisson control field changes; density is used in exact volume integration.\n    s=inspect.getsource(metal.imposed).replace('-.00033','-.00025').replace('.33/(1-.33)','.25/(1-.25)');namespace=dict(globals());exec(compile(s,__file__+'::imposed','exec'),namespace);return namespace['imposed'](L,X,cid)\n",
+      "new": "def imposed(L,X,cid):\n    # Explicit plane displacement control; no alteration of constitutive fields.\n    s=inspect.getsource(metal.imposed).replace('-.00033*y','-.00025*y').replace('-.00033*z','0*z').replace('.33/(1-.33)*.001*z*z/2','0*z')\n    namespace=dict(globals());exec(compile(s,__file__+'::imposed','exec'),namespace);return namespace['imposed'](L,X,cid)\n",
+      "count": 1
+    },
+    {
+      "old": "ii(10,232,0)",
+      "new": "ii(10,292,0)",
+      "count": 1
+    },
+    {
+      "old": "[(1/3,0)]*3",
+      "new": "[(1/9,0)]*9",
+      "count": 1
+    }
+  ],
+  "material_and_thresholds_unchanged": true,
+  "old_native_solver_reruns": 0
+}

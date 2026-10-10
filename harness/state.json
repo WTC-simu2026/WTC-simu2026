@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-10T10:05:23.494419+00:00",
+  "updated_at": "2026-10-10T10:37:13.315700+00:00",
   "active_thread": {
     "id": "019ffb88-05a7-7f60-adff-6804df0d66a5",
     "title": "Poursuivre enquete WTC 1 V4",
@@ -19,10 +19,10 @@
     "targeted_v10i_working_copy_count": 5,
     "targeted_v10i_working_copy_directory": "wtc1_simulation_v8/input/v10i_structural_sources"
   },
-  "current_iteration": "AIRCRAFT-A25",
-  "current_status": "completed_zero_offset_controls__physical_angular_failure_and_shell_inertia_excess",
-  "next_iteration": "AIRCRAFT-A26",
-  "next_objective": "AIRCRAFT-A26 : conserver A24/A25 et leurs échecs sans relancer leurs solveurs. Le simple décalage nul ne restaure pas le moment physique. Les références de coques héritées portent0,1346221J de RKE à10rad/ms, contre0,0003354167J physique transverse et zéro drilling: contrôler le modèle de masse rotative du support avant d’accuser exclusivement Spot25. Aucune soustraction ou reconstruction RKE dans les bilans, aucune compensation de densité ou ADMAS. Tester une représentation à translations pour les plaques/peaux, ou un raffinement contrôlé, avec mêmes volumes, densités, matériaux, orientations et capacités annoncées. Les lois orthotropes et la flexion doivent être vérifiées; une conversion de formulation ne qualifie pas automatiquement un matériau. Le noyau A20 reste préservé: toute nouvelle liaison conforme relève d’une déclaration et de témoins distincts. Le fichier root_geometry_preparation.json donne les24racines et144ancres réelles, avec faces principales, normales et épaisseurs. Leur géométrie native et leur budget restent à construire après qualification du raccordement. Ensuite nouveau départ entier intact et bilan local, coût réel avant calcul long. Matériaux A21, gravité, intérieur, fracture et contacts de fragments restent ouverts. Objectif10secondes physiques3D incomplet, meilleur entier A20=20ms; aucun dommage connu comme cible. Publication A24+A25 après intégrité vérifiée.",
+  "current_iteration": "AIRCRAFT-A27",
+  "current_status": "completed_composite_controls__bending_reference_failed",
+  "next_iteration": "AIRCRAFT-A28",
+  "next_objective": "AIRCRAFT-A28 : reprendre composite_qualification_review.json et constitutive_observation.json. A26 métal HA8 passe9contrôles isolés; A27 TYPE22 LAW25 conserve masse, énergie, quantité de mouvement et moment physique libresXYZ, mais sa flexion ne passe pas la référence indépendante. Ne pas sélectionner un nombre de couches pour croiser artificiellement la référence. Les3/9couches sont des subdivisions numériques du même matériau homogène; le passageN6/N12 ne résout pas l’écart. Comparer maintenant contraintes et moments de flexion natifs à la cinématique réellement interpolée et aux tenseurs constitutifs explicites, puis tester une alternative volumique orthotrope si nécessaire, sans modifier les paramètres pour obtenir le dommage connu. La matrice3D couplée de la théorie LAW25 et la réponse observée TYPE22 restent à réconcilier; les contrôles planes réussis ne qualifient pas la réponse3D générale ou la rupture historique. Ensuite seulement vérifier le cœur/sandwich et les24racines/144ancres courbes A25. Aucun montage entier d’une liaison non qualifiée, aucune prolongation A21. Objectif vidéo3D10secondes physiques incomplet, meilleur entier A20=20ms. Nouveau départ intact après bilans et mesure du coût. Publication A26+A27 après intégrité; conserver tous les échecs, aucune compensation de masse ou RKE.",
   "impact_i02h_key_results": {
     "accepted_cases": 7,
     "new_controls_executed": 2,
@@ -1299,7 +1299,13 @@
     "aircraft_a24_handoff": "harness/handoffs/WTC1_AIRCRAFT_A24_HANDOFF.md",
     "aircraft_a25_report": "wtc1_simulation_v8/output/aircraft_a25/rapport_aircraft_a25.md",
     "aircraft_a25_results": "wtc1_simulation_v8/output/aircraft_a25/campaign_review.json",
-    "aircraft_a25_handoff": "harness/handoffs/WTC1_AIRCRAFT_A25_HANDOFF.md"
+    "aircraft_a25_handoff": "harness/handoffs/WTC1_AIRCRAFT_A25_HANDOFF.md",
+    "aircraft_a26_report": "wtc1_simulation_v8/output/aircraft_a26/rapport_aircraft_a26.md",
+    "aircraft_a26_results": "wtc1_simulation_v8/output/aircraft_a26/metal_qualification_review.json",
+    "aircraft_a26_handoff": "harness/handoffs/WTC1_AIRCRAFT_A26_HANDOFF.md",
+    "aircraft_a27_report": "wtc1_simulation_v8/output/aircraft_a27/rapport_aircraft_a27.md",
+    "aircraft_a27_results": "wtc1_simulation_v8/output/aircraft_a27/composite_qualification_review.json",
+    "aircraft_a27_handoff": "harness/handoffs/WTC1_AIRCRAFT_A27_HANDOFF.md"
   },
   "v8g_key_results": {
     "nist_hat_transfer_at_80_min_kip": 6748.0,
@@ -8243,5 +8249,129 @@
     "physical_strength_and_fracture_qualified": false,
     "objective1_complete": false,
     "next_iteration": "AIRCRAFT-A26"
+  },
+  "aircraft_a26_key_results": {
+    "experiment_id": "WTC1-AIRCRAFT-A26",
+    "registered_at": "2026-10-10T10:17:59.126035+00:00",
+    "configuration": "wtc1_simulation_v8/data/aircraft_a26_predeclaration.json",
+    "configurations": [
+      "wtc1_simulation_v8/data/aircraft_a26_predeclaration.json",
+      "wtc1_simulation_v8/data/aircraft_a26_solidshell.json",
+      "wtc1_simulation_v8/data/aircraft_a26_solidshell_w2.json"
+    ],
+    "report": "wtc1_simulation_v8/output/aircraft_a26/rapport_aircraft_a26.md",
+    "results": "wtc1_simulation_v8/output/aircraft_a26/metal_qualification_review.json",
+    "handoff": "harness/handoffs/WTC1_AIRCRAFT_A26_HANDOFF.md",
+    "artifact_manifest": "wtc1_simulation_v8/output/aircraft_a26/artifact_manifest.json",
+    "publication_verification": "wtc1_simulation_v8/output/aircraft_a26/publication_verification.json",
+    "created_utc": "2026-10-10T10:17:51.686854+00:00",
+    "iteration": "AIRCRAFT-A26",
+    "status": "completed_metal_solidshell_controls__composite_and_real_root_pending",
+    "native_controls": 18,
+    "native_individual_sets_passed": 13,
+    "native_energy_balances_passed": 16,
+    "metal_HA8_native_controls_passed": 9,
+    "metal_scope_qualified": true,
+    "DKT_failures_preserved": 5,
+    "Starter_only_failed_attempts": 1,
+    "native_field_samples": 54,
+    "composite_skin_qualified": false,
+    "whole_insertion_ready": false,
+    "new_whole_impact_executed": false,
+    "old_native_solver_reruns": 0,
+    "physical_strength_and_fracture_qualified": false,
+    "objective1_complete": false,
+    "next_iteration": "AIRCRAFT-A27"
+  },
+  "aircraft_a27_key_results": {
+    "experiment_id": "WTC1-AIRCRAFT-A27",
+    "registered_at": "2026-10-10T10:37:13.315700+00:00",
+    "configuration": "wtc1_simulation_v8/data/aircraft_a27_predeclaration.json",
+    "configurations": [
+      "wtc1_simulation_v8/data/aircraft_a27_plane_w2.json",
+      "wtc1_simulation_v8/data/aircraft_a27_plane_w3.json",
+      "wtc1_simulation_v8/data/aircraft_a27_predeclaration.json",
+      "wtc1_simulation_v8/data/aircraft_a27_regular_layers.json"
+    ],
+    "report": "wtc1_simulation_v8/output/aircraft_a27/rapport_aircraft_a27.md",
+    "results": "wtc1_simulation_v8/output/aircraft_a27/composite_qualification_review.json",
+    "handoff": "harness/handoffs/WTC1_AIRCRAFT_A27_HANDOFF.md",
+    "artifact_manifest": "wtc1_simulation_v8/output/aircraft_a27/artifact_manifest.json",
+    "publication_verification": "wtc1_simulation_v8/output/aircraft_a27/publication_verification.json",
+    "created_utc": "2026-10-10T10:37:02.702680+00:00",
+    "iteration": "AIRCRAFT-A27",
+    "status": "completed_composite_controls__bending_reference_failed",
+    "native_controls": 22,
+    "native_individual_sets_passed": 14,
+    "native_energy_balances_passed": 22,
+    "failed_controls": [
+      {
+        "revision": "w1",
+        "case": "MEMBRANE_N6",
+        "checks": [
+          "independent_elastic_reference"
+        ]
+      },
+      {
+        "revision": "w1",
+        "case": "MEMBRANE_N12",
+        "checks": [
+          "independent_elastic_reference"
+        ]
+      },
+      {
+        "revision": "w1",
+        "case": "BENDING_N6",
+        "checks": [
+          "independent_elastic_reference"
+        ]
+      },
+      {
+        "revision": "w1",
+        "case": "BENDING_N12",
+        "checks": [
+          "independent_elastic_reference"
+        ]
+      },
+      {
+        "revision": "w2",
+        "case": "BENDING_N6",
+        "checks": [
+          "independent_elastic_reference"
+        ]
+      },
+      {
+        "revision": "w2",
+        "case": "BENDING_N12",
+        "checks": [
+          "independent_elastic_reference"
+        ]
+      },
+      {
+        "revision": "w3",
+        "case": "BENDING_N6",
+        "checks": [
+          "independent_elastic_reference"
+        ]
+      },
+      {
+        "revision": "w3",
+        "case": "BENDING_N12",
+        "checks": [
+          "independent_elastic_reference"
+        ]
+      }
+    ],
+    "Starter_only_failed_attempts": 1,
+    "native_field_samples": 66,
+    "free_and_plane_membrane_scope_pass": true,
+    "composite_bending_qualified": false,
+    "general_3D_constitutive_equivalence_qualified": false,
+    "whole_insertion_ready": false,
+    "new_whole_impact_executed": false,
+    "old_native_solver_reruns": 0,
+    "physical_strength_and_fracture_qualified": false,
+    "objective1_complete": false,
+    "next_iteration": "AIRCRAFT-A28"
   }
 }

@@ -1,0 +1,107 @@
+{
+  "iteration": "AIRCRAFT-A26",
+  "declared_utc": "2026-10-10T10:08:22.887767+00:00",
+  "seed": 1102051,
+  "random_draws": 0,
+  "purpose": "Alternative HA8 solid-shell metal plate: preserve physical volume/material/mass, translations only. DKT w0 angular checks pass but zero-P absolute gate and bending native work balance fail; preserve those failures.",
+  "plate": {
+    "bounds_mm": [
+      [
+        -5,
+        -5,
+        0
+      ],
+      [
+        5,
+        5,
+        0
+      ]
+    ],
+    "thickness_mm": 0.5,
+    "volume_mm3": 50,
+    "rho_g_mm3": 0.00278,
+    "mass_g": 0.139,
+    "E_MPa": 73100,
+    "nu": 0.33,
+    "yield_MPa": 324,
+    "hardening": 0,
+    "fracture": "absent inherited LAW2",
+    "formulation": "TYPE1 Ish3n31 DKT_S3; same LAW2 card, triangular mesh, no rotational initial conditions"
+  },
+  "cases": [
+    "FREE_ROTATION_X_N12",
+    "FREE_ROTATION_Y_N12",
+    "FREE_ROTATION_Z_N12",
+    "FREE_TRANSLATION_N12",
+    "FREE_ROTATION_Y_N12_HALF",
+    "MEMBRANE_N6",
+    "MEMBRANE_N12",
+    "BENDING_N6",
+    "BENDING_N12"
+  ],
+  "motion": {
+    "free_duration_ms": 0.05,
+    "free_omega_rad_ms": 10,
+    "translation_m_s": [
+      -200,
+      5,
+      2
+    ],
+    "elastic_duration_ms": 0.1,
+    "membrane_axial_strain": 0.001,
+    "membrane_transverse_strain": -0.00033,
+    "curvature_per_mm": 0.001,
+    "ramp": "3s²-2s³",
+    "bending_displacement": "z=k*x²/2; x-displacement=-k²*x³/6 eliminates leading membrane stretch; all nodes prescribed. Interior elements with full neighbor stencil compared to Kirchhoff bending, boundary response kept separately."
+  },
+  "acceptance": {
+    "mass_relative": 1e-06,
+    "added_mass_relative": 1e-09,
+    "native_energy_fraction": 0.02,
+    "native_energy_absolute_J": 1e-07,
+    "free_energy_fraction": 0.002,
+    "free_momentum_fraction": 0.002,
+    "physical_angular_fraction": 0.002,
+    "physical_angular_absolute_kg_m2_s": 1e-09,
+    "known_discrete_initial_KE_fraction": 0.002,
+    "physical_continuum_initial_KE_fraction": 0.02,
+    "native_RKE_absolute_J": 1e-07,
+    "elastic_reference_fraction": 0.02,
+    "elastic_absolute_J": 1e-07,
+    "elastic_mesh_fraction": 0.05,
+    "position_mm": 0.002,
+    "velocity_m_s": 0.005,
+    "actual_dt_ratio_max": 0.6
+  },
+  "execution": {
+    "CPU_threads": 1,
+    "GPU": false,
+    "mass_scaling": false,
+    "dt_cap_ms": 2.5e-05,
+    "half_dt_cap_ms": 1.25e-05,
+    "history_dt_ms": 0.001,
+    "animation_dt_ms": 0.025,
+    "per_process_cap_s": 600,
+    "estimated_minutes": [
+      3,
+      8
+    ]
+  },
+  "sources": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/theory_element_3_node_triangle_without_rot_dof_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type1_shell_starter_r.htm"
+  ],
+  "constraints": "No body/sandwich/whole input changed. LAW25 composite and core coupling require separate declared witnesses. Prototype curvature does not target observed damage. Refinement changes lumped masses at nodes, preserving volume and density; record discrete and continuum inertia separately.",
+  "whole_insertion_ready": false,
+  "old_A20_A25_native_solver_reruns": 0,
+  "objective1_complete": false,
+  "revision": "w1",
+  "parent_configuration_sha256": "ff71c3fdda28b87a2ceda0c2c30895c1375000f1ec5216f5eed9a8db24a05607",
+  "changes": {
+    "property": "TYPE20 HA8 Isolid14 Ismstr4 Icstr010 Inpts222, standard thickness bottom-to-top s direction per official documentation. No independently rotating nodes. Native readback and geometry record required.",
+    "mesh": "NxNx1 through thickness, matched50mm3 at N6/N12. Lumped nodal masses integrate all hexa volumes, physical continuum tensor is separate. One thickness layer; no exact continuum inertia claim.",
+    "material": "identical LAW2 metal card. No LAW25/composite conversion.",
+    "reference": "3D uniaxial affine elastic field, then plane-stress cylindrical bending with through-thickness displacement. E/nu/thickness preserved; independent analytic energy, all volume compared.",
+    "bending": "ux=-k*x*z-k²*x³/6; uy=0; uz=k*x²/2+nu/(1-nu)*k*z²/2. Plane stress sigma_z=0 to first order, curvature_y=0."
+  }
+}
