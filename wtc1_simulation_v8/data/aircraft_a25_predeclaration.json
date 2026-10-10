@@ -1,0 +1,250 @@
+{
+  "iteration": "AIRCRAFT-A25",
+  "declared_utc": "2026-10-10T09:47:01.677429+00:00",
+  "seed": 1102050,
+  "random_draws": 0,
+  "purpose": "Test the explicit hypothesis that the initial offset of Spot25 creates a missing lever moment. Tie only top footprint nodes initially on the main midsurfaces, rather than offset end-cap nodes. Candidate lap ribbon, not historical identification.",
+  "solid": {
+    "dimensions_mm": [
+      4,
+      1,
+      0.5
+    ],
+    "material": "inherited LAW2/1: rho.00278g/mm3 E73100MPa nu.33 yield324MPa hardening0 fracture absent",
+    "property": "TYPE14 HA8 Isolid14 Ismstr4 Icpre2 Gauss222 Iframe2",
+    "rigid_control_shape": [
+      4,
+      2,
+      2
+    ],
+    "elastic_shapes": [
+      [
+        4,
+        2,
+        2
+      ],
+      [
+        8,
+        4,
+        4
+      ]
+    ],
+    "free_tensor_shape": [
+      12,
+      12,
+      12
+    ],
+    "mass_g": 0.00556,
+    "axial_yield_N": 162,
+    "as_built_identified": false
+  },
+  "fixture": {
+    "body_plate_mm": [
+      [
+        -10,
+        0,
+        -4.25
+      ],
+      [
+        0,
+        0,
+        -4.25
+      ],
+      [
+        0,
+        10,
+        -4.25
+      ],
+      [
+        -10,
+        10,
+        -4.25
+      ]
+    ],
+    "body_skin_thickness_mm": 0.5,
+    "body_skin_material": "inherited LAW2/1",
+    "sandwich": "reuse A20p3 actual skins at z+-4.25, core+-4, skin.5mm and Spot5 Iproj2",
+    "clip_bounds_mm": [
+      [
+        -2,
+        4.5,
+        -4.75
+      ],
+      [
+        2,
+        5.5,
+        -4.25
+      ]
+    ],
+    "clip_surface": "touches outer lower skin at z-4.5, no overlap with sandwich core",
+    "end_ties": "only new solid end nodes secondary; body/lower_skin shells main, Spot5 Iproj2 dsearch.8mm. Opposite end node sets disjoint. Existing core nodes never used as root main.",
+    "unknown_capacity_and_geometry": true
+  },
+  "mass_budget": {
+    "one_clip_g": 0.00556,
+    "whole_added_mass_not_assumed_until_actual_mapping_exists": true,
+    "no_ADMAS_density_or_inertia_compensation": true,
+    "whole_aircraft_unchanged_by_controls": true
+  },
+  "cases": {
+    "primitive": [],
+    "paired": [
+      "CONNECTED_FREE_ROTATION_X",
+      "CONNECTED_FREE_ROTATION_Y",
+      "CONNECTED_FREE_ROTATION_Z",
+      "CONNECTED_FREE_TRANSLATION",
+      "CONNECTED_FREE_ROTATION_Y_HALF",
+      "CONNECTED_EXTENSION_N4",
+      "CONNECTED_EXTENSION_N8"
+    ]
+  },
+  "motion": {
+    "prescribed_duration_ms": 0.1,
+    "s": "3*t^2-2*t^3",
+    "angle_rad": 1.5707963267948966,
+    "affine_axial_strain": 0.001,
+    "free_duration_ms": 0.05,
+    "free_omega_rad_ms": 10,
+    "connected_extension_mm": 0.004,
+    "rotation_duration_ms": 10,
+    "free_translation_m_s": [
+      -200,
+      5,
+      2
+    ],
+    "free_fixture_rotation_rad_ms": 10
+  },
+  "execution": {
+    "CPU_threads": 1,
+    "GPU": false,
+    "dt_cap_ms": 2.5e-05,
+    "history_dt_ms": 0.001,
+    "animation_dt_ms": 0.025,
+    "per_process_cap_s": 600,
+    "estimated_minutes": [
+      3,
+      8
+    ],
+    "no_mass_scaling": true,
+    "rotation_history_dt_ms": 0.01,
+    "rotation_animation_dt_ms": 0.25
+  },
+  "acceptance": {
+    "mass_relative": 1e-06,
+    "added_mass_relative": 1e-09,
+    "energy_fraction": 0.02,
+    "absolute_energy_J": 1e-07,
+    "rigid_IE_J": 1e-07,
+    "known_lumped_KE_fraction": 0.002,
+    "free_continuum_KE_fraction": 0.02,
+    "physical_tensor_fraction": 0.02,
+    "position_mm": 0.002,
+    "velocity_m_s": 0.005,
+    "elastic_IE_fraction": 0.02,
+    "paired_added_KE_fraction": 0.02,
+    "free_energy_fraction": 0.002,
+    "elastic_mesh_fraction": 0.05,
+    "free_global_energy_fraction": 0.002,
+    "free_linear_momentum_fraction": 0.002,
+    "paired_initial_KE_fraction": 0.002,
+    "half_dt_added_KE_fraction": 0.01,
+    "declared_contact_damping_J": 1e-12,
+    "physical_angular_total_fraction": 0.002,
+    "physical_angular_added_fraction": 0.02,
+    "physical_angular_absolute_kg_m2_s": 1e-09,
+    "initial_projection_mm": 1e-08
+  },
+  "references": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type14_solid_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inter_type2_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/mat_law2_plas_johns_starter_r.htm"
+  ],
+  "reuse_existing_A20_passed_core_and_Spot5": true,
+  "no_old_solver_reruns": true,
+  "no_historical_damage_target": true,
+  "whole_insertion_requires_all_scope_controls": true,
+  "whole_impact_qualified": false,
+  "physical_connector_strength_or_fracture_qualified": false,
+  "objective1_complete": false,
+  "revision": "w3",
+  "parent_configuration_sha256": "14d433b610423ed46c3a7c844b56ab6bfddecf645eb8f6fe63242276159b10bb",
+  "changes": {
+    "extension_selector": "all skin main IDs1..8 move .004mm; all backing IDs17..20 remain fixed. w0 x>=0 selection incorrectly moved backing boundary nodes18/19.",
+    "elastic_reference_channel": "compare native FINITE_METAL_CLIP IE with independent clip stiffness, separately report global IE; w0 global IE included distorted backing.",
+    "rotation_scaling": "same cubic angle90degrees in10ms vs1ms. Identical material, geometry, mass, interfaces and all acceptance thresholds. Boundary acceleration reduces100x; errors must be measured, not assumed.",
+    "paired_times": "native sampling occurs at first step after target time. Interpolate reference within common temporal support, retain timestamps and maximum time shift; do not alter native samples or energy."
+  },
+  "fast_w0_velocity_failures_retained": true,
+  "whole_insertion_requires_actual_geometry_controls": true,
+  "old_native_solver_reruns": 0,
+  "changed_since_A23": {
+    "only_new_clip_end_ties": "Spot25; positive Visc1e-20 with native readback; Stfac1/10/100 with native readback; unchanged material/mass. Core Spot5 unchanged.",
+    "unchanged": "clip, backing and sandwich geometry/material/mass; passed core-to-skin Spot5 A20 unchanged",
+    "energy": "include every native contact energy channel, not just structural IE/KE/RKE",
+    "free_initial_conditions": "all nodes uniform[-200,5,2]m/s or omega10rad/ms aboutXYZ; angular velocity assigned only to shell nodes, never solid-only nodes",
+    "time_refinement": "Z paired half scale /DT.2 instead.4 and dt cap.0000125 instead.000025. Same10ms curve and output cadence.",
+    "documentation_limit": "Spot25 is less robust and not recommended for secondary rotational DOF. New clip has only translational DOF. Explicitly test slip and all energy channels; no scientific acceptance inferred from keyword choice."
+  },
+  "physical_strength_or_fracture_qualified": false,
+  "damping_readback": {
+    "observed_w0": [
+      {
+        "interface": 301,
+        "input_Visc": 0,
+        "native_Visc": 0.05
+      },
+      {
+        "interface": 302,
+        "input_Visc": 0,
+        "native_Visc": 0.05
+      }
+    ],
+    "source_listing_sha256": "a5badfac95685711c54f344431f4882d800c0951f6837812f1949cc1bd440c72",
+    "requested_w1_positive_coefficient": 1e-20,
+    "verify_before_each_Engine": true,
+    "near_zero_not_exact_zero": true
+  },
+  "old_solver_reruns": 0,
+  "reuse_reference_cases_from": "aircraft_a24/w0",
+  "source_generator_sha256": "de6ec7da3549b91542515c0a1a6ee6dddc9f84d013bfc7fb5d97492f0b23a84f",
+  "stiffness_scaling": [
+    1,
+    10,
+    100
+  ],
+  "loading_duration_ms": 0.1,
+  "physical_reason_for_short_loading": "Elastic clip axial wave period about .0035ms; .1ms remains slow relative to this scale. Native energy and endpoint stiffness checks unchanged; dynamic error remains measured.",
+  "whole_strength_or_geometry_identified": false,
+  "angular_reference": {
+    "translational": "actual lumped masses, actual nodal positions and velocities",
+    "rotational": "physical shell through-thickness inertia m*t^2/12 transverse to current shell normal, t.5mm; no arbitrary scalar RKE term",
+    "SI_conversion_g_mm2_per_ms": 1e-06,
+    "global_conservation_fraction": 0.002,
+    "paired_added_conservation_fraction": 0.02,
+    "absolute_kg_m2_s": 1e-09,
+    "baseline_core_Spot5_retained": true,
+    "native_scalar_RKE_not_used_to_repair_reference": true
+  },
+  "necessary_observation_repeats_of_A24_reference_scenarios": 4,
+  "old_A20_A23_solver_reruns": 0,
+  "w2_generation_failure": "S100 was placed between ROTATION and axis; old axis parser expected immediate XYZ. Input generation of first free case stopped before Starter. All six completed stiffness witnesses retained and reused.",
+  "half_step_cap_ms": 5e-07,
+  "all_previous_thresholds_retained": true,
+  "changed_since_A24": {
+    "geometry": "same4x1x.5mm ribbon shifted+0.25mm in z, top at lower-skin/backing midsurface z=-4.25; central bridge unbonded, top x<=-1 bonded to backing and x>=1 to lower skin",
+    "mass": "same.00556g; CG and inertia explicitly changed by geometric translation, not compensated",
+    "root_ties": "Spot25 Stfac100 Istf2 Visc1e-20; search1e-5mm, initial projection distance must be zero; footprint not offset cap",
+    "reference": "reuse A24w3 native free references with shell angular observations; new reference stiffness uses actual bonded top-node sets",
+    "limitations": "midsurface lap ribbon idealizes shell thickness and includes half-thickness geometric overlap. Strength, fracture, fatigue, rivet pattern and as-built root are unknown; no whole insertion inferred from flat controls"
+  },
+  "native_reference_paths": {
+    "ROTATION_X": "wtc1_simulation_v8/output/aircraft_a24/w3/REFERENCE_FREE_ROTATION_S100_X",
+    "ROTATION_Y": "wtc1_simulation_v8/output/aircraft_a24/w3/REFERENCE_FREE_ROTATION_S100_Y",
+    "ROTATION_Z": "wtc1_simulation_v8/output/aircraft_a24/w3/REFERENCE_FREE_ROTATION_S100_Z",
+    "TRANSLATION": "wtc1_simulation_v8/output/aircraft_a24/w3/REFERENCE_FREE_TRANSLATION_S100",
+    "ROTATION_Y_HALF": "wtc1_simulation_v8/output/aircraft_a24/w3/REFERENCE_FREE_ROTATION_S100_Y_HALF"
+  },
+  "actual_root_mapping_required": true,
+  "whole_insertion_ready": false,
+  "old_A20_A24_native_solver_reruns": 0
+}

@@ -1,0 +1,75 @@
+{
+  "created_utc": "2026-10-10T09:23:42.521330+00:00",
+  "source": "wtc1_simulation_v8/scripts/test_aircraft_a24_lowdamping.py",
+  "source_sha256": "86969c4ab17ff2bb5a80d5073232bb31991e5544da71aa19fe37b08515a7c636",
+  "derived": "wtc1_simulation_v8/scripts/test_aircraft_a24_stiffness.py",
+  "derived_sha256": "37231f41225d66506f8b943a87450cf78ee05f41b630ab8cd75b928a605d4113",
+  "replacements": [
+    {
+      "old": "data/aircraft_a24_lowdamping.json",
+      "new": "data/aircraft_a24_stiffness.json",
+      "count": 1
+    },
+    {
+      "old": "read(OUT/'lowdamping_guard.json')",
+      "new": "read(OUT/'stiffness_guard.json')",
+      "count": 1
+    },
+    {
+      "old": "\"OUT/'w1'\"",
+      "new": "\"OUT/'w2'\"",
+      "count": 1
+    },
+    {
+      "old": "d=OUT/'w1'/cid",
+      "new": "d=OUT/'w2'/cid",
+      "count": 1
+    },
+    {
+      "old": "read(OUT/'w1'/cid/'review.json')",
+      "new": "read(OUT/'w2'/cid/'review.json')",
+      "count": 1
+    },
+    {
+      "old": "runner_w1_derivation.json",
+      "new": "runner_w2_derivation.json",
+      "count": 1
+    },
+    {
+      "old": "native_case_summary_w1.json",
+      "new": "native_case_summary_w2.json",
+      "count": 1
+    },
+    {
+      "old": "duration=.05 if free else 10 if 'ROTATION_' in cid else 1",
+      "new": "duration=.05 if free else 10 if 'ROTATION_' in cid else .1",
+      "count": 1
+    },
+    {
+      "old": "duration=10 if 'ROTATION_' in cid else 1",
+      "new": "duration=10 if 'ROTATION_' in cid else .1",
+      "count": 1
+    },
+    {
+      "old": "ff(1,1e-20)+' '*20+ii(2)",
+      "new": "ff(stfac,1e-20)+' '*20+ii(2)",
+      "count": 1
+    },
+    {
+      "old": "'Stfac':1,'Visc':1e-20",
+      "new": "'Stfac':stfac,'Visc':1e-20",
+      "count": 1
+    },
+    {
+      "old": "for old,new in replacements:",
+      "new": "s=s.replace(\"guard();c=read(CFG);primitive=\",\"guard();c=read(CFG);stfac=int(re.search('_S(1|10|100)(?:_|$)',cid).group(1));primitive=\")\n    for old,new in replacements:",
+      "count": 1
+    },
+    {
+      "old": "rows.append({'interface':sid,'native_damping':value,'expected':expected,'pass':abs(value-expected)<1e-6*expected})",
+      "new": "actual_stiffness=float(re.search(r'STIFFNESS FACTOR.*?([+\\-]?\\d[\\d.]*(?:E[+\\-]\\d+)?)\\s*$',block,re.M).group(1));wanted_stiffness=int(re.search('_S(1|10|100)(?:_|$)',d.name).group(1));rows.append({'interface':sid,'native_damping':value,'expected':expected,'actual_Stfac':actual_stiffness,'wanted_Stfac':wanted_stiffness,'pass':abs(value-expected)<1e-6*expected and actual_stiffness==wanted_stiffness})",
+      "count": 1
+    }
+  ],
+  "old_inputs_outputs_unchanged": true
+}

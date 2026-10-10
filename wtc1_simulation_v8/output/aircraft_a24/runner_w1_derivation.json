@@ -1,0 +1,69 @@
+{
+  "created_utc": "2026-10-10T09:10:39.219593+00:00",
+  "source": "wtc1_simulation_v8/scripts/run_aircraft_a23.py",
+  "source_sha256": "5fad779a3e94cb50d96f26b9ae83bab6a37c81b34d25c6f3f5cf210b5f23e344",
+  "changes": [
+    {
+      "old": "free=cid.startswith('FREE_')",
+      "new": "free='FREE_' in cid",
+      "count": 1
+    },
+    {
+      "old": "n='A23_'+cid",
+      "new": "n='A24_'+cid",
+      "count": 1
+    },
+    {
+      "old": "duration=.05 if free else 1",
+      "new": "duration=.05 if free else 10 if 'ROTATION_' in cid else 1",
+      "count": 1
+    },
+    {
+      "old": "ii(sid,sid,1000,5,0,2,1000,0)+ff(.8),ii(0)",
+      "new": "ii(sid,sid,1000,25,0,2,1000,0)+ff(.8),ff(1,1e-20)+' '*20+ii(2),ii(0)",
+      "count": 1
+    },
+    {
+      "old": "ff(0,.025)",
+      "new": "ff(0,.25 if not free and 'ROTATION_' in cid else .025)",
+      "count": 1
+    },
+    {
+      "old": "ff(.4,0)",
+      "new": "ff(.2 if cid.endswith('_HALF') else .4,0)",
+      "count": 1
+    },
+    {
+      "old": "ff(.000025,.000025)",
+      "new": "ff(.0000125,.0000125) if cid.endswith('_HALF') else ff(.000025,.000025)",
+      "count": 1
+    },
+    {
+      "old": "ff(.001),'/VERS/2026'",
+      "new": "ff(.01 if not free and 'ROTATION_' in cid else .001),'/VERS/2026'",
+      "count": 1
+    },
+    {
+      "old": ",180,en)",
+      "new": ",600,en)",
+      "count": 3
+    },
+    {
+      "old": "omega=np.eye(3)['XYZ'.index(cid[-1])]*10;V=np.cross(omega,xyz)",
+      "new": "omega=np.eye(3)['XYZ'.index(axis(cid))]*10 if 'ROTATION_' in cid else np.zeros(3);V=np.cross(omega,xyz) if 'ROTATION_' in cid else np.tile([-200,5,2],(len(xyz),1))",
+      "count": 1
+    },
+    {
+      "old": "else:L=imposed(L,main_xyz,main_ids,cid,rotational_DOF=not primitive)",
+      "new": "\n        if 'ROTATION_' in cid:\n            for ni in main_ids:L+=[f'/INIVEL/ROT/{100000+ni}',f'INITIAL_SHELL_ROTATION_{ni}',ff(*omega)+ii(ni,0),ff(0)+ii(0)]\n    else:L=imposed(L,main_xyz,main_ids,cid,rotational_DOF=not primitive)",
+      "count": 1
+    },
+    {
+      "old": "dump(d/'generation.json',generation);en=env()",
+      "new": "known=np.zeros(len(xyz));known[:8]=.0915/4;known[8:16]=.0384/8;known[16:20]=.139/4;known[clip_ids-1]=mass;generation.update(known_translational_node_masses_g=known.tolist(),axis=axis(cid) if 'ROTATION_' in cid else None,initial_omega_rad_ms=omega.tolist() if free else None,initial_velocity_m_s=V.tolist() if free else None,root_penalty_parameters={'Spot':25,'Stfac':1,'Visc':1e-20,'Istf':2,'dsearch_mm':.8} if connected else None);dump(d/'generation.json',generation);en=env()",
+      "count": 1
+    }
+  ],
+  "derived_function_source": "def run_one(cid):\n    guard();c=read(CFG);primitive=cid in c['cases']['primitive'];free='FREE_' in cid;connected=cid.startswith('CONNECTED_');d=OUT/'w1'/cid;n='A24_'+cid;assert not d.exists();d.mkdir(parents=True);P=parent();duration=.05 if free else 10 if 'ROTATION_' in cid else 1\n    if primitive:\n        shape=[12,12,12] if free else [8,4,4] if cid=='AXIAL_N8' else [4,2,2]\n        xyz,brick,mass,left,right=brick_grid(shape,[-2,-.5,-.25],[2,.5,.25]);clip_ids=np.arange(1,len(xyz)+1);main_ids=clip_ids.tolist();main_xyz=xyz;materials=P['/MAT/LAW2/1']+prop()+['/PART/1','FINITE_TRANSLATIONAL_METAL',ii(1,1,0),'/BRICK/1']+[ii(j+1,*conn) for j,conn in enumerate(brick)];known_mass=mass.copy()\n    else:\n        skin=np.array([[0,0,-4.25],[10,0,-4.25],[10,10,-4.25],[0,10,-4.25],[0,0,4.25],[10,0,4.25],[10,10,4.25],[0,10,4.25]],float);core=skin.copy();core[:4,2]=-4;core[4:,2]=4;body=np.array(c['fixture']['body_plate_mm']);xyz=np.vstack([skin,core,body]);main_ids=list(range(1,9))+list(range(17,21));main_xyz=xyz[np.asarray(main_ids)-1];clip_ids=np.array([],int);mass=np.zeros(0);brick=[];shape=[8,4,4] if cid.endswith('_N8') else [4,2,2]\n        bp=P['/PROP/TYPE1/1'].copy();bp[1]='DECLARED_HALF_MM_METAL_BACKING';bp[4]=ii(5)+' '*10+ff(.5,.833333333333)\n        materials=material()+skew_card(28)+solid_property()\n        for key in ['/MAT/LAW2/1','/MAT/LAW25/4','/PROP/TYPE19/41','/PROP/TYPE19/43','/FAIL/ORTHSTRAIN/4']:materials+=P[key]\n        materials+=bp+face_property(122,41,True,True)+face_property(123,43,False,True)+['/PART/28','VERIFIED_CORE',ii(28,28,0),'/BRICK/28',ii(1,9,10,11,12,13,14,15,16),'/PART/122','LOWER_SKIN',ii(122,4,0),'/SHELL/122',ii(2,1,2,3,4),'/PART/123','UPPER_SKIN',ii(123,4,0),'/SHELL/123',ii(3,5,6,7,8),'/PART/1','HALF_MM_BACKING',ii(1,1,0),'/SHELL/1',ii(4,17,18,19,20)]\n        for sid,part,ids in [(201,122,[9,10,11,12]),(202,123,[13,14,15,16])]:\n            materials+=group(sid,'CORE_FACE_SECONDARY',ids)+[f'/SURF/PART/{sid}','SKIN_MIDPLANE_MAIN',ii(part),f'/INTER/TYPE2/{sid}','UNCHANGED_SPOT5_CORE_SKIN',ii(sid,sid,1000,5,0,2,1000,0)+ff(.3),ii(0)+ff(0)+' '*60+ii(2)]\n        if connected:\n            clip,brick,mass,left,right=brick_grid(shape,*c['fixture']['clip_bounds_mm'],first=21);clip_ids=np.arange(21,21+len(clip));xyz=np.vstack([xyz,clip]);materials+=prop(501)+['/PART/501','FINITE_METAL_CLIP',ii(501,1,0),'/BRICK/501']+[ii(501+j,*conn) for j,conn in enumerate(brick)]\n            for sid,part,ids in [(301,1,left),(302,122,right)]:\n                materials+=group(sid,'ONLY_NEW_SOLID_END_NODES',ids)+[f'/SURF/PART/{sid}','BODY_OR_SKIN_MAIN',ii(part),f'/INTER/TYPE2/{sid}','FINITE_CLIP_END_SPOT5',ii(sid,sid,1000,25,0,2,1000,0)+ff(.8),ff(1,1e-20)+' '*20+ii(2),ii(0)+ff(0)+' '*60+ii(2)]\n        known_mass=np.array([])\n    L=['#RADIOSS STARTER','/BEGIN',n,ii(2026,0),ff('g','mm','ms'),ff('g','mm','ms'),'/TITLE',n,'/ANALY',ii(0)+ff(0)+ii(0),'/SPMD',ii(0,0)+ff(0,1),'/NODE']+[ii(i+1)+ff(*q) for i,q in enumerate(xyz)]+materials\n    if free:\n        omega=np.eye(3)['XYZ'.index(axis(cid))]*10 if 'ROTATION_' in cid else np.zeros(3);V=np.cross(omega,xyz) if 'ROTATION_' in cid else np.tile([-200,5,2],(len(xyz),1))\n        for ni,v in enumerate(V,1):L+=group(ni,f'INITIAL_NODE_{ni}',[ni])+[f'/INIVEL/TRA/{ni}',f'INITIAL_PHYSICAL_ROTATION_{ni}',ff(*v)+ii(ni,0),ff(0)+ii(0)]\n    \n        if 'ROTATION_' in cid:\n            for ni in main_ids:L+=[f'/INIVEL/ROT/{100000+ni}',f'INITIAL_SHELL_ROTATION_{ni}',ff(*omega)+ii(ni,0),ff(0)+ii(0)]\n    else:L=imposed(L,main_xyz,main_ids,cid,rotational_DOF=not primitive)\n    parts=[1] if primitive else [1,28,122,123]+([501] if connected else [])\n    L+=['/TH/PART/1','SCOPE_PARTS',''.join(f'{v:>10}' for v in ['IE','KE','HE','PW']),ii(*parts),'/TH/NODE/1','NATIVE_SCOPE_NODES',''.join(f'{v:>10}' for v in ['DX','DY','DZ','VX','VY','VZ'])]+[ii(i,0) for i in range(1,len(xyz)+1)]+['/END']\n    (d/(n+'_0000.rad')).write_text('\\n'.join(L)+'\\n',encoding='utf-8');E=['/ANIM/DT',ff(0,.25 if not free and 'ROTATION_' in cid else .025),'/ANIM/MASS','/ANIM/VECT/DISP','/ANIM/VECT/VEL','/ANIM/BRICK/TENS/STRESS','/ANIM/ELEM/ENER','/DT',ff(.2 if cid.endswith('_HALF') else .4,0),'/DTIX',ff(.0000125,.0000125) if cid.endswith('_HALF') else ff(.000025,.000025),'/PRINT/-100/100',f'/RUN/{n}/1',ff(duration),'/TFILE/4',ff(.01 if not free and 'ROTATION_' in cid else .001),'/VERS/2026'];(d/(n+'_0001.rad')).write_text('\\n'.join(E)+'\\n',encoding='utf-8');shutil.copy2(__file__,d/'generator_snapshot.py')\n    box=xyz if primitive else xyz[clip_ids-1];center=np.array([0,0,0]) if primitive else np.array([0,5,-4.75]);dm=np.array([4.,1,.5]);M=.00556;Icont=np.diag(M*(sum(dm**2)-dm**2)/12)+M*(center@center*np.eye(3)-np.outer(center,center))\n    generation={'created_utc':now(),'case':cid,'name':n,'primitive':primitive,'connected':connected,'free':free,'duration_ms':duration,'shape':shape,'nodes_mm':xyz.tolist(),'main_node_ids':main_ids,'clip_node_ids':clip_ids.tolist(),'clip_known_nodal_masses_g':mass.tolist(),'clip_lumped_inertia_g_mm2':inertia(box,mass).tolist() if len(mass) else None,'clip_continuum_inertia_g_mm2':Icont.tolist(),'bricks':brick,'configuration_sha256':streamsha(CFG),'generator_sha256':streamsha(Path(__file__)),'expected_mass_g':.00556 if primitive else .3604+(.00556 if connected else 0),'clip_only_3_translational_DOF':True}\n    # Fixture reference mass: sandwich.2214g + body10*10*.5*.00278=.139g.\n    known=np.zeros(len(xyz));known[:8]=.0915/4;known[8:16]=.0384/8;known[16:20]=.139/4;known[clip_ids-1]=mass;generation.update(known_translational_node_masses_g=known.tolist(),axis=axis(cid) if 'ROTATION_' in cid else None,initial_omega_rad_ms=omega.tolist() if free else None,initial_velocity_m_s=V.tolist() if free else None,root_penalty_parameters={'Spot':25,'Stfac':1,'Visc':1e-20,'Istf':2,'dsearch_mm':.8} if connected else None);dump(d/'generation.json',generation);en=env();en.update(OMP_NUM_THREADS='1',RAD_HMPP_DOMAINS='1')\n    try:\n        ok=execute(RUNTIME/'starter_win64.exe',['-i',n+'_0000.rad','-np','1'],d,'starter.log',600,en);s=(d/'starter.log').read_text(errors='replace');nw=int(re.findall(r'(\\d+) WARNING\\(S\\)',s)[-1]);ne=int(re.findall(r'(\\d+) ERROR\\(S\\)',s)[-1]);dump(d/'starter_gate.json',{'created_utc':now(),'exit_ok':ok,'warnings':nw,'errors':ne,'pass':bool(ok and nw==0 and ne==0)});assert ok and nw==0 and ne==0,s[-4000:]\n        verify_requested_damping(d,n)\n        assert execute(RUNTIME/'engine_win64.exe',['-i',n+'_0001.rad'],d,'engine.log',600,en);assert 'NORMAL TERMINATION' in (d/'engine.log').read_text(errors='replace')\n        assert execute(RUNTIME/'th_to_csv_win64.exe',[n+'T01'],d,'converter.log',600,en);review(d,n)\n    except Exception:\n        dump(d/'retained_failure.json',{'created_utc':now(),'traceback':traceback.format_exc(),'whole_impact_qualified':False});raise\n",
+  "A23_unmodified": true
+}

@@ -1,0 +1,65 @@
+{
+  "created_utc": "2026-10-10T09:10:38.324728+00:00",
+  "source": "wtc1_simulation_v8/scripts/run_aircraft_a24.py",
+  "source_sha256": "de6ec7da3549b91542515c0a1a6ee6dddc9f84d013bfc7fb5d97492f0b23a84f",
+  "derived": "wtc1_simulation_v8/scripts/test_aircraft_a24_lowdamping.py",
+  "derived_sha256": "86969c4ab17ff2bb5a80d5073232bb31991e5544da71aa19fe37b08515a7c636",
+  "replacements": [
+    {
+      "old": "data/aircraft_a24_predeclaration.json",
+      "new": "data/aircraft_a24_lowdamping.json",
+      "count": 1
+    },
+    {
+      "old": "read(OUT/'declaration_guard.json')",
+      "new": "read(OUT/'lowdamping_guard.json')",
+      "count": 1
+    },
+    {
+      "old": "s=inspect.getsource(A23.run_one);audit=[]",
+      "new": "s=inspect.getsource(A23.run_one).replace(\"OUT/'w0'\",\"OUT/'w1'\");audit=[]",
+      "count": 1
+    },
+    {
+      "old": "ff(1,0)+' '*20+ii(2)",
+      "new": "ff(1,1e-20)+' '*20+ii(2)",
+      "count": 1
+    },
+    {
+      "old": "'Visc':0,'Istf':2",
+      "new": "'Visc':1e-20,'Istf':2",
+      "count": 1
+    },
+    {
+      "old": "d=OUT/'w0'/cid",
+      "new": "d=OUT/'w1'/cid",
+      "count": 1
+    },
+    {
+      "old": "read(OUT/'w0'/cid/'review.json')",
+      "new": "read(OUT/'w1'/cid/'review.json')",
+      "count": 1
+    },
+    {
+      "old": "runner_derivation.json",
+      "new": "runner_w1_derivation.json",
+      "count": 1
+    },
+    {
+      "old": "native_case_summary.json",
+      "new": "native_case_summary_w1.json",
+      "count": 1
+    },
+    {
+      "old": "exec(compile(s,__file__+'::derived_run_one','exec'),globals())",
+      "new": "s=s.replace(\"        assert execute(RUNTIME/'engine_win64.exe'\",\"        verify_requested_damping(d,n)\\n        assert execute(RUNTIME/'engine_win64.exe'\");exec(compile(s,__file__+'::derived_run_one','exec'),globals())",
+      "count": 1
+    },
+    {
+      "old": "choices=['declare','run']",
+      "new": "choices=['run']",
+      "count": 1
+    }
+  ],
+  "old_inputs_outputs_unmodified": true
+}

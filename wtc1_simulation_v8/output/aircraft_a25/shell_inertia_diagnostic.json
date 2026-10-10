@@ -1,0 +1,49 @@
+{
+  "created_utc": "2026-10-10T09:55:14.082518+00:00",
+  "rows": [
+    {
+      "axis": "X",
+      "source_csv": "wtc1_simulation_v8/output/aircraft_a24/w3/REFERENCE_FREE_ROTATION_S100_X/A24_REFERENCE_FREE_ROTATION_S100_XT01.csv",
+      "source_csv_sha256": "20b063c195e3e99ae0f44ac9dae4d11b753319bd24c21fd5b0f454918686a49c",
+      "native_initial_RKE_J": 0.1346221,
+      "native_scalar_sum_I_g_mm2": 2.692442,
+      "physical_thickness_initial_RKE_J": 0.0003354166666666667,
+      "native_minus_physical_J": 0.13428668333333332,
+      "physical_initial_RKE_limit_J": 7.708333333333334e-07,
+      "physical_initial_RKE_pass": false
+    },
+    {
+      "axis": "Y",
+      "source_csv": "wtc1_simulation_v8/output/aircraft_a24/w3/REFERENCE_FREE_ROTATION_S100_Y/A24_REFERENCE_FREE_ROTATION_S100_YT01.csv",
+      "source_csv_sha256": "918266f3dcb8ec60f717d29e5eb26b923c23cac71e3b89485fd3d1c8e2109acb",
+      "native_initial_RKE_J": 0.1346221,
+      "native_scalar_sum_I_g_mm2": 2.692442,
+      "physical_thickness_initial_RKE_J": 0.0003354166666666667,
+      "native_minus_physical_J": 0.13428668333333332,
+      "physical_initial_RKE_limit_J": 7.708333333333334e-07,
+      "physical_initial_RKE_pass": false
+    },
+    {
+      "axis": "Z",
+      "source_csv": "wtc1_simulation_v8/output/aircraft_a24/w3/REFERENCE_FREE_ROTATION_S100_Z/A24_REFERENCE_FREE_ROTATION_S100_ZT01.csv",
+      "source_csv_sha256": "71189e7660f634b3ac827bb0a8a67c8072e20be2e32b6f5b0d30d964084c107c",
+      "native_initial_RKE_J": 0.1346221,
+      "native_scalar_sum_I_g_mm2": 2.692442,
+      "physical_thickness_initial_RKE_J": 0,
+      "native_minus_physical_J": 0.1346221,
+      "physical_initial_RKE_limit_J": 1e-07,
+      "physical_initial_RKE_pass": false
+    }
+  ],
+  "all_physical_initial_RKE_pass": false,
+  "native_RKE_preserved_in_balance": true,
+  "no_scalar_RKE_subtracted_reconstructed_added_or_compensated": true,
+  "derived_physical_thickness_I_g_mm2": 0.0067083333333333335,
+  "known_nodal_geometry_mass_contribution_already_in_translation": true,
+  "primary_theory": "Radioss shell inertia contains a spherical regularized area term m*(A/f+t²/12). This is a discretization term, not solely the physical inertia across thickness. Default f values from theory do not alone determine this composite/tied fixture nodal inertias.",
+  "unproven": "The per-node native inertia and tied-core redistribution have not been read. The observed excess is not proof of the complete angular defect or A21 energy deficit. Zero initial offset alone is insufficient in A25.",
+  "next": "Translation-only solid/thick-shell representation or controlled shell refinement with independent mass, tensor, membrane and bending tests; no unilateral inertia compensation. Keep old failed gates.",
+  "A24_assessment_preserved": true,
+  "whole_insertion_ready": false,
+  "objective1_complete": false
+}

@@ -1,0 +1,90 @@
+{
+  "created_utc": "2026-10-10T09:32:11.567521+00:00",
+  "source": "wtc1_simulation_v8/scripts/test_aircraft_a24_stiffness.py",
+  "source_sha256": "37231f41225d66506f8b943a87450cf78ee05f41b630ab8cd75b928a605d4113",
+  "derived": "wtc1_simulation_v8/scripts/test_aircraft_a24_angular.py",
+  "derived_sha256": "f127b261760a197e206ba808a6005326273d6bccd6658fcbba751255b5fe9451",
+  "changes": [
+    {
+      "old": "data/aircraft_a24_stiffness.json",
+      "new": "data/aircraft_a24_angular.json",
+      "count": 1
+    },
+    {
+      "old": "read(OUT/'stiffness_guard.json')",
+      "new": "read(OUT/'angular_guard.json')",
+      "count": 1
+    },
+    {
+      "old": "\"OUT/'w2'\"",
+      "new": "\"OUT/'w3'\"",
+      "count": 1
+    },
+    {
+      "old": "d=OUT/'w2'/cid",
+      "new": "d=OUT/'w3'/cid",
+      "count": 1
+    },
+    {
+      "old": "read(OUT/'w2'/cid/'review.json')",
+      "new": "read(OUT/'w3'/cid/'review.json')",
+      "count": 1
+    },
+    {
+      "old": "runner_w2_derivation.json",
+      "new": "runner_w3_derivation.json",
+      "count": 1
+    },
+    {
+      "old": "native_case_summary_w2.json",
+      "new": "native_case_summary_w3.json",
+      "count": 1
+    },
+    {
+      "old": "re.search('ROTATION_([XYZ])',cid)",
+      "new": "re.search('ROTATION_(?:S(?:1|10|100)_)?([XYZ])',cid)",
+      "count": 1
+    },
+    {
+      "old": "ff(.0000125,.0000125) if",
+      "new": "ff(.0000005,.0000005) if",
+      "count": 1
+    },
+    {
+      "old": "assert len(keys)==6*len(xyz)",
+      "new": "assert len(keys)==9*len(xyz)",
+      "count": 1
+    },
+    {
+      "old": "reshape(len(T),len(xyz),6)",
+      "new": "reshape(len(T),len(xyz),9)",
+      "count": 1
+    },
+    {
+      "old": "V=node[:,:,3:]",
+      "new": "V=node[:,:,3:6];W=node[:,:,6:9]",
+      "count": 1
+    },
+    {
+      "old": "velocities_m_s=V,momentum_Ns=P",
+      "new": "velocities_m_s=V,angular_velocity_rad_ms=W,momentum_Ns=P",
+      "count": 1
+    },
+    {
+      "old": "if g['free']:\n        checks.update",
+      "new": "if g['free']:\n        checks['initial_shell_rotational_velocity_readback']=bool(abs(W[0,np.asarray(g['main_node_ids'])-1]-np.asarray(g['initial_omega_rad_ms'])).max()<1e-6)\n        checks.update",
+      "count": 1
+    },
+    {
+      "old": "exec(compile(s,__file__+'::derived_run_one','exec'),globals())",
+      "new": "s=s.replace(\"['DX','DY','DZ','VX','VY','VZ']\",\"['DX','DY','DZ','VX','VY','VZ','VRX','VRY','VRZ']\");exec(compile(s,__file__+'::derived_run_one','exec'),globals())",
+      "count": 1
+    },
+    {
+      "old": "def verify_requested_damping(d,n):\n",
+      "new": "def verify_requested_damping(d,n):\n    if not read(d/'generation.json')['connected']:\n        dump(d/'requested_damping_gate.json',{'created_utc':now(),'root_not_present':True,'pass':True,'before_Engine':True});return\n",
+      "count": 1
+    }
+  ],
+  "no_prior_native_result_overwritten": true
+}

@@ -1,0 +1,349 @@
+#RADIOSS STARTER
+/BEGIN
+A24_REFERENCE_FREE_TRANSLATION
+      2026         0
+                   g                  mm                  ms
+                   g                  mm                  ms
+/TITLE
+A24_REFERENCE_FREE_TRANSLATION
+/ANALY
+         0                   0         0
+/SPMD
+         0         0                   0                   1
+/NODE
+         1                   0                   0               -4.25
+         2                  10                   0               -4.25
+         3                  10                  10               -4.25
+         4                   0                  10               -4.25
+         5                   0                   0                4.25
+         6                  10                   0                4.25
+         7                  10                  10                4.25
+         8                   0                  10                4.25
+         9                   0                   0                  -4
+        10                  10                   0                  -4
+        11                  10                  10                  -4
+        12                   0                  10                  -4
+        13                   0                   0                   4
+        14                  10                   0                   4
+        15                  10                  10                   4
+        16                   0                  10                   4
+        17                 -10                   0               -4.25
+        18                   0                   0               -4.25
+        19                   0                  10               -4.25
+        20                 -10                  10               -4.25
+/MAT/LAW28/28
+REFERENCE_HONEYCOMB_FINITE_YIELD_UNMEASURED_FAILURE
+             4.8e-05
+                   1                   1                 138
+                 0.5                  24                  41
+       280       281       282         1                   1                   1                   1
+                 0.2                 0.2                0.05
+       283       284       285         1                   1                   1                   1
+                 0.1                0.06                0.06
+/FUNCT/280
+CONSTANT_YIELD_0
+                  -2                 0.1
+                   0                 0.1
+                   2                 0.1
+/FUNCT/281
+CONSTANT_YIELD_1
+                  -2                 0.1
+                   0                 0.1
+                   2                 0.1
+/FUNCT/282
+CONSTANT_YIELD_2
+                  -2                2.07
+                   0                2.07
+                   2                2.07
+/FUNCT/283
+CONSTANT_YIELD_3
+                  -2                0.05
+                   0                0.05
+                   2                0.05
+/FUNCT/284
+CONSTANT_YIELD_4
+                  -2                0.69
+                   0                0.69
+                   2                0.69
+/FUNCT/285
+CONSTANT_YIELD_5
+                  -2                1.21
+                   0                1.21
+                   2                1.21
+/SKEW/FIX/28
+CORE_L_W_NORMAL_ORIENTATION
+                   0                   0                   0
+                   0                   1                   0
+                   0                   0                   1
+/PROP/TYPE6/28
+FINITE_3D_CORE_FULL_INTEGRATION
+        14         4                   3         0       222         0         2                   0
+                 1.1                0.05                 0.1
+                   1                   0                   0        28         0         0
+                   0                   0                   0                   0
+                   0                   0                   0                   0                   0
+         0         0         2
+/MAT/LAW2/1
+hypothetical_2024_skin_reference
+             0.00278
+               73100                0.33         0         2              -1e+30
+                 324                   0                   1               1e+30               1e+30
+                   0               0.001         1         1               1e+20                   0
+                   1               1e+30                   0              293.15               1e+30
+/MAT/LAW25/4
+elastic_reference_orthotropic_4
+             0.00183
+               22000               22000                0.25         0                         10000
+                4000                4000                4000               1e+30               1e+30
+               1e+30               2e+30               1e+30               2e+30               0.999
+               1e+30                   1         1                             1
+                   0                   1                   1
+               1e+12               1e+12               1e+12               1e+12                   0
+               1e+12               1e+12                   0               0.001         1
+               1e+30               2e+30               0.999
+         0                   0
+/PROP/TYPE19/41
+radome_ply_41
+         4                 0.5                   0         0         0         3                  90
+/PROP/TYPE19/43
+radome_ply_43
+         4                 0.5                   0         0         0         3                  90
+/FAIL/ORTHSTRAIN/4
+                                       1                                                           3
+                   0               1e+30
+         0                   1                   1
+     0.0204545454545     0.0245454545455         0     0.0209090909091     0.0250909090909         0
+     0.0204545454545     0.0245454545455         0     0.0209090909091     0.0250909090909         0
+               1e+20             1.2e+20         0               1e+20             1.2e+20         0
+               1e+20             1.2e+20         0               1e+20             1.2e+20         0
+               1e+20             1.2e+20         0               1e+20             1.2e+20         0
+               1e+20             1.2e+20         0               1e+20             1.2e+20         0
+/PROP/TYPE1/1
+DECLARED_HALF_MM_METAL_BACKING
+        24         4         2         2
+                   0                   0                   0               1e-20               1e-20
+         5                           0.5      0.833333333333
+/PROP/TYPE51/122
+HALF_MM_SKIN_AT_CORE_BOUNDARY
+        12         4        31         2                   1                   0
+                   0                   0                   0               1e-20               1e-20
+                          0.833333333333                   2                   2                   1
+                   1                   0                   0         0         0         0         0
+        41                   0                   0                   1                   1
+
+/PROP/TYPE51/123
+HALF_MM_SKIN_AT_CORE_BOUNDARY
+        12         4        31         2                   1                   0
+                   0                   0                   0               1e-20               1e-20
+                          0.833333333333                   2                   2                   1
+                   1                   0                   0         0         0         0         0
+        43                   0                   0                   1                   1
+
+/PART/28
+VERIFIED_CORE
+        28        28         0
+/BRICK/28
+         1         9        10        11        12        13        14        15        16
+/PART/122
+LOWER_SKIN
+       122         4         0
+/SHELL/122
+         2         1         2         3         4
+/PART/123
+UPPER_SKIN
+       123         4         0
+/SHELL/123
+         3         5         6         7         8
+/PART/1
+HALF_MM_BACKING
+         1         1         0
+/SHELL/1
+         4        17        18        19        20
+/GRNOD/NODE/201
+CORE_FACE_SECONDARY
+         9        10        11        12
+/SURF/PART/201
+SKIN_MIDPLANE_MAIN
+       122
+/INTER/TYPE2/201
+UNCHANGED_SPOT5_CORE_SKIN
+       201       201      1000         5         0         2      1000         0                 0.3
+         0                   0                                                                     2
+/GRNOD/NODE/202
+CORE_FACE_SECONDARY
+        13        14        15        16
+/SURF/PART/202
+SKIN_MIDPLANE_MAIN
+       123
+/INTER/TYPE2/202
+UNCHANGED_SPOT5_CORE_SKIN
+       202       202      1000         5         0         2      1000         0                 0.3
+         0                   0                                                                     2
+/GRNOD/NODE/1
+INITIAL_NODE_1
+         1
+/INIVEL/TRA/1
+INITIAL_PHYSICAL_ROTATION_1
+                -200                   5                   2         1         0
+                   0         0
+/GRNOD/NODE/2
+INITIAL_NODE_2
+         2
+/INIVEL/TRA/2
+INITIAL_PHYSICAL_ROTATION_2
+                -200                   5                   2         2         0
+                   0         0
+/GRNOD/NODE/3
+INITIAL_NODE_3
+         3
+/INIVEL/TRA/3
+INITIAL_PHYSICAL_ROTATION_3
+                -200                   5                   2         3         0
+                   0         0
+/GRNOD/NODE/4
+INITIAL_NODE_4
+         4
+/INIVEL/TRA/4
+INITIAL_PHYSICAL_ROTATION_4
+                -200                   5                   2         4         0
+                   0         0
+/GRNOD/NODE/5
+INITIAL_NODE_5
+         5
+/INIVEL/TRA/5
+INITIAL_PHYSICAL_ROTATION_5
+                -200                   5                   2         5         0
+                   0         0
+/GRNOD/NODE/6
+INITIAL_NODE_6
+         6
+/INIVEL/TRA/6
+INITIAL_PHYSICAL_ROTATION_6
+                -200                   5                   2         6         0
+                   0         0
+/GRNOD/NODE/7
+INITIAL_NODE_7
+         7
+/INIVEL/TRA/7
+INITIAL_PHYSICAL_ROTATION_7
+                -200                   5                   2         7         0
+                   0         0
+/GRNOD/NODE/8
+INITIAL_NODE_8
+         8
+/INIVEL/TRA/8
+INITIAL_PHYSICAL_ROTATION_8
+                -200                   5                   2         8         0
+                   0         0
+/GRNOD/NODE/9
+INITIAL_NODE_9
+         9
+/INIVEL/TRA/9
+INITIAL_PHYSICAL_ROTATION_9
+                -200                   5                   2         9         0
+                   0         0
+/GRNOD/NODE/10
+INITIAL_NODE_10
+        10
+/INIVEL/TRA/10
+INITIAL_PHYSICAL_ROTATION_10
+                -200                   5                   2        10         0
+                   0         0
+/GRNOD/NODE/11
+INITIAL_NODE_11
+        11
+/INIVEL/TRA/11
+INITIAL_PHYSICAL_ROTATION_11
+                -200                   5                   2        11         0
+                   0         0
+/GRNOD/NODE/12
+INITIAL_NODE_12
+        12
+/INIVEL/TRA/12
+INITIAL_PHYSICAL_ROTATION_12
+                -200                   5                   2        12         0
+                   0         0
+/GRNOD/NODE/13
+INITIAL_NODE_13
+        13
+/INIVEL/TRA/13
+INITIAL_PHYSICAL_ROTATION_13
+                -200                   5                   2        13         0
+                   0         0
+/GRNOD/NODE/14
+INITIAL_NODE_14
+        14
+/INIVEL/TRA/14
+INITIAL_PHYSICAL_ROTATION_14
+                -200                   5                   2        14         0
+                   0         0
+/GRNOD/NODE/15
+INITIAL_NODE_15
+        15
+/INIVEL/TRA/15
+INITIAL_PHYSICAL_ROTATION_15
+                -200                   5                   2        15         0
+                   0         0
+/GRNOD/NODE/16
+INITIAL_NODE_16
+        16
+/INIVEL/TRA/16
+INITIAL_PHYSICAL_ROTATION_16
+                -200                   5                   2        16         0
+                   0         0
+/GRNOD/NODE/17
+INITIAL_NODE_17
+        17
+/INIVEL/TRA/17
+INITIAL_PHYSICAL_ROTATION_17
+                -200                   5                   2        17         0
+                   0         0
+/GRNOD/NODE/18
+INITIAL_NODE_18
+        18
+/INIVEL/TRA/18
+INITIAL_PHYSICAL_ROTATION_18
+                -200                   5                   2        18         0
+                   0         0
+/GRNOD/NODE/19
+INITIAL_NODE_19
+        19
+/INIVEL/TRA/19
+INITIAL_PHYSICAL_ROTATION_19
+                -200                   5                   2        19         0
+                   0         0
+/GRNOD/NODE/20
+INITIAL_NODE_20
+        20
+/INIVEL/TRA/20
+INITIAL_PHYSICAL_ROTATION_20
+                -200                   5                   2        20         0
+                   0         0
+/TH/PART/1
+SCOPE_PARTS
+        IE        KE        HE        PW
+         1        28       122       123
+/TH/NODE/1
+NATIVE_SCOPE_NODES
+        DX        DY        DZ        VX        VY        VZ
+         1         0
+         2         0
+         3         0
+         4         0
+         5         0
+         6         0
+         7         0
+         8         0
+         9         0
+        10         0
+        11         0
+        12         0
+        13         0
+        14         0
+        15         0
+        16         0
+        17         0
+        18         0
+        19         0
+        20         0
+/END

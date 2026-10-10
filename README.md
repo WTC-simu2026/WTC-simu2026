@@ -8,13 +8,13 @@ Le projet teste des mécanismes, des hypothèses explicites et des plages de par
 
 ## Où en est la simulation ?
 
-Instantané du **10 octobre 2026** : **AIRCRAFT-A23 terminée**, prochaine étape **AIRCRAFT-A24**. Le registre compte142entrées. Les deux itérations A22+A23 testent les attaches mécaniques avant toute nouvelle extension de l'impact. Tous les calculs natifs, entrées, scripts, rapports et critères échoués sont conservés.
+Instantané du **10 octobre2026** : **AIRCRAFT-A25 terminée**, prochaine étape **AIRCRAFT-A26**. Le registre compte144entrées. A24+A25 ajoutent52contrôles natifs pour qualifier une attache mécanique avant nouvelle extension de l'impact. Tous les calculs, scripts, entrées, rapports et critères échoués sont conservés.
 
-A22 exécute21contrôles de six poutres finies aux offsets réels d'une racine. Les21bilans énergétiques passent mais l'inertie physique reste échouée, notamment enY; la contribution native RKE est scalaire. A23 exécute26contrôles d'un solide3D et de sa transmission à une peau métallique et au sandwich A20. Les26bilans passent; le solide isolé conserve le tenseur physique en rotation libre. Les neuf témoins corrigés w1 passent leurs critères individuels, mais la comparaison avec/sans connecteur échoue à l'énergie cinétique globale ajoutée surXYZ. Aucun connecteur n'est inséré dans l'avion entier, aucune compensation de masse ou de RKE n'est utilisée.
+A24 exécute45contrôles de transmission par pénalité. Les45bilans énergétiques passent; l'énergie cinétique initiale ajoutée est correcte et la traction converge avec une pénalité raide. Le moment cinétique physique du montage échoue enXYZ, même à pas réduit. A25 exécute sept nouveaux contrôles avec des surfaces de reprise sans décalage initial. Les sept bilans passent, mais le moment physique échoue encore. Le témoin révèle aussi une inertie de rotation des coques héritées bien supérieure à leur inertie physique d'épaisseur. Aucun terme RKE n'est retiré, ajouté ou compensé dans les bilans. Aucun connecteur n'est inséré dans l'avion entier.
 
-Le [rapport A23](wtc1_simulation_v8/output/aircraft_a23/rapport_aircraft_a23.md) distingue l'inertie propre correcte du solide et celle du montage encore biaisée. Il conserve les erreurs du témoin de traction initial, les post-traitements corrigés par lecture en cache, les contrôles d'arrondi des champs natifs et les échecs. Le [rapport A22](wtc1_simulation_v8/output/aircraft_a22/rapport_aircraft_a22.md) prépare dix familles d'écrouissage acier sans les adopter; le début de striction n'est pas un seuil de rupture.
+Les [rapports A24](wtc1_simulation_v8/output/aircraft_a24/rapport_aircraft_a24.md) et [A25](wtc1_simulation_v8/output/aircraft_a25/rapport_aircraft_a25.md) conservent les viscosités natives par défaut, les sensibilités de rigidité et de pas, les échecs et les contrôles de précision des champs. La géométrie source des24racines et144ancres de peau est inventoriée pour la suite; ses capacités et son implantation ne sont pas encore qualifiées. La seule suppression du décalage géométrique ne suffit pas et n'identifie pas la cause complète du déficit A21.
 
-L'objectif vidéo3D des **dix premières secondes physiques** demeure incomplet. Le dernier aperçu entier A20 couvre **20millisecondes physiques**. Aucun ancien état invalide n'est prolongé ni ajusté à un dommage observé. Les géométries, capacités, rupture à grand taux, gravité, intérieur porteur et contacts des fragments restent à qualifier. Publication d'intégrité, sans validation historique de l'impact ou de l'effondrement.
+L'objectif vidéo3D des **dix premières secondes physiques** reste incomplet. Le meilleur calcul entier A20 couvre **20millisecondes physiques**. Les prochains travaux doivent vérifier l'inertie et la rigidité des plaques/peaux puis les raccordements réels, avant un nouveau départ entier intact. Matériaux, fracture à grande vitesse, gravité, intérieur porteur et contacts des fragments restent ouverts. Aucun dommage connu n'est une cible. Cette publication confirme l'intégrité des fichiers, sans validation historique de l'impact ou de l'effondrement.
 
 
 ## Ce qui est publié
@@ -26,9 +26,9 @@ L'objectif vidéo3D des **dix premières secondes physiques** demeure incomplet.
 - `outputs/` : calculs exploratoires antérieurs et audits complémentaires. Leurs affirmations se lisent avec leurs propres limites ; leur présence n'est pas une validation.
 - `publication/` : inventaire complet, empreintes SHA-256, règles de publication, licences tierces et liste motivée des fichiers externes non redistribués.
 
-Inventaire courant : **10,448 fichiers scientifiques dans Git**, **17,862 sorties dans 109 archives**.
+Inventaire courant : **11,321 fichiers scientifiques dans Git**, **19,090 sorties dans 110 archives**.
 
-Restaurer les 100 anciennes archives des releases précédentes, puis les 9 archives [A22+A23](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-10-aircraft-a22-a23). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
+Restaurer les 109 anciennes archives des releases précédentes, puis les 1 archives [A24+A25](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-10-aircraft-a24-a25). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
 
 ## Consulter et vérifier sans relancer les solveurs
 
@@ -57,7 +57,7 @@ Voir [REPRODUCIBILITY.md](REPRODUCIBILITY.md). La base Python utilise NumPy et P
 
 ## Prochaine étape
 
-A24 : tester une transmission du solide aux peaux sans condensation de masse, avec bilans natifs, tenseur ajouté indépendant, mouvement libre, rigidité et raffinement du pas. Conserver les témoins cœur et sandwich Spot5 A20 réussis. Contrôler ensuite la géométrie réelle inclinée et les capacités/masses des24racines avant un nouvel avion entier intact. Les dimensions4×1×0,5mm, masse0,00556g et seuil162N ne sont qu'un prototype, pas une fixation AA11 identifiée. Les échecs A21/A22/A23 restent disponibles, sans correction artificielle de RKE. Matériaux et contacts restent ouverts avant10secondes. Publication suivante après A24+A25 vérifiées.
+A26 : tester une représentation à translations des plaques/peaux, ou un raffinement contrôlé, avec volumes, densités, orientations et propriétés conservés et déclarés. Vérifier masse, tenseur physique, mouvement libre, membrane et flexion. Conserver les bilans RKE natifs et les échecs A21–A25; aucune compensation de masse ou d'inertie. Utiliser ensuite l'inventaire réel des24racines/144ancres et vérifier les raccordements courbes avant un nouvel avion entier intact. Estimer le coût effectif avant tout calcul long. L'objectif10secondes physiques demeure incomplet. Prochaine publication après A26+A27 vérifiées.
 
 ## Discipline de preuve
 
