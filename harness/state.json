@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-10T07:53:50.812013+00:00",
+  "updated_at": "2026-10-10T08:49:40.107919+00:00",
   "active_thread": {
     "id": "019ffb88-05a7-7f60-adff-6804df0d66a5",
     "title": "Poursuivre enquete WTC 1 V4",
@@ -19,10 +19,10 @@
     "targeted_v10i_working_copy_count": 5,
     "targeted_v10i_working_copy_directory": "wtc1_simulation_v8/input/v10i_structural_sources"
   },
-  "current_iteration": "AIRCRAFT-A21",
-  "current_status": "completed_cached_diagnosis_root_controls_and_fresh_halfdt12ms__local_energy_and_material_gates_failed",
-  "next_iteration": "AIRCRAFT-A22",
-  "next_objective": "AIRCRAFT-A22 : objectif vidéo3D de10 secondes physiques incomplet. Lire le rapport A21, r0/HALF_DT_12/review.json, native_precision_review.json, root_structural_review.json, control_channel_audit.json et cached_skin_negative_localization.json. A21 est un nouveau départ intact de12ms, mêmes entrées mécaniques A20, pas0,25 contre0,5. Impulsion et énergie finale convergent mais le bilan local reste faux au nez et au contact du fuselage. Ne pas relancer A20/A21 ou leurs témoins. Réutiliser les contrôles cœur LAW28 et sandwich TYPE2 Spot5 p3 A20 réussis; ne pas remplacer sans preuve Spot5 par Spot2. Les témoins de rotation RBE2 échouent avec ou sans peau de fuselage; aucune cause complète du déficit entier n’est prouvée. Les TYPE2 testés à la racine ne sont pas qualifiés: extrapolation de bord, énergie/inertie ou hiérarchie556. Les prototypes Spot2, même en référence sans nouvelle racine, échouent au bilan de rotation; cela ne remet pas silencieusement à zéro les réussites Spot5 p3. Priorité: comparer une attache mécanique finie, avec masse et inertie explicites, à un témoin indépendant de translation/rotation et dynamique libre. Pré-déclarer géométrie, capacité et incertitudes; conserver le budget initial ou annoncer explicitement toute masse ajoutée, sans ajuster ADMAS/densité pour fermer un bilan. Seulement après réussite des témoins, construire un départ intact et vérifier bilan local, matériaux et contact avant extension. Préparer en parallèle une rupture métallique/acier à partir de références et plages déclarées, sans cible de dommage. La référence NASA ATR42 à9,14m/s est une source de modèle différente, pas une mesure de fracture AA11 à200m/s. Ne pas prolonger les états invalides vers100ms,1s ou10s et ne pas inventer une RKE. Gravité, intérieur porteur et contacts des fragments restent nécessaires. Le lecteur CSV place les champs PART avant NODE: sélectionner les titres de groupes. Les erreurs de génération/lecture et tous les témoins refusés sont conservés. Le MP4/GIF A20 demeure le dernier aperçu:20ms physiques ralentis. A12+A13 sont déjà publiés; A14 àA21 restent locaux, sans nouvelle autorisation externe.",
+  "current_iteration": "AIRCRAFT-A23",
+  "current_status": "completed_solid_and_skin_coupling_controls__global_added_inertia_failed",
+  "next_iteration": "AIRCRAFT-A24",
+  "next_objective": "AIRCRAFT-A24 : reprendre coupling_summary.json, inertia_channels_w1.json et paired_w1_cached_audit.json, sans relancer A20–A23. Le solide HA8 conserve la masse et le tenseur physique en libre sur le maillage12³; les tractions N4/N8 correspondent à une rigidité3D indépendante. Le montage aux peaux Spot5 Iproj2 conserve les26bilans mais son énergie cinétique globale ajoutée échoue surXYZ, même en rotation lente10ms; le canal PART du solide reste correct. Ne pas transférer ce connecteur à l’avion entier, ni reconstruire une RKE ou compenser la masse. Tester une transmission sans condensation de masse, par maillage conforme ou attache de pénalité contrôlée, en gardant le cœur/Spot5 A20 intact. Si une formulation de pénalité est testée, déclarer sa rigidité et sa viscosité, inclure toutes ses énergies natives, contrôler glissement, bilan, inertie, dynamique libre et sensibilité au pas. La documentation Spot25 la déconseille: résultat à vérifier, pas choix validé. Après réussite des témoins, vérifier la géométrie réelle inclinée, les144points de peau des24racines, les capacités/budgets et la dynamique libre avant départ entier intact. Les dimensions4×1×0,5mm, masse0,00556g et capacité162N sont celles d’un prototype, pas une attache AA11 identifiée; la masse A22 de0,334g ne s’applique pas au nouveau solide. Les matériaux A21, la gravité, l’intérieur porteur et les contacts de fragments restent ouverts. Les courbes acier A22 et la striction ne sont pas des lois de rupture validées. Aucun dommage connu comme cible. Objectif10secondes physiques3D incomplet; dernier aperçu entier A20 de20ms. Publication A22+A23 autorisée par la cadence après intégrité vérifiée.",
   "impact_i02h_key_results": {
     "accepted_cases": 7,
     "new_controls_executed": 2,
@@ -1287,7 +1287,13 @@
     "aircraft_a20_handoff": "harness/handoffs/WTC1_AIRCRAFT_A20_HANDOFF.md",
     "aircraft_a21_report": "wtc1_simulation_v8/output/aircraft_a21/rapport_aircraft_a21.md",
     "aircraft_a21_results": "wtc1_simulation_v8/output/aircraft_a21/campaign_review.json",
-    "aircraft_a21_handoff": "harness/handoffs/WTC1_AIRCRAFT_A21_HANDOFF.md"
+    "aircraft_a21_handoff": "harness/handoffs/WTC1_AIRCRAFT_A21_HANDOFF.md",
+    "aircraft_a22_report": "wtc1_simulation_v8/output/aircraft_a22/rapport_aircraft_a22.md",
+    "aircraft_a22_results": "wtc1_simulation_v8/output/aircraft_a22/connector_review.json",
+    "aircraft_a22_handoff": "harness/handoffs/WTC1_AIRCRAFT_A22_HANDOFF.md",
+    "aircraft_a23_report": "wtc1_simulation_v8/output/aircraft_a23/rapport_aircraft_a23.md",
+    "aircraft_a23_results": "wtc1_simulation_v8/output/aircraft_a23/coupling_summary.json",
+    "aircraft_a23_handoff": "harness/handoffs/WTC1_AIRCRAFT_A23_HANDOFF.md"
   },
   "v8g_key_results": {
     "nist_hat_transfer_at_80_min_kip": 6748.0,
@@ -7938,5 +7944,134 @@
     "old_solver_reruns": 0,
     "NIST_damage_fitted": false,
     "next_iteration": "AIRCRAFT-A22"
+  },
+  "aircraft_a22_key_results": {
+    "experiment_id": "WTC1-AIRCRAFT-A22",
+    "registered_at": "2026-10-10T08:03:21.252948+00:00",
+    "configuration": "wtc1_simulation_v8/data/aircraft_a22_predeclaration.json",
+    "report": "wtc1_simulation_v8/output/aircraft_a22/rapport_aircraft_a22.md",
+    "results": "wtc1_simulation_v8/output/aircraft_a22/connector_review.json",
+    "handoff": "harness/handoffs/WTC1_AIRCRAFT_A22_HANDOFF.md",
+    "artifact_manifest": "wtc1_simulation_v8/output/aircraft_a22/artifact_manifest.json",
+    "publication_verification": "wtc1_simulation_v8/output/aircraft_a22/publication_verification.json",
+    "created_utc": "2026-10-10T08:02:43.291870+00:00",
+    "iteration": "AIRCRAFT-A22",
+    "status": "completed_finite_connector_controls_and_material_source_preparation__connector_controls_failed",
+    "native_controls": 21,
+    "all_native_controls_pass": false,
+    "failed_controls": [
+      {
+        "case": "ROTATION_X",
+        "nseg": 4,
+        "checks": [
+          "independent_physical_KE"
+        ]
+      },
+      {
+        "case": "ROTATION_Y",
+        "nseg": 4,
+        "checks": [
+          "independent_physical_KE"
+        ]
+      },
+      {
+        "case": "ROTATION_Z",
+        "nseg": 4,
+        "checks": [
+          "independent_physical_KE"
+        ]
+      },
+      {
+        "case": "ROTATION_Y",
+        "nseg": 8,
+        "checks": [
+          "independent_physical_KE"
+        ]
+      },
+      {
+        "case": "FREE_ROTATION_Y",
+        "nseg": 8,
+        "checks": [
+          "independent_initial_KE"
+        ]
+      }
+    ],
+    "root_added_mass_g_if_integrated": 0.3340612548194724,
+    "new_whole_impact_executed": false,
+    "old_solver_reruns": 0,
+    "previous_A21_local_energy_failure_preserved": true,
+    "strength_and_fracture_qualified": false,
+    "steel_source_table_visually_checked": true,
+    "necking_not_fracture": true,
+    "material_values_adopted_in_whole": false,
+    "whole_impact_qualified": false,
+    "objective1_complete": false,
+    "next_iteration": "AIRCRAFT-A23"
+  },
+  "aircraft_a23_key_results": {
+    "experiment_id": "WTC1-AIRCRAFT-A23",
+    "registered_at": "2026-10-10T08:49:40.107919+00:00",
+    "configuration": "wtc1_simulation_v8/data/aircraft_a23_predeclaration.json",
+    "configuration_w1": "wtc1_simulation_v8/data/aircraft_a23_coupling_w1.json",
+    "report": "wtc1_simulation_v8/output/aircraft_a23/rapport_aircraft_a23.md",
+    "results": "wtc1_simulation_v8/output/aircraft_a23/coupling_summary.json",
+    "handoff": "harness/handoffs/WTC1_AIRCRAFT_A23_HANDOFF.md",
+    "artifact_manifest": "wtc1_simulation_v8/output/aircraft_a23/artifact_manifest.json",
+    "publication_verification": "wtc1_simulation_v8/output/aircraft_a23/publication_verification.json",
+    "created_utc": "2026-10-10T08:48:42.471384+00:00",
+    "iteration": "AIRCRAFT-A23",
+    "status": "completed_solid_and_skin_coupling_controls__global_added_inertia_failed",
+    "native_controls": 26,
+    "native_case_gates_passed": 21,
+    "native_energy_balances_passed": 26,
+    "failed_controls": [
+      {
+        "revision": "w0",
+        "case": "CONNECTED_ROTATION_X",
+        "checks": [
+          "all_node_velocity"
+        ]
+      },
+      {
+        "revision": "w0",
+        "case": "CONNECTED_ROTATION_Y",
+        "checks": [
+          "all_node_velocity"
+        ]
+      },
+      {
+        "revision": "w0",
+        "case": "CONNECTED_ROTATION_Z",
+        "checks": [
+          "all_node_velocity"
+        ]
+      },
+      {
+        "revision": "w0",
+        "case": "CONNECTED_EXTENSION_N4",
+        "checks": [
+          "independent_static_IE"
+        ]
+      },
+      {
+        "revision": "w0",
+        "case": "CONNECTED_EXTENSION_N8",
+        "checks": [
+          "independent_static_IE"
+        ]
+      }
+    ],
+    "paired_added_KE_all_axes_pass": false,
+    "native_fields_bounded_precision_samples": 78,
+    "primitive_free_physical_tensor_pass": true,
+    "corrected_elastic_extension_pass": true,
+    "new_whole_impact_executed": false,
+    "previous_A21_local_energy_failure_preserved": true,
+    "physical_strength_and_fracture_qualified": false,
+    "whole_insertion_ready": false,
+    "whole_impact_qualified": false,
+    "objective1_complete": false,
+    "old_solver_reruns": 0,
+    "next_iteration": "AIRCRAFT-A24"
   }
 }

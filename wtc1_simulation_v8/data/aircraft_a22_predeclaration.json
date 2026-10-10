@@ -1,0 +1,185 @@
+{
+  "iteration": "AIRCRAFT-A22",
+  "declared_utc": "2026-10-10T07:55:04.817380+00:00",
+  "seed": 1102047,
+  "random_draws": 0,
+  "purpose": "Independent finite root beam connector, actual six offsets, no ideal constraint or nested TYPE2 in this isolated witness. Native ledger, known mass/inertia and free dynamics before any whole integration.",
+  "geometry": {
+    "root_offsets_mm": [
+      [
+        -0.412364751432051,
+        4.198622575006993,
+        0.5138324478057
+      ],
+      [
+        0.412364751432051,
+        -4.198622575006993,
+        -0.5138324478057
+      ],
+      [
+        -0.41236475142954987,
+        4.198622575007221,
+        -0.5138324478057293
+      ],
+      [
+        0.41236475142954987,
+        -4.198622575007221,
+        0.5138324478057293
+      ],
+      [
+        -0.412364751432051,
+        4.198622575007448,
+        -0.5138324478027482
+      ],
+      [
+        0.412364751432051,
+        -4.198622575007448,
+        0.5138324478027482
+      ]
+    ],
+    "circular_diameter_mm": 0.5,
+    "segments_per_spoke": [
+      4,
+      8
+    ],
+    "all_spokes_share_host_node": true,
+    "no_RBE2_RBE3_TYPE2_or_ADMAS": true,
+    "shared_ends_are_point_connections_not_a_resolved_fastener_bearing_surface": true
+  },
+  "material": {
+    "inherited": "LAW2/1 fuselage hypothesis A20",
+    "rho_g_mm3": 0.00278,
+    "E_MPa": 73100,
+    "nu": 0.33,
+    "yield_MPa": 324,
+    "hardening_MPa": 0,
+    "fracture": "absent; numerical elastic controls only",
+    "material_identified_as_AA11": false
+  },
+  "capacity": {
+    "section_area_mm2": 0.19634954084936207,
+    "second_moment_mm4": 0.0030679615757712823,
+    "elastic_axial_yield_N_per_spoke": 63.61725123519331,
+    "physical_fastener_strength_or_rupture_qualified": false
+  },
+  "mass_budget": {
+    "one_root_g": 0.01391921895081135,
+    "24_roots_added_g_if_integrated": 0.3340612548194724,
+    "no_compensation": true,
+    "whole_aircraft_unchanged_in_controls": true,
+    "must_be_explicitly_added_if_later_integrated": true
+  },
+  "independent_inertia_g_mm2": {
+    "lumped_centerline": [
+      [
+        0.08366489946286029,
+        0.008095836410512678,
+        -0.0003302593779660112
+      ],
+      [
+        0.008095836410512678,
+        0.002029698802685421,
+        0.003362640660068605
+      ],
+      [
+        -0.0003302593779660112,
+        0.003362640660068605,
+        0.08322545437286687
+      ]
+    ],
+    "physical_cross_section": [
+      [
+        0.00021953527815382967,
+        -2.0847088206035475e-05,
+        8.504305218405076e-07
+      ],
+      [
+        -2.0847088206035475e-05,
+        0.000429749040214309,
+        -8.658928230642277e-06
+      ],
+      [
+        8.504305218405076e-07,
+        -8.658928230642277e-06,
+        0.00022066686605757118
+      ]
+    ],
+    "continuous_cylinders": [
+      [
+        0.08323586962889894,
+        0.008012230900519722,
+        -0.00032684879722738
+      ],
+      [
+        0.008012230900519722,
+        0.0024437137436541067,
+        0.0033279147499769646
+      ],
+      [
+        -0.00032684879722738,
+        0.0033279147499769646,
+        0.08280096267789447
+      ]
+    ],
+    "not_a_native_RKE_correction": true
+  },
+  "cases": [
+    "TRANSLATION_X",
+    "ROTATION_X",
+    "ROTATION_Y",
+    "ROTATION_Z",
+    "FREE_TRANSLATION",
+    "FREE_ROTATION_X",
+    "FREE_ROTATION_Y",
+    "FREE_ROTATION_Z",
+    "AXIAL"
+  ],
+  "motion": {
+    "duration_ms": 1,
+    "prescribed_path": "3*t^2-2*t^3 for t in [0,1]ms",
+    "translation_mm": 10,
+    "rotation_rad": 1.5707963267948966,
+    "free_translation_m_s": [
+      10,
+      5,
+      2
+    ],
+    "free_angular_rad_ms": 0.1,
+    "axial_straight_length_mm": 20,
+    "axial_strain": 0.001
+  },
+  "execution": {
+    "CPU_threads": 1,
+    "GPU": false,
+    "dt_cap_ms": 2.5e-05,
+    "history_dt_ms": 0.001,
+    "animation_dt_ms": 0.1,
+    "per_process_cap_s": 120,
+    "no_mass_scaling": true
+  },
+  "acceptance": {
+    "mass_relative": 1e-06,
+    "mass_scaling_relative": 1e-09,
+    "energy_balance_fraction": 0.02,
+    "absolute_energy_J": 1e-07,
+    "rigid_IE_J": 1e-07,
+    "physical_KE_fraction": 0.02,
+    "analytic_axial_IE_fraction": 0.02,
+    "motion_mm": 0.002,
+    "velocity_m_s": 0.005,
+    "free_momentum_fraction": 0.002,
+    "free_energy_fraction": 0.002
+  },
+  "references": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type3_beam_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/beam_elements_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/beam_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inivel_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/th_node_starter_r.htm"
+  ],
+  "no_historical_or_NIST_damage_target": true,
+  "reuse_A20_passed_core_and_Spot5": true,
+  "old_solver_reruns": 0,
+  "whole_impact_qualified": false,
+  "objective1_complete": false
+}

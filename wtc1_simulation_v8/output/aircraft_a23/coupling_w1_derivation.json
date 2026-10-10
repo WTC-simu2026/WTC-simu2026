@@ -1,0 +1,125 @@
+{
+  "created_utc": "2026-10-10T08:32:22.807864+00:00",
+  "original": "wtc1_simulation_v8/scripts/run_aircraft_a23.py",
+  "original_sha256": "5fad779a3e94cb50d96f26b9ae83bab6a37c81b34d25c6f3f5cf210b5f23e344",
+  "derived": "wtc1_simulation_v8/scripts/test_aircraft_a23_coupling_w1.py",
+  "derived_sha256": "a6abedc14e1b50a772e065c63d0295318358073b3724b383f2b7e972c125f186",
+  "replacements": [
+    {
+      "old": "data/aircraft_a23_predeclaration.json",
+      "new": "data/aircraft_a23_coupling_w1.json",
+      "count": 1
+    },
+    {
+      "old": "read(OUT/'declaration_guard.json')",
+      "new": "read(OUT/'coupling_w1_guard.json')",
+      "count": 1
+    },
+    {
+      "old": "def rotation(xyz,T,axis):",
+      "new": "def rotation(xyz,T,axis,duration=1):\n    T=T/duration",
+      "count": 1
+    },
+    {
+      "old": "w=np.pi/2*(6*T-6*T*T)",
+      "new": "w=np.pi/2*(6*T-6*T*T)/duration",
+      "count": 1
+    },
+    {
+      "old": "D[:,:,0]=.004*s[:,None]*(xyz[None,:,0]>=0)",
+      "new": "D[:,:,0]=.004*s[:,None]*(np.asarray(node_ids)[None,:]<=8)",
+      "count": 1
+    },
+    {
+      "old": "for t,v in zip(T,val)",
+      "new": "for t,v in zip(T*(10 if 'ROTATION_' in cid else 1),val)",
+      "count": 1
+    },
+    {
+      "old": "OUT/'w0'",
+      "new": "OUT/'w1'",
+      "count": 4
+    },
+    {
+      "old": "duration=.05 if free else 1",
+      "new": "duration=.05 if free else 10 if 'ROTATION_' in cid else 1",
+      "count": 1
+    },
+    {
+      "old": "n='A23_'+cid",
+      "new": "n='A23_w1_'+cid",
+      "count": 1
+    },
+    {
+      "old": "ff(0,.025)",
+      "new": "ff(0,.25 if 'ROTATION_' in cid else .025)",
+      "count": 1
+    },
+    {
+      "old": "ff(.001),'/VERS/2026'",
+      "new": "ff(.01 if 'ROTATION_' in cid else .001),'/VERS/2026'",
+      "count": 1
+    },
+    {
+      "old": ",180,en)",
+      "new": ",600,en)",
+      "count": 3
+    },
+    {
+      "old": "rotation(xyz,T,cid[-1]);expected=",
+      "new": "rotation(xyz,T,cid[-1],duration=g['duration_ms']);expected=",
+      "count": 1
+    },
+    {
+      "old": "rotation(xyz,T,cid[-1]);position_err=",
+      "new": "rotation(xyz,T,cid[-1],duration=g['duration_ms']);position_err=",
+      "count": 1
+    },
+    {
+      "old": "checks['independent_static_IE']=bool(abs(IE[-1]-analytic)",
+      "new": "clip_IE=next(H[k]*.001 for k in H if k.startswith('FINITE_METAL_CLIP') and k.strip().endswith('IE'));checks['independent_static_IE']=bool(abs(clip_IE[-1]-analytic)",
+      "count": 1
+    },
+    {
+      "old": "'last_IE_J':float(IE[-1]),",
+      "new": "'last_IE_J':float(IE[-1]),'last_clip_IE_J':float(clip_IE[-1]) if g['connected'] and 'EXTENSION' in cid else None,",
+      "count": 1
+    },
+    {
+      "old": "assert np.allclose(T,ref['time_ms'],atol=1e-9,rtol=0);X,V,angle,w=rotation(q,T,axis);",
+      "new": "mask=(T>=ref['time_ms'][0])&(T<=ref['time_ms'][-1]);T=T[mask];X,V,angle,w=rotation(q,T,axis,duration=g['duration_ms']);",
+      "count": 1
+    },
+    {
+      "old": "actual=con['KE_J']-ref['KE_J']",
+      "new": "actual=con['KE_J'][mask]-np.interp(T,ref['time_ms'],ref['KE_J'])",
+      "count": 1
+    },
+    {
+      "old": "'maximum_added_KE_error_J':difference,",
+      "new": "'maximum_added_KE_error_J':difference,'maximum_native_time_shift_ms':float(abs(con['time_ms']-ref['time_ms']).max()),'common_rows':int(mask.sum()),",
+      "count": 1
+    },
+    {
+      "old": "['last_IE_J'];e8=",
+      "new": "['last_clip_IE_J'];e8=",
+      "count": 1
+    },
+    {
+      "old": "N8/review.json')['last_IE_J']",
+      "new": "N8/review.json')['last_clip_IE_J']",
+      "count": 1
+    },
+    {
+      "old": "paired_coupling_review.json",
+      "new": "paired_coupling_w1_review.json",
+      "count": 3
+    },
+    {
+      "old": "campaign_review.json",
+      "new": "campaign_w1_review.json",
+      "count": 1
+    }
+  ],
+  "parent_not_modified": true
+}

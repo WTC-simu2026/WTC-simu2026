@@ -1,0 +1,162 @@
+{
+  "iteration": "AIRCRAFT-A23",
+  "declared_utc": "2026-10-10T08:19:34.147913+00:00",
+  "seed": 1102048,
+  "random_draws": 0,
+  "purpose": "Finite3D connector with translational mass/inertia, independent continuum and lumped tensor; paired reference/connector motion on real shell+Spot5 sandwich before whole insertion. No scalar beam inertia or ideal root constraint.",
+  "solid": {
+    "dimensions_mm": [
+      4,
+      1,
+      0.5
+    ],
+    "material": "inherited LAW2/1: rho.00278g/mm3 E73100MPa nu.33 yield324MPa hardening0 fracture absent",
+    "property": "TYPE14 HA8 Isolid14 Ismstr4 Icpre2 Gauss222 Iframe2",
+    "rigid_control_shape": [
+      4,
+      2,
+      2
+    ],
+    "elastic_shapes": [
+      [
+        4,
+        2,
+        2
+      ],
+      [
+        8,
+        4,
+        4
+      ]
+    ],
+    "free_tensor_shape": [
+      12,
+      12,
+      12
+    ],
+    "mass_g": 0.00556,
+    "axial_yield_N": 162,
+    "as_built_identified": false
+  },
+  "fixture": {
+    "body_plate_mm": [
+      [
+        -10,
+        0,
+        -4.25
+      ],
+      [
+        0,
+        0,
+        -4.25
+      ],
+      [
+        0,
+        10,
+        -4.25
+      ],
+      [
+        -10,
+        10,
+        -4.25
+      ]
+    ],
+    "body_skin_thickness_mm": 0.5,
+    "body_skin_material": "inherited LAW2/1",
+    "sandwich": "reuse A20p3 actual skins at z+-4.25, core+-4, skin.5mm and Spot5 Iproj2",
+    "clip_bounds_mm": [
+      [
+        -2,
+        4.5,
+        -5
+      ],
+      [
+        2,
+        5.5,
+        -4.5
+      ]
+    ],
+    "clip_surface": "touches outer lower skin at z-4.5, no overlap with sandwich core",
+    "end_ties": "only new solid end nodes secondary; body/lower_skin shells main, Spot5 Iproj2 dsearch.8mm. Opposite end node sets disjoint. Existing core nodes never used as root main.",
+    "unknown_capacity_and_geometry": true
+  },
+  "mass_budget": {
+    "one_clip_g": 0.00556,
+    "whole_added_mass_not_assumed_until_actual_mapping_exists": true,
+    "no_ADMAS_density_or_inertia_compensation": true,
+    "whole_aircraft_unchanged_by_controls": true
+  },
+  "cases": {
+    "primitive": [
+      "ROTATION_X",
+      "ROTATION_Y",
+      "ROTATION_Z",
+      "AXIAL_N4",
+      "AXIAL_N8",
+      "FREE_ROTATION_X",
+      "FREE_ROTATION_Y",
+      "FREE_ROTATION_Z"
+    ],
+    "paired": [
+      "REFERENCE_ROTATION_X",
+      "CONNECTED_ROTATION_X",
+      "REFERENCE_ROTATION_Y",
+      "CONNECTED_ROTATION_Y",
+      "REFERENCE_ROTATION_Z",
+      "CONNECTED_ROTATION_Z",
+      "REFERENCE_EXTENSION",
+      "CONNECTED_EXTENSION_N4",
+      "CONNECTED_EXTENSION_N8"
+    ]
+  },
+  "motion": {
+    "prescribed_duration_ms": 1,
+    "s": "3*t^2-2*t^3",
+    "angle_rad": 1.5707963267948966,
+    "affine_axial_strain": 0.001,
+    "free_duration_ms": 0.05,
+    "free_omega_rad_ms": 10,
+    "connected_extension_mm": 0.004
+  },
+  "execution": {
+    "CPU_threads": 1,
+    "GPU": false,
+    "dt_cap_ms": 2.5e-05,
+    "history_dt_ms": 0.001,
+    "animation_dt_ms": 0.025,
+    "per_process_cap_s": 180,
+    "estimated_minutes": [
+      5,
+      15
+    ],
+    "no_mass_scaling": true
+  },
+  "acceptance": {
+    "mass_relative": 1e-06,
+    "added_mass_relative": 1e-09,
+    "energy_fraction": 0.02,
+    "absolute_energy_J": 1e-07,
+    "rigid_IE_J": 1e-07,
+    "known_lumped_KE_fraction": 0.002,
+    "free_continuum_KE_fraction": 0.02,
+    "physical_tensor_fraction": 0.02,
+    "position_mm": 0.002,
+    "velocity_m_s": 0.005,
+    "elastic_IE_fraction": 0.02,
+    "paired_added_KE_fraction": 0.02,
+    "free_energy_fraction": 0.002,
+    "elastic_mesh_fraction": 0.05
+  },
+  "references": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type14_solid_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inter_type2_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/mat_law2_plas_johns_starter_r.htm"
+  ],
+  "reuse_existing_A20_passed_core_and_Spot5": true,
+  "no_old_solver_reruns": true,
+  "no_historical_damage_target": true,
+  "whole_insertion_requires_all_scope_controls": true,
+  "whole_impact_qualified": false,
+  "physical_connector_strength_or_fracture_qualified": false,
+  "objective1_complete": false
+}
