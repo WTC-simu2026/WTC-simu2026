@@ -1,0 +1,164 @@
+{
+  "created_utc": "2026-10-09T13:43:57.700358+00:00",
+  "iteration": "AIRCRAFT-A21",
+  "case": "A21_HALF_DT_12",
+  "end_ms": 12.000055313110352,
+  "main_engine_seconds": 2103.8458494999977,
+  "mass_kg": 191273.8379425,
+  "initial_native_KE_J": 2441025683.456,
+  "final_native_residual_J": -148465.52799987793,
+  "final_native_generated_J": 3623000.2,
+  "maximum_native_residual_J": 258051.60799980164,
+  "native_failed_local_rows": 100,
+  "maximum_native_CSV_residual_difference_J": 812.4175000190735,
+  "windows": [
+    {
+      "window_ms": [
+        0,
+        10
+      ],
+      "native_failed_rows": 52,
+      "first_failure_ms": 0.3401530981063843,
+      "maximum_gate_excess_J": 1308.1498185134883,
+      "worst_time_ms": 1.6401487588882446,
+      "residual_at_worst_J": -4807.194874763489,
+      "generated_at_worst_J": 49980.901125000004
+    },
+    {
+      "window_ms": [
+        10,
+        12.0001
+      ],
+      "native_failed_rows": 48,
+      "first_failure_ms": 10.640028953552246,
+      "maximum_gate_excess_J": 171968.50199983217,
+      "worst_time_ms": 10.920016288757324,
+      "residual_at_worst_J": -257093.97599983215,
+      "generated_at_worst_J": 1682509.48
+    }
+  ],
+  "comparison": {
+    "common_last_main_history_ms": 11.98007,
+    "comparison_native_end_ms": 12.000055313110352,
+    "old_impulse_Ns": [
+      -31792.065830423937,
+      856.3695772568577,
+      -380.9532045386531
+    ],
+    "new_impulse_Ns": [
+      -31474.95,
+      872.8256,
+      -388.6948
+    ],
+    "end_impulse_relative_difference": 0.009986734587709947,
+    "maximum_history_impulse_difference_Ns": 496.61831417336634,
+    "maximum_impulse_norm_reference_Ns": 31805.879078606027,
+    "old_generated_end_interpolated_J": 3632370.707474886,
+    "new_generated_end_J": 3623000.2,
+    "end_generated_relative_difference": 0.002579722233637293,
+    "maximum_generated_history_difference_J": 37669.991616438376,
+    "end_impulse_halfdt_gate": true,
+    "end_generated_halfdt_gate": true,
+    "old_solver_rerun": false,
+    "only_engine_time_step_changed": true
+  },
+  "global_support_momentum_error_Ns": 36.33383156563242,
+  "facade_contact_momentum_error_Ns": 5.784321563378967,
+  "momentum_tolerance_Ns": 639.7889759841981,
+  "minimum_saved_skin_element_IE_J": -0.6733704487653449,
+  "minimum_sampled_core_element_IE_J": 0.0,
+  "maximum_metal_plastic_strain": 0.476483,
+  "maximum_facade_plastic_strain": 0.172335,
+  "maximum_beam_plastic_strain": 0.3446777,
+  "final_core_IE_J": 19137.735743299992,
+  "final_skins_IE_J": 183299.03881128988,
+  "native_geometry_states": [
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a21/r0/HALF_DT_12/A21_HALF_DT_12A001",
+      "time_ms": 0.0,
+      "native_binary_VTK_coordinates_and_velocity_agree": true,
+      "deleted_skins": 0,
+      "deleted_core": 0,
+      "deleted_cohesive": 0,
+      "maximum_metal_plastic_strain": 0.0,
+      "maximum_facade_plastic_strain": 0.0,
+      "core_element_IE_sum_J": 0.0
+    },
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a21/r0/HALF_DT_12/A21_HALF_DT_12A021",
+      "time_ms": 4.000118255615234,
+      "native_binary_VTK_coordinates_and_velocity_agree": true,
+      "deleted_skins": 454,
+      "deleted_core": 269,
+      "deleted_cohesive": 283,
+      "maximum_metal_plastic_strain": 0.0,
+      "maximum_facade_plastic_strain": 0.00123629,
+      "core_element_IE_sum_J": 8378.900720092857
+    },
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a21/r0/HALF_DT_12/A21_HALF_DT_12A041",
+      "time_ms": 8.000123023986816,
+      "native_binary_VTK_coordinates_and_velocity_agree": true,
+      "deleted_skins": 879,
+      "deleted_core": 504,
+      "deleted_cohesive": 550,
+      "maximum_metal_plastic_strain": 0.0,
+      "maximum_facade_plastic_strain": 0.00123629,
+      "core_element_IE_sum_J": 15521.154996748599
+    },
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a21/r0/HALF_DT_12/A21_HALF_DT_12A061",
+      "time_ms": 12.000055313110352,
+      "native_binary_VTK_coordinates_and_velocity_agree": true,
+      "deleted_skins": 1065,
+      "deleted_core": 607,
+      "deleted_cohesive": 605,
+      "maximum_metal_plastic_strain": 0.476483,
+      "maximum_facade_plastic_strain": 0.172335,
+      "core_element_IE_sum_J": 19137.73474260502
+    }
+  ],
+  "checks": {
+    "native_binary_CSV": true,
+    "native_normal_termination": true,
+    "requested_12ms_horizon": true,
+    "native_physical_mass": true,
+    "no_scaled_or_added_mass": true,
+    "identical_A20_Starter_mechanics": true,
+    "identical_A20_mass_CG_inertia": true,
+    "strict_zero_warnings": false,
+    "no_external_work": true,
+    "global_energy": true,
+    "native_local_energy": false,
+    "printed_CSV_local_energy": false,
+    "global_support_momentum": true,
+    "facade_contact_momentum": true,
+    "halfdt_end_impulse": true,
+    "halfdt_end_generated": true,
+    "sampled_native_geometry_finite": true,
+    "sampled_connectivity": true,
+    "supports_fixed": true,
+    "metal_material_domain": false,
+    "facade_material_domain": false,
+    "beam_material_domain": false,
+    "saved_skin_elements_IE_nonnegative": false,
+    "sampled_core_elements_IE_nonnegative": true
+  },
+  "failed_checks": [
+    "strict_zero_warnings",
+    "native_local_energy",
+    "printed_CSV_local_energy",
+    "metal_material_domain",
+    "facade_material_domain",
+    "beam_material_domain",
+    "saved_skin_elements_IE_nonnegative"
+  ],
+  "all_declared_checks_pass": false,
+  "specific_whole_energy_cause_proven": false,
+  "physical_impact_qualified": false,
+  "seconds_extension_allowed": false,
+  "objective1_complete": false,
+  "no_inferred_RKE_or_balance_correction": true,
+  "metal_fracture_modelled": false,
+  "old_A20_preserved_and_not_rerun": true
+}

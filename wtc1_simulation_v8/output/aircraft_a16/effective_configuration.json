@@ -1,0 +1,52 @@
+{
+  "created_utc": "2026-10-09T06:41:41.718396+00:00",
+  "pass": true,
+  "immutable_predeclaration_retained": true,
+  "decks_compared_to_actual_parent": true,
+  "cases": [
+    {
+      "case": "IMPACT_R20_10",
+      "deck": "wtc1_simulation_v8/output/aircraft_a16/r0/IMPACT_R20_10/A16_IMPACT_R20_10_0000.rad",
+      "sha256": "d0addaf2e29d956832ad4b1b1e5d44d3033c1b6d10578cd5323a83009e84051f",
+      "unchanged_parent_mechanical_cards": true,
+      "only_new_mechanical_card": "/FAIL/ORTHSTRAIN/4",
+      "transition_fraction": 0.2,
+      "parent": "wtc1_simulation_v8/output/aircraft_a15/r0/IMPACT_10_DT50",
+      "engine_timeout_s": 1200,
+      "external_contact_keywords": [
+        "/INTER/TYPE25/101",
+        "/INTER/TYPE25/102",
+        "/INTER/TYPE25/103",
+        "/INTER/TYPE25/104"
+      ],
+      "prescribed_aircraft_motion": false
+    },
+    {
+      "case": "IMPACT_R02_10",
+      "deck": "wtc1_simulation_v8/output/aircraft_a16/r0/IMPACT_R02_10/A16_IMPACT_R02_10_0000.rad",
+      "sha256": "868b92f250c8316a94d42acb589a2c5943b7674c6550df5edc80b08f2beabdff",
+      "unchanged_parent_mechanical_cards": true,
+      "only_new_mechanical_card": "/FAIL/ORTHSTRAIN/4",
+      "transition_fraction": 0.02,
+      "parent": "wtc1_simulation_v8/output/aircraft_a15/r0/IMPACT_10_DT50",
+      "engine_timeout_s": 1200,
+      "external_contact_keywords": [
+        "/INTER/TYPE25/101",
+        "/INTER/TYPE25/102",
+        "/INTER/TYPE25/103",
+        "/INTER/TYPE25/104"
+      ],
+      "prescribed_aircraft_motion": false
+    }
+  ],
+  "inherited_metadata_overridden_by_A16": {
+    "sandwich.failure_disabled": "LAW25 built-in failure remains disabled; the new independent FAIL/ORTHSTRAIN/4 is enabled on skins",
+    "failure_transfer_enabled": "inherited qualification/transfer false, not absence of the new damage card",
+    "scene_changes.rupture_erosion": "no whole-shell erosion, but native skin resistance damage is active",
+    "declared_mechanism_controls.material_failure": "legacy diagnostic context; A16 damage section governs the added skin law",
+    "local_control_scope": "legacy engine-only context; the four exterior whole-aircraft contacts remain active as in A15",
+    "stages.execution": "legacy600s narrative; A16 execution.engine_timeout_s and actual execution records specify1200s",
+    "parent": "legacy A11 ancestor; actual direct parent is the cached A15 intact start deck"
+  },
+  "physical_impact_qualified": false
+}

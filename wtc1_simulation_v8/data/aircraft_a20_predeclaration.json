@@ -1,0 +1,163 @@
+{
+  "iteration": "AIRCRAFT-A20",
+  "declared_utc": "2026-10-09T09:14:46.221595+00:00",
+  "seed": 1102045,
+  "random_draws": 0,
+  "goal": {
+    "physical_duration_s": 10,
+    "complete": false,
+    "last_whole_horizon_s": 0.0200002174
+  },
+  "scope": "Replace the radome unfailed shell core by a finite-thickness, finite-yield 3D honeycomb. Native implementation controls before fresh whole integration. No historical damage fitting.",
+  "reference": {
+    "path": "wtc1_simulation_v8/input/aircraft_a05_sources/hrh10_eu.pdf",
+    "sha256": "2494051ced71e0e533d45cca0b13230447165269a39a7300c823a1bf90192b54",
+    "page": 4,
+    "grade": "HRH10-3.2-48",
+    "rho_kg_m3": 48,
+    "E33_MPa": 138,
+    "G31_MPa": 41,
+    "G23_MPa": 24,
+    "tau31_MPa": 1.21,
+    "tau23_MPa": 0.69,
+    "bare_compression33_MPa": 2.07,
+    "test_thickness_mm": 12.7,
+    "typical_room_temperature": true,
+    "AA11_material_identified": false
+  },
+  "core": {
+    "law": "LAW28",
+    "property": "TYPE6",
+    "Isolid": 14,
+    "Ismstr": 4,
+    "Icpre": 3,
+    "Gauss": 222,
+    "Iorth": 0,
+    "rho_g_mm3": 4.8e-05,
+    "E_MPa": [
+      1,
+      1,
+      138
+    ],
+    "G_MPa": [
+      0.5,
+      24,
+      41
+    ],
+    "yield_MPa": [
+      0.1,
+      0.1,
+      2.07,
+      0.05,
+      0.69,
+      1.21
+    ],
+    "failure_normal": [
+      0.2,
+      0.2,
+      0.05
+    ],
+    "failure_shear": [
+      0.1,
+      0.06,
+      0.06
+    ],
+    "failure_strain_interpretation": "Test actual native deletion; documentation labels plastic/total inconsistently. Do not assume measured elongation.",
+    "yield_curve": "constant positive plateau over signed strain -2..2; no measured postpeak or densification curve",
+    "unmeasured": [
+      "E11",
+      "E22",
+      "G12",
+      "yield11",
+      "yield22",
+      "yield12",
+      "all failure strains",
+      "postpeak",
+      "fracture energy",
+      "strain-rate dependence"
+    ],
+    "failure_sensitivity_shear": [
+      0.03,
+      0.06,
+      0.12
+    ],
+    "whole_baseline_shear_failure": 0.06,
+    "thickness_mm": 8,
+    "E11_E22_G12_inherited_placeholders": true,
+    "uncoupled_orthotropy_model_change": true,
+    "bulk_viscosity": [
+      1.1,
+      0.05
+    ],
+    "no_added_or_scaled_mass": true,
+    "physical_G_measured": false
+  },
+  "witness": {
+    "length_xy_mm": 10,
+    "thickness_mm": 8,
+    "time_ms": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "paths": {
+      "L": [
+        0,
+        0.015,
+        0,
+        0.15,
+        0.15
+      ],
+      "W": [
+        0,
+        0.015,
+        0,
+        0.15,
+        0.15
+      ],
+      "C": [
+        0,
+        0.005,
+        0,
+        0.2,
+        0.2
+      ]
+    },
+    "cases": [
+      "SHEAR_L",
+      "SHEAR_W",
+      "CRUSH",
+      "ROTATION",
+      "SHEAR_L_HALF",
+      "SHEAR_L_LOW",
+      "SHEAR_L_HIGH"
+    ],
+    "duration_ms": 1,
+    "dt_cap_ms": 2.5e-05,
+    "history_dt_ms": 0.001,
+    "anim_dt_ms": 0.025,
+    "input_curve_dt_ms": 0.0001,
+    "CPU_threads": 2,
+    "engine_cap_s": 120,
+    "acceptance": {
+      "elastic_energy_fraction": 0.02,
+      "yield_fraction": 0.03,
+      "energy_balance_fraction": 0.02,
+      "absolute_energy_J": 0.0001,
+      "mass_relative": 1e-06,
+      "rotation_IE_J": 0.0001,
+      "half_dt_energy_fraction": 0.01
+    }
+  },
+  "integration": "Separate declaration after passing native core controls. Full skin/core coupling, external/contact meshes and mass moments audited before any whole Engine.",
+  "old_solver_reruns": 0,
+  "sources_read_only": true,
+  "NIST_outcomes_used_as_target": false,
+  "physical_impact_qualified": false,
+  "sources": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/mat_law28_honeycomb_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type6_sol_orth_starter_r.htm"
+  ]
+}

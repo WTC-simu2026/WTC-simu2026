@@ -1,0 +1,114 @@
+#RADIOSS STARTER
+/BEGIN
+A14_AREA_N1_R0
+      2026         0
+                   g                  mm                  ms
+                   g                  mm                  ms
+/TITLE
+A14_AREA_N1_R0
+/ANALY
+         0         0         0         0
+/SPMD
+         0         0                   0                   1
+/NODE
+         1                  -5                 -10                 -10
+         2                  -5                  10                 -10
+         3                  -5                 -10                  10
+         4                  -5                  10                  10
+         5                   0                 -20                 -20
+         6                   0                  20                 -20
+         7                   0                 -20                  20
+         8                   0                  20                  20
+/MAT/LAW1/1
+SYNTHETIC_ELASTIC
+             0.00278
+               70000                 0.3
+/PROP/TYPE1/1
+MOVING_PLATE
+        24         4         2         2
+               1e-20               1e-20               1e-20               1e-20               1e-20
+         0                             1      0.833333333333
+/PART/1
+MOVING_PLATE
+         1         1         0
+/SHELL/1
+      1000         1         2         4         3
+/PROP/TYPE1/2
+FIXED_PLANE
+        24         4         2         2
+               1e-20               1e-20               1e-20               1e-20               1e-20
+         0                             1      0.833333333333
+/PART/2
+FIXED_PLANE
+         2         1         0
+/SHELL/2
+      2000         5         6         8         7
+/GRNOD/NODE/1
+MOVING_ALL
+         1         2         3         4
+/GRNOD/NODE/2
+FIXED_ALL
+         5         6         7         8
+/BCS/1
+X_ONLY
+   011 111         0         1
+/BCS/2
+FIXED
+   111 111         0         2
+/INIVEL/TRA/1
+INITIAL_VELOCITY
+                 200                   0                   0         1         0
+                   0         0
+/SURF/PART/3
+FIXED_MAIN
+         2
+/GRNOD/NODE/101
+CONTACT_NODES_1
+         1         2         3         4
+/INTER/TYPE25/1
+CONTACT_RAW_1
+         0         3         4         0         5         3         0      1000      1000         0
+       101         0                   1                   0               1e+30               1e+30
+                   0               1e+30      1000         2                 135                 0.1
+                   1                   0                   0                   0               1e+30
+   000 000         0         0      1000               1e-20
+         0         0                   0         0         0                   0         0         0
+                   1                   1                   1                   1
+/TH/INTER/1
+CONTACT_RAW
+       FNX       FNY       FNZ  CE_ELAST
+         1
+/TH/PART/1
+PARTS
+        IE        KE        HE        PW       RKE      XMOM      YMOM      ZMOM      MASS
+         1         2
+/TH/NODE/2
+NATIVE_NODES
+        DX        DY        DZ        VX        VY        VZ       VRX       VRY       VRZ
+         1         0N1
+         2         0N2
+         3         0N3
+         4         0N4
+         5         0N5
+         6         0N6
+         7         0N7
+         8         0N8
+/TH/NODE/3
+SUPPORT_NATIVE
+     REACX     REACY     REACZ
+         5         0S5
+         6         0S6
+         7         0S7
+         8         0S8
+/TH/NODE/4
+ACCEL_NATIVE
+        AX        AY        AZ       ARX       ARY       ARZ
+         1         0A1
+         2         0A2
+         3         0A3
+         4         0A4
+         5         0A5
+         6         0A6
+         7         0A7
+         8         0A8
+/END

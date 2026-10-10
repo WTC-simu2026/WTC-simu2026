@@ -1,0 +1,87 @@
+{
+  "iteration": "AIRCRAFT-A19",
+  "declared_utc": "2026-10-09T08:45:27.022908+00:00",
+  "seed": 1102044,
+  "random_draws": 0,
+  "scope": "Native pure transverse shear of an8mm reference core-only triangle. Diagnose finite shear failure and account for removed-element energy and persistent nodal mass. Not actual radome calibration.",
+  "source": {
+    "path": "wtc1_simulation_v8/input/aircraft_a05_sources/hrh10_eu.pdf",
+    "sha256": "2494051ced71e0e533d45cca0b13230447165269a39a7300c823a1bf90192b54",
+    "page": 4,
+    "grade": "HRH10-3.2-48",
+    "test_thickness_mm": 12.7,
+    "rho_kg_m3": 48,
+    "G_L_MPa": 41,
+    "G_W_MPa": 24,
+    "tau_L_MPa": 1.21,
+    "tau_W_MPa": 0.69,
+    "test": "typical room-temperature plate shear values; no high-rate fracture-energy curve"
+  },
+  "onset_gamma": 0.028749999999999998,
+  "onset_rule": "Conservative circular envelope gamma=sqrt(gamma13^2+gamma23^2), weakest reported tau/G; not an identified anisotropic surface.",
+  "softening_ratios": [
+    0.2,
+    0.02
+  ],
+  "softening_ratio_is_hypothesis": true,
+  "core_G_measured": false,
+  "material": "A18 LAW25/5 unchanged except native gamma_ini/gamma_max/d3max for finite cases",
+  "cases": [
+    "UNBOUNDED",
+    "FINITE_R20",
+    "FINITE_R02"
+  ],
+  "d3max": 0.999,
+  "model_thickness_mm": 8,
+  "triangle_mm": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      300,
+      0,
+      0
+    ],
+    [
+      0,
+      300,
+      0
+    ]
+  ],
+  "Ish3n": 2,
+  "angle_path_rad": [
+    0,
+    0.015,
+    0,
+    0.06,
+    0.06
+  ],
+  "time_path_ms": [
+    0,
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "rotations": "Uniform YY director rotation, all midsurface translations and XX/ZZ fixed; no bending/membrane strain intended. No contact/instrument masses.",
+  "dt_cap_ms": 2.5e-05,
+  "history_dt_ms": 0.001,
+  "animation_dt_ms": 0.025,
+  "engine_cap_s": 120,
+  "acceptance": {
+    "mass_relative": 1e-06,
+    "nodal_mass_preservation_relative": 1e-06,
+    "negative_IE_allowance_J": 0.001,
+    "global_energy_balance_fraction": 0.02,
+    "absolute_energy_balance_J": 0.001,
+    "finite_element_removal_expected": true,
+    "unbounded_element_remains_expected": true
+  },
+  "sources": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/tsai_wu_formulation_starter_r.htm"
+  ],
+  "whole_core_transfer_qualified": false,
+  "old_solver_reruns": 0
+}

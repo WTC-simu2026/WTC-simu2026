@@ -1,0 +1,513 @@
+{
+  "iteration": "AIRCRAFT-A19",
+  "seed": 1102044,
+  "random_draws": 0,
+  "scope": "Fresh single-factor whole impact: Ish3n31 DKT_S3 versus cached A18 Ish3n2 C0 large-rotation. Numerical localization comparison, not identified honeycomb failure.",
+  "input_deck": "wtc1_simulation_v8/output/aircraft_a04/r1/PLASTIC_NOMINAL/A04_PLASTIC_NOMINAL_0000.rad",
+  "input_mesh": "wtc1_simulation_v8/output/aircraft_a04/r1/mesh.json",
+  "velocity_m_s": [
+    -200,
+    5,
+    2
+  ],
+  "historical_AA11_conditions_established": false,
+  "nose": {
+    "root_X_mm": 2000,
+    "first_ring_X_mm": 250,
+    "shape": "ellipsoid section r(x)/r(root)=sqrt(1-(1-x/root)^2), joined to inherited X=2m ring; own hypothesis",
+    "root_joint": "common nodes, ideal perfect bond, no fastener failure",
+    "metal_frames_and_stringers_inside_radome": "remove in composite cases; retain in geometry-only metal control",
+    "mass_policy": "derive physical mass change; no top-up to old/historical mass, no hidden stiffness",
+    "fine_mesh": "subdivide all radome edges except root boundary, exact piecewise-flat geometry; conforming 3-triangle root transitions, no hanging node"
+  },
+  "sandwich": {
+    "face_thickness_mm": 0.5,
+    "core_thickness_mm": 8,
+    "ply_integration_points": 3,
+    "thickness_integration": "Gauss",
+    "property": "TYPE51 plus TYPE19 plies",
+    "material_law": "LAW25 Iform0, elastic by very high internal yield/failure caps; diagnostic real reference strengths separate",
+    "failure_disabled": true,
+    "numerical_yield_MPa": 1000000000000.0,
+    "numerical_failure_strain": 1e+30,
+    "core_crushing_not_represented": true,
+    "delamination_not_represented": true,
+    "face": {
+      "rho_g_mm3": 0.00183,
+      "E11_MPa": 22000,
+      "E22_MPa": 22000,
+      "nu12": 0.25,
+      "G12_MPa": 4000,
+      "G23_MPa": 4000,
+      "G31_MPa": 4000,
+      "E33_MPa": 10000,
+      "reference": "Hexcel HexPly913,7781GL/R913, PDF page4: rho1.83g/cc,E1 tension22GPa; E2,nu and G values own balanced-woven approximations, no assignment to actual767",
+      "diagnostic_tension_MPa": 450,
+      "diagnostic_compression_MPa": 460,
+      "short_beam_shear_MPa_not_inplane_shear_strength": 65
+    },
+    "core": {
+      "rho_g_mm3": 4.8e-05,
+      "E11_MPa": 1,
+      "E22_MPa": 1,
+      "nu12": 0.1,
+      "G12_MPa": 0.5,
+      "G23_MPa": 24,
+      "G31_MPa": 41,
+      "E33_MPa": 138,
+      "reference": "HexWeb HRH10-3.2-48,PDF page4: transverse E138MPa,G_L41MPa,G_W24MPa; in-plane E1/E2,G12 and nu own placeholders; E33 unused in plane-stress shell",
+      "diagnostic_shear_L_MPa": 1.21,
+      "diagnostic_shear_W_MPa": 0.69,
+      "bare_normal_crushing_strength_MPa_not_resolved": 2.07
+    }
+  },
+  "contact": {
+    "external_base": "A04 TYPE7 constant gap5mm",
+    "true_gap_variant": "Igap1,Gapmin1mm, sum half native thicknesses",
+    "radome_self_only": "TYPE7, same secondary/main radome; constant gap actual total sandwich thickness, friction0,normal viscosity1e-20",
+    "global_aircraft_self_contact_established": false,
+    "no_initial_adjustment": true,
+    "no_erosion_or_mass_scaling": true
+  },
+  "units": {
+    "native": "g mm ms MPa N Nmm",
+    "g_to_kg": 0.001,
+    "mm_to_m": 0.001,
+    "ms_to_s": 0.001,
+    "Nmm_to_J": 0.001,
+    "Nms_to_Ns": 0.001,
+    "g_cc_to_kg_m3": 1000,
+    "GPa_to_MPa": 1000
+  },
+  "execution": {
+    "cpu_threads": 2,
+    "GPU": false,
+    "starter_timeout_s": 120,
+    "engine_timeout_s": 2700,
+    "converter_timeout_s": 120,
+    "estimated_minutes": [
+      17,
+      45
+    ],
+    "cases": [
+      {
+        "id": "DKT_S3_20",
+        "end_ms": 20,
+        "dt_scale": 0.5,
+        "transition_fraction": 0.2
+      }
+    ],
+    "stop": "2700s cap, nonpositive step or Engine failure; no mass scaling"
+  },
+  "acceptance": {
+    "mass_relative_error": 1e-06,
+    "added_mass_fraction": 1e-09,
+    "global_energy_residual_initial_KE_fraction": 0.005,
+    "local_energy_residual_generated_energy_fraction": 0.05,
+    "local_energy_comparison_minimum_J": 1000,
+    "CSV_KE_precision_allowance_J": 1000,
+    "momentum_absolute_allowance_Ns": 10,
+    "momentum_relative_allowance": 0.02,
+    "half_dt_impulse_difference_fraction": 0.05,
+    "half_dt_generated_energy_difference_fraction": 0.1,
+    "mesh_impulse_difference_fraction": 0.1,
+    "mesh_generated_energy_difference_fraction": 0.1,
+    "free_displacement_error_mm": 0.02,
+    "free_velocity_error_m_s": 0.001,
+    "final_timestamp_overshoot_native_step_factor": 1.1,
+    "metal_plastic_strain_diagnostic_limit": 0.1,
+    "negative_plastic_work_allowance_J": 1e-06,
+    "laminate_quadrature_relative_error": 1e-12,
+    "starter_errors": 0,
+    "starter_warnings": 0
+  },
+  "sources": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type51_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/anim_shell_idply_restype_engine_r.htm"
+  ],
+  "NIST_outcomes_used_as_target": false,
+  "NIST_nominal_facade_input_dependency": true,
+  "physical_impact_qualified": false,
+  "historical_radome_reconstructed": false,
+  "V11F_preserved": true,
+  "audit_reuse_only": true,
+  "parent_deck": "wtc1_simulation_v8/output/aircraft_a07/r0/ENGINE_LOCAL/A07_ENGINE_LOCAL_0000.rad",
+  "fresh_intact_only": true,
+  "failure_transfer_enabled": false,
+  "engine": {
+    "reference_family": "CF6-80A/A2, not a historical aircraft engine identification",
+    "dry_mass_kg": 3980.7,
+    "dry_mass_original_lb": 8776,
+    "mass_scope": "EASA p19 note1 includes basic accessories and listed optional equipment/sensors",
+    "bare_length_mm": 4239.3,
+    "bare_length_original_in": 166.9,
+    "bare_width_mm": 2486.6,
+    "bare_height_mm": 2415.5,
+    "envelope_scope": "EASA p9 bare engine overall dimensions; they do not identify nacelle contours, structural radii or thicknesses",
+    "assembly_budget_kg": 4500,
+    "assembly_budget_is_own_hypothesis": true,
+    "additional_external_budget_kg": 519.3,
+    "front_x_mm": 15468.6,
+    "center_y_mm": [
+      -7924.8,
+      7924.8
+    ],
+    "center_z_mm": -3000,
+    "location_scope": "Boeing airport-planning geometry inherited; vertical offset own hypothesis",
+    "theta_count": 24,
+    "nacelle_profile_mm": [
+      [
+        0,
+        1200
+      ],
+      [
+        300,
+        1300
+      ],
+      [
+        1200,
+        1300
+      ],
+      [
+        2400,
+        1120
+      ],
+      [
+        3400,
+        900
+      ],
+      [
+        4239.3,
+        700
+      ]
+    ],
+    "fan_case_profile_mm": [
+      [
+        150,
+        1100
+      ],
+      [
+        600,
+        1100
+      ],
+      [
+        1200,
+        1100
+      ]
+    ],
+    "core_case_profile_mm": [
+      [
+        1200,
+        550
+      ],
+      [
+        2000,
+        550
+      ],
+      [
+        3000,
+        550
+      ],
+      [
+        4239.3,
+        550
+      ]
+    ],
+    "all_profiles_are_own_hypotheses": true,
+    "nacelle_thickness_mm": 2,
+    "case_thickness_mm": 5,
+    "nacelle_material": "inherited aluminum reference LAW2/1, not measured nacelle material",
+    "case_and_mount_material": "inherited generic steel reference LAW2/3, not actual engine alloy identification",
+    "mount_area_mm2": 400,
+    "mount_Iyy_Izz_mm4": 80000,
+    "mount_J_mm4": 160000,
+    "weak_hub_mount_area_factor": 0.5,
+    "weak_hub_mount_inertia_factor": 0.25,
+    "mass_partition": "dry shell mass subtracted from3980.7; nacelle+new joints subtracted from519.3; nonnegative residual distributed in32 existing engine ADMAS points; old pylon mass unchanged",
+    "RBE3_scope": "engine inertia supported only by new engine shell nodes; no direct nearest-wing shortcut",
+    "unmodeled": [
+      "blades/disks/rotor spin",
+      "actual nacelle layup",
+      "mount failure",
+      "engine crushing/fragmentation",
+      "engine self-contact"
+    ]
+  },
+  "local_control_scope": "Whole coupled airframe retained; facade translated by engine front x, only new engine shell secondary nodes contact it. Nose/wing contact intentionally excluded; this is not a full flight-through-facade simulation.",
+  "comparison_limits": {
+    "instrument_impulse_fraction": 0.01,
+    "instrument_generated_energy_fraction": 0.02,
+    "mesh_impulse_fraction": 0.05,
+    "mesh_generated_energy_fraction": 0.1,
+    "half_dt_impulse_fraction": 0.05,
+    "half_dt_generated_energy_fraction": 0.1
+  },
+  "energy_contract_for_future_fracture": {
+    "E_MPa": 22000,
+    "sigma_MPa": 450,
+    "G_N_mm": 50,
+    "G_is_unmeasured_trial": true,
+    "candidate": "traction-opening law with maximum-opening history and explicit stored/dissipated energy; not transferred to Engine or whole airplane"
+  },
+  "mesh_refinement": "Each engine triangle split into four coplanar triangles using shared edge midpoints. Original joint anchors and RBE3 hosts unchanged. No smoothing, no material/thickness/force adjustment.",
+  "output_contract": {
+    "history_interval_ms": 0.01,
+    "animation_interval_ms": 0.2,
+    "geometry_review_stride": 5,
+    "damage": "native skin DAMA retained",
+    "cohesive": "Native BRICK stress/energy/erosion; four actual part channels IE/KE/HE/PW, corrected coverage contract after A18 diagnosis",
+    "observer": "isolated restart first record; no observer impulses mixed with main"
+  },
+  "nodal_mass_theory": {
+    "triangle_weights": "interior angle / pi",
+    "old_equal_thirds_CG_review_superseded_only_in_A08": true,
+    "source": "https://2022.help.altair.com/2022/simulation/pdfs/radopen/AltairRadioss_2022_TheoryManual.pdf",
+    "printed_page": 154,
+    "equation": 574
+  },
+  "declared_mechanism_controls": {
+    "TYPE7_Istf4": "minimum main/secondary stiffness, inherited",
+    "TYPE7_Istf5": "main/secondary stiffness in series, documented alternative",
+    "Stfac0.1": "numerical penalty sensitivity only, not material softness identification",
+    "RBE3_Iform2": "inherited engine32 constraints, kinematic only",
+    "RBE3_Iform3": "engine32 constraints penalty only, documented alternative; other336 unchanged",
+    "material_failure": "disabled; no material or thickness changes",
+    "stored_constraint_energy": "all native global spring/IE/damping/contact terms retained; missing attribution must not be assumed zero"
+  },
+  "acceptance_extra": {
+    "independent_nodal_translation_KE_fraction_of_initial": 0.005,
+    "independent_nodal_momentum_absolute_Ns": 10,
+    "independent_nodal_momentum_relative": 0.02,
+    "mesh_convergence_qualified": false,
+    "part_RKE_ledger_qualified": false
+  },
+  "declared_utc": "2026-10-09T08:36:29.249497+00:00",
+  "user_steering": "2026-10-08 direct request: if aircraft ready launch it into facade; advance beyond local controls. This changes A15 work route to a bounded exploratory whole-scene experiment, without changing any A11-A14 failures or qualifying the aircraft.",
+  "scene_changes": {
+    "aircraft_geometry_materials_mass_RBE3_facade_and_BCS": "exactly inherited A11 NOSE_04_DT05",
+    "contacts": "four exterior TYPE7 replaced by canonical TYPE25 nodes/surface, same nodal groups and fixed gap5mm",
+    "native_penalty": "Stfac1, Istf4; no area weighting introduced or qualified on aircraft",
+    "radome_self": "existing TYPE7 unchanged",
+    "rupture_erosion": "disabled as inherited",
+    "prescribed_motion": false,
+    "facade": "31986 quadrilateral shells, only944 boundary nodes fixed; interior deformable, no fire/building interior"
+  },
+  "transfer_policy": {
+    "A10_contact_option_qualified_for_aircraft": false,
+    "Stfac1": "inherited default and diagnostic candidate; no spatial/aircraft qualification inherited from 1D witness",
+    "native_RKE": "use global once only, part and independent reconstructions exploratory, never added to close budget"
+  },
+  "stages": {
+    "execution": "Both cases predeclared. Stop each on error, nonpositive step or600s cost cap; save incomplete attempts. No restarts beyond declared horizon. Numerical/material failures retained and reported, not an authorization barrier to this exploratory run.",
+    "seconds": "not requested as an hours-long job here; 10ms=0.01s, not first seconds"
+  },
+  "parent": "wtc1_simulation_v8/output/aircraft_a16/r0/IMPACT_R20_10",
+  "parent_status": "Main A11 prototype executable; parallel joint adapter not dynamically ready and not integrated.",
+  "qualification_policy": {
+    "exploratory_coupled_execution_authorized": true,
+    "old_failed_gates_retained": true,
+    "no_measured_G": true,
+    "no_topological_rupture_claim": true,
+    "no_new_mass_or_erosion": true,
+    "unchanged_facade_and_metal_failure_absent": true,
+    "parallel_module_integrated": false
+  },
+  "prior_failure_reused": {
+    "report": "wtc1_simulation_v8/output/aircraft_a06/rapport_aircraft_a06.md",
+    "ORTHENERG_not_transferred": true,
+    "why": "A06 energy depends on size and repeated equal peaks accumulate damage; prior outputs used without rerun"
+  },
+  "damage": {
+    "keyword": "/FAIL/ORTHSTRAIN/4",
+    "applies_to": "radome face material4 only; core5 intact",
+    "strain_measure": "true strain, Strdef3",
+    "tensile_onset": 0.020454545454545454,
+    "compression_onset": 0.02090909090909091,
+    "threshold_derivation": "reference uniaxial strength/E; own balanced-woven simplification, not actual aircraft identification or multiaxial strength law",
+    "directions": "11 and22 same thresholds; shear and33 unmodelled/disabled1e20",
+    "end_strain": "(1+transition_fraction)*onset",
+    "transition_fractions": [
+      0.02,
+      0.2
+    ],
+    "transition_provenance": ".2 matches documentation default ratio; .02 own one-decade sensitivity; neither calibrated to damage",
+    "maximum_history": true,
+    "rate_effects": false,
+    "size_effects": false,
+    "P_thick_fail": 1,
+    "global_stack_P_thick_fail": 1,
+    "G_assigned": false,
+    "G_physical_measured": false,
+    "energy": "No entered fracture energy. Work/dissipation checked, implied energy remains mesh-dependent and unqualified. Do not label this regularized physical tearing.",
+    "core_crushing": false,
+    "delamination": false,
+    "element_deletion": "not expected: intact8mm core and global thickness threshold1 retained",
+    "topological_fragmentation": false
+  },
+  "witness": {
+    "path_time_ms": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "path_log_strain": [
+      0,
+      0.0225,
+      0,
+      0.0225,
+      0.04
+    ],
+    "smooth_each_leg": "cubic3u2-2u3",
+    "history_interval_ms": 0.0001,
+    "animation_interval_ms": 0.005,
+    "cases": [
+      {
+        "id": "CYCLE_L10_R20",
+        "L_mm": 10,
+        "transition_fraction": 0.2,
+        "dt_cap_ms": 2.5e-05
+      },
+      {
+        "id": "CYCLE_L10_R20_HALF",
+        "L_mm": 10,
+        "transition_fraction": 0.2,
+        "dt_cap_ms": 1.25e-05
+      },
+      {
+        "id": "CYCLE_L20_R20",
+        "L_mm": 20,
+        "transition_fraction": 0.2,
+        "dt_cap_ms": 2.5e-05
+      },
+      {
+        "id": "CYCLE_L10_R02",
+        "L_mm": 10,
+        "transition_fraction": 0.02,
+        "dt_cap_ms": 2.5e-05
+      }
+    ]
+  },
+  "witness_acceptance": {
+    "global_work_balance_fraction": 0.01,
+    "energy_absolute_J": 0.001,
+    "native_vs_maximum_history_damage_absolute": 0.02,
+    "no_damage_at_equal_peak_absolute": 0.002,
+    "closed_equal_peak_energy_fraction": 0.02,
+    "affine_displacement_error_mm": 0.001,
+    "half_dt_final_IE_difference_fraction": 0.01,
+    "gate_role": "mechanical implementation/history gate only; never physical fracture energy qualification"
+  },
+  "qualified_transfer": false,
+  "topology": {
+    "split": "216 radome triangles, distinct midsurface nodes per facet except original root at x2000mm retained shared",
+    "original_nodes": "first incident facet keeps original ID; unchanged non-radome and RBE3 cards",
+    "connections": "two zero-height LAW117/TYPE43 strips per internal radome edge, one through each0.5mm skin at z_local +/-4..4.5mm",
+    "area": "each strip area = initial edge length *0.5mm; skin/core shell volume and material mass unchanged",
+    "RBE2": "each offset corner tied to its own facet midsurface corner; Iflag0, dependent translations111000 includes independent rotational offsets",
+    "core_edge_traction": "none;8mm core remains inside facets but core-edge tearing/crushing not identified or modelled",
+    "bulk_damage": "retain exact A16R20 ORTHSTRAIN skin history inside facets; added interface work is separately recorded; combined mechanisms not physically calibrated",
+    "path_bias": "cracks restricted to declared initial triangle edges; not a spatial convergence claim",
+    "geometry_repositioned": false
+  },
+  "cohesive": {
+    "law": "LAW117",
+    "property": "TYPE43",
+    "EN_N_mm3": 4400,
+    "ET_N_mm3": 800,
+    "TN_MPa": 450,
+    "TT_MPa": 100,
+    "GI_N_mm": 50,
+    "GII_N_mm": 50,
+    "area_mass_density_g_mm2": 1e-20,
+    "nodal_instrument_mass_g": 0,
+    "Imass": 1,
+    "Idel": 4,
+    "Irupt": 1,
+    "Ismstr": 4,
+    "stiffness_derivation": "A07 analytical contract E22000MPa/5mm; ET4000/5. Numerical interface reference only.",
+    "G_physical_measured": false,
+    "shear_strength_measured": false,
+    "whole_aircraft_transfer_qualified": false,
+    "true_glue_or_tearing_properties_identified": false,
+    "material_id": 117,
+    "part_id": 117,
+    "property_id": 117,
+    "Ismstr_change": "full geometric nonlinearities for moving facet offsets; A17 uniform tests alone do not qualify this transfer",
+    "mixed_mode_qualified": false,
+    "rotation_qualified": false,
+    "compression_after_fracture_qualified": false
+  },
+  "self_contact": {
+    "keyword": "TYPE25",
+    "secondary_group": 1004,
+    "main_surface": 1005,
+    "gap_mm": 9,
+    "Inacti": 1000,
+    "initial_pairs": "coincident split corner/neighbor pairs initially ignored natively until separation then reentry; no geometric shift or invented initial force",
+    "limitation": "initially overlapping neighbors can compress before leaving gap; LAW117 compression remains while intact, postfailure contact recovery requires exit; unqualified for long fragment motion",
+    "all_aircraft_self_contact": false
+  },
+  "insertion_acceptance": {
+    "initial_mass_relative": 1e-06,
+    "initial_CG_mm": 0.001,
+    "initial_inertia_relative": 1e-06,
+    "offset_RBE2_distance_error_mm": 0.001,
+    "cohesive_initial_IE_J": 0.001,
+    "no_initial_contact_work_J": 0.001,
+    "shell_connectivity_exact": true
+  },
+  "video": {
+    "source": "wtc1_simulation_v8/output/aircraft_a19/r0/DKT_S3_20",
+    "views": [
+      "whole",
+      "nose_closeup"
+    ],
+    "resolution_each": [
+      1280,
+      720
+    ],
+    "fps": 30,
+    "frames_per_saved_state": 9,
+    "displacement_scale": 1,
+    "geometry_interpolation": "constant exact native states",
+    "objective1_complete": false
+  },
+  "old_solver_reruns": 0,
+  "goal": {
+    "target_physical_s": 10,
+    "complete": false,
+    "previous_coverage_s": 0.0200002613,
+    "requested_new_coverage_s": 0.02
+  },
+  "inherited_configuration": "wtc1_simulation_v8/data/aircraft_a18_predeclaration.json",
+  "change": {
+    "card": "/PROP/TYPE51/21",
+    "field": "Ish3n",
+    "old": 2,
+    "new": 31,
+    "only_mechanical_change": true,
+    "reason": "Native negative IE concentrated in root facet174 with failed skins, very large core strain and incompatible directors. Alternative triangle tests a formulation contribution; root cause not assumed solved.",
+    "no_mass_modulus_strength_G_or_contact_change": true,
+    "core_fracture_still_absent": true,
+    "alternative_formulation_is_not_a_physical_core_failure_model": true
+  },
+  "diagnostic": {
+    "explicit_ply_outputs": [
+      41,
+      42,
+      43
+    ],
+    "integration_point": 2,
+    "native_radome_IE_nonnegative_J_allowance": 1,
+    "preserve_cached_A18_failures": true,
+    "cohesive_part_channels": [
+      "IE",
+      "KE",
+      "HE",
+      "PW"
+    ],
+    "negative_energy_stop_for_extension": true
+  }
+}

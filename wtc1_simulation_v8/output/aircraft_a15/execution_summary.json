@@ -1,0 +1,116 @@
+{
+  "created_utc": "2026-10-08T09:58:59.812409+00:00",
+  "main_engine_jobs": 2,
+  "completed_main_engine_jobs": 1,
+  "capped_main_engine_jobs": 1,
+  "observer_jobs": 1,
+  "starter_jobs": 2,
+  "converter_jobs": 2,
+  "old_solver_reruns": 0,
+  "total_process_seconds": 1114.8421387000017,
+  "GPU": false,
+  "CPU_threads": 2,
+  "runtime": "v20260728-win64",
+  "jobs": [
+    {
+      "case": "IMPACT_10_DT50",
+      "job": "starter.log",
+      "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+      "sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+      "args": [
+        "-i",
+        "A15_IMPACT_10_DT50_0000.rad",
+        "-np",
+        "1"
+      ],
+      "seconds": 2.4291867000010825,
+      "exit_code": 0,
+      "timeout_s": 120,
+      "created_utc": "2026-10-08T09:32:47.973463+00:00"
+    },
+    {
+      "case": "IMPACT_10_DT50",
+      "job": "engine.log",
+      "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+      "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+      "args": [
+        "-i",
+        "A15_IMPACT_10_DT50_0001.rad"
+      ],
+      "seconds": 502.4245618999994,
+      "exit_code": 0,
+      "timeout_s": 600,
+      "created_utc": "2026-10-08T09:41:10.407067+00:00"
+    },
+    {
+      "case": "IMPACT_10_DT50",
+      "job": "observer/observer.log",
+      "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+      "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+      "args": [
+        "-i",
+        "A15_IMPACT_10_DT50_0002.rad"
+      ],
+      "seconds": 0.8264866000008624,
+      "exit_code": 0,
+      "timeout_s": 60,
+      "created_utc": "2026-10-08T09:41:12.505194+00:00"
+    },
+    {
+      "case": "IMPACT_10_DT50",
+      "job": "converter.log",
+      "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+      "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+      "args": [
+        "A15_IMPACT_10_DT50T01"
+      ],
+      "seconds": 4.164175500000056,
+      "exit_code": 0,
+      "timeout_s": 120,
+      "created_utc": "2026-10-08T09:41:17.721323+00:00"
+    },
+    {
+      "case": "IMPACT_10_DT25",
+      "job": "starter.log",
+      "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+      "sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+      "args": [
+        "-i",
+        "A15_IMPACT_10_DT25_0000.rad",
+        "-np",
+        "1"
+      ],
+      "seconds": 2.4136701000006724,
+      "exit_code": 0,
+      "timeout_s": 120,
+      "created_utc": "2026-10-08T09:41:24.032141+00:00"
+    },
+    {
+      "case": "IMPACT_10_DT25",
+      "job": "engine.log",
+      "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+      "sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+      "args": [
+        "-i",
+        "A15_IMPACT_10_DT25_0001.rad"
+      ],
+      "seconds": 600.1625051999999,
+      "exit_code": "TIMEOUT",
+      "timeout_s": 600,
+      "created_utc": "2026-10-08T09:51:24.203823+00:00"
+    },
+    {
+      "case": "IMPACT_10_DT25",
+      "job": "partial_converter.log",
+      "exe": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/th_to_csv_win64.exe",
+      "sha256": "09b18b17bce62c1ca0d4c5f7d58c088098dad6607ebb2fecf45405152499bb92",
+      "args": [
+        "A15_IMPACT_10_DT25T01"
+      ],
+      "seconds": 2.4215526999996655,
+      "exit_code": 0,
+      "timeout_s": 120,
+      "created_utc": "2026-10-08T09:51:49.802759+00:00"
+    }
+  ]
+}

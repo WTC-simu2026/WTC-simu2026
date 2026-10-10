@@ -1,0 +1,55 @@
+{
+  "declared_utc": "2026-10-09T13:18:46.223776+00:00",
+  "before_any_new_surface_tie_solver": true,
+  "iteration": "AIRCRAFT-A21",
+  "revision": "w3",
+  "cases": [
+    "SPOT2_X",
+    "SPOT2_Y",
+    "SPOT2_Z",
+    "SPOT2_Y_HALF",
+    "SPOT5_X",
+    "SPOT5_Y",
+    "SPOT5_Z"
+  ],
+  "purpose": "Matched known-mass backing witnesses after RBE2 rotational energy failures. Replace only root attachment, keep identical coordinates, material, known masses, imposed motion, energy thresholds and reference trajectories.",
+  "reference_declaration_sha256": "e1879e013ee9b3e99642d62584c5721bd84ccee462386bdfba3cf5f64b25cf6b",
+  "root_config_sha256": "a0c2f28a7f57a625f123a03a360ec356ff5c1e873f048e38270365d990ab2590",
+  "TYPE2": {
+    "Ignore": 1000,
+    "Iproj": 2,
+    "dsearch_mm": 5,
+    "Idel2": 1000,
+    "secondary_nodes": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "main_part": 1,
+    "search_rationale": "Actual radial offsets4.25mm; small root corner extrapolations under1mm. All six points must follow native prescribed rigid reference; do not accept a silently unattached point."
+  },
+  "acceptance": {
+    "matched_energy_relative": 0.02,
+    "absolute_J": 0.0001,
+    "native_energy_balance_relative": 0.02,
+    "motion_mm": 0.002,
+    "velocity_m_s": 0.005,
+    "zero_errors_and_warnings": true
+  },
+  "execution": {
+    "CPU_threads": 1,
+    "end_ms": 1,
+    "dt_cap_ms": 2.5e-05,
+    "half_dt_cap_ms": 1.25e-05,
+    "solver_cap_s": 90
+  },
+  "nested_TYPE2_hierarchy_not_yet_tested": true,
+  "whole_attachment_not_yet_changed": true,
+  "attachment_strength_or_failure_qualified": false,
+  "sources": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inter_type2_starter_r.htm"
+  ]
+}

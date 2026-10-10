@@ -1,0 +1,90 @@
+{
+  "case": {
+    "id": "RAW_N8",
+    "n": 8,
+    "main_n": 1,
+    "contact": true,
+    "weighting": "native",
+    "dt_scale": 0.05,
+    "factor": 1
+  },
+  "created_utc": "2026-10-08T09:07:17.395303+00:00",
+  "checks": {
+    "native_binary_CSV": true,
+    "normal_engine_termination": true,
+    "starter_zero_errors_warnings": true,
+    "native_contact_mode_matches_declaration": true,
+    "finite_monotone": true,
+    "analytic_mass": true,
+    "nodal_mass_matches_area": true,
+    "mass_constant": true,
+    "zero_added_mass": true,
+    "supports_fixed": true,
+    "no_external_work": true,
+    "no_plastic_work": true,
+    "energy_global": true,
+    "momentum_support": true,
+    "momentum_contact": false,
+    "contact_support": true,
+    "native_rotation_zero": true,
+    "complete_rebound_impulse": false,
+    "rebound_velocity": false
+  },
+  "all_checks_pass": false,
+  "failed_checks": [
+    "momentum_contact",
+    "complete_rebound_impulse",
+    "rebound_velocity"
+  ],
+  "mass_kg": 0.0011119999885559084,
+  "analytic_mass_error_fraction": 1.0291449236637601e-08,
+  "nodal_mass_error_fraction": 1.0291449431637991e-08,
+  "actual_end_ms": 0.0400102995,
+  "final_impulse_Ns": [
+    0.433861,
+    0.0,
+    0.0
+  ],
+  "initial_KE_J": 22.240000000000002,
+  "maximum_energy_residual_J": 0.00298739999999853,
+  "final_energy_residual_J": 0.0013618259999965687,
+  "onset_ms": 0.02002385,
+  "contact_duration_ms": 0.002192732950000001,
+  "analytic_uniform_contact_duration_ms": 0.001967549805658427,
+  "peak_penetration_mm": null,
+  "analytic_peak_penetration_mm": null,
+  "maximum_analytic_contact_curve_error_fraction_initial": null,
+  "maximum_contact_energy_law_error_fraction_initial": null,
+  "effective_contact_plane_from_saved_energy_fit_mm_diagnostic": null,
+  "aggregate_stiffness_from_energy_fit_N_mm_diagnostic": null,
+  "aggregate_stiffness_expected_N_mm": 2835000.0,
+  "phase_candidates": [
+    {
+      "factor": 0,
+      "max_KE_change_error_J": 0.23937122732991511,
+      "max_momentum_change_error_Ns": 0.002274292494803737,
+      "ledger_unchanged": true,
+      "binary_source_equivalence_established": false
+    },
+    {
+      "factor": -0.5,
+      "max_KE_change_error_J": 0.4751457404857611,
+      "max_momentum_change_error_Ns": 0.0045485781999373975,
+      "ledger_unchanged": true,
+      "binary_source_equivalence_established": false
+    },
+    {
+      "factor": 0.5,
+      "max_KE_change_error_J": 0.016775023109666165,
+      "max_momentum_change_error_Ns": 0.00018796934583670266,
+      "ledger_unchanged": true,
+      "binary_source_equivalence_established": false
+    }
+  ],
+  "observed_native_contact_modes": [
+    3
+  ],
+  "raw_velocities_not_reclassified": true,
+  "observer_REAC_used_for_acceptance": false,
+  "physical_impact_qualified": false
+}

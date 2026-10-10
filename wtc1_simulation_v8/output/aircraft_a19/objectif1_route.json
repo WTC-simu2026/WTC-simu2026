@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-10-09T09:04:25.273134+00:00",
+  "target_physical_s": 10,
+  "coverage_s": 0.02000021743774414,
+  "display_s": 6.3,
+  "complete": false,
+  "new_defect_diagnosis_complete": true,
+  "numerical_and_material_qualification": false,
+  "next": "AIRCRAFT-A20 : objectif vidéo3D10 secondes physiques actif/incomplet. A19 a localisé99,75% de l'IE négative A18 dans12 facettes, vérifié les vrais champs ply42 (le legacy layer2 nul ne représente pas le cœur), effectué4 contrôles de triangle réussis et un nouveau départ intact20ms Ish3n31. IE totale radôme devenue positive328236J mais16 facettes négatives à la fin, minimum transitoire-49669J; local_energy échoué et domaines métal/façade dépassés. La rupture de cisaillement LAW25 gamma_ini/gamma_max lue par Starter ne s'active pas dans les2 témoins TYPE51: conserver ces échecs, ne pas l'intégrer comme correction. Lire source_inspection.json: appel m25delam limité àigmat0 dans le code public épinglé; équivalence avec le binaire non prouvée. Prochaine modification : traiter explicitement le cœur en3D (LAW28 ou loi compatible vérifiée) et le couplage aux peaux, avec cisaillement/crushing fini, pas seulement changer Ish3n. Fiche HRH10 p4 fournitrho48,E33=138,G31=41,G23=24MPa,tau31=1.21,tau23=.69MPa,compression nue2.07MPa, essais12.7mm; épaisseur8mm et branches postpic/G sont hypothèses, pas valeurs mesurées AA11. Déclarer les plages avant calcul, garder masse/CG/inertie/énergie et fragments/contact contrôlés; aucun retrait de cœur ou RKE inventé. Une modification mécanique exige un nouveau départ intact. Ne prolonger les20ms invalides vers100ms sans correction des déficits matériels/énergétiques. Ensuite100ms,1s,10s avec gravité/intérieur réellement modélisé, checkpoints, cadence de sorties réduite, coût annoncé et pas de mass scaling. Réutiliser les sorties et les contrôles A19 sans les relancer. Publication A12+A13 intacte; A14 àA19 en attente.",
+  "horizon_steps_s": [
+    0.02,
+    0.1,
+    1,
+    10
+  ],
+  "new_20ms_wall_s": 1042.307949000001,
+  "linear_10s_days": 6.031874704861116,
+  "linear_projection_is_not_ETA": true
+}

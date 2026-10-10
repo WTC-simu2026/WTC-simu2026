@@ -1,0 +1,133 @@
+{
+  "iteration": "AIRCRAFT-A21",
+  "declared_utc": "2026-10-09T13:10:43.553084+00:00",
+  "seed": 1102046,
+  "random_draws": 0,
+  "cases": [
+    "TRANSLATION_X",
+    "ROTATION_X",
+    "ROTATION_Y",
+    "ROTATION_Z",
+    "ROTATION_Y_HALF"
+  ],
+  "purpose": "Independent known point-mass witness of ideal full111111 RBE2, including its scalar rotational inertia; no structural or material response and no fitting of whole impact.",
+  "source_root": {
+    "id": 6000,
+    "host": 97,
+    "dependent_nodes": [
+      46300,
+      46307,
+      47520,
+      47527,
+      47546,
+      47552
+    ],
+    "role": "root"
+  },
+  "source_mesh": "wtc1_simulation_v8/output/aircraft_a20/r0/CORE3D_TIED_20/mesh.json",
+  "source_mesh_sha256": "d0e5540c980f7a264a8712b82988f172eb9ebb857d6b5af99ed85fb94e3967dd",
+  "nodes_mm": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      -0.412364751432051,
+      4.198622575006993,
+      0.5138324478057
+    ],
+    [
+      0.412364751432051,
+      -4.198622575006993,
+      -0.5138324478057
+    ],
+    [
+      -0.41236475142954987,
+      4.198622575007221,
+      -0.5138324478057293
+    ],
+    [
+      0.41236475142954987,
+      -4.198622575007221,
+      0.5138324478057293
+    ],
+    [
+      -0.412364751432051,
+      4.198622575007448,
+      -0.5138324478027482
+    ],
+    [
+      0.412364751432051,
+      -4.198622575007448,
+      0.5138324478027482
+    ]
+  ],
+  "point_masses_g": [
+    10.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "physical_point_inertia_about_host_g_mm2": [
+    [
+      107.35473187066357,
+      10.3881837269781,
+      -0.423772779229259
+    ],
+    [
+      10.3881837269781,
+      2.604410835839552,
+      4.314777030232389
+    ],
+    [
+      -0.423772779229259,
+      4.314777030232389,
+      106.79085729349917
+    ]
+  ],
+  "motion": {
+    "duration_ms": 1,
+    "smooth_path": "s=3t^2-2t^3, 0<=t<=1ms",
+    "translation_mm": 10,
+    "rotation_rad": 1.5707963267948966,
+    "host_other_DOF": "zero imposed displacement",
+    "initial_velocity": "zero"
+  },
+  "RBE2": {
+    "Trarot": "111111",
+    "Iflag": 0,
+    "no_mass_compensation": true
+  },
+  "execution": {
+    "CPU_threads": 1,
+    "GPU": false,
+    "dt_cap_ms": 2.5e-05,
+    "half_dt_cap_ms": 1.25e-05,
+    "history_dt_ms": 0.001,
+    "animation_dt_ms": 0.025,
+    "solver_cap_s": 90
+  },
+  "acceptance": {
+    "mass_relative": 1e-06,
+    "energy_balance_fraction": 0.02,
+    "physical_kinetic_energy_fraction": 0.02,
+    "absolute_energy_J": 0.0001,
+    "analytic_motion_mm": 0.002,
+    "analytic_velocity_m_s": 0.005,
+    "impulse_relative": 0.02,
+    "impulse_absolute_Ns": 1e-05
+  },
+  "references": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/rbe2_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/admas_starter_r.htm"
+  ],
+  "known_test_masses_are_not_whole_aircraft_mass_changes": true,
+  "independent_of_historical_damage": true,
+  "source_A20_not_modified": true,
+  "root_attachment_strength_or_fracture_qualified": false,
+  "whole_dynamic_qualification": false
+}

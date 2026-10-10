@@ -1,0 +1,849 @@
+ A17_NORMAL_L10_0001.out
+************************************************************************
+**                                                                    **
+**                                                                    **
+**                         OpenRadioss Engine                         **
+**                                                                    **
+**            Non-linear Finite Element Analysis Software             **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+**                  Windows 64 bits, Intel compiler                   **
+**                      Double Precision Version                      **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+************************************************************************
+** OpenRadioss Software                                               **
+** COPYRIGHT (C) 2026 Siemens                                         **
+** Licensed under GNU Affero General Public License.                  **
+** See License file.                                                  **
+************************************************************************
+ 
+ NUMBER OF SPMD DOMAINS           1
+ NUMBER OF THREADS PER DOMAIN     2
+ NUMBER OF HMPP PROCESSES         2
+  
+ COMPUTATION HARDWARE DESCRIPTION
+  
+ HOSTNAME     CPU TYPE, FREQUENCY AND MEMORY
+ jeux   AMD Ryzen 5 5600 6-Core Processor               (x86_64), 3700 MHz,   6937 MB RAM,  18985 MB swap
+  
+ STACKSIZE  . . . . . . . . . . . . . . . . . . . . 1430 MB
+ THREAD STACKSIZE . . . . . . . . . . . . . . . . . 400 MB
+ 
+************************************************************************
+
+
+ A17_NORMAL_L10D01                                                               
+
+
+ FINAL TIME . . . . . . . . . . . . . . . . . . .   1.000000    
+
+ TIME INTERVAL FOR TIME HISTORY PLOTS . . . . . .  0.1000000E-03
+
+ TIME STEP SCALE FACTOR . . . . . . . . . . . . .  0.4000000    
+
+ MINIMUM TIME STEP  . . . . . . . . . . . . . . .   0.000000    
+
+
+ BRICK TIME STEP SCALE FACTOR . . . . . . . . . .  0.4000000    
+ BRICK MINIMUM TIME STEP. . . . . . . . . . . . .   0.000000    
+ MIN. TIME STEP FLAG (1:STOP RUN, 2:DELETE BRICK)     1
+
+ QUAD TIME STEP SCALE FACTOR. . . . . . . . . . .  0.4000000    
+ QUAD MINIMUM TIME STEP . . . . . . . . . . . . .   0.000000    
+ MIN. TIME STEP FLAG (1:STOP RUN, 2:DELETE QUAD).     1
+
+ SHELL TIME STEP SCALE FACTOR . . . . . . . . . .  0.4000000    
+ SHELL MINIMUM TIME STEP. . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE, 3:SMALL STRAIN)    2
+
+ TRUSS TIME STEP SCALE FACTOR . . . . . . . . . .  0.4000000    
+ TRUSS MINIMUM TIME STEP. . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE). . . . . . . .     0
+
+ BEAM TIME STEP SCALE FACTOR. . . . . . . . . . .  0.4000000    
+ BEAM MINIMUM TIME STEP . . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE). . . . . . . .     0
+
+ SPRING TIME STEP SCALE FACTOR. . . . . . . . . .  0.4000000    
+ SPRING MINIMUM TIME STEP . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE). . . . . . . .     0
+
+ AIRBAG TIME STEP SCALE FACTOR. . . . . . . . . .  0.4000000    
+ AIRBAG MINIMUM TIME STEP . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP). . . . . . . . . . . . .     0
+
+ CONTACT TIME STEP SCALE FACTOR . . . . . . . . .  0.4000000    
+ CONTACT MINIMUM TIME STEP. . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG(1:STOP, 2:REMOVE NODE FROM INTERF)    0
+
+ PRINTOUT CYCLE FREQUENCY . . . . . . . . . . . .  -100
+
+ RESTART CYCLE FREQUENCY. . . . . . . . . . . . .   10000000
+
+ MAXIMUM RESTART WRITE BEFORE OVERWRITE . . . . .     0
+
+ INVERS: INPUT DECK VERSION . . . . . . . . . . .  2026
+ ITTYP : FLAG FOR TYPE OF T-FILE. . . . . . . . .     4
+
+ INITIAL TIME STEP. . . . . . . . . . . . . . . .  0.2500000E-04
+ MAXIMUM TIME STEP. . . . . . . . . . . . . . . .  0.2500000E-04
+
+ PARALLEL ARITHMETIC ON
+ NUMBER OF INTERFACES TO BE ELIMINATED. . . . . .        0
+
+ NUMBER OF PARTS TO BE ELIMINATED . . . . . . . .        0
+
+ NUMBER OF SOLID  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF QUAD   ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF SHELL  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF TRUSS  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF BEAM   ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF SPRING ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF SH_3N  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF  SPH PARTICLES BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF RIGID LINKS. . . . . . . . . . . . . .        0
+
+ NUMBER OF NEW BOUNDARY CONDITIONS. . . . . . . .        0
+
+
+ TIME FOR FIRST ANIMATION-FILE PLOT . . . . . . .   0.000000    
+ TIME INTERVAL FOR ANIMATION-FILE PLOTS . . . . .  0.5000000E-02
+ TIME TO STOP ANIMATION-FILE PLOTS. . . . . . . .  0.1000000E+21
+ SENSOR FOR ANIMATION-FILE PLOTS. . . . . . . . .          0
+ TIME INTERVAL FOR SENSOR ANIMATION-FILE PLOTS. .   0.000000    
+
+ VARIABLE SAVED ON ANIMATION FILES (1: YES) :
+      PLASTIC STRAIN. . . . . .     0
+      DENSITY     (SOLID ONLY).     0
+      SPECIFIC ENERGY . . . . .     1
+      HOURGLASS ENERGY. . . . .     0
+      TEMPERATURE (SOLID ONLY).     0
+      THICKNESS   (SHELL ONLY).     0
+      PRESSURE    (SOLID ONLY).     0
+      VON MISES . . . . . . . .     0
+      TURBULENT ENERGY (FLUID).     0
+      TURBULENT VISCOSITY(FLUID)    0
+      VORTICITY (FLUID) . . . .     0
+ NODAL VALUES SAVED ON ANIMATION FILES (1: YES) :
+      PRESSURE. . . . . . . . .     0
+      DENSITY . . . . . . . . .     0
+      TEMPERATURE . . . . . . .     0
+ VECTOR SAVED ON ANIMATION FILES (1: YES) :
+      VELOCITY VECTOR . . . . .     1
+      DISPLACEMENT VECTOR . . .     1
+      ACCELERATION VECTOR . . .     0
+      CONTACT FORCES. . . . . .     0
+      INTERNAL FORCES . . . . .     0
+      EXTERNAL FORCES . . . . .     0
+      SECTION RBY RWALL FORCES.     0
+      ROTATIONAL VELOCITY VECTOR    0
+      CONTACT PRESSURE (VECTORS)    0
+ SHELL TENSOR SAVED ON ANIMATION FILES (1: YES) :
+      MEMBRANE STRESS . . . . .     0
+      BENDING STRESS(MOMENT/T^2)    0
+      UPPER LAYER STRESS. . . .     0
+      LOWER LAYER STRESS. . . .     0
+      MEMBRANE STRAIN . . . . .     0
+      CURVATURE . . . . . . . .     0
+      UPPER LAYER STRAIN. . . .     0
+      LOWER LAYER STRAIN. . . .     0
+ NODAL MASS SAVED ON ANIMATION FILES (1: YES) :    0
+ KEEP DELETED ELEMENT (1: YES) :    0
+
+
+ 09/10/2026
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+       0   0.000      0.2500E-04 NODE           1   0.0%   0.000       0.000       0.000       0.000       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A001 WRITTEN
+     100  0.2500E-02  0.2500E-04 NODE           5  -0.0%  0.5143E-03  0.2972E-02   0.000      0.3488E-02   0.000       8.000       0.000    
+     200  0.5000E-02  0.2500E-04 NODE           5  -0.0%  0.8119E-02  0.1165E-01   0.000      0.1977E-01   0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A002 WRITTEN
+     300  0.7500E-02  0.2500E-04 NODE           5  -0.0%  0.4055E-01  0.2568E-01   0.000      0.6623E-01   0.000       8.000       0.000    
+     400  0.1000E-01  0.2500E-04 NODE           5  -0.0%  0.1264      0.4472E-01   0.000      0.1711       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A003 WRITTEN
+     500  0.1250E-01  0.2500E-04 NODE           5  -0.0%  0.3044      0.6842E-01   0.000      0.3728       0.000       8.000       0.000    
+     600  0.1500E-01  0.2500E-04 NODE           5  -0.0%  0.6225      0.9646E-01   0.000      0.7190       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A004 WRITTEN
+     700  0.1750E-01  0.2500E-04 NODE           5  -0.0%   1.137      0.1285       0.000       1.266       0.000       8.000       0.000    
+     800  0.2000E-01  0.2500E-04 NODE           1  -0.0%   1.913      0.1643       0.000       2.078       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A005 WRITTEN
+     900  0.2250E-01  0.2500E-04 NODE           5  -0.0%   3.022      0.2034       0.000       3.225       0.000       8.000       0.000    
+    1000  0.2500E-01  0.2500E-04 NODE           5  -0.0%   4.540      0.2456       0.000       4.786       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A006 WRITTEN
+    1100  0.2750E-01  0.2500E-04 NODE           5  -0.0%   6.553      0.2907       0.000       6.844       0.000       8.000       0.000    
+    1200  0.3000E-01  0.2500E-04 NODE           5  -0.0%   9.148      0.3382       0.000       9.486       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A007 WRITTEN
+    1300  0.3250E-01  0.2500E-04 NODE           1  -0.0%   12.42      0.3879       0.000       12.81       0.000       8.000       0.000    
+    1400  0.3500E-01  0.2500E-04 NODE           5  -0.0%   16.46      0.4396       0.000       16.90       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A008 WRITTEN
+    1500  0.3750E-01  0.2500E-04 NODE           5  -0.0%   21.37      0.4930       0.000       21.87       0.000       8.000       0.000    
+    1600  0.4000E-01  0.2500E-04 NODE           5  -0.0%   27.26      0.5478       0.000       27.81       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A009 WRITTEN
+    1700  0.4250E-01  0.2500E-04 NODE           1  -0.0%   34.22      0.6038       0.000       34.83       0.000       8.000       0.000    
+    1800  0.4500E-01  0.2500E-04 NODE           5  -0.0%   42.37      0.6607       0.000       43.03       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A010 WRITTEN
+    1900  0.4750E-01  0.2500E-04 NODE           1  -0.0%   51.81      0.7183       0.000       52.53       0.000       8.000       0.000    
+    2000  0.5000E-01  0.2500E-04 NODE           1  -0.0%   62.64      0.7763       0.000       63.42       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A011 WRITTEN
+    2100  0.5250E-01  0.2500E-04 NODE           1  -0.0%   74.97      0.8346       0.000       75.81       0.000       8.000       0.000    
+    2200  0.5500E-01  0.2500E-04 NODE           5  -0.0%   88.91      0.8930       0.000       89.80       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A012 WRITTEN
+    2300  0.5750E-01  0.2500E-04 NODE           5  -0.0%   104.6      0.9511       0.000       105.5       0.000       8.000       0.000    
+    2400  0.6000E-01  0.2500E-04 NODE           1  -0.0%   122.0       1.009       0.000       123.0       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A013 WRITTEN
+    2500  0.6250E-01  0.2500E-04 NODE           5  -0.0%   141.4       1.066       0.000       142.5       0.000       8.000       0.000    
+    2600  0.6500E-01  0.2500E-04 NODE           1  -0.0%   162.8       1.123       0.000       163.9       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A014 WRITTEN
+    2700  0.6750E-01  0.2500E-04 NODE           5  -0.0%   186.3       1.178       0.000       187.4       0.000       8.000       0.000    
+    2800  0.7000E-01  0.2500E-04 NODE           5  -0.0%   211.9       1.233       0.000       213.2       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A015 WRITTEN
+    2900  0.7250E-01  0.2500E-04 NODE           5  -0.0%   239.9       1.286       0.000       241.2       0.000       8.000       0.000    
+    3000  0.7500E-01  0.2500E-04 NODE           5  -0.0%   270.2       1.337       0.000       271.5       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A016 WRITTEN
+    3100  0.7750E-01  0.2500E-04 NODE           5  -0.0%   303.0       1.387       0.000       304.3       0.000       8.000       0.000    
+    3200  0.8000E-01  0.2500E-04 NODE           5  -0.0%   338.2       1.436       0.000       339.7       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A017 WRITTEN
+    3300  0.8250E-01  0.2500E-04 NODE           1  -0.0%   376.1       1.482       0.000       377.6       0.000       8.000       0.000    
+    3400  0.8500E-01  0.2500E-04 NODE           5  -0.0%   416.6       1.527       0.000       418.1       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A018 WRITTEN
+    3500  0.8750E-01  0.2500E-04 NODE           5  -0.0%   459.7       1.570       0.000       461.3       0.000       8.000       0.000    
+    3600  0.9000E-01  0.2500E-04 NODE           5  -0.0%   505.7       1.610       0.000       507.3       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A019 WRITTEN
+    3700  0.9250E-01  0.2500E-04 NODE           5  -0.0%   554.4       1.648       0.000       556.0       0.000       8.000       0.000    
+    3800  0.9500E-01  0.2500E-04 NODE           5  -0.0%   605.9       1.683       0.000       607.6       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A020 WRITTEN
+    3900  0.9750E-01  0.2500E-04 NODE           1  -0.0%   660.3       1.716       0.000       662.0       0.000       8.000       0.000    
+    4000  0.1000      0.2500E-04 NODE           5  -0.0%   717.6       1.747       0.000       719.3       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A021 WRITTEN
+    4100  0.1025      0.2500E-04 NODE           5  -0.0%   777.7       1.775       0.000       779.5       0.000       8.000       0.000    
+    4200  0.1050      0.2500E-04 NODE           5  -0.0%   840.8       1.800       0.000       842.6       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A022 WRITTEN
+    4300  0.1075      0.2500E-04 NODE           5  -0.0%   906.7       1.822       0.000       908.6       0.000       8.000       0.000    
+    4400  0.1100      0.2500E-04 NODE           5  -0.0%   975.6       1.841       0.000       977.4       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A023 WRITTEN
+    4500  0.1125      0.2500E-04 NODE           5  -0.0%   1047.       1.858       0.000       1049.       0.000       8.000       0.000    
+    4600  0.1150      0.2500E-04 NODE           5  -0.0%   1122.       1.871       0.000       1124.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A024 WRITTEN
+    4700  0.1175      0.2500E-04 NODE           5  -0.0%   1199.       1.882       0.000       1201.       0.000       8.000       0.000    
+    4800  0.1200      0.2500E-04 NODE           5  -0.0%   1279.       1.889       0.000       1281.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A025 WRITTEN
+    4900  0.1225      0.2500E-04 NODE           5  -0.0%   1362.       1.894       0.000       1364.       0.000       8.000       0.000    
+    5000  0.1250      0.2500E-04 NODE           5  -0.0%   1448.       1.895       0.000       1450.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A026 WRITTEN
+    5100  0.1275      0.2500E-04 NODE           5   0.0%   1536.       1.894       0.000       1538.       0.000       8.000       0.000    
+    5200  0.1300      0.2500E-04 NODE           5   0.0%   1627.       1.889       0.000       1629.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A027 WRITTEN
+    5300  0.1325      0.2500E-04 NODE           5   0.0%   1720.       1.882       0.000       1722.       0.000       8.000       0.000    
+    5400  0.1350      0.2500E-04 NODE           5   0.0%   1815.       1.871       0.000       1817.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A028 WRITTEN
+    5500  0.1375      0.2500E-04 NODE           5   0.0%   1913.       1.858       0.000       1915.       0.000       8.000       0.000    
+    5600  0.1400      0.2500E-04 NODE           5   0.0%   2013.       1.841       0.000       2015.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A029 WRITTEN
+    5700  0.1425      0.2500E-04 NODE           5   0.0%   2115.       1.822       0.000       2117.       0.000       8.000       0.000    
+    5800  0.1450      0.2500E-04 NODE           5   0.0%   2219.       1.800       0.000       2221.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A030 WRITTEN
+    5900  0.1475      0.2500E-04 NODE           5   0.0%   2324.       1.775       0.000       2326.       0.000       8.000       0.000    
+    6000  0.1500      0.2500E-04 NODE           5   0.0%   2428.       1.747       0.000       2430.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A031 WRITTEN
+    6100  0.1525      0.2500E-04 NODE           5   0.0%   2530.       1.716       0.000       2531.       0.000       8.000       0.000    
+    6200  0.1550      0.2500E-04 NODE           5   0.0%   2628.       1.683       0.000       2630.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A032 WRITTEN
+    6300  0.1575      0.2500E-04 NODE           5   0.0%   2723.       1.648       0.000       2725.       0.000       8.000       0.000    
+    6400  0.1600      0.2500E-04 NODE           5   0.0%   2815.       1.610       0.000       2817.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A033 WRITTEN
+    6500  0.1625      0.2500E-04 NODE           5   0.0%   2905.       1.570       0.000       2906.       0.000       8.000       0.000    
+    6600  0.1650      0.2500E-04 NODE           5   0.0%   2991.       1.527       0.000       2993.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A034 WRITTEN
+    6700  0.1675      0.2500E-04 NODE           5   0.0%   3074.       1.482       0.000       3076.       0.000       8.000       0.000    
+    6800  0.1700      0.2500E-04 NODE           5   0.0%   3155.       1.436       0.000       3156.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A035 WRITTEN
+    6900  0.1725      0.2500E-04 NODE           5   0.0%   3232.       1.387       0.000       3233.       0.000       8.000       0.000    
+    7000  0.1750      0.2500E-04 NODE           5   0.0%   3306.       1.337       0.000       3308.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A036 WRITTEN
+    7100  0.1775      0.2500E-04 NODE           5   0.0%   3378.       1.286       0.000       3379.       0.000       8.000       0.000    
+    7200  0.1800      0.2500E-04 NODE           5   0.0%   3446.       1.233       0.000       3447.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A037 WRITTEN
+    7300  0.1825      0.2500E-04 NODE           5   0.0%   3512.       1.178       0.000       3513.       0.000       8.000       0.000    
+    7400  0.1850      0.2500E-04 NODE           5   0.0%   3574.       1.123       0.000       3576.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A038 WRITTEN
+    7500  0.1875      0.2500E-04 NODE           5   0.0%   3634.       1.066       0.000       3635.       0.000       8.000       0.000    
+    7600  0.1900      0.2500E-04 NODE           5   0.0%   3691.       1.009       0.000       3692.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A039 WRITTEN
+    7700  0.1925      0.2500E-04 NODE           5   0.0%   3746.      0.9511       0.000       3747.       0.000       8.000       0.000    
+    7800  0.1950      0.2500E-04 NODE           5   0.0%   3797.      0.8930       0.000       3798.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A040 WRITTEN
+    7900  0.1975      0.2500E-04 NODE           5   0.0%   3846.      0.8346       0.000       3847.       0.000       8.000       0.000    
+    8000  0.2000      0.2500E-04 NODE           5   0.0%   3892.      0.7763       0.000       3893.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A041 WRITTEN
+    8100  0.2025      0.2500E-04 NODE           5   0.0%   3936.      0.7183       0.000       3937.       0.000       8.000       0.000    
+    8200  0.2050      0.2500E-04 NODE           5   0.0%   3977.      0.6607       0.000       3978.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A042 WRITTEN
+    8300  0.2075      0.2500E-04 NODE           5   0.0%   4015.      0.6038       0.000       4016.       0.000       8.000       0.000    
+    8400  0.2100      0.2500E-04 NODE           5   0.0%   4052.      0.5478       0.000       4052.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A043 WRITTEN
+    8500  0.2125      0.2500E-04 NODE           5   0.0%   4085.      0.4930       0.000       4086.       0.000       8.000       0.000    
+    8600  0.2150      0.2500E-04 NODE           5   0.0%   4117.      0.4396       0.000       4117.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A044 WRITTEN
+    8700  0.2175      0.2500E-04 NODE           5   0.0%   4146.      0.3879       0.000       4146.       0.000       8.000       0.000    
+    8800  0.2200      0.2500E-04 NODE           5   0.0%   4172.      0.3382       0.000       4173.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A045 WRITTEN
+    8900  0.2225      0.2500E-04 NODE           5   0.0%   4197.      0.2907       0.000       4197.       0.000       8.000       0.000    
+    9000  0.2250      0.2500E-04 NODE           5   0.0%   4219.      0.2456       0.000       4219.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A046 WRITTEN
+    9100  0.2275      0.2500E-04 NODE           5   0.0%   4239.      0.2034       0.000       4240.       0.000       8.000       0.000    
+    9200  0.2300      0.2500E-04 NODE           5   0.0%   4257.      0.1643       0.000       4257.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A047 WRITTEN
+    9300  0.2325      0.2500E-04 NODE           5   0.0%   4273.      0.1285       0.000       4273.       0.000       8.000       0.000    
+    9400  0.2350      0.2500E-04 NODE           5   0.0%   4287.      0.9646E-01   0.000       4287.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A048 WRITTEN
+    9500  0.2375      0.2500E-04 NODE           5   0.0%   4299.      0.6842E-01   0.000       4299.       0.000       8.000       0.000    
+    9600  0.2400      0.2500E-04 NODE           5   0.0%   4308.      0.4472E-01   0.000       4308.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A049 WRITTEN
+    9700  0.2425      0.2500E-04 NODE           5   0.0%   4316.      0.2568E-01   0.000       4316.       0.000       8.000       0.000    
+    9800  0.2450      0.2500E-04 NODE           5   0.0%   4321.      0.1165E-01   0.000       4321.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A050 WRITTEN
+    9900  0.2475      0.2500E-04 NODE           5   0.0%   4324.      0.2972E-02   0.000       4324.       0.000       8.000       0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+   10000  0.2500      0.2500E-04 NODE           5   0.0%   4325.      0.6163E-24   0.000       4325.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A051 WRITTEN
+   10100  0.2525      0.2500E-04 NODE           5   0.0%   4324.      0.2972E-02   0.000       4324.       0.000       8.000       0.000    
+   10200  0.2550      0.2500E-04 NODE           5   0.0%   4321.      0.1165E-01   0.000       4321.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A052 WRITTEN
+   10300  0.2575      0.2500E-04 NODE           5   0.0%   4316.      0.2568E-01   0.000       4316.       0.000       8.000       0.000    
+   10400  0.2600      0.2500E-04 NODE           5   0.0%   4308.      0.4472E-01   0.000       4308.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A053 WRITTEN
+   10500  0.2625      0.2500E-04 NODE           5   0.0%   4299.      0.6842E-01   0.000       4299.       0.000       8.000       0.000    
+   10600  0.2650      0.2500E-04 NODE           5   0.0%   4288.      0.9646E-01   0.000       4288.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A054 WRITTEN
+   10700  0.2675      0.2500E-04 NODE           5   0.0%   4274.      0.1285       0.000       4275.       0.000       8.000       0.000    
+   10800  0.2700      0.2500E-04 NODE           5   0.0%   4260.      0.1643       0.000       4260.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A055 WRITTEN
+   10900  0.2725      0.2500E-04 NODE           5   0.0%   4243.      0.2034       0.000       4243.       0.000       8.000       0.000    
+   11000  0.2750      0.2500E-04 NODE           5   0.0%   4224.      0.2456       0.000       4225.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A056 WRITTEN
+   11100  0.2775      0.2500E-04 NODE           5   0.0%   4205.      0.2907       0.000       4205.       0.000       8.000       0.000    
+   11200  0.2800      0.2500E-04 NODE           5   0.0%   4183.      0.3382       0.000       4183.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A057 WRITTEN
+   11300  0.2825      0.2500E-04 NODE           5   0.0%   4160.      0.3879       0.000       4161.       0.000       8.000       0.000    
+   11400  0.2850      0.2500E-04 NODE           5   0.0%   4136.      0.4396       0.000       4136.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A058 WRITTEN
+   11500  0.2875      0.2500E-04 NODE           5   0.0%   4110.      0.4930       0.000       4111.       0.000       8.000       0.000    
+   11600  0.2900      0.2500E-04 NODE           5   0.0%   4083.      0.5478       0.000       4084.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A059 WRITTEN
+   11700  0.2925      0.2500E-04 NODE           5   0.0%   4055.      0.6038       0.000       4056.       0.000       8.000       0.000    
+   11800  0.2950      0.2500E-04 NODE           5   0.0%   4026.      0.6607       0.000       4027.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A060 WRITTEN
+   11900  0.2975      0.2500E-04 NODE           5   0.0%   3996.      0.7183       0.000       3997.       0.000       8.000       0.000    
+   12000  0.3000      0.2500E-04 NODE           5   0.0%   3965.      0.7763       0.000       3966.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A061 WRITTEN
+   12100  0.3025      0.2500E-04 NODE           5   0.0%   3934.      0.8346       0.000       3934.       0.000       8.000       0.000    
+   12200  0.3050      0.2500E-04 NODE           5   0.0%   3901.      0.8930       0.000       3902.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A062 WRITTEN
+   12300  0.3075      0.2500E-04 NODE           5   0.0%   3868.      0.9511       0.000       3869.       0.000       8.000       0.000    
+   12400  0.3100      0.2500E-04 NODE           5   0.0%   3834.       1.009       0.000       3835.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A063 WRITTEN
+   12500  0.3125      0.2500E-04 NODE           5   0.0%   3799.       1.066       0.000       3801.       0.000       8.000       0.000    
+   12600  0.3150      0.2500E-04 NODE           5   0.0%   3765.       1.123       0.000       3766.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A064 WRITTEN
+   12700  0.3175      0.2500E-04 NODE           5   0.0%   3729.       1.178       0.000       3730.       0.000       8.000       0.000    
+   12800  0.3200      0.2500E-04 NODE           5   0.0%   3694.       1.233       0.000       3695.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A065 WRITTEN
+   12900  0.3225      0.2500E-04 NODE           5   0.0%   3658.       1.286       0.000       3659.       0.000       8.000       0.000    
+   13000  0.3250      0.2500E-04 NODE           5   0.0%   3622.       1.337       0.000       3623.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A066 WRITTEN
+   13100  0.3275      0.2500E-04 NODE           5   0.0%   3586.       1.387       0.000       3587.       0.000       8.000       0.000    
+   13200  0.3300      0.2500E-04 NODE           1   0.0%   3550.       1.436       0.000       3551.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A067 WRITTEN
+   13300  0.3325      0.2500E-04 NODE           5   0.0%   3514.       1.482       0.000       3515.       0.000       8.000       0.000    
+   13400  0.3350      0.2500E-04 NODE           5   0.0%   3478.       1.527       0.000       3479.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A068 WRITTEN
+   13500  0.3375      0.2500E-04 NODE           5   0.0%   3442.       1.570       0.000       3443.       0.000       8.000       0.000    
+   13600  0.3400      0.2500E-04 NODE           5   0.0%   3406.       1.610       0.000       3408.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A069 WRITTEN
+   13700  0.3425      0.2500E-04 NODE           5   0.0%   3371.       1.648       0.000       3372.       0.000       8.000       0.000    
+   13800  0.3450      0.2500E-04 NODE           5   0.0%   3335.       1.683       0.000       3337.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A070 WRITTEN
+   13900  0.3475      0.2500E-04 NODE           5   0.0%   3301.       1.716       0.000       3302.       0.000       8.000       0.000    
+   14000  0.3500      0.2500E-04 NODE           5   0.0%   3266.       1.747       0.000       3268.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A071 WRITTEN
+   14100  0.3525      0.2500E-04 NODE           5   0.0%   3233.       1.775       0.000       3234.       0.000       8.000       0.000    
+   14200  0.3550      0.2500E-04 NODE           5   0.0%   3199.       1.800       0.000       3201.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A072 WRITTEN
+   14300  0.3575      0.2500E-04 NODE           5   0.0%   3167.       1.822       0.000       3168.       0.000       8.000       0.000    
+   14400  0.3600      0.2500E-04 NODE           5   0.0%   3134.       1.841       0.000       3136.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A073 WRITTEN
+   14500  0.3625      0.2500E-04 NODE           5   0.0%   3103.       1.858       0.000       3105.       0.000       8.000       0.000    
+   14600  0.3650      0.2500E-04 NODE           5   0.0%   3072.       1.871       0.000       3074.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A074 WRITTEN
+   14700  0.3675      0.2500E-04 NODE           5   0.0%   3042.       1.882       0.000       3044.       0.000       8.000       0.000    
+   14800  0.3700      0.2500E-04 NODE           5   0.0%   3013.       1.889       0.000       3015.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A075 WRITTEN
+   14900  0.3725      0.2500E-04 NODE           5   0.0%   2984.       1.894       0.000       2986.       0.000       8.000       0.000    
+   15000  0.3750      0.2500E-04 NODE           5  -0.0%   2956.       1.895       0.000       2958.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A076 WRITTEN
+   15100  0.3775      0.2500E-04 NODE           5  -0.0%   2929.       1.894       0.000       2931.       0.000       8.000       0.000    
+   15200  0.3800      0.2500E-04 NODE           5  -0.0%   2903.       1.889       0.000       2905.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A077 WRITTEN
+   15300  0.3825      0.2500E-04 NODE           5  -0.0%   2878.       1.882       0.000       2880.       0.000       8.000       0.000    
+   15400  0.3850      0.2500E-04 NODE           5  -0.0%   2854.       1.871       0.000       2855.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A078 WRITTEN
+   15500  0.3875      0.2500E-04 NODE           5  -0.0%   2830.       1.858       0.000       2832.       0.000       8.000       0.000    
+   15600  0.3900      0.2500E-04 NODE           5  -0.0%   2807.       1.841       0.000       2809.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A079 WRITTEN
+   15700  0.3925      0.2500E-04 NODE           5  -0.0%   2786.       1.822       0.000       2788.       0.000       8.000       0.000    
+   15800  0.3950      0.2500E-04 NODE           5  -0.0%   2765.       1.800       0.000       2767.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A080 WRITTEN
+   15900  0.3975      0.2500E-04 NODE           5  -0.0%   2745.       1.775       0.000       2747.       0.000       8.000       0.000    
+   16000  0.4000      0.2500E-04 NODE           5  -0.0%   2726.       1.747       0.000       2728.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A081 WRITTEN
+   16100  0.4025      0.2500E-04 NODE           5  -0.0%   2708.       1.716       0.000       2710.       0.000       8.000       0.000    
+   16200  0.4050      0.2500E-04 NODE           5  -0.0%   2691.       1.683       0.000       2693.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A082 WRITTEN
+   16300  0.4075      0.2500E-04 NODE           5  -0.0%   2675.       1.648       0.000       2676.       0.000       8.000       0.000    
+   16400  0.4100      0.2500E-04 NODE           5  -0.0%   2659.       1.610       0.000       2661.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A083 WRITTEN
+   16500  0.4125      0.2500E-04 NODE           5  -0.0%   2645.       1.570       0.000       2646.       0.000       8.000       0.000    
+   16600  0.4150      0.2500E-04 NODE           5  -0.0%   2631.       1.527       0.000       2633.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A084 WRITTEN
+   16700  0.4175      0.2500E-04 NODE           5  -0.0%   2619.       1.482       0.000       2620.       0.000       8.000       0.000    
+   16800  0.4200      0.2500E-04 NODE           5  -0.0%   2607.       1.436       0.000       2608.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A085 WRITTEN
+   16900  0.4225      0.2500E-04 NODE           5  -0.0%   2595.       1.387       0.000       2597.       0.000       8.000       0.000    
+   17000  0.4250      0.2500E-04 NODE           5  -0.0%   2585.       1.337       0.000       2586.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A086 WRITTEN
+   17100  0.4275      0.2500E-04 NODE           5  -0.0%   2576.       1.286       0.000       2577.       0.000       8.000       0.000    
+   17200  0.4300      0.2500E-04 NODE           5  -0.0%   2567.       1.233       0.000       2568.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A087 WRITTEN
+   17300  0.4325      0.2500E-04 NODE           5  -0.0%   2559.       1.178       0.000       2560.       0.000       8.000       0.000    
+   17400  0.4350      0.2500E-04 NODE           5  -0.0%   2551.       1.123       0.000       2552.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A088 WRITTEN
+   17500  0.4375      0.2500E-04 NODE           5  -0.0%   2545.       1.066       0.000       2546.       0.000       8.000       0.000    
+   17600  0.4400      0.2500E-04 NODE           5  -0.0%   2538.       1.009       0.000       2539.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A089 WRITTEN
+   17700  0.4425      0.2500E-04 NODE           5  -0.0%   2533.      0.9511       0.000       2534.       0.000       8.000       0.000    
+   17800  0.4450      0.2500E-04 NODE           5  -0.0%   2528.      0.8930       0.000       2529.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A090 WRITTEN
+   17900  0.4475      0.2500E-04 NODE           1  -0.0%   2524.      0.8346       0.000       2524.       0.000       8.000       0.000    
+   18000  0.4500      0.2500E-04 NODE           5  -0.0%   2520.      0.7763       0.000       2521.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A091 WRITTEN
+   18100  0.4525      0.2500E-04 NODE           5  -0.0%   2516.      0.7183       0.000       2517.       0.000       8.000       0.000    
+   18200  0.4550      0.2500E-04 NODE           5  -0.0%   2513.      0.6607       0.000       2514.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A092 WRITTEN
+   18300  0.4575      0.2500E-04 NODE           5  -0.0%   2511.      0.6038       0.000       2511.       0.000       8.000       0.000    
+   18400  0.4600      0.2500E-04 NODE           5  -0.0%   2509.      0.5478       0.000       2509.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A093 WRITTEN
+   18500  0.4625      0.2500E-04 NODE           5  -0.0%   2507.      0.4930       0.000       2507.       0.000       8.000       0.000    
+   18600  0.4650      0.2500E-04 NODE           5  -0.0%   2505.      0.4396       0.000       2506.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A094 WRITTEN
+   18700  0.4675      0.2500E-04 NODE           5  -0.0%   2504.      0.3879       0.000       2504.       0.000       8.000       0.000    
+   18800  0.4700      0.2500E-04 NODE           5  -0.0%   2503.      0.3382       0.000       2503.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A095 WRITTEN
+   18900  0.4725      0.2500E-04 NODE           5  -0.0%   2502.      0.2907       0.000       2502.       0.000       8.000       0.000    
+   19000  0.4750      0.2500E-04 NODE           5  -0.0%   2501.      0.2456       0.000       2502.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A096 WRITTEN
+   19100  0.4775      0.2500E-04 NODE           5  -0.0%   2501.      0.2034       0.000       2501.       0.000       8.000       0.000    
+   19200  0.4800      0.2500E-04 NODE           5  -0.0%   2501.      0.1643       0.000       2501.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A097 WRITTEN
+   19300  0.4825      0.2500E-04 NODE           5  -0.0%   2500.      0.1285       0.000       2500.       0.000       8.000       0.000    
+   19400  0.4850      0.2500E-04 NODE           5  -0.0%   2500.      0.9646E-01   0.000       2500.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A098 WRITTEN
+   19500  0.4875      0.2500E-04 NODE           5  -0.0%   2500.      0.6842E-01   0.000       2500.       0.000       8.000       0.000    
+   19600  0.4900      0.2500E-04 NODE           5  -0.0%   2500.      0.4472E-01   0.000       2500.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A099 WRITTEN
+   19700  0.4925      0.2500E-04 NODE           5  -0.0%   2500.      0.2568E-01   0.000       2500.       0.000       8.000       0.000    
+   19800  0.4950      0.2500E-04 NODE           5  -0.0%   2500.      0.1165E-01   0.000       2500.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A100 WRITTEN
+   19900  0.4975      0.2500E-04 NODE           5  -0.0%   2500.      0.2972E-02   0.000       2500.       0.000       8.000       0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+   20000  0.5000      0.2500E-04 NODE           5  -0.0%   2500.      0.4896E-23   0.000       2500.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A101 WRITTEN
+   20100  0.5025      0.2500E-04 NODE           5  -0.0%   2500.      0.2972E-02   0.000       2500.       0.000       8.000       0.000    
+   20200  0.5050      0.2500E-04 NODE           5  -0.0%   2500.      0.1165E-01   0.000       2500.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A102 WRITTEN
+   20300  0.5075      0.2500E-04 NODE           5  -0.0%   2500.      0.2568E-01   0.000       2500.       0.000       8.000       0.000    
+   20400  0.5100      0.2500E-04 NODE           5  -0.0%   2500.      0.4472E-01   0.000       2500.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A103 WRITTEN
+   20500  0.5125      0.2500E-04 NODE           5  -0.0%   2500.      0.6842E-01   0.000       2500.       0.000       8.000       0.000    
+   20600  0.5150      0.2500E-04 NODE           5  -0.0%   2500.      0.9646E-01   0.000       2500.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A104 WRITTEN
+   20700  0.5175      0.2500E-04 NODE           5  -0.0%   2500.      0.1285       0.000       2500.       0.000       8.000       0.000    
+   20800  0.5200      0.2500E-04 NODE           5  -0.0%   2501.      0.1643       0.000       2501.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A105 WRITTEN
+   20900  0.5225      0.2500E-04 NODE           5  -0.0%   2501.      0.2034       0.000       2501.       0.000       8.000       0.000    
+   21000  0.5250      0.2500E-04 NODE           5  -0.0%   2501.      0.2456       0.000       2502.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A106 WRITTEN
+   21100  0.5275      0.2500E-04 NODE           5  -0.0%   2502.      0.2907       0.000       2502.       0.000       8.000       0.000    
+   21200  0.5300      0.2500E-04 NODE           5  -0.0%   2503.      0.3382       0.000       2503.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A107 WRITTEN
+   21300  0.5325      0.2500E-04 NODE           5  -0.0%   2504.      0.3879       0.000       2504.       0.000       8.000       0.000    
+   21400  0.5350      0.2500E-04 NODE           5  -0.0%   2505.      0.4396       0.000       2506.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A108 WRITTEN
+   21500  0.5375      0.2500E-04 NODE           5  -0.0%   2507.      0.4930       0.000       2507.       0.000       8.000       0.000    
+   21600  0.5400      0.2500E-04 NODE           5  -0.0%   2509.      0.5478       0.000       2509.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A109 WRITTEN
+   21700  0.5425      0.2500E-04 NODE           5  -0.0%   2511.      0.6038       0.000       2511.       0.000       8.000       0.000    
+   21800  0.5450      0.2500E-04 NODE           5  -0.0%   2513.      0.6607       0.000       2514.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A110 WRITTEN
+   21900  0.5475      0.2500E-04 NODE           5  -0.0%   2516.      0.7183       0.000       2517.       0.000       8.000       0.000    
+   22000  0.5500      0.2500E-04 NODE           5  -0.0%   2520.      0.7763       0.000       2521.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A111 WRITTEN
+   22100  0.5525      0.2500E-04 NODE           5  -0.0%   2524.      0.8346       0.000       2524.       0.000       8.000       0.000    
+   22200  0.5550      0.2500E-04 NODE           5  -0.0%   2528.      0.8930       0.000       2529.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A112 WRITTEN
+   22300  0.5575      0.2500E-04 NODE           5  -0.0%   2533.      0.9511       0.000       2534.       0.000       8.000       0.000    
+   22400  0.5600      0.2500E-04 NODE           5  -0.0%   2538.       1.009       0.000       2539.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A113 WRITTEN
+   22500  0.5625      0.2500E-04 NODE           5  -0.0%   2545.       1.066       0.000       2546.       0.000       8.000       0.000    
+   22600  0.5650      0.2500E-04 NODE           1  -0.0%   2551.       1.123       0.000       2552.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A114 WRITTEN
+   22700  0.5675      0.2500E-04 NODE           5  -0.0%   2559.       1.178       0.000       2560.       0.000       8.000       0.000    
+   22800  0.5700      0.2500E-04 NODE           5  -0.0%   2567.       1.233       0.000       2568.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A115 WRITTEN
+   22900  0.5725      0.2500E-04 NODE           5  -0.0%   2576.       1.286       0.000       2577.       0.000       8.000       0.000    
+   23000  0.5750      0.2500E-04 NODE           5  -0.0%   2585.       1.337       0.000       2586.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A116 WRITTEN
+   23100  0.5775      0.2500E-04 NODE           5  -0.0%   2595.       1.387       0.000       2597.       0.000       8.000       0.000    
+   23200  0.5800      0.2500E-04 NODE           5  -0.0%   2607.       1.436       0.000       2608.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A117 WRITTEN
+   23300  0.5825      0.2500E-04 NODE           5  -0.0%   2619.       1.482       0.000       2620.       0.000       8.000       0.000    
+   23400  0.5850      0.2500E-04 NODE           5  -0.0%   2631.       1.527       0.000       2633.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A118 WRITTEN
+   23500  0.5875      0.2500E-04 NODE           5  -0.0%   2645.       1.570       0.000       2646.       0.000       8.000       0.000    
+   23600  0.5900      0.2500E-04 NODE           5  -0.0%   2659.       1.610       0.000       2661.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A119 WRITTEN
+   23700  0.5925      0.2500E-04 NODE           5  -0.0%   2675.       1.648       0.000       2676.       0.000       8.000       0.000    
+   23800  0.5950      0.2500E-04 NODE           5  -0.0%   2691.       1.683       0.000       2693.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A120 WRITTEN
+   23900  0.5975      0.2500E-04 NODE           5  -0.0%   2708.       1.716       0.000       2710.       0.000       8.000       0.000    
+   24000  0.6000      0.2500E-04 NODE           5  -0.0%   2726.       1.747       0.000       2728.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A121 WRITTEN
+   24100  0.6025      0.2500E-04 NODE           5  -0.0%   2745.       1.775       0.000       2747.       0.000       8.000       0.000    
+   24200  0.6050      0.2500E-04 NODE           5  -0.0%   2765.       1.800       0.000       2767.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A122 WRITTEN
+   24300  0.6075      0.2500E-04 NODE           5  -0.0%   2786.       1.822       0.000       2788.       0.000       8.000       0.000    
+   24400  0.6100      0.2500E-04 NODE           5  -0.0%   2807.       1.841       0.000       2809.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A123 WRITTEN
+   24500  0.6125      0.2500E-04 NODE           5  -0.0%   2830.       1.858       0.000       2832.       0.000       8.000       0.000    
+   24600  0.6150      0.2500E-04 NODE           5  -0.0%   2854.       1.871       0.000       2855.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A124 WRITTEN
+   24700  0.6175      0.2500E-04 NODE           5  -0.0%   2878.       1.882       0.000       2880.       0.000       8.000       0.000    
+   24800  0.6200      0.2500E-04 NODE           5  -0.0%   2903.       1.889       0.000       2905.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A125 WRITTEN
+   24900  0.6225      0.2500E-04 NODE           5  -0.0%   2929.       1.894       0.000       2931.       0.000       8.000       0.000    
+   25000  0.6250      0.2500E-04 NODE           1  -0.0%   2956.       1.895       0.000       2958.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A126 WRITTEN
+   25100  0.6275      0.2500E-04 NODE           5   0.0%   2984.       1.894       0.000       2986.       0.000       8.000       0.000    
+   25200  0.6300      0.2500E-04 NODE           5   0.0%   3013.       1.889       0.000       3015.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A127 WRITTEN
+   25300  0.6325      0.2500E-04 NODE           5   0.0%   3042.       1.882       0.000       3044.       0.000       8.000       0.000    
+   25400  0.6350      0.2500E-04 NODE           5   0.0%   3072.       1.871       0.000       3074.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A128 WRITTEN
+   25500  0.6375      0.2500E-04 NODE           5   0.0%   3103.       1.858       0.000       3105.       0.000       8.000       0.000    
+   25600  0.6400      0.2500E-04 NODE           5   0.0%   3134.       1.841       0.000       3136.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A129 WRITTEN
+   25700  0.6425      0.2500E-04 NODE           5   0.0%   3167.       1.822       0.000       3168.       0.000       8.000       0.000    
+   25800  0.6450      0.2500E-04 NODE           5   0.0%   3199.       1.800       0.000       3201.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A130 WRITTEN
+   25900  0.6475      0.2500E-04 NODE           5   0.0%   3233.       1.775       0.000       3234.       0.000       8.000       0.000    
+   26000  0.6500      0.2500E-04 NODE           5   0.0%   3266.       1.747       0.000       3268.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A131 WRITTEN
+   26100  0.6525      0.2500E-04 NODE           5   0.0%   3301.       1.716       0.000       3302.       0.000       8.000       0.000    
+   26200  0.6550      0.2500E-04 NODE           5   0.0%   3335.       1.683       0.000       3337.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A132 WRITTEN
+   26300  0.6575      0.2500E-04 NODE           5   0.0%   3371.       1.648       0.000       3372.       0.000       8.000       0.000    
+   26400  0.6600      0.2500E-04 NODE           5   0.0%   3406.       1.610       0.000       3408.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A133 WRITTEN
+   26500  0.6625      0.2500E-04 NODE           5   0.0%   3442.       1.570       0.000       3443.       0.000       8.000       0.000    
+   26600  0.6650      0.2500E-04 NODE           5   0.0%   3478.       1.527       0.000       3479.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A134 WRITTEN
+   26700  0.6675      0.2500E-04 NODE           5   0.0%   3514.       1.482       0.000       3515.       0.000       8.000       0.000    
+   26800  0.6700      0.2500E-04 NODE           5   0.0%   3550.       1.436       0.000       3551.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A135 WRITTEN
+   26900  0.6725      0.2500E-04 NODE           5   0.0%   3586.       1.387       0.000       3587.       0.000       8.000       0.000    
+   27000  0.6750      0.2500E-04 NODE           5   0.0%   3622.       1.337       0.000       3623.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A136 WRITTEN
+   27100  0.6775      0.2500E-04 NODE           5   0.0%   3658.       1.286       0.000       3659.       0.000       8.000       0.000    
+   27200  0.6800      0.2500E-04 NODE           5   0.0%   3694.       1.233       0.000       3695.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A137 WRITTEN
+   27300  0.6825      0.2500E-04 NODE           5   0.0%   3729.       1.178       0.000       3730.       0.000       8.000       0.000    
+   27400  0.6850      0.2500E-04 NODE           5   0.0%   3765.       1.123       0.000       3766.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A138 WRITTEN
+   27500  0.6875      0.2500E-04 NODE           5   0.0%   3799.       1.066       0.000       3801.       0.000       8.000       0.000    
+   27600  0.6900      0.2500E-04 NODE           5   0.0%   3834.       1.009       0.000       3835.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A139 WRITTEN
+   27700  0.6925      0.2500E-04 NODE           5   0.0%   3868.      0.9511       0.000       3869.       0.000       8.000       0.000    
+   27800  0.6950      0.2500E-04 NODE           5   0.0%   3901.      0.8930       0.000       3902.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A140 WRITTEN
+   27900  0.6975      0.2500E-04 NODE           5   0.0%   3934.      0.8346       0.000       3934.       0.000       8.000       0.000    
+   28000  0.7000      0.2500E-04 NODE           5   0.0%   3965.      0.7763       0.000       3966.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A141 WRITTEN
+   28100  0.7025      0.2500E-04 NODE           5   0.0%   3996.      0.7183       0.000       3997.       0.000       8.000       0.000    
+   28200  0.7050      0.2500E-04 NODE           5   0.0%   4026.      0.6607       0.000       4027.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A142 WRITTEN
+   28300  0.7075      0.2500E-04 NODE           5   0.0%   4055.      0.6038       0.000       4056.       0.000       8.000       0.000    
+   28400  0.7100      0.2500E-04 NODE           5   0.0%   4083.      0.5478       0.000       4084.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A143 WRITTEN
+   28500  0.7125      0.2500E-04 NODE           5   0.0%   4110.      0.4930       0.000       4111.       0.000       8.000       0.000    
+   28600  0.7150      0.2500E-04 NODE           5   0.0%   4136.      0.4396       0.000       4136.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A144 WRITTEN
+   28700  0.7175      0.2500E-04 NODE           5   0.0%   4160.      0.3879       0.000       4161.       0.000       8.000       0.000    
+   28800  0.7200      0.2500E-04 NODE           5   0.0%   4183.      0.3382       0.000       4183.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A145 WRITTEN
+   28900  0.7225      0.2500E-04 NODE           5   0.0%   4205.      0.2907       0.000       4205.       0.000       8.000       0.000    
+   29000  0.7250      0.2500E-04 NODE           5   0.0%   4224.      0.2456       0.000       4225.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A146 WRITTEN
+   29100  0.7275      0.2500E-04 NODE           5   0.0%   4243.      0.2034       0.000       4243.       0.000       8.000       0.000    
+   29200  0.7300      0.2500E-04 NODE           5   0.0%   4260.      0.1643       0.000       4260.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A147 WRITTEN
+   29300  0.7325      0.2500E-04 NODE           5   0.0%   4274.      0.1285       0.000       4275.       0.000       8.000       0.000    
+   29400  0.7350      0.2500E-04 NODE           5   0.0%   4288.      0.9646E-01   0.000       4288.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A148 WRITTEN
+   29500  0.7375      0.2500E-04 NODE           5   0.0%   4299.      0.6842E-01   0.000       4299.       0.000       8.000       0.000    
+   29600  0.7400      0.2500E-04 NODE           5   0.0%   4308.      0.4472E-01   0.000       4308.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A149 WRITTEN
+   29700  0.7425      0.2500E-04 NODE           5   0.0%   4316.      0.2568E-01   0.000       4316.       0.000       8.000       0.000    
+   29800  0.7450      0.2500E-04 NODE           5   0.0%   4321.      0.1165E-01   0.000       4321.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A150 WRITTEN
+   29900  0.7475      0.2500E-04 NODE           5   0.0%   4324.      0.2972E-02   0.000       4324.       0.000       8.000       0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+   30000  0.7500      0.2500E-04 NODE           5   0.0%   4325.      0.6880E-06   0.000       4325.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A151 WRITTEN
+   30100  0.7525      0.2500E-04 NODE           1  -0.0%   4326.      0.7628E-03   0.000       4326.       0.000       8.000       0.000    
+   30200  0.7550      0.2500E-04 NODE           1  -0.0%   4327.      0.2990E-02   0.000       4327.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A152 WRITTEN
+   30300  0.7575      0.2500E-04 NODE           1  -0.0%   4330.      0.6591E-02   0.000       4330.       0.000       8.000       0.000    
+   30400  0.7600      0.2500E-04 NODE           1  -0.0%   4334.      0.1148E-01   0.000       4334.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A153 WRITTEN
+   30500  0.7625      0.2500E-04 NODE           5  -0.0%   4339.      0.1756E-01   0.000       4339.       0.000       8.000       0.000    
+   30600  0.7650      0.2500E-04 NODE           1  -0.0%   4344.      0.2476E-01   0.000       4344.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A154 WRITTEN
+   30700  0.7675      0.2500E-04 NODE           5  -0.0%   4351.      0.3299E-01   0.000       4351.       0.000       8.000       0.000    
+   30800  0.7700      0.2500E-04 NODE           1  -0.0%   4358.      0.4216E-01   0.000       4359.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A155 WRITTEN
+   30900  0.7725      0.2500E-04 NODE           5  -0.0%   4367.      0.5221E-01   0.000       4367.       0.000       8.000       0.000    
+   31000  0.7750      0.2500E-04 NODE           1  -0.0%   4376.      0.6304E-01   0.000       4376.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A156 WRITTEN
+   31100  0.7775      0.2500E-04 NODE           5  -0.0%   4386.      0.7460E-01   0.000       4386.       0.000       8.000       0.000    
+   31200  0.7800      0.2500E-04 NODE           5  -0.0%   4397.      0.8679E-01   0.000       4397.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A157 WRITTEN
+   31300  0.7825      0.2500E-04 NODE           1  -0.0%   4408.      0.9956E-01   0.000       4408.       0.000       8.000       0.000    
+   31400  0.7850      0.2500E-04 NODE           5  -0.0%   4420.      0.1128       0.000       4420.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A158 WRITTEN
+   31500  0.7875      0.2500E-04 NODE           1  -0.0%   4433.      0.1265       0.000       4433.       0.000       8.000       0.000    
+   31600  0.7900      0.2500E-04 NODE           5  -0.0%   4446.      0.1406       0.000       4446.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A159 WRITTEN
+   31700  0.7925      0.2500E-04 NODE           1  -0.0%   4460.      0.1550       0.000       4460.       0.000       8.000       0.000    
+   31800  0.7950      0.2500E-04 NODE           1  -0.0%   4474.      0.1696       0.000       4474.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A160 WRITTEN
+   31900  0.7975      0.2500E-04 NODE           1  -0.0%   4489.      0.1843       0.000       4489.       0.000       8.000       0.000    
+   32000  0.8000      0.2500E-04 NODE           5  -0.0%   4504.      0.1993       0.000       4504.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A161 WRITTEN
+   32100  0.8025      0.2500E-04 NODE           1  -0.0%   4519.      0.2142       0.000       4520.       0.000       8.000       0.000    
+   32200  0.8050      0.2500E-04 NODE           1  -0.0%   4535.      0.2292       0.000       4535.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A162 WRITTEN
+   32300  0.8075      0.2500E-04 NODE           5  -0.0%   4551.      0.2441       0.000       4551.       0.000       8.000       0.000    
+   32400  0.8100      0.2500E-04 NODE           5  -0.0%   4567.      0.2589       0.000       4567.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A163 WRITTEN
+   32500  0.8125      0.2500E-04 NODE           1  -0.0%   4583.      0.2736       0.000       4584.       0.000       8.000       0.000    
+   32600  0.8150      0.2500E-04 NODE           1  -0.0%   4600.      0.2881       0.000       4600.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A164 WRITTEN
+   32700  0.8175      0.2500E-04 NODE           5  -0.0%   4616.      0.3024       0.000       4616.       0.000       8.000       0.000    
+   32800  0.8200      0.2500E-04 NODE           5  -0.0%   4633.      0.3163       0.000       4633.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A165 WRITTEN
+   32900  0.8225      0.2500E-04 NODE           1  -0.0%   4649.      0.3300       0.000       4650.       0.000       8.000       0.000    
+   33000  0.8250      0.2500E-04 NODE           5  -0.0%   4666.      0.3432       0.000       4666.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A166 WRITTEN
+   33100  0.8275      0.2500E-04 NODE           1  -0.0%   4682.      0.3561       0.000       4682.       0.000       8.000       0.000    
+   33200  0.8300      0.2500E-04 NODE           1  -0.0%   4698.      0.3685       0.000       4699.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A167 WRITTEN
+   33300  0.8325      0.2500E-04 NODE           1  -0.0%   4714.      0.3805       0.000       4715.       0.000       8.000       0.000    
+   33400  0.8350      0.2500E-04 NODE           1  -0.0%   4730.      0.3919       0.000       4731.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A168 WRITTEN
+   33500  0.8375      0.2500E-04 NODE           5  -0.0%   4746.      0.4028       0.000       4746.       0.000       8.000       0.000    
+   33600  0.8400      0.2500E-04 NODE           5  -0.0%   4761.      0.4132       0.000       4762.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A169 WRITTEN
+   33700  0.8425      0.2500E-04 NODE           1  -0.0%   4776.      0.4229       0.000       4777.       0.000       8.000       0.000    
+   33800  0.8450      0.2500E-04 NODE           1  -0.0%   4791.      0.4320       0.000       4791.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A170 WRITTEN
+   33900  0.8475      0.2500E-04 NODE           1  -0.0%   4805.      0.4405       0.000       4806.       0.000       8.000       0.000    
+   34000  0.8500      0.2500E-04 NODE           1  -0.0%   4819.      0.4483       0.000       4820.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A171 WRITTEN
+   34100  0.8525      0.2500E-04 NODE           5  -0.0%   4833.      0.4554       0.000       4833.       0.000       8.000       0.000    
+   34200  0.8550      0.2500E-04 NODE           5  -0.0%   4846.      0.4619       0.000       4846.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A172 WRITTEN
+   34300  0.8575      0.2500E-04 NODE           1  -0.0%   4859.      0.4676       0.000       4859.       0.000       8.000       0.000    
+   34400  0.8600      0.2500E-04 NODE           1  -0.0%   4871.      0.4725       0.000       4871.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A173 WRITTEN
+   34500  0.8625      0.2500E-04 NODE           1  -0.0%   4883.      0.4768       0.000       4883.       0.000       8.000       0.000    
+   34600  0.8650      0.2500E-04 NODE           5  -0.0%   4894.      0.4802       0.000       4894.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A174 WRITTEN
+   34700  0.8675      0.2500E-04 NODE           5  -0.0%   4904.      0.4830       0.000       4905.       0.000       8.000       0.000    
+   34800  0.8700      0.2500E-04 NODE           1  -0.0%   4915.      0.4849       0.000       4915.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A175 WRITTEN
+   34900  0.8725      0.2500E-04 NODE           5  -0.0%   4924.      0.4861       0.000       4925.       0.000       8.000       0.000    
+   35000  0.8750      0.2500E-04 NODE           5  -0.0%   4933.      0.4865       0.000       4934.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A176 WRITTEN
+   35100  0.8775      0.2500E-04 NODE           5   0.0%   4942.      0.4861       0.000       4942.       0.000       8.000       0.000    
+   35200  0.8800      0.2500E-04 NODE           5   0.0%   4949.      0.4849       0.000       4950.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A177 WRITTEN
+   35300  0.8825      0.2500E-04 NODE           5   0.0%   4957.      0.4830       0.000       4957.       0.000       8.000       0.000    
+   35400  0.8850      0.2500E-04 NODE           1   0.0%   4963.      0.4802       0.000       4964.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A178 WRITTEN
+   35500  0.8875      0.2500E-04 NODE           5   0.0%   4970.      0.4768       0.000       4970.       0.000       8.000       0.000    
+   35600  0.8900      0.2500E-04 NODE           1   0.0%   4975.      0.4725       0.000       4976.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A179 WRITTEN
+   35700  0.8925      0.2500E-04 NODE           1   0.0%   4980.      0.4676       0.000       4981.       0.000       8.000       0.000    
+   35800  0.8950      0.2500E-04 NODE           1   0.0%   4984.      0.4619       0.000       4985.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A180 WRITTEN
+   35900  0.8975      0.2500E-04 NODE           5   0.0%   4988.      0.4554       0.000       4989.       0.000       8.000       0.000    
+   36000  0.9000      0.2500E-04 NODE           5   0.0%   4992.      0.4483       0.000       4992.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A181 WRITTEN
+   36100  0.9025      0.2500E-04 NODE           5   0.0%   4994.      0.4405       0.000       4995.       0.000       8.000       0.000    
+   36200  0.9050      0.2500E-04 NODE           5   0.0%   4996.      0.4320       0.000       4997.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A182 WRITTEN
+   36300  0.9075      0.2500E-04 NODE           1   0.0%   4998.      0.4229       0.000       4998.       0.000       8.000       0.000    
+   36400  0.9100      0.2500E-04 NODE           1   0.0%   4999.      0.4132       0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A183 WRITTEN
+   36500  0.9125      0.2500E-04 NODE           1   0.0%   5000.      0.4028       0.000       5000.       0.000       8.000       0.000    
+     FAILURE COHESIVE ELEMENT          1 INTEGRATION POINT 1, MIXED MODE STRAIN= 2.222226014E-01
+     FAILURE COHESIVE ELEMENT          1 INTEGRATION POINT 2, MIXED MODE STRAIN= 2.222226014E-01
+     FAILURE COHESIVE ELEMENT          1 INTEGRATION POINT 3, MIXED MODE STRAIN= 2.222226014E-01
+     FAILURE COHESIVE ELEMENT          1 INTEGRATION POINT 4, MIXED MODE STRAIN= 2.222226014E-01
+      DELETE CONNECTION SOLID ELEMENT          1
+   36600  0.9150      0.2500E-04 NODE           5  -0.0%   5000.      0.3919       0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A184 WRITTEN
+   36700  0.9175      0.2500E-04 NODE           5  -0.0%   5000.      0.3805       0.000       5000.       0.000       8.000       0.000    
+   36800  0.9200      0.2500E-04 NODE           5  -0.0%   5000.      0.3685       0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A185 WRITTEN
+   36900  0.9225      0.2500E-04 NODE           5  -0.0%   5000.      0.3561       0.000       5000.       0.000       8.000       0.000    
+   37000  0.9250      0.2500E-04 NODE           5  -0.0%   5000.      0.3432       0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A186 WRITTEN
+   37100  0.9275      0.2500E-04 NODE           5  -0.0%   5000.      0.3300       0.000       5000.       0.000       8.000       0.000    
+   37200  0.9300      0.2500E-04 NODE           5  -0.0%   5000.      0.3163       0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A187 WRITTEN
+   37300  0.9325      0.2500E-04 NODE           5  -0.0%   5000.      0.3024       0.000       5000.       0.000       8.000       0.000    
+   37400  0.9350      0.2500E-04 NODE           5  -0.0%   5000.      0.2881       0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A188 WRITTEN
+   37500  0.9375      0.2500E-04 NODE           5  -0.0%   5000.      0.2736       0.000       5000.       0.000       8.000       0.000    
+   37600  0.9400      0.2500E-04 NODE           5  -0.0%   5000.      0.2589       0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A189 WRITTEN
+   37700  0.9425      0.2500E-04 NODE           5  -0.0%   5000.      0.2441       0.000       5000.       0.000       8.000       0.000    
+   37800  0.9450      0.2500E-04 NODE           5  -0.0%   5000.      0.2292       0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A190 WRITTEN
+   37900  0.9475      0.2500E-04 NODE           5  -0.0%   5000.      0.2142       0.000       5000.       0.000       8.000       0.000    
+   38000  0.9500      0.2500E-04 NODE           5  -0.0%   5000.      0.1993       0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A191 WRITTEN
+   38100  0.9525      0.2500E-04 NODE           5  -0.0%   5000.      0.1843       0.000       5000.       0.000       8.000       0.000    
+   38200  0.9550      0.2500E-04 NODE           5  -0.0%   5000.      0.1696       0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A192 WRITTEN
+   38300  0.9575      0.2500E-04 NODE           5  -0.0%   5000.      0.1550       0.000       5000.       0.000       8.000       0.000    
+   38400  0.9600      0.2500E-04 NODE           5  -0.0%   5000.      0.1406       0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A193 WRITTEN
+   38500  0.9625      0.2500E-04 NODE           5  -0.0%   5000.      0.1265       0.000       5000.       0.000       8.000       0.000    
+   38600  0.9650      0.2500E-04 NODE           5  -0.0%   5000.      0.1128       0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A194 WRITTEN
+   38700  0.9675      0.2500E-04 NODE           5  -0.0%   5000.      0.9956E-01   0.000       5000.       0.000       8.000       0.000    
+   38800  0.9700      0.2500E-04 NODE           5  -0.0%   5000.      0.8679E-01   0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A195 WRITTEN
+   38900  0.9725      0.2500E-04 NODE           5  -0.0%   5000.      0.7460E-01   0.000       5000.       0.000       8.000       0.000    
+   39000  0.9750      0.2500E-04 NODE           5  -0.0%   5000.      0.6304E-01   0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A196 WRITTEN
+   39100  0.9775      0.2500E-04 NODE           5  -0.0%   5000.      0.5221E-01   0.000       5000.       0.000       8.000       0.000    
+   39200  0.9800      0.2500E-04 NODE           5  -0.0%   5000.      0.4216E-01   0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A197 WRITTEN
+   39300  0.9825      0.2500E-04 NODE           5  -0.0%   5000.      0.3299E-01   0.000       5000.       0.000       8.000       0.000    
+   39400  0.9850      0.2500E-04 NODE           5  -0.0%   5000.      0.2476E-01   0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A198 WRITTEN
+   39500  0.9875      0.2500E-04 NODE           5  -0.0%   5000.      0.1756E-01   0.000       5000.       0.000       8.000       0.000    
+   39600  0.9900      0.2500E-04 NODE           5  -0.0%   5000.      0.1148E-01   0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A199 WRITTEN
+   39700  0.9925      0.2500E-04 NODE           5  -0.0%   5000.      0.6591E-02   0.000       5000.       0.000       8.000       0.000    
+   39800  0.9950      0.2500E-04 NODE           5  -0.0%   5000.      0.2990E-02   0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A200 WRITTEN
+   39900  0.9975      0.2500E-04 NODE           5  -0.0%   5000.      0.7628E-03   0.000       5000.       0.000       8.000       0.000    
+
+     RESTART FILES: A17_NORMAL_L10_0001_[0001-0001].rst WRITTEN
+     -------------
+
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+   40000   1.000      0.2500E-04 NODE           5  -0.0%   5000.      0.3112E-06   0.000       5000.       0.000       8.000       0.000    
+     ANIMATION FILE: A17_NORMAL_L10A201 WRITTEN
+  
+                           ** CPU USER TIME **
+  
+  
+                        ** SUMMARY **
+  
+ #PROC  ELEMENT   KINCOND   INTEG     IO        T0        ASM       RESOL    
+   1   .7188E+00 .5000E+00 .5469E+00 .2094E+01 .2000E+01 .2812E+00 .7703E+01
+  
+ 
+                   ** CUMULATIVE CPU TIME SUMMARY **
+  
+ CONTACT SORTING.............: .0000E+00     0.00 % 
+ CONTACT FORCES..............: .1562E-01     0.20 % 
+ ELEMENT FORCES..............: .7188E+00     9.33 % 
+ KINEMATIC COND..............: .5000E+00     6.49 % 
+ INTEGRATION.................: .5469E+00     7.10 % 
+ ASSEMBLING..................: .2812E+00     3.65 % 
+ OTHERS (including I/O)......: .5641E+01    73.23 % 
+ TOTAL.......................: .7703E+01   100.00 % 
+  
+  
+                           ** ELAPSED TIME **
+  
+  
+                        ** SUMMARY **
+  
+ #PROC  ELEMENT   KINCOND   INTEG     IO        T0        ASM       RESOL    
+   1   .4097E+00 .2559E+00 .2547E+00 .9427E+00 .9111E+00 .2390E+00 .3873E+01
+  
+                   ** MEMORY USAGE STATISTICS **
+  
+ TOTAL MEMORY USED .........................:       46 MB
+ MAXIMUM MEMORY PER PROCESSOR...............:       46 MB
+ MINIMUM MEMORY PER PROCESSOR...............:       46 MB
+ AVERAGE MEMORY PER PROCESSOR...............:       46 MB
+  
+                   ** DISK USAGE STATISTICS **
+  
+ TOTAL DISK SPACE USED .....................:          3 MB
+ ANIMATION/H3D/TH/OUTP SIZE ................:          2 MB
+ RESTART FILE SIZE .........................:          0 MB
+  
+                   ** COMPUTE TIME INFORMATION **
+                        ** CURRENT ENGINE **
+  
+ EXECUTION STARTED .........................:      2026/10/09  09:16:50
+ EXECUTION COMPLETED .......................:      2026/10/09  09:16:54
+  
+ ELAPSED TIME     =          3.93 s
+                          0:00:03
+
+
+
+     NORMAL TERMINATION      
+
+
+
+     TOTAL NUMBER OF CYCLES  :   40001
+
+  
+                   ** COMPUTE RUNTIME INFORMATION SUMMARY **
+  
+        STARTER RUNTIME =          1.22s (00:00:01)
+ # 001   ENGINE RUNTIME =          3.93s (00:00:03)
+ ------------------------------ 
+ STARTER+ENGINE RUNTIME =          5.14s (00:00:05)
+  

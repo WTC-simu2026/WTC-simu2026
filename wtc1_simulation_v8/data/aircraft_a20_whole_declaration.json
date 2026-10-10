@@ -1,0 +1,119 @@
+{
+  "iteration": "AIRCRAFT-A20",
+  "declared_utc": "2026-10-09T09:44:27.405762+00:00",
+  "seed": 1102045,
+  "random_draws": 0,
+  "parent": "wtc1_simulation_v8/output/aircraft_a19/r0/DKT_S3_20",
+  "scope": "Fresh20ms whole-aircraft/facade exploratory impact after correcting finite core mechanics and skin coupling. Same total material budgets and inlet velocity. Not validated historical impact; no fitting to known damage.",
+  "source_core": "wtc1_simulation_v8/data/aircraft_a20_predeclaration.json",
+  "source_core_sha256": "9e009a03fd8444f11b49995516a7c832921b3d200844aa35c51624fc29ebc1ac",
+  "source_coupling_review": "wtc1_simulation_v8/output/aircraft_a20/sandwich_type2_review.json",
+  "mesh": {
+    "triangles_replaced": 216,
+    "per_triangle": "three nondegenerate quadrilateral cells from3 vertices,3 edge midpoints,centroid; extrude8mm for three HA8 core bricks",
+    "skin_midplanes_mm": [
+      -4.25,
+      4.25
+    ],
+    "core_boundaries_mm": [
+      -4,
+      4
+    ],
+    "skin_thickness_mm": 0.5,
+    "total_material_thickness_mm": 9,
+    "core_parts": "one per original triangle; explicit materialL=globalX projected on triangle, W=n crossL, fixed orthotropic skew carried by co-rotation",
+    "coupling": "two TYPE2 Spot5 Iproj2 ties per facet from core faces to separate skin midsurfaces; dsearch.3mm, physical offset.25mm; no coupling between top/bottom faces",
+    "skin_property": "TYPE51 Ipos0 and one actual0.5mm ply; inherited LAW25/4 and ORTHSTRAIN/4 unchanged",
+    "cohesive": "reuse624 initial zero-height strips and all EN,ET,TN,TT,GI,GII values; reattach massless corner offsets to actual skin nodes",
+    "root": "original x2000mm body attachment kept,24 ideal nonfailing RBE2 root supports for offset skin nodes; hierarchy explicitly audited; root kinematics not as-built bracket failure",
+    "no_core_edge_traction": "core bricks share nodes within a facet, separate between facets; intact skins/cohesive seams carry edge transfers; core-edge tearing unmeasured",
+    "bulk_skin_removal": "failure of the single skin ply now removes the corresponding skin shell; native persistent nodal mass accounted, no removed shell rendered intact",
+    "unchanged": "all non-radome elements, materials, RBE3, ADMAS, facade supports and four external TYPE25 contacts",
+    "changed": "radome discretization, through-thickness mechanics, tie formulation, external radome node positions and self-contact surface/gap"
+  },
+  "self_contact": {
+    "TYPE25": true,
+    "main": "all lower/upper skin parts",
+    "secondary": "all skin midsurface nodes",
+    "gap_mm": 0.5,
+    "derivation": "sum of half-thicknesses of two0.5mm skins; actual midsurfaces separate, prior9mm gap no longer appropriate",
+    "Inacti": 1000,
+    "initial_neighbors_ignored_then_reentry": true,
+    "all_aircraft_self_contact": false,
+    "long_fragment_contact_qualified": false
+  },
+  "preserved_budgets": {
+    "skin_areal_kg_m2": 1.83,
+    "core_areal_kg_m2": 0.384,
+    "total_areal_kg_m2": 2.214,
+    "initial_aircraft_kg": 121962.860669763,
+    "old_mesh_quadrature_not_reused_as_new_mass": true,
+    "no_density_or_ADMAS_compensation": true
+  },
+  "insertion_acceptance": {
+    "initial_mass_relative": 1e-06,
+    "initial_CG_mm": 0.001,
+    "initial_inertia_relative": 1e-06,
+    "initial_no_contact_IE_J": 0.001,
+    "allowed_initial_self_warning_ids": [
+      "1166",
+      "343"
+    ],
+    "no_incompatible_constraint_warnings": true
+  },
+  "acceptance": {
+    "mass_relative_error": 1e-06,
+    "added_mass_fraction": 1e-09,
+    "global_energy_residual_initial_KE_fraction": 0.005,
+    "local_energy_residual_generated_energy_fraction": 0.05,
+    "local_energy_comparison_minimum_J": 1000,
+    "CSV_KE_precision_allowance_J": 1000,
+    "momentum_absolute_allowance_Ns": 10,
+    "momentum_relative_allowance": 0.02,
+    "half_dt_impulse_difference_fraction": 0.05,
+    "half_dt_generated_energy_difference_fraction": 0.1,
+    "mesh_impulse_difference_fraction": 0.1,
+    "mesh_generated_energy_difference_fraction": 0.1,
+    "free_displacement_error_mm": 0.02,
+    "free_velocity_error_m_s": 0.001,
+    "final_timestamp_overshoot_native_step_factor": 1.1,
+    "metal_plastic_strain_diagnostic_limit": 0.1,
+    "negative_plastic_work_allowance_J": 1e-06,
+    "laminate_quadrature_relative_error": 1e-12,
+    "starter_errors": 0,
+    "starter_warnings": 0
+  },
+  "execution": {
+    "CPU_threads": 2,
+    "GPU": false,
+    "engine_cap_s": 3600,
+    "estimated_minutes": [
+      20,
+      60
+    ],
+    "end_ms": 20,
+    "dt_scale": 0.5,
+    "history_dt_ms": 0.02,
+    "animation_dt_ms": 0.2,
+    "no_mass_scaling": true,
+    "checkpoint_on_normal_end": true
+  },
+  "extension_stop": "No extension beyond20ms unless finite core, energy balance and material domains pass. Preserve failures. Metal failure, tower interior, gravity, high-rate material/fracture data still needed for seconds.",
+  "goal": {
+    "target_s": 10,
+    "new_requested_s": 0.02,
+    "complete": false
+  },
+  "velocity_m_s": [
+    -200,
+    5,
+    2
+  ],
+  "physical_G_measured": false,
+  "core_skin_debonding_modelled": false,
+  "core_crushing_densification_modelled": false,
+  "physical_impact_qualified": false,
+  "historical_conditions_identified": false,
+  "NIST_damage_fitted": false,
+  "old_solver_reruns": 0
+}

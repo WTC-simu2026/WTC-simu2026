@@ -1,0 +1,82 @@
+{
+  "created_utc": "2026-10-09T13:56:29.001414+00:00",
+  "iteration": "AIRCRAFT-A21",
+  "status": "completed_cached_diagnosis_root_controls_and_fresh_halfdt12ms__local_energy_and_material_gates_failed",
+  "fresh_intact_native_horizon_s": 0.012000055313110353,
+  "main_engine_wall_s": 2103.8458494999977,
+  "same_A20_geometry_material_mass_CG_inertia": true,
+  "native_CSV_precision_alone_explains_deficit": false,
+  "halfdt_impulse_relative_difference": 0.009986734587709947,
+  "halfdt_generated_relative_difference": 0.002579722233637293,
+  "local_energy_pass": false,
+  "failed_whole_checks": [
+    "strict_zero_warnings",
+    "native_local_energy",
+    "printed_CSV_local_energy",
+    "metal_material_domain",
+    "facade_material_domain",
+    "beam_material_domain",
+    "saved_skin_elements_IE_nonnegative"
+  ],
+  "root_RBE2_rotational_controls_pass": false,
+  "root_surface_tie_qualified": false,
+  "specific_whole_energy_cause_proven": false,
+  "negative_A20_skin_element_localized": {
+    "native_path": "wtc1_simulation_v8/output/aircraft_a20/r0/CORE3D_TIED_20/A20_CORE3D_TIED_20A076",
+    "time_ms": 15.000173568725586,
+    "element_id": 70981,
+    "IE_J": -3.937582362210218,
+    "mass_g": 31.778043746948242,
+    "facet": 111,
+    "side": "hi",
+    "part": 13111,
+    "alive": 1,
+    "nodes": [
+      45456,
+      45459,
+      45460,
+      45458
+    ],
+    "native_damage_layers": {
+      "DAMAGE,(Layer   1)": 0.0,
+      "DAMAGE,(Layer   2)": 0.0,
+      "DAMAGE,(Layer   3)": 0.0,
+      "DAMAGE,(Layer   4)": 0.0,
+      "DAMAGE,(Layer   5)": 0.0
+    },
+    "initial_area_mm2": 34730.103103315225,
+    "deformed_area_mm2": 34715.88972892793,
+    "native_node_positions_mm": [
+      [
+        -1611.888916015625,
+        -620.45751953125,
+        1422.35546875
+      ],
+      [
+        -1783.0596923828125,
+        -349.6379699707031,
+        1394.59375
+      ],
+      [
+        -1688.074951171875,
+        -323.00933837890625,
+        1449.8992919921875
+      ],
+      [
+        -1562.615234375,
+        -446.46185302734375,
+        1502.6744384765625
+      ]
+    ],
+    "negative_skin_elements_at_frame": 1
+  },
+  "control_csv_node_mapping_addendum": "wtc1_simulation_v8/output/aircraft_a21/control_channel_audit.json",
+  "material_reference": "wtc1_simulation_v8/output/aircraft_a21/material_reference_assessment.json",
+  "physical_impact_qualified": false,
+  "objective1_target_s": 10,
+  "objective1_complete": false,
+  "seconds_extension_allowed": false,
+  "old_failed_gates_retained": true,
+  "old_solver_reruns": 0,
+  "NIST_damage_fitted": false
+}

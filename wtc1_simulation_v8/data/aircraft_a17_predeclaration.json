@@ -1,0 +1,134 @@
+{
+  "iteration": "AIRCRAFT-A17",
+  "declared_utc": "2026-10-09T07:16:31.801062+00:00",
+  "seed": 1102042,
+  "random_draws": 0,
+  "user_objective": "Produce 3D visualization and video of first10 physical simulated seconds; slow replay of10ms is only an interim preview.",
+  "target_physical_duration_s": 10,
+  "current_whole_physical_duration_s": 0.0100001755,
+  "scope": "LAW117 cohesive opening energy/history implementation check, not actual radome material identification. Export cached A16 whole scene through Blender, with no physics extrapolation.",
+  "cohesive": {
+    "law": "LAW117",
+    "property": "TYPE43",
+    "EN_N_mm3": 4400,
+    "ET_N_mm3": 800,
+    "TN_MPa": 450,
+    "TT_MPa": 100,
+    "GI_N_mm": 50,
+    "GII_N_mm": 50,
+    "area_mass_density_g_mm2": 1e-20,
+    "nodal_instrument_mass_g": 1,
+    "Imass": 1,
+    "Idel": 4,
+    "Irupt": 1,
+    "Ismstr": 1,
+    "stiffness_derivation": "A07 analytical contract E22000MPa/5mm; ET4000/5. Numerical interface reference only.",
+    "G_physical_measured": false,
+    "shear_strength_measured": false,
+    "whole_aircraft_transfer_qualified": false,
+    "true_glue_or_tearing_properties_identified": false
+  },
+  "witness": {
+    "time_ms": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "opening_path": "0 -> midpoint(initiation,complete) ->0 ->same midpoint ->1.1*complete; cubic smooth each leg",
+    "TH_interval_ms": 0.0001,
+    "ANIM_interval_ms": 0.005,
+    "cases": [
+      {
+        "id": "NORMAL_L10",
+        "mode": "Z",
+        "L_mm": 10,
+        "dt_cap_ms": 2.5e-05
+      },
+      {
+        "id": "NORMAL_L10_HALF",
+        "mode": "Z",
+        "L_mm": 10,
+        "dt_cap_ms": 1.25e-05
+      },
+      {
+        "id": "NORMAL_L20",
+        "mode": "Z",
+        "L_mm": 20,
+        "dt_cap_ms": 2.5e-05
+      },
+      {
+        "id": "SHEAR_L10",
+        "mode": "X",
+        "L_mm": 10,
+        "dt_cap_ms": 2.5e-05
+      }
+    ]
+  },
+  "acceptance": {
+    "work_energy_fraction": 0.01,
+    "absolute_energy_J": 0.001,
+    "work_per_area_G_fraction": 0.02,
+    "equal_peak_energy_fraction": 0.005,
+    "traction_maximum_relative": 0.02,
+    "prescribed_motion_mm": 0.0001,
+    "half_dt_work_fraction": 0.005,
+    "area_normalized_work_fraction": 0.005,
+    "stored_dissipated_reference_identity_relative": 1e-08
+  },
+  "execution": {
+    "CPU_threads": 2,
+    "GPU_physics": false,
+    "starter_cap_s": 120,
+    "engine_cap_s": 180,
+    "converter_cap_s": 120,
+    "no_whole10s_job_launched_in_A17": true
+  },
+  "video": {
+    "source": "wtc1_simulation_v8/output/aircraft_a16/r0/IMPACT_R20_10",
+    "selection": "first declared A16R20, no selection by historical resemblance",
+    "renderer": "Blender5.2 Workbench, geometry only, no rigid-body physics",
+    "unique_saved_states": 21,
+    "views": [
+      "whole",
+      "nose_closeup"
+    ],
+    "resolution_each": [
+      1280,
+      720
+    ],
+    "movie_resolution": [
+      2560,
+      720
+    ],
+    "fps": 30,
+    "frames_per_saved_state": 9,
+    "display_duration_s": 6.3,
+    "geometry_interpolation": "none, hold exact native states",
+    "displacement_scale": 1,
+    "output": "MP4 H264 yuv420p plus labelled GIF",
+    "renderer_cap_s": 900,
+    "physical_10s_goal_complete": false
+  },
+  "cost_estimate": {
+    "observed_10ms_seconds": [
+      509.1971577000004,
+      493.4037875000013
+    ],
+    "mean_10ms_seconds": 501.30047260000083,
+    "linear_10s_seconds": 501300.47260000085,
+    "linear_10s_days": 5.802088803240751,
+    "CPU_threads": 2,
+    "not_a_reliable_ETA": "Fracture, contacts, deformation and changed output cadence can change cost. No GPU solve or mass scaling assumed."
+  },
+  "sources": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/mat_law117_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type43_connect_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/brick_starter_r.htm"
+  ],
+  "NIST_outcomes_used_as_target": false,
+  "old_solver_reruns": 0,
+  "sources_read_only": true,
+  "physical_impact_qualified": false
+}

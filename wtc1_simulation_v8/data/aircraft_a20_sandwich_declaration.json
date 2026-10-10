@@ -1,0 +1,43 @@
+{
+  "iteration": "AIRCRAFT-A20",
+  "declared_utc": "2026-10-09T09:26:44.232283+00:00",
+  "seed": 1102045,
+  "random_draws": 0,
+  "scope": "Shared solid/skin translational nodes; shell rotations free; explicit outer ply positioning. Verify true thickness, no tying of top to bottom, mass, rigid rotation and small membrane/bending response.",
+  "geometry": "10x10mm core, z-4..4; lower face ply-.5..0 at lower nodes, upper0..+.5 at upper nodes;9mm total. TYPE51 Ipos3/4, TYPE6 Ip11 projection of globalX onto local(r,s).",
+  "skin": "Inherited LAW25/4, TYPE19/41/43 each0.5mm, ORTHSTRAIN4 unchanged. No surrogate core ply42.",
+  "core_configuration": "wtc1_simulation_v8/data/aircraft_a20_predeclaration.json",
+  "core_configuration_sha256": "9e009a03fd8444f11b49995516a7c832921b3d200844aa35c51624fc29ebc1ac",
+  "cases": [
+    "ROTATION",
+    "MEMBRANE",
+    "SHEAR",
+    "BENDING"
+  ],
+  "duration_ms": 1,
+  "dt_cap_ms": 2.5e-05,
+  "strain": 0.001,
+  "curvature_per_mm": 0.0001,
+  "maximum_shear": 0.15,
+  "history_ms": 0.001,
+  "animation_ms": 0.025,
+  "engine_cap_s": 120,
+  "reference_mass_g": 0.2214,
+  "acceptance": {
+    "mass_relative": 1e-06,
+    "energy_balance_relative": 0.02,
+    "absolute_energy_J": 0.0001,
+    "rigid_IE_J": 0.0001,
+    "elastic_IE_fraction": 0.02,
+    "core_deletion_expected_shear": true,
+    "skin_survival_expected": true
+  },
+  "references": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type51_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type6_sol_orth_starter_r.htm"
+  ],
+  "core_skin_debonding": false,
+  "physical_sandwich_qualification": false,
+  "fracture_energy_measured": false,
+  "no_mass_scaling": true
+}

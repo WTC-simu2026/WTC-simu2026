@@ -1,0 +1,21 @@
+"""Derive A18 native visualization scripts from the verified A17 exporter."""
+from run_aircraft_a18 import *
+
+dst=ROOT/'wtc1_3d_v4/scripts/render_aircraft_a18.py';assert not dst.exists()
+s=(ROOT/'wtc1_3d_v4/scripts/render_aircraft_a17.py').read_text(encoding='utf-8')
+s=s.replace('cached A16','fresh A18').replace('aircraft_a17','aircraft_a18').replace("assert len(P)==cfg['video']['unique_saved_states'];assert times[-1]<.011","assert 1 < len(P) < 200;assert times[-1]<.021")
+s=s.replace("scene['display_duration_s']=6.3","scene['display_duration_s']=len(P)*.3").replace('A16_exact_native_poses','A18_exact_native_poses')
+dst.write_text(s,encoding='utf-8')
+dst=ROOT/'wtc1_simulation_v8/scripts/encode_aircraft_a18.py';assert not dst.exists()
+s=(ROOT/'wtc1_simulation_v8/scripts/encode_aircraft_a17.py').read_text(encoding='utf-8')
+s=s.replace('run_aircraft_a17','run_aircraft_a18').replace("r['unique_native_states']==21","r['unique_native_states']>1")
+s=s.replace("times=z['time_s'];font=","times=z['time_s'];diagnostics=read(ROOT/c['source']/'review.json')['state_diagnostics'];count=len(times);duration=count*.3;font=")
+s=s.replace('premiers 10 millisecondes','premières 20 millisecondes').replace('APERCU_A16_10ms_ralenti','APERCU_A18_20ms_ralenti')
+s=s.replace("'Rouge : point de peau totalement endommagé · jaune : dommage partiel · cœur encore intact'","f\"Liaisons rompues : {diagnostics[i]['deleted_cohesive_strips']}/624 · groupes séparés du corps : {diagnostics[i]['detached_components']} · rouge/jaune : dommage de peau\"")
+s=s.replace("'0,010 s physique, lues en 6,3 s · pas de fragments libres · aperçu exploratoire · objectif final : 10 s physiques'","f'{times[-1]:.6f} s physique, ralenties en {duration:.1f} s · mouvements issus du solveur · hypothèses de rupture non mesurées · objectif final : 10 s physiques'")
+s=s.replace("int(v['nb_read_frames'])==189","int(v['nb_read_frames'])==count*9").replace("-6.3)","-duration)")
+s=s.replace("r'select=eq(n\\,0)+eq(n\\,94)+eq(n\\,188)'","f'select=eq(n\\\\,0)+eq(n\\\\,{count*9//2})+eq(n\\\\,{count*9-1})'")
+s=s.replace('im.n_frames==21','im.n_frames==count').replace('[300]*21','[300]*count')
+s=s.replace("'display_duration_s':6.3","'display_duration_s':duration").replace("'MP4_frames':189","'MP4_frames':count*9").replace("'unique_native_states':21","'unique_native_states':count").replace("'GIF_frames':21","'GIF_frames':count")
+s=s.replace("'decoder_checked_frames':[0,94,188]","'decoder_checked_frames':[0,count*9//2,count*9-1]").replace("'display_s':6.3","'display_s':duration")
+dst.write_text(s,encoding='utf-8');print({'A18_renderer_and_encoder_created':True},flush=True)

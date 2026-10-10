@@ -1,0 +1,12 @@
+"""Correct cached node-only mapping in mixed part/node histories; no native reruns."""
+from run_aircraft_a21 import *
+
+def main():
+    guard();p=OUT/'control_channel_audit.json';assert not p.exists();c=read(OUT/'nested_root_declaration.json');qpoint=np.vstack([read(ROOT/'wtc1_simulation_v8/data/aircraft_a21_root_declaration.json')['nodes_mm'],[10,0,0],[10,0,10],[0,0,10]]);rows=[]
+    for rev in ['w2','w5','w7','w8']:
+        for d in sorted((OUT/rev).iterdir()):
+            if not d.is_dir() or not (d/'review.json').exists():continue
+            gen=read(d/'generation.json');n=gen['name'];H=histories(d/(n+'T01.csv'));T=H['time'];prefix='POINT_DIAGNOSTIC' if rev in ['w2','w5'] else 'NATIVE_ALL_NODES';keys=[k for k in H if k.startswith(prefix)];q=np.asarray(gen.get('nodes_mm',qpoint));assert len(keys)==len(q)*6;v=np.column_stack([H[k] for k in keys]).reshape(len(T),len(q),6);ax='XYZ'.index(d.name.split('_')[1]);axis=np.eye(3)[ax];a=np.pi/2*(3*T*T-2*T**3);X=q[None,:,:]*np.cos(a)[:,None,None]+np.cross(axis,q)[None,:,:]*np.sin(a)[:,None,None]+axis[None,None,:]*np.dot(q,axis)[None,:,None]*(1-np.cos(a)[:,None,None]);V=np.cross(axis,X)*(np.pi/2*(6*T-6*T*T))[:,None,None];pos=float(abs(q+v[:,:,:3]-X).max());vel=float(abs(v[:,:,3:]-V).max());row={'revision':rev,'case':d.name,'native_node_channels':len(keys),'native_part_channels_precede_node_channels':list(H).index(keys[0])>23,'node_order':'native title selection, then listed node and field order; source deck DX,DY,DZ,VX,VY,VZ','maximum_position_error_mm':pos,'maximum_velocity_error_m_s':vel,'position_gate_pass':pos<.002,'velocity_gate_pass':vel<.005,'original_review_file_preserved':True,'global_energy_values_unaffected_by_reader_correction':True};rows.append(row)
+    dump(p,{'created_utc':now(),'cases':rows,'source_issue':'The native converter puts part channels before node channels regardless of their input order. Some initial mixed-history motion checks accidentally included part channels. This cached addendum replaces no native fields or original review files. Energy/mass fields are named global columns and were unaffected. The original whole solver diagnosis and its node/geometry reader were unaffected.','all_original_failures_preserved':True,'old_solver_reruns':0,'no_whole_root_cause_proven':True});print({'cached_mixed_history_node_maps_checked':len(rows),'motion_failures':[r['revision']+'/'+r['case'] for r in rows if not r['position_gate_pass'] or not r['velocity_gate_pass']]},flush=True)
+
+if __name__=='__main__':main()

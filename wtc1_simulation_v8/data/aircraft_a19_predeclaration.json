@@ -1,0 +1,41 @@
+{
+  "iteration": "AIRCRAFT-A19",
+  "declared_utc": "2026-10-09T08:18:50.054240+00:00",
+  "seed": 1102044,
+  "random_draws": 0,
+  "user_objective_physical_duration_s": 10,
+  "objective1_complete": false,
+  "scope": "Diagnose native negative radome IE from saved A18 states, then declare a targeted correction before new native experiments. Not historical fitting.",
+  "source": "wtc1_simulation_v8/output/aircraft_a18/r0/FACET_COHESIVE_20",
+  "cached_analysis": {
+    "all_native_frames": true,
+    "focus_part_id": 21,
+    "reader": "FASTMAGI10 shell prefix; scalar specific energy and element mass, nodal positions/velocities, shell stresses and strains",
+    "validation_frames": [
+      0,
+      65,
+      -1
+    ],
+    "converter_tolerance_relative": 5e-06,
+    "converter_tolerance_absolute": 1e-06,
+    "geometry": "initial/current metric singular stretches and area, no false inversion label from an initial-normal dot product under rotation",
+    "rotation": "recover angular velocity from actual RBE2 offset nodal velocities by least squares; rank deficiencies reported, not filled",
+    "energy": "element_specific_energy * initial element mass; compare independently to native part IE and keep differences",
+    "selection": "locate most negative energy facets only for defect diagnosis, not for fitting a physical result or selecting a movie"
+  },
+  "execution_policy": {
+    "no_old_solver_reruns": true,
+    "new_solver_declaration_required": true,
+    "conditional_target": "a new fresh coupled run20ms or longer only after negative-energy mechanism is addressed in explicitly declared mechanics",
+    "do_not_compensate_by_mass_G_or_RKE": true,
+    "hours_long_cost_announced_before_launch": true
+  },
+  "sources": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type51_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type19_ply_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/tsai_wu_formulation_starter_r.htm"
+  ],
+  "physical_impact_qualified": false,
+  "NIST_outcomes_used_as_target": false,
+  "sources_read_only": true
+}

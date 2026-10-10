@@ -1,0 +1,68 @@
+{
+  "created_utc": "2026-10-09T13:43:35.292546+00:00",
+  "source": "https://ntrs.nasa.gov/api/citations/20040086484/downloads/20040086484.pdf",
+  "source_sha256": "6c6e401d3ced0c8697fec98dcbec4b5f7855869c5b16e36187268372db694f2e",
+  "PDF_page": 5,
+  "table": 1,
+  "table_render_visually_inspected": true,
+  "reference_aircraft": "ATR42-300",
+  "reference_impact_velocity": {
+    "original": "30 ft/s",
+    "transcribed_m_s": 9.14
+  },
+  "reference_law": "LS-DYNA MAT_PLASTIC_KINEMATIC linear elastic-plastic; values estimated from MIL-HDBK-5H per paper; not independent fracture measurements of AA11",
+  "materials": [
+    {
+      "grade": "Al-2024-T3",
+      "E_original_GPa": 66.33,
+      "E_MPa": 66330,
+      "rho_original_g_cm3": 2.76,
+      "rho_g_mm3": 0.00276,
+      "nu": 0.33,
+      "yield_MPa": 243.0,
+      "hardening_modulus_MPa": 826.7,
+      "failure_strain_original_percent": 14.63,
+      "failure_strain_fraction": 0.1463
+    },
+    {
+      "grade": "Al-7075-T6",
+      "E_original_GPa": 71.02,
+      "E_MPa": 71020,
+      "rho_original_g_cm3": 2.794,
+      "rho_g_mm3": 0.002794,
+      "nu": 0.33,
+      "yield_MPa": 360.0,
+      "hardening_modulus_MPa": 1001.8,
+      "failure_strain_original_percent": 4.49,
+      "failure_strain_fraction": 0.0449
+    }
+  ],
+  "current_A20_A21_materials": {
+    "LAW2/1": {
+      "label": "hypothetical_2024_skin_reference",
+      "E_MPa": 73100,
+      "yield_MPa": 324,
+      "hardening": 0,
+      "fracture": "effectively infinite strain"
+    },
+    "LAW2/2": {
+      "label": "hypothetical_7075_internal_reference",
+      "E_MPa": 71700,
+      "yield_MPa": 503,
+      "hardening": 0,
+      "fracture": "effectively infinite strain"
+    }
+  },
+  "no_direct_parameter_adoption": true,
+  "finite_fracture_branch_ready_for_whole_Engine": false,
+  "missing": [
+    "historical grade and temper per part",
+    "stress-strain hardening curves for declared proxy at relevant strain rate",
+    "plastic versus ultimate total strain definition compatibility",
+    "stress-triaxiality and Lode failure surface",
+    "element-size/fracture-energy regularization",
+    "beam and facade fracture implementation",
+    "new material controls and freshly declared mass budgets if density changes"
+  ],
+  "next": "Use this verified reference as a source envelope and implementation comparison, never as an AA11 measurement. No numerical strain cap invented from A20 observed damage. Declare coupon sensitivity before any new material solve."
+}

@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-10-09T09:20:25.145328+00:00",
+  "before_analysis_and_new_control": true,
+  "scope": "Native nodal REAC components empirically cumulative impulse, not direct force in this binary. Validate against native momentum; differentiate on unchanged histories and subtract prescribed nodal inertia to recover traction. Preserve original VTK component audits as failed.",
+  "force_protocol": "Central derivative of four upper-node cumulative reactions in imposed direction, minus0.0192g times prescribed acceleration; use pre-deletion yielded interval; compare declared yield tolerance3%.",
+  "acceptance_unchanged": true,
+  "momentum_absolute_g_mm_ms": 0.001,
+  "external_work_check_J": 0.0001,
+  "new_control": {
+    "case": "SHEAR_L_HIGH_EXT",
+    "revision": "w3",
+    "path": [
+      0,
+      0.015,
+      0,
+      0.35,
+      0.35
+    ],
+    "failure_shear": 0.12,
+    "reason": "w2 high did not delete by imposed engineering shear.15; increase loading amplitude, retain high no-deletion result and all material parameters. This is a failure-interpretation test, not property fitting."
+  },
+  "same_material_parameters": true,
+  "physical_failure_strain_identified": false
+}

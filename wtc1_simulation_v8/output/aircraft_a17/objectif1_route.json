@@ -1,0 +1,42 @@
+{
+  "created_utc": "2026-10-09T07:16:34.828498+00:00",
+  "objective": "10 simulated physical seconds, native physics visualization, export video",
+  "target_physical_seconds": 10,
+  "coverage_now_s": 0.0100001755,
+  "complete": false,
+  "steps": [
+    {
+      "horizon_s": 0.01,
+      "status": "cached_A16_exploratory"
+    },
+    {
+      "horizon_s": 0.02,
+      "status": "after native separation/contact checks and fresh intact coupled setup"
+    },
+    {
+      "horizon_s": 0.1,
+      "status": "future contact, metal failure and geometry domain checks"
+    },
+    {
+      "horizon_s": 1,
+      "status": "requires interior structure, gravity and free fragments"
+    },
+    {
+      "horizon_s": 10,
+      "status": "requires bounded resumable campaign and final video audit"
+    }
+  ],
+  "no_kinematic_extrapolation": true,
+  "no_slow_preview_substitution": true,
+  "cost": {
+    "observed_10ms_seconds": [
+      509.1971577000004,
+      493.4037875000013
+    ],
+    "mean_10ms_seconds": 501.30047260000083,
+    "linear_10s_seconds": 501300.47260000085,
+    "linear_10s_days": 5.802088803240751,
+    "CPU_threads": 2,
+    "not_a_reliable_ETA": "Fracture, contacts, deformation and changed output cadence can change cost. No GPU solve or mass scaling assumed."
+  }
+}

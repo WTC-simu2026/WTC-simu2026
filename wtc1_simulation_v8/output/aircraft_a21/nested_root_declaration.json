@@ -1,0 +1,53 @@
+{
+  "declared_utc": "2026-10-09T13:28:12.653443+00:00",
+  "iteration": "AIRCRAFT-A21",
+  "revision": "w6",
+  "before_any_w6_solver": true,
+  "cases": [
+    "REFERENCE_X",
+    "REFERENCE_Y",
+    "REFERENCE_Z",
+    "RBE2_Y",
+    "TYPE2_X",
+    "TYPE2_Y",
+    "TYPE2_Z",
+    "TYPE2_Y_HALF"
+  ],
+  "purpose": "Actual rotational DOFs on two0.5mm skins and finite8mm core, inherited A20 p3 constitutive cards. Avoid conclusions from point-mass-only TYPE2. One10x10x2.54mm fuselage backing extendsx=-10..0; skin/core panelx=0..10. Root corner midsurfaces atx=0 andz+/-4.25 project exactly to backing edge. This is a local implementation witness, not changed whole geometry.",
+  "source_panel_sha256": "36a33826e9b16b74ba49c98b9197da0c4225d89a52cd714385446053824ac84f",
+  "whole_material_sha256": "44444ba93d96ab22a40a4d4e00ac77c4b1d30f392c5add5206f64adc52a7598a",
+  "TYPE2_hierarchy": {
+    "core_to_skins": "Spot2 Level0 Iproj2 dsearch0.3mm offset0.25mm",
+    "skin_roots_to_body": "Spot2 Level1 Iproj2 dsearch5mm offset4.25mm; all four roots must tie",
+    "core_ties": 2,
+    "root_ties": 1
+  },
+  "reference": "Identical body/skins/core and masses; all skin nodes independently follow same rigid rotation; core attached identically viaTYPE2 Spot2 Level0.",
+  "RBE2_control": "Two body root nodes, each paired with lower/upper skin corner. Original ideal111111 Iflag0. No mass compensation.",
+  "mass_g": 0.92752,
+  "execution": {
+    "end_ms": 1,
+    "dt_cap_ms": 2.5e-05,
+    "half_dt_cap_ms": 1.25e-05,
+    "history_ms": 0.001,
+    "animation_ms": 0.025,
+    "CPU_threads": 1,
+    "engine_cap_s": 120
+  },
+  "acceptance": {
+    "zero_errors_warnings": true,
+    "mass_relative": 1e-06,
+    "added_mass_fraction": 1e-09,
+    "rigid_IE_J": 0.0001,
+    "energy_balance_fraction": 0.02,
+    "matched_energy_fraction": 0.02,
+    "absolute_J": 0.0001,
+    "motion_mm": 0.002,
+    "velocity_m_s": 0.005
+  },
+  "source_reference": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inter_type2_starter_r.htm",
+  "old_control_failures_retained": true,
+  "whole_geometry_changed": false,
+  "root_strength_or_failure_qualified": false,
+  "whole_cause_proven": false
+}

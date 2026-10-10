@@ -8,13 +8,13 @@ Le projet teste des mécanismes, des hypothèses explicites et des plages de par
 
 ## Où en est la simulation ?
 
-Instantané du **8 octobre 2026** : **AIRCRAFT-A13 terminée**, prochaine étape **AIRCRAFT-A14**. Le registre contient 132 expériences. Les anciennes mentions V8H/V11H sont historiques.
+Instantané du **10 octobre 2026** : **AIRCRAFT-A21 terminée**, prochaine étape **AIRCRAFT-A22**. Cette mise à jour rattrape les huit itérations A14 à A21, avec les calculs natifs, configurations, témoins refusés et rapports conservés. Le registre compte 140 entrées.
 
-A12 isole le radôme, vérifie l'inertie initiale et conserve les échecs de fermeture énergétique et de convergence sur quatre maillages. A13 ajoute treize témoins : le contact TYPE25 ferme l'énergie du radôme, mais l'impulsion varie encore de **23,53 %** entre 3456 et 13824 triangles (seuil 10 %). Le demi-pas ne change cette impulsion que de 0,093 %. Le témoin de rebond à 200 m/s passe avec TYPE25 ; TYPE7 perd environ 20,8 % de son énergie initiale. Le contrôle DKT18/TYPE7 conserve un déficit. La correction temporelle v+dt·a/2 reste un diagnostic sans requalification rétroactive.
+Le dernier aperçu 3D A20 couvre **20 millisecondes physiques** ; son ralenti MP4/GIF ne constitue pas dix secondes simulées. Le nouvel impact intact A21 atteint **12,000055 ms**, aux mêmes conditions hypothétiques que A20, avec un pas deux fois plus fin. L'impulsion finale varie de **0,9987 %** et l'énergie générée de **0,2580 %**, mais le **bilan énergétique local échoue encore**. Le résidu au contact du fuselage atteint −257,094 kJ à 10,920 ms ; les limites des matériaux métalliques et une énergie de peau négative restent des critères échoués.
 
-Lire le [rapport A12](wtc1_simulation_v8/output/aircraft_a12/rapport_aircraft_a12.md), le [rapport A13](wtc1_simulation_v8/output/aircraft_a13/rapport_aircraft_a13.md), les [résultats définitifs A13](wtc1_simulation_v8/output/aircraft_a13/campaign_review.json) et la [passation A14](harness/handoffs/WTC1_AIRCRAFT_A13_HANDOFF.md). L'agrégat intermédiaire A13 est conservé comme tentative incomplète et remplacé scientifiquement par campaign_review.json.
+Les contrôles isolés du cœur fini et du sandwich Spot5 A20 réussissent. Les témoins des attaches de racine échouent en rotation ; les remplacements TYPE2 testés ne sont pas qualifiés. Leur défaut ne prouve pas la cause complète du bilan entier. Aucun état invalide n'est prolongé vers 10 secondes. La gravité, l'intérieur porteur, la fracture métallique et les contacts des fragments restent à compléter.
 
-Le temps radôme reste **0,4 milliseconde**, soit **0,0004 seconde**. Premières secondes, rupture, écrasement, pénétration historique et effondrement ne sont pas qualifiés. Le module Boeing parallèle v2 reste séparé ; le contrat d'inertie et la dynamique libre demeurent bloqués. V11F/V11R et les branches différées sont conservées.
+Lire les [rapports A14](wtc1_simulation_v8/output/aircraft_a14/rapport_aircraft_a14.md) à [A21](wtc1_simulation_v8/output/aircraft_a21/rapport_aircraft_a21.md), le [rapport A20](wtc1_simulation_v8/output/aircraft_a20/rapport_aircraft_a20.md) et la [passation A21 → A22](harness/handoffs/WTC1_AIRCRAFT_A21_HANDOFF.md). La release fournit l'aperçu A20 et les états mécaniques ; aucune ressemblance visuelle n'identifie un mécanisme historique. Vitesses, attitude, assemblages et lois non mesurées sont des hypothèses déclarées ; aucun résultat de dommage NIST ou observé n'est une cible.
 
 
 ## Ce qui est publié
@@ -26,9 +26,9 @@ Le temps radôme reste **0,4 milliseconde**, soit **0,0004 seconde**. Premières
 - `outputs/` : calculs exploratoires antérieurs et audits complémentaires. Leurs affirmations se lisent avec leurs propres limites ; leur présence n'est pas une validation.
 - `publication/` : inventaire complet, empreintes SHA-256, règles de publication, licences tierces et liste motivée des fichiers externes non redistribués.
 
-Inventaire courant : **7,858 fichiers scientifiques dans Git**, **10,314 sorties dans 79 archives**.
+Inventaire courant : **9,767 fichiers scientifiques dans Git**, **16,299 sorties dans 100 archives**.
 
-Restaurer les 69 anciennes archives des releases précédentes, puis les 10 archives [A12+A13](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-08-aircraft-a12-a13). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
+Restaurer les 79 anciennes archives des releases précédentes, puis les 21 archives [A14–A21](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-10-aircraft-a14-a21). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
 
 ## Consulter et vérifier sans relancer les solveurs
 
@@ -57,8 +57,7 @@ Voir [REPRODUCIBILITY.md](REPRODUCIBILITY.md). La base Python utilise NumPy et P
 
 ## Prochaine étape
 
-**AIRCRAFT-A14** : contrôler la dépendance spatiale de la pénalité de contact sur une plaque plane à 200 m/s, avec aire, masse et gap fixes. Examiner le nombre de nœuds actifs et l'aire tributaire, puis déclarer séparément tout contact pondéré par aire. Aucun Stfac choisi sur les dégâts NIST. Qualifier d'abord les bilans et le demi-pas du témoin analytique, puis réessayer le radôme si ces contrôles passent. Vérifier la convention temporelle native à partir des sorties et de la source exacte. Aucun allongement à l'avion complet avant fermeture locale et convergence spatiale ; premières secondes non calculées.
-
+A22 : tester une attache mécanique finie avec masse et inertie explicites, en translation, rotation et dynamique libre, puis seulement envisager un nouveau départ intact. Réutiliser les témoins cœur et sandwich Spot5 A20 réussis. Préparer la fracture métallique et acier à partir de sources et plages déclarées, sans cible de dommage. Le document NASA ATR42 à 9,14 m/s n'est pas une mesure AA11 à 200 m/s. Les contrôles de bilan local et de matériaux doivent passer avant extension. L'objectif reste une vidéo 3D des dix premières secondes physiques ; il est incomplet. Publication suivante après A22 et A23 vérifiées.
 
 ## Discipline de preuve
 

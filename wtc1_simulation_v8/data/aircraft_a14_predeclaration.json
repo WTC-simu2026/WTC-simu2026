@@ -1,0 +1,315 @@
+{
+  "iteration": "AIRCRAFT-A14",
+  "declared_utc": "2026-10-08T09:02:28.027573+00:00",
+  "seed": 1102039,
+  "random_draws": 0,
+  "scope": "Numerical spatial objectivity of a fixed area/mass plate impacting a plane at 200m/s. No Boeing qualification, no target damage, no historical fit.",
+  "units": {
+    "native": "g mm ms MPa N",
+    "g_to_kg": 0.001,
+    "mm_to_m": 0.001,
+    "ms_to_s": 0.001,
+    "energy_to_J": 0.001,
+    "impulse_to_Ns": 0.001
+  },
+  "geometry": {
+    "moving_side_mm": 20,
+    "wall_side_mm": 40,
+    "thickness_mm": 1,
+    "start_x_mm": -5,
+    "wall_x_mm": 0,
+    "moving_BCS": "X free; Y,Z and all rotations locked",
+    "wall_BCS": "all fixed"
+  },
+  "material_hypothesis": {
+    "law": "LAW1",
+    "rho_g_mm3": 0.00278,
+    "E_MPa": 70000,
+    "nu": 0.3,
+    "source": "Synthetic verification values inherited A10, not aircraft material"
+  },
+  "velocity_m_s": [
+    200,
+    0,
+    0
+  ],
+  "end_ms": 0.04,
+  "contact": {
+    "type": 25,
+    "Istf": 4,
+    "canonical_surface_ids": [
+      0,
+      3
+    ],
+    "secondary_group": 1,
+    "gap_card_mm": 1,
+    "contact_thickness_s_and_m_mm": 1,
+    "Ishape": 2,
+    "Inacti": 1000,
+    "Iedge": 1000,
+    "Ipstif": 0,
+    "VIS_s": 1e-20,
+    "friction": 0,
+    "all_secondary_nodes_in_one_disjoint_group_only": true
+  },
+  "area_weighting": {
+    "law": "Stfac_i=factor*A_i/A_reference",
+    "A_reference_mm2": 100,
+    "A_i": "Initial quad area/4 summed over incident quads; total area fixed 400mm2",
+    "K_native_node_N_mm": 35000,
+    "kappa_nominal_N_mm3": 350,
+    "K_total_nominal_N_mm": 140000,
+    "reference_selection": "E*t/(2*A_reference); A_reference is A13 coarse witness per-node area, no fit to outputs or historical damage",
+    "sensitivity_factors": [
+      0.25,
+      1,
+      4
+    ],
+    "numerical_penalty_not_physical_contact_identification": true
+  },
+  "analytical_reference": {
+    "mass_kg": 0.001112,
+    "initial_KE_J": 22.24,
+    "initial_P_Ns": 0.2224,
+    "complete_rebound_impulse_Ns": 0.4448,
+    "contact_duration_ms": "pi*sqrt(M_g/K_total_N_mm) for uniform motion of area weighted nodes",
+    "peak_penetration_mm": "v0*sqrt(M_g/K_total_N_mm)",
+    "native_unweighted_aggregate_stiffness_changes_with_nodal_count": true,
+    "contact_onset_not_fitted": "Report native onset and static effective-plane diagnostic separately; no fitted gap to force onset."
+  },
+  "energy_contract": {
+    "ledger": [
+      "KINETIC ENERGY",
+      "ROTATION ENERGY",
+      "INTERNAL ENERGY",
+      "HOURGLASS ENERGY",
+      "SPRING ENERGY",
+      "ELASTIC CONTACT ENERGY",
+      "FRICTIONAL CONTACT ENERGY",
+      "DAMPING CONTACT ENERGY "
+    ],
+    "no_reconstructed_RKE_added": true,
+    "support_main_only": true,
+    "contact_impulses_cumulative": true
+  },
+  "acceptance": {
+    "mass_relative": 1e-06,
+    "added_mass_fraction": 1e-09,
+    "energy_fraction_initial": 0.01,
+    "momentum_fraction_initial": 0.01,
+    "support_fraction_initial": 0.02,
+    "rebound_velocity_fraction": 0.01,
+    "contact_duration_fraction": 0.02,
+    "peak_penetration_fraction": 0.02,
+    "contact_energy_law_fraction_initial": 0.01,
+    "area_weighted_velocity_uniformity_fraction": 0.001,
+    "mesh_impulse_fraction": 0.01,
+    "mesh_duration_fraction": 0.02,
+    "mesh_contact_energy_curve_fraction_initial": 0.02,
+    "half_dt_impulse_fraction": 0.01,
+    "native_csv_relative": 6e-07,
+    "native_csv_absolute": 1e-12,
+    "free_velocity_m_s": 1e-06,
+    "phase_centered_momentum_fraction_initial": 0.001,
+    "phase_centered_KE_fraction_initial": 0.001
+  },
+  "timing_contract": {
+    "raw_velocities_retained": true,
+    "diagnostic_only": [
+      "v",
+      "v-dt*a/2",
+      "v+dt*a/2"
+    ],
+    "source_binary_equivalence_established": false,
+    "no_ledger_shift": true,
+    "no_retroactive_A13_credit": true
+  },
+  "execution": {
+    "cases": [
+      {
+        "id": "FREE_N8",
+        "n": 8,
+        "main_n": 1,
+        "contact": false,
+        "weighting": "none",
+        "dt_scale": 0.05,
+        "factor": 1
+      },
+      {
+        "id": "RAW_N1",
+        "n": 1,
+        "main_n": 1,
+        "contact": true,
+        "weighting": "native",
+        "dt_scale": 0.05,
+        "factor": 1
+      },
+      {
+        "id": "RAW_N2",
+        "n": 2,
+        "main_n": 1,
+        "contact": true,
+        "weighting": "native",
+        "dt_scale": 0.05,
+        "factor": 1
+      },
+      {
+        "id": "RAW_N4",
+        "n": 4,
+        "main_n": 1,
+        "contact": true,
+        "weighting": "native",
+        "dt_scale": 0.05,
+        "factor": 1
+      },
+      {
+        "id": "RAW_N8",
+        "n": 8,
+        "main_n": 1,
+        "contact": true,
+        "weighting": "native",
+        "dt_scale": 0.05,
+        "factor": 1
+      },
+      {
+        "id": "AREA_N1",
+        "n": 1,
+        "main_n": 1,
+        "contact": true,
+        "weighting": "area",
+        "dt_scale": 0.05,
+        "factor": 1
+      },
+      {
+        "id": "AREA_N2",
+        "n": 2,
+        "main_n": 1,
+        "contact": true,
+        "weighting": "area",
+        "dt_scale": 0.05,
+        "factor": 1
+      },
+      {
+        "id": "AREA_N4",
+        "n": 4,
+        "main_n": 1,
+        "contact": true,
+        "weighting": "area",
+        "dt_scale": 0.05,
+        "factor": 1
+      },
+      {
+        "id": "AREA_N8",
+        "n": 8,
+        "main_n": 1,
+        "contact": true,
+        "weighting": "area",
+        "dt_scale": 0.05,
+        "factor": 1
+      },
+      {
+        "id": "AREA_N8_HALF",
+        "n": 8,
+        "main_n": 1,
+        "contact": true,
+        "weighting": "area",
+        "dt_scale": 0.025,
+        "factor": 1
+      },
+      {
+        "id": "AREA_N4_MAIN3",
+        "n": 4,
+        "main_n": 3,
+        "contact": true,
+        "weighting": "area",
+        "dt_scale": 0.05,
+        "factor": 1
+      },
+      {
+        "id": "AREA_N4_MAIN4",
+        "n": 4,
+        "main_n": 4,
+        "contact": true,
+        "weighting": "area",
+        "dt_scale": 0.05,
+        "factor": 1
+      },
+      {
+        "id": "AREA_SOFT_N4",
+        "n": 4,
+        "main_n": 1,
+        "contact": true,
+        "weighting": "area",
+        "dt_scale": 0.05,
+        "factor": 0.25
+      },
+      {
+        "id": "AREA_SOFT_N8",
+        "n": 8,
+        "main_n": 1,
+        "contact": true,
+        "weighting": "area",
+        "dt_scale": 0.05,
+        "factor": 0.25
+      },
+      {
+        "id": "AREA_STIFF_N4",
+        "n": 4,
+        "main_n": 1,
+        "contact": true,
+        "weighting": "area",
+        "dt_scale": 0.05,
+        "factor": 4
+      },
+      {
+        "id": "AREA_STIFF_N8",
+        "n": 8,
+        "main_n": 1,
+        "contact": true,
+        "weighting": "area",
+        "dt_scale": 0.05,
+        "factor": 4
+      },
+      {
+        "id": "LEGACY_N1",
+        "n": 1,
+        "main_n": 1,
+        "contact": true,
+        "weighting": "native",
+        "dt_scale": 0.025,
+        "factor": 1,
+        "legacy_surface_mode": true,
+        "start_x_mm": -1.01
+      }
+    ],
+    "history_interval_ms": 1e-06,
+    "animation_interval_ms": 0.002,
+    "CPU_threads": 2,
+    "GPU": false,
+    "starter_timeout_s": 120,
+    "engine_timeout_s": 180,
+    "converter_timeout_s": 60,
+    "estimated_minutes": [
+      5,
+      15
+    ]
+  },
+  "legacy_A13_card_audit": {
+    "Starter_contact_type": 1,
+    "documented_expected_node_to_surface_type": 3,
+    "surface_ids_actual": [
+      3,
+      0
+    ],
+    "supplementary_secondary_group": 1,
+    "preserve_A13": true,
+    "no_old_results_relabelled_as_failed_or_passed": true
+  },
+  "conditional_radome_extension": "Only if area-weighted plate energy/momentum/rebound and secondary/main mesh checks pass; declare radome-only area scheme before fresh starts, no whole-aircraft extension.",
+  "sources": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inter_type25_starter_r.htm"
+  ],
+  "NIST_input_dependency": false,
+  "NIST_outcomes_target": false,
+  "physical_impact_qualified": false
+}

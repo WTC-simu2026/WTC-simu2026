@@ -1,0 +1,47 @@
+{
+  "declared_utc": "2026-10-09T13:15:17.168375+00:00",
+  "revision": "w2",
+  "before_all_native_w2_execution": true,
+  "root_config_sha256": "a0c2f28a7f57a625f123a03a360ec356ff5c1e873f048e38270365d990ab2590",
+  "cases": [
+    "REFERENCE_X",
+    "RBE2_X",
+    "REFERENCE_Y",
+    "RBE2_Y",
+    "REFERENCE_Z",
+    "RBE2_Z"
+  ],
+  "purpose": "Distinguish missing rotational global accounting in a no-part point witness from the actual root whose main node has shell rotations. Add one fully prescribed undeforming10x10mm fuselage shell using inherited LAW2/1 and TYPE1/1 thickness2.54mm. Every RBE2 case has a matched independently prescribed reference with the identical continuum and point masses, coordinates and rigid motion.",
+  "geometry": "Host at origin, backing corners[10,0,0],[10,0,10],[0,0,10]; six actual root offsets unchanged; no massless artificial material.",
+  "inherited_sources": {
+    "source": "wtc1_simulation_v8/output/aircraft_a20/r0/CORE3D_TIED_20",
+    "deck_sha256": "44444ba93d96ab22a40a4d4e00ac77c4b1d30f392c5add5206f64adc52a7598a"
+  },
+  "point_masses": [
+    10.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "analytical_backing_mass_g": 0.70612,
+  "acceptance": {
+    "matched_energy_relative": 0.02,
+    "absolute_J": 0.0001,
+    "native_energy_balance_relative": 0.02,
+    "motion_mm": 0.002,
+    "velocity_m_s": 0.005,
+    "zero_errors_and_warnings": true
+  },
+  "execution": {
+    "duration_ms": 1,
+    "dt_cap_ms": 2.5e-05,
+    "CPU_threads": 1,
+    "solver_cap_s": 90
+  },
+  "whole_mechanics_changed": false,
+  "whole_root_cause_proven": false,
+  "strength_or_fracture_qualified": false
+}
