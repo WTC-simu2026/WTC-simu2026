@@ -1,0 +1,57 @@
+{
+  "created_utc": "2026-10-11T07:21:04.099207+00:00",
+  "source": "wtc1_simulation_v8/scripts/test_aircraft_a29_native_readback.py",
+  "source_sha256": "975a3be21c9440a05c7abcc070146fe14bc46f851dfc1dd39c7232d03976dc57",
+  "target": "wtc1_simulation_v8/scripts/test_aircraft_a29_law12.py",
+  "target_sha256": "12613d0d9c79eca68b46dbd4de9a8690694344032fcc668268350b2a5dd23663",
+  "changes": [
+    {
+      "old": "aircraft_a29_native_readback.json",
+      "new": "aircraft_a29_law12.json",
+      "count": 1
+    },
+    {
+      "old": "OUT/'native_readback_guard.json'",
+      "new": "OUT/'law12_guard.json'",
+      "count": 2
+    },
+    {
+      "old": "(\"OUT/'w2'\",\"OUT/'w3'\")",
+      "new": "(\"OUT/'w2'\",\"OUT/'w4'\")",
+      "count": 1
+    },
+    {
+      "old": "d=OUT/'w3'/cid",
+      "new": "d=OUT/'w4'/cid",
+      "count": 1
+    },
+    {
+      "old": "native_case_summary_w3.json",
+      "new": "native_case_summary_w4.json",
+      "count": 1
+    },
+    {
+      "old": "runner_w3_derivation.json",
+      "new": "runner_w4_derivation.json",
+      "count": 1
+    },
+    {
+      "old": "review_w3_derivation.json",
+      "new": "review_w4_derivation.json",
+      "count": 1
+    },
+    {
+      "old": "A29_W3_3D_",
+      "new": "A29_W4_3D_",
+      "count": 1
+    },
+    {
+      "old": "\"P['/MAT/LAW25/4']+prop\"",
+      "new": "\"law12_card()+prop\"",
+      "count": 1
+    }
+  ],
+  "new_material_card_source": "def law12_card():\n    return ['/MAT/LAW12/4','EXPLICIT_FULL3D_ELASTIC_REFERENCE_NOT_HISTORICAL',ff(.00183),ff(22000,22000,10000),ff(.25,.25,.25),ff(4000,4000,4000),ff(1e12,1e12,1e12,.05),ff(0,1,1,1),ff(1e12,1e12,1e12,1e12),ff(1e12,1e12,1e12,1e12),ff(1e12,1e12,1e12,1e12),ff(0,0,0,.001)+ii(1)]\n\n",
+  "no_fit": true,
+  "native_old_not_rerun": true
+}

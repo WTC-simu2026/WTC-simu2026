@@ -1,0 +1,240 @@
+{
+  "iteration": "AIRCRAFT-A29",
+  "declared_utc": "2026-10-11T07:10:47.592099+00:00",
+  "seed": 1102054,
+  "random_draws": 0,
+  "purpose": "Full3D LAW25 source card with TYPE6 Isolid18, four geometric thickness elements, explicit source-theory 3D constitutive tensor. Stop after first failed affine gate, retain failure; no post-hoc material fit.",
+  "plate": {
+    "bounds_mm": [
+      [
+        -5,
+        -5,
+        0
+      ],
+      [
+        5,
+        5,
+        0
+      ]
+    ],
+    "thickness_mm": 0.5,
+    "volume_mm3": 50,
+    "rho_g_mm3": 0.00183,
+    "mass_g": 0.0915,
+    "E_MPa": 22000,
+    "nu": 0.25,
+    "yield_MPa": 324,
+    "hardening": 0,
+    "fracture": "absent inherited LAW2",
+    "formulation": "TYPE1 Ish3n31 DKT_S3; same LAW2 card, triangular mesh, no rotational initial conditions",
+    "material": "LAW25/4 inherited elastic-reference orthotropic witness",
+    "historical_attachment_unknown": true
+  },
+  "cases": [
+    "PATCH_NORMAL_X_N12",
+    "PATCH_NORMAL_Y_N12",
+    "PATCH_NORMAL_Z_N12",
+    "PATCH_SHEAR_XY_N12",
+    "PATCH_SHEAR_YZ_N12",
+    "PATCH_SHEAR_XZ_N12",
+    "FREE_ROTATION_X_N12",
+    "FREE_ROTATION_Y_N12",
+    "FREE_ROTATION_Z_N12",
+    "FREE_TRANSLATION_N12",
+    "FREE_ROTATION_Y_N12_HALF",
+    "MEMBRANE_N6",
+    "MEMBRANE_N12",
+    "BENDING_N6",
+    "BENDING_N12"
+  ],
+  "motion": {
+    "free_duration_ms": 0.05,
+    "free_omega_rad_ms": 10,
+    "translation_m_s": [
+      -200,
+      5,
+      2
+    ],
+    "elastic_duration_ms": 0.1,
+    "membrane_axial_strain": 0.001,
+    "membrane_transverse_strain": -0.00025,
+    "curvature_per_mm": 0.001,
+    "ramp": "3s²-2s³",
+    "bending_displacement": "z=k*x²/2; x-displacement=-k²*x³/6 eliminates leading membrane stretch; all nodes prescribed. Interior elements with full neighbor stencil compared to Kirchhoff bending, boundary response kept separately."
+  },
+  "acceptance": {
+    "mass_relative": 1e-06,
+    "added_mass_relative": 1e-09,
+    "native_energy_fraction": 0.02,
+    "native_energy_absolute_J": 1e-07,
+    "free_energy_fraction": 0.002,
+    "free_momentum_fraction": 0.002,
+    "physical_angular_fraction": 0.002,
+    "physical_angular_absolute_kg_m2_s": 1e-09,
+    "known_discrete_initial_KE_fraction": 0.002,
+    "physical_continuum_initial_KE_fraction": 0.02,
+    "native_RKE_absolute_J": 1e-07,
+    "elastic_reference_fraction": 0.02,
+    "elastic_absolute_J": 1e-07,
+    "elastic_mesh_fraction": 0.05,
+    "position_mm": 0.002,
+    "velocity_m_s": 0.005,
+    "actual_dt_ratio_max": 0.6
+  },
+  "execution": {
+    "CPU_threads": 1,
+    "GPU": false,
+    "mass_scaling": false,
+    "dt_cap_ms": 2.5e-05,
+    "half_dt_cap_ms": 1.25e-05,
+    "per_process_cap_s": 1200,
+    "estimated_minutes": [
+      4,
+      20
+    ]
+  },
+  "sources": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/theory_element_3_node_triangle_without_rot_dof_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type1_shell_starter_r.htm"
+  ],
+  "constraints": "No body/sandwich/whole input changed. LAW25 composite and core coupling require separate declared witnesses. Prototype curvature does not target observed damage. Refinement changes lumped masses at nodes, preserving volume and density; record discrete and continuum inertia separately.",
+  "whole_insertion_ready": false,
+  "old_A20_A25_native_solver_reruns": 0,
+  "objective1_complete": false,
+  "revision": "w0",
+  "parent_configuration_sha256": "c6d228c29042687c470bd83702bcfc2a6018d00a2392230ea5d450ba01ed0961",
+  "changes": {
+    "material": "unchanged LAW25/4 elastic-reference card, rho.00183g/mm3 E11=E22=22000MPa nu12=.25 G12/G23/G31=4000MPa; other source fields retained, no historical strength/fracture qualification",
+    "geometry": "same10x10x.5mm plate, physical mass.0915g from declared density; this is a different material from the.139g metal witness, not a mass compensation",
+    "property": "TYPE22 HA814 Icstr010 Inpts232 Ipos0, three regular homogeneous layers of relative thickness1/3, z input0 (native auto positions); native quadrature checked by elastic references, not presumed equivalent to previous rejected weights.",
+    "reference": "free mass/tensor/energy/momenta with same thresholds as A26; uniaxial plane referenceE11, bending D11=E11*t³/[12(1-nu12*nu21)], no assumption that shear is isotropic. The prescribed 3D transverse strain is a control hypothesis, to be checked against actual native stresses; failures retained."
+  },
+  "previous_cfg_sha256": "eb29baba4eed198a30a65b70c592648ceb49aec6b61ce96ce56c5f86f6743ed2",
+  "format_correction": "TYPE20 reserved columns3/4 and unused Iint for HA8 must be blank, not numeric zero. Preserve warning100214 w1; no w1 Engine ran. Geometry/material/solver thresholds unchanged.",
+  "composite_strength_or_fracture_qualified": false,
+  "old_A20_A26_native_solver_reruns": 0,
+  "layer_correction": "Starter674 rejects manually positioned Gauss weights as irregular physical layer ratios. Use three equal-thickness homogeneous layers with automatic positions and native HA8 integration. Same homogeneous LAW25, density, phi90, global thickness, no physical layup claim; no original Engine ran. Analytic bending reference unchanged.",
+  "thickness_layers": 9,
+  "constitutive_reference": {
+    "Voigt_order": [
+      "XX",
+      "YY",
+      "ZZ",
+      "gammaXY",
+      "gammaYZ",
+      "gammaXZ"
+    ],
+    "global_stiffness_MPa": [
+      [
+        25630.08442056792,
+        9286.26247122026,
+        5234.0752110514195,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        9286.262471220261,
+        28871.834228702995,
+        8273.21565617805,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        5234.0752110514195,
+        8273.21565617805,
+        12663.085188027628,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        4000.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4000.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4000.0
+      ]
+    ],
+    "engineering_shear_G_MPa": [
+      4000,
+      4000,
+      4000
+    ],
+    "source": "LAW25 official Elastic Phase compliance equation, normal symmetric matrix S12=-nu/E11, S13=-nu/E33, S23=-nu/E22; invert positive definite S then rotate90deg. Engineering shear gamma=2epsilon, so stiffness is G, not2G.",
+    "status": "new declared full3D interpretation of unchanged scalar material inputs. Not automatically equivalent to observed TYPE22 plane block, no historical fracture/material validation."
+  },
+  "loading": {
+    "membrane": "uniaxial stress ideal: ux=.001x, uy=-.00025y, uz=-.00025z for material-axis2/globalX. This transverse contraction follows full3D source compliance.",
+    "bending": "epsilon_x=-kz, epsilon_y=0, sigma_z=0 to first order: uz=k*x²/2+(Czx/Czz)*k*z²/2; ux=-k*x*z-k²*x³/6;uy=0;k=.001/mm. Transverse quadratic field represented by4geometric elements, not a fitted modulus."
+  },
+  "quadrature": {
+    "layers": 9,
+    "Ipos": 0,
+    "Inpts": 292,
+    "relative_thickness": 0.1111111111111111,
+    "automatic_centers_expected": [
+      -0.4444444444444444,
+      -0.33333333333333337,
+      -0.2222222222222222,
+      -0.1111111111111111,
+      0.0,
+      0.11111111111111116,
+      0.2222222222222222,
+      0.33333333333333337,
+      0.4444444444444444
+    ],
+    "midpoint_second_moment_fraction": 0.9876543209876543,
+    "continuous_bending_quadrature_deficit_fraction": 0.012345679012345678,
+    "selection": "3 retained as diagnostic;9 chosen before new runs since uniform midpoint second-moment error1/N² is below previously fixed2% elastic threshold. No stiffness or strength fitting; homogeneous physical continuum unchanged."
+  },
+  "material_card_sha256": "b2155eaca181f1ebb94e35eed5b70bff5490b960069ee91b1840bedb1c6f55ea",
+  "branches": {
+    "w0": {
+      "property": "TYPE6 SOL_ORTH Isolid18 Ismstr4 Icpre3 Iframe2. Fixed material skew: axis1=globalY, axis2=-globalX, axis3=globalZ. No composite layer card or Ashear correction. Same LAW25/4 input card and physical volume/density."
+    }
+  },
+  "elastic_reference_scope": "native IE, plus untouched separate HE in full balance; classical plane bending condenses source3D tensor at sigma_z=0, D=(Cxx-Cxz²/Czz)t³/12. Independent affine energy0.5epsilon*C*epsilon*volume.",
+  "native_old_reruns": 0,
+  "mesh": {
+    "XY": [
+      6,
+      12
+    ],
+    "Z": 4,
+    "bounds_mm": [
+      [
+        -5,
+        -5,
+        -0.25
+      ],
+      [
+        5,
+        5,
+        0.25
+      ]
+    ],
+    "volume_mm3": 50,
+    "physical_mass_g": 0.0915,
+    "known_mass": "integrate source density over each physical hexa, equal-volume lump at8corners; no inertia adjustment",
+    "initial_continuum_inertia_gate_fraction": 0.02
+  }
+}

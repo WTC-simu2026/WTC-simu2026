@@ -1,0 +1,52 @@
+{
+  "created_utc": "2026-10-11T07:15:31.725448+00:00",
+  "source": "wtc1_simulation_v8/scripts/test_aircraft_a29_auto_strain.py",
+  "source_sha256": "89918a0445f2fc07d4745bf9f0bbbdc1656af4114526619c67d02beb21f3679a",
+  "target": "wtc1_simulation_v8/scripts/test_aircraft_a29_frame_corrected.py",
+  "target_sha256": "559f35912a4d1bef00e722344d859b7dee2ed4c09424822511bf6f58e9d5f2f2",
+  "changes": [
+    {
+      "old": "aircraft_a29_auto_strain.json",
+      "new": "aircraft_a29_frame_corrected.json",
+      "count": 1
+    },
+    {
+      "old": "OUT/'auto_strain_guard.json'",
+      "new": "OUT/'frame_corrected_guard.json'",
+      "count": 2
+    },
+    {
+      "old": "OUT/'w1'",
+      "new": "OUT/'w2'",
+      "count": 3
+    },
+    {
+      "old": "OUT/'native_case_summary_w1.json'",
+      "new": "OUT/'native_case_summary_w2.json'",
+      "count": 1
+    },
+    {
+      "old": "OUT/'runner_w1_derivation.json'",
+      "new": "OUT/'runner_w2_derivation.json'",
+      "count": 1
+    },
+    {
+      "old": "OUT/'review_w1_derivation.json'",
+      "new": "OUT/'review_w2_derivation.json'",
+      "count": 1
+    },
+    {
+      "old": "n='A29_W1_3D_'+cid",
+      "new": "n='A29_W2_3D_'+cid",
+      "count": 1
+    },
+    {
+      "old": "ff(0,1,0),ff(-1,0,0)",
+      "new": "ff(-1,0,0),ff(0,0,1)",
+      "count": 1
+    }
+  ],
+  "new_native_gate_source": "\ndef validate_native_frame(d,n):\n    t=(d/(n+'_0000.out')).read_text();m=re.search(r'SKEW SYSTEM SETS.*?VECTORS.*?ORIGIN\\s+1\\s+0\\s+0\\s+0\\s+([^\\n]+)\\n\\s+([^\\n]+)\\n\\s+([^\\n]+)',t,re.S);assert m,'Missing native skew readback'\n    axes=np.array([[float(v) for v in line.split()][:3] for line in m.groups()]);expected=np.array([[0,1,0],[-1,0,0],[0,0,1]])\n    p=re.search(r'Isolid  Ismstr   Icpre     NPT ICONTROL\\s+(\\d+)\\s+(\\d+)\\s+(\\d+)\\s+(\\d+)\\s+(\\d+)',t);assert p\n    flags=list(map(int,p.groups()));checks={'axes':bool(np.allclose(axes,expected,atol=1e-6,rtol=0)),'native_flags':flags==[18,2,3,8,0]};dump(d/'native_frame_gate.json',{'created_utc':now(),'axes_rows':axes.tolist(),'expected_axes_rows':expected.tolist(),'native_flags':flags,'checks':checks,'pass':all(checks.values()),'before_Engine':True});assert all(checks.values()),checks\n",
+  "material_fields_unchanged": true,
+  "previous_native_solvers_not_rerun": true
+}

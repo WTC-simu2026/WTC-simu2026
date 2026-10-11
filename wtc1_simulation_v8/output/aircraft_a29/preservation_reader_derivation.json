@@ -1,0 +1,6 @@
+{
+  "source": "wtc1_simulation_v8/scripts/audit_aircraft_a27.py",
+  "source_sha256": "5b04b37e855746d902f461bf5f2ba3d0fac897a4a6eaf3187420951226672210",
+  "derived_source": "def preserve():\n    guard();dest=OUT/'preservation_verification.json';assert not dest.exists()\n    pins={r['path']:r for f in ['preservation_before.json','artifact_manifest.json'] for r in read(PREV/f)['files']}\n    for q in [PREV/'artifact_manifest.json',PREV/'publication_verification.json']:pins[rel(q)]={'path':rel(q),'bytes':q.stat().st_size,'sha256':streamsha(q)}\n    rows=list(pins.values());dump(OUT/'preservation_before.json',{'created_utc':now(),'files':rows,'archives_rescanned':False});start=time.perf_counter()\n    for i,r in enumerate(rows):\n        p=ROOT/r['path'];assert p.is_file() and p.stat().st_size==r['bytes'] and streamsha(p)==r['sha256'],r['path']\n        if (i+1)%3000==0:print({'old_files':i+1,'of':len(rows)},flush=True)\n    dump(dest,{'created_utc':now(),'pass':True,'files':len(rows),'bytes_hashed':sum(r['bytes'] for r in rows),'wall_seconds':time.perf_counter()-start,'sources_not_rescanned':True});print({'preservation_A29':True,'files':len(rows)},flush=True)\n",
+  "old_files_only_read": true
+}

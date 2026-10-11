@@ -8,15 +8,15 @@ Le projet teste des mécanismes, des hypothèses explicites et des plages de par
 
 ## Où en est la simulation ?
 
-Instantané du **10 octobre2026** : **AIRCRAFT-A27 terminée**, prochaine étape **AIRCRAFT-A28**. Le registre compte146entrées. A26+A27 ajoutent40calculs natifs complets sur des plaques isolées, avant un nouveau départ de l'impact entier. Les configurations, sorties, scripts, rapports et critères échoués restent disponibles.
+Instantané du **11 octobre2026** : **AIRCRAFT-A29 terminée**, prochaine étape **AIRCRAFT-A30**. Le registre compte148entrées. A28+A29 ajoutent39calculs natifs complets de témoins isolés. Rapports, configurations, résultats, scripts et critères échoués sont conservés.
 
-A26 qualifie les neuf témoins de plaque métallique volumique HA8: masse, énergie complète, inertie physique, mouvements libres, moment cinétique, traction et flexion, raffinements spatial et temporel. Les neuf essais triangulaires DKT et leurs cinq échecs sont conservés. Aucun matériau ou raccordement de l'avion entier n'est remplacé.
+A28 explique une composante numérique de l'écart de flexion: la formule ASQBI et les propriétés déclarées prédisent six historiques A27sans ajustement. Le changement de défaut Icpre n'est pas appliqué dans les pièces TYPE22. La variante HSEPH garde les échecs de flexion et échoue aussi au bilan du cisaillement transverse avec Ashear5/6. Aucun terme ne répare artificiellement l'énergie.
 
-A27 exécute22contrôles de peau composite avec la même carte LAW25 source. Les22bilans complets passent, ainsi que les mouvements libres et la traction plane corrigée. **La flexion échoue encore à sa référence indépendante**, avec3ou9subdivisions numériques dans l'épaisseur. Aucun nombre de couches intermédiaire n'est choisi pour rejoindre la référence. La réponse3D complète, la rupture réelle et les attaches courbes restent à qualifier. Deux tentatives arrêtées au Starter sont conservées sur la paire; aucun Engine correspondant n'a été lancé.
+A29 teste une branche volumique TYPE6avec quatre éléments géométriques dans l'épaisseur. La carte LAW25source, conservée, échoue à la référence3D même avec le bon repère. La nouvelle branche explicite LAW12passe **ses15contrôles**: six modes affines, mouvements libres, masse/inertie physiques, moment cinétique, traction, flexion et raffinements. Les modules,densitéetnu12source sont inchangés; **nu23=nu31=0,25sont des hypothèses transverses nouvelles**, sans équivalence automatique de LAW25ni mesure historique de rupture. Le montage entier n'est pas modifié.
 
-Les [rapports A26](wtc1_simulation_v8/output/aircraft_a26/rapport_aircraft_a26.md) et [A27](wtc1_simulation_v8/output/aircraft_a27/rapport_aircraft_a27.md) séparent les observations natives, références mécaniques, hypothèses et limites. Les RKE natives sont gardées dans tous les bilans; aucun terme inventé ni compensation de masse ou d'inertie. Les24racines/144ancres géométriques A25 restent disponibles pour la suite.
+Les [rapports A28](wtc1_simulation_v8/output/aircraft_a28/rapport_aircraft_a28.md) et [A29](wtc1_simulation_v8/output/aircraft_a29/rapport_aircraft_a29.md) distinguent observations, références, hypothèses et limites. Les erreurs de préparation et de lecture sont documentées; les essais arrêtés au Starter et les deux calculs A29échoués sont gardés. Aucune ancienne exécution relancée, compensation de masse/inertie ou RKE inventée.
 
-L'objectif vidéo3D des **dix premières secondes physiques** demeure incomplet. Le meilleur calcul entier A20 couvre **20millisecondes physiques**. La prochaine étape confronte la flexion composite aux contraintes, moments et cinématiques réellement interpolées, puis vérifie cœur et attaches avant un nouveau départ entier intact. Matériaux, rupture, gravité, intérieur porteur et contacts de fragments restent ouverts. Aucun dommage connu n'est une cible. Cette publication vérifie l'intégrité, sans validation historique de l'impact ou de l'effondrement.
+La vidéo3D des **dix premières secondes physiques** reste incomplète: le meilleur calcul entier A20couvre **20millisecondes physiques**. A30qualifiera le cœur et son assemblage avec les peaux avant les24racines/144ancres courbes. Les propriétés et ruptures historiques, la façade, la gravité, l'intérieur porteur et les contacts de fragments restent ouverts. Nouveau départ entier intact seulement après bilans et estimation du coût. Aucun dommage connu comme cible. Cette publication confirme l'intégrité des fichiers, sans validation historique de l'impact ou de l'effondrement.
 
 
 ## Ce qui est publié
@@ -28,9 +28,9 @@ L'objectif vidéo3D des **dix premières secondes physiques** demeure incomplet.
 - `outputs/` : calculs exploratoires antérieurs et audits complémentaires. Leurs affirmations se lisent avec leurs propres limites ; leur présence n'est pas une validation.
 - `publication/` : inventaire complet, empreintes SHA-256, règles de publication, licences tierces et liste motivée des fichiers externes non redistribués.
 
-Inventaire courant : **12,006 fichiers scientifiques dans Git**, **19,560 sorties dans 111 archives**.
+Inventaire courant : **12,692 fichiers scientifiques dans Git**, **20,049 sorties dans 112 archives**.
 
-Restaurer les 110 anciennes archives des releases précédentes, puis les 1 archives [A26+A27](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-10-aircraft-a26-a27). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
+Restaurer les 111 anciennes archives des releases précédentes, puis les 1 archives [A28+A29](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-11-aircraft-a28-a29). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
 
 ## Consulter et vérifier sans relancer les solveurs
 
@@ -59,7 +59,7 @@ Voir [REPRODUCIBILITY.md](REPRODUCIBILITY.md). La base Python utilise NumPy et P
 
 ## Prochaine étape
 
-A28 : comparer la flexion composite native à la cinématique interpolée et aux tenseurs constitutifs explicitement documentés; réconcilier la réponse TYPE22 avec la matrice3D officielle. Tester une alternative volumique orthotrope si nécessaire, avec même volume, densité et propriétés déclarées, sans calage de rigidité sur une sortie. Conserver tous les échecs A21–A27 et les bilans natifs. Ensuite vérifier cœur/sandwich et24racines/144ancres réelles avant un nouveau départ entier intact; mesurer son coût avant tout calcul long. L'objectif10secondes physiques reste incomplet. Prochaine publication après A28+A29 vérifiées.
+A30 : qualifier séparément le cœur LAW28 et un sandwich conformal peau/cœur à faces partagées, à partir des témoins volumiques A29. Préserver masse, inertie physique et matériaux déclarés, documenter les hypothèses transverses nouvelles, vérifier mouvements libres, travail/énergie et modes élastiques indépendants avec raffinements. Les anciens Spot5ne sont pas remplacés implicitement. Ensuite24racines/144ancres courbes A25et nouveau départ entier intact après estimation du coût. Objectif10secondes physiques incomplet, meilleur entier20ms; pas de prolongation A21, aucune rupture historique qualifiée, aucun dommage connu comme cible. Prochaine publication après A30+A31vérifiées.
 
 ## Discipline de preuve
 

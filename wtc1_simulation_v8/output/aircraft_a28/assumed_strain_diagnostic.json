@@ -1,0 +1,169 @@
+{
+  "created_utc": "2026-10-10T10:51:15.066132+00:00",
+  "iteration": "AIRCRAFT-A28",
+  "method": "Pure xz bending activates ASQBI xz hourglass mode: epsilon_xx=-k*z, epsilon_yy=0, epsilon_zz=-nu/(1-nu)*epsilon_xx. Applying explicitly declared TYPE22 block stiffness produces E33*(nu/(1-nu))² extra stiffness, independent of native energy. Numerical layers integrate z² at their centers. No modulus or coefficient inferred from native outputs.",
+  "documented_sources": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/theory_element_assumed_strain_rate.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/law25_composite_material_r.htm"
+  ],
+  "C_plane_MPa": 23466.666666666668,
+  "assumed_transverse_strain_ratio": 0.3333333333333333,
+  "extra_C_MPa": 1111.1111111111109,
+  "relative_extra_C": 0.047348484848484834,
+  "fully_3D_theory_normal_stiffness_material_axes_MPa": [
+    [
+      28871.834228702995,
+      9286.262471220261,
+      8273.21565617805
+    ],
+    [
+      9286.26247122026,
+      25630.08442056792,
+      5234.0752110514195
+    ],
+    [
+      8273.21565617805,
+      5234.0752110514195,
+      12663.085188027628
+    ]
+  ],
+  "thick_shell_block_normal_stiffness_global_MPa": [
+    [
+      23466.666666666668,
+      5866.666666666667,
+      0.0
+    ],
+    [
+      5866.666666666667,
+      23466.666666666668,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      10000.0
+    ]
+  ],
+  "general_3D_equivalence_still_unqualified": true,
+  "cases": [
+    {
+      "revision": "w1",
+      "mesh_n": 6,
+      "layers": 3,
+      "native_history": "wtc1_simulation_v8/output/aircraft_a27/w1/BENDING_N6/A27_COMP_BENDING_N6T01.csv",
+      "native_history_sha256": "1d73db316d1cdf5e2567fbe6d6147740a695bbe42971baf8888538fe58aa1b9e",
+      "old_review": "wtc1_simulation_v8/output/aircraft_a27/w1/BENDING_N6/review.json",
+      "old_review_sha256": "3a162d9cf048851dbfd4b18465c18a06e6f616cf8f50a6be2cab61296a2d8631",
+      "old_independent_bending_gate_unchanged": false,
+      "native_last_ms": 0.099025,
+      "native_final_IE_J": 1.137976e-05,
+      "classical_layer_quadrature_final_J": 1.0858030030124192e-05,
+      "ASQBI_transverse_prediction_final_J": 1.137214130048992e-05,
+      "extra_transverse_prediction_final_J": 5.14111270365728e-07,
+      "maximum_all_history_difference_J": 7.61869951007975e-09,
+      "maximum_normalized_difference": 0.023256444264384064,
+      "ASQBI_prediction_matches_original_tolerance": true,
+      "source_material_and_geometry_unmodified": true
+    },
+    {
+      "revision": "w1",
+      "mesh_n": 12,
+      "layers": 3,
+      "native_history": "wtc1_simulation_v8/output/aircraft_a27/w1/BENDING_N12/A27_COMP_BENDING_N12T01.csv",
+      "native_history_sha256": "7a7846b0057c175ae02323b6b47c566012f0e2a632d5a6158b83b60ebef37bf9",
+      "old_review": "wtc1_simulation_v8/output/aircraft_a27/w1/BENDING_N12/review.json",
+      "old_review_sha256": "8e58f5e6a9b2be4b9e2f5452f44c65f4d9bc5a947c860b873edb76c63f33d33c",
+      "old_independent_bending_gate_unchanged": false,
+      "native_last_ms": 0.099025,
+      "native_final_IE_J": 1.137984e-05,
+      "classical_layer_quadrature_final_J": 1.0858030030124192e-05,
+      "ASQBI_transverse_prediction_final_J": 1.137214130048992e-05,
+      "extra_transverse_prediction_final_J": 5.14111270365728e-07,
+      "maximum_all_history_difference_J": 7.698699510080265e-09,
+      "maximum_normalized_difference": 0.023500533308262673,
+      "ASQBI_prediction_matches_original_tolerance": true,
+      "source_material_and_geometry_unmodified": true
+    },
+    {
+      "revision": "w2",
+      "mesh_n": 6,
+      "layers": 3,
+      "native_history": "wtc1_simulation_v8/output/aircraft_a27/w2/BENDING_N6/A27_COMP_BENDING_N6T01.csv",
+      "native_history_sha256": "c1a2f36927b12a4bd117cdbc6f4449fbb2bb1628a3f714893552261216965a82",
+      "old_review": "wtc1_simulation_v8/output/aircraft_a27/w2/BENDING_N6/review.json",
+      "old_review_sha256": "20ff1f053c3ab5f3b4aa9f01179ffcc1f119a7550901b36edc34cecaf7d1ca75",
+      "old_independent_bending_gate_unchanged": false,
+      "native_last_ms": 0.099025,
+      "native_final_IE_J": 1.137976e-05,
+      "classical_layer_quadrature_final_J": 1.0858030030124192e-05,
+      "ASQBI_transverse_prediction_final_J": 1.137214130048992e-05,
+      "extra_transverse_prediction_final_J": 5.14111270365728e-07,
+      "maximum_all_history_difference_J": 7.61869951007975e-09,
+      "maximum_normalized_difference": 0.023256444264384064,
+      "ASQBI_prediction_matches_original_tolerance": true,
+      "source_material_and_geometry_unmodified": true
+    },
+    {
+      "revision": "w2",
+      "mesh_n": 12,
+      "layers": 3,
+      "native_history": "wtc1_simulation_v8/output/aircraft_a27/w2/BENDING_N12/A27_COMP_BENDING_N12T01.csv",
+      "native_history_sha256": "3ca60865947bd974628ddd62722c4af86b35083af6dc3ad86ebdecbd529405d4",
+      "old_review": "wtc1_simulation_v8/output/aircraft_a27/w2/BENDING_N12/review.json",
+      "old_review_sha256": "5f7c23a2ba1e67fc0ae4ba96730cbb7d4472f21b1f468d357798fcbf6957200c",
+      "old_independent_bending_gate_unchanged": false,
+      "native_last_ms": 0.099025,
+      "native_final_IE_J": 1.137984e-05,
+      "classical_layer_quadrature_final_J": 1.0858030030124192e-05,
+      "ASQBI_transverse_prediction_final_J": 1.137214130048992e-05,
+      "extra_transverse_prediction_final_J": 5.14111270365728e-07,
+      "maximum_all_history_difference_J": 7.698699510080265e-09,
+      "maximum_normalized_difference": 0.023500533308262673,
+      "ASQBI_prediction_matches_original_tolerance": true,
+      "source_material_and_geometry_unmodified": true
+    },
+    {
+      "revision": "w3",
+      "mesh_n": 6,
+      "layers": 9,
+      "native_history": "wtc1_simulation_v8/output/aircraft_a27/w3/BENDING_N6/A27_COMP_BENDING_N6T01.csv",
+      "native_history_sha256": "1ddd767d451f3dc882c5ed986a23b116f935b8ef25c2af476e34722717f989fb",
+      "old_review": "wtc1_simulation_v8/output/aircraft_a27/w3/BENDING_N6/review.json",
+      "old_review_sha256": "7d1c8803ab7668018d82717165a3ac9884bb26f7450df783ba94293b28bd880d",
+      "old_independent_bending_gate_unchanged": false,
+      "native_last_ms": 0.099025,
+      "native_final_IE_J": 1.264333e-05,
+      "classical_layer_quadrature_final_J": 1.2064477811249098e-05,
+      "ASQBI_transverse_prediction_final_J": 1.2635712556099908e-05,
+      "extra_transverse_prediction_final_J": 5.712347448508094e-07,
+      "maximum_all_history_difference_J": 7.617443900092362e-09,
+      "maximum_normalized_difference": 0.021587319117457877,
+      "ASQBI_prediction_matches_original_tolerance": true,
+      "source_material_and_geometry_unmodified": true
+    },
+    {
+      "revision": "w3",
+      "mesh_n": 12,
+      "layers": 9,
+      "native_history": "wtc1_simulation_v8/output/aircraft_a27/w3/BENDING_N12/A27_COMP_BENDING_N12T01.csv",
+      "native_history_sha256": "8e69f972e859ede03730008a3e1d97c5e74d2d1c907ca30c56bd4c6bac422d11",
+      "old_review": "wtc1_simulation_v8/output/aircraft_a27/w3/BENDING_N12/review.json",
+      "old_review_sha256": "cfa7463439a39cadf54736e59da7f0475cd99a33a5bd72fd95f8de51284eed20",
+      "old_independent_bending_gate_unchanged": false,
+      "native_last_ms": 0.099025,
+      "native_final_IE_J": 1.264341e-05,
+      "classical_layer_quadrature_final_J": 1.2064477811249098e-05,
+      "ASQBI_transverse_prediction_final_J": 1.2635712556099908e-05,
+      "extra_transverse_prediction_final_J": 5.712347448508094e-07,
+      "maximum_all_history_difference_J": 7.697443900092876e-09,
+      "maximum_normalized_difference": 0.02181393477817745,
+      "ASQBI_prediction_matches_original_tolerance": true,
+      "source_material_and_geometry_unmodified": true
+    }
+  ],
+  "cached_native_cases_read": 6,
+  "native_old_solver_reruns": 0,
+  "old_failed_reviews_preserved": true,
+  "prediction_matches_all": true,
+  "qualification": "Explanation supported by formulation and cached outputs; direct diagnostic perturbation and alternative formulation remain independent new tests, not historical validation. A27 failure is retained."
+}
