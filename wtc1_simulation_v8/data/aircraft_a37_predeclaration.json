@@ -1,0 +1,199 @@
+{
+  "iteration": "AIRCRAFT-A37",
+  "declared_utc": "2026-10-11T13:35:31.862448+00:00",
+  "seed": 1102062,
+  "random_draws": 0,
+  "cases": [
+    {
+      "name": "FREE_EE",
+      "scope": "FREE",
+      "mode": "EE",
+      "dt_ms": 1e-05
+    },
+    {
+      "name": "FREE_EI",
+      "scope": "FREE",
+      "mode": "EI",
+      "dt_ms": 0.001
+    },
+    {
+      "name": "FREE_EI_HALF",
+      "scope": "FREE",
+      "mode": "EI_HALF",
+      "dt_ms": 0.0005
+    },
+    {
+      "name": "FREE_I",
+      "scope": "FREE",
+      "mode": "I",
+      "dt_ms": 0.001
+    },
+    {
+      "name": "CONTACT_EE",
+      "scope": "CONTACT",
+      "mode": "EE",
+      "dt_ms": 1e-05
+    },
+    {
+      "name": "CONTACT_EI",
+      "scope": "CONTACT",
+      "mode": "EI",
+      "dt_ms": 5e-05
+    },
+    {
+      "name": "CONTACT_EI_HALF",
+      "scope": "CONTACT",
+      "mode": "EI_HALF",
+      "dt_ms": 2.5e-05
+    },
+    {
+      "name": "CONTACT_I",
+      "scope": "CONTACT",
+      "mode": "I",
+      "dt_ms": 5e-05
+    }
+  ],
+  "purpose": "Native full restart explicit-to-implicit with free motion and active bounded contact, then unchanged whole model compatibility. No 10s physical credit from checker.",
+  "units": {
+    "input": [
+      "g",
+      "mm",
+      "ms"
+    ],
+    "energy_Nmm_to_J": 0.001,
+    "momentum_g_mm_ms_to_Ns": 0.001,
+    "velocity_mm_ms_to_m_s": 1
+  },
+  "geometry": {
+    "free": "One 1mm cube N2, 27nodes 8HA8 bricks",
+    "contact": "Two separate 1mm cubes N2, 54nodes 16HA8 bricks, left x[-1.05,-.05], right [.05,1.05], y/z[-.5,.5]"
+  },
+  "material": "Unchanged LAW2/1 source rho .00278g/mm3 E73100MPa nu.33 yield324MPa, no added failure",
+  "property": "TYPE14 HA8 Isolid14 Ismstr4 Icpre2 Gauss222 Iframe2",
+  "free": {
+    "velocity_mm_ms": [
+      -200,
+      5,
+      2
+    ],
+    "mass_g": 0.00278,
+    "join_ms": 0.04,
+    "end_ms": 0.1,
+    "history_dt_ms": 0.001,
+    "animation_dt_ms": 0.01
+  },
+  "contact": {
+    "velocity_left_mm_ms": [
+      5,
+      0,
+      0
+    ],
+    "velocity_right_mm_ms": [
+      -5,
+      0,
+      0
+    ],
+    "mass_g": 0.00556,
+    "join_ms": 0.0092,
+    "end_ms": 0.015,
+    "history_dt_ms": 5e-05,
+    "animation_dt_ms": 0.0002,
+    "type": 7,
+    "stiffness_flag": 4,
+    "scale": 1,
+    "gap_mm": 0.01,
+    "friction": 0,
+    "viscous_stiffness_coefficient": 1e-20,
+    "no_boundary_constraints": true,
+    "scope": "Closed elastic collision witness, not AA11 material qualification; no silent replacement of whole TYPE25"
+  },
+  "implicit": {
+    "solver": 2,
+    "Newmark_gamma": 0.5,
+    "Newmark_beta": 0.25,
+    "nonlinear_tolerances": [
+      1e-06,
+      1e-06,
+      1e-06
+    ],
+    "time_control": "It_w2 scale_i1 maximumIterations30 scale_d.5; dtmin1e-8ms dtmax=declared initial step"
+  },
+  "execution": {
+    "CPU_threads": 1,
+    "GPU": false,
+    "per_process_cap_s": 180,
+    "estimated_seconds_max": 2700,
+    "expected_seconds": 300,
+    "mass_scaling": false,
+    "new_installation_or_compilation": false,
+    "old_native_solver_reruns": 0
+  },
+  "acceptance": {
+    "mass_relative": 1e-06,
+    "added_mass_relative": 1e-09,
+    "energy_relative": 0.02,
+    "energy_absolute_J": 1e-07,
+    "momentum_relative": 0.02,
+    "momentum_absolute_Ns": 1e-09,
+    "free_displacement_mm": 2e-05,
+    "free_velocity_mm_ms": 0.0002,
+    "junction_state_relative": 1e-05,
+    "junction_state_absolute": 1e-06,
+    "junction_time_ms": 2e-05,
+    "contact_impulse_observable_Ns": 1e-06,
+    "contact_IE_observable_J": 1e-07,
+    "comparison_energy_relative": 0.02,
+    "comparison_energy_absolute_J": 1e-07,
+    "half_dt_energy_relative": 0.005
+  },
+  "restart": "Fresh Windows Starter writes initial native state; Linux compiled engine runs all dynamics. Phase2 receives complete freshly produced phase1 restart files, byte/hash identity, no CSV injection. Fresh directories prevent output overwrite.",
+  "whole_check": {
+    "input_unchanged_physics": true,
+    "mode": "/IMPL/CHECK",
+    "conditional": "Checking permitted independent of transition result; actual whole dynamics only after transition/contact compatibility gates",
+    "no_simulated_time_credit": true
+  },
+  "sources": [
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a20/r0/CORE3D_TIED_20/A20_CORE3D_TIED_20_0000.rad",
+      "sha256": "44444ba93d96ab22a40a4d4e00ac77c4b1d30f392c5add5206f64adc52a7598a",
+      "bytes": 7406793
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+      "sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+      "bytes": 51955200
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/isolated_exec/engine_linux64_gf_ompi",
+      "sha256": "f9f2eae4f871b13c53716012030495b292c48bc0e1f30035ebd750f8395a9fe8",
+      "bytes": 36337088
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/isolated_exec/libopen_reader_linux64.so",
+      "sha256": "5882082e40ab0f950ca7119dfea58701d739fdf6c737116c423ae8862c176f6a",
+      "bytes": 21484168
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/input/freimpl.F",
+      "sha256": "0cbedb90094c175ebd822716835b081e4bc4acf5bafe3828e90d0a6e9c29a260",
+      "bytes": 20731
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/imp_solv.F",
+      "sha256": "88e72fa3caf29de165d5690ca1b7e534f2716b44db80e737e76e6d68c377dbca",
+      "bytes": 367832
+    }
+  ],
+  "primary_documentation": {
+    "compatibility": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/implicit_features_compatibility_intro_c.htm",
+    "activation": "https://help.altair.com/2024/hwsolvers/rad/topics/solvers/rad/implicit_analysis_activation_r.htm",
+    "check": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/impl_check_engine_r.htm",
+    "contact7": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inter_type7_starter_r.htm",
+    "time_control": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/impl_dt_1_engine_r.htm",
+    "time_stop": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/impl_dt_stop_engine_r.htm"
+  },
+  "source_commit": "bad6688602d770e019b75773d2d5a48b4f9bd918",
+  "whole_insertion_ready": false,
+  "objective1_complete": false
+}

@@ -1,0 +1,5 @@
+{
+  "created_utc": "2026-10-11T13:36:32.279526+00:00",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an\\wtc1_simulation_v8\\scripts\\probe_aircraft_a37.py\", line 85, in start_case\n    en=env();en.update(OMP_NUM_THREADS='1',RAD_HMPP_DOMAINS='1');ok=win_execute(RUNTIME/'starter_win64.exe',['-i',n+'_0000.rad','-np','1'],p,'starter.log',180,en);s=(p/'starter.log').read_text(errors='replace');w=int(re.findall(r'(\\d+) WARNING\\(S\\)',s)[-1]);e=int(re.findall(r'(\\d+) ERROR\\(S\\)',s)[-1]);dump(p/'starter_gate.json',{'warnings':w,'errors':e,'pass':ok and w==0 and e==0});assert ok and w==0 and e==0\n                                                                                                                                                                                                                                                                                                                                                                                                        ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "no_successful_solver_rerun": true
+}

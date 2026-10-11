@@ -1,0 +1,530 @@
+ A36_MUMPS_N4_0001.out
+************************************************************************
+**                                                                    **
+**                                                                    **
+**                         OpenRadioss Engine                         **
+**                                                                    **
+**            Non-linear Finite Element Analysis Software             **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+**                Linux 64 bits, GNU compiler, OpenMPI                **
+**                      Double Precision Version                      **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+************************************************************************
+** OpenRadioss Software                                               **
+** COPYRIGHT (C) 2026 Siemens                                         **
+** Licensed under GNU Affero General Public License.                  **
+** See License file.                                                  **
+************************************************************************
+ 
+ NUMBER OF SPMD DOMAINS           1
+ NUMBER OF THREADS PER DOMAIN     1
+ NUMBER OF HMPP PROCESSES         1
+  
+ COMPUTATION HARDWARE DESCRIPTION
+  
+ HOSTNAME     CPU TYPE, FREQUENCY AND MEMORY
+ jeux   AMD Ryzen 5 5600 6-Core Processor (x86_64), 3700 MHz,   7897 MB RAM,   2048 MB swap
+  
+ STACKSIZE  . . . . . . . . . . . . . . . . . . . . 8 MB
+ THREAD STACKSIZE . . . . . . . . . . . . . . . . . 0 MB
+ 
+************************************************************************
+
+
+ A36_MUMPS_N4D01                                                                 
+
+
+ FINAL TIME . . . . . . . . . . . . . . . . . . .  0.5000000E-01
+
+ TIME INTERVAL FOR TIME HISTORY PLOTS . . . . . .  0.1000000E-02
+
+ TIME STEP SCALE FACTOR . . . . . . . . . . . . .  0.9000000    
+
+ MINIMUM TIME STEP  . . . . . . . . . . . . . . .   0.000000    
+
+
+ BRICK TIME STEP SCALE FACTOR . . . . . . . . . .  0.9000000    
+ BRICK MINIMUM TIME STEP. . . . . . . . . . . . .   0.000000    
+ MIN. TIME STEP FLAG (1:STOP RUN, 2:DELETE BRICK)     1
+
+ QUAD TIME STEP SCALE FACTOR. . . . . . . . . . .  0.9000000    
+ QUAD MINIMUM TIME STEP . . . . . . . . . . . . .   0.000000    
+ MIN. TIME STEP FLAG (1:STOP RUN, 2:DELETE QUAD).     1
+
+ SHELL TIME STEP SCALE FACTOR . . . . . . . . . .  0.9000000    
+ SHELL MINIMUM TIME STEP. . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE, 3:SMALL STRAIN)    2
+
+ TRUSS TIME STEP SCALE FACTOR . . . . . . . . . .  0.9000000    
+ TRUSS MINIMUM TIME STEP. . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE). . . . . . . .     0
+
+ BEAM TIME STEP SCALE FACTOR. . . . . . . . . . .  0.9000000    
+ BEAM MINIMUM TIME STEP . . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE). . . . . . . .     0
+
+ SPRING TIME STEP SCALE FACTOR. . . . . . . . . .  0.9000000    
+ SPRING MINIMUM TIME STEP . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE). . . . . . . .     0
+
+ AIRBAG TIME STEP SCALE FACTOR. . . . . . . . . .  0.9000000    
+ AIRBAG MINIMUM TIME STEP . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP). . . . . . . . . . . . .     0
+
+ CONTACT TIME STEP SCALE FACTOR . . . . . . . . .  0.9000000    
+ CONTACT MINIMUM TIME STEP. . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG(1:STOP, 2:REMOVE NODE FROM INTERF)    0
+
+ PRINTOUT CYCLE FREQUENCY . . . . . . . . . . . .    -1
+
+ RESTART CYCLE FREQUENCY. . . . . . . . . . . . .   10000000
+
+ MAXIMUM RESTART WRITE BEFORE OVERWRITE . . . . .     0
+
+ INVERS: INPUT DECK VERSION . . . . . . . . . . .  2026
+ ITTYP : FLAG FOR TYPE OF T-FILE. . . . . . . . .     4
+
+  ** WARNING ** : PARITH/ON IS NOT COMPATIBLE WITH IMPLICIT OPTION 
+  ** RESETTING **  : PARITH/OFF  
+ INITIAL TIME STEP. . . . . . . . . . . . . . . .   0.000000    
+ MAXIMUM TIME STEP. . . . . . . . . . . . . . . .  0.1000000E+21
+
+ PARALLEL ARITHMETIC OFF
+ NUMBER OF INTERFACES TO BE ELIMINATED. . . . . .        0
+
+ NUMBER OF PARTS TO BE ELIMINATED . . . . . . . .        0
+
+ NUMBER OF SOLID  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF QUAD   ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF SHELL  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF TRUSS  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF BEAM   ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF SPRING ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF SH_3N  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF  SPH PARTICLES BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF RIGID LINKS. . . . . . . . . . . . . .        0
+
+ NUMBER OF NEW BOUNDARY CONDITIONS. . . . . . . .        0
+
+  ** WARNING: NO TIMESTEP CONTROL METHOD DEFINED **
+  ** POTENTIAL INFINITE LOOP IF NO CONVERGENCE IS ACHIEVED **
+
+ IMPLICIT OPTIONS USED :
+
+ IMPLICIT TYPE : . . . . . . . . . . . . .   DYNAMIC NON-LINEAR       
+ LINEAR SOLVER : . . . . . . . . . . . . .   DIRECT(MUMPS)            
+ PRINTOUT FREQUENCY FOR LINEAR SOLVER . . .      0
+
+
+ GEOMETRICAL STIFFNESS FLAG  . . .. . . . .      1
+ LOAD (PRESSURE) STIFFNESS FLAG  . . . . .       1
+ AUTOSPC FLAG (0:OFF,1:ON,2:ALL) . . .. . .      1
+ SPRING-BACK OPTION : . . . . . . . . . . .      0
+ SPECIAL PCG SOLVER FOR CONTACT . . . .. .       0
+
+ NON-LINEAR SOLVER : . . . . . . . . . . .   MODIFIED NEWTON          
+ INITIAL TIME STEP . . . . . . . . . . . .    0.1000000E-02
+ STOP CRITERION FOR NON-LINEAR SOLVER . . .    123
+ ENERGY TOLERANCE FOR NON-LINEAR SOLVER . .   0.1000000E-05
+ FORCE TOLERANCE FOR NON-LINEAR SOLVER  . .   0.1000000E-05
+ DISP. TOLERANCE FOR NON-LINEAR SOLVER  . .   0.1000000E-05
+ ITERATION NUM.LIMIT FOR REFORMING MATRIX .      6
+ PRINTOUT FREQUENCY FOR NON-LINEAR SOLVER .      0
+ PRE-STRESSES CONTROL FLAG . . . . . . . .       0
+ REFERENCE RESIDUAL FLAG . . . . . . .. . .      1
+ TIME STEP CONTROL METHOD . . . . . . . . .      0
+ MINIMUM TIME STEP . . . . . . . . . . . .    0.1000000E-09
+ MAXIMUM TIME STEP . . . . . . . . . . . .    0.1000000E+11
+
+
+ SMALL DISPLACEMENT OPTION(0:OFF,1:ON) . . .. . .      0
+
+ MINIMUM REFERENCE FORCE RESIDUAL . . . .    0.000000    
+ MAXIMUM REFERENCE FORCE RESIDUAL . . . .    0.1000000E+31
+
+
+ TIME INTEGRATION WITH NEWMARK CONSTANTS     0.5000000     0.2500000    
+
+
+ LINE-SEARCH METHOD :. . . . . . . . . . . .      3
+ MAXIMUM LINE-SEARCH ITERATION NUM. . . . .      20
+ TOLERANCE FOR LINE-SEARCH ITERATION.  . . .   0.1000000E-02
+
+ DIVERGENCE CRITERION NUMBERS :  . . . . . .      1
+
+
+ TIME FOR FIRST ANIMATION-FILE PLOT . . . . . . .   0.000000    
+ TIME INTERVAL FOR ANIMATION-FILE PLOTS . . . . .  0.1000000E-01
+ TIME TO STOP ANIMATION-FILE PLOTS. . . . . . . .  0.1000000E+21
+ SENSOR FOR ANIMATION-FILE PLOTS. . . . . . . . .          0
+ TIME INTERVAL FOR SENSOR ANIMATION-FILE PLOTS. .   0.000000    
+
+ VARIABLE SAVED ON ANIMATION FILES (1: YES) :
+      PLASTIC STRAIN. . . . . .     0
+      DENSITY     (SOLID ONLY).     0
+      SPECIFIC ENERGY . . . . .     1
+      HOURGLASS ENERGY. . . . .     0
+      TEMPERATURE (SOLID ONLY).     0
+      THICKNESS   (SHELL ONLY).     0
+      PRESSURE    (SOLID ONLY).     0
+      VON MISES . . . . . . . .     0
+      TURBULENT ENERGY (FLUID).     0
+      TURBULENT VISCOSITY(FLUID)    0
+      VORTICITY (FLUID) . . . .     0
+ NODAL VALUES SAVED ON ANIMATION FILES (1: YES) :
+      PRESSURE. . . . . . . . .     0
+      DENSITY . . . . . . . . .     0
+      TEMPERATURE . . . . . . .     0
+ VECTOR SAVED ON ANIMATION FILES (1: YES) :
+      VELOCITY VECTOR . . . . .     1
+      DISPLACEMENT VECTOR . . .     1
+      ACCELERATION VECTOR . . .     0
+      CONTACT FORCES. . . . . .     0
+      INTERNAL FORCES . . . . .     0
+      EXTERNAL FORCES . . . . .     0
+      SECTION RBY RWALL FORCES.     0
+      ROTATIONAL VELOCITY VECTOR    0
+      CONTACT PRESSURE (VECTORS)    0
+ SHELL TENSOR SAVED ON ANIMATION FILES (1: YES) :
+      MEMBRANE STRESS . . . . .     0
+      BENDING STRESS(MOMENT/T^2)    0
+      UPPER LAYER STRESS. . . .     0
+      LOWER LAYER STRESS. . . .     0
+      MEMBRANE STRAIN . . . . .     0
+      CURVATURE . . . . . . . .     0
+      UPPER LAYER STRAIN. . . .     0
+      LOWER LAYER STRAIN. . . .     0
+ NODAL MASS SAVED ON ANIMATION FILES (1: YES) :    1
+ KEEP DELETED ELEMENT (1: YES) :    0
+
+
+ 11/10/2026
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+       0   0.000      0.1000E-02 SOLID         64   0.0%   0.000       0.000       0.000       0.000       0.000      0.2780E-02   0.000    
+     ANIMATION FILE: A36_MUMPS_N4A001 WRITTEN
+
+   *--------- STIFFNESS MATRIX SETUP ---------*
+ SYMBOLIC DIM : ND =     375 NZ =      9699 NB_MAX =      26
+ FINAL    DIM : ND =     225 NZ =      5211 NB_MAX =      26
+
+
+Entering DMUMPS 5.6.2 with JOB, N, NNZ =   1         225           5436
+      executing #MPI =      1, without OMP
+
+ =================================================
+ MUMPS compiled with option -Dpord
+ =================================================
+L D L^T Solver for symmetric positive definite matrices
+Type of parallelism: Working host
+
+ ****** ANALYSIS STEP ********
+
+ Processing a graph of size:       225
+ Average density of rows/columns =   46
+ Ordering based on AMF 
+
+Leaving analysis phase with  ...
+ INFOG(1)                                       =               0
+ INFOG(2)                                       =               0
+ -- (20) Number of entries in factors (estim.)  =           12627
+ --  (3) Real space for factors    (estimated)  =           15876
+ --  (4) Integer space for factors (estimated)  =            1202
+ --  (5) Maximum frontal size      (estimated)  =              99
+ --  (6) Number of nodes in the tree            =               7
+ -- (32) Type of analysis effectively used      =               1
+ --  (7) Ordering option effectively used       =               2
+ ICNTL (6) Maximum transversal option           =               0
+ ICNTL (7) Pivot order option                   =               7
+ ICNTL(13) Parallelism/splitting of root node   =               1
+ ICNTL(14) Percentage of memory relaxation      =               5
+ ICNTL(15) Analysis by block effectively used   =               0
+ ICNTL(18) Distributed input matrix (on if >0)  =               0
+ ICNTL(58) Symbolic factorization option        =               2
+ Number of level 2 nodes                        =               0
+ Number of split nodes                          =               0
+ RINFOG(1) Operations during elimination (estim)= 8.057D+05
+
+ MEMORY ESTIMATIONS ... 
+ Estimations with standard Full-Rank (FR) factorization:
+    Total space in MBytes, IC factorization      (INFOG(17)):           0
+    Total space in MBytes,  OOC factorization    (INFOG(27)):           0
+
+ Elapsed time in analysis driver=       0.0008
+
+Entering DMUMPS 5.6.2 with JOB, N, NNZ =   2         225           5436
+      executing #MPI =      1, without OMP
+
+
+
+****** FACTORIZATION STEP ********
+
+ GLOBAL STATISTICS PRIOR NUMERICAL FACTORIZATION ...
+ Number of working processes                =               1
+ ICNTL(22) Out-of-core option               =               0
+ ICNTL(35) BLR activation (eff. choice)     =               0
+ ICNTL(37) BLR CB compression (eff. choice) =               0
+ ICNTL(49) Compact workarray S (end facto.) =               0
+ ICNTL(14) Memory relaxation                =               5
+ INFOG(3) Real space for factors (estimated)=           15876
+ INFOG(4) Integer space for factors (estim.)=            1202
+ Maximum frontal size (estimated)           =              99
+ Number of nodes in the tree                =               7
+ ICNTL(23) Memory allowed (value on host)   =               0
+           Sum over all procs               =               0
+ Memory provided by user, sum of LWK_USER   =               0
+ Effective threshold for pivoting, CNTL(1)  =      0.0000D+00
+ Effective size of S     (based on INFO(39))=                21238
+
+ Elapsed time to reformat/distribute matrix =      0.0001
+
+ ** Memory allocated, total in Mbytes           (INFOG(19)):           0
+ ** Memory effectively used, total in Mbytes    (INFOG(22)):           0
+
+ Elapsed time for factorization                     =      0.0017
+
+Leaving factorization with ...
+ RINFOG (2) Operations in node assembly             = 8.172D+03
+ ------ (3) Operations in node elimination          = 8.057D+05
+ ICNTL  (8) Scaling effectively used                =               0
+ INFOG  (9) Real space for factors                  =           15876
+ INFOG (10) Integer space for factors               =            1202
+ INFOG (11) Maximum front size                      =              99
+ INFOG (29) Number of entries in factors            =           12627
+ INFOG (12) Number of negative pivots               =               0
+ INFOG (14) Number of memory compress               =               0
+
+ Elapsed time in factorization driver               =      0.0026
+
+Entering DMUMPS 5.6.2 with JOB, N, NNZ =   3         225           5436
+      executing #MPI =      1, without OMP
+
+
+
+ ****** SOLVE & CHECK STEP ********
+
+ GLOBAL STATISTICS PRIOR SOLVE PHASE ...........
+ Number of right-hand-sides                    =           1
+ Blocking factor for multiple rhs              =           1
+ ICNTL (9)                                     =           1
+  --- (10)                                     =           0
+  --- (11)                                     =           0
+  --- (20)                                     =           0
+  --- (21)                                     =           0
+  --- (30)                                     =           0
+  --- (35)                                     =           0
+ ** Space in MBYTES used for solve                        :         0
+
+ Leaving solve with ...
+ Time to build/scatter RHS        =       0.000014
+ Time in solution step (fwd/bwd)  =       0.000249
+  .. Time in forward (fwd) step   =          0.000195
+  .. Time in backward (bwd) step  =          0.000053
+ Time to gather solution(cent.sol)=       0.000001
+ Time to copy/scale dist. solution=       0.000000
+
+ Elapsed time in solve driver=       0.0006
+
+Entering DMUMPS 5.6.2 with JOB =  -2
+      executing #MPI =      1, without OMP
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+       1  0.1000E-02  0.1000E-02 SOLID         64  -0.4%  0.5654E-07  0.1839E-08   0.000      0.5862E-07   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+       2  0.2000E-02  0.1000E-02 SOLID         64  -0.2%  0.8800E-06  0.8203E-08   0.000      0.8903E-06   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+       3  0.3000E-02  0.1000E-02 SOLID         64  -0.1%  0.4334E-05  0.1864E-07   0.000      0.4356E-05   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+       4  0.4000E-02  0.1000E-02 SOLID         52  -0.0%  0.1332E-04  0.3435E-07   0.000      0.1336E-04   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+       5  0.5000E-02  0.1000E-02 SOLID         64  -0.0%  0.3161E-04  0.5143E-07   0.000      0.3167E-04   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+       6  0.6000E-02  0.1000E-02 SOLID         16  -0.0%  0.6368E-04  0.7425E-07   0.000      0.6376E-04   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+       7  0.7000E-02  0.1000E-02 SOLID         64  -0.0%  0.1146E-03  0.9564E-07   0.000      0.1147E-03   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+       8  0.8000E-02  0.1000E-02 SOLID         64  -0.0%  0.1898E-03  0.1232E-06   0.000      0.1899E-03   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+       9  0.9000E-02  0.1000E-02 SOLID          1  -0.0%  0.2949E-03  0.1474E-06   0.000      0.2951E-03   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      10  0.1000E-01  0.1000E-02 SOLID         64  -0.0%  0.4360E-03  0.1773E-06   0.000      0.4362E-03   0.000      0.2780E-02   0.000    
+     ANIMATION FILE: A36_MUMPS_N4A002 WRITTEN
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      11  0.1100E-01  0.1000E-02 SOLID         61  -0.0%  0.6189E-03  0.2026E-06   0.000      0.6191E-03   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      12  0.1200E-01  0.1000E-02 SOLID         64  -0.0%  0.8493E-03  0.2321E-06   0.000      0.8496E-03   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      13  0.1300E-01  0.1000E-02 SOLID         61  -0.0%  0.1133E-02  0.2578E-06   0.000      0.1133E-02   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      14  0.1400E-01  0.1000E-02 SOLID         64  -0.0%  0.1475E-02  0.2848E-06   0.000      0.1475E-02   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      15  0.1500E-01  0.1000E-02 SOLID         61  -0.0%  0.1881E-02  0.3099E-06   0.000      0.1881E-02   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      16  0.1600E-01  0.1000E-02 SOLID         64  -0.0%  0.2354E-02  0.3329E-06   0.000      0.2354E-02   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      17  0.1700E-01  0.1000E-02 SOLID         13  -0.0%  0.2899E-02  0.3563E-06   0.000      0.2900E-02   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      18  0.1800E-01  0.1000E-02 SOLID         64  -0.0%  0.3519E-02  0.3743E-06   0.000      0.3520E-02   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      19  0.1900E-01  0.1000E-02 SOLID         49  -0.0%  0.4217E-02  0.3947E-06   0.000      0.4217E-02   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      20  0.2000E-01  0.1000E-02 SOLID         64  -0.0%  0.4994E-02  0.4073E-06   0.000      0.4994E-02   0.000      0.2780E-02   0.000    
+     ANIMATION FILE: A36_MUMPS_N4A003 WRITTEN
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      21  0.2100E-01  0.1000E-02 SOLID         64  -0.0%  0.5851E-02  0.4234E-06   0.000      0.5852E-02   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      22  0.2200E-01  0.1000E-02 SOLID         61  -0.0%  0.6789E-02  0.4307E-06   0.000      0.6790E-02   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      23  0.2300E-01  0.1000E-02 SOLID         64  -0.0%  0.7807E-02  0.4411E-06   0.000      0.7808E-02   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      24  0.2400E-01  0.1000E-02 SOLID         61  -0.0%  0.8903E-02  0.4434E-06   0.000      0.8904E-02   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      25  0.2500E-01  0.1000E-02 SOLID         64  -0.0%  0.1007E-01  0.4472E-06   0.000      0.1008E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      26  0.2600E-01  0.1000E-02 SOLID         61  -0.0%  0.1132E-01  0.4450E-06   0.000      0.1132E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      27  0.2700E-01  0.1000E-02 SOLID         64  -0.0%  0.1263E-01  0.4417E-06   0.000      0.1263E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      28  0.2800E-01  0.1000E-02 SOLID         61  -0.0%  0.1401E-01  0.4351E-06   0.000      0.1401E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      29  0.2900E-01  0.1000E-02 SOLID         16  -0.0%  0.1544E-01  0.4248E-06   0.000      0.1544E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      30  0.3000E-01  0.1000E-02 SOLID         61  -0.0%  0.1692E-01  0.4140E-06   0.000      0.1692E-01   0.000      0.2780E-02   0.000    
+     ANIMATION FILE: A36_MUMPS_N4A004 WRITTEN
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      31  0.3100E-01  0.1000E-02 SOLID         52  -0.0%  0.1844E-01  0.3975E-06   0.000      0.1844E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      32  0.3200E-01  0.1000E-02 SOLID         61  -0.0%  0.2000E-01  0.3824E-06   0.000      0.2000E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      33  0.3300E-01  0.1000E-02 SOLID         52  -0.0%  0.2158E-01  0.3608E-06   0.000      0.2158E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      34  0.3400E-01  0.1000E-02 SOLID         49  -0.0%  0.2317E-01  0.3416E-06   0.000      0.2317E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      35  0.3500E-01  0.1000E-02 SOLID         61  -0.0%  0.2476E-01  0.3164E-06   0.000      0.2477E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      36  0.3600E-01  0.1000E-02 SOLID         61  -0.0%  0.2635E-01  0.2934E-06   0.000      0.2635E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      37  0.3700E-01  0.1000E-02 SOLID         61  -0.0%  0.2791E-01  0.2661E-06   0.000      0.2791E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      38  0.3800E-01  0.1000E-02 SOLID         64  -0.0%  0.2944E-01  0.2401E-06   0.000      0.2944E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      39  0.3900E-01  0.1000E-02 SOLID         61  -0.0%  0.3092E-01  0.2123E-06   0.000      0.3092E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      40  0.4000E-01  0.1000E-02 SOLID         16  -0.0%  0.3234E-01  0.1845E-06   0.000      0.3234E-01   0.000      0.2780E-02   0.000    
+     ANIMATION FILE: A36_MUMPS_N4A005 WRITTEN
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      41  0.4100E-01  0.1000E-02 SOLID         61  -0.0%  0.3369E-01  0.1575E-06   0.000      0.3369E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      42  0.4200E-01  0.1000E-02 SOLID         52  -0.0%  0.3495E-01  0.1300E-06   0.000      0.3495E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      43  0.4300E-01  0.1000E-02 SOLID         49  -0.0%  0.3611E-01  0.1052E-06   0.000      0.3611E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      44  0.4400E-01  0.1000E-02 SOLID         52  -0.0%  0.3715E-01  0.8012E-07   0.000      0.3715E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      45  0.4500E-01  0.1000E-02 SOLID         61  -0.0%  0.3806E-01  0.5901E-07   0.000      0.3806E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      46  0.4600E-01  0.1000E-02 SOLID         52  -0.0%  0.3883E-01  0.3885E-07   0.000      0.3883E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      47  0.4700E-01  0.1000E-02 SOLID         13  -0.0%  0.3945E-01  0.2329E-07   0.000      0.3945E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      48  0.4800E-01  0.1000E-02 SOLID         13  -0.0%  0.3991E-01  0.1054E-07   0.000      0.3991E-01   0.000      0.2780E-02   0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      49  0.4900E-01  0.1000E-02 SOLID         13  -0.0%  0.4019E-01  0.2859E-08   0.000      0.4019E-01   0.000      0.2780E-02   0.000    
+
+     RESTART FILES: A36_MUMPS_N4_0001_[0001-0001].rst WRITTEN
+     -------------
+
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+      50  0.5000E-01  0.1000E-02 SOLID         61  -0.0%  0.4028E-01  0.1669E-11   0.000      0.4029E-01   0.000      0.2780E-02   0.000    
+     ANIMATION FILE: A36_MUMPS_N4A006 WRITTEN
+
+   * IMPLICIT COMPUTATION TERMINATED WITH    TOTAL NONLINEAR ITERATIONS:     247
+   * TOTAL NUM.OF MATRIX FACTORIZATION AND PCG ITERATION:     51         0
+  
+                           ** CPU USER TIME **
+  
+  
+                      ** IMPLICIT  **
+  
+ #PROC  [K]SETUP  [M]SETUP  IMP_SOLV  IMP_TOT  
+   1   .1040E+00 .0000E+00 .0000E+00 .1844E+00
+  
+                        ** SUMMARY **
+  
+ #PROC  ELEMENT   KINCOND   INTEG     IO        T0        ASM       RESOL    
+   1   .4247E-01 .1159E-02 .9801E-03 .1165E-01 .2610E-01 .4821E-03 .2752E+00
+  
+ 
+                   ** CUMULATIVE CPU TIME SUMMARY **
+  
+ CONTACT SORTING.............: .0000E+00     0.00 % 
+ CONTACT FORCES..............: .2560E-03     0.09 % 
+ ELEMENT FORCES..............: .4247E-01    15.43 % 
+ KINEMATIC COND..............: .1159E-02     0.42 % 
+ INTEGRATION.................: .9801E-03     0.36 % 
+ ASSEMBLING..................: .4821E-03     0.18 % 
+ OTHERS (including I/O)......: .2298E+00    83.52 % 
+ TOTAL.......................: .2752E+00   100.00 % 
+  
+  
+                           ** ELAPSED TIME **
+  
+  
+                      ** IMPLICIT  **
+  
+ #PROC  [K]SETUP  [M]SETUP  IMP_SOLV  IMP_TOT  
+   1   .1150E+00 .0000E+00 .0000E+00 .2078E+00
+  
+                        ** SUMMARY **
+  
+ #PROC  ELEMENT   KINCOND   INTEG     IO        T0        ASM       RESOL    
+   1   .5414E-01 .1521E-02 .1054E-02 .8757E-01 .7208E-01 .5335E-03 .4472E+00
+  
+                   ** MEMORY USAGE STATISTICS **
+  
+ TOTAL MEMORY USED .........................:       66 MB
+ MAXIMUM MEMORY PER PROCESSOR...............:       66 MB
+ MINIMUM MEMORY PER PROCESSOR...............:       66 MB
+ AVERAGE MEMORY PER PROCESSOR...............:       66 MB
+  
+                   ** DISK USAGE STATISTICS **
+  
+ TOTAL DISK SPACE USED .....................:          0 MB
+ ANIMATION/H3D/TH/OUTP SIZE ................:          0 MB
+ RESTART FILE SIZE .........................:          0 MB
+  
+                   ** COMPUTE TIME INFORMATION **
+                        ** CURRENT ENGINE **
+  
+ EXECUTION STARTED .........................:      2026/10/11  15:13:00
+ EXECUTION COMPLETED .......................:      2026/10/11  15:13:01
+  
+ ELAPSED TIME     =          0.91 s
+                          0:00:00
+
+
+
+     NORMAL TERMINATION      
+
+
+
+     TOTAL NUMBER OF CYCLES  :      51
+
+  
+                   ** COMPUTE RUNTIME INFORMATION SUMMARY **
+  
+        STARTER RUNTIME =          0.67s (00:00:00)
+ # 001   ENGINE RUNTIME =          0.91s (00:00:00)
+ ------------------------------ 
+ STARTER+ENGINE RUNTIME =          1.58s (00:00:01)
+  

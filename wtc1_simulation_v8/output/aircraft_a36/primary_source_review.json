@@ -1,0 +1,42 @@
+{
+  "created_utc": "2026-10-11T13:12:29.178414+00:00",
+  "source_commit": "bad6688602d770e019b75773d2d5a48b4f9bd918",
+  "files": {
+    "reaction_accumulation": {
+      "path": "engine/source/output/th/bcs1th_imp.F",
+      "sha256": "a2b89917e5f023d09572eae23d2927e3ae551fe9b94eb9d5f5d219178749d68d",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/output/th/bcs1th_imp.F"
+    },
+    "reaction_nodes": {
+      "path": "engine/source/output/th/thbcs_imp.F",
+      "sha256": "fac269f4da67e400b38c8ab5e6aaf6778fedeaeadbe5a6a1d7c0968e77bb1705",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/output/th/thbcs_imp.F"
+    },
+    "reaction_output": {
+      "path": "engine/source/output/th/thnod.F",
+      "sha256": "920a7ad618c0d6f4ffc0c00276a437c6c81bb94c1d0f7320630756db73d6ec67",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/output/th/thnod.F"
+    },
+    "reaction_call": {
+      "path": "engine/source/engine/resol.F",
+      "sha256": "c7002fad89c5df71ce8a78a0b2173d3e63e9fa33ae802333edb1ed13ab9143fb",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/engine/resol.F"
+    },
+    "boundary_work_inertia": {
+      "path": "engine/source/constraints/general/impvel/fv_imp0.F",
+      "sha256": "3339b169e027c3d458711d04de5e73b377853b4da07a43c9f9fa211605a15f44",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/constraints/general/impvel/fv_imp0.F"
+    },
+    "dynamics_work": {
+      "path": "engine/source/implicit/imp_dyna.F",
+      "sha256": "52d510efd2fea12c947662e38735cef5267d109eb811e4cee80c7136a027364f",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/imp_dyna.F"
+    }
+  },
+  "observed_equations": {
+    "TH": "Qn = Qprev -dt/2 * (A_n + A_prev), FTHDTM stores previous A",
+    "boundary_work": "FV_FINT0 forms A0=A+MS*DY_A and averages endpoint values; WFV_IMP uses it for imposed displacement work"
+  },
+  "hypothesis_to_test": "TH excludes imposed boundary nodal inertia; verify additive mass budget using distinct translation and face-loading witnesses. Not a fitted factor2.",
+  "source_physics_changed": false
+}

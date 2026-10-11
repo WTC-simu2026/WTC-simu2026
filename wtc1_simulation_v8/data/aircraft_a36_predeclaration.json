@@ -1,0 +1,318 @@
+{
+  "iteration": "AIRCRAFT-A36",
+  "subscope": "Independent continuum refinement and source-derived implicit reaction interpretation",
+  "declared_utc": "2026-10-11T13:12:29.038299+00:00",
+  "seed": 1102061,
+  "random_draws": 0,
+  "purpose": "Probe a potentially efficient late-time physical dynamics route. This tiny fixture can establish binary capability only; it does not qualify nonlinear whole impact, restart, contact or regime transition.",
+  "geometry_mm": {
+    "lo": [
+      -0.5,
+      -0.5,
+      -0.5
+    ],
+    "hi": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "shape": [
+      2,
+      2,
+      2
+    ]
+  },
+  "material": "unchanged source LAW2/1: rho.00278g/mm3 E73100MPa nu.33 yield324MPa, no added failure",
+  "solid": "TYPE14 HA8 Isolid14 Ismstr4 Icpre2 Gauss222 Iframe2",
+  "mass_g": 0.00278,
+  "boundary": "Only x=-.5 and x=.5 faces fixed XYZ except right-face ramp ux; middle nodes free",
+  "motion": {
+    "duration_ms": 0.05,
+    "displacement_mm": 0.001,
+    "shape": "3u2-2u3",
+    "function_points": 1001
+  },
+  "implicit": {
+    "Newmark_gamma": 0.5,
+    "Newmark_beta": 0.25,
+    "initial_dt_ms": 0.001,
+    "nonlin_N": 1,
+    "L_A": 0,
+    "Itol": 123,
+    "tolerances": [
+      1e-06,
+      1e-06,
+      1e-06
+    ],
+    "cases": [
+      {
+        "name": "EXPLICIT",
+        "solver_N": 0,
+        "Iprec": 2,
+        "It_max": 0,
+        "Itol": 1,
+        "Tol": 1e-08,
+        "dt_ms": 1e-05
+      },
+      {
+        "name": "EXPLICIT_HALF",
+        "solver_N": 0,
+        "Iprec": 2,
+        "It_max": 0,
+        "Itol": 1,
+        "Tol": 1e-08,
+        "dt_ms": 5e-06
+      },
+      {
+        "name": "PCG",
+        "solver_N": 1,
+        "Iprec": 2,
+        "It_max": 0,
+        "Itol": 1,
+        "Tol": 1e-08,
+        "dt_ms": 0.001
+      },
+      {
+        "name": "MUMPS",
+        "solver_N": 2,
+        "Iprec": 2,
+        "It_max": 0,
+        "Itol": 1,
+        "Tol": 1e-08,
+        "dt_ms": 0.001
+      },
+      {
+        "name": "MUMPS_HALF",
+        "solver_N": 2,
+        "Iprec": 2,
+        "It_max": 0,
+        "Itol": 1,
+        "Tol": 1e-08,
+        "dt_ms": 0.0005
+      }
+    ]
+  },
+  "execution": {
+    "CPU_threads": 1,
+    "GPU": false,
+    "per_process_cap_s": 180,
+    "estimated_seconds_max": 1800,
+    "binary_changed": false,
+    "installation": false,
+    "mass_scaling": false
+  },
+  "acceptance": {
+    "strict_zero_starter_warnings": true,
+    "native_normal_termination": true,
+    "mass_relative": 1e-06,
+    "ADMAS_relative": 1e-09,
+    "reference_IE_fraction": 0.02,
+    "energy_fraction": 0.02,
+    "energy_absolute_J": 1e-07,
+    "elastic_PW_J": 1e-07
+  },
+  "independent_reference": "A23 conventional8node isotropic3D elastic stiffness,2x2x2Gauss; source tensor, saved before native outputs",
+  "docs": {
+    "nonlin": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/impl_nonlin_engine_r.htm",
+    "solver": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/impl_solver_engine_r.htm",
+    "dtini": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/impl_dtini_engine_r.htm",
+    "dyna": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/impl_dyna_2_engine_r.htm"
+  },
+  "whole_inputs_changed": false,
+  "whole_insertion_ready": false,
+  "objective1_complete": false,
+  "parent_configuration": "wtc1_simulation_v8/data/aircraft_a35_implicit_capability.json",
+  "parent_configuration_sha256": "be0a7164dc4e16a628ee03c322430fa32add5ded7eb2f8a568d704f6a8933642",
+  "cases": [
+    {
+      "name": "WINDOWS_EXPLICIT_N2",
+      "N": 2,
+      "platform": "Windows",
+      "motion": "face",
+      "solver_N": 0,
+      "dt_ms": 1e-05,
+      "Iprec": 2,
+      "It_max": 0,
+      "Itol": 1,
+      "Tol": 1e-08
+    },
+    {
+      "name": "WINDOWS_EXPLICIT_N4",
+      "N": 4,
+      "platform": "Windows",
+      "motion": "face",
+      "solver_N": 0,
+      "dt_ms": 1e-05,
+      "Iprec": 2,
+      "It_max": 0,
+      "Itol": 1,
+      "Tol": 1e-08
+    },
+    {
+      "name": "LINUX_EXPLICIT_N4",
+      "N": 4,
+      "platform": "Linux",
+      "motion": "face",
+      "solver_N": 0,
+      "dt_ms": 1e-05,
+      "Iprec": 2,
+      "It_max": 0,
+      "Itol": 1,
+      "Tol": 1e-08
+    },
+    {
+      "name": "MUMPS_N4",
+      "N": 4,
+      "platform": "Linux",
+      "motion": "face",
+      "solver_N": 2,
+      "dt_ms": 0.001,
+      "Iprec": 2,
+      "It_max": 0,
+      "Itol": 1,
+      "Tol": 1e-08
+    },
+    {
+      "name": "MUMPS_N4_HALF",
+      "N": 4,
+      "platform": "Linux",
+      "motion": "face",
+      "solver_N": 2,
+      "dt_ms": 0.0005,
+      "Iprec": 2,
+      "It_max": 0,
+      "Itol": 1,
+      "Tol": 1e-08
+    },
+    {
+      "name": "MUMPS_N8",
+      "N": 8,
+      "platform": "Linux",
+      "motion": "face",
+      "solver_N": 2,
+      "dt_ms": 0.001,
+      "Iprec": 2,
+      "It_max": 0,
+      "Itol": 1,
+      "Tol": 1e-08
+    },
+    {
+      "name": "WINDOWS_TRANSLATION",
+      "N": 2,
+      "platform": "Windows",
+      "motion": "translation",
+      "solver_N": 0,
+      "dt_ms": 1e-05,
+      "Iprec": 2,
+      "It_max": 0,
+      "Itol": 1,
+      "Tol": 1e-08
+    },
+    {
+      "name": "LINUX_TRANSLATION",
+      "N": 2,
+      "platform": "Linux",
+      "motion": "translation",
+      "solver_N": 0,
+      "dt_ms": 1e-05,
+      "Iprec": 2,
+      "It_max": 0,
+      "Itol": 1,
+      "Tol": 1e-08
+    },
+    {
+      "name": "MUMPS_TRANSLATION",
+      "N": 2,
+      "platform": "Linux",
+      "motion": "translation",
+      "solver_N": 2,
+      "dt_ms": 0.001,
+      "Iprec": 2,
+      "It_max": 0,
+      "Itol": 1,
+      "Tol": 1e-08
+    }
+  ],
+  "build_configuration": "wtc1_simulation_v8/data/aircraft_a35_mumps_build_predeclaration.json",
+  "source_commit": "bad6688602d770e019b75773d2d5a48b4f9bd918",
+  "Windows_restart_reused": false,
+  "format_repair": {
+    "record": "NONLIN whitespace-separated all5valueswithin72characters",
+    "previous_A31_failures_preserved": true
+  },
+  "additional_acceptance": {
+    "finite_histories": true,
+    "three_field_samples": "ids/finite/coordinate-displacement bound/noerosion",
+    "field_reference_final_mm": 2e-05,
+    "same_version_energy_difference": "2% +1e-7J at common native history time",
+    "temporal_energy_difference": "0.2% +1e-7J at common time",
+    "actually_half_implicit_dt_ratio": 0.6,
+    "scope": "Tinyelasticavailabilityfixture only; no whole contact, plasticity, restart or transition qualification"
+  },
+  "independent_refinement": {
+    "N": [
+      2,
+      4,
+      8,
+      16
+    ],
+    "same_geometry_material_and_face_BCs": true,
+    "operator": "Conventional 8node2x2x2Gauss isotropic elasticity, matrix-free CG; no native stiffness or response fitted",
+    "reference_N8_N16_energy_fraction": 0.005,
+    "reference_N8_N16_displacement_mm": 2e-06,
+    "native_N4_N8_energy_fraction": 0.01,
+    "native_independent_IE_fraction": 0.02,
+    "native_independent_displacement_mm": 2e-05,
+    "original_A35_gates_preserved": true
+  },
+  "reaction_prediction": {
+    "basis": "Pinned BCS1TH_IMP accumulates trapezoidal negative nodal residual A; FV_FINT0 separately adds MS*DY_A for boundary work. Test that implicit TH impulse excludes imposed-node inertia, not a multiplicative factor.",
+    "implicit_impulse": "Qsum-Qsum0 + sum(boundary_m * (v-v0)) = Ptotal-Ptotal0",
+    "implicit_work": "integral(dQ/dt dot v_boundary) + KEboundary-KEboundary0 = EW",
+    "explicit_impulse": "Qsum-Qsum0 = Ptotal-Ptotal0",
+    "explicit_work": "integral(dQ/dt dot v_boundary) = EW",
+    "tolerances": "Unchanged 2% maxDeltaP +1e-9Ns and 2%maxEW/reference +1e-7J",
+    "distinct_witness": "All nodes undergo the same smooth rigid translation; exact IE=0, KE/P from physical nodal masses. Implicit raw Q should vanish, while imposed-node inertia carries all P and work.",
+    "not_applied_to_A35_original_reviews": true,
+    "general_constraints_rotational_DOF_or_mass_scaling": false
+  },
+  "version_witness": "Fresh Windows N2 compared to cached A35 Linux N2; then fresh Windows/Linux N4. Same source material and fresh Starter on every case, no successful old Engine rerun.",
+  "sources": [
+    {
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/output/th/bcs1th_imp.F",
+      "local_path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/output/th/bcs1th_imp.F",
+      "sha256": "a2b89917e5f023d09572eae23d2927e3ae551fe9b94eb9d5f5d219178749d68d",
+      "redistribution": "reference_only_no_source_copy"
+    },
+    {
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/output/th/thbcs_imp.F",
+      "local_path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/output/th/thbcs_imp.F",
+      "sha256": "fac269f4da67e400b38c8ab5e6aaf6778fedeaeadbe5a6a1d7c0968e77bb1705",
+      "redistribution": "reference_only_no_source_copy"
+    },
+    {
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/output/th/thnod.F",
+      "local_path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/output/th/thnod.F",
+      "sha256": "920a7ad618c0d6f4ffc0c00276a437c6c81bb94c1d0f7320630756db73d6ec67",
+      "redistribution": "reference_only_no_source_copy"
+    },
+    {
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/engine/resol.F",
+      "local_path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/engine/resol.F",
+      "sha256": "c7002fad89c5df71ce8a78a0b2173d3e63e9fa33ae802333edb1ed13ab9143fb",
+      "redistribution": "reference_only_no_source_copy"
+    },
+    {
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/constraints/general/impvel/fv_imp0.F",
+      "local_path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/constraints/general/impvel/fv_imp0.F",
+      "sha256": "3339b169e027c3d458711d04de5e73b377853b4da07a43c9f9fa211605a15f44",
+      "redistribution": "reference_only_no_source_copy"
+    },
+    {
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/imp_dyna.F",
+      "local_path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/imp_dyna.F",
+      "sha256": "52d510efd2fea12c947662e38735cef5267d109eb811e4cee80c7136a027364f",
+      "redistribution": "reference_only_no_source_copy"
+    }
+  ]
+}

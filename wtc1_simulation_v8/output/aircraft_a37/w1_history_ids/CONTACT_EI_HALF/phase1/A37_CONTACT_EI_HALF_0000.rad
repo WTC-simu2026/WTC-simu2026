@@ -1,0 +1,562 @@
+#RADIOSS STARTER
+/BEGIN
+A37_CONTACT_EI_HALF
+      2026         0
+                   g                  mm                  ms
+                   g                  mm                  ms
+/TITLE
+A37_CONTACT_EI_HALF
+/ANALY
+         0                   0         0
+/SPMD
+         0         0                   0                   1
+/NODE
+         1               -1.05                -0.5                -0.5
+         2               -0.55                -0.5                -0.5
+         3               -0.05                -0.5                -0.5
+         4               -1.05                   0                -0.5
+         5               -0.55                   0                -0.5
+         6               -0.05                   0                -0.5
+         7               -1.05                 0.5                -0.5
+         8               -0.55                 0.5                -0.5
+         9               -0.05                 0.5                -0.5
+        10               -1.05                -0.5                   0
+        11               -0.55                -0.5                   0
+        12               -0.05                -0.5                   0
+        13               -1.05                   0                   0
+        14               -0.55                   0                   0
+        15               -0.05                   0                   0
+        16               -1.05                 0.5                   0
+        17               -0.55                 0.5                   0
+        18               -0.05                 0.5                   0
+        19               -1.05                -0.5                 0.5
+        20               -0.55                -0.5                 0.5
+        21               -0.05                -0.5                 0.5
+        22               -1.05                   0                 0.5
+        23               -0.55                   0                 0.5
+        24               -0.05                   0                 0.5
+        25               -1.05                 0.5                 0.5
+        26               -0.55                 0.5                 0.5
+        27               -0.05                 0.5                 0.5
+        28                0.05                -0.5                -0.5
+        29                0.55                -0.5                -0.5
+        30                1.05                -0.5                -0.5
+        31                0.05                   0                -0.5
+        32                0.55                   0                -0.5
+        33                1.05                   0                -0.5
+        34                0.05                 0.5                -0.5
+        35                0.55                 0.5                -0.5
+        36                1.05                 0.5                -0.5
+        37                0.05                -0.5                   0
+        38                0.55                -0.5                   0
+        39                1.05                -0.5                   0
+        40                0.05                   0                   0
+        41                0.55                   0                   0
+        42                1.05                   0                   0
+        43                0.05                 0.5                   0
+        44                0.55                 0.5                   0
+        45                1.05                 0.5                   0
+        46                0.05                -0.5                 0.5
+        47                0.55                -0.5                 0.5
+        48                1.05                -0.5                 0.5
+        49                0.05                   0                 0.5
+        50                0.55                   0                 0.5
+        51                1.05                   0                 0.5
+        52                0.05                 0.5                 0.5
+        53                0.55                 0.5                 0.5
+        54                1.05                 0.5                 0.5
+/MAT/LAW2/1
+hypothetical_2024_skin_reference
+             0.00278
+               73100                0.33         0         2              -1e+30
+                 324                   0                   1               1e+30               1e+30
+                   0               0.001         1         1               1e+20                   0
+                   1               1e+30                   0              293.15               1e+30
+/PROP/TYPE14/1
+FINITE_FULL_INTEGRATION_METAL_WITHOUT_ROTATIONAL_DOF
+        14         4         0         2         0       222         0         2                   0
+                   0                   0                   0                   0                   0
+                   0                   0                   0                   0                   0
+         0         0         0
+/PART/1
+CLOSED_ELASTIC_BODY_1
+         1         1         0
+/BRICK/1
+         1         1         2         5         4        10        11        14        13
+         2         2         3         6         5        11        12        15        14
+         3         4         5         8         7        13        14        17        16
+         4         5         6         9         8        14        15        18        17
+         5        10        11        14        13        19        20        23        22
+         6        11        12        15        14        20        21        24        23
+         7        13        14        17        16        22        23        26        25
+         8        14        15        18        17        23        24        27        26
+/PART/2
+CLOSED_ELASTIC_BODY_2
+         1         1         0
+/BRICK/2
+         9        28        29        32        31        37        38        41        40
+        10        29        30        33        32        38        39        42        41
+        11        31        32        35        34        40        41        44        43
+        12        32        33        36        35        41        42        45        44
+        13        37        38        41        40        46        47        50        49
+        14        38        39        42        41        47        48        51        50
+        15        40        41        44        43        49        50        53        52
+        16        41        42        45        44        50        51        54        53
+/SURF/PART/101
+LEFT_BODY_MAIN
+         1
+/GRNOD/NODE/102
+RIGHT_FRONT_SECONDARY
+        28        31        34        37        40        43        46        49        52
+/INTER/TYPE7/1
+ELASTIC_CONTACT_WITNESS
+       102       101         4         0      1000                   0      1000         0         0
+                   1                   0                   0                             0         0
+                   0               1e+30                   0                   0         1         3
+                   1                   0                0.01                   0               1e+30
+       000                          1000               1e-20                   1                 0.2
+         0         0                   0         0         0         0                   0         0
+/TH/INTER/11
+CONTACT_IMPULSE
+       FNX       FNY       FNZ
+         1
+/GRNOD/NODE/1
+PHYSICAL_INITIAL_NODE
+         1
+/INIVEL/TRA/1
+INITIAL_TRANSLATION
+                   5                   0                   0         1         0
+                   0         0
+/GRNOD/NODE/2
+PHYSICAL_INITIAL_NODE
+         2
+/INIVEL/TRA/2
+INITIAL_TRANSLATION
+                   5                   0                   0         2         0
+                   0         0
+/GRNOD/NODE/3
+PHYSICAL_INITIAL_NODE
+         3
+/INIVEL/TRA/3
+INITIAL_TRANSLATION
+                   5                   0                   0         3         0
+                   0         0
+/GRNOD/NODE/4
+PHYSICAL_INITIAL_NODE
+         4
+/INIVEL/TRA/4
+INITIAL_TRANSLATION
+                   5                   0                   0         4         0
+                   0         0
+/GRNOD/NODE/5
+PHYSICAL_INITIAL_NODE
+         5
+/INIVEL/TRA/5
+INITIAL_TRANSLATION
+                   5                   0                   0         5         0
+                   0         0
+/GRNOD/NODE/6
+PHYSICAL_INITIAL_NODE
+         6
+/INIVEL/TRA/6
+INITIAL_TRANSLATION
+                   5                   0                   0         6         0
+                   0         0
+/GRNOD/NODE/7
+PHYSICAL_INITIAL_NODE
+         7
+/INIVEL/TRA/7
+INITIAL_TRANSLATION
+                   5                   0                   0         7         0
+                   0         0
+/GRNOD/NODE/8
+PHYSICAL_INITIAL_NODE
+         8
+/INIVEL/TRA/8
+INITIAL_TRANSLATION
+                   5                   0                   0         8         0
+                   0         0
+/GRNOD/NODE/9
+PHYSICAL_INITIAL_NODE
+         9
+/INIVEL/TRA/9
+INITIAL_TRANSLATION
+                   5                   0                   0         9         0
+                   0         0
+/GRNOD/NODE/10
+PHYSICAL_INITIAL_NODE
+        10
+/INIVEL/TRA/10
+INITIAL_TRANSLATION
+                   5                   0                   0        10         0
+                   0         0
+/GRNOD/NODE/11
+PHYSICAL_INITIAL_NODE
+        11
+/INIVEL/TRA/11
+INITIAL_TRANSLATION
+                   5                   0                   0        11         0
+                   0         0
+/GRNOD/NODE/12
+PHYSICAL_INITIAL_NODE
+        12
+/INIVEL/TRA/12
+INITIAL_TRANSLATION
+                   5                   0                   0        12         0
+                   0         0
+/GRNOD/NODE/13
+PHYSICAL_INITIAL_NODE
+        13
+/INIVEL/TRA/13
+INITIAL_TRANSLATION
+                   5                   0                   0        13         0
+                   0         0
+/GRNOD/NODE/14
+PHYSICAL_INITIAL_NODE
+        14
+/INIVEL/TRA/14
+INITIAL_TRANSLATION
+                   5                   0                   0        14         0
+                   0         0
+/GRNOD/NODE/15
+PHYSICAL_INITIAL_NODE
+        15
+/INIVEL/TRA/15
+INITIAL_TRANSLATION
+                   5                   0                   0        15         0
+                   0         0
+/GRNOD/NODE/16
+PHYSICAL_INITIAL_NODE
+        16
+/INIVEL/TRA/16
+INITIAL_TRANSLATION
+                   5                   0                   0        16         0
+                   0         0
+/GRNOD/NODE/17
+PHYSICAL_INITIAL_NODE
+        17
+/INIVEL/TRA/17
+INITIAL_TRANSLATION
+                   5                   0                   0        17         0
+                   0         0
+/GRNOD/NODE/18
+PHYSICAL_INITIAL_NODE
+        18
+/INIVEL/TRA/18
+INITIAL_TRANSLATION
+                   5                   0                   0        18         0
+                   0         0
+/GRNOD/NODE/19
+PHYSICAL_INITIAL_NODE
+        19
+/INIVEL/TRA/19
+INITIAL_TRANSLATION
+                   5                   0                   0        19         0
+                   0         0
+/GRNOD/NODE/20
+PHYSICAL_INITIAL_NODE
+        20
+/INIVEL/TRA/20
+INITIAL_TRANSLATION
+                   5                   0                   0        20         0
+                   0         0
+/GRNOD/NODE/21
+PHYSICAL_INITIAL_NODE
+        21
+/INIVEL/TRA/21
+INITIAL_TRANSLATION
+                   5                   0                   0        21         0
+                   0         0
+/GRNOD/NODE/22
+PHYSICAL_INITIAL_NODE
+        22
+/INIVEL/TRA/22
+INITIAL_TRANSLATION
+                   5                   0                   0        22         0
+                   0         0
+/GRNOD/NODE/23
+PHYSICAL_INITIAL_NODE
+        23
+/INIVEL/TRA/23
+INITIAL_TRANSLATION
+                   5                   0                   0        23         0
+                   0         0
+/GRNOD/NODE/24
+PHYSICAL_INITIAL_NODE
+        24
+/INIVEL/TRA/24
+INITIAL_TRANSLATION
+                   5                   0                   0        24         0
+                   0         0
+/GRNOD/NODE/25
+PHYSICAL_INITIAL_NODE
+        25
+/INIVEL/TRA/25
+INITIAL_TRANSLATION
+                   5                   0                   0        25         0
+                   0         0
+/GRNOD/NODE/26
+PHYSICAL_INITIAL_NODE
+        26
+/INIVEL/TRA/26
+INITIAL_TRANSLATION
+                   5                   0                   0        26         0
+                   0         0
+/GRNOD/NODE/27
+PHYSICAL_INITIAL_NODE
+        27
+/INIVEL/TRA/27
+INITIAL_TRANSLATION
+                   5                   0                   0        27         0
+                   0         0
+/GRNOD/NODE/28
+PHYSICAL_INITIAL_NODE
+        28
+/INIVEL/TRA/28
+INITIAL_TRANSLATION
+                  -5                   0                   0        28         0
+                   0         0
+/GRNOD/NODE/29
+PHYSICAL_INITIAL_NODE
+        29
+/INIVEL/TRA/29
+INITIAL_TRANSLATION
+                  -5                   0                   0        29         0
+                   0         0
+/GRNOD/NODE/30
+PHYSICAL_INITIAL_NODE
+        30
+/INIVEL/TRA/30
+INITIAL_TRANSLATION
+                  -5                   0                   0        30         0
+                   0         0
+/GRNOD/NODE/31
+PHYSICAL_INITIAL_NODE
+        31
+/INIVEL/TRA/31
+INITIAL_TRANSLATION
+                  -5                   0                   0        31         0
+                   0         0
+/GRNOD/NODE/32
+PHYSICAL_INITIAL_NODE
+        32
+/INIVEL/TRA/32
+INITIAL_TRANSLATION
+                  -5                   0                   0        32         0
+                   0         0
+/GRNOD/NODE/33
+PHYSICAL_INITIAL_NODE
+        33
+/INIVEL/TRA/33
+INITIAL_TRANSLATION
+                  -5                   0                   0        33         0
+                   0         0
+/GRNOD/NODE/34
+PHYSICAL_INITIAL_NODE
+        34
+/INIVEL/TRA/34
+INITIAL_TRANSLATION
+                  -5                   0                   0        34         0
+                   0         0
+/GRNOD/NODE/35
+PHYSICAL_INITIAL_NODE
+        35
+/INIVEL/TRA/35
+INITIAL_TRANSLATION
+                  -5                   0                   0        35         0
+                   0         0
+/GRNOD/NODE/36
+PHYSICAL_INITIAL_NODE
+        36
+/INIVEL/TRA/36
+INITIAL_TRANSLATION
+                  -5                   0                   0        36         0
+                   0         0
+/GRNOD/NODE/37
+PHYSICAL_INITIAL_NODE
+        37
+/INIVEL/TRA/37
+INITIAL_TRANSLATION
+                  -5                   0                   0        37         0
+                   0         0
+/GRNOD/NODE/38
+PHYSICAL_INITIAL_NODE
+        38
+/INIVEL/TRA/38
+INITIAL_TRANSLATION
+                  -5                   0                   0        38         0
+                   0         0
+/GRNOD/NODE/39
+PHYSICAL_INITIAL_NODE
+        39
+/INIVEL/TRA/39
+INITIAL_TRANSLATION
+                  -5                   0                   0        39         0
+                   0         0
+/GRNOD/NODE/40
+PHYSICAL_INITIAL_NODE
+        40
+/INIVEL/TRA/40
+INITIAL_TRANSLATION
+                  -5                   0                   0        40         0
+                   0         0
+/GRNOD/NODE/41
+PHYSICAL_INITIAL_NODE
+        41
+/INIVEL/TRA/41
+INITIAL_TRANSLATION
+                  -5                   0                   0        41         0
+                   0         0
+/GRNOD/NODE/42
+PHYSICAL_INITIAL_NODE
+        42
+/INIVEL/TRA/42
+INITIAL_TRANSLATION
+                  -5                   0                   0        42         0
+                   0         0
+/GRNOD/NODE/43
+PHYSICAL_INITIAL_NODE
+        43
+/INIVEL/TRA/43
+INITIAL_TRANSLATION
+                  -5                   0                   0        43         0
+                   0         0
+/GRNOD/NODE/44
+PHYSICAL_INITIAL_NODE
+        44
+/INIVEL/TRA/44
+INITIAL_TRANSLATION
+                  -5                   0                   0        44         0
+                   0         0
+/GRNOD/NODE/45
+PHYSICAL_INITIAL_NODE
+        45
+/INIVEL/TRA/45
+INITIAL_TRANSLATION
+                  -5                   0                   0        45         0
+                   0         0
+/GRNOD/NODE/46
+PHYSICAL_INITIAL_NODE
+        46
+/INIVEL/TRA/46
+INITIAL_TRANSLATION
+                  -5                   0                   0        46         0
+                   0         0
+/GRNOD/NODE/47
+PHYSICAL_INITIAL_NODE
+        47
+/INIVEL/TRA/47
+INITIAL_TRANSLATION
+                  -5                   0                   0        47         0
+                   0         0
+/GRNOD/NODE/48
+PHYSICAL_INITIAL_NODE
+        48
+/INIVEL/TRA/48
+INITIAL_TRANSLATION
+                  -5                   0                   0        48         0
+                   0         0
+/GRNOD/NODE/49
+PHYSICAL_INITIAL_NODE
+        49
+/INIVEL/TRA/49
+INITIAL_TRANSLATION
+                  -5                   0                   0        49         0
+                   0         0
+/GRNOD/NODE/50
+PHYSICAL_INITIAL_NODE
+        50
+/INIVEL/TRA/50
+INITIAL_TRANSLATION
+                  -5                   0                   0        50         0
+                   0         0
+/GRNOD/NODE/51
+PHYSICAL_INITIAL_NODE
+        51
+/INIVEL/TRA/51
+INITIAL_TRANSLATION
+                  -5                   0                   0        51         0
+                   0         0
+/GRNOD/NODE/52
+PHYSICAL_INITIAL_NODE
+        52
+/INIVEL/TRA/52
+INITIAL_TRANSLATION
+                  -5                   0                   0        52         0
+                   0         0
+/GRNOD/NODE/53
+PHYSICAL_INITIAL_NODE
+        53
+/INIVEL/TRA/53
+INITIAL_TRANSLATION
+                  -5                   0                   0        53         0
+                   0         0
+/GRNOD/NODE/54
+PHYSICAL_INITIAL_NODE
+        54
+/INIVEL/TRA/54
+INITIAL_TRANSLATION
+                  -5                   0                   0        54         0
+                   0         0
+/TH/PART/1
+PHYSICAL_BODIES
+        IE        KE        HE        PW
+         1         2
+/TH/NODE/1
+NATIVE_SCOPE_NODES
+        DX        DY        DZ        VX        VY        VZ
+         1         0
+         2         0
+         3         0
+         4         0
+         5         0
+         6         0
+         7         0
+         8         0
+         9         0
+        10         0
+        11         0
+        12         0
+        13         0
+        14         0
+        15         0
+        16         0
+        17         0
+        18         0
+        19         0
+        20         0
+        21         0
+        22         0
+        23         0
+        24         0
+        25         0
+        26         0
+        27         0
+        28         0
+        29         0
+        30         0
+        31         0
+        32         0
+        33         0
+        34         0
+        35         0
+        36         0
+        37         0
+        38         0
+        39         0
+        40         0
+        41         0
+        42         0
+        43         0
+        44         0
+        45         0
+        46         0
+        47         0
+        48         0
+        49         0
+        50         0
+        51         0
+        52         0
+        53         0
+        54         0
+/END
