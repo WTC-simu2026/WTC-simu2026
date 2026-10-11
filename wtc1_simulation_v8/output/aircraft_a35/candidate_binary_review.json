@@ -1,0 +1,81 @@
+{
+  "created_utc": "2026-10-11T12:50:31.060085+00:00",
+  "checks": {
+    "all_binaries_present": true,
+    "MUMPS_dynamically_linked": true,
+    "MPI_dynamically_linked": true,
+    "no_missing_libraries": true,
+    "tracked_physics_source_unchanged": true,
+    "Windows_solver_unchanged": true,
+    "build_within_one_hour": true
+  },
+  "engine_candidate_availability_pass": true,
+  "full_build_availability_pass": false,
+  "Linux_Starter_built": false,
+  "files": [
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/isolated_exec/engine_linux64_gf_ompi",
+      "sha256": "f9f2eae4f871b13c53716012030495b292c48bc0e1f30035ebd750f8395a9fe8",
+      "bytes": 36337088
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/isolated_exec/libopen_reader_linux64.so",
+      "sha256": "5882082e40ab0f950ca7119dfea58701d739fdf6c737116c423ae8862c176f6a",
+      "bytes": 21484168
+    }
+  ],
+  "dynamic_libraries": [
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/isolated_exec/engine_linux64_gf_ompi",
+      "exit_code": 0,
+      "ldd": "\tlinux-vdso.so.1 (0x00007ffc15ded000)\n\tlibdmumps-5.6.so => /lib/x86_64-linux-gnu/libdmumps-5.6.so (0x00007a5a13000000)\n\tlibscalapack-openmpi.so.2.2 => /lib/x86_64-linux-gnu/libscalapack-openmpi.so.2.2 (0x00007a5a12a00000)\n\tliblapack.so.3 => /lib/x86_64-linux-gnu/liblapack.so.3 (0x00007a5a12200000)\n\tlibblas.so.3 => /lib/x86_64-linux-gnu/libblas.so.3 (0x00007a5a13239000)\n\tlibmpi.so.40 => /lib/x86_64-linux-gnu/libmpi.so.40 (0x00007a5a120ce000)\n\tlibmpi_mpifh.so.40 => /lib/x86_64-linux-gnu/libmpi_mpifh.so.40 (0x00007a5a12f9b000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007a5a11e00000)\n\tlibgfortran.so.5 => /lib/x86_64-linux-gnu/libgfortran.so.5 (0x00007a5a11a00000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007a5a12917000)\n\tlibgomp.so.1 => /lib/x86_64-linux-gnu/libgomp.so.1 (0x00007a5a11daa000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007a5a120a0000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007a5a11600000)\n\tlibmumps_common-5.6.so => /lib/x86_64-linux-gnu/libmumps_common-5.6.so (0x00007a5a11d30000)\n\tlibopen-rte.so.40 => /lib/x86_64-linux-gnu/libopen-rte.so.40 (0x00007a5a11944000)\n\tlibopen-pal.so.40 => /lib/x86_64-linux-gnu/libopen-pal.so.40 (0x00007a5a11890000)\n\tlibhwloc.so.15 => /lib/x86_64-linux-gnu/libhwloc.so.15 (0x00007a5a1182f000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007a5a1be4e000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007a5a12f7f000)\n\tlibevent_core-2.1.so.7 => /lib/x86_64-linux-gnu/libevent_core-2.1.so.7 (0x00007a5a115cb000)\n\tlibevent_pthreads-2.1.so.7 => /lib/x86_64-linux-gnu/libevent_pthreads-2.1.so.7 (0x00007a5a1322e000)\n\tlibudev.so.1 => /lib/x86_64-linux-gnu/libudev.so.1 (0x00007a5a11598000)\n\tlibcap.so.2 => /lib/x86_64-linux-gnu/libcap.so.2 (0x00007a5a12908000)\n"
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/isolated_exec/libopen_reader_linux64.so",
+      "exit_code": 0,
+      "ldd": "\tlinux-vdso.so.1 (0x00007ffff6fe4000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007ea73c200000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007ea73c117000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007ea73c52a000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ea73be00000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007ea73d5bd000)\n"
+    }
+  ],
+  "tracked_source_changes": [
+    "EXTLIB_VERSION.json"
+  ],
+  "actual_build": {
+    "created_utc": "2026-10-11T12:48:45.123819+00:00",
+    "seconds": 2357.6397676467896,
+    "limit_seconds": 3600,
+    "build_commands_completed": false,
+    "engine_built": true,
+    "Linux_starter_built": false,
+    "terminal_build_status": "partial_engine_and_reader__LinuxStarter_link_failed",
+    "native_physical_validation": false,
+    "source_verification": "wtc1_simulation_v8/output/aircraft_a35/source_w2_verification.json",
+    "binary_directory": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/isolated_exec",
+    "dependency_revision": 67,
+    "source_commit": "bad6688602d770e019b75773d2d5a48b4f9bd918",
+    "reader": "pinnedopensource",
+    "python_interface": "defaultenabled, unusedbydecks",
+    "H3D_import": "unqualified",
+    "original_failed_attempts_preserved": true
+  },
+  "earlier_dependency_override": {
+    "created_utc": "2026-10-11T12:19:25.842871+00:00",
+    "file": "EXTLIB_VERSION.json",
+    "old_sha256": "d33972226543132fa11e6ad8990b5b47da3c0a9aa115a296091d1fb2bdc0733b",
+    "new_sha256": "13a542e964149eb7fccccfdf39efcd840d21e9113a46dc4704d4aabfe4e9050d",
+    "old": {
+      "version": "82",
+      "delivery_date": "2026-09-22",
+      "url": "https://github.com/OpenRadioss/OpenRadioss_extlib/releases/download/v82/extlib.zip"
+    },
+    "new": {
+      "version": "59",
+      "delivery_date": "2026-05-28",
+      "url": "https://github.com/OpenRadioss/OpenRadioss_extlib/releases/download/v59/extlib.zip"
+    },
+    "physics_source_modified": false
+  },
+  "native_physical_validation": false,
+  "whole_impact_qualified": false,
+  "objective1_complete": false,
+  "seconds": 73.14827040000091
+}

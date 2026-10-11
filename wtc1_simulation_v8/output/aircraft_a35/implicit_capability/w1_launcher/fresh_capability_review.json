@@ -1,0 +1,286 @@
+{
+  "created_utc": "2026-10-11T12:52:02.857262+00:00",
+  "cases": [
+    {
+      "created_utc": "2026-10-11T12:51:50.086382+00:00",
+      "name": "EXPLICIT",
+      "checks": {
+        "strict_starter": true,
+        "native_completed": true,
+        "mass": true,
+        "no_ADMAS": true,
+        "independent_IE": false,
+        "native_full_balance": true,
+        "elastic_PW": true
+      },
+      "all_declared_checks_pass": false,
+      "binary_implicit_completion": true,
+      "failure_traceback": null,
+      "whole_impact_qualified": false,
+      "additional_checks": {
+        "finite_histories": true,
+        "at_least_three_fields": true,
+        "native_fields": true,
+        "independent_displacement": false
+      },
+      "native_scope_pass": false
+    },
+    {
+      "created_utc": "2026-10-11T12:51:56.985247+00:00",
+      "name": "EXPLICIT_HALF",
+      "checks": {
+        "strict_starter": true,
+        "native_completed": true,
+        "mass": true,
+        "no_ADMAS": true,
+        "independent_IE": false,
+        "native_full_balance": true,
+        "elastic_PW": true
+      },
+      "all_declared_checks_pass": false,
+      "binary_implicit_completion": true,
+      "failure_traceback": null,
+      "whole_impact_qualified": false,
+      "additional_checks": {
+        "finite_histories": true,
+        "at_least_three_fields": true,
+        "native_fields": true,
+        "independent_displacement": false
+      },
+      "native_scope_pass": false
+    },
+    {
+      "created_utc": "2026-10-11T12:51:58.831534+00:00",
+      "name": "PCG",
+      "checks": {
+        "strict_starter": true,
+        "native_completed": true,
+        "mass": true,
+        "no_ADMAS": true,
+        "independent_IE": false,
+        "native_full_balance": true,
+        "elastic_PW": true
+      },
+      "all_declared_checks_pass": false,
+      "binary_implicit_completion": true,
+      "failure_traceback": null,
+      "whole_impact_qualified": false,
+      "additional_checks": {
+        "finite_histories": true,
+        "at_least_three_fields": true,
+        "native_fields": true,
+        "independent_displacement": false
+      },
+      "native_scope_pass": false
+    },
+    {
+      "created_utc": "2026-10-11T12:52:00.690687+00:00",
+      "name": "MUMPS",
+      "checks": {
+        "strict_starter": true,
+        "native_completed": true,
+        "mass": true,
+        "no_ADMAS": true,
+        "independent_IE": false,
+        "native_full_balance": true,
+        "elastic_PW": true
+      },
+      "all_declared_checks_pass": false,
+      "binary_implicit_completion": true,
+      "failure_traceback": null,
+      "whole_impact_qualified": false,
+      "additional_checks": {
+        "finite_histories": true,
+        "at_least_three_fields": true,
+        "native_fields": true,
+        "independent_displacement": false
+      },
+      "native_scope_pass": false
+    },
+    {
+      "created_utc": "2026-10-11T12:52:02.669824+00:00",
+      "name": "MUMPS_HALF",
+      "checks": {
+        "strict_starter": true,
+        "native_completed": true,
+        "mass": true,
+        "no_ADMAS": true,
+        "independent_IE": false,
+        "native_full_balance": true,
+        "elastic_PW": true
+      },
+      "all_declared_checks_pass": false,
+      "binary_implicit_completion": true,
+      "failure_traceback": null,
+      "whole_impact_qualified": false,
+      "additional_checks": {
+        "finite_histories": true,
+        "at_least_three_fields": true,
+        "native_fields": true,
+        "independent_displacement": false
+      },
+      "native_scope_pass": false
+    }
+  ],
+  "transfer": [
+    {
+      "created_utc": "2026-10-11T12:52:02.769119+00:00",
+      "case": "EXPLICIT",
+      "checks": {
+        "unique_reaction_interpretation": true,
+        "native_reaction_work": false,
+        "global_history_momentum_matches_nodes": true
+      },
+      "pass": false,
+      "raw_impulse_error_Ns": 4.887384119944467e-10,
+      "force_integral_error_Ns": 4.099582492789901e-08,
+      "tolerance_Ns": 1.833000312e-09,
+      "interpretation": "impulse",
+      "boundary_work_error_J": 3.2664369707328083e-05,
+      "work_tolerance_J": 9.573886639676113e-07,
+      "native_diagnostics_scope_only": true
+    },
+    {
+      "created_utc": "2026-10-11T12:52:02.780944+00:00",
+      "case": "EXPLICIT_HALF",
+      "checks": {
+        "unique_reaction_interpretation": true,
+        "native_reaction_work": false,
+        "global_history_momentum_matches_nodes": true
+      },
+      "pass": false,
+      "raw_impulse_error_Ns": 4.580952019961108e-10,
+      "force_integral_error_Ns": 4.094528194242402e-08,
+      "tolerance_Ns": 1.8322389395e-09,
+      "interpretation": "impulse",
+      "boundary_work_error_J": 3.267454591535723e-05,
+      "work_tolerance_J": 9.573886639676113e-07,
+      "native_diagnostics_scope_only": true
+    },
+    {
+      "created_utc": "2026-10-11T12:52:02.793207+00:00",
+      "case": "PCG",
+      "checks": {
+        "unique_reaction_interpretation": false,
+        "native_reaction_work": false,
+        "global_history_momentum_matches_nodes": true
+      },
+      "pass": false,
+      "raw_impulse_error_Ns": 2.0886836700002084e-08,
+      "force_integral_error_Ns": 4.1323113050000016e-08,
+      "tolerance_Ns": 1.8337367339999998e-09,
+      "interpretation": "undetermined",
+      "boundary_work_error_J": 4.128904134594021e-05,
+      "work_tolerance_J": 9.573886639676113e-07,
+      "native_diagnostics_scope_only": true
+    },
+    {
+      "created_utc": "2026-10-11T12:52:02.806271+00:00",
+      "case": "MUMPS",
+      "checks": {
+        "unique_reaction_interpretation": false,
+        "native_reaction_work": false,
+        "global_history_momentum_matches_nodes": true
+      },
+      "pass": false,
+      "raw_impulse_error_Ns": 2.0886836700002084e-08,
+      "force_integral_error_Ns": 4.1323113050000016e-08,
+      "tolerance_Ns": 1.8337367339999998e-09,
+      "interpretation": "undetermined",
+      "boundary_work_error_J": 4.128904134594021e-05,
+      "work_tolerance_J": 9.573886639676113e-07,
+      "native_diagnostics_scope_only": true
+    },
+    {
+      "created_utc": "2026-10-11T12:52:02.817824+00:00",
+      "case": "MUMPS_HALF",
+      "checks": {
+        "unique_reaction_interpretation": false,
+        "native_reaction_work": false,
+        "global_history_momentum_matches_nodes": true
+      },
+      "pass": false,
+      "raw_impulse_error_Ns": 2.0919992899993843e-08,
+      "force_integral_error_Ns": 4.1326211926000016e-08,
+      "tolerance_Ns": 1.8334757615000001e-09,
+      "interpretation": "undetermined",
+      "boundary_work_error_J": 4.129121096170187e-05,
+      "work_tolerance_J": 9.573886639676113e-07,
+      "native_diagnostics_scope_only": true
+    }
+  ],
+  "comparisons": [
+    {
+      "comparison": "explicit_time",
+      "common_time_ms": 0.049,
+      "energies_J": [
+        4.1405360000000006e-05,
+        4.140489175e-05
+      ],
+      "difference_J": 4.682500000059904e-10,
+      "tolerance_J": 1.8281072e-07,
+      "actual_dt_ratio": 0.5,
+      "checks": {
+        "elastic_energy": true,
+        "actual_half_step": true
+      },
+      "pass": true
+    },
+    {
+      "comparison": "implicit_time",
+      "common_time_ms": 0.049,
+      "energies_J": [
+        4.140377e-05,
+        4.1404580000000005e-05
+      ],
+      "difference_J": 8.100000000024537e-10,
+      "tolerance_J": 1.8280916e-07,
+      "actual_dt_ratio": 0.5,
+      "checks": {
+        "elastic_energy": true,
+        "actual_half_step": true
+      },
+      "pass": true
+    },
+    {
+      "comparison": "same_version_explicit_implicit",
+      "common_time_ms": 0.049,
+      "energies_J": [
+        4.1405360000000006e-05,
+        4.140377e-05
+      ],
+      "difference_J": 1.5900000000028088e-09,
+      "tolerance_J": 9.281072000000001e-07,
+      "actual_dt_ratio": 100.0,
+      "checks": {
+        "elastic_energy": true
+      },
+      "pass": true
+    },
+    {
+      "comparison": "same_version_PCG_MUMPS",
+      "common_time_ms": 0.049,
+      "energies_J": [
+        4.140377e-05,
+        4.140377e-05
+      ],
+      "difference_J": 0.0,
+      "tolerance_J": 9.280754000000001e-07,
+      "actual_dt_ratio": 1.0,
+      "checks": {
+        "elastic_energy": true
+      },
+      "pass": true
+    }
+  ],
+  "native_scope_pass": false,
+  "whole_impact_qualified": false,
+  "requested_physical_horizon_s": 5e-05,
+  "last_history_times_ms": {
+    "EXPLICIT": 0.049,
+    "EXPLICIT_HALF": 0.049005,
+    "PCG": 0.049,
+    "MUMPS": 0.049,
+    "MUMPS_HALF": 0.049
+  }
+}

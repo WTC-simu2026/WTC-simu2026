@@ -1,0 +1,6 @@
+# Reprise AIRCRAFT-A35 → AIRCRAFT-A36
+
+Rapport : wtc1_simulation_v8/output/aircraft_a35/rapport_aircraft_a35.md
+Résultats : wtc1_simulation_v8/output/aircraft_a35/composite_qualification_review.json
+
+AIRCRAFT-A36 : qualifier le moteur implicite effectivement disponible avant extension entière. Contrôler les mêmes données physiques avec un nouveau témoin du moteur Windows et une référence conventionnelle raffinée pour distinguer écart de formulation/référence et compatibilité du nouveau moteur. Lire dans les sources épinglées le stockage des réactions implicites et le relier à momentum/travail par un témoin distinct; ne pas appliquer un facteur ajusté aux résultats. Vérifier ensuite une transition explicite→implicite avec états fraîchement calculés et mêmes bilans avant un impact entier borné. Le préparateur Windows est inchangé; le préparateur Linux a échoué à cinq interfaces et reste incomplet. La compilation autorisée A35 est terminée en moins d’une heure, sans prolongation de ce budget. Conserver A34, les échecs A35, masse/densité/inertie, sources et seuils. La comparaison mécanique Isolid18/24 préparée reste différée. Objectif : dix secondes physiques 3D puis vidéo/GIF; meilleur entier A20=20ms, objectif incomplet, aucun dommage connu comme cible. Publication A34+A35 après vérification d’intégrité, sans redistribution des binaires ni sources tierces.

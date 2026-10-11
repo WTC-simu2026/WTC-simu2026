@@ -1,0 +1,62 @@
+{
+  "created_utc": "2026-10-11T12:34:28.076351+00:00",
+  "before_native": true,
+  "seed": 1102060,
+  "configuration_sha256": "7e69dfeb63683eab9fbd4bf654ecb44a5fe7620a4439a486913d8852bdc79a6b",
+  "reaction_cases": [
+    {
+      "name": "EXPLICIT",
+      "solver_N": 0,
+      "Iprec": 2,
+      "It_max": 0,
+      "Itol": 1,
+      "Tol": 1e-08,
+      "dt_ms": 1e-05
+    },
+    {
+      "name": "EXPLICIT_HALF",
+      "solver_N": 0,
+      "Iprec": 2,
+      "It_max": 0,
+      "Itol": 1,
+      "Tol": 1e-08,
+      "dt_ms": 5e-06
+    },
+    {
+      "name": "PCG",
+      "solver_N": 1,
+      "Iprec": 2,
+      "It_max": 0,
+      "Itol": 1,
+      "Tol": 1e-08,
+      "dt_ms": 0.001
+    },
+    {
+      "name": "MUMPS",
+      "solver_N": 2,
+      "Iprec": 2,
+      "It_max": 0,
+      "Itol": 1,
+      "Tol": 1e-08,
+      "dt_ms": 0.001
+    },
+    {
+      "name": "MUMPS_HALF",
+      "solver_N": 2,
+      "Iprec": 2,
+      "It_max": 0,
+      "Itol": 1,
+      "Tol": 1e-08,
+      "dt_ms": 0.0005
+    }
+  ],
+  "TH_NODE_group": "Boundary-onlyREACXYZ, independentfromfullnodeDX/DY/DZ/VX/VY/VZ",
+  "momentum_tolerance": "2% of maxDeltaP +1e-9Ns, inheritedA33",
+  "reaction_units": "Compare rawsum difference and force-integral to DeltaP independently; require exactlyoneinterpretation. Do not assume Windowsreaction semantics in Linux implicit.",
+  "work_tolerance": "2%maxEW/reference +1e-7J inheritedA31/A33",
+  "compare_energy": "2% +1e-7J at commonnative time; time refinement0.2% +1e-7J",
+  "implicit_dt_half_ratio_max": 0.6,
+  "scope": "Nativeavailability/transferelasticfixture; wholeimpactfalse",
+  "redeclared_utc": "2026-10-11T12:51:40.632204+00:00",
+  "parent": "wtc1_simulation_v8/output/aircraft_a35/implicit_capability/transfer_predeclaration.json"
+}

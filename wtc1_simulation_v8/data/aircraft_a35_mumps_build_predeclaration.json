@@ -1,0 +1,65 @@
+{
+  "iteration": "AIRCRAFT-A35",
+  "declared_utc": "2026-10-11T12:09:22.719158+00:00",
+  "seed": 1102060,
+  "random_draws": 0,
+  "purpose": "Enable and measure a native implicit route toward the actual10physicalseconds, not a slowed20ms video.",
+  "authorization": {
+    "human_answer": "Oui, installer et compiler le solveur séparé",
+    "scope": "MinimalUbuntuWSLdependencies and separateMUMPSbuild, onehour maximum",
+    "proposal": "wtc1_simulation_v8/output/aircraft_a33/native_build_preflight/build_proposal.json",
+    "proposal_sha256": "68449dabceb506cabe7f0524da85d1d62f58e7a228116a24fa1dda0ac7708e3b",
+    "received_before_installation": true
+  },
+  "source": {
+    "repository": "https://github.com/gabrielrussell/OpenRadioss",
+    "commit": "bad6688602d770e019b75773d2d5a48b4f9bd918",
+    "license": "AGPL-3.0",
+    "tree": "wtc1_simulation_v8/output/aircraft_a31/implicit_capability/sources/preserved_source_tree.json",
+    "verify_git_blobs": true
+  },
+  "destination": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate",
+  "configuration": {
+    "arch": "linux64_gf",
+    "precision": "dp",
+    "MPI": "ompi",
+    "maximum_compile_threads": 6,
+    "GPU": false,
+    "physics_source_patch": false,
+    "replace_Windows_solver": false,
+    "binary_publication": false
+  },
+  "packages": [
+    "gfortran",
+    "libopenmpi-dev",
+    "libmumps-dev",
+    "libscalapack-openmpi-dev",
+    "liblapack-dev"
+  ],
+  "required_library_layout_dependencies": "libtmglib-dev only if the pinned build requires libtmglib.a; mandatory package dependencies recorded before installation",
+  "general_upgrade": false,
+  "execution": {
+    "wall_limit_seconds": 3600,
+    "estimated_minutes": [
+      15,
+      60
+    ],
+    "workspace_GB": [
+      2,
+      8
+    ],
+    "start_at_first_install_or_download": true
+  },
+  "gates": {
+    "source_integrity": "Pinned tree and Gitblob content",
+    "build": "SeparateStarter/Engine, SHA256, exactflags, linkedMUMPS and logs",
+    "native": "Fresh1mmcubePCG/MUMPS and explicit sameversion; finite histories, mass, energy, work and fields. Build success is not physical validation."
+  },
+  "deferred": {
+    "mechanical_draft": "wtc1_simulation_v8/scripts/run_aircraft_a35.py",
+    "run": false,
+    "reason": "NewexplicitMUMPSauthorization changes priority; no mechanicalcampaign declared or run."
+  },
+  "objective1_complete": false,
+  "whole_insertion_ready": false
+}
