@@ -1,0 +1,78 @@
+{
+  "created_utc": "2026-10-11T14:10:21.004843+00:00",
+  "seed": 1102063,
+  "random_draws": 0,
+  "parent_configuration_sha256": "cddc766ea170ff56e59e112320521076d1ab6c64c9e7c411b643fcdb751b8308",
+  "case": {
+    "name": "FREE_TIGHT_I",
+    "scope": "FREE",
+    "mode": "I",
+    "dt_ms": 0.001,
+    "variant": "TIGHT",
+    "end_ms": 0.1
+  },
+  "before_new_native": true,
+  "harness_before": {
+    "Status": "PASS",
+    "ProjectRoot": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an",
+    "RegistryEntries": 156,
+    "RequiredFiles": 98,
+    "SourceArchivesDeclared": 2,
+    "SourceArchivesUnavailable": 0,
+    "SourceHashesVerified": 8,
+    "CurrentIteration": "AIRCRAFT-A37",
+    "NextIteration": "AIRCRAFT-A38"
+  },
+  "source_commit": "bad6688602d770e019b75773d2d5a48b4f9bd918",
+  "source_files": [
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/nl_solv.F",
+      "sha256": "0a8778499b3c574e8ff7c0b187b9cb2c20dfc9a7cabf658a0fcda0b10e22e268",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/nl_solv.F"
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/imp_init.F",
+      "sha256": "d2480eec5cb7ad61cb44c6cff290c74b9e349619e5434b2aefa22d54dad90ec0",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/imp_init.F"
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/imp_dyna.F",
+      "sha256": "52d510efd2fea12c947662e38735cef5267d109eb811e4cee80c7136a027364f",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/imp_dyna.F"
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/imp_solv.F",
+      "sha256": "88e72fa3caf29de165d5690ca1b7e534f2716b44db80e737e76e6d68c377dbca",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/imp_solv.F"
+    }
+  ],
+  "trigger": "nl_solv.F192-211 returns at IT0 when R01*NL_TOL<=EM12 and NL_TOL>EM10 and IDIV/=10. The cached first trace has R01=3.750E-12. This shortcut precedes CRIT_ITE and explains why criterion3 alone did not suppress the trace. Its causal role in erroneous free dynamics still needs a native test.",
+  "numeric_change": {
+    "nonlinear_tolerances_before": [
+      1e-06,
+      1e-06,
+      1e-06
+    ],
+    "nonlinear_tolerances_after": [
+      1e-11,
+      1e-11,
+      1e-11
+    ],
+    "reason": "Disable the source shortcut guard NL_TOL>EM10 by stricter relative tolerance; no physical threshold relaxed.",
+    "linear_tolerance": 1e-08,
+    "same_Newmark_gamma_beta": [
+      0.5,
+      0.25
+    ],
+    "same_MUMPS": true,
+    "same_dt_ms": 0.001
+  },
+  "acquisition_change": "Nonlinear trace and native animation every .001ms, to inspect initial steps and endpoint.",
+  "physical_inputs_changed": false,
+  "physical_gates_changed": false,
+  "new_build_or_installation": false,
+  "CPU_threads": 1,
+  "GPU": false,
+  "per_process_cap_s": 180,
+  "conditional_next": "Only a passing complete free witness permits a new declared half-step and contact qualification in A39; this experiment alone does not qualify the whole model."
+}

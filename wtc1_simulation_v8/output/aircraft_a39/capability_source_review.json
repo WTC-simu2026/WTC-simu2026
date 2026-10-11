@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-10-11T14:30:03.990121+00:00",
+  "source_commit": "bad6688602d770e019b75773d2d5a48b4f9bd918",
+  "files": [
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/engine/resol.F",
+      "sha256": "c7002fad89c5df71ce8a78a0b2173d3e63e9fa33ae802333edb1ed13ab9143fb",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/engine/resol.F"
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/prec_solv.F",
+      "sha256": "d7f265affdf407f684e10d63879c82392a7c46e8f7ce48c272b0c1cca3799f2f",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/prec_solv.F"
+    }
+  ],
+  "finding": "Pinned RESOL encloses the implicit IMP_SOLV call in #if defined(MUMPS5), with MUMPS required termination otherwise, independently of the PCG input selection. This source guards a capability, not a free-dynamics root cause. Windows exact source identity remains unproved.",
+  "cached_prior_same_capability_failure": "A33 native_build_preflight/proposition_compilation.md already records MUMPS required on A31 implicit probes. A39 confirms that limitation also blocks this free witness; no new cause claimed.",
+  "Windows_HMPP_readback": "Both failed starts print2 despite declared1. They abort at time0 in about0.2s. Retain discrepancy; require explicit -nt1 and verify before any subsequent Windows dynamical run."
+}

@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-10-11T14:01:57.139382+00:00",
+  "seed": 1102063,
+  "random_draws": 0,
+  "parent_configuration_sha256": "cddc766ea170ff56e59e112320521076d1ab6c64c9e7c411b643fcdb751b8308",
+  "cases": [
+    {
+      "name": "FREE_TRACE_I",
+      "scope": "FREE",
+      "mode": "I",
+      "dt_ms": 0.001,
+      "variant": "TRACE",
+      "end_ms": 0.004
+    },
+    {
+      "name": "FREE_LINEAR_I",
+      "scope": "FREE",
+      "mode": "I",
+      "dt_ms": 0.001,
+      "variant": "LINEAR",
+      "end_ms": 0.1
+    }
+  ],
+  "purpose": "Three separate options failed. Record iteration diagnostics during only four initial steps; separately determine whether failure depends on nonlinear startup driver, with unforced linear-exact translation.",
+  "TRACE": "Same Newmark/MUMPS dynamics, short .004ms; /IMPL/PRINT/NONLIN/1 and initial stiffness matrix output; output-only variation",
+  "LINEAR": "Replace /IMPL/NONLIN/1 and its tolerance row with /IMPL/LINEAR; /IMPL/DYNA/2 retained. No whole/contact substitution. Native may use single full-time step; report actual time sampling.",
+  "references": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/impl_print_nonlin_engine_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/impl_linear_engine_r.htm"
+  ],
+  "before_new_native": true,
+  "per_process_cap_s": 180,
+  "no_build": true
+}

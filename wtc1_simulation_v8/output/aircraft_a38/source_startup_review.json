@@ -1,0 +1,64 @@
+{
+  "created_utc": "2026-10-11T14:13:52.411607+00:00",
+  "source_commit": "bad6688602d770e019b75773d2d5a48b4f9bd918",
+  "source_files": [
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/nl_solv.F",
+      "sha256": "0a8778499b3c574e8ff7c0b187b9cb2c20dfc9a7cabf658a0fcda0b10e22e268",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/nl_solv.F",
+      "raw_source_redistributed": false
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/imp_init.F",
+      "sha256": "d2480eec5cb7ad61cb44c6cff290c74b9e349619e5434b2aefa22d54dad90ec0",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/imp_init.F",
+      "raw_source_redistributed": false
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/imp_dyna.F",
+      "sha256": "52d510efd2fea12c947662e38735cef5267d109eb811e4cee80c7136a027364f",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/imp_dyna.F",
+      "raw_source_redistributed": false
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/imp_solv.F",
+      "sha256": "88e72fa3caf29de165d5690ca1b7e534f2716b44db80e737e76e6d68c377dbca",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/imp_solv.F",
+      "raw_source_redistributed": false
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/imp_sol_init.F",
+      "sha256": "f5ec5f42688209c17067a4477b086d51b5003974447c31ad77fd600908e3c03b",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/imp_sol_init.F",
+      "raw_source_redistributed": false
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/output/restart/wrrest.F",
+      "sha256": "e13877405a5e8abc52c7f19789ec01dbcfd8d3571331f036fdc33265ac6851ef",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/output/restart/wrrest.F",
+      "raw_source_redistributed": false
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/common_source/modules/constant_mod.F",
+      "sha256": "8eb74762e4220f5237a9e00883351179959cc64a44a1b5ce548fe6699bb90be1",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/common_source/modules/constant_mod.F",
+      "raw_source_redistributed": false
+    }
+  ],
+  "direct_source_facts": [
+    "NL_SOLV lines192-211 has absolute-small-residual return before selected CRIT_ITE; R01 is absolute SQRT(R02) in this shortcut even though print column says relative residual.",
+    "IMP_INIT sets N_TOL=max of selected component tolerances; EM10=1e-10, EM12=1e-12 from constant_mod.",
+    "DYNA_INI starts DY_D and DY_A at zero, retaining V in DY_V; DYNA_INA later forms predictors; INTE_DYNA derives acceleration and updates velocity.",
+    "DYNA_INIV copies displacement predictor but no CALL DYNA_INIV was found in the inspected engine tree; absence of a call is not by itself a confirmed fault."
+  ],
+  "native_observations": {
+    "default_initial_shortcut_trace": true,
+    "tight_initial_MUMPS_before_iteration_trace": true,
+    "tight_normal_completion": false,
+    "tight_native_error_percent": -75,
+    "tight_stopped_on_observed_failed_energy": true
+  },
+  "inference": "The absolute stopping shortcut is evidenced and tightening tolerances engages MUMPS at startup. Its removal alone does not preserve free dynamics. Initial predictor and mixed-version restart compatibility remain hypotheses, not confirmed causes.",
+  "initial_velocity_count_present": true,
+  "no_binary_or_physical_input_patch": true
+}

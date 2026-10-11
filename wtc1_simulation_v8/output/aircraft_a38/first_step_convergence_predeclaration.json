@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-10-11T14:04:23.435519+00:00",
+  "seed": 1102063,
+  "parent_configuration_sha256": "cddc766ea170ff56e59e112320521076d1ab6c64c9e7c411b643fcdb751b8308",
+  "cases": [
+    {
+      "name": "FREE_DISPLACEMENT_I",
+      "scope": "FREE",
+      "mode": "I",
+      "dt_ms": 0.001,
+      "variant": "DISPLACEMENT",
+      "end_ms": 0.1
+    },
+    {
+      "name": "FREE_TRACE_INITIAL_I",
+      "scope": "FREE",
+      "mode": "I",
+      "dt_ms": 0.001,
+      "variant": "TRACE_INITIAL",
+      "end_ms": 0.004
+    }
+  ],
+  "trigger": "First native nonlinear iteration accepted at displacement ratio1 and energy ratio1 while force ratio3.75e-12 under criteria123. Determine whether selecting displacement-only criterion changes initial dynamics.",
+  "DISPLACEMENT": "Only nonlinear Itol123 to3, tolerance1e-6 unchanged for selected displacement criterion; model/output/binary unchanged. Full original physical gates still used.",
+  "TRACE_INITIAL": "Only acquisition of initial stiffness at NC1/IT0 instead ofIT1 and animation every.001ms; same failed 4-step dynamics. Needed observations not present in cached first trace.",
+  "before_new_native": true,
+  "per_process_cap_s": 180,
+  "physical_data_fit": false,
+  "docs": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/impl_nonlin_engine_r.htm"
+}

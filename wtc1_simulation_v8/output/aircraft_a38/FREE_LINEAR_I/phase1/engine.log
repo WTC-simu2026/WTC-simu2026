@@ -1,0 +1,89 @@
+************************************************************************
+**                                                                    **
+**                                                                    **
+**                         OpenRadioss Engine                         **
+**                                                                    **
+**            Non-linear Finite Element Analysis Software             **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+**                Linux 64 bits, GNU compiler, OpenMPI                **
+**                      Double Precision Version                      **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+************************************************************************
+** OpenRadioss Software                                               **
+** COPYRIGHT (C) 2026 Siemens                                         **
+** Licensed under GNU Affero General Public License.                  **
+** See License file.                                                  **
+************************************************************************
+ 
+ ROOT: A38_FREE_LINEAR_I  RESTART: 0001
+ NUMBER OF HMPP PROCESSES     1
+ 11/10/2026
+
+           **************************
+           ** IMPLICIT OPTION USED **
+           **************************
+
+ NC=       0 T= 0.0000E+00 DT= 1.0000E-01 ERR=  0.0% DM/M= 0.0000E+00
+     ANIMATION FILE: A38_FREE_LINEAR_IA001 WRITTEN
+
+   *--------- STIFFNESS MATRIX SETUP ---------*
+ SYMBOLIC DIM : ND =      81 NZ =      1503 NB_MAX =      26
+ FINAL    DIM : ND =      81 NZ =      1503 NB_MAX =      26
+
+
+Entering DMUMPS 5.6.2 with JOB =  -2
+      executing #MPI =      1, without OMP
+
+ MUMPS    DIM : NNZ =      1584 NNZFR =         0
+
+  ** BEGIN LINEAR STATIC IMPLICIT COMPUTATION **
+
+     ANIMATION FILE: A38_FREE_LINEAR_IA002 WRITTEN
+     RESTART FILES: A38_FREE_LINEAR_I_0001_[0001-0001].rst WRITTEN
+  
+                           ** CPU USER TIME **
+  
+  
+                      ** IMPLICIT  **
+  
+ #PROC  [K]SETUP  [M]SETUP  IMP_SOLV  IMP_TOT  
+   1   .5130E-03 .0000E+00 .0000E+00 .1755E-02
+  
+                        ** SUMMARY **
+  
+ #PROC  ELEMENT   KINCOND   INTEG     IO        T0        ASM       RESOL    
+   1   .1770E-03 .2999E-05 .1400E-04 .4182E-02 .1180E-03 .2999E-05 .6573E-02
+ 
+                   ** CUMULATIVE CPU TIME SUMMARY **
+  
+ CONTACT SORTING.............: .0000E+00     0.00 % 
+ CONTACT FORCES..............: .1002E-05     0.02 % 
+ ELEMENT FORCES..............: .1770E-03     2.69 % 
+ KINEMATIC COND..............: .2999E-05     0.05 % 
+ INTEGRATION.................: .1400E-04     0.21 % 
+ ASSEMBLING..................: .2999E-05     0.05 % 
+ OTHERS (including I/O)......: .6375E-02    96.99 % 
+ TOTAL.......................: .6573E-02   100.00 % 
+  
+                   ** MEMORY USAGE STATISTICS **
+  
+ TOTAL MEMORY USED .........................:       66 MB
+ MAXIMUM MEMORY PER PROCESSOR...............:       66 MB
+ MINIMUM MEMORY PER PROCESSOR...............:       66 MB
+ AVERAGE MEMORY PER PROCESSOR...............:       66 MB
+  
+                   ** DISK USAGE STATISTICS **
+  
+ TOTAL DISK SPACE USED .....................:          0 MB
+ ANIMATION/H3D/TH/OUTP SIZE ................:          0 MB
+ RESTART FILE SIZE .........................:          0 MB
+  
+ ELAPSED TIME     =          0.46 s
+                          0:00:00
+  
+     NORMAL TERMINATION      
+     TOTAL NUMBER OF CYCLES  :       2

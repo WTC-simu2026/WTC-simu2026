@@ -1,0 +1,32 @@
+"""Aggregate startup failures and independently read completed and partial native fields."""
+from probe_aircraft_a38 import *
+from probe_aircraft_a37 import vtk,env,win_execute
+import re,subprocess
+REVIEW_NAMES=['startup_review.json','startup_extension_review.json','first_step_convergence_review.json','absolute_stop_review.json']
+
+def assess():
+ guard();rows=[r for n in REVIEW_NAMES for r in read(OUT/n)['cases']];assert len(rows)==8 and not any(r['pass'] for r in rows)
+ endpoints=[]
+ for r in rows:
+  c=r['case'];d=OUT/c['name'];g=read(d/'generation.json');p=d/'phase1';n=g['name'];partial=not r['checks']['native_completed']
+  if partial:
+   for f in sorted(p.glob(n+'A[0-9][0-9][0-9]')):
+    target=f.with_suffix('.vtk');assert not target.exists()
+    run=subprocess.run([str(RUNTIME/'anim_to_vtk_win64.exe'),str(f)],capture_output=True,timeout=60,env=env());assert run.returncode==0;target.write_bytes(run.stdout)
+  m=np.asarray(g['nodal_masses_g']);V0=np.asarray(g['initial_velocity_mm_ms']);samples=[]
+  for f in sorted(p.glob('*.vtk')):
+   q=vtk(f.read_text());o=np.argsort(q['NODE_ID']);V=q['Velocity'].reshape(-1,3)[o];U=q['Displacement'].reshape(-1,3)[o];K=float(.5*np.sum(m[:,None]*V**2)*.001)
+   samples.append({'path':rel(f),'time_ms':q['time'],'velocity_first_node_mm_ms':V[0].tolist(),'physical_nodal_KE_J':K,'max_velocity_error_mm_ms':float(abs(V-V0).max()),'max_displacement_error_mm':float(abs(U-q['time']*V0).max())})
+  assert samples
+  last=samples[-1];ck={'endpoint_time':abs(last['time_ms']-c.get('end_ms',.1))<1e-5,'velocity_all_samples':max(s['max_velocity_error_mm_ms'] for s in samples)<2e-4,'displacement_all_samples':max(s['max_displacement_error_mm'] for s in samples)<2e-5,'physical_KE_all_samples':max(abs(s['physical_nodal_KE_J']-g['kinetic_energy_J']) for s in samples)<.02*g['kinetic_energy_J']+1e-7,'native_normal_completion':not partial}
+  endpoints.append({'case':c['name'],'samples':samples,'initial_KE_J':g['kinetic_energy_J'],'partial_only':partial,'checks':ck,'pass':all(ck.values())})
+ dump(OUT/'endpoint_addendum.json',{'created_utc':now(),'cases':endpoints,'pass':False,'original_endpoint_review_preserved':True,'partial_outputs_not_credited_as_complete':True})
+ source_files=['engine/source/implicit/nl_solv.F','engine/source/implicit/imp_init.F','engine/source/implicit/imp_dyna.F','engine/source/implicit/imp_solv.F','engine/source/implicit/imp_sol_init.F','engine/source/output/restart/wrrest.F','common_source/modules/constant_mod.F']
+ trace=(OUT/'FREE_TRACE_INITIAL_I/phase1/A38_FREE_TRACE_INITIAL_I_0001.out').read_text();tight=(OUT/'FREE_TIGHT_I/phase1/A38_FREE_TIGHT_I_0001.out').read_text();src=(build.CAND/'source/engine/source/implicit/nl_solv.F').read_text();assert 'R01*NL_TOL<=EM12.AND.NL_TOL>EM10.AND.IDIV/=10' in src
+ dump(OUT/'source_startup_review.json',{'created_utc':now(),'source_commit':build.PIN,'source_files':[{'path':rel(build.CAND/'source'/f),'sha256':streamsha(build.CAND/'source'/f),'url':f'https://github.com/gabrielrussell/OpenRadioss/blob/{build.PIN}/{f}','raw_source_redistributed':False} for f in source_files],'direct_source_facts':['NL_SOLV lines192-211 has absolute-small-residual return before selected CRIT_ITE; R01 is absolute SQRT(R02) in this shortcut even though print column says relative residual.','IMP_INIT sets N_TOL=max of selected component tolerances; EM10=1e-10, EM12=1e-12 from constant_mod.','DYNA_INI starts DY_D and DY_A at zero, retaining V in DY_V; DYNA_INA later forms predictors; INTE_DYNA derives acceleration and updates velocity.','DYNA_INIV copies displacement predictor but no CALL DYNA_INIV was found in the inspected engine tree; absence of a call is not by itself a confirmed fault.'],'native_observations':{'default_initial_shortcut_trace':bool(re.search(r'0\s+Y\s+1.000E\+00\s+3.750E-12\s+1.000E\+00\s+C',trace)),'tight_initial_MUMPS_before_iteration_trace':'Entering DMUMPS' in tight,'tight_normal_completion':False,'tight_native_error_percent':-75,'tight_stopped_on_observed_failed_energy':True},'inference':'The absolute stopping shortcut is evidenced and tightening tolerances engages MUMPS at startup. Its removal alone does not preserve free dynamics. Initial predictor and mixed-version restart compatibility remain hypotheses, not confirmed causes.','initial_velocity_count_present':read(OUT/'restart_header_review.json')['pass'],'no_binary_or_physical_input_patch':True})
+ fields=[f for r in rows for f in r['fields']];hist=[h for r in rows for h in r['histories']]
+ a={'created_utc':now(),'iteration':'AIRCRAFT-A38','status':'completed_startup_diagnostics__implicit_free_dynamics_failed','native_controls':8,'native_normal_completions':sum(r['checks']['native_completed'] for r in rows),'native_stopped_failed_branches':1,'native_individual_sets_passed':0,'native_history_sets':len(hist),'native_energy_balances_passed':sum(h['checks']['full_native_energy_balance'] for h in hist),'native_field_samples_of_completed_runs':len(fields),'native_fields_of_completed_runs_pass':all(f['pass'] for f in fields),'partial_native_animation_samples':len(endpoints[-1]['samples']),'mass_and_no_added_mass_of_completed_runs_pass':all(h['checks']['mass'] and h['checks']['no_added_mass'] for h in hist),'restart_headers_inspected':len(read(OUT/'restart_header_review.json')['files']),'initial_velocity_count_retained':True,'absolute_convergence_shortcut_evidenced':True,'shortcut_removal_sufficient':False,'startup_qualified':False,'transition_qualified':False,'whole_insertion_ready':False,'new_whole_impact_executed':False,'physical_strength_and_fracture_qualified':False,'physical_inputs_changed':False,'physical_gates_changed':False,'new_installation_or_compilation':False,'old_solver_reruns':0,'objective1_complete':False,'best_whole_physical_s':.0200001220703125,'next_iteration':'AIRCRAFT-A39','failed_controls':[{'case':r['case']['name'],'checks':[k for k,v in r['checks'].items() if not v]} for r in rows]}
+ dump(OUT/'scientific_assessment.json',a);dump(OUT/'composite_qualification_review.json',{'created_utc':now(),'assessment':a,'cases':rows,'endpoints':endpoints,'source_startup_review':read(OUT/'source_startup_review.json'),'restart_header_review':read(OUT/'restart_header_review.json'),'failed_gates_preserved':True,'whole_impact_qualified':False})
+ print({k:a[k] for k in ['native_controls','native_normal_completions','native_individual_sets_passed','native_field_samples_of_completed_runs','partial_native_animation_samples']},flush=True)
+
+if __name__=='__main__':assess()
