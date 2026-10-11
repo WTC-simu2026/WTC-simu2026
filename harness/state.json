@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-11T08:40:23.511001+00:00",
+  "updated_at": "2026-10-11T09:17:47.405874+00:00",
   "active_thread": {
     "id": "019ffb88-05a7-7f60-adff-6804df0d66a5",
     "title": "Poursuivre enquete WTC 1 V4",
@@ -19,10 +19,10 @@
     "targeted_v10i_working_copy_count": 5,
     "targeted_v10i_working_copy_directory": "wtc1_simulation_v8/input/v10i_structural_sources"
   },
-  "current_iteration": "AIRCRAFT-A31",
-  "current_status": "completed_face_loaded_free_interior_sandwich__curved_roots_pending",
-  "next_iteration": "AIRCRAFT-A32",
-  "next_objective": "AIRCRAFT-A32 : le périmètre élastique du sandwich à intérieur libre passe; préparer les24racines/144ancres courbes réellement inventoriées dans A25, leurs repères, prises et budgets physiques avant un contrôle natif représentatif. Le coût de10secondes doit être évalué sur la discrétisation réelle; tester une formulation efficace à masse physique inchangée avec référence indépendante si nécessaire. Le binaire installé échoue aux deux sondes implicites avec MUMPSrequired; aucune installation ni modification du solveur effectuée. Les cartes LAW12, coefficients transverses et collage parfait restent des hypothèses explicites; résistances, décollement et rupture historiques non identifiés. Aucun faux ajout de RKE, correction de densité ou ajustement aux dégâts connus. Nouveau départ entier après critères locaux, bilans et estimation du coût. Meilleur entierA20=20ms; objectif vidéo3D10secondes physiques incomplet. Publication A30+A31 après vérification, déjà autorisée; cadence suivante A32+A33.",
+  "current_iteration": "AIRCRAFT-A33",
+  "current_status": "completed_free_interior_efficient_skin__edge_relaxation_failed",
+  "next_iteration": "AIRCRAFT-A34",
+  "next_objective": "AIRCRAFT-A34 : conserver les défauts de relaxation aux bords A33, étudier leur raffinement géométrique et l’opérateur discret avant une prise courbe ou insertion entière. La référence indépendante A32 à faces prescrites et intérieur libre passe ses contrôles; A33Z4passe l’énergie mais pas le champ intérieur. Une compilation séparée avec MUMPS est proposée dans aircraft_a33/native_build_preflight, soumise à accord explicite Jeremy pour installation/compilation; ne pas l’exécuter sans cet accord. Après accord, déclarer configuration/source/version et contrôles avant construction et nouveaux calculs; aucune compatibilité de reprise Windows/Linux présumée. Sans cet accord, les diagnostics et contrôles mécaniques du binaire actuel peuvent continuer. Aucun ajout de masse/densité, RKE inventé ou dommage connu comme cible. Capacités, décollement et rupture historiques non identifiés; LAW12reste un témoin élastique hypothétique. Meilleur entier A20=20ms; vidéo3D10secondes physiques incomplète. Publication A32+A33 après vérification; cadence suivante A34+A35.",
   "impact_i02h_key_results": {
     "accepted_cases": 7,
     "new_controls_executed": 2,
@@ -1317,7 +1317,13 @@
     "aircraft_a30_handoff": "harness/handoffs/WTC1_AIRCRAFT_A30_HANDOFF.md",
     "aircraft_a31_report": "wtc1_simulation_v8/output/aircraft_a31/rapport_aircraft_a31.md",
     "aircraft_a31_results": "wtc1_simulation_v8/output/aircraft_a31/sandwich_qualification_review.json",
-    "aircraft_a31_handoff": "harness/handoffs/WTC1_AIRCRAFT_A31_HANDOFF.md"
+    "aircraft_a31_handoff": "harness/handoffs/WTC1_AIRCRAFT_A31_HANDOFF.md",
+    "aircraft_a32_report": "wtc1_simulation_v8/output/aircraft_a32/rapport_aircraft_a32.md",
+    "aircraft_a32_results": "wtc1_simulation_v8/output/aircraft_a32/composite_qualification_review.json",
+    "aircraft_a32_handoff": "harness/handoffs/WTC1_AIRCRAFT_A32_HANDOFF.md",
+    "aircraft_a33_report": "wtc1_simulation_v8/output/aircraft_a33/rapport_aircraft_a33.md",
+    "aircraft_a33_results": "wtc1_simulation_v8/output/aircraft_a33/composite_qualification_review.json",
+    "aircraft_a33_handoff": "harness/handoffs/WTC1_AIRCRAFT_A33_HANDOFF.md"
   },
   "v8g_key_results": {
     "nist_hat_transfer_at_80_min_kip": 6748.0,
@@ -8588,5 +8594,145 @@
     "old_native_solver_reruns": 0,
     "objective1_complete": false,
     "next_iteration": "AIRCRAFT-A32"
+  },
+  "aircraft_a32_key_results": {
+    "experiment_id": "WTC1-AIRCRAFT-A32",
+    "registered_at": "2026-10-11T09:08:28.600356+00:00",
+    "configuration": "wtc1_simulation_v8/data/aircraft_a32_predeclaration.json",
+    "configurations": [
+      "wtc1_simulation_v8/data/aircraft_a32_predeclaration.json",
+      "wtc1_simulation_v8/data/aircraft_a32_surface_bending_diagnostic.json",
+      "wtc1_simulation_v8/data/aircraft_a32_surface_reference_extension.json",
+      "wtc1_simulation_v8/data/aircraft_a32_surface_reference_refinement.json"
+    ],
+    "report": "wtc1_simulation_v8/output/aircraft_a32/rapport_aircraft_a32.md",
+    "results": "wtc1_simulation_v8/output/aircraft_a32/composite_qualification_review.json",
+    "handoff": "harness/handoffs/WTC1_AIRCRAFT_A32_HANDOFF.md",
+    "artifact_manifest": "wtc1_simulation_v8/output/aircraft_a32/artifact_manifest.json",
+    "publication_verification": "wtc1_simulation_v8/output/aircraft_a32/publication_verification.json",
+    "created_utc": "2026-10-11T09:07:53.158019+00:00",
+    "iteration": "AIRCRAFT-A32",
+    "status": "completed_efficient_volume_controls__bending_reference_and_native_equivalence_unqualified",
+    "native_controls": 30,
+    "native_individual_sets_passed": 26,
+    "native_energy_balances_passed": 30,
+    "failed_controls": [
+      {
+        "revision": "w0",
+        "case": "CONSTRAINED_BENDING_N12",
+        "checks": [
+          "independent_elastic_energy"
+        ]
+      },
+      {
+        "revision": "w0",
+        "case": "CONSTRAINED_BENDING_N6",
+        "checks": [
+          "independent_elastic_energy"
+        ]
+      },
+      {
+        "revision": "w1",
+        "case": "CONSTRAINED_BENDING_N12",
+        "checks": [
+          "independent_elastic_energy"
+        ]
+      },
+      {
+        "revision": "w1",
+        "case": "CONSTRAINED_BENDING_N6",
+        "checks": [
+          "independent_elastic_energy"
+        ]
+      }
+    ],
+    "native_field_samples": 90,
+    "free_scope_pass": true,
+    "affine_scope_pass": true,
+    "membrane_scope_pass": true,
+    "bending_scope_pass": false,
+    "surface_reference_refinement_pass": true,
+    "original_reference_failures_retained": true,
+    "physical_mass_g": 0.0915,
+    "source_LAW12_unchanged": true,
+    "whole_insertion_ready": false,
+    "new_whole_impact_executed": false,
+    "whole_aircraft_inputs_changed": false,
+    "old_native_solver_reruns": 0,
+    "physical_strength_and_fracture_qualified": false,
+    "objective1_complete": false,
+    "next_iteration": "AIRCRAFT-A33"
+  },
+  "aircraft_a33_key_results": {
+    "experiment_id": "WTC1-AIRCRAFT-A33",
+    "registered_at": "2026-10-11T09:17:47.405874+00:00",
+    "configuration": "wtc1_simulation_v8/data/aircraft_a33_predeclaration.json",
+    "report": "wtc1_simulation_v8/output/aircraft_a33/rapport_aircraft_a33.md",
+    "results": "wtc1_simulation_v8/output/aircraft_a33/composite_qualification_review.json",
+    "handoff": "harness/handoffs/WTC1_AIRCRAFT_A33_HANDOFF.md",
+    "artifact_manifest": "wtc1_simulation_v8/output/aircraft_a33/artifact_manifest.json",
+    "publication_verification": "wtc1_simulation_v8/output/aircraft_a33/publication_verification.json",
+    "created_utc": "2026-10-11T09:17:36.550463+00:00",
+    "iteration": "AIRCRAFT-A33",
+    "status": "completed_free_interior_efficient_skin__edge_relaxation_failed",
+    "native_controls": 8,
+    "native_individual_sets_passed": 3,
+    "native_energy_balances_passed": 8,
+    "failed_controls": [
+      {
+        "case": "FACE_BENDING_N12_Z1",
+        "negative_control": true,
+        "checks": [
+          "independent_elastic_energy"
+        ]
+      },
+      {
+        "case": "FACE_BENDING_N12_Z2",
+        "negative_control": false,
+        "checks": [
+          "independent_elastic_energy",
+          "independent_interior_relaxation"
+        ]
+      },
+      {
+        "case": "FACE_BENDING_N24_Z2",
+        "negative_control": false,
+        "checks": [
+          "independent_elastic_energy",
+          "independent_interior_relaxation"
+        ]
+      },
+      {
+        "case": "FACE_BENDING_N24_Z4",
+        "negative_control": false,
+        "checks": [
+          "independent_interior_relaxation"
+        ]
+      },
+      {
+        "case": "FACE_BENDING_N24_Z2_HALF",
+        "negative_control": false,
+        "checks": [
+          "independent_elastic_energy",
+          "independent_interior_relaxation"
+        ]
+      }
+    ],
+    "native_field_samples": 24,
+    "free_scope_pass": true,
+    "affine_scope_pass": true,
+    "Z4_energy_gate_pass": true,
+    "interior_relaxation_qualified": false,
+    "physical_mass_g": 0.0915,
+    "source_LAW12_unchanged": true,
+    "implicit_build_proposal_prepared": true,
+    "implicit_build_or_installation_performed": false,
+    "whole_insertion_ready": false,
+    "new_whole_impact_executed": false,
+    "whole_aircraft_inputs_changed": false,
+    "old_native_solver_reruns": 0,
+    "physical_strength_and_fracture_qualified": false,
+    "objective1_complete": false,
+    "next_iteration": "AIRCRAFT-A34"
   }
 }

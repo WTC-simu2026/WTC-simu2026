@@ -1,0 +1,116 @@
+{
+  "iteration": "AIRCRAFT-A32",
+  "declared_utc": "2026-10-11T08:58:19.881785+00:00",
+  "seed": 1102057,
+  "random_draws": 0,
+  "diagnostic_after_original_results": true,
+  "before_new_reference": true,
+  "original_native_gates_unchanged": true,
+  "original_reference_failure": {
+    "case": "N6_Z16_EXACT_FACE",
+    "gate": "virtual_work",
+    "evidence": "harness/handoffs/WTC1_AIRCRAFT_A32_LIVE_HANDOFF.md",
+    "accepted_output_exists": false,
+    "original_traceback_file_available": false
+  },
+  "cached_accepted_references": [
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a32/surface_references/N6_Z16_FIRST_ORDER.json",
+      "bytes": 95700,
+      "sha256": "2a5d917a9dcce85855610989128bfd1f512353f06b45e9fa7d362c84de7b2ab5"
+    },
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a32/surface_references/N6_Z4_EXACT_FACE.json",
+      "bytes": 34006,
+      "sha256": "451cd30136752e67255c7f31872d19c8efa93e1ada627aa23bd9e7393ac34edb"
+    },
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a32/surface_references/N6_Z4_FIRST_ORDER.json",
+      "bytes": 33836,
+      "sha256": "8dea5e2d95d1aaee42c1d1eea57f2abc21eed8e5d5f12ba7b3a636e997fd2dc8"
+    },
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a32/surface_references/N6_Z8_EXACT_FACE.json",
+      "bytes": 54640,
+      "sha256": "1fc2190717efd87f1dd2d945cdc668a2dd2d7e708edb0dcbfa89e98c90c361b0"
+    },
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a32/surface_references/N6_Z8_FIRST_ORDER.json",
+      "bytes": 54459,
+      "sha256": "720430eb3470e219788d28fa4825ad29fe1ec162b40c75e697bd91f8e395e1d4"
+    }
+  ],
+  "cases": [
+    {
+      "XY": 6,
+      "Z": 16,
+      "second_order": true
+    },
+    {
+      "XY": 12,
+      "Z": 8,
+      "second_order": false
+    },
+    {
+      "XY": 12,
+      "Z": 8,
+      "second_order": true
+    },
+    {
+      "XY": 24,
+      "Z": 8,
+      "second_order": false
+    },
+    {
+      "XY": 24,
+      "Z": 8,
+      "second_order": true
+    },
+    {
+      "XY": 48,
+      "Z": 8,
+      "second_order": false
+    },
+    {
+      "XY": 48,
+      "Z": 8,
+      "second_order": true
+    },
+    {
+      "XY": 96,
+      "Z": 8,
+      "second_order": false
+    },
+    {
+      "XY": 96,
+      "Z": 8,
+      "second_order": true
+    },
+    {
+      "XY": 96,
+      "Z": 4,
+      "second_order": true
+    }
+  ],
+  "CG_relative": 1e-13,
+  "CG_absolute_N": 1e-14,
+  "CG_max_iterations": 12000,
+  "all_original_verification_thresholds_retained": true,
+  "geometry_mm": [
+    10,
+    10,
+    0.5
+  ],
+  "boundary": "Both outer z faces prescribe XYZ field; all interior nodes free",
+  "reference": "Conventional8-node2x2x2Gauss source3D stiffness; no native assumed strain or measured response",
+  "XY_convergence_diagnostic_fraction": 0.02,
+  "Z_convergence_diagnostic_fraction": 0.02,
+  "reason": "Coarse standard continuum interpolation of quadratic face uz produces transverse shear; XY and Z refinements are distinct. Refine XY rather than fitting a modulus or relaxing native gates.",
+  "maximum_mesh_elements": 73728,
+  "expected_CPU_minutes": [
+    1,
+    10
+  ],
+  "new_native_runs": 0,
+  "whole_insertion_ready": false
+}

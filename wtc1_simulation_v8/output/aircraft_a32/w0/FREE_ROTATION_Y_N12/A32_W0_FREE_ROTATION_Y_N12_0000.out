@@ -1,0 +1,646 @@
+ A32_W0_FREE_ROTATION_Y_N12_0000.out
+************************************************************************
+**                                                                    **
+**                                                                    **
+**                        OpenRadioss Starter                         **
+**                                                                    **
+**            Non-linear Finite Element Analysis Software             **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+**                  Windows 64 bits, Intel compiler                   **
+**                      Double Precision Version                      **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+************************************************************************
+** OpenRadioss Software                                               **
+** COPYRIGHT (C) 2026 Siemens                                         **
+** Licensed under GNU Affero General Public License.                  **
+** See License file.                                                  **
+************************************************************************
+ 
+  
+ COMPUTATION HARDWARE DESCRIPTION
+  
+ HOSTNAME     CPU TYPE, FREQUENCY AND MEMORY
+ jeux   AMD Ryzen 5 5600 6-Core Processor               (x86_64), 3700 MHz,  10447 MB RAM,  22043 MB swap
+  
+ STACKSIZE  . . . . . . . . . . . . . . . . . . . . 1430 MB
+ THREAD STACKSIZE . . . . . . . . . . . . . . . . . 400 MB
+ 
+************************************************************************
+
+
+************************************************************************
+* INPUT READING PROCESS
+************************************************************************
+
+ -NO SYNTAX ERROR DETECTED DURING INPUT READING PROCESS
+
+
+
+
+************************************************************************
+
+
+
+    UNIT SYSTEMS DEFINITION     
+    -----------------------     
+
+                                                          MASS                LENGTH              TIME
+    WORK UNIT SYSTEM . . . . . . ( g  , mm , ms  ) 1.0000000000000E-03 1.0000000000000E-03 1.0000000000000E-03
+    INPUT UNIT SYSTEM  . . . . . ( g  , mm , ms  ) 1.0000000000000E-03 1.0000000000000E-03 1.0000000000000E-03
+A32_W0_FREE_ROTATION_Y_N12
+
+
+    CONTROL  PARAMETERS                                                                  
+    -------------------                                                                  
+
+    IPRI  : PRINTOUT FLAG . . . . . . . . . . . . . . . .         0
+    INVERS: MANUAL VERSION OF THIS INPUT DECK . . . . . .      2026
+    NSUBS:   NUMBER OF SUBSETS. . . . . . . . . . . . . .         1
+    NPART:   NUMBER OF PARTS. . . . . . . . . . . . . . .         1
+    NUMMAT: NUMBER OF MATERIALS . . . . . . . . . . . . .         1
+    NUMGEO: NUMBER OF PROPERTY SETS . . . . . . . . . . .         1
+    NUMNOD: NUMBER OF NODAL POINTS. . . . . . . . . . . .       338
+    NUMSKW: NUMBER OF SKEW REFERENCE FRAMES . . . . . . .         1
+    NUMBCS: NUMBER OF BOUNDARY CONDITIONS . . . . . . . .         0
+    NUMFRAM: NUMBER OF REFERENCE FRAMES . . . . . . . . .         0
+    NUMELQ: NUMBER OF 2D QUAD ELEMENTS. . . . . . . . . .         0
+    NUMELT3 : NUMBER OF 2D TRIA ELEMENTS. . . . . . . . .         0
+    NUMELS: NUMBER OF 3D SOLID ELEMENTS . . . . . . . . .       144
+    NUMELC: NUMBER OF 3D SHELL ELEMENTS (4-NODES) . . . .         0
+    NUMELT: NUMBER OF 3D TRUSS ELEMENTS . . . . . . . . .         0
+    NUMELP: NUMBER OF 3D BEAM  ELEMENTS . . . . . . . . .         0
+    NUMELR: NUMBER OF 3D SPRING ELEMENTS. . . . . . . . .         0
+    NUMELTG: NUMBER OF 3D SHELL ELEMENTS (3-NODES). . . .         0
+    NUMELX: NUMBER OF MULTIPURPOSE ELEMENTS . . . . . . .         0
+    NUMELIG3D: NUMBER OF ISO-GEOMETRIC ELEMENTS . . . . .         0
+    NUMSPH : NUMBER OF SMOOTH PARTICLES (SPH CELLS) . . .         0
+    NSPHBCS: NUMBER OF SPH SYMMETRY CONDITIONS. . . . . .         0
+    NSPHIO : NUMBER OF SPH INLET/OUTLET CONDITIONS. . . .         0
+
+    NFUNCT: NUMBER OF USER'S FUNCTIONS . . . . . . . . .          0
+    NGRAV:  NUMBER OF GRAVITY LOADS . . . . . . . . . . .         0
+    NFUNC2D:  NUMBER OF USER 2D FUNCTIONS . . . . . . . .         0
+    NINIGRV:NUMBER OF INITIAL GRAVITY LOADS . . . . . . .         0
+    NCONLD: NUMBER OF CONCENTRATED LOADS. . . . . . . . .         0
+    NINVEL: NUMBER OF INITIAL VELOCITIES. . . . . . . . .       338
+    NPRELD: NUMBER OF PRESSURE LOADS. . . . . . . . . . .         0
+    NINIMAP1D: NUMBER OF INITIAL 1D MAPPING.. . . . . . .         0
+    NINIMAP2D: NUMBER OF INITIAL 2D MAPPING.. . . . . . .         0
+    NUMBER OF ACCELEROMETERS. . . . . . . . . . . . . . .         0
+    NUMBER OF SENSORS . . . . . . . . . . . . . . . . . .         0
+    NUMBER OF GAUGES. . . . . . . . . . . . . . . . . . .         0
+    NINTER: NUMBER OF INTERFACES. . . . . . . . . . . . .         0
+    NRWALL: NUMBER OF RIGID WALLS . . . . . . . . . . . .         0
+    NRBODY: NUMBER OF RIGID BODIES. . . . . . . . . . . .         0
+    NFXBODY: NUMBER OF FLEXIBLE BODIES. . . . . . . . . .         0
+    NCONX : NUMBER OF RIGID LINKS TO MADYMO BODIES. . . .         0
+    NODMAS: NUMBER OF ADDED NODAL MASSES. . . . . . . . .         0
+    NIMPDISP: NUMBER OF IMPOSED DISPLACEMENTS . . . . . .         0
+    NIMPVEL: NUMBER OF IMPOSED VELOCITIES . . . . . . . .         0
+    NIMPACC: NUMBER OF IMPOSED ACCELERATIONS . . . . . .          0
+    NRIVET: NUMBER OF RIVETS OR SPOT WELDS. . . . . . . .         0
+    NSECT : NUMBER OF SECTIONS SAVED (TIME HISTORY PLOTS)         0
+    NJOINT: NUMBER OF JOINTS. . . . . . . . . . . . . . .         0
+    NACTIV: NUMBER OF ELEMENT DEACTIVATION GROUPS . . . .         0
+    NDAMP:  NUMBER OF RAYLEIGH DAMPING GROUPS . . . . . .         0
+    NGJOINT: NUMBER OF GEAR TYPE JOINTS . . . . . . . . .         0
+    NUMMPC: NUMBER OF MULTI-POINT CONSTRAINTS . . . . . .         0
+    NR2RLNK: NUMBER OF EXTERNAL COUPLING LINKS . . . . .          0
+    NSUBDOM: NUMBER OF SUBDOMAINS . . . . . .. . . . . .          0
+    NVOLU:  NUMBER OF MONITORED VOLUMES . . . . . . . . .         0
+    NEIG:   NUMBER OF EIGEN AND STATIC MODES PROBLEMS . .         0
+    NBEM:   NUMBER OF BEM SOLVED PROBLEMS . . . . . . . .         0
+    NRBE2:  NUMBER OF RBE2 RIGID ELEMENTS . . . . . . . .         0
+    NRBE3:  NUMBER OF RBE3 CONSTRAINT ELEMENTS  . . . . .         0
+    INITIAL STRESS FILE =
+                                          FLAG ISIGI. . .         0
+
+
+    N2D3D : ANALYSIS TYPE: 0=3D,1=AXISYM,2=PLANE STRAIN .         0
+
+
+    ANALYSIS OPTIONS
+    ----------------
+
+    INTEG8 : 8 GAUSS POINT CONDENSED INTEGRATION . . . . .         0
+    IPARITH: PARALLEL ARITHMETIC FLAG (2 OFF, 1 0N). . . .         1
+    IUSERW : GENERAL USER WINDOW FLAG. . . . . . . . . . .         0
+    ISOLID : DEFAULT BRICK FORMULATION FLAG. . . . . . . .         1
+    ITET4  : DEFAULT TETRA4 FORMULATION FLAG . . . . . . .         0
+    ITET10 : DEFAULT TETRA10 FORMULATION FLAG. . . . . . .      1000
+    ISMSTR : DEFAULT BRICK SMALL STRAIN FLAG . . . . . . .         0
+    ICPRE  : DEFAULT SOLID CONSTANT PRESSURE FLAG. . . . .         0
+    ISHELL : DEFAULT SHELL FORMULATION FLAG. . . . . . . .         1
+    ISST   : DEFAULT SHELL SMALL STRAIN FLAG . . . . . . .         0
+    ITHK   : DEFAULT SHELL THICKNESS VARIATION FLAG. . . .         0
+    IPLA   : DEFAULT PLANE STRESS PLASTICITY FLAG. . . . .         0
+    ISTR   : DEFAULT SHELL STRAIN COMPUTATION FLAG . . . .         1
+    ISHEA  : DEFAULT SHELL SHEAR COMPUTATION FLAG. . . . .         0
+    INSH   : SHELL INERTIA FLAG. . . . . . . . . . . . . .         0
+    ISH3N  : DEFAULT 3 NODE SHELL FORMULATION FLAG . . . .         2
+    NPTS   : SHELL PROPERTIES DEFAULT NUMBER OF           
+             INTEGRATION POINTS OR LAYERS. . . . . . . . .        -1
+    IFRAME : DEFAULT SOLID FRAME FORMULATION FLAG . . . .          1
+    IOFFSET: DEFAULT SHELL OFFSET FLAG. . . . . . . . . .          0
+    ICONTROL:DEFAULT SOLID DISTORTION CONTROL FLAG. . . .          0
+    ISHFRAM: LOCAL SHELL FRAME DEFINITION. . . . . . . . .         0
+
+
+    LAGRANGE MULTIPLIER OPTIONS
+    ---------------------------
+    LAGM_TOL:CONVERGENCE CRITERION. . . . . . . . . . . . 1.0000000000000E-11
+
+
+    NODAL MASS DISTRIBUTION FLAG . . . . . . . . .         0
+
+
+    SPEED PARAMETERS  
+    ----------------  
+
+    STARTER RUNNING ON. . . . . . . . . . . . . . . . . .         1 THREAD              
+    NUMBER OF SPMD DOMAINS. . . . . . . . . . . . . . . .         1
+    NUMBER OF THREADS PER DOMAIN. . . . . . . . . . . . .         1
+    ARCHITECTURE OPTIMIZATION . . . . . . . . . . . . . .        22, win64               
+    SIZE OF ELEMENT BUFFER. . . . . . . . . . . . . . . .       128
+ 
+     INFO : OMP_NUM_THREADS SET, DEFAULT SETTING IGNORED
+  
+
+
+    MATERIAL LAWS
+    -------------
+    NUMBER OF MATERIALS. . . . . . . . . =         1
+
+
+
+     EXPLICIT_FULL3D_ELASTIC_REFERENCE_NOT_HISTORICAL
+     MATERIAL NUMBER . . . . . . . . . . . .=         4
+     MATERIAL LAW. . . . . . . . . . . . . .=        12
+
+       ORTHOTROPIC MATERIAL WITH FIBERS      
+       ---------------------------------     
+
+
+     INITIAL DENSITY . . . . . . . . . . . .= 1.8300000000000E-03
+     REFERENCE DENSITY . . . . . . . . . . .= 1.8300000000000E-03
+     YOUNG MODULUS E11 . . . . . . . . . . .=  22000.00000000    
+     YOUNG MODULUS E22 . . . . . . . . . . .=  22000.00000000    
+     YOUNG MODULUS E33 . . . . . . . . . . .=  10000.00000000    
+
+
+     POISSON RATIO N12 . . . . . . . . . . .= 0.2500000000000    
+     POISSON RATIO N23 . . . . . . . . . . .= 0.2500000000000    
+     POISSON RATIO N31 . . . . . . . . . . .= 0.2500000000000    
+
+
+     SHEAR MODULUS   G12 . . . . . . . . . .=  4000.000000000    
+     SHEAR MODULUS   G23 . . . . . . . . . .=  4000.000000000    
+     SHEAR MODULUS   G31 . . . . . . . . . .=  4000.000000000    
+
+
+     MATRIX TENSILE FAILURE STRESS DIR-1 . .=  1000000000000.    
+     MATRIX TENSILE FAILURE STRESS DIR-2 . .=  1000000000000.    
+     MATRIX TENSILE FAILURE STRESS DIR-3 . .=  1000000000000.    
+     DAMAGE PARAMETER . . . . . . . . . . . = 5.0000000000000E-02
+
+
+     COMPOSITE HARDENING PARAMETER  (B). . .=  0.000000000000    
+     COMPOSITE HARDENING PARAMETER  (N). . .=  1.000000000000    
+     COMPOSITE MAXIMUM YIELD FUNCTION FMAX .=  1.000000000000    
+     REFERENCE PLASTIC WORK WPLAREF        .=  1.000000000000    
+
+
+     COMPOSITE YIELD IN TRACTION (1) . . . .=  1000000000000.    
+     COMPOSITE YIELD IN TRACTION (2-3) . .  =  1000000000000.    
+     COMPOSITE YIELD IN COMPRESSION (1)  .  =  1000000000000.    
+     COMPOSITE YIELD IN COMPRESSION (2-3).  =  1000000000000.    
+
+
+     COMPOSITE YIELD IN SHEAR (+12) . . . . =  1000000000000.    
+     COMPOSITE YIELD IN SHEAR (-12) . . . . =  1000000000000.    
+     COMPOSITE YIELD IN SHEAR (+23) . . . . =  1000000000000.    
+     COMPOSITE YIELD IN SHEAR (-23) . . . . =  1000000000000.    
+
+
+     FIBER VOLUME FRACTION . . . . . . . . .=  0.000000000000    
+     FIBER MODULUS . . . . . . . . . . . . .=  0.000000000000    
+
+
+     STRAIN RATE COEFFICIENT CC. . . . . . .=  0.000000000000    
+     REFERENCE STRAIN RATE . . . . . . . . .=  1.000000000000    
+     FLAG FOR STRAIN RATE ON F-MAX Wp-MAX. .=         1
+
+
+       YIELD FUNCTION CONSTANTS              ,
+       ------------------------              ,
+
+     F1 , F2 , F3  . . . . . . . . . . . . .=  0.0000E+00  0.0000E+00  0.0000E+00
+     F4 , F5 , F6. . . . . . . . . . . . . .=  0.0000E+00  0.0000E+00  0.0000E+00
+     F11, F22, F33  . . . . . . . . . . . . =  0.1000E-23  0.1000E-23  0.1000E-23
+     F44, F55, F66 . . . . . . . . . . . . . =  0.1000E-23  0.1000E-23  0.1000E-23
+     F12, F23, F13 . . . . . . . . . . . . ..= -0.5000E-24 -0.5000E-24 -0.5000E-24
+     FT1, FT2. . . . . . . . . . . . . . . .=  0.0000E+00  0.0000E+00
+
+
+ COMPOSITE CONSTITUTIVE LAW
+  28871.83422870      9286.262471220      8273.215656178    
+                      25630.08442057      5234.075211051    
+                                          12663.08518803    
+
+     SKEW SYSTEM SETS                                                                    
+     -------------------                                                                 
+     NUMBER        N1        N2        N3          VECTORS                                          ORIGIN
+          1         0         0         0        0.0000000       1.0000000       0.0000000       0.0000000       0.0000000       0.0000000
+                                                -1.0000000       0.0000000       0.0000000
+                                                 0.0000000       0.0000000       1.0000000
+
+
+
+         PROPERTY SETS
+         -------------
+
+
+HSEPH_FULL_TENSOR_COMPATIBILITY_PROBE   
+     ORTHOTROPIC THICK SHELL PROPERTY SET
+     PROPERTY SET NUMBER . . . . . . . . . .=         1
+     FORMULATION FLAG. . . . . . . . . . . .=        15
+     SMALL STRAIN FLAG . . . . . . . . . . .=         4
+     NUMBER OF INTEGRATION POINTS. .  . .  .=         9
+     CONSTANT STRESS FLAG. . . . . . . . . .=         0
+     HOURGLASS NUMERICAL DAMPING . . . . . .= 1.0000000000000E-20
+     DEFAULT VALUE FOR QUADRATIC BULK. . . . 
+          VISCOSITY (QA) WILL BE USED. . . .=  1.100000000000    
+     EXCEPT IN CASE LAW 70 WHERE QA = 0.     
+     DEFAULT VALUE FOR LINEAR BULK . . . . . 
+          VISCOSITY (QB) WILL BE USED . . . = 5.0000000000000E-02
+     EXCEPT IN CASE LAW 70 WHERE QB = 0.     
+     BRICK MINIMUM TIME STEP................=  0.000000000000    
+     SOLID DISTORTION CONTROL FLAG . . . . .=         0
+
+     ORTHOTROPIC SKEW FRAME. . . . . . . . .=         1
+     LOCAL ORTHOTROPY SYSTEM FORMULATION . .=         0
+     ORTHOTROPIC ANGLE . . . . . . . . . . .=  0.000000000000    
+
+
+
+       PARTS
+       -----
+
+
+
+PART:         1,DECLARED_PHYSICAL_SKIN
+----
+     PROPERTY    :         1 (TYPE 21),HSEPH_FULL_TENSOR_COMPATIBILITY_PROBE
+     MATERIAL    :         4 (LAW  12),EXPLICIT_FULL3D_ELASTIC_REFERENCE_NOT_HISTORICAL
+     SUBSET      :         0
+     FRAMEWORK   :         LAGRANGE
+
+
+       HIERARCHICAL SUBSET ORGANIZATION
+       --------------------------------
+
+
+  
+  
+ SUBSET:         0,GLOBAL MODEL                                                                                                     
+ ~~~~~~
+  |
+  |________Part(s):         1,DECLARED_PHYSICAL_SKIN                  
+  
+ SPMD IS CHECKING FOR ELEMENT DELETION IN : 
+ A32_W0_FREE_ROTATION_Y_N12_0001.rad                                                                          
+ 
+ DOMAIN DECOMPOSITION USING MULTILEVEL KWAY
+ ------------------------------------------
+ DOMAIN DECOMPOSITION OPTIMIZED FOR PARALLEL ARITHMETIC ON
+ DOMAIN DECOMPOSITION : OPTIMIZED FOR BROADWELL PROCESSOR
+** INFO: SIMPLIFIED DOMAIN DECOMPOSITION
+
+MESSAGE ID :   3012
+** INFO IN THICKSHELL PROPERTY
+DESCRIPTION :  
+   THICKNESS-LOCKING TREATMENT CANCELED DUE TO MATERIAL LAW
+   CONCERNING 1 PROPERTY(S)
+   PROPERTY ID=1         ,  PROPERTY TITLE: HSEPH_FULL_TENSOR_COMPATIBILITY_PROBE,  LAW TYPE=12        
+
+
+
+ BRICK GROUP         1 VECTORIZATION CODE =    0
+ BRICK GROUP         2 VECTORIZATION CODE =    0
+
+
+PART MASS & INERTIA
+-------------------
+
+
+PART :          1, DECLARED_PHYSICAL_SKIN
+            Mass             Ixx             Iyy             Izz             Ixy             Iyz             Izx
+  9.15000000E-02  7.78809028E-01  7.78809028E-01  1.54618056E+00 -6.93889390E-18 -5.29090660E-20 -5.29090660E-20
+               X               Y               Z     Kin. Energy              Vx              Vy              Vz
+  4.26571347E-17  1.23231722E-16  0.00000000E+00  3.89404514E+01  0.00000000E+00  0.00000000E+00 -1.13752359E-16
+
+
+PART ELEMENT/MATERIAL PARAMETER REVIEW:
+-----------------------
+
+Part id,name:         1 DECLARED_PHYSICAL_SK   Mat type:  12 Elm type: THICK-SHELL HEXA       
+----
+  Isolid  Ismstr   Icpre     NPT ICONTROL
+      15       4       3       9       0
+--      qa        qb   lamda_v      mu_v         h        dn
+    1.1000    0.0500    0.0000    0.0000    0.0000    0.0000
+
+
+
+     TOTAL MASS AND MASS CENTER
+     --------------------------
+                     MASS                    X                    Y                    Z
+
+      9.1500000000000E-02 -8.1167047885527E-17  4.1472214248079E-18  2.1476682378470E-18
+
+
+     TOTAL INERTIA
+     -------------
+                      IXX                  IYY                  IZZ                  IXY                  IYZ                  IZX
+      0.7788090277778      0.7788090277778       1.546180555556     -3.0800521378103E-35 -9.4867690092482E-20 -3.1170812458958E-19
+
+
+
+      ADDED NODAL NON-STRUCTURAL MASSES 
+     -----------------------------------
+
+      TOTAL ADDED MASS =   0.000000000000    
+
+
+
+
+     TOTAL ADDED NON-STRUCTURAL INERTIA
+     ------------------
+
+      TOTAL ADDED INERTIA =   0.000000000000    
+
+
+
+
+         SOLID ELEMENTS TIME STEP
+         ------------------------
+
+      TIME STEP       ELEMENT NUMBER
+  1.1974370043235E-04             85
+  1.1974370043235E-04             37
+  1.1974370043235E-04             97
+  1.1974370043235E-04             96
+  1.1974370043235E-04             52
+  1.1974370043235E-04             23
+  1.1974370043235E-04            131
+  1.1974370043235E-04             57
+  1.1974370043235E-04             88
+  1.1974370043235E-04             93
+  1.1974370043235E-04             60
+  1.1974370043235E-04            136
+  1.1974370043235E-04             14
+  1.1974370043235E-04            137
+  1.1974370043235E-04             49
+  1.1974370043235E-04            108
+  1.1974370043235E-04              4
+  1.1974370043235E-04              5
+  1.1974370043235E-04            122
+  1.1974370043235E-04            141
+
+
+         NODAL TIME STEP (estimation)
+         ---------------
+
+      TIME STEP       NODE NUMBER
+  1.1974370043235E-04            142
+  1.1974370043235E-04            178
+  1.1974370043235E-04             15
+  1.1974370043235E-04            314
+  1.1974370043235E-04             67
+  1.1974370043235E-04            194
+  1.1974370043235E-04             38
+  1.1974370043235E-04             77
+  1.1974370043235E-04            184
+  1.1974370043235E-04            145
+  1.1974370043235E-04            330
+  1.1974370043235E-04             25
+  1.1974370043235E-04              5
+  1.1974370043235E-04            174
+  1.1974370043235E-04            246
+  1.1974370043235E-04            165
+  1.1974370043235E-04            311
+  1.1974370043235E-04            161
+  1.1974370043235E-04            334
+  1.1974370043235E-04            207
+  1.1974370043235E-04              9
+  1.1974370043235E-04            236
+  1.1974370043235E-04            226
+  1.1974370043235E-04            225
+  1.1974370043235E-04              2
+  1.1974370043235E-04            224
+  1.1974370043235E-04            223
+  1.1974370043235E-04            222
+  1.1974370043235E-04            221
+  1.1974370043235E-04            220
+  1.1974370043235E-04            219
+  1.1974370043235E-04            217
+  1.1974370043235E-04            216
+  1.1974370043235E-04            227
+  1.1974370043235E-04            235
+  1.1974370043235E-04            228
+  1.1974370043235E-04            240
+  1.1974370043235E-04            230
+  1.1974370043235E-04            245
+  1.1974370043235E-04            244
+  1.1974370043235E-04            243
+  1.1974370043235E-04            242
+  1.1974370043235E-04            241
+  1.1974370043235E-04            238
+  1.1974370043235E-04            239
+  1.1974370043235E-04            229
+  1.1974370043235E-04            237
+  1.1974370043235E-04            214
+  1.1974370043235E-04            234
+  1.1974370043235E-04            233
+  1.1974370043235E-04            231
+  1.1974370043235E-04            215
+  1.1974370043235E-04            200
+  1.1974370043235E-04            211
+  1.1974370043235E-04            180
+  1.1974370043235E-04            209
+  1.1974370043235E-04            186
+  1.1974370043235E-04            185
+  1.1974370043235E-04            183
+  1.1974370043235E-04            182
+  1.1974370043235E-04            181
+  1.1974370043235E-04            177
+  1.1974370043235E-04            179
+  1.1974370043235E-04            188
+  1.1974370043235E-04            176
+  1.1974370043235E-04            175
+  1.1974370043235E-04            173
+  1.1974370043235E-04            172
+  1.1974370043235E-04            171
+  1.1974370043235E-04            187
+  1.1974370043235E-04            190
+  1.1974370043235E-04            189
+  1.1974370043235E-04            201
+  1.1974370043235E-04            191
+  1.1974370043235E-04            208
+  1.1974370043235E-04            206
+  1.1974370043235E-04            204
+  1.1974370043235E-04            203
+  1.1974370043235E-04            202
+  1.1974370043235E-04            198
+  1.1974370043235E-04            248
+  1.1974370043235E-04            210
+  1.1974370043235E-04            197
+  1.1974370043235E-04            196
+  1.1974370043235E-04            195
+  1.1974370043235E-04            193
+  1.1974370043235E-04            192
+  1.1974370043235E-04            247
+  1.1974370043235E-04            255
+  1.1974370043235E-04            249
+  1.1974370043235E-04            305
+  1.1974370043235E-04            251
+  1.1974370043235E-04            315
+  1.1974370043235E-04            313
+  1.1974370043235E-04            312
+  1.1974370043235E-04            310
+  1.1974370043235E-04            307
+  1.1974370043235E-04            306
+  1.1974370043235E-04            301
+  1.1974370043235E-04            302
+
+
+         NODAL TIME STEP DISTRIBUTION 
+         ----------------------------
+
+
+            % OF NODES
+                   ^
+                   |                                                            
+          85.207 --|                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+                   |                            #                               
+           0.000 --|#                           #                             # 
+                    -------------------------------------------------------------> NODAL TIME STEP
+                    |                                                          |
+                1.197E-04                                                  1.197E-04
+  
+  
+
+
+     INITIAL ADDED MASS ESTIMATION for /DT/NODA/CST
+     ----------------------------------------------
+
+
+            DM/M - at first cycle - scaling factor = 0.9
+                   ^
+                   |                                                            
+           0.100 --|                                                          * 
+                   |                                                            
+                   |                                                      *     
+                   |                                                   *        
+                   |                                                *           
+                   |                                             *              
+                   |                                                            
+                   |                                          *                 
+                   |                                       *                    
+                   |                                    *                       
+                   |                                 *                          
+                   |                              *                             
+                   |                                                            
+                   |                           *                                
+                   |                        *                                   
+                   |                     *                                      
+                   |                 *                                          
+                   |              *                                             
+                   |                                                            
+                   |           *                                                
+                   |        *                                                   
+                   |     *                                                      
+           0.005 --|* *                                                         
+                    -------------------------------------------------------------> TARGET TIME STEP
+                    |                                                          |
+                1.080E-04                                                  1.130E-04
+  
+  
+              DM/M at first cycle          |  Target time step - scaling factor = 0.9  |  Target time step - scaling factor = 0.67
+    -------------------------------------  |  ---------------------------------------  |  ---------------------------------------
+                 1.000E-02                 |                 1.083E-04                 |                 8.063E-05
+                 2.000E-02                 |                 1.088E-04                 |                 8.103E-05
+                 3.000E-02                 |                 1.094E-04                 |                 8.142E-05
+                 4.000E-02                 |                 1.099E-04                 |                 8.182E-05
+                 5.000E-02                 |                 1.104E-04                 |                 8.221E-05
+
+
+    WARNING : These added mass estimations are valid at first cycle only.
+    Because of element deformation or contacts the added mass can increase during the run
+
+
+ SUMMARY OF POSSIBLE INCOMPATIBLE KINEMATIC CONDITIONS :
+ -----------------------------------------------------
+                                  
+ NO TRUE INCOMPATIBLE KINEMATIC CONDITION
+
+ 
+    STARTER STORAGE 
+    --------------- 
+ 
+    STARTER MEMORY USAGE        167 MB
+
+
+     LOCAL ENGINE STORAGE EVALUATION FOR SPMD PROCESSOR     1
+     --------------------------------------------------------
+        RESTART FILE SIZE         1 MB
+ 
+
+     RESTART FILES A32_W0_FREE_ROTATION_Y_N12_0000 WRITTEN
+     -------------
+
+  
+------------------------------------------------------------------------
+  
+                   ** COMPUTE TIME INFORMATION **
+  
+ EXECUTION STARTED      :      2026/10/11  10:44:34
+ EXECUTION COMPLETED    :      2026/10/11  10:44:34
+  
+ ELAPSED TIME...........=          0.68 s
+                               00:00:00
+  
+------------------------------------------------------------------------
+
+
+
+     NORMAL TERMINATION                                                                  
+     ------------------                                                                  
+              0 ERROR(S)            
+              0 WARNING(S)          
+
+

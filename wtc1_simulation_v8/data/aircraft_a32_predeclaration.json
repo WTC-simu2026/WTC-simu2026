@@ -1,0 +1,215 @@
+{
+  "iteration": "AIRCRAFT-A32",
+  "declared_utc": "2026-10-11T08:42:11.249856+00:00",
+  "seed": 1102057,
+  "random_draws": 0,
+  "purpose": "Make the10physical-second route feasible without mass or inertia scaling. Compare documented efficient translation-only formulations against the explicit full3D LAW12 tensor and A31 curved-root surface preparation, before any whole insertion. The branch can fail; no target-damage fitting.",
+  "parent_configuration": "wtc1_simulation_v8/data/aircraft_a29_law12.json",
+  "parent_configuration_sha256": "846ec8dfff127f9f5008503a288e2eea8b02fb0a20289db97b09d3ba92f31b8a",
+  "material": "exact unchanged A29LAW12/4 scalar card, including explicitly hypothetical nu23/nu31 and giant elastic-witness strengths",
+  "geometry": {
+    "bounds_mm": [
+      [
+        -5,
+        -5,
+        -0.25
+      ],
+      [
+        5,
+        5,
+        0.25
+      ]
+    ],
+    "XY_meshes": [
+      6,
+      12
+    ],
+    "geometric_Z_elements": 1,
+    "volume_mm3": 50,
+    "density_g_mm3": 0.00183,
+    "mass_g": 0.0915
+  },
+  "branches": {
+    "w0": {
+      "property": "TYPE21 HSEPH Isolid15 Ismstr4,9through-thickness quadrature points,dn1e-20,physical thickness. Source material skew rowsY,-X,Z projected to plane. Scalar LAW12 fields and full3D constitutive reference retained; no presumption of plane-law equivalence.",
+      "cases": [
+        "PATCH_NORMAL_X_N12",
+        "PATCH_NORMAL_Y_N12",
+        "PATCH_NORMAL_Z_N12",
+        "PATCH_SHEAR_XY_N12",
+        "PATCH_SHEAR_YZ_N12",
+        "PATCH_SHEAR_XZ_N12",
+        "FREE_ROTATION_X_N12",
+        "FREE_ROTATION_Y_N12",
+        "FREE_ROTATION_Z_N12",
+        "FREE_TRANSLATION_N12",
+        "FREE_ROTATION_Y_N12_HALF",
+        "MEMBRANE_N6",
+        "MEMBRANE_N12",
+        "CONSTRAINED_BENDING_N6",
+        "CONSTRAINED_BENDING_N12"
+      ]
+    },
+    "w1": {
+      "property": "TYPE6 HEPH Isolid24 Ismstr4 Icpre3 Iframe2,dn1e-20,one physical thickness element; exact same LAW12 card and skew. Full3D physical-stabilization candidate, not fitted quadrature.",
+      "cases": [
+        "PATCH_NORMAL_X_N12",
+        "PATCH_NORMAL_Y_N12",
+        "PATCH_NORMAL_Z_N12",
+        "PATCH_SHEAR_XY_N12",
+        "PATCH_SHEAR_YZ_N12",
+        "PATCH_SHEAR_XZ_N12",
+        "FREE_ROTATION_X_N12",
+        "FREE_ROTATION_Y_N12",
+        "FREE_ROTATION_Z_N12",
+        "FREE_TRANSLATION_N12",
+        "FREE_ROTATION_Y_N12_HALF",
+        "MEMBRANE_N6",
+        "MEMBRANE_N12",
+        "CONSTRAINED_BENDING_N6",
+        "CONSTRAINED_BENDING_N12"
+      ]
+    }
+  },
+  "stop_rule": "Within each branch stop after first failed affine constitutive/full-balance gate or native fatal. Preserve all attempted outputs. Subsequent branches may still test an independent documented candidate. Full qualification requires all declared cases, finite fields, mass/tensor, independent elasticity, and refinements; native completion alone is insufficient.",
+  "loading": {
+    "patch_strain": 0.001,
+    "patch_ms": 0.1,
+    "free_duration_ms": 0.05,
+    "free_omega_rad_ms": 10,
+    "translation_m_s": [
+      -200,
+      5,
+      2
+    ],
+    "ramp": "3u2-2u3",
+    "membrane": "ux=.001x;uy=-.00025y;uz=-.00025z, source full3D uniaxial stress compliance",
+    "constrained_bending": "ux=-.001*x*z-.001²*x³/6;uy=0;uz=.001*x²/2; epsilonYY=epsilonZZ=0tofirstorder; full3DCxx bending stiffness. Single-layer interpolation/assumed strains are tested rather than accepted."
+  },
+  "reference": {
+    "full_C_MPa": [
+      [
+        25630.08442056792,
+        9286.26247122026,
+        5234.0752110514195,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        9286.262471220261,
+        28871.834228702995,
+        8273.21565617805,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        5234.0752110514195,
+        8273.21565617805,
+        12663.085188027628,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        4000.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4000.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4000.0
+      ]
+    ],
+    "Voigt": [
+      "XX",
+      "YY",
+      "ZZ",
+      "gammaXY",
+      "gammaYZ",
+      "gammaXZ"
+    ],
+    "patch": "0.5epsilon*C*epsilon*50mm3",
+    "membrane_J": 0.0005499999999999999,
+    "constrained_bending_J": 1.3349002302379127e-05,
+    "native_elastic_comparison": "IE+HE for physical-stabilization candidates; IE andHE retained separately in full energy balance. No added reconstructed energy.",
+    "continuous_inertia_g_mm2": [
+      0.76440625,
+      0.76440625,
+      1.5250000000000001
+    ]
+  },
+  "acceptance": {
+    "mass_relative": 1e-06,
+    "ADMAS_relative": 1e-09,
+    "full_balance_fraction": 0.02,
+    "energy_absolute_J": 1e-07,
+    "elastic_fraction": 0.02,
+    "free_energy_fraction": 0.002,
+    "free_L_fraction": 0.002,
+    "continuous_initial_KE_fraction": 0.02,
+    "no_RKE_J": 1e-07,
+    "spatial_fraction": 0.05,
+    "time_fraction": 0.002,
+    "actual_half_dt_ratio_max": 0.6,
+    "no_erosion_and_finite_fields": true
+  },
+  "execution": {
+    "CPU_threads": 1,
+    "GPU": false,
+    "mass_scaling": false,
+    "native_DT_factor": 0.4,
+    "native_half_DT_factor": 0.2,
+    "no_DTIX_cap": "Use actual native critical step to assess efficiency; reduction of factor still tests time refinement. No relaxation of stability condition.",
+    "per_process_cap_s": 600,
+    "estimated_minutes": [
+      5,
+      25
+    ],
+    "history_dt_ms": 0.001,
+    "animation_dt_ms": 0.025
+  },
+  "curved_roots": {
+    "source": "wtc1_simulation_v8/output/aircraft_a31/curved_root_surface_mapping.json",
+    "sha256": "ca8f49a2c78f4c56b334063d6a046524cc97a1c25cecd1ac509124852c104275",
+    "roots": 24,
+    "anchors": 144,
+    "physical_surface_gaps_mm": [
+      2.4489712230253486,
+      2.726935580724446
+    ],
+    "finite_attachment_footprint_volume_mass_capacity": null,
+    "no_flat_budget_substitution": true,
+    "coupled_native_curved_fixture_pending": true
+  },
+  "implicit_route": {
+    "source": "wtc1_simulation_v8/output/aircraft_a31/implicit_binary_capability_assessment.json",
+    "available_in_installed_binary": false,
+    "no_software_modification": true
+  },
+  "whole_aircraft_inputs_changed": false,
+  "whole_insertion_ready": false,
+  "old_native_solver_reruns": 0,
+  "objective1_complete": false,
+  "sources": {
+    "type21": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type21_tsh_orth_starter_r.htm",
+    "type6": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type6_sol_orth_starter_r.htm",
+    "solid_shell": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/theory_element_library_solid_shell_elements_r.htm"
+  }
+}

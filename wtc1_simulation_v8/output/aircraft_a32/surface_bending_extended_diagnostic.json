@@ -1,0 +1,83 @@
+{
+  "created_utc": "2026-10-11T09:01:56.945938+00:00",
+  "configuration_sha256": "0adb596b885fbfa5d97dcb1c1d68623134efcb9ff96c66e91c78e7f55a00866f",
+  "new_cases": [
+    {
+      "case": "N192_Z8_EXACT_FACE",
+      "energy_J": 1.1929056653442072e-05,
+      "CG_iterations": 191,
+      "checks": {
+        "equilibrium": true,
+        "virtual_work": true,
+        "positive_energy": true,
+        "element_symmetry": true,
+        "part_energy_sum": true
+      },
+      "pass": true,
+      "assembly_and_solve_seconds": 40.06624280000051
+    },
+    {
+      "case": "N192_Z16_EXACT_FACE",
+      "energy_J": 1.1889205896836094e-05,
+      "CG_iterations": 217,
+      "checks": {
+        "equilibrium": true,
+        "virtual_work": true,
+        "positive_energy": true,
+        "element_symmetry": true,
+        "part_energy_sum": true
+      },
+      "pass": true,
+      "assembly_and_solve_seconds": 104.4296419000002
+    }
+  ],
+  "XY_96_to_192_fraction": 0.006501601863725117,
+  "Z_8_to_16_fraction": 0.0033518434243436195,
+  "reference_refinement_checks": {
+    "XY": true,
+    "Z": true
+  },
+  "native_comparisons": [
+    {
+      "branch": "w0",
+      "n": 6,
+      "original_gate_pass": false,
+      "native_elastic_J": 1.2266880000000001e-05,
+      "independent_surface_prediction_J": 1.188267095198545e-05,
+      "difference_fraction": 0.03233355948061104,
+      "diagnostic_only": true
+    },
+    {
+      "branch": "w0",
+      "n": 12,
+      "original_gate_pass": false,
+      "native_elastic_J": 1.226733e-05,
+      "independent_surface_prediction_J": 1.188267095198545e-05,
+      "difference_fraction": 0.03237142975420674,
+      "diagnostic_only": true
+    },
+    {
+      "branch": "w1",
+      "n": 6,
+      "original_gate_pass": false,
+      "native_elastic_J": 1.226732e-05,
+      "independent_surface_prediction_J": 1.1882671223281234e-05,
+      "difference_fraction": 0.03237056462229971,
+      "diagnostic_only": true
+    },
+    {
+      "branch": "w1",
+      "n": 12,
+      "original_gate_pass": false,
+      "native_elastic_J": 1.226754e-05,
+      "independent_surface_prediction_J": 1.1882671087634038e-05,
+      "difference_fraction": 0.03238909076314364,
+      "diagnostic_only": true
+    }
+  ],
+  "original_four_native_failures_unchanged": true,
+  "reference_boundary_issue_does_not_prove_native_equivalence": true,
+  "native_internal_operator_not_directly_observed": true,
+  "whole_insertion_ready": false,
+  "new_native_runs": 0
+}

@@ -1,0 +1,87 @@
+{
+  "iteration": "AIRCRAFT-A32",
+  "declared_utc": "2026-10-11T08:49:12.589858+00:00",
+  "seed": 1102057,
+  "random_draws": 0,
+  "diagnostic_declared_after_original_native_results": true,
+  "before_new_independent_reference": true,
+  "question": "All nodes of a one-thickness-cell skin are on its two external faces. Does their prescribed bending constrain interior epsilonZZ pointwise, as the original Cxx reference presumed? Compare an independent finer3D continuum with only those physical faces constrained and all interior nodes free.",
+  "native_gates_unchanged": true,
+  "geometry_mm": [
+    10,
+    10,
+    0.5
+  ],
+  "XY_meshes": [
+    6,
+    12
+  ],
+  "Z_meshes": [
+    4,
+    8,
+    16
+  ],
+  "full_C_MPa": [
+    [
+      25630.08442056792,
+      9286.26247122026,
+      5234.0752110514195,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      9286.262471220261,
+      28871.834228702995,
+      8273.21565617805,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      5234.0752110514195,
+      8273.21565617805,
+      12663.085188027628,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      4000.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      4000.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      4000.0
+    ]
+  ],
+  "boundary": "allXYZofboth z=+-.25faces prescribed; remaining nodes free",
+  "variants": [
+    "first_order_bending",
+    "actual_prescribed_second_order_correction"
+  ],
+  "analytical_admissible_bubble": "uz=k*x²/2+(Czx/Czz)*k*(z²-t²/4)/2; equals original uz on external faces, permits epsilonZZ=(Czx/Czz)*k*z in the interior and sigmaZZ=0. It does not prove the actual native enhanced-strain operator.",
+  "energy_reference": "For first-order cylindrical field:0.5*k²*area*(Cxx-Cxz²/Czz)*t³/12, derived solely from source tensor and geometry; independent finite continuum checks edge effects and discretization. No acceptance threshold newly substituted.",
+  "analytical_full_Cxx_J": 1.3349002302379125e-05,
+  "analytical_free_transverse_J": 1.222222222222222e-05,
+  "source": "wtc1_simulation_v8/scripts/linear_sandwich_reference_aircraft_a31.py",
+  "source_sha256": "1c1d6737769ca0804b16c3cff279a5e1f77b5839b0bf165c12e41423bf1b123e",
+  "new_native_runs": 0,
+  "whole_insertion_ready": false
+}
