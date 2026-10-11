@@ -1,0 +1,197 @@
+{
+  "iteration": "AIRCRAFT-A30",
+  "declared_utc": "2026-10-11T07:33:24.278172+00:00",
+  "seed": 1102055,
+  "random_draws": 0,
+  "purpose": "Conformal volume sandwich using explicit LAW12 skins and unchanged source LAW28 core. Physical face sharing is a newly declared perfect-bond hypothesis; old Spot5 and whole aircraft inputs are preserved. Free physical invariants and manufactured elastic fields before surface-loaded coupling and real root insertion.",
+  "geometry": {
+    "XY_bounds_mm": [
+      -5,
+      5
+    ],
+    "lower_skin_Z_mm": [
+      -4.5,
+      -4
+    ],
+    "core_Z_mm": [
+      -4,
+      4
+    ],
+    "upper_skin_Z_mm": [
+      4,
+      4.5
+    ],
+    "XY_meshes": [
+      6,
+      12
+    ],
+    "geometric_Z_elements": {
+      "skin_each": 4,
+      "core": 12
+    },
+    "faces": "identical node IDs at z=-4 and z=4, no duplicate interface masses, rigid-body offset or independent rotations",
+    "continuous_physical_mass_g": 0.2214,
+    "no_added_or_scaled_mass": true
+  },
+  "skin": {
+    "law": "LAW12/4",
+    "configuration": "wtc1_simulation_v8/data/aircraft_a29_law12.json",
+    "configuration_sha256": "846ec8dfff127f9f5008503a288e2eea8b02fb0a20289db97b09d3ba92f31b8a",
+    "rho_g_mm3": 0.00183,
+    "E_MPa": [
+      22000,
+      22000,
+      10000
+    ],
+    "nu12_nu23_nu31": [
+      0.25,
+      0.25,
+      0.25
+    ],
+    "new_transverse_Poisson_assumptions": true,
+    "G_MPa": [
+      4000,
+      4000,
+      4000
+    ],
+    "axes_global_rows": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "property": "TYPE6 Isolid18 Ismstr0(auto2) Icpre3 Iframe2",
+    "historical_strength_and_fracture_qualified": false
+  },
+  "core": {
+    "law": "unchanged source LAW28/28 and constant plateau curves280..285",
+    "rho_g_mm3": 4.8e-05,
+    "E_MPa": [
+      1,
+      1,
+      138
+    ],
+    "G_MPa": [
+      0.5,
+      24,
+      41
+    ],
+    "axes_global_rows": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "property": "TYPE6 Isolid14 Ismstr4 Icpre3 Gauss222 Iframe2, same scalar property inputs as cached A20 core",
+    "reference": "uncoupled tangent C=diag(E11,E22,E33,G12,G23,G31)",
+    "unmeasured_parameters": [
+      "E11",
+      "E22",
+      "G12",
+      "in_plane_yield",
+      "failure_strains",
+      "fracture_energy",
+      "postpeak",
+      "rate_dependence"
+    ],
+    "cached_A20_material_controls_reused": true,
+    "no_new_core_failure_claim": true
+  },
+  "cases": [
+    "FREE_ROTATION_X_N12",
+    "FREE_ROTATION_Y_N12",
+    "FREE_ROTATION_Z_N12",
+    "FREE_TRANSLATION_N12",
+    "FREE_ROTATION_Y_N12_HALF",
+    "AFFINE_EXTENSION_N6",
+    "AFFINE_EXTENSION_N12",
+    "CONSTRAINED_BENDING_N6",
+    "CONSTRAINED_BENDING_N12"
+  ],
+  "loading": {
+    "free_duration_ms": 0.05,
+    "free_omega_rad_ms": 1,
+    "free_omega_reason": "Keep low-strength core elastic: estimated rho*omega²*R² below weakest declared .1MPa yield. New sandwich amplitude declared before any native results, no claim of high-speed A29 amplitude equivalence.",
+    "translation_m_s": [
+      -200,
+      5,
+      2
+    ],
+    "elastic_duration_ms": 0.1,
+    "ramp": "3s²-2s³",
+    "axial_strain": 0.001,
+    "affine": "ux=.001*x; uy=uz=0, all nodes prescribed. Constrained 3D extension, not free uniaxial contraction.",
+    "curvature_per_mm": 0.0001,
+    "bending": "ux=-k*x*z-k²*x³/6;uy=0;uz=k*x²/2. All nodes prescribed, epsilon_y=epsilon_z=0 to first order. Constrained transverse bending, not free plate bending.",
+    "small_strain_limit_reason": "κ chosen for max skin strain4.5e-4 on9mm sandwich, same elastic order as A29 plate; not native response fit."
+  },
+  "reference": {
+    "extension": "0.5*epsilon²*sum(Cxx_region*physical_volume_region), J conversion1e-3 from native g/mm/ms energy",
+    "bending": "0.5*kappa²*area*sum(Cxx_region*integral(z²dz)), source tensor, native values not used",
+    "continuous_inertia": "analytic sum of each layer rectangular prism about global origin including physical offset; compare separate known lumped tensor",
+    "limitations": "Manufactured fields constrain every node. They verify coupled native mass, conservation and constitutive response, not free interior transmission, delamination or real attachment capacity."
+  },
+  "acceptance": {
+    "mass_relative": 1e-06,
+    "added_mass_relative": 1e-09,
+    "native_energy_fraction": 0.02,
+    "native_energy_absolute_J": 1e-07,
+    "free_energy_fraction": 0.002,
+    "free_momentum_fraction": 0.002,
+    "physical_angular_fraction": 0.002,
+    "physical_angular_absolute_kg_m2_s": 1e-09,
+    "known_discrete_initial_KE_fraction": 0.002,
+    "physical_continuum_initial_KE_fraction": 0.02,
+    "native_RKE_absolute_J": 1e-07,
+    "elastic_reference_fraction": 0.02,
+    "elastic_absolute_J": 1e-07,
+    "elastic_mesh_fraction": 0.05,
+    "position_mm": 0.002,
+    "velocity_m_s": 0.005,
+    "actual_dt_ratio_max": 0.6
+  },
+  "execution": {
+    "CPU_threads": 1,
+    "GPU": false,
+    "mass_scaling": false,
+    "dt_cap_ms": 2.5e-05,
+    "half_dt_cap_ms": 1.25e-05,
+    "per_process_cap_s": 1800,
+    "estimated_minutes": [
+      10,
+      25
+    ]
+  },
+  "sources": [
+    "A29 explicit LAW12 qualification",
+    "A20 verified LAW28 controls",
+    "actual source A20 deck",
+    "A25 root inventory"
+  ],
+  "whole_aircraft_inputs_changed": false,
+  "old_native_solver_reruns": 0,
+  "whole_insertion_ready": false,
+  "objective1_complete": false
+}

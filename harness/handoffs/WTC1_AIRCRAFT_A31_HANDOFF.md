@@ -1,0 +1,6 @@
+# Reprise AIRCRAFT-A31 → AIRCRAFT-A32
+
+Rapport: wtc1_simulation_v8/output/aircraft_a31/rapport_aircraft_a31.md
+Résultats: wtc1_simulation_v8/output/aircraft_a31/sandwich_qualification_review.json
+
+AIRCRAFT-A32 : le périmètre élastique du sandwich à intérieur libre passe; préparer les24racines/144ancres courbes réellement inventoriées dans A25, leurs repères, prises et budgets physiques avant un contrôle natif représentatif. Le coût de10secondes doit être évalué sur la discrétisation réelle; tester une formulation efficace à masse physique inchangée avec référence indépendante si nécessaire. Le binaire installé échoue aux deux sondes implicites avec MUMPSrequired; aucune installation ni modification du solveur effectuée. Les cartes LAW12, coefficients transverses et collage parfait restent des hypothèses explicites; résistances, décollement et rupture historiques non identifiés. Aucun faux ajout de RKE, correction de densité ou ajustement aux dégâts connus. Nouveau départ entier après critères locaux, bilans et estimation du coût. Meilleur entierA20=20ms; objectif vidéo3D10secondes physiques incomplet. Publication A30+A31 après vérification, déjà autorisée; cadence suivante A32+A33.

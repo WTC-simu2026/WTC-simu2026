@@ -1,0 +1,217 @@
+{
+  "iteration": "AIRCRAFT-A31",
+  "declared_utc": "2026-10-11T07:48:49.307150+00:00",
+  "seed": 1102056,
+  "random_draws": 0,
+  "purpose": "Only lower and upper physical outer faces constrained; all skin/core interior nodes free. Test real load transmission rather than imposed internal strains. Preserve A30 geometry, volume,density,LAW12/LAW28 and perfect-bond hypothesis, unchanged whole aircraft.",
+  "parent_configuration": "wtc1_simulation_v8/data/aircraft_a30_predeclaration.json",
+  "parent_configuration_sha256": "5ed9217c18dc376c22e5fa1a50e0dedc1f9834463c736d439a86cd355b249a1a",
+  "geometry": {
+    "XY_bounds_mm": [
+      -5,
+      5
+    ],
+    "lower_skin_Z_mm": [
+      -4.5,
+      -4
+    ],
+    "core_Z_mm": [
+      -4,
+      4
+    ],
+    "upper_skin_Z_mm": [
+      4,
+      4.5
+    ],
+    "XY_meshes": [
+      6,
+      12
+    ],
+    "geometric_Z_elements": {
+      "skin_each": 4,
+      "core": 12
+    },
+    "faces": "identical node IDs at z=-4 and z=4, no duplicate interface masses, rigid-body offset or independent rotations",
+    "continuous_physical_mass_g": 0.2214,
+    "no_added_or_scaled_mass": true
+  },
+  "skin": {
+    "law": "LAW12/4",
+    "configuration": "wtc1_simulation_v8/data/aircraft_a29_law12.json",
+    "configuration_sha256": "846ec8dfff127f9f5008503a288e2eea8b02fb0a20289db97b09d3ba92f31b8a",
+    "rho_g_mm3": 0.00183,
+    "E_MPa": [
+      22000,
+      22000,
+      10000
+    ],
+    "nu12_nu23_nu31": [
+      0.25,
+      0.25,
+      0.25
+    ],
+    "new_transverse_Poisson_assumptions": true,
+    "G_MPa": [
+      4000,
+      4000,
+      4000
+    ],
+    "axes_global_rows": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "property": "TYPE6 Isolid18 Ismstr0(auto2) Icpre3 Iframe2",
+    "historical_strength_and_fracture_qualified": false
+  },
+  "core": {
+    "law": "unchanged source LAW28/28 and constant plateau curves280..285",
+    "rho_g_mm3": 4.8e-05,
+    "E_MPa": [
+      1,
+      1,
+      138
+    ],
+    "G_MPa": [
+      0.5,
+      24,
+      41
+    ],
+    "axes_global_rows": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "property": "TYPE6 Isolid14 Ismstr4 Icpre3 Gauss222 Iframe2, same scalar property inputs as cached A20 core",
+    "reference": "uncoupled tangent C=diag(E11,E22,E33,G12,G23,G31)",
+    "unmeasured_parameters": [
+      "E11",
+      "E22",
+      "G12",
+      "in_plane_yield",
+      "failure_strains",
+      "fracture_energy",
+      "postpeak",
+      "rate_dependence"
+    ],
+    "cached_A20_material_controls_reused": true,
+    "no_new_core_failure_claim": true
+  },
+  "cases": [
+    "SHEAR_XZ_N6",
+    "SHEAR_XZ_N12",
+    "SHEAR_YZ_N6",
+    "SHEAR_YZ_N12",
+    "NORMAL_TENSION_N6",
+    "NORMAL_TENSION_N12",
+    "NORMAL_COMPRESSION_N6",
+    "NORMAL_COMPRESSION_N12",
+    "SHEAR_XZ_N12_HALF"
+  ],
+  "loading": {
+    "ramp_ms": 0.5,
+    "duration_ms": 0.5,
+    "displacement_mm": 0.009,
+    "shape": "3s²-2s³",
+    "bottom_face": "z=-4.5,XYZfixed",
+    "top_face": "z=4.5: XYZprescribed, one component delta*s, other two0",
+    "all_interior_nodes_free": true,
+    "modes": {
+      "SHEAR_XZ": {
+        "axis": 0,
+        "sign": 1
+      },
+      "SHEAR_YZ": {
+        "axis": 1,
+        "sign": 1
+      },
+      "NORMAL_TENSION": {
+        "axis": 2,
+        "sign": 1
+      },
+      "NORMAL_COMPRESSION": {
+        "axis": 2,
+        "sign": -1
+      }
+    },
+    "amplitude_reason": "nominal displacement/thickness=.001, low elastic regime; source material/yield estimates, not a native response fit",
+    "duration_reason": "more than7transits over10mm at weakest source-core in-plane wave speed sqrt(E11/rho)≈144mm/ms. Quasi-static adequacy tested, not presumed."
+  },
+  "independent_reference": {
+    "method": "heterogeneous small-strain conventional8node finite elements,2x2x2Gauss; source3Dtensors, same physical geometry and face boundary conditions; positive-Jacobian,symmetry,equilibrium,virtual-work checks",
+    "iterative_solver": "matrix-free Jacobi-preconditioned CG, relative norm1e-10+absolute1e-11N,12000iterations max",
+    "native_operator_not_used": true
+  },
+  "native_reaction_protocol": {
+    "prior_evidence": "wtc1_simulation_v8/output/aircraft_a20/core_verified_review.json",
+    "observation": "same binary A20REACcomponents act as accumulated nodal impulses, contrary to force label; verify summed raw values against physical momentum before differentiating",
+    "units": "raw g*mm/ms toNs factor1e-3; d(raw)/d(time_ms) gives N; subtract prescribed top nodal inertia to recover internal static traction",
+    "check_both_interpretations": true,
+    "ambiguous_interpretation_not_qualified": true
+  },
+  "acceptance": {
+    "mass_relative": 1e-06,
+    "ADMAS_relative": 1e-09,
+    "native_full_energy_fraction": 0.02,
+    "energy_absolute_J": 1e-07,
+    "native_RKE_absolute_J": 1e-07,
+    "static_IE_fraction": 0.02,
+    "static_reaction_fraction": 0.02,
+    "static_reaction_absolute_N": 1e-05,
+    "reaction_window": "max error in final10% of ramp, divide by ramp amplitude",
+    "interior_displacement_fraction_of_delta": 0.02,
+    "interior_displacement_absolute_mm": 2e-06,
+    "quasi_static_KE_fraction_of_reference": 0.01,
+    "impulse_momentum_fraction": 0.02,
+    "impulse_momentum_absolute_Ns": 1e-09,
+    "native_boundary_work_fraction": 0.02,
+    "plastic_work_absolute_J": 1e-07,
+    "spatial_change_fraction": 0.05,
+    "half_actual_dt_ratio_max": 0.6,
+    "time_change_fraction": 0.002,
+    "all_native_fields_finite_and_no_erosion": true
+  },
+  "qualification": "fineN12candidate requires every original mode gate plus spatial/time convergence and native field audit. Coarse failed gates retained separately, never rewritten. Perfect bond and unmeasured materials remain hypotheses.",
+  "execution": {
+    "CPU_threads": 1,
+    "GPU": false,
+    "mass_scaling": false,
+    "dt_cap_ms": 2.5e-05,
+    "half_dt_cap_ms": 1.25e-05,
+    "history_dt_ms": 0.001,
+    "animation_dt_ms": 0.05,
+    "per_process_cap_s": 1800,
+    "estimated_minutes": [
+      30,
+      60
+    ]
+  },
+  "whole_aircraft_inputs_changed": false,
+  "whole_insertion_ready": false,
+  "old_native_solver_reruns": 0,
+  "objective1_complete": false
+}

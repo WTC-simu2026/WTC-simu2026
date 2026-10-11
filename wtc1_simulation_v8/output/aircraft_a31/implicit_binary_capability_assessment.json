@@ -1,0 +1,48 @@
+{
+  "created_utc": "2026-10-11T08:08:59.551738+00:00",
+  "cases": [
+    {
+      "case": "wtc1_simulation_v8/output/aircraft_a31/implicit_capability/PCG",
+      "starter_pass": true,
+      "native_completed": false,
+      "engine_log_sha256": "fc49105425a06b39329790182f7bf2acf5ecddcc3e04b639d0d193b9cc5b8020",
+      "native_fatal_MUMPS_required": false,
+      "native_error_termination": false,
+      "parser_internal_EOF": true
+    },
+    {
+      "case": "wtc1_simulation_v8/output/aircraft_a31/implicit_capability/MUMPS",
+      "starter_pass": true,
+      "native_completed": false,
+      "engine_log_sha256": "fc49105425a06b39329790182f7bf2acf5ecddcc3e04b639d0d193b9cc5b8020",
+      "native_fatal_MUMPS_required": false,
+      "native_error_termination": false,
+      "parser_internal_EOF": true
+    },
+    {
+      "case": "wtc1_simulation_v8/output/aircraft_a31/implicit_capability/w1_compact/PCG",
+      "starter_pass": true,
+      "native_completed": false,
+      "engine_log_sha256": "5d647ffc1fbbeffeb38675d654309363e3bfd31e6836e121bf71e9a3b722c8e2",
+      "native_fatal_MUMPS_required": true,
+      "native_error_termination": true,
+      "parser_internal_EOF": false
+    },
+    {
+      "case": "wtc1_simulation_v8/output/aircraft_a31/implicit_capability/w1_compact/MUMPS",
+      "starter_pass": true,
+      "native_completed": false,
+      "engine_log_sha256": "13d1025dcb302bd46d75b27834e6ea19a697bb331133c81fd031175cfc6f19c5",
+      "native_fatal_MUMPS_required": true,
+      "native_error_termination": true,
+      "parser_internal_EOF": false
+    }
+  ],
+  "existing_binary_implicit_route_available": false,
+  "conclusion": "Original80charNONLINrecord fails before native setup. Independent preserved upstream parser declares TITLE*72; compact equivalent record removes that parser failure. Both compact PCG and direct MUMPS probes terminate natively with MUMPS required (8684 and2404). This installed executable does not demonstrate an implicit continuation route.",
+  "whole_restart_contact_or_regime_transition_tested": false,
+  "solver_binary_changed": false,
+  "software_installed": false,
+  "old_runs_retained": true,
+  "source_snapshot_matches_binary_not_claimed": true
+}

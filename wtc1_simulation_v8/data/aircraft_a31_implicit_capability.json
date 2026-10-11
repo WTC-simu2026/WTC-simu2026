@@ -1,0 +1,95 @@
+{
+  "iteration": "AIRCRAFT-A31",
+  "subscope": "existing-binary implicit capability",
+  "declared_utc": "2026-10-11T08:03:36.574893+00:00",
+  "seed": 1102056,
+  "random_draws": 0,
+  "purpose": "Probe a potentially efficient late-time physical dynamics route. This tiny fixture can establish binary capability only; it does not qualify nonlinear whole impact, restart, contact or regime transition.",
+  "geometry_mm": {
+    "lo": [
+      -0.5,
+      -0.5,
+      -0.5
+    ],
+    "hi": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "shape": [
+      2,
+      2,
+      2
+    ]
+  },
+  "material": "unchanged source LAW2/1: rho.00278g/mm3 E73100MPa nu.33 yield324MPa, no added failure",
+  "solid": "TYPE14 HA8 Isolid14 Ismstr4 Icpre2 Gauss222 Iframe2",
+  "mass_g": 0.00278,
+  "boundary": "Only x=-.5 and x=.5 faces fixed XYZ except right-face ramp ux; middle nodes free",
+  "motion": {
+    "duration_ms": 0.05,
+    "displacement_mm": 0.001,
+    "shape": "3u2-2u3",
+    "function_points": 1001
+  },
+  "implicit": {
+    "Newmark_gamma": 0.5,
+    "Newmark_beta": 0.25,
+    "initial_dt_ms": 0.001,
+    "nonlin_N": 1,
+    "L_A": 0,
+    "Itol": 123,
+    "tolerances": [
+      1e-06,
+      1e-06,
+      1e-06
+    ],
+    "cases": [
+      {
+        "name": "PCG",
+        "solver_N": 1,
+        "Iprec": 2,
+        "It_max": 0,
+        "Itol": 1,
+        "Tol": 1e-08
+      },
+      {
+        "name": "MUMPS",
+        "solver_N": 2,
+        "Iprec": 2,
+        "It_max": 0,
+        "Itol": 1,
+        "Tol": 1e-08
+      }
+    ]
+  },
+  "execution": {
+    "CPU_threads": 1,
+    "GPU": false,
+    "per_process_cap_s": 60,
+    "estimated_seconds_max": 240,
+    "binary_changed": false,
+    "installation": false,
+    "mass_scaling": false
+  },
+  "acceptance": {
+    "strict_zero_starter_warnings": true,
+    "native_normal_termination": true,
+    "mass_relative": 1e-06,
+    "ADMAS_relative": 1e-09,
+    "reference_IE_fraction": 0.02,
+    "energy_fraction": 0.02,
+    "energy_absolute_J": 1e-07,
+    "elastic_PW_J": 1e-07
+  },
+  "independent_reference": "A23 conventional8node isotropic3D elastic stiffness,2x2x2Gauss; source tensor, saved before native outputs",
+  "docs": {
+    "nonlin": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/impl_nonlin_engine_r.htm",
+    "solver": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/impl_solver_engine_r.htm",
+    "dtini": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/impl_dtini_engine_r.htm",
+    "dyna": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/impl_dyna_2_engine_r.htm"
+  },
+  "whole_inputs_changed": false,
+  "whole_insertion_ready": false,
+  "objective1_complete": false
+}

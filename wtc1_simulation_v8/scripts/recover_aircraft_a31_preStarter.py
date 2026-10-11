@@ -1,0 +1,14 @@
+"""Repair only missing preparation metadata, then execute unchanged saved inputs."""
+from run_aircraft_a31 import *
+
+def main():
+    guard();cid='SHEAR_XZ_N6';d=OUT/'w0'/cid;n='A31_'+cid;assert d.exists() and not (d/'starter.log').exists() and not (d/'engine.log').exists() and not (d/'generation.json').exists();h=harness();assert h['Status']=='PASS';X,B,parts,m=mesh(6);bottom=[int(i+1) for i,x in enumerate(X) if x[2]==-4.5];top=[int(i+1) for i,x in enumerate(X) if x[2]==4.5];pins=[{'path':rel(d/(n+q)),'sha256':streamsha(d/(n+q))} for q in ['_0000.rad','_0001.rad']];old=OUT/'runner_before_missing_import_fix.py';new=Path(__file__).with_name('run_aircraft_a31.py');expected=old.read_text(encoding='utf-8').replace('native_gate,skin,core\n','native_gate,skin,core,continuous_I\n');assert new.read_text(encoding='utf-8')==expected
+    dump(OUT/'preStarter_recovery.json',{'created_utc':now(),'error':'NameError continuous_I while writing generation metadata, before Starter; independent reference and both decks already saved. Missing import repaired; no input deck rewritten or solver rerun.','original_runner':rel(old),'original_runner_sha256':streamsha(old),'repaired_runner':rel(new),'repaired_runner_sha256':streamsha(new),'saved_input_pins':pins,'harness':h,'before_first_native':True})
+    dump(d/'generation.json',{'created_utc':now(),'case':cid,'name':n,'mesh_n':6,'free':False,'duration_ms':.5,'nodes_mm':X.tolist(),'bricks':B,'brick_parts':parts,'known_nodal_masses_g':m.tolist(),'known_mass_g':float(m.sum()),'continuous_inertia_g_mm2':continuous_I().tolist(),'initial_velocity_m_s':np.zeros_like(X).tolist(),'initial_omega_rad_ms':[0,0,0],'physical_shared_faces':True,'bottom_node_ids':bottom,'top_node_ids':top,'interior_nodes_free':True,'configuration_sha256':streamsha(CFG),'generator_sha256':streamsha(d/'generator_snapshot.py'),'preStarter_metadata_recovery':rel(OUT/'preStarter_recovery.json')})
+    en=env();en.update(OMP_NUM_THREADS='1',RAD_HMPP_DOMAINS='1')
+    try:
+        ok=execute(RUNTIME/'starter_win64.exe',['-i',n+'_0000.rad','-np','1'],d,'starter.log',1800,en);t=(d/'starter.log').read_text(errors='replace');nw=int(re.findall(r'(\d+) WARNING\(S\)',t)[-1]);ne=int(re.findall(r'(\d+) ERROR\(S\)',t)[-1]);dump(d/'starter_gate.json',{'created_utc':now(),'warnings':nw,'errors':ne,'pass':bool(ok and nw==0 and ne==0)});assert ok and nw==0 and ne==0,t[-4000:];native_gate(d,n);assert execute(RUNTIME/'engine_win64.exe',['-i',n+'_0001.rad'],d,'engine.log',1800,en);assert 'NORMAL TERMINATION' in (d/'engine.log').read_text(errors='replace');assert execute(RUNTIME/'th_to_csv_win64.exe',[n+'T01'],d,'converter.log',1800,en);review(d,n)
+    except Exception:dump(d/'retained_failure.json',{'created_utc':now(),'traceback':traceback.format_exc(),'whole_insertion_ready':False});raise
+    assert all(streamsha(ROOT/p['path'])==p['sha256'] for p in pins);run()
+
+if __name__=='__main__':main()
