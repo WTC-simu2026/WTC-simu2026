@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-10-12T14:48:48.082381+00:00",
+  "files": [
+    {
+      "path": "engine/source/implicit/imp_glob_k.F",
+      "sha256": "7a6630fe353463ada0d2e0066073970694e8bb6625a05cac9a14850bd9e3d30e",
+      "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+      "raw_source_redistributed": false
+    },
+    {
+      "path": "engine/source/implicit/assem_c4.F",
+      "sha256": "8cf88794e510ed9f34d296f31b1216eb9341e90b304e0e4d2f69dd8fbb38ca85",
+      "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+      "raw_source_redistributed": false
+    },
+    {
+      "path": "engine/source/elements/shell/coqueba/cbake3.F",
+      "sha256": "efca538f4d628d9de145de02634b3e9097dedffb5effbbd731235c7e317e81b2",
+      "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+      "raw_source_redistributed": false
+    }
+  ],
+  "observed_calls": "CBAKE3 assembles four-node shell stiffness through ASSEM_C4 then ASSEMC_KIJ; six nominal shell DOF blocks, NDOF controls active rows.",
+  "hypothesis": "Whole topology, boundary constraints or mixed DOF graph may differ from isolated shell; source branch alone does not identify the failing native element.",
+  "known_missing_guard": "ASSEMC_KIJ searches JDIK for a block then uses JDL without an explicit not-found branch. No source patch and no proven missing block in native whole state.",
+  "physical_cause_inferred": false
+}

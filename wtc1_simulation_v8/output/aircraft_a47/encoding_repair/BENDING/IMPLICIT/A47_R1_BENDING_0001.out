@@ -1,0 +1,832 @@
+ A47_R1_BENDING_0001.out
+************************************************************************
+**                                                                    **
+**                                                                    **
+**                         OpenRadioss Engine                         **
+**                                                                    **
+**            Non-linear Finite Element Analysis Software             **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+**                Linux 64 bits, GNU compiler, OpenMPI                **
+**                      Double Precision Version                      **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+************************************************************************
+** OpenRadioss Software                                               **
+** COPYRIGHT (C) 2026 Siemens                                         **
+** Licensed under GNU Affero General Public License.                  **
+** See License file.                                                  **
+************************************************************************
+ 
+ NUMBER OF SPMD DOMAINS           1
+ NUMBER OF THREADS PER DOMAIN     1
+ NUMBER OF HMPP PROCESSES         1
+  
+ COMPUTATION HARDWARE DESCRIPTION
+  
+ HOSTNAME     CPU TYPE, FREQUENCY AND MEMORY
+ jeux   AMD Ryzen 5 5600 6-Core Processor (x86_64), 3700 MHz,   7897 MB RAM,   2048 MB swap
+  
+ STACKSIZE  . . . . . . . . . . . . . . . . . . . . 8 MB
+ THREAD STACKSIZE . . . . . . . . . . . . . . . . . 0 MB
+ 
+************************************************************************
+
+
+ A47_R1_BENDINGD01                                                               
+
+
+ FINAL TIME . . . . . . . . . . . . . . . . . . .   12.00000    
+
+ TIME INTERVAL FOR TIME HISTORY PLOTS . . . . . .  0.1000000E-02
+
+ TIME STEP SCALE FACTOR . . . . . . . . . . . . .  0.9000000    
+
+ MINIMUM TIME STEP  . . . . . . . . . . . . . . .   0.000000    
+
+
+ BRICK TIME STEP SCALE FACTOR . . . . . . . . . .  0.9000000    
+ BRICK MINIMUM TIME STEP. . . . . . . . . . . . .   0.000000    
+ MIN. TIME STEP FLAG (1:STOP RUN, 2:DELETE BRICK)     1
+
+ QUAD TIME STEP SCALE FACTOR. . . . . . . . . . .  0.9000000    
+ QUAD MINIMUM TIME STEP . . . . . . . . . . . . .   0.000000    
+ MIN. TIME STEP FLAG (1:STOP RUN, 2:DELETE QUAD).     1
+
+ SHELL TIME STEP SCALE FACTOR . . . . . . . . . .  0.9000000    
+ SHELL MINIMUM TIME STEP. . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE, 3:SMALL STRAIN)    2
+
+ TRUSS TIME STEP SCALE FACTOR . . . . . . . . . .  0.9000000    
+ TRUSS MINIMUM TIME STEP. . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE). . . . . . . .     0
+
+ BEAM TIME STEP SCALE FACTOR. . . . . . . . . . .  0.9000000    
+ BEAM MINIMUM TIME STEP . . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE). . . . . . . .     0
+
+ SPRING TIME STEP SCALE FACTOR. . . . . . . . . .  0.9000000    
+ SPRING MINIMUM TIME STEP . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE). . . . . . . .     0
+
+ AIRBAG TIME STEP SCALE FACTOR. . . . . . . . . .  0.9000000    
+ AIRBAG MINIMUM TIME STEP . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP). . . . . . . . . . . . .     0
+
+ CONTACT TIME STEP SCALE FACTOR . . . . . . . . .  0.9000000    
+ CONTACT MINIMUM TIME STEP. . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG(1:STOP, 2:REMOVE NODE FROM INTERF)    0
+
+ PRINTOUT CYCLE FREQUENCY . . . . . . . . . . . .  -100
+
+ RESTART CYCLE FREQUENCY. . . . . . . . . . . . .   10000000
+
+ MAXIMUM RESTART WRITE BEFORE OVERWRITE . . . . .     0
+
+ INVERS: INPUT DECK VERSION . . . . . . . . . . .  2026
+ ITTYP : FLAG FOR TYPE OF T-FILE. . . . . . . . .     4
+
+  ** WARNING ** : PARITH/ON IS NOT COMPATIBLE WITH IMPLICIT OPTION 
+  ** RESETTING **  : PARITH/OFF  
+ INITIAL TIME STEP. . . . . . . . . . . . . . . .   0.000000    
+ MAXIMUM TIME STEP. . . . . . . . . . . . . . . .  0.1000000E+21
+
+ PARALLEL ARITHMETIC OFF
+ NUMBER OF INTERFACES TO BE ELIMINATED. . . . . .        0
+
+ NUMBER OF PARTS TO BE ELIMINATED . . . . . . . .        0
+
+ NUMBER OF SOLID  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF QUAD   ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF SHELL  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF TRUSS  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF BEAM   ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF SPRING ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF SH_3N  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF  SPH PARTICLES BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF RIGID LINKS. . . . . . . . . . . . . .        0
+
+ NUMBER OF NEW BOUNDARY CONDITIONS. . . . . . . .        0
+
+
+ IMPLICIT OPTIONS USED :
+
+ IMPLICIT TYPE : . . . . . . . . . . . . .   DYNAMIC NON-LINEAR       
+ LINEAR SOLVER : . . . . . . . . . . . . .   DIRECT(MUMPS)            
+ PRINTOUT FREQUENCY FOR LINEAR SOLVER . . .      0
+
+
+ GEOMETRICAL STIFFNESS FLAG  . . .. . . . .      1
+ LOAD (PRESSURE) STIFFNESS FLAG  . . . . .       1
+ AUTOSPC FLAG (0:OFF,1:ON,2:ALL) . . .. . .      1
+ SPRING-BACK OPTION : . . . . . . . . . . .      0
+ SPECIAL PCG SOLVER FOR CONTACT . . . .. .       0
+
+ NON-LINEAR SOLVER : . . . . . . . . . . .   MODIFIED NEWTON          
+ INITIAL TIME STEP . . . . . . . . . . . .    0.1000000E-02
+ STOP CRITERION FOR NON-LINEAR SOLVER . . .    123
+ ENERGY TOLERANCE FOR NON-LINEAR SOLVER . .   0.1000000E-10
+ FORCE TOLERANCE FOR NON-LINEAR SOLVER  . .   0.1000000E-10
+ DISP. TOLERANCE FOR NON-LINEAR SOLVER  . .   0.1000000E-10
+ ITERATION NUM.LIMIT FOR REFORMING MATRIX .      6
+ PRINTOUT FREQUENCY FOR NON-LINEAR SOLVER .      0
+ PRE-STRESSES CONTROL FLAG . . . . . . . .       0
+ REFERENCE RESIDUAL FLAG . . . . . . .. . .      2
+ TIME STEP CONTROL METHOD . . . . . . . . .      1
+ MINIMUM TIME STEP . . . . . . . . . . . .    0.1000000E-11
+ MAXIMUM TIME STEP . . . . . . . . . . . .    0.1000000E-02
+
+
+ SMALL DISPLACEMENT OPTION(0:OFF,1:ON) . . .. . .      0
+
+ MINIMUM REFERENCE FORCE RESIDUAL . . . .    1.000000    
+ MAXIMUM REFERENCE FORCE RESIDUAL . . . .    0.1000000E+31
+
+
+AUTOMATIC TIME STEP CONTROL:
+
+ CONVERGE ITERATION NUM. FOR INCREASING DT.       2
+ INCREASING TIME STEP SCALE FACTOR.  . . . .    1.000000    
+ CONVERGE ITERATION NUM. FOR DECREASING DT .     30
+ DECREASING TIME STEP SCALE FACTOR.  . . . .   0.5000000    
+
+ TIME INTEGRATION WITH NEWMARK CONSTANTS     0.5000000     0.2500000    
+
+
+ LINE-SEARCH METHOD :. . . . . . . . . . . .      3
+ MAXIMUM LINE-SEARCH ITERATION NUM. . . . .      20
+ TOLERANCE FOR LINE-SEARCH ITERATION.  . . .   0.1000000E-02
+
+ DIVERGENCE CRITERION NUMBERS :  . . . . . .      1
+
+
+ TIME FOR FIRST ANIMATION-FILE PLOT . . . . . . .   0.000000    
+ TIME INTERVAL FOR ANIMATION-FILE PLOTS . . . . .  0.5000000    
+ TIME TO STOP ANIMATION-FILE PLOTS. . . . . . . .  0.1000000E+21
+ SENSOR FOR ANIMATION-FILE PLOTS. . . . . . . . .          0
+ TIME INTERVAL FOR SENSOR ANIMATION-FILE PLOTS. .   0.000000    
+
+ VARIABLE SAVED ON ANIMATION FILES (1: YES) :
+      PLASTIC STRAIN. . . . . .     0
+      DENSITY     (SOLID ONLY).     0
+      SPECIFIC ENERGY . . . . .     1
+      HOURGLASS ENERGY. . . . .     0
+      TEMPERATURE (SOLID ONLY).     0
+      THICKNESS   (SHELL ONLY).     0
+      PRESSURE    (SOLID ONLY).     0
+      VON MISES . . . . . . . .     0
+      TURBULENT ENERGY (FLUID).     0
+      TURBULENT VISCOSITY(FLUID)    0
+      VORTICITY (FLUID) . . . .     0
+ NODAL VALUES SAVED ON ANIMATION FILES (1: YES) :
+      PRESSURE. . . . . . . . .     0
+      DENSITY . . . . . . . . .     0
+      TEMPERATURE . . . . . . .     0
+ VECTOR SAVED ON ANIMATION FILES (1: YES) :
+      VELOCITY VECTOR . . . . .     1
+      DISPLACEMENT VECTOR . . .     1
+      ACCELERATION VECTOR . . .     0
+      CONTACT FORCES. . . . . .     0
+      INTERNAL FORCES . . . . .     0
+      EXTERNAL FORCES . . . . .     0
+      SECTION RBY RWALL FORCES.     0
+      ROTATIONAL VELOCITY VECTOR    0
+      CONTACT PRESSURE (VECTORS)    0
+ SHELL TENSOR SAVED ON ANIMATION FILES (1: YES) :
+      MEMBRANE STRESS . . . . .     0
+      BENDING STRESS(MOMENT/T^2)    0
+      UPPER LAYER STRESS. . . .     0
+      LOWER LAYER STRESS. . . .     0
+      MEMBRANE STRAIN . . . . .     0
+      CURVATURE . . . . . . . .     0
+      UPPER LAYER STRAIN. . . .     0
+      LOWER LAYER STRAIN. . . .     0
+ NODAL MASS SAVED ON ANIMATION FILES (1: YES) :    1
+ KEEP DELETED ELEMENT (1: YES) :    0
+
+
+ 12/10/2026
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+       0   0.000      0.1000E-02 SHELL          1   0.0%   0.000       0.000       0.000       0.000       0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA001 WRITTEN
+
+   *--------- STIFFNESS MATRIX SETUP ---------*
+ SYMBOLIC DIM : ND =      54 NZ =       855 NB_MAX =       8
+ FINAL    DIM : ND =       6 NZ =        15 NB_MAX =       8
+
+
+Entering DMUMPS 5.6.2 with JOB, N, NNZ =   1           6             21
+      executing #MPI =      1, without OMP
+
+ =================================================
+ MUMPS compiled with option -Dpord
+ =================================================
+L D L^T Solver for symmetric positive definite matrices
+Type of parallelism: Working host
+
+ ****** ANALYSIS STEP ********
+
+ Processing a graph of size:         6
+ Average density of rows/columns =    5
+ Ordering based on AMF 
+
+Leaving analysis phase with  ...
+ INFOG(1)                                       =               0
+ INFOG(2)                                       =               0
+ -- (20) Number of entries in factors (estim.)  =              21
+ --  (3) Real space for factors    (estimated)  =              36
+ --  (4) Integer space for factors (estimated)  =              32
+ --  (5) Maximum frontal size      (estimated)  =               6
+ --  (6) Number of nodes in the tree            =               1
+ -- (32) Type of analysis effectively used      =               1
+ --  (7) Ordering option effectively used       =               2
+ ICNTL (6) Maximum transversal option           =               0
+ ICNTL (7) Pivot order option                   =               7
+ ICNTL(13) Parallelism/splitting of root node   =               1
+ ICNTL(14) Percentage of memory relaxation      =               5
+ ICNTL(15) Analysis by block effectively used   =               0
+ ICNTL(18) Distributed input matrix (on if >0)  =               0
+ ICNTL(58) Symbolic factorization option        =               2
+ Number of level 2 nodes                        =               0
+ Number of split nodes                          =               0
+ RINFOG(1) Operations during elimination (estim)= 8.500D+01
+
+ MEMORY ESTIMATIONS ... 
+ Estimations with standard Full-Rank (FR) factorization:
+    Total space in MBytes, IC factorization      (INFOG(17)):           0
+    Total space in MBytes,  OOC factorization    (INFOG(27)):           0
+
+ Elapsed time in analysis driver=       0.0001
+
+Entering DMUMPS 5.6.2 with JOB, N, NNZ =   2           6             21
+      executing #MPI =      1, without OMP
+
+
+
+****** FACTORIZATION STEP ********
+
+ GLOBAL STATISTICS PRIOR NUMERICAL FACTORIZATION ...
+ Number of working processes                =               1
+ ICNTL(22) Out-of-core option               =               0
+ ICNTL(35) BLR activation (eff. choice)     =               0
+ ICNTL(37) BLR CB compression (eff. choice) =               0
+ ICNTL(49) Compact workarray S (end facto.) =               0
+ ICNTL(14) Memory relaxation                =               5
+ INFOG(3) Real space for factors (estimated)=              36
+ INFOG(4) Integer space for factors (estim.)=              32
+ Maximum frontal size (estimated)           =               6
+ Number of nodes in the tree                =               1
+ ICNTL(23) Memory allowed (value on host)   =               0
+           Sum over all procs               =               0
+ Memory provided by user, sum of LWK_USER   =               0
+ Effective threshold for pivoting, CNTL(1)  =      0.0000D+00
+ Effective size of S     (based on INFO(39))=                 2141
+
+ Elapsed time to reformat/distribute matrix =      0.0000
+
+ ** Memory allocated, total in Mbytes           (INFOG(19)):           0
+ ** Memory effectively used, total in Mbytes    (INFOG(22)):           0
+
+ Elapsed time for factorization                     =      0.0000
+
+Leaving factorization with ...
+ RINFOG (2) Operations in node assembly             = 0.000D+00
+ ------ (3) Operations in node elimination          = 8.500D+01
+ ICNTL  (8) Scaling effectively used                =               0
+ INFOG  (9) Real space for factors                  =              36
+ INFOG (10) Integer space for factors               =              32
+ INFOG (11) Maximum front size                      =               6
+ INFOG (29) Number of entries in factors            =              21
+ INFOG (12) Number of negative pivots               =               0
+ INFOG (14) Number of memory compress               =               0
+
+ Elapsed time in factorization driver               =      0.0003
+
+Entering DMUMPS 5.6.2 with JOB, N, NNZ =   3           6             21
+      executing #MPI =      1, without OMP
+
+
+
+ ****** SOLVE & CHECK STEP ********
+
+ GLOBAL STATISTICS PRIOR SOLVE PHASE ...........
+ Number of right-hand-sides                    =           1
+ Blocking factor for multiple rhs              =           1
+ ICNTL (9)                                     =           1
+  --- (10)                                     =           0
+  --- (11)                                     =           0
+  --- (20)                                     =           0
+  --- (21)                                     =           0
+  --- (30)                                     =           0
+  --- (35)                                     =           0
+ ** Space in MBYTES used for solve                        :         0
+
+ Leaving solve with ...
+ Time to build/scatter RHS        =       0.000010
+ Time in solution step (fwd/bwd)  =       0.000038
+  .. Time in forward (fwd) step   =          0.000029
+  .. Time in backward (bwd) step  =          0.000009
+ Time to gather solution(cent.sol)=       0.000001
+ Time to copy/scale dist. solution=       0.000000
+
+ Elapsed time in solve driver=       0.0001
+
+Entering DMUMPS 5.6.2 with JOB =  -2
+      executing #MPI =      1, without OMP
+     100  0.9100E-01  0.5000E-03 SHELL          1  99.9%  0.3977E-10  0.1232E-07  0.6485E-08  0.5068E-08   0.000       8640.       0.000    
+     200  0.1410      0.5000E-03 SHELL          1  97.6%  0.4797E-09  0.8900E-07  0.4686E-07  0.6899E-07   0.000       8640.       0.000    
+     300  0.1910      0.5000E-03 SHELL          1  57.0%  0.2795E-08  0.3308E-06  0.1742E-06  0.3235E-06   0.000       8640.       0.000    
+     400  0.2410      0.5000E-03 SHELL          1  39.8%  0.1089E-07  0.8813E-06  0.4640E-06  0.9700E-06   0.000       8640.       0.000    
+     500  0.2910      0.5000E-03 SHELL          1  30.4%  0.3287E-07  0.1922E-05  0.1012E-05  0.2275E-05   0.000       8640.       0.000    
+     600  0.3410      0.5000E-03 SHELL          1  24.5%  0.8326E-07  0.3667E-05  0.1931E-05  0.4562E-05   0.000       8640.       0.000    
+     700  0.3910      0.5000E-03 SHELL          2  20.5%  0.1856E-06  0.6360E-05  0.3349E-05  0.8214E-05   0.000       8640.       0.000    
+     800  0.4410      0.5000E-03 SHELL          2  17.5%  0.3750E-06  0.1027E-04  0.5408E-05  0.1366E-04   0.000       8640.       0.000    
+     900  0.4910      0.5000E-03 SHELL          1  15.3%  0.7020E-06  0.1569E-04  0.8260E-05  0.2138E-04   0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA002 WRITTEN
+    1000  0.5410      0.5000E-03 SHELL          2  13.5%  0.1235E-05  0.2292E-04  0.1207E-04  0.3191E-04   0.000       8640.       0.000    
+    1100  0.5910      0.5000E-03 SHELL          1   6.4%  0.2064E-05  0.3228E-04  0.1699E-04  0.4825E-04   0.000       8640.       0.000    
+    1200  0.6410      0.5000E-03 SHELL          1   2.4%  0.3304E-05  0.4410E-04  0.2322E-04  0.6894E-04   0.000       8640.       0.000    
+    1300  0.6910      0.5000E-03 SHELL          1   0.1%  0.5101E-05  0.5872E-04  0.3092E-04  0.9465E-04   0.000       8640.       0.000    
+    1400  0.7410      0.5000E-03 SHELL          1  -1.3%  0.7632E-05  0.7648E-04  0.4027E-04  0.1261E-03   0.000       8640.       0.000    
+    1500  0.7910      0.5000E-03 SHELL          1  -2.2%  0.1111E-04  0.9771E-04  0.5145E-04  0.1640E-03   0.000       8640.       0.000    
+    1600  0.8410      0.5000E-03 SHELL          1  -2.8%  0.1579E-04  0.1228E-03  0.6464E-04  0.2091E-03   0.000       8640.       0.000    
+    1700  0.8910      0.5000E-03 SHELL          1  -3.1%  0.2197E-04  0.1520E-03  0.8002E-04  0.2622E-03   0.000       8640.       0.000    
+    1800  0.9410      0.5000E-03 SHELL          1  -3.3%  0.2999E-04  0.1857E-03  0.9776E-04  0.3242E-03   0.000       8640.       0.000    
+    1900  0.9910      0.5000E-03 SHELL          2  -3.4%  0.4025E-04  0.2242E-03  0.1180E-03  0.3960E-03   0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA003 WRITTEN
+    2000   1.041      0.5000E-03 SHELL          1  -3.5%  0.5320E-04  0.2678E-03  0.1410E-03  0.4785E-03   0.000       8640.       0.000    
+    2100   1.091      0.5000E-03 SHELL          1  -3.4%  0.6935E-04  0.3168E-03  0.1668E-03  0.5727E-03   0.000       8640.       0.000    
+    2200   1.141      0.5000E-03 SHELL          2  -3.4%  0.8927E-04  0.3716E-03  0.1956E-03  0.6795E-03   0.000       8640.       0.000    
+    2300   1.191      0.5000E-03 SHELL          2  -3.3%  0.1136E-03  0.4323E-03  0.2276E-03  0.8000E-03   0.000       8640.       0.000    
+    2400   1.241      0.5000E-03 SHELL          2  -3.2%  0.1430E-03  0.4992E-03  0.2628E-03  0.9352E-03   0.000       8640.       0.000    
+    2500   1.291      0.5000E-03 SHELL          1  -3.1%  0.1783E-03  0.5726E-03  0.3015E-03  0.1086E-02   0.000       8640.       0.000    
+    2600   1.341      0.5000E-03 SHELL          1  -3.0%  0.2202E-03  0.6526E-03  0.3436E-03  0.1254E-02   0.000       8640.       0.000    
+    2700   1.391      0.5000E-03 SHELL          1  -2.9%  0.2698E-03  0.7395E-03  0.3894E-03  0.1441E-02   0.000       8640.       0.000    
+    2800   1.441      0.5000E-03 SHELL          1  -2.8%  0.3279E-03  0.8335E-03  0.4389E-03  0.1647E-02   0.000       8640.       0.000    
+    2900   1.491      0.5000E-03 SHELL          1  -2.7%  0.3957E-03  0.9346E-03  0.4921E-03  0.1873E-02   0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA004 WRITTEN
+    3000   1.541      0.5000E-03 SHELL          2  -2.6%  0.4743E-03  0.1043E-02  0.5492E-03  0.2122E-02   0.000       8640.       0.000    
+    3100   1.591      0.5000E-03 SHELL          1  -2.5%  0.5648E-03  0.1159E-02  0.6103E-03  0.2394E-02   0.000       8640.       0.000    
+    3200   1.641      0.5000E-03 SHELL          1  -2.4%  0.6687E-03  0.1282E-02  0.6752E-03  0.2691E-02   0.000       8640.       0.000    
+    3300   1.691      0.5000E-03 SHELL          1  -2.3%  0.7871E-03  0.1413E-02  0.7442E-03  0.3014E-02   0.000       8640.       0.000    
+    3400   1.741      0.5000E-03 SHELL          1  -2.2%  0.9216E-03  0.1552E-02  0.8172E-03  0.3366E-02   0.000       8640.       0.000    
+    3500   1.791      0.5000E-03 SHELL          1  -2.1%  0.1074E-02  0.1698E-02  0.8942E-03  0.3746E-02   0.000       8640.       0.000    
+    3600   1.841      0.5000E-03 SHELL          2  -2.0%  0.1245E-02  0.1852E-02  0.9752E-03  0.4157E-02   0.000       8640.       0.000    
+    3700   1.891      0.5000E-03 SHELL          2  -2.0%  0.1437E-02  0.2014E-02  0.1060E-02  0.4601E-02   0.000       8640.       0.000    
+    3800   1.941      0.5000E-03 SHELL          1  -1.9%  0.1652E-02  0.2183E-02  0.1149E-02  0.5079E-02   0.000       8640.       0.000    
+    3900   1.991      0.5000E-03 SHELL          1  -1.8%  0.1891E-02  0.2359E-02  0.1242E-02  0.5593E-02   0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA005 WRITTEN
+    4000   2.041      0.5000E-03 SHELL          2  -1.7%  0.2157E-02  0.2543E-02  0.1339E-02  0.6144E-02   0.000       8640.       0.000    
+    4100   2.091      0.5000E-03 SHELL          1  -1.6%  0.2450E-02  0.2734E-02  0.1439E-02  0.6734E-02   0.000       8640.       0.000    
+    4200   2.141      0.5000E-03 SHELL          2  -1.6%  0.2774E-02  0.2932E-02  0.1544E-02  0.7366E-02   0.000       8640.       0.000    
+    4300   2.191      0.5000E-03 SHELL          1  -1.5%  0.3131E-02  0.3137E-02  0.1651E-02  0.8040E-02   0.000       8640.       0.000    
+    4400   2.241      0.5000E-03 SHELL          2  -1.4%  0.3522E-02  0.3348E-02  0.1763E-02  0.8759E-02   0.000       8640.       0.000    
+    4500   2.291      0.5000E-03 SHELL          2  -1.4%  0.3949E-02  0.3566E-02  0.1878E-02  0.9525E-02   0.000       8640.       0.000    
+    4600   2.341      0.5000E-03 SHELL          1  -1.3%  0.4416E-02  0.3790E-02  0.1996E-02  0.1034E-01   0.000       8640.       0.000    
+    4700   2.391      0.5000E-03 SHELL          1  -1.3%  0.4924E-02  0.4021E-02  0.2117E-02  0.1120E-01   0.000       8640.       0.000    
+    4800   2.441      0.5000E-03 SHELL          1  -1.2%  0.5476E-02  0.4256E-02  0.2241E-02  0.1212E-01   0.000       8640.       0.000    
+    4900   2.491      0.5000E-03 SHELL          1  -1.2%  0.6073E-02  0.4498E-02  0.2368E-02  0.1309E-01   0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA006 WRITTEN
+    5000   2.541      0.5000E-03 SHELL          1  -1.0%  0.6719E-02  0.4744E-02  0.2498E-02  0.1411E-01   0.000       8640.       0.000    
+    5100   2.591      0.5000E-03 SHELL          2  -0.9%  0.7416E-02  0.4995E-02  0.2630E-02  0.1518E-01   0.000       8640.       0.000    
+    5200   2.641      0.5000E-03 SHELL          1  -0.8%  0.8167E-02  0.5251E-02  0.2765E-02  0.1632E-01   0.000       8640.       0.000    
+    5300   2.691      0.5000E-03 SHELL          1  -0.8%  0.8973E-02  0.5511E-02  0.2901E-02  0.1752E-01   0.000       8640.       0.000    
+    5400   2.741      0.5000E-03 SHELL          2  -0.7%  0.9838E-02  0.5774E-02  0.3040E-02  0.1878E-01   0.000       8640.       0.000    
+    5500   2.791      0.5000E-03 SHELL          2  -0.6%  0.1076E-01  0.6040E-02  0.3180E-02  0.2011E-01   0.000       8640.       0.000    
+    5600   2.841      0.5000E-03 SHELL          1  -0.6%  0.1175E-01  0.6310E-02  0.3322E-02  0.2150E-01   0.000       8640.       0.000    
+    5700   2.891      0.5000E-03 SHELL          1  -0.5%  0.1281E-01  0.6582E-02  0.3466E-02  0.2297E-01   0.000       8640.       0.000    
+    5800   2.941      0.5000E-03 SHELL          1  -0.5%  0.1393E-01  0.6856E-02  0.3610E-02  0.2451E-01   0.000       8640.       0.000    
+    5900   2.991      0.5000E-03 SHELL          2  -0.4%  0.1513E-01  0.7132E-02  0.3755E-02  0.2612E-01   0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA007 WRITTEN
+    6000   3.041      0.5000E-03 SHELL          1  -0.4%  0.1640E-01  0.7409E-02  0.3901E-02  0.2781E-01   0.000       8640.       0.000    
+    6100   3.091      0.5000E-03 SHELL          1  -0.3%  0.1774E-01  0.7686E-02  0.4047E-02  0.2958E-01   0.000       8640.       0.000    
+    6200   3.141      0.5000E-03 SHELL          1  -0.3%  0.1917E-01  0.7964E-02  0.4193E-02  0.3142E-01   0.000       8640.       0.000    
+    6300   3.191      0.5000E-03 SHELL          1  -0.3%  0.2067E-01  0.8242E-02  0.4340E-02  0.3335E-01   0.000       8640.       0.000    
+    6400   3.241      0.5000E-03 SHELL          1  -0.2%  0.2226E-01  0.8520E-02  0.4486E-02  0.3536E-01   0.000       8640.       0.000    
+    6500   3.291      0.5000E-03 SHELL          1  -0.2%  0.2394E-01  0.8796E-02  0.4631E-02  0.3745E-01   0.000       8640.       0.000    
+    6600   3.341      0.5000E-03 SHELL          1  -0.2%  0.2570E-01  0.9071E-02  0.4776E-02  0.3963E-01   0.000       8640.       0.000    
+    6700   3.391      0.5000E-03 SHELL          1  -0.2%  0.2756E-01  0.9343E-02  0.4919E-02  0.4190E-01   0.000       8640.       0.000    
+    6800   3.441      0.5000E-03 SHELL          1  -0.2%  0.2950E-01  0.9614E-02  0.5062E-02  0.4425E-01   0.000       8640.       0.000    
+    6900   3.491      0.5000E-03 SHELL          1  -0.2%  0.3154E-01  0.9881E-02  0.5203E-02  0.4670E-01   0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA008 WRITTEN
+    7000   3.541      0.5000E-03 SHELL          1  -0.1%  0.3368E-01  0.1015E-01  0.5342E-02  0.4924E-01   0.000       8640.       0.000    
+    7100   3.591      0.5000E-03 SHELL          1  -0.1%  0.3592E-01  0.1041E-01  0.5479E-02  0.5187E-01   0.000       8640.       0.000    
+    7200   3.641      0.5000E-03 SHELL          1  -0.1%  0.3826E-01  0.1066E-01  0.5613E-02  0.5460E-01   0.000       8640.       0.000    
+    7300   3.691      0.5000E-03 SHELL          1  -0.1%  0.4070E-01  0.1091E-01  0.5746E-02  0.5742E-01   0.000       8640.       0.000    
+    7400   3.741      0.5000E-03 SHELL          1  -0.1%  0.4325E-01  0.1116E-01  0.5875E-02  0.6034E-01   0.000       8640.       0.000    
+    7500   3.791      0.5000E-03 SHELL          1  -0.1%  0.4590E-01  0.1140E-01  0.6002E-02  0.6336E-01   0.000       8640.       0.000    
+    7600   3.841      0.5000E-03 SHELL          1  -0.1%  0.4866E-01  0.1163E-01  0.6126E-02  0.6647E-01   0.000       8640.       0.000    
+    7700   3.891      0.5000E-03 SHELL          1  -0.1%  0.5153E-01  0.1186E-01  0.6246E-02  0.6969E-01   0.000       8640.       0.000    
+    7800   3.941      0.5000E-03 SHELL          1  -0.1%  0.5450E-01  0.1208E-01  0.6362E-02  0.7300E-01   0.000       8640.       0.000    
+    7900   3.991      0.5000E-03 SHELL          1  -0.1%  0.5759E-01  0.1230E-01  0.6475E-02  0.7642E-01   0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA009 WRITTEN
+    8000   4.041      0.5000E-03 SHELL          2  -0.1%  0.6080E-01  0.1250E-01  0.6584E-02  0.7994E-01   0.000       8640.       0.000    
+    8100   4.091      0.5000E-03 SHELL          2  -0.1%  0.6411E-01  0.1270E-01  0.6689E-02  0.8355E-01   0.000       8640.       0.000    
+    8200   4.141      0.5000E-03 SHELL          1  -0.1%  0.6754E-01  0.1289E-01  0.6789E-02  0.8727E-01   0.000       8640.       0.000    
+    8300   4.191      0.5000E-03 SHELL          2  -0.1%  0.7108E-01  0.1308E-01  0.6885E-02  0.9109E-01   0.000       8640.       0.000    
+    8400   4.241      0.5000E-03 SHELL          1  -0.0%  0.7474E-01  0.1325E-01  0.6976E-02  0.9501E-01   0.000       8640.       0.000    
+    8500   4.291      0.5000E-03 SHELL          1  -0.0%  0.7852E-01  0.1341E-01  0.7062E-02  0.9904E-01   0.000       8640.       0.000    
+    8600   4.341      0.5000E-03 SHELL          2  -0.0%  0.8241E-01  0.1357E-01  0.7143E-02  0.1032       0.000       8640.       0.000    
+    8700   4.391      0.5000E-03 SHELL          1  -0.0%  0.8642E-01  0.1371E-01  0.7219E-02  0.1074       0.000       8640.       0.000    
+    8800   4.441      0.5000E-03 SHELL          1  -0.0%  0.9054E-01  0.1384E-01  0.7290E-02  0.1117       0.000       8640.       0.000    
+    8900   4.491      0.5000E-03 SHELL          2  -0.0%  0.9477E-01  0.1397E-01  0.7355E-02  0.1161       0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA010 WRITTEN
+    9000   4.541      0.5000E-03 SHELL          2  -0.0%  0.9913E-01  0.1408E-01  0.7415E-02  0.1207       0.000       8640.       0.000    
+    9100   4.591      0.5000E-03 SHELL          2  -0.0%  0.1036      0.1418E-01  0.7469E-02  0.1253       0.000       8640.       0.000    
+    9200   4.641      0.5000E-03 SHELL          1  -0.0%  0.1082      0.1428E-01  0.7517E-02  0.1300       0.000       8640.       0.000    
+    9300   4.691      0.5000E-03 SHELL          1  -0.0%  0.1129      0.1436E-01  0.7559E-02  0.1348       0.000       8640.       0.000    
+    9400   4.741      0.5000E-03 SHELL          1  -0.0%  0.1177      0.1443E-01  0.7596E-02  0.1397       0.000       8640.       0.000    
+    9500   4.791      0.5000E-03 SHELL          2  -0.0%  0.1226      0.1448E-01  0.7626E-02  0.1447       0.000       8640.       0.000    
+    9600   4.841      0.5000E-03 SHELL          1  -0.0%  0.1276      0.1453E-01  0.7651E-02  0.1498       0.000       8640.       0.000    
+    9700   4.891      0.5000E-03 SHELL          2  -0.0%  0.1327      0.1457E-01  0.7669E-02  0.1550       0.000       8640.       0.000    
+    9800   4.941      0.5000E-03 SHELL          2  -0.0%  0.1380      0.1459E-01  0.7681E-02  0.1603       0.000       8640.       0.000    
+    9900   4.991      0.5000E-03 SHELL          1  -0.0%  0.1433      0.1460E-01  0.7688E-02  0.1657       0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA011 WRITTEN
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+   10000   5.041      0.5000E-03 SHELL          1  -0.0%  0.1488      0.1460E-01  0.7688E-02  0.1711       0.000       8640.       0.000    
+   10100   5.091      0.5000E-03 SHELL          1  -0.0%  0.1543      0.1459E-01  0.7681E-02  0.1766       0.000       8640.       0.000    
+   10200   5.141      0.5000E-03 SHELL          1  -0.0%  0.1599      0.1457E-01  0.7669E-02  0.1822       0.000       8640.       0.000    
+   10300   5.169      0.2500E-03 SHELL          1  -0.0%  0.1631      0.1453E-01  0.7651E-02  0.1853       0.000       8640.       0.000    
+   10400   5.194      0.2500E-03 SHELL          2  -0.0%  0.1660      0.1453E-01  0.7651E-02  0.1882       0.000       8640.       0.000    
+   10500   5.219      0.2500E-03 SHELL          2  -0.0%  0.1689      0.1448E-01  0.7626E-02  0.1911       0.000       8640.       0.000    
+   10600   5.244      0.2500E-03 SHELL          1  -0.0%  0.1718      0.1448E-01  0.7626E-02  0.1940       0.000       8640.       0.000    
+   10700   5.269      0.2500E-03 SHELL          1  -0.0%  0.1748      0.1443E-01  0.7596E-02  0.1968       0.000       8640.       0.000    
+   10800   5.294      0.2500E-03 SHELL          2  -0.0%  0.1778      0.1443E-01  0.7596E-02  0.1998       0.000       8640.       0.000    
+   10900   5.319      0.2500E-03 SHELL          1  -0.0%  0.1807      0.1436E-01  0.7559E-02  0.2027       0.000       8640.       0.000    
+   11000   5.344      0.2500E-03 SHELL          2  -0.0%  0.1838      0.1436E-01  0.7559E-02  0.2057       0.000       8640.       0.000    
+   11100   5.369      0.2500E-03 SHELL          1  -0.0%  0.1868      0.1428E-01  0.7517E-02  0.2086       0.000       8640.       0.000    
+   11200   5.394      0.2500E-03 SHELL          2  -0.0%  0.1898      0.1428E-01  0.7517E-02  0.2117       0.000       8640.       0.000    
+   11300   5.419      0.2500E-03 SHELL          1  -0.0%  0.1929      0.1418E-01  0.7469E-02  0.2146       0.000       8640.       0.000    
+   11400   5.444      0.2500E-03 SHELL          1  -0.0%  0.1960      0.1418E-01  0.7469E-02  0.2177       0.000       8640.       0.000    
+   11500   5.469      0.2500E-03 SHELL          2  -0.0%  0.1991      0.1408E-01  0.7415E-02  0.2207       0.000       8640.       0.000    
+   11600   5.494      0.2500E-03 SHELL          1  -0.0%  0.2023      0.1408E-01  0.7415E-02  0.2238       0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA012 WRITTEN
+   11700   5.519      0.2500E-03 SHELL          1  -0.0%  0.2054      0.1397E-01  0.7355E-02  0.2268       0.000       8640.       0.000    
+   11800   5.544      0.2500E-03 SHELL          1  -0.0%  0.2086      0.1397E-01  0.7355E-02  0.2299       0.000       8640.       0.000    
+   11900   5.569      0.2500E-03 SHELL          1  -0.0%  0.2118      0.1384E-01  0.7290E-02  0.2329       0.000       8640.       0.000    
+   12000   5.594      0.2500E-03 SHELL          1  -0.0%  0.2150      0.1384E-01  0.7290E-02  0.2361       0.000       8640.       0.000    
+   12100   5.619      0.2500E-03 SHELL          2  -0.0%  0.2182      0.1371E-01  0.7219E-02  0.2391       0.000       8640.       0.000    
+   12200   5.644      0.2500E-03 SHELL          2  -0.0%  0.2214      0.1371E-01  0.7219E-02  0.2424       0.000       8640.       0.000    
+   12300   5.669      0.2500E-03 SHELL          2  -0.0%  0.2247      0.1357E-01  0.7143E-02  0.2454       0.000       8640.       0.000    
+   12400   5.694      0.2500E-03 SHELL          1  -0.0%  0.2279      0.1357E-01  0.7143E-02  0.2487       0.000       8640.       0.000    
+   12500   5.719      0.2500E-03 SHELL          1  -0.0%  0.2312      0.1341E-01  0.7062E-02  0.2517       0.000       8640.       0.000    
+   12600   5.744      0.2500E-03 SHELL          1  -0.0%  0.2345      0.1341E-01  0.7062E-02  0.2550       0.000       8640.       0.000    
+   12700   5.769      0.2500E-03 SHELL          1  -0.0%  0.2378      0.1325E-01  0.6976E-02  0.2581       0.000       8640.       0.000    
+   12800   5.794      0.2500E-03 SHELL          1  -0.0%  0.2411      0.1325E-01  0.6976E-02  0.2614       0.000       8640.       0.000    
+   12900   5.819      0.2500E-03 SHELL          1  -0.0%  0.2444      0.1308E-01  0.6885E-02  0.2644       0.000       8640.       0.000    
+   13000   5.844      0.2500E-03 SHELL          1  -0.0%  0.2478      0.1308E-01  0.6885E-02  0.2678       0.000       8640.       0.000    
+   13100   5.869      0.2500E-03 SHELL          1  -0.0%  0.2511      0.1289E-01  0.6789E-02  0.2709       0.000       8640.       0.000    
+   13200   5.894      0.2500E-03 SHELL          2  -0.0%  0.2545      0.1289E-01  0.6789E-02  0.2742       0.000       8640.       0.000    
+   13300   5.919      0.2500E-03 SHELL          1  -0.0%  0.2579      0.1270E-01  0.6689E-02  0.2773       0.000       8640.       0.000    
+   13400   5.944      0.2500E-03 SHELL          1  -0.0%  0.2613      0.1270E-01  0.6689E-02  0.2807       0.000       8640.       0.000    
+   13500   5.969      0.2500E-03 SHELL          1  -0.0%  0.2646      0.1250E-01  0.6584E-02  0.2838       0.000       8640.       0.000    
+   13600   5.994      0.2500E-03 SHELL          1  -0.0%  0.2680      0.1250E-01  0.6584E-02  0.2872       0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA013 WRITTEN
+   13700   6.019      0.2500E-03 SHELL          2  -0.0%  0.2714      0.1230E-01  0.6475E-02  0.2902       0.000       8640.       0.000    
+   13800   6.044      0.2500E-03 SHELL          1  -0.0%  0.2749      0.1230E-01  0.6475E-02  0.2937       0.000       8640.       0.000    
+   13900   6.069      0.2500E-03 SHELL          1  -0.0%  0.2783      0.1208E-01  0.6362E-02  0.2968       0.000       8640.       0.000    
+   14000   6.094      0.2500E-03 SHELL          1  -0.0%  0.2817      0.1208E-01  0.6362E-02  0.3002       0.000       8640.       0.000    
+   14100   6.119      0.2500E-03 SHELL          2  -0.0%  0.2851      0.1186E-01  0.6246E-02  0.3033       0.000       8640.       0.000    
+   14200   6.144      0.2500E-03 SHELL          1  -0.0%  0.2886      0.1186E-01  0.6246E-02  0.3067       0.000       8640.       0.000    
+   14300   6.169      0.2500E-03 SHELL          1  -0.0%  0.2920      0.1163E-01  0.6126E-02  0.3098       0.000       8640.       0.000    
+   14400   6.194      0.2500E-03 SHELL          1  -0.0%  0.2954      0.1163E-01  0.6126E-02  0.3132       0.000       8640.       0.000    
+   14500   6.219      0.2500E-03 SHELL          1  -0.0%  0.2989      0.1140E-01  0.6002E-02  0.3163       0.000       8640.       0.000    
+   14600   6.244      0.2500E-03 SHELL          2  -0.0%  0.3023      0.1140E-01  0.6002E-02  0.3198       0.000       8640.       0.000    
+   14700   6.269      0.2500E-03 SHELL          1  -0.0%  0.3058      0.1116E-01  0.5875E-02  0.3228       0.000       8640.       0.000    
+   14800   6.294      0.2500E-03 SHELL          2  -0.0%  0.3092      0.1116E-01  0.5875E-02  0.3263       0.000       8640.       0.000    
+   14900   6.319      0.2500E-03 SHELL          1  -0.0%  0.3127      0.1091E-01  0.5746E-02  0.3294       0.000       8640.       0.000    
+   15000   6.344      0.2500E-03 SHELL          2  -0.0%  0.3161      0.1091E-01  0.5746E-02  0.3328       0.000       8640.       0.000    
+   15100   6.369      0.2500E-03 SHELL          2  -0.0%  0.3196      0.1066E-01  0.5613E-02  0.3359       0.000       8640.       0.000    
+   15200   6.394      0.2500E-03 SHELL          1  -0.0%  0.3230      0.1066E-01  0.5613E-02  0.3393       0.000       8640.       0.000    
+   15300   6.419      0.2500E-03 SHELL          1  -0.0%  0.3265      0.1041E-01  0.5479E-02  0.3424       0.000       8640.       0.000    
+   15400   6.444      0.2500E-03 SHELL          1  -0.0%  0.3299      0.1041E-01  0.5479E-02  0.3458       0.000       8640.       0.000    
+   15500   6.469      0.2500E-03 SHELL          1  -0.0%  0.3333      0.1015E-01  0.5342E-02  0.3488       0.000       8640.       0.000    
+   15600   6.494      0.2500E-03 SHELL          1  -0.0%  0.3368      0.1015E-01  0.5342E-02  0.3523       0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA014 WRITTEN
+   15700   6.519      0.2500E-03 SHELL          1  -0.0%  0.3402      0.9881E-02  0.5203E-02  0.3553       0.000       8640.       0.000    
+   15800   6.544      0.2500E-03 SHELL          1  -0.0%  0.3436      0.9881E-02  0.5203E-02  0.3587       0.000       8640.       0.000    
+   15900   6.569      0.2500E-03 SHELL          1  -0.0%  0.3470      0.9614E-02  0.5062E-02  0.3617       0.000       8640.       0.000    
+   16000   6.594      0.2500E-03 SHELL          1  -0.0%  0.3504      0.9614E-02  0.5062E-02  0.3651       0.000       8640.       0.000    
+   16100   6.619      0.2500E-03 SHELL          1  -0.0%  0.3538      0.9343E-02  0.4919E-02  0.3681       0.000       8640.       0.000    
+   16200   6.644      0.2500E-03 SHELL          1  -0.0%  0.3572      0.9343E-02  0.4919E-02  0.3715       0.000       8640.       0.000    
+   16300   6.669      0.2500E-03 SHELL          1  -0.0%  0.3606      0.9071E-02  0.4776E-02  0.3744       0.000       8640.       0.000    
+   16400   6.694      0.2500E-03 SHELL          1  -0.0%  0.3640      0.9071E-02  0.4776E-02  0.3778       0.000       8640.       0.000    
+   16500   6.719      0.2500E-03 SHELL          1  -0.0%  0.3673      0.8796E-02  0.4631E-02  0.3808       0.000       8640.       0.000    
+   16600   6.744      0.2500E-03 SHELL          1  -0.0%  0.3707      0.8796E-02  0.4631E-02  0.3841       0.000       8640.       0.000    
+   16700   6.769      0.2500E-03 SHELL          1   0.0%  0.3740      0.8520E-02  0.4486E-02  0.3870       0.000       8640.       0.000    
+   16800   6.794      0.2500E-03 SHELL          1   0.0%  0.3774      0.8520E-02  0.4486E-02  0.3904       0.000       8640.       0.000    
+   16900   6.819      0.2500E-03 SHELL          1   0.0%  0.3807      0.8242E-02  0.4340E-02  0.3932       0.000       8640.       0.000    
+   17000   6.844      0.2500E-03 SHELL          1   0.0%  0.3840      0.8242E-02  0.4340E-02  0.3965       0.000       8640.       0.000    
+   17100   6.869      0.2500E-03 SHELL          2   0.0%  0.3872      0.7964E-02  0.4193E-02  0.3994       0.000       8640.       0.000    
+   17200   6.894      0.2500E-03 SHELL          1   0.0%  0.3905      0.7964E-02  0.4193E-02  0.4027       0.000       8640.       0.000    
+   17300   6.919      0.2500E-03 SHELL          1   0.0%  0.3938      0.7686E-02  0.4047E-02  0.4055       0.000       8640.       0.000    
+   17400   6.944      0.2500E-03 SHELL          1   0.0%  0.3970      0.7686E-02  0.4047E-02  0.4087       0.000       8640.       0.000    
+   17500   6.969      0.2500E-03 SHELL          1   0.0%  0.4002      0.7409E-02  0.3901E-02  0.4115       0.000       8640.       0.000    
+   17600   6.994      0.2500E-03 SHELL          2   0.0%  0.4035      0.7409E-02  0.3901E-02  0.4148       0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA015 WRITTEN
+   17700   7.019      0.2500E-03 SHELL          1   0.0%  0.4066      0.7132E-02  0.3755E-02  0.4175       0.000       8640.       0.000    
+   17800   7.044      0.2500E-03 SHELL          1   0.0%  0.4098      0.7132E-02  0.3755E-02  0.4207       0.000       8640.       0.000    
+   17900   7.069      0.2500E-03 SHELL          2   0.0%  0.4130      0.6856E-02  0.3610E-02  0.4234       0.000       8640.       0.000    
+   18000   7.094      0.2500E-03 SHELL          1   0.0%  0.4161      0.6856E-02  0.3610E-02  0.4266       0.000       8640.       0.000    
+   18100   7.119      0.2500E-03 SHELL          1   0.0%  0.4192      0.6582E-02  0.3466E-02  0.4292       0.000       8640.       0.000    
+   18200   7.144      0.2500E-03 SHELL          1   0.0%  0.4223      0.6582E-02  0.3466E-02  0.4323       0.000       8640.       0.000    
+   18300   7.169      0.2500E-03 SHELL          1   0.0%  0.4254      0.6310E-02  0.3322E-02  0.4350       0.000       8640.       0.000    
+   18400   7.194      0.2500E-03 SHELL          1   0.0%  0.4284      0.6310E-02  0.3322E-02  0.4380       0.000       8640.       0.000    
+   18500   7.219      0.2500E-03 SHELL          2   0.0%  0.4315      0.6040E-02  0.3180E-02  0.4406       0.000       8640.       0.000    
+   18600   7.244      0.2500E-03 SHELL          1   0.0%  0.4345      0.6040E-02  0.3180E-02  0.4437       0.000       8640.       0.000    
+   18700   7.269      0.2500E-03 SHELL          1   0.0%  0.4375      0.5774E-02  0.3040E-02  0.4462       0.000       8640.       0.000    
+   18800   7.294      0.2500E-03 SHELL          1   0.0%  0.4404      0.5774E-02  0.3040E-02  0.4492       0.000       8640.       0.000    
+   18900   7.319      0.2500E-03 SHELL          1   0.0%  0.4433      0.5511E-02  0.2901E-02  0.4517       0.000       8640.       0.000    
+   19000   7.344      0.2500E-03 SHELL          1   0.0%  0.4463      0.5511E-02  0.2901E-02  0.4546       0.000       8640.       0.000    
+   19100   7.369      0.2500E-03 SHELL          1   0.0%  0.4491      0.5251E-02  0.2765E-02  0.4571       0.000       8640.       0.000    
+   19200   7.394      0.2500E-03 SHELL          1   0.0%  0.4520      0.5251E-02  0.2765E-02  0.4600       0.000       8640.       0.000    
+   19300   7.419      0.2500E-03 SHELL          2   0.0%  0.4548      0.4995E-02  0.2630E-02  0.4624       0.000       8640.       0.000    
+   19400   7.444      0.2500E-03 SHELL          1   0.0%  0.4576      0.4995E-02  0.2630E-02  0.4652       0.000       8640.       0.000    
+   19500   7.469      0.2500E-03 SHELL          2   0.0%  0.4604      0.4744E-02  0.2498E-02  0.4676       0.000       8640.       0.000    
+   19600   7.494      0.2500E-03 SHELL          2   0.0%  0.4632      0.4744E-02  0.2498E-02  0.4703       0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA016 WRITTEN
+   19700   7.519      0.2500E-03 SHELL          1   0.0%  0.4659      0.4498E-02  0.2368E-02  0.4727       0.000       8640.       0.000    
+   19800   7.544      0.2500E-03 SHELL          1   0.0%  0.4686      0.4498E-02  0.2368E-02  0.4754       0.000       8640.       0.000    
+   19900   7.569      0.2500E-03 SHELL          1   0.0%  0.4712      0.4256E-02  0.2241E-02  0.4777       0.000       8640.       0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+   20000   7.594      0.2500E-03 SHELL          1   0.0%  0.4739      0.4256E-02  0.2241E-02  0.4803       0.000       8640.       0.000    
+   20100   7.619      0.2500E-03 SHELL          1   0.0%  0.4765      0.4021E-02  0.2117E-02  0.4825       0.000       8640.       0.000    
+   20200   7.644      0.2500E-03 SHELL          1   0.0%  0.4791      0.4021E-02  0.2117E-02  0.4851       0.000       8640.       0.000    
+   20300   7.669      0.2500E-03 SHELL          1   0.0%  0.4816      0.3790E-02  0.1996E-02  0.4873       0.000       8640.       0.000    
+   20400   7.694      0.2500E-03 SHELL          1   0.0%  0.4841      0.3790E-02  0.1996E-02  0.4898       0.000       8640.       0.000    
+   20500   7.719      0.2500E-03 SHELL          1   0.0%  0.4866      0.3566E-02  0.1878E-02  0.4919       0.000       8640.       0.000    
+   20600   7.744      0.2500E-03 SHELL          2   0.0%  0.4890      0.3566E-02  0.1878E-02  0.4944       0.000       8640.       0.000    
+   20700   7.769      0.2500E-03 SHELL          1   0.0%  0.4915      0.3348E-02  0.1763E-02  0.4965       0.000       8640.       0.000    
+   20800   7.794      0.2500E-03 SHELL          1   0.0%  0.4938      0.3348E-02  0.1763E-02  0.4989       0.000       8640.       0.000    
+   20900   7.819      0.2500E-03 SHELL          1   0.0%  0.4962      0.3137E-02  0.1651E-02  0.5009       0.000       8640.       0.000    
+   21000   7.844      0.2500E-03 SHELL          2   0.0%  0.4985      0.3137E-02  0.1651E-02  0.5032       0.000       8640.       0.000    
+   21100   7.869      0.2500E-03 SHELL          1   0.0%  0.5008      0.2932E-02  0.1544E-02  0.5052       0.000       8640.       0.000    
+   21200   7.894      0.2500E-03 SHELL          1   0.0%  0.5031      0.2932E-02  0.1544E-02  0.5074       0.000       8640.       0.000    
+   21300   7.919      0.2500E-03 SHELL          1   0.0%  0.5053      0.2734E-02  0.1439E-02  0.5093       0.000       8640.       0.000    
+   21400   7.944      0.2500E-03 SHELL          2   0.0%  0.5075      0.2734E-02  0.1439E-02  0.5115       0.000       8640.       0.000    
+   21500   7.969      0.2500E-03 SHELL          1   0.0%  0.5096      0.2543E-02  0.1339E-02  0.5134       0.000       8640.       0.000    
+   21600   7.994      0.2500E-03 SHELL          1   0.0%  0.5117      0.2543E-02  0.1339E-02  0.5155       0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA017 WRITTEN
+   21700   8.019      0.2500E-03 SHELL          1   0.0%  0.5138      0.2359E-02  0.1242E-02  0.5173       0.000       8640.       0.000    
+   21800   8.044      0.2500E-03 SHELL          1   0.0%  0.5158      0.2359E-02  0.1242E-02  0.5193       0.000       8640.       0.000    
+   21900   8.069      0.2500E-03 SHELL          1   0.0%  0.5178      0.2183E-02  0.1149E-02  0.5210       0.000       8640.       0.000    
+   22000   8.094      0.2500E-03 SHELL          1   0.0%  0.5198      0.2183E-02  0.1149E-02  0.5230       0.000       8640.       0.000    
+   22100   8.119      0.2500E-03 SHELL          1   0.0%  0.5217      0.2014E-02  0.1060E-02  0.5247       0.000       8640.       0.000    
+   22200   8.144      0.2500E-03 SHELL          2   0.0%  0.5237      0.2014E-02  0.1060E-02  0.5266       0.000       8640.       0.000    
+   22300   8.169      0.2500E-03 SHELL          1   0.0%  0.5255      0.1852E-02  0.9752E-03  0.5282       0.000       8640.       0.000    
+   22400   8.194      0.2500E-03 SHELL          1   0.0%  0.5274      0.1852E-02  0.9752E-03  0.5301       0.000       8640.       0.000    
+   22500   8.219      0.2500E-03 SHELL          2   0.0%  0.5291      0.1698E-02  0.8942E-03  0.5316       0.000       8640.       0.000    
+   22600   8.244      0.2500E-03 SHELL          1   0.0%  0.5309      0.1698E-02  0.8942E-03  0.5334       0.000       8640.       0.000    
+   22700   8.269      0.2500E-03 SHELL          1   0.0%  0.5326      0.1552E-02  0.8172E-03  0.5348       0.000       8640.       0.000    
+   22800   8.294      0.2500E-03 SHELL          1   0.0%  0.5343      0.1552E-02  0.8172E-03  0.5365       0.000       8640.       0.000    
+   22900   8.319      0.2500E-03 SHELL          2   0.0%  0.5360      0.1413E-02  0.7442E-03  0.5380       0.000       8640.       0.000    
+   23000   8.344      0.2500E-03 SHELL          1   0.0%  0.5376      0.1413E-02  0.7442E-03  0.5396       0.000       8640.       0.000    
+   23100   8.369      0.2500E-03 SHELL          2   0.0%  0.5392      0.1282E-02  0.6752E-03  0.5410       0.000       8640.       0.000    
+   23200   8.394      0.2500E-03 SHELL          1   0.0%  0.5407      0.1282E-02  0.6752E-03  0.5425       0.000       8640.       0.000    
+   23300   8.419      0.2500E-03 SHELL          2   0.0%  0.5422      0.1159E-02  0.6103E-03  0.5438       0.000       8640.       0.000    
+   23400   8.444      0.2500E-03 SHELL          1   0.0%  0.5437      0.1159E-02  0.6103E-03  0.5453       0.000       8640.       0.000    
+   23500   8.469      0.2500E-03 SHELL          1   0.0%  0.5451      0.1043E-02  0.5492E-03  0.5465       0.000       8640.       0.000    
+   23600   8.494      0.2500E-03 SHELL          1   0.0%  0.5465      0.1043E-02  0.5492E-03  0.5479       0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA018 WRITTEN
+   23700   8.519      0.2500E-03 SHELL          1   0.0%  0.5479      0.9346E-03  0.4921E-03  0.5491       0.000       8640.       0.000    
+   23800   8.544      0.2500E-03 SHELL          1   0.0%  0.5492      0.9346E-03  0.4921E-03  0.5505       0.000       8640.       0.000    
+   23900   8.569      0.2500E-03 SHELL          2   0.0%  0.5505      0.8335E-03  0.4389E-03  0.5516       0.000       8640.       0.000    
+   24000   8.594      0.2500E-03 SHELL          1   0.0%  0.5517      0.8335E-03  0.4389E-03  0.5528       0.000       8640.       0.000    
+   24100   8.619      0.2500E-03 SHELL          1   0.0%  0.5529      0.7395E-03  0.3894E-03  0.5539       0.000       8640.       0.000    
+   24200   8.644      0.2500E-03 SHELL          1   0.0%  0.5541      0.7395E-03  0.3894E-03  0.5551       0.000       8640.       0.000    
+   24300   8.669      0.2500E-03 SHELL          1   0.0%  0.5553      0.6526E-03  0.3436E-03  0.5561       0.000       8640.       0.000    
+   24400   8.694      0.2500E-03 SHELL          1   0.0%  0.5564      0.6526E-03  0.3436E-03  0.5572       0.000       8640.       0.000    
+   24500   8.719      0.2500E-03 SHELL          2   0.0%  0.5575      0.5726E-03  0.3015E-03  0.5582       0.000       8640.       0.000    
+   24600   8.744      0.2500E-03 SHELL          2   0.0%  0.5585      0.5726E-03  0.3015E-03  0.5592       0.000       8640.       0.000    
+   24700   8.769      0.2500E-03 SHELL          1   0.0%  0.5595      0.4992E-03  0.2628E-03  0.5601       0.000       8640.       0.000    
+   24800   8.794      0.2500E-03 SHELL          1   0.0%  0.5605      0.4992E-03  0.2628E-03  0.5611       0.000       8640.       0.000    
+   24900   8.819      0.2500E-03 SHELL          1   0.0%  0.5614      0.4323E-03  0.2276E-03  0.5619       0.000       8640.       0.000    
+   25000   8.844      0.2500E-03 SHELL          2   0.0%  0.5624      0.4323E-03  0.2276E-03  0.5628       0.000       8640.       0.000    
+   25100   8.869      0.2500E-03 SHELL          2   0.0%  0.5632      0.3716E-03  0.1956E-03  0.5636       0.000       8640.       0.000    
+   25200   8.894      0.2500E-03 SHELL          1   0.0%  0.5641      0.3716E-03  0.1956E-03  0.5645       0.000       8640.       0.000    
+   25300   8.919      0.2500E-03 SHELL          1   0.0%  0.5649      0.3168E-03  0.1668E-03  0.5652       0.000       8640.       0.000    
+   25400   8.944      0.2500E-03 SHELL          1   0.0%  0.5657      0.3168E-03  0.1668E-03  0.5660       0.000       8640.       0.000    
+   25500   8.969      0.2500E-03 SHELL          1   0.0%  0.5664      0.2678E-03  0.1410E-03  0.5666       0.000       8640.       0.000    
+   25600   8.994      0.2500E-03 SHELL          1   0.0%  0.5671      0.2678E-03  0.1410E-03  0.5674       0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA019 WRITTEN
+   25700   9.019      0.2500E-03 SHELL          1   0.0%  0.5678      0.2242E-03  0.1180E-03  0.5680       0.000       8640.       0.000    
+   25800   9.044      0.2500E-03 SHELL          1   0.0%  0.5685      0.2242E-03  0.1180E-03  0.5686       0.000       8640.       0.000    
+   25900   9.069      0.2500E-03 SHELL          1   0.0%  0.5691      0.1857E-03  0.9776E-04  0.5692       0.000       8640.       0.000    
+   26000   9.094      0.2500E-03 SHELL          2   0.0%  0.5697      0.1857E-03  0.9776E-04  0.5698       0.000       8640.       0.000    
+   26100   9.119      0.2500E-03 SHELL          1   0.0%  0.5703      0.1520E-03  0.8002E-04  0.5703       0.000       8640.       0.000    
+   26200   9.144      0.2500E-03 SHELL          1   0.0%  0.5708      0.1520E-03  0.8002E-04  0.5709       0.000       8640.       0.000    
+   26300   9.169      0.2500E-03 SHELL          1   0.0%  0.5713      0.1228E-03  0.6464E-04  0.5713       0.000       8640.       0.000    
+   26400   9.194      0.2500E-03 SHELL          2   0.0%  0.5718      0.1228E-03  0.6464E-04  0.5718       0.000       8640.       0.000    
+   26500   9.219      0.2500E-03 SHELL          1   0.0%  0.5723      0.9771E-04  0.5145E-04  0.5722       0.000       8640.       0.000    
+   26600   9.244      0.2500E-03 SHELL          2   0.0%  0.5727      0.9771E-04  0.5145E-04  0.5727       0.000       8640.       0.000    
+   26700   9.269      0.2500E-03 SHELL          1   0.0%  0.5731      0.7648E-04  0.4027E-04  0.5730       0.000       8640.       0.000    
+   26800   9.294      0.2500E-03 SHELL          2   0.0%  0.5735      0.7648E-04  0.4027E-04  0.5734       0.000       8640.       0.000    
+   26900   9.319      0.2500E-03 SHELL          1   0.0%  0.5739      0.5872E-04  0.3092E-04  0.5737       0.000       8640.       0.000    
+   27000   9.344      0.2500E-03 SHELL          1   0.0%  0.5742      0.5872E-04  0.3092E-04  0.5741       0.000       8640.       0.000    
+   27100   9.369      0.2500E-03 SHELL          1   0.0%  0.5745      0.4410E-04  0.2322E-04  0.5744       0.000       8640.       0.000    
+   27200   9.394      0.2500E-03 SHELL          2   0.0%  0.5748      0.4410E-04  0.2322E-04  0.5747       0.000       8640.       0.000    
+   27300   9.419      0.2500E-03 SHELL          1   0.0%  0.5751      0.3228E-04  0.1699E-04  0.5749       0.000       8640.       0.000    
+   27400   9.444      0.2500E-03 SHELL          2   0.0%  0.5753      0.3228E-04  0.1699E-04  0.5752       0.000       8640.       0.000    
+   27500   9.469      0.2500E-03 SHELL          1   0.0%  0.5756      0.2292E-04  0.1207E-04  0.5754       0.000       8640.       0.000    
+   27600   9.494      0.2500E-03 SHELL          1   0.0%  0.5758      0.2292E-04  0.1207E-04  0.5756       0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA020 WRITTEN
+   27700   9.519      0.2500E-03 SHELL          1   0.0%  0.5760      0.1569E-04  0.8260E-05  0.5758       0.000       8640.       0.000    
+   27800   9.544      0.2500E-03 SHELL          1   0.0%  0.5761      0.1569E-04  0.8260E-05  0.5759       0.000       8640.       0.000    
+   27900   9.569      0.2500E-03 SHELL          2   0.0%  0.5763      0.1027E-04  0.5408E-05  0.5761       0.000       8640.       0.000    
+   28000   9.594      0.2500E-03 SHELL          1   0.0%  0.5764      0.1027E-04  0.5408E-05  0.5762       0.000       8640.       0.000    
+   28100   9.619      0.2500E-03 SHELL          1   0.0%  0.5766      0.6360E-05  0.3349E-05  0.5763       0.000       8640.       0.000    
+   28200   9.644      0.2500E-03 SHELL          1   0.0%  0.5767      0.6360E-05  0.3349E-05  0.5765       0.000       8640.       0.000    
+   28300   9.669      0.2500E-03 SHELL          1   0.0%  0.5768      0.3667E-05  0.1931E-05  0.5766       0.000       8640.       0.000    
+   28400   9.694      0.2500E-03 SHELL          2   0.0%  0.5769      0.3667E-05  0.1931E-05  0.5766       0.000       8640.       0.000    
+   28500   9.719      0.2500E-03 SHELL          1   0.0%  0.5769      0.1922E-05  0.1012E-05  0.5767       0.000       8640.       0.000    
+   28600   9.744      0.2500E-03 SHELL          2   0.0%  0.5770      0.1922E-05  0.1012E-05  0.5768       0.000       8640.       0.000    
+   28700   9.769      0.2500E-03 SHELL          1   0.0%  0.5770      0.8813E-06  0.4640E-06  0.5768       0.000       8640.       0.000    
+   28800   9.794      0.2500E-03 SHELL          1   0.0%  0.5771      0.8813E-06  0.4640E-06  0.5769       0.000       8640.       0.000    
+   28900   9.819      0.2500E-03 SHELL          2   0.0%  0.5771      0.3308E-06  0.1742E-06  0.5769       0.000       8640.       0.000    
+   29000   9.844      0.2500E-03 SHELL          2   0.0%  0.5771      0.3308E-06  0.1742E-06  0.5769       0.000       8640.       0.000    
+   29100   9.869      0.2500E-03 SHELL          1   0.0%  0.5771      0.8900E-07  0.4686E-07  0.5769       0.000       8640.       0.000    
+   29200   9.894      0.2500E-03 SHELL          1   0.0%  0.5772      0.8900E-07  0.4686E-07  0.5769       0.000       8640.       0.000    
+   29300   9.919      0.2500E-03 SHELL          1   0.0%  0.5772      0.1232E-07  0.6485E-08  0.5769       0.000       8640.       0.000    
+   29400   9.944      0.2500E-03 SHELL          1   0.0%  0.5772      0.1232E-07  0.6485E-08  0.5769       0.000       8640.       0.000    
+   29500   9.969      0.2500E-03 SHELL          1   0.0%  0.5772      0.2557E-09  0.1346E-09  0.5770       0.000       8640.       0.000    
+   29600   9.994      0.2500E-03 SHELL          1   0.0%  0.5772      0.2557E-09  0.1346E-09  0.5770       0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA021 WRITTEN
+   29700   10.02      0.2500E-03 SHELL          1   0.0%  0.5772      0.1992E-23  0.5719E-25  0.5770       0.000       8640.       0.000    
+   29800   10.04      0.2500E-03 SHELL          1   0.0%  0.5772      0.1173E-23  0.1306E-25  0.5770       0.000       8640.       0.000    
+   29900   10.07      0.2500E-03 SHELL          1   0.0%  0.5772      0.1000E-22  0.6618E-26  0.5770       0.000       8640.       0.000    
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+   30000   10.09      0.2500E-03 SHELL          1   0.0%  0.5772      0.1630E-22  0.5029E-25  0.5770       0.000       8640.       0.000    
+   30100   10.12      0.2500E-03 SHELL          1   0.0%  0.5772      0.1136E-22  0.5983E-25  0.5770       0.000       8640.       0.000    
+   30200   10.14      0.2500E-03 SHELL          1   0.0%  0.5772      0.2017E-23  0.1684E-25  0.5770       0.000       8640.       0.000    
+   30300   10.17      0.2500E-03 SHELL          1   0.0%  0.5772      0.1153E-23  0.4242E-26  0.5770       0.000       8640.       0.000    
+   30400   10.19      0.2500E-03 SHELL          1   0.0%  0.5772      0.9966E-23  0.4634E-25  0.5770       0.000       8640.       0.000    
+   30500   10.22      0.2500E-03 SHELL          1   0.0%  0.5772      0.1629E-22  0.6193E-25  0.5770       0.000       8640.       0.000    
+   30600   10.24      0.2500E-03 SHELL          1   0.0%  0.5772      0.1140E-22  0.2093E-25  0.5770       0.000       8640.       0.000    
+   30700   10.27      0.2500E-03 SHELL          1   0.0%  0.5772      0.2041E-23  0.2437E-26  0.5770       0.000       8640.       0.000    
+   30800   10.29      0.2500E-03 SHELL          1   0.0%  0.5772      0.1134E-23  0.4212E-25  0.5770       0.000       8640.       0.000    
+   30900   10.32      0.2500E-03 SHELL          1   0.0%  0.5772      0.9930E-23  0.6343E-25  0.5770       0.000       8640.       0.000    
+   31000   10.34      0.2500E-03 SHELL          1   0.0%  0.5772      0.1629E-22  0.2527E-25  0.5770       0.000       8640.       0.000    
+   31100   10.37      0.2500E-03 SHELL          1   0.0%  0.5772      0.1143E-22  0.1240E-26  0.5770       0.000       8640.       0.000    
+   31200   10.39      0.2500E-03 SHELL          1   0.0%  0.5772      0.2066E-23  0.3770E-25  0.5770       0.000       8640.       0.000    
+   31300   10.42      0.2500E-03 SHELL          1   0.0%  0.5772      0.1115E-23  0.6431E-25  0.5770       0.000       8640.       0.000    
+   31400   10.44      0.2500E-03 SHELL          1   0.0%  0.5772      0.9893E-23  0.2975E-25  0.5770       0.000       8640.       0.000    
+   31500   10.47      0.2500E-03 SHELL          1   0.0%  0.5772      0.1628E-22  0.6753E-27  0.5770       0.000       8640.       0.000    
+   31600   10.49      0.2500E-03 SHELL          1   0.0%  0.5772      0.1147E-22  0.3318E-25  0.5770       0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA022 WRITTEN
+   31700   10.52      0.2500E-03 SHELL          1   0.0%  0.5772      0.2092E-23  0.6456E-25  0.5770       0.000       8640.       0.000    
+   31800   10.54      0.2500E-03 SHELL          1   0.0%  0.5772      0.1096E-23  0.3429E-25  0.5770       0.000       8640.       0.000    
+   31900   10.57      0.2500E-03 SHELL          1   0.0%  0.5772      0.9856E-23  0.7540E-27  0.5770       0.000       8640.       0.000    
+   32000   10.59      0.2500E-03 SHELL          1   0.0%  0.5772      0.1628E-22  0.2864E-25  0.5770       0.000       8640.       0.000    
+   32100   10.62      0.2500E-03 SHELL          1   0.0%  0.5772      0.1150E-22  0.6416E-25  0.5770       0.000       8640.       0.000    
+   32200   10.64      0.2500E-03 SHELL          1   0.0%  0.5772      0.2117E-23  0.3879E-25  0.5770       0.000       8640.       0.000    
+   32300   10.67      0.2500E-03 SHELL          1   0.0%  0.5772      0.1077E-23  0.1475E-26  0.5770       0.000       8640.       0.000    
+   32400   10.69      0.2500E-03 SHELL          1   0.0%  0.5772      0.9819E-23  0.2419E-25  0.5770       0.000       8640.       0.000    
+   32500   10.72      0.2500E-03 SHELL          1   0.0%  0.5772      0.1628E-22  0.6312E-25  0.5770       0.000       8640.       0.000    
+   32600   10.74      0.2500E-03 SHELL          1   0.0%  0.5772      0.1154E-22  0.4317E-25  0.5770       0.000       8640.       0.000    
+   32700   10.77      0.2500E-03 SHELL          1   0.0%  0.5772      0.2142E-23  0.2823E-26  0.5770       0.000       8640.       0.000    
+   32800   10.79      0.2500E-03 SHELL          1   0.0%  0.5772      0.1059E-23  0.1991E-25  0.5770       0.000       8640.       0.000    
+   32900   10.82      0.2500E-03 SHELL          1   0.0%  0.5772      0.9782E-23  0.6147E-25  0.5770       0.000       8640.       0.000    
+   33000   10.84      0.2500E-03 SHELL          1   0.0%  0.5772      0.1627E-22  0.4733E-25  0.5770       0.000       8640.       0.000    
+   33100   10.87      0.2500E-03 SHELL          1   0.0%  0.5772      0.1157E-22  0.4771E-26  0.5770       0.000       8640.       0.000    
+   33200   10.89      0.2500E-03 SHELL          1   0.0%  0.5772      0.2168E-23  0.1588E-25  0.5770       0.000       8640.       0.000    
+   33300   10.92      0.2500E-03 SHELL          1   0.0%  0.5772      0.1040E-23  0.5923E-25  0.5770       0.000       8640.       0.000    
+   33400   10.94      0.2500E-03 SHELL          1   0.0%  0.5772      0.9745E-23  0.5120E-25  0.5770       0.000       8640.       0.000    
+   33500   10.97      0.2500E-03 SHELL          1   0.0%  0.5772      0.1627E-22  0.7280E-26  0.5770       0.000       8640.       0.000    
+   33600   10.99      0.2500E-03 SHELL          1   0.0%  0.5772      0.1161E-22  0.1219E-25  0.5770       0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA023 WRITTEN
+   33700   11.02      0.2500E-03 SHELL          1   0.0%  0.5772      0.2193E-23  0.5646E-25  0.5770       0.000       8640.       0.000    
+   33800   11.04      0.2500E-03 SHELL          1   0.0%  0.5772      0.1022E-23  0.5470E-25  0.5770       0.000       8640.       0.000    
+   33900   11.07      0.2500E-03 SHELL          1   0.0%  0.5772      0.9708E-23  0.1030E-25  0.5770       0.000       8640.       0.000    
+   34000   11.09      0.2500E-03 SHELL          1   0.0%  0.5772      0.1626E-22  0.8911E-26  0.5770       0.000       8640.       0.000    
+   34100   11.12      0.2500E-03 SHELL          1   0.0%  0.5772      0.1164E-22  0.5321E-25  0.5770       0.000       8640.       0.000    
+   34200   11.14      0.2500E-03 SHELL          1   0.0%  0.5772      0.2219E-23  0.5775E-25  0.5770       0.000       8640.       0.000    
+   34300   11.17      0.2500E-03 SHELL          1   0.0%  0.5772      0.1004E-23  0.1377E-25  0.5770       0.000       8640.       0.000    
+   34400   11.19      0.2500E-03 SHELL          1   0.0%  0.5772      0.9671E-23  0.6109E-26  0.5770       0.000       8640.       0.000    
+   34500   11.22      0.2500E-03 SHELL          1   0.0%  0.5772      0.1626E-22  0.4954E-25  0.5770       0.000       8640.       0.000    
+   34600   11.24      0.2500E-03 SHELL          1   0.0%  0.5772      0.1167E-22  0.6029E-25  0.5770       0.000       8640.       0.000    
+   34700   11.27      0.2500E-03 SHELL          1   0.0%  0.5772      0.2245E-23  0.1762E-25  0.5770       0.000       8640.       0.000    
+   34800   11.29      0.2500E-03 SHELL          1   0.0%  0.5772      0.9856E-24  0.3842E-26  0.5770       0.000       8640.       0.000    
+   34900   11.32      0.2500E-03 SHELL          1   0.0%  0.5772      0.9634E-23  0.4553E-25  0.5770       0.000       8640.       0.000    
+   35000   11.34      0.2500E-03 SHELL          1   0.0%  0.5772      0.1625E-22  0.6227E-25  0.5770       0.000       8640.       0.000    
+   35100   11.37      0.2500E-03 SHELL          1   0.0%  0.5772      0.1171E-22  0.2177E-25  0.5770       0.000       8640.       0.000    
+   35200   11.39      0.2500E-03 SHELL          1   0.0%  0.5772      0.2271E-23  0.2153E-26  0.5770       0.000       8640.       0.000    
+   35300   11.42      0.2500E-03 SHELL          1   0.0%  0.5772      0.9677E-24  0.4126E-25  0.5770       0.000       8640.       0.000    
+   35400   11.44      0.2500E-03 SHELL          1   0.0%  0.5772      0.9597E-23  0.6365E-25  0.5770       0.000       8640.       0.000    
+   35500   11.47      0.2500E-03 SHELL          1   0.0%  0.5772      0.1625E-22  0.2614E-25  0.5770       0.000       8640.       0.000    
+   35600   11.49      0.2500E-03 SHELL          1   0.0%  0.5772      0.1174E-22  0.1079E-26  0.5770       0.000       8640.       0.000    
+     ANIMATION FILE: A47_R1_BENDINGA024 WRITTEN
+   35700   11.52      0.2500E-03 SHELL          1   0.0%  0.5772      0.2297E-23  0.3682E-25  0.5770       0.000       8640.       0.000    
+   35800   11.54      0.2500E-03 SHELL          1   0.0%  0.5772      0.9500E-24  0.6441E-25  0.5770       0.000       8640.       0.000    
+   35900   11.57      0.2500E-03 SHELL          1   0.0%  0.5772      0.9560E-23  0.3064E-25  0.5770       0.000       8640.       0.000    
+   36000   11.59      0.2500E-03 SHELL          1   0.0%  0.5772      0.1624E-22  0.6399E-27  0.5770       0.000       8640.       0.000    
+   36100   11.62      0.2500E-03 SHELL          1   0.0%  0.5772      0.1178E-22  0.3229E-25  0.5770       0.000       8640.       0.000    
+   36200   11.64      0.2500E-03 SHELL          1   0.0%  0.5772      0.2323E-23  0.6453E-25  0.5770       0.000       8640.       0.000    
+   36300   11.67      0.2500E-03 SHELL          1   0.0%  0.5772      0.9325E-24  0.3517E-25  0.5770       0.000       8640.       0.000    
+   36400   11.69      0.2500E-03 SHELL          1   0.0%  0.5772      0.9523E-23  0.8450E-27  0.5770       0.000       8640.       0.000    
+   36500   11.72      0.2500E-03 SHELL          1   0.0%  0.5772      0.1624E-22  0.2776E-25  0.5770       0.000       8640.       0.000    
+   36600   11.74      0.2500E-03 SHELL          1   0.0%  0.5772      0.1181E-22  0.6400E-25  0.5770       0.000       8640.       0.000    
+   36700   11.77      0.2500E-03 SHELL          1   0.0%  0.5772      0.2350E-23  0.3966E-25  0.5770       0.000       8640.       0.000    
+   36800   11.79      0.2500E-03 SHELL          1   0.0%  0.5772      0.9151E-24  0.1690E-26  0.5770       0.000       8640.       0.000    
+   36900   11.82      0.2500E-03 SHELL          1   0.0%  0.5772      0.9486E-23  0.2334E-25  0.5770       0.000       8640.       0.000    
+   37000   11.84      0.2500E-03 SHELL          1   0.0%  0.5772      0.1623E-22  0.6284E-25  0.5770       0.000       8640.       0.000    
+   37100   11.87      0.2500E-03 SHELL          1   0.0%  0.5772      0.1184E-22  0.4400E-25  0.5770       0.000       8640.       0.000    
+   37200   11.89      0.2500E-03 SHELL          1   0.0%  0.5772      0.2376E-23  0.3158E-26  0.5770       0.000       8640.       0.000    
+   37300   11.92      0.2500E-03 SHELL          1   0.0%  0.5772      0.8978E-24  0.1910E-25  0.5770       0.000       8640.       0.000    
+   37400   11.94      0.2500E-03 SHELL          1   0.0%  0.5772      0.9448E-23  0.6107E-25  0.5770       0.000       8640.       0.000    
+   37500   11.97      0.2500E-03 SHELL          1   0.0%  0.5772      0.1623E-22  0.4812E-25  0.5770       0.000       8640.       0.000    
+   37600   11.99      0.2500E-03 SHELL          1   0.0%  0.5772      0.1188E-22  0.5220E-26  0.5770       0.000       8640.       0.000    
+
+     RESTART FILES: A47_R1_BENDING_0001_[0001-0001].rst WRITTEN
+     -------------
+
+
+   * IMPLICIT COMPUTATION TERMINATED WITH    TOTAL NONLINEAR ITERATIONS:  163749
+   * TOTAL NUM.OF MATRIX FACTORIZATION AND PCG ITERATION:  37638         0
+  
+                           ** CPU USER TIME **
+  
+  
+                      ** IMPLICIT  **
+  
+ #PROC  [K]SETUP  [M]SETUP  IMP_SOLV  IMP_TOT  
+   1   .1081E+01 .0000E+00 .0000E+00 .1339E+02
+  
+                        ** SUMMARY **
+  
+ #PROC  ELEMENT   KINCOND   INTEG     IO        T0        ASM       RESOL    
+   1   .2049E+01 .3144E+00 .3981E+00 .7216E+00 .9852E+01 .1610E+00 .2979E+02
+  
+ 
+                   ** CUMULATIVE CPU TIME SUMMARY **
+  
+ CONTACT SORTING.............: .0000E+00     0.00 % 
+ CONTACT FORCES..............: .1083E+00     0.36 % 
+ ELEMENT FORCES..............: .2049E+01     6.88 % 
+ KINEMATIC COND..............: .3144E+00     1.06 % 
+ INTEGRATION.................: .3981E+00     1.34 % 
+ ASSEMBLING..................: .1610E+00     0.54 % 
+ OTHERS (including I/O)......: .2676E+02    89.83 % 
+ TOTAL.......................: .2979E+02   100.00 % 
+  
+  
+                           ** ELAPSED TIME **
+  
+  
+                      ** IMPLICIT  **
+  
+ #PROC  [K]SETUP  [M]SETUP  IMP_SOLV  IMP_TOT  
+   1   .1815E+01 .0000E+00 .0000E+00 .2169E+02
+  
+                        ** SUMMARY **
+  
+ #PROC  ELEMENT   KINCOND   INTEG     IO        T0        ASM       RESOL    
+   1   .3433E+01 .5314E+00 .5176E+00 .3147E+01 .4173E+02 .2714E+00 .7628E+02
+  
+                   ** MEMORY USAGE STATISTICS **
+  
+ TOTAL MEMORY USED .........................:       57 MB
+ MAXIMUM MEMORY PER PROCESSOR...............:       57 MB
+ MINIMUM MEMORY PER PROCESSOR...............:       57 MB
+ AVERAGE MEMORY PER PROCESSOR...............:       57 MB
+  
+                   ** DISK USAGE STATISTICS **
+  
+ TOTAL DISK SPACE USED .....................:         11 MB
+ ANIMATION/H3D/TH/OUTP SIZE ................:         10 MB
+ RESTART FILE SIZE .........................:          0 MB
+  
+                   ** COMPUTE TIME INFORMATION **
+                        ** CURRENT ENGINE **
+  
+ EXECUTION STARTED .........................:      2026/10/12  17:11:25
+ EXECUTION COMPLETED .......................:      2026/10/12  17:12:42
+  
+ ELAPSED TIME     =         76.69 s
+                          0:01:16
+
+
+
+     NORMAL TERMINATION      
+
+
+
+     TOTAL NUMBER OF CYCLES  :   37627
+
+  
+                   ** COMPUTE RUNTIME INFORMATION SUMMARY **
+  
+        STARTER RUNTIME =          0.59s (00:00:00)
+ # 001   ENGINE RUNTIME =         76.69s (00:01:16)
+ ------------------------------ 
+ STARTER+ENGINE RUNTIME =         77.28s (00:01:17)
+  

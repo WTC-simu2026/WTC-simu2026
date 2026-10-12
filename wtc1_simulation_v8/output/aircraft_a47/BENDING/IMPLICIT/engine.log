@@ -1,0 +1,67 @@
+************************************************************************
+**                                                                    **
+**                                                                    **
+**                         OpenRadioss Engine                         **
+**                                                                    **
+**            Non-linear Finite Element Analysis Software             **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+**                Linux 64 bits, GNU compiler, OpenMPI                **
+**                      Double Precision Version                      **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+************************************************************************
+** OpenRadioss Software                                               **
+** COPYRIGHT (C) 2026 Siemens                                         **
+** Licensed under GNU Affero General Public License.                  **
+** See License file.                                                  **
+************************************************************************
+ 
+ ROOT: A47_BENDING  RESTART: 0001
+ NUMBER OF HMPP PROCESSES     1
+ 12/10/2026
+
+           **************************
+           ** IMPLICIT OPTION USED **
+           **************************
+
+ NC=       0 T= 0.0000E+00 DT= 1.0000E-03 ERR=  0.0% DM/M= 0.0000E+00
+     ANIMATION FILE: A47_BENDINGA001 WRITTEN
+
+   *--------- STIFFNESS MATRIX SETUP ---------*
+ SYMBOLIC DIM : ND =      54 NZ =       855 NB_MAX =       8
+ FINAL    DIM : ND =       6 NZ =        15 NB_MAX =       8
+
+
+Entering DMUMPS 5.6.2 with JOB =  -2
+      executing #MPI =      1, without OMP
+
+ MUMPS    DIM : NNZ =        21 NNZFR =         0
+     RESTART FILES: A47_BENDING_0001_[0001-0001].rst WRITTEN
+ NC=       0 T= 0.0000E+00 DT= 5.0000E-04 ERR=  0.0% DM/M= 0.0000E+00
+     RESTART FILES: A47_BENDING_0001_[0001-0001].rst WRITTEN
+ NC=       0 T= 0.0000E+00 DT= 2.5000E-04 ERR=  0.0% DM/M= 0.0000E+00
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 2.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+[jeux:00397] [0] func:/lib/x86_64-linux-gnu/libopen-pal.so.40(opal_backtrace_buffer+0x3f) [0x7144497c05ef]
+[jeux:00397] [1] func:/lib/x86_64-linux-gnu/libmpi.so.40(ompi_mpi_abort+0x16b) [0x71444a32f0bb]
+[jeux:00397] [2] func:/lib/x86_64-linux-gnu/libmpi_mpifh.so.40(mpi_abort+0x24) [0x71444b1e41d4]
+[jeux:00397] [3] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(spmd_kill_+0x1c) [0x5610314aff5c]
+[jeux:00397] [4] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(arret_+0x2e9) [0x561031a4cb39]
+[jeux:00397] [5] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(imp_solv_+0xfc68) [0x56103092aa08]
+[jeux:00397] [6] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(resol_+0x274fc) [0x56103087317c]
+[jeux:00397] [7] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(resol_head_+0xa73) [0x56103087e2d3]
+[jeux:00397] [8] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(radioss2_+0x5962) [0x56103082f252]
+[jeux:00397] [9] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(radioss0_+0x121) [0x561030829841]
+[jeux:00397] [10] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(main+0x21) [0x56102fe02641]
+[jeux:00397] [11] func:/lib/x86_64-linux-gnu/libc.so.6(+0x2a1ca) [0x71444982a1ca]
+[jeux:00397] [12] func:/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x8b) [0x71444982a28b]
+[jeux:00397] [13] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(_start+0x25) [0x56102fe02a75]

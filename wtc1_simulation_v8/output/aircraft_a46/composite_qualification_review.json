@@ -1,0 +1,122 @@
+{
+  "created_utc": "2026-10-12T14:52:35.078070+00:00",
+  "assessment": {
+    "created_utc": "2026-10-12T14:52:35.077530+00:00",
+    "iteration": "AIRCRAFT-A46",
+    "status": "completed_isolated_facade_shell_assembly_diagnostics__mechanical_CHECK_not_clean",
+    "native_Starter_controls": 2,
+    "native_Starter_strict_passes": 2,
+    "native_Engine_CHECK_controls": 2,
+    "native_NORMAL_completions": 2,
+    "CHECK_reports_completed": 2,
+    "patch_mass_g": 8640.489177995105,
+    "unchanged_patch_mass_pass": true,
+    "added_mass_g": 0,
+    "CHECK_errors_per_case": [
+      1,
+      1
+    ],
+    "CHECK_warnings_per_case": [
+      27,
+      21
+    ],
+    "rotational_warning_directions_per_case": [
+      27,
+      21
+    ],
+    "clean_mechanical_CHECK_pass": false,
+    "whole_assembly_abort_reproduced": false,
+    "whole_assembly_cause_uniquely_identified": false,
+    "whole_physics_modified": false,
+    "new_installations_or_compilations": 0,
+    "mechanical_source_patches": 0,
+    "old_native_solver_replays": 0,
+    "whole_insertion_ready": false,
+    "new_whole_extension_executed": false,
+    "new_physical_duration_credit_s": 0,
+    "best_whole_physical_s": 0.0200001220703125,
+    "objective1_complete": false,
+    "next_iteration": "AIRCRAFT-A47"
+  },
+  "cases": [
+    {
+      "case": "FACADE_PATCH_FREE",
+      "checks": {
+        "strict_Starter": true,
+        "Engine_NORMAL_exit0": true,
+        "CHECK_report_completed": true,
+        "source_mass": true,
+        "no_added_mass": true,
+        "no_TYPE25": true
+      },
+      "capability_and_mass_pass": true,
+      "CHECK_errors": 1,
+      "CHECK_warnings": 27,
+      "implicit_loading_error_present": true,
+      "rotational_warning_directions": 27,
+      "rotational_coefficient_min_max": [
+        4.002939e-14,
+        1.601553e-13
+      ],
+      "expected_mass_g": 8640.489177995105,
+      "Starter_mass_g": 8640.489177995,
+      "added_mass_g": 0.0,
+      "clean_mechanical_CHECK_pass": false,
+      "old_raw_completion_review_preserved": "wtc1_simulation_v8/output/aircraft_a46/FACADE_PATCH_FREE/review.json"
+    },
+    {
+      "case": "FACADE_PATCH_FIXED_EDGE",
+      "checks": {
+        "strict_Starter": true,
+        "Engine_NORMAL_exit0": true,
+        "CHECK_report_completed": true,
+        "source_mass": true,
+        "no_added_mass": true,
+        "no_TYPE25": true
+      },
+      "capability_and_mass_pass": true,
+      "CHECK_errors": 1,
+      "CHECK_warnings": 21,
+      "implicit_loading_error_present": true,
+      "rotational_warning_directions": 21,
+      "rotational_coefficient_min_max": [
+        4.002939e-14,
+        1.601553e-13
+      ],
+      "expected_mass_g": 8640.489177995105,
+      "Starter_mass_g": 8640.489177995,
+      "added_mass_g": 0.0,
+      "clean_mechanical_CHECK_pass": false,
+      "old_raw_completion_review_preserved": "wtc1_simulation_v8/output/aircraft_a46/FACADE_PATCH_FIXED_EDGE/review.json"
+    }
+  ],
+  "raw_completion_reviews_preserved": true,
+  "source_review": {
+    "created_utc": "2026-10-12T14:48:48.082381+00:00",
+    "files": [
+      {
+        "path": "engine/source/implicit/imp_glob_k.F",
+        "sha256": "7a6630fe353463ada0d2e0066073970694e8bb6625a05cac9a14850bd9e3d30e",
+        "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+        "raw_source_redistributed": false
+      },
+      {
+        "path": "engine/source/implicit/assem_c4.F",
+        "sha256": "8cf88794e510ed9f34d296f31b1216eb9341e90b304e0e4d2f69dd8fbb38ca85",
+        "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+        "raw_source_redistributed": false
+      },
+      {
+        "path": "engine/source/elements/shell/coqueba/cbake3.F",
+        "sha256": "efca538f4d628d9de145de02634b3e9097dedffb5effbbd731235c7e317e81b2",
+        "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+        "raw_source_redistributed": false
+      }
+    ],
+    "observed_calls": "CBAKE3 assembles four-node shell stiffness through ASSEM_C4 then ASSEMC_KIJ; six nominal shell DOF blocks, NDOF controls active rows.",
+    "hypothesis": "Whole topology, boundary constraints or mixed DOF graph may differ from isolated shell; source branch alone does not identify the failing native element.",
+    "known_missing_guard": "ASSEMC_KIJ searches JDIK for a block then uses JDL without an explicit not-found branch. No source patch and no proven missing block in native whole state.",
+    "physical_cause_inferred": false
+  },
+  "whole_impact_qualified": false
+}

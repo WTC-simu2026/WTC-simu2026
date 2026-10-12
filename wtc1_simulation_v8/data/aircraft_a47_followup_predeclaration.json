@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-10-12T15:05:38.728221+00:00",
+  "iteration": "AIRCRAFT-A47",
+  "seed": 1102072,
+  "random_draws": 0,
+  "reason": "Membrane Starter rejects three DR outputs because rotational displacement not computed; bending Linux explicit reaches energy-killed inf at .010ms and Linux implicit stops before first accepted step. Distinguish observation-only warning and input/Windows-vs-Linux issue.",
+  "cases": [
+    "MEMBRANE_TRANSLATION_OUTPUT",
+    "BENDING_WINDOWS_REFERENCE"
+  ],
+  "membrane_change": "Only remove DRX DRY DRZ requests; no material, mass, property, loading, supports, timestep or criterion changed.",
+  "Windows_comparison": "Fresh Windows Engine on exact same A47 bending initial state and exact explicit Engine cards, not an old successful simulation rerun.",
+  "Windows_Engine": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/engine_win64.exe",
+  "Windows_Engine_sha256": "53625d1fdc32991b0f51c368c648a5c184fd3bc43875553b4653132445e4b8e8",
+  "bending_initial_state_sha256": "c10a6c55234035409cf622de8a3f09d777fff8dd5a545a51d32371741d0316a7",
+  "bending_explicit_cards_sha256": "5f9cae6b84a5f82a5089ba65ac9e9f78c7b9f86a7f724750bc1a96e952f8e01c",
+  "CPU_threads": 1,
+  "GPU": false,
+  "per_process_cap_s": 180,
+  "expected_total_s": 120,
+  "maximum_total_s": 540,
+  "physical_acceptance": {
+    "Starter_warnings": 0,
+    "Starter_errors": 0,
+    "mass_relative": 1e-06,
+    "added_mass_relative": 1e-09,
+    "energy_fraction": 0.02,
+    "absolute_energy_J": 1e-07,
+    "prescribed_displacement_mm": 2e-05,
+    "prescribed_rotation_rad": 2e-06,
+    "analytic_membrane_energy_fraction": 0.02,
+    "analytic_bending_energy_fraction": 0.02,
+    "analytic_resultant_fraction": 0.02,
+    "explicit_implicit_energy_fraction": 0.02,
+    "explicit_implicit_displacement_mm": 2e-05,
+    "force_or_moment_absolute_MPa": 1e-05,
+    "no_plastic_work_J": 1e-07,
+    "no_erosion": true
+  },
+  "strict_completion": "Exit0 AND NORMAL AND no RUN KILLED/USER BREAK AND recorded last time reaches requested12ms. Original raw completion.json retained; it is not full-horizon evidence.",
+  "old_failures_retained": true,
+  "whole_time_credit_s": 0
+}

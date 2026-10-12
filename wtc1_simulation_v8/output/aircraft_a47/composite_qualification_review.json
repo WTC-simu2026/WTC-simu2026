@@ -1,0 +1,504 @@
+{
+  "created_utc": "2026-10-12T15:22:06.283457+00:00",
+  "assessment": {
+    "created_utc": "2026-10-12T15:22:06.282631+00:00",
+    "iteration": "AIRCRAFT-A47",
+    "status": "completed_loaded_shell_response_and_encoding_repair__terminal_output_gate_failed",
+    "native_Starter_preparations": 5,
+    "Starter_threads_observed": 2,
+    "native_Engine_executions": 9,
+    "Engine_threads": 1,
+    "original_membrane_DR_warning_count": 3,
+    "original_load_scaling_encoding_error_identified": true,
+    "encoding_repair_matches_original_configuration": true,
+    "physical_parameters_or_criteria_changed_to_fit_output": false,
+    "corrected_native_controls": 4,
+    "corrected_normal_no_kill_completions": 4,
+    "loaded_physical_checks_on_recorded_support_pass": true,
+    "explicit_implicit_mechanical_comparisons_on_common_support_pass": true,
+    "exact_12ms_history_gates_passed": 2,
+    "exact_12ms_history_gates_failed": 2,
+    "common_comparison_last_ms": [
+      11.999,
+      11.999
+    ],
+    "full_original_campaign_gate_pass": false,
+    "whole_initial_physics_changed": false,
+    "new_installations_or_compilations": 0,
+    "mechanical_source_patches": 0,
+    "old_native_solver_replays": 0,
+    "whole_insertion_ready": false,
+    "new_whole_extension_executed": false,
+    "new_whole_duration_credit_s": 0,
+    "best_whole_physical_s": 0.0200001220703125,
+    "objective1_complete": false,
+    "next_iteration": "AIRCRAFT-A48"
+  },
+  "loaded_shell": {
+    "created_utc": "2026-10-12T15:16:01.185775+00:00",
+    "cases": [
+      {
+        "created_utc": "2026-10-12T15:15:58.035651+00:00",
+        "mode": "MEMBRANE",
+        "method": "EXPLICIT",
+        "samples": 12001,
+        "first_ms": 0.0,
+        "last_ms": 12.0,
+        "checks": {
+          "native_full_window": true,
+          "fresh_Starter_strict": true,
+          "finite_histories": true,
+          "mass_matches_patch": true,
+          "no_added_mass": true,
+          "prescribed_displacements": true,
+          "native_global_work_energy": true,
+          "no_plastic_work": true,
+          "entered_thickness_unchanged": true,
+          "no_erosion": true,
+          "independent_end_internal_energy": true,
+          "independent_force_or_moment_resultants": true
+        },
+        "pass": true,
+        "failed_checks": [],
+        "maximum_prescribed_displacement_error_mm": 5.500858813595189e-10,
+        "maximum_prescribed_rotation_error_rad": null,
+        "end_IE_J": 0.01099293,
+        "reference_IE_J": 0.010992988776075196,
+        "end_IE_relative_error": 5.3466874562850505e-06,
+        "maximum_energy_residual_J": 2.2221980000916575e-08,
+        "energy_tolerance_J": 0.00021995977552150393,
+        "maximum_force_or_moment_normalized_resultant_error_MPa": 1.1819579501137767e-05,
+        "resultant_reference_scale_MPa": 2.0,
+        "max_plastic_work_J": 0.0,
+        "reaction_trapezoid_work_J_diagnostic": 0.010996064325614913,
+        "external_work_J": 0.01099293,
+        "reaction_diagnostic_scope": "Raw REAC channels and translational/angular published velocities retained; no force semantics imposed on implicit secant fields or restart. Resultant validation uses native F/M shell channels and primary documented thickness normalization.",
+        "whole_impact_qualified": false
+      },
+      {
+        "created_utc": "2026-10-12T15:15:58.989700+00:00",
+        "mode": "MEMBRANE",
+        "method": "IMPLICIT",
+        "samples": 12000,
+        "first_ms": 0.0,
+        "last_ms": 11.999,
+        "checks": {
+          "native_full_window": false,
+          "fresh_Starter_strict": true,
+          "finite_histories": true,
+          "mass_matches_patch": true,
+          "no_added_mass": true,
+          "prescribed_displacements": true,
+          "native_global_work_energy": true,
+          "no_plastic_work": true,
+          "entered_thickness_unchanged": true,
+          "no_erosion": true,
+          "independent_end_internal_energy": true,
+          "independent_force_or_moment_resultants": true
+        },
+        "pass": false,
+        "failed_checks": [
+          "native_full_window"
+        ],
+        "maximum_prescribed_displacement_error_mm": 5.534551612580013e-10,
+        "maximum_prescribed_rotation_error_rad": null,
+        "end_IE_J": 0.01099293,
+        "reference_IE_J": 0.010992988776075196,
+        "end_IE_relative_error": 5.3466874562850505e-06,
+        "maximum_energy_residual_J": 1.3231937000951488e-08,
+        "energy_tolerance_J": 0.00021995977552150393,
+        "maximum_force_or_moment_normalized_resultant_error_MPa": 1.1819579501137767e-05,
+        "resultant_reference_scale_MPa": 2.0,
+        "max_plastic_work_J": 0.0,
+        "reaction_trapezoid_work_J_diagnostic": 0.010991422703227378,
+        "external_work_J": 0.01099293,
+        "reaction_diagnostic_scope": "Raw REAC channels and translational/angular published velocities retained; no force semantics imposed on implicit secant fields or restart. Resultant validation uses native F/M shell channels and primary documented thickness normalization.",
+        "whole_impact_qualified": false
+      },
+      {
+        "created_utc": "2026-10-12T15:16:00.047977+00:00",
+        "mode": "BENDING",
+        "method": "EXPLICIT",
+        "samples": 12001,
+        "first_ms": 0.0,
+        "last_ms": 12.0,
+        "checks": {
+          "native_full_window": true,
+          "fresh_Starter_strict": true,
+          "finite_histories": true,
+          "mass_matches_patch": true,
+          "no_added_mass": true,
+          "prescribed_displacements": true,
+          "native_global_work_energy": true,
+          "no_plastic_work": true,
+          "entered_thickness_unchanged": true,
+          "no_erosion": true,
+          "independent_end_internal_energy": true,
+          "independent_force_or_moment_resultants": true,
+          "prescribed_rotations": true
+        },
+        "pass": true,
+        "failed_checks": [],
+        "maximum_prescribed_displacement_error_mm": 5.8816923796667364e-09,
+        "maximum_prescribed_rotation_error_rad": 5.6907078008205936e-11,
+        "end_IE_J": 0.0005771697999999999,
+        "reference_IE_J": 0.0005771676952126199,
+        "end_IE_relative_error": 3.646751884319409e-06,
+        "maximum_energy_residual_J": 1.3800000000016707e-09,
+        "energy_tolerance_J": 1.1643396001951906e-05,
+        "maximum_force_or_moment_normalized_resultant_error_MPa": 1.1170972305518667e-07,
+        "resultant_reference_scale_MPa": 0.13229166666666667,
+        "max_plastic_work_J": 0.0,
+        "reaction_trapezoid_work_J_diagnostic": 0.0005767912765233599,
+        "external_work_J": 0.0005771697999999999,
+        "reaction_diagnostic_scope": "Raw REAC channels and translational/angular published velocities retained; no force semantics imposed on implicit secant fields or restart. Resultant validation uses native F/M shell channels and primary documented thickness normalization.",
+        "whole_impact_qualified": false
+      },
+      {
+        "created_utc": "2026-10-12T15:16:01.053203+00:00",
+        "mode": "BENDING",
+        "method": "IMPLICIT",
+        "samples": 12000,
+        "first_ms": 0.0,
+        "last_ms": 11.99925,
+        "checks": {
+          "native_full_window": false,
+          "fresh_Starter_strict": true,
+          "finite_histories": true,
+          "mass_matches_patch": true,
+          "no_added_mass": true,
+          "prescribed_displacements": true,
+          "native_global_work_energy": true,
+          "no_plastic_work": true,
+          "entered_thickness_unchanged": true,
+          "no_erosion": true,
+          "independent_end_internal_energy": true,
+          "independent_force_or_moment_resultants": true,
+          "prescribed_rotations": true
+        },
+        "pass": false,
+        "failed_checks": [
+          "native_full_window"
+        ],
+        "maximum_prescribed_displacement_error_mm": 5.8816923796667364e-09,
+        "maximum_prescribed_rotation_error_rad": 5.6907078008205936e-11,
+        "end_IE_J": 0.0005771697999999999,
+        "reference_IE_J": 0.0005771676952126199,
+        "end_IE_relative_error": 3.646751884319409e-06,
+        "maximum_energy_residual_J": 3.368809999999998e-07,
+        "energy_tolerance_J": 1.1643396007807618e-05,
+        "maximum_force_or_moment_normalized_resultant_error_MPa": 1.1220253459676144e-07,
+        "resultant_reference_scale_MPa": 0.13229166666666667,
+        "max_plastic_work_J": 0.0,
+        "reaction_trapezoid_work_J_diagnostic": 0.0005772422056174294,
+        "external_work_J": 0.0005769516,
+        "reaction_diagnostic_scope": "Raw REAC channels and translational/angular published velocities retained; no force semantics imposed on implicit secant fields or restart. Resultant validation uses native F/M shell channels and primary documented thickness normalization.",
+        "whole_impact_qualified": false
+      }
+    ],
+    "explicit_implicit_pairs": [
+      {
+        "mode": "MEMBRANE",
+        "first_common_ms": 0.0,
+        "last_common_ms": 11.999,
+        "samples_common": 12000,
+        "energy": {
+          "INTERNAL ENERGY": {
+            "maximum_difference_J": 1.0000000001675335e-08,
+            "tolerance_J": 0.00021995977552150393,
+            "pass": true
+          },
+          "KINETIC ENERGY": {
+            "maximum_difference_J": 2.483499999999997e-09,
+            "tolerance_J": 0.00021995977552150393,
+            "pass": true
+          },
+          "ROTATION ENERGY": {
+            "maximum_difference_J": 4.826888e-39,
+            "tolerance_J": 0.00021995977552150393,
+            "pass": true
+          },
+          "EXTERNAL WORK": {
+            "maximum_difference_J": 1.7500000001197114e-08,
+            "tolerance_J": 0.00021995977552150393,
+            "pass": true
+          }
+        },
+        "maximum_nodal_displacement_difference_mm": 1.249999999775736e-09,
+        "same_initial_state_sha256": true,
+        "all_individual_checks": false,
+        "pass": false,
+        "comparison_on_recorded_common_support_only": true,
+        "no_time_shift_or_extrapolation": true
+      },
+      {
+        "mode": "BENDING",
+        "first_common_ms": 0.0,
+        "last_common_ms": 11.999,
+        "samples_common": 12000,
+        "energy": {
+          "INTERNAL ENERGY": {
+            "maximum_difference_J": 3.250000000024067e-10,
+            "tolerance_J": 1.1643353904252399e-05,
+            "pass": true
+          },
+          "KINETIC ENERGY": {
+            "maximum_difference_J": 1.1982199999999944e-07,
+            "tolerance_J": 1.1643353904252399e-05,
+            "pass": true
+          },
+          "ROTATION ENERGY": {
+            "maximum_difference_J": 6.308899999999935e-08,
+            "tolerance_J": 1.1643353904252399e-05,
+            "pass": true
+          },
+          "EXTERNAL WORK": {
+            "maximum_difference_J": 3.3553999999999984e-07,
+            "tolerance_J": 1.1643353904252399e-05,
+            "pass": true
+          }
+        },
+        "maximum_nodal_displacement_difference_mm": 1.150000000023528e-08,
+        "same_initial_state_sha256": true,
+        "all_individual_checks": false,
+        "pass": false,
+        "comparison_on_recorded_common_support_only": true,
+        "no_time_shift_or_extrapolation": true
+      }
+    ],
+    "all_pass": false,
+    "corrected_input_matches_original_declaration": true,
+    "original_criteria_unchanged": true,
+    "old_failures_preserved": true,
+    "whole_impact_qualified": false,
+    "new_whole_time_credit_s": 0
+  },
+  "raw_terminal_fields": {
+    "created_utc": "2026-10-12T15:14:32.462411+00:00",
+    "cases": [
+      {
+        "mode": "MEMBRANE",
+        "method": "EXPLICIT",
+        "native_animation": "wtc1_simulation_v8/output/aircraft_a47/encoding_repair/MEMBRANE/EXPLICIT/A47_R1_MEMBRANEA025",
+        "vtk": "wtc1_simulation_v8/output/aircraft_a47/encoding_repair/MEMBRANE/EXPLICIT/A47_R1_MEMBRANEA025.vtk",
+        "native_sha256": "fb511dbeed700e1d408a86cf3ab7d102d72841e6006de64972ceaaaf18b1a344",
+        "vtk_sha256": "83876e79aa7ddbf94bb88ee9ef24c6d086acab8492ee8c86cad100878542249f",
+        "actual_terminal_animation_ms": 12.001,
+        "actual_last_history_ms": 12.0,
+        "checks": {
+          "native_terminal_time": true,
+          "all_node_ids": true,
+          "finite": true,
+          "coordinate_displacement_source_format": true,
+          "final_prescribed_translation": true,
+          "no_erosion": true
+        },
+        "pass": true,
+        "raw_exact_terminal_history_gate_preserved": true,
+        "no_history_timestamp_changed_or_value_injected": true
+      },
+      {
+        "mode": "MEMBRANE",
+        "method": "IMPLICIT",
+        "native_animation": "wtc1_simulation_v8/output/aircraft_a47/encoding_repair/MEMBRANE/IMPLICIT/A47_R1_MEMBRANEA025",
+        "vtk": "wtc1_simulation_v8/output/aircraft_a47/encoding_repair/MEMBRANE/IMPLICIT/A47_R1_MEMBRANEA025.vtk",
+        "native_sha256": "31499ac9ff43bc2e6c2a517d391d7305258b349e0c32db8538b6ad0e75e49ab1",
+        "vtk_sha256": "7de279110e28b8976d511aefb26abcd85010504e71ef787c7d3b835665caa207",
+        "actual_terminal_animation_ms": 12.0,
+        "actual_last_history_ms": 11.999,
+        "checks": {
+          "native_terminal_time": true,
+          "all_node_ids": true,
+          "finite": true,
+          "coordinate_displacement_source_format": true,
+          "final_prescribed_translation": true,
+          "no_erosion": true
+        },
+        "pass": true,
+        "raw_exact_terminal_history_gate_preserved": false,
+        "no_history_timestamp_changed_or_value_injected": true
+      },
+      {
+        "mode": "BENDING",
+        "method": "EXPLICIT",
+        "native_animation": "wtc1_simulation_v8/output/aircraft_a47/encoding_repair/BENDING/EXPLICIT/A47_R1_BENDINGA025",
+        "vtk": "wtc1_simulation_v8/output/aircraft_a47/encoding_repair/BENDING/EXPLICIT/A47_R1_BENDINGA025.vtk",
+        "native_sha256": "1a18c014664a33b4fbdd834597e9dc20a6df615ad70d734631ec054286b92883",
+        "vtk_sha256": "1daa899ab84dbd8b4621f69fbd6ffb4c39f692495232f8f63ade7c3a0462295a",
+        "actual_terminal_animation_ms": 12.001,
+        "actual_last_history_ms": 12.0,
+        "checks": {
+          "native_terminal_time": true,
+          "all_node_ids": true,
+          "finite": true,
+          "coordinate_displacement_source_format": true,
+          "final_prescribed_translation": true,
+          "no_erosion": true
+        },
+        "pass": true,
+        "raw_exact_terminal_history_gate_preserved": true,
+        "no_history_timestamp_changed_or_value_injected": true
+      },
+      {
+        "mode": "BENDING",
+        "method": "IMPLICIT",
+        "native_animation": "wtc1_simulation_v8/output/aircraft_a47/encoding_repair/BENDING/IMPLICIT/A47_R1_BENDINGA024",
+        "vtk": "wtc1_simulation_v8/output/aircraft_a47/encoding_repair/BENDING/IMPLICIT/A47_R1_BENDINGA024.vtk",
+        "native_sha256": "5653449bf791e1ca0ad08132d2d54dccfb1a7963dc392905d828c728880cf3bb",
+        "vtk_sha256": "247b7616fd338b977cb8a68898304e046a86df7ecd86f8b8253d1e1b0086947d",
+        "actual_terminal_animation_ms": 11.5002,
+        "actual_last_history_ms": 11.99925,
+        "checks": {
+          "native_terminal_time": false,
+          "all_node_ids": true,
+          "finite": true,
+          "coordinate_displacement_source_format": true,
+          "final_prescribed_translation": true,
+          "no_erosion": true
+        },
+        "pass": false,
+        "raw_exact_terminal_history_gate_preserved": false,
+        "no_history_timestamp_changed_or_value_injected": true
+      }
+    ],
+    "pass": false,
+    "scope": "Actual native terminal animation plus Normal/exit0/no USER BREAK; exact terminal history output gate retained separately. Global history balance covers recorded samples through actual last history time only.",
+    "no_old_solver_replay": true
+  },
+  "original_execution": {
+    "created_utc": "2026-10-12T15:01:41.784577+00:00",
+    "cases": [
+      {
+        "mode": "MEMBRANE",
+        "Starter_pass": false,
+        "Engine_not_run": true
+      },
+      {
+        "mode": "BENDING",
+        "method": "EXPLICIT",
+        "Starter_pass": true,
+        "native_completed": true,
+        "history_converted": true
+      },
+      {
+        "mode": "BENDING",
+        "method": "IMPLICIT",
+        "Starter_pass": true,
+        "native_completed": false,
+        "history_converted": false
+      }
+    ],
+    "whole_duration_credit_s": 0,
+    "whole_impact_qualified": false
+  },
+  "observation_followup": {
+    "created_utc": "2026-10-12T15:06:27.985990+00:00",
+    "Windows_bending_full_window": {
+      "created_utc": "2026-10-12T15:05:40.103990+00:00",
+      "requested_end_ms": 12,
+      "actual_last_history_ms": 0.01,
+      "early_kill_or_user_break": true,
+      "normal_marker": true,
+      "pass": false,
+      "raw_native_completion_preserved": true
+    },
+    "membrane_observation_Starter_pass": true,
+    "membrane_cases": [
+      {
+        "method": "EXPLICIT",
+        "native_exit_normal": true,
+        "full_window": {
+          "created_utc": "2026-10-12T15:05:52.353838+00:00",
+          "requested_end_ms": 12,
+          "actual_last_history_ms": 12.0,
+          "early_kill_or_user_break": false,
+          "normal_marker": true,
+          "pass": true,
+          "raw_native_completion_preserved": true
+        }
+      },
+      {
+        "method": "IMPLICIT",
+        "native_exit_normal": true,
+        "full_window": {
+          "created_utc": "2026-10-12T15:06:27.985189+00:00",
+          "requested_end_ms": 12,
+          "actual_last_history_ms": 12.0,
+          "early_kill_or_user_break": false,
+          "normal_marker": true,
+          "pass": true,
+          "raw_native_completion_preserved": true
+        }
+      }
+    ],
+    "whole_impact_qualified": false,
+    "no_old_native_replays": true
+  },
+  "encoding_repair_execution": {
+    "created_utc": "2026-10-12T15:12:45.025175+00:00",
+    "cases": [
+      {
+        "mode": "MEMBRANE",
+        "method": "EXPLICIT",
+        "raw_exit_normal": true,
+        "full_window": {
+          "created_utc": "2026-10-12T15:08:46.868825+00:00",
+          "requested_end_ms": 12,
+          "actual_last_history_ms": 12.0,
+          "early_kill_or_user_break": false,
+          "normal_marker": true,
+          "pass": true,
+          "raw_native_completion_preserved": true
+        }
+      },
+      {
+        "mode": "MEMBRANE",
+        "method": "IMPLICIT",
+        "raw_exit_normal": true,
+        "full_window": {
+          "created_utc": "2026-10-12T15:11:16.257330+00:00",
+          "requested_end_ms": 12,
+          "actual_last_history_ms": 11.999,
+          "early_kill_or_user_break": false,
+          "normal_marker": true,
+          "pass": false,
+          "raw_native_completion_preserved": true
+        }
+      },
+      {
+        "mode": "BENDING",
+        "method": "EXPLICIT",
+        "raw_exit_normal": true,
+        "full_window": {
+          "created_utc": "2026-10-12T15:11:24.688423+00:00",
+          "requested_end_ms": 12,
+          "actual_last_history_ms": 12.0,
+          "early_kill_or_user_break": false,
+          "normal_marker": true,
+          "pass": true,
+          "raw_native_completion_preserved": true
+        }
+      },
+      {
+        "mode": "BENDING",
+        "method": "IMPLICIT",
+        "raw_exit_normal": true,
+        "full_window": {
+          "created_utc": "2026-10-12T15:12:45.024114+00:00",
+          "requested_end_ms": 12,
+          "actual_last_history_ms": 11.99925,
+          "early_kill_or_user_break": false,
+          "normal_marker": true,
+          "pass": false,
+          "raw_native_completion_preserved": true
+        }
+      }
+    ],
+    "all_full_windows_pass": false,
+    "whole_impact_qualified": false,
+    "original_physical_acceptance_unchanged": true,
+    "new_whole_time_credit_s": 0
+  },
+  "failed_gates_preserved": true,
+  "whole_impact_qualified": false
+}

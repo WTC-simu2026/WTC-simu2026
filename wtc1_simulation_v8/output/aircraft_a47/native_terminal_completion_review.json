@@ -1,0 +1,92 @@
+{
+  "created_utc": "2026-10-12T15:14:32.462411+00:00",
+  "cases": [
+    {
+      "mode": "MEMBRANE",
+      "method": "EXPLICIT",
+      "native_animation": "wtc1_simulation_v8/output/aircraft_a47/encoding_repair/MEMBRANE/EXPLICIT/A47_R1_MEMBRANEA025",
+      "vtk": "wtc1_simulation_v8/output/aircraft_a47/encoding_repair/MEMBRANE/EXPLICIT/A47_R1_MEMBRANEA025.vtk",
+      "native_sha256": "fb511dbeed700e1d408a86cf3ab7d102d72841e6006de64972ceaaaf18b1a344",
+      "vtk_sha256": "83876e79aa7ddbf94bb88ee9ef24c6d086acab8492ee8c86cad100878542249f",
+      "actual_terminal_animation_ms": 12.001,
+      "actual_last_history_ms": 12.0,
+      "checks": {
+        "native_terminal_time": true,
+        "all_node_ids": true,
+        "finite": true,
+        "coordinate_displacement_source_format": true,
+        "final_prescribed_translation": true,
+        "no_erosion": true
+      },
+      "pass": true,
+      "raw_exact_terminal_history_gate_preserved": true,
+      "no_history_timestamp_changed_or_value_injected": true
+    },
+    {
+      "mode": "MEMBRANE",
+      "method": "IMPLICIT",
+      "native_animation": "wtc1_simulation_v8/output/aircraft_a47/encoding_repair/MEMBRANE/IMPLICIT/A47_R1_MEMBRANEA025",
+      "vtk": "wtc1_simulation_v8/output/aircraft_a47/encoding_repair/MEMBRANE/IMPLICIT/A47_R1_MEMBRANEA025.vtk",
+      "native_sha256": "31499ac9ff43bc2e6c2a517d391d7305258b349e0c32db8538b6ad0e75e49ab1",
+      "vtk_sha256": "7de279110e28b8976d511aefb26abcd85010504e71ef787c7d3b835665caa207",
+      "actual_terminal_animation_ms": 12.0,
+      "actual_last_history_ms": 11.999,
+      "checks": {
+        "native_terminal_time": true,
+        "all_node_ids": true,
+        "finite": true,
+        "coordinate_displacement_source_format": true,
+        "final_prescribed_translation": true,
+        "no_erosion": true
+      },
+      "pass": true,
+      "raw_exact_terminal_history_gate_preserved": false,
+      "no_history_timestamp_changed_or_value_injected": true
+    },
+    {
+      "mode": "BENDING",
+      "method": "EXPLICIT",
+      "native_animation": "wtc1_simulation_v8/output/aircraft_a47/encoding_repair/BENDING/EXPLICIT/A47_R1_BENDINGA025",
+      "vtk": "wtc1_simulation_v8/output/aircraft_a47/encoding_repair/BENDING/EXPLICIT/A47_R1_BENDINGA025.vtk",
+      "native_sha256": "1a18c014664a33b4fbdd834597e9dc20a6df615ad70d734631ec054286b92883",
+      "vtk_sha256": "1daa899ab84dbd8b4621f69fbd6ffb4c39f692495232f8f63ade7c3a0462295a",
+      "actual_terminal_animation_ms": 12.001,
+      "actual_last_history_ms": 12.0,
+      "checks": {
+        "native_terminal_time": true,
+        "all_node_ids": true,
+        "finite": true,
+        "coordinate_displacement_source_format": true,
+        "final_prescribed_translation": true,
+        "no_erosion": true
+      },
+      "pass": true,
+      "raw_exact_terminal_history_gate_preserved": true,
+      "no_history_timestamp_changed_or_value_injected": true
+    },
+    {
+      "mode": "BENDING",
+      "method": "IMPLICIT",
+      "native_animation": "wtc1_simulation_v8/output/aircraft_a47/encoding_repair/BENDING/IMPLICIT/A47_R1_BENDINGA024",
+      "vtk": "wtc1_simulation_v8/output/aircraft_a47/encoding_repair/BENDING/IMPLICIT/A47_R1_BENDINGA024.vtk",
+      "native_sha256": "5653449bf791e1ca0ad08132d2d54dccfb1a7963dc392905d828c728880cf3bb",
+      "vtk_sha256": "247b7616fd338b977cb8a68898304e046a86df7ecd86f8b8253d1e1b0086947d",
+      "actual_terminal_animation_ms": 11.5002,
+      "actual_last_history_ms": 11.99925,
+      "checks": {
+        "native_terminal_time": false,
+        "all_node_ids": true,
+        "finite": true,
+        "coordinate_displacement_source_format": true,
+        "final_prescribed_translation": true,
+        "no_erosion": true
+      },
+      "pass": false,
+      "raw_exact_terminal_history_gate_preserved": false,
+      "no_history_timestamp_changed_or_value_injected": true
+    }
+  ],
+  "pass": false,
+  "scope": "Actual native terminal animation plus Normal/exit0/no USER BREAK; exact terminal history output gate retained separately. Global history balance covers recorded samples through actual last history time only.",
+  "no_old_solver_replay": true
+}

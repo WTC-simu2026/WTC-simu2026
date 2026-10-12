@@ -1,0 +1,53 @@
+#RADIOSS STARTER
+/BEGIN
+A46_FACADE_PATCH_FIXED_EDGE
+      2026         0
+                   g                  mm                  ms
+                   g                  mm                  ms
+/TITLE
+A46_FACADE_PATCH_FIXED_EDGE
+/ANALY
+         0                   0         0
+/SPMD
+         0         0                   0                   1
+/NODE
+         1                 -50            -29641.8             -5486.4
+         2                 -50              -29464             -5486.4
+         3                 -50            -29286.2             -5486.4
+         4                 -50            -29641.8        -5291.666667
+         5                 -50              -29464        -5291.666667
+         6                 -50            -29286.2        -5291.666667
+         7                 -50            -29641.8        -5096.933333
+         8                 -50              -29464        -5096.933333
+         9                 -50            -29286.2        -5096.933333
+/MAT/LAW2/3
+representative_facade_steel_reference
+             0.00786
+              200000                 0.3         0         2              -1e+30
+             427.656                   0                   1               1e+30               1e+30
+                   0               0.001         1         1               1e+20                   0
+                   1               1e+30                   0              293.15               1e+30
+/PROP/TYPE1/31
+FACADE_COLUMNS
+        24         4         2         2
+                   0                   0                   0               1e-20               1e-20
+         5                        7.9375      0.833333333333
+/PART/31
+FACADE_COLUMNS
+        31         3         0
+/SHELL/31
+         1         1         2         5         4
+         2         2         3         6         5
+         3         4         5         8         7
+         4         5         6         9         8
+/GRNOD/NODE/900
+DECLARED_DIAGNOSTIC_FIXED_EDGE
+         1         2
+/BCS/900
+DECLARED_FIXED_EDGE
+   111 111         0       900
+/TH/PART/31
+PATCH_ENERGY
+        IE        KE        HE        PW
+        31
+/END
