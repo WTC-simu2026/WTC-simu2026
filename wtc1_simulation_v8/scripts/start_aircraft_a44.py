@@ -1,0 +1,20 @@
+"""Record the explicit A43 approval and declare A44 before its bounded build."""
+from preflight_aircraft_a43 import ROOT,RUNTIME,read,dump,rel,now,harness,streamsha,build
+from pathlib import Path
+import shutil
+OUT=ROOT/'wtc1_simulation_v8/output/aircraft_a44'
+CFG=ROOT/'wtc1_simulation_v8/data/aircraft_a44_predeclaration.json'
+PARENT=ROOT/'wtc1_simulation_v8/output/aircraft_a43'
+
+def declare():
+ assert not CFG.exists() and not (OUT/'software_authorization.json').exists();h=harness();assert h['Status']=='PASS' and h['CurrentIteration']=='AIRCRAFT-A43';p=read(PARENT/'legacy_build_proposal.json');assert read(PARENT/'publication_verification.json')['pass'];assert read(ROOT/'outputs/github_publication/updates_2026-10-12_aircraft_a42_a43/final_remote_verification.json')['pass'];assert read(OUT/'cached_Windows_LAW117_reference_review.json')['pass'];assert not (ROOT/p['new_candidate_directory']).exists();builder=ROOT/p['builder'];assert streamsha(builder)==p['builder_sha256'];dump(OUT/'harness_before_build.json',h)
+ for name in ['state.json','publication_cycle.json','experiments/registry.jsonl']:
+  target=OUT/('before_'+Path(name).name);assert not target.exists();shutil.copy2(ROOT/'harness'/name,target)
+ authorization={'received_utc':now(),'explicit_human_authorization':True,'answer':'Oui, compiler le second moteur séparé','source_pin':p['source_pin'],'cap_s':3600,'maximum_CPU_threads':6,'new_installation':False,'proposal':rel(PARENT/'proposition_compilation_moteur_compatible.md'),'proposal_sha256':streamsha(PARENT/'proposition_compilation_moteur_compatible.md'),'builder_sha256':p['builder_sha256'],'scope':'Second separate complete July28Engine with existing MUMPS, bounded1hour. No physical source patch, old software preserved.'};dump(OUT/'software_authorization.json',authorization)
+ protected=[RUNTIME/'starter_win64.exe',RUNTIME/'engine_win64.exe',build.CAND/'isolated_exec/engine_linux64_gf_ompi',build.CAND/'isolated_exec/libopen_reader_linux64.so'];dump(OUT/'protected_binaries_before.json',{'created_utc':now(),'files':[{'path':rel(x),'bytes':x.stat().st_size,'sha256':streamsha(x)} for x in protected]})
+ c={'iteration':'AIRCRAFT-A44','declared_utc':now(),'seed':1102069,'random_draws':0,'authorization':authorization,'build_proposal':p,'build':{'CPU_threads':6,'GPU':False,'cap_s':3600,'new_installation':False,'physics_source_patch':False,'complete_source_pin':p['source_pin']},'validation_baseline':rel(OUT/'cached_Windows_LAW117_reference_review.json'),'validation_baseline_sha256':streamsha(OUT/'cached_Windows_LAW117_reference_review.json'),'planned_native_execution':{'CPU_threads':1,'GPU':False,'per_process_cap_s':180,'estimated_s':120,'cases':'Four cached A17cohesive initial states, same Engine cards; separate unchanged whole A37explicit startup and conditional CHECK. New implicit controls must be separately declared if needed.','no_old_Windows_rerun':True,'no_CSV_state_injection':True},'physical_acceptance':read(ROOT/'wtc1_simulation_v8/data/aircraft_a44_validation_predeclaration.json')['acceptance'],'whole_insertion_ready':False,'objective1_complete':False,'target_physical_s':10,'best_whole_physical_s':.0200001220703125};dump(CFG,c);dump(OUT/'declaration_guard.json',{'created_utc':now(),'sha256':streamsha(CFG),'before_build':True});pins={r['path']:r for name in ['preservation_before.json','artifact_manifest.json'] for r in read(PARENT/name)['files']}
+ for name in ['artifact_manifest.json','publication_verification.json']:
+  x=PARENT/name;pins[rel(x)]={'path':rel(x),'bytes':x.stat().st_size,'sha256':streamsha(x)}
+ dump(OUT/'preservation_before.json',{'created_utc':now(),'files':list(pins.values()),'source_archives_not_rescanned':True});dump(OUT/'blocker_resolved.json',{'created_utc':now(),'condition':'A43secondEnginebuildauthorization','explicit_human_answer_received':True,'previous_goal_block_audit_retained':'harness/goal_audits/a44_pending_software_authorization_2026-10-12.json','fresh_blocked_audit_if_other_problem_recurs':True});print({'A44_declared':True,'explicit_authorization_recorded':True,'source_pin':p['source_pin']},flush=True)
+
+if __name__=='__main__':declare()

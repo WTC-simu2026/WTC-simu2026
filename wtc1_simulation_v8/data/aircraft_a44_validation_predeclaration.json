@@ -1,0 +1,89 @@
+{
+  "created_utc": "2026-10-12T09:56:14.988185+00:00",
+  "iteration": "AIRCRAFT-A44",
+  "phase": "cached_validation_baseline_only",
+  "seed": 1102069,
+  "random_draws": 0,
+  "purpose": "Reuse qualified Windows LAW117 references instead of rerunning successful native controls. Prepare fair same-input comparisons after an explicitly authorized future separate Engine build.",
+  "reference_iteration": "AIRCRAFT-A17",
+  "reference_configuration": "wtc1_simulation_v8/data/aircraft_a17_predeclaration.json",
+  "reference_configuration_sha256": "a4eedecedc82d322eb79884496352489bc3ca324a180d30c0e13068f43d07301",
+  "reference_manifest": "wtc1_simulation_v8/output/aircraft_a17/artifact_manifest.json",
+  "reference_manifest_sha256": "9b26f3a3165857e81818795fdb8ad35387814b0460d96e5f96d133acd123e6f9",
+  "reference_material": {
+    "law": "LAW117",
+    "property": "TYPE43",
+    "EN_N_mm3": 4400,
+    "ET_N_mm3": 800,
+    "TN_MPa": 450,
+    "TT_MPa": 100,
+    "GI_N_mm": 50,
+    "GII_N_mm": 50,
+    "area_mass_density_g_mm2": 1e-20,
+    "nodal_instrument_mass_g": 1,
+    "Imass": 1,
+    "Idel": 4,
+    "Irupt": 1,
+    "Ismstr": 1,
+    "stiffness_derivation": "A07 analytical contract E22000MPa/5mm; ET4000/5. Numerical interface reference only.",
+    "G_physical_measured": false,
+    "shear_strength_measured": false,
+    "whole_aircraft_transfer_qualified": false,
+    "true_glue_or_tearing_properties_identified": false
+  },
+  "cases": [
+    {
+      "id": "NORMAL_L10",
+      "mode": "Z",
+      "L_mm": 10,
+      "dt_cap_ms": 2.5e-05
+    },
+    {
+      "id": "NORMAL_L10_HALF",
+      "mode": "Z",
+      "L_mm": 10,
+      "dt_cap_ms": 1.25e-05
+    },
+    {
+      "id": "NORMAL_L20",
+      "mode": "Z",
+      "L_mm": 20,
+      "dt_cap_ms": 2.5e-05
+    },
+    {
+      "id": "SHEAR_L10",
+      "mode": "X",
+      "L_mm": 10,
+      "dt_cap_ms": 2.5e-05
+    }
+  ],
+  "acceptance": {
+    "work_energy_fraction": 0.01,
+    "absolute_energy_J": 0.001,
+    "work_per_area_G_fraction": 0.02,
+    "equal_peak_energy_fraction": 0.005,
+    "traction_maximum_relative": 0.02,
+    "prescribed_motion_mm": 0.0001,
+    "half_dt_work_fraction": 0.005,
+    "area_normalized_work_fraction": 0.005,
+    "stored_dissipated_reference_identity_relative": 1e-08
+  },
+  "execution": {
+    "native_solver_executions": 0,
+    "converter_executions": 0,
+    "installations": 0,
+    "compilations": 0,
+    "read_only_cache_audit": true,
+    "source_archive_rescan": false
+  },
+  "future_comparison_requires_authorized_new_binary": true,
+  "future_Linux_controls": "Cached full native initial states and identical Engine cards, then existing independent analytic work/force/energy/motion/mass/erosion gates and area/half-dt checks. No CSV injection or remapped physical state.",
+  "limits": [
+    "Uniform opening/shear fixture only, not actual aircraft material identification or mixed-mode/compression qualification.",
+    "Fixture uses documented instrument masses, not an aircraft mass-budget change.",
+    "TYPE43 Ismstr1 here versus moving whole Ismstr4; whole checks remain separate.",
+    "No10s physical credit from these1ms coupon references."
+  ],
+  "objective1_target_physical_s": 10,
+  "objective1_complete": false
+}
