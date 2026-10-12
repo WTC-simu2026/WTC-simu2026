@@ -1,0 +1,93 @@
+{
+  "created_utc": "2026-10-12T09:14:24.944850+00:00",
+  "before_native": true,
+  "iteration": "AIRCRAFT-A42",
+  "seed": 1102067,
+  "random_draws": 0,
+  "source_deck": "wtc1_simulation_v8/output/aircraft_a37/whole_compatibility/A37_WHOLE_CHECK_0000.rad",
+  "source_sha256": "0f8e900f8e096b554d5f897cd4b6ec2b43dfa80e4048d78499021e17726e7a29",
+  "fresh_Starter_required": true,
+  "function_ids": [
+    286,
+    287
+  ],
+  "changed_physical_data_family": "LAW117 optional table representation only",
+  "numeric_parameters": {
+    "EN": 4400.0,
+    "ET": 800.0,
+    "TN": 450.0,
+    "TT": 100.0,
+    "GIC": 50.0,
+    "GIIC": 50.0,
+    "Fscale_x": 1.0,
+    "curve_ordinate": 1.0,
+    "curve_abscissae": [
+      0.0,
+      1000000000000.0
+    ]
+  },
+  "equivalence": [
+    {
+      "mode": "normal",
+      "old_peak_initiation_ultimate": [
+        450.0,
+        0.10227272727272728,
+        0.2222222222222222
+      ],
+      "table_peak_initiation_ultimate": [
+        450.0,
+        0.10227272727272728,
+        0.2222222222222222
+      ],
+      "exact_algebraic_equality": true,
+      "unchanged_energy_above_minimum": true
+    },
+    {
+      "mode": "shear",
+      "old_peak_initiation_ultimate": [
+        100.0,
+        0.125,
+        1.0
+      ],
+      "table_peak_initiation_ultimate": [
+        100.0,
+        0.125,
+        1.0
+      ],
+      "exact_algebraic_equality": true,
+      "unchanged_energy_above_minimum": true
+    }
+  ],
+  "curve_units": {
+    "x": "element size mm",
+    "y": "dimensionless scale; TN/TT remain450/100MPa"
+  },
+  "physical_parameters_unchanged": true,
+  "mass_material_geometry_contact_BCS_unchanged": true,
+  "source_commit": "bad6688602d770e019b75773d2d5a48b4f9bd918",
+  "source_files": [
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/materials/mat/mat117/sigeps117.F90",
+      "sha256": "ecaa68a044efb6cb649012e65458586b8db6f068a3bc4439c342b84e2b4b7d10"
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/starter/source/materials/mat/mat117/hm_read_mat117.F90",
+      "sha256": "3f95d64b29de752983c266047d207455dfd2538df118553f043fa41064e4507a"
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/starter/source/materials/tools/mat_table_copy.F90",
+      "sha256": "75627cdce9c663031d5bee7e7eba57418e28d362081c2c5ff085070ea15c2899"
+    }
+  ],
+  "documentation": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/mat_law117_starter_r.htm",
+  "native_engine_sha256": "f9f2eae4f871b13c53716012030495b292c48bc0e1f30035ebd750f8395a9fe8",
+  "execution": {
+    "CPU_threads": 1,
+    "GPU": false,
+    "per_process_cap_s": 180,
+    "explicit_end_ms": 1e-05,
+    "CHECK_only_if_explicit_completes": true,
+    "new_software_install_or_build": false
+  },
+  "limits": "An input-level algebraic equivalence is not proof of native-state compatibility or physical whole-model qualification."
+}

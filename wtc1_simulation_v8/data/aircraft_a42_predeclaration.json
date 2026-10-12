@@ -1,0 +1,42 @@
+{
+  "iteration": "AIRCRAFT-A42",
+  "declared_utc": "2026-10-12T08:51:37.354497+00:00",
+  "seed": 1102067,
+  "random_draws": 0,
+  "purpose": "Separate cached whole-model restart reading/complexity from implicit CHECK initialization. Same whole physical model and binary; no new preparation or substitutions.",
+  "source_generation": "wtc1_simulation_v8/output/aircraft_a37/whole_compatibility/generation.json",
+  "source_generation_sha256": "da85d51edb80bc855eb4164d86b97f72746dba8d4e3cfecbe63517242be2f724",
+  "source_initial_native_state": "wtc1_simulation_v8/output/aircraft_a37/whole_compatibility/A37_WHOLE_CHECK_0000_0001.rst",
+  "source_state_sha256": "5e9d7cc197a129104683357d646239c8ff754b185efbc2ef04a7fcfc52e6277d",
+  "source_state_bytes": 145410285,
+  "cases": [
+    {
+      "name": "WHOLE_EXPLICIT_READ",
+      "mode": "E",
+      "maximum_dt_ms": 1e-05,
+      "requested_end_ms": 1e-05,
+      "purpose": "Tiny explicit diagnostic with unchanged cached initial whole state; isolates read/initialization from implicit capability. It is not a10s run or extension beyond A20."
+    },
+    {
+      "name": "WHOLE_RREF_CHECK",
+      "mode": "CHECK",
+      "only_if_explicit_read_completes": true,
+      "purpose": "Same physical state, qualified numeric reference floor; CHECK only. If explicit also fails, skip identical reread and localize shared read failure from source instead."
+    }
+  ],
+  "execution": {
+    "CPU_threads": 1,
+    "GPU": false,
+    "per_process_cap_s": 180,
+    "expected_seconds": 30,
+    "estimated_seconds_max": 360,
+    "new_installation_or_compilation": false
+  },
+  "whole_physical_data_unchanged": true,
+  "no_history_or_state_injection": true,
+  "no_old_successful_solver_reruns": true,
+  "failed_A37_CHECK_retained": true,
+  "no_whole_qualification_inferred_from_diagnostic": true,
+  "source_code_commit": "bad6688602d770e019b75773d2d5a48b4f9bd918",
+  "Linux_engine_sha256": "f9f2eae4f871b13c53716012030495b292c48bc0e1f30035ebd750f8395a9fe8"
+}

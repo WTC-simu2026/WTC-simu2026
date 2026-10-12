@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-10-12T08:52:16.829781+00:00",
+  "case": {
+    "name": "WHOLE_EXPLICIT_READ",
+    "mode": "E",
+    "maximum_dt_ms": 1e-05,
+    "requested_end_ms": 1e-05,
+    "purpose": "Tiny explicit diagnostic with unchanged cached initial whole state; isolates read/initialization from implicit capability. It is not a10s run or extension beyond A20."
+  },
+  "native_completed": false,
+  "execution": {
+    "created_utc": "2026-10-12T08:52:16.648363+00:00",
+    "argv": [
+      "wsl.exe",
+      "-d",
+      "Ubuntu",
+      "--",
+      "timeout",
+      "--signal=TERM",
+      "--kill-after=5",
+      "180",
+      "bash",
+      "/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/output/aircraft_a42/WHOLE_EXPLICIT_READ/engine.log.launch.sh"
+    ],
+    "environment": {
+      "OMP_NUM_THREADS": "1",
+      "RAD_HMPP_DOMAINS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "LD_LIBRARY_PATH": "/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/isolated_exec",
+      "OPENRADIOSS_PATH": "/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source",
+      "RAD_CFG_PATH": "/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/hm_cfg_files",
+      "RAD_H3D_PATH": "/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/extlib/h3d/lib/linux64"
+    },
+    "exit_code": 3,
+    "seconds": 11.612736900000527,
+    "candidate_sha256": "f9f2eae4f871b13c53716012030495b292c48bc0e1f30035ebd750f8395a9fe8",
+    "CPU_threads": 1,
+    "GPU": false
+  },
+  "source_initial_state_unchanged": true,
+  "whole_physical_inputs_unchanged": true,
+  "whole_impact_qualified": false
+}

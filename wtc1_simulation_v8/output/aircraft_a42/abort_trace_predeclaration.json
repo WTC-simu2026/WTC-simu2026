@@ -1,0 +1,17 @@
+{
+  "created_utc": "2026-10-12T08:57:53.564020+00:00",
+  "seed": 1102067,
+  "before_new_native": true,
+  "source_case": "WHOLE_EXPLICIT_READ",
+  "source_case_execution_sha256": "472b0f57ee2bc86d999ccc0447c072fa567570d13d789684d4b96bb7a5f5fa76",
+  "binary_sha256": "f9f2eae4f871b13c53716012030495b292c48bc0e1f30035ebd750f8395a9fe8",
+  "purpose": "Capture the abort call stack using an installed MCA parameter, with identical whole state, Engine input and binary. Failure replay only for new diagnostic observations.",
+  "runtime_option": "OMPI_MCA_mpi_abort_print_stack=1",
+  "installed_runtime_option_verified": "ompi_info --all lists mpi_abort_print_stack synonym of opal_abort_print_stack; defaultfalse",
+  "documentation": "https://docs.open-mpi.org/en/v5.0.8/app-debug/debug-options.html",
+  "no_software_install_build_patch": true,
+  "no_input_physics_change": true,
+  "per_process_cap_s": 180,
+  "CPU_threads": 1,
+  "GPU": false
+}

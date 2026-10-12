@@ -1,0 +1,14 @@
+"""Use the installed Open MPI abort stack option; no debugger install or solver patch."""
+from probe_aircraft_a42 import *
+import subprocess,re
+
+def declare():
+ guard();p=OUT/'abort_trace_predeclaration.json';assert not p.exists();assert not read(OUT/'WHOLE_EXPLICIT_READ/review.json')['native_completed'];binary=build.CAND/'isolated_exec/engine_linux64_gf_ompi';dump(p,{'created_utc':now(),'seed':1102067,'before_new_native':True,'source_case':'WHOLE_EXPLICIT_READ','source_case_execution_sha256':streamsha(OUT/'WHOLE_EXPLICIT_READ/engine.log.execution.json'),'binary_sha256':streamsha(binary),'purpose':'Capture the abort call stack using an installed MCA parameter, with identical whole state, Engine input and binary. Failure replay only for new diagnostic observations.','runtime_option':'OMPI_MCA_mpi_abort_print_stack=1','installed_runtime_option_verified':'ompi_info --all lists mpi_abort_print_stack synonym of opal_abort_print_stack; defaultfalse','documentation':'https://docs.open-mpi.org/en/v5.0.8/app-debug/debug-options.html','no_software_install_build_patch':True,'no_input_physics_change':True,'per_process_cap_s':180,'CPU_threads':1,'GPU':False})
+
+def run():
+ guard();dec=read(OUT/'abort_trace_predeclaration.json');assert dec['before_new_native'];src=OUT/'WHOLE_EXPLICIT_READ';d=OUT/'WHOLE_ABORT_TRACE_W1';assert not d.exists();d.mkdir();g=read(src/'generation.json');n=g['name']
+ for f in [src/(n+'_0000_0001.rst'),src/(n+'_0001.rad'),src/'generation.json']:shutil.copy2(f,d/f.name)
+ text=(src/'engine.log.launch.sh').read_text();old=build.linux(src);new=build.linux(d);assert old in text;assert text.count('\nexec ')==1;text=text.replace(old,new).replace('\nexec ','\nexport OMPI_MCA_mpi_abort_print_stack=1\nexec ',1);launch=d/'engine.log.launch.sh';launch.write_text(text,encoding='utf8',newline='\n');cmd=['wsl.exe','-d','Ubuntu','--','timeout','--signal=TERM','--kill-after=5','180','bash',build.linux(launch)];t=time.perf_counter();r=subprocess.run(cmd,capture_output=True,timeout=195);(d/'launcher.log').write_bytes(r.stdout+r.stderr);dump(d/'execution.json',{'created_utc':now(),'argv':cmd,'exit_code':r.returncode,'wall_seconds':time.perf_counter()-t,'binary_sha256':streamsha(build.CAND/'isolated_exec/engine_linux64_gf_ompi'),'CPU_threads':1,'GPU':False,'only_new_option':'mpi_abort_print_stack1','previous_launch_syntax_failure_retained':'WHOLE_ABORT_TRACE'});s=(d/'engine.log').read_text(errors='replace');dump(d/'stack_review.json',{'created_utc':now(),'exit_code':r.returncode,'stack_lines':[q for q in s.splitlines() if re.search(r'\[\s*\d+\]|0x[0-9a-fA-F]+',q)],'whole_impact_qualified':False,'physics_or_binary_changed':False});print({'abort_trace_exit':r.returncode,'stack_lines':len(read(d/'stack_review.json')['stack_lines'])},flush=True)
+
+if __name__=='__main__':
+ p=argparse.ArgumentParser();p.add_argument('action',choices=['declare','run']);globals()[p.parse_args().action]()

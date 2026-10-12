@@ -1,0 +1,35 @@
+{
+  "created_utc": "2026-10-12T09:38:05.617622+00:00",
+  "source_pin": "bad6688602d770e019b75773d2d5a48b4f9bd918",
+  "missing_linker_symbols": [
+    "cpp_create_rbodies_from_rigid_parts_",
+    "cpp_evaluate_rbodies_number_from_rigid_parts_",
+    "cpp_is_part_with_elements_",
+    "cpp_sale_mesh_create_",
+    "cpp_get_include_file_by_index"
+  ],
+  "pinned_link_failure_log": "wtc1_simulation_v8/output/aircraft_a35/build_logs/36_w4_starter_compile.log",
+  "signature_mismatch": {
+    "symbol": "cpp_get_number_of_include_files",
+    "Fortran_Bind_C_arguments": [
+      "is_dyna_by_reference",
+      "num_includes_by_reference"
+    ],
+    "C_implementation_arguments": [
+      "nbIncludes_pointer"
+    ],
+    "same_symbol_does_not_establish_ABI_compatibility": true
+  },
+  "sources": [
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/starter/source/devtools/hm_reader/write_include_files_list.F90",
+      "sha256": "a672f3ef5f996750a3b53eb5e35a730ca27c73187f53b50e30bb3420f0fd6ff1"
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/reader/source/solver_interface/source/cfg_reading/cpp_get_number_of_include_files.cpp",
+      "sha256": "58655bb405d4372362a15205fbd3d0d191a8837cd6d8469632a26974c2f2da6b"
+    }
+  ],
+  "no_noop_or_fake_implementation_created": true,
+  "route": "A full Reader interface repair needs more than resolving five undefined symbols. Prefer a coherent legacy Engine source with existing Windows preparation before any further Starter modification."
+}
