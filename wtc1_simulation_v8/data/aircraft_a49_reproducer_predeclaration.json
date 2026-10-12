@@ -1,0 +1,105 @@
+{
+  "created_utc": "2026-10-12T16:24:39.476270+00:00",
+  "iteration": "AIRCRAFT-A49",
+  "seed": 1102074,
+  "random_draws": 0,
+  "cases": [
+    "ROOT_UNLINKED",
+    "ROOT_FULL_6DOF",
+    "ROOT_TRANSLATION_3DOF"
+  ],
+  "reason": "Validated original lower radome element70513 has adjacent native6/3DOF; original root RBE2 fully selects secondary rotations at node46990. Reproduce same source sections and actual role with one original host triangle and original skin quad.",
+  "host": {
+    "keyword": "/SH3N/1",
+    "element_id": 220,
+    "nodes": [
+      110,
+      135,
+      111
+    ]
+  },
+  "host_part": "1",
+  "skin": {
+    "keyword": "/SHELL/12171",
+    "element_id": 70513,
+    "nodes": [
+      46990,
+      46993,
+      46994,
+      46992
+    ],
+    "part": "12171"
+  },
+  "root": {
+    "keyword": "/RBE2/6014",
+    "title": "DECLARED_IDEAL_ROOT_ATTACHMENT",
+    "reference_node": 111,
+    "translation_mask": "111",
+    "rotation_mask": "111",
+    "group": 6014,
+    "formulation": 0
+  },
+  "secondary_node": 46990,
+  "nodes_mm": {
+    "110": [
+      2000.0,
+      -1493.78400592,
+      -430.580810306
+    ],
+    "111": [
+      2000.0,
+      -1339.29010041,
+      -831.818250009
+    ],
+    "135": [
+      2500.0,
+      -1551.6165798,
+      -963.691875
+    ],
+    "46990": [
+      1999.58398751,
+      -1343.23720331,
+      -833.33805669
+    ],
+    "46992": [
+      1999.58398751,
+      -1420.48415606,
+      -632.719336839
+    ],
+    "46993": [
+      1749.58398751,
+      -1396.76722532,
+      -625.882970123
+    ],
+    "46994": [
+      1832.91732085,
+      -1430.42185315,
+      -561.288852411
+    ]
+  },
+  "expected_geometric_mass_g": 878.5142400444771,
+  "cases_difference": "Only root constraint absent, original111/111, or111/000. No geometry/material/property/density/inertia/strength/timestep changes.",
+  "native_reference": "CBAKE3NPT1 is recorded as an engine scalar; not equated without audit to the number of physical integration points in TYPE19. Original TYPE19/41 has4 and TYPE51 hasoneply.",
+  "primary_sources": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/rbe2_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type51_starter_r.htm"
+  ],
+  "kinematic_scope": "Iflag0 main retains6DOF; dependent translational mask retains rigid offset effect of main rotation. Removing dependent rotation constraint is a declared candidate for these shell points, not an accepted full impact change.",
+  "acceptance": {
+    "Starter_errors": 0,
+    "Starter_warnings": 0,
+    "mass_relative": 1e-06,
+    "no_prescribed_added_mass": true,
+    "native_sparse_expected_columns_present": true,
+    "CHECK_completion": true,
+    "clean_mechanical_CHECK_not_assumed": true
+  },
+  "expected_s": 30,
+  "CPU_threads": 1,
+  "GPU": false,
+  "per_process_cap_s": 180,
+  "new_installation_or_compilation": false,
+  "no_process_data_or_instruction_patch": true,
+  "whole_input_unchanged": true,
+  "new_physical_duration_credit_s": 0
+}

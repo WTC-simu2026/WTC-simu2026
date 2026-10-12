@@ -1,0 +1,252 @@
+{
+  "created_utc": "2026-10-12T15:35:20.553553+00:00",
+  "iteration": "AIRCRAFT-A48",
+  "seed": 1102073,
+  "random_draws": 0,
+  "purpose": "Native CHECK of identical shell/solid geometry with no coupling then one TYPE2, RBE2 or RBE3 family. Locate whole sparse-shell assembly failure without changing full impact physics.",
+  "units": [
+    "g",
+    "mm",
+    "ms"
+  ],
+  "cases": [
+    "UNCOUPLED",
+    "TYPE2_SPOT5",
+    "RBE2_TRANSLATION",
+    "RBE3_INTERPOLATION"
+  ],
+  "facade_patch": {
+    "original_elements": [
+      [
+        20001,
+        3229,
+        3230,
+        3233,
+        3232
+      ],
+      [
+        20002,
+        3230,
+        3231,
+        3234,
+        3233
+      ],
+      [
+        20003,
+        3232,
+        3233,
+        3236,
+        3235
+      ],
+      [
+        20004,
+        3233,
+        3234,
+        3237,
+        3236
+      ]
+    ],
+    "original_node_ids": [
+      3229,
+      3230,
+      3231,
+      3232,
+      3233,
+      3234,
+      3235,
+      3236,
+      3237
+    ],
+    "coordinates_mm": [
+      [
+        -50.0,
+        -29641.8,
+        -5486.4
+      ],
+      [
+        -50.0,
+        -29464.0,
+        -5486.4
+      ],
+      [
+        -50.0,
+        -29286.2,
+        -5486.4
+      ],
+      [
+        -50.0,
+        -29641.8,
+        -5291.666667
+      ],
+      [
+        -50.0,
+        -29464.0,
+        -5291.666667
+      ],
+      [
+        -50.0,
+        -29286.2,
+        -5291.666667
+      ],
+      [
+        -50.0,
+        -29641.8,
+        -5096.933333
+      ],
+      [
+        -50.0,
+        -29464.0,
+        -5096.933333
+      ],
+      [
+        -50.0,
+        -29286.2,
+        -5096.933333
+      ]
+    ],
+    "material_section": "/MAT/LAW2/3",
+    "property_section": "/PROP/TYPE1/31",
+    "part_section": "/PART/31",
+    "zero_initial_velocity": true,
+    "whole_boundary_not_inherited": true,
+    "area_mm2": 138494.3467851993,
+    "expected_mass_g": 8640.489177995105
+  },
+  "solid": {
+    "coordinates_mm": [
+      [
+        -50.0,
+        -29474.0,
+        -5301.666666666667
+      ],
+      [
+        -40.0,
+        -29474.0,
+        -5301.666666666667
+      ],
+      [
+        -50.0,
+        -29454.0,
+        -5301.666666666667
+      ],
+      [
+        -40.0,
+        -29454.0,
+        -5301.666666666667
+      ],
+      [
+        -50.0,
+        -29474.0,
+        -5281.666666666667
+      ],
+      [
+        -40.0,
+        -29474.0,
+        -5281.666666666667
+      ],
+      [
+        -50.0,
+        -29454.0,
+        -5281.666666666667
+      ],
+      [
+        -40.0,
+        -29454.0,
+        -5281.666666666667
+      ]
+    ],
+    "bricks": [
+      [
+        10,
+        11,
+        13,
+        12,
+        14,
+        15,
+        17,
+        16
+      ]
+    ],
+    "nodal_masses_g": [
+      1.39,
+      1.39,
+      1.39,
+      1.39,
+      1.39,
+      1.39,
+      1.39,
+      1.39
+    ],
+    "left_node_ids": [
+      10,
+      12,
+      14,
+      16
+    ],
+    "right_node_ids": [
+      11,
+      13,
+      15,
+      17
+    ],
+    "expected_mass_g": 11.12,
+    "material_section": "MAT/LAW2/1 from whole A20",
+    "property": "TYPE14/1 Isolid14 Ismstr4 Icpre2 Iframe2, cached A41 full-integration reference",
+    "scope": "Declared small metal cube coupling instrument, not the full composite core geometry or mass budget."
+  },
+  "expected_total_mass_g": 8651.609177995106,
+  "boundary_conditions": "None; zero initial velocity and no external load. CHECK mechanical free-mode/loading warnings are recorded, not hidden.",
+  "constraints": {
+    "TYPE2_SPOT5": "Secondary four left solid nodes, main unchanged four facade facets; exact cached Spot5 numerical options.",
+    "RBE2_TRANSLATION": "Facade center node5 references solid left nodes with translational111 rotational000 selection, same original whole syntax.",
+    "RBE3_INTERPOLATION": "Solid node10 references nine facade nodes with original whole111/000, Iform2, uniform unit weights. Mass redistribution must be assessed over both bodies together."
+  },
+  "acceptance": {
+    "Starter_errors": 0,
+    "Starter_warnings": 0,
+    "native_exit": 0,
+    "NORMAL": true,
+    "CHECK_report_BEGIN_END": true,
+    "mass_relative": 1e-06,
+    "added_mass_relative": 1e-09,
+    "clean_mechanical_CHECK_not_inferred": true
+  },
+  "execution": {
+    "Starter_CPU_threads": 1,
+    "Engine_CPU_threads": 1,
+    "GPU": false,
+    "per_process_cap_s": 180,
+    "expected_total_s": 45,
+    "maximum_total_s": 1800,
+    "new_installation_or_compilation": false
+  },
+  "sources": [
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a20/r0/CORE3D_TIED_20/A20_CORE3D_TIED_20_0000.rad",
+      "sha256": "44444ba93d96ab22a40a4d4e00ac77c4b1d30f392c5add5206f64adc52a7598a"
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi",
+      "sha256": "871dc6c9f154173eb4148b95cdfeed3e485735d64eb48957722b3588e319730a"
+    },
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a47/loaded_shell_review.json",
+      "sha256": "8cfa2ca7a6668f91f46d3c24b274798b30623b3af4b0e4ce4ee384b034409666"
+    }
+  ],
+  "conditional_whole_ablation": {
+    "case": "WHOLE_NO_RBE3_CHECK",
+    "only_after_small_controls_reviewed": true,
+    "purpose": "Diagnostic-only remove RBE3 definitions as a single-family ablation; original node coordinates/materials/elements/masses/groups/TYPE25/TYPE2/RBE2 retained. It is not an impact candidate and changes constraints/mass redistribution explicitly.",
+    "fresh_Starter": true,
+    "native_CHECK_only": true,
+    "mass_and_added_mass_must_be_audited": true,
+    "inertia_distribution_not_assumed_identical": true,
+    "old_failed_whole_CHECK_not_replayed": true,
+    "new_physical_duration_credit_s": 0
+  },
+  "source_assembly_inspection": "ASSEMC_KIJ+0x664 is a vector load while accumulating an off-diagonal shell block. Static offset does not establish runtime index or unique cause.",
+  "whole_physical_input_not_modified": true,
+  "whole_time_credit_s": 0,
+  "objective1_complete": false
+}

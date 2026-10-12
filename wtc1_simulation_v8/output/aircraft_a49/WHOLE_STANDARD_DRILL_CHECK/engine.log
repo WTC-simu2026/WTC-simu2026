@@ -1,0 +1,92 @@
+************************************************************************
+**                                                                    **
+**                                                                    **
+**                         OpenRadioss Engine                         **
+**                                                                    **
+**            Non-linear Finite Element Analysis Software             **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+**                Linux 64 bits, GNU compiler, OpenMPI                **
+**                      Double Precision Version                      **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+************************************************************************
+** OpenRadioss Software                                               **
+** COPYRIGHT (C) 2026 Siemens                                         **
+** Licensed under GNU Affero General Public License.                  **
+** See License file.                                                  **
+************************************************************************
+ 
+ ROOT: A49_WHOLE_STANDARD_DRILL  RESTART: 0001
+ NUMBER OF HMPP PROCESSES     1
+ 12/10/2026
+
+           **************************
+           ** IMPLICIT OPTION USED **
+           **************************
+
+
+MESSAGE ID :        232
+
+ ** WARNING: INTERFACE TYPE 25 IS NOT AVAILABLE WITH IMPLICIT SOLUTION;
+                IT WILL BE IGNORED. 
+
+
+MESSAGE ID :        232
+
+ ** WARNING: INTERFACE TYPE 25 IS NOT AVAILABLE WITH IMPLICIT SOLUTION;
+                IT WILL BE IGNORED. 
+
+
+MESSAGE ID :        232
+
+ ** WARNING: INTERFACE TYPE 25 IS NOT AVAILABLE WITH IMPLICIT SOLUTION;
+                IT WILL BE IGNORED. 
+
+
+MESSAGE ID :        232
+
+ ** WARNING: INTERFACE TYPE 25 IS NOT AVAILABLE WITH IMPLICIT SOLUTION;
+                IT WILL BE IGNORED. 
+
+
+MESSAGE ID :        232
+
+ ** WARNING: INTERFACE TYPE 25 IS NOT AVAILABLE WITH IMPLICIT SOLUTION;
+                IT WILL BE IGNORED. 
+
+ NC=       0 T= 0.0000E+00 DT= 1.0000E-03 ERR=  0.0% DM/M= 0.0000E+00
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 3.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+[jeux:00392] [0] func:/lib/x86_64-linux-gnu/libopen-pal.so.40(opal_backtrace_buffer+0x3f) [0x7eb4b8fc05ef]
+[jeux:00392] [1] func:/lib/x86_64-linux-gnu/libmpi.so.40(ompi_mpi_abort+0x16b) [0x7eb4b972f0bb]
+[jeux:00392] [2] func:/lib/x86_64-linux-gnu/libmpi_mpifh.so.40(mpi_abort+0x24) [0x7eb4ba90f1d4]
+[jeux:00392] [3] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(spmd_kill_+0x1c) [0x581139acaf5c]
+[jeux:00392] [4] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(trace_print_+0x48a) [0x58113a080ffa]
+[jeux:00392] [5] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(trace_cf_+0x1d) [0x58113a0818fd]
+[jeux:00392] [6] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(ignoreCore+0x55) [0x58113a114ef5]
+[jeux:00392] [7] func:/lib/x86_64-linux-gnu/libc.so.6(+0x45330) [0x7eb4b8c45330]
+[jeux:00392] [8] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(assemc_kij_+0x664) [0x581138efd704]
+[jeux:00392] [9] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(assem_c4_+0x2bf) [0x581138ece15f]
+[jeux:00392] [10] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(cbake3_+0x1457) [0x581138901ed7]
+[jeux:00392] [11] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(imp_glob_k0_+0xd0d) [0x581138eefe8d]
+[jeux:00392] [12] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(+0xb90ed1) [0x581138ef0ed1]
+[jeux:00392] [13] func:/lib/x86_64-linux-gnu/libgomp.so.1(GOMP_parallel+0x47) [0x7eb4ba888977]
+[jeux:00392] [14] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(imp_glob_khp_+0x33b) [0x581138efddcb]
+[jeux:00392] [15] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(imp_chkm_+0x3b3a) [0x581138f4b46a]
+[jeux:00392] [16] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(resol_+0x2520c) [0x581138e8be8c]
+[jeux:00392] [17] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(resol_head_+0xa73) [0x581138e992d3]
+[jeux:00392] [18] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(radioss2_+0x5962) [0x581138e4a252]
+[jeux:00392] [19] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(radioss0_+0x121) [0x581138e44841]
+[jeux:00392] [20] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(main+0x21) [0x58113841d641]
+[jeux:00392] [21] func:/lib/x86_64-linux-gnu/libc.so.6(+0x2a1ca) [0x7eb4b8c2a1ca]
+[jeux:00392] [22] func:/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x8b) [0x7eb4b8c2a28b]
+[jeux:00392] [23] func:/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi(_start+0x25) [0x58113841da75]

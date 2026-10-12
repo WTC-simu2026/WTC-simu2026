@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-10-12T16:24:39.490109+00:00",
+  "source": "wtc1_simulation_v8/scripts/trace_aircraft_a49_linux.py",
+  "source_sha256": "20ce578493c2d8909482062e724eacd6f77a37c417a377605f8958b1ddc1e890",
+  "derived": "wtc1_simulation_v8/scripts/trace_aircraft_a49_reproducer_linux.py",
+  "derived_sha256": "9555f6a9e25ca67cd3c993d905c2c7dde1a7b2ae3463e275b7711f8e327c8859",
+  "literal_changes": [
+    [
+      "fault=None;events=0;deliver=0",
+      "fault=None;events=0;deliver=0;missing_events=[]"
+    ],
+    [
+      "if r.rip==target:count+=1;args=capture_arguments(pid,r)",
+      "if r.rip==target:\n    count+=1;args=capture_arguments(pid,r);pattern=i32(pid,base+c['pattern_symbol_offset']);sr=sparse_rows(pid,args,pattern,c['maximum_nodes']);bad=[x for x in sr if any(not y['column_present'] for y in x['sparse_search'])]\n    if bad:missing_events.append({'call':count,'NEL':args['NEL'],'ND':args['ND'],'pattern':pattern,'missing_pairs':bad})"
+    ],
+    [
+      "'trace_event_count':events,",
+      "'trace_event_count':events,'entry_missing_events':missing_events,"
+    ]
+  ],
+  "reason": "Read sparse graph at each minimal-assembly entry even if unchecked bad index happens to remain mapped and process does not fault. NORMAL alone is not the graph acceptance.",
+  "physics_or_binary_changed": false
+}

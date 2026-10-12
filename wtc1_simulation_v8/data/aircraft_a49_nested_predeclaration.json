@@ -1,0 +1,130 @@
+{
+  "created_utc": "2026-10-12T16:32:59.011140+00:00",
+  "iteration": "AIRCRAFT-A49",
+  "seed": 1102074,
+  "random_draws": 0,
+  "reason": "Root attachment alone has no missing graph rows. The same mapped skin node is also the main node of RBE2/3126 controlling two cohesive vertices. Add that original dual role and original cohesive brick60565.",
+  "cases": [
+    "NESTED_ORIGINAL_DRILL2",
+    "NESTED_STANDARD_DRILL1"
+  ],
+  "cohesive_brick": {
+    "keyword": "/BRICK/117",
+    "element_id": 60565,
+    "nodes": [
+      42220,
+      42221,
+      42222,
+      42223,
+      42224,
+      42225,
+      42226,
+      42227
+    ]
+  },
+  "cohesive_offset_RBE2": "/RBE2/3126",
+  "cohesive_group": 3126,
+  "slaves": [
+    42221,
+    42222
+  ],
+  "offset_norms_mm": [
+    0.2499999977082771,
+    0.24999999672922327
+  ],
+  "pure_translation_link_not_equivalent": "Offsets are .25mm; a rigid-link formulation suppressing main-rotation lever effect would change kinematics. It is not substituted.",
+  "source_nodes_mm": {
+    "110": [
+      2000.0,
+      -1493.78400592,
+      -430.580810306
+    ],
+    "111": [
+      2000.0,
+      -1339.29010041,
+      -831.818250009
+    ],
+    "135": [
+      2500.0,
+      -1551.6165798,
+      -963.691875
+    ],
+    "42220": [
+      1499.60845884,
+      -1450.06506481,
+      -418.338483163
+    ],
+    "42221": [
+      1999.60845884,
+      -1343.00502079,
+      -833.248656297
+    ],
+    "42222": [
+      1999.55951619,
+      -1343.46938583,
+      -833.427457083
+    ],
+    "42223": [
+      1499.55951619,
+      -1450.52942986,
+      -418.517283949
+    ],
+    "42224": [
+      1499.60845884,
+      -1450.06506481,
+      -418.338483163
+    ],
+    "42225": [
+      1999.60845884,
+      -1343.00502079,
+      -833.248656297
+    ],
+    "42226": [
+      1999.55951619,
+      -1343.46938583,
+      -833.427457083
+    ],
+    "42227": [
+      1499.55951619,
+      -1450.52942986,
+      -418.517283949
+    ],
+    "46990": [
+      1999.58398751,
+      -1343.23720331,
+      -833.33805669
+    ],
+    "46992": [
+      1999.58398751,
+      -1420.48415606,
+      -632.719336839
+    ],
+    "46993": [
+      1749.58398751,
+      -1396.76722532,
+      -625.882970123
+    ],
+    "46994": [
+      1832.91732085,
+      -1430.42185315,
+      -561.288852411
+    ]
+  },
+  "reference_base_mass_g": 878.5142400444771,
+  "cohesive_mass": "Original LAW117density1e-20 retained, not replaced or compensated. Total freshly prepared mass compared with base within1e-6; source cohesive contribution negligible on this tolerance.",
+  "case_change": "Only TYPE51/122 Idrill2 versus1. Same QBAT12, integration/plies, all constraints, original geometry, density, strengths, inertia inputs and contact-free scope.",
+  "candidate_justification": "Official /IMPLICIT default enables drilling DOF for implicit shells. This numerical candidate must pass independent mechanics before any full impact credit; no historic target.",
+  "primary_sources": [
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/implicit_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/prop_type51_starter_r.htm",
+    "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/rbe2_starter_r.htm"
+  ],
+  "CPU_threads": 1,
+  "GPU": false,
+  "per_process_cap_s": 180,
+  "expected_s": 30,
+  "no_software_installation_compilation_or_binary_patch": true,
+  "whole_input_unchanged": true,
+  "physical_acceptance_unchanged": true,
+  "new_whole_physical_duration_credit_s": 0
+}

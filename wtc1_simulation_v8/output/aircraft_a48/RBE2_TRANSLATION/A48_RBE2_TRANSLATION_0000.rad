@@ -1,0 +1,79 @@
+#RADIOSS STARTER
+/BEGIN
+A48_RBE2_TRANSLATION
+      2026         0
+                   g                  mm                  ms
+                   g                  mm                  ms
+/TITLE
+A48_RBE2_TRANSLATION
+/ANALY
+         0                   0         0
+/SPMD
+         0         0                   0                   1
+/NODE
+         1                 -50            -29641.8             -5486.4
+         2                 -50              -29464             -5486.4
+         3                 -50            -29286.2             -5486.4
+         4                 -50            -29641.8        -5291.666667
+         5                 -50              -29464        -5291.666667
+         6                 -50            -29286.2        -5291.666667
+         7                 -50            -29641.8        -5096.933333
+         8                 -50              -29464        -5096.933333
+         9                 -50            -29286.2        -5096.933333
+        10                 -50              -29474      -5301.66666667
+        11                 -40              -29474      -5301.66666667
+        12                 -50              -29454      -5301.66666667
+        13                 -40              -29454      -5301.66666667
+        14                 -50              -29474      -5281.66666667
+        15                 -40              -29474      -5281.66666667
+        16                 -50              -29454      -5281.66666667
+        17                 -40              -29454      -5281.66666667
+/MAT/LAW2/3
+representative_facade_steel_reference
+             0.00786
+              200000                 0.3         0         2              -1e+30
+             427.656                   0                   1               1e+30               1e+30
+                   0               0.001         1         1               1e+20                   0
+                   1               1e+30                   0              293.15               1e+30
+/PROP/TYPE1/31
+FACADE_COLUMNS
+        24         4         2         2
+                   0                   0                   0               1e-20               1e-20
+         5                        7.9375      0.833333333333
+/PART/31
+FACADE_COLUMNS
+        31         3         0
+/MAT/LAW2/1
+hypothetical_2024_skin_reference
+             0.00278
+               73100                0.33         0         2              -1e+30
+                 324                   0                   1               1e+30               1e+30
+                   0               0.001         1         1               1e+20                   0
+                   1               1e+30                   0              293.15               1e+30
+/SHELL/31
+         1         1         2         5         4
+         2         2         3         6         5
+         3         4         5         8         7
+         4         5         6         9         8
+/PROP/TYPE14/1
+FINITE_FULL_INTEGRATION_METAL_WITHOUT_ROTATIONAL_DOF
+        14         4         0         2         0       222         0         2                   0
+                   0                   0                   0                   0                   0
+                   0                   0                   0                   0                   0
+         0         0         0
+/PART/11
+DECLARED_COUPLING_SOLID
+         1         1         0
+/BRICK/11
+       101        10        11        13        12        14        15        17        16
+/GRNOD/NODE/501
+SOLID_SECONDARY_LEFT
+        10        12        14        16
+/RBE2/501
+DECLARED_SINGLE_FAMILY_RBE2
+         5   111 000         0       501         0
+/TH/PART/31
+GLOBAL_DIAGNOSTIC_BODIES
+        IE        KE        HE        PW
+        31        11
+/END

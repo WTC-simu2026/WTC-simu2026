@@ -1,0 +1,71 @@
+{
+  "created_utc": "2026-10-12T16:07:39.644143+00:00",
+  "iteration": "AIRCRAFT-A49",
+  "seed": 1102074,
+  "random_draws": 0,
+  "purpose": "Observe native CBAKE3 IXC/X at the same sparse assembly fault, validate original element IDs and node coordinate correspondence, then build targeted reproducer.",
+  "source": "wtc1_simulation_v8/output/aircraft_a48/WHOLE_NO_RBE3_CHECK",
+  "name": "A48_WHOLE_NO_RBE3",
+  "files": [
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a48/WHOLE_NO_RBE3_CHECK/A48_WHOLE_NO_RBE3_0000_0001.rst",
+      "sha256": "91e6af5811f0db80e1400fc2a8af9e90cf3fadfdf703276312e29081a9b866ea",
+      "bytes": 144908335
+    },
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a48/WHOLE_NO_RBE3_CHECK/A48_WHOLE_NO_RBE3_0001.rad",
+      "sha256": "7d87c32ead56ec22e128617d3af5c95b980e3400023f2a96d13614d0f9cb53ee",
+      "bytes": 382
+    }
+  ],
+  "binary_sha256": "871dc6c9f154173eb4148b95cdfeed3e485735d64eb48957722b3588e319730a",
+  "source_mechanics": [
+    {
+      "path": "engine/source/elements/shell/coqueba/cbake3.F",
+      "sha256": "efca538f4d628d9de145de02634b3e9097dedffb5effbbd731235c7e317e81b2",
+      "raw_source_redistributed": false
+    },
+    {
+      "path": "engine/source/elements/shell/coqueba/cbacoork.F",
+      "sha256": "53a8717b323ccb17d6bfb5c8c8351c558f7d7778b7606eef4119752175a1d275",
+      "raw_source_redistributed": false
+    },
+    {
+      "path": "common_source/modules/elements/element_mod.F90",
+      "sha256": "5843cc5fa95989e876462c6b2370b4dadf577439b2eb07d725b69ac85c5c326e",
+      "raw_source_redistributed": false
+    }
+  ],
+  "source_schema": {
+    "IXC_dimension": 7,
+    "IXC_material_row": 1,
+    "IXC_nodes_rows": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "IXC_property_row": 6,
+    "IXC_user_element_row": 7,
+    "X": "X(3,*) double precision, runtime internal indices",
+    "CBAKE3_X_argument_1based": 27,
+    "CBAKE3_IXC_argument_1based": 12,
+    "fact": "CBACOORK assigns NGL(I)=IXC(7,I), documented users element ID; coordinate matches required before node-label mapping."
+  },
+  "function_offset": 12177568,
+  "shell_function_offset": 5900928,
+  "pattern_symbol_offset": 138705880,
+  "maximum_nodes": 48171,
+  "CPU_threads": 1,
+  "GPU": false,
+  "per_process_cap_s": 180,
+  "expected_s": 30,
+  "new_installation_or_compilation": false,
+  "no_physical_state_or_instruction_memory_patch": true,
+  "prior_failed_cases_retained": true,
+  "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+  "whole_input_sha256": "44444ba93d96ab22a40a4d4e00ac77c4b1d30f392c5add5206f64adc52a7598a",
+  "source_coordinate_tolerance_mm": 1e-08,
+  "new_whole_duration_credit_s": 0,
+  "objective1_complete": false
+}

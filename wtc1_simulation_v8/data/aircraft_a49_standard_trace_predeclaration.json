@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-10-12T16:50:24.562800+00:00",
+  "iteration": "AIRCRAFT-A49",
+  "seed": 1102074,
+  "random_draws": 0,
+  "reason": "Whole flag1 candidate still faults. Identify its actual failed element/property and effective native IPARG41 instead of assume the input flag propagated or failure stayed at the same part.",
+  "source": "wtc1_simulation_v8/output/aircraft_a49/WHOLE_STANDARD_DRILL_CHECK",
+  "name": "A49_WHOLE_STANDARD_DRILL",
+  "case": "WHOLE_STANDARD_DRILL_NATIVE_TRACE",
+  "files": [
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a49/WHOLE_STANDARD_DRILL_CHECK/A49_WHOLE_STANDARD_DRILL_0000_0001.rst",
+      "sha256": "7264961a73fedc1df4df65c6f682079dad595ff1891aeda28a7f58a1764eaca0",
+      "bytes": 145545102
+    },
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a49/WHOLE_STANDARD_DRILL_CHECK/A49_WHOLE_STANDARD_DRILL_0001.rad",
+      "sha256": "210ada0ebda3f3eced8b2bbedc2584d674e9cb7998a876d5ce584ec5647fefb4",
+      "bytes": 389
+    }
+  ],
+  "observer_source": "wtc1_simulation_v8/scripts/trace_aircraft_a49_linux.py",
+  "observer_source_sha256": "20ce578493c2d8909482062e724eacd6f77a37c417a377605f8958b1ddc1e890",
+  "observer_derived": "wtc1_simulation_v8/scripts/trace_aircraft_a49_drill_linux.py",
+  "observer_derived_sha256": "59fc97d684b6af3b0ee198fcc88bd69a0fbe56a48120686df6b33ca437c6f97c",
+  "literal_changes": [
+    [
+      "'caller_return_address':hex(u64(pid,r.rsp))}",
+      "'effective_IPARG41':i32(pid,p['IPARG']+160),'caller_return_address':hex(u64(pid,r.rsp))}"
+    ],
+    [
+      "return {'scalars':a,'IXC_dimension':7,",
+      "return {'scalars':a,'effective_IPARG41':context['effective_IPARG41'],'IXC_dimension':7,"
+    ]
+  ],
+  "CPU_threads": 1,
+  "GPU": false,
+  "per_process_cap_s": 180,
+  "expected_s": 30,
+  "no_new_installation_or_compilation": true,
+  "read_only_native_data": true,
+  "whole_time_credit_s": 0
+}

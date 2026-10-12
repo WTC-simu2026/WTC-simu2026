@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-10-12T15:38:08.203201+00:00",
+  "iteration": "AIRCRAFT-A48",
+  "seed": 1102073,
+  "random_draws": 0,
+  "case": "WHOLE_NO_RBE3_CHECK",
+  "reason": "Four small single-family coupling assemblies complete CHECK; simple presence of each constraint family does not reproduce whole fault. Remove only whole RBE3 definitions in a fresh diagnostic copy to test involvement in sparse shell graph.",
+  "before_native": true,
+  "source": "wtc1_simulation_v8/output/aircraft_a20/r0/CORE3D_TIED_20/A20_CORE3D_TIED_20_0000.rad",
+  "source_sha256": "44444ba93d96ab22a40a4d4e00ac77c4b1d30f392c5add5206f64adc52a7598a",
+  "removed_keyword_prefix": "/RBE3/",
+  "expected_removed_sections": 368,
+  "only_other_changed_lines": [
+    "BEGIN root",
+    "TITLE root"
+  ],
+  "materials_properties_nodes_elements_masses_groups_other_constraints_unchanged": true,
+  "constraints_and_mass_redistribution_changed_explicitly": true,
+  "reference_Starter_report": "wtc1_simulation_v8/output/aircraft_a37/whole_compatibility/A37_WHOLE_CHECK_0000.out",
+  "reference_Starter_report_sha256": "4be91b7afaf7e91f8ca2d96881e5a4ab99ae94ab2c31dadd107e7059d670f0d0",
+  "reference_Starter_mass_g": 191273837.9425,
+  "reference_Starter_center_mm": [
+    14245.90260656,
+    -0.00031019191109262,
+    -211.2460794408
+  ],
+  "mass_relative_tolerance": 1e-06,
+  "added_mass_relative_tolerance": 1e-09,
+  "per_process_cap_s": 180,
+  "Starter_CPU_threads": 1,
+  "Engine_CPU_threads": 1,
+  "GPU": false,
+  "expected_wall_s": 60,
+  "maximum_total_s": 360,
+  "whole_impact_qualification": false,
+  "new_physical_duration_credit_s": 0,
+  "five_TYPE25_retained_and_implicit_warning_not_suppressed": true,
+  "no_new_installation_or_compilation": true
+}
