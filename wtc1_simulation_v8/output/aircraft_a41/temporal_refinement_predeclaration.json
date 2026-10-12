@@ -1,0 +1,58 @@
+{
+  "created_utc": "2026-10-12T08:17:55.964978+00:00",
+  "seed": 1102066,
+  "random_draws": 0,
+  "before_new_native": true,
+  "parent_configuration_sha256": "a348fa4745cc8a63b53690fb71d264acb70f81ec00eda76963c5cc621321c8d5",
+  "cases": [
+    {
+      "name": "CONTACT_RREF_DIRECT_QUARTER",
+      "scope": "CONTACT",
+      "mode": "I",
+      "dt_ms": 1.25e-05,
+      "platform": "Linux"
+    },
+    {
+      "name": "CONTACT_RREF_DIRECT_EIGHTH",
+      "scope": "CONTACT",
+      "mode": "I",
+      "dt_ms": 6.25e-06,
+      "platform": "Linux"
+    },
+    {
+      "name": "CONTACT_RREF_DIRECT_SIXTEENTH",
+      "scope": "CONTACT",
+      "mode": "I",
+      "dt_ms": 3.125e-06,
+      "platform": "Linux"
+    },
+    {
+      "name": "CONTACT_RREF_DIRECT_THIRTYSECOND",
+      "scope": "CONTACT",
+      "mode": "I",
+      "dt_ms": 1.5625e-06,
+      "platform": "Linux"
+    }
+  ],
+  "trigger": "Direct contact half-step passes physical gates after source-defined Newmark velocity interpretation; convergence of wave/energy components still required.",
+  "branch_rule": "Start quarter, compare with preceding qualified half. Continue halving only if new physical gates pass but original0.5percent+1e-7J component convergence fails. Stop at first converged pair, physical failure, native failure or fourth declared refinement.",
+  "original_half_step_energy_gate": {
+    "relative_to_initial_KE": 0.005,
+    "absolute_J": 1e-07,
+    "components": [
+      "KINETIC ENERGY",
+      "INTERNAL ENERGY",
+      "ELASTIC CONTACT ENERGY"
+    ]
+  },
+  "physical_inputs_changed": false,
+  "physical_gates_changed": false,
+  "numeric_options_unchanged_except_fixed_step": true,
+  "history_every_actual_requested_step": true,
+  "CPU_threads": 1,
+  "GPU": false,
+  "per_process_cap_s": 180,
+  "maximum_seconds_four": 720,
+  "no_software_change": true,
+  "no_historical_damage_target": true
+}

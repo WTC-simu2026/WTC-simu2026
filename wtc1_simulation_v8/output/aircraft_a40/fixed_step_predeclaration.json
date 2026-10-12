@@ -1,0 +1,45 @@
+{
+  "created_utc": "2026-10-12T06:44:33.512409+00:00",
+  "seed": 1102065,
+  "random_draws": 0,
+  "before_new_native": true,
+  "parent_configuration_sha256": "a11a7640bf350080a7917536972dd53ccd6e43f92619e7e02946d2d372f88550",
+  "cases": [
+    {
+      "name": "FREE_RREF_FIXED_I",
+      "scope": "FREE",
+      "mode": "I",
+      "dt_ms": 0.001,
+      "maximum_dt_ms": 0.001,
+      "end_ms": 0.1,
+      "platform": "Linux",
+      "nonlinear_tolerance": 1e-11
+    },
+    {
+      "name": "FREE_RREF_FIXED_HALF_I",
+      "scope": "FREE",
+      "mode": "I",
+      "dt_ms": 0.0005,
+      "maximum_dt_ms": 0.0005,
+      "end_ms": 0.1,
+      "platform": "Linux",
+      "nonlinear_tolerance": 1e-11
+    }
+  ],
+  "trigger": "Both floor/adaptive calculations complete and preserve reported energy, but during growth1.5 their nodal velocity becomesV0/1.5 then returns toV0 after reaching maximum dt; displacement offset persists. Test whether fixed time step with the same reference floor removes that lag.",
+  "change_from_floor_adaptive": "Set initial step equal to maximum step, factor of increase1. No applied loads, altered states, time shift, materials, masses or physical acceptance changes.",
+  "nonlinear_tolerances": [
+    1e-11,
+    1e-11,
+    1e-11
+  ],
+  "reference_floor_force_N": 1.0,
+  "reference_max": 1e+30,
+  "minimum_dt_ms": 1e-12,
+  "branch_rule": "Fixed baseline first, half-time-step only if baseline passes complete original physical gates. No transition/contact from failed free route.",
+  "CPU_threads": 1,
+  "GPU": false,
+  "per_process_cap_s": 180,
+  "maximum_seconds_both": 360,
+  "no_solver_source_or_binary_change": true
+}

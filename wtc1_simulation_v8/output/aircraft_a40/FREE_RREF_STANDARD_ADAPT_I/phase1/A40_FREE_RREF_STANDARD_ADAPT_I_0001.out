@@ -1,0 +1,1829 @@
+ A40_FREE_RREF_STANDARD_ADAPT_I_0001.out
+************************************************************************
+**                                                                    **
+**                                                                    **
+**                         OpenRadioss Engine                         **
+**                                                                    **
+**            Non-linear Finite Element Analysis Software             **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+**                Linux 64 bits, GNU compiler, OpenMPI                **
+**                      Double Precision Version                      **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+************************************************************************
+** OpenRadioss Software                                               **
+** COPYRIGHT (C) 2026 Siemens                                         **
+** Licensed under GNU Affero General Public License.                  **
+** See License file.                                                  **
+************************************************************************
+ 
+ NUMBER OF SPMD DOMAINS           1
+ NUMBER OF THREADS PER DOMAIN     1
+ NUMBER OF HMPP PROCESSES         1
+  
+ COMPUTATION HARDWARE DESCRIPTION
+  
+ HOSTNAME     CPU TYPE, FREQUENCY AND MEMORY
+ jeux   AMD Ryzen 5 5600 6-Core Processor (x86_64), 3700 MHz,   7897 MB RAM,   2048 MB swap
+  
+ STACKSIZE  . . . . . . . . . . . . . . . . . . . . 8 MB
+ THREAD STACKSIZE . . . . . . . . . . . . . . . . . 0 MB
+ 
+************************************************************************
+
+
+ A40_FREE_RREF_STANDARD_ADAPT_ID01                                               
+
+
+ FINAL TIME . . . . . . . . . . . . . . . . . . .  0.1000000    
+
+ TIME INTERVAL FOR TIME HISTORY PLOTS . . . . . .  0.1000000E-02
+
+ TIME STEP SCALE FACTOR . . . . . . . . . . . . .  0.9000000    
+
+ MINIMUM TIME STEP  . . . . . . . . . . . . . . .   0.000000    
+
+
+ BRICK TIME STEP SCALE FACTOR . . . . . . . . . .  0.9000000    
+ BRICK MINIMUM TIME STEP. . . . . . . . . . . . .   0.000000    
+ MIN. TIME STEP FLAG (1:STOP RUN, 2:DELETE BRICK)     1
+
+ QUAD TIME STEP SCALE FACTOR. . . . . . . . . . .  0.9000000    
+ QUAD MINIMUM TIME STEP . . . . . . . . . . . . .   0.000000    
+ MIN. TIME STEP FLAG (1:STOP RUN, 2:DELETE QUAD).     1
+
+ SHELL TIME STEP SCALE FACTOR . . . . . . . . . .  0.9000000    
+ SHELL MINIMUM TIME STEP. . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE, 3:SMALL STRAIN)    2
+
+ TRUSS TIME STEP SCALE FACTOR . . . . . . . . . .  0.9000000    
+ TRUSS MINIMUM TIME STEP. . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE). . . . . . . .     0
+
+ BEAM TIME STEP SCALE FACTOR. . . . . . . . . . .  0.9000000    
+ BEAM MINIMUM TIME STEP . . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE). . . . . . . .     0
+
+ SPRING TIME STEP SCALE FACTOR. . . . . . . . . .  0.9000000    
+ SPRING MINIMUM TIME STEP . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE). . . . . . . .     0
+
+ AIRBAG TIME STEP SCALE FACTOR. . . . . . . . . .  0.9000000    
+ AIRBAG MINIMUM TIME STEP . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP). . . . . . . . . . . . .     0
+
+ CONTACT TIME STEP SCALE FACTOR . . . . . . . . .  0.9000000    
+ CONTACT MINIMUM TIME STEP. . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG(1:STOP, 2:REMOVE NODE FROM INTERF)    0
+
+ PRINTOUT CYCLE FREQUENCY . . . . . . . . . . . .  -100
+
+ RESTART CYCLE FREQUENCY. . . . . . . . . . . . .   10000000
+
+ MAXIMUM RESTART WRITE BEFORE OVERWRITE . . . . .     0
+
+ INVERS: INPUT DECK VERSION . . . . . . . . . . .  2026
+ ITTYP : FLAG FOR TYPE OF T-FILE. . . . . . . . .     4
+
+  ** WARNING ** : PARITH/ON IS NOT COMPATIBLE WITH IMPLICIT OPTION 
+  ** RESETTING **  : PARITH/OFF  
+ INITIAL TIME STEP. . . . . . . . . . . . . . . .   0.000000    
+ MAXIMUM TIME STEP. . . . . . . . . . . . . . . .  0.1000000E+21
+
+ PARALLEL ARITHMETIC OFF
+ NUMBER OF INTERFACES TO BE ELIMINATED. . . . . .        0
+
+ NUMBER OF PARTS TO BE ELIMINATED . . . . . . . .        0
+
+ NUMBER OF SOLID  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF QUAD   ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF SHELL  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF TRUSS  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF BEAM   ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF SPRING ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF SH_3N  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF  SPH PARTICLES BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF RIGID LINKS. . . . . . . . . . . . . .        0
+
+ NUMBER OF NEW BOUNDARY CONDITIONS. . . . . . . .        0
+
+
+ IMPLICIT OPTIONS USED :
+
+ IMPLICIT TYPE : . . . . . . . . . . . . .   DYNAMIC NON-LINEAR       
+ LINEAR SOLVER : . . . . . . . . . . . . .   DIRECT(MUMPS)            
+ PRINTOUT FREQUENCY FOR LINEAR SOLVER . . .      0
+
+
+ GEOMETRICAL STIFFNESS FLAG  . . .. . . . .      1
+ LOAD (PRESSURE) STIFFNESS FLAG  . . . . .       1
+ AUTOSPC FLAG (0:OFF,1:ON,2:ALL) . . .. . .      1
+ SPRING-BACK OPTION : . . . . . . . . . . .      0
+ SPECIAL PCG SOLVER FOR CONTACT . . . .. .       0
+
+ NON-LINEAR SOLVER : . . . . . . . . . . .   MODIFIED NEWTON          
+ INITIAL TIME STEP . . . . . . . . . . . .    0.1000000E-07
+ STOP CRITERION FOR NON-LINEAR SOLVER . . .    123
+ ENERGY TOLERANCE FOR NON-LINEAR SOLVER . .   0.1000000E-05
+ FORCE TOLERANCE FOR NON-LINEAR SOLVER  . .   0.1000000E-05
+ DISP. TOLERANCE FOR NON-LINEAR SOLVER  . .   0.1000000E-05
+ ITERATION NUM.LIMIT FOR REFORMING MATRIX .      6
+ PRINTOUT FREQUENCY FOR NON-LINEAR SOLVER .      1
+ PRE-STRESSES CONTROL FLAG . . . . . . . .       0
+ REFERENCE RESIDUAL FLAG . . . . . . .. . .      2
+ TIME STEP CONTROL METHOD . . . . . . . . .      1
+ MINIMUM TIME STEP . . . . . . . . . . . .    0.1000000E-11
+ MAXIMUM TIME STEP . . . . . . . . . . . .    0.1000000E-02
+
+
+ SMALL DISPLACEMENT OPTION(0:OFF,1:ON) . . .. . .      0
+
+ MINIMUM REFERENCE FORCE RESIDUAL . . . .    1.000000    
+ MAXIMUM REFERENCE FORCE RESIDUAL . . . .    0.1000000E+31
+
+
+AUTOMATIC TIME STEP CONTROL:
+
+ CONVERGE ITERATION NUM. FOR INCREASING DT.       4
+ INCREASING TIME STEP SCALE FACTOR.  . . . .    1.500000    
+ CONVERGE ITERATION NUM. FOR DECREASING DT .     30
+ DECREASING TIME STEP SCALE FACTOR.  . . . .   0.5000000    
+
+ TIME INTEGRATION WITH NEWMARK CONSTANTS     0.5000000     0.2500000    
+
+
+ LINE-SEARCH METHOD :. . . . . . . . . . . .      3
+ MAXIMUM LINE-SEARCH ITERATION NUM. . . . .      20
+ TOLERANCE FOR LINE-SEARCH ITERATION.  . . .   0.1000000E-02
+
+ DIVERGENCE CRITERION NUMBERS :  . . . . . .      1
+
+
+ TIME FOR FIRST ANIMATION-FILE PLOT . . . . . . .   0.000000    
+ TIME INTERVAL FOR ANIMATION-FILE PLOTS . . . . .  0.1000000E-02
+ TIME TO STOP ANIMATION-FILE PLOTS. . . . . . . .  0.1000000E+21
+ SENSOR FOR ANIMATION-FILE PLOTS. . . . . . . . .          0
+ TIME INTERVAL FOR SENSOR ANIMATION-FILE PLOTS. .   0.000000    
+
+ VARIABLE SAVED ON ANIMATION FILES (1: YES) :
+      PLASTIC STRAIN. . . . . .     0
+      DENSITY     (SOLID ONLY).     0
+      SPECIFIC ENERGY . . . . .     1
+      HOURGLASS ENERGY. . . . .     0
+      TEMPERATURE (SOLID ONLY).     0
+      THICKNESS   (SHELL ONLY).     0
+      PRESSURE    (SOLID ONLY).     0
+      VON MISES . . . . . . . .     0
+      TURBULENT ENERGY (FLUID).     0
+      TURBULENT VISCOSITY(FLUID)    0
+      VORTICITY (FLUID) . . . .     0
+ NODAL VALUES SAVED ON ANIMATION FILES (1: YES) :
+      PRESSURE. . . . . . . . .     0
+      DENSITY . . . . . . . . .     0
+      TEMPERATURE . . . . . . .     0
+ VECTOR SAVED ON ANIMATION FILES (1: YES) :
+      VELOCITY VECTOR . . . . .     1
+      DISPLACEMENT VECTOR . . .     1
+      ACCELERATION VECTOR . . .     0
+      CONTACT FORCES. . . . . .     0
+      INTERNAL FORCES . . . . .     0
+      EXTERNAL FORCES . . . . .     0
+      SECTION RBY RWALL FORCES.     0
+      ROTATIONAL VELOCITY VECTOR    0
+      CONTACT PRESSURE (VECTORS)    0
+ SHELL TENSOR SAVED ON ANIMATION FILES (1: YES) :
+      MEMBRANE STRESS . . . . .     0
+      BENDING STRESS(MOMENT/T^2)    0
+      UPPER LAYER STRESS. . . .     0
+      LOWER LAYER STRESS. . . .     0
+      MEMBRANE STRAIN . . . . .     0
+      CURVATURE . . . . . . . .     0
+      UPPER LAYER STRAIN. . . .     0
+      LOWER LAYER STRAIN. . . .     0
+ NODAL MASS SAVED ON ANIMATION FILES (1: YES) :    1
+ KEEP DELETED ELEMENT (1: YES) :    0
+
+
+ 12/10/2026
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+       0   0.000      0.1000E-07 SOLID          8   0.0%   0.000       55.64       0.000       0.000       0.000      0.2780E-02   0.000    
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA001 WRITTEN
+
+   *--------- STIFFNESS MATRIX SETUP ---------*
+ SYMBOLIC DIM : ND =      81 NZ =      1503 NB_MAX =      26
+ FINAL    DIM : ND =      81 NZ =      1503 NB_MAX =      26
+
+
+Entering DMUMPS 5.6.2 with JOB, N, NNZ =   1          81           1584
+      executing #MPI =      1, without OMP
+
+ =================================================
+ MUMPS compiled with option -Dpord
+ =================================================
+L D L^T Solver for symmetric positive definite matrices
+Type of parallelism: Working host
+
+ ****** ANALYSIS STEP ********
+
+ Processing a graph of size:        81
+ Average density of rows/columns =   37
+ Ordering based on AMF 
+
+Leaving analysis phase with  ...
+ INFOG(1)                                       =               0
+ INFOG(2)                                       =               0
+ -- (20) Number of entries in factors (estim.)  =            2394
+ --  (3) Real space for factors    (estimated)  =            3429
+ --  (4) Integer space for factors (estimated)  =             392
+ --  (5) Maximum frontal size      (estimated)  =              54
+ --  (6) Number of nodes in the tree            =               4
+ -- (32) Type of analysis effectively used      =               1
+ --  (7) Ordering option effectively used       =               2
+ ICNTL (6) Maximum transversal option           =               0
+ ICNTL (7) Pivot order option                   =               7
+ ICNTL(13) Parallelism/splitting of root node   =               1
+ ICNTL(14) Percentage of memory relaxation      =               5
+ ICNTL(15) Analysis by block effectively used   =               0
+ ICNTL(18) Distributed input matrix (on if >0)  =               0
+ ICNTL(58) Symbolic factorization option        =               2
+ Number of level 2 nodes                        =               0
+ Number of split nodes                          =               0
+ RINFOG(1) Operations during elimination (estim)= 8.553D+04
+
+ MEMORY ESTIMATIONS ... 
+ Estimations with standard Full-Rank (FR) factorization:
+    Total space in MBytes, IC factorization      (INFOG(17)):           0
+    Total space in MBytes,  OOC factorization    (INFOG(27)):           0
+
+ Elapsed time in analysis driver=       0.0002
+
+Entering DMUMPS 5.6.2 with JOB, N, NNZ =   2          81           1584
+      executing #MPI =      1, without OMP
+
+
+
+****** FACTORIZATION STEP ********
+
+ GLOBAL STATISTICS PRIOR NUMERICAL FACTORIZATION ...
+ Number of working processes                =               1
+ ICNTL(22) Out-of-core option               =               0
+ ICNTL(35) BLR activation (eff. choice)     =               0
+ ICNTL(37) BLR CB compression (eff. choice) =               0
+ ICNTL(49) Compact workarray S (end facto.) =               0
+ ICNTL(14) Memory relaxation                =               5
+ INFOG(3) Real space for factors (estimated)=            3429
+ INFOG(4) Integer space for factors (estim.)=             392
+ Maximum frontal size (estimated)           =              54
+ Number of nodes in the tree                =               4
+ ICNTL(23) Memory allowed (value on host)   =               0
+           Sum over all procs               =               0
+ Memory provided by user, sum of LWK_USER   =               0
+ Effective threshold for pivoting, CNTL(1)  =      0.0000D+00
+ Effective size of S     (based on INFO(39))=                 5704
+
+ Elapsed time to reformat/distribute matrix =      0.0000
+
+ ** Memory allocated, total in Mbytes           (INFOG(19)):           0
+ ** Memory effectively used, total in Mbytes    (INFOG(22)):           0
+
+ Elapsed time for factorization                     =      0.0002
+
+Leaving factorization with ...
+ RINFOG (2) Operations in node assembly             = 9.870D+02
+ ------ (3) Operations in node elimination          = 8.553D+04
+ ICNTL  (8) Scaling effectively used                =               0
+ INFOG  (9) Real space for factors                  =            3429
+ INFOG (10) Integer space for factors               =             392
+ INFOG (11) Maximum front size                      =              54
+ INFOG (29) Number of entries in factors            =            2394
+ INFOG (12) Number of negative pivots               =               0
+ INFOG (14) Number of memory compress               =               0
+
+ Elapsed time in factorization driver               =      0.0005
+
+Entering DMUMPS 5.6.2 with JOB, N, NNZ =   3          81           1584
+      executing #MPI =      1, without OMP
+
+
+
+ ****** SOLVE & CHECK STEP ********
+
+ GLOBAL STATISTICS PRIOR SOLVE PHASE ...........
+ Number of right-hand-sides                    =           1
+ Blocking factor for multiple rhs              =           1
+ ICNTL (9)                                     =           1
+  --- (10)                                     =           0
+  --- (11)                                     =           0
+  --- (20)                                     =           0
+  --- (21)                                     =           0
+  --- (30)                                     =           0
+  --- (35)                                     =           0
+ ** Space in MBYTES used for solve                        :         0
+
+ Leaving solve with ...
+ Time to build/scatter RHS        =       0.000010
+ Time in solution step (fwd/bwd)  =       0.000024
+  .. Time in forward (fwd) step   =          0.000010
+  .. Time in backward (bwd) step  =          0.000012
+ Time to gather solution(cent.sol)=       0.000001
+ Time to copy/scale dist. solution=       0.000000
+
+ Elapsed time in solve driver=       0.0001
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.062E-29  1.000E+00  3.686E-46
+
+Entering DMUMPS 5.6.2 with JOB =  -2
+      executing #MPI =      1, without OMP
+         1      Y       1.000E+00  5.109E+07  2.713E+25
+         2              1.000E+00  1.737E-08  1.000E+00
+         3              4.500E-16  1.127E-11  2.247E-23     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.559E-05  1.000E+00  4.451E+02
+         1      Y       1.000E+00  1.135E+07  2.247E-23
+         2              5.000E-01  4.831E-09  1.000E-01
+         3              2.304E-16  8.896E-12  2.022E-23     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.559E-05  1.000E+00  4.946E+02
+         1              1.000E+00  1.362E+07  2.022E-23
+         2              9.000E-01  4.310E-09  2.447E-01
+         3              2.402E-16  8.896E-12  1.527E-23     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       2.339E-05  1.000E+00  6.548E+02
+         1              1.000E+00  9.083E+06  1.527E-23
+         2              9.000E-01  5.926E-09  1.966E-01
+         3              3.989E-16  1.661E-11  1.227E-23     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       3.509E-05  1.000E+00  8.151E+02
+         1              1.000E+00  1.975E+06 -3.427E-21
+         2              2.935E-01  1.164E-09  2.048E-02
+         3              1.228E-16  8.574E-12  1.202E-23     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       5.263E-05  1.000E+00  8.321E+02
+         1              1.000E+00  4.355E+06 -2.184E-21
+         2              9.709E-01  9.082E-10  1.831E-01
+         3              3.024E-16  1.719E-11  9.817E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       7.895E-05  1.000E+00  1.019E+03
+         1              1.000E+00  3.185E+05 -6.540E-21
+         2              1.065E-01  6.569E-11  2.198E-03
+         3              3.104E-17  1.038E-11  9.796E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.184E-04  1.000E+00  1.021E+03
+         1              1.000E+00  1.794E+06  1.107E-21
+         2              9.000E-01  4.248E-10  1.357E-01
+         3              2.156E-16  9.344E-12  8.467E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.776E-04  1.000E+00  1.181E+03
+         1              1.000E+00  1.279E+06  2.006E-21
+         2              9.622E-01  4.961E-10  1.342E-01
+         3              3.865E-16  1.517E-11  7.330E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       2.664E-04  1.000E+00  1.364E+03
+         1              1.000E+00  8.324E+05  5.262E-22
+         2              9.395E-01  3.649E-10  1.135E-01
+         3              5.231E-16  1.401E-11  6.498E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       3.997E-04  1.000E+00  1.539E+03
+         1              1.000E+00  5.347E+05  6.498E-24
+         2              9.053E-01  2.067E-10  9.532E-02
+         3              3.254E-16  1.542E-11  5.879E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       5.995E-04  1.000E+00  1.701E+03
+         1              1.000E+00  3.551E+05  5.879E-24
+         2              9.017E-01  8.818E-11  8.640E-02
+         3              2.008E-16  1.386E-11  5.371E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       8.992E-04  1.000E+00  1.862E+03
+         1              1.000E+00  4.243E-11 -2.047E-18
+         2              2.068E-16  1.324E-11  5.371E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.349E-03  1.000E+00  1.862E+03
+         1              1.000E+00  6.009E-11 -4.678E-18
+         2              4.091E-16  1.388E-11  5.371E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       2.023E-03  1.000E+00  1.862E+03
+         1              1.000E+00  1.106E+05 -4.159E-18
+         2              9.481E-01  4.996E-11  8.719E-02
+         3              4.814E-16  1.754E-12  4.903E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       3.035E-03  1.000E+00  2.040E+03
+         1              1.000E+00  7.001E+04 -5.437E-22
+         2              9.001E-01  3.238E-11  7.285E-02
+         3              4.537E-16  1.420E-13  4.545E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       4.552E-03  1.000E+00  2.200E+03
+         1              1.000E+00  4.670E+04  9.166E-22
+         2              9.005E-01  2.929E-11  6.797E-02
+         3              7.645E-16  4.970E-12  4.236E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       6.829E-03  1.000E+00  2.360E+03
+         1              1.000E+00  3.154E+04  2.428E-19
+         2              9.123E-01  2.100E-11  6.521E-02
+         3              7.860E-16  1.930E-12  3.960E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.024E-02  1.000E+00  2.525E+03
+         1              1.000E+00  6.874E+03 -3.028E-18
+         2              2.982E-01  1.816E-11  6.921E-03
+         3              9.737E-16  1.186E-12  3.933E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.536E-02  1.000E+00  2.543E+03
+         1              1.000E+00  1.516E+04 -1.203E-18
+         2              9.866E-01  2.177E-11  7.040E-02
+         3              1.756E-15  1.504E-12  3.656E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       2.305E-02  1.000E+00  2.735E+03
+         1              1.000E+00  9.525E+03  2.486E-19
+         2              9.299E-01  2.416E-11  5.886E-02
+         3              2.650E-15  6.064E-12  3.441E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       3.457E-02  1.000E+00  2.906E+03
+         1              1.000E+00  5.451E+03 -1.247E-18
+         2              7.982E-01  1.024E-11  4.157E-02
+         3              1.474E-15  4.011E-12  3.298E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       5.185E-02  1.000E+00  3.032E+03
+         1              1.000E+00  4.431E+03  2.001E-19
+         2              9.733E-01  1.174E-11  5.821E-02
+         3              2.147E-15  1.165E-11  3.106E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       7.778E-02  1.000E+00  3.220E+03
+         1              1.000E+00  1.088E+03  2.001E-18
+         2              3.584E-01  1.731E-11  7.831E-03
+         3              3.073E-15  1.442E-11  3.081E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.167E-01  1.000E+00  3.245E+03
+         1              1.000E+00  1.914E+03  4.962E-19
+         2              9.462E-01  1.039E-11  5.175E-02
+         3              1.674E-15  9.463E-12  2.922E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.750E-01  1.000E+00  3.422E+03
+         1              1.000E+00  1.306E+03  1.045E-18
+         2              9.681E-01  1.270E-11  5.139E-02
+         3              1.465E-15  1.533E-11  2.772E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       2.625E-01  1.000E+00  3.608E+03
+         1              1.000E+00  8.887E+02 -2.648E-19
+         2              9.883E-01  1.060E-11  5.083E-02
+         3              1.466E-15  1.876E-11  2.631E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA002 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       3.938E-01  1.000E+00  3.801E+03
+         1      Y       1.000E+00  2.990E-11 -1.172E-18
+         2              1.953E-15  9.083E-12  2.631E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1500E+01
+
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       5.907E-01  1.000E+00  3.801E+03
+         1              1.000E+00  3.888E+02  2.231E-19
+         2              9.729E-01  1.662E-11  4.695E-02
+         3              3.916E-15  1.393E-11  2.507E-24     C
+
+
+     --NEXT TIMESTEP IS INCREASED BY-- 0.1173E+01
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA003 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       6.931E-01  1.000E+00  3.988E+03
+         1      Y       1.000E+00  9.480E+01 -4.438E-19
+         2              2.177E-01  1.443E-11  3.828E-03
+         3              1.675E-15  9.949E-12  2.498E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA004 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       8.860E-01  1.000E+00  4.004E+03
+         1      Y       1.000E+00  7.550E+01 -1.123E-22
+         2              1.478E-01  1.649E-11  2.422E-03
+         3              1.073E-15  1.386E-11  2.492E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA005 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  4.013E+03
+         1              1.000E+00  2.552E+02 -9.599E-19
+         2              4.995E-01  1.141E-11  2.693E-02
+         3              3.714E-15  1.137E-11  2.425E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA006 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  4.124E+03
+         1              1.000E+00  4.790E+02  9.362E-19
+         2              9.375E-01  1.497E-11  8.664E-02
+         3              3.532E-15  1.126E-11  2.215E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA007 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  4.516E+03
+         1              1.000E+00  3.996E-11  6.415E-19
+         2              1.021E-15  1.722E-11  2.215E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA008 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  4.516E+03
+         1              1.000E+00  4.927E+02  2.135E-19
+         2              9.643E-01  2.570E-11  8.396E-02
+         3              7.916E-15  2.125E-11  2.029E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA009 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  4.929E+03
+         1              1.000E+00  4.600E+02  7.032E-22
+         2              9.003E-01  1.859E-11  6.820E-02
+         3              2.789E-15  2.549E-11  1.890E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA010 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  5.290E+03
+         1              1.000E+00  4.787E+02 -1.827E-19
+         2              9.370E-01  1.950E-11  6.879E-02
+         3              6.523E-15  1.485E-11  1.760E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA011 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  5.681E+03
+         1              1.000E+00  4.930E+02  5.091E-19
+         2              9.649E-01  3.092E-11  6.798E-02
+         3              2.794E-15  3.093E-11  1.641E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA012 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  6.095E+03
+         1              1.000E+00  2.226E+02  9.501E-19
+         2              4.357E-01  2.302E-11  1.367E-02
+         3              2.687E-15  2.933E-11  1.618E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA013 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  6.180E+03
+         1              1.000E+00  4.695E+02  3.110E-19
+         2              9.189E-01  2.193E-11  5.733E-02
+         3              4.167E-15  2.742E-11  1.525E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA014 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  6.556E+03
+         1              1.000E+00  5.005E+02  1.471E-19
+         2              9.797E-01  1.585E-11  6.118E-02
+         3              2.633E-15  1.729E-11  1.432E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA015 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  6.983E+03
+         1              1.000E+00  2.464E+00 -8.294E-19
+         2              4.822E-03  3.134E-11  1.482E-06
+         3              6.876E-16  2.438E-11  1.432E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA016 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  6.983E+03
+         1              1.000E+00  5.046E+02 -1.383E-19
+         2              9.877E-01  2.505E-11  5.854E-02
+         3              6.542E-15  2.965E-11  1.348E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA017 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  7.417E+03
+         1              1.000E+00  4.542E+02  1.298E-19
+         2              8.889E-01  2.005E-11  4.528E-02
+         3              3.296E-15  2.983E-11  1.287E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA018 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  7.769E+03
+         1              1.000E+00  2.608E+02  8.691E-19
+         2              5.105E-01  3.622E-11  1.471E-02
+         3              3.129E-15  2.827E-11  1.268E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA019 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  7.885E+03
+         1              1.000E+00  1.278E+02  3.666E-19
+         2              2.501E-01  3.229E-11  3.517E-03
+         3              9.191E-16  3.281E-11  1.264E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA020 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  7.913E+03
+         1              1.000E+00  4.530E+02  1.225E-19
+         2              8.867E-01  5.047E-11  4.235E-02
+         3              2.553E-15  3.741E-11  1.210E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA021 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  8.263E+03
+         1              1.000E+00  8.428E-11  4.676E-19
+         2              2.758E-15  3.385E-11  1.210E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA022 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  8.263E+03
+         1              1.000E+00  4.789E+02  1.160E-19
+         2              9.373E-01  2.488E-11  4.519E-02
+         3              3.703E-15  4.124E-11  1.156E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA023 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  8.654E+03
+         1              1.000E+00  4.537E+02  1.113E-19
+         2              8.880E-01  8.770E-11  3.898E-02
+         3              3.737E-15  4.804E-11  1.111E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA024 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  9.005E+03
+         1              1.000E+00  3.979E+02  8.568E-19
+         2              7.789E-01  2.422E-11  2.912E-02
+         3              4.675E-15  2.260E-11  1.078E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA025 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  9.275E+03
+         1              1.000E+00  4.904E+02  3.118E-19
+         2              9.600E-01  2.316E-11  4.235E-02
+         3              5.159E-15  1.446E-11  1.033E-24     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA026 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  9.685E+03
+         1              1.000E+00  4.782E+02 -9.951E-20
+         2              9.360E-01  2.468E-11  3.870E-02
+         3              6.071E-15  2.665E-11  9.926E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA027 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.007E+04
+         1              1.000E+00  4.693E+02  1.913E-19
+         2              9.186E-01  1.515E-11  3.594E-02
+         3              2.164E-15  9.855E-12  9.569E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA028 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.045E+04
+         1              1.000E+00  1.553E+02  4.617E-19
+         2              3.040E-01  6.223E-11  3.920E-03
+         3              1.712E-15  5.130E-11  9.531E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA029 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.049E+04
+         1              1.000E+00  4.901E+02 -9.245E-20
+         2              9.592E-01  2.288E-11  3.757E-02
+         3              3.727E-15  1.732E-11  9.173E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA030 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.090E+04
+         1              1.000E+00  1.344E+02  3.871E-22
+         2              2.632E-01  2.756E-11  2.820E-03
+         3              1.181E-15  2.350E-11  9.147E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA031 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.093E+04
+         1              1.000E+00  4.756E+02  8.773E-20
+         2              9.309E-01  1.833E-11  3.408E-02
+         3              2.673E-15  2.605E-11  8.836E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA032 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.132E+04
+         1              1.000E+00  4.969E+02  8.498E-20
+         2              9.727E-01  1.626E-11  3.587E-02
+         3              5.153E-15  2.083E-11  8.519E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA033 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.174E+04
+         1              1.000E+00  9.508E-11 -5.747E-19
+         2              3.128E-15  3.497E-11  8.519E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA034 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.174E+04
+         1      Y       1.000E+00  8.267E-11  3.284E-19
+         2              3.910E-15  1.922E-11  8.519E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA035 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.174E+04
+         1              1.000E+00  4.599E+02  8.987E-23
+         2              9.001E-01  1.484E-11  2.981E-02
+         3              1.305E-15  1.771E-11  8.265E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA036 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.210E+04
+         1              1.000E+00  4.098E+02  3.190E-19
+         2              8.021E-01  2.225E-11  2.312E-02
+         3              3.122E-15  3.241E-11  8.074E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA037 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.239E+04
+         1              1.000E+00  4.100E+02  6.232E-19
+         2              8.024E-01  3.429E-11  2.262E-02
+         3              4.191E-15  1.755E-11  7.891E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA038 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.267E+04
+         1              1.000E+00  2.402E+02 -6.089E-19
+         2              4.701E-01  7.086E-11  7.704E-03
+         3              2.496E-15  7.456E-11  7.830E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA039 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.277E+04
+         1              1.000E+00  4.285E+02 -1.515E-19
+         2              8.386E-01  2.553E-11  2.393E-02
+         3              2.171E-15  7.043E-11  7.643E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA040 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.308E+04
+         1      Y       1.000E+00  1.360E-10  7.372E-19
+         2              4.725E-15  6.159E-11  7.643E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA041 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.308E+04
+         1              1.000E+00  5.036E+02  1.474E-19
+         2              9.857E-01  8.214E-11  3.199E-02
+         3              3.970E-15  9.677E-11  7.398E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA042 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.352E+04
+         1              1.000E+00  2.229E+02 -2.142E-19
+         2              4.363E-01  3.968E-11  6.228E-03
+         3              2.006E-15  5.573E-11  7.352E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA043 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.360E+04
+         1              1.000E+00  4.537E+02  1.422E-19
+         2              8.880E-01  5.319E-11  2.516E-02
+         3              3.346E-15  1.334E-10  7.167E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA044 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.395E+04
+         1              1.000E+00  4.825E+02 -2.768E-19
+         2              9.445E-01  6.336E-11  2.767E-02
+         3              4.419E-15  9.154E-11  6.969E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA045 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.435E+04
+         1              1.000E+00  3.630E+02  4.701E-19
+         2              7.104E-01  4.221E-11  1.542E-02
+         3              2.451E-15  8.748E-11  6.862E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA046 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.457E+04
+         1              1.000E+00  4.826E+02  2.647E-19
+         2              9.446E-01  8.161E-11  2.653E-02
+         3              3.021E-15  7.097E-11  6.680E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA047 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.497E+04
+         1              1.000E+00  4.905E+02  1.287E-19
+         2              9.602E-01  5.055E-11  2.668E-02
+         3              5.144E-15  8.230E-11  6.501E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA048 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.538E+04
+         1              1.000E+00  4.905E+02  6.257E-20
+         2              9.600E-01  4.456E-11  2.598E-02
+         3              4.948E-15  6.996E-11  6.332E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA049 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.579E+04
+         1              1.000E+00  3.831E+02  6.722E-19
+         2              7.499E-01  5.825E-11  1.560E-02
+         3              2.383E-15  8.346E-11  6.234E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA050 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.604E+04
+         1              1.000E+00  4.746E+02  2.401E-19
+         2              9.290E-01  6.464E-11  2.339E-02
+         3              4.492E-15  1.344E-10  6.088E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA051 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.643E+04
+         1              1.000E+00  3.831E+02 -3.526E-19
+         2              7.498E-01  7.813E-11  1.501E-02
+         3              5.186E-15  9.089E-11  5.997E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA052 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.668E+04
+         1              1.000E+00  1.681E+02  5.205E-19
+         2              3.291E-01  4.081E-11  2.883E-03
+         3              1.423E-15  4.015E-11  5.979E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA053 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.672E+04
+         1              1.000E+00  4.286E+02 -1.155E-19
+         2              8.389E-01  7.176E-11  1.839E-02
+         3              2.841E-15  7.412E-11  5.869E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA054 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.704E+04
+         1              1.000E+00  4.988E+02 -1.131E-19
+         2              9.764E-01  3.382E-11  2.430E-02
+         3              3.357E-15  7.710E-11  5.727E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA055 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.746E+04
+         1              1.000E+00  1.703E+02  4.419E-19
+         2              3.333E-01  5.750E-11  2.823E-03
+         3              2.076E-15  4.887E-11  5.710E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA056 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.751E+04
+         1              1.000E+00  2.403E-10 -1.101E-19
+         2              8.478E-15  8.958E-11  5.710E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA057 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.751E+04
+         1              1.000E+00  5.029E+02  5.519E-20
+         2              9.843E-01  5.257E-11  2.403E-02
+         3              4.164E-15  6.324E-11  5.573E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA058 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.794E+04
+         1      Y       1.000E+00  2.534E-10  2.151E-19
+         2              8.015E-15  8.318E-11  5.573E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA059 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.794E+04
+         1              1.000E+00  6.132E+01 -3.762E-19
+         2              1.200E-01  1.717E-10  3.572E-04
+         3              3.084E-15  1.018E-10  5.571E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA060 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.795E+04
+         1              1.000E+00  4.849E+02 -3.763E-19
+         2              9.490E-01  5.414E-11  2.185E-02
+         3              2.364E-15  4.728E-11  5.450E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA061 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.835E+04
+         1              1.000E+00  2.034E+02  2.105E-19
+         2              3.981E-01  8.582E-11  3.829E-03
+         3              2.038E-15  9.784E-11  5.429E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA062 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.842E+04
+         1              1.000E+00  4.602E+02 -1.882E-22
+         2              9.008E-01  5.088E-11  1.923E-02
+         3              4.773E-15  9.996E-11  5.324E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA063 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.878E+04
+         1      Y       1.000E+00  5.019E-10  1.028E-19
+         2              9.961E-15  1.498E-10  5.324E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA064 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.878E+04
+         1              1.000E+00  4.601E+02  1.926E-22
+         2              9.006E-01  1.998E-10  1.886E-02
+         3              5.019E-15  5.175E-11  5.224E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA065 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.914E+04
+         1              1.000E+00  2.549E+02 -5.031E-20
+         2              4.989E-01  5.039E-11  5.754E-03
+         3              2.139E-15  5.979E-11  5.194E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA066 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.925E+04
+         1              1.000E+00  4.819E+02 -2.507E-19
+         2              9.432E-01  5.147E-11  2.015E-02
+         3              2.916E-15  6.775E-11  5.089E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA067 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  1.965E+04
+         1              1.000E+00  4.603E+02 -5.369E-23
+         2              9.010E-01  5.449E-11  1.806E-02
+         3              2.631E-15  1.127E-10  4.997E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA068 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.001E+04
+         1              1.000E+00  1.350E+02  2.892E-19
+         2              2.643E-01  7.538E-11  1.552E-03
+         3              2.176E-15  5.742E-11  4.989E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA069 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.004E+04
+         1              1.000E+00  4.101E+02  1.923E-19
+         2              8.026E-01  4.700E-11  1.411E-02
+         3              4.903E-15  6.105E-11  4.919E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA070 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.033E+04
+         1      Y       1.000E+00  3.099E-10 -1.895E-19
+         2              9.514E-15  1.017E-10  4.919E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA071 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.033E+04
+         1              1.000E+00  4.170E+02 -2.847E-19
+         2              8.163E-01  3.090E-11  1.438E-02
+         3              2.350E-15  5.872E-11  4.848E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA072 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.063E+04
+         1              1.000E+00  2.307E+00  9.353E-20
+         2              4.516E-03  6.899E-11  4.400E-07
+         3              1.670E-15  5.535E-11  4.848E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA073 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.063E+04
+         1              1.000E+00  2.596E-10  3.272E-19
+         2              9.012E-15  6.556E-11  4.848E-25     C
+
+
+     100  0.7356E-01  0.1000E-02 SOLID          4  -0.0% -0.6315E-24   55.64       0.000       0.000       0.000      0.2780E-02   0.000    
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA074 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.063E+04
+         1              1.000E+00  3.978E+02  3.741E-19
+         2              7.785E-01  3.343E-11  1.291E-02
+         3              1.284E-15  3.150E-11  4.786E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA075 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.090E+04
+         1              1.000E+00  1.078E+02  3.691E-19
+         2              2.110E-01  3.936E-11  9.473E-04
+         3              1.710E-15  8.838E-11  4.781E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA076 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.092E+04
+         1              1.000E+00  5.022E+02  1.381E-19
+         2              9.831E-01  7.652E-11  2.015E-02
+         3              3.691E-15  7.765E-11  4.685E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA077 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.135E+04
+         1              1.000E+00  2.833E+02 -1.808E-19
+         2              5.545E-01  4.547E-11  6.372E-03
+         3              2.170E-15  6.658E-11  4.655E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA078 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.148E+04
+         1              1.000E+00  4.390E+02  1.347E-19
+         2              8.592E-01  5.962E-11  1.507E-02
+         3              3.669E-15  1.156E-10  4.585E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA079 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.181E+04
+         1              1.000E+00  4.598E+02 -2.073E-23
+         2              9.000E-01  9.960E-11  1.626E-02
+         3              4.394E-15  8.539E-11  4.510E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA080 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.217E+04
+         1              1.000E+00  5.054E+02 -1.304E-19
+         2              9.893E-01  9.779E-11  1.927E-02
+         3              4.748E-15  1.516E-10  4.423E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA081 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.261E+04
+         1              1.000E+00  4.856E+02  8.547E-20
+         2              9.504E-01  1.379E-10  1.747E-02
+         3              3.787E-15  1.522E-10  4.346E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA082 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.301E+04
+         1      Y       1.000E+00  4.209E-10 -1.258E-19
+         2              1.405E-14  8.787E-11  4.346E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA083 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.301E+04
+         1              1.000E+00  2.554E+02 -8.395E-20
+         2              5.000E-01  1.103E-10  4.812E-03
+         3              3.406E-15  9.903E-11  4.325E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA084 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.312E+04
+         1      Y       1.000E+00  4.210E-10  8.340E-20
+         2              1.367E-14  1.325E-10  4.325E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA085 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.312E+04
+         1              1.000E+00  4.601E+02  1.434E-22
+         2              9.005E-01  6.922E-11  1.537E-02
+         3              3.132E-15  8.306E-11  4.259E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA086 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.348E+04
+         1      Y       1.000E+00  3.110E-10  1.642E-19
+         2              1.343E-14  8.512E-11  4.259E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA087 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.348E+04
+         1              1.000E+00  4.543E+02 -8.200E-20
+         2              8.891E-01  3.947E-11  1.476E-02
+         3              4.425E-15  4.615E-11  4.196E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA088 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.383E+04
+         1              1.000E+00  4.923E+02  1.619E-19
+         2              9.637E-01  1.065E-10  1.705E-02
+         3              4.173E-15  1.110E-10  4.124E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA089 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.425E+04
+         1              1.000E+00  4.101E+02 -1.590E-19
+         2              8.027E-01  9.548E-11  1.169E-02
+         3              3.232E-15  6.674E-11  4.076E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA090 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.453E+04
+         1              1.000E+00  2.235E+02  2.357E-19
+         2              4.375E-01  1.253E-10  3.461E-03
+         3              3.596E-15  8.648E-11  4.062E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA091 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.462E+04
+         1              1.000E+00  2.549E+02 -1.960E-19
+         2              4.989E-01  4.104E-11  4.479E-03
+         3              2.166E-15  9.345E-11  4.044E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA092 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.473E+04
+         1              1.000E+00  4.541E+02  1.171E-19
+         2              8.887E-01  1.221E-10  1.402E-02
+         3              5.550E-15  9.363E-11  3.987E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA093 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.508E+04
+         1              1.000E+00  4.024E+02  2.307E-19
+         2              7.877E-01  9.824E-11  1.089E-02
+         3              3.093E-15  1.132E-10  3.944E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA094 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.536E+04
+         1      Y       1.000E+00  2.960E-10 -1.142E-19
+         2              1.017E-14  5.223E-11  3.944E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA095 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.536E+04
+         1              1.000E+00  4.290E+02 -7.614E-20
+         2              8.396E-01  7.151E-11  1.222E-02
+         3              3.934E-15  5.740E-11  3.895E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA096 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.567E+04
+         1      Y       1.000E+00  2.748E-10  1.878E-19
+         2              1.293E-14  7.218E-11  3.895E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA097 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.567E+04
+         1              1.000E+00  3.842E+02 -7.496E-20
+         2              7.519E-01  4.059E-11  9.709E-03
+         3              3.526E-15  6.575E-11  3.858E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA098 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.592E+04
+         1              1.000E+00  4.609E+02 -1.860E-19
+         2              9.022E-01  4.066E-11  1.378E-02
+         3              2.654E-15  1.579E-11  3.804E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA099 WRITTEN
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       1.040E+00  1.000E+00  2.628E+04
+         1      Y       1.000E+00  2.391E-10  7.341E-20
+         2              9.806E-15  8.245E-11  3.804E-25     C
+
+
+     ANIMATION FILE: A40_FREE_RREF_STANDARD_ADAPT_IA100 WRITTEN
+
+   * IMPLICIT COMPUTATION TERMINATED WITH    TOTAL NONLINEAR ITERATIONS:     485
+   * TOTAL NUM.OF MATRIX FACTORIZATION AND PCG ITERATION:    127         0
+
+     RESTART FILES: A40_FREE_RREF_STANDARD_ADAPT_I_0001_[0001-0001].rst WRITTEN
+     -------------
+
+  
+                           ** CPU USER TIME **
+  
+  
+                      ** IMPLICIT  **
+  
+ #PROC  [K]SETUP  [M]SETUP  IMP_SOLV  IMP_TOT  
+   1   .1963E-01 .0000E+00 .0000E+00 .8574E-01
+  
+                        ** SUMMARY **
+  
+ #PROC  ELEMENT   KINCOND   INTEG     IO        T0        ASM       RESOL    
+   1   .2530E-01 .1064E-02 .2024E-02 .4190E-01 .4981E-01 .9031E-03 .2223E+00
+  
+ 
+                   ** CUMULATIVE CPU TIME SUMMARY **
+  
+ CONTACT SORTING.............: .0000E+00     0.00 % 
+ CONTACT FORCES..............: .5339E-03     0.24 % 
+ ELEMENT FORCES..............: .2530E-01    11.38 % 
+ KINEMATIC COND..............: .1064E-02     0.48 % 
+ INTEGRATION.................: .2024E-02     0.91 % 
+ ASSEMBLING..................: .9031E-03     0.41 % 
+ OTHERS (including I/O)......: .1925E+00    86.58 % 
+ TOTAL.......................: .2223E+00   100.00 % 
+  
+  
+                           ** ELAPSED TIME **
+  
+  
+                      ** IMPLICIT  **
+  
+ #PROC  [K]SETUP  [M]SETUP  IMP_SOLV  IMP_TOT  
+   1   .3371E-01 .0000E+00 .0000E+00 .1364E+00
+  
+                        ** SUMMARY **
+  
+ #PROC  ELEMENT   KINCOND   INTEG     IO        T0        ASM       RESOL    
+   1   .4517E-01 .1644E-02 .2583E-02 .2666E+00 .1895E+00 .1361E-02 .6775E+00
+  
+                   ** MEMORY USAGE STATISTICS **
+  
+ TOTAL MEMORY USED .........................:       66 MB
+ MAXIMUM MEMORY PER PROCESSOR...............:       66 MB
+ MINIMUM MEMORY PER PROCESSOR...............:       66 MB
+ AVERAGE MEMORY PER PROCESSOR...............:       66 MB
+  
+                   ** DISK USAGE STATISTICS **
+  
+ TOTAL DISK SPACE USED .....................:          0 MB
+ ANIMATION/H3D/TH/OUTP SIZE ................:          0 MB
+ RESTART FILE SIZE .........................:          0 MB
+  
+                   ** COMPUTE TIME INFORMATION **
+                        ** CURRENT ENGINE **
+  
+ EXECUTION STARTED .........................:      2026/10/12  08:35:01
+ EXECUTION COMPLETED .......................:      2026/10/12  08:35:02
+  
+ ELAPSED TIME     =          1.13 s
+                          0:00:01
+
+
+
+     NORMAL TERMINATION      
+
+
+
+     TOTAL NUMBER OF CYCLES  :     127
+
+  
+                   ** COMPUTE RUNTIME INFORMATION SUMMARY **
+  
+        STARTER RUNTIME =          0.63s (00:00:00)
+ # 001   ENGINE RUNTIME =          1.13s (00:00:01)
+ ------------------------------ 
+ STARTER+ENGINE RUNTIME =          1.76s (00:00:01)
+  

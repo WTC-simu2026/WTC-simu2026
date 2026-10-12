@@ -1,0 +1,54 @@
+{
+  "created_utc": "2026-10-12T08:31:32.709294+00:00",
+  "source_commit": "bad6688602d770e019b75773d2d5a48b4f9bd918",
+  "source_files": [
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/integrator.F",
+      "sha256": "9be210238dc65e74355389061af4d31b22d2716bc2f37b0ca0f3e2f5b78485b4",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/integrator.F",
+      "raw_source_redistributed": false
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/imp_dyna.F",
+      "sha256": "52d510efd2fea12c947662e38735cef5267d109eb811e4cee80c7136a027364f",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/imp_dyna.F",
+      "raw_source_redistributed": false
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/imp_solv.F",
+      "sha256": "88e72fa3caf29de165d5690ca1b7e534f2716b44db80e737e76e6d68c377dbca",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/imp_solv.F",
+      "raw_source_redistributed": false
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/output/th/thnod.F",
+      "sha256": "920a7ad618c0d6f4ffc0c00276a437c6c81bb94c1d0f7320630756db73d6ec67",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/output/th/thnod.F",
+      "raw_source_redistributed": false
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/output/ecrit.F",
+      "sha256": "34c2633623ac04c8423f8f96a9357ef83e23a9ce761edca739d0ab00c428622d",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/output/ecrit.F",
+      "raw_source_redistributed": false
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/output/restart/wrrest.F",
+      "sha256": "e13877405a5e8abc52c7f19789ec01dbcfd8d3571331f036fdc33265ac6851ef",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/output/restart/wrrest.F",
+      "raw_source_redistributed": false
+    }
+  ],
+  "facts": [
+    "INTEGRATOR/INTEGRATOR_HP replace V with incremental displacement divided by timestep and NDT after INTE_DYNA.",
+    "THNOD publishes that V array.",
+    "For NDT1, fixed step, gamma.5 beta.25, displacement secant equals average of adjacent endpoint velocities.",
+    "ECRIT derives dynamic kinetic velocity from DY_V and DY_A; its call context must not be inferred merely from a serialized global DT1 value."
+  ],
+  "derived_method": "Endpoint velocity from v[n]=2*secant[n]-v[n-1], with independently known initial velocity, all recorded physical cycles, displacement identity and native kinetic/momentum counters verified. No fitted factor, new RKE term, state injection or software patch.",
+  "limits": [
+    "No reconstruction accepted for variable/sparsely sampled steps.",
+    "Loaded explicit-to-implicit A40 requires separate time/state-convention audit and remains failed.",
+    "Source predicate alone does not prove unique cause of prior failures."
+  ]
+}

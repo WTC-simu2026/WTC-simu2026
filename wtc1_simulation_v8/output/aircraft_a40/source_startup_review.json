@@ -1,0 +1,55 @@
+{
+  "created_utc": "2026-10-12T07:14:27.474232+00:00",
+  "source_commit": "bad6688602d770e019b75773d2d5a48b4f9bd918",
+  "files": [
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/imp_dyna.F",
+      "sha256": "52d510efd2fea12c947662e38735cef5267d109eb811e4cee80c7136a027364f",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/imp_dyna.F"
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/imp_solv.F",
+      "sha256": "88e72fa3caf29de165d5690ca1b7e534f2716b44db80e737e76e6d68c377dbca",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/imp_solv.F"
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/integrator.F",
+      "sha256": "9be210238dc65e74355389061af4d31b22d2716bc2f37b0ca0f3e2f5b78485b4",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/integrator.F"
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/input/freimpl.F",
+      "sha256": "0cbedb90094c175ebd822716835b081e4bc4acf5bafe3828e90d0a6e9c29a260",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/input/freimpl.F"
+    }
+  ],
+  "observations": {
+    "growth_factor": 1.5,
+    "initial_recorded_velocity_during_growth_mm_ms": [
+      -133.3333,
+      3.333333,
+      1.333333
+    ],
+    "expected_free_velocity_mm_ms": [
+      -200.0,
+      5.0,
+      2.0
+    ],
+    "late_recorded_velocity_after_maximum_step_mm_ms": [
+      -200.0,
+      5.0,
+      2.0
+    ],
+    "maximum_displacement_error_mm": 0.20000200000000135,
+    "late_displacement_error_mm": 0.20000200000000135
+  },
+  "source_facts": [
+    "DYNA_INA forms predictors with current DT2 in imp_dyna.F916-925.",
+    "IMP_SOLV calls DYNA_INA at NCYCLE1 inside the converged-start block.",
+    "INTE_DYNA prepares the next displacement predictor using DT2.",
+    "Residual reference is bounded separately by RF_MIN/RF_MAX, parsed through /IMPL/RREF/LIMIT."
+  ],
+  "inference": "During growth the observed velocity equals aboutV0/1.5 and the displacement lag persists after fixed maximum step. A predictor built with the previous rather than next step is a source-based hypothesis. Fixed-step tests remove the observed defect, but no native software patch or unique internal-cause proof is claimed.",
+  "active_restart_acceleration_initialization": "The source initial force block has TT==DT2 or IMPL_S0==0. Its role in contact energy failure remains a hypothesis; a fresh direct-implicit contact witness and source timing inspection are needed.",
+  "no_software_modification": true
+}

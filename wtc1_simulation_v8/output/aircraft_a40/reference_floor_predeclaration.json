@@ -1,0 +1,85 @@
+{
+  "created_utc": "2026-10-12T06:34:36.560483+00:00",
+  "seed": 1102065,
+  "random_draws": 0,
+  "before_new_native": true,
+  "parent_configuration_sha256": "a11a7640bf350080a7917536972dd53ccd6e43f92619e7e02946d2d372f88550",
+  "cases": [
+    {
+      "name": "FREE_RREF_ADAPT_I",
+      "scope": "FREE",
+      "mode": "I",
+      "dt_ms": 1e-08,
+      "maximum_dt_ms": 0.001,
+      "end_ms": 0.1,
+      "platform": "Linux",
+      "nonlinear_tolerance": 1e-11
+    },
+    {
+      "name": "FREE_RREF_ADAPT_HALF_I",
+      "scope": "FREE",
+      "mode": "I",
+      "dt_ms": 5e-09,
+      "maximum_dt_ms": 0.0005,
+      "end_ms": 0.1,
+      "platform": "Linux",
+      "nonlinear_tolerance": 1e-11
+    },
+    {
+      "name": "FREE_RREF_STANDARD_ADAPT_I",
+      "scope": "FREE",
+      "mode": "I",
+      "dt_ms": 1e-08,
+      "maximum_dt_ms": 0.001,
+      "end_ms": 0.1,
+      "platform": "Linux",
+      "nonlinear_tolerance": 1e-06
+    },
+    {
+      "name": "FREE_RREF_STANDARD_ADAPT_HALF_I",
+      "scope": "FREE",
+      "mode": "I",
+      "dt_ms": 5e-09,
+      "maximum_dt_ms": 0.0005,
+      "end_ms": 0.1,
+      "platform": "Linux",
+      "nonlinear_tolerance": 1e-06
+    }
+  ],
+  "trigger": "Base strict adaptive startup fails before any completed cycle; trace first relative residual grows to9.956e27 with Infinity energy ratio, despite near-zero unforced reference. Source RF_MIN floor is available through /IMPL/RREF/LIMIT, independently of physical loads.",
+  "reference_minimum_force": {
+    "original_unit": "g mm/ms^2",
+    "value": 1.0,
+    "SI_force_N": 1.0,
+    "conversion": "0.001kg*0.001m/(0.001s)^2 =1N",
+    "maximum_force": 1e+30,
+    "reason": "Explicit normalization scale for a force-free exact witness, no applied load. Strict force tolerance1e-11 implies nominal absolute1e-11N; standard relative1e-6 option, if needed, is the original A37 tolerance. All external physical gates remain original."
+  },
+  "branch_rule": "Strict floor witness first. If it passes, half-step strict witness. If it fails, standard relative tolerance (the original A37 value) at same floor and timestep; if that passes, its half-step. No contact/whole extension from failed free route.",
+  "source_files": [
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/input/freimpl.F",
+      "sha256": "0cbedb90094c175ebd822716835b081e4bc4acf5bafe3828e90d0a6e9c29a260",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/input/freimpl.F"
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/imp_solv.F",
+      "sha256": "88e72fa3caf29de165d5690ca1b7e534f2716b44db80e737e76e6d68c377dbca",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/imp_solv.F"
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/source/engine/source/implicit/nl_solv.F",
+      "sha256": "0a8778499b3c574e8ff7c0b187b9cb2c20dfc9a7cabf658a0fcda0b10e22e268",
+      "url": "https://github.com/gabrielrussell/OpenRadioss/blob/bad6688602d770e019b75773d2d5a48b4f9bd918/engine/source/implicit/nl_solv.F"
+    }
+  ],
+  "documentation": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/impl_rref_limit_engine_r.htm",
+  "physical_inputs_changed": false,
+  "physical_gates_changed": false,
+  "new_installation_or_build": false,
+  "no_time_or_position_shift_applied": true,
+  "CPU_threads": 1,
+  "GPU": false,
+  "per_process_cap_s": 180,
+  "maximum_seconds_all_four": 720
+}

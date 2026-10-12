@@ -1,0 +1,105 @@
+{
+  "created_utc": "2026-10-12T06:54:41.125645+00:00",
+  "seed": 1102065,
+  "random_draws": 0,
+  "before_new_native": true,
+  "parent_configuration_sha256": "a11a7640bf350080a7917536972dd53ccd6e43f92619e7e02946d2d372f88550",
+  "cases": [
+    {
+      "name": "FREE_RREF_RESTART_BASE",
+      "scope": "FREE",
+      "mode": "I",
+      "dt_ms": 0.001,
+      "platform": "Linux"
+    },
+    {
+      "name": "FREE_RREF_RESTART_HALF",
+      "scope": "FREE",
+      "mode": "I",
+      "dt_ms": 0.0005,
+      "platform": "Linux"
+    },
+    {
+      "name": "CONTACT_RREF_RESTART_BASE",
+      "scope": "CONTACT",
+      "mode": "I",
+      "dt_ms": 5e-05,
+      "platform": "Linux"
+    },
+    {
+      "name": "CONTACT_RREF_RESTART_HALF",
+      "scope": "CONTACT",
+      "mode": "I",
+      "dt_ms": 2.5e-05,
+      "platform": "Linux"
+    }
+  ],
+  "donors": [
+    {
+      "scope": "FREE",
+      "donor": "wtc1_simulation_v8/output/aircraft_a37/FREE_EE",
+      "generation_sha256": "35bb3bd5ee3e7397b9d1fe2f040942174757473e2476acd2e1e604d949ff4abf",
+      "native_states": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a37/FREE_EE/phase1/A37_FREE_EE_0001_0001.rst",
+          "bytes": 324101,
+          "sha256": "b8ff1fa19508de2cb9c0a24d8dd1a61ad33346d26fb765c1d8e91d98c40948eb"
+        }
+      ],
+      "cached_junction_field": "wtc1_simulation_v8/output/aircraft_a37/FREE_EE/phase2/A37_FREE_EEA005.vtk",
+      "cached_junction_field_sha256": "57711a8612a871e8cfacdf295fe7366dbba7f26733fec29e6c0902901e89faf2",
+      "native_join_ms": 0.04,
+      "qualified_source_review": "wtc1_simulation_v8/output/aircraft_a37/native_review.json",
+      "qualified_source_review_sha256": "ef27d7ae7cd912b67bc9c25051a2a0cdeef063615c87d4d54b7d8b85201735cb",
+      "original_raw_review_pass": true,
+      "original_donor_field_acquisition_diagnostics_preserved": true,
+      "fresh_Starter_or_explicit_replay": false
+    },
+    {
+      "scope": "CONTACT",
+      "donor": "wtc1_simulation_v8/output/aircraft_a37/w2_front_facets/CONTACT_EE",
+      "generation_sha256": "feaabffa36d4905139ea4548377adba568f3be91d7ed979e2aec1f7cbe3489f7",
+      "native_states": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a37/w2_front_facets/CONTACT_EE/phase1/A37_CONTACT_EE_0001_0001.rst",
+          "bytes": 386128,
+          "sha256": "b4c1a9c14afdd8595562809cece80796fb35552ca2d0bd0f664d5cd2f828cff6"
+        }
+      ],
+      "cached_junction_field": "wtc1_simulation_v8/output/aircraft_a37/w2_front_facets/CONTACT_EE/phase2/A37_CONTACT_EEA047.vtk",
+      "cached_junction_field_sha256": "49a3f507a216a3772c6dbf8c0d24fad7464055020f9a5959fefff96c0e2ee5fb",
+      "native_join_ms": 0.00920457,
+      "qualified_source_review": "wtc1_simulation_v8/output/aircraft_a37/native_review.json",
+      "qualified_source_review_sha256": "ef27d7ae7cd912b67bc9c25051a2a0cdeef063615c87d4d54b7d8b85201735cb",
+      "original_raw_review_pass": false,
+      "original_donor_field_acquisition_diagnostics_preserved": true,
+      "fresh_Starter_or_explicit_replay": false
+    }
+  ],
+  "numeric_options": {
+    "MUMPS": true,
+    "nonlinear_tolerances": [
+      1e-11,
+      1e-11,
+      1e-11
+    ],
+    "force_reference_min_N": 1.0,
+    "force_reference_max": 1e+30,
+    "fixed_time_step": true,
+    "minimum_dt_ms": 1e-12,
+    "Newmark_gamma_beta": [
+      0.5,
+      0.25
+    ]
+  },
+  "physical_fixture_unchanged": true,
+  "full_native_state_copy_only": true,
+  "no_field_injection_or_rescaling": true,
+  "original_physical_gates_retained": true,
+  "branch_rule": "Free restart base then half; if either fails, stop before contact. Contact base and half assess closed balance and numerical refinement; stop whole extension unless all original gates pass.",
+  "CPU_threads": 1,
+  "GPU": false,
+  "per_process_cap_s": 180,
+  "estimated_seconds_max": 720,
+  "whole_duration_credit_s": 0
+}

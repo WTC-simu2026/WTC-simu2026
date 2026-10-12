@@ -1,0 +1,11 @@
+{
+  "created_utc": "2026-10-12T06:28:35.307099+00:00",
+  "parent": "wtc1_simulation_v8/scripts/probe_aircraft_a37.py",
+  "parent_sha256": "1f7aea904b7a57eb4e42f9c7f6289b26392e9a4f65771118f07b9134300bfdea",
+  "derived_prepare_source": "def prepare_case(case):\n guard();d=OUT/case['name'];assert not d.exists();d.mkdir();p=d/'phase1';p.mkdir();scope=case['scope'];n='A40_'+case['name'];X,B,m,V,parts,M=fixture(scope);q=read(CFG)[scope.lower()]\n L=['#RADIOSS STARTER','/BEGIN',n,ii(2026,0),ff('g','mm','ms'),ff('g','mm','ms'),'/TITLE',n,'/ANALY',ii(0)+ff(0)+ii(0),'/SPMD',ii(0,0)+ff(0,1),'/NODE']+[ii(i+1)+ff(*x) for i,x in enumerate(X)]+M\n for ni,v in enumerate(V,1):L+=group(ni,'PHYSICAL_INITIAL_NODE',[ni])+[f'/INIVEL/TRA/{ni}','INITIAL_TRANSLATION',ff(*v)+ii(ni,0),ff(0)+ii(0)]\n L+=['/TH/PART/1','PHYSICAL_BODIES',''.join(f'{v:>10}' for v in ['IE','KE','HE','PW']),ii(*parts),'/TH/NODE/1','NATIVE_SCOPE_NODES',''.join(f'{v:>10}' for v in ['DX','DY','DZ','VX','VY','VZ'])]+[ii(j,0) for j in range(1,len(X)+1)]+['/END']\n (p/(n+'_0000.rad')).write_text('\\n'.join(L)+'\\n',encoding='utf8');mode='I' if case['mode']=='I' else 'E';end=q['end_ms'] if mode=='I' else q['join_ms'];dt=case['dt_ms'] if mode=='I' else 1e-5\n (p/(n+'_0001.rad')).write_text(engine_cards(n,1,mode,dt,end,scope),encoding='utf8')\n meta={'created_utc':now(),'case':{**case,'platform':'Linux'},'name':n,'nodes_mm':X.tolist(),'bricks':B,'nodal_masses_g':m.tolist(),'initial_velocity_mm_ms':V.tolist(),'expected_mass_g':float(m.sum()),'configuration_sha256':streamsha(CFG),'kinetic_energy_J':float(.5*np.sum(m[:,None]*V**2)*.001),'momentum_Ns':(np.sum(m[:,None]*V,axis=0)*.001).tolist()};dump(d/'generation.json',meta);dump(p/'generation.json',meta);shutil.copy2(__file__,d/'generator_snapshot.py')\n return d,p,n\n",
+  "changes": [
+    "A40 root and configuration only; physical fixture unchanged",
+    "Predeclared nonlinear tolerance and adaptive timestep controls"
+  ],
+  "compiled_solver_modified": false
+}
