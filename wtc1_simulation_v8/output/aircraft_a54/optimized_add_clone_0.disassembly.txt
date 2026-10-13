@@ -1,0 +1,66 @@
+
+/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a54_type2_graph_candidate_r1/isolated_exec/engine_linux64_gf_ompi:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .text:
+
+0000000000bf6850 <type2_kin_add_.constprop.0.isra.0>:
+  bf6850:	4c 63 d7             	movslq %edi,%r10
+  bf6853:	89 f0                	mov    %esi,%eax
+  bf6855:	4d 8d 5a ff          	lea    -0x1(%r10),%r11
+  bf6859:	4b 63 34 99          	movslq (%r9,%r11,4),%rsi
+  bf685d:	44 39 c7             	cmp    %r8d,%edi
+  bf6860:	7f 4e                	jg     bf68b0 <type2_kin_add_.constprop.0.isra.0+0x60>
+  bf6862:	48 63 c9             	movslq %ecx,%rcx
+  bf6865:	31 d2                	xor    %edx,%edx
+  bf6867:	48 85 c9             	test   %rcx,%rcx
+  bf686a:	48 0f 48 ca          	cmovs  %rdx,%rcx
+  bf686e:	48 8b 54 24 10       	mov    0x10(%rsp),%rdx
+  bf6873:	4c 0f af d1          	imul   %rcx,%r10
+  bf6877:	49 29 ca             	sub    %rcx,%r10
+  bf687a:	4a 8d 0c 92          	lea    (%rdx,%r10,4),%rcx
+  bf687e:	85 f6                	test   %esi,%esi
+  bf6880:	7e 1e                	jle    bf68a0 <type2_kin_add_.constprop.0.isra.0+0x50>
+  bf6882:	ba 01 00 00 00       	mov    $0x1,%edx
+  bf6887:	eb 0f                	jmp    bf6898 <type2_kin_add_.constprop.0.isra.0+0x48>
+  bf6889:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  bf6890:	48 83 c2 01          	add    $0x1,%rdx
+  bf6894:	39 d6                	cmp    %edx,%esi
+  bf6896:	7c 08                	jl     bf68a0 <type2_kin_add_.constprop.0.isra.0+0x50>
+  bf6898:	39 44 91 fc          	cmp    %eax,-0x4(%rcx,%rdx,4)
+  bf689c:	75 f2                	jne    bf6890 <type2_kin_add_.constprop.0.isra.0+0x40>
+  bf689e:	c3                   	ret
+  bf689f:	90                   	nop
+  bf68a0:	8d 56 01             	lea    0x1(%rsi),%edx
+  bf68a3:	43 89 14 99          	mov    %edx,(%r9,%r11,4)
+  bf68a7:	89 04 b1             	mov    %eax,(%rcx,%rsi,4)
+  bf68aa:	c3                   	ret
+  bf68ab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  bf68b0:	48 63 d2             	movslq %edx,%rdx
+  bf68b3:	31 c9                	xor    %ecx,%ecx
+  bf68b5:	48 85 d2             	test   %rdx,%rdx
+  bf68b8:	48 0f 48 d1          	cmovs  %rcx,%rdx
+  bf68bc:	4c 0f af d2          	imul   %rdx,%r10
+  bf68c0:	49 29 d2             	sub    %rdx,%r10
+  bf68c3:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+  bf68c8:	4a 8d 0c 92          	lea    (%rdx,%r10,4),%rcx
+  bf68cc:	85 f6                	test   %esi,%esi
+  bf68ce:	7e d0                	jle    bf68a0 <type2_kin_add_.constprop.0.isra.0+0x50>
+  bf68d0:	ba 01 00 00 00       	mov    $0x1,%edx
+  bf68d5:	eb 11                	jmp    bf68e8 <type2_kin_add_.constprop.0.isra.0+0x98>
+  bf68d7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  bf68de:	00 00 
+  bf68e0:	48 83 c2 01          	add    $0x1,%rdx
+  bf68e4:	39 d6                	cmp    %edx,%esi
+  bf68e6:	7c b8                	jl     bf68a0 <type2_kin_add_.constprop.0.isra.0+0x50>
+  bf68e8:	39 44 91 fc          	cmp    %eax,-0x4(%rcx,%rdx,4)
+  bf68ec:	75 f2                	jne    bf68e0 <type2_kin_add_.constprop.0.isra.0+0x90>
+  bf68ee:	c3                   	ret
+
+Disassembly of section .fini:

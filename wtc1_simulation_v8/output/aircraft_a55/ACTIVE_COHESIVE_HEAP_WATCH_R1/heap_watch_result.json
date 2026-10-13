@@ -1,0 +1,71 @@
+{
+  "created_epoch": 1791892358.9463863,
+  "wall_s": 0.6287719580000006,
+  "Engine_exit_code": 3,
+  "events": [
+    {
+      "bits": 1,
+      "instruction_after_event_offset": "0x19b70b",
+      "pointer": "0x623847975660",
+      "pointer_mod16": 0,
+      "registers_at_event": {
+        "rax": "0x623847975660",
+        "r8": "0x0",
+        "rdi": "0x11",
+        "rsi": "0x0",
+        "rdx": "0xffffffffffffffff",
+        "rcx": "0x0"
+      },
+      "store_destination_from_R8_RAX": "0x311c23cbab308",
+      "at_known_free_call": false,
+      "malloc_size_word": "0x31",
+      "preceding_word": "0x623847975630",
+      "watched_header_now": "0x31"
+    },
+    {
+      "bits": 2,
+      "instruction_after_event_offset": "0x8decc8",
+      "pointer": "0x623847975660",
+      "pointer_mod16": 0,
+      "registers_at_event": {
+        "rax": "0x0",
+        "r8": "0x623847975650",
+        "rdi": "0x623847975668",
+        "rsi": "0x6238479756d8",
+        "rdx": "0x623847975678",
+        "rcx": "0x623847975670"
+      },
+      "store_destination_from_R8_RAX": "0x623847975658",
+      "at_known_free_call": false,
+      "malloc_size_word": "0x0",
+      "preceding_word": "0xc024000000000000",
+      "watched_header_now": "0x0"
+    },
+    {
+      "bits": 4,
+      "instruction_after_event_offset": "0xb202a1",
+      "pointer": "0x623847975660",
+      "pointer_mod16": 0,
+      "registers_at_event": {
+        "rax": "0x17",
+        "r8": "0x6238475a3010",
+        "rdi": "0x623847975660",
+        "rsi": "0x6238477b68b0",
+        "rdx": "0x623e64eadd46",
+        "rcx": "0x4"
+      },
+      "store_destination_from_R8_RAX": "0x6238475a30d0",
+      "at_known_free_call": true,
+      "malloc_size_word": "0x0",
+      "preceding_word": "0xc024000000000000",
+      "watched_header_now": "0x0"
+    }
+  ],
+  "abort": {
+    "signal": 6,
+    "PC": "0x78a44269ec0c",
+    "NODREAC_pointer": "0x623847975660"
+  },
+  "SRCOORK_contexts": [],
+  "scope": "Three hardware watches in an owned TRACEME child: descriptor pointer writes, allocated header writes and the native free call identified by CFI/disassembly. Bounded numeric reads, no code or mechanical process writes; native signals forwarded."
+}

@@ -1,0 +1,24 @@
+{
+  "source": "wtc1_simulation_v8\\scripts\\active_aircraft_a55_cohesive.py",
+  "source_sha256": "384443e705b01086320ce03426a143f4b78da1a7e0512476d2b90faedadf73c4",
+  "derived": "wtc1_simulation_v8\\scripts\\active_aircraft_a55_cohesive_r1.py",
+  "derived_sha256": "a42aecb8ab3129a2933a4ae67899a636d1f34553249c979e71f27dedd5d753e7",
+  "changes": [
+    {
+      "old": "DEC=OUT/'active_dof_predeclaration.json'",
+      "new": "DEC=OUT/'active_dof_predeclaration_r1.json'",
+      "count": 1
+    },
+    {
+      "old": "OUT/'active_dof_controls'",
+      "new": "OUT/'active_dof_controls_r1'",
+      "count": 2
+    },
+    {
+      "old": "env=__import__('os').environ|{'OMP_NUM_THREADS':'1','RAD_HMPP_DOMAINS':'1','OPENRADIOSS_PATH':str(RUNTIME),'RAD_CFG_PATH':str(RUNTIME/'hm_cfg_files')}",
+      "new": "env=__import__('run_aircraft_a17').env()|{'OMP_NUM_THREADS':'1','RAD_HMPP_DOMAINS':'1'}",
+      "count": 1
+    }
+  ],
+  "scope": "Fresh R1 outputs and established Windows Starter environment only. First unavailable-reader-configuration launches preserved; no mechanical input or acceptance change."
+}

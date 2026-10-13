@@ -1,0 +1,43 @@
+{
+  "created_epoch": 1791892122.6602407,
+  "wall_s": 0.6616346240000004,
+  "Engine_exit_code": 3,
+  "events": [
+    {
+      "bits": 1,
+      "instruction_after_event_offset": "0x19b70b",
+      "pointer": "0x5d6cda7d7dc0",
+      "pointer_mod16": 0,
+      "at_known_free_call": false,
+      "malloc_size_word": "0x31",
+      "preceding_word": "0x5d6cda7d7d90",
+      "watched_header_now": "0x31"
+    },
+    {
+      "bits": 2,
+      "instruction_after_event_offset": "0x8decc8",
+      "pointer": "0x5d6cda7d7dc0",
+      "pointer_mod16": 0,
+      "at_known_free_call": false,
+      "malloc_size_word": "0x0",
+      "preceding_word": "0xc024000000000000",
+      "watched_header_now": "0x0"
+    },
+    {
+      "bits": 4,
+      "instruction_after_event_offset": "0xb202a1",
+      "pointer": "0x5d6cda7d7dc0",
+      "pointer_mod16": 0,
+      "at_known_free_call": true,
+      "malloc_size_word": "0x0",
+      "preceding_word": "0xc024000000000000",
+      "watched_header_now": "0x0"
+    }
+  ],
+  "abort": {
+    "signal": 6,
+    "PC": "0x76f8a989ec0c",
+    "NODREAC_pointer": "0x5d6cda7d7dc0"
+  },
+  "scope": "Three hardware watches in an owned TRACEME child: descriptor pointer writes, allocated header writes and the native free call identified by CFI/disassembly. Bounded numeric reads, no code or mechanical process writes; native signals forwarded."
+}

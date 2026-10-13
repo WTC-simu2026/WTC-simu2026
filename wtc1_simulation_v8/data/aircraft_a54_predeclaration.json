@@ -1,0 +1,166 @@
+{
+  "declared_utc": "2026-10-13T11:02:08.884714+00:00",
+  "iteration": "AIRCRAFT-A54",
+  "seed": 1102079,
+  "random_draws": 0,
+  "preparation": "wtc1_simulation_v8/data/aircraft_a54_preparation.json",
+  "preparation_sha256": "012eab867505428ae39c2613b8a0e003af56d8a1b66c0d6a7e01e0424cd5008e",
+  "authorization": {
+    "received_utc": "2026-10-13T11:02:08.883418+00:00",
+    "explicit_human_authorization": true,
+    "answer": "oui j'autorise, continue l'objectif1 : creer la video 3d des 10 premieres secondes de l'impact modelisé sur le WTC1",
+    "proposal": "wtc1_simulation_v8/output/aircraft_a53/proposition_correctif_graphe_moteur.md",
+    "proposal_sha256": "3b73fc0532d6bbb73eccc61edbb636d569b37c665d11325fd70b769878397ad1",
+    "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+    "patch_sha256": "053e40c2833aad51d77f670aba0dfc9a8f016981d961d1edb7d04c3734154c64",
+    "cap_s": 3600,
+    "maximum_CPU_threads": 6,
+    "GPU": false,
+    "new_installation": false,
+    "scope": "Exact A53 graph patch, third separate Engine and fresh bounded qualification controls; continue objective1 subject to physical gates. Prior authorizations are not reused."
+  },
+  "patch": {
+    "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+    "source_path": "engine/source/implicit/ind_glob_k.F",
+    "original_sha256": "22118686d6690b2e0b7be7e2bc9dd4b55a7450b52f7ec29f4a13000f7a675e81",
+    "patch_path": "tmp/aircraft_a53_graph_patch_proposal/type2_graph_routing.patch",
+    "patch_sha256": "053e40c2833aad51d77f670aba0dfc9a8f016981d961d1edb7d04c3734154c64",
+    "proposed_source_path": "tmp/aircraft_a53_graph_patch_proposal/ind_glob_k.F.proposed",
+    "proposed_sha256": "e90e934721b31d645d7d7ce1e3697008ba0f74f21d7c38afdd583416d143fe90",
+    "read_only_hash_checks_pass": true,
+    "applied": false,
+    "compiled": false,
+    "native_qualified": false,
+    "scope": "TYPE2 add/get/membership in DIM_KINE_T and IND_KINE_K plus three storage-selection helpers, one source file only.",
+    "sizing_rule": "Main rows first; ordinary sizing indices remain global with existing padding.",
+    "building_rule": "Ordinary rows in ICOK; main rows in ICOKM at row-INK.",
+    "cached_static_scope_pass": true,
+    "cached_python_oracle_cases_passed": 8,
+    "cached_checks_rerun": false,
+    "license": "AGPL-3.0-or-later",
+    "complete_engine_source_and_patch_in_current_MIT_public_manifest": false
+  },
+  "build": {
+    "planned_candidate_directory": "wtc1_simulation_v8/openradioss_runtime/a54_type2_graph_candidate",
+    "candidate_directory_currently_exists": false,
+    "planned_output_directory": "wtc1_simulation_v8/output/aircraft_a54",
+    "output_directory_currently_exists": false,
+    "reuse_builder_as_reference_only": "wtc1_simulation_v8/scripts/build_aircraft_a44_legacy_mumps.py",
+    "builder_adaptation_needed": "A44 builder asserts AIRCRAFT-A43 and a nonexistent A44 directory, and reads the old authorization. Create a separate A54 builder only after the new consent; never run A44 builder directly or weaken its guards.",
+    "cached_source_archive": {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/source.tar.gz",
+      "sha256": "d64b773e899c174f5d59aadc4d2b73a101a083581e611d67215aaa50037cf9f8",
+      "bytes": 35589972,
+      "read_only_hash_check_pass": true,
+      "original_target_member_hash_check_pass": true,
+      "member_extracted_to_filesystem": false
+    },
+    "cached_dependency_archive": {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/extlib_v67.tar.gz",
+      "sha256": "e7eb6f949702dc8a1fd74b16221ac1aae43b439358cb2b7e0c8cd7e5b8d17cdb",
+      "bytes": 26929629,
+      "read_only_hash_check_pass": true,
+      "requested_version": 71,
+      "cached_version": 67,
+      "difference_remains_explicitly_unqualified": true,
+      "metadata_override": "Preserve original EXTLIB_VERSION.json and record the same A44 build-only 71->67 override separately from the sole mechanical-code patch."
+    },
+    "library_layout": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/library_layout",
+    "library_layout_subdirectories_present": [
+      "mumps",
+      "scalapack",
+      "lapack"
+    ],
+    "runtime": "Existing Ubuntu/GNU/OpenMPI/MUMPS; exact current versions and linkage to be recorded after authorization, before native qualification.",
+    "precision": "dp",
+    "maximum_CPU_threads": 6,
+    "GPU": false,
+    "cap_s": 3600,
+    "estimated_minutes": [
+      10,
+      30
+    ],
+    "estimate_basis": "A44 saved total build wall time 311.3923375606537 seconds; preparation, patch verification and host load add uncertainty. Hard cap remains one hour.",
+    "new_sparse_ext4_image_GiB": 8,
+    "new_installation_or_upgrade": false,
+    "new_source_download_required": false,
+    "old_build_image_or_workspace_modified": false,
+    "deliverables": [
+      "separate complete source",
+      "exact patch",
+      "source/dependency hashes",
+      "build parameters and current versions",
+      "step logs and elapsed times",
+      "isolated Engine binary and SHA256",
+      "linkage inventory",
+      "preservation review"
+    ]
+  },
+  "native_controls": {
+    "CPU_threads": 1,
+    "GPU": false,
+    "per_process_cap_s": 180,
+    "old_engine_diagnostics_rerun": false,
+    "fresh_corrected_engine_controls_only": true,
+    "ordered_gates": [
+      {
+        "id": "N1_GRAPH_DESTINATION",
+        "input": "Same original non-grouped A49 restart and Engine card as aircraft_a53_write_watch_predeclaration.json, copied to a new case directory.",
+        "criterion": "Correct table and stride for the runtime row region, consistent counts and neighbor sets, duplicate insertion does not inflate the count, no write to the wrong table.",
+        "instrumentation": "Recompute offsets/symbols, runtime INLOC and buffer addresses from the new binary; A53 offsets, addresses, row numbers and dimensions are evidence, not fixed addresses for the new Engine. An unobserved or inlined entry remains inconclusive."
+      },
+      {
+        "id": "N2_WHOLE_CHECK_COMPARISON",
+        "inputs": [
+          "A49 non-grouped reference, unchanged",
+          "A52 paired TYPE2 R1 diagnostic candidate, unchanged and still rejected"
+        ],
+        "criterion": "Record all native errors, warning families, missing graph rows and TYPE2 binding comparisons against cached baselines. A52 cannot be accepted without native binding equivalence and required mechanical gates.",
+        "qualification_limit": "CHECK forces PCG/IPREC5; a passing CHECK does not qualify a MUMPS impact. Five TYPE25 contacts ignored in implicit remain blocking."
+      },
+      {
+        "id": "N3_INDEPENDENT_PHYSICAL_QUALIFICATION",
+        "domains": [
+          "mass and rotational inertia",
+          "loaded cohesive laws and growth",
+          "shell response",
+          "contact impulse and contact work",
+          "free dynamics and momentum",
+          "local and global energy/work",
+          "mesh and time-step sensitivity"
+        ],
+        "criterion": "Reuse saved input definitions, baselines and unchanged acceptance thresholds. Freeze exact case files, hashes and numerical criteria in an A54 predeclaration before each new native run. Do not fit to damage, invent RKE or compensate budgets.",
+        "qualification_limit": "This is a staged route. Every missing or failed domain stays unqualified; a successful build or graph gate does not imply whole-impact insertion readiness."
+      }
+    ]
+  },
+  "preservation": {
+    "protected_A44_binary": "wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi",
+    "protected_A44_binary_sha256": "871dc6c9f154173eb4148b95cdfeed3e485735d64eb48957722b3588e319730a",
+    "protected_A44_binary_current_hash_pass": true,
+    "old_engines_and_outputs_preserved": true,
+    "physical_inputs_or_budgets_changed": false,
+    "A52_candidate_accepted": false,
+    "source_archives_read_only": true,
+    "state_registry_and_publication_cycle_updates": false
+  },
+  "retained_limitations": {
+    "A49_mechanical_errors": 15,
+    "A49_warning_messages": 49370,
+    "implicit_ignored_TYPE25": 5,
+    "failed_or_missing_domains": [
+      "A40 loaded cohesive/growth",
+      "A34 shells",
+      "A36 refinement",
+      "local energy/work",
+      "inertia qualification"
+    ],
+    "all_failures_explained_by_graph_bug": false,
+    "whole_insertion_ready": false
+  },
+  "target_physical_s": 10,
+  "best_whole_physical_s": 0.0200001220703125,
+  "new_whole_duration_credit_s": 0,
+  "whole_insertion_ready": false,
+  "objective1_complete": false
+}
