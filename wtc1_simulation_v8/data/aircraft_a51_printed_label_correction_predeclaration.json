@@ -1,0 +1,134 @@
+{
+  "created_utc": "2026-10-13T07:48:41.388475+00:00",
+  "iteration": "AIRCRAFT-A51",
+  "seed": 1102076,
+  "random_draws": 0,
+  "source_call_sites": [
+    {
+      "path": "engine/source/interfaces/interf/i2_imp1.F",
+      "sha256": "66acdc80611ee31b2107b03678d2585a69c60df512dd46704d719a78151bb932",
+      "raw_source_redistributed": false,
+      "all_PRINT_WKIJ_calls_pass_original_ITAB_labels": [
+        {
+          "line": 341,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NJ) ,ITAB(NM) ,2 )"
+        },
+        {
+          "line": 349,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(I) ,2 )"
+        },
+        {
+          "line": 362,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(NJ) ,2 )"
+        },
+        {
+          "line": 378,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(NJ) ,2 )"
+        },
+        {
+          "line": 414,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NM) ,ITAB(NM1) ,2 )"
+        },
+        {
+          "line": 454,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NM) ,ITAB(NM1) ,2 )"
+        },
+        {
+          "line": 692,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NJ) ,ITAB(NM) ,2 )"
+        },
+        {
+          "line": 700,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(I) ,2 )"
+        },
+        {
+          "line": 716,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(NJ) ,2 )"
+        },
+        {
+          "line": 734,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(NJ) ,2 )"
+        },
+        {
+          "line": 750,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NM) ,ITAB(NM1) ,2 )"
+        },
+        {
+          "line": 754,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NM1) ,ITAB(NM) ,2 )"
+        },
+        {
+          "line": 773,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NM) ,ITAB(NM1) ,2 )"
+        },
+        {
+          "line": 2582,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NJ) ,ITAB(NM) ,2 )"
+        },
+        {
+          "line": 2768,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NJ) ,ITAB(NM) ,2 )"
+        }
+      ]
+    },
+    {
+      "path": "engine/source/constraints/general/rbe2/rbe2_imp0.F",
+      "sha256": "68bae640ff1a438858b9c51a06a835039e03bb9090a032a275b53e663333aaef",
+      "raw_source_redistributed": false,
+      "all_PRINT_WKIJ_calls_pass_original_ITAB_labels": [
+        {
+          "line": 265,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(N) ,IP )"
+        },
+        {
+          "line": 275,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(M) ,IP )"
+        },
+        {
+          "line": 295,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(N) ,ITAB(M) ,IP )"
+        },
+        {
+          "line": 403,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(N) ,IP )"
+        },
+        {
+          "line": 412,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(M) ,IP )"
+        },
+        {
+          "line": 430,
+          "arguments": "IF (IR==1) CALL PRINT_WKIJ(ITAB(N) ,ITAB(M) ,IP )"
+        }
+      ]
+    },
+    {
+      "path": "engine/source/implicit/imp_solv.F",
+      "sha256": "88e72fa3caf29de165d5690ca1b7e534f2716b44db80e737e76e6d68c377dbca",
+      "raw_source_redistributed": false,
+      "zero_stiffness_and_mass_diagnostic_writes": [
+        {
+          "line": 2893,
+          "arguments": "WRITE(IOUT,1001)ITAB(I),DIR(J),DIAG_M(ID)"
+        },
+        {
+          "line": 2895,
+          "arguments": "WRITE(IOUT,1002)ITAB(I),DIR(J-3),DIAG_M(ID)"
+        },
+        {
+          "line": 3042,
+          "arguments": "WRITE(IOUT,1001)ITAB(I),DIR(J),DIAG_M(ID)"
+        },
+        {
+          "line": 3044,
+          "arguments": "WRITE(IOUT,1002)ITAB(I),DIR(J-3),DIAG_M(ID)"
+        }
+      ]
+    }
+  ],
+  "correction": "The printer itself receives NI/NJ unchanged, but TYPE2/RBE2 callers pass ITAB(NI)/ITAB(NJ), so printed numbers are original source labels. Zero-stiffness printer also uses ITAB(I). Earlier reinterpretation as internal indices is rejected.",
+  "original_role_review_retained": "wtc1_simulation_v8/output/aircraft_a51/whole_constraint_role_mapping_review.json",
+  "native_coordinate_and_index_map_remains_valid": true,
+  "no_criteria_physics_or_solver_change": true,
+  "before_corrected_role_analysis": true
+}

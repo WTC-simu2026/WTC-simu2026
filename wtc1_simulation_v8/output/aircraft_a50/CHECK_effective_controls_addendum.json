@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-10-12T17:26:59.652597+00:00",
+  "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+  "files": [
+    {
+      "path": "engine/source/input/lectur.F",
+      "sha256": "455caa7c28edcca1dc265b9c61c57386c52687c58185cd85318a1e4dafd2fbe3",
+      "raw_source_redistributed": false,
+      "line_start": 3213,
+      "line_end": 3220,
+      "behavior": "IMP_CHK>0 forces IPREC5, ISOLV1, ILINE1 and D_TOL0, independent of the input solver keyword."
+    },
+    {
+      "path": "engine/source/implicit/imp_init.F",
+      "sha256": "d2480eec5cb7ad61cb44c6cff290c74b9e349619e5434b2aefa22d54dad90ec0",
+      "raw_source_redistributed": false,
+      "line": 89,
+      "behavior": "IPREC5 selects IKPAT1. This matches the native A48/A49 pattern observation."
+    }
+  ],
+  "CHECK_does_not_run_the_requested_MUMPS_solution": true,
+  "fixed_CHECK_controls": {
+    "ISOLV": 1,
+    "IPREC": 5,
+    "ILINE": 1,
+    "IKPAT": 1
+  },
+  "candidate_Engine_contains_MUMPS_but_CHECK_is_not_MUMPS_dynamic_qualification": true,
+  "earlier_reports_or_configs_not_rewritten": true,
+  "proposed_solver_only_CHECK_variation_not_executed": true,
+  "reason": "The pinned code overrides the requested solver during CHECK; changing only /IMPL/SOLVER would not test the intended alternative.",
+  "no_implicit_impact_with_ignored_contacts": true,
+  "software_changed": false
+}

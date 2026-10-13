@@ -1,0 +1,118 @@
+{
+  "created_utc": "2026-10-12T17:18:55.709665+00:00",
+  "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+  "files": [
+    {
+      "path": "engine/source/implicit/imp_glob_k.F",
+      "sha256": "7a6630fe353463ada0d2e0066073970694e8bb6625a05cac9a14850bd9e3d30e",
+      "bytes": 144033,
+      "PRINT_WKIJ_calls": [],
+      "raw_source_redistributed": false,
+      "missing_column_behavior": "PUT_KIJ sets IERR=1 and returns before adding the corresponding KIJ block. A missing block is not assembled as a valid zero stiffness.",
+      "reported_node_indices": "PRINT_WKIJ prints passed NI/NJ without a label mapping; do not identify them with original /NODE labels without independent evidence."
+    },
+    {
+      "path": "engine/source/interfaces/interf/i2_imp1.F",
+      "sha256": "66acdc80611ee31b2107b03678d2585a69c60df512dd46704d719a78151bb932",
+      "bytes": 93264,
+      "PRINT_WKIJ_calls": [
+        {
+          "line": 341,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NJ) ,ITAB(NM) ,2 )"
+        },
+        {
+          "line": 349,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(I) ,2 )"
+        },
+        {
+          "line": 362,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(NJ) ,2 )"
+        },
+        {
+          "line": 378,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(NJ) ,2 )"
+        },
+        {
+          "line": 414,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NM) ,ITAB(NM1) ,2 )"
+        },
+        {
+          "line": 454,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NM) ,ITAB(NM1) ,2 )"
+        },
+        {
+          "line": 692,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NJ) ,ITAB(NM) ,2 )"
+        },
+        {
+          "line": 700,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(I) ,2 )"
+        },
+        {
+          "line": 716,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(NJ) ,2 )"
+        },
+        {
+          "line": 734,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(NJ) ,2 )"
+        },
+        {
+          "line": 750,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NM) ,ITAB(NM1) ,2 )"
+        },
+        {
+          "line": 754,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NM1) ,ITAB(NM) ,2 )"
+        },
+        {
+          "line": 773,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NM) ,ITAB(NM1) ,2 )"
+        },
+        {
+          "line": 2582,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NJ) ,ITAB(NM) ,2 )"
+        },
+        {
+          "line": 2768,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NJ) ,ITAB(NM) ,2 )"
+        }
+      ],
+      "raw_source_redistributed": false
+    },
+    {
+      "path": "engine/source/constraints/general/rbe2/rbe2_imp0.F",
+      "sha256": "68bae640ff1a438858b9c51a06a835039e03bb9090a032a275b53e663333aaef",
+      "bytes": 64490,
+      "PRINT_WKIJ_calls": [
+        {
+          "line": 265,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(N) ,IP )"
+        },
+        {
+          "line": 275,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(M) ,IP )"
+        },
+        {
+          "line": 295,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(N) ,ITAB(M) ,IP )"
+        },
+        {
+          "line": 403,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(N) ,IP )"
+        },
+        {
+          "line": 412,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(NI) ,ITAB(M) ,IP )"
+        },
+        {
+          "line": 430,
+          "call": "IF (IR==1) CALL PRINT_WKIJ(ITAB(N) ,ITAB(M) ,IP )"
+        }
+      ],
+      "raw_source_redistributed": false
+    }
+  ],
+  "conclusion": "Completed CHECK with missing connectivity does not certify the stiffness: PUT_KIJ explicitly returns without adding a missing block. Original labels of printed indices still need mapping. No physical instability or material conclusion follows.",
+  "raw_source_redistributed": false,
+  "software_changed": false
+}

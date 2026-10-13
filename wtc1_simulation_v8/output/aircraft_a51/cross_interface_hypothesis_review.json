@@ -1,0 +1,255 @@
+{
+  "created_utc": "2026-10-13T07:54:06.312195+00:00",
+  "verified_printed_source_labels": true,
+  "TYPE2_messages_classified": 48996,
+  "counts": {
+    "different_declared_TYPE2_sets": 37165,
+    "at_least_one_common_declared_TYPE2": 11831
+  },
+  "examples": [
+    {
+      "original_nodes": [
+        48158,
+        48151
+      ],
+      "messages": 2,
+      "roles": [
+        [
+          {
+            "constraint": "/INTER/TYPE2/16430",
+            "role": "secondary",
+            "family": "TYPE2"
+          }
+        ],
+        [
+          {
+            "constraint": "/INTER/TYPE2/16431",
+            "role": "potential_main",
+            "family": "TYPE2"
+          },
+          {
+            "constraint": "/RBE2/3293",
+            "role": "main",
+            "family": "RBE2"
+          }
+        ]
+      ]
+    },
+    {
+      "original_nodes": [
+        48161,
+        48151
+      ],
+      "messages": 2,
+      "roles": [
+        [
+          {
+            "constraint": "/INTER/TYPE2/16430",
+            "role": "secondary",
+            "family": "TYPE2"
+          }
+        ],
+        [
+          {
+            "constraint": "/INTER/TYPE2/16431",
+            "role": "potential_main",
+            "family": "TYPE2"
+          },
+          {
+            "constraint": "/RBE2/3293",
+            "role": "main",
+            "family": "RBE2"
+          }
+        ]
+      ]
+    },
+    {
+      "original_nodes": [
+        48164,
+        48151
+      ],
+      "messages": 2,
+      "roles": [
+        [
+          {
+            "constraint": "/INTER/TYPE2/16430",
+            "role": "secondary",
+            "family": "TYPE2"
+          }
+        ],
+        [
+          {
+            "constraint": "/INTER/TYPE2/16431",
+            "role": "potential_main",
+            "family": "TYPE2"
+          },
+          {
+            "constraint": "/RBE2/3293",
+            "role": "main",
+            "family": "RBE2"
+          }
+        ]
+      ]
+    },
+    {
+      "original_nodes": [
+        48163,
+        48151
+      ],
+      "messages": 2,
+      "roles": [
+        [
+          {
+            "constraint": "/INTER/TYPE2/16430",
+            "role": "secondary",
+            "family": "TYPE2"
+          }
+        ],
+        [
+          {
+            "constraint": "/INTER/TYPE2/16431",
+            "role": "potential_main",
+            "family": "TYPE2"
+          },
+          {
+            "constraint": "/RBE2/3293",
+            "role": "main",
+            "family": "RBE2"
+          }
+        ]
+      ]
+    },
+    {
+      "original_nodes": [
+        48159,
+        48152
+      ],
+      "messages": 3,
+      "roles": [
+        [
+          {
+            "constraint": "/INTER/TYPE2/16430",
+            "role": "secondary",
+            "family": "TYPE2"
+          }
+        ],
+        [
+          {
+            "constraint": "/INTER/TYPE2/16431",
+            "role": "potential_main",
+            "family": "TYPE2"
+          },
+          {
+            "constraint": "/RBE2/3294",
+            "role": "main",
+            "family": "RBE2"
+          }
+        ]
+      ]
+    },
+    {
+      "original_nodes": [
+        48162,
+        48152
+      ],
+      "messages": 3,
+      "roles": [
+        [
+          {
+            "constraint": "/INTER/TYPE2/16430",
+            "role": "secondary",
+            "family": "TYPE2"
+          }
+        ],
+        [
+          {
+            "constraint": "/INTER/TYPE2/16431",
+            "role": "potential_main",
+            "family": "TYPE2"
+          },
+          {
+            "constraint": "/RBE2/3294",
+            "role": "main",
+            "family": "RBE2"
+          }
+        ]
+      ]
+    },
+    {
+      "original_nodes": [
+        48164,
+        48152
+      ],
+      "messages": 3,
+      "roles": [
+        [
+          {
+            "constraint": "/INTER/TYPE2/16430",
+            "role": "secondary",
+            "family": "TYPE2"
+          }
+        ],
+        [
+          {
+            "constraint": "/INTER/TYPE2/16431",
+            "role": "potential_main",
+            "family": "TYPE2"
+          },
+          {
+            "constraint": "/RBE2/3294",
+            "role": "main",
+            "family": "RBE2"
+          }
+        ]
+      ]
+    },
+    {
+      "original_nodes": [
+        48161,
+        48152
+      ],
+      "messages": 3,
+      "roles": [
+        [
+          {
+            "constraint": "/INTER/TYPE2/16430",
+            "role": "secondary",
+            "family": "TYPE2"
+          }
+        ],
+        [
+          {
+            "constraint": "/INTER/TYPE2/16431",
+            "role": "potential_main",
+            "family": "TYPE2"
+          },
+          {
+            "constraint": "/RBE2/3294",
+            "role": "main",
+            "family": "RBE2"
+          }
+        ]
+      ]
+    }
+  ],
+  "source": {
+    "path": "engine/source/implicit/ind_glob_k.F",
+    "sha256": "22118686d6690b2e0b7be7e2bc9dd4b55a7450b52f7ec29f4a13000f7a675e81",
+    "NMC2_assignments": [
+      {
+        "line": 2915,
+        "statement": "NMC2=0"
+      }
+    ],
+    "IND_KINE_K_TYPE2_loop_line": 2823,
+    "RBE2_loop_line": 2918,
+    "raw_source_redistributed": false
+  },
+  "hypothesis": "The graph builder handles each TYPE2 group and its within-group secondary pairs before RBE2; the explicit cross-interface count NMC2 remains0 in this routine. Missing cross-interface blocks are a candidate explanation, to test on one complete physical facet with the actual two opposing TYPE2 interfaces and cohesive-offset RBE2s.",
+  "surface_membership_is_not_native_interpolation_weights": true,
+  "cause_proven": false,
+  "next_minimal_test": "Copy final facet216 from the real input. Compare same native geometry/materials/offsets/core with original two TYPE2 groups and a single grouped alternative. Grouping is not mechanically qualified unless native selected main facets, weights and offsets match; no whole impact or silent substitution.",
+  "known_damage_or_fit_target": false,
+  "new_Engine_executions": 0,
+  "software_or_physics_changed": false
+}
