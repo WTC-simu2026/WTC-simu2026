@@ -1,0 +1,104 @@
+{
+  "created_utc": "2026-10-13T15:16:32.423235+00:00",
+  "iteration": "AIRCRAFT-A59",
+  "seed": 1102084,
+  "random_draws": 0,
+  "workspace": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an",
+  "purpose": "Independent area surface residual and active pure-mode tangent prototype. Verify actual equilibrium/closed integral/FD/cached native witnesses before considering a source patch.",
+  "cohesive": {
+    "law": "LAW117",
+    "property": "TYPE43",
+    "EN_N_mm3": 4400,
+    "ET_N_mm3": 800,
+    "TN_MPa": 450,
+    "TT_MPa": 100,
+    "GI_N_mm": 50,
+    "GII_N_mm": 50,
+    "area_mass_density_g_mm2": 1e-20,
+    "nodal_instrument_mass_g": 1,
+    "Imass": 1,
+    "Idel": 4,
+    "Irupt": 1,
+    "Ismstr": 1,
+    "stiffness_derivation": "A07 analytical contract E22000MPa/5mm; ET4000/5. Numerical interface reference only.",
+    "G_physical_measured": false,
+    "shear_strength_measured": false,
+    "whole_aircraft_transfer_qualified": false,
+    "true_glue_or_tearing_properties_identified": false
+  },
+  "acceptance": {
+    "work_energy_fraction": 0.01,
+    "absolute_energy_J": 0.001,
+    "work_per_area_G_fraction": 0.02,
+    "equal_peak_energy_fraction": 0.005,
+    "traction_maximum_relative": 0.02,
+    "prescribed_motion_mm": 0.0001,
+    "half_dt_work_fraction": 0.005,
+    "area_normalized_work_fraction": 0.005,
+    "stored_dissipated_reference_identity_relative": 1e-08
+  },
+  "cached_native_diagnostics": [
+    {
+      "case": {
+        "id": "NORMAL_L10",
+        "mode": "Z",
+        "L_mm": 10,
+        "dt_cap_ms": 2.5e-05
+      },
+      "path": "wtc1_simulation_v8/output/aircraft_a57/cohesive_controls/w0/NORMAL_L10/cohesive_diagnostics.npz",
+      "sha256": "28dc6cd4cfe445ef32aaee6b3ff01366a2f8af131b1ff2891c78105c62eb88db"
+    },
+    {
+      "case": {
+        "id": "NORMAL_L10_HALF",
+        "mode": "Z",
+        "L_mm": 10,
+        "dt_cap_ms": 1.25e-05
+      },
+      "path": "wtc1_simulation_v8/output/aircraft_a57/cohesive_controls/w0/NORMAL_L10_HALF/cohesive_diagnostics.npz",
+      "sha256": "79d6b3c2265e780c84e21f2a05bf0d87068ce335ec8313ae4a991002c9000618"
+    },
+    {
+      "case": {
+        "id": "NORMAL_L20",
+        "mode": "Z",
+        "L_mm": 20,
+        "dt_cap_ms": 2.5e-05
+      },
+      "path": "wtc1_simulation_v8/output/aircraft_a57/cohesive_controls/w0/NORMAL_L20/cohesive_diagnostics.npz",
+      "sha256": "7a2b1ed70c68f6b7f260a72818dcfc6437c35003182bb8475cf935cfa61d95da"
+    },
+    {
+      "case": {
+        "id": "SHEAR_L10",
+        "mode": "X",
+        "L_mm": 10,
+        "dt_cap_ms": 2.5e-05
+      },
+      "path": "wtc1_simulation_v8/output/aircraft_a57/cohesive_controls/w0/SHEAR_L10/cohesive_diagnostics.npz",
+      "sha256": "7009a9d2118e46b66293d0c695a28ae0817454b41edaf480cf6e2f8680863d58"
+    }
+  ],
+  "units": {
+    "length": "mm",
+    "force": "N",
+    "traction": "N/mm2",
+    "surface_K": "N/mm3",
+    "work_to_J": 0.001
+  },
+  "CPU": 1,
+  "GPU": false,
+  "cap_s": 120,
+  "expected_seconds": [
+    1,
+    30
+  ],
+  "native_Engine_executions": 0,
+  "Starter_runs": 0,
+  "new_Engine_software_patch_or_compile": false,
+  "mixed_mode_or_native_transfer_not_qualified": true,
+  "target_physical_s": 10,
+  "best_whole_physical_s": 0.0200001220703125,
+  "new_whole_duration_credit_s": 0,
+  "objective1_complete": false
+}
