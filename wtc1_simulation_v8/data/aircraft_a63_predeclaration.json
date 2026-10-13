@@ -1,0 +1,142 @@
+{
+  "created_utc": "2026-10-13T17:06:59.472269+00:00",
+  "iteration": "AIRCRAFT-A63",
+  "seed": 1102088,
+  "random_draws": 0,
+  "binary_sha256": "d36015d6238b5216ae7c5c4cbd909abb5c3cd7b25f724e6ef2faebc4814a4235",
+  "cohesive": {
+    "law": "LAW117",
+    "property": "TYPE43",
+    "EN_N_mm3": 4400,
+    "ET_N_mm3": 800,
+    "TN_MPa": 450,
+    "TT_MPa": 100,
+    "GI_N_mm": 50,
+    "GII_N_mm": 50,
+    "area_mass_density_g_mm2": 1e-20,
+    "nodal_instrument_mass_g": 1,
+    "Imass": 1,
+    "Idel": 4,
+    "Irupt": 1,
+    "Ismstr": 1,
+    "stiffness_derivation": "A07 analytical contract E22000MPa/5mm; ET4000/5. Numerical interface reference only.",
+    "G_physical_measured": false,
+    "shear_strength_measured": false,
+    "whole_aircraft_transfer_qualified": false,
+    "true_glue_or_tearing_properties_identified": false,
+    "power_exponent": 2,
+    "mode_coupling_gamma": 1,
+    "displacement_criterion": 1,
+    "linear_evolution": 1,
+    "symmetric_damage": false
+  },
+  "cases": [
+    {
+      "id": "FREE_ELASTIC",
+      "stage": "free",
+      "L_mm": 10,
+      "dt_cap_ms": 0.001,
+      "imposed_axes": [],
+      "knot_times_ms": [
+        0,
+        1
+      ],
+      "knot_gaps_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "end_ms": 1,
+      "initial_free_velocity_mm_ms": [
+        0,
+        1,
+        0
+      ],
+      "all_top_translations_free": true,
+      "no_imposed_displacements_or_velocities_during_run": true
+    },
+    {
+      "id": "FREE_ELASTIC_HALF",
+      "stage": "free",
+      "L_mm": 10,
+      "dt_cap_ms": 0.0005,
+      "imposed_axes": [],
+      "knot_times_ms": [
+        0,
+        1
+      ],
+      "knot_gaps_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "end_ms": 1,
+      "initial_free_velocity_mm_ms": [
+        0,
+        1,
+        0
+      ],
+      "all_top_translations_free": true,
+      "no_imposed_displacements_or_velocities_during_run": true
+    }
+  ],
+  "acceptance": {
+    "mass_relative": 1e-06,
+    "added_mass_relative": 1e-09,
+    "energy_relative": 0.02,
+    "energy_absolute_J": 1e-07,
+    "momentum_relative": 0.02,
+    "momentum_absolute_Ns": 1e-09,
+    "free_displacement_mm": 2e-05,
+    "free_velocity_mm_ms": 0.0002,
+    "junction_state_relative": 1e-05,
+    "junction_state_absolute": 1e-06,
+    "junction_time_ms": 2e-05,
+    "contact_impulse_observable_Ns": 1e-06,
+    "contact_IE_observable_J": 1e-07,
+    "comparison_energy_relative": 0.02,
+    "comparison_energy_absolute_J": 1e-07,
+    "half_dt_energy_relative": 0.005
+  },
+  "purpose": "Separate unconstrained Newmark dynamics from prescribed-axis counter conventions. Verify exact linear oscillator, all physical nodal momentum/energy and support-only impulse on the already authorized Engine.",
+  "source_protocol": "Pinned Newmark gamma.5 beta.25: endpointV[n]=2*published secant[n]-endpointV[n-1]. All moving DOFs here are FREE; no constrained-motion velocity reconstruction assumed.",
+  "analytical_reference": {
+    "top_mass_g": 4,
+    "area_mm2": 100,
+    "initial_speed_mm_ms": 1,
+    "initial_energy_J": 0.002,
+    "surface_stiffness_N_mm": 80000,
+    "omega_per_ms": 141.4213562373095,
+    "Newmark_phase_step": "2*atan(omega*dt/2)",
+    "exact_elastic_gap": "v0/omega*sin(n*phase_step)",
+    "exact_elastic_velocity": "v0*cos(n*phase_step)",
+    "parameter_fitting": false
+  },
+  "extra_analytical_displacement_tolerance_mm": 2e-05,
+  "extra_analytical_velocity_tolerance_mm_ms": 0.0002,
+  "authorized_A61_native_maximum_across_A62_A63": 12,
+  "A62_native_already_executed": 10,
+  "maximum_new_native_runs": 2,
+  "each_cap_s": 180,
+  "CPU": 1,
+  "GPU": false,
+  "new_software_changes_or_compilation": false,
+  "whole_mass_material_budgets_changed": false,
+  "target_physical_s": 10,
+  "best_whole_physical_s": 0.0200001220703125,
+  "new_whole_credit_s": 0
+}

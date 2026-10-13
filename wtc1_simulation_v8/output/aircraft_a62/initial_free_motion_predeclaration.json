@@ -1,0 +1,263 @@
+{
+  "created_utc": "2026-10-13T16:42:52.101751+00:00",
+  "iteration": "AIRCRAFT-A62",
+  "seed": 1102087,
+  "random_draws": 0,
+  "binary_sha256": "d36015d6238b5216ae7c5c4cbd909abb5c3cd7b25f724e6ef2faebc4814a4235",
+  "cohesive": {
+    "law": "LAW117",
+    "property": "TYPE43",
+    "EN_N_mm3": 4400,
+    "ET_N_mm3": 800,
+    "TN_MPa": 450,
+    "TT_MPa": 100,
+    "GI_N_mm": 50,
+    "GII_N_mm": 50,
+    "area_mass_density_g_mm2": 1e-20,
+    "nodal_instrument_mass_g": 1,
+    "Imass": 1,
+    "Idel": 4,
+    "Irupt": 1,
+    "Ismstr": 1,
+    "stiffness_derivation": "A07 analytical contract E22000MPa/5mm; ET4000/5. Numerical interface reference only.",
+    "G_physical_measured": false,
+    "shear_strength_measured": false,
+    "whole_aircraft_transfer_qualified": false,
+    "true_glue_or_tearing_properties_identified": false,
+    "power_exponent": 2,
+    "mode_coupling_gamma": 1,
+    "displacement_criterion": 1,
+    "linear_evolution": 1,
+    "symmetric_damage": false
+  },
+  "cases": [
+    {
+      "id": "ELASTIC_NORMAL_INITIAL_FREE_MOTION",
+      "stage": "initial_free_motion",
+      "L_mm": 10,
+      "dt_cap_ms": 0.001,
+      "imposed_axes": [
+        2
+      ],
+      "knot_times_ms": [
+        0,
+        0.25,
+        0.5,
+        0.75,
+        1
+      ],
+      "knot_gaps_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.04
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "end_ms": 1,
+      "model_domain": "elastic",
+      "initial_free_velocity_mm_ms": [
+        0,
+        0.01,
+        0
+      ]
+    },
+    {
+      "id": "DAMAGE_MIXED_INITIAL_FREE_MOTION",
+      "stage": "initial_free_motion",
+      "L_mm": 10,
+      "dt_cap_ms": 0.001,
+      "imposed_axes": [
+        0,
+        2
+      ],
+      "knot_times_ms": [
+        0,
+        0.25,
+        0.5,
+        0.75,
+        1
+      ],
+      "knot_gaps_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.08362720722292774,
+          0.0,
+          0.16725441444585548
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.08362720722292774,
+          0.0,
+          0.16725441444585548
+        ],
+        [
+          0.1319178396038717,
+          0.0,
+          0.2638356792077434
+        ]
+      ],
+      "end_ms": 1,
+      "proportional": true,
+      "direction": [
+        0.4472135954999579,
+        0.0,
+        0.8944271909999159
+      ],
+      "d0_mm": 0.10583109769315471,
+      "df_mm": 0.26816114254470097,
+      "model_domain": "damage",
+      "initial_free_velocity_mm_ms": [
+        0,
+        0.01,
+        0
+      ]
+    },
+    {
+      "id": "DAMAGE_MIXED_HALF_INITIAL_FREE_MOTION",
+      "stage": "initial_free_motion",
+      "L_mm": 10,
+      "dt_cap_ms": 0.0005,
+      "imposed_axes": [
+        0,
+        2
+      ],
+      "knot_times_ms": [
+        0,
+        0.25,
+        0.5,
+        0.75,
+        1
+      ],
+      "knot_gaps_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.08362720722292774,
+          0.0,
+          0.16725441444585548
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.08362720722292774,
+          0.0,
+          0.16725441444585548
+        ],
+        [
+          0.1319178396038717,
+          0.0,
+          0.2638356792077434
+        ]
+      ],
+      "end_ms": 1,
+      "proportional": true,
+      "direction": [
+        0.4472135954999579,
+        0.0,
+        0.8944271909999159
+      ],
+      "d0_mm": 0.10583109769315471,
+      "df_mm": 0.26816114254470097,
+      "model_domain": "damage",
+      "initial_free_velocity_mm_ms": [
+        0,
+        0.01,
+        0
+      ]
+    }
+  ],
+  "acceptance": {
+    "work_energy_fraction": 0.01,
+    "absolute_energy_J": 0.001,
+    "work_per_area_G_fraction": 0.02,
+    "equal_peak_energy_fraction": 0.005,
+    "traction_maximum_relative": 0.02,
+    "prescribed_motion_mm": 0.0001,
+    "half_dt_work_fraction": 0.005,
+    "area_normalized_work_fraction": 0.005,
+    "stored_dissipated_reference_identity_relative": 1e-08
+  },
+  "elastic_first_new_question": "Does the new surface branch advance under load with at least one unconstrained translation? No claim from NORMAL/exit0 alone.",
+  "unused_top_axes_free": true,
+  "same_nodal_instrument_mass_g": 8,
+  "whole_budgets_unchanged": true,
+  "implicit_numerics": {
+    "solver": 2,
+    "Newmark_gamma_beta": [
+      0.5,
+      0.25
+    ],
+    "nonlinear_tolerances": [
+      1e-11,
+      1e-11,
+      1e-11
+    ],
+    "linear_tolerance": 1e-08,
+    "fixed_dt_ms": "each declared case",
+    "minimum_dt_ms": 1e-12
+  },
+  "maximum_native_Engine_runs_all_stages": 12,
+  "each_cap_s": 180,
+  "CPU": 1,
+  "GPU": false,
+  "new_software_changes_beyond_approved_patch": false,
+  "old_Engine_replays": 0,
+  "regression_plan": [
+    "Two explicit mixed controls on the new binary from cached A60 initial states",
+    "TYPE7 implicit contact on the new binary from cached accepted input",
+    "Whole CHECK only after local implicit mechanical gate; at most one further native observer if needed"
+  ],
+  "new_whole_duration_credit_s": 0,
+  "comparison_cases": [
+    "DAMAGE_MIXED_INITIAL_FREE_MOTION",
+    "DAMAGE_MIXED_HALF_INITIAL_FREE_MOTION"
+  ],
+  "new_question": "At-rest free unknowns have zero normalized displacement/energy references: Newton diagnostics show NaN/Infinity while force residual is0. Does a declared nonzero initial free-axis velocity remove the singular normalization, with all three criteria123 and1e-11 tolerances unchanged?",
+  "initial_free_velocity_mm_ms": [
+    0,
+    0.01,
+    0
+  ],
+  "top_instrument_mass_g": 4,
+  "initial_instrument_KE_J": 2.0000000000000002e-07,
+  "only_additional_mechanical_condition": "Initial0.01mm/ms Y velocity on the four top instrument nodes; no aircraft/facade mass, material or whole budget changed.",
+  "all_original_criteria_and_at_rest_failed_gates_preserved": true,
+  "force_only_criterion_not_used": true,
+  "no_new_software_change": true,
+  "same_A62_binary": true,
+  "counts_towards_original_maximum12": true
+}

@@ -1,0 +1,135 @@
+{
+  "created_utc": "2026-10-13T16:31:19.213501+00:00",
+  "source_units": [
+    {
+      "path": "engine/source/output/th/bcs1th_imp.F",
+      "sha256": "a2b89917e5f023d09572eae23d2927e3ae551fe9b94eb9d5f5d219178749d68d",
+      "anchors": [
+        {
+          "line": 39,
+          "keyword": "FTHREAC"
+        }
+      ]
+    },
+    {
+      "path": "engine/source/output/th/thnod.F",
+      "sha256": "920a7ad618c0d6f4ffc0c00276a437c6c81bb94c1d0f7320630756db73d6ec67",
+      "anchors": [
+        {
+          "line": 179,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 185,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 191,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 197,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 203,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 209,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 346,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 354,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 362,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 370,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 378,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 386,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 610,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 616,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 622,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 628,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 634,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 640,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 717,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 724,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 731,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 738,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 745,
+          "keyword": "FTHREAC"
+        },
+        {
+          "line": 752,
+          "keyword": "FTHREAC"
+        }
+      ]
+    }
+  ],
+  "reaction_contract": "BCS1TH_IMP accumulates force times DT3/2, including previous force; THNOD writes FTHREAC. Thus recorded REAC is integrated impulse, not direct force.",
+  "acceptance": {
+    "work_energy_fraction": 0.01,
+    "absolute_energy_J": 0.001,
+    "work_per_area_G_fraction": 0.02,
+    "equal_peak_energy_fraction": 0.005,
+    "traction_maximum_relative": 0.02,
+    "prescribed_motion_mm": 0.0001,
+    "half_dt_work_fraction": 0.005,
+    "area_normalized_work_fraction": 0.005,
+    "stored_dissipated_reference_identity_relative": 1e-08
+  },
+  "terminal_clock_interval": "[requested_end-1e-6ms,requested_end+declared_maximum_dt+1e-6ms], actual clock unchanged",
+  "end_motion_reference": "curve at requested_end, constant beyond end",
+  "elastic_energy_scale": "maximum analytical stored elastic energy along declared imposed path",
+  "damage_energy_scale": "mixed power-law G when proportional, otherwise max(GI,GII)*area",
+  "no_native_runs_for_analysis": true,
+  "whole_credit_s": 0
+}

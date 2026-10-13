@@ -1,0 +1,643 @@
+ A63_FREE_ELASTIC_0001.out
+************************************************************************
+**                                                                    **
+**                                                                    **
+**                         OpenRadioss Engine                         **
+**                                                                    **
+**            Non-linear Finite Element Analysis Software             **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+**                Linux 64 bits, GNU compiler, OpenMPI                **
+**                      Double Precision Version                      **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+************************************************************************
+** OpenRadioss Software                                               **
+** COPYRIGHT (C) 2026 Siemens                                         **
+** Licensed under GNU Affero General Public License.                  **
+** See License file.                                                  **
+************************************************************************
+ 
+ NUMBER OF SPMD DOMAINS           1
+ NUMBER OF THREADS PER DOMAIN     1
+ NUMBER OF HMPP PROCESSES         1
+  
+ COMPUTATION HARDWARE DESCRIPTION
+  
+ HOSTNAME     CPU TYPE, FREQUENCY AND MEMORY
+ jeux   AMD Ryzen 5 5600 6-Core Processor (x86_64), 3700 MHz,   7897 MB RAM,   2048 MB swap
+  
+ STACKSIZE  . . . . . . . . . . . . . . . . . . . . 8 MB
+ THREAD STACKSIZE . . . . . . . . . . . . . . . . . 0 MB
+ 
+************************************************************************
+
+
+ A63_FREE_ELASTICD01                                                             
+
+
+ FINAL TIME . . . . . . . . . . . . . . . . . . .   1.000000    
+
+ TIME INTERVAL FOR TIME HISTORY PLOTS . . . . . .  0.1000000E-03
+
+ TIME STEP SCALE FACTOR . . . . . . . . . . . . .  0.9000000    
+
+ MINIMUM TIME STEP  . . . . . . . . . . . . . . .   0.000000    
+
+
+ BRICK TIME STEP SCALE FACTOR . . . . . . . . . .  0.9000000    
+ BRICK MINIMUM TIME STEP. . . . . . . . . . . . .   0.000000    
+ MIN. TIME STEP FLAG (1:STOP RUN, 2:DELETE BRICK)     1
+
+ QUAD TIME STEP SCALE FACTOR. . . . . . . . . . .  0.9000000    
+ QUAD MINIMUM TIME STEP . . . . . . . . . . . . .   0.000000    
+ MIN. TIME STEP FLAG (1:STOP RUN, 2:DELETE QUAD).     1
+
+ SHELL TIME STEP SCALE FACTOR . . . . . . . . . .  0.9000000    
+ SHELL MINIMUM TIME STEP. . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE, 3:SMALL STRAIN)    2
+
+ TRUSS TIME STEP SCALE FACTOR . . . . . . . . . .  0.9000000    
+ TRUSS MINIMUM TIME STEP. . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE). . . . . . . .     0
+
+ BEAM TIME STEP SCALE FACTOR. . . . . . . . . . .  0.9000000    
+ BEAM MINIMUM TIME STEP . . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE). . . . . . . .     0
+
+ SPRING TIME STEP SCALE FACTOR. . . . . . . . . .  0.9000000    
+ SPRING MINIMUM TIME STEP . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP, 2:DELETE). . . . . . . .     0
+
+ AIRBAG TIME STEP SCALE FACTOR. . . . . . . . . .  0.9000000    
+ AIRBAG MINIMUM TIME STEP . . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG (1:STOP). . . . . . . . . . . . .     0
+
+ CONTACT TIME STEP SCALE FACTOR . . . . . . . . .  0.9000000    
+ CONTACT MINIMUM TIME STEP. . . . . . . . . . . .   0.000000    
+ MIN. TIME FLAG(1:STOP, 2:REMOVE NODE FROM INTERF)    0
+
+ PRINTOUT CYCLE FREQUENCY . . . . . . . . . . . .  -100
+
+ RESTART CYCLE FREQUENCY. . . . . . . . . . . . .   10000000
+
+ MAXIMUM RESTART WRITE BEFORE OVERWRITE . . . . .     0
+
+ INVERS: INPUT DECK VERSION . . . . . . . . . . .  2026
+ ITTYP : FLAG FOR TYPE OF T-FILE. . . . . . . . .     4
+
+  ** WARNING ** : PARITH/ON IS NOT COMPATIBLE WITH IMPLICIT OPTION 
+  ** RESETTING **  : PARITH/OFF  
+ INITIAL TIME STEP. . . . . . . . . . . . . . . .   0.000000    
+ MAXIMUM TIME STEP. . . . . . . . . . . . . . . .  0.1000000E+21
+
+ PARALLEL ARITHMETIC OFF
+ NUMBER OF INTERFACES TO BE ELIMINATED. . . . . .        0
+
+ NUMBER OF PARTS TO BE ELIMINATED . . . . . . . .        0
+
+ NUMBER OF SOLID  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF QUAD   ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF SHELL  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF TRUSS  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF BEAM   ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF SPRING ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF SH_3N  ELEMENT BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF  SPH PARTICLES BLOCKS TO BE ELIMINATED        0
+
+ NUMBER OF RIGID LINKS. . . . . . . . . . . . . .        0
+
+ NUMBER OF NEW BOUNDARY CONDITIONS. . . . . . . .        0
+
+
+ IMPLICIT OPTIONS USED :
+
+ IMPLICIT TYPE : . . . . . . . . . . . . .   DYNAMIC NON-LINEAR       
+ LINEAR SOLVER : . . . . . . . . . . . . .   DIRECT(MUMPS)            
+ PRINTOUT FREQUENCY FOR LINEAR SOLVER . . .      0
+
+
+ GEOMETRICAL STIFFNESS FLAG  . . .. . . . .      1
+ LOAD (PRESSURE) STIFFNESS FLAG  . . . . .       1
+ AUTOSPC FLAG (0:OFF,1:ON,2:ALL) . . .. . .      1
+ SPRING-BACK OPTION : . . . . . . . . . . .      0
+ SPECIAL PCG SOLVER FOR CONTACT . . . .. .       0
+
+ NON-LINEAR SOLVER : . . . . . . . . . . .   MODIFIED NEWTON          
+ INITIAL TIME STEP . . . . . . . . . . . .    0.1000000E-02
+ STOP CRITERION FOR NON-LINEAR SOLVER . . .    123
+ ENERGY TOLERANCE FOR NON-LINEAR SOLVER . .   0.1000000E-10
+ FORCE TOLERANCE FOR NON-LINEAR SOLVER  . .   0.1000000E-10
+ DISP. TOLERANCE FOR NON-LINEAR SOLVER  . .   0.1000000E-10
+ ITERATION NUM.LIMIT FOR REFORMING MATRIX .      6
+ PRINTOUT FREQUENCY FOR NON-LINEAR SOLVER .      0
+ PRE-STRESSES CONTROL FLAG . . . . . . . .       0
+ REFERENCE RESIDUAL FLAG . . . . . . .. . .      2
+ TIME STEP CONTROL METHOD . . . . . . . . .      1
+ MINIMUM TIME STEP . . . . . . . . . . . .    0.1000000E-11
+ MAXIMUM TIME STEP . . . . . . . . . . . .    0.1000000E-02
+
+
+ SMALL DISPLACEMENT OPTION(0:OFF,1:ON) . . .. . .      0
+
+ MINIMUM REFERENCE FORCE RESIDUAL . . . .    1.000000    
+ MAXIMUM REFERENCE FORCE RESIDUAL . . . .    0.1000000E+31
+
+
+AUTOMATIC TIME STEP CONTROL:
+
+ CONVERGE ITERATION NUM. FOR INCREASING DT.       2
+ INCREASING TIME STEP SCALE FACTOR.  . . . .    1.000000    
+ CONVERGE ITERATION NUM. FOR DECREASING DT .     30
+ DECREASING TIME STEP SCALE FACTOR.  . . . .   0.5000000    
+
+ TIME INTEGRATION WITH NEWMARK CONSTANTS     0.5000000     0.2500000    
+
+
+ LINE-SEARCH METHOD :. . . . . . . . . . . .      3
+ MAXIMUM LINE-SEARCH ITERATION NUM. . . . .      20
+ TOLERANCE FOR LINE-SEARCH ITERATION.  . . .   0.1000000E-02
+
+ DIVERGENCE CRITERION NUMBERS :  . . . . . .      1
+
+
+ TIME FOR FIRST ANIMATION-FILE PLOT . . . . . . .   0.000000    
+ TIME INTERVAL FOR ANIMATION-FILE PLOTS . . . . .  0.5000000E-02
+ TIME TO STOP ANIMATION-FILE PLOTS. . . . . . . .  0.1000000E+21
+ SENSOR FOR ANIMATION-FILE PLOTS. . . . . . . . .          0
+ TIME INTERVAL FOR SENSOR ANIMATION-FILE PLOTS. .   0.000000    
+
+ VARIABLE SAVED ON ANIMATION FILES (1: YES) :
+      PLASTIC STRAIN. . . . . .     0
+      DENSITY     (SOLID ONLY).     0
+      SPECIFIC ENERGY . . . . .     1
+      HOURGLASS ENERGY. . . . .     0
+      TEMPERATURE (SOLID ONLY).     0
+      THICKNESS   (SHELL ONLY).     0
+      PRESSURE    (SOLID ONLY).     0
+      VON MISES . . . . . . . .     0
+      TURBULENT ENERGY (FLUID).     0
+      TURBULENT VISCOSITY(FLUID)    0
+      VORTICITY (FLUID) . . . .     0
+ NODAL VALUES SAVED ON ANIMATION FILES (1: YES) :
+      PRESSURE. . . . . . . . .     0
+      DENSITY . . . . . . . . .     0
+      TEMPERATURE . . . . . . .     0
+ VECTOR SAVED ON ANIMATION FILES (1: YES) :
+      VELOCITY VECTOR . . . . .     1
+      DISPLACEMENT VECTOR . . .     1
+      ACCELERATION VECTOR . . .     0
+      CONTACT FORCES. . . . . .     0
+      INTERNAL FORCES . . . . .     0
+      EXTERNAL FORCES . . . . .     0
+      SECTION RBY RWALL FORCES.     0
+      ROTATIONAL VELOCITY VECTOR    0
+      CONTACT PRESSURE (VECTORS)    0
+ SHELL TENSOR SAVED ON ANIMATION FILES (1: YES) :
+      MEMBRANE STRESS . . . . .     0
+      BENDING STRESS(MOMENT/T^2)    0
+      UPPER LAYER STRESS. . . .     0
+      LOWER LAYER STRESS. . . .     0
+      MEMBRANE STRAIN . . . . .     0
+      CURVATURE . . . . . . . .     0
+      UPPER LAYER STRAIN. . . .     0
+      LOWER LAYER STRAIN. . . .     0
+ NODAL MASS SAVED ON ANIMATION FILES (1: YES) :    0
+ KEEP DELETED ELEMENT (1: YES) :    0
+
+
+ 13/10/2026
+   CYCLE    TIME      TIME-STEP  ELEMENT          ERROR  I-ENERGY    K-ENERGY T  K-ENERGY R  EXT-WORK     MAS.ERR     TOTAL MASS  MASS ADDED
+       0   0.000      0.1000E-02 NODE           1   0.0%   0.000       2.000       0.000       0.000       0.000       8.000       0.000    
+     ANIMATION FILE: A63_FREE_ELASTICA001 WRITTEN
+  ***** WARNING : ELEMENT FORMULATION ISOLID=    0
+     IS NOT AVAILABLE FOR STIFFNESS MATRIX BUILDING, USING GENERIC ONE INSTEAD
+      POSSIBLE CONVERGING ISSUE. *****
+
+   *--------- STIFFNESS MATRIX SETUP ---------*
+ SYMBOLIC DIM : ND =      24 NZ =       276 NB_MAX =       7
+ FINAL    DIM : ND =      12 NZ =        66 NB_MAX =       7
+
+
+Entering DMUMPS 5.6.2 with JOB, N, NNZ =   1          12             78
+      executing #MPI =      1, without OMP
+
+ =================================================
+ MUMPS compiled with option -Dpord
+ =================================================
+L D L^T Solver for symmetric positive definite matrices
+Type of parallelism: Working host
+
+ ****** ANALYSIS STEP ********
+
+ Processing a graph of size:        12
+ Average density of rows/columns =   11
+ Ordering based on AMF 
+
+Leaving analysis phase with  ...
+ INFOG(1)                                       =               0
+ INFOG(2)                                       =               0
+ -- (20) Number of entries in factors (estim.)  =              78
+ --  (3) Real space for factors    (estimated)  =             144
+ --  (4) Integer space for factors (estimated)  =              44
+ --  (5) Maximum frontal size      (estimated)  =              12
+ --  (6) Number of nodes in the tree            =               1
+ -- (32) Type of analysis effectively used      =               1
+ --  (7) Ordering option effectively used       =               2
+ ICNTL (6) Maximum transversal option           =               0
+ ICNTL (7) Pivot order option                   =               7
+ ICNTL(13) Parallelism/splitting of root node   =               1
+ ICNTL(14) Percentage of memory relaxation      =               5
+ ICNTL(15) Analysis by block effectively used   =               0
+ ICNTL(18) Distributed input matrix (on if >0)  =               0
+ ICNTL(58) Symbolic factorization option        =               2
+ Number of level 2 nodes                        =               0
+ Number of split nodes                          =               0
+ RINFOG(1) Operations during elimination (estim)= 6.380D+02
+
+ MEMORY ESTIMATIONS ... 
+ Estimations with standard Full-Rank (FR) factorization:
+    Total space in MBytes, IC factorization      (INFOG(17)):           0
+    Total space in MBytes,  OOC factorization    (INFOG(27)):           0
+
+ Elapsed time in analysis driver=       0.0008
+
+Entering DMUMPS 5.6.2 with JOB, N, NNZ =   2          12             78
+      executing #MPI =      1, without OMP
+
+
+
+****** FACTORIZATION STEP ********
+
+ GLOBAL STATISTICS PRIOR NUMERICAL FACTORIZATION ...
+ Number of working processes                =               1
+ ICNTL(22) Out-of-core option               =               0
+ ICNTL(35) BLR activation (eff. choice)     =               0
+ ICNTL(37) BLR CB compression (eff. choice) =               0
+ ICNTL(49) Compact workarray S (end facto.) =               0
+ ICNTL(14) Memory relaxation                =               5
+ INFOG(3) Real space for factors (estimated)=             144
+ INFOG(4) Integer space for factors (estim.)=              44
+ Maximum frontal size (estimated)           =              12
+ Number of nodes in the tree                =               1
+ ICNTL(23) Memory allowed (value on host)   =               0
+           Sum over all procs               =               0
+ Memory provided by user, sum of LWK_USER   =               0
+ Effective threshold for pivoting, CNTL(1)  =      0.0000D+00
+ Effective size of S     (based on INFO(39))=                 2254
+
+ Elapsed time to reformat/distribute matrix =      0.0000
+
+ ** Memory allocated, total in Mbytes           (INFOG(19)):           0
+ ** Memory effectively used, total in Mbytes    (INFOG(22)):           0
+
+ Elapsed time for factorization                     =      0.0004
+
+Leaving factorization with ...
+ RINFOG (2) Operations in node assembly             = 0.000D+00
+ ------ (3) Operations in node elimination          = 6.380D+02
+ ICNTL  (8) Scaling effectively used                =               0
+ INFOG  (9) Real space for factors                  =             144
+ INFOG (10) Integer space for factors               =              44
+ INFOG (11) Maximum front size                      =              12
+ INFOG (29) Number of entries in factors            =              78
+ INFOG (12) Number of negative pivots               =               0
+ INFOG (14) Number of memory compress               =               0
+
+ Elapsed time in factorization driver               =      0.0012
+
+Entering DMUMPS 5.6.2 with JOB, N, NNZ =   3          12             78
+      executing #MPI =      1, without OMP
+
+
+
+ ****** SOLVE & CHECK STEP ********
+
+ GLOBAL STATISTICS PRIOR SOLVE PHASE ...........
+ Number of right-hand-sides                    =           1
+ Blocking factor for multiple rhs              =           1
+ ICNTL (9)                                     =           1
+  --- (10)                                     =           0
+  --- (11)                                     =           0
+  --- (20)                                     =           0
+  --- (21)                                     =           0
+  --- (30)                                     =           0
+  --- (35)                                     =           0
+ ** Space in MBYTES used for solve                        :         0
+
+ Leaving solve with ...
+ Time to build/scatter RHS        =       0.000012
+ Time in solution step (fwd/bwd)  =       0.000944
+  .. Time in forward (fwd) step   =          0.000933
+  .. Time in backward (bwd) step  =          0.000010
+ Time to gather solution(cent.sol)=       0.000001
+ Time to copy/scale dist. solution=       0.000000
+
+ Elapsed time in solve driver=       0.0014
+
+Entering DMUMPS 5.6.2 with JOB =  -2
+      executing #MPI =      1, without OMP
+     ANIMATION FILE: A63_FREE_ELASTICA002 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA003 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA004 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA005 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA006 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA007 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA008 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA009 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA010 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA011 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA012 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA013 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA014 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA015 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA016 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA017 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA018 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA019 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA020 WRITTEN
+     100  0.1000      0.1000E-02 NODE           1   0.0%   1.999      0.6867E-03   0.000       0.000       0.000       8.000       0.000    
+     ANIMATION FILE: A63_FREE_ELASTICA021 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA022 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA023 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA024 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA025 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA026 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA027 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA028 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA029 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA030 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA031 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA032 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA033 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA034 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA035 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA036 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA037 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA038 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA039 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA040 WRITTEN
+     200  0.2000      0.1000E-02 NODE           1  -0.0%  0.2746E-02   1.997       0.000       0.000       0.000       8.000       0.000    
+     ANIMATION FILE: A63_FREE_ELASTICA041 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA042 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA043 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA044 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA045 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA046 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA047 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA048 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA049 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA050 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA051 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA052 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA053 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA054 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA055 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA056 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA057 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA058 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA059 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA060 WRITTEN
+     300  0.3000      0.1000E-02 NODE           1   0.0%   1.994      0.6175E-02   0.000       0.000       0.000       8.000       0.000    
+     ANIMATION FILE: A63_FREE_ELASTICA061 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA062 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA063 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA064 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA065 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA066 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA067 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA068 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA069 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA070 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA071 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA072 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA073 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA074 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA075 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA076 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA077 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA078 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA079 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA080 WRITTEN
+     400  0.4000      0.1000E-02 NODE           1  -0.0%  0.1097E-01   1.989       0.000       0.000       0.000       8.000       0.000    
+     ANIMATION FILE: A63_FREE_ELASTICA081 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA082 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA083 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA084 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA085 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA086 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA087 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA088 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA089 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA090 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA091 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA092 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA093 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA094 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA095 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA096 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA097 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA098 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA099 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA100 WRITTEN
+     500  0.5000      0.1000E-02 NODE           1   0.0%   1.983      0.1712E-01   0.000       0.000       0.000       8.000       0.000    
+     ANIMATION FILE: A63_FREE_ELASTICA101 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA102 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA103 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA104 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA105 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA106 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA107 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA108 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA109 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA110 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA111 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA112 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA113 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA114 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA115 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA116 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA117 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA118 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA119 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA120 WRITTEN
+     600  0.6000      0.1000E-02 NODE           1  -0.0%  0.2462E-01   1.975       0.000       0.000       0.000       8.000       0.000    
+     ANIMATION FILE: A63_FREE_ELASTICA121 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA122 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA123 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA124 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA125 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA126 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA127 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA128 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA129 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA130 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA131 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA132 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA133 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA134 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA135 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA136 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA137 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA138 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA139 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA140 WRITTEN
+     700  0.7000      0.1000E-02 NODE           1  -0.0%   1.967      0.3346E-01   0.000       0.000       0.000       8.000       0.000    
+     ANIMATION FILE: A63_FREE_ELASTICA141 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA142 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA143 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA144 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA145 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA146 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA147 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA148 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA149 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA150 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA151 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA152 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA153 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA154 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA155 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA156 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA157 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA158 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA159 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA160 WRITTEN
+     800  0.8000      0.1000E-02 NODE           1   0.0%  0.4363E-01   1.956       0.000       0.000       0.000       8.000       0.000    
+     ANIMATION FILE: A63_FREE_ELASTICA161 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA162 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA163 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA164 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA165 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA166 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA167 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA168 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA169 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA170 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA171 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA172 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA173 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA174 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA175 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA176 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA177 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA178 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA179 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA180 WRITTEN
+     900  0.9000      0.1000E-02 NODE           1   0.0%   1.945      0.5512E-01   0.000       0.000       0.000       8.000       0.000    
+     ANIMATION FILE: A63_FREE_ELASTICA181 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA182 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA183 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA184 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA185 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA186 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA187 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA188 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA189 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA190 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA191 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA192 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA193 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA194 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA195 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA196 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA197 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA198 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA199 WRITTEN
+     ANIMATION FILE: A63_FREE_ELASTICA200 WRITTEN
+
+     RESTART FILES: A63_FREE_ELASTIC_0001_[0001-0001].rst WRITTEN
+     -------------
+
+    1000   1.000      0.1000E-02 NODE           1   0.0%  0.6790E-01   1.932       0.000       0.000       0.000       8.000       0.000    
+     ANIMATION FILE: A63_FREE_ELASTICA201 WRITTEN
+
+   * IMPLICIT COMPUTATION TERMINATED WITH    TOTAL NONLINEAR ITERATIONS:    4000
+   * TOTAL NUM.OF MATRIX FACTORIZATION AND PCG ITERATION:   1001         0
+  
+                           ** CPU USER TIME **
+  
+  
+                      ** IMPLICIT  **
+  
+ #PROC  [K]SETUP  [M]SETUP  IMP_SOLV  IMP_TOT  
+   1   .1951E-01 .0000E+00 .0000E+00 .3408E+00
+  
+                        ** SUMMARY **
+  
+ #PROC  ELEMENT   KINCOND   INTEG     IO        T0        ASM       RESOL    
+   1   .5369E-01 .5512E-02 .1099E-01 .9619E-01 .2699E+00 .4882E-02 .8659E+00
+  
+ 
+                   ** CUMULATIVE CPU TIME SUMMARY **
+  
+ CONTACT SORTING.............: .0000E+00     0.00 % 
+ CONTACT FORCES..............: .2950E-02     0.34 % 
+ ELEMENT FORCES..............: .5369E-01     6.20 % 
+ KINEMATIC COND..............: .5512E-02     0.64 % 
+ INTEGRATION.................: .1099E-01     1.27 % 
+ ASSEMBLING..................: .4882E-02     0.56 % 
+ OTHERS (including I/O)......: .7878E+00    90.99 % 
+ TOTAL.......................: .8659E+00   100.00 % 
+  
+  
+                           ** ELAPSED TIME **
+  
+  
+                      ** IMPLICIT  **
+  
+ #PROC  [K]SETUP  [M]SETUP  IMP_SOLV  IMP_TOT  
+   1   .3702E-01 .0000E+00 .0000E+00 .5609E+00
+  
+                        ** SUMMARY **
+  
+ #PROC  ELEMENT   KINCOND   INTEG     IO        T0        ASM       RESOL    
+   1   .9152E-01 .9563E-02 .1436E-01 .6603E+00 .1142E+01 .8183E-02 .2640E+01
+  
+                   ** MEMORY USAGE STATISTICS **
+  
+ TOTAL MEMORY USED .........................:       57 MB
+ MAXIMUM MEMORY PER PROCESSOR...............:       57 MB
+ MINIMUM MEMORY PER PROCESSOR...............:       57 MB
+ AVERAGE MEMORY PER PROCESSOR...............:       57 MB
+  
+                   ** DISK USAGE STATISTICS **
+  
+ TOTAL DISK SPACE USED .....................:          0 MB
+ ANIMATION/H3D/TH/OUTP SIZE ................:          0 MB
+ RESTART FILE SIZE .........................:          0 MB
+  
+                   ** COMPUTE TIME INFORMATION **
+                        ** CURRENT ENGINE **
+  
+ EXECUTION STARTED .........................:      2026/10/13  19:08:07
+ EXECUTION COMPLETED .......................:      2026/10/13  19:08:10
+  
+ ELAPSED TIME     =          3.13 s
+                          0:00:03
+
+
+
+     NORMAL TERMINATION      
+
+
+
+     TOTAL NUMBER OF CYCLES  :    1001
+
+  
+                   ** COMPUTE RUNTIME INFORMATION SUMMARY **
+  
+        STARTER RUNTIME =          0.61s (00:00:00)
+ # 001   ENGINE RUNTIME =          3.13s (00:00:03)
+ ------------------------------ 
+ STARTER+ENGINE RUNTIME =          3.74s (00:00:03)
+  

@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-10-13T16:49:31.617365+00:00",
+  "after_native_runs": true,
+  "old_failed_gates_and_partial_JSON_preserved": true,
+  "reasons": [
+    "Unused Y translations were explicitly FREE and now have declared initial velocity. Compare motion only on prescribed axes; free-flight Y after deletion is a model result, not a prescribed-motion error.",
+    "Newmark TH velocities are secants, as the already established source protocol describes. Compute boundary work from recorded displacements and integrated reaction impulse on actual fixed steps, and independently reconstruct physical endpoint velocities.",
+    "Half-dt final animation is at0.9955ms, but a complete native nodal TH sample exists at1ms. Use that real saved field to establish terminal completion without changing any clock or replaying the Engine."
+  ],
+  "cached_source_method": "wtc1_simulation_v8/scripts/read_aircraft_a41_newmark.py",
+  "cached_method_sha256": "8418d1bea7d6092901e47d06c02d225ad4a75ea85ca9c04e349480ea47fb54ee",
+  "physical_thresholds_unchanged": true,
+  "native_binary_unchanged": true,
+  "old_Engine_replays": 0,
+  "additional_kinematic_counter_thresholds_from_A45": {
+    "energy_relative_initial_KE": 0.02,
+    "energy_absolute_J": 1e-07,
+    "momentum_relative_initial_absolute_P": 0.02,
+    "momentum_absolute_Ns": 1e-09
+  }
+}
