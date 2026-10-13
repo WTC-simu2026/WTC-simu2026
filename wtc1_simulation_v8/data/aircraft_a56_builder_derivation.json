@@ -1,0 +1,81 @@
+{
+  "created_utc": "2026-10-13T14:08:13.522637+00:00",
+  "source": "wtc1_simulation_v8/scripts/build_aircraft_a54_graph_r1.py",
+  "source_sha256": "657ce5903364c8738d43c4a7d41c20ddada4f59a896744d79f3968b95a815b92",
+  "derived": "wtc1_simulation_v8/scripts/build_aircraft_a56_scratch.py",
+  "derived_sha256": "2dcad421c37af0b96ca616fbb09199a1d61df873ad524aa3c7ded4736fe1e7e2",
+  "replacements": [
+    {
+      "old": "ROOT, OUT, read, dump, sha, now, linux = base.ROOT, base.OUT, base.read, base.dump, base.sha, base.now, base.linux",
+      "new": "ROOT, read, dump, sha, now, linux = base.ROOT, base.read, base.dump, base.sha, base.now, base.linux\nOUT=ROOT/'wtc1_simulation_v8/output/aircraft_a56'\nCFG=ROOT/'wtc1_simulation_v8/data/aircraft_a56_predeclaration.json'",
+      "count": 1
+    },
+    {
+      "old": "a54_type2_graph_candidate_r1",
+      "new": "a56_type43_scratch_candidate",
+      "count": 1
+    },
+    {
+      "old": "build_attempt_r1",
+      "new": "build_attempt_0",
+      "count": 1
+    },
+    {
+      "old": "config = base.guard()",
+      "new": "config = guard()",
+      "count": 1
+    },
+    {
+      "old": "    assert read(OUT/'build_failure.json')['error'] == '04_exact_patch'\n",
+      "new": "",
+      "count": 1
+    },
+    {
+      "old": "    deadline = read(OUT/'build_clock.json')['deadline_epoch']",
+      "new": "    started=time.time();deadline=started+3600\n    dump(OUT/'build_clock.json',{'started_epoch':started,'deadline_epoch':deadline,'limit_s':3600})",
+      "count": 1
+    },
+    {
+      "old": "'iteration': 'AIRCRAFT-A54'",
+      "new": "'iteration': 'AIRCRAFT-A56'",
+      "count": 1
+    },
+    {
+      "old": "'R1'",
+      "new": "'R0'",
+      "count": 5
+    },
+    {
+      "old": "'seed': 1102079",
+      "new": "'seed': 1102081",
+      "count": 1
+    },
+    {
+      "old": "'authorization': 'Same approved exact A53 file; no new code change.'",
+      "new": "'authorization': 'Explicit approval of exact A55 scratch proposal plus retained A53 graph patch.'",
+      "count": 1
+    },
+    {
+      "old": "'previous_attempt_preserved': True, 'previous_failure': 'GNU patch strips CRLF; exact raw hash guard stopped before compilation.'",
+      "new": "'previous_A54_attempts_preserved': True, 'graph_EOL_procedure_reused': True",
+      "count": 1
+    },
+    {
+      "old": "'exact_A53_graph_patch_applied':True,'native_or_physical_qualification':False,",
+      "new": "'exact_A53_graph_patch_applied':True,'exact_A55_scratch_patch_applied':True,'native_or_physical_qualification':False,",
+      "count": 1
+    },
+    {
+      "old": "'initial_EOL_guard_failure_preserved':True",
+      "new": "'prior_A54_EOL_guard_failure_preserved':True",
+      "count": 1
+    },
+    {
+      "old": "if __name__=='__main__':run()",
+      "new": "if __name__=='__main__':\n    import argparse\n    p=argparse.ArgumentParser();p.add_argument('action',choices=['declare','run']);globals()[p.parse_args().action]()",
+      "count": 1
+    }
+  ],
+  "native_build_not_started": true,
+  "exact_authorized_scratch_inserted": true
+}

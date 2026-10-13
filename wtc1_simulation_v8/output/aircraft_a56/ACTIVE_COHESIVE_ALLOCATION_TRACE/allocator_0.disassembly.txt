@@ -1,0 +1,144 @@
+
+/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/openradioss_runtime/a56_type43_scratch_candidate/isolated_exec/engine_linux64_gf_ompi:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+Disassembly of section .plt:
+
+Disassembly of section .plt.got:
+
+Disassembly of section .text:
+
+000000000019c6e0 <__my_alloc_impl_idx4_mod_MOD_my_alloc_real_1d>:
+  19c6e0:	41 57                	push   %r15
+  19c6e2:	41 56                	push   %r14
+  19c6e4:	49 89 d6             	mov    %rdx,%r14
+  19c6e7:	41 55                	push   %r13
+  19c6e9:	49 89 cd             	mov    %rcx,%r13
+  19c6ec:	41 54                	push   %r12
+  19c6ee:	4d 89 cc             	mov    %r9,%r12
+  19c6f1:	55                   	push   %rbp
+  19c6f2:	48 89 fd             	mov    %rdi,%rbp
+  19c6f5:	53                   	push   %rbx
+  19c6f6:	48 83 ec 48          	sub    $0x48,%rsp
+  19c6fa:	4d 85 c0             	test   %r8,%r8
+  19c6fd:	0f 84 5d 01 00 00    	je     19c860 <__my_alloc_impl_idx4_mod_MOD_my_alloc_real_1d+0x180>
+  19c703:	4d 63 38             	movslq (%r8),%r15
+  19c706:	4c 89 fa             	mov    %r15,%rdx
+  19c709:	4c 89 f8             	mov    %r15,%rax
+  19c70c:	48 f7 da             	neg    %rdx
+  19c70f:	03 06                	add    (%rsi),%eax
+  19c711:	48 89 54 24 08       	mov    %rdx,0x8(%rsp)
+  19c716:	48 bb 00 00 00 00 01 	movabs $0x30100000000,%rbx
+  19c71d:	03 00 00 
+  19c720:	48 89 5d 18          	mov    %rbx,0x18(%rbp)
+  19c724:	8d 58 ff             	lea    -0x1(%rax),%ebx
+  19c727:	b8 00 00 00 00       	mov    $0x0,%eax
+  19c72c:	48 63 db             	movslq %ebx,%rbx
+  19c72f:	48 c7 45 10 04 00 00 	movq   $0x4,0x10(%rbp)
+  19c736:	00 
+  19c737:	48 89 de             	mov    %rbx,%rsi
+  19c73a:	4c 29 fe             	sub    %r15,%rsi
+  19c73d:	48 8d 4e 01          	lea    0x1(%rsi),%rcx
+  19c741:	48 89 74 24 18       	mov    %rsi,0x18(%rsp)
+  19c746:	48 8d 3c 8d 00 00 00 	lea    0x0(,%rcx,4),%rdi
+  19c74d:	00 
+  19c74e:	48 89 4c 24 10       	mov    %rcx,0x10(%rsp)
+  19c753:	48 0f 48 f8          	cmovs  %rax,%rdi
+  19c757:	48 83 7d 00 00       	cmpq   $0x0,0x0(%rbp)
+  19c75c:	0f 85 ce 00 00 00    	jne    19c830 <__my_alloc_impl_idx4_mod_MOD_my_alloc_real_1d+0x150>
+  19c762:	48 85 ff             	test   %rdi,%rdi
+  19c765:	b8 01 00 00 00       	mov    $0x1,%eax
+  19c76a:	48 0f 44 f8          	cmove  %rax,%rdi
+  19c76e:	e8 3d 68 f1 ff       	call   b2fb0 <malloc@plt>
+  19c773:	48 8b 54 24 08       	mov    0x8(%rsp),%rdx
+  19c778:	4c 89 7d 30          	mov    %r15,0x30(%rbp)
+  19c77c:	66 0f 6f 05 5c 08 de 	movdqa 0x1de085c(%rip),%xmm0        # 1f7cfe0 <_IO_stdin_used+0x160fe0>
+  19c783:	01 
+  19c784:	48 85 c0             	test   %rax,%rax
+  19c787:	48 89 45 00          	mov    %rax,0x0(%rbp)
+  19c78b:	48 89 5d 38          	mov    %rbx,0x38(%rbp)
+  19c78f:	48 89 55 08          	mov    %rdx,0x8(%rbp)
+  19c793:	0f 11 45 20          	movups %xmm0,0x20(%rbp)
+  19c797:	0f 84 06 01 00 00    	je     19c8a3 <__my_alloc_impl_idx4_mod_MOD_my_alloc_real_1d+0x1c3>
+  19c79d:	c7 44 24 2c 00 00 00 	movl   $0x0,0x2c(%rsp)
+  19c7a4:	00 
+  19c7a5:	4d 85 f6             	test   %r14,%r14
+  19c7a8:	0f 84 ea 00 00 00    	je     19c898 <__my_alloc_impl_idx4_mod_MOD_my_alloc_real_1d+0x1b8>
+  19c7ae:	48 8b 4c 24 10       	mov    0x10(%rsp),%rcx
+  19c7b3:	31 d2                	xor    %edx,%edx
+  19c7b5:	48 85 c9             	test   %rcx,%rcx
+  19c7b8:	48 0f 48 ca          	cmovs  %rdx,%rcx
+  19c7bc:	85 c9                	test   %ecx,%ecx
+  19c7be:	7e 31                	jle    19c7f1 <__my_alloc_impl_idx4_mod_MOD_my_alloc_real_1d+0x111>
+  19c7c0:	48 8b 74 24 18       	mov    0x18(%rsp),%rsi
+  19c7c5:	48 85 f6             	test   %rsi,%rsi
+  19c7c8:	0f 88 b2 00 00 00    	js     19c880 <__my_alloc_impl_idx4_mod_MOD_my_alloc_real_1d+0x1a0>
+  19c7ce:	48 c1 e1 02          	shl    $0x2,%rcx
+  19c7d2:	48 8d 54 24 38       	lea    0x38(%rsp),%rdx
+  19c7d7:	48 8d 7c 24 30       	lea    0x30(%rsp),%rdi
+  19c7dc:	4c 89 f6             	mov    %r14,%rsi
+  19c7df:	48 89 4c 24 38       	mov    %rcx,0x38(%rsp)
+  19c7e4:	4c 89 e1             	mov    %r12,%rcx
+  19c7e7:	48 89 44 24 30       	mov    %rax,0x30(%rsp)
+  19c7ec:	e8 2f 41 00 00       	call   1a0920 <__my_alloc_tools_mod_MOD_record_alloc_addr>
+  19c7f1:	4d 85 ed             	test   %r13,%r13
+  19c7f4:	74 1a                	je     19c810 <__my_alloc_impl_idx4_mod_MOD_my_alloc_real_1d+0x130>
+  19c7f6:	31 c0                	xor    %eax,%eax
+  19c7f8:	41 89 45 00          	mov    %eax,0x0(%r13)
+  19c7fc:	48 83 c4 48          	add    $0x48,%rsp
+  19c800:	5b                   	pop    %rbx
+  19c801:	5d                   	pop    %rbp
+  19c802:	41 5c                	pop    %r12
+  19c804:	41 5d                	pop    %r13
+  19c806:	41 5e                	pop    %r14
+  19c808:	41 5f                	pop    %r15
+  19c80a:	c3                   	ret
+  19c80b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  19c810:	48 8d 7c 24 2c       	lea    0x2c(%rsp),%rdi
+  19c815:	4c 89 e2             	mov    %r12,%rdx
+  19c818:	4c 89 f6             	mov    %r14,%rsi
+  19c81b:	e8 50 41 00 00       	call   1a0970 <__my_alloc_tools_mod_MOD_my_alloc_check>
+  19c820:	48 83 c4 48          	add    $0x48,%rsp
+  19c824:	5b                   	pop    %rbx
+  19c825:	5d                   	pop    %rbp
+  19c826:	41 5c                	pop    %r12
+  19c828:	41 5d                	pop    %r13
+  19c82a:	41 5e                	pop    %r14
+  19c82c:	41 5f                	pop    %r15
+  19c82e:	c3                   	ret
+  19c82f:	90                   	nop
+  19c830:	ba 96 13 00 00       	mov    $0x1396,%edx
+  19c835:	b8 96 13 00 00       	mov    $0x1396,%eax
+  19c83a:	89 54 24 2c          	mov    %edx,0x2c(%rsp)
+  19c83e:	4d 85 ed             	test   %r13,%r13
+  19c841:	75 b5                	jne    19c7f8 <__my_alloc_impl_idx4_mod_MOD_my_alloc_real_1d+0x118>
+  19c843:	4d 85 f6             	test   %r14,%r14
+  19c846:	75 c8                	jne    19c810 <__my_alloc_impl_idx4_mod_MOD_my_alloc_real_1d+0x130>
+  19c848:	48 8d 7c 24 2c       	lea    0x2c(%rsp),%rdi
+  19c84d:	31 d2                	xor    %edx,%edx
+  19c84f:	31 f6                	xor    %esi,%esi
+  19c851:	e8 1a 41 00 00       	call   1a0970 <__my_alloc_tools_mod_MOD_my_alloc_check>
+  19c856:	eb a4                	jmp    19c7fc <__my_alloc_impl_idx4_mod_MOD_my_alloc_real_1d+0x11c>
+  19c858:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  19c85f:	00 
+  19c860:	48 c7 c2 ff ff ff ff 	mov    $0xffffffffffffffff,%rdx
+  19c867:	41 bf 01 00 00 00    	mov    $0x1,%r15d
+  19c86d:	b8 01 00 00 00       	mov    $0x1,%eax
+  19c872:	e9 98 fe ff ff       	jmp    19c70f <__my_alloc_impl_idx4_mod_MOD_my_alloc_real_1d+0x2f>
+  19c877:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+  19c87e:	00 00 
+  19c880:	ba 01 00 00 00       	mov    $0x1,%edx
+  19c885:	4c 29 fa             	sub    %r15,%rdx
+  19c888:	48 8d 04 90          	lea    (%rax,%rdx,4),%rax
+  19c88c:	e9 3d ff ff ff       	jmp    19c7ce <__my_alloc_impl_idx4_mod_MOD_my_alloc_real_1d+0xee>
+  19c891:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+  19c898:	4d 85 ed             	test   %r13,%r13
+  19c89b:	0f 85 55 ff ff ff    	jne    19c7f6 <__my_alloc_impl_idx4_mod_MOD_my_alloc_real_1d+0x116>
+  19c8a1:	eb a5                	jmp    19c848 <__my_alloc_impl_idx4_mod_MOD_my_alloc_real_1d+0x168>
+  19c8a3:	ba 9c 13 00 00       	mov    $0x139c,%edx
+  19c8a8:	b8 9c 13 00 00       	mov    $0x139c,%eax
+  19c8ad:	eb 8b                	jmp    19c83a <__my_alloc_impl_idx4_mod_MOD_my_alloc_real_1d+0x15a>
+
+Disassembly of section .fini:
