@@ -1,0 +1,97 @@
+{
+  "created_utc": "2026-10-13T09:42:29.886086+00:00",
+  "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+  "source_path": "engine/source/implicit/ind_glob_k.F",
+  "original_sha256": "22118686d6690b2e0b7be7e2bc9dd4b55a7450b52f7ec29f4a13000f7a675e81",
+  "proposed_source_path": "tmp/aircraft_a53_graph_patch_proposal/ind_glob_k.F.proposed",
+  "proposed_sha256": "e90e934721b31d645d7d7ce1e3697008ba0f74f21d7c38afdd583416d143fe90",
+  "patch_path": "tmp/aircraft_a53_graph_patch_proposal/type2_graph_routing.patch",
+  "patch_sha256": "053e40c2833aad51d77f670aba0dfc9a8f016981d961d1edb7d04c3734154c64",
+  "source_license": "AGPL-3.0-or-later",
+  "raw_proposed_third_party_source_not_in_public_manifest": true,
+  "modified_functions": [
+    "DIM_KINE_T TYPE2 block",
+    "IND_KINE_K TYPE2 block"
+  ],
+  "replacement_audit": {
+    "DIM_KINE_T": [
+      {
+        "kind": "add",
+        "row": "NKE1",
+        "neighbor": "NM1"
+      },
+      {
+        "kind": "add",
+        "row": "NKE1",
+        "neighbor": "NJ"
+      },
+      {
+        "kind": "add",
+        "row": "NKE2",
+        "neighbor": "NM"
+      },
+      {
+        "kind": "add",
+        "row": "NKE1",
+        "neighbor": "NM1"
+      },
+      {
+        "kind": "add",
+        "row": "NKE2",
+        "neighbor": "NM"
+      },
+      {
+        "kind": "get",
+        "row": "NKS",
+        "position": "NK"
+      },
+      {
+        "kind": "has",
+        "row": "NKS",
+        "neighbor": "NJ"
+      }
+    ],
+    "IND_KINE_K": [
+      {
+        "kind": "add",
+        "row": "NKE1",
+        "neighbor": "NM1"
+      },
+      {
+        "kind": "add",
+        "row": "NKE1",
+        "neighbor": "NJ"
+      },
+      {
+        "kind": "add",
+        "row": "NKE2",
+        "neighbor": "NM"
+      },
+      {
+        "kind": "add",
+        "row": "NKE1",
+        "neighbor": "NM1"
+      },
+      {
+        "kind": "add",
+        "row": "NKE2",
+        "neighbor": "NM"
+      },
+      {
+        "kind": "get",
+        "row": "NKE",
+        "position": "N1"
+      },
+      {
+        "kind": "has",
+        "row": "NKE",
+        "neighbor": "NJ"
+      }
+    ]
+  },
+  "helpers": "Route add/get/membership to ordinary vs main row storage, retaining padded global ordinary indices in the sizing phase and row-INK main indices in building phase.",
+  "software_source_or_binary_changed": false,
+  "patch_applied": false,
+  "compiled_or_native_qualified": false,
+  "requires_explicit_user_software_authorization": true
+}

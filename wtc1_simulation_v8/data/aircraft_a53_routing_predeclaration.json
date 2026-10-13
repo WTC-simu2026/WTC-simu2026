@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-10-13T09:17:18.873787+00:00",
+  "iteration": "AIRCRAFT-A53",
+  "seed": 1102078,
+  "random_draws": 0,
+  "source": {
+    "path": "engine/source/implicit/ind_glob_k.F",
+    "sha256": "22118686d6690b2e0b7be7e2bc9dd4b55a7450b52f7ec29f4a13000f7a675e81",
+    "raw_source_redistributed": false
+  },
+  "arguments": {
+    "ITAB": 3,
+    "NNMAX": 21,
+    "NKMAX": 24,
+    "NKINE": 22,
+    "INK": 30,
+    "NROWK": 25,
+    "ICOK": 26,
+    "ICOKM": 27,
+    "INLOC": 23
+  },
+  "IND_KINE_K_offset": 12574128,
+  "REORDER_A_offset": 12539824,
+  "hypothesis": "TYPE2 writes appear to use ICOK(1,row) even when the row is in the main region that uses ICOKM(1,row-INK) with a different stride. Verify actual pointer destinations and dimensions; do not patch or infer all faults from text alone.",
+  "expected_source_layout": "IND_GLOB_K mono-domain branch uses ordinary rows<=INK with NNMAX, main rows>INK with NKMAX; RBE2/RBE3 code selects those buffers explicitly.",
+  "observation_bound": {
+    "maximum_REORDER_calls": 512,
+    "maximum_wrong_destinations": 20
+  },
+  "CPU_threads": 1,
+  "GPU": false,
+  "per_process_cap_s": 180,
+  "expected_s": 20,
+  "software_or_mechanical_data_change": false,
+  "new_physical_duration_credit_s": 0
+}
