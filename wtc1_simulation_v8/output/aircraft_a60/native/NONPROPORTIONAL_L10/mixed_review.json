@@ -1,0 +1,90 @@
+{
+  "case": {
+    "id": "NONPROPORTIONAL_L10",
+    "L_mm": 10,
+    "dt_cap_ms": 2.5e-05,
+    "proportional": false,
+    "knot_times_ms": [
+      0,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1
+    ],
+    "knot_gaps_mm": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0.14
+      ],
+      [
+        0.25,
+        0.12,
+        0.08
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0.25,
+        0.12,
+        0.08
+      ],
+      [
+        1.2,
+        0.6,
+        0.15
+      ]
+    ]
+  },
+  "checks": {
+    "native_binary_all_CSV_channels": true,
+    "native_loaded_end_time": false,
+    "native_normal_no_USER_BREAK": true,
+    "mass_8g": true,
+    "no_added_mass": true,
+    "imposed_vector_motion": true,
+    "all_three_native_tractions": true,
+    "global_work_energy": true,
+    "native_impulse_work": true,
+    "complete_own_work_vs_native_IE": true,
+    "reference_damage_irreversible": true
+  },
+  "pass": false,
+  "failed_checks": [
+    "native_loaded_end_time"
+  ],
+  "native_rows": 10000,
+  "native_record_sizes": [
+    4,
+    88,
+    16,
+    96,
+    96,
+    96
+  ],
+  "maximum_traction_relative_error": 0.00045379274845545295,
+  "maximum_motion_error_mm": 5.39637500240886e-07,
+  "maximum_global_residual_J": 1.826199999666045e-06,
+  "impulse_work_error_J": 0.004317264941374077,
+  "maximum_reference_work_IE_difference_J": 2.768591749191529e-06,
+  "native_final_IE_J": 6.851020000000001,
+  "expected_mixed_G_N_mm": null,
+  "native_work_per_area_N_mm": 68.51020000000001,
+  "reload_energy_difference_fraction": null,
+  "final_reference_state": [
+    1.3499989666666787,
+    1.0,
+    0.0
+  ],
+  "physical_fracture_data_measured": false,
+  "whole_transfer_qualified": false
+}

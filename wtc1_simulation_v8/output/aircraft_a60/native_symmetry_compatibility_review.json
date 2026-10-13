@@ -1,0 +1,68 @@
+{
+  "created_utc": "2026-10-13T15:59:24.216214+00:00",
+  "archive": "wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/source.tar.gz",
+  "archive_sha256": "d64b773e899c174f5d59aadc4d2b73a101a083581e611d67215aaa50037cf9f8",
+  "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+  "sources": [
+    {
+      "path": "engine/source/implicit/imp_glob_k.F",
+      "sha256": "7a6630fe353463ada0d2e0066073970694e8bb6625a05cac9a14850bd9e3d30e",
+      "lines": 3534,
+      "anchors": [
+        {
+          "line": 2660,
+          "keyword": "SUBROUTINE ASSEMC_KIJ"
+        }
+      ]
+    },
+    {
+      "path": "engine/source/implicit/imp_mumps.F",
+      "sha256": "a2336aa1bcf8e2837b32affe3ab7c45ad61333f6a81dd1071c62919aaae8279e",
+      "lines": 1011,
+      "anchors": [
+        {
+          "line": 105,
+          "keyword": "CALL SPMD_MUMPS_INI"
+        }
+      ]
+    },
+    {
+      "path": "engine/source/mpi/implicit/imp_spmd.F",
+      "sha256": "468fcd0338864727d946f190b5289a2f98825785ecaea3ea30705ea771fd9327",
+      "lines": 5510,
+      "anchors": [
+        {
+          "line": 498,
+          "keyword": "SUBROUTINE SPMD_MUMPS_INI"
+        }
+      ]
+    }
+  ],
+  "MUMPS_initialization_calls_in_scanned_implicit_directories": [
+    {
+      "path": "engine/source/implicit/imp_buck.F",
+      "line": 578,
+      "call": "CALL SPMD_MUMPS_INI(MUMPS_PAR, 2)",
+      "source_sha256": "c72b209619cb4c49d2550bdae32002b78ec45213e6e0797eee766f69ff78a8d3"
+    },
+    {
+      "path": "engine/source/implicit/imp_mumps.F",
+      "line": 105,
+      "call": "CALL SPMD_MUMPS_INI(MUMPS_PAR, 1)",
+      "source_sha256": "a2336aa1bcf8e2837b32affe3ab7c45ad61333f6a81dd1071c62919aaae8279e"
+    }
+  ],
+  "scan_scope": [
+    "engine/source/implicit/",
+    "engine/source/mpi/implicit/"
+  ],
+  "observations": [
+    "IMP_MUMPS1 initializes SPMD_MUMPS_INI with SYM=1. SPMD_MUMPS_INI assigns its SYM argument to MUMPS_PAR%SYM.",
+    "ASSEMC_KIJ adds the transposed block for a degenerate node pair and stores only one triangular global block for distinct pairs. Full nonsymmetric material Jacobians cannot be preserved by this symmetric assembly."
+  ],
+  "full_tree_or_all_solver_paths_not_claimed": true,
+  "mixed_exact_Jacobian_cannot_be_inserted_unchanged": true,
+  "candidate_direction": "Symmetric elastic/quasi-Newton iteration matrix with unchanged native traction residual, convergence gates and correctly staged internal state. Native implementation not yet qualified.",
+  "new_software_patch_applied": false,
+  "raw_AGPL_source_not_copied_to_public_MIT_artifact": true
+}

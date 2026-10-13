@@ -1,0 +1,554 @@
+{
+  "created_utc": "2026-10-13T15:48:23.458336+00:00",
+  "checks": [
+    {
+      "name": "all_component_material_Jacobian_FD_elastic",
+      "pass": true,
+      "detail": 2.673707719871097e-11
+    },
+    {
+      "name": "discarded_trial_no_state_pollution_elastic",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "damage_and_peak_monotone_elastic",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all_component_material_Jacobian_FD_mixed_loading",
+      "pass": true,
+      "detail": 2.482458989822466e-10
+    },
+    {
+      "name": "discarded_trial_no_state_pollution_mixed_loading",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "damage_and_peak_monotone_mixed_loading",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all_component_material_Jacobian_FD_unloading",
+      "pass": true,
+      "detail": 1.1956905499380697e-11
+    },
+    {
+      "name": "discarded_trial_no_state_pollution_unloading",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "damage_and_peak_monotone_unloading",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all_component_material_Jacobian_FD_compression_shear",
+      "pass": true,
+      "detail": 5.560319881293584e-12
+    },
+    {
+      "name": "discarded_trial_no_state_pollution_compression_shear",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "damage_and_peak_monotone_compression_shear",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all_component_material_Jacobian_FD_ratio_change",
+      "pass": true,
+      "detail": 1.2891214386382562e-10
+    },
+    {
+      "name": "discarded_trial_no_state_pollution_ratio_change",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "damage_and_peak_monotone_ratio_change",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "independent_pure_closed_softening_2",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "independent_pure_closed_softening_0",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "mixed_material_Jacobian_is_generally_nonsymmetric",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Newton_committed_state_frozen_[0, 0, 0]",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Newton_committed_state_frozen_[0.4, 0.3, 0.45]",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Newton_committed_state_frozen_[-0.03, 0.02, 0.07]",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "negative_control_premature_commit_is_detected",
+      "pass": true,
+      "detail": {
+        "wrong_gap": [
+          0.12232596758032954,
+          0.08896434005842149,
+          0.14456705259493496
+        ],
+        "damage": 1.0
+      }
+    }
+  ],
+  "pass": true,
+  "sample_Jacobians": [
+    {
+      "case": "elastic",
+      "gap_mm": [
+        0.025,
+        0.01,
+        0.04
+      ],
+      "Jacobian_N_mm3": [
+        [
+          800.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          800.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          4400.0
+        ]
+      ],
+      "normalized_nonsymmetry": 0.0,
+      "state": {
+        "peak": 0.04821825380496478,
+        "damage": 0.0,
+        "active": true
+      }
+    },
+    {
+      "case": "mixed_loading",
+      "gap_mm": [
+        0.11,
+        0.08,
+        0.13
+      ],
+      "Jacobian_N_mm3": [
+        [
+          259.732162942013,
+          -71.88468319625203,
+          -426.93195787066804
+        ],
+        [
+          -71.884683196252,
+          306.29383273958535,
+          -310.49596936048584
+        ],
+        [
+          -642.4693560665022,
+          -467.2504407756382,
+          -802.9029133066144
+        ]
+      ],
+      "normalized_nonsymmetry": 0.26844764743495736,
+      "state": {
+        "peak": 0.1881488772222678,
+        "damage": 0.5517829970789255,
+        "active": true
+      }
+    },
+    {
+      "case": "unloading",
+      "gap_mm": [
+        0.1,
+        0.06,
+        0.07
+      ],
+      "Jacobian_N_mm3": [
+        [
+          240.00000000000003,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          240.00000000000003,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1320.0000000000002
+        ]
+      ],
+      "normalized_nonsymmetry": 0.0,
+      "state": {
+        "peak": 0.22,
+        "damage": 0.7,
+        "active": true
+      }
+    },
+    {
+      "case": "compression_shear",
+      "gap_mm": [
+        0.04,
+        0.025,
+        -0.03
+      ],
+      "Jacobian_N_mm3": [
+        [
+          320.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          320.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          4400.0
+        ]
+      ],
+      "normalized_nonsymmetry": 0.0,
+      "state": {
+        "peak": 0.18,
+        "damage": 0.6,
+        "active": true
+      }
+    },
+    {
+      "case": "ratio_change",
+      "gap_mm": [
+        0.25,
+        0.12,
+        0.08
+      ],
+      "Jacobian_N_mm3": [
+        [
+          3.3662816272652663,
+          -130.87376847840247,
+          -162.47064339287186
+        ],
+        [
+          -130.87376847840247,
+          213.20055708763724,
+          -77.98590882857849
+        ],
+        [
+          -479.870484420809,
+          -230.33783252198833,
+          1232.1614803935329
+        ]
+      ],
+      "normalized_nonsymmetry": 0.25759597753905167,
+      "state": {
+        "peak": 0.28861739379323625,
+        "damage": 0.654975042553412,
+        "active": true
+      }
+    }
+  ],
+  "Newton_trials": [
+    {
+      "start": [
+        0,
+        0,
+        0
+      ],
+      "converged_gap": [
+        0.10999999999999999,
+        0.08,
+        0.13
+      ],
+      "state": {
+        "peak": 0.1881488772222678,
+        "damage": 0.5517829970789255,
+        "active": true
+      },
+      "iterations": [
+        {
+          "iteration": 0,
+          "gap": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "base_state": {
+            "peak": 0.0,
+            "damage": 0.0,
+            "active": true
+          },
+          "trial_state": {
+            "peak": 0.0,
+            "damage": 0.0,
+            "active": true
+          },
+          "residual": 2590.008489648043
+        },
+        {
+          "iteration": 1,
+          "gap": [
+            0.09786077406426363,
+            0.0711714720467372,
+            0.11565364207594794
+          ],
+          "base_state": {
+            "peak": 0.0,
+            "damage": 0.0,
+            "active": true
+          },
+          "trial_state": {
+            "peak": 0.16738540694812026,
+            "damage": 0.4501154334844576,
+            "active": true
+          },
+          "residual": 233.1605588092708
+        },
+        {
+          "iteration": 2,
+          "gap": [
+            0.10999999999999999,
+            0.08,
+            0.13
+          ],
+          "base_state": {
+            "peak": 0.0,
+            "damage": 0.0,
+            "active": true
+          },
+          "trial_state": {
+            "peak": 0.1881488772222678,
+            "damage": 0.5517829970789255,
+            "active": true
+          },
+          "residual": 5.684341886080802e-14
+        }
+      ]
+    },
+    {
+      "start": [
+        0.4,
+        0.3,
+        0.45
+      ],
+      "converged_gap": [
+        0.11,
+        0.08,
+        0.13000000000000003
+      ],
+      "state": {
+        "peak": 0.1881488772222678,
+        "damage": 0.5517829970789256,
+        "active": true
+      },
+      "iterations": [
+        {
+          "iteration": 0,
+          "gap": [
+            0.4,
+            0.3,
+            0.45
+          ],
+          "base_state": {
+            "peak": 0.0,
+            "damage": 0.0,
+            "active": true
+          },
+          "trial_state": {
+            "peak": 0.6726812023536856,
+            "damage": 1.0,
+            "active": false
+          },
+          "residual": 5490.25241260232
+        },
+        {
+          "iteration": 1,
+          "gap": [
+            0.12232596758032954,
+            0.08896434005842149,
+            0.14456705259493496
+          ],
+          "base_state": {
+            "peak": 0.0,
+            "damage": 0.0,
+            "active": true
+          },
+          "trial_state": {
+            "peak": 0.20923175868515034,
+            "damage": 0.634368236004079,
+            "active": true
+          },
+          "residual": 236.74734320860674
+        },
+        {
+          "iteration": 2,
+          "gap": [
+            0.11,
+            0.08,
+            0.13000000000000003
+          ],
+          "base_state": {
+            "peak": 0.0,
+            "damage": 0.0,
+            "active": true
+          },
+          "trial_state": {
+            "peak": 0.1881488772222678,
+            "damage": 0.5517829970789256,
+            "active": true
+          },
+          "residual": 0.0
+        }
+      ]
+    },
+    {
+      "start": [
+        -0.03,
+        0.02,
+        0.07
+      ],
+      "converged_gap": [
+        0.10999999999999999,
+        0.08,
+        0.13
+      ],
+      "state": {
+        "peak": 0.1881488772222678,
+        "damage": 0.5517829970789255,
+        "active": true
+      },
+      "iterations": [
+        {
+          "iteration": 0,
+          "gap": [
+            -0.03,
+            0.02,
+            0.07
+          ],
+          "base_state": {
+            "peak": 0.0,
+            "damage": 0.0,
+            "active": true
+          },
+          "trial_state": {
+            "peak": 0.07874007874011811,
+            "damage": 0.0,
+            "active": true
+          },
+          "residual": 1145.5347181008894
+        },
+        {
+          "iteration": 1,
+          "gap": [
+            0.09786077406426363,
+            0.0711714720467372,
+            0.11565364207594794
+          ],
+          "base_state": {
+            "peak": 0.0,
+            "damage": 0.0,
+            "active": true
+          },
+          "trial_state": {
+            "peak": 0.16738540694812026,
+            "damage": 0.4501154334844576,
+            "active": true
+          },
+          "residual": 233.1605588092708
+        },
+        {
+          "iteration": 2,
+          "gap": [
+            0.10999999999999999,
+            0.08,
+            0.13
+          ],
+          "base_state": {
+            "peak": 0.0,
+            "damage": 0.0,
+            "active": true
+          },
+          "trial_state": {
+            "peak": 0.1881488772222678,
+            "damage": 0.5517829970789255,
+            "active": true
+          },
+          "residual": 5.684341886080802e-14
+        }
+      ]
+    }
+  ],
+  "preserved_wrong_state_negative_control": [
+    {
+      "iteration": 0,
+      "gap": [
+        0.4,
+        0.3,
+        0.45
+      ],
+      "base_state": {
+        "peak": 0.0,
+        "damage": 0.0,
+        "active": true
+      },
+      "trial_state": {
+        "peak": 0.6726812023536856,
+        "damage": 1.0,
+        "active": false
+      },
+      "residual": 5490.25241260232
+    },
+    {
+      "iteration": 1,
+      "gap": [
+        0.12232596758032954,
+        0.08896434005842149,
+        0.14456705259493496
+      ],
+      "base_state": {
+        "peak": 0.6726812023536856,
+        "damage": 1.0,
+        "active": false
+      },
+      "trial_state": {
+        "peak": 0.6726812023536856,
+        "damage": 1.0,
+        "active": false
+      },
+      "residual": 4.547473508864641e-13
+    }
+  ],
+  "source_branch": "displacement criterion / linear softening / power-law mixing / asymmetric compression",
+  "moving_frame_geometry_and_native_state_rollback_qualified": false,
+  "native_solver_symmetry_compatibility_qualified": false,
+  "native_Engine_integration_ready": false
+}

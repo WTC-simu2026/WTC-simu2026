@@ -1,0 +1,93 @@
+{
+  "case": {
+    "id": "MIX_B05_HALF",
+    "L_mm": 10,
+    "dt_cap_ms": 1.25e-05,
+    "proportional": true,
+    "direction": [
+      0.31622776601683794,
+      0.31622776601683794,
+      0.8944271909999159
+    ],
+    "d0_mm": 0.10583109769315471,
+    "df_mm": 0.26816114254470097,
+    "knot_times_ms": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "knot_gaps_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.05913336531902484,
+        0.05913336531902484,
+        0.16725441444585548
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.05913336531902484,
+        0.05913336531902484,
+        0.16725441444585548
+      ],
+      [
+        0.09327999894337699,
+        0.09327999894337699,
+        0.2638356792077434
+      ]
+    ]
+  },
+  "checks": {
+    "native_binary_all_CSV_channels": true,
+    "native_loaded_end_time": false,
+    "native_normal_no_USER_BREAK": true,
+    "mass_8g": true,
+    "no_added_mass": true,
+    "imposed_vector_motion": true,
+    "all_three_native_tractions": true,
+    "global_work_energy": true,
+    "native_impulse_work": true,
+    "complete_own_work_vs_native_IE": true,
+    "reference_damage_irreversible": true,
+    "mixed_power_law_final_G": true,
+    "equal_peak_reload_no_new_energy": true
+  },
+  "pass": false,
+  "failed_checks": [
+    "native_loaded_end_time"
+  ],
+  "native_rows": 10000,
+  "native_record_sizes": [
+    4,
+    88,
+    16,
+    96,
+    96,
+    96
+  ],
+  "maximum_traction_relative_error": 0.0004120523883352386,
+  "maximum_motion_error_mm": 6.827546711329902e-08,
+  "maximum_global_residual_J": 1.351500000801309e-06,
+  "impulse_work_error_J": 0.001288466454155035,
+  "maximum_reference_work_IE_difference_J": 2.4822582882499944e-06,
+  "native_final_IE_J": 5.221881000000001,
+  "expected_mixed_G_N_mm": 52.21881005644748,
+  "native_work_per_area_N_mm": 52.218810000000005,
+  "reload_energy_difference_fraction": 0.0,
+  "final_reference_state": [
+    0.29497718029732434,
+    1.0,
+    0.0
+  ],
+  "physical_fracture_data_measured": false,
+  "whole_transfer_qualified": false
+}
