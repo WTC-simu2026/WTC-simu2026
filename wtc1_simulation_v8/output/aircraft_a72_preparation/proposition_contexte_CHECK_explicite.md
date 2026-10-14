@@ -1,0 +1,13 @@
+# AIRCRAFT-A72 — proposition de contexte CHECK explicite, non appliquée
+
+A71 compile et ses six contrôles sont terminés, mais la garde TT==0 reste échouée dans le témoin zéro dynamique et les deux scènes entières. Le résidu vaut bien zéro. La source RESOL avance TT avant CALL IMP_CHKM sous IF(IMP_CHK>0), puis arrête le CHECK par MSTOP2. Le contrôle du premier état ne se déroule donc pas sous une horloge absolue nulle.
+
+La proposition remplace uniquement TT==0 par IMP_CHK>0 dans la garde et retire l’inclusion COM08 devenue inutile dans cette routine. IDYNA2, IQSTAT0 et R2 exactement zéro restent exigés. Le diagnostic explicite INFO est conservé ; zéro statique, autres méthodes/quasi-statique et R2 hors plage/non fini gardent leurs anciennes branches. Tous les anciens CHECK échoués restent conservés. Aucune force, matrice, matière, histoire, masse, inertie ou dynamique modifiée. Les107391 avertissements et cinq contactsTYPE25 restent présents/bloquants, sans substitution ni compensationRKE.
+
+Source/différence exactes en copie privéeAGPL. Plan : wtc1_simulation_v8/data/aircraft_a72_proposal.json. Neuvième moteur isolé A73 proposé, toutes les corrections A71 conservées, compilation plafond1h/sixCPU, sansGPU ni installation, estimation5–15minutes. Aucun patch appliqué, aucun nouveau moteur compilé.
+
+Puis maximum six Engine sur unCPU/plafond180s, zéro Starter : les six mêmes références instrumentales/entières sur le nouveau binaire. Le Starter positif A71 validé est réutilisé sans répétition, cartes/état initial vérifiés par empreintes. Les observations ajoutent les valeurs natives IDYNA, IQSTAT, IMP_CHK, NCYCLE et TT aux lectures de R2/diagonales, aux mêmes points d’arrêt matériels ; offsets et types sont dérivés des déclarations figées, bornes/taille des symboles contrôlées avant lecture. Aucun logiciel à installer, code/instruction/état mécanique de l’enfant modifié.
+
+Le témoin zéro dynamique doit afficher INFO1/ERROR0, le zéro statique rester refusé, le contrôle chargé garder R2=4, la dynamique libre1ms conserver ses critères et les CHECK entiers garder leurs contacts/avertissements. Aucun temps de témoin crédité à l’impact entier, aucune extension vers10s dans ce lot. Réussite d’un contrôle de chargement ne qualifie pas l’impact physique ; les contacts/inerties/matériaux/bilans entiers restent à traiter.
+
+Un nouvel accord distinct est requis : l’accord A71 couvrait la source exacte TT0 et ses six Engine/unStarter, tous consommés. AGENTS.md demande une autorisation pour toute nouvelle modification/compilation. Meilleur impact entier0,0200001220703125s ; objectif dix secondes physiques puis vidéo3D incomplet.
