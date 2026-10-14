@@ -1,0 +1,304 @@
+{
+  "created_utc": "2026-10-14T15:47:39.221445+00:00",
+  "iteration": "AIRCRAFT-A71",
+  "seed": 1102096,
+  "random_draws": 0,
+  "cases": [
+    {
+      "case": "FREE_INITIAL_ZERO_CHECK",
+      "name": "A67_FREE_Ismstr4",
+      "inputs": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a67/native/FREE_Ismstr4/A67_FREE_Ismstr4_0000_0001.rst",
+          "bytes": 303870,
+          "sha256": "fa86b514cc2c5bf07daf094af4943c6bdbb72eba73c5b27c7577a9ae03d6ea8b"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a70_preparation_r2/FREE_INITIAL_ZERO_CHECK/A67_FREE_Ismstr4_0001.rad",
+          "bytes": 620,
+          "sha256": "c825bc2bd431ed32b7af68754d50a3c6f4398c802c1b87a2dde9863aee5d7ab0"
+        }
+      ],
+      "new_Starter": false,
+      "expected": "zero residual INFO, no loading error; observation R2=0"
+    },
+    {
+      "case": "STATIC_INITIAL_ZERO_CHECK",
+      "name": "A67_FREE_Ismstr4",
+      "inputs": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a67/native/FREE_Ismstr4/A67_FREE_Ismstr4_0000_0001.rst",
+          "bytes": 303870,
+          "sha256": "fa86b514cc2c5bf07daf094af4943c6bdbb72eba73c5b27c7577a9ae03d6ea8b"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a70_preparation_r2/STATIC_INITIAL_ZERO_CHECK/A67_FREE_Ismstr4_0001.rad",
+          "bytes": 566,
+          "sha256": "8be5f3b1c5570c914c18daa4a71f973b991a39cf64e8898e05a829f4757ccb62"
+        }
+      ],
+      "new_Starter": false,
+      "expected": "R2=0 still loading ERROR in static CHECK; intentional rejection preserved"
+    },
+    {
+      "case": "STATIC_POSITIVE_LOAD_CHECK",
+      "name": "A71_STATIC_POSITIVE_LOAD_CHECK",
+      "inputs": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a70_preparation_r2/STATIC_POSITIVE_LOAD_CHECK/A71_STATIC_POSITIVE_LOAD_CHECK_0000.rad",
+          "bytes": 3209,
+          "sha256": "c4199929a4d7fde56f49ddb63408106684c9f5453091a0d547882a0ad7c58e9d"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a70_preparation_r2/STATIC_POSITIVE_LOAD_CHECK/A71_STATIC_POSITIVE_LOAD_CHECK_0001.rad",
+          "bytes": 580,
+          "sha256": "54a554dabd73f5683f7687edbee4cfbd435e21927a9c3698c4cf8d3c1cb362f2"
+        }
+      ],
+      "new_Starter": true,
+      "force_per_node_N": 1,
+      "loaded_nodes": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "total_control_force_N": 4,
+      "expected": "R2 positive finite; no loading error; no residual-zero INFO"
+    },
+    {
+      "case": "FREE_DYNAMIC_REGRESSION",
+      "name": "A67_FREE_Ismstr4",
+      "inputs": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a67/native/FREE_Ismstr4/A67_FREE_Ismstr4_0000_0001.rst",
+          "bytes": 303870,
+          "sha256": "fa86b514cc2c5bf07daf094af4943c6bdbb72eba73c5b27c7577a9ae03d6ea8b"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a67/native/FREE_Ismstr4/A67_FREE_Ismstr4_0001.rad",
+          "bytes": 608,
+          "sha256": "c72b4b39d02ffa323e8828a7031250e204978b2104043c9410e2bf8cbb6cff6d"
+        }
+      ],
+      "new_Starter": false,
+      "expected": "1 ms native all-step free conservation/reference with unchanged A67 tolerances; no CHECK, no whole duration credit"
+    },
+    {
+      "case": "WHOLE_ORIGINAL_CHECK",
+      "name": "A49_EQUIVALENT_RIGID_CHAINS",
+      "inputs": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a52/WHOLE_ORIGINAL_TYPE2_BINDING_TRACE/A49_EQUIVALENT_RIGID_CHAINS_0000_0001.rst",
+          "sha256": "7a36733b32058c90b583f598e49924b2ab5cfc30e70e74fcf98cff61dad7fb06",
+          "bytes": 145410297
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a52/WHOLE_ORIGINAL_TYPE2_BINDING_TRACE/A49_EQUIVALENT_RIGID_CHAINS_0001.rad",
+          "sha256": "223954811ab3b45978fb34983534092a2db6362d3a1fe6534e71f26fa0ba814b",
+          "bytes": 392
+        }
+      ],
+      "new_Starter": false,
+      "whole_cards_and_initial_state_unchanged": true,
+      "expected": "observe zero/positive R2 classification in new binary; keep all warnings and five TYPE25 blocking, whole qualification remains false"
+    },
+    {
+      "case": "WHOLE_PAIRED_CHECK",
+      "name": "A52_TYPE2_FACET_PAIRS_R1",
+      "inputs": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a52/WHOLE_PAIRED_TYPE2_BINDING_TRACE_R1/A52_TYPE2_FACET_PAIRS_R1_0000_0001.rst",
+          "sha256": "030edddf27c40cfab372582e3b311627ddda51c77c21409c2ffd58259807126a",
+          "bytes": 144800310
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a52/WHOLE_PAIRED_TYPE2_BINDING_TRACE_R1/A52_TYPE2_FACET_PAIRS_R1_0001.rad",
+          "sha256": "9c0465aa6d928b2ab192c06dd97405705fb918f589f96f6de9d8c1a1d7f4478b",
+          "bytes": 389
+        }
+      ],
+      "new_Starter": false,
+      "whole_cards_and_initial_state_unchanged": true,
+      "expected": "observe zero/positive R2 classification in new binary; keep all warnings and five TYPE25 blocking, whole qualification remains false"
+    }
+  ],
+  "binary_sha256": "61b9b1d613267ad24ad8bde41e00496399ba5ba5e0808f8e3bead9b161c99a7e",
+  "symbols": {
+    "imp_check0_": {
+      "offset": 12341584,
+      "bytes": 2506
+    },
+    "imp_checm0_": {
+      "offset": 12339088,
+      "bytes": 2484
+    },
+    "imp_chkm_": {
+      "offset": 12495616,
+      "bytes": 26284
+    },
+    "lin_solv_": {
+      "offset": 12715136,
+      "bytes": 6235
+    },
+    "produt_w_": {
+      "offset": 12782448,
+      "bytes": 187
+    }
+  },
+  "observer": "wtc1_simulation_v8/scripts/observe_aircraft_a71_check_linux.py",
+  "observer_sha256": "19402094314f775e76ef3970932a98fcf953474d17c1ec232aafdd45a9804cd4",
+  "cohesive": {
+    "law": "LAW117",
+    "property": "TYPE43",
+    "EN_N_mm3": 4400,
+    "ET_N_mm3": 800,
+    "TN_MPa": 450,
+    "TT_MPa": 100,
+    "GI_N_mm": 50,
+    "GII_N_mm": 50,
+    "area_mass_density_g_mm2": 1e-20,
+    "nodal_instrument_mass_g": 1,
+    "Imass": 1,
+    "Idel": 4,
+    "Irupt": 1,
+    "Ismstr": 1,
+    "stiffness_derivation": "A07 analytical contract E22000MPa/5mm; ET4000/5. Numerical interface reference only.",
+    "G_physical_measured": false,
+    "shear_strength_measured": false,
+    "whole_aircraft_transfer_qualified": false,
+    "true_glue_or_tearing_properties_identified": false,
+    "power_exponent": 2,
+    "mode_coupling_gamma": 1,
+    "displacement_criterion": 1,
+    "linear_evolution": 1,
+    "symmetric_damage": false
+  },
+  "acceptance": {
+    "mass_relative": 1e-06,
+    "added_mass_relative": 1e-09,
+    "energy_relative": 0.02,
+    "energy_absolute_J": 1e-07,
+    "momentum_relative": 0.02,
+    "momentum_absolute_Ns": 1e-09,
+    "free_displacement_mm": 2e-05,
+    "free_velocity_mm_ms": 0.0002,
+    "junction_state_relative": 1e-05,
+    "junction_state_absolute": 1e-06,
+    "junction_time_ms": 2e-05,
+    "contact_impulse_observable_Ns": 1e-06,
+    "contact_IE_observable_J": 1e-07,
+    "comparison_energy_relative": 0.02,
+    "comparison_energy_absolute_J": 1e-07,
+    "half_dt_energy_relative": 0.005
+  },
+  "free_case": {
+    "id": "FREE_DYNAMIC_REGRESSION",
+    "stage": "free",
+    "L_mm": 10,
+    "dt_cap_ms": 0.000125,
+    "imposed_axes": [],
+    "knot_times_ms": [
+      0,
+      1
+    ],
+    "knot_gaps_mm": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "end_ms": 1,
+    "initial_free_velocity_mm_ms": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "all_top_translations_free": true,
+    "no_imposed_displacements_or_velocities_during_run": true,
+    "nodes_mm": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        10.0,
+        0.0,
+        0.0
+      ],
+      [
+        10.0,
+        10.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        10.0,
+        0.0,
+        0.0
+      ],
+      [
+        10.0,
+        10.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.0,
+        0.0
+      ]
+    ],
+    "reference": "constant_uniform",
+    "Ismstr": 4,
+    "field_output_dt_ms": 6.25e-05,
+    "RUN_stop_ms": 1.0000625,
+    "initial_top_mass_g": 4,
+    "total_instrument_mass_g": 8,
+    "nodal_mass_g": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "whole_budget_change": false,
+    "initial_current_GP_area_mm2": [
+      25.0,
+      25.0,
+      25.0,
+      25.0
+    ],
+    "full_free_counter_qualification_required": true,
+    "linear_reference_small_amplitude_not_full_nonlinear_qualification": false,
+    "uniform_top_motion_required": true
+  },
+  "extra_analytical_displacement_tolerance_mm": 2e-05,
+  "extra_analytical_velocity_tolerance_mm_ms": 0.0002,
+  "maximum_Engine": 6,
+  "maximum_Starter": 1,
+  "CPU_threads": 1,
+  "each_cap_s": 180,
+  "GPU": false,
+  "whole_dynamic_extension": false,
+  "positive_only_source_field_in_old_observer_renamed_for_new_policy_clarity": true,
+  "all_prior_budgets_not_reset": true
+}

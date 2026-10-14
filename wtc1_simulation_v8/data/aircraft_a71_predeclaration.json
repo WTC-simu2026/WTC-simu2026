@@ -1,0 +1,1223 @@
+{
+  "created_utc": "2026-10-14T15:41:16.595084+00:00",
+  "iteration": "AIRCRAFT-A71",
+  "seed": 1102096,
+  "random_draws": 0,
+  "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+  "authorization": {
+    "created_utc": "2026-10-14T15:41:14.305176+00:00",
+    "explicit_human_authorization": true,
+    "answer": "Oui, appliquer et compiler le correctif A70 et exécuter le lot A71",
+    "question_item": "request_user_input_async/call_39c39821021d487995c72f3fcc09f18e/0",
+    "plan_sha256": "ec5b475e5bdc26386bf19f4ee8683351756d40a984148233a97bd73b662496e4",
+    "review_sha256": "8fb755b71fcf9b5ba7df580d5da4edab647f2569ea8a5bf57e19af126493307c",
+    "proposal_sha256": "b4bc9732d4ac8fcf92b293c472c9121ea39e52393395ca4fc23f418cd2ea1de5",
+    "source_sha256": "3c5a03f568e764d7a7d6965b3020b8e38c12539ee19561781f5031f53415191c",
+    "patch_sha256": "cbdf8ec9dc0519464613f94b6937a093299ed3ea0bac6bbd4bfc3265487a6442",
+    "maximum_build_s": 3600,
+    "CPU_build": 6,
+    "maximum_Engine": 6,
+    "maximum_Starter": 1,
+    "CPU_native": 1,
+    "each_native_cap_s": 180,
+    "GPU": false,
+    "installation": false,
+    "whole_dynamic_extension": false,
+    "prior_budgets_not_reset": true
+  },
+  "surface_patch": {
+    "created_utc": "2026-10-13T16:10:27.598753+00:00",
+    "target": "engine/source/elements/solid/solide8z/s8zke3.F",
+    "source_sha256": "50a875b9309d05deeedfc1238e76a31d4dc9e22d01016521d4a46752f2a78a66",
+    "proposed_source_path": "wtc1_simulation_v8/openradioss_runtime/a61_surface_iteration_proposal/s8zke3.proposed.F",
+    "proposed_sha256": "53a6d683bff4e2f3124ac98d2743f74777107890031b5e407af489859407f35e",
+    "patch_path": "wtc1_simulation_v8/openradioss_runtime/a61_surface_iteration_proposal/type43_surface_elastic_iteration.patch",
+    "patch_sha256": "1c2c9b74239d75883234057d2ae0f1e28d0dd017abb5fa99aa8deaad89b3a3b8",
+    "only_new_engine_file": "engine/source/elements/solid/solide8z/s8zke3.F",
+    "new_routine_appended_in_existing_file": true,
+    "no_build_system_change": true,
+    "conditional": "IGTYP43 and MTN117 and Ismstr1 only",
+    "fixed_format_new_code_columns_within_72": true,
+    "matrix": "integral B^T[ET I+(EN-ET) n n^T]B dA over four reference-area Gauss points; active GP flags retained",
+    "is_exact_Jacobian": false,
+    "native_forces_and_damage_history_source_unchanged": true,
+    "new_source_patch_applied": false,
+    "compiled": false,
+    "native_mechanical_pass_claimed": false,
+    "requires_distinct_explicit_human_approval": true,
+    "future_candidate_name": "a62_type43_surface_iteration_candidate",
+    "future_Engine_number": 6,
+    "future_build_cap_s": 3600,
+    "future_CPU": 6,
+    "GPU": false,
+    "installation": false,
+    "future_control_plan": [
+      "First elastic normal/shear/mixed implicit loaded witnesses with nodal reactions and fields, all fail on USER BREAK/empty histories.",
+      "Then damaged cyclic/mixed witnesses with material state/rollback observation, equivalent native traction/work and unchanged physical gates; stop qualification if state staging fails.",
+      "New binary regressions for explicit cohesive branch and TYPE7 implicit contact; bounded whole CHECK only after local gate, no long impact yet."
+    ],
+    "native_Engine_maximum_runs": 12,
+    "each_native_cap_s": 180,
+    "physical_budgets_or_criteria_changed": false,
+    "old_Engines_and_failures_preserved": true,
+    "whole_insertion_qualified": false,
+    "objective1_complete": false
+  },
+  "original_scratch_patch": {
+    "created_utc": "2026-10-13T14:26:12.417767+00:00",
+    "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+    "target": "engine/source/elements/elbuf/allocbuf_auto.F",
+    "source_sha256": "dd98f5fc264c750bc85fc244f3513a657e13a666583d75f1a72daabca89777f0",
+    "patch_path": "tmp/aircraft_a56_original_smstr_patch_proposal/type43_original_smstr.patch",
+    "patch_sha256": "ef56cf633e4d43b2dd4298f1c5995da1cae7f4a22130aea35e9702dc57c0427e",
+    "proposed_source_path": "tmp/aircraft_a56_original_smstr_patch_proposal/allocbuf_auto.F.proposed",
+    "proposed_sha256": "f8b105bcf7c53e252c4c73fa89a2b4bf55fc4b86d1b31ace549f3214f480ab3b",
+    "native_original_allocation_capacity_zero_proven": true,
+    "actual_SAV_matches_original_allocation": {
+      "label": "ELBUF_STR%GBUF%SMSTR",
+      "requested_values": 0,
+      "descriptor_address": "0x631466f9d2d0",
+      "caller_return_offset": "0x468d01",
+      "allocator_entry_offset": "0x197150",
+      "data_pointer": "0x631466f9f390",
+      "element_bytes": 8,
+      "lower_bound": 1,
+      "upper_bound": 0,
+      "native_capacity": 0,
+      "descriptor_raw_words": [
+        "0x631466f9f390",
+        "0xffffffffffffffff",
+        "0x8",
+        "0x30100000000",
+        "0x8",
+        "0x1",
+        "0x1",
+        "0x0"
+      ]
+    },
+    "A55_temporary_buffer_only_hypothesis_rejected": true,
+    "software_patch_applied": false,
+    "compiled_or_native_qualified": false,
+    "human_authorization_received": false,
+    "arithmetic_and_restart_restore_cases": [
+      {
+        "kind": 14,
+        "NEL": 0,
+        "encoded_width": 0,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 14,
+        "NEL": 0,
+        "encoded_width": 6,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 14,
+        "NEL": 0,
+        "encoded_width": 21,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 14,
+        "NEL": 0,
+        "encoded_width": 24,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 14,
+        "NEL": 1,
+        "encoded_width": 0,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 14,
+        "NEL": 1,
+        "encoded_width": 6,
+        "allocation": 6,
+        "encoded_read_count": 6,
+        "pass": true
+      },
+      {
+        "kind": 14,
+        "NEL": 1,
+        "encoded_width": 21,
+        "allocation": 21,
+        "encoded_read_count": 21,
+        "pass": true
+      },
+      {
+        "kind": 14,
+        "NEL": 1,
+        "encoded_width": 24,
+        "allocation": 24,
+        "encoded_read_count": 24,
+        "pass": true
+      },
+      {
+        "kind": 14,
+        "NEL": 128,
+        "encoded_width": 0,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 14,
+        "NEL": 128,
+        "encoded_width": 6,
+        "allocation": 768,
+        "encoded_read_count": 768,
+        "pass": true
+      },
+      {
+        "kind": 14,
+        "NEL": 128,
+        "encoded_width": 21,
+        "allocation": 2688,
+        "encoded_read_count": 2688,
+        "pass": true
+      },
+      {
+        "kind": 14,
+        "NEL": 128,
+        "encoded_width": 24,
+        "allocation": 3072,
+        "encoded_read_count": 3072,
+        "pass": true
+      },
+      {
+        "kind": 14,
+        "NEL": 624,
+        "encoded_width": 0,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 14,
+        "NEL": 624,
+        "encoded_width": 6,
+        "allocation": 3744,
+        "encoded_read_count": 3744,
+        "pass": true
+      },
+      {
+        "kind": 14,
+        "NEL": 624,
+        "encoded_width": 21,
+        "allocation": 13104,
+        "encoded_read_count": 13104,
+        "pass": true
+      },
+      {
+        "kind": 14,
+        "NEL": 624,
+        "encoded_width": 24,
+        "allocation": 14976,
+        "encoded_read_count": 14976,
+        "pass": true
+      },
+      {
+        "kind": 21,
+        "NEL": 0,
+        "encoded_width": 0,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 21,
+        "NEL": 0,
+        "encoded_width": 6,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 21,
+        "NEL": 0,
+        "encoded_width": 21,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 21,
+        "NEL": 0,
+        "encoded_width": 24,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 21,
+        "NEL": 1,
+        "encoded_width": 0,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 21,
+        "NEL": 1,
+        "encoded_width": 6,
+        "allocation": 6,
+        "encoded_read_count": 6,
+        "pass": true
+      },
+      {
+        "kind": 21,
+        "NEL": 1,
+        "encoded_width": 21,
+        "allocation": 21,
+        "encoded_read_count": 21,
+        "pass": true
+      },
+      {
+        "kind": 21,
+        "NEL": 1,
+        "encoded_width": 24,
+        "allocation": 24,
+        "encoded_read_count": 24,
+        "pass": true
+      },
+      {
+        "kind": 21,
+        "NEL": 128,
+        "encoded_width": 0,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 21,
+        "NEL": 128,
+        "encoded_width": 6,
+        "allocation": 768,
+        "encoded_read_count": 768,
+        "pass": true
+      },
+      {
+        "kind": 21,
+        "NEL": 128,
+        "encoded_width": 21,
+        "allocation": 2688,
+        "encoded_read_count": 2688,
+        "pass": true
+      },
+      {
+        "kind": 21,
+        "NEL": 128,
+        "encoded_width": 24,
+        "allocation": 3072,
+        "encoded_read_count": 3072,
+        "pass": true
+      },
+      {
+        "kind": 21,
+        "NEL": 624,
+        "encoded_width": 0,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 21,
+        "NEL": 624,
+        "encoded_width": 6,
+        "allocation": 3744,
+        "encoded_read_count": 3744,
+        "pass": true
+      },
+      {
+        "kind": 21,
+        "NEL": 624,
+        "encoded_width": 21,
+        "allocation": 13104,
+        "encoded_read_count": 13104,
+        "pass": true
+      },
+      {
+        "kind": 21,
+        "NEL": 624,
+        "encoded_width": 24,
+        "allocation": 14976,
+        "encoded_read_count": 14976,
+        "pass": true
+      },
+      {
+        "kind": 43,
+        "NEL": 0,
+        "encoded_width": 0,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 43,
+        "NEL": 0,
+        "encoded_width": 6,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 43,
+        "NEL": 0,
+        "encoded_width": 21,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 43,
+        "NEL": 0,
+        "encoded_width": 24,
+        "allocation": 0,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 43,
+        "NEL": 1,
+        "encoded_width": 0,
+        "allocation": 21,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 43,
+        "NEL": 1,
+        "encoded_width": 6,
+        "allocation": 21,
+        "encoded_read_count": 6,
+        "pass": true
+      },
+      {
+        "kind": 43,
+        "NEL": 1,
+        "encoded_width": 21,
+        "allocation": 21,
+        "encoded_read_count": 21,
+        "pass": true
+      },
+      {
+        "kind": 43,
+        "NEL": 1,
+        "encoded_width": 24,
+        "allocation": 24,
+        "encoded_read_count": 24,
+        "pass": true
+      },
+      {
+        "kind": 43,
+        "NEL": 128,
+        "encoded_width": 0,
+        "allocation": 2688,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 43,
+        "NEL": 128,
+        "encoded_width": 6,
+        "allocation": 2688,
+        "encoded_read_count": 768,
+        "pass": true
+      },
+      {
+        "kind": 43,
+        "NEL": 128,
+        "encoded_width": 21,
+        "allocation": 2688,
+        "encoded_read_count": 2688,
+        "pass": true
+      },
+      {
+        "kind": 43,
+        "NEL": 128,
+        "encoded_width": 24,
+        "allocation": 3072,
+        "encoded_read_count": 3072,
+        "pass": true
+      },
+      {
+        "kind": 43,
+        "NEL": 624,
+        "encoded_width": 0,
+        "allocation": 13104,
+        "encoded_read_count": 0,
+        "pass": true
+      },
+      {
+        "kind": 43,
+        "NEL": 624,
+        "encoded_width": 6,
+        "allocation": 13104,
+        "encoded_read_count": 3744,
+        "pass": true
+      },
+      {
+        "kind": 43,
+        "NEL": 624,
+        "encoded_width": 21,
+        "allocation": 13104,
+        "encoded_read_count": 13104,
+        "pass": true
+      },
+      {
+        "kind": 43,
+        "NEL": 624,
+        "encoded_width": 24,
+        "allocation": 14976,
+        "encoded_read_count": 14976,
+        "pass": true
+      }
+    ],
+    "arithmetic_gate_pass": true,
+    "fixed_form_added_lines_at_most_72": true,
+    "scope": "Original TYPE43 scratch allocation at restart load, at least NEL*21. Serialized G_SMSTR widths/SDP_RBUF/read counts unchanged. Shared loader affects memory allocation in explicit and implicit; physics cards unchanged.",
+    "build_proposal": {
+      "iteration": "AIRCRAFT-A57",
+      "isolated_directory": "wtc1_simulation_v8/openradioss_runtime/a57_original_type43_scratch_candidate",
+      "prior_A53_graph_and_A55_temporary_patches_retained": true,
+      "maximum_build_s": 3600,
+      "CPU_threads": 6,
+      "GPU": false,
+      "new_installation": false,
+      "dependencies": "same cached A54/A56 environment"
+    },
+    "native_proposal": {
+      "cap_s": 180,
+      "CPU": 1,
+      "GPU": false,
+      "checks": [
+        "native capacity >=NEL*21 and actual pointer identity",
+        "heap header writer regression",
+        "implicit loaded cohesion/work and time step",
+        "whole graph and CHECK",
+        "explicit cohesion and TYPE7 conservation"
+      ],
+      "acceptance_thresholds_unchanged": true
+    },
+    "remaining_failed_gates": [
+      "implicit loaded cohesion",
+      "whole CHECK 15errors",
+      "five implicit TYPE25 ignored",
+      "whole inertias/local energy coverage"
+    ],
+    "objective1_complete": false,
+    "new_whole_duration_credit_s": 0,
+    "harness": {
+      "Status": "PASS",
+      "ProjectRoot": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an",
+      "RegistryEntries": 174,
+      "RequiredFiles": 98,
+      "SourceArchivesDeclared": 2,
+      "SourceArchivesUnavailable": 0,
+      "SourceHashesVerified": 8,
+      "CurrentIteration": "AIRCRAFT-A55",
+      "NextIteration": "AIRCRAFT-A56"
+    }
+  },
+  "scratch_patch": {
+    "created_utc": "2026-10-13T13:58:27.113969+00:00",
+    "target": "engine/source/elements/elbuf/alloc_elbuf_imp.F",
+    "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+    "source_sha256": "9fdd36d3e265755cce16484a3259fea248180cbcbde193113a038d91225ebf54",
+    "patch_path": "tmp/aircraft_a55_smstr_patch_proposal_r1/type43_smstr_scratch.patch",
+    "patch_sha256": "a0d52993240ac373a726185b2a3400d447bd947a59aa483b7f60e45c2bdc8503",
+    "proposed_source_path": "tmp/aircraft_a55_smstr_patch_proposal_r1/alloc_elbuf_imp.F.proposed",
+    "proposed_sha256": "d8884a6d37289d94aca8ddfbddf2ab176e0e7a08e06ac4b0a9d712b2e68c4173",
+    "arithmetic_checks": [
+      {
+        "IGTYP": 14,
+        "NEL": 0,
+        "G_SMSTR": 0,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 14,
+        "NEL": 0,
+        "G_SMSTR": 6,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 14,
+        "NEL": 0,
+        "G_SMSTR": 21,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 14,
+        "NEL": 0,
+        "G_SMSTR": 24,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 14,
+        "NEL": 1,
+        "G_SMSTR": 0,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 14,
+        "NEL": 1,
+        "G_SMSTR": 6,
+        "allocation": 6,
+        "pass": true
+      },
+      {
+        "IGTYP": 14,
+        "NEL": 1,
+        "G_SMSTR": 21,
+        "allocation": 21,
+        "pass": true
+      },
+      {
+        "IGTYP": 14,
+        "NEL": 1,
+        "G_SMSTR": 24,
+        "allocation": 24,
+        "pass": true
+      },
+      {
+        "IGTYP": 14,
+        "NEL": 128,
+        "G_SMSTR": 0,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 14,
+        "NEL": 128,
+        "G_SMSTR": 6,
+        "allocation": 768,
+        "pass": true
+      },
+      {
+        "IGTYP": 14,
+        "NEL": 128,
+        "G_SMSTR": 21,
+        "allocation": 2688,
+        "pass": true
+      },
+      {
+        "IGTYP": 14,
+        "NEL": 128,
+        "G_SMSTR": 24,
+        "allocation": 3072,
+        "pass": true
+      },
+      {
+        "IGTYP": 14,
+        "NEL": 624,
+        "G_SMSTR": 0,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 14,
+        "NEL": 624,
+        "G_SMSTR": 6,
+        "allocation": 3744,
+        "pass": true
+      },
+      {
+        "IGTYP": 14,
+        "NEL": 624,
+        "G_SMSTR": 21,
+        "allocation": 13104,
+        "pass": true
+      },
+      {
+        "IGTYP": 14,
+        "NEL": 624,
+        "G_SMSTR": 24,
+        "allocation": 14976,
+        "pass": true
+      },
+      {
+        "IGTYP": 21,
+        "NEL": 0,
+        "G_SMSTR": 0,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 21,
+        "NEL": 0,
+        "G_SMSTR": 6,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 21,
+        "NEL": 0,
+        "G_SMSTR": 21,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 21,
+        "NEL": 0,
+        "G_SMSTR": 24,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 21,
+        "NEL": 1,
+        "G_SMSTR": 0,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 21,
+        "NEL": 1,
+        "G_SMSTR": 6,
+        "allocation": 6,
+        "pass": true
+      },
+      {
+        "IGTYP": 21,
+        "NEL": 1,
+        "G_SMSTR": 21,
+        "allocation": 21,
+        "pass": true
+      },
+      {
+        "IGTYP": 21,
+        "NEL": 1,
+        "G_SMSTR": 24,
+        "allocation": 24,
+        "pass": true
+      },
+      {
+        "IGTYP": 21,
+        "NEL": 128,
+        "G_SMSTR": 0,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 21,
+        "NEL": 128,
+        "G_SMSTR": 6,
+        "allocation": 768,
+        "pass": true
+      },
+      {
+        "IGTYP": 21,
+        "NEL": 128,
+        "G_SMSTR": 21,
+        "allocation": 2688,
+        "pass": true
+      },
+      {
+        "IGTYP": 21,
+        "NEL": 128,
+        "G_SMSTR": 24,
+        "allocation": 3072,
+        "pass": true
+      },
+      {
+        "IGTYP": 21,
+        "NEL": 624,
+        "G_SMSTR": 0,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 21,
+        "NEL": 624,
+        "G_SMSTR": 6,
+        "allocation": 3744,
+        "pass": true
+      },
+      {
+        "IGTYP": 21,
+        "NEL": 624,
+        "G_SMSTR": 21,
+        "allocation": 13104,
+        "pass": true
+      },
+      {
+        "IGTYP": 21,
+        "NEL": 624,
+        "G_SMSTR": 24,
+        "allocation": 14976,
+        "pass": true
+      },
+      {
+        "IGTYP": 43,
+        "NEL": 0,
+        "G_SMSTR": 0,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 43,
+        "NEL": 0,
+        "G_SMSTR": 6,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 43,
+        "NEL": 0,
+        "G_SMSTR": 21,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 43,
+        "NEL": 0,
+        "G_SMSTR": 24,
+        "allocation": 0,
+        "pass": true
+      },
+      {
+        "IGTYP": 43,
+        "NEL": 1,
+        "G_SMSTR": 0,
+        "allocation": 21,
+        "pass": true
+      },
+      {
+        "IGTYP": 43,
+        "NEL": 1,
+        "G_SMSTR": 6,
+        "allocation": 21,
+        "pass": true
+      },
+      {
+        "IGTYP": 43,
+        "NEL": 1,
+        "G_SMSTR": 21,
+        "allocation": 21,
+        "pass": true
+      },
+      {
+        "IGTYP": 43,
+        "NEL": 1,
+        "G_SMSTR": 24,
+        "allocation": 24,
+        "pass": true
+      },
+      {
+        "IGTYP": 43,
+        "NEL": 128,
+        "G_SMSTR": 0,
+        "allocation": 2688,
+        "pass": true
+      },
+      {
+        "IGTYP": 43,
+        "NEL": 128,
+        "G_SMSTR": 6,
+        "allocation": 2688,
+        "pass": true
+      },
+      {
+        "IGTYP": 43,
+        "NEL": 128,
+        "G_SMSTR": 21,
+        "allocation": 2688,
+        "pass": true
+      },
+      {
+        "IGTYP": 43,
+        "NEL": 128,
+        "G_SMSTR": 24,
+        "allocation": 3072,
+        "pass": true
+      },
+      {
+        "IGTYP": 43,
+        "NEL": 624,
+        "G_SMSTR": 0,
+        "allocation": 13104,
+        "pass": true
+      },
+      {
+        "IGTYP": 43,
+        "NEL": 624,
+        "G_SMSTR": 6,
+        "allocation": 13104,
+        "pass": true
+      },
+      {
+        "IGTYP": 43,
+        "NEL": 624,
+        "G_SMSTR": 21,
+        "allocation": 13104,
+        "pass": true
+      },
+      {
+        "IGTYP": 43,
+        "NEL": 624,
+        "G_SMSTR": 24,
+        "allocation": 14976,
+        "pass": true
+      }
+    ],
+    "arithmetic_gate_pass": true,
+    "fixed_form_added_line_limit_pass": true,
+    "line_endings": "LF",
+    "software_patch_applied": false,
+    "compiled_or_native_qualified": false,
+    "human_authorization_received": false,
+    "native_heap_corruption_directly_observed": true,
+    "insufficient_capacity_is_source_contract_inference": true,
+    "native_G_SMSTR_capacity_not_read": true,
+    "scope": "Temporary implicit TYPE43 SMSTR storage only, at least NEL*21 values; other types unchanged, source/restart widths and physical cards unchanged.",
+    "build_proposal": {
+      "iteration": "AIRCRAFT-A56",
+      "isolated_directory": "wtc1_simulation_v8/openradioss_runtime/a56_type43_scratch_candidate",
+      "prior_A53_graph_patch_retained": true,
+      "maximum_build_s": 3600,
+      "CPU_threads": 6,
+      "GPU": false,
+      "new_installation": false,
+      "dependencies": "same cached and installed A54 environment"
+    },
+    "native_proposal": {
+      "per_process_cap_s": 180,
+      "CPU_threads": 1,
+      "GPU": false,
+      "checks": [
+        "native temporary capacity and bounds",
+        "heap corruption regression",
+        "loaded implicit cohesion and energy",
+        "whole graph and CHECK",
+        "explicit cohesive and TYPE7 contact regression"
+      ],
+      "acceptance_thresholds_unchanged": true
+    },
+    "remaining_failed_gates": [
+      "whole CHECK 15 errors",
+      "TYPE25 implicit ignored",
+      "loaded implicit cohesion",
+      "whole contact and energy coverage"
+    ],
+    "new_whole_duration_credit_s": 0,
+    "objective1_complete": false,
+    "harness": {
+      "Status": "PASS",
+      "ProjectRoot": "C:\\Users\\jeuxpc\\Documents\\Codex\\2026-08-13\\referenced-chatgpt-conversation-this-is-an",
+      "RegistryEntries": 173,
+      "RequiredFiles": 98,
+      "SourceArchivesDeclared": 2,
+      "SourceArchivesUnavailable": 0,
+      "SourceHashesVerified": 8,
+      "CurrentIteration": "AIRCRAFT-A54",
+      "NextIteration": "AIRCRAFT-A55"
+    }
+  },
+  "patch": {
+    "source_pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+    "source_path": "engine/source/implicit/ind_glob_k.F",
+    "original_sha256": "22118686d6690b2e0b7be7e2bc9dd4b55a7450b52f7ec29f4a13000f7a675e81",
+    "patch_path": "tmp/aircraft_a53_graph_patch_proposal/type2_graph_routing.patch",
+    "patch_sha256": "053e40c2833aad51d77f670aba0dfc9a8f016981d961d1edb7d04c3734154c64",
+    "proposed_source_path": "tmp/aircraft_a53_graph_patch_proposal/ind_glob_k.F.proposed",
+    "proposed_sha256": "e90e934721b31d645d7d7ce1e3697008ba0f74f21d7c38afdd583416d143fe90",
+    "read_only_hash_checks_pass": true,
+    "applied": false,
+    "compiled": false,
+    "native_qualified": false,
+    "scope": "TYPE2 add/get/membership in DIM_KINE_T and IND_KINE_K plus three storage-selection helpers, one source file only.",
+    "sizing_rule": "Main rows first; ordinary sizing indices remain global with existing padding.",
+    "building_rule": "Ordinary rows in ICOK; main rows in ICOKM at row-INK.",
+    "cached_static_scope_pass": true,
+    "cached_python_oracle_cases_passed": 8,
+    "cached_checks_rerun": false,
+    "license": "AGPL-3.0-or-later",
+    "complete_engine_source_and_patch_in_current_MIT_public_manifest": false
+  },
+  "build": {
+    "planned_candidate_directory": "wtc1_simulation_v8/openradioss_runtime/a54_type2_graph_candidate",
+    "candidate_directory_currently_exists": false,
+    "planned_output_directory": "wtc1_simulation_v8/output/aircraft_a54",
+    "output_directory_currently_exists": false,
+    "reuse_builder_as_reference_only": "wtc1_simulation_v8/scripts/build_aircraft_a44_legacy_mumps.py",
+    "builder_adaptation_needed": "A44 builder asserts AIRCRAFT-A43 and a nonexistent A44 directory, and reads the old authorization. Create a separate A54 builder only after the new consent; never run A44 builder directly or weaken its guards.",
+    "cached_source_archive": {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/source.tar.gz",
+      "sha256": "d64b773e899c174f5d59aadc4d2b73a101a083581e611d67215aaa50037cf9f8",
+      "bytes": 35589972,
+      "read_only_hash_check_pass": true,
+      "original_target_member_hash_check_pass": true,
+      "member_extracted_to_filesystem": false
+    },
+    "cached_dependency_archive": {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/extlib_v67.tar.gz",
+      "sha256": "e7eb6f949702dc8a1fd74b16221ac1aae43b439358cb2b7e0c8cd7e5b8d17cdb",
+      "bytes": 26929629,
+      "read_only_hash_check_pass": true,
+      "requested_version": 71,
+      "cached_version": 67,
+      "difference_remains_explicitly_unqualified": true,
+      "metadata_override": "Preserve original EXTLIB_VERSION.json and record the same A44 build-only 71->67 override separately from the sole mechanical-code patch."
+    },
+    "library_layout": "wtc1_simulation_v8/openradioss_runtime/a34_mumps_candidate/library_layout",
+    "library_layout_subdirectories_present": [
+      "mumps",
+      "scalapack",
+      "lapack"
+    ],
+    "runtime": "Existing Ubuntu/GNU/OpenMPI/MUMPS; exact current versions and linkage to be recorded after authorization, before native qualification.",
+    "precision": "dp",
+    "maximum_CPU_threads": 6,
+    "GPU": false,
+    "cap_s": 3600,
+    "estimated_minutes": [
+      10,
+      30
+    ],
+    "estimate_basis": "A44 saved total build wall time 311.3923375606537 seconds; preparation, patch verification and host load add uncertainty. Hard cap remains one hour.",
+    "new_sparse_ext4_image_GiB": 8,
+    "new_installation_or_upgrade": false,
+    "new_source_download_required": false,
+    "old_build_image_or_workspace_modified": false,
+    "deliverables": [
+      "separate complete source",
+      "exact patch",
+      "source/dependency hashes",
+      "build parameters and current versions",
+      "step logs and elapsed times",
+      "isolated Engine binary and SHA256",
+      "linkage inventory",
+      "preservation review"
+    ]
+  },
+  "preservation": {
+    "protected_A44_binary": "wtc1_simulation_v8/openradioss_runtime/a44_legacy_mumps_candidate/isolated_exec/engine_linux64_gf_ompi",
+    "protected_A44_binary_sha256": "871dc6c9f154173eb4148b95cdfeed3e485735d64eb48957722b3588e319730a",
+    "protected_A44_binary_current_hash_pass": true,
+    "old_engines_and_outputs_preserved": true,
+    "physical_inputs_or_budgets_changed": false,
+    "A52_candidate_accepted": false,
+    "source_archives_read_only": true,
+    "state_registry_and_publication_cycle_updates": false
+  },
+  "current_area_patch": {
+    "target": "engine/source/elements/solid/solide8z/s8zke3.F",
+    "current_A62_source": "wtc1_simulation_v8/openradioss_runtime/a62_type43_surface_iteration_candidate/s8zke3_R2_interface.proposed.F",
+    "current_A62_source_sha256": "a7cac8f4853718c3b7ef3ed8434c2c5849e495a79ef07ead9e04905b25ee19ba",
+    "proposed_source": "wtc1_simulation_v8/openradioss_runtime/a66_current_area_proposal_r1/s8zke3_Ismstr4.proposed.F",
+    "proposed_sha256": "67429d7ad4ebd5eefb5790d1b03ff7a4e9fc0e2d3290e809e8318ca7bb6ace3e",
+    "patch": "wtc1_simulation_v8/openradioss_runtime/a66_current_area_proposal_r1/current_area_Ismstr4.patch",
+    "patch_sha256": "9cb53b72ac987d1524b13f966e77175490ac739eb0379841fdc829324d7813e1",
+    "new_scope": "TYPE43+LAW117+Ismstr4 only; current projected Gauss areas, no reference VOL read",
+    "previous_Ismstr1_helper_preserved_exactly": true,
+    "native_residual_material_history_unchanged": true,
+    "matrix_is_exact_Jacobian": false,
+    "applied": false,
+    "compiled": false
+  },
+  "check_zero_residual_patch": {
+    "target": "engine/source/implicit/imp_solv.F",
+    "current_source": "wtc1_simulation_v8/openradioss_runtime/a68_check_semantics_audit/imp_solv.F",
+    "current_sha256": "88e72fa3caf29de165d5690ca1b7e534f2716b44db80e737e76e6d68c377dbca",
+    "proposed_source": "wtc1_simulation_v8/openradioss_runtime/a70_initial_zero_residual_proposal_r4/imp_solv.proposed.F",
+    "proposed_sha256": "3c5a03f568e764d7a7d6965b3020b8e38c12539ee19561781f5031f53415191c",
+    "patch": "wtc1_simulation_v8/openradioss_runtime/a70_initial_zero_residual_proposal_r4/initial_Newmark_zero_residual.patch",
+    "patch_sha256": "cbdf8ec9dc0519464613f94b6937a093299ed3ea0bac6bbd4bfc3265487a6442",
+    "only_routine_changed": "IMP_CHKM",
+    "added_fixed_form_lines": 4,
+    "admissibility_change": "Exactly R2=0 at native TT=0 with IDYNA=2 and IQSTAT=0 gets explicit diagnostic and no loading-error increment; add existing COM08 declaration only inside IMP_CHKM, all other paths identical.",
+    "old_loading_failed_criteria_preserved_in_prior_outputs": true,
+    "dynamics_force_material_stiffness_mass_inertia_unchanged": true,
+    "preconditioner_connection_warnings_and_TYPE25_checks_unchanged": true,
+    "applied": false,
+    "compiled": false,
+    "common_include": "engine/share/includes/com08_c.inc",
+    "common_include_sha256": "10f98e71274a756d2e1345d29658c97a035c89c918257f20c2a164fbecfba496",
+    "TIME_undeclared_proposal_not_used": true
+  },
+  "control_contract": {
+    "maximum_Engine": 6,
+    "maximum_Starter": 1,
+    "CPU_threads": 1,
+    "each_cap_s": 180,
+    "GPU": false,
+    "whole_dynamic_extension": false,
+    "cases": [
+      {
+        "case": "FREE_INITIAL_ZERO_CHECK",
+        "name": "A67_FREE_Ismstr4",
+        "inputs": [
+          {
+            "path": "wtc1_simulation_v8/output/aircraft_a67/native/FREE_Ismstr4/A67_FREE_Ismstr4_0000_0001.rst",
+            "bytes": 303870,
+            "sha256": "fa86b514cc2c5bf07daf094af4943c6bdbb72eba73c5b27c7577a9ae03d6ea8b"
+          },
+          {
+            "path": "wtc1_simulation_v8/output/aircraft_a70_preparation_r2/FREE_INITIAL_ZERO_CHECK/A67_FREE_Ismstr4_0001.rad",
+            "bytes": 620,
+            "sha256": "c825bc2bd431ed32b7af68754d50a3c6f4398c802c1b87a2dde9863aee5d7ab0"
+          }
+        ],
+        "new_Starter": false,
+        "expected": "zero residual INFO, no loading error; observation R2=0"
+      },
+      {
+        "case": "STATIC_INITIAL_ZERO_CHECK",
+        "name": "A67_FREE_Ismstr4",
+        "inputs": [
+          {
+            "path": "wtc1_simulation_v8/output/aircraft_a67/native/FREE_Ismstr4/A67_FREE_Ismstr4_0000_0001.rst",
+            "bytes": 303870,
+            "sha256": "fa86b514cc2c5bf07daf094af4943c6bdbb72eba73c5b27c7577a9ae03d6ea8b"
+          },
+          {
+            "path": "wtc1_simulation_v8/output/aircraft_a70_preparation_r2/STATIC_INITIAL_ZERO_CHECK/A67_FREE_Ismstr4_0001.rad",
+            "bytes": 566,
+            "sha256": "8be5f3b1c5570c914c18daa4a71f973b991a39cf64e8898e05a829f4757ccb62"
+          }
+        ],
+        "new_Starter": false,
+        "expected": "R2=0 still loading ERROR in static CHECK; intentional rejection preserved"
+      },
+      {
+        "case": "STATIC_POSITIVE_LOAD_CHECK",
+        "name": "A71_STATIC_POSITIVE_LOAD_CHECK",
+        "inputs": [
+          {
+            "path": "wtc1_simulation_v8/output/aircraft_a70_preparation_r2/STATIC_POSITIVE_LOAD_CHECK/A71_STATIC_POSITIVE_LOAD_CHECK_0000.rad",
+            "bytes": 3209,
+            "sha256": "c4199929a4d7fde56f49ddb63408106684c9f5453091a0d547882a0ad7c58e9d"
+          },
+          {
+            "path": "wtc1_simulation_v8/output/aircraft_a70_preparation_r2/STATIC_POSITIVE_LOAD_CHECK/A71_STATIC_POSITIVE_LOAD_CHECK_0001.rad",
+            "bytes": 580,
+            "sha256": "54a554dabd73f5683f7687edbee4cfbd435e21927a9c3698c4cf8d3c1cb362f2"
+          }
+        ],
+        "new_Starter": true,
+        "force_per_node_N": 1,
+        "loaded_nodes": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "total_control_force_N": 4,
+        "expected": "R2 positive finite; no loading error; no residual-zero INFO"
+      },
+      {
+        "case": "FREE_DYNAMIC_REGRESSION",
+        "name": "A67_FREE_Ismstr4",
+        "inputs": [
+          {
+            "path": "wtc1_simulation_v8/output/aircraft_a67/native/FREE_Ismstr4/A67_FREE_Ismstr4_0000_0001.rst",
+            "bytes": 303870,
+            "sha256": "fa86b514cc2c5bf07daf094af4943c6bdbb72eba73c5b27c7577a9ae03d6ea8b"
+          },
+          {
+            "path": "wtc1_simulation_v8/output/aircraft_a67/native/FREE_Ismstr4/A67_FREE_Ismstr4_0001.rad",
+            "bytes": 608,
+            "sha256": "c72b4b39d02ffa323e8828a7031250e204978b2104043c9410e2bf8cbb6cff6d"
+          }
+        ],
+        "new_Starter": false,
+        "expected": "1 ms native all-step free conservation/reference with unchanged A67 tolerances; no CHECK, no whole duration credit"
+      },
+      {
+        "case": "WHOLE_ORIGINAL_CHECK",
+        "name": "A49_EQUIVALENT_RIGID_CHAINS",
+        "inputs": [
+          {
+            "path": "wtc1_simulation_v8/output/aircraft_a52/WHOLE_ORIGINAL_TYPE2_BINDING_TRACE/A49_EQUIVALENT_RIGID_CHAINS_0000_0001.rst",
+            "sha256": "7a36733b32058c90b583f598e49924b2ab5cfc30e70e74fcf98cff61dad7fb06",
+            "bytes": 145410297
+          },
+          {
+            "path": "wtc1_simulation_v8/output/aircraft_a52/WHOLE_ORIGINAL_TYPE2_BINDING_TRACE/A49_EQUIVALENT_RIGID_CHAINS_0001.rad",
+            "sha256": "223954811ab3b45978fb34983534092a2db6362d3a1fe6534e71f26fa0ba814b",
+            "bytes": 392
+          }
+        ],
+        "new_Starter": false,
+        "whole_cards_and_initial_state_unchanged": true,
+        "expected": "observe zero/positive R2 classification in new binary; keep all warnings and five TYPE25 blocking, whole qualification remains false"
+      },
+      {
+        "case": "WHOLE_PAIRED_CHECK",
+        "name": "A52_TYPE2_FACET_PAIRS_R1",
+        "inputs": [
+          {
+            "path": "wtc1_simulation_v8/output/aircraft_a52/WHOLE_PAIRED_TYPE2_BINDING_TRACE_R1/A52_TYPE2_FACET_PAIRS_R1_0000_0001.rst",
+            "sha256": "030edddf27c40cfab372582e3b311627ddda51c77c21409c2ffd58259807126a",
+            "bytes": 144800310
+          },
+          {
+            "path": "wtc1_simulation_v8/output/aircraft_a52/WHOLE_PAIRED_TYPE2_BINDING_TRACE_R1/A52_TYPE2_FACET_PAIRS_R1_0001.rad",
+            "sha256": "9c0465aa6d928b2ab192c06dd97405705fb918f589f96f6de9d8c1a1d7f4478b",
+            "bytes": 389
+          }
+        ],
+        "new_Starter": false,
+        "whole_cards_and_initial_state_unchanged": true,
+        "expected": "observe zero/positive R2 classification in new binary; keep all warnings and five TYPE25 blocking, whole qualification remains false"
+      }
+    ],
+    "acceptance": {
+      "mass_relative": 1e-06,
+      "added_mass_relative": 1e-09,
+      "energy_relative": 0.02,
+      "energy_absolute_J": 1e-07,
+      "momentum_relative": 0.02,
+      "momentum_absolute_Ns": 1e-09,
+      "free_displacement_mm": 2e-05,
+      "free_velocity_mm_ms": 0.0002,
+      "junction_state_relative": 1e-05,
+      "junction_state_absolute": 1e-06,
+      "junction_time_ms": 2e-05,
+      "contact_impulse_observable_Ns": 1e-06,
+      "contact_IE_observable_J": 1e-07,
+      "comparison_energy_relative": 0.02,
+      "comparison_energy_absolute_J": 1e-07,
+      "half_dt_energy_relative": 0.005
+    },
+    "mechanical_qualification_not_inferred_from_CHECK_INFO_or_source_prototype": true,
+    "five_TYPE25_preserved_blocking": true,
+    "native_READ_observer": "wtc1_simulation_v8/scripts/observe_aircraft_a69_check_r1_linux.py",
+    "native_READ_observer_sha256": "23ea2bc3ab1b9e9eac9df89296d3a540fe7423ea188c01ddb1189f0d4cc34bfb",
+    "new_binary_symbols_must_be_resolved_and_ABI_guarded": true
+  },
+  "execution": {
+    "maximum_build_s": 3600,
+    "CPU_build": 6,
+    "native_cap_s": 180,
+    "maximum_Engine": 6,
+    "maximum_Starter": 1,
+    "CPU_native": 1,
+    "GPU": false
+  },
+  "target_physical_s": 10,
+  "best_whole_physical_s": 0.0200001220703125,
+  "objective1_complete": false,
+  "whole_physical_inputs_and_physical_gates_unchanged": true,
+  "CHECK_zero_initial_Newmark_admissibility_explicitly_CHANGED": true,
+  "whole_dynamic_extension": false,
+  "new_installation": false
+}

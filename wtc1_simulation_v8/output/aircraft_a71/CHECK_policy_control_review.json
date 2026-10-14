@@ -1,0 +1,109 @@
+{
+  "created_utc": "2026-10-14T15:54:18.326223+00:00",
+  "cases": [
+    {
+      "case": "FREE_INITIAL_ZERO_CHECK",
+      "software_control_pass": false,
+      "checks": {
+        "complete_native_observation": true,
+        "native_R2_matches_independent_actual_LB": true,
+        "normal_with_code0": true,
+        "zero_R2": true,
+        "initial_Newmark_zero_NEW_INFO": false,
+        "no_loading_error": false
+      },
+      "failed_checks": [
+        "initial_Newmark_zero_NEW_INFO",
+        "no_loading_error"
+      ],
+      "actual_message_review": "wtc1_simulation_v8/output/aircraft_a71/FREE_INITIAL_ZERO_CHECK/actual_message_review.json",
+      "whole_physical_qualification": false
+    },
+    {
+      "case": "STATIC_INITIAL_ZERO_CHECK",
+      "software_control_pass": true,
+      "checks": {
+        "complete_native_observation": true,
+        "native_R2_matches_independent_actual_LB": true,
+        "normal_with_code0": true,
+        "zero_R2": true,
+        "static_still_refused": true
+      },
+      "failed_checks": [],
+      "actual_message_review": "wtc1_simulation_v8/output/aircraft_a71/STATIC_INITIAL_ZERO_CHECK/actual_message_review.json",
+      "whole_physical_qualification": false
+    },
+    {
+      "case": "STATIC_POSITIVE_LOAD_CHECK",
+      "software_control_pass": true,
+      "checks": {
+        "complete_native_observation": true,
+        "native_R2_matches_independent_actual_LB": true,
+        "normal_with_code0": true,
+        "exact_positive_load_R2_4N_squared": true,
+        "positive_still_accepted": true
+      },
+      "failed_checks": [],
+      "actual_message_review": "wtc1_simulation_v8/output/aircraft_a71/STATIC_POSITIVE_LOAD_CHECK/actual_message_review.json",
+      "whole_physical_qualification": false
+    },
+    {
+      "case": "FREE_DYNAMIC_REGRESSION",
+      "software_control_pass": true,
+      "checks": {
+        "free_native_conservation_reference_same_A67_limits": true
+      },
+      "failed_checks": [],
+      "actual_message_review": "wtc1_simulation_v8/output/aircraft_a71/native/FREE_DYNAMIC_REGRESSION/actual_message_review.json",
+      "whole_physical_qualification": false
+    },
+    {
+      "case": "WHOLE_ORIGINAL_CHECK",
+      "software_control_pass": false,
+      "checks": {
+        "complete_native_observation": true,
+        "native_R2_matches_independent_actual_LB": true,
+        "normal_with_code0": true,
+        "zero_R2": true,
+        "initial_Newmark_zero_NEW_INFO": false,
+        "no_loading_error": false,
+        "TYPE25_five_unchanged_still_blocking": true
+      },
+      "failed_checks": [
+        "initial_Newmark_zero_NEW_INFO",
+        "no_loading_error"
+      ],
+      "actual_message_review": "wtc1_simulation_v8/output/aircraft_a71/WHOLE_ORIGINAL_CHECK/actual_message_review.json",
+      "whole_physical_qualification": false
+    },
+    {
+      "case": "WHOLE_PAIRED_CHECK",
+      "software_control_pass": false,
+      "checks": {
+        "complete_native_observation": true,
+        "native_R2_matches_independent_actual_LB": true,
+        "normal_with_code0": true,
+        "zero_R2": true,
+        "initial_Newmark_zero_NEW_INFO": false,
+        "no_loading_error": false,
+        "TYPE25_five_unchanged_still_blocking": true
+      },
+      "failed_checks": [
+        "initial_Newmark_zero_NEW_INFO",
+        "no_loading_error"
+      ],
+      "actual_message_review": "wtc1_simulation_v8/output/aircraft_a71/WHOLE_PAIRED_CHECK/actual_message_review.json",
+      "whole_physical_qualification": false
+    }
+  ],
+  "pass": false,
+  "failed_expected_initial_zero_cases": [
+    "FREE_INITIAL_ZERO_CHECK",
+    "WHOLE_ORIGINAL_CHECK",
+    "WHOLE_PAIRED_CHECK"
+  ],
+  "all_six_native_finished": true,
+  "all_five_CHECK_observations_complete": true,
+  "no_unused_budget": true,
+  "whole_credit_s": 0
+}

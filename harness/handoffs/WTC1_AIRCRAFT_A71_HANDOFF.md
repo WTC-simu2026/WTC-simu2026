@@ -1,0 +1,6 @@
+# Reprise AIRCRAFT-A71 → AIRCRAFT-A72
+
+Rapport : wtc1_simulation_v8/output/aircraft_a71/rapport_aircraft_a71.md
+Résultats : wtc1_simulation_v8/output/aircraft_a71/composite_qualification_review.json
+
+AIRCRAFT-A72 : audit/proposition en lecture seule de la sélection CHECK, à partir du nouvel échec A71. Le moteur avance TT avant IMP_CHKM ; la garde TT==0 ne correspond pas au contexte du premier contrôle. Préparer une sélection explicite par IMP_CHK>0, sans temps absolu supposé, et des observations des flags/horloges dans les futurs contrôles. A71 huitième moteur compilé exactement après accord ; six Engine et un Starter autorisés consommés, aucun replay ou crédit entier. Dynamique libre1ms et charge positive R2=4 passent ; zéro statique reste refusé comme prévu ; zéro dynamique et deuxCHECK entiers restent échoués avec R2=0. Conserver cette nouvelle garde ratée et toutes les anciennes sorties/critères/budgets. Les 107391 avertissements et cinq TYPE25 par scène sont bloquants. Toute nouvelle modification/compilation et lot natif exigent une proposition concrète et un accord distinct. Meilleur impact entier0,0200001220703125s ; objectif dix secondes physiques et vidéo3D incomplet.
