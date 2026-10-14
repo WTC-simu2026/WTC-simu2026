@@ -1,0 +1,709 @@
+{
+  "created_utc": "2026-10-14T09:12:49.938063+00:00",
+  "iteration": "AIRCRAFT-A67",
+  "seed": 1102092,
+  "random_draws": 0,
+  "build_configuration_sha256": "618896d80e06fe8bba5caccdb04cb212b133a4d8b3fc4b251848ff968b33d7f2",
+  "cohesive": {
+    "law": "LAW117",
+    "property": "TYPE43",
+    "EN_N_mm3": 4400,
+    "ET_N_mm3": 800,
+    "TN_MPa": 450,
+    "TT_MPa": 100,
+    "GI_N_mm": 50,
+    "GII_N_mm": 50,
+    "area_mass_density_g_mm2": 1e-20,
+    "nodal_instrument_mass_g": 1,
+    "Imass": 1,
+    "Idel": 4,
+    "Irupt": 1,
+    "Ismstr": 1,
+    "stiffness_derivation": "A07 analytical contract E22000MPa/5mm; ET4000/5. Numerical interface reference only.",
+    "G_physical_measured": false,
+    "shear_strength_measured": false,
+    "whole_aircraft_transfer_qualified": false,
+    "true_glue_or_tearing_properties_identified": false,
+    "power_exponent": 2,
+    "mode_coupling_gamma": 1,
+    "displacement_criterion": 1,
+    "linear_evolution": 1,
+    "symmetric_damage": false
+  },
+  "acceptance": {
+    "mass_relative": 1e-06,
+    "added_mass_relative": 1e-09,
+    "energy_relative": 0.02,
+    "energy_absolute_J": 1e-07,
+    "momentum_relative": 0.02,
+    "momentum_absolute_Ns": 1e-09,
+    "free_displacement_mm": 2e-05,
+    "free_velocity_mm_ms": 0.0002,
+    "junction_state_relative": 1e-05,
+    "junction_state_absolute": 1e-06,
+    "junction_time_ms": 2e-05,
+    "contact_impulse_observable_Ns": 1e-06,
+    "contact_IE_observable_J": 1e-07,
+    "comparison_energy_relative": 0.02,
+    "comparison_energy_absolute_J": 1e-07,
+    "half_dt_energy_relative": 0.005
+  },
+  "cases": [
+    {
+      "id": "FREE_Ismstr4",
+      "stage": "free",
+      "L_mm": 10,
+      "dt_cap_ms": 0.000125,
+      "imposed_axes": [],
+      "knot_times_ms": [
+        0,
+        1
+      ],
+      "knot_gaps_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "end_ms": 1,
+      "initial_free_velocity_mm_ms": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "all_top_translations_free": true,
+      "no_imposed_displacements_or_velocities_during_run": true,
+      "nodes_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          10.0,
+          0.0,
+          0.0
+        ],
+        [
+          10.0,
+          10.0,
+          0.0
+        ],
+        [
+          0.0,
+          10.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          10.0,
+          0.0,
+          0.0
+        ],
+        [
+          10.0,
+          10.0,
+          0.0
+        ],
+        [
+          0.0,
+          10.0,
+          0.0
+        ]
+      ],
+      "reference": "constant_uniform",
+      "Ismstr": 4,
+      "field_output_dt_ms": 6.25e-05,
+      "RUN_stop_ms": 1.0000625,
+      "initial_top_mass_g": 4,
+      "total_instrument_mass_g": 8,
+      "nodal_mass_g": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "whole_budget_change": false,
+      "initial_current_GP_area_mm2": [
+        25.0,
+        25.0,
+        25.0,
+        25.0
+      ],
+      "full_free_counter_qualification_required": true,
+      "linear_reference_small_amplitude_not_full_nonlinear_qualification": false,
+      "uniform_top_motion_required": true
+    },
+    {
+      "id": "FREE_Ismstr4_HALF",
+      "stage": "free",
+      "L_mm": 10,
+      "dt_cap_ms": 6.25e-05,
+      "imposed_axes": [],
+      "knot_times_ms": [
+        0,
+        1
+      ],
+      "knot_gaps_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "end_ms": 1,
+      "initial_free_velocity_mm_ms": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "all_top_translations_free": true,
+      "no_imposed_displacements_or_velocities_during_run": true,
+      "nodes_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          10.0,
+          0.0,
+          0.0
+        ],
+        [
+          10.0,
+          10.0,
+          0.0
+        ],
+        [
+          0.0,
+          10.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          10.0,
+          0.0,
+          0.0
+        ],
+        [
+          10.0,
+          10.0,
+          0.0
+        ],
+        [
+          0.0,
+          10.0,
+          0.0
+        ]
+      ],
+      "reference": "constant_uniform",
+      "Ismstr": 4,
+      "field_output_dt_ms": 3.125e-05,
+      "RUN_stop_ms": 1.00003125,
+      "initial_top_mass_g": 4,
+      "total_instrument_mass_g": 8,
+      "nodal_mass_g": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "whole_budget_change": false,
+      "initial_current_GP_area_mm2": [
+        25.0,
+        25.0,
+        25.0,
+        25.0
+      ],
+      "full_free_counter_qualification_required": true,
+      "linear_reference_small_amplitude_not_full_nonlinear_qualification": false,
+      "uniform_top_motion_required": true
+    },
+    {
+      "id": "RIGID_ROTATED_FREE",
+      "stage": "free",
+      "L_mm": 10,
+      "dt_cap_ms": 0.000125,
+      "imposed_axes": [],
+      "knot_times_ms": [
+        0,
+        1
+      ],
+      "knot_gaps_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "end_ms": 1,
+      "initial_free_velocity_mm_ms": [
+        -0.636497860615334,
+        0.6097115153039837,
+        0.4723582766691222
+      ],
+      "all_top_translations_free": true,
+      "no_imposed_displacements_or_velocities_during_run": true,
+      "nodes_mm": [
+        [
+          31.0,
+          -7.0,
+          15.0
+        ],
+        [
+          35.926249698951786,
+          0.9261325449374054,
+          11.4071617370578
+        ],
+        [
+          29.56127109279845,
+          7.023247697977242,
+          16.13074450374902
+        ],
+        [
+          24.63502139384666,
+          -0.9028848469601627,
+          19.723582766691223
+        ],
+        [
+          31.0,
+          -7.0,
+          15.0
+        ],
+        [
+          35.926249698951786,
+          0.9261325449374054,
+          11.4071617370578
+        ],
+        [
+          29.56127109279845,
+          7.023247697977242,
+          16.13074450374902
+        ],
+        [
+          24.63502139384666,
+          -0.9028848469601627,
+          19.723582766691223
+        ]
+      ],
+      "reference": "constant_uniform",
+      "Ismstr": 4,
+      "field_output_dt_ms": 6.25e-05,
+      "RUN_stop_ms": 1.0000625,
+      "initial_top_mass_g": 4,
+      "total_instrument_mass_g": 8,
+      "nodal_mass_g": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "whole_budget_change": false,
+      "initial_current_GP_area_mm2": [
+        24.999999999999993,
+        24.99999999999999,
+        24.999999999999993,
+        25.0
+      ],
+      "full_free_counter_qualification_required": true,
+      "linear_reference_small_amplitude_not_full_nonlinear_qualification": false,
+      "uniform_top_motion_required": true
+    },
+    {
+      "id": "AREA_x4_FREE",
+      "stage": "free",
+      "L_mm": 20,
+      "dt_cap_ms": 6.25e-05,
+      "imposed_axes": [],
+      "knot_times_ms": [
+        0,
+        1
+      ],
+      "knot_gaps_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "end_ms": 1,
+      "initial_free_velocity_mm_ms": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "all_top_translations_free": true,
+      "no_imposed_displacements_or_velocities_during_run": true,
+      "nodes_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          20.0,
+          0.0,
+          0.0
+        ],
+        [
+          20.0,
+          20.0,
+          0.0
+        ],
+        [
+          0.0,
+          20.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          20.0,
+          0.0,
+          0.0
+        ],
+        [
+          20.0,
+          20.0,
+          0.0
+        ],
+        [
+          0.0,
+          20.0,
+          0.0
+        ]
+      ],
+      "reference": "constant_uniform",
+      "Ismstr": 4,
+      "field_output_dt_ms": 3.125e-05,
+      "RUN_stop_ms": 1.00003125,
+      "initial_top_mass_g": 4,
+      "total_instrument_mass_g": 8,
+      "nodal_mass_g": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "whole_budget_change": false,
+      "initial_current_GP_area_mm2": [
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "full_free_counter_qualification_required": true,
+      "linear_reference_small_amplitude_not_full_nonlinear_qualification": false,
+      "uniform_top_motion_required": true
+    },
+    {
+      "id": "NONUNIFORM_AREA_FREE",
+      "stage": "free",
+      "L_mm": 10,
+      "dt_cap_ms": 0.000125,
+      "imposed_axes": [],
+      "knot_times_ms": [
+        0,
+        1
+      ],
+      "knot_gaps_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "end_ms": 1,
+      "initial_free_velocity_mm_ms": [
+        0.0,
+        0.01,
+        0.0
+      ],
+      "all_top_translations_free": true,
+      "no_imposed_displacements_or_velocities_during_run": true,
+      "nodes_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          10.0,
+          0.0,
+          0.0
+        ],
+        [
+          8.0,
+          10.0,
+          0.0
+        ],
+        [
+          1.0,
+          10.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          10.0,
+          0.0,
+          0.0
+        ],
+        [
+          8.0,
+          10.0,
+          0.0
+        ],
+        [
+          1.0,
+          10.0,
+          0.0
+        ]
+      ],
+      "reference": "small_amplitude_nonuniform",
+      "Ismstr": 4,
+      "field_output_dt_ms": 6.25e-05,
+      "RUN_stop_ms": 1.0000625,
+      "initial_top_mass_g": 4,
+      "total_instrument_mass_g": 8,
+      "nodal_mass_g": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "whole_budget_change": false,
+      "initial_current_GP_area_mm2": [
+        23.4150635094611,
+        23.4150635094611,
+        19.0849364905389,
+        19.0849364905389
+      ],
+      "full_free_counter_qualification_required": true,
+      "linear_reference_small_amplitude_not_full_nonlinear_qualification": true,
+      "uniform_top_motion_required": false
+    },
+    {
+      "id": "AREA_EVOLUTION_FREE_Y",
+      "stage": "free",
+      "L_mm": 10,
+      "dt_cap_ms": 0.000125,
+      "imposed_axes": [],
+      "knot_times_ms": [
+        0,
+        1
+      ],
+      "knot_gaps_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "end_ms": 1,
+      "initial_free_velocity_mm_ms": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "all_top_translations_free": true,
+      "no_imposed_displacements_or_velocities_during_run": true,
+      "nodes_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          10.0,
+          0.0,
+          0.0
+        ],
+        [
+          10.0,
+          10.0,
+          0.0
+        ],
+        [
+          0.0,
+          10.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          10.0,
+          0.0,
+          0.0
+        ],
+        [
+          10.0,
+          10.0,
+          0.0
+        ],
+        [
+          0.0,
+          10.0,
+          0.0
+        ]
+      ],
+      "reference": "current_area_evolution_free_Y",
+      "Ismstr": 4,
+      "field_output_dt_ms": 6.25e-05,
+      "RUN_stop_ms": 1.0000625,
+      "initial_top_mass_g": 4,
+      "total_instrument_mass_g": 8,
+      "nodal_mass_g": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "whole_budget_change": false,
+      "initial_current_GP_area_mm2": [
+        25.0,
+        25.0,
+        25.0,
+        25.0
+      ],
+      "full_free_counter_qualification_required": false,
+      "linear_reference_small_amplitude_not_full_nonlinear_qualification": false,
+      "uniform_top_motion_required": true,
+      "imposed_common_X_scale": "1+0.1*sin(pi*t/1ms)^2",
+      "only_Y_counter_and_support_qualified_scope": true,
+      "full_prescribed_X_KE_P_observables_remain_unqualified": true,
+      "top_Y_Z_free": true,
+      "all_X_prescribed": true,
+      "reference_Newmark": "Mass4g, K(t)=80000*(1+0.1*sin(pi*t)^2)N/mm, gamma.5 beta.25; no fitted coefficient."
+    }
+  ],
+  "whole_CHECK_cases": [
+    {
+      "id": "WHOLE_ORIGINAL_CHECK",
+      "name": "A49_EQUIVALENT_RIGID_CHAINS",
+      "files": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a52/WHOLE_ORIGINAL_TYPE2_BINDING_TRACE/A49_EQUIVALENT_RIGID_CHAINS_0000_0001.rst",
+          "sha256": "7a36733b32058c90b583f598e49924b2ab5cfc30e70e74fcf98cff61dad7fb06",
+          "bytes": 145410297
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a52/WHOLE_ORIGINAL_TYPE2_BINDING_TRACE/A49_EQUIVALENT_RIGID_CHAINS_0001.rad",
+          "sha256": "223954811ab3b45978fb34983534092a2db6362d3a1fe6534e71f26fa0ba814b",
+          "bytes": 392
+        }
+      ],
+      "unchanged_cached_CHECK_cards": true
+    },
+    {
+      "id": "WHOLE_PAIRED_CHECK",
+      "name": "A52_TYPE2_FACET_PAIRS_R1",
+      "files": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a52/WHOLE_PAIRED_TYPE2_BINDING_TRACE_R1/A52_TYPE2_FACET_PAIRS_R1_0000_0001.rst",
+          "sha256": "030edddf27c40cfab372582e3b311627ddda51c77c21409c2ffd58259807126a",
+          "bytes": 144800310
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a52/WHOLE_PAIRED_TYPE2_BINDING_TRACE_R1/A52_TYPE2_FACET_PAIRS_R1_0001.rad",
+          "sha256": "9c0465aa6d928b2ab192c06dd97405705fb918f589f96f6de9d8c1a1d7f4478b",
+          "bytes": 389
+        }
+      ],
+      "unchanged_cached_CHECK_cards": true
+    }
+  ],
+  "extra_analytical_displacement_tolerance_mm": 2e-05,
+  "extra_analytical_velocity_tolerance_mm_ms": 0.0002,
+  "authorized_maximum_native": 8,
+  "each_cap_s": 180,
+  "CPU": 1,
+  "GPU": false,
+  "software_changes_beyond_exact_A66": false,
+  "whole_dynamic_extension": false,
+  "minimum_case_error_not_used_to_refit": true,
+  "source_interpretation": "Endpoint velocity from all-step secants only for actually free translations. Prescribed X counters not promoted in area-evolution case.",
+  "units": {
+    "length": "mm",
+    "time": "ms",
+    "mass": "g",
+    "energy_to_J": 0.001,
+    "momentum_to_Ns": 0.001
+  },
+  "best_whole_physical_s": 0.0200001220703125,
+  "new_whole_credit_s": 0,
+  "objective1_complete": false
+}
