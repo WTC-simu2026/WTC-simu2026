@@ -1,0 +1,6 @@
+# Reprise AIRCRAFT-A77 → AIRCRAFT-A78
+
+Rapport : wtc1_simulation_v8/output/aircraft_a77/rapport_aircraft_a77.md
+Résultats : wtc1_simulation_v8/output/aircraft_a77/composite_qualification_review.json
+
+AIRCRAFT-A78 : audit géométrique/topologique en lecture seule des contacts initiaux A77, après publication A76+A77 vérifiée. IBAG0 supprime les dix614, mais Irem_gap2 natif confirmé ne résout aucune des916erreurs612 de l’auto-contact2 ;23520candidats et4430pénétrations initiales restent. Deux Starter autorisés consommés, zéro Engine ; deux CHECK conditionnellement inutilisés non réaffectés. Cartographier les numéros effectivement imprimés vers les faces/connexions du modèle et préparer une mesure de paires initiales si elles manquent, sans rejouer les anciens diagnostics. Ne pas désactiver globalement le contact, réduire le gap ou déplacer les nœuds pour forcer un passage. Moteur A73 inchangé ; tout nouveau lot natif/correctif/compilation nécessite une proposition et accord distinct. Préserver A75, Irem_gap2 raté, anciennes sorties, budgets et critères échoués. Les107391 avertissements et budgets physiques entiers restent bloquants. Meilleur impact entier0,0200001220703125s ; dix secondes physiques puis vidéo3D incomplètes.

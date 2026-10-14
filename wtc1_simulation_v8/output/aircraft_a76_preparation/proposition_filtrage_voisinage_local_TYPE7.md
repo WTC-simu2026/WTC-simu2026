@@ -1,0 +1,13 @@
+# AIRCRAFT-A76 — filtrage local de voisinage TYPE7, proposition seulement
+
+A75 échoue dans les deux Starter :916erreurs612 sur l’auto-contact2,11avertissements dont dix614 liés à IBAG. Aucun Engine, restart initial qualifié ou temps entier crédité. Les deux Starter sont consommés ; les deux places CHECK conditionnellement inutilisées ne couvrent pas une nouvelle préparation.
+
+La différence préparée change exactement six champs par modèle : IBAG2→0 pour les cinq TYPE7, et Irem_gap1→2 seulement pour l’auto-contact2. Toutes les autres cartes, coordonnées, masses/matériaux/inerties, groupes/surfaces, TH, gaps0,5/5mm, Istf4/Stfac1/friction0 et Inacti1000 restent identiques. BEGIN/TITLE/RUN sont renommés. Aucun contact ni nœud n’est désactivé globalement, aucune option Inacti1/2/3/5/6 n’est introduite.
+
+Le filtrage proposé vise les voisins proches d’un segment de la surface d’auto-contact, au lieu d’une désactivation générale. Son effet réel sur les paires A75 reste inconnu, notamment avec les faces séparées et les liaisons TYPE2 ; aucune réussite ou équivalence dynamique n’est présumée. Les [définitions TYPE7](https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inter_type7_starter_r.htm) décrivent ce filtre local. Les sources figées expliquent aussi la représentation1000 imprimée et sa normalisation0 opérationnelle ; leur identité avec le binaire Windows n’est pas revendiquée. Les messages natifs A75 restent prioritaires.
+
+Le lecteur propre futur est préparé. Il lit séparément les paramètres et la table d’impacts : les sorties A75 impriment23520impacts possibles pour2 et0 pour101–104. Les916lignes de coordonnées impossibles précèdent leur message612 et portent le même numéro ; le décalage d’association du premier lecteur est conservé et corrigé en lecture seule. Les vrais916erreurs/11avertissements restent rejetés, sans nouveau calcul.
+
+Lot A77 proposé : deux nouveaux Starter et au maximum deux Engine CHECK, seulement si chaque Starter passe. UnCPU/plafond180s chacun, moteur A73 inchangé, sans correctif moteur/compilation/GPU/installation. Estimation1–5minutes. Conserver strictement zéro erreur/avertissement Starter, masse/ADMAS, cinq contacts et paramètres lus, avant CHECK ; relever les inventaires imprimés. Les107391 avertissements de préconditionnement restent bloquants. Aucun impact entier prolongé, aucune suppression d’échec ou interpolation vers10s.
+
+Accord distinct requis pour ce nouveau lot. Source/données préparées, aucune exécution A77. Compatibilité, paires effectivement exclues et dynamique des fragments restent à qualifier avant toute intégration. Plan : wtc1_simulation_v8/data/aircraft_a76_proposal.json. Meilleur impact entier0,0200001220703125s ; objectif dix secondes physiques puis vidéo3D incomplet.

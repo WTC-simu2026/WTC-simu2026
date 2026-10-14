@@ -1,0 +1,7 @@
+# Reprise AIRCRAFT-A76 → AIRCRAFT-A77
+
+Rapport : wtc1_simulation_v8/output/aircraft_a76/rapport_aircraft_a76.md
+Proposition : wtc1_simulation_v8/output/aircraft_a76_preparation/proposition_filtrage_voisinage_local_TYPE7.md
+Plan : wtc1_simulation_v8/data/aircraft_a76_proposal.json
+
+AIRCRAFT-A77 proposée seulement : deux nouveaux Starter et deux CHECK Engine conditionnels sur variantes A76 exactes, unCPU/plafond180s chacun, moteur A73 inchangé. IBAG2→0 dans cinq cartes et Irem_gap1→2 seulement pour l’auto-contact2 ; tous les autres paramètres, groupes/surfaces, gaps0,5/5mm et cartes mécaniques conservés. Pas de désactivation globale de nœuds/contact ni Inacti1/2/3/5/6, coordonnées ou compensation RKE modifiées. Hypothèse de filtrage local de voisins, non qualifiée nativement et non équivalence dynamique TYPE25/TYPE7. Lecteur propre réparé pour tables d’impacts séparées et chronologie des messages, ancien lecteur/échecs A75 conservés. Deux Starter A75 épuisés ; deux CHECK inutilisés conditionnellement ne couvrent pas de nouveaux Starter. Accord distinct requis pour le nouveau lot ; aucun correctif moteur, compilation, GPU ou installation, aucun prolongement d’impact entier. Starter sans erreur/avertissement, masse/ADMAS/gaps/flags/contacts lus avant chaque CHECK ;107391 avertissements de préconditionnement toujours bloquants. Meilleur impact entier0,0200001220703125s ; dix secondes physiques puis vidéo3D incomplètes.
