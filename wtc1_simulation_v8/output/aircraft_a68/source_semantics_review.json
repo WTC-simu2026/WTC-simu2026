@@ -1,0 +1,85 @@
+{
+  "created_utc": "2026-10-14T10:11:16.742961+00:00",
+  "pass": true,
+  "checks": {
+    "A67_checker_source_exact_pin": true,
+    "checker_calls_connection_after_linear_solver": true,
+    "K_checker_copies_base_and_interface_diagonal": true,
+    "FSAI_uses_inverse_column": true,
+    "FSAI_inv_solve_uses_MUMPS5_conditional": true,
+    "loading_condition_positive_bounded_norm": true,
+    "single_process_norm_ignores_weight_array": true,
+    "dynamic_residual_uses_acceleration_not_velocity_directly": true,
+    "R2_remains_unobserved_in_existing_whole_listings": true
+  },
+  "source_rows": [
+    {
+      "source_path": "engine/source/implicit/imp_solv.F",
+      "private_copy": "wtc1_simulation_v8/openradioss_runtime/a68_check_semantics_audit/imp_solv.F",
+      "sha256": "88e72fa3caf29de165d5690ca1b7e534f2716b44db80e737e76e6d68c377dbca"
+    },
+    {
+      "source_path": "engine/source/implicit/lin_solv.F",
+      "private_copy": "wtc1_simulation_v8/openradioss_runtime/a68_check_semantics_audit/lin_solv.F",
+      "sha256": "4609a0f0dfff4e8a1330ca4c1e9a5a7c12b1994e3a35af266ece3807298befe5"
+    },
+    {
+      "source_path": "engine/source/implicit/imp_fsa_inv.F",
+      "private_copy": "wtc1_simulation_v8/openradioss_runtime/a68_check_semantics_audit/imp_fsa_inv.F",
+      "sha256": "685c011ee0115ebc0663df08a25a223bba6014dd9e5ae0e79f8b935f65832dc0"
+    },
+    {
+      "source_path": "engine/source/implicit/prec_solv.F",
+      "private_copy": "wtc1_simulation_v8/openradioss_runtime/a68_check_semantics_audit/prec_solv.F",
+      "sha256": "d7f265affdf407f684e10d63879c82392a7c46e8f7ce48c272b0c1cca3799f2f"
+    },
+    {
+      "source_path": "engine/source/implicit/upd_glob_k.F",
+      "private_copy": "wtc1_simulation_v8/openradioss_runtime/a68_check_semantics_audit/upd_glob_k.F",
+      "sha256": "e3f6c03e36824eedf3b6ca9b9f8a091a356369934031f8f93e8eb4c5c074b170"
+    },
+    {
+      "source_path": "engine/source/implicit/imp_dyna.F",
+      "private_copy": "wtc1_simulation_v8/openradioss_runtime/a68_check_semantics_audit/imp_dyna.F",
+      "sha256": "52d510efd2fea12c947662e38735cef5267d109eb811e4cee80c7136a027364f"
+    },
+    {
+      "source_path": "engine/source/implicit/imp_setb.F",
+      "private_copy": "wtc1_simulation_v8/openradioss_runtime/a68_check_semantics_audit/imp_setb.F",
+      "sha256": "cdf7b93dfbacd05a4add2b42079f668c97e6387fc9bed41505baa92596918067"
+    },
+    {
+      "source_path": "engine/source/implicit/produt_v.F",
+      "private_copy": "wtc1_simulation_v8/openradioss_runtime/a68_check_semantics_audit/produt_v.F",
+      "sha256": "98cca758a36e9e3bd751640814c43b048d8e9573fd6303dd6308d59e586e6b20"
+    }
+  ],
+  "connection_DIAG_M_is_preconditioning_workspace_not_mass": true,
+  "reported_values_can_be_inverse_submatrix_coefficients": true,
+  "connected_SPD_counterexample": {
+    "K": [
+      [
+        200000000000000.0,
+        -100000000000000.0
+      ],
+      [
+        -100000000000000.0,
+        200000000000000.0
+      ]
+    ],
+    "eigenvalues": [
+      100000000000000.0,
+      300000000000000.0
+    ],
+    "inverse_last_diagonal": 6.6666666666666664e-15,
+    "native_small_inverse_condition_true": true,
+    "whole_native_diagonal_not_inferred": true
+  },
+  "loading_requires_0_R2_1e30": true,
+  "single_process_R2_is_plain_LB_norm_squared": true,
+  "initial_velocity_does_not_require_nonzero_initial_acceleration_or_residual": true,
+  "actual_whole_R2_not_measured": true,
+  "preconditioner_thresholds_unmodified": true,
+  "TYPE25_five_per_scene_still_blocking": true,
+  "no_physical_gate_lowered": true
+}

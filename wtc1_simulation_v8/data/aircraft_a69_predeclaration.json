@@ -1,0 +1,135 @@
+{
+  "created_utc": "2026-10-14T10:17:37.749430+00:00",
+  "iteration": "AIRCRAFT-A69",
+  "seed": 1102094,
+  "random_draws": 0,
+  "binary": "wtc1_simulation_v8/openradioss_runtime/a67_current_area_iteration_candidate/isolated_exec/engine_linux64_gf_ompi",
+  "binary_sha256": "89a87631eb2e7f87db29e03247717556818567e41feb7fa2e768a10e03b642f8",
+  "observer": "wtc1_simulation_v8/scripts/observe_aircraft_a69_check_linux.py",
+  "observer_sha256": "b3792467c0e3dc4706e0dfd6f7043f3b78a18590c6da8f0311b4ae94aa42b3df",
+  "helper": "wtc1_simulation_v8/scripts/trace_aircraft_a48_linux.py",
+  "helper_sha256": "055e9cefd934071c4709dea4fb7aff951bc5b1b55850270ba8b84e3839980e9e",
+  "symbols": {
+    "imp_check0_": {
+      "offset": 12341584,
+      "bytes": 2506
+    },
+    "imp_checm0_": {
+      "offset": 12339088,
+      "bytes": 2484
+    },
+    "imp_chkm_": {
+      "offset": 12495616,
+      "bytes": 26108
+    },
+    "lin_solv_": {
+      "offset": 12714960,
+      "bytes": 6235
+    },
+    "produt_w_": {
+      "offset": 12782272,
+      "bytes": 187
+    }
+  },
+  "cases": [
+    {
+      "case": "WHOLE_ORIGINAL_CHECK",
+      "name": "A49_EQUIVALENT_RIGID_CHAINS",
+      "input_files": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a52/WHOLE_ORIGINAL_TYPE2_BINDING_TRACE/A49_EQUIVALENT_RIGID_CHAINS_0000_0001.rst",
+          "sha256": "7a36733b32058c90b583f598e49924b2ab5cfc30e70e74fcf98cff61dad7fb06",
+          "bytes": 145410297
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a52/WHOLE_ORIGINAL_TYPE2_BINDING_TRACE/A49_EQUIVALENT_RIGID_CHAINS_0001.rad",
+          "sha256": "223954811ab3b45978fb34983534092a2db6362d3a1fe6534e71f26fa0ba814b",
+          "bytes": 392
+        }
+      ],
+      "node_count": 48171,
+      "CHECK_cards_unchanged": true,
+      "new_observation": "native_R2_LB_and_pre_post_precondition_diagonal",
+      "whole_duration_credit_s": 0
+    },
+    {
+      "case": "WHOLE_PAIRED_CHECK",
+      "name": "A52_TYPE2_FACET_PAIRS_R1",
+      "input_files": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a52/WHOLE_PAIRED_TYPE2_BINDING_TRACE_R1/A52_TYPE2_FACET_PAIRS_R1_0000_0001.rst",
+          "sha256": "030edddf27c40cfab372582e3b311627ddda51c77c21409c2ffd58259807126a",
+          "bytes": 144800310
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a52/WHOLE_PAIRED_TYPE2_BINDING_TRACE_R1/A52_TYPE2_FACET_PAIRS_R1_0001.rad",
+          "sha256": "9c0465aa6d928b2ab192c06dd97405705fb918f589f96f6de9d8c1a1d7f4478b",
+          "bytes": 389
+        }
+      ],
+      "node_count": 48171,
+      "CHECK_cards_unchanged": true,
+      "new_observation": "native_R2_LB_and_pre_post_precondition_diagonal",
+      "whole_duration_credit_s": 0
+    },
+    {
+      "case": "FREE_ZERO_RESIDUAL_CHECK",
+      "name": "A67_FREE_Ismstr4",
+      "node_count": 8,
+      "input_files": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a67/native/FREE_Ismstr4/A67_FREE_Ismstr4_0000_0001.rst",
+          "bytes": 303870,
+          "sha256": "fa86b514cc2c5bf07daf094af4943c6bdbb72eba73c5b27c7577a9ae03d6ea8b"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a69_preparation/A67_FREE_Ismstr4_0001.rad",
+          "bytes": 620,
+          "sha256": "c825bc2bd431ed32b7af68754d50a3c6f4398c802c1b87a2dde9863aee5d7ab0"
+        }
+      ],
+      "only_new_keyword": "/IMPL/CHECK",
+      "zero_force_initial_velocity_control": true,
+      "whole_duration_credit_s": 0
+    }
+  ],
+  "maximum_Engine": 3,
+  "maximum_Starter": 0,
+  "CPU_threads": 1,
+  "each_cap_s": 180,
+  "GPU": false,
+  "installation": false,
+  "source_patch": false,
+  "compilation": false,
+  "whole_dynamic_extension": false,
+  "instrumentation": "Owned-child TRACEME with hardware execution breakpoints, numeric memory reads only; no instruction or mechanical-state writes",
+  "gdb_not_available_and_not_required": true,
+  "prepared_not_executed": true,
+  "requires_distinct_explicit_human_consent": true,
+  "old_A67_budget_remaining": 0,
+  "stop_if_address_array_or_symbol_guard_fails_no_unbudgeted_retry": true,
+  "deliverable": "R2 and plain norm of actual LB, combined assembled diagonal before LIN_SOLV, preconditioner coefficients at IMP_CHECM0, per-node direction map, complete native logs and observer scopes",
+  "acceptance": "Observation completeness, exact binary/input hashes, bounded arrays and unchanged source/checker values; physics remains FAIL while TYPE25 ignored or whole gates unresolved",
+  "all_five_TYPE25_preserved_blocking": true,
+  "old_errors_not_suppressed": true,
+  "best_whole_physical_s": 0.0200001220703125,
+  "objective1_complete": false,
+  "authorization": {
+    "created_utc": "2026-10-14T10:17:35.502410+00:00",
+    "explicit_human_authorization": true,
+    "answer": "Oui, exécuter les trois observations A69",
+    "question_item": "request_user_input_async/call_dd2f2a39f45d4373a9798616fc184ead/0",
+    "plan_sha256": "033d036c063d200b590d97e5c39f0333176524c04cd7add5dfee951f514e083e",
+    "review_sha256": "cdabf754b4926b09345f17636ce40fddc19c9b1dbe3a3ee0f30922afbd030613",
+    "maximum_Engine": 3,
+    "maximum_Starter": 0,
+    "CPU_threads": 1,
+    "each_cap_s": 180,
+    "GPU": false,
+    "installation": false,
+    "source_patch": false,
+    "compilation": false,
+    "whole_dynamic_extension": false,
+    "prior_budgets_not_reset": true
+  }
+}

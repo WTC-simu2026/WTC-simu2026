@@ -1,0 +1,9 @@
+# AIRCRAFT-A69 — trois mesures natives nouvelles, moteur inchangé
+
+Les CHECK A67 sont terminés et restent refusés ; aucun diagnostic de volume ou de graphe n’est à rejouer. L’audit A68 suit la transformation de DIAG_M : la valeur contrôlée après LIN_SOLV peut être un coefficient d’inverse approché, et non une masse ou une raideur physique brute. Une matrice connectée et positive peut donner une petite valeur signalée. Le contrôle de chargement exige un résidu LB non nul et fini ; une vitesse initiale avec accélération et force initiales nulles n’implique pas ce résidu. La valeur native R2 manque dans les sorties actuelles.
+
+Proposition concrète : deux anciens CHECK entiers copiés exactement et un CHECK du témoin libre A67, avec le seul mot-clé /IMPL/CHECK ajouté. Le moteur, les données mécaniques et les seuils restent identiques. L’observateur propre préparé lit R2/LB et les diagonales avant/après préconditionnement par points d’arrêt matériels sur son enfant propre. Aucun gdb, logiciel à installer, instruction ou état mécanique modifié ; aucune compilation. Plan exact et empreintes : wtc1_simulation_v8/data/aircraft_a69_proposal.json.
+
+Plafond : trois Engine, un CPU, 180 s chacun ; zéro Starter, sans GPU ni prolongement d’impact entier. Aucun retry hors budget. Échec si symbole, taille d’array, empreinte ou observation ne correspond pas au contrat ; le calcul conserve son résultat natif et ses signaux. Sorties attendues : valeurs natives, comparaison du résidu calculé, diagonales et directions, journaux complets, qualification de la mesure et limitations.
+
+Les cinq TYPE25 sont conservés, ignorés et bloquants ; aucune substitution, fausse force, changement de RREF ou seuil assoupli. Le passage de ces mesures n’est pas un passage physique de la scène ni une autorisation de dix secondes. Un accord distinct est requis : le précédent lot A67 de huit Engine est entièrement consommé. Lot non exécuté.
