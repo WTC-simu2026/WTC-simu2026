@@ -8,25 +8,19 @@ Le projet teste des mécanismes, des hypothèses explicites et des plages de par
 
 ## Où en est la simulation ?
 
-Instantané du **14 octobre 2026** : **AIRCRAFT-A73 terminée**, prochaine **AIRCRAFT-A74**, registre **192 entrées**. Objectif dix secondes physiques puis vidéo 3D incomplet.
+Instantané du **14 octobre 2026** : **AIRCRAFT-A75 terminée**, prochaine **AIRCRAFT-A76**, registre **194 entrées**. Objectif dix secondes physiques puis vidéo 3D incomplet.
 
-**A72 : proposition concrète de contexte CHECK explicite.** La garde TT0 ratée A71 est conservée. La source avance TT avant CALL IMP_CHKM ; le correctif propose IMP_CHK>0, en conservant IDYNA2/IQSTAT0/R2exact0 et un diagnostic explicite, et retire l’inclusion COM08 devenue inutile. Quatorze critères de portée passent ; aucun moteur modifié en A72. Cinq lectures scalaires sont préparées, avec offsets typés figés et bornes à vérifier dans le futur binaire. La revue statique ne présume aucune valeur native ni qualification physique.
+**A74 : contrat de cinq contacts actuels et deux variantes TYPE7 préparées, non exécutées.** Les deux scènes A49/A52 portent les mêmes interfaces2/101/102/103/104, groupes secondaires3024/1056/480/672/5785nœuds et surfaces principales en coques. L’inventaire statique propose gap0,5mm pour2 et5mm pour101–104. Vingt-deux critères de portée passent ; toutes les cartes mécaniques et TH restent identiques hors cinq cartes de contact et noms BEGIN/TITLE/RUN. Une variante de modèle de contact est déclarée explicitement, sans présumer l’équivalence dynamique TYPE25/TYPE7.
 
-**A73 : neuvième moteur isolé, autorisé distinctement, appliqué exactement et compilé.** Build en 301.832s sur six CPU, plafond1h, sans GPU ni installation. Les sources/moteurs antérieurs sont conservés ; différence exacte appliquée fuzz0 dans un nouveau workspace puis démontée. Six Engine sur unCPU/plafond180s, zéro Starter, budget entièrement consommé. Le Starter positif propre A71 est réutilisé par empreintes, sans répétition.
+**A75 : les deux Starter autorisés échouent ; aucun Engine CHECK exécuté.** CPU1/plafond180s chacun, moteur A73 inchangé, sans correctif, compilation, GPU ni installation. Chaque cas retourne2, sans dépassement de temps, avec **916erreurs et11avertissements**. La condition de préparation propre interdit les deux CHECK : leurs places restent conditionnellement inutilisées, non réaffectées ; aucun nouveau crédit Starter. Les deux Starter autorisés sont entièrement consommés.
 
-**Le contrôle logiciel de la nouvelle garde passe.** Les cinq contextes et R2 sont mesurés directement dans l’enfant, en lecture seule, aux points d’arrêt matériels existants. Aucun scalaire inventé ou instruction/état mécanique modifié. La dynamique libre passe : True, 23 critères aux seuils A67 conservés, TH terminal1.0ms ; aucun crédit entier donné aux témoins. Les anciennes erreurs TT0 A71 et le premier échec d’observation A69 ne sont pas réécrits.
+**Cause native précise, conservée avec les sorties.** Les916erreurs612 par cas concernent seulement l’auto-contact2 du radôme : nœuds sur la surface principale et impossibilité de calcul de nouvelles coordonnées. L’entrée et le résumé impriment Inacti1000, mais les erreurs impriment INACTI=0. Aucun domaine de nombres de nœuds ou état initial valide n’est supposé. Les11avertissements sont10messages614 (IBAG activé sans volume surveillé puis remis à zéro, deux passages pour cinq interfaces) et1message343 :4430pénétrations initiales concernant1968nœuds. La valeur1000 ne porte pas le même contrat initial entreTYPE25 etTYPE7 ; une revue statique et le résumé de paramètres ne qualifient pas l’initialisation.
 
-| Contrôle | IDYNA | IQSTAT | IMP_CHK | NCYCLE | TT natif(ms) | R2 |
-|---|---:|---:|---:|---:|---:|---:|
-| FREE_INITIAL_ZERO_CHECK | 2 | 0 | 1 | 1 | 1.0000625 | 0.0 |
-| STATIC_INITIAL_ZERO_CHECK | 0 | 0 | 1 | 1 | 1.0000625 | 0.0 |
-| STATIC_POSITIVE_LOAD_CHECK | 0 | 0 | 1 | 1 | 1.0000625 | 4.0 |
-| WHOLE_ORIGINAL_CHECK | 2 | 0 | 1 | 1 | 0.001 | 0.0 |
-| WHOLE_PAIRED_CHECK | 2 | 0 | 1 | 1 | 0.001 | 0.0 |
+**Les totaux de masse sont conservés, pas la compatibilité validée.** Les cinq TYPE7 et gaps déclarés sont imprimés. Masse191273837,9425g, ADMAS100368522,1367g et centres imprimés correspondent aux références ; aucun tenseur redistribué ou inertie native inférés. Aucun restart initial propre n’est produit, aucun impact entier prolongé. La liste des paires initiales n’est pas qualifiée par ces sorties avortées.
 
-**Les scènes entières restent bloquées.** WHOLE_ORIGINAL_CHECK : 0 erreurs/107396 avertissements, 5 TYPE25 ignorés ; WHOLE_PAIRED_CHECK : 0 erreurs/107396 avertissements, 5 TYPE25 ignorés. Les avertissements de préconditionnement et cinq contacts ignorés restent des critères échoués, sans substitution silencieuse ni force ou RKE de compensation. A52nonintégrée, inerties/matériaux/contacts/bilans entiers non qualifiés, aucun prolongement dynamique entier. Toutes les sorties, tentatives ratées, versions, budgets et archives sont conservés. Le prochain audit en lecture seule doit utiliser les résultats A73 et les audits existants ; toute nouvelle modification/compilation ou lot natif nécessite une proposition concrète et un accord distinct.
+**Les blocages restent visibles.** Anciennes TYPE25 ignorées,107391 avertissements de préconditionnement A73, gardeTT0 ratée A71, budgets, configurations et critères échoués sont conservés. Aucun contact entier supprimé, déplacement de nœuds d’entrée, RKE de compensation, modification masse/matière/inertie ou ajustement aux dégâts connus. A76 doit auditer le filtrage de voisinage et IBAG à partir de ces nouvelles données, préparer une différence exacte puis demander un accord distinct pour de nouvelles préparations.
 
-Les [rapports A72](wtc1_simulation_v8/output/aircraft_a72/rapport_aircraft_a72.md) et [A73](wtc1_simulation_v8/output/aircraft_a73/rapport_aircraft_a73.md) séparent les six catégories de preuve. **Meilleur impact entier : 0,0200001220703125 s.** Dix secondes et vidéo 3D ne sont pas produites ; aucune extrapolation visuelle fabriquée ni ajustement à des dégâts connus. Publication et CI attestent l’intégrité, pas la physique de l’impact réel.
+Les [rapports A74](wtc1_simulation_v8/output/aircraft_a74/rapport_aircraft_a74.md) et [A75](wtc1_simulation_v8/output/aircraft_a75/rapport_aircraft_a75.md) séparent les six catégories de preuve. **Meilleur impact entier : 0,0200001220703125 s.** Dix secondes et vidéo 3D restent incomplètes. Publication et CI attestent l’intégrité, pas la physique de l’impact réel.
 
 
 ## Ce qui est publié
@@ -38,9 +32,9 @@ Les [rapports A72](wtc1_simulation_v8/output/aircraft_a72/rapport_aircraft_a72.m
 - `outputs/` : calculs exploratoires antérieurs et audits complémentaires. Leurs affirmations se lisent avec leurs propres limites ; leur présence n'est pas une validation.
 - `publication/` : inventaire complet, empreintes SHA-256, règles de publication, licences tierces et liste motivée des fichiers externes non redistribués.
 
-Inventaire courant : **19,038 fichiers scientifiques dans Git**, **41,423 sorties dans 141 archives**.
+Inventaire courant : **19,113 fichiers scientifiques dans Git**, **41,428 sorties dans 142 archives**.
 
-Restaurer les 140 anciennes archives des releases précédentes, puis les 1 archives [A72+A73](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-14-aircraft-a72-a73). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
+Restaurer les 141 anciennes archives des releases précédentes, puis les 1 archives [A74+A75](https://github.com/WTC-simu2026/WTC-simu2026/releases/tag/snapshot-2026-10-14-aircraft-a74-a75). Manifestes, SHA-256 et URL conservés ; aucune ancienne archive reconstruite ou remplacée.
 
 ## Consulter et vérifier sans relancer les solveurs
 
@@ -69,7 +63,7 @@ Voir [REPRODUCIBILITY.md](REPRODUCIBILITY.md). La base Python utilise NumPy et P
 
 ## Prochaine étape
 
-AIRCRAFT-A74 : préparer en lecture seule la prochaine étape à partir des résultats natifs A73, après publication A72+A73 vérifiée. Utiliser les cinq paramètres natifs, R2 et les avertissements effectivement mesurés ; conserver A71 gardeTT0 échouée, anciennes sorties, contacts/budgets et tous les critères physiques échoués. Si la garde CHECK passe, traiter le contrat des cinq TYPE25 ignorés et des avertissements de préconditionnement avant toute intégration/prolongation entière ; réutiliser les audits existants, aucune substitution silencieuse. A73 neuf moteurs isolés au total, six Engine/zéro Starter autorisés entièrement consommés. Toute nouvelle modification de logiciel/compilation ou lot natif requiert une proposition concrète et un accord distinct. Pas de GPU, installation, RKE de compensation, calibrage aux dégâts connus ni crédit de témoins. Meilleur impact entier0,0200001220703125s ; objectif dix secondes physiques puis vidéo3D incomplet.
+AIRCRAFT-A76 : audit en lecture seule du nouvel échec d’initialisation TYPE7 A75 et proposition ciblée après publication A74+A75 vérifiée. Les deux Starter autorisés ont échoué avec916erreurs612 sur l’interface2 et11avertissements (10IBAG614 +1pénétrations343) ; aucun Engine exécuté. Les deux places CHECK restent conditionnellement inutilisées, non réaffectées et sans nouveau crédit Starter. Les cinq TYPE7/gaps0,5/5mm sont imprimés et masse/ADMAS conservés, mais aucun restart initial qualifié. La valeur Inacti1000 ne porte pas le même contrat entreTYPE25 etTYPE7 : ne pas désactiver globalement des contacts ni déplacer des nœuds pour forcer un passage. Inspecter le filtrage de voisinage/paires initiales et IBAG sans volume surveillé, préparer une différence exacte et un nouveau lot borné avec accord distinct. Moteur A73 conservé, zéro correctif/compilation/GPU/installation ; critères et anciens échecs inchangés. Les107391 avertissements et budgets physiques entiers restent bloquants. Meilleur impact entier0,0200001220703125s ; objectif dix secondes physiques puis vidéo3D incomplet.
 
 ## Discipline de preuve
 
