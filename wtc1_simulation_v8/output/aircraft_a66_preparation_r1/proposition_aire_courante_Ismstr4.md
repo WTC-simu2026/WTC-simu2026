@@ -1,0 +1,11 @@
+# Proposition Ismstr4 — aire courante, septième moteur isolé
+
+A65 qualifie le témoin libre raffiné mais ses deux scènes entières échouent. Les624éléments signalés utilisentTYPE43/LAW117/Ismstr4 ; leurs quatre aires projetées sont positives. Le moteurA62 traite seulementIsmstr1. Les sources natives stockent l’aire de référenceVOL seulement pourIsmstr1 ; Ismstr4 utiliseAREAP courante. Élargir simplement le test lirait un tampon qui n’est pas initialisé comme aire de référence dans ce domaine.
+
+Une différence exacte est préparée hors des livrablesMIT. Elle ajoute une brancheTYPE43+LAW117+Ismstr4 et un helper séparé, conserve exactement l’ancienne branche/helperIsmstr1, calcule quatre aires projetées courantes par quadrature sur la face médiane et utilise la normale courante. Même matrice symétrique d’itération élastique, pas un jacobien matériel/géométrique exact. ForcesSIGEPS117, états, matériaux, inerties et budgets restent natifs et inchangés. Une aire active non positive, un agencement invalide ou une valeur non finie arrêtent le candidat code66 ; aucune épaisseur/volume fictif ni message désactivé.
+
+Le prototype propre contrôle les mêmes formules d’aire queSDET43, la covariance aux rotations, l’évolution quadratique d’aire, la symétrie/positivité, équilibre/tractions, translations et géométries invalides. Aucun correctif appliqué ni compilé ; aucune qualification nativeIsmstr4 déduite du prototype.
+
+Application et compilation futures dans un septième moteur isolé : plafond1heure, CPU6, sansGPU/installation, caches déjà présents. Puis maximum8Engine CPU1/plafond180s : six témoins décrits dans le plan (libre/demi-pas, rotation, aire×4, aire non uniforme, évolution d’aire avecYlibre), puis deuxCHECK entiers strictement bornés. Seuils existants conservés. Les cinqTYPE25 restent inchangés et bloquants ; ce correctif ne suffit donc pas à autoriser l’impact entier ni dix secondes dynamiques.
+
+L’accordA65 de quatre calculs est consommé. Ce nouveau correctif et sa compilation requièrent un accord humain explicite distinct, conformément àAGENTS.md. Les entrées/caches, anciens moteurs, sorties et critères échoués seront conservés. Prochaine question de contact : préparer une variante admissible et ses bilans, sans remplacerTYPE25 silencieusement.

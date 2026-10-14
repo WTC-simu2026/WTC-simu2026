@@ -1,0 +1,71 @@
+{
+  "created_utc": "2026-10-14T08:02:52.889283+00:00",
+  "cases": [
+    {
+      "case": "FREE_REFINED",
+      "source_TH_frequency_ms": 0.0001,
+      "dt_ms": 0.000125,
+      "samples": 8000,
+      "last_TH_ms": 0.999875,
+      "recorded_cycle_jump_counts": {
+        "1": 7999
+      },
+      "all_samples_on_native_dt_grid": true,
+      "missing_steps_before_last_saved_cycle": 0,
+      "maximum_actual_cycle_Newmark_gap_error_mm": 7.300269616247745e-10,
+      "maximum_actual_cycle_native_KE_vs_exact_J": 5.545231114567617e-10,
+      "maximum_actual_cycle_native_IE_vs_exact_J": 5.526077965448822e-10,
+      "maximum_native_energy_residual_J": 6.000000002046035e-10,
+      "maximum_native_P_vs_exact_Ns": 6.085577454288671e-10,
+      "maximum_native_P_support_residual_Ns": 2.200000000750213e-09,
+      "terminal_complete_fields_gate_not_overridden": true,
+      "raw_A64_qualification_failure_preserved": true,
+      "missing_step_velocity_recursion_invalid_for_sparse_case": false
+    },
+    {
+      "case": "FREE_REFINED_HALF",
+      "source_TH_frequency_ms": 0.0001,
+      "dt_ms": 6.25e-05,
+      "samples": 10000,
+      "last_TH_ms": 0.9999375,
+      "recorded_cycle_jump_counts": {
+        "1": 3999,
+        "2": 6000
+      },
+      "all_samples_on_native_dt_grid": true,
+      "missing_steps_before_last_saved_cycle": 6000,
+      "maximum_actual_cycle_Newmark_gap_error_mm": 7.26713516620292e-10,
+      "maximum_actual_cycle_native_KE_vs_exact_J": 5.553529235872295e-10,
+      "maximum_actual_cycle_native_IE_vs_exact_J": 5.576207657512905e-10,
+      "maximum_native_energy_residual_J": 6.000000002046035e-10,
+      "maximum_native_P_vs_exact_Ns": 6.162277754045986e-10,
+      "maximum_native_P_support_residual_Ns": 2.200000000750213e-09,
+      "terminal_complete_fields_gate_not_overridden": true,
+      "raw_A64_qualification_failure_preserved": true,
+      "missing_step_velocity_recursion_invalid_for_sparse_case": true
+    }
+  ],
+  "native_counter_comparisons": [
+    {
+      "channel": "native_KE",
+      "maximum_difference_J": 5.49260000000005e-06,
+      "unchanged_tolerance_J": 1.0100000000000002e-05,
+      "pass": true,
+      "common_recorded_time_only": true
+    },
+    {
+      "channel": "native_IE",
+      "maximum_difference_J": 5.492499999999907e-06,
+      "unchanged_tolerance_J": 1.0100000000000002e-05,
+      "pass": true,
+      "common_recorded_time_only": true
+    }
+  ],
+  "no_solver_replay": true,
+  "no_source_patch": true,
+  "no_extrapolated_missing_fields": true,
+  "original_free_composite_pass": false,
+  "qualification_not_promoted": true,
+  "conditional_whole_CHECK_not_authorized_to_override_failed_gate": true,
+  "diagnosis": "TFILE=0.0001ms exceeds the fine step0.0000625ms; sparse samples invalidate every-step secant recursion. Last complete saved fields also precede target."
+}

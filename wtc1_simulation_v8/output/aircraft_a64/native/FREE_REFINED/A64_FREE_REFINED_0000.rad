@@ -1,0 +1,102 @@
+#RADIOSS STARTER
+/BEGIN
+A64_FREE_REFINED
+      2026         0
+                   g                  mm                  ms
+                   g                  mm                  ms
+/TITLE
+A64_FREE_REFINED
+/ANALY
+         0                   0         0
+/SPMD
+         0         0                   0                   1
+/NODE
+         1                   0                   0                   0
+         2                  10                   0                   0
+         3                  10                  10                   0
+         4                   0                  10                   0
+         5                   0                   0                   0
+         6                  10                   0                   0
+         7                  10                  10                   0
+         8                   0                  10                   0
+/MAT/LAW117/1
+UNCHANGED_NUMERICAL_COHESIVE_REFERENCE
+               1e-20
+                4400                 800         1         4         1
+         0         0                 450                 100                   1
+                  50                  50                   2                   2                   1
+/PROP/TYPE43/1
+ZERO_HEIGHT_COHESIVE
+         1                                                                                         0
+/PART/1
+COHESIVE_REFERENCE
+         1         1         0
+/BRICK/1
+         1         1         2         3         4         5         6         7         8
+/ADMAS/5/1
+INSTRUMENT_NODAL_MASSES
+                   1         1
+                   1         2
+                   1         3
+                   1         4
+                   1         5
+                   1         6
+                   1         7
+                   1         8
+/GRNOD/NODE/1
+GROUP_1
+         1         2         3         4
+/GRNOD/NODE/2
+GROUP_2
+         5         6         7         8
+/GRNOD/NODE/3
+GROUP_3
+         1         2         3         4         5         6         7         8
+/BCS/1
+BOTTOM_FIXED
+   111 111         0         1
+/BCS/2
+TOP_ROTATIONS_FIXED_UNUSED_TRANSLATIONS_FREE
+   000 111         0         2
+/INIVEL/TRA/500
+DECLARED_INITIAL_FREE_AXIS_MOTION
+                   0                   1                   0         2         0
+                   0         0
+/TH/PART/1
+COHESIVE_PART
+        IE        KE        HE        PW
+         1
+/TH/NODE/2
+REACTION_X
+        DX        VX     REACX
+         1         0
+         2         0
+         3         0
+         4         0
+         5         0
+         6         0
+         7         0
+         8         0
+/TH/NODE/3
+REACTION_Y
+        DY        VY     REACY
+         1         0
+         2         0
+         3         0
+         4         0
+         5         0
+         6         0
+         7         0
+         8         0
+/TH/NODE/4
+REACTION_Z
+        DZ        VZ     REACZ
+         1         0
+         2         0
+         3         0
+         4         0
+         5         0
+         6         0
+         7         0
+         8         0
+/END
