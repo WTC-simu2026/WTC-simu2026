@@ -1,0 +1,6 @@
+# Reprise AIRCRAFT-A91 → AIRCRAFT-A92
+
+Rapport : wtc1_simulation_v8/output/aircraft_a91/rapport_aircraft_a91.md
+Contrôles : wtc1_simulation_v8/output/aircraft_a91/controls_execution_review.json
+
+AIRCRAFT-A92 : après publication A90+A91 vérifiée, analyser en lecture seule les nouveaux états A91 sauvegardés et leurs critères encore échoués. Distinguer la garde numérique des cas nuls, les régressions à seuils inchangés, le parcours commandé du coupon et ses qualifications physiques. Ne pas confondre durée locale en millisecondes et impact avion entier. Le coupon atteint0,65ms mais ne transmet plus de compression après refermeture ; tracer les états de suppression et les champs TH dans les sources exactes, puis examiner le bilan indépendant des réactions et sa précision. Ne pas rejouer les diagnostics vérifiés. Aucun nouveau lancement automatique : les places utilisées A91 sont consommées et le CHECK conditionnel inutilisé ne devient pas un crédit générique. Toute autre modification du moteur ou exécution hors lot demande une proposition et un accord distinct. Conserver tolérances, budgets physiques, sources, sorties, critères échoués, cinqTYPE25 ignorés et107391avertissements. Meilleur impact entier0,0200001220703125s ; dix secondes physiques puis vidéo3D incomplètes.

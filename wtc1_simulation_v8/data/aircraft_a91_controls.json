@@ -1,0 +1,106 @@
+{
+  "created_utc": "2026-10-15T16:53:23.881410+00:00",
+  "iteration": "AIRCRAFT-A91",
+  "seed": 1102116,
+  "random_draws": 0,
+  "binary_sha256": "04e260a0f090153f899bf6300dbaff82c51aa0d3eb95ca8c0aa54d7c5d359e6c",
+  "plan_sha256": "f58c9112a83caa1e4ef2955e24506efee01251d065b31be6b760a7835f71e60b",
+  "driver_sha256": "666196cef069286aa2c40ca93bfb081843ea42c8e3a0b9b01899b9df7ea31a9f",
+  "cases": [
+    {
+      "case": "FREE_Ismstr4",
+      "name": "A67_FREE_Ismstr4",
+      "kind": "new_binary_regression_against_saved_A67",
+      "inputs": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a67/native/FREE_Ismstr4/A67_FREE_Ismstr4_0001.rad",
+          "bytes": 608,
+          "sha256": "c72b4b39d02ffa323e8828a7031250e204978b2104043c9410e2bf8cbb6cff6d"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a67/native/FREE_Ismstr4/A67_FREE_Ismstr4_0000_0001.rst",
+          "bytes": 303870,
+          "sha256": "fa86b514cc2c5bf07daf094af4943c6bdbb72eba73c5b27c7577a9ae03d6ea8b"
+        }
+      ],
+      "saved_reference_review": "wtc1_simulation_v8/output/aircraft_a67/native/FREE_Ismstr4/mechanical_review.json",
+      "target_ms": 1,
+      "existing_thresholds_preserved": true,
+      "normal_termination_and_existing_mechanical_gates_required": true
+    },
+    {
+      "case": "AREA_EVOLUTION_FREE_Y",
+      "name": "A67_AREA_EVOLUTION_FREE_Y",
+      "kind": "new_binary_regression_against_saved_A67",
+      "inputs": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a67/native/AREA_EVOLUTION_FREE_Y/A67_AREA_EVOLUTION_FREE_Y_0001.rad",
+          "bytes": 617,
+          "sha256": "497bc2cf56af55ea4d3d518db87eabe98f91f5b595469d86f4a0a10f76f86fd6"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a67/native/AREA_EVOLUTION_FREE_Y/A67_AREA_EVOLUTION_FREE_Y_0000_0001.rst",
+          "bytes": 821671,
+          "sha256": "bdbdf5555b43ed9a98275d65f34a486d4248f5156e3723de83329022792e8b2e"
+        }
+      ],
+      "saved_reference_review": "wtc1_simulation_v8/output/aircraft_a67/native/AREA_EVOLUTION_FREE_Y/mechanical_review.json",
+      "target_ms": 1,
+      "existing_thresholds_preserved": true,
+      "normal_termination_and_existing_mechanical_gates_required": true
+    },
+    {
+      "case": "COMPRESSION_RUPTURE_RECLOSE",
+      "name": "A81_COHESIVE_COMPRESSION_PARTIAL_OPEN_RECLOSE",
+      "kind": "original_A81_witness_first_new_candidate_trajectory",
+      "inputs": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a82_preparation/FIRST_NEWTON_DETAIL/A81_COHESIVE_COMPRESSION_PARTIAL_OPEN_RECLOSE_0001.rad",
+          "bytes": 774,
+          "sha256": "204ed502b05e409c0fd0dc66e344e56b0d4e1499c5a4bba2ce5bb253a9c0c838"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a82_preparation/FIRST_NEWTON_DETAIL/A81_COHESIVE_COMPRESSION_PARTIAL_OPEN_RECLOSE_0000_0001.rst",
+          "bytes": 656859,
+          "sha256": "3bed40078e9b15a2124404861ee5e707a6e81ae7edd16ffc7a2f657afdf4847f"
+        }
+      ],
+      "target_ms": 0.65,
+      "requires_prior_regressions_pass": true,
+      "energy_absolute_J": 1e-07,
+      "energy_relative_to_initial_K": 0.02,
+      "initial_K_J": 0,
+      "complete_native_TH_fields_reactions_damage_and_independent_energy_required": true,
+      "zero_USR_fields_do_not_certify_population": true
+    },
+    {
+      "case": "WHOLE_ORIGINAL_CHECK",
+      "name": "A49_EQUIVALENT_RIGID_CHAINS",
+      "kind": "bounded_CHECK_only_no_whole_dynamics",
+      "inputs": [
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a67/WHOLE_ORIGINAL_CHECK/A49_EQUIVALENT_RIGID_CHAINS_0001.rad",
+          "bytes": 392,
+          "sha256": "223954811ab3b45978fb34983534092a2db6362d3a1fe6534e71f26fa0ba814b"
+        },
+        {
+          "path": "wtc1_simulation_v8/output/aircraft_a67/WHOLE_ORIGINAL_CHECK/A49_EQUIVALENT_RIGID_CHAINS_0000_0001.rst",
+          "bytes": 145410297,
+          "sha256": "7a36733b32058c90b583f598e49924b2ab5cfc30e70e74fcf98cff61dad7fb06"
+        }
+      ],
+      "requires_all_local_mechanical_and_energy_gates_pass": true,
+      "TYPE25_ignored5_and_107391_warnings_remain_blocking": true,
+      "general_interface_guard_must_stay_off": true
+    }
+  ],
+  "maximum_Engine": 4,
+  "maximum_Starter": 0,
+  "CPU_threads": 1,
+  "each_cap_s": 180,
+  "GPU_installation_whole_dynamics": false,
+  "zero_native_converters": true,
+  "reused_analysis": "review_aircraft_a67_current_area.case_review on new outputs only",
+  "old_analysis_sha256": "1a3f272044812032dc7e03b9749ced01888bc193dcff571f7cc8ad85be0b4530",
+  "TH_reader_sha256": "6ce146739cfafe35b7e0afdf8d261a6bfb41bfc7849885869dafd66051476602"
+}

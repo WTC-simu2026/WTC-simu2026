@@ -1,0 +1,86 @@
+{
+  "created_utc": "2026-10-15T16:55:12.131958+00:00",
+  "case": "COMPRESSION_RUPTURE_RECLOSE",
+  "pass": false,
+  "checks": {
+    "normal_Engine_and_positive_time_target": true,
+    "actual_regular_saved_history": true,
+    "literal_independent_energy_threshold": false,
+    "physical_reconstructed_KE_vs_native": false,
+    "pre_rupture_compression_plateau_reference": true,
+    "post_reclosure_compression_plateau_reference": false,
+    "prescribed_top_Z_target_reclosed": true,
+    "free_top_XY_small": true,
+    "uniform_top_Z": true,
+    "native_USR_population_qualified": false,
+    "native_damage_and_rupture_semantics_certified": false,
+    "full_reaction_work_independent_closure_certified": false
+  },
+  "failed_checks": [
+    "literal_independent_energy_threshold",
+    "physical_reconstructed_KE_vs_native",
+    "post_reclosure_compression_plateau_reference",
+    "native_USR_population_qualified",
+    "native_damage_and_rupture_semantics_certified",
+    "full_reaction_work_independent_closure_certified"
+  ],
+  "native_rows": 5201,
+  "last_saved_ms": 0.6499999761581421,
+  "global_energy_residual_J_max": 6.153964568511583e-05,
+  "unchanged_energy_limit_J": 1e-07,
+  "KE_reconstruction_vs_native_J_max": 3.8607598933135256e-05,
+  "energy_formula": "physical nodal KE + native internal/rotation/spring/hourglass/contact energies - native external work; independent reaction work still requires certification",
+  "native_external_work_J_range": [
+    -8.670276030898095e-06,
+    5.0215576171875
+  ],
+  "pre_compression_force_N": -22000.006638469316,
+  "post_reclosure_force_N": -0.0,
+  "fields_raw_observed_ranges": {
+    "1": {
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "nonzero_rows": 2627
+    },
+    "4": {
+      "minimum": -220.0,
+      "maximum": 449.3791809082031,
+      "nonzero_rows": 2615
+    },
+    "137": {
+      "minimum": -0.05000000074505806,
+      "maximum": 0.22232764959335327,
+      "nonzero_rows": 5200
+    },
+    "140": {
+      "minimum": 0.0,
+      "maximum": 0.22232764959335327,
+      "nonzero_rows": 3761
+    },
+    "141": {
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "nonzero_rows": 2939
+    },
+    "142": {
+      "minimum": -220.0,
+      "maximum": 449.3791809082031,
+      "nonzero_rows": 2615
+    },
+    "145": {
+      "minimum": 0.10227272659540176,
+      "maximum": 0.10227272659540176,
+      "nonzero_rows": 5201
+    },
+    "148": {
+      "minimum": 0.2222222238779068,
+      "maximum": 0.2222222238779068,
+      "nonzero_rows": 5201
+    }
+  },
+  "field_population_and_deletion_semantics_not_inferred_from_zero_or_transition": true,
+  "zero_denominator_guard_marker_count": 5200,
+  "whole_CHECK_condition_not_met": true,
+  "whole_dynamic_extension": false,
+  "physical_whole_credit_s": 0
+}
