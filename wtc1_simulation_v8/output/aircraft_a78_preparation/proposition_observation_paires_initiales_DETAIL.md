@@ -1,0 +1,11 @@
+# AIRCRAFT-A78 — une observation des paires initiales, proposée seulement
+
+La variante de voisinage A77 reste échouée :916erreurs612/1avertissement par Starter, aucun Engine ni restart initial propre. Les deux préparations sont consommées. Aucune modification de contact supplémentaire n’est proposée sans identifier les paires fautives.
+
+Le nouvel audit statique de l’auto-contact relève432morceaux reliés par identités de nœuds dans1296facettes,3024nœuds et340groupes de coordonnées identiques entre morceaux. Les676numéros de nœuds distincts des916erreurs correspondent tous à ces coïncidences. Les liaisons mécaniques TYPE2 ne sont pas incluses dans ce graphe de surface : aucune déconnexion structurelle déduite. Les tuples de segments réellement sélectionnés n’ont pas encore été imprimés.
+
+Une seule nouvelle entrée est préparée depuis la variante originale A77. Elle ajoute uniquement /IOFLAG Ipri5 et renomme BEGIN/TITLE ; tous les contacts, gaps, coordonnées, propriétés, liaisons, masse/matière/inertie et conditions physiques restent identiques. Les autres flags de sortie et Idrot restent à leur valeur0 par défaut. La [documentation officielle IOFLAG](https://help.altair.com/hwsolvers/rad/topics/solvers/rad/ioflag_starter_r.htm) définit cette sortie détaillée, incluant coordonnées/connectivités/pénétrations initiales. Sources en cache vérifiées, identité avec le binaire Windows non supposée ; le rendu natif reste à contrôler.
+
+Lot A79 : un seul Starter d’observation, unCPU/plafond180s, estimation20–90s, zéro Engine, correctif logiciel, compilation, GPU ou installation. Il doit produire les numéros de nœud secondaire et quatre nœuds de segment, pour les vérifier contre la géométrie/connectivité imprimées et le modèle déclaré. Totaux masse/ADMAS à comparer. Les erreurs physiques916/1 restent attendues et échouées : réussite d’une observation ne devient pas préparation propre ni temps d’impact simulé.
+
+Un accord distinct est requis : les deux Starter A77 sont épuisés et les CHECK inutilisés ne sont pas réaffectés. Aucun impact entier prolongé ni nouvelle règle de contact appliquée. Plan : wtc1_simulation_v8/data/aircraft_a78_proposal.json. Meilleur impact entier0,0200001220703125s ; dix secondes physiques et vidéo3D incomplètes.

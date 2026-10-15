@@ -1,0 +1,132 @@
+{
+  "created_utc": "2026-10-14T18:08:11.470465+00:00",
+  "iteration": "AIRCRAFT-A78_PROPOSAL",
+  "seed": 1102103,
+  "random_draws": 0,
+  "purpose": "Observe actual initial node/main-segment labels through detailed Starter listing, not retry pass",
+  "case": "SELF_PAIR_PRINT",
+  "name": "A79_SELF_PAIR_PRINT",
+  "source_original_A77_case": {
+    "case": "WHOLE_ORIGINAL_NEIGHBOR_CHECK",
+    "name": "A77_WHOLE_ORIGINAL_NEIGHBOR_CHECK",
+    "source_A74_variant": {
+      "path": "wtc1_simulation_v8/output/aircraft_a74_preparation/WHOLE_ORIGINAL_TYPE7_CHECK/A75_WHOLE_ORIGINAL_TYPE7_CHECK_0000.rad",
+      "bytes": 7281560,
+      "sha256": "62ae9bb300538cf473731a12287fee9b9434c4a3433357e3f3e043324593d036"
+    },
+    "inputs": [
+      {
+        "path": "wtc1_simulation_v8/output/aircraft_a76_preparation/WHOLE_ORIGINAL_NEIGHBOR_CHECK/A77_WHOLE_ORIGINAL_NEIGHBOR_CHECK_0000.rad",
+        "bytes": 7281566,
+        "sha256": "409aae915ff578cf39e8f8cd86765966a19e644adcd78aaf5c07c98a0172e08d"
+      },
+      {
+        "path": "wtc1_simulation_v8/output/aircraft_a76_preparation/WHOLE_ORIGINAL_NEIGHBOR_CHECK/A77_WHOLE_ORIGINAL_NEIGHBOR_CHECK_0001.rad",
+        "bytes": 381,
+        "sha256": "54add3101e63071d1a5605154635439e5a7a54ee75de1535946d94f6445b7f78"
+      }
+    ],
+    "contact_interface_IDs": [
+      2,
+      101,
+      102,
+      103,
+      104
+    ],
+    "expected_self_Irem_gap": 2,
+    "expected_other_Irem_gap": 1,
+    "new_Starter": true,
+    "new_Engine_CHECK_only": true,
+    "Starter_gate": {
+      "normal_and_code0": true,
+      "errors": 0,
+      "warnings_strict": 0,
+      "mass_relative": 1e-06,
+      "ADMAS_exact": true,
+      "five_TYPE7_registered": true,
+      "all_references_valid": true,
+      "gap_and_initial_pair_readback_required": true
+    },
+    "Engine_CHECK_gate": {
+      "ignored_unsupported_contacts": 0,
+      "loading_errors": 0,
+      "volume_stops": 0,
+      "TYPE7_interfaces_required": 5,
+      "connection_warnings_retained_blocking": true
+    },
+    "native_pair_local_exclusion_not_yet_measured": true,
+    "dynamic_equivalence_qualified": false,
+    "whole_credit_s": 0
+  },
+  "inputs": [
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a78_preparation/SELF_PAIR_PRINT/A79_SELF_PAIR_PRINT_0000.rad",
+      "bytes": 7281617,
+      "sha256": "b2d26251703fd2e92c6435d9fb0c37f378e9a144004f8b01e3bb1455c5d23ca9"
+    }
+  ],
+  "output_option": {
+    "keyword": "/IOFLAG",
+    "Ipri": 5,
+    "Ioutp": 0,
+    "OutyyFMT": 0,
+    "Irootyy": 0,
+    "Idrot": 0
+  },
+  "source_physical_cards_unchanged": true,
+  "Starter_binary": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+  "Starter_sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6",
+  "mass_baseline": {
+    "path": "wtc1_simulation_v8/output/aircraft_a49/WHOLE_EQUIVALENT_RIGID_CHAINS_CHECK/mass_review.json",
+    "sha256": "46bc6d10e1b026e21d309cf5d3dce3c75c1a3b9d1f7a67b3f96502fb7ec1ed83",
+    "values": {
+      "created_utc": "2026-10-12T17:01:52.992134+00:00",
+      "pass": true,
+      "mass_g": 191273837.9425,
+      "reference_mass_g": 191273837.9425,
+      "center_mm": [
+        14245.90260656,
+        -0.00031019191109262,
+        -211.2460794408
+      ],
+      "reference_center_mm": [
+        14245.90260656,
+        -0.00031019191109262,
+        -211.2460794408
+      ],
+      "prescribed_ADMAS_g": 100368522.1367,
+      "no_mass_or_inertia_compensation": true,
+      "redistributed_native_mass_tensor_not_assumed_identical": true
+    }
+  },
+  "maximum_Starter": 1,
+  "maximum_Engine": 0,
+  "CPU_threads": 1,
+  "cap_s": 180,
+  "GPU": false,
+  "software_source_patch": false,
+  "compilation": false,
+  "installation": false,
+  "whole_dynamic_extension": false,
+  "expected_observation_wall_s": [
+    20,
+    90
+  ],
+  "old_A77_Starter_remaining": 0,
+  "old_A77_Engine_conditionally_unused": 2,
+  "unused_CHECK_slots_do_not_cover_new_Starter": true,
+  "new_explicit_human_authorization_required": true,
+  "expected_physical_Starter_errors": 916,
+  "expected_physical_Starter_warnings": 1,
+  "observation_acceptance": {
+    "native_print_option_confirmed": true,
+    "actual_secondary_and_four_main_node_numbers_printed": true,
+    "tuple_domains_verified_against_native_coordinate_or_connectivity_listing": true,
+    "printed_pair_nodes_found_in_predeclared_groups_and_main_facets": true,
+    "mass_and_ADMAS_unchanged": true,
+    "physical_errors_and_warnings_preserved_not_relabelled": true
+  },
+  "full_dynamic_contact_or_initialization_qualification": false,
+  "best_whole_physical_s": 0.0200001220703125,
+  "objective1_complete": false
+}
