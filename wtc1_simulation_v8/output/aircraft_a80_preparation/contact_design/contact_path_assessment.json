@@ -1,0 +1,95 @@
+{
+  "status": "research_path_only_no_patch_ready",
+  "native_runs": 0,
+  "source_modifications": false,
+  "compilation": false,
+  "recommended_single_path": "Prepare an explicit opt-in initial-pair lifecycle for TYPE7 in the implicit solver, limited to certified cohesive-joint pairs; retain the nominal gap and arm each pair permanently after a genuine separation out of its contact envelope.",
+  "directly_observed_input_from_parent": [
+    "A79 printed 916 ERROR612 node/facet tuples.",
+    "Some tuple vertices coincide with secondary nodes on intentionally distinct rupture fragments."
+  ],
+  "primary_documentation": [
+    {
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inter_type7_starter_r.htm",
+      "claim": "Inacti5/6 changes initial effective gap; 1/2 suppress entire node/segment stiffness; Irem_gap2 follows connected topology."
+    },
+    {
+      "url": "https://help.altair.com/hwsolvers/rad/topics/solvers/rad/inter_type25_starter_r.htm",
+      "claim": "TYPE25 unavailable for implicit; Inacti1000 ignores initial contacts but permits contact on exit and later reentry."
+    }
+  ],
+  "pinned_source_facts": [
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a76_initial_contact_source_audit/i7pwr3.F",
+      "lines": [
+        201,
+        207
+      ],
+      "fact": "Inacti1 sets STFN(node)=0 and2 sets STF(segment)=0."
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a76_initial_contact_source_audit/i7pwr3.F",
+      "lines": [
+        245,
+        259
+      ],
+      "fact": "Inacti5/6 stores initial penetration in CAND_P and prints initial-gap reduction."
+    },
+    {
+      "path": "tmp/aircraft_a80_contact_path/engine/source/interfaces/int07/i7for3.F",
+      "lines": [
+        722,
+        758
+      ],
+      "fact": "Inacti5/6 explicitly subtract CAND_P from penetration and GAPV."
+    },
+    {
+      "path": "tmp/aircraft_a80_contact_path/engine/source/interfaces/int07/i7dstk3.F",
+      "lines": [
+        391,
+        399
+      ],
+      "fact": "Implicit pair list selection clears CAND_P for5/6 when PENE2>0 or STIF=0."
+    },
+    {
+      "path": "tmp/aircraft_a80_contact_path/engine/source/interfaces/intsort/i7sto.F",
+      "lines": [
+        95,
+        114
+      ],
+      "fact": "Sorting avoids duplicate old candidates for existing special treatments; pair identity uses node/segment indices and includes SPMD node-renumbering logic."
+    },
+    {
+      "path": "tmp/aircraft_a80_contact_path/engine/source/interfaces/intsort/i7sto.F",
+      "lines": [
+        138,
+        197
+      ],
+      "fact": "New candidates in5/6/7 branches initialize CAND_P tozero."
+    }
+  ],
+  "non_equivalence": "The proposed lifecycle is a new model/solver feature, not proof of equivalence between TYPE7 and TYPE25 stiffness or implicit support of TYPE25. Windows Starter identity with pinned source is not established.",
+  "minimal_preparation_before_any_patch_approval": [
+    "Certify every initially suppressed pair by cohesive connectivity, not only coordinate coincidence or the916 singular-error tuples. Account for all4430 initial penetrations and reject unexplained exterior/interior overlaps.",
+    "Specify stable pair key(interface,secondary node ID,main facet ID), initial-only eligibility, state WAITING/ARMED, finite-geometry guards and observables. New initially clean pairs are always ARMED. A node paired to a third unrelated facet must remain active.",
+    "Use the unchanged contact distance and nominal gap from native geometry. WAITING pair carries no contact reaction or tangent until the node leaves that facet contact envelope. Commit irreversible ARMED only at an accepted converged step; reject/rollback trials cannot change committed state.",
+    "Trace exact allocation, Starter-to-Engine transfer, sort/reindex, restart read/write, force and tangent paths and failure cleanup. Do not reuse CAND_P blindly. Define opt-in card/manifest scope without redefining standard1000 semantics or hardcoding aircraft IDs.",
+    "Define cohesion/contact interaction at rupture and compression, including risk of no contact until a full gap exit. The cohesive law must still support intended pre-arm compression; otherwise the proposed lifecycle is physically inadequate and stops.",
+    "Only after a static design and isolated diff are reviewable request separate explicit permission for isolated Starter and Engine changes/builds, with a new bounded witness budget."
+  ],
+  "distinctive_witnesses_required": [
+    "Coincident cohesive seam at rest: no artificial impulse, energy, displacement or change to cohesive traction; no initial coordinate or nominal-gap change.",
+    "Opening past the unchanged envelope, cohesive damage and reclosing: WAITING->ARMED once, ordinary TYPE7 contact activates on return at the original nominal threshold; no permanent exclusion.",
+    "Initially clean secondary-versus-main contact: standard baseline response preserved.",
+    "One seam node versus two facets: initial neighbour pair waits, unrelated new collision reacts; excludes node-wide suppression.",
+    "Resort/restart and rejected Newton trials: identical accepted response and pair states, no rearming or premature activation; CPU1 first, MPI only in a separately budgeted stage.",
+    "Energy/reaction balance and time-step refinement, separately from clean Starter termination and CHECK policy. Any later whole-model run requires all local gates and a new explicit budget."
+  ],
+  "risks": [
+    "Waiting contacts may permit interpenetration before a full envelope exit; this is an explicit inherited modelling assumption requiring cohesion/compression evidence.",
+    "Hard transition of the active set can hurt Newton convergence; force and tangent must share states.",
+    "Candidate disappearance/recreation or restart can lose memory.",
+    "The916 fatal pairs are not necessarily the complete legitimate initial-contact set.",
+    "No guarantee this removes preconditioner warnings or advances the physical whole-impact duration."
+  ]
+}

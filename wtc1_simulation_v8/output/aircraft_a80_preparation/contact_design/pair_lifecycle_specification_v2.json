@@ -1,0 +1,188 @@
+{
+  "status": "non_native_specification_not_a_patch",
+  "software_cost_assessment": {
+    "small_engine_only_patch_claim": "not_defensible",
+    "scope": "Starter input/eligibility and state creation, buffer lifecycle/copies, stable candidate sorting, implicit force and matrix, accepted-step and rollback semantics, restart, potential MPI ownership. Exact commit hook still to identify.",
+    "ready_to_compile": false,
+    "reason_to_continue_path": "Required behaviour is missing from available TYPE7 semantics while fixed-gap initial overlap and future recontact remain requirements. A persistent scoped lifecycle is technically plausible, but must pass design and cohesive compression gates before source edit authorization."
+  },
+  "fixed_geometry": {
+    "source": {
+      "input": "wtc1_simulation_v8/output/aircraft_a79/SELF_PAIR_PRINT/A79_SELF_PAIR_PRINT_0000.rad",
+      "secondary_node": 50,
+      "main_facet_nodes": [
+        37327,
+        43926,
+        43928,
+        43925
+      ],
+      "coordinates_in_input_units": {
+        "50": [
+          997.739500831,
+          1297.2272228,
+          373.33110558
+        ],
+        "37327": [
+          997.739500831,
+          1297.2272228,
+          373.33110558
+        ],
+        "43925": [
+          747.739500831,
+          1161.84962957,
+          186.884145546
+        ],
+        "43926": [
+          747.739500831,
+          1144.42239835,
+          329.285363511
+        ],
+        "43928": [
+          664.406167497,
+          1105.10561102,
+          219.669304178
+        ]
+      },
+      "coordinate_zero_shift": true,
+      "synthetic_displacement_path_required": true,
+      "not_a_native_geometry_measurement": true
+    },
+    "native_A79_tuple": [
+      50,
+      37327,
+      43926,
+      43928,
+      43925
+    ],
+    "normal_from_v1v2_cross_v1v4": [
+      0.531882157459448,
+      -0.840547270520387,
+      -0.1028671793965898
+    ],
+    "nominal_gap_in_input_units": 0.5,
+    "main_vertices_fixed_for_geometry_witness": true,
+    "initial_secondary_coordinate_equals_first_vertex": true,
+    "trial_motion": "x50(s)=x50(0)+s*n, with both signs and deterministic increments; derive actual shortest contact distance with the source contact algorithm. This geometric trajectory is a synthetic witness, not a forecast of aircraft motion.",
+    "geometry_caveat": "Nonplanar four-node facet and exact vertex coincidence: do not equate s blindly to native distance, normal, facet sector or contact force."
+  },
+  "state_policy": {
+    "pair_key": "interface persistent ID, secondary persistent node ID, main persistent facet ID; internal indices only via verified maps",
+    "eligibility": "Explicitly certified initial cohesive-neighbour pair, initialized once at first activation; geometry coincidence alone is insufficient. No other pair inherits waiting from this secondary node.",
+    "states": [
+      "WAITING",
+      "ARMED"
+    ],
+    "initialize": "Certified initially overlapping seam pair WAITING; every initially clean/new/unrelated pair ARMED; uncertified initial overlap is a model gate failure.",
+    "evaluate": "WAITING force, contact tangent and contact energy are exactly zero for this pair. Preserve ordinary geometric distance, normal and nominal gap. ARMED uses unchanged TYPE7 force, matrix, friction and energy branches.",
+    "arm": "After an accepted converged configuration is genuinely outside the unchanged native contact envelope, commit ARMED permanently. Prefer clear d>g+roundoff_guard; roundoff guard must be a numeric tolerance, not a gap change.",
+    "newton": "Maintain trial and committed state separately. A failed trial, line search or rejected step must not commit. Pending state transitions must be recomputed consistently when a step is retried. Irreversible committed arming may occur only on accepted geometry.",
+    "sort_restart": "Pair identity and state persist through candidate disappearance, reappearance, reordering and restart. Restart restores WAITING before exit and ARMED after exit. A recreated candidate must never be treated as initially overlapping anew.",
+    "unresolved_commit_design": "Exact accepted-step hook, trial state copying and supported restart format/schema version are unresolved; this prevents a reviewable diff today.",
+    "cohesive_gate": "Prove the unchanged seam law supports intended compression before arming and preserves rupture after the new contact gate. If a failed seam can interpenetrate before full gap exit with no adequate compression reaction, stop this policy."
+  },
+  "oracle_event_sequences": [
+    {
+      "name": "initially_overlapped_seam_with_rollback",
+      "initial": "WAITING",
+      "events": [
+        {
+          "event": "evaluate",
+          "d_over_g": 0.0,
+          "committed": "WAITING",
+          "contact_pair_active": false
+        },
+        {
+          "event": "rejected_trial",
+          "d_over_g": 1.1,
+          "committed": "WAITING",
+          "contact_pair_active": false
+        },
+        {
+          "event": "accept",
+          "d_over_g": 0.5,
+          "committed": "WAITING",
+          "contact_pair_active": false
+        },
+        {
+          "event": "accept",
+          "d_over_g": 1.1,
+          "committed": "ARMED",
+          "contact_pair_active": false
+        },
+        {
+          "event": "accept",
+          "d_over_g": 0.9,
+          "committed": "ARMED",
+          "contact_pair_active": true
+        },
+        {
+          "event": "restart_then_accept",
+          "d_over_g": 0.9,
+          "committed": "ARMED",
+          "contact_pair_active": true
+        },
+        {
+          "event": "accept",
+          "d_over_g": 1.1,
+          "committed": "ARMED",
+          "contact_pair_active": false
+        },
+        {
+          "event": "resort_then_accept",
+          "d_over_g": 0.9,
+          "committed": "ARMED",
+          "contact_pair_active": true
+        }
+      ]
+    },
+    {
+      "name": "unrelated_second_facet_same_node",
+      "initial": "ARMED",
+      "events": [
+        {
+          "event": "accept",
+          "d_over_g": 0.9,
+          "committed": "ARMED",
+          "contact_pair_active": true
+        }
+      ]
+    },
+    {
+      "name": "initially_clean_pair",
+      "initial": "ARMED",
+      "events": [
+        {
+          "event": "accept",
+          "d_over_g": 1.1,
+          "committed": "ARMED",
+          "contact_pair_active": false
+        },
+        {
+          "event": "accept",
+          "d_over_g": 0.9,
+          "committed": "ARMED",
+          "contact_pair_active": true
+        }
+      ]
+    }
+  ],
+  "force_matrix_criteria": [
+    "WAITING: no pair force, pair tangent or pair energy; cohesive terms unchanged.",
+    "ARMED: same reactions, ordinary gap and tangent as baseline TYPE7 on an initially clean witness driven to the same native geometry.",
+    "Directional finite differences of force match assembled tangent for fixed active set and away from contact/arming transitions; separately observe the transition and do not demand differentiability at the switch.",
+    "Action-reaction, impulse and energy closure use independent residuals and established budgets; do not infer success from exit0 or zero singular-error count.",
+    "Native implicit selector has a0.97-gap inner criterion in I7DSTR3; tests near that boundary must inspect its actual baseline force/matrix semantics, not assume exact gap threshold equality."
+  ],
+  "optional_unchanged_engine_witness": {
+    "purpose": "Reduce the untested physical uncertainty of cohesive seam compression and rupture before arming; not rerun failing TYPE7 whole preparation.",
+    "precondition": "Search targeted A67/A71 existing local reports for equivalent compression/rupture/reclosure qualification and reuse if present.",
+    "model": "Minimal mass-neutral seam coupon using exact current LAW43/TYPE43 surfaces and unchanged A73. Omit general contact deliberately so the cohesive reaction can be isolated; prescribed compressive then opening reversal, with local traction and tangent outputs.",
+    "potential_budget_to_prepare_not_authorized": {
+      "Starter": 1,
+      "Engine": 1,
+      "cpu": 1,
+      "seconds_each": 180
+    },
+    "restriction": "No whole impact extension; zero result cannot validate future recontact. If current law has no certified failure path, inspect source and parameter ranges before preparing any load that claims rupture."
+  }
+}

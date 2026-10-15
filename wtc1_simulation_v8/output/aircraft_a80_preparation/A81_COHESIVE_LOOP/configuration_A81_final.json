@@ -1,0 +1,273 @@
+{
+  "iteration": "AIRCRAFT-A81_PROPOSAL",
+  "status": "prepared_no_native_requires_separate_human_authorization",
+  "seed": 1102092,
+  "random_draws": 0,
+  "name": "A81_COHESIVE_COMPRESSION_PARTIAL_OPEN_RECLOSE",
+  "new_native_started": 0,
+  "maximum_native_processes": 2,
+  "Starter": 1,
+  "Engine_conditional": 1,
+  "cpu": 1,
+  "each_cap_s": 180,
+  "GPU": false,
+  "source_patch": false,
+  "compile": false,
+  "installation": false,
+  "whole_impact_extension": false,
+  "expected_total_minutes": [
+    1,
+    5
+  ],
+  "purpose": "Observe cohesive compression, rupture below nominal contact gap, and reclosure after rupture before any contact lifecycle development.",
+  "units": {
+    "mass": "g",
+    "length": "mm",
+    "time": "ms",
+    "force": "N",
+    "stress": "N/mm2",
+    "cohesive_stiffness": "N/mm3",
+    "energy": "Nmm",
+    "energy_to_J": 0.001
+  },
+  "geometry": "A67 FREE_Ismstr4 eight-node zero-height square10x10mm, oneTYPE43 brick, currentA79LAW117 numerical card",
+  "area_mm2": 100,
+  "instrument_nodal_masses_g": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "instrument_mass_g": 8,
+  "cohesive_area_density_g_mm2": 1e-20,
+  "whole_mass_compensation": false,
+  "material": {
+    "LAW": 117,
+    "EN_N_mm3": 4400,
+    "ET_N_mm3": 800,
+    "TN_MPa": 450,
+    "TT_MPa": 100,
+    "GI_N_mm": 50,
+    "GII_N_mm": 50,
+    "Imass": 1,
+    "Idel": 4,
+    "Irupt": 1,
+    "Ismstr": 4,
+    "true_thickness": 0
+  },
+  "conditional_documented_pure_mode_I_reference": {
+    "initiation_mm": 0.10227272727272728,
+    "failure_mm": 0.2222222222222222,
+    "fracture_work_Nmm": 5000,
+    "intact_compression_force_magnitude_at_minus005_N": 22000.0,
+    "nominal_contact_gap_mm_for_comparison_only_not_a_contact_card": 0.5
+  },
+  "load": {
+    "top_Z_only": true,
+    "top_XY_free": true,
+    "bottom_fixed": true,
+    "knots_ms_mm": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.08,
+        -0.05
+      ],
+      [
+        0.1,
+        -0.05
+      ],
+      [
+        0.18,
+        0.0
+      ],
+      [
+        0.2,
+        0.0
+      ],
+      [
+        0.4,
+        0.3
+      ],
+      [
+        0.42,
+        0.3
+      ],
+      [
+        0.62,
+        -0.05
+      ],
+      [
+        0.65,
+        -0.05
+      ],
+      [
+        0.651,
+        -0.05
+      ]
+    ],
+    "interpolation": "sampledC2quintic transitions; FUNCT uses native linear interpolation between the dt/2 tabulated samples",
+    "no_general_contact": true
+  },
+  "time": {
+    "target_ms": 0.65,
+    "RUN_stop_ms": 0.6500625,
+    "dt_cap_ms": 0.000125,
+    "dt_min_ms": 0.000125,
+    "dt_reduction_causes_stop": true,
+    "TH_ms": 6.25e-05,
+    "ANIM_ms": 6.25e-05,
+    "maximum_nominal_accepted_steps_before_one_step_overshoot": 5201
+  },
+  "Starter_gate": {
+    "normal_exit_required": true,
+    "syntax_reference_mass_and_property_checks_required": true,
+    "unclassified_errors_or_warnings_block_Engine": true,
+    "known_generic_ISOLID0_informational_message_not_relabelled_warning": true,
+    "native_mat_defaults_must_be_recorded_if_printed": true,
+    "conditional_Engine_not_reassigned_on_failure": true
+  },
+  "observation_gate": {
+    "all_actual_accepted_steps_required": true,
+    "saved_actual_state_at_target_required": true,
+    "fields": [
+      "all8DX_DY_DZ_VX_VY_VZ_REACX_REACY_REACZ_AZ",
+      "partIE_KE_HE_PW",
+      "brickOFF_SZ",
+      "brickUSR1_USR4_USR5_USR6_USR9_USR12_TH_and_ANIM"
+    ],
+    "USR_population_not_assumed": true,
+    "zero_or_absent_user_outputs_not_damage_zero": true,
+    "if_output_population_or_domain_unqualified": "observation_gate_fail_preserve_no_retry",
+    "post_deletion_missing_fields_not_interpreted_as_healing": true
+  },
+  "physical_gates_separate_from_observation": {
+    "reference_force_and_damage_curve_required": true,
+    "top_reaction_must_separate_prescribed_inertia_using_measured_acceleration": true,
+    "action_reaction_plus_inertia_and_external_work_balance_required": true,
+    "no_initial_spurious_impulse_or_energy_required": true,
+    "no_nonphysical_healing_or_missing_mass_concealment": true,
+    "failure_before_half_mm_and_reclosure_reaction_recorded_not_assumed": true,
+    "do_not_claim_contact_validated_from_absent_contact": true,
+    "A67_small_elastic_thresholds_preserved_not_silently_relaxed": true,
+    "new_non_linear_qualification_not_inferred_from_exit0": true,
+    "REAC_is_cumulative_support_impulse_not_instantaneous_force": true,
+    "same_energy_and_momentum_formulae": true,
+    "no_constant_1e_minus5_J_threshold_inferred_from_elastic_report": true
+  },
+  "observation_not_physical_qualification": true,
+  "constitutive_failure_unknown_in_current_native_engine": true,
+  "contact_policy_WAITING_until_gap_exit_not_retained": true,
+  "source_limit": "Pinned software source and official documentation motivate formulas/defaults; identity with WindowsStarter binary is not assumed; native material/default observations remain required.",
+  "inputs": [
+    {
+      "path": "A81_COHESIVE_COMPRESSION_PARTIAL_OPEN_RECLOSE_0000.rad",
+      "sha256": "adc472caf97afd15afce6b88b321f8e59ef75dbc1cb21f0190b575a761eee304"
+    },
+    {
+      "path": "A81_COHESIVE_COMPRESSION_PARTIAL_OPEN_RECLOSE_0001.rad",
+      "sha256": "a986c4384162e891fc74e0b2e2f5e0b96b4dfbe6acd6457faf2c700cb18eb5bc"
+    }
+  ],
+  "sources": [
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a67/native/FREE_Ismstr4/A67_FREE_Ismstr4_0000.rad",
+      "sha256": "134eac36f9fd90461df1804b5c37122578d3879d8e3646708119b0dbde774f0b"
+    },
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a67/native/FREE_Ismstr4/A67_FREE_Ismstr4_0001.rad",
+      "sha256": "c72b4b39d02ffa323e8828a7031250e204978b2104043c9410e2bf8cbb6cff6d"
+    },
+    {
+      "path": "wtc1_simulation_v8/output/aircraft_a79/SELF_PAIR_PRINT/A79_SELF_PAIR_PRINT_0000.rad",
+      "sha256": "b2d26251703fd2e92c6435d9fb0c37f378e9a144004f8b01e3bb1455c5d23ca9"
+    }
+  ],
+  "unchanged_software": [
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/v20260728-win64/starter_win64.exe",
+      "sha256": "961eca1640c321b0cb4893c8481942e5162e89ea292d64e964deea1b5ead96d6"
+    },
+    {
+      "path": "wtc1_simulation_v8/openradioss_runtime/a73_CHECK_context_candidate/isolated_exec/engine_linux64_gf_ompi",
+      "sha256": "09a2f856d0eddb13ba56c80c578a12d058cb2cee1e403d46074b1b77b29aa158"
+    }
+  ],
+  "source_evidence": [
+    "starter/source/materials/mat/mat117/hm_read_mat117.F:141-159,211-240,315-336",
+    "engine/source/materials/mat/mat117/sigeps117.F:175-189,362-381,455-467",
+    "hm_cfg_files/config/CFG/radioss2612/MAT/mat117.cfg:77-84",
+    "A67rapport limits damage rollback and nonlinear domains"
+  ],
+  "best_whole_physical_s": 0.0200001220703125,
+  "new_whole_credit_s": 0,
+  "objective1_complete": false,
+  "support_impulse_measurement": {
+    "native_REAC_unit": "Nms",
+    "to_Ns": 0.001,
+    "force_estimator_N": "difference of cumulative REAC divided by actual time interval inms",
+    "intact_compression_plateau_ms": [
+      0.08,
+      0.1
+    ],
+    "reclosure_plateau_ms": [
+      0.62,
+      0.65
+    ],
+    "expected_intact_abs_force_N": 22000,
+    "compare_same_minus005mm_plateaus": true,
+    "sign": "Check by independent momentum balance; support reaction opposes compression displacement. Never compare raw cumulative REAC to22000N."
+  },
+  "inherits_A67_acceptance_formulae": {
+    "mass_relative": 1e-06,
+    "added_mass_relative": 1e-09,
+    "energy_relative": 0.02,
+    "energy_absolute_J": 1e-07,
+    "momentum_relative": 0.02,
+    "momentum_absolute_Ns": 1e-09,
+    "free_displacement_mm": 2e-05,
+    "free_velocity_mm_ms": 0.0002,
+    "junction_state_relative": 1e-05,
+    "junction_state_absolute": 1e-06,
+    "junction_time_ms": 2e-05,
+    "contact_impulse_observable_Ns": 1e-06,
+    "contact_IE_observable_J": 1e-07,
+    "comparison_energy_relative": 0.02,
+    "comparison_energy_absolute_J": 1e-07,
+    "half_dt_energy_relative": 0.005
+  },
+  "mode_I_eligibility_gate": {
+    "reason_XY_not_prescribed": "Preserve genuinely free unknown translations as in the known implicitA67 witness; all-prescribed unknown-space case is not qualified.",
+    "maximum_absolute_XY_displacement_mm": 2e-05,
+    "maximum_four_nodal_Z_jump_spread_mm": 2e-05,
+    "maximum_current_Gauss_area_relative_change": 1e-06,
+    "maximum_shear_stress_MPa": 0.004501000000000001,
+    "if_any_gate_fails": "Do not compare with pure-modeI closed-form failure0.22222mm; record observation and preserve failed qualification. No correction/rerun within the lot."
+  },
+  "material_default_limit": {
+    "Imass1_Idel4_Irupt1_Ismstr4": "Explicit card fields equal currentA79 andA67 numerically.",
+    "short_card_CritType1_EvoShape1_ISYM0": "Related pinned reader/cfg defaults; WindowsStarter source identity not assumed. Native outputs must establish the constitutive branch, using active parameter print if available plus initiation/failure/USR9/USR12/stress histories. If unobservable mark branch unqualified.",
+    "source_reader": "starter/source/materials/mat/mat117/hm_read_mat117.F:141-159,211-240,315-336",
+    "source_model": "engine/source/materials/mat/mat117/sigeps117.F:175-189,362-381,455-467",
+    "cfg_defaults": "hm_cfg_files/config/CFG/radioss2612/MAT/mat117.cfg:77-84"
+  },
+  "contact_feature_decision": {
+    "WAITING_until_full_nominal_gap_exit_retained": false,
+    "counterexample": "For current pure-modeI linear branch rupture0.222222mm<0.3mm<0.5mm. A failed seam can reclose without a full envelope exit; geometric-only waiting would never arm. Must observe compression and deletion before designing any feature.",
+    "no_implicit_gap_change_or_global_deactivation": true,
+    "uncertified_initial_pair": "Retain ordinary ARMED contact treatment and reject the preparation if overlap persists; never WAITING based only on coincidence."
+  },
+  "native_result_interpretation": {
+    "observation_success": "A clean bounded launch and complete actual histories with qualified variables and target state; independent of whether cohesion persists after failure.",
+    "physical_result": "Measure intact compression versus analytic linear branch and residual compression after element deletion, with force/energy balance and unchanged material parameters.",
+    "contact_result": "No general contact exists. No contact response, recontact adequacy or whole-impact qualification can be inferred.",
+    "null_USR": "Missing or unpopulated zero user-history fields are an observation failure, not zero damage.",
+    "deleted_fields": "Do not mistake disappearing/reset fields after OFF0 for healing."
+  }
+}
