@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-10-15T12:48:11.980173+00:00",
+  "source_manifest": {
+    "pin": "3d75ff13d1946f6d28a43920eac4fa2aae41b27a",
+    "copied_members_unmodified": [
+      {
+        "private_path": "wtc1_simulation_v8/openradioss_runtime/a82_dt_limit_audit/freimpl.F",
+        "sha256": "0cbedb90094c175ebd822716835b081e4bc4acf5bafe3828e90d0a6e9c29a260"
+      },
+      {
+        "private_path": "wtc1_simulation_v8/openradioss_runtime/a82_dt_limit_audit/imp_solv.F",
+        "sha256": "88e72fa3caf29de165d5690ca1b7e534f2716b44db80e737e76e6d68c377dbca"
+      },
+      {
+        "private_path": "wtc1_simulation_v8/openradioss_runtime/a82_dt_limit_audit/imp_dt.F",
+        "sha256": "a061a63b20958b27c7d6e3eaec94e5af550dfd279c7ff32930ae944dec46bae0"
+      }
+    ],
+    "patches_not_applied": true,
+    "not_native_observation_of_convergence_cause": true
+  },
+  "facts": {
+    "freimpl.F:251-255": "PRINT/NONL prefix reads KEY4 into NPRINT; default0 at96",
+    "imp_solv.F:1833-1849": "Rejected step rolls back time/cycle, adjusts DT, calls IMP_STOP if at minimum",
+    "imp_dt.F:106-116": "Negative IMCONV reduces or clamps DT to declared minimum",
+    "imp_solv.F:2022-2040": "ISTOP-2 maps to time-step-limit message79 and termination2"
+  },
+  "precise_initial_failure_cause_not_observed_in_A81": true,
+  "raw_AGPL_sources_not_in_own_public_manifest": true
+}
