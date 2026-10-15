@@ -1,0 +1,381 @@
+{
+  "created_utc": "2026-10-15T16:08:26.916919+00:00",
+  "pass_observation": true,
+  "physical_pass": false,
+  "checks": {
+    "all_raw_entries_and_criteria_present": true,
+    "native_norm_return_domains_present": true,
+    "free_residual_components_exactly_zero": true,
+    "reference_force_squared_exactly1": true,
+    "cumulative_energy_exactly_zero": true,
+    "previous_energy_increment_floor_exactly1e20": true,
+    "energy_ratio_infinite_at_criteria1and2": true,
+    "native_U2_DU2_exactly_zero": true,
+    "line_search_factor1_at_iteration2": true,
+    "displacement_ratio_NaN_at2": true,
+    "all_increment_components_zero": true,
+    "normal_prescribed_movement_present": true,
+    "eleven_bounded_traps_then_native_error_stop": true,
+    "same_native_timestep_limit_and_max_iterations": true,
+    "all_tolerances_and_step_bounds_unchanged": true,
+    "actual_saved_state_only_time_zero": true
+  },
+  "criteria": [
+    {
+      "iteration": 1,
+      "DE0_native": 1e-20,
+      "EIMP_native": 0.0,
+      "R02_native": 1.0,
+      "F_squared_recomputed_from_read_vector": 0.0,
+      "UR_native": 1.0,
+      "RR_native": 0.0,
+      "ER_native": "+Infinity"
+    },
+    {
+      "iteration": 2,
+      "DE0_native": 1e-20,
+      "EIMP_native": 0.0,
+      "R02_native": 1.0,
+      "F_squared_recomputed_from_read_vector": 0.0,
+      "UR_native": "NaN",
+      "RR_native": 0.0,
+      "ER_native": "+Infinity"
+    }
+  ],
+  "native_norm_squared_samples": [
+    {
+      "event": "PRODUT_UHP_return",
+      "iteration": 0,
+      "role": "D",
+      "native_norm_squared": 0.0,
+      "caller_return_offset": 12727774
+    },
+    {
+      "event": "PRODUT_UHP_return",
+      "iteration": 2,
+      "role": "D",
+      "native_norm_squared": 0.0,
+      "caller_return_offset": 12737505
+    },
+    {
+      "event": "PRODUT_UHP_return",
+      "iteration": 2,
+      "role": "DD",
+      "native_norm_squared": 0.0,
+      "caller_return_offset": 12737565
+    }
+  ],
+  "force_squared_recomputed_is_derived_not_read_local_R2": true,
+  "DE0_raw_before_floor_not_captured": true,
+  "native_internal_energy_EIMP_is_not_total_physical_energy": true,
+  "source_equations_confirmed_by_operands_and_outputs": true,
+  "strict_zero_case_observed_only_first_trial": true,
+  "global_cycle_time_not_observed_or_promised": true,
+  "read_only_breakpoints_disabled_after_criterion2": true,
+  "last_saved_coupon_time_ms": 0,
+  "saved_nonzero_states": 0,
+  "TH_schema": {
+    "code": 3040,
+    "header_records": 54,
+    "records_per_frame": 8,
+    "rows": 1,
+    "global_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "parts": [
+      {
+        "id": 1,
+        "title": "COHESIVE_REFERENCE",
+        "material": 0,
+        "subset": 1,
+        "property": 1,
+        "variables": [
+          1,
+          2,
+          7,
+          32
+        ]
+      }
+    ],
+    "subsets": [
+      {
+        "id": 0,
+        "title": "GLOBAL MODEL",
+        "parent": 0,
+        "parts": [
+          1
+        ],
+        "variables": []
+      }
+    ],
+    "groups": [
+      {
+        "id": 10,
+        "title": "COHESIVE_STATUS_STRESS_USER_FIELDS",
+        "kind": 1,
+        "extra": 0,
+        "entities": [
+          {
+            "id": 1,
+            "title": ""
+          }
+        ],
+        "variables": [
+          1,
+          4,
+          137,
+          140,
+          141,
+          142,
+          145,
+          148
+        ]
+      },
+      {
+        "id": 2,
+        "title": "REACTION_X",
+        "kind": 0,
+        "extra": 0,
+        "entities": [
+          {
+            "id": 1,
+            "title": ""
+          },
+          {
+            "id": 2,
+            "title": ""
+          },
+          {
+            "id": 3,
+            "title": ""
+          },
+          {
+            "id": 4,
+            "title": ""
+          },
+          {
+            "id": 5,
+            "title": ""
+          },
+          {
+            "id": 6,
+            "title": ""
+          },
+          {
+            "id": 7,
+            "title": ""
+          },
+          {
+            "id": 8,
+            "title": ""
+          }
+        ],
+        "variables": [
+          1,
+          4,
+          620
+        ]
+      },
+      {
+        "id": 3,
+        "title": "REACTION_Y",
+        "kind": 0,
+        "extra": 0,
+        "entities": [
+          {
+            "id": 1,
+            "title": ""
+          },
+          {
+            "id": 2,
+            "title": ""
+          },
+          {
+            "id": 3,
+            "title": ""
+          },
+          {
+            "id": 4,
+            "title": ""
+          },
+          {
+            "id": 5,
+            "title": ""
+          },
+          {
+            "id": 6,
+            "title": ""
+          },
+          {
+            "id": 7,
+            "title": ""
+          },
+          {
+            "id": 8,
+            "title": ""
+          }
+        ],
+        "variables": [
+          2,
+          5,
+          621
+        ]
+      },
+      {
+        "id": 4,
+        "title": "REACTION_Z",
+        "kind": 0,
+        "extra": 0,
+        "entities": [
+          {
+            "id": 1,
+            "title": ""
+          },
+          {
+            "id": 2,
+            "title": ""
+          },
+          {
+            "id": 3,
+            "title": ""
+          },
+          {
+            "id": 4,
+            "title": ""
+          },
+          {
+            "id": 5,
+            "title": ""
+          },
+          {
+            "id": 6,
+            "title": ""
+          },
+          {
+            "id": 7,
+            "title": ""
+          },
+          {
+            "id": 8,
+            "title": ""
+          }
+        ],
+        "variables": [
+          3,
+          6,
+          622
+        ]
+      },
+      {
+        "id": 11,
+        "title": "ALL_NODE_NORMAL_ACCELERATION",
+        "kind": 0,
+        "extra": 0,
+        "entities": [
+          {
+            "id": 1,
+            "title": ""
+          },
+          {
+            "id": 2,
+            "title": ""
+          },
+          {
+            "id": 3,
+            "title": ""
+          },
+          {
+            "id": 4,
+            "title": ""
+          },
+          {
+            "id": 5,
+            "title": ""
+          },
+          {
+            "id": 6,
+            "title": ""
+          },
+          {
+            "id": 7,
+            "title": ""
+          },
+          {
+            "id": 8,
+            "title": ""
+          }
+        ],
+        "variables": [
+          9
+        ]
+      }
+    ],
+    "frame_schema": [
+      [
+        "time",
+        1
+      ],
+      [
+        "global",
+        22
+      ],
+      [
+        "parts",
+        4
+      ],
+      [
+        "group_0",
+        8
+      ],
+      [
+        "group_1",
+        24
+      ],
+      [
+        "group_2",
+        24
+      ],
+      [
+        "group_3",
+        24
+      ],
+      [
+        "group_4",
+        8
+      ]
+    ]
+  },
+  "Engine_exit_code": 2,
+  "observer_exit_code": 0,
+  "Engine_remaining": 0,
+  "new_Engine": 1,
+  "new_Starter": 0,
+  "preserved_warnings": [
+    "PARITH/ON incompatible with implicit",
+    "ISOLID0 generic stiffness"
+  ],
+  "stop_message": 79,
+  "ISTOP": -2,
+  "no_new_native_or_converter_for_analysis": true
+}
