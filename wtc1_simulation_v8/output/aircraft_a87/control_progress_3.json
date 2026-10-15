@@ -1,0 +1,52 @@
+{
+  "created_utc": "2026-10-15T16:24:34.021203+00:00",
+  "results": [
+    {
+      "case": "FREE_Ismstr4",
+      "pass": true,
+      "cached_binary_comparison_pass": true,
+      "mechanical_review_pass": true,
+      "scope": "all_free_top_translations",
+      "no_new_physical_thresholds": true
+    },
+    {
+      "case": "AREA_EVOLUTION_FREE_Y",
+      "pass": true,
+      "cached_binary_comparison_pass": true,
+      "mechanical_review_pass": true,
+      "scope": "free_Y_current_area_control_only",
+      "no_new_physical_thresholds": true
+    },
+    {
+      "case": "COMPRESSION_RUPTURE_RECLOSE",
+      "pass": false,
+      "reason": "Native Engine incomplete or stopped",
+      "completion": {
+        "created_utc": "2026-10-15T16:24:33.994620+00:00",
+        "argv": [
+          "wsl.exe",
+          "-d",
+          "Ubuntu",
+          "--",
+          "timeout",
+          "--signal=TERM",
+          "--kill-after=5",
+          "180",
+          "bash",
+          "/mnt/c/Users/jeuxpc/Documents/Codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/wtc1_simulation_v8/output/aircraft_a87/native/COMPRESSION_RUPTURE_RECLOSE/engine.launch.sh"
+        ],
+        "parent_exit_code": 2,
+        "timed_out": false,
+        "wall_s": 0.6020238999990397,
+        "CPU_threads": 1,
+        "cap_s": 180,
+        "binary_sha256": "9e72f04411158c9b48f67968eff3fe01f741aca5cb5bd3201985cdbaf75e27cd",
+        "normal_termination": false,
+        "error_or_abort": true,
+        "mechanical_qualification_not_inferred": true
+      }
+    }
+  ],
+  "Engine_consumed": 3,
+  "maximum": 4
+}

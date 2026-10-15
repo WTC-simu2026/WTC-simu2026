@@ -1,0 +1,7 @@
+# Reprise AIRCRAFT-A86 → AIRCRAFT-A87
+
+Rapport : wtc1_simulation_v8/output/aircraft_a86/rapport_aircraft_a86.md
+Proposition : wtc1_simulation_v8/output/aircraft_a86_preparation/proposition_criteres_relatifs_exactement_nuls_A87.md
+Plan : wtc1_simulation_v8/data/aircraft_a86_proposal.json
+
+AIRCRAFT-A87 proposée non exécutée : nouveau traitement A86 des critères relatifs exactement nuls, moteur isolé numéro10, application/compilation seulement après accord explicite distinct. Plafond compilation1h/6CPU, puis au maximum4EngineCPU1/180s, zéro Starter/GPU/installation. Deux régressions libres anciennes avec le nouveau binaire, puis boucle A81 ; CHECK entier uniquement si toutes les qualifications locales passent. Aucun prolongement dynamique entier. Garde limitée Newmark non quasi-statique, Newton modifié, trois critères123, mouvement imposé, sans interface générale/rotation, un domaine/un thread, itération>=2, force libre et correction exactement nulles, référencesEIMP=0/DE0=1e−20 et normesU2=DU2=0. Les tolérances et le chemin non dégénéré restent inchangés ; l’itération1 conserve son ancien affichageInfinity. Le critère relatif reçoit0 dans ce seul sous-espace nul ; cela ne valide pas l’énergie physique indépendante. A85consommé, aucun nouveau correctif appliqué ou compilé ; budgets, échecs et sorties conservés. Meilleur impact entier0,0200001220703125s ; dix secondes physiques puis vidéo3D incomplètes.

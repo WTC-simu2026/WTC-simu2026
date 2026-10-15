@@ -1,0 +1,87 @@
+{
+  "created_utc": "2026-10-15T16:26:46.723552+00:00",
+  "case": "COMPRESSION_RUPTURE_RECLOSE",
+  "pass": false,
+  "checks": {
+    "normal_Engine_and_positive_time_target": false,
+    "actual_regular_saved_history": true,
+    "literal_independent_energy_threshold": true,
+    "physical_reconstructed_KE_vs_native": true,
+    "pre_rupture_compression_plateau_reference": false,
+    "post_reclosure_compression_plateau_reference": false,
+    "prescribed_top_Z_target_reclosed": false,
+    "free_top_XY_small": true,
+    "uniform_top_Z": true,
+    "native_USR_population_qualified": false,
+    "native_damage_and_rupture_semantics_certified": false,
+    "full_reaction_work_independent_closure_certified": false
+  },
+  "failed_checks": [
+    "normal_Engine_and_positive_time_target",
+    "pre_rupture_compression_plateau_reference",
+    "post_reclosure_compression_plateau_reference",
+    "prescribed_top_Z_target_reclosed",
+    "native_USR_population_qualified",
+    "native_damage_and_rupture_semantics_certified",
+    "full_reaction_work_independent_closure_certified"
+  ],
+  "native_rows": 2,
+  "last_saved_ms": 0.0001250000059371814,
+  "global_energy_residual_J_max": 1.3904472599123527e-12,
+  "unchanged_energy_limit_J": 1e-07,
+  "KE_reconstruction_vs_native_J_max": 1.8248940012981022e-12,
+  "energy_formula": "physical nodal KE + native internal/rotation/spring/hourglass/contact energies - native external work; independent reaction work still requires certification",
+  "native_external_work_J_range": [
+    0.0,
+    4.642790318865053e-13
+  ],
+  "pre_compression_force_N": null,
+  "post_reclosure_force_N": null,
+  "fields_raw_observed_ranges": {
+    "1": {
+      "minimum": 1.0,
+      "maximum": 1.0,
+      "nonzero_rows": 2
+    },
+    "4": {
+      "minimum": -8.37267634778982e-06,
+      "maximum": 0.0,
+      "nonzero_rows": 1
+    },
+    "137": {
+      "minimum": -1.902881185955607e-09,
+      "maximum": 0.0,
+      "nonzero_rows": 1
+    },
+    "140": {
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "nonzero_rows": 0
+    },
+    "141": {
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "nonzero_rows": 0
+    },
+    "142": {
+      "minimum": -8.37267634778982e-06,
+      "maximum": 0.0,
+      "nonzero_rows": 1
+    },
+    "145": {
+      "minimum": 0.10227272659540176,
+      "maximum": 0.10227272659540176,
+      "nonzero_rows": 2
+    },
+    "148": {
+      "minimum": 0.2222222238779068,
+      "maximum": 0.2222222238779068,
+      "nonzero_rows": 2
+    }
+  },
+  "field_population_and_deletion_semantics_not_inferred_from_zero_or_transition": true,
+  "zero_denominator_guard_marker_count": 1,
+  "whole_CHECK_condition_not_met": true,
+  "whole_dynamic_extension": false,
+  "physical_whole_credit_s": 0
+}
