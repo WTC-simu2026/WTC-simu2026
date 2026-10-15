@@ -1,0 +1,60 @@
+************************************************************************
+**                                                                    **
+**                                                                    **
+**                         OpenRadioss Engine                         **
+**                                                                    **
+**            Non-linear Finite Element Analysis Software             **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+**                Linux 64 bits, GNU compiler, OpenMPI                **
+**                      Double Precision Version                      **
+**                                                                    **
+**                                                                    **
+**                                                                    **
+************************************************************************
+** OpenRadioss Software                                               **
+** COPYRIGHT (C) 2026 Siemens                                         **
+** Licensed under GNU Affero General Public License.                  **
+** See License file.                                                  **
+************************************************************************
+ 
+ ROOT: A81_COHESIVE_COMPRESSION_PARTIAL_OPEN_RECLOSE  RESTART: 0001
+ NUMBER OF HMPP PROCESSES     1
+ 15/10/2026
+
+           **************************
+           ** IMPLICIT OPTION USED **
+           **************************
+
+ NC=       0 T= 0.0000E+00 DT= 1.2500E-04 ERR=  0.0% DM/M= 0.0000E+00
+     ANIMATION FILE: A81_COHESIVE_COMPRESSION_PARTIAL_OPEN_RECLOSEA001 WRITTEN
+
+   *--------- STIFFNESS MATRIX SETUP ---------*
+ SYMBOLIC DIM : ND =      24 NZ =       276 NB_MAX =       7
+ FINAL    DIM : ND =       8 NZ =        28 NB_MAX =       7
+
+
+Entering DMUMPS 5.6.2 with JOB =  -2
+      executing #MPI =      1, without OMP
+
+ MUMPS    DIM : NNZ =        36 NNZFR =         0
+   ------------------------------------------------------------------------------
+            Stif. Mat.
+      Iter   reformed      |du|/|u|   |r|/|r0|   |dE|/|E| Conv.stat.
+   ------------------------------------------------------------------------------
+         0      Y       0.000E+00  1.000E+00  0.000E+00
+         1      Y       1.000E+00  0.000E+00   Infinity
+         2              0.000E+00  0.000E+00  0.000E+00     C
+
+
+ NC=       1 T= 1.2500E-04 DT= 1.2500E-04 ERR=-93.6% DM/M= 0.0000E+00
+ ELAPSED TIME=          0.62 s  REMAINING TIME=       3217.59 s
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 2.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
